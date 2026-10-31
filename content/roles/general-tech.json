@@ -1,0 +1,1625 @@
+{
+  "role": "general-tech",
+  "terms": [
+    {
+      "id": "variable",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "variable",
+      "translation_fr": "variable",
+      "part_of_speech": "noun",
+      "definition_en": "A named place in a program that stores a value which can change.",
+      "explanation_fr": "Emplacement nommé dans un programme qui stocke une valeur susceptible de changer.",
+      "why_it_matters_fr": "Le tout premier concept de programmation.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "variable-1",
+          "text_en": "Store the total price in a variable.",
+          "text_fr": "Stocke le prix total dans une variable."
+        },
+        {
+          "id": "variable-2",
+          "text_en": "Give your variables clear names.",
+          "text_fr": "Donne des noms clairs à tes variables."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "function",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "function",
+      "translation_fr": "fonction",
+      "part_of_speech": "noun",
+      "definition_en": "A reusable block of code that performs a task, can take inputs and can return a result.",
+      "explanation_fr": "Bloc de code réutilisable qui réalise une tâche, peut recevoir des entrées et renvoyer un résultat.",
+      "why_it_matters_fr": "Découper son code en fonctions claires est la base d’un code lisible.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "function-1",
+          "text_en": "This function calculates the delivery fee.",
+          "text_fr": "Cette fonction calcule les frais de livraison."
+        },
+        {
+          "id": "function-2",
+          "text_en": "Keep each function small and focused.",
+          "text_fr": "Garde chaque fonction courte et ciblée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "loop",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "loop",
+      "translation_fr": "boucle",
+      "part_of_speech": "noun",
+      "definition_en": "A structure that repeats a block of code while a condition is true or for each item of a list.",
+      "explanation_fr": "Structure qui répète un bloc de code tant qu’une condition est vraie ou pour chaque élément d’une liste.",
+      "why_it_matters_fr": "Notion de base présente dans tous les langages.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "loop-1",
+          "text_en": "The loop goes through every order in the list.",
+          "text_fr": "La boucle parcourt chaque commande de la liste."
+        },
+        {
+          "id": "loop-2",
+          "text_en": "An infinite loop froze the page.",
+          "text_fr": "Une boucle infinie a figé la page."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "array",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "array",
+      "translation_fr": "tableau (liste)",
+      "part_of_speech": "noun",
+      "definition_en": "An ordered collection of values stored under one name and accessed by their position.",
+      "explanation_fr": "Collection ordonnée de valeurs rangées sous un même nom et accessibles par leur position.",
+      "why_it_matters_fr": "Structure de données la plus utilisée au quotidien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "array-1",
+          "text_en": "The API returns an array of products.",
+          "text_fr": "L’API renvoie un tableau de produits."
+        },
+        {
+          "id": "array-2",
+          "text_en": "Arrays start at index zero in most languages.",
+          "text_fr": "Dans la plupart des langages, les tableaux commencent à l’indice zéro."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "object",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "object",
+      "translation_fr": "objet",
+      "part_of_speech": "noun",
+      "definition_en": "A structure that groups related data (properties) and behaviors (methods) together.",
+      "explanation_fr": "Structure qui regroupe des données liées (propriétés) et des comportements (méthodes).",
+      "why_it_matters_fr": "Base de la programmation orientée objet et du JSON.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "object-1",
+          "text_en": "Each user is an object with a name and an email.",
+          "text_fr": "Chaque utilisateur est un objet avec un nom et un e-mail."
+        },
+        {
+          "id": "object-2",
+          "text_en": "Pass the settings as an object.",
+          "text_fr": "Passe les réglages sous forme d’objet."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "class",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "class",
+      "translation_fr": "classe",
+      "part_of_speech": "noun",
+      "definition_en": "A template that defines the properties and methods shared by a type of object.",
+      "explanation_fr": "Modèle qui définit les propriétés et méthodes communes à un type d’objet.",
+      "why_it_matters_fr": "Cœur de la programmation orientée objet (Java, Kotlin, Swift…).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "class-1",
+          "text_en": "The User class has a method to change the password.",
+          "text_fr": "La classe User a une méthode pour changer le mot de passe."
+        },
+        {
+          "id": "class-2",
+          "text_en": "We created one class per screen.",
+          "text_fr": "Nous avons créé une classe par écran."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "string",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "string",
+      "translation_fr": "chaîne de caractères",
+      "part_of_speech": "noun",
+      "definition_en": "A sequence of characters, such as a word or a sentence, stored as text.",
+      "explanation_fr": "Suite de caractères, comme un mot ou une phrase, stockée sous forme de texte.",
+      "why_it_matters_fr": "Type de données de base : « Expected a string » est une erreur courante.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "string-1",
+          "text_en": "The name is stored as a string.",
+          "text_fr": "Le nom est stocké sous forme de chaîne de caractères."
+        },
+        {
+          "id": "string-2",
+          "text_en": "Convert the number to a string before displaying it.",
+          "text_fr": "Convertis le nombre en chaîne avant de l’afficher."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "boolean",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "boolean",
+      "translation_fr": "booléen",
+      "part_of_speech": "noun",
+      "definition_en": "A data type with only two possible values: true or false.",
+      "explanation_fr": "Type de données qui n’a que deux valeurs possibles : vrai ou faux.",
+      "why_it_matters_fr": "Utilisé partout pour les conditions et les options.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "boolean-1",
+          "text_en": "isPaid is a boolean that tells if the order is paid.",
+          "text_fr": "isPaid est un booléen qui indique si la commande est payée."
+        },
+        {
+          "id": "boolean-2",
+          "text_en": "The function returns a boolean.",
+          "text_fr": "La fonction renvoie un booléen."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "null",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "null",
+      "translation_fr": "null (valeur vide)",
+      "part_of_speech": "noun",
+      "definition_en": "A special value meaning “no value” or “nothing”.",
+      "explanation_fr": "Valeur spéciale qui signifie « aucune valeur » ou « rien ».",
+      "why_it_matters_fr": "Les erreurs liées à null sont parmi les plus fréquentes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "null-1",
+          "text_en": "The app crashed because the address was null.",
+          "text_fr": "L’app a planté car l’adresse était nulle."
+        },
+        {
+          "id": "null-2",
+          "text_en": "Check for null before using the value.",
+          "text_fr": "Vérifie que la valeur n’est pas nulle avant de l’utiliser."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "exception",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "programming",
+        "code-quality"
+      ],
+      "term_en": "exception",
+      "translation_fr": "exception",
+      "part_of_speech": "noun",
+      "definition_en": "An error event that interrupts the normal flow of a program and can be caught and handled.",
+      "explanation_fr": "Erreur qui interrompt le déroulement normal d’un programme et qui peut être interceptée et traitée.",
+      "why_it_matters_fr": "Savoir gérer les exceptions évite les plantages.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "exception-1",
+          "text_en": "The code throws an exception when the file is missing.",
+          "text_fr": "Le code lève une exception quand le fichier est absent."
+        },
+        {
+          "id": "exception-2",
+          "text_en": "We catch the exception and show a friendly message.",
+          "text_fr": "Nous interceptons l’exception et affichons un message clair."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "error-message",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "error message",
+      "translation_fr": "message d’erreur",
+      "part_of_speech": "noun",
+      "definition_en": "A text that tells the user or the developer that something went wrong and, ideally, how to fix it.",
+      "explanation_fr": "Texte qui indique à l’utilisateur ou au développeur qu’un problème est survenu et, idéalement, comment le résoudre.",
+      "why_it_matters_fr": "Lire attentivement le message d’erreur est le premier réflexe de débogage.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "error-message-1",
+          "text_en": "Read the error message before searching online.",
+          "text_fr": "Lis le message d’erreur avant de chercher sur internet."
+        },
+        {
+          "id": "error-message-2",
+          "text_en": "The error message says the port is already in use.",
+          "text_fr": "Le message d’erreur indique que le port est déjà utilisé."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "stack-trace",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "stack trace",
+      "translation_fr": "trace d’appels (stack trace)",
+      "part_of_speech": "noun",
+      "definition_en": "A report listing the sequence of function calls that led to an error, used to find where it happened.",
+      "explanation_fr": "Rapport qui liste la suite d’appels de fonctions ayant mené à une erreur, pour trouver où elle s’est produite.",
+      "why_it_matters_fr": "Indispensable pour déboguer ; on le colle dans les rapports de bug.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "stack-trace-1",
+          "text_en": "The stack trace points to line 42 of the payment file.",
+          "text_fr": "La trace d’appels pointe vers la ligne 42 du fichier de paiement."
+        },
+        {
+          "id": "stack-trace-2",
+          "text_en": "Paste the full stack trace in the ticket.",
+          "text_fr": "Colle la trace d’appels complète dans le ticket."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "algorithm",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 70
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "algorithm",
+      "translation_fr": "algorithme",
+      "part_of_speech": "noun",
+      "definition_en": "A precise sequence of steps for solving a problem or performing a task.",
+      "explanation_fr": "Suite précise d’étapes pour résoudre un problème ou réaliser une tâche.",
+      "why_it_matters_fr": "Les entretiens techniques testent souvent ta façon de concevoir un algorithme.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "algorithm-1",
+          "text_en": "This algorithm sorts the products by price.",
+          "text_fr": "Cet algorithme trie les produits par prix."
+        },
+        {
+          "id": "algorithm-2",
+          "text_en": "Explain your algorithm before writing the code.",
+          "text_fr": "Explique ton algorithme avant d’écrire le code."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-structure",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "data structure",
+      "translation_fr": "structure de données",
+      "part_of_speech": "noun",
+      "definition_en": "A way of organizing data in memory, such as an array, a list, a tree or a hash map, to use it efficiently.",
+      "explanation_fr": "Façon d’organiser les données en mémoire (tableau, liste, arbre, table de hachage…) pour les utiliser efficacement.",
+      "why_it_matters_fr": "Sujet incontournable des entretiens techniques.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-structure-1",
+          "text_en": "Choosing the right data structure made the search faster.",
+          "text_fr": "Choisir la bonne structure de données a accéléré la recherche."
+        },
+        {
+          "id": "data-structure-2",
+          "text_en": "A hash map is a data structure for fast lookups.",
+          "text_fr": "Une table de hachage est une structure de données pour des recherches rapides."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "time-complexity",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "programming",
+        "performance"
+      ],
+      "term_en": "time complexity",
+      "translation_fr": "complexité en temps",
+      "part_of_speech": "noun",
+      "definition_en": "A measure of how the running time of an algorithm grows as the input gets larger, often written with Big O notation.",
+      "explanation_fr": "Mesure de la croissance du temps d’exécution d’un algorithme quand la taille des données augmente, souvent notée avec la notation grand O.",
+      "why_it_matters_fr": "« What is the time complexity of your solution? » : question classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "time-complexity-1",
+          "text_en": "The time complexity of this search is O(n).",
+          "text_fr": "La complexité en temps de cette recherche est O(n)."
+        },
+        {
+          "id": "time-complexity-2",
+          "text_en": "We reduced the time complexity from O(n²) to O(n log n).",
+          "text_fr": "Nous avons réduit la complexité de O(n²) à O(n log n)."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "recursion",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "recursion",
+      "translation_fr": "récursivité",
+      "part_of_speech": "noun",
+      "definition_en": "A technique where a function calls itself to solve smaller versions of the same problem.",
+      "explanation_fr": "Technique où une fonction s’appelle elle-même pour résoudre des versions plus petites du même problème.",
+      "why_it_matters_fr": "Classique des entretiens et des structures en arbre.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "recursion-1",
+          "text_en": "We used recursion to display nested comments.",
+          "text_fr": "Nous avons utilisé la récursivité pour afficher les commentaires imbriqués."
+        },
+        {
+          "id": "recursion-2",
+          "text_en": "Without a stop condition, recursion never ends.",
+          "text_fr": "Sans condition d’arrêt, la récursivité ne s’arrête jamais."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "compiler",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "compiler",
+      "translation_fr": "compilateur",
+      "part_of_speech": "noun",
+      "definition_en": "A program that translates source code into machine code or another lower-level language before it runs.",
+      "explanation_fr": "Programme qui traduit le code source en code machine (ou dans un langage de plus bas niveau) avant son exécution.",
+      "why_it_matters_fr": "Explique les erreurs « de compilation » et la différence avec les langages interprétés.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "compiler-1",
+          "text_en": "The compiler found a type error before the app ran.",
+          "text_fr": "Le compilateur a trouvé une erreur de type avant l’exécution de l’app."
+        },
+        {
+          "id": "compiler-2",
+          "text_en": "Go’s compiler produces a single binary.",
+          "text_fr": "Le compilateur de Go produit un unique binaire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "interpreter",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "interpreter",
+      "translation_fr": "interpréteur",
+      "part_of_speech": "noun",
+      "definition_en": "A program that reads and runs source code line by line, without producing a separate executable first.",
+      "explanation_fr": "Programme qui lit et exécute le code source au fur et à mesure, sans produire d’exécutable séparé.",
+      "why_it_matters_fr": "Python est le plus souvent utilisé avec un interpréteur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "interpreter-1",
+          "text_en": "The Python interpreter runs the script directly.",
+          "text_fr": "L’interpréteur Python exécute directement le script."
+        },
+        {
+          "id": "interpreter-2",
+          "text_en": "You can test small ideas quickly in the interpreter.",
+          "text_fr": "Tu peux tester vite de petites idées dans l’interpréteur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "open-source",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "programming",
+        "collaboration"
+      ],
+      "term_en": "open source",
+      "translation_fr": "open source (code source ouvert)",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes software whose source code is public and can be used, studied and modified under a license.",
+      "explanation_fr": "Qualifie un logiciel dont le code source est public et peut être utilisé, étudié et modifié selon une licence.",
+      "why_it_matters_fr": "Contribuer à l’open source est un vrai plus sur un CV.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "open-source-1",
+          "text_en": "Most of our tools are open source.",
+          "text_fr": "La plupart de nos outils sont open source."
+        },
+        {
+          "id": "open-source-2",
+          "text_en": "I contributed a fix to an open source library.",
+          "text_fr": "J’ai contribué un correctif à une bibliothèque open source."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "documentation",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "collaboration",
+        "code-quality"
+      ],
+      "term_en": "documentation",
+      "translation_fr": "documentation",
+      "part_of_speech": "noun",
+      "definition_en": "Written material that explains how software works and how to use it.",
+      "explanation_fr": "Textes qui expliquent comment fonctionne un logiciel et comment l’utiliser.",
+      "why_it_matters_fr": "Lire la doc en anglais est la compétence que TechLingo vise en premier.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "documentation-1",
+          "text_en": "The answer was in the official documentation.",
+          "text_fr": "La réponse était dans la documentation officielle."
+        },
+        {
+          "id": "documentation-2",
+          "text_en": "I updated the documentation after changing the API.",
+          "text_fr": "J’ai mis à jour la documentation après avoir modifié l’API."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "readme",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "collaboration",
+        "version-control"
+      ],
+      "term_en": "README",
+      "translation_fr": "README (fichier de présentation)",
+      "part_of_speech": "noun",
+      "definition_en": "The main text file of a project that explains what it does, how to install it and how to use it.",
+      "explanation_fr": "Fichier texte principal d’un projet qui explique ce qu’il fait, comment l’installer et l’utiliser.",
+      "why_it_matters_fr": "La première chose que lit un recruteur sur ton GitHub.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "readme-1",
+          "text_en": "Write a clear README for your portfolio project.",
+          "text_fr": "Écris un README clair pour ton projet de portfolio."
+        },
+        {
+          "id": "readme-2",
+          "text_en": "The README explains how to run the tests.",
+          "text_fr": "Le README explique comment lancer les tests."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "semantic-versioning",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "semantic versioning",
+      "translation_fr": "versionnage sémantique",
+      "part_of_speech": "noun",
+      "definition_en": "A version numbering system, MAJOR.MINOR.PATCH, where each number signals the type of change.",
+      "explanation_fr": "Système de numérotation des versions MAJEUR.MINEUR.CORRECTIF, où chaque chiffre indique le type de changement.",
+      "why_it_matters_fr": "Permet de savoir si une mise à jour risque de casser ton code.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "semantic-versioning-1",
+          "text_en": "Version 3.0.0 has breaking changes according to semantic versioning.",
+          "text_fr": "La version 3.0.0 contient des changements incompatibles selon le versionnage sémantique."
+        },
+        {
+          "id": "semantic-versioning-2",
+          "text_en": "A patch version only fixes bugs.",
+          "text_fr": "Une version corrective ne fait que corriger des bugs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "breaking-change",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control",
+        "api"
+      ],
+      "term_en": "breaking change",
+      "translation_fr": "changement incompatible",
+      "part_of_speech": "noun",
+      "definition_en": "A change that makes existing code or integrations stop working unless they are updated.",
+      "explanation_fr": "Modification qui fait cesser de fonctionner le code ou les intégrations existants tant qu’ils ne sont pas mis à jour.",
+      "why_it_matters_fr": "On l’annonce clairement et on l’évite autant que possible.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "breaking-change-1",
+          "text_en": "Removing this field is a breaking change for mobile clients.",
+          "text_fr": "Supprimer ce champ est un changement incompatible pour les clients mobiles."
+        },
+        {
+          "id": "breaking-change-2",
+          "text_en": "Read the changelog for breaking changes before upgrading.",
+          "text_fr": "Lis le journal des changements avant de mettre à jour."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ide",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "IDE",
+      "translation_fr": "environnement de développement (IDE)",
+      "part_of_speech": "acronym",
+      "definition_en": "Integrated Development Environment: an application for writing, running and debugging code, such as VS Code or Android Studio.",
+      "explanation_fr": "Integrated Development Environment : application pour écrire, exécuter et déboguer du code, comme VS Code ou Android Studio.",
+      "why_it_matters_fr": "Outil principal du quotidien d’un développeur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ide-1",
+          "text_en": "I use VS Code as my main IDE.",
+          "text_fr": "J’utilise VS Code comme IDE principal."
+        },
+        {
+          "id": "ide-2",
+          "text_en": "The IDE highlights errors as you type.",
+          "text_fr": "L’IDE souligne les erreurs pendant la saisie."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "command-line",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "command line",
+      "translation_fr": "ligne de commande",
+      "part_of_speech": "noun",
+      "definition_en": "A text interface where you type commands to control a computer or run programs.",
+      "explanation_fr": "Interface texte où l’on tape des commandes pour piloter un ordinateur ou lancer des programmes.",
+      "why_it_matters_fr": "Incontournable pour Git, les serveurs et les outils de développement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "command-line-1",
+          "text_en": "Run the tests from the command line.",
+          "text_fr": "Lance les tests depuis la ligne de commande."
+        },
+        {
+          "id": "command-line-2",
+          "text_en": "I installed the package with one command line instruction.",
+          "text_fr": "J’ai installé le paquet avec une seule commande."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "script",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "script",
+      "translation_fr": "script",
+      "part_of_speech": "noun",
+      "definition_en": "A small program, often used to automate a task, such as renaming files or deploying an app.",
+      "explanation_fr": "Petit programme, souvent utilisé pour automatiser une tâche comme renommer des fichiers ou déployer une app.",
+      "why_it_matters_fr": "Écrire des scripts fait gagner un temps considérable.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "script-1",
+          "text_en": "I wrote a script to back up the database.",
+          "text_fr": "J’ai écrit un script pour sauvegarder la base."
+        },
+        {
+          "id": "script-2",
+          "text_en": "The deploy script runs the tests first.",
+          "text_fr": "Le script de déploiement lance d’abord les tests."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "package-manager",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "package manager",
+      "translation_fr": "gestionnaire de paquets",
+      "part_of_speech": "noun",
+      "definition_en": "A tool that installs, updates and removes software libraries for a project, such as npm or pip.",
+      "explanation_fr": "Outil qui installe, met à jour et supprime les bibliothèques d’un projet, comme npm ou pip.",
+      "why_it_matters_fr": "On l’utilise dès le premier jour sur un projet.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "package-manager-1",
+          "text_en": "npm is the package manager for JavaScript.",
+          "text_fr": "npm est le gestionnaire de paquets de JavaScript."
+        },
+        {
+          "id": "package-manager-2",
+          "text_en": "The package manager locked the exact versions.",
+          "text_fr": "Le gestionnaire de paquets a figé les versions exactes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "http",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "network-systems",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "networking",
+        "api"
+      ],
+      "term_en": "HTTP",
+      "translation_fr": "HTTP (protocole du web)",
+      "part_of_speech": "acronym",
+      "definition_en": "HyperText Transfer Protocol: the protocol used by browsers and servers to exchange web pages and API data.",
+      "explanation_fr": "HyperText Transfer Protocol : protocole utilisé par les navigateurs et les serveurs pour échanger pages web et données d’API.",
+      "why_it_matters_fr": "Base du web : méthodes, en-têtes, codes de statut.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "http-1",
+          "text_en": "The browser sends an HTTP request to the server.",
+          "text_fr": "Le navigateur envoie une requête HTTP au serveur."
+        },
+        {
+          "id": "http-2",
+          "text_en": "HTTP status 404 means the page was not found.",
+          "text_fr": "Le statut HTTP 404 signifie que la page est introuvable."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "https",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "HTTPS",
+      "translation_fr": "HTTPS (HTTP sécurisé)",
+      "part_of_speech": "acronym",
+      "definition_en": "The secure version of HTTP, where communication is encrypted with TLS.",
+      "explanation_fr": "Version sécurisée de HTTP, où la communication est chiffrée avec TLS.",
+      "why_it_matters_fr": "Obligatoire aujourd’hui pour tout site, et exigé pour les PWA.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "https-1",
+          "text_en": "Every page of the site uses HTTPS.",
+          "text_fr": "Toutes les pages du site utilisent HTTPS."
+        },
+        {
+          "id": "https-2",
+          "text_en": "Browsers warn users when a site is not on HTTPS.",
+          "text_fr": "Les navigateurs avertissent quand un site n’est pas en HTTPS."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "url",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "URL",
+      "translation_fr": "URL (adresse web)",
+      "part_of_speech": "acronym",
+      "definition_en": "Uniform Resource Locator: the address of a resource on the internet, such as a web page.",
+      "explanation_fr": "Uniform Resource Locator : l’adresse d’une ressource sur internet, comme une page web.",
+      "why_it_matters_fr": "Vocabulaire de base du web.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "url-1",
+          "text_en": "Copy the URL of the page and send it to me.",
+          "text_fr": "Copie l’URL de la page et envoie-la-moi."
+        },
+        {
+          "id": "url-2",
+          "text_en": "The URL contains the product ID.",
+          "text_fr": "L’URL contient l’identifiant du produit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "browser",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "frontend"
+      ],
+      "term_en": "browser",
+      "translation_fr": "navigateur",
+      "part_of_speech": "noun",
+      "definition_en": "An application used to access websites, such as Chrome, Firefox or Safari.",
+      "explanation_fr": "Application pour accéder aux sites web, comme Chrome, Firefox ou Safari.",
+      "why_it_matters_fr": "Mot de base, et source de nombreux bugs spécifiques à un navigateur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "browser-1",
+          "text_en": "The bug only happens in one browser.",
+          "text_fr": "Le bug n’apparaît que dans un navigateur."
+        },
+        {
+          "id": "browser-2",
+          "text_en": "Clear your browser cache and try again.",
+          "text_fr": "Vide le cache de ton navigateur et réessaie."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hardware",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "hardware",
+      "translation_fr": "matériel",
+      "part_of_speech": "noun",
+      "definition_en": "The physical parts of a computer or device, such as the processor, memory and screen.",
+      "explanation_fr": "Les éléments physiques d’un ordinateur ou d’un appareil : processeur, mémoire, écran…",
+      "why_it_matters_fr": "À distinguer du logiciel (software).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hardware-1",
+          "text_en": "The problem is not the code, it is the hardware.",
+          "text_fr": "Le problème ne vient pas du code, mais du matériel."
+        },
+        {
+          "id": "hardware-2",
+          "text_en": "We upgraded the server hardware.",
+          "text_fr": "Nous avons amélioré le matériel du serveur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "software",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "software",
+      "translation_fr": "logiciel",
+      "part_of_speech": "noun",
+      "definition_en": "Programs and applications that run on a computer or device.",
+      "explanation_fr": "Programmes et applications qui fonctionnent sur un ordinateur ou un appareil.",
+      "why_it_matters_fr": "Mot de base ; « software engineer » est un intitulé de poste courant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "software-1",
+          "text_en": "I work as a software engineer.",
+          "text_fr": "Je travaille comme ingénieur logiciel."
+        },
+        {
+          "id": "software-2",
+          "text_en": "Update the software to fix the security issue.",
+          "text_fr": "Mets à jour le logiciel pour corriger le problème de sécurité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "legacy-code",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "legacy code",
+      "translation_fr": "code hérité (legacy)",
+      "part_of_speech": "noun",
+      "definition_en": "Old code that is still in use, often hard to change because it lacks tests or documentation.",
+      "explanation_fr": "Ancien code toujours utilisé, souvent difficile à modifier faute de tests ou de documentation.",
+      "why_it_matters_fr": "Tout développeur y est confronté ; savoir l’aborder est apprécié.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "legacy-code-1",
+          "text_en": "We are slowly replacing the legacy code.",
+          "text_fr": "Nous remplaçons progressivement le code hérité."
+        },
+        {
+          "id": "legacy-code-2",
+          "text_en": "Add tests before changing legacy code.",
+          "text_fr": "Ajoute des tests avant de modifier du code hérité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "technical-debt",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "project-management",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "technical debt",
+      "translation_fr": "dette technique",
+      "part_of_speech": "noun",
+      "definition_en": "The future cost of quick or imperfect technical choices that will need to be fixed later.",
+      "explanation_fr": "Le coût futur des choix techniques rapides ou imparfaits qu’il faudra corriger plus tard.",
+      "why_it_matters_fr": "Sujet clé des discussions entre développeurs et managers.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "technical-debt-1",
+          "text_en": "We took on technical debt to meet the launch date.",
+          "text_fr": "Nous avons contracté de la dette technique pour tenir la date de lancement."
+        },
+        {
+          "id": "technical-debt-2",
+          "text_en": "Each sprint, we spend time paying back technical debt.",
+          "text_fr": "À chaque sprint, nous consacrons du temps à rembourser la dette technique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "best-practice",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "best practice",
+      "translation_fr": "bonne pratique",
+      "part_of_speech": "noun",
+      "definition_en": "A method widely accepted as the most effective way to do something.",
+      "explanation_fr": "Méthode largement reconnue comme la façon la plus efficace de faire quelque chose.",
+      "why_it_matters_fr": "Expression très courante en revue de code et en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "best-practice-1",
+          "text_en": "Using environment variables for secrets is a best practice.",
+          "text_fr": "Utiliser des variables d’environnement pour les secrets est une bonne pratique."
+        },
+        {
+          "id": "best-practice-2",
+          "text_en": "The team follows best practices for code reviews.",
+          "text_fr": "L’équipe suit les bonnes pratiques de revue de code."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "workaround",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "network-systems",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "workaround",
+      "translation_fr": "solution de contournement",
+      "part_of_speech": "noun",
+      "definition_en": "A temporary way to avoid a problem without fixing its real cause.",
+      "explanation_fr": "Moyen temporaire d’éviter un problème sans en corriger la vraie cause.",
+      "why_it_matters_fr": "Vocabulaire très fréquent dans les tickets et les échanges d’équipe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "workaround-1",
+          "text_en": "Restarting the app is only a workaround.",
+          "text_fr": "Redémarrer l’app n’est qu’une solution de contournement."
+        },
+        {
+          "id": "workaround-2",
+          "text_en": "We found a workaround until the library is fixed.",
+          "text_fr": "Nous avons trouvé un contournement en attendant la correction de la bibliothèque."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "use-case",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "general-tech",
+          "priority": 55
+        },
+        {
+          "role": "product-design",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "product"
+      ],
+      "term_en": "use case",
+      "translation_fr": "cas d’usage",
+      "part_of_speech": "noun",
+      "definition_en": "A specific situation in which a product or feature is used to achieve a goal.",
+      "explanation_fr": "Situation précise où un produit ou une fonctionnalité sert à atteindre un objectif.",
+      "why_it_matters_fr": "Permet d’expliquer à quoi sert une technologie de façon concrète.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "use-case-1",
+          "text_en": "The main use case is paying a bill from the phone.",
+          "text_fr": "Le cas d’usage principal est de payer une facture depuis le téléphone."
+        },
+        {
+          "id": "use-case-2",
+          "text_en": "Is there a real use case for this feature?",
+          "text_fr": "Existe-t-il un vrai cas d’usage pour cette fonctionnalité ?"
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}
