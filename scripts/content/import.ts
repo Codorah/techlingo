@@ -34,6 +34,7 @@ for (const f of readdirSync(join(CONTENT_DIR, 'roles')).filter((x) => x.endsWith
 }
 
 let errors = 0, added = 0, updated = 0;
+const seenInRun = new Map<string, string>(); // id -> file:line, catches the same id in two import files
 for (const file of inputs) {
   readFileSync(file, 'utf8').split(/\r?\n/).forEach((line, i) => {
     if (!line.trim() || line.trimStart().startsWith('#')) return;
@@ -41,6 +42,9 @@ for (const file of inputs) {
     const f = line.split(' | ').map((s) => s.trim());
     if (f.length < 12 || f.length > 15) { console.error(`error ${where}: expected 12-15 fields, got ${f.length}`); errors++; return; }
     const [id, level, roles, categories, pos, term_en, translation_fr, definition_en, explanation_fr, why, e1en, e1fr, e2en, e2fr, note] = f as string[];
+    const clash = seenInRun.get(id!);
+    if (clash) { console.error(`error ${where}: id "${id}" is already used at ${clash}`); errors++; return; }
+    seenInRun.set(id!, where);
     const sentences = [{ id: `${id}-1`, text_en: e1en, text_fr: e1fr }];
     if (e2en && e2fr) sentences.push({ id: `${id}-2`, text_en: e2en, text_fr: e2fr });
     const roleList = roles!.split(',').map((r) => { const [role, p] = r.split(':'); return { role: role!.trim(), priority: Number(p ?? 50) }; });
