@@ -39,11 +39,11 @@ export interface FsrsCard {
   due: string;
   stability: number;
   difficulty: number;
-  elapsedDays: number;
   scheduledDays: number;
+  learningSteps: number;
   reps: number;
   lapses: number;
-  state: number; // ts-fsrs State enum (New, Learning, Review, Relearning)
+  state: number; // ts-fsrs State: 0 New, 1 Learning, 2 Review, 3 Relearning
   lastReview?: string;
 }
 

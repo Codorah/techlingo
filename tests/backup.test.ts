@@ -19,7 +19,7 @@ async function seed(database: TechLingoDB) {
     updatedAt: iso('2026-10-30'), deviceId
   });
   await database.userTerms.bulkPut([
-    { termId: 'rest-api', state: 'learning', card: { due: iso('2026-11-02'), stability: 3.1, difficulty: 5.2, elapsedDays: 2, scheduledDays: 3, reps: 2, lapses: 0, state: 2, lastReview: iso('2026-10-30') }, favorite: true, notes: 'vu en réunion', updatedAt: iso('2026-10-30'), deviceId },
+    { termId: 'rest-api', state: 'learning', card: { due: iso('2026-11-02'), stability: 3.1, difficulty: 5.2, scheduledDays: 3, learningSteps: 0, reps: 2, lapses: 0, state: 2, lastReview: iso('2026-10-30') }, favorite: true, notes: 'vu en réunion', updatedAt: iso('2026-10-30'), deviceId },
     { termId: 'webhook', state: 'new', card: null, favorite: false, notes: '', updatedAt: iso('2026-10-29'), deviceId }
   ]);
   await database.reviewLog.put({ id: 'r1', termId: 'rest-api', rating: 3, reviewedAt: iso('2026-10-30'), cardBefore: null, updatedAt: iso('2026-10-30'), deviceId });
