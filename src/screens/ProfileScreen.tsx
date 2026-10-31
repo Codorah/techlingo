@@ -87,8 +87,8 @@ export function ProfileScreen() {
             <Moon size={22} className="text-ocean" aria-hidden />
             <span className="flex-1 font-bold">{t('profile.theme')}</span>
             <button type="button" role="switch" aria-checked={dark} aria-label={t('profile.theme')} onClick={toggleTheme}
-              className={`relative h-8 w-14 rounded-full transition-colors ${dark ? 'bg-mint-strong' : 'bg-line'}`}>
-              <span className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow transition-transform ${dark ? 'translate-x-7' : 'translate-x-1'}`} />
+              className={`relative h-8 w-14 flex-none rounded-full transition-colors ${dark ? 'bg-ocean' : 'bg-line'}`}>
+              <span className={`absolute left-0 top-1 h-6 w-6 rounded-full bg-white shadow transition-transform duration-200 ${dark ? 'translate-x-7' : 'translate-x-1'}`} />
             </button>
           </div>
         </Card>
