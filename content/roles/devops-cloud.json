@@ -1817,6 +1817,1071 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "iaas-paas",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "IaaS and PaaS",
+      "translation_fr": "IaaS et PaaS",
+      "part_of_speech": "acronym",
+      "definition_en": "Infrastructure as a Service gives you virtual machines and networks to manage; Platform as a Service runs your code without managing servers.",
+      "explanation_fr": "L’IaaS fournit des machines virtuelles et des réseaux à gérer soi-même ; le PaaS fait tourner ton code sans gérer de serveurs.",
+      "why_it_matters_fr": "Distinction classique des modèles cloud, avec le SaaS.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "iaas-paas-1",
+          "text_en": "We moved from IaaS to PaaS to reduce maintenance.",
+          "text_fr": "Nous sommes passés de l’IaaS au PaaS pour réduire la maintenance."
+        },
+        {
+          "id": "iaas-paas-2",
+          "text_en": "With PaaS, we just push the code.",
+          "text_fr": "Avec le PaaS, nous envoyons simplement le code."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "object-storage",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "object storage",
+      "translation_fr": "stockage objet",
+      "part_of_speech": "noun",
+      "definition_en": "Cloud storage that keeps files as objects in buckets, accessed by URL, such as Amazon S3.",
+      "explanation_fr": "Stockage cloud qui conserve les fichiers sous forme d’objets dans des compartiments, accessibles par URL, comme Amazon S3.",
+      "why_it_matters_fr": "Solution standard pour les images, vidéos et sauvegardes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "object-storage-1",
+          "text_en": "User photos are saved in object storage.",
+          "text_fr": "Les photos des utilisateurs sont enregistrées dans un stockage objet."
+        },
+        {
+          "id": "object-storage-2",
+          "text_en": "Object storage is cheap for large files.",
+          "text_fr": "Le stockage objet coûte peu pour les gros fichiers."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bucket",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "data-engineer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "bucket",
+      "translation_fr": "compartiment (bucket)",
+      "part_of_speech": "noun",
+      "definition_en": "A container for files in cloud object storage.",
+      "explanation_fr": "Conteneur de fichiers dans un stockage objet cloud.",
+      "why_it_matters_fr": "Un compartiment mal configuré en public est une cause fréquente de fuite.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bucket-1",
+          "text_en": "The backups are stored in a private bucket.",
+          "text_fr": "Les sauvegardes sont stockées dans un compartiment privé."
+        },
+        {
+          "id": "bucket-2",
+          "text_en": "Make sure the bucket is not public.",
+          "text_fr": "Vérifie que le compartiment n’est pas public."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "iam",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "cloud",
+        "security"
+      ],
+      "term_en": "IAM",
+      "translation_fr": "gestion des identités et des accès (IAM)",
+      "part_of_speech": "acronym",
+      "definition_en": "Identity and Access Management: the service that controls who and what can access cloud resources and with which permissions.",
+      "explanation_fr": "Identity and Access Management : service qui contrôle qui (et quoi) peut accéder aux ressources cloud, et avec quels droits.",
+      "why_it_matters_fr": "Mal configuré, c’est la porte ouverte aux incidents.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "iam-1",
+          "text_en": "We use IAM roles instead of sharing access keys.",
+          "text_fr": "Nous utilisons des rôles IAM au lieu de partager des clés d’accès."
+        },
+        {
+          "id": "iam-2",
+          "text_en": "The IAM policy only allows reading the bucket.",
+          "text_fr": "La règle IAM n’autorise que la lecture du compartiment."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "vpc",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "cloud",
+        "networking"
+      ],
+      "term_en": "VPC",
+      "translation_fr": "réseau privé virtuel cloud (VPC)",
+      "part_of_speech": "acronym",
+      "definition_en": "Virtual Private Cloud: an isolated private network inside a cloud provider where you run your resources.",
+      "explanation_fr": "Virtual Private Cloud : réseau privé isolé chez un fournisseur cloud, dans lequel tournent tes ressources.",
+      "why_it_matters_fr": "Base de la sécurité réseau dans le cloud.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "vpc-1",
+          "text_en": "The database runs in a private subnet of our VPC.",
+          "text_fr": "La base tourne dans un sous-réseau privé de notre VPC."
+        },
+        {
+          "id": "vpc-2",
+          "text_en": "Only the load balancer is exposed outside the VPC.",
+          "text_fr": "Seul le répartiteur de charge est exposé hors du VPC."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "managed-service",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "managed service",
+      "translation_fr": "service managé",
+      "part_of_speech": "noun",
+      "definition_en": "A cloud service where the provider handles setup, updates, backups and scaling for you.",
+      "explanation_fr": "Service cloud dont le fournisseur gère l’installation, les mises à jour, les sauvegardes et la montée en charge.",
+      "why_it_matters_fr": "Libère l’équipe des tâches d’exploitation, au prix d’une dépendance au fournisseur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "managed-service-1",
+          "text_en": "We use a managed database instead of running our own.",
+          "text_fr": "Nous utilisons une base managée plutôt que d’héberger la nôtre."
+        },
+        {
+          "id": "managed-service-2",
+          "text_en": "Managed services cost more but save time.",
+          "text_fr": "Les services managés coûtent plus cher mais font gagner du temps."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "terraform",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "cloud",
+        "ci-cd"
+      ],
+      "term_en": "Terraform",
+      "translation_fr": "Terraform",
+      "part_of_speech": "noun",
+      "definition_en": "A popular infrastructure-as-code tool that creates and updates cloud resources from configuration files.",
+      "explanation_fr": "Outil d’infrastructure en tant que code très répandu qui crée et met à jour les ressources cloud à partir de fichiers de configuration.",
+      "why_it_matters_fr": "Compétence fréquemment demandée dans les offres DevOps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "terraform-1",
+          "text_en": "We manage all our servers with Terraform.",
+          "text_fr": "Nous gérons tous nos serveurs avec Terraform."
+        },
+        {
+          "id": "terraform-2",
+          "text_en": "Terraform shows the changes before applying them.",
+          "text_fr": "Terraform affiche les changements avant de les appliquer."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "helm",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "containers"
+      ],
+      "term_en": "Helm",
+      "translation_fr": "Helm",
+      "part_of_speech": "noun",
+      "definition_en": "A package manager for Kubernetes that installs and updates applications using reusable templates called charts.",
+      "explanation_fr": "Gestionnaire de paquets pour Kubernetes qui installe et met à jour des applications avec des modèles réutilisables appelés charts.",
+      "why_it_matters_fr": "Outil courant dès qu’on déploie sur Kubernetes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "helm-1",
+          "text_en": "We deploy the API to Kubernetes with Helm.",
+          "text_fr": "Nous déployons l’API sur Kubernetes avec Helm."
+        },
+        {
+          "id": "helm-2",
+          "text_en": "The Helm chart sets the number of replicas.",
+          "text_fr": "Le chart Helm fixe le nombre de réplicas."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pod",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "containers"
+      ],
+      "term_en": "pod",
+      "translation_fr": "pod",
+      "part_of_speech": "noun",
+      "definition_en": "In Kubernetes, the smallest deployable unit, containing one or more containers that share network and storage.",
+      "explanation_fr": "Dans Kubernetes, la plus petite unité déployable, qui contient un ou plusieurs conteneurs partageant réseau et stockage.",
+      "why_it_matters_fr": "Vocabulaire de base de Kubernetes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pod-1",
+          "text_en": "The pod restarted because it ran out of memory.",
+          "text_fr": "Le pod a redémarré car il manquait de mémoire."
+        },
+        {
+          "id": "pod-2",
+          "text_en": "Kubernetes keeps three pods running at all times.",
+          "text_fr": "Kubernetes garde toujours trois pods en fonctionnement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "horizontal-scaling",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "cloud",
+        "performance"
+      ],
+      "term_en": "horizontal scaling",
+      "translation_fr": "mise à l’échelle horizontale",
+      "part_of_speech": "noun",
+      "definition_en": "Handling more load by adding more machines or instances, rather than making one machine bigger.",
+      "explanation_fr": "Absorber plus de charge en ajoutant des machines ou des instances, plutôt qu’en renforçant une seule machine.",
+      "why_it_matters_fr": "À opposer à la mise à l’échelle verticale ; question classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "horizontal-scaling-1",
+          "text_en": "Horizontal scaling added two more API instances.",
+          "text_fr": "La mise à l’échelle horizontale a ajouté deux instances de l’API."
+        },
+        {
+          "id": "horizontal-scaling-2",
+          "text_en": "Stateless services are easier to scale horizontally.",
+          "text_fr": "Les services sans état sont plus faciles à mettre à l’échelle horizontalement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "vertical-scaling",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "cloud",
+        "performance"
+      ],
+      "term_en": "vertical scaling",
+      "translation_fr": "mise à l’échelle verticale",
+      "part_of_speech": "noun",
+      "definition_en": "Handling more load by giving one machine more CPU, memory or storage.",
+      "explanation_fr": "Absorber plus de charge en donnant à une machine plus de processeur, de mémoire ou de stockage.",
+      "why_it_matters_fr": "Simple, mais limité par la taille maximale d’une machine.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "vertical-scaling-1",
+          "text_en": "Vertical scaling doubled the server’s memory.",
+          "text_fr": "La mise à l’échelle verticale a doublé la mémoire du serveur."
+        },
+        {
+          "id": "vertical-scaling-2",
+          "text_en": "Vertical scaling has a maximum limit.",
+          "text_fr": "La mise à l’échelle verticale a une limite maximale."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "stateless",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "architecture"
+      ],
+      "term_en": "stateless",
+      "translation_fr": "sans état",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes a service that does not keep user data between requests, so any instance can handle any request.",
+      "explanation_fr": "Qualifie un service qui ne garde pas de données utilisateur entre deux requêtes : n’importe quelle instance peut traiter n’importe quelle requête.",
+      "why_it_matters_fr": "Condition pour une mise à l’échelle simple.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "stateless-1",
+          "text_en": "Our API is stateless; sessions are stored in Redis.",
+          "text_fr": "Notre API est sans état ; les sessions sont dans Redis."
+        },
+        {
+          "id": "stateless-2",
+          "text_en": "Stateless services are easy to replace.",
+          "text_fr": "Les services sans état sont faciles à remplacer."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "slo",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "SLO",
+      "translation_fr": "objectif de niveau de service (SLO)",
+      "part_of_speech": "acronym",
+      "definition_en": "Service Level Objective: an internal target for a service’s reliability, such as 99.9% of requests succeeding.",
+      "explanation_fr": "Service Level Objective : objectif interne de fiabilité d’un service, par exemple 99,9 % de requêtes réussies.",
+      "why_it_matters_fr": "Base de la pratique SRE, avec le budget d’erreur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "slo-1",
+          "text_en": "Our SLO is 99.9% availability per month.",
+          "text_fr": "Notre SLO est de 99,9 % de disponibilité par mois."
+        },
+        {
+          "id": "slo-2",
+          "text_en": "We missed the SLO because of two outages.",
+          "text_fr": "Nous avons raté le SLO à cause de deux pannes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "error-budget",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "error budget",
+      "translation_fr": "budget d’erreur",
+      "part_of_speech": "noun",
+      "definition_en": "The amount of unreliability a service is allowed within its SLO; when it is used up, teams focus on stability.",
+      "explanation_fr": "La part de défaillance qu’un service peut se permettre dans son SLO ; quand il est épuisé, l’équipe se concentre sur la stabilité.",
+      "why_it_matters_fr": "Aide à équilibrer vitesse de livraison et fiabilité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "error-budget-1",
+          "text_en": "We used half of our error budget this month.",
+          "text_fr": "Nous avons consommé la moitié de notre budget d’erreur ce mois-ci."
+        },
+        {
+          "id": "error-budget-2",
+          "text_en": "When the error budget is empty, we freeze new features.",
+          "text_fr": "Quand le budget d’erreur est épuisé, nous gelons les nouvelles fonctionnalités."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "distributed-tracing",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "distributed tracing",
+      "translation_fr": "traçage distribué",
+      "part_of_speech": "noun",
+      "definition_en": "Following a single request as it travels through several services, to see where time is spent or errors occur.",
+      "explanation_fr": "Suivre une requête à travers plusieurs services pour voir où le temps est passé et où surviennent les erreurs.",
+      "why_it_matters_fr": "Indispensable pour déboguer des microservices.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "distributed-tracing-1",
+          "text_en": "Distributed tracing showed the delay was in the payment service.",
+          "text_fr": "Le traçage distribué a montré que le délai venait du service de paiement."
+        },
+        {
+          "id": "distributed-tracing-2",
+          "text_en": "Each request gets a trace ID.",
+          "text_fr": "Chaque requête reçoit un identifiant de trace."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "runbook",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "collaboration"
+      ],
+      "term_en": "runbook",
+      "translation_fr": "procédure d’exploitation (runbook)",
+      "part_of_speech": "noun",
+      "definition_en": "A step-by-step guide for handling a routine task or a known incident.",
+      "explanation_fr": "Guide pas à pas pour réaliser une tâche courante ou traiter un incident connu.",
+      "why_it_matters_fr": "Permet à l’astreinte d’agir vite, même la nuit.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "runbook-1",
+          "text_en": "The runbook explains how to restart the queue.",
+          "text_fr": "La procédure explique comment redémarrer la file."
+        },
+        {
+          "id": "runbook-2",
+          "text_en": "We updated the runbook after the incident.",
+          "text_fr": "Nous avons mis à jour la procédure après l’incident."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "feature-flag",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 45
+        },
+        {
+          "role": "product-design",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "ci-cd",
+        "product"
+      ],
+      "term_en": "feature flag",
+      "translation_fr": "interrupteur de fonctionnalité (feature flag)",
+      "part_of_speech": "noun",
+      "definition_en": "A switch in the code that turns a feature on or off without deploying again, often for some users only.",
+      "explanation_fr": "Interrupteur dans le code qui active ou désactive une fonctionnalité sans redéployer, souvent pour une partie des utilisateurs.",
+      "why_it_matters_fr": "Permet de livrer en sécurité et de tester progressivement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "feature-flag-1",
+          "text_en": "The new checkout is behind a feature flag.",
+          "text_fr": "Le nouveau paiement est derrière un interrupteur de fonctionnalité."
+        },
+        {
+          "id": "feature-flag-2",
+          "text_en": "We turned the feature flag off when errors increased.",
+          "text_fr": "Nous avons coupé la fonctionnalité quand les erreurs ont augmenté."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "gitops",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "GitOps",
+      "translation_fr": "GitOps",
+      "part_of_speech": "noun",
+      "definition_en": "A practice where the desired state of infrastructure and deployments is stored in Git and applied automatically.",
+      "explanation_fr": "Pratique où l’état souhaité de l’infrastructure et des déploiements est stocké dans Git et appliqué automatiquement.",
+      "why_it_matters_fr": "Rend les déploiements traçables et réversibles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "gitops-1",
+          "text_en": "With GitOps, a merged pull request triggers the deployment.",
+          "text_fr": "Avec GitOps, une pull request fusionnée déclenche le déploiement."
+        },
+        {
+          "id": "gitops-2",
+          "text_en": "GitOps gives us a full history of infrastructure changes.",
+          "text_fr": "GitOps nous donne l’historique complet des changements d’infrastructure."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "immutable-infrastructure",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "cloud",
+        "architecture"
+      ],
+      "term_en": "immutable infrastructure",
+      "translation_fr": "infrastructure immuable",
+      "part_of_speech": "noun",
+      "definition_en": "An approach where servers are never changed after deployment; to update, you replace them with new ones.",
+      "explanation_fr": "Approche où l’on ne modifie jamais un serveur après son déploiement : pour le mettre à jour, on le remplace par un nouveau.",
+      "why_it_matters_fr": "Évite les serveurs différents les uns des autres.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "immutable-infrastructure-1",
+          "text_en": "With immutable infrastructure, we never SSH into servers to fix them.",
+          "text_fr": "Avec l’infrastructure immuable, nous ne nous connectons jamais aux serveurs pour les réparer."
+        },
+        {
+          "id": "immutable-infrastructure-2",
+          "text_en": "Each release creates new servers.",
+          "text_fr": "Chaque version crée de nouveaux serveurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cold-start",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "cloud",
+        "performance"
+      ],
+      "term_en": "cold start",
+      "translation_fr": "démarrage à froid",
+      "part_of_speech": "noun",
+      "definition_en": "The extra delay when a serverless function or service starts after being idle.",
+      "explanation_fr": "Le délai supplémentaire quand une fonction serverless ou un service démarre après une période d’inactivité.",
+      "why_it_matters_fr": "Peut ralentir la première requête d’un utilisateur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cold-start-1",
+          "text_en": "The first request is slow because of the cold start.",
+          "text_fr": "La première requête est lente à cause du démarrage à froid."
+        },
+        {
+          "id": "cold-start-2",
+          "text_en": "We keep one instance warm to avoid cold starts.",
+          "text_fr": "Nous gardons une instance active pour éviter les démarrages à froid."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "edge-computing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "network-systems",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "cloud",
+        "networking"
+      ],
+      "term_en": "edge computing",
+      "translation_fr": "informatique en périphérie (edge)",
+      "part_of_speech": "noun",
+      "definition_en": "Running computation close to users or devices, at the network’s edge, to reduce latency.",
+      "explanation_fr": "Exécuter les calculs près des utilisateurs ou des appareils, en bordure du réseau, pour réduire la latence.",
+      "why_it_matters_fr": "Améliore la rapidité pour des utilisateurs éloignés des grands datacenters.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "edge-computing-1",
+          "text_en": "Edge computing serves pages from a city near the user.",
+          "text_fr": "L’edge sert les pages depuis une ville proche de l’utilisateur."
+        },
+        {
+          "id": "edge-computing-2",
+          "text_en": "We moved image resizing to edge computing.",
+          "text_fr": "Nous avons déplacé le redimensionnement des images en périphérie."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "vendor-lock-in",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "project-management",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "vendor lock-in",
+      "translation_fr": "dépendance au fournisseur",
+      "part_of_speech": "noun",
+      "definition_en": "A situation where changing provider is very hard or expensive because you depend on its specific services.",
+      "explanation_fr": "Situation où changer de fournisseur est très difficile ou coûteux parce qu’on dépend de ses services spécifiques.",
+      "why_it_matters_fr": "Risque à peser quand on choisit des services managés.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "vendor-lock-in-1",
+          "text_en": "Using only open standards reduces vendor lock-in.",
+          "text_fr": "N’utiliser que des standards ouverts réduit la dépendance au fournisseur."
+        },
+        {
+          "id": "vendor-lock-in-2",
+          "text_en": "Vendor lock-in made the migration expensive.",
+          "text_fr": "La dépendance au fournisseur a rendu la migration coûteuse."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cloud-cost",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "project-management",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "cloud cost optimization",
+      "translation_fr": "optimisation des coûts cloud",
+      "part_of_speech": "noun",
+      "definition_en": "Reducing cloud spending by removing unused resources, choosing the right sizes and using cheaper options.",
+      "explanation_fr": "Réduire les dépenses cloud en supprimant les ressources inutilisées, en choisissant les bonnes tailles et des options moins chères.",
+      "why_it_matters_fr": "Le cloud mal maîtrisé coûte vite très cher.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cloud-cost-1",
+          "text_en": "Cloud cost optimization cut our bill by 30%.",
+          "text_fr": "L’optimisation des coûts cloud a réduit notre facture de 30 %."
+        },
+        {
+          "id": "cloud-cost-2",
+          "text_en": "We delete test servers every Friday to save money.",
+          "text_fr": "Nous supprimons les serveurs de test chaque vendredi pour économiser."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "replica",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases",
+        "cloud"
+      ],
+      "term_en": "replica",
+      "translation_fr": "réplique (réplica)",
+      "part_of_speech": "noun",
+      "definition_en": "A copy of a database or service running at the same time, used for reliability or to share the load.",
+      "explanation_fr": "Copie d’une base de données ou d’un service qui tourne en parallèle, pour la fiabilité ou pour répartir la charge.",
+      "why_it_matters_fr": "Base de la haute disponibilité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "replica-1",
+          "text_en": "Read queries go to a replica of the database.",
+          "text_fr": "Les requêtes de lecture vont vers une réplique de la base."
+        },
+        {
+          "id": "replica-2",
+          "text_en": "Kubernetes runs three replicas of the API.",
+          "text_fr": "Kubernetes fait tourner trois réplicas de l’API."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "failover",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "architecture",
+        "cloud"
+      ],
+      "term_en": "failover",
+      "translation_fr": "basculement (failover)",
+      "part_of_speech": "noun",
+      "definition_en": "Automatically switching to a backup system when the main one fails.",
+      "explanation_fr": "Basculer automatiquement vers un système de secours quand le système principal tombe.",
+      "why_it_matters_fr": "Assure la continuité de service.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "failover-1",
+          "text_en": "The failover to the second database took ten seconds.",
+          "text_fr": "Le basculement vers la seconde base a pris dix secondes."
+        },
+        {
+          "id": "failover-2",
+          "text_en": "We test failover every month.",
+          "text_fr": "Nous testons le basculement chaque mois."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "chaos-engineering",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "testing"
+      ],
+      "term_en": "chaos engineering",
+      "translation_fr": "ingénierie du chaos",
+      "part_of_speech": "noun",
+      "definition_en": "Deliberately causing failures in a system to test how well it resists and recovers.",
+      "explanation_fr": "Provoquer volontairement des pannes dans un système pour tester sa résistance et sa capacité à se rétablir.",
+      "why_it_matters_fr": "Pratique avancée des grandes plateformes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "chaos-engineering-1",
+          "text_en": "Chaos engineering showed that one failed node broke checkout.",
+          "text_fr": "L’ingénierie du chaos a montré qu’un seul nœud en panne cassait le paiement."
+        },
+        {
+          "id": "chaos-engineering-2",
+          "text_en": "We run chaos engineering tests in staging.",
+          "text_fr": "Nous faisons des tests de chaos en préproduction."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "environment-parity",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "environment parity",
+      "translation_fr": "parité des environnements",
+      "part_of_speech": "noun",
+      "definition_en": "Keeping development, staging and production as similar as possible to avoid surprises.",
+      "explanation_fr": "Garder développement, préproduction et production aussi semblables que possible pour éviter les surprises.",
+      "why_it_matters_fr": "Réduit les bugs « ça marchait chez moi ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "environment-parity-1",
+          "text_en": "Containers improved environment parity.",
+          "text_fr": "Les conteneurs ont amélioré la parité des environnements."
+        },
+        {
+          "id": "environment-parity-2",
+          "text_en": "The bug came from missing environment parity.",
+          "text_fr": "Le bug venait d’un manque de parité entre environnements."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
