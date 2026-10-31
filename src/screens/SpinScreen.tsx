@@ -116,7 +116,8 @@ export function SpinScreen() {
       )}
 
       <div className="flex flex-1 flex-col items-center justify-center">
-        {(canSpin || result) && segments.length > 0 && <Wheel ref={wheel} labels={segments.map((s) => s.label)} />}
+        {(canSpin || result) && segments.length > 0 && <Wheel ref={wheel} labels={segments.map((s) => s.label)} onSpin={() => void spin()} spinLabel={t('spin.cta')}
+          disabled={!canSpin || !!result || spinning || !input || (mode === 'category' && !category)} />}
         {!canSpin && !result && todaysTerm && (
           <Card className="w-full text-center">
             <p className="text-sm font-bold text-ink-2">{t('home.spin.done.title')}</p>
