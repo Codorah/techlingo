@@ -1805,6 +1805,1213 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "validation-set",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "validation set",
+      "translation_fr": "jeu de validation",
+      "part_of_speech": "noun",
+      "definition_en": "Data kept apart from training and used to tune a model and its hyperparameters before the final test.",
+      "explanation_fr": "Données mises de côté pendant l’entraînement, utilisées pour régler le modèle et ses hyperparamètres avant le test final.",
+      "why_it_matters_fr": "Évite de « tricher » en ajustant le modèle sur le jeu de test.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "validation-set-1",
+          "text_en": "We tuned the learning rate on the validation set.",
+          "text_fr": "Nous avons réglé le taux d’apprentissage sur le jeu de validation."
+        },
+        {
+          "id": "validation-set-2",
+          "text_en": "The validation set has 10% of the data.",
+          "text_fr": "Le jeu de validation contient 10 % des données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "confusion-matrix",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 60
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "confusion matrix",
+      "translation_fr": "matrice de confusion",
+      "part_of_speech": "noun",
+      "definition_en": "A table that compares a classifier’s predictions with the real classes, showing correct predictions and each type of error.",
+      "explanation_fr": "Tableau qui compare les prédictions d’un classifieur aux vraies classes, en montrant les bonnes prédictions et chaque type d’erreur.",
+      "why_it_matters_fr": "Permet de voir précisément où un modèle se trompe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "confusion-matrix-1",
+          "text_en": "The confusion matrix shows many fraud cases predicted as normal.",
+          "text_fr": "La matrice de confusion montre beaucoup de fraudes prédites comme normales."
+        },
+        {
+          "id": "confusion-matrix-2",
+          "text_en": "We added the confusion matrix to the report.",
+          "text_fr": "Nous avons ajouté la matrice de confusion au rapport."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "f1-score",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "F1 score",
+      "translation_fr": "score F1",
+      "part_of_speech": "noun",
+      "definition_en": "A metric that combines precision and recall into one number, useful when classes are imbalanced.",
+      "explanation_fr": "Métrique qui combine précision et rappel en un seul nombre, utile quand les classes sont déséquilibrées.",
+      "why_it_matters_fr": "Plus parlant que l’exactitude sur des données déséquilibrées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "f1-score-1",
+          "text_en": "Our F1 score improved from 0.71 to 0.84.",
+          "text_fr": "Notre score F1 est passé de 0,71 à 0,84."
+        },
+        {
+          "id": "f1-score-2",
+          "text_en": "We chose the model with the best F1 score.",
+          "text_fr": "Nous avons choisi le modèle avec le meilleur score F1."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "reinforcement-learning",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "reinforcement learning",
+      "translation_fr": "apprentissage par renforcement",
+      "part_of_speech": "noun",
+      "definition_en": "A type of machine learning where an agent learns by trial and error, receiving rewards or penalties for its actions.",
+      "explanation_fr": "Type d’apprentissage automatique où un agent apprend par essais et erreurs, en recevant récompenses ou pénalités.",
+      "why_it_matters_fr": "Utilisé pour les jeux, la robotique et l’ajustement des grands modèles de langage.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "reinforcement-learning-1",
+          "text_en": "The robot learned to walk with reinforcement learning.",
+          "text_fr": "Le robot a appris à marcher par apprentissage par renforcement."
+        },
+        {
+          "id": "reinforcement-learning-2",
+          "text_en": "Reinforcement learning needs a clear reward signal.",
+          "text_fr": "L’apprentissage par renforcement demande un signal de récompense clair."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "clustering",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 60
+        },
+        {
+          "role": "data-analyst",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "data-analysis"
+      ],
+      "term_en": "clustering",
+      "translation_fr": "regroupement (clustering)",
+      "part_of_speech": "noun",
+      "definition_en": "An unsupervised technique that groups similar data points together without predefined labels.",
+      "explanation_fr": "Technique non supervisée qui regroupe les données similaires sans étiquettes prédéfinies.",
+      "why_it_matters_fr": "Très utilisé pour segmenter des clients.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "clustering-1",
+          "text_en": "Clustering revealed four types of customers.",
+          "text_fr": "Le regroupement a révélé quatre types de clients."
+        },
+        {
+          "id": "clustering-2",
+          "text_en": "K-means is a simple clustering algorithm.",
+          "text_fr": "K-means est un algorithme de regroupement simple."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "decision-tree",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "decision tree",
+      "translation_fr": "arbre de décision",
+      "part_of_speech": "noun",
+      "definition_en": "A model that makes predictions by following a series of yes/no questions organized like a tree.",
+      "explanation_fr": "Modèle qui prédit en suivant une série de questions oui/non organisées en arbre.",
+      "why_it_matters_fr": "Facile à expliquer à des non-spécialistes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "decision-tree-1",
+          "text_en": "The decision tree first checks the customer’s age.",
+          "text_fr": "L’arbre de décision vérifie d’abord l’âge du client."
+        },
+        {
+          "id": "decision-tree-2",
+          "text_en": "Decision trees are easy to explain to managers.",
+          "text_fr": "Les arbres de décision sont faciles à expliquer aux managers."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "random-forest",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "random forest",
+      "translation_fr": "forêt aléatoire",
+      "part_of_speech": "noun",
+      "definition_en": "A model that combines many decision trees trained on random parts of the data and averages their predictions.",
+      "explanation_fr": "Modèle qui combine de nombreux arbres de décision entraînés sur des parties aléatoires des données et fait la moyenne de leurs prédictions.",
+      "why_it_matters_fr": "Modèle robuste et souvent efficace sur des données tabulaires.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "random-forest-1",
+          "text_en": "A random forest gave better results than a single tree.",
+          "text_fr": "Une forêt aléatoire a donné de meilleurs résultats qu’un seul arbre."
+        },
+        {
+          "id": "random-forest-2",
+          "text_en": "Random forests are less likely to overfit.",
+          "text_fr": "Les forêts aléatoires surapprennent moins facilement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "feature-engineering",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 60
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "feature engineering",
+      "translation_fr": "ingénierie des variables",
+      "part_of_speech": "noun",
+      "definition_en": "Creating, transforming or selecting input variables to help a model learn better.",
+      "explanation_fr": "Créer, transformer ou sélectionner les variables d’entrée pour aider un modèle à mieux apprendre.",
+      "why_it_matters_fr": "Souvent plus efficace que changer d’algorithme.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "feature-engineering-1",
+          "text_en": "Feature engineering added the day of the week as a variable.",
+          "text_fr": "L’ingénierie des variables a ajouté le jour de la semaine comme variable."
+        },
+        {
+          "id": "feature-engineering-2",
+          "text_en": "Good feature engineering beat a complex model.",
+          "text_fr": "Une bonne ingénierie des variables a battu un modèle complexe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "normalization-ml",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "data-analysis"
+      ],
+      "term_en": "normalization",
+      "translation_fr": "normalisation (des données)",
+      "part_of_speech": "noun",
+      "definition_en": "Rescaling numeric values to a common range so that no feature dominates just because of its scale.",
+      "explanation_fr": "Remettre des valeurs numériques à une échelle commune pour qu’aucune variable ne domine à cause de son ordre de grandeur.",
+      "why_it_matters_fr": "Étape de préparation classique avant l’entraînement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "normalization-ml-1",
+          "text_en": "We applied normalization so prices and ages have the same scale.",
+          "text_fr": "Nous avons normalisé pour que prix et âges aient la même échelle."
+        },
+        {
+          "id": "normalization-ml-2",
+          "text_en": "Without normalization, the model trained slowly.",
+          "text_fr": "Sans normalisation, le modèle s’entraînait lentement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "one-hot-encoding",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "one-hot encoding",
+      "translation_fr": "encodage one-hot",
+      "part_of_speech": "noun",
+      "definition_en": "Turning a category into several columns of 0 and 1, one per possible value, so a model can use it.",
+      "explanation_fr": "Transformer une catégorie en plusieurs colonnes de 0 et 1, une par valeur possible, pour qu’un modèle puisse l’utiliser.",
+      "why_it_matters_fr": "Technique de base pour les variables catégorielles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "one-hot-encoding-1",
+          "text_en": "We used one-hot encoding for the city column.",
+          "text_fr": "Nous avons utilisé l’encodage one-hot pour la colonne ville."
+        },
+        {
+          "id": "one-hot-encoding-2",
+          "text_en": "One-hot encoding adds one column per category.",
+          "text_fr": "L’encodage one-hot ajoute une colonne par catégorie."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "learning-rate",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "learning rate",
+      "translation_fr": "taux d’apprentissage",
+      "part_of_speech": "noun",
+      "definition_en": "A hyperparameter that controls how big each adjustment of the model’s parameters is during training.",
+      "explanation_fr": "Hyperparamètre qui contrôle l’ampleur de chaque ajustement des paramètres du modèle pendant l’entraînement.",
+      "why_it_matters_fr": "Trop haut, l’entraînement diverge ; trop bas, il est très lent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "learning-rate-1",
+          "text_en": "We lowered the learning rate to stabilize training.",
+          "text_fr": "Nous avons baissé le taux d’apprentissage pour stabiliser l’entraînement."
+        },
+        {
+          "id": "learning-rate-2",
+          "text_en": "The learning rate decreases over time.",
+          "text_fr": "Le taux d’apprentissage diminue au fil du temps."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dropout",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "dropout",
+      "translation_fr": "dropout (désactivation aléatoire)",
+      "part_of_speech": "noun",
+      "definition_en": "A regularization technique that randomly ignores some neurons during training to reduce overfitting.",
+      "explanation_fr": "Technique de régularisation qui ignore aléatoirement certains neurones pendant l’entraînement pour réduire le surapprentissage.",
+      "why_it_matters_fr": "Méthode classique contre le surapprentissage des réseaux de neurones.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dropout-1",
+          "text_en": "Adding dropout reduced overfitting.",
+          "text_fr": "Ajouter du dropout a réduit le surapprentissage."
+        },
+        {
+          "id": "dropout-2",
+          "text_en": "Dropout is turned off during inference.",
+          "text_fr": "Le dropout est désactivé pendant l’inférence."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pretrained-model",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "generative-ai"
+      ],
+      "term_en": "pre-trained model",
+      "translation_fr": "modèle pré-entraîné",
+      "part_of_speech": "noun",
+      "definition_en": "A model already trained on a large dataset that can be reused or adapted for a new task.",
+      "explanation_fr": "Modèle déjà entraîné sur un grand jeu de données, réutilisable ou adaptable à une nouvelle tâche.",
+      "why_it_matters_fr": "Permet d’obtenir de bons résultats sans tout entraîner soi-même.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pretrained-model-1",
+          "text_en": "We started from a pre-trained model instead of training from scratch.",
+          "text_fr": "Nous sommes partis d’un modèle pré-entraîné au lieu de tout entraîner."
+        },
+        {
+          "id": "pretrained-model-2",
+          "text_en": "The pre-trained model already recognizes common objects.",
+          "text_fr": "Le modèle pré-entraîné reconnaît déjà les objets courants."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "transfer-learning",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "transfer learning",
+      "translation_fr": "apprentissage par transfert",
+      "part_of_speech": "noun",
+      "definition_en": "Reusing knowledge from a model trained on one task to improve learning on a related task.",
+      "explanation_fr": "Réutiliser les connaissances d’un modèle entraîné sur une tâche pour mieux apprendre une tâche proche.",
+      "why_it_matters_fr": "Indispensable quand on a peu de données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "transfer-learning-1",
+          "text_en": "Transfer learning let us train with only 500 images.",
+          "text_fr": "L’apprentissage par transfert nous a permis d’entraîner avec seulement 500 images."
+        },
+        {
+          "id": "transfer-learning-2",
+          "text_en": "We used transfer learning from an English model to French.",
+          "text_fr": "Nous avons utilisé le transfert d’un modèle anglais vers le français."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "few-shot",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "few-shot",
+      "translation_fr": "à quelques exemples (few-shot)",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes giving a model only a few examples in the prompt to show the expected task or format.",
+      "explanation_fr": "Qualifie le fait de donner au modèle seulement quelques exemples dans la consigne pour montrer la tâche ou le format attendus.",
+      "why_it_matters_fr": "Technique simple et efficace de prompt engineering.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "few-shot-1",
+          "text_en": "Few-shot prompting improved the output format.",
+          "text_fr": "Donner quelques exemples dans la consigne a amélioré le format de sortie."
+        },
+        {
+          "id": "few-shot-2",
+          "text_en": "We added three few-shot examples to the prompt.",
+          "text_fr": "Nous avons ajouté trois exemples à la consigne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "temperature",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "temperature",
+      "translation_fr": "température (génération)",
+      "part_of_speech": "noun",
+      "definition_en": "A setting that controls how random a language model’s output is: low is more predictable, high is more creative.",
+      "explanation_fr": "Réglage qui contrôle le caractère aléatoire des réponses d’un modèle de langage : bas = plus prévisible, haut = plus créatif.",
+      "why_it_matters_fr": "Paramètre à connaître pour régler un assistant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "temperature-1",
+          "text_en": "We set a low temperature for factual answers.",
+          "text_fr": "Nous avons réglé une température basse pour les réponses factuelles."
+        },
+        {
+          "id": "temperature-2",
+          "text_en": "A high temperature produced more varied slogans.",
+          "text_fr": "Une température élevée a produit des slogans plus variés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "guardrails",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "security"
+      ],
+      "term_en": "guardrails",
+      "translation_fr": "garde-fous",
+      "part_of_speech": "noun",
+      "definition_en": "Rules and checks around an AI system that prevent harmful, off-topic or unsafe outputs.",
+      "explanation_fr": "Règles et contrôles autour d’un système d’IA qui empêchent des réponses nuisibles, hors sujet ou dangereuses.",
+      "why_it_matters_fr": "Indispensable avant de mettre un assistant face aux clients.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "guardrails-1",
+          "text_en": "Our guardrails block requests for personal data.",
+          "text_fr": "Nos garde-fous bloquent les demandes de données personnelles."
+        },
+        {
+          "id": "guardrails-2",
+          "text_en": "We test the guardrails with tricky prompts.",
+          "text_fr": "Nous testons les garde-fous avec des consignes piégeuses."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "prompt-injection",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "security"
+      ],
+      "term_en": "prompt injection",
+      "translation_fr": "injection de consigne (prompt injection)",
+      "part_of_speech": "noun",
+      "definition_en": "An attack where hidden instructions in user input or documents try to make an AI system ignore its rules.",
+      "explanation_fr": "Attaque où des instructions cachées dans une saisie ou un document tentent de faire ignorer ses règles à un système d’IA.",
+      "why_it_matters_fr": "Nouveau risque de sécurité propre aux applications d’IA.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "prompt-injection-1",
+          "text_en": "A web page contained a prompt injection telling the assistant to leak data.",
+          "text_fr": "Une page web contenait une injection demandant à l’assistant de divulguer des données."
+        },
+        {
+          "id": "prompt-injection-2",
+          "text_en": "We treat retrieved documents as data, not instructions, to resist prompt injection.",
+          "text_fr": "Nous traitons les documents récupérés comme des données, pas des instructions, pour résister aux injections."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "chunking",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "chunking",
+      "translation_fr": "découpage (en morceaux)",
+      "part_of_speech": "noun",
+      "definition_en": "Splitting long documents into smaller pieces before creating embeddings or sending them to a language model.",
+      "explanation_fr": "Découper de longs documents en morceaux plus petits avant de créer des embeddings ou de les envoyer à un modèle de langage.",
+      "why_it_matters_fr": "Le choix de la taille des morceaux influence fortement un système RAG.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "chunking-1",
+          "text_en": "Smaller chunking gave more precise answers.",
+          "text_fr": "Un découpage plus fin a donné des réponses plus précises."
+        },
+        {
+          "id": "chunking-2",
+          "text_en": "We use chunking with a small overlap between pieces.",
+          "text_fr": "Nous découpons avec un léger chevauchement entre les morceaux."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "semantic-search",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "semantic search",
+      "translation_fr": "recherche sémantique",
+      "part_of_speech": "noun",
+      "definition_en": "Search based on the meaning of the query rather than exact keywords, often using embeddings.",
+      "explanation_fr": "Recherche fondée sur le sens de la requête plutôt que sur les mots exacts, souvent grâce aux embeddings.",
+      "why_it_matters_fr": "Trouve des résultats pertinents même formulés autrement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "semantic-search-1",
+          "text_en": "Semantic search finds “refund” when the user types “money back”.",
+          "text_fr": "La recherche sémantique trouve « remboursement » quand l’utilisateur tape « récupérer mon argent »."
+        },
+        {
+          "id": "semantic-search-2",
+          "text_en": "We replaced keyword search with semantic search.",
+          "text_fr": "Nous avons remplacé la recherche par mots-clés par une recherche sémantique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "model-deployment",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "ci-cd"
+      ],
+      "term_en": "model deployment",
+      "translation_fr": "déploiement de modèle",
+      "part_of_speech": "noun",
+      "definition_en": "Making a trained model available in production, for example behind an API, so applications can use it.",
+      "explanation_fr": "Rendre un modèle entraîné disponible en production, par exemple derrière une API, pour que les applications l’utilisent.",
+      "why_it_matters_fr": "Beaucoup de projets IA échouent à cette étape.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "model-deployment-1",
+          "text_en": "Model deployment uses a container behind our API.",
+          "text_fr": "Le déploiement du modèle utilise un conteneur derrière notre API."
+        },
+        {
+          "id": "model-deployment-2",
+          "text_en": "We monitor accuracy after each model deployment.",
+          "text_fr": "Nous surveillons la précision après chaque déploiement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "explainability",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "explainability",
+      "translation_fr": "explicabilité",
+      "part_of_speech": "noun",
+      "definition_en": "The ability to explain why a model made a particular prediction in terms people can understand.",
+      "explanation_fr": "La capacité à expliquer, de façon compréhensible, pourquoi un modèle a fait une prédiction.",
+      "why_it_matters_fr": "Exigée dans la banque, la santé et l’emploi.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "explainability-1",
+          "text_en": "Explainability is required for loan decisions.",
+          "text_fr": "L’explicabilité est exigée pour les décisions de crédit."
+        },
+        {
+          "id": "explainability-2",
+          "text_en": "We show the top three factors behind each prediction.",
+          "text_fr": "Nous affichons les trois principaux facteurs de chaque prédiction."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ground-truth",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "ground truth",
+      "translation_fr": "vérité terrain",
+      "part_of_speech": "noun",
+      "definition_en": "The real, verified answers used to train or evaluate a model.",
+      "explanation_fr": "Les vraies réponses vérifiées utilisées pour entraîner ou évaluer un modèle.",
+      "why_it_matters_fr": "Sans vérité terrain fiable, impossible de mesurer un modèle.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ground-truth-1",
+          "text_en": "Doctors created the ground truth for the medical images.",
+          "text_fr": "Des médecins ont établi la vérité terrain des images médicales."
+        },
+        {
+          "id": "ground-truth-2",
+          "text_en": "We compare predictions with the ground truth.",
+          "text_fr": "Nous comparons les prédictions à la vérité terrain."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-labeling",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "data labeling",
+      "translation_fr": "annotation des données",
+      "part_of_speech": "noun",
+      "definition_en": "Adding labels, such as categories or bounding boxes, to raw data so it can be used for supervised learning.",
+      "explanation_fr": "Ajouter des étiquettes (catégories, cadres…) aux données brutes pour l’apprentissage supervisé.",
+      "why_it_matters_fr": "Étape coûteuse mais décisive.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-labeling-1",
+          "text_en": "Data labeling took three weeks.",
+          "text_fr": "L’annotation des données a pris trois semaines."
+        },
+        {
+          "id": "data-labeling-2",
+          "text_en": "We wrote clear guidelines for data labeling.",
+          "text_fr": "Nous avons rédigé des consignes claires pour l’annotation."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "synthetic-data",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "qa-testing",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "synthetic data",
+      "translation_fr": "données synthétiques",
+      "part_of_speech": "noun",
+      "definition_en": "Artificially generated data that imitates real data, used when real data is rare or sensitive.",
+      "explanation_fr": "Données générées artificiellement qui imitent des données réelles, utilisées quand les vraies sont rares ou sensibles.",
+      "why_it_matters_fr": "Utile pour tester ou entraîner sans exposer de données personnelles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "synthetic-data-1",
+          "text_en": "We trained the model partly on synthetic data.",
+          "text_fr": "Nous avons entraîné le modèle en partie sur des données synthétiques."
+        },
+        {
+          "id": "synthetic-data-2",
+          "text_en": "Synthetic data protects customer privacy in tests.",
+          "text_fr": "Les données synthétiques protègent la vie privée des clients en test."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "quantization",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "performance"
+      ],
+      "term_en": "quantization",
+      "translation_fr": "quantification",
+      "part_of_speech": "noun",
+      "definition_en": "Reducing the numeric precision of a model’s parameters to make it smaller and faster, with a small loss of accuracy.",
+      "explanation_fr": "Réduire la précision numérique des paramètres d’un modèle pour le rendre plus léger et plus rapide, avec une légère perte de précision.",
+      "why_it_matters_fr": "Permet de faire tourner des modèles sur téléphone ou petit serveur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "quantization-1",
+          "text_en": "Quantization made the model four times smaller.",
+          "text_fr": "La quantification a rendu le modèle quatre fois plus léger."
+        },
+        {
+          "id": "quantization-2",
+          "text_en": "After quantization, it runs on a phone.",
+          "text_fr": "Après quantification, il tourne sur un téléphone."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "multimodal",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "multimodal",
+      "translation_fr": "multimodal",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes an AI model that can handle several types of data, such as text, images and audio.",
+      "explanation_fr": "Qualifie un modèle d’IA capable de traiter plusieurs types de données : texte, images, audio…",
+      "why_it_matters_fr": "Tendance forte des modèles récents.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "multimodal-1",
+          "text_en": "The multimodal model can read a photo of a receipt.",
+          "text_fr": "Le modèle multimodal peut lire la photo d’un reçu."
+        },
+        {
+          "id": "multimodal-2",
+          "text_en": "Multimodal assistants answer questions about images.",
+          "text_fr": "Les assistants multimodaux répondent à des questions sur des images."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "speech-to-text",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "speech-to-text",
+      "translation_fr": "reconnaissance vocale (transcription)",
+      "part_of_speech": "noun",
+      "definition_en": "Technology that converts spoken words into written text.",
+      "explanation_fr": "Technologie qui convertit la parole en texte écrit.",
+      "why_it_matters_fr": "Utilisée dans TechLingo pour l’exercice de répétition.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "speech-to-text-1",
+          "text_en": "We use speech-to-text to transcribe meetings.",
+          "text_fr": "Nous utilisons la reconnaissance vocale pour transcrire les réunions."
+        },
+        {
+          "id": "speech-to-text-2",
+          "text_en": "Speech-to-text works less well with background noise.",
+          "text_fr": "La reconnaissance vocale marche moins bien avec du bruit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "recommendation-system",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "recommendation system",
+      "translation_fr": "système de recommandation",
+      "part_of_speech": "noun",
+      "definition_en": "A system that suggests items, such as products or videos, based on users’ behavior and preferences.",
+      "explanation_fr": "Système qui suggère des éléments (produits, vidéos…) selon le comportement et les préférences des utilisateurs.",
+      "why_it_matters_fr": "Présent dans presque toutes les grandes plateformes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "recommendation-system-1",
+          "text_en": "The recommendation system suggests products you may like.",
+          "text_fr": "Le système de recommandation propose des produits susceptibles de te plaire."
+        },
+        {
+          "id": "recommendation-system-2",
+          "text_en": "Better recommendations increased sales by 10%.",
+          "text_fr": "De meilleures recommandations ont augmenté les ventes de 10 %."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "anomaly-detection",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 40
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "anomaly detection",
+      "translation_fr": "détection d’anomalies",
+      "part_of_speech": "noun",
+      "definition_en": "Identifying data points or events that differ significantly from normal behavior.",
+      "explanation_fr": "Repérer les données ou événements qui s’écartent nettement du comportement normal.",
+      "why_it_matters_fr": "Utilisée pour la fraude, la sécurité et la maintenance.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "anomaly-detection-1",
+          "text_en": "Anomaly detection flagged unusual transactions at night.",
+          "text_fr": "La détection d’anomalies a signalé des transactions inhabituelles la nuit."
+        },
+        {
+          "id": "anomaly-detection-2",
+          "text_en": "We use anomaly detection on server metrics.",
+          "text_fr": "Nous utilisons la détection d’anomalies sur les métriques des serveurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sentiment-analysis",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        },
+        {
+          "role": "product-design",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "machine-learning"
+      ],
+      "term_en": "sentiment analysis",
+      "translation_fr": "analyse des sentiments",
+      "part_of_speech": "noun",
+      "definition_en": "Using NLP to detect whether a text expresses a positive, negative or neutral opinion.",
+      "explanation_fr": "Utiliser le TAL pour détecter si un texte exprime une opinion positive, négative ou neutre.",
+      "why_it_matters_fr": "Utile pour analyser avis clients et réseaux sociaux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sentiment-analysis-1",
+          "text_en": "Sentiment analysis showed most reviews were positive.",
+          "text_fr": "L’analyse des sentiments a montré que la plupart des avis étaient positifs."
+        },
+        {
+          "id": "sentiment-analysis-2",
+          "text_en": "We run sentiment analysis on support tickets.",
+          "text_fr": "Nous analysons le sentiment des tickets de support."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
