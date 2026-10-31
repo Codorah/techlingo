@@ -1,7 +1,7 @@
 // Loads the generated content manifest and role packs. Packs are cached by the service worker,
 // so once fetched they keep working offline.
 import MiniSearch from 'minisearch';
-import type { Manifest, RolePack, Term } from '@/content/schema';
+import type { CareerPack, Manifest, RolePack, Term } from '@/content/schema';
 import { SEARCH_OPTIONS, type SearchDoc } from '@/content/search';
 
 let manifestPromise: Promise<Manifest> | null = null;
@@ -35,3 +35,11 @@ export function loadRolePack(role: string) {
 }
 
 export type { Term };
+
+let careerPromise: Promise<CareerPack> | null = null;
+export function loadCareer(): Promise<CareerPack> {
+  careerPromise ??= fetch('/content/career.json')
+    .then((r) => { if (!r.ok) throw new Error(`career ${r.status}`); return r.json(); })
+    .then((json: CareerPack) => { if (!Array.isArray(json.questions)) throw new Error('career malformed'); return json; });
+  return careerPromise;
+}

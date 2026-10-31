@@ -21,6 +21,12 @@ const LessonScreen = named(() => import('@/screens/lesson/LessonScreen'), 'Lesso
 const DictionaryScreen = named(() => import('@/screens/DictionaryScreen'), 'DictionaryScreen');
 const WordScreen = named(() => import('@/screens/WordScreen'), 'WordScreen');
 const ProfileScreen = named(() => import('@/screens/ProfileScreen'), 'ProfileScreen');
+const PracticeScreen = named(() => import('@/screens/practice/PracticeScreen'), 'PracticeScreen');
+const ReviewScreen = named(() => import('@/screens/practice/ReviewScreen'), 'ReviewScreen');
+const SessionScreen = named(() => import('@/screens/practice/SessionScreen'), 'SessionScreen');
+const CareerScreen = named(() => import('@/screens/career/CareerScreen'), 'CareerScreen');
+const QuestionScreen = named(() => import('@/screens/career/QuestionScreen'), 'QuestionScreen');
+const PitchScreen = named(() => import('@/screens/career/PitchScreen'), 'PitchScreen');
 const DataScreen = named(() => import('@/screens/DataScreen'), 'DataScreen');
 
 function App() {
@@ -41,6 +47,12 @@ function App() {
       <Route path="/lesson/:termId"><LessonScreen /></Route>
       <Route path="/dictionary"><DictionaryScreen /></Route>
       <Route path="/word/:id"><WordScreen /></Route>
+      <Route path="/practice/review"><ReviewScreen /></Route>
+      <Route path="/practice/:mode"><SessionScreen /></Route>
+      <Route path="/practice"><PracticeScreen /></Route>
+      <Route path="/career/pitch"><PitchScreen /></Route>
+      <Route path="/career/q/:id"><QuestionScreen /></Route>
+      <Route path="/career"><CareerScreen /></Route>
       <Route path="/profile"><ProfileScreen /></Route>
       <Route path="/settings/data"><DataScreen /></Route>
       <Route><HomeScreen /></Route>

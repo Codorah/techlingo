@@ -137,7 +137,7 @@ export function LessonScreen() {
                 </div>
               </div>
               <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')}
-                className="grid h-16 w-16 flex-none place-items-center rounded-2xl bg-ocean text-white shadow-[0_4px_0_var(--color-ocean-press)] active:translate-y-1 active:shadow-none"><Volume2 size={28} aria-hidden /></button>
+                className="grid h-16 w-16 flex-none place-items-center rounded-2xl bg-ocean text-on-ocean shadow-[0_4px_0_var(--color-ocean-press)] active:translate-y-1 active:shadow-none"><Volume2 size={28} aria-hidden /></button>
             </div>
             <Card className="mt-6"><p className="text-sm font-bold text-ink-2">{t('lesson.translation')}</p><p className="mt-1 text-2xl font-extrabold">{term.translation_fr}</p></Card>
           </>

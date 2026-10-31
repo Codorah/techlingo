@@ -140,3 +140,37 @@ export async function toggleFavorite(termId: string) {
 }
 
 export const LEVEL_LABELS: Record<Level, string> = { A1: 'Débutant', A2: 'Élémentaire', B1: 'Intermédiaire', B2: 'Avancé', C1: 'Expert' };
+
+/** Awards XP for an activity outside lessons (practice, career) and counts it for the streak. */
+export async function addXP(amount: number) {
+  const deviceId = await getDeviceId();
+  const profile = await db.profile.get('me');
+  if (!profile) return;
+  const s = recordActivity(profile, localDay());
+  await db.profile.put({ ...profile, xp: profile.xp + amount, streak: s.streak, bestStreak: s.bestStreak, lastActiveDay: s.lastActiveDay, streakFreezes: s.streakFreezes, updatedAt: nowIso(), deviceId });
+}
+
+/** Interview practice is kept in answerDrafts (one row per question). */
+export async function saveAnswerDraft(questionId: string, patch: { text?: string; checklist?: Record<string, boolean> }) {
+  const deviceId = await getDeviceId();
+  const existing = await db.answerDrafts.get(questionId);
+  await db.answerDrafts.put({
+    id: questionId, questionId, text: patch.text ?? existing?.text ?? '',
+    checklist: { ...(existing?.checklist ?? {}), ...(patch.checklist ?? {}) }, updatedAt: nowIso(), deviceId
+  });
+}
+
+/** One FSRS review from the Revision Room (no full lesson). */
+export async function reviewTerm(termId: string, rating: 1 | 2 | 3 | 4) {
+  const deviceId = await getDeviceId();
+  const now = new Date();
+  const iso = now.toISOString();
+  const retention = await getRetention();
+  await db.transaction('rw', [db.userTerms, db.reviewLog], async () => {
+    const existing = await db.userTerms.get(termId);
+    const card = review(existing?.card ?? null, rating, now, retention);
+    await db.reviewLog.put({ id: uuid(), termId, rating, reviewedAt: iso, cardBefore: existing?.card ?? null, updatedAt: iso, deviceId });
+    await db.userTerms.put({ termId, card, state: stateOf(card), favorite: existing?.favorite ?? false, notes: existing?.notes ?? '', updatedAt: iso, deviceId });
+  });
+  await addXP(XP.review);
+}

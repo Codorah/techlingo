@@ -63,7 +63,7 @@ export function ProfileScreen() {
         <div role="radiogroup" aria-label={t('profile.editLevel')} className="mt-3 grid grid-cols-5 gap-2">
           {LEVELS.map((l: Level) => (
             <button key={l} type="button" role="radio" aria-checked={profile.level === l} onClick={() => void saveProfile({ level: l })}
-              className={`min-h-12 rounded-xl border-2 font-title font-black ${profile.level === l ? 'border-ocean bg-ocean text-white' : 'border-line bg-surface text-ink-2'}`}>{l}</button>
+              className={`min-h-12 rounded-xl border-2 font-title font-black ${profile.level === l ? 'border-ocean bg-ocean text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>{l}</button>
           ))}
         </div>
 
@@ -72,7 +72,7 @@ export function ProfileScreen() {
         <div role="radiogroup" aria-label={t('profile.retention')} className="mt-3 grid grid-cols-4 gap-2">
           {RETENTIONS.map((r) => (
             <button key={r} type="button" role="radio" aria-checked={retention === r} onClick={() => { setRetention(r); void setSetting('retention', r); }}
-              className={`min-h-12 rounded-xl border-2 font-bold ${retention === r ? 'border-ocean bg-ocean text-white' : 'border-line bg-surface text-ink-2'}`}>{Math.round(r * 100)} %</button>
+              className={`min-h-12 rounded-xl border-2 font-bold ${retention === r ? 'border-ocean bg-ocean text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>{Math.round(r * 100)} %</button>
           ))}
         </div>
 

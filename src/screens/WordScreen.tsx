@@ -36,11 +36,11 @@ export function WordScreen() {
         </div>
         <div className="flex gap-2">
           <button type="button" onClick={() => void toggleFavorite(term.id)} aria-pressed={fav} aria-label="Favori"
-            className={`grid h-12 w-12 place-items-center rounded-2xl border-2 ${fav ? 'border-ocean bg-ocean text-white' : 'border-line bg-surface text-ink-2'}`}>
+            className={`grid h-12 w-12 place-items-center rounded-2xl border-2 ${fav ? 'border-ocean bg-ocean text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
             <Bookmark size={22} fill={fav ? 'currentColor' : 'none'} aria-hidden />
           </button>
           <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')}
-            className="grid h-12 w-12 place-items-center rounded-2xl bg-ocean text-white shadow-[0_4px_0_var(--color-ocean-press)] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button>
+            className="grid h-12 w-12 place-items-center rounded-2xl bg-ocean text-on-ocean shadow-[0_4px_0_var(--color-ocean-press)] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button>
         </div>
       </div>
 

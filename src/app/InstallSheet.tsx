@@ -66,7 +66,7 @@ export function InstallSheet() {
           <ol className="mb-2">
             {steps.map(({ text, Icon }, i) => (
               <li key={text} className={`flex min-h-12 items-center gap-3 ${i ? 'border-t-2 border-line' : ''}`}>
-                <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-ocean text-sm font-bold text-white">{i + 1}</span>
+                <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-ocean text-sm font-bold text-on-ocean">{i + 1}</span>
                 <span className="flex-1">{text}</span>
                 <Icon size={22} className="text-ocean" aria-hidden />
               </li>

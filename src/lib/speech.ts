@@ -55,13 +55,13 @@ export type ListenError = 'not-allowed' | 'no-speech' | 'network' | 'unsupported
  * Listens once in en-US. `onPartial` receives the live transcript; resolves with the final one.
  * Audio is never stored: only the text transcript is returned.
  */
-export function listen(onPartial: (text: string) => void): { done: Promise<string>; stop: () => void } {
+export function listen(onPartial: (text: string) => void, opts: { continuous?: boolean } = {}): { done: Promise<string>; stop: () => void } {
   const C = ctor();
   if (!C) return { done: Promise.reject<string>('unsupported' satisfies ListenError), stop: () => {} };
   const r = new C();
   r.lang = 'en-US';
   r.interimResults = true;
-  r.continuous = false;
+  r.continuous = !!opts.continuous;
   r.maxAlternatives = 1;
   let text = '';
   const done = new Promise<string>((resolve, reject) => {

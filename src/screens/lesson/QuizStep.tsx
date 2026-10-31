@@ -1,11 +1,12 @@
-import { Check, X } from 'lucide-react';
-import { useState } from 'react';
+import { Check, Turtle, Volume2, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
 import { Choice } from '@/components/ui/Choice';
 import type { QuizQuestion } from '@/content/schema';
+import { speak } from '@/lib/speech';
 
-type Playable = { id: string; prompt: string; sentence?: string; choices: string[]; answer: number; explanation: string };
+export type Playable = { id: string; termId?: string; prompt: string; sentence?: string; audio?: string; choices: string[]; answer: number; explanation: string };
 
 /** Turns the supported quiz types into one multiple-choice shape. */
 export function toPlayable(q: QuizQuestion, fillGapLabel: string): Playable | null {
@@ -36,6 +37,7 @@ export function QuizStep({ questions, onAnswer, onDone }: {
   const [score, setScore] = useState(0);
   const q = questions[i]!;
   const correct = selected === q.answer;
+  useEffect(() => { if (q.audio) speak(q.audio); }, [q]);
 
   function check() {
     if (selected === null) return;
@@ -53,6 +55,12 @@ export function QuizStep({ questions, onAnswer, onDone }: {
     <div className="flex flex-1 flex-col">
       <p className="text-sm font-bold text-ink-2">{t('quiz.progress', { n: i + 1, total: questions.length })}</p>
       <h2 className="mt-2 text-[1.35rem] font-black leading-snug">{q.prompt}</h2>
+      {q.audio && (
+        <div className="mt-4 flex gap-2">
+          <Button block={false} className="flex-1" icon={<Volume2 size={20} aria-hidden />} onClick={() => speak(q.audio!)}>{t('practice.listening.play')}</Button>
+          <Button variant="secondary" block={false} className="flex-1" icon={<Turtle size={20} aria-hidden />} onClick={() => speak(q.audio!, { slow: true })}>{t('practice.listening.slow')}</Button>
+        </div>
+      )}
       {q.sentence && <p className="mt-3 rounded-2xl bg-surface p-4 font-mono text-[15px] leading-relaxed">{q.sentence.replace('___', '_____')}</p>}
       <div className="mt-5 grid gap-2.5">
         {q.choices.map((c, k) => (

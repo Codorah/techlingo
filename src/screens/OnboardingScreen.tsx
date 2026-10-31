@@ -102,7 +102,7 @@ export function OnboardingScreen() {
             <li key={r.id}>
               <Choice state={isPrimary || isSecondary ? 'selected' : 'idle'} disabled={disabled} onClick={() => toggleRole(r.id)}
                 leading={<span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist text-ocean"><DynamicIcon name={r.icon} /></span>}
-                trailing={isPrimary ? <span className="rounded-full bg-ocean px-2.5 py-1 text-xs font-bold text-white">{t('onboarding.role.primary')}</span>
+                trailing={isPrimary ? <span className="rounded-full bg-ocean px-2.5 py-1 text-xs font-bold text-on-ocean">{t('onboarding.role.primary')}</span>
                   : isSecondary ? <span className="rounded-full bg-sky/30 px-2.5 py-1 text-xs font-bold text-ocean">{t('onboarding.role.secondary')}</span>
                   : disabled ? <span className="text-xs font-bold text-ink-2">{t('onboarding.role.soon')}</span> : null}>
                 <span className="block">{r.name_fr}</span>

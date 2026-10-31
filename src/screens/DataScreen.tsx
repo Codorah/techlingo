@@ -96,7 +96,7 @@ export function DataScreen() {
         <h2 className="flex items-center gap-2 text-lg font-extrabold"><Smartphone size={22} className="text-ocean" aria-hidden />{t('data.move.title')}</h2>
         <ol className="mt-3 space-y-3">
           {steps.map((s, i) => (
-            <li key={s} className="flex gap-3"><span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-ocean text-sm font-bold text-white">{i + 1}</span><span className="pt-0.5">{s}</span></li>
+            <li key={s} className="flex gap-3"><span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-ocean text-sm font-bold text-on-ocean">{i + 1}</span><span className="pt-0.5">{s}</span></li>
           ))}
         </ol>
       </Card>

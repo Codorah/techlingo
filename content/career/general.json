@@ -1,0 +1,109 @@
+{
+  "questions": [
+    {
+      "id": "tell-me-about-yourself", "status": "draft", "roles": ["general-tech"], "level": "A2",
+      "topic_fr": "Présentation",
+      "question_en": "Tell me about yourself.",
+      "question_fr": "Parlez-moi de vous.",
+      "hint_fr": "Présent → passé → futur, en 60 à 90 secondes. Reste centré sur ton parcours pro.",
+      "answer_outline_fr": ["Ton rôle actuel et ta spécialité", "Une expérience ou un projet marquant", "Ce que tu sais bien faire", "Pourquoi ce poste t’intéresse"],
+      "model_answer_en": "I’m a web developer with two years of experience, mostly with React and Node.js. In my last job, I built an ordering app used by more than five hundred customers. I enjoy turning business needs into simple, reliable features. Now I’m looking for a team where I can grow on the back-end side, and your product is a great match.",
+      "model_answer_fr": "Je suis développeur web avec deux ans d’expérience, surtout en React et Node.js. Dans mon dernier poste, j’ai créé une application de commande utilisée par plus de cinq cents clients. J’aime transformer des besoins métier en fonctionnalités simples et fiables. Je cherche maintenant une équipe où progresser côté back-end, et votre produit correspond bien.",
+      "key_phrases": ["years of experience", "I built", "I enjoy", "I’m looking for"]
+    },
+    {
+      "id": "describe-a-project", "status": "draft", "roles": ["general-tech"], "level": "B1",
+      "topic_fr": "Projet",
+      "question_en": "Tell me about a project you built.",
+      "question_fr": "Parlez-moi d’un projet que vous avez réalisé.",
+      "hint_fr": "Le problème, ta solution technique, ton rôle précis, le résultat chiffré si possible.",
+      "answer_outline_fr": ["Le problème à résoudre", "La solution et la stack", "Ton rôle exact", "Le résultat"],
+      "model_answer_en": "I built a mobile app that helps small shops track their sales. The front-end is written in Flutter and it talks to a REST API built with Node.js and PostgreSQL. I was responsible for the API and the offline mode. After the launch, shop owners saved about an hour a day on their accounts.",
+      "model_answer_fr": "J’ai créé une app mobile qui aide les petites boutiques à suivre leurs ventes. Le front-end est en Flutter et communique avec une API REST en Node.js et PostgreSQL. J’étais responsable de l’API et du mode hors ligne. Après le lancement, les commerçants gagnaient environ une heure par jour sur leur comptabilité.",
+      "key_phrases": ["I built", "talks to", "I was responsible for", "after the launch"],
+      "vocabulary_term_ids": ["rest-api", "offline-first"]
+    },
+    {
+      "id": "difficult-bug", "status": "draft", "roles": ["general-tech"], "level": "B1",
+      "topic_fr": "Résolution de problème",
+      "question_en": "Tell me about a difficult bug you fixed.",
+      "question_fr": "Parlez-moi d’un bug difficile que vous avez corrigé.",
+      "hint_fr": "Montre ta méthode : reproduire, isoler, corriger la cause racine, éviter le retour.",
+      "answer_outline_fr": ["Le symptôme", "Comment tu as trouvé la cause", "La correction", "Ce que tu as mis en place pour éviter que ça revienne"],
+      "model_answer_en": "Our API became very slow under load. I reproduced the problem locally, profiled the application and found that one database query was the bottleneck. I added an index and a cache, and the response time went from two seconds to two hundred milliseconds. Then I wrote a test to prevent a regression.",
+      "model_answer_fr": "Notre API devenait très lente en charge. J’ai reproduit le problème en local, profilé l’application et trouvé qu’une requête était le goulot d’étranglement. J’ai ajouté un index et un cache : le temps de réponse est passé de deux secondes à deux cents millisecondes. J’ai ensuite écrit un test pour éviter une régression.",
+      "key_phrases": ["I reproduced", "bottleneck", "response time", "regression"],
+      "vocabulary_term_ids": ["bottleneck", "cache", "root-cause"]
+    },
+    {
+      "id": "teamwork", "status": "draft", "roles": ["general-tech"], "level": "A2",
+      "topic_fr": "Travail en équipe",
+      "question_en": "How do you work with your team?",
+      "question_fr": "Comment travaillez-vous avec votre équipe ?",
+      "hint_fr": "Rituels, revue de code, communication quand tu bloques.",
+      "answer_outline_fr": ["L’organisation (sprints, daily)", "La revue de code", "Ta façon de communiquer"],
+      "model_answer_en": "We work in two-week sprints with a daily stand-up. I open small pull requests and I review my teammates’ code carefully. When I’m blocked, I ask for help early, and I document my decisions so everyone can follow.",
+      "model_answer_fr": "Nous travaillons en sprints de deux semaines avec un point quotidien. J’ouvre de petites pull requests et je relis attentivement le code de mes collègues. Quand je bloque, je demande de l’aide tôt, et je documente mes décisions pour que tout le monde suive.",
+      "key_phrases": ["sprints", "stand-up", "pull requests", "I’m blocked"],
+      "vocabulary_term_ids": ["pull-request", "code-review"]
+    },
+    {
+      "id": "strengths-weaknesses", "status": "draft", "roles": ["general-tech"], "level": "B1",
+      "topic_fr": "Forces et axes de progrès",
+      "question_en": "What is your biggest weakness?",
+      "question_fr": "Quel est votre plus grand point faible ?",
+      "hint_fr": "Un vrai point à améliorer, puis ce que tu fais concrètement pour progresser.",
+      "answer_outline_fr": ["Le point faible, honnêtement", "Un exemple", "Ce que tu fais pour t’améliorer"],
+      "model_answer_en": "I sometimes spend too long polishing details before asking for feedback. On a recent feature, I lost two days that way. Now I share an early version with my team and I set a time limit for each task, which helps me deliver faster.",
+      "model_answer_fr": "Je passe parfois trop de temps à peaufiner les détails avant de demander un retour. Sur une fonctionnalité récente, j’ai perdu deux jours comme ça. Maintenant, je partage une première version tôt avec l’équipe et je fixe une limite de temps par tâche, ce qui m’aide à livrer plus vite.",
+      "key_phrases": ["I sometimes", "feedback", "now I", "deliver faster"]
+    },
+    {
+      "id": "why-this-company", "status": "draft", "roles": ["general-tech"], "level": "A2",
+      "topic_fr": "Motivation",
+      "question_en": "Why do you want to work here?",
+      "question_fr": "Pourquoi voulez-vous travailler chez nous ?",
+      "hint_fr": "Relie le produit ou la mission de l’entreprise à ton expérience et à ce que tu veux apprendre.",
+      "answer_outline_fr": ["Ce qui t’attire dans le produit ou la mission", "Le lien avec ton expérience", "Ce que tu veux apporter et apprendre"],
+      "model_answer_en": "I use your product myself and I like how simple it makes payments for small businesses. I have built similar features in my last job, so I can contribute quickly. I also want to learn from a team that works at this scale.",
+      "model_answer_fr": "J’utilise moi-même votre produit et j’aime à quel point il simplifie les paiements pour les petites entreprises. J’ai développé des fonctionnalités similaires dans mon dernier poste, je peux donc contribuer rapidement. Je veux aussi apprendre auprès d’une équipe qui travaille à cette échelle.",
+      "key_phrases": ["I use your product", "I have built", "contribute", "I want to learn"]
+    },
+    {
+      "id": "explain-to-non-technical", "status": "draft", "roles": ["general-tech", "product-design", "project-management"], "level": "B1",
+      "topic_fr": "Communication",
+      "question_en": "How would you explain a technical problem to a non-technical person?",
+      "question_fr": "Comment expliqueriez-vous un problème technique à une personne non technique ?",
+      "hint_fr": "Impact d’abord, analogie simple, pas de jargon, et la prochaine étape.",
+      "answer_outline_fr": ["Commencer par l’impact", "Une analogie simple", "La solution et le délai"],
+      "model_answer_en": "I start with the impact: for example, some customers cannot pay right now. Then I use a simple comparison, like a road that is closed, so traffic must take a detour. Finally, I explain what we are doing and when it should be fixed, without technical words.",
+      "model_answer_fr": "Je commence par l’impact : par exemple, certains clients ne peuvent pas payer en ce moment. Puis j’utilise une comparaison simple, comme une route fermée qui oblige le trafic à faire un détour. Enfin, j’explique ce que nous faisons et quand ce sera réglé, sans mots techniques.",
+      "key_phrases": ["I start with the impact", "a simple comparison", "when it should be fixed"]
+    },
+    {
+      "id": "questions-for-us", "status": "draft", "roles": ["general-tech"], "level": "A2",
+      "topic_fr": "Fin d’entretien",
+      "question_en": "Do you have any questions for us?",
+      "question_fr": "Avez-vous des questions pour nous ?",
+      "hint_fr": "Prépare toujours deux ou trois questions sur l’équipe, le travail au quotidien et l’évolution.",
+      "answer_outline_fr": ["Une question sur l’équipe", "Une question sur le quotidien", "Une question sur l’évolution"],
+      "model_answer_en": "Yes, thank you. How is the team organized, and how do you review code? What would a typical week look like in this role? And what would success look like after six months?",
+      "model_answer_fr": "Oui, merci. Comment l’équipe est-elle organisée, et comment faites-vous les revues de code ? À quoi ressemblerait une semaine type dans ce poste ? Et qu’est-ce qu’une réussite après six mois ?",
+      "key_phrases": ["how is the team organized", "a typical week", "after six months"]
+    }
+  ],
+  "verbs": [
+    { "id": "streamline", "verb": "Streamline", "meaning_fr": "Optimiser, simplifier un processus", "example_en": "I streamlined the deployment process from two hours to ten minutes.", "example_fr": "J’ai simplifié le processus de déploiement, passé de deux heures à dix minutes." },
+    { "id": "architect", "verb": "Architect", "meaning_fr": "Concevoir l’architecture d’un système", "example_en": "I architected a fault-tolerant payment service.", "example_fr": "J’ai conçu l’architecture d’un service de paiement tolérant aux pannes." },
+    { "id": "refactor-verb", "verb": "Refactor", "meaning_fr": "Restructurer du code sans changer son comportement", "example_en": "I refactored legacy components into reusable React components.", "example_fr": "J’ai refactorisé d’anciens composants en composants React réutilisables." },
+    { "id": "deploy-verb", "verb": "Deploy", "meaning_fr": "Mettre en production", "example_en": "We deployed updates with zero downtime.", "example_fr": "Nous avons déployé des mises à jour sans interruption de service." },
+    { "id": "mitigate", "verb": "Mitigate", "meaning_fr": "Atténuer un risque ou un incident", "example_en": "We mitigated the outage by switching traffic to a second region.", "example_fr": "Nous avons limité la panne en basculant le trafic vers une seconde région." },
+    { "id": "spearhead", "verb": "Spearhead", "meaning_fr": "Piloter, être à l’initiative d’un projet", "example_en": "I spearheaded the migration from REST to GraphQL.", "example_fr": "J’ai piloté la migration de REST vers GraphQL." },
+    { "id": "automate", "verb": "Automate", "meaning_fr": "Automatiser une tâche répétitive", "example_en": "I automated regression tests in the CI pipeline.", "example_fr": "J’ai automatisé les tests de non-régression dans le pipeline CI." },
+    { "id": "optimize", "verb": "Optimize", "meaning_fr": "Améliorer les performances", "example_en": "I optimized database queries and cut page load time by 40%.", "example_fr": "J’ai optimisé les requêtes et réduit de 40 % le temps de chargement." },
+    { "id": "collaborate", "verb": "Collaborate", "meaning_fr": "Travailler en collaboration", "example_en": "I collaborated with designers to improve the onboarding flow.", "example_fr": "J’ai collaboré avec les designers pour améliorer le parcours d’accueil." },
+    { "id": "mentor", "verb": "Mentor", "meaning_fr": "Accompagner, former un collègue", "example_en": "I mentored two junior developers during their first months.", "example_fr": "J’ai accompagné deux développeurs juniors pendant leurs premiers mois." },
+    { "id": "implement", "verb": "Implement", "meaning_fr": "Mettre en œuvre, développer", "example_en": "I implemented role-based access control for the admin panel.", "example_fr": "J’ai mis en place un contrôle d’accès par rôle pour l’espace d’administration." },
+    { "id": "troubleshoot-verb", "verb": "Troubleshoot", "meaning_fr": "Diagnostiquer et dépanner", "example_en": "I troubleshot network issues for more than two hundred users.", "example_fr": "J’ai diagnostiqué les problèmes réseau de plus de deux cents utilisateurs." }
+  ]
+}

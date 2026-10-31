@@ -64,7 +64,7 @@ export function HomeScreen() {
         )}
 
         {spinCard && (
-          <section className="relative mt-5 overflow-hidden rounded-[var(--radius-card)] bg-ocean p-5 text-white shadow-[0_4px_0_var(--color-ocean-press)]">
+          <section className="relative mt-5 overflow-hidden rounded-[var(--radius-card)] bg-ocean p-5 text-on-ocean shadow-[0_4px_0_var(--color-ocean-press)]">
             <svg viewBox="-100 -100 200 200" className="absolute -right-10 top-1/2 h-44 w-44 -translate-y-1/2 opacity-25" aria-hidden>
               {Array.from({ length: 8 }, (_, i) => {
                 const a0 = (i * 45 * Math.PI) / 180, a1 = ((i + 1) * 45 * Math.PI) / 180;

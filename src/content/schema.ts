@@ -130,3 +130,29 @@ export const RolePack = z.object({
   searchIndex: z.unknown()
 });
 export type RolePack = z.infer<typeof RolePack>;
+
+// Career content (content/career/*.json)
+export const InterviewQuestion = z.object({
+  id: Slug,
+  status: Status,
+  roles: z.array(Slug).min(1), // "general-tech" = asked to everyone
+  level: Level,
+  topic_fr: text,
+  question_en: text,
+  question_fr: text,
+  hint_fr: text,
+  answer_outline_fr: z.array(text).min(2).max(6),
+  model_answer_en: text,
+  model_answer_fr: text,
+  key_phrases: z.array(text).min(2).max(8),
+  vocabulary_term_ids: z.array(Slug).default([])
+});
+export type InterviewQuestion = z.infer<typeof InterviewQuestion>;
+
+export const ActionVerb = z.object({ id: Slug, verb: text, meaning_fr: text, example_en: text, example_fr: text });
+export type ActionVerb = z.infer<typeof ActionVerb>;
+
+export const CareerFile = z.object({ questions: z.array(InterviewQuestion), verbs: z.array(ActionVerb).default([]) });
+
+export const CareerPack = z.object({ contentVersion: z.string(), questions: z.array(InterviewQuestion), verbs: z.array(ActionVerb) });
+export type CareerPack = z.infer<typeof CareerPack>;

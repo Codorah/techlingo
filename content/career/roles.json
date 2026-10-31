@@ -1,0 +1,125 @@
+{
+  "questions": [
+    {
+      "id": "explain-devops", "status": "draft", "roles": ["devops-cloud", "web-developer"], "level": "B1",
+      "topic_fr": "DevOps",
+      "question_en": "Can you explain what DevOps is?",
+      "question_fr": "Pouvez-vous expliquer ce qu’est le DevOps ?",
+      "hint_fr": "Une culture, pas un outil : collaboration dev et ops, automatisation, exemple concret.",
+      "answer_outline_fr": ["Définition : culture et pratiques", "Le but : livrer vite et de façon fiable", "Un exemple de ton expérience"],
+      "model_answer_en": "DevOps is a culture and a set of practices that bring developers and operations together. The goal is to deliver software faster and more reliably by automating testing, deployment and monitoring. In my last project, we used a CI/CD pipeline, so every merge was tested and deployed automatically.",
+      "model_answer_fr": "Le DevOps est une culture et un ensemble de pratiques qui rapprochent développeurs et exploitation. Le but est de livrer plus vite et plus sûrement en automatisant tests, déploiement et supervision. Sur mon dernier projet, nous utilisions un pipeline CI/CD : chaque fusion était testée et déployée automatiquement.",
+      "key_phrases": ["culture", "automating", "CI/CD pipeline", "deployed automatically"],
+      "vocabulary_term_ids": ["devops", "cicd-pipeline", "monitoring"]
+    },
+    {
+      "id": "web-vs-mobile", "status": "draft", "roles": ["mobile-developer", "web-developer"], "level": "B1",
+      "topic_fr": "Web et mobile",
+      "question_en": "What is the difference between web and mobile development?",
+      "question_fr": "Quelle différence entre le développement web et mobile ?",
+      "hint_fr": "Où l’app tourne, accès aux fonctions du téléphone, mises à jour, et le compromis PWA.",
+      "answer_outline_fr": ["Le web tourne dans le navigateur", "Le mobile est installé et accède aux fonctions natives", "Les mises à jour", "Le compromis PWA"],
+      "model_answer_en": "Web applications run in the browser and are updated instantly on the server. Mobile apps are installed on the device, so they can use native features like the camera or push notifications, but updates go through the app stores. A PWA is a good compromise because it is installable and works offline.",
+      "model_answer_fr": "Les applications web tournent dans le navigateur et se mettent à jour instantanément côté serveur. Les apps mobiles sont installées sur l’appareil : elles accèdent aux fonctions natives (appareil photo, notifications push), mais les mises à jour passent par les stores. Une PWA est un bon compromis : installable et utilisable hors ligne.",
+      "key_phrases": ["run in the browser", "native features", "app stores", "works offline"],
+      "vocabulary_term_ids": ["native-app", "push-notification", "offline-first"]
+    },
+    {
+      "id": "what-happens-url", "status": "draft", "roles": ["web-developer", "network-systems"], "level": "B2",
+      "topic_fr": "Réseau et web",
+      "question_en": "What happens when you type a URL in the browser?",
+      "question_fr": "Que se passe-t-il quand on tape une URL dans le navigateur ?",
+      "hint_fr": "DNS, connexion (TLS), requête HTTP, traitement serveur, réponse, affichage.",
+      "answer_outline_fr": ["Résolution DNS", "Connexion sécurisée au serveur", "Requête et réponse HTTP", "Affichage de la page"],
+      "model_answer_en": "First, the browser asks a DNS server to translate the domain name into an IP address. Then it opens a secure connection to the server and sends an HTTP request. The server processes the request, maybe queries a database, and sends back a response. Finally, the browser renders the page.",
+      "model_answer_fr": "D’abord, le navigateur demande à un serveur DNS de traduire le nom de domaine en adresse IP. Puis il ouvre une connexion sécurisée avec le serveur et envoie une requête HTTP. Le serveur la traite, interroge éventuellement une base de données, et renvoie une réponse. Enfin, le navigateur affiche la page.",
+      "key_phrases": ["DNS server", "IP address", "HTTP request", "renders the page"],
+      "vocabulary_term_ids": ["dns", "ip-address", "ssl-tls"]
+    },
+    {
+      "id": "choose-language", "status": "draft", "roles": ["web-developer", "mobile-developer", "general-tech"], "level": "B1",
+      "topic_fr": "Choix techniques",
+      "question_en": "Why did you choose this programming language or framework?",
+      "question_fr": "Pourquoi avoir choisi ce langage ou ce framework ?",
+      "hint_fr": "Critères concrets : besoins du projet, écosystème, équipe, performance. Montre que tu connais les limites.",
+      "answer_outline_fr": ["Les besoins du projet", "L’écosystème et l’équipe", "Les limites que tu connais"],
+      "model_answer_en": "We chose it because it has a large community and many libraries, which helped us move faster. It is also easy to read, so the whole team can maintain the code. For performance-critical parts, I would consider a compiled language instead.",
+      "model_answer_fr": "Nous l’avons choisi pour sa grande communauté et ses nombreuses bibliothèques, ce qui nous a fait avancer plus vite. Il est aussi lisible : toute l’équipe peut maintenir le code. Pour les parties critiques en performance, j’envisagerais plutôt un langage compilé.",
+      "key_phrases": ["large community", "move faster", "maintain the code", "performance-critical"],
+      "vocabulary_term_ids": ["framework", "library"]
+    },
+    {
+      "id": "scale-a-system", "status": "draft", "roles": ["devops-cloud", "web-developer", "data-engineer"], "level": "B2",
+      "topic_fr": "Architecture",
+      "question_en": "How would you make a system scale?",
+      "question_fr": "Comment feriez-vous passer un système à l’échelle ?",
+      "hint_fr": "Mesurer d’abord, puis mise à l’échelle horizontale, cache, files d’attente, supervision.",
+      "answer_outline_fr": ["Mesurer pour trouver le goulot", "Ajouter des instances derrière un répartiteur", "Cache et tâches en arrière-plan", "Supervision et alertes"],
+      "model_answer_en": "I would first measure to find the bottleneck. Then I would scale horizontally by adding instances behind a load balancer, add caching for frequent reads, and move slow tasks to background queues. Finally, I would set up monitoring and alerts.",
+      "model_answer_fr": "Je commencerais par mesurer pour trouver le goulot d’étranglement. Ensuite, je mettrais à l’échelle horizontalement en ajoutant des instances derrière un répartiteur de charge, j’ajouterais du cache pour les lectures fréquentes et je déplacerais les tâches lentes vers des files d’attente. Enfin, je mettrais en place supervision et alertes.",
+      "key_phrases": ["bottleneck", "scale horizontally", "load balancer", "monitoring"],
+      "vocabulary_term_ids": ["scalability", "load-balancer", "cache", "monitoring"]
+    },
+    {
+      "id": "production-incident", "status": "draft", "roles": ["devops-cloud", "network-systems", "web-developer"], "level": "B2",
+      "topic_fr": "Incident",
+      "question_en": "How do you handle a production incident?",
+      "question_fr": "Comment gérez-vous un incident en production ?",
+      "hint_fr": "Rétablir le service d’abord, communiquer, trouver la cause racine, écrire un post-mortem.",
+      "answer_outline_fr": ["Évaluer l’impact et rétablir le service", "Communiquer avec l’équipe et les utilisateurs", "Trouver la cause racine", "Post-mortem et actions"],
+      "model_answer_en": "First, I assess the impact and restore the service, for example with a rollback. I keep the team and the users informed. Once the service is stable, I look for the root cause. Then we write a blameless postmortem with actions to prevent it from happening again.",
+      "model_answer_fr": "D’abord, j’évalue l’impact et je rétablis le service, par exemple avec un retour arrière. Je tiens l’équipe et les utilisateurs informés. Une fois le service stable, je cherche la cause racine. Ensuite, nous écrivons un post-mortem sans reproches, avec des actions pour éviter que ça se reproduise.",
+      "key_phrases": ["restore the service", "rollback", "root cause", "postmortem"],
+      "vocabulary_term_ids": ["incident", "rollback", "root-cause", "postmortem"]
+    },
+    {
+      "id": "explain-overfitting", "status": "draft", "roles": ["ai-ml-engineer", "data-analyst"], "level": "B2",
+      "topic_fr": "Machine learning",
+      "question_en": "What is overfitting and how do you prevent it?",
+      "question_fr": "Qu’est-ce que le surapprentissage et comment l’éviter ?",
+      "hint_fr": "Définition, comment le repérer (écart entraînement/test), puis 3 remèdes.",
+      "answer_outline_fr": ["Définition", "Comment le détecter", "Les remèdes"],
+      "model_answer_en": "Overfitting happens when a model learns the training data too closely and performs poorly on new data. I detect it when the training accuracy is much higher than the test accuracy. To prevent it, I use more data, regularization, cross-validation and early stopping.",
+      "model_answer_fr": "Le surapprentissage arrive quand un modèle apprend trop précisément les données d’entraînement et se trompe sur de nouvelles données. Je le repère quand la précision d’entraînement est bien plus haute que celle de test. Pour l’éviter, j’utilise plus de données, la régularisation, la validation croisée et l’arrêt précoce.",
+      "key_phrases": ["training data", "new data", "test accuracy", "regularization"],
+      "vocabulary_term_ids": ["overfitting", "training-set", "test-set", "cross-validation"]
+    },
+    {
+      "id": "explain-rag", "status": "draft", "roles": ["ai-ml-engineer"], "level": "B2",
+      "topic_fr": "IA générative",
+      "question_en": "How would you build an assistant that answers from company documents?",
+      "question_fr": "Comment construiriez-vous un assistant qui répond à partir des documents de l’entreprise ?",
+      "hint_fr": "RAG : découper, créer des embeddings, rechercher, donner les passages au LLM, citer les sources.",
+      "answer_outline_fr": ["Découper et indexer les documents", "Rechercher les passages pertinents", "Les donner au modèle et citer les sources", "Évaluer et surveiller"],
+      "model_answer_en": "I would use retrieval-augmented generation. First, I split the documents into chunks and store their embeddings in a vector database. For each question, I retrieve the most relevant passages and give them to the language model with clear instructions. The answer cites its sources, and we evaluate the results regularly to reduce hallucinations.",
+      "model_answer_fr": "J’utiliserais la génération augmentée par récupération. D’abord, je découpe les documents en morceaux et je stocke leurs embeddings dans une base vectorielle. Pour chaque question, je récupère les passages les plus pertinents et je les donne au modèle de langage avec des consignes claires. La réponse cite ses sources, et nous évaluons régulièrement les résultats pour réduire les hallucinations.",
+      "key_phrases": ["retrieval-augmented generation", "embeddings", "vector database", "hallucinations"],
+      "vocabulary_term_ids": ["rag", "embedding", "vector-database", "hallucination"]
+    },
+    {
+      "id": "secure-an-api", "status": "draft", "roles": ["cybersecurity", "web-developer"], "level": "B2",
+      "topic_fr": "Sécurité",
+      "question_en": "How do you secure an API?",
+      "question_fr": "Comment sécurisez-vous une API ?",
+      "hint_fr": "Authentification, autorisation, HTTPS, validation des entrées, limitation de débit, secrets.",
+      "answer_outline_fr": ["Authentification et autorisation", "Chiffrement en transit", "Validation des entrées", "Limitation de débit et gestion des secrets"],
+      "model_answer_en": "I require authentication with short-lived tokens and check authorization on every endpoint. All traffic goes over HTTPS. I validate every input to prevent injection attacks, add rate limiting against brute-force attacks, and keep secrets in environment variables, never in the code.",
+      "model_answer_fr": "J’exige une authentification avec des jetons de courte durée et je vérifie l’autorisation sur chaque endpoint. Tout le trafic passe en HTTPS. Je valide chaque entrée pour éviter les injections, j’ajoute une limitation de débit contre la force brute, et je garde les secrets dans des variables d’environnement, jamais dans le code.",
+      "key_phrases": ["authentication", "authorization", "rate limiting", "environment variables"],
+      "vocabulary_term_ids": ["authentication", "authorization", "rate-limiting", "sql-injection"]
+    },
+    {
+      "id": "troubleshoot-network", "status": "draft", "roles": ["network-systems"], "level": "B1",
+      "topic_fr": "Dépannage",
+      "question_en": "A user says the internet is not working. What do you do?",
+      "question_fr": "Un utilisateur dit qu’internet ne marche pas. Que faites-vous ?",
+      "hint_fr": "Méthode du plus simple au plus complexe : câble/Wi-Fi, adresse IP, passerelle, DNS.",
+      "answer_outline_fr": ["Poser des questions et reproduire", "Vérifier la connexion physique ou le Wi-Fi", "Vérifier l’adresse IP et la passerelle", "Tester le DNS"],
+      "model_answer_en": "I start by asking a few questions and checking if other users are affected. Then I check the cable or the Wi-Fi connection, and whether the computer has a valid IP address. Next, I ping the gateway and a public server. If the IP works but names do not, the problem is probably DNS.",
+      "model_answer_fr": "Je commence par poser quelques questions et vérifier si d’autres utilisateurs sont touchés. Ensuite, je contrôle le câble ou le Wi-Fi, et si l’ordinateur a une adresse IP valide. Puis je fais un ping vers la passerelle et vers un serveur public. Si l’IP répond mais pas les noms, le problème vient probablement du DNS.",
+      "key_phrases": ["other users", "IP address", "gateway", "DNS"],
+      "vocabulary_term_ids": ["troubleshoot", "ip-address", "dns", "dhcp"]
+    }
+  ],
+  "verbs": []
+}

@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
-import { Category, Role, RoleFile, type Term } from '../../src/content/schema';
+import { type ActionVerb, CareerFile, Category, type InterviewQuestion, Role, RoleFile, type Term } from '../../src/content/schema';
 
 export const CONTENT_DIR = join(process.cwd(), 'content');
 
@@ -11,6 +11,8 @@ export interface LoadedContent {
   roles: Role[];
   categories: Category[];
   terms: Term[];
+  questions: InterviewQuestion[];
+  verbs: ActionVerb[];
   errors: string[];
   warnings: string[];
   contentVersion: string;
@@ -57,6 +59,23 @@ export function loadContent(): LoadedContent {
     }
   }
 
+  // Career content: interview questions and action verbs
+  const questions: InterviewQuestion[] = [];
+  const verbs: ActionVerb[] = [];
+  const careerDir = join(CONTENT_DIR, 'career');
+  for (const file of readdirSync(careerDir).filter((f) => f.endsWith('.json')).sort()) {
+    const raw = readFileSync(join(careerDir, file), 'utf8');
+    hash.update(raw);
+    const parsed = CareerFile.safeParse(JSON.parse(raw));
+    if (!parsed.success) { errors.push(...formatIssues(`career/${file}`, parsed.error)); continue; }
+    questions.push(...parsed.data.questions);
+    verbs.push(...parsed.data.verbs);
+  }
+  const seenQ = new Set<string>();
+  for (const q of questions) { if (seenQ.has(q.id)) errors.push(`duplicate interview question id "${q.id}"`); seenQ.add(q.id); }
+  const seenV = new Set<string>();
+  for (const v of verbs) { if (seenV.has(v.id)) errors.push(`duplicate verb id "${v.id}"`); seenV.add(v.id); }
+
   // Cross references
   const roleIds = new Set(roles.map((r) => r.id));
   const catIds = new Set(categories.map((c) => c.id));
@@ -73,8 +92,12 @@ export function loadContent(): LoadedContent {
     lowerTerms.set(key, t.id);
     if (t.review_note) warnings.push(`${t.id}: review note: ${t.review_note}`);
   }
+  for (const q of questions) {
+    q.roles.forEach((r) => { if (!roleIds.has(r)) errors.push(`question ${q.id}: unknown role "${r}"`); });
+    q.vocabulary_term_ids.forEach((v) => { if (!termIds.has(v)) warnings.push(`question ${q.id}: vocabulary term "${v}" does not exist yet`); });
+  }
 
-  return { roles, categories, terms, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
+  return { roles, categories, terms, questions, verbs, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
 }
 
 export function coverage(content: LoadedContent) {

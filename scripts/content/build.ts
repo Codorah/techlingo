@@ -41,5 +41,8 @@ for (const role of content.roles) {
   manifest.roles.push({ ...role, termCount: terms.length, categories: [...new Set(terms.flatMap((t) => t.categories))] });
 }
 
+const careerShippable = content.questions.filter((q) => includeDrafts || q.status === 'validated');
+writeFileSync(join(out, 'career.json'), JSON.stringify({ contentVersion: content.contentVersion, questions: careerShippable, verbs: content.verbs }));
+
 writeFileSync(join(out, 'manifest.json'), JSON.stringify(manifest, null, 2));
-console.log(`✓ content ${content.contentVersion} built${includeDrafts ? ' (with drafts)' : ''}: ${manifest.totalTerms} terms in ${manifest.roles.length} packs`);
+console.log(`✓ content ${content.contentVersion} built${includeDrafts ? ' (with drafts)' : ''}: ${manifest.totalTerms} terms in ${manifest.roles.length} packs, ${careerShippable.length} interview questions`);
