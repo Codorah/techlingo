@@ -1323,6 +1323,713 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "foreign-key",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 55
+        },
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "foreign key",
+      "translation_fr": "clé étrangère",
+      "part_of_speech": "noun",
+      "definition_en": "A column in one table that refers to the primary key of another table, linking the two.",
+      "explanation_fr": "Colonne d’une table qui fait référence à la clé primaire d’une autre table et relie les deux.",
+      "why_it_matters_fr": "Base des jointures et de l’intégrité des données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "foreign-key-1",
+          "text_en": "The orders table has a foreign key to customers.",
+          "text_fr": "La table des commandes a une clé étrangère vers les clients."
+        },
+        {
+          "id": "foreign-key-2",
+          "text_en": "The insert failed because of the foreign key.",
+          "text_fr": "L’insertion a échoué à cause de la clé étrangère."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "group-by",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        },
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-analysis"
+      ],
+      "term_en": "GROUP BY",
+      "translation_fr": "regroupement (GROUP BY)",
+      "part_of_speech": "phrase",
+      "definition_en": "An SQL clause that groups rows sharing the same value so you can calculate totals or averages per group.",
+      "explanation_fr": "Clause SQL qui regroupe les lignes ayant la même valeur pour calculer des totaux ou moyennes par groupe.",
+      "why_it_matters_fr": "Indispensable pour tout tableau de bord.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "group-by-1",
+          "text_en": "Group by country to see sales per country.",
+          "text_fr": "Regroupe par pays pour voir les ventes par pays."
+        },
+        {
+          "id": "group-by-2",
+          "text_en": "I forgot a column in the GROUP BY.",
+          "text_fr": "J’ai oublié une colonne dans le GROUP BY."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "window-function",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-analysis"
+      ],
+      "term_en": "window function",
+      "translation_fr": "fonction de fenêtrage",
+      "part_of_speech": "noun",
+      "definition_en": "An SQL function that calculates a value across a set of related rows, such as a running total or a rank, without grouping them.",
+      "explanation_fr": "Fonction SQL qui calcule une valeur sur un ensemble de lignes liées, comme un cumul ou un classement, sans les regrouper.",
+      "why_it_matters_fr": "Question fréquente des entretiens data.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "window-function-1",
+          "text_en": "Use a window function to rank customers by revenue.",
+          "text_fr": "Utilise une fonction de fenêtrage pour classer les clients par chiffre d’affaires."
+        },
+        {
+          "id": "window-function-2",
+          "text_en": "The running total uses a window function.",
+          "text_fr": "Le cumul utilise une fonction de fenêtrage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "subquery",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "subquery",
+      "translation_fr": "sous-requête",
+      "part_of_speech": "noun",
+      "definition_en": "A query written inside another query.",
+      "explanation_fr": "Requête écrite à l’intérieur d’une autre requête.",
+      "why_it_matters_fr": "Utile mais parfois lente : on la remplace souvent par une jointure ou une CTE.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "subquery-1",
+          "text_en": "The subquery finds the latest order for each customer.",
+          "text_fr": "La sous-requête trouve la dernière commande de chaque client."
+        },
+        {
+          "id": "subquery-2",
+          "text_en": "Rewrite the subquery as a join.",
+          "text_fr": "Réécris la sous-requête en jointure."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cte",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 45
+        },
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "CTE",
+      "translation_fr": "expression de table commune (CTE)",
+      "part_of_speech": "acronym",
+      "definition_en": "Common Table Expression: a named temporary result defined with WITH at the start of an SQL query to make it easier to read.",
+      "explanation_fr": "Common Table Expression : résultat temporaire nommé, défini avec WITH au début d’une requête SQL pour la rendre plus lisible.",
+      "why_it_matters_fr": "Rend les longues requêtes compréhensibles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cte-1",
+          "text_en": "I split the query into three CTEs.",
+          "text_fr": "J’ai découpé la requête en trois CTE."
+        },
+        {
+          "id": "cte-2",
+          "text_en": "A CTE is easier to read than nested subqueries.",
+          "text_fr": "Une CTE est plus lisible que des sous-requêtes imbriquées."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "missing-value",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-analysis"
+      ],
+      "term_en": "missing value",
+      "translation_fr": "valeur manquante",
+      "part_of_speech": "noun",
+      "definition_en": "A field with no data, often stored as NULL or left empty.",
+      "explanation_fr": "Champ sans donnée, souvent stocké comme NULL ou laissé vide.",
+      "why_it_matters_fr": "Mal gérées, elles faussent les moyennes et les comptages.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "missing-value-1",
+          "text_en": "20% of the age column has missing values.",
+          "text_fr": "20 % de la colonne âge contient des valeurs manquantes."
+        },
+        {
+          "id": "missing-value-2",
+          "text_en": "We replaced missing values with the median.",
+          "text_fr": "Nous avons remplacé les valeurs manquantes par la médiane."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "duplicate-records",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "data-engineering"
+      ],
+      "term_en": "duplicate records",
+      "translation_fr": "doublons",
+      "part_of_speech": "noun",
+      "definition_en": "Rows that appear more than once in a dataset, often by mistake.",
+      "explanation_fr": "Lignes présentes plusieurs fois dans un jeu de données, souvent par erreur.",
+      "why_it_matters_fr": "Gonflent les chiffres et faussent les analyses.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "duplicate-records-1",
+          "text_en": "Remove duplicate records before counting users.",
+          "text_fr": "Supprime les doublons avant de compter les utilisateurs."
+        },
+        {
+          "id": "duplicate-records-2",
+          "text_en": "The import created duplicate records.",
+          "text_fr": "L’import a créé des doublons."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "standard-deviation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 55
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "standard deviation",
+      "translation_fr": "écart type",
+      "part_of_speech": "noun",
+      "definition_en": "A measure of how spread out values are around the average.",
+      "explanation_fr": "Mesure de la dispersion des valeurs autour de la moyenne.",
+      "why_it_matters_fr": "Indique si une moyenne est représentative.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "standard-deviation-1",
+          "text_en": "The standard deviation is very high.",
+          "text_fr": "L’écart type est très élevé."
+        },
+        {
+          "id": "standard-deviation-2",
+          "text_en": "Delivery times have a small standard deviation.",
+          "text_fr": "Les délais de livraison ont un faible écart type."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "distribution",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 55
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "distribution",
+      "translation_fr": "distribution",
+      "part_of_speech": "noun",
+      "definition_en": "The way values in a dataset are spread out, often shown as a histogram.",
+      "explanation_fr": "La façon dont les valeurs d’un jeu de données sont réparties, souvent montrée par un histogramme.",
+      "why_it_matters_fr": "Toujours regarder la distribution avant de calculer une moyenne.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "distribution-1",
+          "text_en": "The income distribution is skewed.",
+          "text_fr": "La distribution des revenus est asymétrique."
+        },
+        {
+          "id": "distribution-2",
+          "text_en": "Plot the distribution of session lengths.",
+          "text_fr": "Trace la distribution des durées de session."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "percentile",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "performance"
+      ],
+      "term_en": "percentile",
+      "translation_fr": "centile",
+      "part_of_speech": "noun",
+      "definition_en": "The value below which a given percentage of observations fall; for example the 95th percentile.",
+      "explanation_fr": "Valeur sous laquelle se trouve un pourcentage donné des observations ; par exemple le 95e centile.",
+      "why_it_matters_fr": "Très utilisé pour les temps de réponse (p95, p99).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "percentile-1",
+          "text_en": "The 95th percentile response time is 800 ms.",
+          "text_fr": "Le temps de réponse au 95e centile est de 800 ms."
+        },
+        {
+          "id": "percentile-2",
+          "text_en": "Look at percentiles, not only the average.",
+          "text_fr": "Regarde les centiles, pas seulement la moyenne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hypothesis",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "product-design",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "hypothesis",
+      "translation_fr": "hypothèse",
+      "part_of_speech": "noun",
+      "definition_en": "A statement you want to test with data, such as “a shorter form will increase sign-ups”.",
+      "explanation_fr": "Affirmation que l’on veut tester avec des données, par exemple « un formulaire plus court augmentera les inscriptions ».",
+      "why_it_matters_fr": "Base des tests A/B.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hypothesis-1",
+          "text_en": "Our hypothesis is that the new button increases clicks.",
+          "text_fr": "Notre hypothèse est que le nouveau bouton augmente les clics."
+        },
+        {
+          "id": "hypothesis-2",
+          "text_en": "The data did not confirm the hypothesis.",
+          "text_fr": "Les données n’ont pas confirmé l’hypothèse."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sample-size",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "sample size",
+      "translation_fr": "taille d’échantillon",
+      "part_of_speech": "noun",
+      "definition_en": "The number of observations or people included in a study or test.",
+      "explanation_fr": "Le nombre d’observations ou de personnes incluses dans une étude ou un test.",
+      "why_it_matters_fr": "Un échantillon trop petit donne des conclusions fragiles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sample-size-1",
+          "text_en": "The sample size is too small to conclude.",
+          "text_fr": "La taille d’échantillon est trop petite pour conclure."
+        },
+        {
+          "id": "sample-size-2",
+          "text_en": "We need a larger sample size for this test.",
+          "text_fr": "Il faut un échantillon plus grand pour ce test."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "causation",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "causation",
+      "translation_fr": "causalité",
+      "part_of_speech": "noun",
+      "definition_en": "When one thing directly causes another, which is different from simply happening together.",
+      "explanation_fr": "Quand une chose en provoque directement une autre, ce qui diffère d’un simple lien statistique.",
+      "why_it_matters_fr": "« Correlation is not causation » : phrase clé des analystes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "causation-1",
+          "text_en": "Correlation does not prove causation.",
+          "text_fr": "La corrélation ne prouve pas la causalité."
+        },
+        {
+          "id": "causation-2",
+          "text_en": "We ran an A/B test to check causation.",
+          "text_fr": "Nous avons fait un test A/B pour vérifier la causalité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "segmentation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "product-design",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "segmentation",
+      "translation_fr": "segmentation",
+      "part_of_speech": "noun",
+      "definition_en": "Dividing users or customers into groups with similar characteristics.",
+      "explanation_fr": "Diviser les utilisateurs ou clients en groupes aux caractéristiques similaires.",
+      "why_it_matters_fr": "Permet des analyses et actions plus ciblées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "segmentation-1",
+          "text_en": "Segmentation shows mobile users buy less.",
+          "text_fr": "La segmentation montre que les utilisateurs mobiles achètent moins."
+        },
+        {
+          "id": "segmentation-2",
+          "text_en": "We created a segmentation by country and age.",
+          "text_fr": "Nous avons créé une segmentation par pays et âge."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "drill-down",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "drill down",
+      "translation_fr": "explorer en détail",
+      "part_of_speech": "verb",
+      "definition_en": "To move from a summary view to more detailed data in a report or dashboard.",
+      "explanation_fr": "Passer d’une vue globale à des données plus détaillées dans un rapport ou un tableau de bord.",
+      "why_it_matters_fr": "Fonction attendue des tableaux de bord.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "drill-down-1",
+          "text_en": "Click the region to drill down into each city.",
+          "text_fr": "Clique sur la région pour explorer chaque ville."
+        },
+        {
+          "id": "drill-down-2",
+          "text_en": "Let’s drill down into last month’s drop.",
+          "text_fr": "Explorons en détail la baisse du mois dernier."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-storytelling",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "data storytelling",
+      "translation_fr": "narration par les données",
+      "part_of_speech": "noun",
+      "definition_en": "Presenting data analysis as a clear story with context, key insights and recommendations.",
+      "explanation_fr": "Présenter une analyse de données comme une histoire claire : contexte, enseignements clés et recommandations.",
+      "why_it_matters_fr": "Les décideurs retiennent une histoire, pas un tableau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-storytelling-1",
+          "text_en": "Good data storytelling convinced the managers.",
+          "text_fr": "Une bonne narration par les données a convaincu les managers."
+        },
+        {
+          "id": "data-storytelling-2",
+          "text_en": "Start your data storytelling with the main insight.",
+          "text_fr": "Commence ta narration par l’enseignement principal."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bi-tool",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "BI tool",
+      "translation_fr": "outil de BI",
+      "part_of_speech": "noun",
+      "definition_en": "Software like Power BI, Tableau or Looker used to build reports and dashboards from data.",
+      "explanation_fr": "Logiciel comme Power BI, Tableau ou Looker utilisé pour créer rapports et tableaux de bord.",
+      "why_it_matters_fr": "Compétence très demandée chez les analystes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bi-tool-1",
+          "text_en": "Which BI tool do you use?",
+          "text_fr": "Quel outil de BI utilisez-vous ?"
+        },
+        {
+          "id": "bi-tool-2",
+          "text_en": "The report was rebuilt in a new BI tool.",
+          "text_fr": "Le rapport a été refait dans un nouvel outil de BI."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ad-hoc-analysis",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "ad hoc analysis",
+      "translation_fr": "analyse ponctuelle",
+      "part_of_speech": "noun",
+      "definition_en": "A one-time analysis done to answer a specific question, not part of a regular report.",
+      "explanation_fr": "Analyse unique réalisée pour répondre à une question précise, hors rapport régulier.",
+      "why_it_matters_fr": "Une grande partie du travail d’analyste.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ad-hoc-analysis-1",
+          "text_en": "Marketing asked for an ad hoc analysis of the campaign.",
+          "text_fr": "Le marketing a demandé une analyse ponctuelle de la campagne."
+        },
+        {
+          "id": "ad-hoc-analysis-2",
+          "text_en": "Ad hoc analyses take time away from dashboards.",
+          "text_fr": "Les analyses ponctuelles prennent du temps sur les tableaux de bord."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }

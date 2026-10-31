@@ -573,6 +573,490 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "data-catalog",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data catalog",
+      "translation_fr": "catalogue de données",
+      "part_of_speech": "noun",
+      "definition_en": "A searchable inventory of an organization’s datasets with descriptions, owners and definitions.",
+      "explanation_fr": "Inventaire consultable des jeux de données d’une organisation, avec descriptions, responsables et définitions.",
+      "why_it_matters_fr": "Aide à trouver la bonne donnée et à lui faire confiance.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-catalog-1",
+          "text_en": "Check the data catalog before creating a new table.",
+          "text_fr": "Consulte le catalogue de données avant de créer une table."
+        },
+        {
+          "id": "data-catalog-2",
+          "text_en": "Each dataset in the data catalog has an owner.",
+          "text_fr": "Chaque jeu de données du catalogue a un responsable."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-lineage",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data lineage",
+      "translation_fr": "traçabilité des données",
+      "part_of_speech": "noun",
+      "definition_en": "Information showing where data comes from and every transformation it goes through.",
+      "explanation_fr": "Information qui montre d’où viennent les données et chaque transformation qu’elles subissent.",
+      "why_it_matters_fr": "Indispensable pour déboguer un chiffre faux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-lineage-1",
+          "text_en": "Data lineage shows the column comes from the CRM.",
+          "text_fr": "La traçabilité montre que la colonne vient du CRM."
+        },
+        {
+          "id": "data-lineage-2",
+          "text_en": "Without data lineage, debugging takes days.",
+          "text_fr": "Sans traçabilité, le débogage prend des jours."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "elt",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "ELT",
+      "translation_fr": "ELT (extraire, charger, transformer)",
+      "part_of_speech": "acronym",
+      "definition_en": "Extract, Load, Transform: loading raw data into the warehouse first and transforming it there.",
+      "explanation_fr": "Extract, Load, Transform : charger d’abord les données brutes dans l’entrepôt puis les transformer sur place.",
+      "why_it_matters_fr": "Approche dominante avec les entrepôts cloud modernes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "elt-1",
+          "text_en": "We moved from ETL to ELT.",
+          "text_fr": "Nous sommes passés de l’ETL à l’ELT."
+        },
+        {
+          "id": "elt-2",
+          "text_en": "With ELT, transformations run in the warehouse.",
+          "text_fr": "Avec l’ELT, les transformations tournent dans l’entrepôt."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-ingestion",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data ingestion",
+      "translation_fr": "ingestion de données",
+      "part_of_speech": "noun",
+      "definition_en": "Collecting and importing data from various sources into a storage system.",
+      "explanation_fr": "Collecter et importer des données de diverses sources vers un système de stockage.",
+      "why_it_matters_fr": "Première étape de tout pipeline.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-ingestion-1",
+          "text_en": "Data ingestion runs every hour.",
+          "text_fr": "L’ingestion de données tourne toutes les heures."
+        },
+        {
+          "id": "data-ingestion-2",
+          "text_en": "The ingestion failed because the API changed.",
+          "text_fr": "L’ingestion a échoué car l’API a changé."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "incremental-load",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "incremental load",
+      "translation_fr": "chargement incrémental",
+      "part_of_speech": "noun",
+      "definition_en": "Loading only new or changed data since the last run instead of reloading everything.",
+      "explanation_fr": "Charger uniquement les données nouvelles ou modifiées depuis la dernière exécution au lieu de tout recharger.",
+      "why_it_matters_fr": "Réduit beaucoup le temps et le coût.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "incremental-load-1",
+          "text_en": "Switch to an incremental load to save time.",
+          "text_fr": "Passe à un chargement incrémental pour gagner du temps."
+        },
+        {
+          "id": "incremental-load-2",
+          "text_en": "The incremental load uses the updated_at column.",
+          "text_fr": "Le chargement incrémental utilise la colonne updated_at."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "backfill",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "backfill",
+      "translation_fr": "recharger l’historique (backfill)",
+      "part_of_speech": "verb",
+      "definition_en": "To run a pipeline on past dates to fill in missing or corrected historical data.",
+      "explanation_fr": "Exécuter un pipeline sur des dates passées pour combler ou corriger l’historique.",
+      "why_it_matters_fr": "Nécessaire après une panne ou un bug.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "backfill-1",
+          "text_en": "We need to backfill the last two weeks.",
+          "text_fr": "Il faut recharger l’historique des deux dernières semaines."
+        },
+        {
+          "id": "backfill-2",
+          "text_en": "The backfill took six hours.",
+          "text_fr": "Le rechargement de l’historique a pris six heures."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dag",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "DAG",
+      "translation_fr": "graphe de tâches (DAG)",
+      "part_of_speech": "acronym",
+      "definition_en": "Directed Acyclic Graph: a set of tasks with dependencies and no loops, used by orchestrators like Airflow.",
+      "explanation_fr": "Directed Acyclic Graph : ensemble de tâches avec dépendances et sans boucle, utilisé par des orchestrateurs comme Airflow.",
+      "why_it_matters_fr": "Vocabulaire quotidien des data engineers.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dag-1",
+          "text_en": "The DAG runs every night at 2 a.m.",
+          "text_fr": "Le DAG tourne chaque nuit à 2 h."
+        },
+        {
+          "id": "dag-2",
+          "text_en": "One task in the DAG failed.",
+          "text_fr": "Une tâche du DAG a échoué."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "parquet",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "Parquet",
+      "translation_fr": "Parquet",
+      "part_of_speech": "noun",
+      "definition_en": "A column-based file format that stores large datasets efficiently and makes analytical queries fast.",
+      "explanation_fr": "Format de fichier en colonnes qui stocke efficacement de gros volumes et accélère les requêtes analytiques.",
+      "why_it_matters_fr": "Standard des data lakes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "parquet-1",
+          "text_en": "Save the files as Parquet, not CSV.",
+          "text_fr": "Enregistre les fichiers en Parquet, pas en CSV."
+        },
+        {
+          "id": "parquet-2",
+          "text_en": "Parquet files are much smaller.",
+          "text_fr": "Les fichiers Parquet sont beaucoup plus légers."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "spark",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "Apache Spark",
+      "translation_fr": "Apache Spark",
+      "part_of_speech": "noun",
+      "definition_en": "An engine for processing very large datasets in parallel across many machines.",
+      "explanation_fr": "Moteur de traitement de très gros volumes de données en parallèle sur plusieurs machines.",
+      "why_it_matters_fr": "Outil phare du big data.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "spark-1",
+          "text_en": "The job runs on Apache Spark.",
+          "text_fr": "Le traitement tourne sur Apache Spark."
+        },
+        {
+          "id": "spark-2",
+          "text_en": "We tuned Spark to use less memory.",
+          "text_fr": "Nous avons optimisé Spark pour consommer moins de mémoire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "kafka",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "architecture"
+      ],
+      "term_en": "Apache Kafka",
+      "translation_fr": "Apache Kafka",
+      "part_of_speech": "noun",
+      "definition_en": "A platform for publishing, storing and processing streams of events in real time.",
+      "explanation_fr": "Plateforme pour publier, stocker et traiter des flux d’événements en temps réel.",
+      "why_it_matters_fr": "Très utilisée pour le streaming de données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "kafka-1",
+          "text_en": "Orders are sent to a Kafka topic.",
+          "text_fr": "Les commandes sont envoyées dans un topic Kafka."
+        },
+        {
+          "id": "kafka-2",
+          "text_en": "Kafka keeps events for seven days.",
+          "text_fr": "Kafka conserve les événements sept jours."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "slowly-changing-dimension",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "databases"
+      ],
+      "term_en": "slowly changing dimension",
+      "translation_fr": "dimension à évolution lente",
+      "part_of_speech": "noun",
+      "definition_en": "A dimension table whose values change occasionally, such as a customer’s address, with rules to keep history.",
+      "explanation_fr": "Table de dimension dont les valeurs changent parfois, comme l’adresse d’un client, avec des règles pour garder l’historique.",
+      "why_it_matters_fr": "Notion classique de la modélisation d’entrepôt.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "slowly-changing-dimension-1",
+          "text_en": "Customer addresses are a slowly changing dimension.",
+          "text_fr": "Les adresses clients sont une dimension à évolution lente."
+        },
+        {
+          "id": "slowly-changing-dimension-2",
+          "text_en": "Type 2 keeps every version of the record.",
+          "text_fr": "Le type 2 conserve chaque version de l’enregistrement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "star-schema",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "databases"
+      ],
+      "term_en": "star schema",
+      "translation_fr": "schéma en étoile",
+      "part_of_speech": "noun",
+      "definition_en": "A warehouse design with a central fact table linked to several dimension tables.",
+      "explanation_fr": "Modèle d’entrepôt avec une table de faits centrale reliée à plusieurs tables de dimensions.",
+      "why_it_matters_fr": "Facilite les analyses rapides.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "star-schema-1",
+          "text_en": "The sales warehouse uses a star schema.",
+          "text_fr": "L’entrepôt des ventes utilise un schéma en étoile."
+        },
+        {
+          "id": "star-schema-2",
+          "text_en": "The fact table stores each sale.",
+          "text_fr": "La table de faits stocke chaque vente."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-contract",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "collaboration"
+      ],
+      "term_en": "data contract",
+      "translation_fr": "contrat de données",
+      "part_of_speech": "noun",
+      "definition_en": "An agreement between data producers and consumers defining the structure, meaning and quality of shared data.",
+      "explanation_fr": "Accord entre producteurs et consommateurs de données qui définit structure, sens et qualité des données partagées.",
+      "why_it_matters_fr": "Évite qu’un changement d’une équipe casse les pipelines des autres.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-contract-1",
+          "text_en": "The data contract says this field is never empty.",
+          "text_fr": "Le contrat de données indique que ce champ n’est jamais vide."
+        },
+        {
+          "id": "data-contract-2",
+          "text_en": "Breaking the data contract broke three dashboards.",
+          "text_fr": "La rupture du contrat de données a cassé trois tableaux de bord."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
