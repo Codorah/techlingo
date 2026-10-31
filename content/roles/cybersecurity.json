@@ -1,0 +1,784 @@
+{
+  "role": "cybersecurity",
+  "terms": [
+    {
+      "id": "vulnerability",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 90
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "vulnerability",
+      "translation_fr": "vulnérabilité (faille)",
+      "part_of_speech": "noun",
+      "definition_en": "A weakness in software or a system that an attacker can exploit.",
+      "explanation_fr": "Faiblesse d’un logiciel ou d’un système qu’un attaquant peut exploiter.",
+      "why_it_matters_fr": "Le mot central de la cybersécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "vulnerability-1",
+          "text_en": "The scanner found a vulnerability in an old library.",
+          "text_fr": "Le scanner a trouvé une vulnérabilité dans une vieille bibliothèque."
+        },
+        {
+          "id": "vulnerability-2",
+          "text_en": "We patched the vulnerability within 24 hours.",
+          "text_fr": "Nous avons corrigé la faille en moins de 24 heures."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "exploit",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "exploit",
+      "translation_fr": "exploit (code d’attaque)",
+      "part_of_speech": "noun",
+      "definition_en": "Code or a technique that takes advantage of a vulnerability to cause unintended behavior, such as gaining access.",
+      "explanation_fr": "Code ou technique qui tire parti d’une vulnérabilité pour provoquer un comportement non prévu, comme obtenir un accès.",
+      "why_it_matters_fr": "Faux ami : « exploit » ici n’est pas un exploit sportif.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "exploit-1",
+          "text_en": "A public exploit appeared two days after the vulnerability was announced.",
+          "text_fr": "Un exploit public est apparu deux jours après l’annonce de la vulnérabilité."
+        },
+        {
+          "id": "exploit-2",
+          "text_en": "The attackers used an exploit to get admin access.",
+          "text_fr": "Les attaquants ont utilisé un exploit pour obtenir un accès administrateur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "patch",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "network-systems",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "operating-systems"
+      ],
+      "term_en": "patch",
+      "translation_fr": "correctif",
+      "part_of_speech": "noun",
+      "definition_en": "An update that fixes a bug or a security vulnerability.",
+      "explanation_fr": "Mise à jour qui corrige un bug ou une faille de sécurité.",
+      "why_it_matters_fr": "Appliquer les correctifs rapidement est la base de l’hygiène informatique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "patch-1",
+          "text_en": "Install the security patch on all servers tonight.",
+          "text_fr": "Installe le correctif de sécurité sur tous les serveurs ce soir."
+        },
+        {
+          "id": "patch-2",
+          "text_en": "The vendor released a patch for the bug.",
+          "text_fr": "L’éditeur a publié un correctif pour le bug."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "phishing",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 85
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "phishing",
+      "translation_fr": "hameçonnage",
+      "part_of_speech": "noun",
+      "definition_en": "A scam where attackers send fake messages that look legitimate to trick people into giving passwords or money.",
+      "explanation_fr": "Arnaque où des attaquants envoient de faux messages d’apparence légitime pour obtenir mots de passe ou argent.",
+      "why_it_matters_fr": "La cause la plus fréquente des intrusions en entreprise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "phishing-1",
+          "text_en": "Employees received a phishing email pretending to be from the bank.",
+          "text_fr": "Les employés ont reçu un e-mail d’hameçonnage qui se faisait passer pour la banque."
+        },
+        {
+          "id": "phishing-2",
+          "text_en": "We train staff to recognize phishing.",
+          "text_fr": "Nous formons le personnel à reconnaître l’hameçonnage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "malware",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        },
+        {
+          "role": "network-systems",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "malware",
+      "translation_fr": "logiciel malveillant",
+      "part_of_speech": "noun",
+      "definition_en": "Software designed to damage, spy on or take control of a computer, such as viruses, ransomware or spyware.",
+      "explanation_fr": "Logiciel conçu pour endommager, espionner ou prendre le contrôle d’un ordinateur : virus, rançongiciels, logiciels espions…",
+      "why_it_matters_fr": "Terme générique utilisé dans tous les rapports de sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "malware-1",
+          "text_en": "The antivirus detected malware in the attachment.",
+          "text_fr": "L’antivirus a détecté un logiciel malveillant dans la pièce jointe."
+        },
+        {
+          "id": "malware-2",
+          "text_en": "The malware spread through the shared folder.",
+          "text_fr": "Le logiciel malveillant s’est propagé par le dossier partagé."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ransomware",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "ransomware",
+      "translation_fr": "rançongiciel",
+      "part_of_speech": "noun",
+      "definition_en": "Malware that encrypts a victim’s files and demands payment to unlock them.",
+      "explanation_fr": "Logiciel malveillant qui chiffre les fichiers d’une victime et exige une rançon pour les débloquer.",
+      "why_it_matters_fr": "Menace majeure pour les entreprises : d’où l’importance des sauvegardes hors ligne.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ransomware-1",
+          "text_en": "The hospital was hit by ransomware.",
+          "text_fr": "L’hôpital a été frappé par un rançongiciel."
+        },
+        {
+          "id": "ransomware-2",
+          "text_en": "Offline backups let us recover without paying the ransomware attackers.",
+          "text_fr": "Les sauvegardes hors ligne nous ont permis de tout récupérer sans payer les attaquants."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "encryption",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 85
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "encryption",
+      "translation_fr": "chiffrement",
+      "part_of_speech": "noun",
+      "definition_en": "Transforming data into an unreadable form that only someone with the right key can turn back into the original.",
+      "explanation_fr": "Transformer des données en une forme illisible que seul le détenteur de la bonne clé peut retransformer.",
+      "why_it_matters_fr": "Attention : en français on dit « chiffrement », pas « cryptage ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "encryption-1",
+          "text_en": "All data is protected by encryption at rest and in transit.",
+          "text_fr": "Toutes les données sont protégées par chiffrement au repos et en transit."
+        },
+        {
+          "id": "encryption-2",
+          "text_en": "End-to-end encryption means the server cannot read messages.",
+          "text_fr": "Le chiffrement de bout en bout signifie que le serveur ne peut pas lire les messages."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hashing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "hashing",
+      "translation_fr": "hachage",
+      "part_of_speech": "noun",
+      "definition_en": "Turning data into a fixed-length value with a one-way function; used to store passwords and check integrity.",
+      "explanation_fr": "Transformer des données en une valeur de longueur fixe avec une fonction à sens unique ; sert à stocker les mots de passe et vérifier l’intégrité.",
+      "why_it_matters_fr": "À distinguer du chiffrement : un hachage ne se « déchiffre » pas.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hashing-1",
+          "text_en": "We store passwords with hashing, never in plain text.",
+          "text_fr": "Nous stockons les mots de passe hachés, jamais en clair."
+        },
+        {
+          "id": "hashing-2",
+          "text_en": "Hashing the file shows whether it was modified.",
+          "text_fr": "Le hachage du fichier montre s’il a été modifié."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "two-factor-authentication",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "two-factor authentication",
+      "translation_fr": "authentification à deux facteurs",
+      "part_of_speech": "noun",
+      "definition_en": "A login method that requires two different proofs of identity, such as a password and a code sent to your phone.",
+      "explanation_fr": "Méthode de connexion qui exige deux preuves d’identité différentes, comme un mot de passe et un code reçu sur le téléphone.",
+      "why_it_matters_fr": "Abrégé 2FA ; mesure simple qui bloque la majorité des vols de comptes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "two-factor-authentication-1",
+          "text_en": "Enable two-factor authentication on your GitHub account.",
+          "text_fr": "Active l’authentification à deux facteurs sur ton compte GitHub."
+        },
+        {
+          "id": "two-factor-authentication-2",
+          "text_en": "Two-factor authentication stopped the attacker even with the stolen password.",
+          "text_fr": "L’authentification à deux facteurs a bloqué l’attaquant malgré le mot de passe volé."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "penetration-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "security",
+        "testing"
+      ],
+      "term_en": "penetration testing",
+      "translation_fr": "test d’intrusion",
+      "part_of_speech": "noun",
+      "definition_en": "An authorized simulated attack on a system to find vulnerabilities before real attackers do.",
+      "explanation_fr": "Attaque simulée et autorisée contre un système pour trouver les failles avant les vrais attaquants.",
+      "why_it_matters_fr": "Abrégé pentest ; métier à part entière dans la cybersécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "penetration-testing-1",
+          "text_en": "The penetration testing report listed three critical issues.",
+          "text_fr": "Le rapport de test d’intrusion listait trois problèmes critiques."
+        },
+        {
+          "id": "penetration-testing-2",
+          "text_en": "We run penetration testing before each major release.",
+          "text_fr": "Nous faisons un test d’intrusion avant chaque version majeure."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sql-injection",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "security",
+        "databases"
+      ],
+      "term_en": "SQL injection",
+      "translation_fr": "injection SQL",
+      "part_of_speech": "noun",
+      "definition_en": "An attack where malicious SQL code is inserted into an input so that the database runs commands it should not.",
+      "explanation_fr": "Attaque qui insère du code SQL malveillant dans une saisie pour que la base exécute des commandes non prévues.",
+      "why_it_matters_fr": "Faille classique, connue de tout développeur back-end et demandée en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sql-injection-1",
+          "text_en": "Parameterized queries protect against SQL injection.",
+          "text_fr": "Les requêtes paramétrées protègent contre l’injection SQL."
+        },
+        {
+          "id": "sql-injection-2",
+          "text_en": "The login form was vulnerable to SQL injection.",
+          "text_fr": "Le formulaire de connexion était vulnérable à l’injection SQL."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "xss",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "security",
+        "frontend"
+      ],
+      "term_en": "XSS",
+      "translation_fr": "XSS (script intersite)",
+      "part_of_speech": "acronym",
+      "definition_en": "Cross-Site Scripting: an attack where malicious scripts are injected into a web page and run in other users’ browsers.",
+      "explanation_fr": "Cross-Site Scripting : attaque qui injecte des scripts malveillants dans une page web, exécutés ensuite dans le navigateur des autres utilisateurs.",
+      "why_it_matters_fr": "Les frameworks protègent en partie, mais il faut connaître le risque.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "xss-1",
+          "text_en": "Escaping user input prevents XSS.",
+          "text_fr": "Échapper les saisies des utilisateurs empêche les failles XSS."
+        },
+        {
+          "id": "xss-2",
+          "text_en": "A comment field allowed XSS attacks.",
+          "text_fr": "Un champ de commentaire permettait des attaques XSS."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "least-privilege",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "principle of least privilege",
+      "translation_fr": "principe du moindre privilège",
+      "part_of_speech": "noun",
+      "definition_en": "Giving each user or program only the minimum access it needs to do its job.",
+      "explanation_fr": "Ne donner à chaque utilisateur ou programme que l’accès minimum nécessaire à sa tâche.",
+      "why_it_matters_fr": "Principe de base de la sécurité, très apprécié en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "least-privilege-1",
+          "text_en": "Following the principle of least privilege, the app cannot delete the database.",
+          "text_fr": "Selon le principe du moindre privilège, l’application ne peut pas supprimer la base."
+        },
+        {
+          "id": "least-privilege-2",
+          "text_en": "We reviewed admin accounts to apply least privilege.",
+          "text_fr": "Nous avons revu les comptes administrateurs pour appliquer le moindre privilège."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "zero-day",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "zero-day",
+      "translation_fr": "faille zero-day (jour zéro)",
+      "part_of_speech": "noun",
+      "definition_en": "A vulnerability that is unknown to the vendor or has no available fix when attackers start exploiting it.",
+      "explanation_fr": "Faille inconnue de l’éditeur, ou sans correctif disponible, au moment où les attaquants commencent à l’exploiter.",
+      "why_it_matters_fr": "Terme très présent dans l’actualité de la cybersécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "zero-day-1",
+          "text_en": "Attackers used a zero-day in the browser.",
+          "text_fr": "Les attaquants ont utilisé une faille zero-day du navigateur."
+        },
+        {
+          "id": "zero-day-2",
+          "text_en": "There was no patch yet for the zero-day.",
+          "text_fr": "Il n’existait pas encore de correctif pour la faille zero-day."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "soc",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "security",
+        "monitoring"
+      ],
+      "term_en": "SOC",
+      "translation_fr": "centre des opérations de sécurité (SOC)",
+      "part_of_speech": "acronym",
+      "definition_en": "Security Operations Center: a team that monitors systems around the clock to detect and respond to security threats.",
+      "explanation_fr": "Security Operations Center : équipe qui surveille les systèmes en continu pour détecter les menaces et y répondre.",
+      "why_it_matters_fr": "Beaucoup de postes juniors en cybersécurité commencent en SOC.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "soc-1",
+          "text_en": "The SOC detected unusual logins at night.",
+          "text_fr": "Le SOC a détecté des connexions inhabituelles la nuit."
+        },
+        {
+          "id": "soc-2",
+          "text_en": "I started my career as a SOC analyst.",
+          "text_fr": "J’ai commencé ma carrière comme analyste SOC."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "threat",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "threat",
+      "translation_fr": "menace",
+      "part_of_speech": "noun",
+      "definition_en": "A potential cause of harm to a system, such as an attacker, malware or a natural disaster.",
+      "explanation_fr": "Cause potentielle de dommage pour un système : un attaquant, un logiciel malveillant, une catastrophe…",
+      "why_it_matters_fr": "Menace, vulnérabilité et risque : trois notions à bien distinguer.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "threat-1",
+          "text_en": "Phishing is the main threat for our company.",
+          "text_fr": "L’hameçonnage est la principale menace pour notre entreprise."
+        },
+        {
+          "id": "threat-2",
+          "text_en": "We model threats before designing a new feature.",
+          "text_fr": "Nous modélisons les menaces avant de concevoir une nouvelle fonctionnalité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "brute-force-attack",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "brute-force attack",
+      "translation_fr": "attaque par force brute",
+      "part_of_speech": "noun",
+      "definition_en": "An attack that tries many possible passwords or keys until one works.",
+      "explanation_fr": "Attaque qui essaie un grand nombre de mots de passe ou de clés jusqu’à trouver le bon.",
+      "why_it_matters_fr": "Bloquée par la limitation de débit et les mots de passe forts.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "brute-force-attack-1",
+          "text_en": "Rate limiting stopped the brute-force attack.",
+          "text_fr": "La limitation de débit a stoppé l’attaque par force brute."
+        },
+        {
+          "id": "brute-force-attack-2",
+          "text_en": "Long passwords make brute-force attacks much harder.",
+          "text_fr": "Les mots de passe longs rendent les attaques par force brute bien plus difficiles."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ddos",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "DDoS",
+      "translation_fr": "attaque par déni de service distribué (DDoS)",
+      "part_of_speech": "acronym",
+      "definition_en": "Distributed Denial of Service: an attack that floods a service with traffic from many machines to make it unavailable.",
+      "explanation_fr": "Distributed Denial of Service : attaque qui inonde un service de trafic venu de nombreuses machines pour le rendre indisponible.",
+      "why_it_matters_fr": "Une protection anti-DDoS est souvent fournie par le CDN.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ddos-1",
+          "text_en": "The website went down during a DDoS attack.",
+          "text_fr": "Le site est tombé pendant une attaque DDoS."
+        },
+        {
+          "id": "ddos-2",
+          "text_en": "Our CDN filters DDoS traffic.",
+          "text_fr": "Notre CDN filtre le trafic DDoS."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ssl-tls",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "SSL/TLS",
+      "translation_fr": "SSL/TLS (protocole de chiffrement)",
+      "part_of_speech": "acronym",
+      "definition_en": "Protocols that encrypt communication between a client and a server; TLS is the modern version, used by HTTPS.",
+      "explanation_fr": "Protocoles qui chiffrent la communication entre un client et un serveur ; TLS est la version moderne, utilisée par HTTPS.",
+      "why_it_matters_fr": "Le cadenas du navigateur : un certificat expiré peut couper un service.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ssl-tls-1",
+          "text_en": "The site uses TLS, so passwords are encrypted in transit.",
+          "text_fr": "Le site utilise TLS : les mots de passe sont chiffrés pendant le transfert."
+        },
+        {
+          "id": "ssl-tls-2",
+          "text_en": "The SSL certificate expires next week.",
+          "text_fr": "Le certificat SSL expire la semaine prochaine."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}

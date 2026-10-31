@@ -1,0 +1,1822 @@
+{
+  "role": "devops-cloud",
+  "terms": [
+    {
+      "id": "devops",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 95
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "ci-cd",
+        "collaboration"
+      ],
+      "term_en": "DevOps",
+      "translation_fr": "DevOps",
+      "part_of_speech": "noun",
+      "definition_en": "A culture and set of practices that bring development and operations teams together to deliver software faster and more reliably through automation.",
+      "explanation_fr": "Culture et ensemble de pratiques qui rapprochent les équipes de développement et d’exploitation pour livrer plus vite et plus sûrement, grâce à l’automatisation.",
+      "why_it_matters_fr": "« Can you explain what DevOps is? » est une question d’entretien très fréquente.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "devops-1",
+          "text_en": "Our team adopted DevOps practices to reduce failed deployments.",
+          "text_fr": "Notre équipe a adopté les pratiques DevOps pour réduire les déploiements ratés."
+        },
+        {
+          "id": "devops-2",
+          "text_en": "DevOps is a culture, not just a set of tools.",
+          "text_fr": "Le DevOps est une culture, pas seulement un ensemble d’outils."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cicd-pipeline",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 95
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "CI/CD pipeline",
+      "translation_fr": "pipeline CI/CD",
+      "part_of_speech": "noun",
+      "definition_en": "An automated chain of steps that builds, tests and deploys code every time a change is pushed.",
+      "explanation_fr": "Chaîne d’étapes automatisées qui compile, exécute les tests et déploie le code à chaque modification envoyée.",
+      "why_it_matters_fr": "Présent dans presque toutes les équipes : il faut savoir décrire le sien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cicd-pipeline-1",
+          "text_en": "The build failed in the CI/CD pipeline because a unit test failed.",
+          "text_fr": "Le build a échoué dans le pipeline CI/CD parce qu’un test unitaire ne passait pas."
+        },
+        {
+          "id": "cicd-pipeline-2",
+          "text_en": "Our CI/CD pipeline deploys to staging after every merge.",
+          "text_fr": "Notre pipeline CI/CD déploie en préproduction après chaque fusion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "continuous-integration",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "qa-testing",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "continuous integration",
+      "translation_fr": "intégration continue",
+      "part_of_speech": "noun",
+      "definition_en": "The practice of merging code changes into the main branch frequently, with automatic builds and tests on each change.",
+      "explanation_fr": "Pratique qui consiste à fusionner souvent le code dans la branche principale, avec compilation et tests automatiques à chaque changement.",
+      "why_it_matters_fr": "Le « CI » de CI/CD : détecter les problèmes tôt.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "continuous-integration-1",
+          "text_en": "Continuous integration catches broken code within minutes.",
+          "text_fr": "L’intégration continue repère le code cassé en quelques minutes."
+        },
+        {
+          "id": "continuous-integration-2",
+          "text_en": "With continuous integration, every pull request runs the test suite.",
+          "text_fr": "Avec l’intégration continue, chaque pull request lance la suite de tests."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "continuous-delivery",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "continuous delivery",
+      "translation_fr": "livraison continue",
+      "part_of_speech": "noun",
+      "definition_en": "The practice of keeping code always ready to be released, so any version can be deployed to production at any time.",
+      "explanation_fr": "Pratique qui garde le code toujours prêt à être publié, pour pouvoir déployer n’importe quelle version en production à tout moment.",
+      "why_it_matters_fr": "Le « CD » de CI/CD, souvent confondu avec le déploiement continu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "continuous-delivery-1",
+          "text_en": "Continuous delivery lets us release on demand.",
+          "text_fr": "La livraison continue nous permet de publier à la demande."
+        },
+        {
+          "id": "continuous-delivery-2",
+          "text_en": "With continuous delivery, a person still approves the production deploy.",
+          "text_fr": "Avec la livraison continue, une personne valide encore le déploiement en production."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "deployment",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "deployment",
+      "translation_fr": "déploiement",
+      "part_of_speech": "noun",
+      "definition_en": "The process of installing a new version of software on servers so that users can use it, or a single instance of that process.",
+      "explanation_fr": "Le fait d’installer une nouvelle version d’un logiciel sur des serveurs pour la rendre utilisable, ou une occurrence de ce processus.",
+      "why_it_matters_fr": "Nom du verbe « deploy » : on parle de fréquence et de sûreté des déploiements.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "deployment-1",
+          "text_en": "The deployment took ten minutes.",
+          "text_fr": "Le déploiement a pris dix minutes."
+        },
+        {
+          "id": "deployment-2",
+          "text_en": "We do several deployments a day.",
+          "text_fr": "Nous faisons plusieurs déploiements par jour."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "container",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 90
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "containers"
+      ],
+      "term_en": "container",
+      "translation_fr": "conteneur",
+      "part_of_speech": "noun",
+      "definition_en": "A lightweight, isolated package that contains an application and everything it needs to run, such as libraries and settings.",
+      "explanation_fr": "Paquet léger et isolé qui contient une application et tout ce dont elle a besoin pour tourner (bibliothèques, configuration).",
+      "why_it_matters_fr": "Les conteneurs garantissent le même environnement partout : base du DevOps moderne.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "container-1",
+          "text_en": "Each microservice runs in its own container.",
+          "text_fr": "Chaque microservice tourne dans son propre conteneur."
+        },
+        {
+          "id": "container-2",
+          "text_en": "The container behaves the same on my laptop and in production.",
+          "text_fr": "Le conteneur se comporte de la même façon sur mon ordinateur et en production."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "docker",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "containers"
+      ],
+      "term_en": "Docker",
+      "translation_fr": "Docker",
+      "part_of_speech": "noun",
+      "definition_en": "A popular tool for building, sharing and running containers.",
+      "explanation_fr": "Outil très répandu pour créer, partager et exécuter des conteneurs.",
+      "why_it_matters_fr": "Compétence demandée dans une grande partie des offres back-end et DevOps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "docker-1",
+          "text_en": "We use Docker to run the database locally.",
+          "text_fr": "Nous utilisons Docker pour faire tourner la base de données en local."
+        },
+        {
+          "id": "docker-2",
+          "text_en": "I wrote a Dockerfile to package the API.",
+          "text_fr": "J’ai écrit un Dockerfile pour empaqueter l’API."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "container-image",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "containers"
+      ],
+      "term_en": "image",
+      "translation_fr": "image (de conteneur)",
+      "part_of_speech": "noun",
+      "definition_en": "A read-only template that contains an application and its dependencies, used to start containers.",
+      "explanation_fr": "Modèle en lecture seule qui contient une application et ses dépendances, et sert à démarrer des conteneurs.",
+      "why_it_matters_fr": "On construit, versionne et publie des images à chaque release.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "container-image-1",
+          "text_en": "We build a new image for every release.",
+          "text_fr": "Nous construisons une nouvelle image à chaque version."
+        },
+        {
+          "id": "container-image-2",
+          "text_en": "The image is stored in our private registry.",
+          "text_fr": "L’image est stockée dans notre registre privé."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "kubernetes",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 90
+        }
+      ],
+      "categories": [
+        "containers",
+        "cloud"
+      ],
+      "term_en": "Kubernetes",
+      "translation_fr": "Kubernetes",
+      "part_of_speech": "noun",
+      "definition_en": "An open-source platform that automatically deploys, scales and manages containers across a cluster of machines.",
+      "explanation_fr": "Plateforme open source qui déploie, met à l’échelle et gère automatiquement des conteneurs sur un ensemble de machines.",
+      "why_it_matters_fr": "Abrégé K8s ; standard de fait pour faire tourner des conteneurs en production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "kubernetes-1",
+          "text_en": "Kubernetes restarts a container automatically when it crashes.",
+          "text_fr": "Kubernetes redémarre automatiquement un conteneur qui plante."
+        },
+        {
+          "id": "kubernetes-2",
+          "text_en": "We deployed our services on a managed Kubernetes cluster.",
+          "text_fr": "Nous avons déployé nos services sur un cluster Kubernetes managé."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cluster",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 75
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "cloud",
+        "containers"
+      ],
+      "term_en": "cluster",
+      "translation_fr": "grappe (cluster)",
+      "part_of_speech": "noun",
+      "definition_en": "A group of connected machines that work together as a single system.",
+      "explanation_fr": "Groupe de machines connectées qui fonctionnent ensemble comme un seul système.",
+      "why_it_matters_fr": "On parle de cluster pour Kubernetes, les bases de données ou le calcul distribué.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cluster-1",
+          "text_en": "The cluster has five nodes.",
+          "text_fr": "Le cluster compte cinq nœuds."
+        },
+        {
+          "id": "cluster-2",
+          "text_en": "We added a node to the cluster during the sales peak.",
+          "text_fr": "Nous avons ajouté un nœud au cluster pendant le pic des ventes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "infrastructure-as-code",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        }
+      ],
+      "categories": [
+        "cloud",
+        "ci-cd"
+      ],
+      "term_en": "infrastructure as code",
+      "translation_fr": "infrastructure en tant que code",
+      "part_of_speech": "noun",
+      "definition_en": "Managing servers, networks and cloud resources with configuration files kept in version control, instead of manual setup.",
+      "explanation_fr": "Gérer serveurs, réseaux et ressources cloud avec des fichiers de configuration versionnés, au lieu de réglages manuels.",
+      "why_it_matters_fr": "Abrégé IaC (Terraform, Ansible…) : très recherché en DevOps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "infrastructure-as-code-1",
+          "text_en": "With infrastructure as code, we can rebuild the whole environment in minutes.",
+          "text_fr": "Avec l’infrastructure en tant que code, nous reconstruisons tout l’environnement en quelques minutes."
+        },
+        {
+          "id": "infrastructure-as-code-2",
+          "text_en": "Every infrastructure change goes through a pull request.",
+          "text_fr": "Chaque changement d’infrastructure passe par une pull request."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cloud-computing",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "cloud computing",
+      "translation_fr": "informatique en nuage (cloud)",
+      "part_of_speech": "noun",
+      "definition_en": "Using servers, storage and services over the internet from a provider, paying for what you use instead of owning hardware.",
+      "explanation_fr": "Utiliser serveurs, stockage et services via internet auprès d’un fournisseur, en payant à l’usage plutôt qu’en possédant le matériel.",
+      "why_it_matters_fr": "AWS, Azure et Google Cloud reviennent dans la majorité des offres.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cloud-computing-1",
+          "text_en": "We moved our servers to cloud computing to reduce costs.",
+          "text_fr": "Nous avons migré nos serveurs vers le cloud pour réduire les coûts."
+        },
+        {
+          "id": "cloud-computing-2",
+          "text_en": "Cloud computing lets a small team scale quickly.",
+          "text_fr": "Le cloud permet à une petite équipe de monter en charge rapidement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "saas",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "product-design",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "cloud",
+        "product"
+      ],
+      "term_en": "SaaS",
+      "translation_fr": "logiciel en tant que service (SaaS)",
+      "part_of_speech": "acronym",
+      "definition_en": "Software as a Service: software delivered over the internet by subscription, without installation, such as an online email or CRM tool.",
+      "explanation_fr": "Software as a Service : logiciel fourni par internet sur abonnement, sans installation, comme une messagerie ou un CRM en ligne.",
+      "why_it_matters_fr": "Modèle économique de beaucoup de startups ; vocabulaire produit et business.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "saas-1",
+          "text_en": "We sell our product as a SaaS with monthly plans.",
+          "text_fr": "Nous vendons notre produit en SaaS avec des abonnements mensuels."
+        },
+        {
+          "id": "saas-2",
+          "text_en": "Most companies use SaaS tools for accounting.",
+          "text_fr": "La plupart des entreprises utilisent des outils SaaS pour la comptabilité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "serverless",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "cloud",
+        "architecture"
+      ],
+      "term_en": "serverless",
+      "translation_fr": "sans serveur (serverless)",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes running code in the cloud without managing servers: the provider runs your functions on demand and bills per use.",
+      "explanation_fr": "Qualifie l’exécution de code dans le cloud sans gérer de serveurs : le fournisseur lance tes fonctions à la demande et facture à l’usage.",
+      "why_it_matters_fr": "Il y a bien des serveurs, mais tu ne les gères pas : nuance à savoir expliquer.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "serverless-1",
+          "text_en": "The image resizing runs as a serverless function.",
+          "text_fr": "Le redimensionnement des images tourne dans une fonction serverless."
+        },
+        {
+          "id": "serverless-2",
+          "text_en": "Serverless is cheap when traffic is low.",
+          "text_fr": "Le serverless coûte peu quand le trafic est faible."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "virtual-machine",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 75
+        },
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "cloud",
+        "operating-systems"
+      ],
+      "term_en": "virtual machine",
+      "translation_fr": "machine virtuelle",
+      "part_of_speech": "noun",
+      "definition_en": "A software-based computer that runs its own operating system on top of a physical machine.",
+      "explanation_fr": "Ordinateur logiciel qui fait tourner son propre système d’exploitation sur une machine physique.",
+      "why_it_matters_fr": "Abrégé VM : base du cloud et de l’administration système.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "virtual-machine-1",
+          "text_en": "We run the legacy app on a virtual machine.",
+          "text_fr": "Nous faisons tourner l’ancienne application sur une machine virtuelle."
+        },
+        {
+          "id": "virtual-machine-2",
+          "text_en": "A virtual machine is heavier than a container.",
+          "text_fr": "Une machine virtuelle est plus lourde qu’un conteneur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "autoscaling",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "cloud",
+        "performance"
+      ],
+      "term_en": "autoscaling",
+      "translation_fr": "mise à l’échelle automatique",
+      "part_of_speech": "noun",
+      "definition_en": "Automatically adding or removing servers or containers depending on the current load.",
+      "explanation_fr": "Ajouter ou retirer automatiquement des serveurs ou des conteneurs selon la charge du moment.",
+      "why_it_matters_fr": "Permet d’absorber un pic sans payer de serveurs inutiles le reste du temps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "autoscaling-1",
+          "text_en": "Autoscaling added three servers during the campaign.",
+          "text_fr": "La mise à l’échelle automatique a ajouté trois serveurs pendant la campagne."
+        },
+        {
+          "id": "autoscaling-2",
+          "text_en": "We set autoscaling to keep CPU usage under 70%.",
+          "text_fr": "Nous avons réglé la mise à l’échelle pour garder le CPU sous 70 %."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "load-balancer",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        },
+        {
+          "role": "network-systems",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "networking",
+        "cloud"
+      ],
+      "term_en": "load balancer",
+      "translation_fr": "répartiteur de charge",
+      "part_of_speech": "noun",
+      "definition_en": "A component that distributes incoming traffic across several servers to improve availability and performance.",
+      "explanation_fr": "Composant qui répartit le trafic entrant entre plusieurs serveurs pour améliorer la disponibilité et les performances.",
+      "why_it_matters_fr": "Brique de base de toute architecture qui doit tenir la charge.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "load-balancer-1",
+          "text_en": "The load balancer stops sending traffic to unhealthy servers.",
+          "text_fr": "Le répartiteur de charge n’envoie plus de trafic aux serveurs défaillants."
+        },
+        {
+          "id": "load-balancer-2",
+          "text_en": "We put a load balancer in front of three API instances.",
+          "text_fr": "Nous avons placé un répartiteur de charge devant trois instances de l’API."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "monitoring",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        },
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "monitoring",
+      "translation_fr": "supervision (monitoring)",
+      "part_of_speech": "noun",
+      "definition_en": "Continuously collecting and watching metrics about systems, such as CPU, errors and response time, to detect problems.",
+      "explanation_fr": "Collecter et surveiller en continu des indicateurs (CPU, erreurs, temps de réponse) pour détecter les problèmes.",
+      "why_it_matters_fr": "Sans supervision, on découvre les pannes par les utilisateurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "monitoring-1",
+          "text_en": "Our monitoring showed a spike in errors at 3 a.m.",
+          "text_fr": "Notre supervision a montré un pic d’erreurs à 3 h du matin."
+        },
+        {
+          "id": "monitoring-2",
+          "text_en": "We added monitoring on the payment service.",
+          "text_fr": "Nous avons ajouté de la supervision sur le service de paiement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "observability",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "observability",
+      "translation_fr": "observabilité",
+      "part_of_speech": "noun",
+      "definition_en": "The ability to understand what is happening inside a system from its outputs, mainly logs, metrics and traces.",
+      "explanation_fr": "Capacité à comprendre ce qui se passe dans un système à partir de ce qu’il produit : surtout logs, métriques et traces.",
+      "why_it_matters_fr": "Plus large que la supervision : on cherche à expliquer, pas seulement à alerter.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "observability-1",
+          "text_en": "Better observability helped us find the slow database query.",
+          "text_fr": "Une meilleure observabilité nous a aidés à trouver la requête lente."
+        },
+        {
+          "id": "observability-2",
+          "text_en": "Logs, metrics and traces are the three pillars of observability.",
+          "text_fr": "Logs, métriques et traces sont les trois piliers de l’observabilité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "log",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "log",
+      "translation_fr": "journal (log)",
+      "part_of_speech": "noun",
+      "definition_en": "A time-stamped record of events produced by an application or a system.",
+      "explanation_fr": "Enregistrement horodaté des événements produits par une application ou un système.",
+      "why_it_matters_fr": "Premier outil pour comprendre un bug en production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "log-1",
+          "text_en": "Check the logs to see what happened before the crash.",
+          "text_fr": "Regarde les logs pour voir ce qui s’est passé avant le plantage."
+        },
+        {
+          "id": "log-2",
+          "text_en": "Never write passwords in the logs.",
+          "text_fr": "N’écris jamais de mots de passe dans les logs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "alert",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "alert",
+      "translation_fr": "alerte",
+      "part_of_speech": "noun",
+      "definition_en": "An automatic notification sent when a metric crosses a threshold or an error occurs.",
+      "explanation_fr": "Notification automatique envoyée quand un indicateur dépasse un seuil ou qu’une erreur survient.",
+      "why_it_matters_fr": "Trop d’alertes fatiguent l’équipe : il faut bien les régler.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "alert-1",
+          "text_en": "We received an alert when the disk was 90% full.",
+          "text_fr": "Nous avons reçu une alerte quand le disque était plein à 90 %."
+        },
+        {
+          "id": "alert-2",
+          "text_en": "Too many false alerts make people ignore them.",
+          "text_fr": "Trop de fausses alertes poussent les gens à les ignorer."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "incident",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 80
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "incident",
+      "translation_fr": "incident",
+      "part_of_speech": "noun",
+      "definition_en": "An unplanned event that disrupts a service or reduces its quality, such as an outage.",
+      "explanation_fr": "Événement imprévu qui perturbe un service ou en dégrade la qualité, comme une panne.",
+      "why_it_matters_fr": "« Tell me about a production incident » : question d’entretien fréquente.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "incident-1",
+          "text_en": "The incident lasted twenty minutes and affected payments.",
+          "text_fr": "L’incident a duré vingt minutes et a touché les paiements."
+        },
+        {
+          "id": "incident-2",
+          "text_en": "We opened an incident channel to coordinate the fix.",
+          "text_fr": "Nous avons ouvert un canal d’incident pour coordonner la correction."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "outage",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 75
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "outage",
+      "translation_fr": "panne (interruption de service)",
+      "part_of_speech": "noun",
+      "definition_en": "A period when a service is unavailable to users.",
+      "explanation_fr": "Période pendant laquelle un service est indisponible pour les utilisateurs.",
+      "why_it_matters_fr": "Vocabulaire des comptes rendus et des communications aux clients.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "outage-1",
+          "text_en": "The outage was caused by an expired certificate.",
+          "text_fr": "La panne venait d’un certificat expiré."
+        },
+        {
+          "id": "outage-2",
+          "text_en": "We informed customers about the outage on our status page.",
+          "text_fr": "Nous avons informé les clients de la panne sur notre page de statut."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "on-call",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "collaboration"
+      ],
+      "term_en": "on-call",
+      "translation_fr": "d’astreinte",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes the person or the period responsible for responding to alerts and incidents outside normal hours.",
+      "explanation_fr": "Qualifie la personne ou la période chargée de répondre aux alertes et incidents en dehors des heures normales.",
+      "why_it_matters_fr": "Question à poser en entretien : comment l’astreinte est-elle organisée ?",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "on-call-1",
+          "text_en": "I am on-call this week.",
+          "text_fr": "Je suis d’astreinte cette semaine."
+        },
+        {
+          "id": "on-call-2",
+          "text_en": "The on-call engineer restarted the service at night.",
+          "text_fr": "L’ingénieur d’astreinte a redémarré le service dans la nuit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "postmortem",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "project-management",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "collaboration"
+      ],
+      "term_en": "postmortem",
+      "translation_fr": "retour d’expérience (post-mortem)",
+      "part_of_speech": "noun",
+      "definition_en": "A written review after an incident that explains what happened, why, and what will be done to prevent it, without blaming people.",
+      "explanation_fr": "Analyse écrite après un incident qui explique ce qui s’est passé, pourquoi, et ce qui sera fait pour éviter que ça recommence, sans chercher de coupable.",
+      "why_it_matters_fr": "Montre la maturité d’une équipe ; bon sujet d’entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "postmortem-1",
+          "text_en": "We wrote a blameless postmortem after the outage.",
+          "text_fr": "Nous avons rédigé un post-mortem sans reproches après la panne."
+        },
+        {
+          "id": "postmortem-2",
+          "text_en": "The postmortem listed three actions to prevent it from happening again.",
+          "text_fr": "Le post-mortem listait trois actions pour éviter que cela se reproduise."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "root-cause",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "code-quality"
+      ],
+      "term_en": "root cause",
+      "translation_fr": "cause racine",
+      "part_of_speech": "noun",
+      "definition_en": "The deepest underlying reason for a problem; fixing it prevents the problem from coming back.",
+      "explanation_fr": "La raison profonde d’un problème ; la corriger empêche le problème de revenir.",
+      "why_it_matters_fr": "On attend d’un ingénieur qu’il cherche la cause racine, pas seulement le symptôme.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "root-cause-1",
+          "text_en": "The root cause was a missing database index.",
+          "text_fr": "La cause racine était un index manquant dans la base de données."
+        },
+        {
+          "id": "root-cause-2",
+          "text_en": "Restarting the server fixed the symptom, not the root cause.",
+          "text_fr": "Redémarrer le serveur a corrigé le symptôme, pas la cause racine."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "rollback",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "rollback",
+      "translation_fr": "retour arrière (rollback)",
+      "part_of_speech": "noun",
+      "definition_en": "Returning a system to a previous working version after a failed deployment or change.",
+      "explanation_fr": "Revenir à une version précédente qui fonctionnait après un déploiement ou un changement raté.",
+      "why_it_matters_fr": "Savoir revenir en arrière vite est aussi important que déployer vite.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "rollback-1",
+          "text_en": "We did a rollback five minutes after the release.",
+          "text_fr": "Nous avons fait un retour arrière cinq minutes après la mise en ligne."
+        },
+        {
+          "id": "rollback-2",
+          "text_en": "Always prepare a rollback plan before a big deploy.",
+          "text_fr": "Prépare toujours un plan de retour arrière avant un gros déploiement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "canary-release",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "canary release",
+      "translation_fr": "déploiement canari",
+      "part_of_speech": "noun",
+      "definition_en": "Releasing a new version to a small share of users first, then to everyone if no problem appears.",
+      "explanation_fr": "Publier une nouvelle version d’abord pour une petite part des utilisateurs, puis pour tous si aucun problème n’apparaît.",
+      "why_it_matters_fr": "Technique de déploiement sûr souvent citée en entretien DevOps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "canary-release-1",
+          "text_en": "The canary release went to 5% of users first.",
+          "text_fr": "Le déploiement canari a d’abord concerné 5 % des utilisateurs."
+        },
+        {
+          "id": "canary-release-2",
+          "text_en": "Errors increased during the canary release, so we stopped it.",
+          "text_fr": "Les erreurs ont augmenté pendant le déploiement canari, nous l’avons donc arrêté."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "blue-green-deployment",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "blue-green deployment",
+      "translation_fr": "déploiement bleu-vert",
+      "part_of_speech": "noun",
+      "definition_en": "Running two identical production environments and switching traffic from the old one to the new one at once, which makes rollback instant.",
+      "explanation_fr": "Faire tourner deux environnements de production identiques et basculer le trafic de l’ancien vers le nouveau d’un coup, ce qui rend le retour arrière instantané.",
+      "why_it_matters_fr": "Autre stratégie classique de déploiement sans interruption.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "blue-green-deployment-1",
+          "text_en": "Blue-green deployment gives us zero-downtime releases.",
+          "text_fr": "Le déploiement bleu-vert nous permet des mises en ligne sans interruption."
+        },
+        {
+          "id": "blue-green-deployment-2",
+          "text_en": "If the green environment fails, we switch back to blue.",
+          "text_fr": "Si l’environnement vert échoue, nous rebasculons sur le bleu."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "downtime",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "downtime",
+      "translation_fr": "temps d’arrêt (indisponibilité)",
+      "part_of_speech": "noun",
+      "definition_en": "The time during which a system is not available.",
+      "explanation_fr": "La durée pendant laquelle un système n’est pas disponible.",
+      "why_it_matters_fr": "Le « zero downtime » est un objectif courant des déploiements.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "downtime-1",
+          "text_en": "The migration caused two minutes of downtime.",
+          "text_fr": "La migration a provoqué deux minutes d’indisponibilité."
+        },
+        {
+          "id": "downtime-2",
+          "text_en": "We schedule maintenance downtime at night.",
+          "text_fr": "Nous planifions les arrêts de maintenance la nuit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "uptime",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "uptime",
+      "translation_fr": "disponibilité (temps de fonctionnement)",
+      "part_of_speech": "noun",
+      "definition_en": "The share of time a system is running and available, often expressed as a percentage such as 99.9%.",
+      "explanation_fr": "La part du temps pendant laquelle un système fonctionne et est disponible, souvent exprimée en pourcentage, comme 99,9 %.",
+      "why_it_matters_fr": "Chiffre clé des contrats de service et des tableaux de bord.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "uptime-1",
+          "text_en": "Our API had 99.95% uptime last month.",
+          "text_fr": "Notre API a eu 99,95 % de disponibilité le mois dernier."
+        },
+        {
+          "id": "uptime-2",
+          "text_en": "Uptime is measured by an external monitoring tool.",
+          "text_fr": "La disponibilité est mesurée par un outil de supervision externe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sla",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        },
+        {
+          "role": "project-management",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "product"
+      ],
+      "term_en": "SLA",
+      "translation_fr": "accord de niveau de service (SLA)",
+      "part_of_speech": "acronym",
+      "definition_en": "Service Level Agreement: a commitment between a provider and a customer about service quality, such as availability or response time.",
+      "explanation_fr": "Service Level Agreement : engagement entre un fournisseur et un client sur la qualité de service, comme la disponibilité ou le délai de réponse.",
+      "why_it_matters_fr": "Vocabulaire des contrats et des relations clients.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sla-1",
+          "text_en": "Our SLA guarantees 99.9% availability.",
+          "text_fr": "Notre SLA garantit 99,9 % de disponibilité."
+        },
+        {
+          "id": "sla-2",
+          "text_en": "Missing the SLA means we refund part of the subscription.",
+          "text_fr": "Ne pas respecter le SLA nous oblige à rembourser une partie de l’abonnement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "high-availability",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "architecture",
+        "cloud"
+      ],
+      "term_en": "high availability",
+      "translation_fr": "haute disponibilité",
+      "part_of_speech": "noun",
+      "definition_en": "Designing a system so that it keeps working even when some of its components fail.",
+      "explanation_fr": "Concevoir un système pour qu’il continue de fonctionner même si certains composants tombent en panne.",
+      "why_it_matters_fr": "Exigence courante pour les services critiques (paiement, santé, banque).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "high-availability-1",
+          "text_en": "We run the database in high availability across two zones.",
+          "text_fr": "Nous faisons tourner la base en haute disponibilité sur deux zones."
+        },
+        {
+          "id": "high-availability-2",
+          "text_en": "High availability needs no single point of failure.",
+          "text_fr": "La haute disponibilité exige l’absence de point de défaillance unique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "backup",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "network-systems",
+          "priority": 75
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases",
+        "security"
+      ],
+      "term_en": "backup",
+      "translation_fr": "sauvegarde",
+      "part_of_speech": "noun",
+      "definition_en": "A copy of data kept separately so it can be restored if the original is lost or damaged.",
+      "explanation_fr": "Copie des données conservée à part pour pouvoir les restaurer si l’original est perdu ou abîmé.",
+      "why_it_matters_fr": "Une sauvegarde n’a de valeur que si sa restauration a été testée.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "backup-1",
+          "text_en": "We take a database backup every night.",
+          "text_fr": "Nous faisons une sauvegarde de la base chaque nuit."
+        },
+        {
+          "id": "backup-2",
+          "text_en": "We tested restoring the backup last month.",
+          "text_fr": "Nous avons testé la restauration de la sauvegarde le mois dernier."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "disaster-recovery",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "disaster recovery",
+      "translation_fr": "reprise après sinistre",
+      "part_of_speech": "noun",
+      "definition_en": "The plans and tools used to restore systems and data after a major failure, such as a data center loss or a cyberattack.",
+      "explanation_fr": "Plans et outils pour restaurer systèmes et données après une défaillance majeure, comme la perte d’un datacenter ou une cyberattaque.",
+      "why_it_matters_fr": "Sujet des entretiens seniors et des audits de sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "disaster-recovery-1",
+          "text_en": "Our disaster recovery plan restores the service in four hours.",
+          "text_fr": "Notre plan de reprise après sinistre rétablit le service en quatre heures."
+        },
+        {
+          "id": "disaster-recovery-2",
+          "text_en": "We run a disaster recovery drill twice a year.",
+          "text_fr": "Nous faisons un exercice de reprise après sinistre deux fois par an."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cdn",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "networking",
+        "performance"
+      ],
+      "term_en": "CDN",
+      "translation_fr": "réseau de diffusion de contenu (CDN)",
+      "part_of_speech": "acronym",
+      "definition_en": "Content Delivery Network: a network of servers around the world that stores copies of files close to users so they load faster.",
+      "explanation_fr": "Content Delivery Network : réseau de serveurs dans le monde qui garde des copies des fichiers près des utilisateurs pour qu’ils se chargent plus vite.",
+      "why_it_matters_fr": "Clé de la rapidité pour des utilisateurs éloignés des serveurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cdn-1",
+          "text_en": "Images are served from a CDN close to our users.",
+          "text_fr": "Les images sont servies par un CDN proche de nos utilisateurs."
+        },
+        {
+          "id": "cdn-2",
+          "text_en": "The CDN reduced page load time in West Africa.",
+          "text_fr": "Le CDN a réduit le temps de chargement en Afrique de l’Ouest."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "reverse-proxy",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "networking",
+        "architecture"
+      ],
+      "term_en": "reverse proxy",
+      "translation_fr": "proxy inverse",
+      "part_of_speech": "noun",
+      "definition_en": "A server that receives client requests and forwards them to backend servers, often also handling HTTPS, caching or load balancing.",
+      "explanation_fr": "Serveur qui reçoit les requêtes des clients et les transmet aux serveurs internes, en gérant souvent aussi le HTTPS, le cache ou la répartition de charge.",
+      "why_it_matters_fr": "Nginx en est l’exemple le plus connu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "reverse-proxy-1",
+          "text_en": "Nginx works as a reverse proxy in front of our API.",
+          "text_fr": "Nginx sert de proxy inverse devant notre API."
+        },
+        {
+          "id": "reverse-proxy-2",
+          "text_en": "The reverse proxy handles the SSL certificates.",
+          "text_fr": "Le proxy inverse gère les certificats SSL."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "region",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "cloud"
+      ],
+      "term_en": "region",
+      "translation_fr": "région (cloud)",
+      "part_of_speech": "noun",
+      "definition_en": "A geographic area where a cloud provider has data centers, such as Europe West or Africa South.",
+      "explanation_fr": "Zone géographique où un fournisseur cloud possède des datacenters, comme Europe Ouest ou Afrique du Sud.",
+      "why_it_matters_fr": "Le choix de la région joue sur la latence, le coût et la loi applicable aux données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "region-1",
+          "text_en": "We host the app in a region close to our users.",
+          "text_fr": "Nous hébergeons l’app dans une région proche de nos utilisateurs."
+        },
+        {
+          "id": "region-2",
+          "text_en": "The new region reduced latency for Nigerian customers.",
+          "text_fr": "La nouvelle région a réduit la latence pour les clients nigérians."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "secret",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "secret",
+      "translation_fr": "secret (donnée sensible)",
+      "part_of_speech": "noun",
+      "definition_en": "Sensitive information such as a password, an API key or a certificate that must be stored and shared securely.",
+      "explanation_fr": "Information sensible (mot de passe, clé d’API, certificat) qui doit être stockée et partagée de façon sécurisée.",
+      "why_it_matters_fr": "Un secret exposé sur GitHub est l’une des fuites les plus fréquentes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "secret-1",
+          "text_en": "Store secrets in a secret manager, not in the repository.",
+          "text_fr": "Stocke les secrets dans un gestionnaire de secrets, pas dans le dépôt."
+        },
+        {
+          "id": "secret-2",
+          "text_en": "We rotated the secret after it leaked.",
+          "text_fr": "Nous avons changé le secret après sa fuite."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "yaml",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "general-tech",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "ci-cd",
+        "programming"
+      ],
+      "term_en": "YAML",
+      "translation_fr": "YAML",
+      "part_of_speech": "acronym",
+      "definition_en": "A human-readable text format for configuration files, based on indentation, used by many CI/CD and Kubernetes tools.",
+      "explanation_fr": "Format texte lisible pour les fichiers de configuration, fondé sur l’indentation, utilisé par beaucoup d’outils CI/CD et Kubernetes.",
+      "why_it_matters_fr": "Une indentation fausse en YAML casse une configuration : erreur très courante.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "yaml-1",
+          "text_en": "The pipeline is defined in a YAML file.",
+          "text_fr": "Le pipeline est défini dans un fichier YAML."
+        },
+        {
+          "id": "yaml-2",
+          "text_en": "A wrong indentation in the YAML broke the deployment.",
+          "text_fr": "Une mauvaise indentation dans le YAML a cassé le déploiement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "artifact",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "artifact",
+      "translation_fr": "artefact (de build)",
+      "part_of_speech": "noun",
+      "definition_en": "A file produced by a build, such as a compiled app, a package or a container image, stored to be deployed later.",
+      "explanation_fr": "Fichier produit par un build (application compilée, paquet, image de conteneur) conservé pour être déployé plus tard.",
+      "why_it_matters_fr": "Notion centrale des pipelines CI/CD.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "artifact-1",
+          "text_en": "The pipeline stores the build artifact for each version.",
+          "text_fr": "Le pipeline conserve l’artefact de build de chaque version."
+        },
+        {
+          "id": "artifact-2",
+          "text_en": "We deploy the same artifact to staging and production.",
+          "text_fr": "Nous déployons le même artefact en préproduction et en production."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bottleneck",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "performance"
+      ],
+      "term_en": "bottleneck",
+      "translation_fr": "goulot d’étranglement",
+      "part_of_speech": "noun",
+      "definition_en": "The part of a system whose limited capacity slows down the whole process.",
+      "explanation_fr": "La partie d’un système dont la capacité limitée ralentit l’ensemble.",
+      "why_it_matters_fr": "Pour optimiser, il faut d’abord trouver le goulot, sinon on travaille au mauvais endroit.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bottleneck-1",
+          "text_en": "The database is the main bottleneck of our application.",
+          "text_fr": "La base de données est le principal goulot d’étranglement de notre application."
+        },
+        {
+          "id": "bottleneck-2",
+          "text_en": "Profiling showed that image resizing was the bottleneck.",
+          "text_fr": "Le profilage a montré que le redimensionnement des images était le goulot d’étranglement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sre",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "collaboration"
+      ],
+      "term_en": "SRE",
+      "translation_fr": "ingénierie de la fiabilité des sites (SRE)",
+      "part_of_speech": "acronym",
+      "definition_en": "Site Reliability Engineering: an approach that applies software engineering to operations to make systems reliable and scalable.",
+      "explanation_fr": "Site Reliability Engineering : approche qui applique le génie logiciel à l’exploitation pour rendre les systèmes fiables et scalables.",
+      "why_it_matters_fr": "Titre de poste fréquent dans les grandes entreprises tech.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sre-1",
+          "text_en": "Our SRE team defines reliability targets for each service.",
+          "text_fr": "Notre équipe SRE fixe des objectifs de fiabilité pour chaque service."
+        },
+        {
+          "id": "sre-2",
+          "text_en": "SRE engineers automate repetitive operations work.",
+          "text_fr": "Les ingénieurs SRE automatisent les tâches d’exploitation répétitives."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "configuration-management",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "ci-cd",
+        "operating-systems"
+      ],
+      "term_en": "configuration management",
+      "translation_fr": "gestion de configuration",
+      "part_of_speech": "noun",
+      "definition_en": "Keeping the settings of servers and software consistent and documented, usually with automation tools like Ansible.",
+      "explanation_fr": "Garder les réglages des serveurs et logiciels cohérents et documentés, généralement avec des outils d’automatisation comme Ansible.",
+      "why_it_matters_fr": "Évite les serveurs « configurés à la main » que personne ne sait reproduire.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "configuration-management-1",
+          "text_en": "Configuration management keeps all our servers identical.",
+          "text_fr": "La gestion de configuration garde tous nos serveurs identiques."
+        },
+        {
+          "id": "configuration-management-2",
+          "text_en": "We use Ansible for configuration management.",
+          "text_fr": "Nous utilisons Ansible pour la gestion de configuration."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}

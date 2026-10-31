@@ -1,0 +1,869 @@
+{
+  "role": "network-systems",
+  "terms": [
+    {
+      "id": "firewall",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 85
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 90
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "firewall",
+      "translation_fr": "pare-feu",
+      "part_of_speech": "noun",
+      "definition_en": "A security system that monitors and filters network traffic according to defined rules.",
+      "explanation_fr": "Système de sécurité qui surveille et filtre le trafic réseau selon des règles définies.",
+      "why_it_matters_fr": "Première ligne de défense d’un réseau, vocabulaire de base du métier.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "firewall-1",
+          "text_en": "The firewall blocks all incoming traffic except ports 80 and 443.",
+          "text_fr": "Le pare-feu bloque tout le trafic entrant sauf les ports 80 et 443."
+        },
+        {
+          "id": "firewall-2",
+          "text_en": "I opened port 5432 in the firewall for the database server.",
+          "text_fr": "J’ai ouvert le port 5432 dans le pare-feu pour le serveur de base de données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "vpn",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking",
+        "security"
+      ],
+      "term_en": "VPN",
+      "translation_fr": "réseau privé virtuel (VPN)",
+      "part_of_speech": "acronym",
+      "definition_en": "Virtual Private Network: an encrypted connection that lets a device access a private network securely over the internet.",
+      "explanation_fr": "Virtual Private Network : connexion chiffrée qui permet à un appareil d’accéder à un réseau privé de façon sûre via internet.",
+      "why_it_matters_fr": "Indispensable pour le télétravail en entreprise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "vpn-1",
+          "text_en": "Connect to the VPN to access the internal servers.",
+          "text_fr": "Connecte-toi au VPN pour accéder aux serveurs internes."
+        },
+        {
+          "id": "vpn-2",
+          "text_en": "The VPN encrypts all traffic between your laptop and the office.",
+          "text_fr": "Le VPN chiffre tout le trafic entre ton ordinateur et le bureau."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dns",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 90
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "DNS",
+      "translation_fr": "DNS (système de noms de domaine)",
+      "part_of_speech": "acronym",
+      "definition_en": "Domain Name System: the system that translates domain names such as example.com into IP addresses.",
+      "explanation_fr": "Domain Name System : système qui traduit les noms de domaine (example.com) en adresses IP.",
+      "why_it_matters_fr": "« It’s always DNS » : cause classique de pannes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dns-1",
+          "text_en": "The site was down because the DNS record pointed to the wrong IP.",
+          "text_fr": "Le site était hors ligne car l’enregistrement DNS pointait vers la mauvaise IP."
+        },
+        {
+          "id": "dns-2",
+          "text_en": "DNS changes can take a few hours to propagate.",
+          "text_fr": "Les modifications DNS peuvent mettre quelques heures à se propager."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ip-address",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 85
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "IP address",
+      "translation_fr": "adresse IP",
+      "part_of_speech": "noun",
+      "definition_en": "A numeric label that identifies a device on a network, such as 192.168.1.10.",
+      "explanation_fr": "Identifiant numérique d’un appareil sur un réseau, par exemple 192.168.1.10.",
+      "why_it_matters_fr": "Base absolue du vocabulaire réseau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ip-address-1",
+          "text_en": "The printer has a fixed IP address.",
+          "text_fr": "L’imprimante a une adresse IP fixe."
+        },
+        {
+          "id": "ip-address-2",
+          "text_en": "We blocked the IP address that sent the attack.",
+          "text_fr": "Nous avons bloqué l’adresse IP qui envoyait l’attaque."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bandwidth",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 85
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 30
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "networking",
+        "performance"
+      ],
+      "term_en": "bandwidth",
+      "translation_fr": "bande passante",
+      "part_of_speech": "noun",
+      "definition_en": "The maximum amount of data that can be transferred over a network connection in a given time.",
+      "explanation_fr": "Quantité maximale de données qu’une connexion réseau peut transférer en un temps donné.",
+      "why_it_matters_fr": "À ne pas confondre avec la latence : débit contre délai.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bandwidth-1",
+          "text_en": "Video calls use a lot of bandwidth.",
+          "text_fr": "Les appels vidéo consomment beaucoup de bande passante."
+        },
+        {
+          "id": "bandwidth-2",
+          "text_en": "We compressed images to save bandwidth on mobile networks.",
+          "text_fr": "Nous avons compressé les images pour économiser la bande passante sur les réseaux mobiles."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "router",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "router",
+      "translation_fr": "routeur",
+      "part_of_speech": "noun",
+      "definition_en": "A device that forwards data between networks, for example between a local network and the internet.",
+      "explanation_fr": "Équipement qui achemine les données entre des réseaux, par exemple entre le réseau local et internet.",
+      "why_it_matters_fr": "Matériel central de tout réseau d’entreprise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "router-1",
+          "text_en": "Restart the router if the connection drops.",
+          "text_fr": "Redémarre le routeur si la connexion coupe."
+        },
+        {
+          "id": "router-2",
+          "text_en": "The router sends traffic to the right network.",
+          "text_fr": "Le routeur envoie le trafic vers le bon réseau."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "switch",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "switch",
+      "translation_fr": "commutateur (switch)",
+      "part_of_speech": "noun",
+      "definition_en": "A device that connects devices inside a local network and sends data only to the device it is meant for.",
+      "explanation_fr": "Équipement qui relie les appareils d’un réseau local et n’envoie les données qu’à l’appareil destinataire.",
+      "why_it_matters_fr": "Avec le routeur, l’équipement réseau le plus courant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "switch-1",
+          "text_en": "We added a switch to connect the new offices.",
+          "text_fr": "Nous avons ajouté un switch pour connecter les nouveaux bureaux."
+        },
+        {
+          "id": "switch-2",
+          "text_en": "A faulty switch cut the network on the second floor.",
+          "text_fr": "Un switch défectueux a coupé le réseau du deuxième étage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "lan",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "LAN",
+      "translation_fr": "réseau local (LAN)",
+      "part_of_speech": "acronym",
+      "definition_en": "Local Area Network: a network that connects devices in a limited area, such as an office or a home.",
+      "explanation_fr": "Local Area Network : réseau qui relie des appareils dans une zone limitée, comme un bureau ou une maison.",
+      "why_it_matters_fr": "Notion de base des certifications réseau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "lan-1",
+          "text_en": "All computers in the office are on the same LAN.",
+          "text_fr": "Tous les ordinateurs du bureau sont sur le même réseau local."
+        },
+        {
+          "id": "lan-2",
+          "text_en": "The file server is only reachable from the LAN.",
+          "text_fr": "Le serveur de fichiers n’est accessible que depuis le réseau local."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "subnet",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "subnet",
+      "translation_fr": "sous-réseau",
+      "part_of_speech": "noun",
+      "definition_en": "A logical subdivision of an IP network, used to organize and isolate groups of devices.",
+      "explanation_fr": "Subdivision logique d’un réseau IP, qui sert à organiser et isoler des groupes d’appareils.",
+      "why_it_matters_fr": "Indispensable pour configurer un réseau cloud ou d’entreprise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "subnet-1",
+          "text_en": "The database runs in a private subnet.",
+          "text_fr": "La base de données tourne dans un sous-réseau privé."
+        },
+        {
+          "id": "subnet-2",
+          "text_en": "We put the guest Wi-Fi on a separate subnet.",
+          "text_fr": "Nous avons mis le Wi-Fi invités sur un sous-réseau séparé."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "port",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "port",
+      "translation_fr": "port",
+      "part_of_speech": "noun",
+      "definition_en": "A number that identifies a specific service on a device, such as 443 for HTTPS or 22 for SSH.",
+      "explanation_fr": "Numéro qui identifie un service précis sur un appareil, comme 443 pour HTTPS ou 22 pour SSH.",
+      "why_it_matters_fr": "« Port already in use » : erreur rencontrée par tous les développeurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "port-1",
+          "text_en": "The web server listens on port 443.",
+          "text_fr": "Le serveur web écoute sur le port 443."
+        },
+        {
+          "id": "port-2",
+          "text_en": "Close the ports you do not need.",
+          "text_fr": "Ferme les ports dont tu n’as pas besoin."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "protocol",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "protocol",
+      "translation_fr": "protocole",
+      "part_of_speech": "noun",
+      "definition_en": "A set of rules that defines how devices communicate, such as HTTP, TCP or SMTP.",
+      "explanation_fr": "Ensemble de règles qui définit comment des appareils communiquent, comme HTTP, TCP ou SMTP.",
+      "why_it_matters_fr": "On compare souvent les protocoles en entretien (TCP contre UDP, par exemple).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "protocol-1",
+          "text_en": "HTTP is the protocol of the web.",
+          "text_fr": "HTTP est le protocole du web."
+        },
+        {
+          "id": "protocol-2",
+          "text_en": "The two systems use different protocols to exchange data.",
+          "text_fr": "Les deux systèmes utilisent des protocoles différents pour échanger des données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "tcp-udp",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "TCP and UDP",
+      "translation_fr": "TCP et UDP",
+      "part_of_speech": "acronym",
+      "definition_en": "Two transport protocols: TCP guarantees ordered, reliable delivery; UDP is faster but does not guarantee delivery.",
+      "explanation_fr": "Deux protocoles de transport : TCP garantit une livraison fiable et ordonnée ; UDP est plus rapide mais ne garantit pas la livraison.",
+      "why_it_matters_fr": "Question classique d’entretien réseau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "tcp-udp-1",
+          "text_en": "Video calls often use UDP because speed matters more than perfect delivery.",
+          "text_fr": "Les appels vidéo utilisent souvent UDP car la vitesse compte plus qu’une livraison parfaite."
+        },
+        {
+          "id": "tcp-udp-2",
+          "text_en": "File transfers use TCP to make sure nothing is lost.",
+          "text_fr": "Les transferts de fichiers utilisent TCP pour que rien ne se perde."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "packet",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "packet",
+      "translation_fr": "paquet",
+      "part_of_speech": "noun",
+      "definition_en": "A small unit of data sent over a network; large messages are split into many packets.",
+      "explanation_fr": "Petite unité de données envoyée sur un réseau ; les gros messages sont découpés en de nombreux paquets.",
+      "why_it_matters_fr": "On parle de perte de paquets pour expliquer un réseau instable.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "packet-1",
+          "text_en": "Packet loss made the video call choppy.",
+          "text_fr": "La perte de paquets a rendu l’appel vidéo saccadé."
+        },
+        {
+          "id": "packet-2",
+          "text_en": "The firewall inspects each packet.",
+          "text_fr": "Le pare-feu inspecte chaque paquet."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dhcp",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "DHCP",
+      "translation_fr": "DHCP (attribution automatique d’adresses)",
+      "part_of_speech": "acronym",
+      "definition_en": "Dynamic Host Configuration Protocol: a service that automatically gives IP addresses and network settings to devices.",
+      "explanation_fr": "Dynamic Host Configuration Protocol : service qui attribue automatiquement adresses IP et paramètres réseau aux appareils.",
+      "why_it_matters_fr": "Explique pourquoi un appareil obtient une adresse dès qu’il se connecte.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dhcp-1",
+          "text_en": "The DHCP server gives each laptop an IP address.",
+          "text_fr": "Le serveur DHCP attribue une adresse IP à chaque ordinateur portable."
+        },
+        {
+          "id": "dhcp-2",
+          "text_en": "Phones could not connect because the DHCP pool was full.",
+          "text_fr": "Les téléphones ne pouvaient pas se connecter car la plage DHCP était pleine."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ssh",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "networking",
+        "security"
+      ],
+      "term_en": "SSH",
+      "translation_fr": "SSH (connexion sécurisée à distance)",
+      "part_of_speech": "acronym",
+      "definition_en": "Secure Shell: a protocol for connecting securely to a remote computer and running commands on it.",
+      "explanation_fr": "Secure Shell : protocole pour se connecter de façon sécurisée à un ordinateur distant et y lancer des commandes.",
+      "why_it_matters_fr": "Outil quotidien des administrateurs et des DevOps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ssh-1",
+          "text_en": "I connected to the server over SSH to read the logs.",
+          "text_fr": "Je me suis connecté au serveur en SSH pour lire les logs."
+        },
+        {
+          "id": "ssh-2",
+          "text_en": "Use SSH keys instead of passwords.",
+          "text_fr": "Utilise des clés SSH plutôt que des mots de passe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "operating-system",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "operating system",
+      "translation_fr": "système d’exploitation",
+      "part_of_speech": "noun",
+      "definition_en": "The core software that manages a computer’s hardware and runs applications, such as Windows, Linux, Android or iOS.",
+      "explanation_fr": "Logiciel de base qui gère le matériel d’un ordinateur et fait tourner les applications : Windows, Linux, Android, iOS…",
+      "why_it_matters_fr": "Abrégé OS ; vocabulaire de base de toute la tech.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "operating-system-1",
+          "text_en": "Our servers run on a Linux operating system.",
+          "text_fr": "Nos serveurs tournent sous un système d’exploitation Linux."
+        },
+        {
+          "id": "operating-system-2",
+          "text_en": "Update the operating system to get the latest security fixes.",
+          "text_fr": "Mets à jour le système d’exploitation pour avoir les derniers correctifs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "server",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "backend"
+      ],
+      "term_en": "server",
+      "translation_fr": "serveur",
+      "part_of_speech": "noun",
+      "definition_en": "A computer or program that provides data or services to other computers, called clients.",
+      "explanation_fr": "Ordinateur ou programme qui fournit des données ou des services à d’autres ordinateurs, appelés clients.",
+      "why_it_matters_fr": "Mot de base de toute conversation technique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "server-1",
+          "text_en": "The server is down, so the app cannot load data.",
+          "text_fr": "Le serveur est hors service, l’app ne peut donc pas charger les données."
+        },
+        {
+          "id": "server-2",
+          "text_en": "We added more memory to the server.",
+          "text_fr": "Nous avons ajouté de la mémoire au serveur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "active-directory",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "security"
+      ],
+      "term_en": "Active Directory",
+      "translation_fr": "Active Directory",
+      "part_of_speech": "noun",
+      "definition_en": "Microsoft’s directory service that manages users, computers and permissions in a company network.",
+      "explanation_fr": "Service d’annuaire de Microsoft qui gère utilisateurs, ordinateurs et droits dans un réseau d’entreprise.",
+      "why_it_matters_fr": "Très présent dans les offres d’administrateur systèmes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "active-directory-1",
+          "text_en": "I created the new employee’s account in Active Directory.",
+          "text_fr": "J’ai créé le compte du nouvel employé dans Active Directory."
+        },
+        {
+          "id": "active-directory-2",
+          "text_en": "Active Directory controls who can access the shared folders.",
+          "text_fr": "Active Directory contrôle qui peut accéder aux dossiers partagés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "helpdesk",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "collaboration",
+        "operating-systems"
+      ],
+      "term_en": "help desk",
+      "translation_fr": "support informatique (helpdesk)",
+      "part_of_speech": "noun",
+      "definition_en": "The service that answers users’ technical questions and solves their IT problems.",
+      "explanation_fr": "Service qui répond aux questions techniques des utilisateurs et résout leurs problèmes informatiques.",
+      "why_it_matters_fr": "Porte d’entrée fréquente vers les métiers systèmes et réseaux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "helpdesk-1",
+          "text_en": "Contact the help desk if you cannot log in.",
+          "text_fr": "Contacte le support informatique si tu ne peux pas te connecter."
+        },
+        {
+          "id": "helpdesk-2",
+          "text_en": "I worked at the help desk for two years.",
+          "text_fr": "J’ai travaillé au support informatique pendant deux ans."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ticket",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        },
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "project-management",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "collaboration"
+      ],
+      "term_en": "ticket",
+      "translation_fr": "ticket",
+      "part_of_speech": "noun",
+      "definition_en": "A tracked request or issue in a support or project tool, such as a bug report or a task.",
+      "explanation_fr": "Demande ou problème suivi dans un outil de support ou de gestion de projet, comme un rapport de bug ou une tâche.",
+      "why_it_matters_fr": "« I’ll open a ticket » : phrase du quotidien dans toutes les équipes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ticket-1",
+          "text_en": "I opened a ticket for the broken printer.",
+          "text_fr": "J’ai ouvert un ticket pour l’imprimante en panne."
+        },
+        {
+          "id": "ticket-2",
+          "text_en": "This ticket is assigned to the backend team.",
+          "text_fr": "Ce ticket est attribué à l’équipe back-end."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "troubleshoot",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "monitoring"
+      ],
+      "term_en": "troubleshoot",
+      "translation_fr": "diagnostiquer et dépanner",
+      "part_of_speech": "verb",
+      "definition_en": "To find the cause of a technical problem step by step and fix it.",
+      "explanation_fr": "Trouver pas à pas la cause d’un problème technique et le corriger.",
+      "why_it_matters_fr": "Compétence clé demandée en entretien : décris ta méthode.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "troubleshoot-1",
+          "text_en": "I troubleshot the network issue by checking each cable.",
+          "text_fr": "J’ai diagnostiqué le problème réseau en vérifiant chaque câble."
+        },
+        {
+          "id": "troubleshoot-2",
+          "text_en": "Start troubleshooting by reading the error message.",
+          "text_fr": "Commence le dépannage en lisant le message d’erreur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}
