@@ -1,29 +1,22 @@
-import { CheckCircle2, Download, EllipsisVertical, Feather, Lock, Plus, Share, Smartphone, WifiOff } from 'lucide-react';
+import { CheckCircle2, Download, EllipsisVertical, Feather, Lock, Plus, Share, WifiOff } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
 import { canPromptInstall, isIOS, isStandalone, onInstallChange, promptInstall } from '@/lib/install';
 
 const DISMISS_KEY = 'techlingo.installDismissedAt';
-const APK_URL = '/download/techlingo-android.apk';
 const isAndroid = () => /android/i.test(navigator.userAgent);
 const isNativeShell = () => !!(window as { Capacitor?: unknown }).Capacitor;
 
-/** Install card shown on the first web visit (PWA prompt, iPhone steps, optional APK). */
+/** Install card shown on the first web visit (PWA prompt or manual steps per platform). */
 export function InstallSheet() {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [, force] = useState(0);
-  const [apk, setApk] = useState(false);
 
   useEffect(() => {
     if (isStandalone() || isNativeShell()) return;
     try { if (Date.now() - Number(localStorage.getItem(DISMISS_KEY) ?? 0) < 3 * 86_400_000) return; } catch { /* storage unavailable */ }
-    if (isAndroid()) {
-      fetch(APK_URL, { method: 'HEAD', cache: 'no-store' })
-        .then((r) => setApk(r.ok && !(r.headers.get('content-type') ?? '').includes('text/html')))
-        .catch(() => setApk(false));
-    }
     const timer = setTimeout(() => setOpen(true), 2500);
     const off = onInstallChange(() => force((n) => n + 1));
     return () => { clearTimeout(timer); off(); };
@@ -72,14 +65,6 @@ export function InstallSheet() {
               </li>
             ))}
           </ol>
-        )}
-        {apk && (
-          <>
-            <a href={APK_URL} download className="mt-2 flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border-2 border-line font-bold text-ocean">
-              <Smartphone size={20} aria-hidden />{t('install.apk')}
-            </a>
-            <p className="mt-1.5 text-center text-xs text-ink-2">{t('install.apkNote')}</p>
-          </>
         )}
         <button type="button" onClick={close} className="mt-2 min-h-11 w-full font-bold text-ocean">{t('install.later')}</button>
       </div>
