@@ -235,7 +235,7 @@ function render() {
   const bar = $('#tabbar');
   bar.hidden = !tab;
   if (tab) {
-    bar.innerHTML = `<div class="brand-side">${avatarOf(32).replace(avatarColor(), '#0284C7')}TechLingo</div>` + TABS.map((t) => `<button data-a="tab" data-v="${t.r}" class="${t.r === name ? 'on' : ''}" aria-label="${t.label}" ${t.r === name ? 'aria-current="page"' : ''}><span class="pill">${icon(t.ic, 24)}</span><span>${t.label}</span></button>`).join('');
+    bar.innerHTML = `<div class="brand-side"><img src="icons/icon.svg" width="32" height="32" alt="">TechLingo</div>` + TABS.map((t) => `<button data-a="tab" data-v="${t.r}" class="${t.r === name ? 'on' : ''}" aria-label="${t.label}" ${t.r === name ? 'aria-current="page"' : ''}><span class="pill">${icon(t.ic, 24)}</span><span>${t.label}</span></button>`).join('');
   }
   const after = AFTER[name];
   if (after) after(a, b);
@@ -892,6 +892,52 @@ VIEWS.faq = () => `${navbar('Aide et FAQ', '/profile')}
   <div class="group faq">${FAQ.map(([q, a], i) => `<div><button class="row" data-a="faq" data-v="${i}" aria-expanded="${FQ === i}"><span class="t"><b>${esc(q)}</b></span>${icon('chev', 20, 'chev')}</button>${FQ === i ? `<p class="faq-a">${esc(a)}</p>` : ''}</div>`).join('')}</div>`;
 
 // =============================================================================
+// Carte d'installation : PWA (Android/ordinateur), guide iOS, APK en option
+// =============================================================================
+const INSTALL_KEY = 'techlingo.installDismissedAt';
+const APK_URL = 'download/techlingo-android.apk';
+const isIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const isAndroid = () => /android/i.test(navigator.userAgent);
+let apkAvailable = false;
+async function checkApk() {
+  if (!/^https?:$/.test(location.protocol)) return;
+  try {
+    const r = await fetch(APK_URL, { method: 'HEAD', cache: 'no-store' });
+    apkAvailable = r.ok && !/text\/html/.test(r.headers.get('content-type') || '');
+  } catch (e) { apkAvailable = false; }
+}
+function installSheet(force = false) {
+  if (isStandalone()) { if (force) toast('TechLingo est déjà installé', 'checkCircle'); return; }
+  if (!force) { try { if (Date.now() - (+localStorage.getItem(INSTALL_KEY) || 0) < 3 * DAY) return; } catch (e) { /* stockage indisponible */ } }
+  let action;
+  if (deferredInstall) {
+    action = `<button class="btn" data-a="doInstall">${icon('download', 20)} Installer l’application</button>`;
+  } else if (isIOS()) {
+    action = `<ol class="steps"><li><span>Touche <b>Partager</b> dans Safari</span>${icon('iosShare', 22)}</li>
+      <li><span>Choisis <b>Sur l’écran d’accueil</b></span>${icon('plus', 22)}</li><li><span>Touche <b>Ajouter</b></span>${icon('checkCircle', 22)}</li></ol>`;
+  } else if (isAndroid()) {
+    action = `<ol class="steps"><li><span>Ouvre le menu du navigateur</span>${icon('menu', 22)}</li>
+      <li><span>Choisis <b>Installer l’application</b> ou <b>Ajouter à l’écran d’accueil</b></span>${icon('download', 22)}</li></ol>`;
+  } else {
+    action = `<ol class="steps"><li><span>Clique sur l’icône d’installation dans la barre d’adresse</span>${icon('download', 22)}</li><li><span>Confirme avec <b>Installer</b></span>${icon('checkCircle', 22)}</li></ol>`;
+  }
+  const apk = isAndroid() && apkAvailable
+    ? `<a class="btn ghost" style="margin-top:10px" href="${APK_URL}" download>${icon('phone', 20)} Télécharger l’APK Android</a>
+       <p class="note">L’APK s’installe hors Play Store : Android te demandera d’autoriser cette source.</p>` : '';
+  $('#sheet-root').innerHTML = `<div class="inst-backdrop" data-a="closeInstall"></div>
+    <div class="inst" role="dialog" aria-modal="true" aria-labelledby="instTitle"><div class="grab"></div>
+      <div class="head"><img src="icons/icon-192.png" alt=""><div><h2 id="instTitle">Installe TechLingo</h2><p>Ouvre l’app en un geste depuis ton écran d’accueil.</p></div></div>
+      <div class="perks"><span>${icon('feather', 16)} Ultra légère</span><span>${icon('wifiOff', 16)} Marche hors ligne</span><span>${icon('lock', 16)} Sans compte en ligne</span></div>
+      ${action}${apk}
+      <button class="text-btn later" data-a="closeInstall">Plus tard</button></div>`;
+  const first = $('.inst .btn, .inst .text-btn'); if (first) first.focus({ preventScroll: true });
+}
+function closeInstall() {
+  try { localStorage.setItem(INSTALL_KEY, String(Date.now())); } catch (e) { /* stockage indisponible */ }
+  $('#sheet-root').innerHTML = '';
+}
+
+// =============================================================================
 // Thème, actions, démarrage
 // =============================================================================
 function applyTheme() {
@@ -946,9 +992,15 @@ const ACTIONS = {
   copyBackup: () => copyBackup(),
   shareBackup: () => shareBackup(),
   restoreBackup: () => restoreBackup(),
-  install: async () => {
-    if (deferredInstall) { deferredInstall.prompt(); await deferredInstall.userChoice; deferredInstall = null; redraw(); }
-    else toast('Menu du navigateur, puis « Installer l’application »', 'download');
+  install: () => installSheet(true),
+  closeInstall: () => closeInstall(),
+  doInstall: async () => {
+    if (!deferredInstall) return;
+    deferredInstall.prompt();
+    const choice = await deferredInstall.userChoice;
+    deferredInstall = null; closeInstall();
+    if (choice && choice.outcome === 'accepted') toast('Installation en cours', 'download');
+    redraw();
   },
   reset: () => {
     if (!confirm('Supprimer ton profil, tes XP et tes mots appris de cet appareil ? Cette action est définitive.')) return;
@@ -966,6 +1018,7 @@ document.addEventListener('click', (e) => {
   if (fn) fn(el.dataset.v);
 });
 document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && $('.inst')) closeInstall();
   if (e.key === 'Enter' && e.target.id === 'nm') e.target.blur();
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.flash')) { e.preventDefault(); ACTIONS.flip(); }
 });
@@ -974,8 +1027,8 @@ document.addEventListener('input', (e) => {
   if (e.target.id === 'nm') { S.name = e.target.value.trim().slice(0, 24); save(); const b = $('#setupBtn'); if (b) b.disabled = !(S.name && S.goal); }
 });
 window.addEventListener('hashchange', render);
-window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredInstall = e; if ((routePath()[0] || 'home') === 'home') redraw(); });
-window.addEventListener('appinstalled', () => { deferredInstall = null; toast('TechLingo est installé', 'checkCircle'); });
+window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredInstall = e; if ($('.inst')) installSheet(true); else if ((routePath()[0] || 'home') === 'home') redraw(); });
+window.addEventListener('appinstalled', () => { deferredInstall = null; closeInstall(); toast('TechLingo est installé', 'checkCircle'); });
 document.addEventListener('visibilitychange', () => { if (document.hidden && 'speechSynthesis' in window) speechSynthesis.cancel(); });
 matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => { if (S.settings.dark == null) { applyTheme(); redraw(); } });
 
@@ -988,7 +1041,9 @@ checkBadges();
 // Écran de chargement : affiché au plus 1,3 s
 (function hideBoot() {
   const boot = $('#boot'); if (!boot) return;
-  setTimeout(() => { boot.classList.add('out'); setTimeout(() => boot.remove(), 400); }, Math.max(150, 1300 - performance.now()));
+  setTimeout(() => { boot.classList.add('out'); setTimeout(() => boot.remove(), 400); }, Math.max(150, 1500 - performance.now()));
+  // Carte d'installation proposée à la première visite web
+  checkApk().finally(() => setTimeout(() => installSheet(), 2200));
   try { const SS = cap('SplashScreen'); if (SS) SS.hide(); } catch (e) { /* web */ }
 })();
 

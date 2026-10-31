@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>TechLingo — Speak Tech. Think Global.</title>
-  <meta name="description" content="Apprends l'anglais technique : DevOps, web, mobile, réseaux, systèmes. Prépare tes entretiens de développeur.">
-  <meta name="theme-color" content="#F5F8FB">
+  <meta name="description" content="L'anglais technique de ton métier : un mot par jour, la prononciation, des quiz et la préparation aux entretiens. Gratuit, léger, hors ligne.">
+  <meta name="theme-color" content="#EAF6FF">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="TechLingo">
   <meta name="format-detection" content="telephone=no">
+  <meta property="og:title" content="TechLingo — Speak Tech. Think Global.">
+  <meta property="og:description" content="L'anglais technique de ton métier, en 5 minutes par jour.">
+  <meta property="og:image" content="store/play-feature-graphic-1024x500.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="preload" href="fonts/DMSans-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/DMSans-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Nunito-900-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="style.css">
   <script>
@@ -31,34 +36,24 @@
     <main id="app" aria-live="polite"></main>
     <nav id="tabbar" aria-label="Navigation principale" hidden></nav>
     <div id="toast" role="status"></div>
+    <div id="sheet-root"></div>
     <canvas id="confetti" aria-hidden="true"></canvas>
 
-    <!-- Écran de chargement animé -->
+    <!-- Écran de chargement -->
     <div id="boot" aria-hidden="true">
-      <div class="boot-logo">
-        <svg viewBox="0 0 1024 1024" width="150" height="150">
-          <defs>
-            <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#0369A1"/></linearGradient>
-            <radialGradient id="gl1" cx=".28" cy=".2" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-          </defs>
-          <rect class="b-tile" width="1024" height="1024" rx="230" fill="url(#bg1)"/>
-          <rect width="1024" height="1024" rx="230" fill="url(#gl1)"/>
-          <g class="b-mark" transform="translate(512 520) scale(.92) translate(-512 -512)">
-            <line x1="512" y1="292" x2="512" y2="222" stroke="#fff" stroke-width="26" stroke-linecap="round"/>
-            <circle class="b-ball" cx="512" cy="192" r="38" fill="#FBBF24"/>
-            <rect x="186" y="438" width="48" height="134" rx="24" fill="#E0F2FE"/>
-            <rect x="790" y="438" width="48" height="134" rx="24" fill="#E0F2FE"/>
-            <path d="M232 460a170 170 0 0 1 170-170h220a170 170 0 0 1 170 170v90a170 170 0 0 1-170 170H470L318 836l22-116h-6a170 170 0 0 1-102-170z" fill="#fff"/>
-            <rect x="292" y="380" width="440" height="250" rx="112" fill="#0F2A44"/>
-            <circle class="b-eye" cx="404" cy="494" r="35" fill="#38E1FF"/>
-            <circle class="b-eye" cx="620" cy="494" r="35" fill="#38E1FF"/>
-            <path d="M444 562Q512 618 580 562" stroke="#38E1FF" stroke-width="26" fill="none" stroke-linecap="round"/>
+      <svg class="boot-logo" viewBox="0 0 1024 1024" width="128" height="128">
+        <defs><linearGradient id="bootbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3479C0"/><stop offset="1" stop-color="#2560A0"/></linearGradient></defs>
+        <rect class="b-tile" width="1024" height="1024" rx="228" fill="url(#bootbg)"/>
+        <g transform="translate(512 528) scale(1.06) translate(-512 -528)">
+          <path class="b-back" d="M540 230h160a110 110 0 0 1 110 110v80a110 110 0 0 1-110 110h-6l52 84-118-84h-88a110 110 0 0 1-110-110v-80a110 110 0 0 1 110-110z" fill="#65BDF5"/>
+          <path class="b-front" d="M344 370h210a130 130 0 0 1 130 130v100a130 130 0 0 1-130 130H404L270 826l40-102a130 130 0 0 1-96-124V500a130 130 0 0 1 130-130z" fill="#fff"/>
+          <g class="b-code" fill="none" stroke="#2B6CB0" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M382 498l-56 52 56 52" pathLength="1"/><path d="M476 482l-40 136" pathLength="1"/><path d="M530 498l56 52-56 52" pathLength="1"/>
           </g>
-        </svg>
-      </div>
+        </g>
+      </svg>
       <div class="boot-name">TechLingo</div>
       <div class="boot-tag">Speak Tech. Think Global.</div>
-      <div class="boot-bar"><i></i></div>
     </div>
   </div>
   <noscript>TechLingo a besoin de JavaScript pour fonctionner.</noscript>

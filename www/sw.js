@@ -1,8 +1,10 @@
 // TechLingo — service worker : l'app complète fonctionne hors ligne
-const CACHE = 'techlingo-v3';
+const CACHE = 'techlingo-v4';
 const SHELL = [
-  './', './index.html', './style.css', './fonts.css', './data.js', './data-extra.js', './icons.js', './app.js', './privacy.html', './terms.html',
-  './manifest.webmanifest', './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png',
+  './', './index.html', './style.css', './fonts.css', './data.js', './data-extra.js', './icons.js', './app.js',
+  './privacy.html', './terms.html', './manifest.webmanifest',
+  './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-192.png', './icons/icon-maskable-512.png',
+  './icons/apple-touch-icon.png', './icons/favicon-32.png',
   './fonts/DMSans-400-latin-ext.woff2',
   './fonts/DMSans-400-latin.woff2',
   './fonts/DMSans-500-latin-ext.woff2',
@@ -10,7 +12,11 @@ const SHELL = [
   './fonts/DMSans-700-latin-ext.woff2',
   './fonts/DMSans-700-latin.woff2',
   './fonts/JetBrainsMono-500-latin-ext.woff2',
-  './fonts/JetBrainsMono-500-latin.woff2'
+  './fonts/JetBrainsMono-500-latin.woff2',
+  './fonts/Nunito-800-latin-ext.woff2',
+  './fonts/Nunito-800-latin.woff2',
+  './fonts/Nunito-900-latin-ext.woff2',
+  './fonts/Nunito-900-latin.woff2'
 ];
 
 self.addEventListener('install', (e) => {
@@ -32,6 +38,7 @@ self.addEventListener('fetch', (e) => {
 
   // Aucune ressource externe : on ignore toute requête hors origine
   if (url.origin !== location.origin) return;
+  if (url.pathname.endsWith('.apk')) return;
 
   // Fichiers locaux : réseau d'abord pour avoir la dernière version, cache en secours
   e.respondWith(
