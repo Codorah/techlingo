@@ -1,0 +1,578 @@
+{
+  "role": "data-engineer",
+  "terms": [
+    {
+      "id": "index",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases",
+        "performance"
+      ],
+      "term_en": "index",
+      "translation_fr": "index",
+      "part_of_speech": "noun",
+      "definition_en": "A database structure that makes searching a column much faster, at the cost of extra storage and slower writes.",
+      "explanation_fr": "Structure de la base qui accélère fortement la recherche sur une colonne, au prix d’espace en plus et d’écritures plus lentes.",
+      "why_it_matters_fr": "La première piste quand une requête est lente.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "index-1",
+          "text_en": "Adding an index made the search ten times faster.",
+          "text_fr": "Ajouter un index a rendu la recherche dix fois plus rapide."
+        },
+        {
+          "id": "index-2",
+          "text_en": "Too many indexes slow down inserts.",
+          "text_fr": "Trop d’index ralentissent les insertions."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "etl",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 85
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "ETL",
+      "translation_fr": "ETL (extraction, transformation, chargement)",
+      "part_of_speech": "acronym",
+      "definition_en": "Extract, Transform, Load: a process that takes data from sources, cleans and reshapes it, then loads it into a target system.",
+      "explanation_fr": "Extract, Transform, Load : processus qui extrait les données des sources, les nettoie et les restructure, puis les charge dans un système cible.",
+      "why_it_matters_fr": "Le cœur du métier de data engineer.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "etl-1",
+          "text_en": "The ETL job runs every night at two o’clock.",
+          "text_fr": "Le traitement ETL tourne chaque nuit à deux heures."
+        },
+        {
+          "id": "etl-2",
+          "text_en": "We rewrote the ETL to handle more sources.",
+          "text_fr": "Nous avons réécrit l’ETL pour gérer plus de sources."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-pipeline",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 90
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data pipeline",
+      "translation_fr": "pipeline de données",
+      "part_of_speech": "noun",
+      "definition_en": "An automated series of steps that moves data from sources to a destination, transforming it along the way.",
+      "explanation_fr": "Suite automatisée d’étapes qui déplace les données des sources vers une destination en les transformant.",
+      "why_it_matters_fr": "Construire et fiabiliser des pipelines, c’est le quotidien du data engineer.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-pipeline-1",
+          "text_en": "The data pipeline failed because a source changed its format.",
+          "text_fr": "Le pipeline de données a échoué car une source a changé de format."
+        },
+        {
+          "id": "data-pipeline-2",
+          "text_en": "We monitor every data pipeline with alerts.",
+          "text_fr": "Nous surveillons chaque pipeline de données avec des alertes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-warehouse",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 80
+        },
+        {
+          "role": "data-analyst",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "databases"
+      ],
+      "term_en": "data warehouse",
+      "translation_fr": "entrepôt de données",
+      "part_of_speech": "noun",
+      "definition_en": "A central database optimized for analysis, which stores cleaned historical data from many sources.",
+      "explanation_fr": "Base centrale optimisée pour l’analyse, qui stocke des données historiques nettoyées venant de nombreuses sources.",
+      "why_it_matters_fr": "BigQuery, Snowflake, Redshift : vocabulaire des offres data.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-warehouse-1",
+          "text_en": "All reports read from the data warehouse.",
+          "text_fr": "Tous les rapports lisent l’entrepôt de données."
+        },
+        {
+          "id": "data-warehouse-2",
+          "text_en": "We load sales data into the data warehouse every hour.",
+          "text_fr": "Nous chargeons les ventes dans l’entrepôt de données toutes les heures."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-lake",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data lake",
+      "translation_fr": "lac de données",
+      "part_of_speech": "noun",
+      "definition_en": "A storage system that keeps large amounts of raw data in its original format until it is needed.",
+      "explanation_fr": "Système de stockage qui garde de grandes quantités de données brutes dans leur format d’origine jusqu’à leur utilisation.",
+      "why_it_matters_fr": "À distinguer de l’entrepôt : données brutes contre données préparées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-lake-1",
+          "text_en": "Raw logs are stored in the data lake.",
+          "text_fr": "Les logs bruts sont stockés dans le lac de données."
+        },
+        {
+          "id": "data-lake-2",
+          "text_en": "Without rules, a data lake becomes hard to use.",
+          "text_fr": "Sans règles, un lac de données devient difficile à exploiter."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "batch-processing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "batch processing",
+      "translation_fr": "traitement par lots",
+      "part_of_speech": "noun",
+      "definition_en": "Processing large amounts of data in groups at scheduled times rather than one record at a time.",
+      "explanation_fr": "Traiter de grands volumes de données par groupes à heures fixes, plutôt qu’enregistrement par enregistrement.",
+      "why_it_matters_fr": "À opposer au traitement en temps réel (streaming).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "batch-processing-1",
+          "text_en": "Invoices are generated by batch processing every night.",
+          "text_fr": "Les factures sont générées par traitement par lots chaque nuit."
+        },
+        {
+          "id": "batch-processing-2",
+          "text_en": "Batch processing is cheaper than real-time processing.",
+          "text_fr": "Le traitement par lots coûte moins cher que le temps réel."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "stream-processing",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "stream processing",
+      "translation_fr": "traitement en flux (streaming)",
+      "part_of_speech": "noun",
+      "definition_en": "Processing data continuously, event by event, as soon as it arrives.",
+      "explanation_fr": "Traiter les données en continu, événement par événement, dès leur arrivée.",
+      "why_it_matters_fr": "Indispensable pour la détection de fraude ou les tableaux de bord en direct.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "stream-processing-1",
+          "text_en": "We use stream processing to detect fraud in real time.",
+          "text_fr": "Nous utilisons le traitement en flux pour détecter la fraude en temps réel."
+        },
+        {
+          "id": "stream-processing-2",
+          "text_en": "Kafka is often used for stream processing.",
+          "text_fr": "Kafka est souvent utilisé pour le traitement en flux."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "schema",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-engineering"
+      ],
+      "term_en": "schema",
+      "translation_fr": "schéma",
+      "part_of_speech": "noun",
+      "definition_en": "The structure of a database or a data format: its tables, fields, types and relationships.",
+      "explanation_fr": "La structure d’une base ou d’un format de données : tables, champs, types et relations.",
+      "why_it_matters_fr": "Un changement de schéma peut casser un pipeline ou une application.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "schema-1",
+          "text_en": "We updated the schema to add a currency field.",
+          "text_fr": "Nous avons mis à jour le schéma pour ajouter un champ devise."
+        },
+        {
+          "id": "schema-2",
+          "text_en": "The pipeline validates the schema of each file.",
+          "text_fr": "Le pipeline vérifie le schéma de chaque fichier."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-quality",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 70
+        },
+        {
+          "role": "data-analyst",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "data-analysis"
+      ],
+      "term_en": "data quality",
+      "translation_fr": "qualité des données",
+      "part_of_speech": "noun",
+      "definition_en": "How accurate, complete, consistent and up to date data is.",
+      "explanation_fr": "Le degré d’exactitude, de complétude, de cohérence et de fraîcheur des données.",
+      "why_it_matters_fr": "Sans qualité des données, les analyses et les modèles sont faux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-quality-1",
+          "text_en": "We added data quality checks to the pipeline.",
+          "text_fr": "Nous avons ajouté des contrôles de qualité des données au pipeline."
+        },
+        {
+          "id": "data-quality-2",
+          "text_en": "Poor data quality led to a wrong forecast.",
+          "text_fr": "Une mauvaise qualité des données a conduit à une prévision fausse."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "orchestration",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "ci-cd"
+      ],
+      "term_en": "orchestration",
+      "translation_fr": "orchestration",
+      "part_of_speech": "noun",
+      "definition_en": "Coordinating and scheduling automated tasks so they run in the right order, with retries and monitoring.",
+      "explanation_fr": "Coordonner et planifier des tâches automatisées pour qu’elles s’exécutent dans le bon ordre, avec relances et supervision.",
+      "why_it_matters_fr": "Airflow et ses équivalents sont très demandés en data engineering.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "orchestration-1",
+          "text_en": "Airflow handles the orchestration of our daily jobs.",
+          "text_fr": "Airflow gère l’orchestration de nos traitements quotidiens."
+        },
+        {
+          "id": "orchestration-2",
+          "text_en": "Good orchestration retries a task when it fails.",
+          "text_fr": "Une bonne orchestration relance une tâche quand elle échoue."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "partitioning",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "performance"
+      ],
+      "term_en": "partitioning",
+      "translation_fr": "partitionnement",
+      "part_of_speech": "noun",
+      "definition_en": "Splitting a large table or dataset into smaller parts, for example by date, so queries read less data.",
+      "explanation_fr": "Découper une grande table ou un jeu de données en parties plus petites, par exemple par date, pour que les requêtes lisent moins de données.",
+      "why_it_matters_fr": "Réduit fortement le coût et la durée des requêtes sur de gros volumes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "partitioning-1",
+          "text_en": "We partition the events table by day.",
+          "text_fr": "Nous partitionnons la table des événements par jour."
+        },
+        {
+          "id": "partitioning-2",
+          "text_en": "Partitioning cut the query cost by 90%.",
+          "text_fr": "Le partitionnement a réduit le coût de la requête de 90 %."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "database-sharding",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "databases",
+        "architecture"
+      ],
+      "term_en": "database sharding",
+      "translation_fr": "sharding (partitionnement horizontal)",
+      "part_of_speech": "noun",
+      "definition_en": "Splitting a database across several servers, each holding part of the data, to spread load and storage.",
+      "explanation_fr": "Répartir une base de données sur plusieurs serveurs, chacun contenant une partie des données, pour répartir charge et stockage.",
+      "why_it_matters_fr": "Technique avancée, souvent abordée en entretien d’architecture.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "database-sharding-1",
+          "text_en": "We use sharding to split users across five database servers.",
+          "text_fr": "Nous utilisons le sharding pour répartir les utilisateurs sur cinq serveurs."
+        },
+        {
+          "id": "database-sharding-2",
+          "text_en": "Sharding makes some queries more complex.",
+          "text_fr": "Le sharding complique certaines requêtes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-governance",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "security"
+      ],
+      "term_en": "data governance",
+      "translation_fr": "gouvernance des données",
+      "part_of_speech": "noun",
+      "definition_en": "The rules and roles that define who owns data, who can access it, and how it must be protected and used.",
+      "explanation_fr": "Règles et rôles qui définissent à qui appartiennent les données, qui peut y accéder et comment les protéger et les utiliser.",
+      "why_it_matters_fr": "Exigée par les lois sur la protection des données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-governance-1",
+          "text_en": "Our data governance policy limits access to customer data.",
+          "text_fr": "Notre politique de gouvernance des données limite l’accès aux données clients."
+        },
+        {
+          "id": "data-governance-2",
+          "text_en": "Data governance defines an owner for each dataset.",
+          "text_fr": "La gouvernance des données désigne un responsable pour chaque jeu de données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-model",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "data-analyst",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases",
+        "architecture"
+      ],
+      "term_en": "data model",
+      "translation_fr": "modèle de données",
+      "part_of_speech": "noun",
+      "definition_en": "A description of how data is organized: the entities, their attributes and the relationships between them.",
+      "explanation_fr": "Description de l’organisation des données : entités, attributs et relations entre elles.",
+      "why_it_matters_fr": "Un bon modèle de données simplifie toutes les requêtes futures.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-model-1",
+          "text_en": "We designed the data model before writing any code.",
+          "text_fr": "Nous avons conçu le modèle de données avant d’écrire du code."
+        },
+        {
+          "id": "data-model-2",
+          "text_en": "The data model links each order to one customer.",
+          "text_fr": "Le modèle de données relie chaque commande à un client."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}

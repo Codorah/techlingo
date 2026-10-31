@@ -1,0 +1,1328 @@
+{
+  "role": "data-analyst",
+  "terms": [
+    {
+      "id": "sql",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 95
+        },
+        {
+          "role": "data-engineer",
+          "priority": 85
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-analysis"
+      ],
+      "term_en": "SQL",
+      "translation_fr": "SQL (langage de requête)",
+      "part_of_speech": "acronym",
+      "definition_en": "Structured Query Language: the standard language for reading and changing data in relational databases.",
+      "explanation_fr": "Structured Query Language : langage standard pour lire et modifier les données des bases relationnelles.",
+      "why_it_matters_fr": "Compétence la plus demandée en analyse de données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sql-1",
+          "text_en": "I wrote a SQL query to count orders by country.",
+          "text_fr": "J’ai écrit une requête SQL pour compter les commandes par pays."
+        },
+        {
+          "id": "sql-2",
+          "text_en": "Most analyst interviews include a SQL test.",
+          "text_fr": "La plupart des entretiens d’analyste incluent un test SQL."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "query",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 85
+        },
+        {
+          "role": "data-engineer",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "query",
+      "translation_fr": "requête",
+      "part_of_speech": "noun",
+      "definition_en": "A request for data from a database, usually written in SQL.",
+      "explanation_fr": "Demande de données adressée à une base, généralement écrite en SQL.",
+      "why_it_matters_fr": "On parle de requêtes lentes, de requêtes à optimiser, de résultats de requête.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "query-1",
+          "text_en": "This query returns all customers who paid last month.",
+          "text_fr": "Cette requête renvoie tous les clients qui ont payé le mois dernier."
+        },
+        {
+          "id": "query-2",
+          "text_en": "The query was slow because the table had no index.",
+          "text_fr": "La requête était lente car la table n’avait pas d’index."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "table",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 75
+        },
+        {
+          "role": "data-engineer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "table",
+      "translation_fr": "table",
+      "part_of_speech": "noun",
+      "definition_en": "A set of data organized in rows and columns inside a database.",
+      "explanation_fr": "Ensemble de données organisé en lignes et en colonnes dans une base.",
+      "why_it_matters_fr": "Base du vocabulaire des bases de données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "table-1",
+          "text_en": "The orders table has one row per purchase.",
+          "text_fr": "La table des commandes a une ligne par achat."
+        },
+        {
+          "id": "table-2",
+          "text_en": "We added a column to the users table.",
+          "text_fr": "Nous avons ajouté une colonne à la table des utilisateurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "join",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 85
+        },
+        {
+          "role": "data-engineer",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-analysis"
+      ],
+      "term_en": "join",
+      "translation_fr": "jointure",
+      "part_of_speech": "noun",
+      "definition_en": "A SQL operation that combines rows from two tables based on a related column, such as a customer ID.",
+      "explanation_fr": "Opération SQL qui combine les lignes de deux tables à partir d’une colonne commune, comme un identifiant client.",
+      "why_it_matters_fr": "INNER JOIN et LEFT JOIN sont des classiques des entretiens SQL.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "join-1",
+          "text_en": "A left join keeps all customers, even those without orders.",
+          "text_fr": "Une jointure gauche garde tous les clients, même ceux sans commande."
+        },
+        {
+          "id": "join-2",
+          "text_en": "I joined the payments and users tables on user_id.",
+          "text_fr": "J’ai joint les tables des paiements et des utilisateurs sur user_id."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "primary-key",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 60
+        },
+        {
+          "role": "data-engineer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "primary key",
+      "translation_fr": "clé primaire",
+      "part_of_speech": "noun",
+      "definition_en": "A column, or set of columns, that uniquely identifies each row of a table.",
+      "explanation_fr": "Colonne (ou groupe de colonnes) qui identifie de façon unique chaque ligne d’une table.",
+      "why_it_matters_fr": "Notion de base de la modélisation de données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "primary-key-1",
+          "text_en": "The id column is the primary key of the table.",
+          "text_fr": "La colonne id est la clé primaire de la table."
+        },
+        {
+          "id": "primary-key-2",
+          "text_en": "Two rows cannot share the same primary key.",
+          "text_fr": "Deux lignes ne peuvent pas avoir la même clé primaire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "aggregation",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 75
+        },
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "databases"
+      ],
+      "term_en": "aggregation",
+      "translation_fr": "agrégation",
+      "part_of_speech": "noun",
+      "definition_en": "Combining many values into a summary, such as a sum, an average or a count.",
+      "explanation_fr": "Combiner de nombreuses valeurs en un résumé : somme, moyenne, nombre…",
+      "why_it_matters_fr": "GROUP BY, SUM, AVG : le cœur des rapports.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "aggregation-1",
+          "text_en": "We used aggregation to compute revenue per month.",
+          "text_fr": "Nous avons utilisé une agrégation pour calculer le chiffre d’affaires par mois."
+        },
+        {
+          "id": "aggregation-2",
+          "text_en": "The dashboard shows aggregations, not individual transactions.",
+          "text_fr": "Le tableau de bord montre des agrégats, pas les transactions une à une."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dashboard",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 85
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "dashboard",
+      "translation_fr": "tableau de bord",
+      "part_of_speech": "noun",
+      "definition_en": "A screen that displays key metrics and charts in one place so people can follow performance at a glance.",
+      "explanation_fr": "Écran qui regroupe indicateurs et graphiques pour suivre la performance d’un coup d’œil.",
+      "why_it_matters_fr": "Livrable principal d’un analyste de données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dashboard-1",
+          "text_en": "I built a sales dashboard in Power BI.",
+          "text_fr": "J’ai créé un tableau de bord des ventes dans Power BI."
+        },
+        {
+          "id": "dashboard-2",
+          "text_en": "The dashboard updates every morning.",
+          "text_fr": "Le tableau de bord se met à jour chaque matin."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "kpi",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 85
+        },
+        {
+          "role": "product-design",
+          "priority": 55
+        },
+        {
+          "role": "project-management",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "KPI",
+      "translation_fr": "indicateur clé de performance (KPI)",
+      "part_of_speech": "acronym",
+      "definition_en": "Key Performance Indicator: a measurable value that shows how well a goal is being reached.",
+      "explanation_fr": "Key Performance Indicator : valeur mesurable qui montre à quel point un objectif est atteint.",
+      "why_it_matters_fr": "Vocabulaire commun aux analystes, aux produits et aux managers.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "kpi-1",
+          "text_en": "Our main KPI is the number of active users per week.",
+          "text_fr": "Notre KPI principal est le nombre d’utilisateurs actifs par semaine."
+        },
+        {
+          "id": "kpi-2",
+          "text_en": "Each team has three KPIs for the quarter.",
+          "text_fr": "Chaque équipe a trois KPI pour le trimestre."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "metric",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 75
+        },
+        {
+          "role": "product-design",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "monitoring"
+      ],
+      "term_en": "metric",
+      "translation_fr": "métrique (indicateur)",
+      "part_of_speech": "noun",
+      "definition_en": "A quantity that is measured and tracked over time, such as conversion rate or response time.",
+      "explanation_fr": "Grandeur mesurée et suivie dans le temps, comme le taux de conversion ou le temps de réponse.",
+      "why_it_matters_fr": "On choisit, définit et explique des métriques en permanence.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "metric-1",
+          "text_en": "Retention is the metric we watch most closely.",
+          "text_fr": "La rétention est la métrique que nous surveillons le plus."
+        },
+        {
+          "id": "metric-2",
+          "text_en": "Define the metric clearly before you build the chart.",
+          "text_fr": "Définis clairement la métrique avant de créer le graphique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-cleaning",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 80
+        },
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "data cleaning",
+      "translation_fr": "nettoyage des données",
+      "part_of_speech": "noun",
+      "definition_en": "Fixing or removing incorrect, duplicate, incomplete or badly formatted data before analysis.",
+      "explanation_fr": "Corriger ou supprimer les données fausses, en double, incomplètes ou mal formatées avant l’analyse.",
+      "why_it_matters_fr": "Une grande partie du temps d’un analyste y passe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-cleaning-1",
+          "text_en": "Data cleaning took most of the project time.",
+          "text_fr": "Le nettoyage des données a pris l’essentiel du temps du projet."
+        },
+        {
+          "id": "data-cleaning-2",
+          "text_en": "We removed duplicates during data cleaning.",
+          "text_fr": "Nous avons supprimé les doublons pendant le nettoyage des données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "outlier",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "outlier",
+      "translation_fr": "valeur aberrante",
+      "part_of_speech": "noun",
+      "definition_en": "A data point that is very different from the others, which can be an error or a real but rare event.",
+      "explanation_fr": "Valeur très différente des autres, qui peut être une erreur ou un événement réel mais rare.",
+      "why_it_matters_fr": "Il faut savoir décider de garder ou d’écarter une valeur aberrante.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "outlier-1",
+          "text_en": "One order of ten million francs was an outlier caused by a typo.",
+          "text_fr": "Une commande de dix millions de francs était une valeur aberrante due à une faute de frappe."
+        },
+        {
+          "id": "outlier-2",
+          "text_en": "Outliers can distort the average.",
+          "text_fr": "Les valeurs aberrantes peuvent fausser la moyenne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mean-median",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "mean and median",
+      "translation_fr": "moyenne et médiane",
+      "part_of_speech": "noun",
+      "definition_en": "The mean is the sum of values divided by their number; the median is the middle value once the values are sorted.",
+      "explanation_fr": "La moyenne est la somme des valeurs divisée par leur nombre ; la médiane est la valeur du milieu une fois les valeurs triées.",
+      "why_it_matters_fr": "La médiane résiste mieux aux valeurs aberrantes : question classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mean-median-1",
+          "text_en": "The median salary is more representative than the mean.",
+          "text_fr": "Le salaire médian est plus représentatif que la moyenne."
+        },
+        {
+          "id": "mean-median-2",
+          "text_en": "A few very large orders raised the mean but not the median.",
+          "text_fr": "Quelques très grosses commandes ont fait monter la moyenne, pas la médiane."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "correlation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "correlation",
+      "translation_fr": "corrélation",
+      "part_of_speech": "noun",
+      "definition_en": "A statistical relationship where two variables tend to change together.",
+      "explanation_fr": "Relation statistique où deux variables ont tendance à varier ensemble.",
+      "why_it_matters_fr": "« Correlation is not causation » : phrase incontournable.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "correlation-1",
+          "text_en": "We found a correlation between delivery time and bad reviews.",
+          "text_fr": "Nous avons trouvé une corrélation entre délai de livraison et mauvais avis."
+        },
+        {
+          "id": "correlation-2",
+          "text_en": "Correlation does not prove that one causes the other.",
+          "text_fr": "Une corrélation ne prouve pas que l’un cause l’autre."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ab-test",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        },
+        {
+          "role": "product-design",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "A/B test",
+      "translation_fr": "test A/B",
+      "part_of_speech": "noun",
+      "definition_en": "An experiment that shows two versions of something to different groups of users to see which one performs better.",
+      "explanation_fr": "Expérience qui montre deux versions à des groupes d’utilisateurs différents pour voir laquelle marche le mieux.",
+      "why_it_matters_fr": "Méthode de référence pour décider avec des données plutôt qu’à l’intuition.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ab-test-1",
+          "text_en": "The A/B test showed that the green button increased sign-ups.",
+          "text_fr": "Le test A/B a montré que le bouton vert augmentait les inscriptions."
+        },
+        {
+          "id": "ab-test-2",
+          "text_en": "Run the A/B test long enough to get reliable results.",
+          "text_fr": "Fais durer le test A/B assez longtemps pour obtenir des résultats fiables."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "statistical-significance",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "statistical significance",
+      "translation_fr": "significativité statistique",
+      "part_of_speech": "noun",
+      "definition_en": "A measure of how unlikely it is that a result happened by chance.",
+      "explanation_fr": "Mesure de la probabilité qu’un résultat ne soit pas dû au hasard.",
+      "why_it_matters_fr": "Indispensable pour interpréter correctement un test A/B.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "statistical-significance-1",
+          "text_en": "The difference is not statistically significant yet.",
+          "text_fr": "La différence n’est pas encore statistiquement significative."
+        },
+        {
+          "id": "statistical-significance-2",
+          "text_en": "We need more users to reach statistical significance.",
+          "text_fr": "Il nous faut plus d’utilisateurs pour atteindre la significativité statistique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-visualization",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 80
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "ux-ui"
+      ],
+      "term_en": "data visualization",
+      "translation_fr": "visualisation de données",
+      "part_of_speech": "noun",
+      "definition_en": "Presenting data as charts, maps or graphics so that patterns are easy to see.",
+      "explanation_fr": "Présenter des données sous forme de graphiques ou de cartes pour rendre les tendances visibles.",
+      "why_it_matters_fr": "Une bonne visualisation vaut mieux qu’un long tableau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-visualization-1",
+          "text_en": "A simple bar chart is often the best data visualization.",
+          "text_fr": "Un simple diagramme en barres est souvent la meilleure visualisation."
+        },
+        {
+          "id": "data-visualization-2",
+          "text_en": "Good data visualization helps managers decide quickly.",
+          "text_fr": "Une bonne visualisation de données aide les managers à décider vite."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "spreadsheet",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "project-management",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "spreadsheet",
+      "translation_fr": "tableur (feuille de calcul)",
+      "part_of_speech": "noun",
+      "definition_en": "A document organized in rows and columns, such as Excel or Google Sheets, used to store and calculate data.",
+      "explanation_fr": "Document organisé en lignes et colonnes, comme Excel ou Google Sheets, pour stocker et calculer des données.",
+      "why_it_matters_fr": "Encore omniprésent, même dans les équipes très techniques.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "spreadsheet-1",
+          "text_en": "The client sent the data in a spreadsheet.",
+          "text_fr": "Le client a envoyé les données dans un tableur."
+        },
+        {
+          "id": "spreadsheet-2",
+          "text_en": "We moved from spreadsheets to a real database.",
+          "text_fr": "Nous sommes passés des tableurs à une vraie base de données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pivot-table",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "pivot table",
+      "translation_fr": "tableau croisé dynamique",
+      "part_of_speech": "noun",
+      "definition_en": "A spreadsheet tool that summarizes data by grouping and aggregating it along rows and columns.",
+      "explanation_fr": "Outil de tableur qui résume les données en les regroupant et en les agrégeant par lignes et colonnes.",
+      "why_it_matters_fr": "Compétence attendue dans beaucoup de postes data juniors.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pivot-table-1",
+          "text_en": "I used a pivot table to see sales by region and month.",
+          "text_fr": "J’ai utilisé un tableau croisé dynamique pour voir les ventes par région et par mois."
+        },
+        {
+          "id": "pivot-table-2",
+          "text_en": "The pivot table answered the question in two minutes.",
+          "text_fr": "Le tableau croisé dynamique a répondu à la question en deux minutes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "business-intelligence",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        },
+        {
+          "role": "data-engineer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "business intelligence",
+      "translation_fr": "informatique décisionnelle (BI)",
+      "part_of_speech": "noun",
+      "definition_en": "Tools and practices that turn company data into reports and dashboards to support decisions.",
+      "explanation_fr": "Outils et pratiques qui transforment les données de l’entreprise en rapports et tableaux de bord pour aider à décider.",
+      "why_it_matters_fr": "Abrégé BI : Power BI, Tableau, Looker…",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "business-intelligence-1",
+          "text_en": "The business intelligence team publishes a weekly report.",
+          "text_fr": "L’équipe BI publie un rapport chaque semaine."
+        },
+        {
+          "id": "business-intelligence-2",
+          "text_en": "We connected our database to a business intelligence tool.",
+          "text_fr": "Nous avons relié notre base à un outil de BI."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "personal-data",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 55
+        },
+        {
+          "role": "data-engineer",
+          "priority": 50
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security",
+        "data-analysis"
+      ],
+      "term_en": "personal data",
+      "translation_fr": "données personnelles",
+      "part_of_speech": "noun",
+      "definition_en": "Any information that can identify a person directly or indirectly, such as a name, phone number or location.",
+      "explanation_fr": "Toute information qui permet d’identifier une personne, directement ou non : nom, numéro de téléphone, localisation…",
+      "why_it_matters_fr": "Sa protection est encadrée par la loi (RGPD et lois nationales).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "personal-data-1",
+          "text_en": "We anonymize personal data before analysis.",
+          "text_fr": "Nous anonymisons les données personnelles avant l’analyse."
+        },
+        {
+          "id": "personal-data-2",
+          "text_en": "Phone numbers are personal data.",
+          "text_fr": "Les numéros de téléphone sont des données personnelles."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "anonymization",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 45
+        },
+        {
+          "role": "data-engineer",
+          "priority": 50
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "data-engineering"
+      ],
+      "term_en": "anonymization",
+      "translation_fr": "anonymisation",
+      "part_of_speech": "noun",
+      "definition_en": "Transforming data so that people can no longer be identified from it.",
+      "explanation_fr": "Transformer des données pour qu’on ne puisse plus identifier les personnes.",
+      "why_it_matters_fr": "Permet d’analyser des données sans exposer la vie privée des clients.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "anonymization-1",
+          "text_en": "Anonymization removes names and exact addresses.",
+          "text_fr": "L’anonymisation supprime les noms et les adresses exactes."
+        },
+        {
+          "id": "anonymization-2",
+          "text_en": "We checked that anonymization could not be reversed.",
+          "text_fr": "Nous avons vérifié que l’anonymisation ne pouvait pas être inversée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "python",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 75
+        },
+        {
+          "role": "data-engineer",
+          "priority": 75
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 85
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "Python",
+      "translation_fr": "Python",
+      "part_of_speech": "noun",
+      "definition_en": "A popular programming language known for its readability, widely used for data analysis, automation and AI.",
+      "explanation_fr": "Langage de programmation populaire, réputé pour sa lisibilité, très utilisé pour l’analyse de données, l’automatisation et l’IA.",
+      "why_it_matters_fr": "Langage numéro un des métiers data et IA.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "python-1",
+          "text_en": "I automated the weekly report with a Python script.",
+          "text_fr": "J’ai automatisé le rapport hebdomadaire avec un script Python."
+        },
+        {
+          "id": "python-2",
+          "text_en": "Most of our models are written in Python.",
+          "text_fr": "La plupart de nos modèles sont écrits en Python."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dataframe",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "programming"
+      ],
+      "term_en": "DataFrame",
+      "translation_fr": "DataFrame (tableau de données)",
+      "part_of_speech": "noun",
+      "definition_en": "A table-like data structure with labeled rows and columns, used by libraries such as pandas.",
+      "explanation_fr": "Structure de données en forme de tableau, avec lignes et colonnes nommées, utilisée par des bibliothèques comme pandas.",
+      "why_it_matters_fr": "Objet central de l’analyse de données en Python.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dataframe-1",
+          "text_en": "I loaded the CSV file into a DataFrame.",
+          "text_fr": "J’ai chargé le fichier CSV dans un DataFrame."
+        },
+        {
+          "id": "dataframe-2",
+          "text_en": "Filter the DataFrame to keep only paid orders.",
+          "text_fr": "Filtre le DataFrame pour ne garder que les commandes payées."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "csv",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 60
+        },
+        {
+          "role": "data-engineer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "CSV",
+      "translation_fr": "CSV (valeurs séparées par des virgules)",
+      "part_of_speech": "acronym",
+      "definition_en": "Comma-Separated Values: a simple text file format where each line is a row and values are separated by commas.",
+      "explanation_fr": "Comma-Separated Values : format texte simple où chaque ligne est un enregistrement et les valeurs sont séparées par des virgules.",
+      "why_it_matters_fr": "Le format d’échange de données le plus courant entre outils.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "csv-1",
+          "text_en": "Export the results as a CSV file.",
+          "text_fr": "Exporte les résultats dans un fichier CSV."
+        },
+        {
+          "id": "csv-2",
+          "text_en": "The CSV file uses semicolons instead of commas.",
+          "text_fr": "Le fichier CSV utilise des points-virgules au lieu de virgules."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "forecast",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "forecast",
+      "translation_fr": "prévision",
+      "part_of_speech": "noun",
+      "definition_en": "An estimate of future values, such as sales or demand, based on past data.",
+      "explanation_fr": "Estimation de valeurs futures, comme les ventes ou la demande, à partir des données passées.",
+      "why_it_matters_fr": "Les entreprises en ont besoin pour les stocks, le budget et le recrutement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "forecast-1",
+          "text_en": "The sales forecast for next month is 15% higher.",
+          "text_fr": "La prévision des ventes du mois prochain est supérieure de 15 %."
+        },
+        {
+          "id": "forecast-2",
+          "text_en": "The forecast was wrong because of a holiday.",
+          "text_fr": "La prévision était fausse à cause d’un jour férié."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cohort",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "cohort",
+      "translation_fr": "cohorte",
+      "part_of_speech": "noun",
+      "definition_en": "A group of users who share a characteristic, such as signing up in the same month, followed over time.",
+      "explanation_fr": "Groupe d’utilisateurs qui partagent une caractéristique (par exemple l’inscription le même mois), suivi dans le temps.",
+      "why_it_matters_fr": "L’analyse de cohortes est la méthode standard pour mesurer la rétention.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cohort-1",
+          "text_en": "The March cohort has the best retention.",
+          "text_fr": "La cohorte de mars a la meilleure rétention."
+        },
+        {
+          "id": "cohort-2",
+          "text_en": "We compared cohorts before and after the redesign.",
+          "text_fr": "Nous avons comparé les cohortes avant et après la refonte."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "retention-rate",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        },
+        {
+          "role": "product-design",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "retention rate",
+      "translation_fr": "taux de rétention",
+      "part_of_speech": "noun",
+      "definition_en": "The share of users who keep using a product after a given period, such as 7 or 30 days.",
+      "explanation_fr": "Part des utilisateurs qui continuent d’utiliser un produit après une période donnée, par exemple 7 ou 30 jours.",
+      "why_it_matters_fr": "Indicateur clé de la réussite d’une application.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "retention-rate-1",
+          "text_en": "Our 30-day retention rate went up to 40%.",
+          "text_fr": "Notre taux de rétention à 30 jours est monté à 40 %."
+        },
+        {
+          "id": "retention-rate-2",
+          "text_en": "Improving onboarding increased the retention rate.",
+          "text_fr": "Améliorer l’onboarding a augmenté le taux de rétention."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "churn",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        },
+        {
+          "role": "product-design",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "churn",
+      "translation_fr": "attrition (churn)",
+      "part_of_speech": "noun",
+      "definition_en": "The rate at which customers stop using or paying for a product.",
+      "explanation_fr": "Rythme auquel les clients arrêtent d’utiliser un produit ou d’y payer un abonnement.",
+      "why_it_matters_fr": "Indicateur scruté par toutes les entreprises à abonnement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "churn-1",
+          "text_en": "Monthly churn dropped after we added reminders.",
+          "text_fr": "L’attrition mensuelle a baissé après l’ajout de rappels."
+        },
+        {
+          "id": "churn-2",
+          "text_en": "We built a model to predict churn.",
+          "text_fr": "Nous avons créé un modèle pour prédire l’attrition."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "conversion-rate",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        },
+        {
+          "role": "product-design",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "conversion rate",
+      "translation_fr": "taux de conversion",
+      "part_of_speech": "noun",
+      "definition_en": "The percentage of users who complete a desired action, such as buying or signing up.",
+      "explanation_fr": "Pourcentage d’utilisateurs qui réalisent l’action visée, comme acheter ou s’inscrire.",
+      "why_it_matters_fr": "Métrique centrale du e-commerce et du marketing.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "conversion-rate-1",
+          "text_en": "The new checkout raised the conversion rate to 4%.",
+          "text_fr": "Le nouveau tunnel de paiement a porté le taux de conversion à 4 %."
+        },
+        {
+          "id": "conversion-rate-2",
+          "text_en": "Track the conversion rate for each step of the funnel.",
+          "text_fr": "Suis le taux de conversion à chaque étape du tunnel."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "funnel",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "data-analysis",
+        "product"
+      ],
+      "term_en": "funnel",
+      "translation_fr": "tunnel (de conversion)",
+      "part_of_speech": "noun",
+      "definition_en": "The sequence of steps users go through toward a goal, such as visit, sign-up and purchase, showing where they drop off.",
+      "explanation_fr": "Suite d’étapes que suivent les utilisateurs vers un objectif (visite, inscription, achat), qui montre où ils abandonnent.",
+      "why_it_matters_fr": "Permet de repérer l’étape qui fait fuir les utilisateurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "funnel-1",
+          "text_en": "The funnel shows that many users leave at the payment step.",
+          "text_fr": "Le tunnel montre que beaucoup d’utilisateurs partent à l’étape du paiement."
+        },
+        {
+          "id": "funnel-2",
+          "text_en": "We simplified the first step of the funnel.",
+          "text_fr": "Nous avons simplifié la première étape du tunnel."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "insight",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "insight",
+      "translation_fr": "enseignement (insight)",
+      "part_of_speech": "noun",
+      "definition_en": "A useful understanding gained from analyzing data, which can guide a decision.",
+      "explanation_fr": "Compréhension utile tirée de l’analyse des données, qui peut orienter une décision.",
+      "why_it_matters_fr": "Les managers attendent des insights, pas seulement des chiffres.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "insight-1",
+          "text_en": "The key insight was that most churn happens in the first week.",
+          "text_fr": "L’enseignement clé était que l’essentiel de l’attrition a lieu la première semaine."
+        },
+        {
+          "id": "insight-2",
+          "text_en": "Share one clear insight per slide.",
+          "text_fr": "Partage un seul enseignement clair par diapositive."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}
