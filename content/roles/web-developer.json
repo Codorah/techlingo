@@ -4567,6 +4567,995 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "git",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "Git",
+      "translation_fr": "Git",
+      "part_of_speech": "noun",
+      "definition_en": "The most widely used version control system, which records every change made to code.",
+      "explanation_fr": "Le système de gestion de versions le plus utilisé, qui enregistre chaque modification du code.",
+      "why_it_matters_fr": "Exigé dans presque toutes les offres de développeur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "git-1",
+          "text_en": "We use Git for all our projects.",
+          "text_fr": "Nous utilisons Git pour tous nos projets."
+        },
+        {
+          "id": "git-2",
+          "text_en": "Do you know the basic Git commands?",
+          "text_fr": "Connais-tu les commandes Git de base ?"
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "version-control",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "version control",
+      "translation_fr": "gestion de versions",
+      "part_of_speech": "noun",
+      "definition_en": "A system that tracks changes to files over time so you can go back to earlier versions and work in a team.",
+      "explanation_fr": "Système qui suit les modifications des fichiers dans le temps pour revenir à d’anciennes versions et travailler en équipe.",
+      "why_it_matters_fr": "Base du travail collaboratif sur le code.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "version-control-1",
+          "text_en": "All the code is under version control.",
+          "text_fr": "Tout le code est sous gestion de versions."
+        },
+        {
+          "id": "version-control-2",
+          "text_en": "Version control lets us see who changed what.",
+          "text_fr": "La gestion de versions permet de voir qui a modifié quoi."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "clone",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "clone",
+      "translation_fr": "cloner",
+      "part_of_speech": "verb",
+      "definition_en": "To make a full local copy of a remote repository on your computer.",
+      "explanation_fr": "Faire une copie locale complète d’un dépôt distant sur son ordinateur.",
+      "why_it_matters_fr": "Première étape pour travailler sur un projet existant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "clone-1",
+          "text_en": "Clone the repository and run npm install.",
+          "text_fr": "Clone le dépôt et lance npm install."
+        },
+        {
+          "id": "clone-2",
+          "text_en": "I cloned the project yesterday.",
+          "text_fr": "J’ai cloné le projet hier."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "push-git",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "push",
+      "translation_fr": "pousser (push)",
+      "part_of_speech": "verb",
+      "definition_en": "To send your local commits to the remote repository.",
+      "explanation_fr": "Envoyer ses commits locaux vers le dépôt distant.",
+      "why_it_matters_fr": "Sans push, les collègues ne voient pas votre travail.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "push-git-1",
+          "text_en": "Don’t forget to push your changes.",
+          "text_fr": "N’oublie pas de pousser tes modifications."
+        },
+        {
+          "id": "push-git-2",
+          "text_en": "I pushed the fix to the main branch.",
+          "text_fr": "J’ai poussé le correctif sur la branche principale."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pull-git",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "pull",
+      "translation_fr": "récupérer (pull)",
+      "part_of_speech": "verb",
+      "definition_en": "To download the latest changes from the remote repository and merge them into your local branch.",
+      "explanation_fr": "Télécharger les dernières modifications du dépôt distant et les fusionner dans sa branche locale.",
+      "why_it_matters_fr": "À faire avant de commencer à travailler pour éviter les conflits.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pull-git-1",
+          "text_en": "Pull before you start working.",
+          "text_fr": "Fais un pull avant de commencer."
+        },
+        {
+          "id": "pull-git-2",
+          "text_en": "I pulled the latest changes from main.",
+          "text_fr": "J’ai récupéré les dernières modifications de main."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "merge",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "merge",
+      "translation_fr": "fusionner",
+      "part_of_speech": "verb",
+      "definition_en": "To combine the changes of one branch into another.",
+      "explanation_fr": "Combiner les modifications d’une branche dans une autre.",
+      "why_it_matters_fr": "Étape finale d’une pull request.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "merge-1",
+          "text_en": "I merged the feature branch into main.",
+          "text_fr": "J’ai fusionné la branche de fonctionnalité dans main."
+        },
+        {
+          "id": "merge-2",
+          "text_en": "Can you merge my pull request?",
+          "text_fr": "Peux-tu fusionner ma pull request ?"
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "rebase",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "rebase",
+      "translation_fr": "rebaser",
+      "part_of_speech": "verb",
+      "definition_en": "To move your commits so they start from the latest version of another branch, giving a cleaner history.",
+      "explanation_fr": "Déplacer ses commits pour qu’ils partent de la dernière version d’une autre branche, ce qui donne un historique plus propre.",
+      "why_it_matters_fr": "Puissant mais dangereux sur une branche partagée.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "rebase-1",
+          "text_en": "Rebase your branch on main before merging.",
+          "text_fr": "Rebase ta branche sur main avant de fusionner."
+        },
+        {
+          "id": "rebase-2",
+          "text_en": "Never rebase a branch others are using.",
+          "text_fr": "Ne rebase jamais une branche que d’autres utilisent."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "stash",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "stash",
+      "translation_fr": "mettre de côté (stash)",
+      "part_of_speech": "verb",
+      "definition_en": "To temporarily save uncommitted changes so you can switch tasks and restore them later.",
+      "explanation_fr": "Sauvegarder temporairement des modifications non commitées pour changer de tâche puis les récupérer.",
+      "why_it_matters_fr": "Pratique pour une urgence en plein travail.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "stash-1",
+          "text_en": "I stashed my changes to fix the urgent bug.",
+          "text_fr": "J’ai mis mes modifications de côté pour corriger le bug urgent."
+        },
+        {
+          "id": "stash-2",
+          "text_en": "Don’t forget your stash.",
+          "text_fr": "N’oublie pas ce que tu as mis de côté."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cherry-pick",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "cherry-pick",
+      "translation_fr": "sélectionner un commit (cherry-pick)",
+      "part_of_speech": "verb",
+      "definition_en": "To copy one specific commit from one branch onto another.",
+      "explanation_fr": "Copier un commit précis d’une branche vers une autre.",
+      "why_it_matters_fr": "Utile pour appliquer un correctif sans tout fusionner.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cherry-pick-1",
+          "text_en": "Cherry-pick the fix into the release branch.",
+          "text_fr": "Applique le correctif sur la branche de release avec un cherry-pick."
+        },
+        {
+          "id": "cherry-pick-2",
+          "text_en": "I cherry-picked two commits.",
+          "text_fr": "J’ai sélectionné deux commits."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "fork",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "version-control",
+        "collaboration"
+      ],
+      "term_en": "fork",
+      "translation_fr": "copie de dépôt (fork)",
+      "part_of_speech": "noun",
+      "definition_en": "Your own copy of someone else’s repository, often used to propose changes to an open-source project.",
+      "explanation_fr": "Sa propre copie du dépôt de quelqu’un d’autre, souvent utilisée pour proposer des modifications à un projet open source.",
+      "why_it_matters_fr": "Base de la contribution open source.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "fork-1",
+          "text_en": "Create a fork, then open a pull request.",
+          "text_fr": "Crée un fork, puis ouvre une pull request."
+        },
+        {
+          "id": "fork-2",
+          "text_en": "My fork is behind the original project.",
+          "text_fr": "Mon fork est en retard sur le projet d’origine."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "remote",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "remote",
+      "translation_fr": "dépôt distant",
+      "part_of_speech": "noun",
+      "definition_en": "A version of the repository hosted on a server such as GitHub or GitLab.",
+      "explanation_fr": "Version du dépôt hébergée sur un serveur comme GitHub ou GitLab.",
+      "why_it_matters_fr": "« origin » est le nom habituel du dépôt distant principal.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "remote-1",
+          "text_en": "Origin is the default remote.",
+          "text_fr": "Origin est le dépôt distant par défaut."
+        },
+        {
+          "id": "remote-2",
+          "text_en": "Add the remote before pushing.",
+          "text_fr": "Ajoute le dépôt distant avant de pousser."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "main-branch",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "main branch",
+      "translation_fr": "branche principale",
+      "part_of_speech": "noun",
+      "definition_en": "The primary branch of a repository, usually containing the stable code.",
+      "explanation_fr": "La branche principale d’un dépôt, qui contient généralement le code stable.",
+      "why_it_matters_fr": "On ne pousse pas directement dessus dans beaucoup d’équipes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "main-branch-1",
+          "text_en": "The main branch is protected.",
+          "text_fr": "La branche principale est protégée."
+        },
+        {
+          "id": "main-branch-2",
+          "text_en": "Create your branch from the main branch.",
+          "text_fr": "Crée ta branche à partir de la branche principale."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "feature-branch",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "feature branch",
+      "translation_fr": "branche de fonctionnalité",
+      "part_of_speech": "noun",
+      "definition_en": "A branch created to develop one feature or fix without affecting the main branch.",
+      "explanation_fr": "Branche créée pour développer une fonctionnalité ou un correctif sans toucher à la branche principale.",
+      "why_it_matters_fr": "Pratique standard en équipe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "feature-branch-1",
+          "text_en": "I work on a feature branch called login-page.",
+          "text_fr": "Je travaille sur une branche de fonctionnalité appelée login-page."
+        },
+        {
+          "id": "feature-branch-2",
+          "text_en": "Delete the feature branch after merging.",
+          "text_fr": "Supprime la branche de fonctionnalité après la fusion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "commit-message",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control",
+        "collaboration"
+      ],
+      "term_en": "commit message",
+      "translation_fr": "message de commit",
+      "part_of_speech": "noun",
+      "definition_en": "A short description that explains what a commit changes and why.",
+      "explanation_fr": "Courte description qui explique ce que change un commit et pourquoi.",
+      "why_it_matters_fr": "De bons messages facilitent la relecture et la recherche de bugs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "commit-message-1",
+          "text_en": "Write a clear commit message.",
+          "text_fr": "Écris un message de commit clair."
+        },
+        {
+          "id": "commit-message-2",
+          "text_en": "“Fix stuff” is not a good commit message.",
+          "text_fr": "« Fix stuff » n’est pas un bon message de commit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "git-history",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "commit history",
+      "translation_fr": "historique des commits",
+      "part_of_speech": "noun",
+      "definition_en": "The list of all commits made in a repository, with their authors and dates.",
+      "explanation_fr": "La liste de tous les commits d’un dépôt, avec leurs auteurs et leurs dates.",
+      "why_it_matters_fr": "Permet de comprendre quand et pourquoi un bug est apparu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "git-history-1",
+          "text_en": "The commit history shows who changed the file.",
+          "text_fr": "L’historique des commits montre qui a modifié le fichier."
+        },
+        {
+          "id": "git-history-2",
+          "text_en": "Keep the commit history clean.",
+          "text_fr": "Garde l’historique des commits propre."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "diff",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "version-control",
+        "code-quality"
+      ],
+      "term_en": "diff",
+      "translation_fr": "différences (diff)",
+      "part_of_speech": "noun",
+      "definition_en": "A view that shows exactly which lines were added, removed or changed between two versions.",
+      "explanation_fr": "Affichage qui montre exactement quelles lignes ont été ajoutées, supprimées ou modifiées entre deux versions.",
+      "why_it_matters_fr": "On relit le diff avant chaque commit.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "diff-1",
+          "text_en": "Check the diff before you commit.",
+          "text_fr": "Vérifie le diff avant de commiter."
+        },
+        {
+          "id": "diff-2",
+          "text_en": "The diff is too big to review.",
+          "text_fr": "Le diff est trop gros pour être relu."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "gitignore",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": ".gitignore file",
+      "translation_fr": "fichier .gitignore",
+      "part_of_speech": "noun",
+      "definition_en": "A file listing files and folders that Git should not track, like dependencies or secret files.",
+      "explanation_fr": "Fichier qui liste les fichiers et dossiers que Git ne doit pas suivre, comme les dépendances ou les fichiers secrets.",
+      "why_it_matters_fr": "Évite de publier des secrets ou des fichiers lourds.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "gitignore-1",
+          "text_en": "Add the .env file to .gitignore.",
+          "text_fr": "Ajoute le fichier .env au .gitignore."
+        },
+        {
+          "id": "gitignore-2",
+          "text_en": "node_modules is in the .gitignore file.",
+          "text_fr": "node_modules est dans le fichier .gitignore."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "tag-git",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "version-control",
+        "ci-cd"
+      ],
+      "term_en": "tag (Git)",
+      "translation_fr": "étiquette (tag Git)",
+      "part_of_speech": "noun",
+      "definition_en": "A name attached to a specific commit, usually to mark a release version.",
+      "explanation_fr": "Nom attaché à un commit précis, généralement pour marquer une version publiée.",
+      "why_it_matters_fr": "Les pipelines de release se déclenchent souvent sur un tag.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "tag-git-1",
+          "text_en": "We created the tag v2.1.0 for the release.",
+          "text_fr": "Nous avons créé le tag v2.1.0 pour la version."
+        },
+        {
+          "id": "tag-git-2",
+          "text_en": "Pushing a tag starts the deployment.",
+          "text_fr": "Pousser un tag lance le déploiement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "revert",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "revert",
+      "translation_fr": "annuler (revert)",
+      "part_of_speech": "verb",
+      "definition_en": "To create a new commit that undoes the changes of an earlier commit.",
+      "explanation_fr": "Créer un nouveau commit qui annule les modifications d’un commit précédent.",
+      "why_it_matters_fr": "Moyen sûr d’annuler un changement déjà partagé.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "revert-1",
+          "text_en": "Revert the commit that broke the build.",
+          "text_fr": "Annule le commit qui a cassé le build."
+        },
+        {
+          "id": "revert-2",
+          "text_en": "I reverted my last change.",
+          "text_fr": "J’ai annulé ma dernière modification."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "branch-protection",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "version-control",
+        "collaboration"
+      ],
+      "term_en": "branch protection",
+      "translation_fr": "protection de branche",
+      "part_of_speech": "noun",
+      "definition_en": "Rules that prevent direct pushes to a branch and require reviews or passing tests before merging.",
+      "explanation_fr": "Règles qui interdisent de pousser directement sur une branche et exigent relecture ou tests réussis avant fusion.",
+      "why_it_matters_fr": "Protège le code de production des erreurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "branch-protection-1",
+          "text_en": "Branch protection requires two approvals.",
+          "text_fr": "La protection de branche exige deux validations."
+        },
+        {
+          "id": "branch-protection-2",
+          "text_en": "I can’t push because of branch protection.",
+          "text_fr": "Je ne peux pas pousser à cause de la protection de branche."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "monorepo",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "version-control",
+        "architecture"
+      ],
+      "term_en": "monorepo",
+      "translation_fr": "dépôt unique (monorepo)",
+      "part_of_speech": "noun",
+      "definition_en": "A single repository that contains the code of several projects or services.",
+      "explanation_fr": "Un seul dépôt qui contient le code de plusieurs projets ou services.",
+      "why_it_matters_fr": "Choix d’organisation fréquent dans les grandes équipes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "monorepo-1",
+          "text_en": "The web and mobile apps live in one monorepo.",
+          "text_fr": "Les apps web et mobile sont dans un seul monorepo."
+        },
+        {
+          "id": "monorepo-2",
+          "text_en": "A monorepo makes shared code easier.",
+          "text_fr": "Un monorepo facilite le partage de code."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "github",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "version-control",
+        "collaboration"
+      ],
+      "term_en": "GitHub",
+      "translation_fr": "GitHub",
+      "part_of_speech": "noun",
+      "definition_en": "An online platform that hosts Git repositories and adds tools for collaboration, reviews and automation.",
+      "explanation_fr": "Plateforme en ligne qui héberge des dépôts Git et ajoute des outils de collaboration, relecture et automatisation.",
+      "why_it_matters_fr": "Votre profil GitHub sert souvent de portfolio.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "github-1",
+          "text_en": "Share your GitHub profile with the recruiter.",
+          "text_fr": "Partage ton profil GitHub avec le recruteur."
+        },
+        {
+          "id": "github-2",
+          "text_en": "The project is hosted on GitHub.",
+          "text_fr": "Le projet est hébergé sur GitHub."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "approve",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "version-control",
+        "collaboration"
+      ],
+      "term_en": "approve",
+      "translation_fr": "approuver",
+      "part_of_speech": "verb",
+      "definition_en": "To officially accept a pull request after reviewing it.",
+      "explanation_fr": "Accepter officiellement une pull request après l’avoir relue.",
+      "why_it_matters_fr": "Souvent obligatoire avant la fusion.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "approve-1",
+          "text_en": "Two reviewers approved my pull request.",
+          "text_fr": "Deux relecteurs ont approuvé ma pull request."
+        },
+        {
+          "id": "approve-2",
+          "text_en": "Can you approve it so I can merge?",
+          "text_fr": "Peux-tu l’approuver pour que je fusionne ?"
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "nitpick",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 35
+        },
+        {
+          "role": "general-tech",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "collaboration",
+        "code-quality"
+      ],
+      "term_en": "nitpick",
+      "translation_fr": "remarque mineure (nit)",
+      "part_of_speech": "noun",
+      "definition_en": "A very small, non-blocking comment in a code review, often marked “nit”.",
+      "explanation_fr": "Commentaire très mineur et non bloquant lors d’une relecture, souvent noté « nit ».",
+      "why_it_matters_fr": "Comprendre « nit » évite de sur-interpréter un commentaire.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "nitpick-1",
+          "text_en": "Nitpick: rename this variable.",
+          "text_fr": "Remarque mineure : renomme cette variable."
+        },
+        {
+          "id": "nitpick-2",
+          "text_en": "These are just nitpicks, feel free to merge.",
+          "text_fr": "Ce ne sont que des remarques mineures, tu peux fusionner."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "lgtm",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "collaboration"
+      ],
+      "term_en": "LGTM",
+      "translation_fr": "ça me semble bon (LGTM)",
+      "part_of_speech": "acronym",
+      "definition_en": "“Looks good to me”: a short comment meaning a reviewer approves the change.",
+      "explanation_fr": "« Looks good to me » : court commentaire signifiant que le relecteur approuve la modification.",
+      "why_it_matters_fr": "Abréviation omniprésente dans les relectures de code.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "lgtm-1",
+          "text_en": "LGTM, ship it!",
+          "text_fr": "Ça me semble bon, on livre !"
+        },
+        {
+          "id": "lgtm-2",
+          "text_en": "He left an LGTM on my pull request.",
+          "text_fr": "Il a laissé un LGTM sur ma pull request."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
