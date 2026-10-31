@@ -1197,6 +1197,609 @@
       "related_terms": [],
       "quiz": [],
       "review_note": "Distinct de la régression statistique (terme « regression » en data)."
+    },
+    {
+      "id": "test-suite",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test suite",
+      "translation_fr": "suite de tests",
+      "part_of_speech": "noun",
+      "definition_en": "A group of tests run together, often for one feature or the whole application.",
+      "explanation_fr": "Groupe de tests exécutés ensemble, souvent pour une fonctionnalité ou toute l’application.",
+      "why_it_matters_fr": "On lance la suite complète avant chaque release.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-suite-1",
+          "text_en": "The full test suite takes ten minutes.",
+          "text_fr": "La suite de tests complète prend dix minutes."
+        },
+        {
+          "id": "test-suite-2",
+          "text_en": "Add this test to the regression test suite.",
+          "text_fr": "Ajoute ce test à la suite de non-régression."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "assertion",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "programming"
+      ],
+      "term_en": "assertion",
+      "translation_fr": "assertion",
+      "part_of_speech": "noun",
+      "definition_en": "A statement in a test that checks whether a value is what you expect.",
+      "explanation_fr": "Instruction dans un test qui vérifie qu’une valeur correspond à l’attendu.",
+      "why_it_matters_fr": "Un test sans assertion ne vérifie rien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "assertion-1",
+          "text_en": "The assertion failed: expected 3, got 2.",
+          "text_fr": "L’assertion a échoué : attendu 3, obtenu 2."
+        },
+        {
+          "id": "assertion-2",
+          "text_en": "Each test should have a clear assertion.",
+          "text_fr": "Chaque test doit avoir une assertion claire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-runner",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test runner",
+      "translation_fr": "lanceur de tests",
+      "part_of_speech": "noun",
+      "definition_en": "A tool that finds, runs and reports the results of automated tests, such as Jest or Vitest.",
+      "explanation_fr": "Outil qui trouve, exécute et rapporte les résultats des tests automatisés, comme Jest ou Vitest.",
+      "why_it_matters_fr": "Intégré à la CI.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-runner-1",
+          "text_en": "The test runner shows two failures.",
+          "text_fr": "Le lanceur de tests affiche deux échecs."
+        },
+        {
+          "id": "test-runner-2",
+          "text_en": "Configure the test runner to run in watch mode.",
+          "text_fr": "Configure le lanceur de tests en mode surveillance."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "selector",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "frontend"
+      ],
+      "term_en": "selector",
+      "translation_fr": "sélecteur",
+      "part_of_speech": "noun",
+      "definition_en": "A pattern used to find an element on a web page, for example in CSS or in automated tests.",
+      "explanation_fr": "Motif utilisé pour trouver un élément d’une page web, en CSS ou dans les tests automatisés.",
+      "why_it_matters_fr": "Des sélecteurs fragiles rendent les tests instables.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "selector-1",
+          "text_en": "The test broke because the selector changed.",
+          "text_fr": "Le test a cassé car le sélecteur a changé."
+        },
+        {
+          "id": "selector-2",
+          "text_en": "Use data-testid attributes as stable selectors.",
+          "text_fr": "Utilise des attributs data-testid comme sélecteurs stables."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "headless-browser",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "headless browser",
+      "translation_fr": "navigateur sans interface",
+      "part_of_speech": "noun",
+      "definition_en": "A web browser that runs without a visible window, used for automated tests and scraping.",
+      "explanation_fr": "Navigateur qui fonctionne sans fenêtre visible, utilisé pour les tests automatisés et l’extraction de données.",
+      "why_it_matters_fr": "Standard dans les pipelines de CI.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "headless-browser-1",
+          "text_en": "The end-to-end tests run in a headless browser.",
+          "text_fr": "Les tests de bout en bout tournent dans un navigateur sans interface."
+        },
+        {
+          "id": "headless-browser-2",
+          "text_en": "Headless Chrome is faster in CI.",
+          "text_fr": "Chrome sans interface est plus rapide en CI."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-pyramid",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test pyramid",
+      "translation_fr": "pyramide des tests",
+      "part_of_speech": "noun",
+      "definition_en": "A guideline suggesting many unit tests, fewer integration tests and only a few end-to-end tests.",
+      "explanation_fr": "Principe qui recommande beaucoup de tests unitaires, moins de tests d’intégration et peu de tests de bout en bout.",
+      "why_it_matters_fr": "Question classique en entretien QA.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-pyramid-1",
+          "text_en": "Our test pyramid is upside down: too many UI tests.",
+          "text_fr": "Notre pyramide des tests est inversée : trop de tests d’interface."
+        },
+        {
+          "id": "test-pyramid-2",
+          "text_en": "Follow the test pyramid to keep tests fast.",
+          "text_fr": "Suis la pyramide des tests pour garder des tests rapides."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "performance-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "performance"
+      ],
+      "term_en": "performance testing",
+      "translation_fr": "test de performance",
+      "part_of_speech": "noun",
+      "definition_en": "Testing how fast and stable a system is under different amounts of load.",
+      "explanation_fr": "Tester la rapidité et la stabilité d’un système sous différentes charges.",
+      "why_it_matters_fr": "Révèle les goulots d’étranglement avant la production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "performance-testing-1",
+          "text_en": "Performance testing showed the API slows down at 500 users.",
+          "text_fr": "Le test de performance a montré que l’API ralentit à 500 utilisateurs."
+        },
+        {
+          "id": "performance-testing-2",
+          "text_en": "We do performance testing before each big release.",
+          "text_fr": "Nous faisons des tests de performance avant chaque grosse version."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "stress-testing",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing",
+        "performance"
+      ],
+      "term_en": "stress testing",
+      "translation_fr": "test de stress",
+      "part_of_speech": "noun",
+      "definition_en": "Pushing a system beyond its normal limits to see when and how it breaks.",
+      "explanation_fr": "Pousser un système au-delà de ses limites normales pour voir quand et comment il casse.",
+      "why_it_matters_fr": "Vérifie qu’il échoue proprement et se rétablit.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "stress-testing-1",
+          "text_en": "Stress testing crashed the database at 2,000 users.",
+          "text_fr": "Le test de stress a fait tomber la base à 2 000 utilisateurs."
+        },
+        {
+          "id": "stress-testing-2",
+          "text_en": "The system recovered well after stress testing.",
+          "text_fr": "Le système s’est bien rétabli après le test de stress."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "security-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "security"
+      ],
+      "term_en": "security testing",
+      "translation_fr": "test de sécurité",
+      "part_of_speech": "noun",
+      "definition_en": "Testing an application to find weaknesses an attacker could exploit.",
+      "explanation_fr": "Tester une application pour trouver les failles qu’un attaquant pourrait exploiter.",
+      "why_it_matters_fr": "Doit faire partie du cycle de test normal.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "security-testing-1",
+          "text_en": "Security testing found an exposed admin page.",
+          "text_fr": "Le test de sécurité a trouvé une page admin exposée."
+        },
+        {
+          "id": "security-testing-2",
+          "text_en": "We added security testing to the pipeline.",
+          "text_fr": "Nous avons ajouté des tests de sécurité au pipeline."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "accessibility-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "ux-ui"
+      ],
+      "term_en": "accessibility testing",
+      "translation_fr": "test d’accessibilité",
+      "part_of_speech": "noun",
+      "definition_en": "Checking that people with disabilities can use the product, with tools and manual checks.",
+      "explanation_fr": "Vérifier que les personnes en situation de handicap peuvent utiliser le produit, avec outils et contrôles manuels.",
+      "why_it_matters_fr": "Souvent oublié, parfois obligatoire légalement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "accessibility-testing-1",
+          "text_en": "Accessibility testing found missing labels.",
+          "text_fr": "Le test d’accessibilité a trouvé des libellés manquants."
+        },
+        {
+          "id": "accessibility-testing-2",
+          "text_en": "Include keyboard navigation in accessibility testing.",
+          "text_fr": "Inclus la navigation clavier dans les tests d’accessibilité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "known-issue",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "project-management",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "known issue",
+      "translation_fr": "problème connu",
+      "part_of_speech": "noun",
+      "definition_en": "A bug that has been identified and documented but not yet fixed.",
+      "explanation_fr": "Bug identifié et documenté mais pas encore corrigé.",
+      "why_it_matters_fr": "On le signale dans les notes de version.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "known-issue-1",
+          "text_en": "This is a known issue, the fix is planned for next week.",
+          "text_fr": "C’est un problème connu, le correctif est prévu la semaine prochaine."
+        },
+        {
+          "id": "known-issue-2",
+          "text_en": "Add it to the known issues list.",
+          "text_fr": "Ajoute-le à la liste des problèmes connus."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "release-notes",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 40
+        },
+        {
+          "role": "project-management",
+          "priority": 40
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "product"
+      ],
+      "term_en": "release notes",
+      "translation_fr": "notes de version",
+      "part_of_speech": "noun",
+      "definition_en": "A document describing what is new, fixed or changed in a release.",
+      "explanation_fr": "Document qui décrit les nouveautés, corrections et changements d’une version.",
+      "why_it_matters_fr": "Utile aux utilisateurs comme au support.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "release-notes-1",
+          "text_en": "Write the release notes in simple English.",
+          "text_fr": "Rédige les notes de version en anglais simple."
+        },
+        {
+          "id": "release-notes-2",
+          "text_en": "The release notes mention the new dark mode.",
+          "text_fr": "Les notes de version mentionnent le nouveau mode sombre."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "showstopper",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "showstopper",
+      "translation_fr": "bug bloquant",
+      "part_of_speech": "noun",
+      "definition_en": "A bug so serious that the release cannot go ahead until it is fixed.",
+      "explanation_fr": "Bug si grave que la sortie ne peut pas avoir lieu avant sa correction.",
+      "why_it_matters_fr": "Arrête une release.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "showstopper-1",
+          "text_en": "Payment failure is a showstopper.",
+          "text_fr": "L’échec des paiements est un bug bloquant."
+        },
+        {
+          "id": "showstopper-2",
+          "text_en": "We found a showstopper the day before launch.",
+          "text_fr": "Nous avons trouvé un bug bloquant la veille du lancement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "retest",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "retest",
+      "translation_fr": "retester",
+      "part_of_speech": "verb",
+      "definition_en": "To test again after a bug fix to confirm the problem is solved.",
+      "explanation_fr": "Tester à nouveau après une correction pour confirmer que le problème est résolu.",
+      "why_it_matters_fr": "Étape obligatoire avant de fermer un bug.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "retest-1",
+          "text_en": "Please retest the login after the fix.",
+          "text_fr": "Merci de retester la connexion après le correctif."
+        },
+        {
+          "id": "retest-2",
+          "text_en": "I retested and the bug is gone.",
+          "text_fr": "J’ai retesté et le bug a disparu."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cannot-reproduce",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "cannot reproduce",
+      "translation_fr": "non reproductible",
+      "part_of_speech": "phrase",
+      "definition_en": "Said when a developer or tester can’t make a reported bug happen again.",
+      "explanation_fr": "Se dit quand un développeur ou testeur n’arrive pas à refaire apparaître un bug signalé.",
+      "why_it_matters_fr": "Les étapes de reproduction précises évitent ce statut.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cannot-reproduce-1",
+          "text_en": "I cannot reproduce the crash on my phone.",
+          "text_fr": "Je ne reproduis pas le crash sur mon téléphone."
+        },
+        {
+          "id": "cannot-reproduce-2",
+          "text_en": "The ticket was closed as “cannot reproduce”.",
+          "text_fr": "Le ticket a été fermé comme « non reproductible »."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
