@@ -864,6 +864,1080 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "osi-model",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "OSI model",
+      "translation_fr": "modèle OSI",
+      "part_of_speech": "noun",
+      "definition_en": "A seven-layer reference model that describes how data travels through a network, from the physical cable to the application.",
+      "explanation_fr": "Modèle de référence en sept couches qui décrit comment les données circulent dans un réseau, du câble physique à l’application.",
+      "why_it_matters_fr": "Question classique des entretiens et certifications réseau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "osi-model-1",
+          "text_en": "This problem is at layer 3 of the OSI model.",
+          "text_fr": "Ce problème se situe à la couche 3 du modèle OSI."
+        },
+        {
+          "id": "osi-model-2",
+          "text_en": "Switches work at layer 2 of the OSI model.",
+          "text_fr": "Les switchs travaillent à la couche 2 du modèle OSI."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "gateway",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "gateway",
+      "translation_fr": "passerelle",
+      "part_of_speech": "noun",
+      "definition_en": "A device, often a router, that connects a local network to other networks such as the internet.",
+      "explanation_fr": "Équipement, souvent un routeur, qui relie un réseau local à d’autres réseaux comme internet.",
+      "why_it_matters_fr": "La passerelle par défaut est une notion de base du dépannage.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "gateway-1",
+          "text_en": "The default gateway is 192.168.1.1.",
+          "text_fr": "La passerelle par défaut est 192.168.1.1."
+        },
+        {
+          "id": "gateway-2",
+          "text_en": "Users lost internet because the gateway was down.",
+          "text_fr": "Les utilisateurs ont perdu internet car la passerelle était en panne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "nat",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "NAT",
+      "translation_fr": "traduction d’adresses (NAT)",
+      "part_of_speech": "acronym",
+      "definition_en": "Network Address Translation: a technique that lets many devices on a private network share one public IP address.",
+      "explanation_fr": "Network Address Translation : technique qui permet à de nombreux appareils d’un réseau privé de partager une seule adresse IP publique.",
+      "why_it_matters_fr": "Explique pourquoi les appareils d’un réseau local ont des adresses privées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "nat-1",
+          "text_en": "The router uses NAT for all office computers.",
+          "text_fr": "Le routeur utilise le NAT pour tous les ordinateurs du bureau."
+        },
+        {
+          "id": "nat-2",
+          "text_en": "NAT hides internal addresses from the internet.",
+          "text_fr": "Le NAT masque les adresses internes vis-à-vis d’internet."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "vlan",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "VLAN",
+      "translation_fr": "réseau local virtuel (VLAN)",
+      "part_of_speech": "acronym",
+      "definition_en": "Virtual LAN: a way to split one physical network into several separate logical networks.",
+      "explanation_fr": "Virtual LAN : moyen de découper un réseau physique en plusieurs réseaux logiques séparés.",
+      "why_it_matters_fr": "Sépare par exemple le réseau des invités de celui des employés.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "vlan-1",
+          "text_en": "Guests are on a separate VLAN.",
+          "text_fr": "Les invités sont sur un VLAN séparé."
+        },
+        {
+          "id": "vlan-2",
+          "text_en": "We created a VLAN for the cameras.",
+          "text_fr": "Nous avons créé un VLAN pour les caméras."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ping",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "ping",
+      "translation_fr": "tester la connexion (ping)",
+      "part_of_speech": "verb",
+      "definition_en": "To send a small test message to another device to check that it is reachable and measure the response time.",
+      "explanation_fr": "Envoyer un petit message de test à un autre appareil pour vérifier qu’il répond et mesurer le temps de réponse.",
+      "why_it_matters_fr": "Premier outil de diagnostic réseau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ping-1",
+          "text_en": "Ping the server to see if it is online.",
+          "text_fr": "Fais un ping au serveur pour voir s’il est en ligne."
+        },
+        {
+          "id": "ping-2",
+          "text_en": "The ping time is over 300 milliseconds.",
+          "text_fr": "Le temps de ping dépasse 300 millisecondes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "traceroute",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "traceroute",
+      "translation_fr": "traceroute",
+      "part_of_speech": "noun",
+      "definition_en": "A tool that shows the path packets take to reach a destination and where delays happen.",
+      "explanation_fr": "Outil qui montre le chemin suivi par les paquets jusqu’à une destination et où se produisent les délais.",
+      "why_it_matters_fr": "Utile pour localiser une coupure ou une lenteur réseau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "traceroute-1",
+          "text_en": "Traceroute showed the delay was at the provider’s router.",
+          "text_fr": "Traceroute a montré que le délai venait du routeur du fournisseur."
+        },
+        {
+          "id": "traceroute-2",
+          "text_en": "Run a traceroute to the website.",
+          "text_fr": "Lance un traceroute vers le site."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mac-address",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "MAC address",
+      "translation_fr": "adresse MAC",
+      "part_of_speech": "noun",
+      "definition_en": "A unique hardware identifier assigned to a network interface.",
+      "explanation_fr": "Identifiant matériel unique attribué à une interface réseau.",
+      "why_it_matters_fr": "Utilisée pour le filtrage, le DHCP et le dépannage local.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mac-address-1",
+          "text_en": "We filter Wi-Fi access by MAC address.",
+          "text_fr": "Nous filtrons l’accès Wi-Fi par adresse MAC."
+        },
+        {
+          "id": "mac-address-2",
+          "text_en": "Each network card has its own MAC address.",
+          "text_fr": "Chaque carte réseau a sa propre adresse MAC."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ipv6",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "IPv6",
+      "translation_fr": "IPv6",
+      "part_of_speech": "acronym",
+      "definition_en": "The newer version of the Internet Protocol, with much longer addresses to provide far more of them than IPv4.",
+      "explanation_fr": "Nouvelle version du protocole internet, avec des adresses bien plus longues pour en fournir beaucoup plus qu’IPv4.",
+      "why_it_matters_fr": "Les adresses IPv4 sont épuisées : IPv6 progresse partout.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ipv6-1",
+          "text_en": "Our mobile operator uses IPv6.",
+          "text_fr": "Notre opérateur mobile utilise IPv6."
+        },
+        {
+          "id": "ipv6-2",
+          "text_en": "The server is reachable over both IPv4 and IPv6.",
+          "text_fr": "Le serveur est joignable en IPv4 et en IPv6."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "proxy",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "networking",
+        "security"
+      ],
+      "term_en": "proxy server",
+      "translation_fr": "serveur mandataire (proxy)",
+      "part_of_speech": "noun",
+      "definition_en": "A server that sits between users and the internet, forwarding requests, often to filter or cache traffic.",
+      "explanation_fr": "Serveur placé entre les utilisateurs et internet, qui relaie les requêtes, souvent pour filtrer ou mettre en cache le trafic.",
+      "why_it_matters_fr": "Fréquent en entreprise ; source de problèmes de connexion.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "proxy-1",
+          "text_en": "The company proxy blocks some websites.",
+          "text_fr": "Le proxy de l’entreprise bloque certains sites."
+        },
+        {
+          "id": "proxy-2",
+          "text_en": "Configure the proxy in your browser settings.",
+          "text_fr": "Configure le proxy dans les réglages du navigateur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "linux",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "general-tech",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "Linux",
+      "translation_fr": "Linux",
+      "part_of_speech": "noun",
+      "definition_en": "A family of open-source operating systems used on most servers, cloud machines and Android phones.",
+      "explanation_fr": "Famille de systèmes d’exploitation open source utilisée sur la plupart des serveurs, machines cloud et téléphones Android.",
+      "why_it_matters_fr": "Compétence de base pour l’administration système et le DevOps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "linux-1",
+          "text_en": "Our servers run Linux.",
+          "text_fr": "Nos serveurs tournent sous Linux."
+        },
+        {
+          "id": "linux-2",
+          "text_en": "I manage Linux users and permissions.",
+          "text_fr": "Je gère les utilisateurs et les droits sous Linux."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "kernel",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "kernel",
+      "translation_fr": "noyau",
+      "part_of_speech": "noun",
+      "definition_en": "The core part of an operating system that manages memory, processes and hardware.",
+      "explanation_fr": "Partie centrale d’un système d’exploitation, qui gère la mémoire, les processus et le matériel.",
+      "why_it_matters_fr": "Les mises à jour du noyau corrigent souvent des failles importantes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "kernel-1",
+          "text_en": "We updated the kernel to fix a security flaw.",
+          "text_fr": "Nous avons mis à jour le noyau pour corriger une faille."
+        },
+        {
+          "id": "kernel-2",
+          "text_en": "The kernel manages access to the hardware.",
+          "text_fr": "Le noyau gère l’accès au matériel."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "process",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "process",
+      "translation_fr": "processus",
+      "part_of_speech": "noun",
+      "definition_en": "A running program with its own memory and resources.",
+      "explanation_fr": "Programme en cours d’exécution avec sa propre mémoire et ses propres ressources.",
+      "why_it_matters_fr": "On surveille et arrête les processus qui consomment trop.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "process-1",
+          "text_en": "One process was using all the CPU.",
+          "text_fr": "Un processus utilisait tout le processeur."
+        },
+        {
+          "id": "process-2",
+          "text_en": "Restart the process after changing the configuration.",
+          "text_fr": "Redémarre le processus après avoir modifié la configuration."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "file-permissions",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "security"
+      ],
+      "term_en": "file permissions",
+      "translation_fr": "droits sur les fichiers",
+      "part_of_speech": "noun",
+      "definition_en": "Settings that decide who can read, write or execute a file or folder.",
+      "explanation_fr": "Réglages qui décident qui peut lire, écrire ou exécuter un fichier ou un dossier.",
+      "why_it_matters_fr": "Mal réglés, ils créent des failles ou des erreurs « permission denied ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "file-permissions-1",
+          "text_en": "The script failed because of file permissions.",
+          "text_fr": "Le script a échoué à cause des droits sur les fichiers."
+        },
+        {
+          "id": "file-permissions-2",
+          "text_en": "Only the admin can change these file permissions.",
+          "text_fr": "Seul l’administrateur peut modifier ces droits."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "root-user",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "security"
+      ],
+      "term_en": "root user",
+      "translation_fr": "superutilisateur (root)",
+      "part_of_speech": "noun",
+      "definition_en": "On Linux, the administrator account with full control over the system.",
+      "explanation_fr": "Sous Linux, le compte administrateur qui a le contrôle total du système.",
+      "why_it_matters_fr": "On évite de travailler en root au quotidien, par sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "root-user-1",
+          "text_en": "Don’t run the application as the root user.",
+          "text_fr": "Ne lance pas l’application en tant que root."
+        },
+        {
+          "id": "root-user-2",
+          "text_en": "Only two people have the root password.",
+          "text_fr": "Seules deux personnes ont le mot de passe root."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "shell",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "shell",
+      "translation_fr": "interpréteur de commandes (shell)",
+      "part_of_speech": "noun",
+      "definition_en": "A program that reads commands typed in a terminal and runs them, such as Bash or PowerShell.",
+      "explanation_fr": "Programme qui lit les commandes tapées dans un terminal et les exécute, comme Bash ou PowerShell.",
+      "why_it_matters_fr": "Écrire des scripts shell est un savoir-faire de base en exploitation.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "shell-1",
+          "text_en": "I wrote a shell script to clean the logs.",
+          "text_fr": "J’ai écrit un script shell pour nettoyer les journaux."
+        },
+        {
+          "id": "shell-2",
+          "text_en": "Open a shell on the server.",
+          "text_fr": "Ouvre un shell sur le serveur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "disk-space",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "monitoring"
+      ],
+      "term_en": "disk space",
+      "translation_fr": "espace disque",
+      "part_of_speech": "noun",
+      "definition_en": "The amount of storage available on a drive.",
+      "explanation_fr": "La quantité de stockage disponible sur un disque.",
+      "why_it_matters_fr": "Un disque plein est une cause fréquente de panne.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "disk-space-1",
+          "text_en": "The server stopped because it ran out of disk space.",
+          "text_fr": "Le serveur s’est arrêté car il n’avait plus d’espace disque."
+        },
+        {
+          "id": "disk-space-2",
+          "text_en": "We get an alert when disk space is below 10%.",
+          "text_fr": "Nous recevons une alerte quand l’espace disque passe sous 10 %."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ram",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "RAM",
+      "translation_fr": "mémoire vive (RAM)",
+      "part_of_speech": "acronym",
+      "definition_en": "Random Access Memory: the fast, temporary memory a computer uses for running programs.",
+      "explanation_fr": "Random Access Memory : mémoire rapide et temporaire qu’un ordinateur utilise pour faire tourner les programmes.",
+      "why_it_matters_fr": "Le manque de RAM ralentit les machines et les serveurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ram-1",
+          "text_en": "The laptop needs more RAM to run Android Studio.",
+          "text_fr": "L’ordinateur a besoin de plus de RAM pour faire tourner Android Studio."
+        },
+        {
+          "id": "ram-2",
+          "text_en": "The app uses too much RAM on old phones.",
+          "text_fr": "L’app consomme trop de RAM sur les vieux téléphones."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cpu",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "performance"
+      ],
+      "term_en": "CPU",
+      "translation_fr": "processeur (CPU)",
+      "part_of_speech": "acronym",
+      "definition_en": "Central Processing Unit: the main chip that executes a computer’s instructions.",
+      "explanation_fr": "Central Processing Unit : la puce principale qui exécute les instructions de l’ordinateur.",
+      "why_it_matters_fr": "L’usage du CPU est un indicateur clé de supervision.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cpu-1",
+          "text_en": "CPU usage reached 100% during the backup.",
+          "text_fr": "L’usage du processeur a atteint 100 % pendant la sauvegarde."
+        },
+        {
+          "id": "cpu-2",
+          "text_en": "We need a server with more CPU cores.",
+          "text_fr": "Il nous faut un serveur avec plus de cœurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "virtualization",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "cloud"
+      ],
+      "term_en": "virtualization",
+      "translation_fr": "virtualisation",
+      "part_of_speech": "noun",
+      "definition_en": "Running several virtual computers on one physical machine, each with its own operating system.",
+      "explanation_fr": "Faire tourner plusieurs ordinateurs virtuels sur une seule machine physique, chacun avec son système d’exploitation.",
+      "why_it_matters_fr": "Base des datacenters et du cloud.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "virtualization-1",
+          "text_en": "Virtualization lets us run ten servers on one machine.",
+          "text_fr": "La virtualisation nous permet de faire tourner dix serveurs sur une machine."
+        },
+        {
+          "id": "virtualization-2",
+          "text_en": "We use VMware for virtualization.",
+          "text_fr": "Nous utilisons VMware pour la virtualisation."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hypervisor",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "cloud"
+      ],
+      "term_en": "hypervisor",
+      "translation_fr": "hyperviseur",
+      "part_of_speech": "noun",
+      "definition_en": "Software that creates and runs virtual machines and shares the physical hardware between them.",
+      "explanation_fr": "Logiciel qui crée et exécute des machines virtuelles et partage le matériel physique entre elles.",
+      "why_it_matters_fr": "Composant central de la virtualisation.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hypervisor-1",
+          "text_en": "The hypervisor gives each VM four CPU cores.",
+          "text_fr": "L’hyperviseur attribue quatre cœurs à chaque machine virtuelle."
+        },
+        {
+          "id": "hypervisor-2",
+          "text_en": "We updated the hypervisor during the weekend.",
+          "text_fr": "Nous avons mis à jour l’hyperviseur pendant le week-end."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "raid",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "RAID",
+      "translation_fr": "RAID (regroupement de disques)",
+      "part_of_speech": "acronym",
+      "definition_en": "Redundant Array of Independent Disks: combining several disks for better performance, protection against disk failure, or both.",
+      "explanation_fr": "Redundant Array of Independent Disks : combiner plusieurs disques pour de meilleures performances, une protection contre la panne d’un disque, ou les deux.",
+      "why_it_matters_fr": "Le RAID n’est pas une sauvegarde : piège classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "raid-1",
+          "text_en": "The server uses RAID 1, so one disk can fail safely.",
+          "text_fr": "Le serveur utilise le RAID 1 : un disque peut tomber sans perte."
+        },
+        {
+          "id": "raid-2",
+          "text_en": "RAID is not a replacement for backups.",
+          "text_fr": "Le RAID ne remplace pas les sauvegardes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "patch-management",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "security"
+      ],
+      "term_en": "patch management",
+      "translation_fr": "gestion des correctifs",
+      "part_of_speech": "noun",
+      "definition_en": "The process of tracking, testing and installing updates on systems to fix bugs and security flaws.",
+      "explanation_fr": "Le processus de suivi, test et installation des mises à jour pour corriger bugs et failles.",
+      "why_it_matters_fr": "Essentiel contre les attaques qui exploitent des failles connues.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "patch-management-1",
+          "text_en": "Patch management is done every second Tuesday.",
+          "text_fr": "La gestion des correctifs se fait un mardi sur deux."
+        },
+        {
+          "id": "patch-management-2",
+          "text_en": "Good patch management would have prevented the attack.",
+          "text_fr": "Une bonne gestion des correctifs aurait évité l’attaque."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mdm",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 50
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "mobile-platforms"
+      ],
+      "term_en": "MDM",
+      "translation_fr": "gestion des appareils mobiles (MDM)",
+      "part_of_speech": "acronym",
+      "definition_en": "Mobile Device Management: software that lets a company configure, secure and wipe employees’ phones and laptops remotely.",
+      "explanation_fr": "Mobile Device Management : logiciel qui permet à une entreprise de configurer, sécuriser et effacer à distance les téléphones et ordinateurs des employés.",
+      "why_it_matters_fr": "Indispensable quand les employés utilisent des appareils pour le travail.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mdm-1",
+          "text_en": "MDM let us wipe the stolen phone remotely.",
+          "text_fr": "Le MDM nous a permis d’effacer le téléphone volé à distance."
+        },
+        {
+          "id": "mdm-2",
+          "text_en": "All company laptops are enrolled in MDM.",
+          "text_fr": "Tous les ordinateurs de l’entreprise sont gérés par le MDM."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "it-asset-inventory",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "IT asset inventory",
+      "translation_fr": "inventaire du parc informatique",
+      "part_of_speech": "noun",
+      "definition_en": "A list of all hardware and software a company owns, with owners, locations and versions.",
+      "explanation_fr": "Liste de tout le matériel et les logiciels de l’entreprise, avec responsables, emplacements et versions.",
+      "why_it_matters_fr": "Base de la gestion de parc et de la sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "it-asset-inventory-1",
+          "text_en": "The IT asset inventory lists 120 laptops.",
+          "text_fr": "L’inventaire du parc compte 120 ordinateurs portables."
+        },
+        {
+          "id": "it-asset-inventory-2",
+          "text_en": "Update the inventory when someone leaves the company.",
+          "text_fr": "Mets à jour l’inventaire quand quelqu’un quitte l’entreprise."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "remote-desktop",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "operating-systems",
+        "networking"
+      ],
+      "term_en": "remote desktop",
+      "translation_fr": "bureau à distance",
+      "part_of_speech": "noun",
+      "definition_en": "A tool that lets you see and control another computer’s screen over the network.",
+      "explanation_fr": "Outil qui permet de voir et contrôler l’écran d’un autre ordinateur à travers le réseau.",
+      "why_it_matters_fr": "Outil quotidien du support informatique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "remote-desktop-1",
+          "text_en": "I fixed her laptop through remote desktop.",
+          "text_fr": "J’ai réparé son ordinateur via le bureau à distance."
+        },
+        {
+          "id": "remote-desktop-2",
+          "text_en": "Remote desktop access requires the VPN.",
+          "text_fr": "L’accès au bureau à distance nécessite le VPN."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "wifi",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "Wi-Fi",
+      "translation_fr": "Wi-Fi",
+      "part_of_speech": "noun",
+      "definition_en": "Wireless networking technology that connects devices to a local network and the internet without cables.",
+      "explanation_fr": "Technologie de réseau sans fil qui relie les appareils à un réseau local et à internet sans câble.",
+      "why_it_matters_fr": "Source de nombreux tickets de support.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "wifi-1",
+          "text_en": "The Wi-Fi signal is weak in the meeting room.",
+          "text_fr": "Le signal Wi-Fi est faible dans la salle de réunion."
+        },
+        {
+          "id": "wifi-2",
+          "text_en": "We added a second Wi-Fi access point.",
+          "text_fr": "Nous avons ajouté un second point d’accès Wi-Fi."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "uptime-monitoring",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "uptime monitoring",
+      "translation_fr": "surveillance de disponibilité",
+      "part_of_speech": "noun",
+      "definition_en": "Automatically checking from outside, at regular intervals, that a website or service is reachable.",
+      "explanation_fr": "Vérifier automatiquement de l’extérieur, à intervalles réguliers, qu’un site ou un service répond.",
+      "why_it_matters_fr": "Prévient l’équipe avant que les utilisateurs ne se plaignent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "uptime-monitoring-1",
+          "text_en": "Uptime monitoring alerted us when the site went down.",
+          "text_fr": "La surveillance de disponibilité nous a alertés quand le site est tombé."
+        },
+        {
+          "id": "uptime-monitoring-2",
+          "text_en": "The check runs every minute from three countries.",
+          "text_fr": "Le contrôle tourne chaque minute depuis trois pays."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
