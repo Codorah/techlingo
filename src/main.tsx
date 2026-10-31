@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { Route, Switch } from 'wouter';
 import '@/i18n';
 import '@/styles/index.css';
+import { InstallSheet } from '@/app/InstallSheet';
 import { UpdatePrompt } from '@/app/UpdatePrompt';
 import { db, getDeviceId, requestPersistence } from '@/db/db';
 import '@/lib/install';
@@ -51,5 +52,6 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={null}><App /></Suspense>
     <UpdatePrompt />
+    <InstallSheet />
   </StrictMode>
 );
