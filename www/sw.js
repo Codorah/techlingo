@@ -1,7 +1,7 @@
 // TechLingo — service worker : l'app complète fonctionne hors ligne
-const CACHE = 'techlingo-v2';
+const CACHE = 'techlingo-v3';
 const SHELL = [
-  './', './index.html', './style.css', './fonts.css', './data.js', './data-extra.js', './app.js', './privacy.html', './terms.html',
+  './', './index.html', './style.css', './fonts.css', './data.js', './data-extra.js', './icons.js', './app.js', './privacy.html', './terms.html',
   './manifest.webmanifest', './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png',
   './fonts/DMSans-400-latin-ext.woff2',
   './fonts/DMSans-400-latin.woff2',
@@ -10,13 +10,7 @@ const SHELL = [
   './fonts/DMSans-700-latin-ext.woff2',
   './fonts/DMSans-700-latin.woff2',
   './fonts/JetBrainsMono-500-latin-ext.woff2',
-  './fonts/JetBrainsMono-500-latin.woff2',
-  './fonts/Nunito-700-latin-ext.woff2',
-  './fonts/Nunito-700-latin.woff2',
-  './fonts/Nunito-800-latin-ext.woff2',
-  './fonts/Nunito-800-latin.woff2',
-  './fonts/Nunito-900-latin-ext.woff2',
-  './fonts/Nunito-900-latin.woff2'
+  './fonts/JetBrainsMono-500-latin.woff2'
 ];
 
 self.addEventListener('install', (e) => {
