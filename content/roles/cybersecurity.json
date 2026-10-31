@@ -779,6 +779,1065 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "attack-surface",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "attack surface",
+      "translation_fr": "surface d’attaque",
+      "part_of_speech": "noun",
+      "definition_en": "All the points where an attacker could try to enter or extract data from a system.",
+      "explanation_fr": "L’ensemble des points par lesquels un attaquant pourrait tenter d’entrer dans un système ou d’en extraire des données.",
+      "why_it_matters_fr": "Réduire la surface d’attaque est un principe de base.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "attack-surface-1",
+          "text_en": "Closing unused ports reduced our attack surface.",
+          "text_fr": "Fermer les ports inutilisés a réduit notre surface d’attaque."
+        },
+        {
+          "id": "attack-surface-2",
+          "text_en": "Every new API endpoint increases the attack surface.",
+          "text_fr": "Chaque nouvel endpoint augmente la surface d’attaque."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "social-engineering",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "social engineering",
+      "translation_fr": "ingénierie sociale",
+      "part_of_speech": "noun",
+      "definition_en": "Manipulating people into revealing confidential information or performing unsafe actions.",
+      "explanation_fr": "Manipuler des personnes pour qu’elles révèlent des informations confidentielles ou fassent des actions dangereuses.",
+      "why_it_matters_fr": "Les attaquants visent souvent l’humain plutôt que la technique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "social-engineering-1",
+          "text_en": "The attacker used social engineering to get a password over the phone.",
+          "text_fr": "L’attaquant a utilisé l’ingénierie sociale pour obtenir un mot de passe au téléphone."
+        },
+        {
+          "id": "social-engineering-2",
+          "text_en": "Training helps employees resist social engineering.",
+          "text_fr": "La formation aide les employés à résister à l’ingénierie sociale."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-breach",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "data breach",
+      "translation_fr": "fuite de données",
+      "part_of_speech": "noun",
+      "definition_en": "An incident where confidential data is accessed or disclosed without authorization.",
+      "explanation_fr": "Incident où des données confidentielles sont consultées ou divulguées sans autorisation.",
+      "why_it_matters_fr": "Peut entraîner des sanctions légales et une perte de confiance.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-breach-1",
+          "text_en": "The data breach exposed thousands of email addresses.",
+          "text_fr": "La fuite de données a exposé des milliers d’adresses e-mail."
+        },
+        {
+          "id": "data-breach-2",
+          "text_en": "We must report a data breach to the authorities quickly.",
+          "text_fr": "Nous devons signaler rapidement une fuite de données aux autorités."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "access-control",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "access control",
+      "translation_fr": "contrôle d’accès",
+      "part_of_speech": "noun",
+      "definition_en": "The rules and mechanisms that decide who can access which resources and actions.",
+      "explanation_fr": "Règles et mécanismes qui décident qui peut accéder à quelles ressources et actions.",
+      "why_it_matters_fr": "Une grande partie des failles viennent d’un contrôle d’accès défaillant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "access-control-1",
+          "text_en": "Access control prevents interns from seeing salaries.",
+          "text_fr": "Le contrôle d’accès empêche les stagiaires de voir les salaires."
+        },
+        {
+          "id": "access-control-2",
+          "text_en": "We review access control every quarter.",
+          "text_fr": "Nous revoyons le contrôle d’accès chaque trimestre."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "role-based-access-control",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "role-based access control",
+      "translation_fr": "contrôle d’accès par rôle",
+      "part_of_speech": "noun",
+      "definition_en": "Giving permissions to roles, such as admin or editor, and assigning users to those roles.",
+      "explanation_fr": "Attribuer des droits à des rôles (administrateur, éditeur…) puis affecter les utilisateurs à ces rôles.",
+      "why_it_matters_fr": "Abrégé RBAC ; modèle standard des applications d’entreprise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "role-based-access-control-1",
+          "text_en": "With role-based access control, editors cannot delete users.",
+          "text_fr": "Avec le contrôle d’accès par rôle, les éditeurs ne peuvent pas supprimer d’utilisateurs."
+        },
+        {
+          "id": "role-based-access-control-2",
+          "text_en": "We added a support role with read-only access.",
+          "text_fr": "Nous avons ajouté un rôle support en lecture seule."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "security-audit",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "security audit",
+      "translation_fr": "audit de sécurité",
+      "part_of_speech": "noun",
+      "definition_en": "A systematic review of a system to check that it follows security rules and to find weaknesses.",
+      "explanation_fr": "Examen méthodique d’un système pour vérifier qu’il respecte les règles de sécurité et trouver ses faiblesses.",
+      "why_it_matters_fr": "Souvent exigé par les clients et les régulateurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "security-audit-1",
+          "text_en": "The security audit found weak passwords on two servers.",
+          "text_fr": "L’audit de sécurité a trouvé des mots de passe faibles sur deux serveurs."
+        },
+        {
+          "id": "security-audit-2",
+          "text_en": "We pass a security audit every year.",
+          "text_fr": "Nous passons un audit de sécurité chaque année."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "incident-response",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "monitoring"
+      ],
+      "term_en": "incident response",
+      "translation_fr": "réponse aux incidents",
+      "part_of_speech": "noun",
+      "definition_en": "The organized process for detecting, containing, investigating and recovering from a security incident.",
+      "explanation_fr": "Processus organisé pour détecter, contenir, analyser un incident de sécurité et s’en remettre.",
+      "why_it_matters_fr": "Les équipes de sécurité s’y entraînent régulièrement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "incident-response-1",
+          "text_en": "Our incident response plan starts by isolating the affected server.",
+          "text_fr": "Notre plan de réponse aux incidents commence par isoler le serveur touché."
+        },
+        {
+          "id": "incident-response-2",
+          "text_en": "The incident response team worked all night.",
+          "text_fr": "L’équipe de réponse aux incidents a travaillé toute la nuit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "siem",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security",
+        "monitoring"
+      ],
+      "term_en": "SIEM",
+      "translation_fr": "SIEM (gestion des événements de sécurité)",
+      "part_of_speech": "acronym",
+      "definition_en": "Security Information and Event Management: a tool that collects and analyzes security logs from many systems to detect threats.",
+      "explanation_fr": "Security Information and Event Management : outil qui collecte et analyse les journaux de sécurité de nombreux systèmes pour détecter les menaces.",
+      "why_it_matters_fr": "Outil central du travail en SOC.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "siem-1",
+          "text_en": "The SIEM raised an alert for logins from two countries.",
+          "text_fr": "Le SIEM a levé une alerte pour des connexions depuis deux pays."
+        },
+        {
+          "id": "siem-2",
+          "text_en": "We send all firewall logs to the SIEM.",
+          "text_fr": "Nous envoyons tous les journaux du pare-feu au SIEM."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "intrusion-detection",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "intrusion detection system",
+      "translation_fr": "système de détection d’intrusion",
+      "part_of_speech": "noun",
+      "definition_en": "A system that monitors network or host activity and alerts on suspicious behavior.",
+      "explanation_fr": "Système qui surveille l’activité réseau ou d’une machine et alerte en cas de comportement suspect.",
+      "why_it_matters_fr": "Abrégé IDS ; complète le pare-feu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "intrusion-detection-1",
+          "text_en": "The intrusion detection system flagged a port scan.",
+          "text_fr": "Le système de détection d’intrusion a signalé un scan de ports."
+        },
+        {
+          "id": "intrusion-detection-2",
+          "text_en": "We tuned the intrusion detection system to reduce false alerts.",
+          "text_fr": "Nous avons réglé l’IDS pour réduire les fausses alertes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "false-positive",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "ai-ml-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "testing"
+      ],
+      "term_en": "false positive",
+      "translation_fr": "faux positif",
+      "part_of_speech": "noun",
+      "definition_en": "A result that wrongly signals a problem that does not exist.",
+      "explanation_fr": "Résultat qui signale à tort un problème qui n’existe pas.",
+      "why_it_matters_fr": "Trop de faux positifs fatiguent les équipes et masquent les vraies alertes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "false-positive-1",
+          "text_en": "The antivirus quarantined our app: it was a false positive.",
+          "text_fr": "L’antivirus a mis notre app en quarantaine : c’était un faux positif."
+        },
+        {
+          "id": "false-positive-2",
+          "text_en": "We reduced false positives in the fraud model.",
+          "text_fr": "Nous avons réduit les faux positifs du modèle de fraude."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "endpoint-security",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "operating-systems"
+      ],
+      "term_en": "endpoint security",
+      "translation_fr": "sécurité des postes de travail",
+      "part_of_speech": "noun",
+      "definition_en": "Protecting devices such as laptops and phones that connect to a company network.",
+      "explanation_fr": "Protéger les appareils (ordinateurs portables, téléphones) qui se connectent au réseau de l’entreprise.",
+      "why_it_matters_fr": "Le télétravail a rendu ce sujet central.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "endpoint-security-1",
+          "text_en": "Endpoint security blocks unknown USB drives.",
+          "text_fr": "La sécurité des postes bloque les clés USB inconnues."
+        },
+        {
+          "id": "endpoint-security-2",
+          "text_en": "Every laptop has endpoint security software.",
+          "text_fr": "Chaque ordinateur portable a un logiciel de protection."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "password-policy",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "password policy",
+      "translation_fr": "politique de mots de passe",
+      "part_of_speech": "noun",
+      "definition_en": "Rules that define how passwords must be created, stored and renewed.",
+      "explanation_fr": "Règles qui définissent comment créer, stocker et renouveler les mots de passe.",
+      "why_it_matters_fr": "Une base de la sécurité des comptes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "password-policy-1",
+          "text_en": "Our password policy requires at least twelve characters.",
+          "text_fr": "Notre politique impose au moins douze caractères."
+        },
+        {
+          "id": "password-policy-2",
+          "text_en": "A password manager makes the password policy easier to follow.",
+          "text_fr": "Un gestionnaire de mots de passe facilite le respect de la politique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "salting",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "salt",
+      "translation_fr": "sel (cryptographique)",
+      "part_of_speech": "noun",
+      "definition_en": "Random data added to a password before hashing so that identical passwords produce different hashes.",
+      "explanation_fr": "Donnée aléatoire ajoutée à un mot de passe avant le hachage pour que deux mots de passe identiques donnent des empreintes différentes.",
+      "why_it_matters_fr": "Protège contre les attaques par tables précalculées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "salting-1",
+          "text_en": "Each password is hashed with a unique salt.",
+          "text_fr": "Chaque mot de passe est haché avec un sel unique."
+        },
+        {
+          "id": "salting-2",
+          "text_en": "Modern hashing libraries add the salt automatically.",
+          "text_fr": "Les bibliothèques modernes ajoutent le sel automatiquement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "public-key",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "public key",
+      "translation_fr": "clé publique",
+      "part_of_speech": "noun",
+      "definition_en": "In asymmetric encryption, the key that can be shared openly to encrypt data or verify signatures; only the matching private key can decrypt or sign.",
+      "explanation_fr": "En chiffrement asymétrique, la clé partageable librement pour chiffrer ou vérifier une signature ; seule la clé privée associée peut déchiffrer ou signer.",
+      "why_it_matters_fr": "Base de HTTPS, SSH et des signatures numériques.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "public-key-1",
+          "text_en": "Add your public key to the server to connect with SSH.",
+          "text_fr": "Ajoute ta clé publique sur le serveur pour te connecter en SSH."
+        },
+        {
+          "id": "public-key-2",
+          "text_en": "Never share your private key, only the public key.",
+          "text_fr": "Ne partage jamais ta clé privée, seulement la clé publique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "certificate",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "certificate",
+      "translation_fr": "certificat",
+      "part_of_speech": "noun",
+      "definition_en": "A digital document that proves the identity of a website or server and enables encrypted connections.",
+      "explanation_fr": "Document numérique qui prouve l’identité d’un site ou d’un serveur et permet les connexions chiffrées.",
+      "why_it_matters_fr": "Un certificat expiré peut couper un service entier.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "certificate-1",
+          "text_en": "The site went down because the certificate expired.",
+          "text_fr": "Le site est tombé parce que le certificat avait expiré."
+        },
+        {
+          "id": "certificate-2",
+          "text_en": "We renew certificates automatically.",
+          "text_fr": "Nous renouvelons les certificats automatiquement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "security-by-design",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security",
+        "architecture"
+      ],
+      "term_en": "security by design",
+      "translation_fr": "sécurité dès la conception",
+      "part_of_speech": "noun",
+      "definition_en": "Building security into a system from the first design steps rather than adding it at the end.",
+      "explanation_fr": "Intégrer la sécurité dès les premières étapes de conception plutôt que de l’ajouter à la fin.",
+      "why_it_matters_fr": "Coûte beaucoup moins cher que de corriger après coup.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "security-by-design-1",
+          "text_en": "Security by design means threat modeling before coding.",
+          "text_fr": "La sécurité dès la conception implique de modéliser les menaces avant de coder."
+        },
+        {
+          "id": "security-by-design-2",
+          "text_en": "We follow security by design for every new service.",
+          "text_fr": "Nous appliquons la sécurité dès la conception à chaque nouveau service."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "threat-modeling",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "threat modeling",
+      "translation_fr": "modélisation des menaces",
+      "part_of_speech": "noun",
+      "definition_en": "Identifying what could go wrong in a system, who could attack it and how, in order to plan defenses.",
+      "explanation_fr": "Identifier ce qui pourrait mal tourner dans un système, qui pourrait l’attaquer et comment, pour planifier les défenses.",
+      "why_it_matters_fr": "Pratique clé des équipes de sécurité matures.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "threat-modeling-1",
+          "text_en": "Threat modeling showed that the admin page was exposed.",
+          "text_fr": "La modélisation des menaces a montré que la page d’administration était exposée."
+        },
+        {
+          "id": "threat-modeling-2",
+          "text_en": "We do threat modeling for features that handle payments.",
+          "text_fr": "Nous modélisons les menaces pour les fonctionnalités de paiement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "csrf",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "frontend"
+      ],
+      "term_en": "CSRF",
+      "translation_fr": "CSRF (falsification de requête intersite)",
+      "part_of_speech": "acronym",
+      "definition_en": "Cross-Site Request Forgery: an attack that tricks a logged-in user’s browser into sending an unwanted request to a site.",
+      "explanation_fr": "Cross-Site Request Forgery : attaque qui pousse le navigateur d’un utilisateur connecté à envoyer une requête non voulue à un site.",
+      "why_it_matters_fr": "Faille web classique, avec XSS et injection SQL.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "csrf-1",
+          "text_en": "CSRF tokens protect our forms.",
+          "text_fr": "Des jetons anti-CSRF protègent nos formulaires."
+        },
+        {
+          "id": "csrf-2",
+          "text_en": "The bank fixed a CSRF vulnerability in the transfer page.",
+          "text_fr": "La banque a corrigé une faille CSRF sur la page de virement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "owasp",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "OWASP Top 10",
+      "translation_fr": "OWASP Top 10",
+      "part_of_speech": "acronym",
+      "definition_en": "A widely used list, published by the OWASP foundation, of the most critical security risks for web applications.",
+      "explanation_fr": "Liste très utilisée, publiée par la fondation OWASP, des risques de sécurité les plus critiques pour les applications web.",
+      "why_it_matters_fr": "Référence citée dans les audits et les entretiens sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "owasp-1",
+          "text_en": "We check our app against the OWASP Top 10.",
+          "text_fr": "Nous vérifions notre application selon l’OWASP Top 10."
+        },
+        {
+          "id": "owasp-2",
+          "text_en": "Broken access control is high on the OWASP Top 10.",
+          "text_fr": "Le contrôle d’accès défaillant est en haut de l’OWASP Top 10."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "vulnerability-scanning",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "ci-cd"
+      ],
+      "term_en": "vulnerability scanning",
+      "translation_fr": "analyse de vulnérabilités",
+      "part_of_speech": "noun",
+      "definition_en": "Using automated tools to look for known weaknesses in systems, code or dependencies.",
+      "explanation_fr": "Utiliser des outils automatisés pour chercher des faiblesses connues dans les systèmes, le code ou les dépendances.",
+      "why_it_matters_fr": "Souvent intégrée au pipeline CI/CD.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "vulnerability-scanning-1",
+          "text_en": "Vulnerability scanning runs on every pull request.",
+          "text_fr": "L’analyse de vulnérabilités tourne sur chaque pull request."
+        },
+        {
+          "id": "vulnerability-scanning-2",
+          "text_en": "The scanner found an outdated library with a known flaw.",
+          "text_fr": "Le scanner a trouvé une bibliothèque obsolète avec une faille connue."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "compliance",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "data-engineer",
+          "priority": 35
+        },
+        {
+          "role": "project-management",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "compliance",
+      "translation_fr": "conformité",
+      "part_of_speech": "noun",
+      "definition_en": "Following the laws, regulations and standards that apply to a company, such as data protection rules.",
+      "explanation_fr": "Respecter les lois, réglementations et normes qui s’appliquent à l’entreprise, comme les règles de protection des données.",
+      "why_it_matters_fr": "De plus en plus d’offres demandent une sensibilité à la conformité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "compliance-1",
+          "text_en": "The project must meet compliance rules for health data.",
+          "text_fr": "Le projet doit respecter les règles de conformité pour les données de santé."
+        },
+        {
+          "id": "compliance-2",
+          "text_en": "Compliance requires keeping logs for one year.",
+          "text_fr": "La conformité exige de garder les journaux pendant un an."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "gdpr",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "product-design",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "GDPR",
+      "translation_fr": "RGPD",
+      "part_of_speech": "acronym",
+      "definition_en": "General Data Protection Regulation: the European Union law that protects personal data and privacy.",
+      "explanation_fr": "Règlement général sur la protection des données : loi de l’Union européenne qui protège les données personnelles et la vie privée.",
+      "why_it_matters_fr": "S’applique dès qu’on traite des données de résidents européens ; beaucoup de pays africains ont des lois proches.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "gdpr-1",
+          "text_en": "Under GDPR, users can ask us to delete their data.",
+          "text_fr": "Selon le RGPD, les utilisateurs peuvent nous demander de supprimer leurs données."
+        },
+        {
+          "id": "gdpr-2",
+          "text_en": "We updated the privacy policy for GDPR.",
+          "text_fr": "Nous avons mis à jour la politique de confidentialité pour le RGPD."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Mentionner aussi les lois nationales (ex. Sénégal, Côte d’Ivoire, Togo) si besoin."
+    },
+    {
+      "id": "backdoor",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "backdoor",
+      "translation_fr": "porte dérobée",
+      "part_of_speech": "noun",
+      "definition_en": "A hidden way to bypass normal authentication and access a system.",
+      "explanation_fr": "Moyen caché de contourner l’authentification normale pour accéder à un système.",
+      "why_it_matters_fr": "Peut être laissée par un attaquant ou par erreur par un développeur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "backdoor-1",
+          "text_en": "The attackers installed a backdoor on the server.",
+          "text_fr": "Les attaquants ont installé une porte dérobée sur le serveur."
+        },
+        {
+          "id": "backdoor-2",
+          "text_en": "A forgotten test account worked like a backdoor.",
+          "text_fr": "Un compte de test oublié fonctionnait comme une porte dérobée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "privilege-escalation",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "privilege escalation",
+      "translation_fr": "élévation de privilèges",
+      "part_of_speech": "noun",
+      "definition_en": "When an attacker gains higher access rights than they should have, for example from a normal user to admin.",
+      "explanation_fr": "Quand un attaquant obtient plus de droits qu’il ne devrait, par exemple en passant d’utilisateur normal à administrateur.",
+      "why_it_matters_fr": "Étape fréquente d’une intrusion.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "privilege-escalation-1",
+          "text_en": "A bug allowed privilege escalation to admin.",
+          "text_fr": "Un bug permettait une élévation de privilèges jusqu’à administrateur."
+        },
+        {
+          "id": "privilege-escalation-2",
+          "text_en": "We patched the privilege escalation vulnerability.",
+          "text_fr": "Nous avons corrigé la faille d’élévation de privilèges."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "security-awareness",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "security awareness",
+      "translation_fr": "sensibilisation à la sécurité",
+      "part_of_speech": "noun",
+      "definition_en": "Training and habits that help everyone recognize and avoid security risks.",
+      "explanation_fr": "Formations et habitudes qui aident chacun à reconnaître et éviter les risques de sécurité.",
+      "why_it_matters_fr": "La plupart des attaques réussies exploitent un manque de vigilance.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "security-awareness-1",
+          "text_en": "Security awareness training reduced phishing clicks.",
+          "text_fr": "La sensibilisation a réduit les clics sur les e-mails d’hameçonnage."
+        },
+        {
+          "id": "security-awareness-2",
+          "text_en": "Every new employee follows a security awareness session.",
+          "text_fr": "Chaque nouvel employé suit une session de sensibilisation."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "red-team",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "testing"
+      ],
+      "term_en": "red team",
+      "translation_fr": "équipe rouge (red team)",
+      "part_of_speech": "noun",
+      "definition_en": "A team that simulates real attackers to test an organization’s defenses; the blue team defends.",
+      "explanation_fr": "Équipe qui simule de vrais attaquants pour tester les défenses d’une organisation ; l’équipe bleue défend.",
+      "why_it_matters_fr": "Vocabulaire courant des métiers offensifs et défensifs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "red-team-1",
+          "text_en": "The red team got into the network through a phishing email.",
+          "text_fr": "L’équipe rouge est entrée dans le réseau par un e-mail d’hameçonnage."
+        },
+        {
+          "id": "red-team-2",
+          "text_en": "The blue team detected the red team after two hours.",
+          "text_fr": "L’équipe bleue a détecté l’équipe rouge au bout de deux heures."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
