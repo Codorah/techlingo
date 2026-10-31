@@ -8,21 +8,25 @@ import { TabBar } from '@/components/ui/TabBar';
 import type { CareerPack } from '@/content/schema';
 import { db } from '@/db/db';
 import { loadCareer } from '@/lib/content';
+import { generalRoleOf, profileRoles } from '@/lib/domains';
+import { useManifest } from '@/lib/useContent';
 import { speak } from '@/lib/speech';
 
 export function CareerScreen() {
   const { t } = useTranslation();
   const [, navigate] = useLocation();
   const profile = useLiveQuery(() => db.profile.get('me'));
+  const manifest = useManifest();
   const drafts = useLiveQuery(() => db.answerDrafts.toArray(), [], []);
   const [career, setCareer] = useState<CareerPack | null>(null);
   useEffect(() => { void loadCareer().then(setCareer).catch(() => setCareer(null)); }, []);
 
-  const roles = new Set(['general-tech', ...(profile?.primaryRole ? [profile.primaryRole, ...profile.secondaryRoles] : [])]);
+  const general = generalRoleOf(manifest, profile?.primaryRole);
+  const roles = new Set([general, ...profileRoles(profile)]);
   // Questions of the user's roles first, then the general ones.
   const questions = (career?.questions ?? [])
     .filter((q) => q.roles.some((r) => roles.has(r)))
-    .sort((a, b) => Number(a.roles.includes('general-tech')) - Number(b.roles.includes('general-tech')));
+    .sort((a, b) => Number(a.roles.includes(general)) - Number(b.roles.includes(general)));
   const practiced = new Set(drafts.filter((d) => d.checklist.practiced).map((d) => d.questionId));
   const done = questions.filter((q) => practiced.has(q.id)).length;
   const next = questions.find((q) => !practiced.has(q.id)) ?? questions[0];

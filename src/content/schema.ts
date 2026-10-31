@@ -106,7 +106,12 @@ export type Term = z.infer<typeof Term>;
 
 export const RoleFile = z.object({ role: Slug, terms: z.array(Term) });
 
-export const Role = z.object({ id: Slug, name_fr: text, name_en: text, icon: z.string(), description_fr: text });
+// A domain groups job roles (IT, digital marketing…). Its general role holds the basics
+// shared by every role of the domain and the interview questions asked to everyone.
+export const Domain = z.object({ id: Slug, name_fr: text, name_en: text, icon: z.string(), description_fr: text, generalRole: Slug });
+export type Domain = z.infer<typeof Domain>;
+
+export const Role = z.object({ id: Slug, domain: Slug, name_fr: text, name_en: text, icon: z.string(), description_fr: text });
 export type Role = z.infer<typeof Role>;
 
 export const Category = z.object({ id: Slug, name_fr: text, name_en: text, icon: z.string() });
@@ -118,6 +123,7 @@ export const Manifest = z.object({
   builtAt: z.string(),
   includesDrafts: z.boolean(),
   totalTerms: z.number().int(),
+  domains: z.array(Domain.extend({ termCount: z.number().int() })),
   roles: z.array(Role.extend({ termCount: z.number().int(), categories: z.array(Slug) })),
   categories: z.array(Category)
 });
@@ -135,7 +141,7 @@ export type RolePack = z.infer<typeof RolePack>;
 export const InterviewQuestion = z.object({
   id: Slug,
   status: Status,
-  roles: z.array(Slug).min(1), // "general-tech" = asked to everyone
+  roles: z.array(Slug).min(1), // a domain's general role (e.g. "general-tech") = asked to everyone in it
   level: Level,
   topic_fr: text,
   question_en: text,

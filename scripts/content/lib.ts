@@ -3,11 +3,12 @@ import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
-import { type ActionVerb, CareerFile, Category, type InterviewQuestion, Role, RoleFile, type Term } from '../../src/content/schema';
+import { type ActionVerb, CareerFile, Category, Domain, type InterviewQuestion, Role, RoleFile, type Term } from '../../src/content/schema';
 
 export const CONTENT_DIR = join(process.cwd(), 'content');
 
 export interface LoadedContent {
+  domains: Domain[];
   roles: Role[];
   categories: Category[];
   terms: Term[];
@@ -29,9 +30,14 @@ export function loadContent(): LoadedContent {
   const warnings: string[] = [];
   const hash = createHash('sha256');
 
+  const domainsRaw = readFileSync(join(CONTENT_DIR, 'domains.json'), 'utf8');
   const rolesRaw = readFileSync(join(CONTENT_DIR, 'roles.json'), 'utf8');
   const catsRaw = readFileSync(join(CONTENT_DIR, 'categories.json'), 'utf8');
-  hash.update(rolesRaw).update(catsRaw);
+  hash.update(domainsRaw).update(rolesRaw).update(catsRaw);
+
+  const domainsParsed = z.array(Domain).safeParse(JSON.parse(domainsRaw));
+  if (!domainsParsed.success) errors.push(...formatIssues('domains.json', domainsParsed.error));
+  const domains = domainsParsed.success ? domainsParsed.data : [];
 
   const rolesParsed = z.array(Role).safeParse(JSON.parse(rolesRaw));
   const catsParsed = z.array(Category).safeParse(JSON.parse(catsRaw));
@@ -78,6 +84,12 @@ export function loadContent(): LoadedContent {
 
   // Cross references
   const roleIds = new Set(roles.map((r) => r.id));
+  const domainIds = new Set(domains.map((d) => d.id));
+  for (const r of roles) if (!domainIds.has(r.domain)) errors.push(`role ${r.id}: unknown domain "${r.domain}"`);
+  for (const d of domains) {
+    const general = roles.find((r) => r.id === d.generalRole);
+    if (!general || general.domain !== d.id) errors.push(`domain ${d.id}: generalRole "${d.generalRole}" must be a role of this domain`);
+  }
   const catIds = new Set(categories.map((c) => c.id));
   const termIds = new Set(terms.map((t) => t.id));
   const lowerTerms = new Map<string, string>();
@@ -97,7 +109,7 @@ export function loadContent(): LoadedContent {
     q.vocabulary_term_ids.forEach((v) => { if (!termIds.has(v)) warnings.push(`question ${q.id}: vocabulary term "${v}" does not exist yet`); });
   }
 
-  return { roles, categories, terms, questions, verbs, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
+  return { domains, roles, categories, terms, questions, verbs, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
 }
 
 export function coverage(content: LoadedContent) {

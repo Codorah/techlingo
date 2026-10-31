@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 import { Avatar, AVATARS } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
+import { DomainPicker, RolePicker } from '@/components/RolePicker';
 import { Choice } from '@/components/ui/Choice';
-import { DynamicIcon } from '@/components/ui/DynamicIcon';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { LEVELS, type Level } from '@/content/levels';
 import type { Term } from '@/content/schema';
@@ -14,8 +14,8 @@ import type { Profile } from '@/db/db';
 import { nextPlacementLevel, pickPlacementTerm, PLACEMENT_QUESTIONS, PLACEMENT_START, type PlacementAnswer, placementResult } from '@/learning/placement';
 import { useContent } from '@/lib/useContent';
 
-type Step = 'welcome' | 'role' | 'level' | 'placement' | 'placementDone' | 'goal' | 'rhythm' | 'profile';
-const FLOW: Step[] = ['role', 'level', 'goal', 'rhythm', 'profile'];
+type Step = 'welcome' | 'domain' | 'role' | 'level' | 'placement' | 'placementDone' | 'goal' | 'rhythm' | 'profile';
+const FLOW: Step[] = ['domain', 'role', 'level', 'goal', 'rhythm', 'profile'];
 const GOALS = ['docs', 'work', 'interviews', 'vocabulary'] as const;
 const MINUTES = [5, 10, 15, 20] as const;
 
@@ -23,6 +23,7 @@ export function OnboardingScreen() {
   const { t } = useTranslation();
   const [, navigate] = useLocation();
   const [step, setStep] = useState<Step>('welcome');
+  const [domain, setDomain] = useState<string | null>(null);
   const [primary, setPrimary] = useState<string | null>(null);
   const [secondary, setSecondary] = useState<string[]>([]);
   const [level, setLevel] = useState<Level | null>(null);
@@ -34,20 +35,12 @@ export function OnboardingScreen() {
 
   const roles = primary ? [primary, ...secondary] : [];
   const content = useContent(roles.length ? roles : []);
-  const manifestRoles = content.manifest?.roles ?? [];
 
   const flowIndex = FLOW.indexOf(step === 'placement' || step === 'placementDone' ? 'level' : step);
   const back = () => {
     if (step === 'placement' || step === 'placementDone') return setStep('level');
     setStep(flowIndex <= 0 ? 'welcome' : FLOW[flowIndex - 1]!);
   };
-
-  function toggleRole(id: string) {
-    if (id === primary) { setPrimary(secondary[0] ?? null); setSecondary(secondary.slice(1)); return; }
-    if (secondary.includes(id)) { setSecondary(secondary.filter((r) => r !== id)); return; }
-    if (!primary) setPrimary(id);
-    else if (secondary.length < 2) setSecondary([...secondary, id]);
-  }
 
   async function finish() {
     await saveProfile({
@@ -65,7 +58,7 @@ export function OnboardingScreen() {
           <h1 className="mt-8 text-3xl font-black leading-tight">{t('onboarding.welcome.title')}</h1>
           <p className="mt-3 max-w-[32ch] text-lg text-ink-2">{t('onboarding.welcome.text')}</p>
         </div>
-        <Button onClick={() => setStep('role')} icon={<ArrowRight size={20} aria-hidden />}>{t('onboarding.welcome.start')}</Button>
+        <Button onClick={() => setStep('domain')} icon={<ArrowRight size={20} aria-hidden />}>{t('onboarding.welcome.start')}</Button>
         <Link href="/settings/data" className="mt-2 flex min-h-11 items-center justify-center font-bold text-ocean">{t('onboarding.welcome.restore')}</Link>
         <p className="mt-2 text-center text-sm text-ink-2">{t('onboarding.welcome.privacy')}</p>
       </main>
@@ -91,27 +84,17 @@ export function OnboardingScreen() {
     </main>
   );
 
+  if (step === 'domain') {
+    return shell(t('onboarding.domain.title'), t('onboarding.domain.text'),
+      <DomainPicker manifest={content.manifest} value={domain}
+        onChange={(d) => { if (d !== domain) { setPrimary(null); setSecondary([]); } setDomain(d); }} />,
+      <Button disabled={!domain} onClick={() => setStep('role')}>{t('common.continue')}</Button>);
+  }
+
   if (step === 'role') {
     return shell(t('onboarding.role.title'), t('onboarding.role.text'),
-      <ul className="grid gap-2.5">
-        {manifestRoles.map((r) => {
-          const isPrimary = r.id === primary;
-          const isSecondary = secondary.includes(r.id);
-          const disabled = r.termCount === 0;
-          return (
-            <li key={r.id}>
-              <Choice state={isPrimary || isSecondary ? 'selected' : 'idle'} disabled={disabled} onClick={() => toggleRole(r.id)}
-                leading={<span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist text-ocean"><DynamicIcon name={r.icon} /></span>}
-                trailing={isPrimary ? <span className="rounded-full bg-ocean px-2.5 py-1 text-xs font-bold text-on-ocean">{t('onboarding.role.primary')}</span>
-                  : isSecondary ? <span className="rounded-full bg-sky/30 px-2.5 py-1 text-xs font-bold text-ocean">{t('onboarding.role.secondary')}</span>
-                  : disabled ? <span className="text-xs font-bold text-ink-2">{t('onboarding.role.soon')}</span> : null}>
-                <span className="block">{r.name_fr}</span>
-                <span className="block text-sm font-normal text-ink-2">{r.description_fr}</span>
-              </Choice>
-            </li>
-          );
-        })}
-      </ul>,
+      <RolePicker manifest={content.manifest} domain={domain} primary={primary} secondary={secondary}
+        onChange={(p, s) => { setPrimary(p); setSecondary(s); }} />,
       <Button disabled={!primary} onClick={() => setStep('level')}>{t('common.continue')}</Button>);
   }
 

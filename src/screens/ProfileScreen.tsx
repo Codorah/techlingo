@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { BookOpen, ChevronRight, Database, Flame, Moon, Star, Zap } from 'lucide-react';
+import { BookOpen, Briefcase, ChevronRight, Database, Flame, Moon, Star, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
@@ -10,6 +10,7 @@ import { LEVELS, type Level } from '@/content/levels';
 import { getRetention, saveProfile, setSetting } from '@/data/progress';
 import { db } from '@/db/db';
 import { displayedStreak, localDay } from '@/learning/streak';
+import { domainOf } from '@/lib/domains';
 import { useContent } from '@/lib/useContent';
 
 const RETENTIONS = [0.8, 0.85, 0.9, 0.95];
@@ -33,6 +34,8 @@ export function ProfileScreen() {
 
   if (!profile) return null;
   const roleNames = [profile.primaryRole, ...profile.secondaryRoles].map((id) => content.manifest?.roles.find((r) => r.id === id)?.name_fr ?? id);
+  const domain = domainOf(content.manifest, profile.primaryRole);
+  const domainName = content.manifest?.domains?.find((d) => d.id === domain)?.name_fr ?? '';
   const mastered = words.filter((w) => w.state === 'mastered').length;
   const stats = [
     { Icon: Flame, color: 'text-[#C2410C]', value: displayedStreak(profile, localDay()), label: t('profile.stats.streak') },
@@ -77,6 +80,12 @@ export function ProfileScreen() {
         </div>
 
         <Card className="mt-7 p-1">
+          <Link href="/settings/roles" className="flex min-h-14 items-center gap-3 rounded-2xl px-3">
+            <Briefcase size={22} className="text-ocean" aria-hidden />
+            <span className="flex-1"><span className="block font-bold">{t('roles.title')}</span><span className="block text-sm text-ink-2">{domainName} · {roleNames.join(', ')}</span></span>
+            <ChevronRight size={20} className="text-ink-2" aria-hidden />
+          </Link>
+          <div className="mx-3 h-0.5 bg-line" />
           <Link href="/settings/data" className="flex min-h-14 items-center gap-3 rounded-2xl px-3">
             <Database size={22} className="text-ocean" aria-hidden />
             <span className="flex-1"><span className="block font-bold">{t('profile.data')}</span><span className="block text-sm text-ink-2">{t('profile.dataText')}</span></span>

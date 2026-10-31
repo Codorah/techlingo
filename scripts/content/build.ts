@@ -28,6 +28,7 @@ const manifest: Manifest = {
   includesDrafts: includeDrafts,
   totalTerms: content.terms.filter(shippable).length,
   categories: content.categories,
+  domains: [],
   roles: []
 };
 
@@ -39,6 +40,12 @@ for (const role of content.roles) {
   index.addAll(terms.map(({ id, term_en, translation_fr, definition_en, explanation_fr }) => ({ id, term_en, translation_fr, definition_en, explanation_fr })));
   writeFileSync(join(out, 'packs', `${role.id}.json`), JSON.stringify({ role: role.id, contentVersion: content.contentVersion, terms, searchIndex: index.toJSON() }));
   manifest.roles.push({ ...role, termCount: terms.length, categories: [...new Set(terms.flatMap((t) => t.categories))] });
+}
+
+for (const domain of content.domains) {
+  const roleIds = new Set(content.roles.filter((r) => r.domain === domain.id).map((r) => r.id));
+  const termCount = content.terms.filter((t) => shippable(t) && t.roles.some((r) => roleIds.has(r.role))).length;
+  manifest.domains.push({ ...domain, termCount });
 }
 
 const careerShippable = content.questions.filter((q) => includeDrafts || q.status === 'validated');

@@ -28,6 +28,7 @@ const CareerScreen = named(() => import('@/screens/career/CareerScreen'), 'Caree
 const QuestionScreen = named(() => import('@/screens/career/QuestionScreen'), 'QuestionScreen');
 const PitchScreen = named(() => import('@/screens/career/PitchScreen'), 'PitchScreen');
 const DataScreen = named(() => import('@/screens/DataScreen'), 'DataScreen');
+const RolesScreen = named(() => import('@/screens/RolesScreen'), 'RolesScreen');
 
 function App() {
   const profile = useLiveQuery(async () => (await db.profile.get('me')) ?? null);
@@ -54,6 +55,7 @@ function App() {
       <Route path="/career/q/:id"><QuestionScreen /></Route>
       <Route path="/career"><CareerScreen /></Route>
       <Route path="/profile"><ProfileScreen /></Route>
+      <Route path="/settings/roles"><RolesScreen /></Route>
       <Route path="/settings/data"><DataScreen /></Route>
       <Route><HomeScreen /></Route>
     </Switch>

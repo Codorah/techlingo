@@ -35,3 +35,10 @@ export function useContent(roles: string[]): ContentState {
 
   return state;
 }
+
+/** The content manifest alone (roles, domains, categories), without loading any pack. */
+export function useManifest(): Manifest | null {
+  const [manifest, setManifest] = useState<Manifest | null>(null);
+  useEffect(() => { void loadManifest().then(setManifest).catch(() => setManifest(null)); }, []);
+  return manifest;
+}

@@ -10,6 +10,8 @@ import type { CareerPack } from '@/content/schema';
 import { addXP, saveAnswerDraft } from '@/data/progress';
 import { db } from '@/db/db';
 import { loadCareer } from '@/lib/content';
+import { generalRoleOf, profileRoles } from '@/lib/domains';
+import { useManifest } from '@/lib/useContent';
 import { canRecognize, listen, speak, stopSpeaking } from '@/lib/speech';
 
 const squash = (s: string) => s.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9']/g, '');
@@ -22,6 +24,7 @@ export function QuestionScreen() {
   const [career, setCareer] = useState<CareerPack | null>(null);
   const draft = useLiveQuery(() => db.answerDrafts.get(id), [id]);
   const profile = useLiveQuery(() => db.profile.get('me'));
+  const manifest = useManifest();
   const [showFr, setShowFr] = useState(false);
   const [listening, setListening] = useState(false);
   const [spoken, setSpoken] = useState('');
@@ -40,7 +43,8 @@ export function QuestionScreen() {
   const hits = q.key_phrases.filter((k) => contains(attempt, k));
   const practiced = !!draft?.checklist.practiced;
 
-  const roles = new Set(['general-tech', ...(profile?.primaryRole ? [profile.primaryRole, ...profile.secondaryRoles] : [])]);
+  const general = generalRoleOf(manifest, profile?.primaryRole);
+  const roles = new Set([general, ...profileRoles(profile)]);
   const list = career!.questions.filter((x) => x.roles.some((r) => roles.has(r)));
   const next = list[(list.findIndex((x) => x.id === q.id) + 1) % list.length];
 
