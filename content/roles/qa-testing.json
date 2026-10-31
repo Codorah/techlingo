@@ -1,0 +1,1156 @@
+{
+  "role": "qa-testing",
+  "terms": [
+    {
+      "id": "unit-test",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 85
+        },
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "testing",
+        "code-quality"
+      ],
+      "term_en": "unit test",
+      "translation_fr": "test unitaire",
+      "part_of_speech": "noun",
+      "definition_en": "An automated test that checks a small piece of code, such as one function, in isolation.",
+      "explanation_fr": "Test automatisé qui vérifie un petit morceau de code, comme une fonction, de façon isolée.",
+      "why_it_matters_fr": "La base de toute stratégie de test : demandée dans presque tous les entretiens.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "unit-test-1",
+          "text_en": "I wrote unit tests for the price calculation.",
+          "text_fr": "J’ai écrit des tests unitaires pour le calcul des prix."
+        },
+        {
+          "id": "unit-test-2",
+          "text_en": "The unit tests run in a few seconds.",
+          "text_fr": "Les tests unitaires s’exécutent en quelques secondes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "integration-test",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "integration test",
+      "translation_fr": "test d’intégration",
+      "part_of_speech": "noun",
+      "definition_en": "A test that checks that several parts of a system work correctly together, such as the API and the database.",
+      "explanation_fr": "Test qui vérifie que plusieurs parties d’un système fonctionnent bien ensemble, comme l’API et la base de données.",
+      "why_it_matters_fr": "Complète les tests unitaires, qui ne voient pas les problèmes de connexion entre modules.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "integration-test-1",
+          "text_en": "The integration test caught a wrong database column name.",
+          "text_fr": "Le test d’intégration a repéré un mauvais nom de colonne."
+        },
+        {
+          "id": "integration-test-2",
+          "text_en": "Integration tests use a real test database.",
+          "text_fr": "Les tests d’intégration utilisent une vraie base de test."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "end-to-end-test",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "end-to-end test",
+      "translation_fr": "test de bout en bout",
+      "part_of_speech": "noun",
+      "definition_en": "A test that simulates a real user going through a complete flow in the application, from start to finish.",
+      "explanation_fr": "Test qui simule un vrai utilisateur suivant un parcours complet dans l’application, du début à la fin.",
+      "why_it_matters_fr": "Abrégé E2E : Playwright, Cypress… Indispensable sur les parcours critiques.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "end-to-end-test-1",
+          "text_en": "The end-to-end test signs up, buys a product and logs out.",
+          "text_fr": "Le test de bout en bout s’inscrit, achète un produit et se déconnecte."
+        },
+        {
+          "id": "end-to-end-test-2",
+          "text_en": "End-to-end tests are slower but closer to real use.",
+          "text_fr": "Les tests de bout en bout sont plus lents mais plus proches de l’usage réel."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "regression-test",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 80
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "regression test",
+      "translation_fr": "test de non-régression",
+      "part_of_speech": "noun",
+      "definition_en": "A test run after a change to make sure existing features still work.",
+      "explanation_fr": "Test lancé après une modification pour vérifier que les fonctionnalités existantes marchent toujours.",
+      "why_it_matters_fr": "Évite qu’une correction casse autre chose.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "regression-test-1",
+          "text_en": "We run regression tests before every release.",
+          "text_fr": "Nous lançons les tests de non-régression avant chaque version."
+        },
+        {
+          "id": "regression-test-2",
+          "text_en": "The regression test failed after the refactoring.",
+          "text_fr": "Le test de non-régression a échoué après le refactoring."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-case",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 85
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test case",
+      "translation_fr": "cas de test",
+      "part_of_speech": "noun",
+      "definition_en": "A set of steps, input data and expected results used to check one specific behavior.",
+      "explanation_fr": "Ensemble d’étapes, de données d’entrée et de résultats attendus pour vérifier un comportement précis.",
+      "why_it_matters_fr": "Unité de base du travail d’un testeur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-case-1",
+          "text_en": "I wrote ten test cases for the payment form.",
+          "text_fr": "J’ai écrit dix cas de test pour le formulaire de paiement."
+        },
+        {
+          "id": "test-case-2",
+          "text_en": "Each test case has a clear expected result.",
+          "text_fr": "Chaque cas de test a un résultat attendu clair."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-plan",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 70
+        },
+        {
+          "role": "project-management",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test plan",
+      "translation_fr": "plan de test",
+      "part_of_speech": "noun",
+      "definition_en": "A document that describes what will be tested, how, by whom and when.",
+      "explanation_fr": "Document qui décrit ce qui sera testé, comment, par qui et quand.",
+      "why_it_matters_fr": "Livrable classique avant une grosse mise en production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-plan-1",
+          "text_en": "The test plan covers mobile and desktop browsers.",
+          "text_fr": "Le plan de test couvre les navigateurs mobiles et ordinateurs."
+        },
+        {
+          "id": "test-plan-2",
+          "text_en": "We reviewed the test plan with the product owner.",
+          "text_fr": "Nous avons relu le plan de test avec le product owner."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "expected-result",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "expected result",
+      "translation_fr": "résultat attendu",
+      "part_of_speech": "noun",
+      "definition_en": "The outcome a test should produce if the software works correctly.",
+      "explanation_fr": "Le résultat qu’un test doit produire si le logiciel fonctionne correctement.",
+      "why_it_matters_fr": "Un rapport de bug compare toujours résultat attendu et résultat obtenu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "expected-result-1",
+          "text_en": "Expected result: the user sees a confirmation message.",
+          "text_fr": "Résultat attendu : l’utilisateur voit un message de confirmation."
+        },
+        {
+          "id": "expected-result-2",
+          "text_en": "The actual result differs from the expected result.",
+          "text_fr": "Le résultat obtenu diffère du résultat attendu."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bug-report",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 85
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "collaboration"
+      ],
+      "term_en": "bug report",
+      "translation_fr": "rapport de bug",
+      "part_of_speech": "noun",
+      "definition_en": "A written description of a problem, with steps to reproduce it, expected and actual results, and context such as the device.",
+      "explanation_fr": "Description écrite d’un problème, avec les étapes pour le reproduire, résultats attendu et obtenu, et le contexte (appareil…).",
+      "why_it_matters_fr": "Un bon rapport de bug fait gagner des heures aux développeurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bug-report-1",
+          "text_en": "Your bug report must include the steps to reproduce.",
+          "text_fr": "Ton rapport de bug doit inclure les étapes pour reproduire."
+        },
+        {
+          "id": "bug-report-2",
+          "text_en": "I attached a screenshot to the bug report.",
+          "text_fr": "J’ai joint une capture d’écran au rapport de bug."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "steps-to-reproduce",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 80
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "steps to reproduce",
+      "translation_fr": "étapes pour reproduire",
+      "part_of_speech": "noun",
+      "definition_en": "The exact actions that make a bug appear, so that someone else can see it too.",
+      "explanation_fr": "Les actions exactes qui font apparaître un bug, pour qu’une autre personne puisse le constater.",
+      "why_it_matters_fr": "Sans elles, un bug est souvent impossible à corriger.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "steps-to-reproduce-1",
+          "text_en": "Steps to reproduce: open the cart, change the quantity, tap Pay.",
+          "text_fr": "Étapes pour reproduire : ouvrir le panier, changer la quantité, toucher Payer."
+        },
+        {
+          "id": "steps-to-reproduce-2",
+          "text_en": "I could not reproduce the bug with these steps.",
+          "text_fr": "Je n’ai pas pu reproduire le bug avec ces étapes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "severity",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 70
+        },
+        {
+          "role": "project-management",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "severity",
+      "translation_fr": "gravité",
+      "part_of_speech": "noun",
+      "definition_en": "How serious the impact of a bug is on the system or the users.",
+      "explanation_fr": "L’importance de l’impact d’un bug sur le système ou les utilisateurs.",
+      "why_it_matters_fr": "À distinguer de la priorité : un bug grave n’est pas toujours le plus urgent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "severity-1",
+          "text_en": "This crash has a high severity.",
+          "text_fr": "Ce plantage a une gravité élevée."
+        },
+        {
+          "id": "severity-2",
+          "text_en": "We classify bugs by severity and priority.",
+          "text_fr": "Nous classons les bugs par gravité et par priorité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "priority",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        },
+        {
+          "role": "project-management",
+          "priority": 65
+        },
+        {
+          "role": "product-design",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "agile"
+      ],
+      "term_en": "priority",
+      "translation_fr": "priorité",
+      "part_of_speech": "noun",
+      "definition_en": "How urgently something must be handled compared with other tasks.",
+      "explanation_fr": "Le degré d’urgence d’une tâche par rapport aux autres.",
+      "why_it_matters_fr": "Vocabulaire quotidien du backlog et des tickets.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "priority-1",
+          "text_en": "This bug is high priority because it blocks payments.",
+          "text_fr": "Ce bug est prioritaire car il bloque les paiements."
+        },
+        {
+          "id": "priority-2",
+          "text_en": "We set the priority with the product owner.",
+          "text_fr": "Nous fixons la priorité avec le product owner."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-automation",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 85
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "ci-cd"
+      ],
+      "term_en": "test automation",
+      "translation_fr": "automatisation des tests",
+      "part_of_speech": "noun",
+      "definition_en": "Using scripts and tools to run tests automatically instead of manually.",
+      "explanation_fr": "Utiliser des scripts et des outils pour exécuter les tests automatiquement plutôt qu’à la main.",
+      "why_it_matters_fr": "Compétence très recherchée chez les testeurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-automation-1",
+          "text_en": "Test automation saves us two days per release.",
+          "text_fr": "L’automatisation des tests nous fait gagner deux jours par version."
+        },
+        {
+          "id": "test-automation-2",
+          "text_en": "I use Playwright for test automation.",
+          "text_fr": "J’utilise Playwright pour l’automatisation des tests."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "manual-testing",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "manual testing",
+      "translation_fr": "test manuel",
+      "part_of_speech": "noun",
+      "definition_en": "Testing software by hand, by using it like a real user, without automation scripts.",
+      "explanation_fr": "Tester un logiciel à la main, en l’utilisant comme un vrai utilisateur, sans scripts automatisés.",
+      "why_it_matters_fr": "Toujours utile pour l’ergonomie et les cas imprévus.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "manual-testing-1",
+          "text_en": "Manual testing found a layout issue on small screens.",
+          "text_fr": "Le test manuel a trouvé un problème d’affichage sur petits écrans."
+        },
+        {
+          "id": "manual-testing-2",
+          "text_en": "We still do manual testing before each release.",
+          "text_fr": "Nous faisons encore des tests manuels avant chaque version."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "exploratory-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "exploratory testing",
+      "translation_fr": "test exploratoire",
+      "part_of_speech": "noun",
+      "definition_en": "Testing without a fixed script, where the tester explores the application freely to find unexpected problems.",
+      "explanation_fr": "Tester sans script fixe : le testeur explore librement l’application pour trouver des problèmes imprévus.",
+      "why_it_matters_fr": "Complète les cas de test écrits à l’avance.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "exploratory-testing-1",
+          "text_en": "Exploratory testing revealed a crash when the network drops.",
+          "text_fr": "Le test exploratoire a révélé un plantage quand le réseau coupe."
+        },
+        {
+          "id": "exploratory-testing-2",
+          "text_en": "I spend one hour of exploratory testing on each new feature.",
+          "text_fr": "Je consacre une heure de test exploratoire à chaque nouvelle fonctionnalité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-coverage",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing",
+        "code-quality"
+      ],
+      "term_en": "test coverage",
+      "translation_fr": "couverture de tests",
+      "part_of_speech": "noun",
+      "definition_en": "The proportion of code or features that are checked by tests.",
+      "explanation_fr": "La part du code ou des fonctionnalités vérifiée par des tests.",
+      "why_it_matters_fr": "Un indicateur utile, mais 100 % de couverture ne garantit pas l’absence de bugs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-coverage-1",
+          "text_en": "Our test coverage is 80% on the payment module.",
+          "text_fr": "Notre couverture de tests est de 80 % sur le module de paiement."
+        },
+        {
+          "id": "test-coverage-2",
+          "text_en": "High coverage does not mean the tests are good.",
+          "text_fr": "Une forte couverture ne veut pas dire que les tests sont bons."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mock",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "mock",
+      "translation_fr": "simulacre (mock)",
+      "part_of_speech": "noun",
+      "definition_en": "A fake object that imitates a real dependency, such as an API, so code can be tested in isolation.",
+      "explanation_fr": "Faux objet qui imite une vraie dépendance (une API par exemple) pour tester le code de façon isolée.",
+      "why_it_matters_fr": "Indispensable pour tester sans dépendre d’un service externe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mock-1",
+          "text_en": "We used a mock of the payment API in the tests.",
+          "text_fr": "Nous avons utilisé un simulacre de l’API de paiement dans les tests."
+        },
+        {
+          "id": "mock-2",
+          "text_en": "The mock returns a fixed response.",
+          "text_fr": "Le simulacre renvoie une réponse fixe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-environment",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "ci-cd"
+      ],
+      "term_en": "test environment",
+      "translation_fr": "environnement de test",
+      "part_of_speech": "noun",
+      "definition_en": "A separate setup of servers, data and configuration where software is tested without affecting real users.",
+      "explanation_fr": "Ensemble séparé de serveurs, de données et de configuration où l’on teste sans toucher les vrais utilisateurs.",
+      "why_it_matters_fr": "Tester en production est risqué : on teste d’abord ici.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-environment-1",
+          "text_en": "The test environment uses fake customer data.",
+          "text_fr": "L’environnement de test utilise de fausses données clients."
+        },
+        {
+          "id": "test-environment-2",
+          "text_en": "Deploy the build to the test environment first.",
+          "text_fr": "Déploie d’abord le build dans l’environnement de test."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "smoke-test",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing",
+        "ci-cd"
+      ],
+      "term_en": "smoke test",
+      "translation_fr": "test de fumée",
+      "part_of_speech": "noun",
+      "definition_en": "A quick, basic test that checks the most important functions work before deeper testing.",
+      "explanation_fr": "Test rapide et basique qui vérifie que les fonctions essentielles marchent avant des tests plus poussés.",
+      "why_it_matters_fr": "Lancé juste après un déploiement pour détecter un problème grave tout de suite.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "smoke-test-1",
+          "text_en": "After each deploy, a smoke test checks login and checkout.",
+          "text_fr": "Après chaque déploiement, un test de fumée vérifie la connexion et le paiement."
+        },
+        {
+          "id": "smoke-test-2",
+          "text_en": "The smoke test failed, so we stopped the release.",
+          "text_fr": "Le test de fumée a échoué, nous avons donc arrêté la mise en ligne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "acceptance-criteria",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        },
+        {
+          "role": "project-management",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "agile",
+        "testing"
+      ],
+      "term_en": "acceptance criteria",
+      "translation_fr": "critères d’acceptation",
+      "part_of_speech": "noun",
+      "definition_en": "The conditions a feature must meet to be considered done and accepted.",
+      "explanation_fr": "Les conditions qu’une fonctionnalité doit remplir pour être considérée comme terminée et acceptée.",
+      "why_it_matters_fr": "Base commune entre produit, développeurs et testeurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "acceptance-criteria-1",
+          "text_en": "The acceptance criteria say the email must arrive within one minute.",
+          "text_fr": "Les critères d’acceptation précisent que l’e-mail doit arriver en moins d’une minute."
+        },
+        {
+          "id": "acceptance-criteria-2",
+          "text_en": "We test each story against its acceptance criteria.",
+          "text_fr": "Nous testons chaque story selon ses critères d’acceptation."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "user-acceptance-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "project-management",
+          "priority": 50
+        },
+        {
+          "role": "product-design",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "agile"
+      ],
+      "term_en": "user acceptance testing",
+      "translation_fr": "recette (tests d’acceptation utilisateur)",
+      "part_of_speech": "noun",
+      "definition_en": "The final testing phase where real users or the client check that the software meets their needs before release.",
+      "explanation_fr": "Dernière phase de test où de vrais utilisateurs ou le client vérifient que le logiciel répond à leurs besoins avant la mise en ligne.",
+      "why_it_matters_fr": "Abrégé UAT ; le client « recette » le produit.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "user-acceptance-testing-1",
+          "text_en": "The client started user acceptance testing on Monday.",
+          "text_fr": "Le client a commencé la recette lundi."
+        },
+        {
+          "id": "user-acceptance-testing-2",
+          "text_en": "Two bugs were found during user acceptance testing.",
+          "text_fr": "Deux bugs ont été trouvés pendant la recette."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "load-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "testing",
+        "performance"
+      ],
+      "term_en": "load testing",
+      "translation_fr": "test de charge",
+      "part_of_speech": "noun",
+      "definition_en": "Testing how a system behaves when many users or requests arrive at the same time.",
+      "explanation_fr": "Tester le comportement d’un système quand beaucoup d’utilisateurs ou de requêtes arrivent en même temps.",
+      "why_it_matters_fr": "Évite les mauvaises surprises lors d’un pic de trafic.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "load-testing-1",
+          "text_en": "Load testing showed the API fails above 500 requests per second.",
+          "text_fr": "Le test de charge a montré que l’API tombe au-delà de 500 requêtes par seconde."
+        },
+        {
+          "id": "load-testing-2",
+          "text_en": "We ran load testing before the promotion.",
+          "text_fr": "Nous avons fait un test de charge avant la promotion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "edge-case",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "code-quality"
+      ],
+      "term_en": "edge case",
+      "translation_fr": "cas limite",
+      "part_of_speech": "noun",
+      "definition_en": "An unusual situation at the limits of normal use, such as an empty field, a very long name or zero items.",
+      "explanation_fr": "Situation inhabituelle aux limites de l’usage normal : champ vide, nom très long, zéro article…",
+      "why_it_matters_fr": "Beaucoup de bugs se cachent dans les cas limites.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "edge-case-1",
+          "text_en": "What happens in the edge case where the cart is empty?",
+          "text_fr": "Que se passe-t-il dans le cas limite où le panier est vide ?"
+        },
+        {
+          "id": "edge-case-2",
+          "text_en": "We added tests for edge cases like negative amounts.",
+          "text_fr": "Nous avons ajouté des tests pour les cas limites comme les montants négatifs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "flaky-test",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "ci-cd"
+      ],
+      "term_en": "flaky test",
+      "translation_fr": "test instable",
+      "part_of_speech": "noun",
+      "definition_en": "A test that sometimes passes and sometimes fails without any change in the code.",
+      "explanation_fr": "Test qui passe parfois et échoue parfois sans aucun changement de code.",
+      "why_it_matters_fr": "Les tests instables font perdre confiance dans la CI : on les corrige vite.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "flaky-test-1",
+          "text_en": "This flaky test fails one time out of ten.",
+          "text_fr": "Ce test instable échoue une fois sur dix."
+        },
+        {
+          "id": "flaky-test-2",
+          "text_en": "We fixed the flaky test by waiting for the page to load.",
+          "text_fr": "Nous avons corrigé le test instable en attendant le chargement de la page."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-driven-development",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "code-quality"
+      ],
+      "term_en": "test-driven development",
+      "translation_fr": "développement piloté par les tests",
+      "part_of_speech": "noun",
+      "definition_en": "A practice where you write a failing test first, then the code that makes it pass, then improve the code.",
+      "explanation_fr": "Pratique qui consiste à écrire d’abord un test qui échoue, puis le code qui le fait passer, puis à améliorer le code.",
+      "why_it_matters_fr": "Abrégé TDD ; sujet fréquent en entretien sur la qualité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-driven-development-1",
+          "text_en": "We use test-driven development for the billing rules.",
+          "text_fr": "Nous utilisons le développement piloté par les tests pour les règles de facturation."
+        },
+        {
+          "id": "test-driven-development-2",
+          "text_en": "Test-driven development helps design simpler code.",
+          "text_fr": "Le TDD aide à concevoir un code plus simple."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "qa",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 85
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "QA",
+      "translation_fr": "assurance qualité (QA)",
+      "part_of_speech": "acronym",
+      "definition_en": "Quality Assurance: the activities and team that make sure software meets quality standards before it reaches users.",
+      "explanation_fr": "Quality Assurance : activités et équipe qui garantissent qu’un logiciel atteint le niveau de qualité attendu avant d’arriver aux utilisateurs.",
+      "why_it_matters_fr": "« QA » désigne autant le métier que l’équipe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "qa-1",
+          "text_en": "QA approved the release this morning.",
+          "text_fr": "L’équipe QA a validé la version ce matin."
+        },
+        {
+          "id": "qa-2",
+          "text_en": "I work as a QA engineer.",
+          "text_fr": "Je travaille comme ingénieur QA."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "validation",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "testing",
+        "code-quality"
+      ],
+      "term_en": "validation",
+      "translation_fr": "validation",
+      "part_of_speech": "noun",
+      "definition_en": "Checking that data or a product meets the rules and needs, for example that a form field contains a valid email.",
+      "explanation_fr": "Vérifier que des données ou un produit respectent les règles et les besoins, par exemple qu’un champ contient un e-mail valide.",
+      "why_it_matters_fr": "Côté code : valider les saisies est aussi une règle de sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "validation-1",
+          "text_en": "Input validation rejects phone numbers with letters.",
+          "text_fr": "La validation des saisies refuse les numéros de téléphone avec des lettres."
+        },
+        {
+          "id": "validation-2",
+          "text_en": "Server-side validation is required even with client checks.",
+          "text_fr": "La validation côté serveur est obligatoire même avec des contrôles côté client."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cross-browser-testing",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "frontend"
+      ],
+      "term_en": "cross-browser testing",
+      "translation_fr": "test multinavigateur",
+      "part_of_speech": "noun",
+      "definition_en": "Checking that a website works correctly on different browsers and devices.",
+      "explanation_fr": "Vérifier qu’un site fonctionne correctement sur différents navigateurs et appareils.",
+      "why_it_matters_fr": "Les utilisateurs n’ont pas tous Chrome : un bug Safari est vite arrivé.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cross-browser-testing-1",
+          "text_en": "Cross-browser testing found a bug in Safari only.",
+          "text_fr": "Le test multinavigateur a trouvé un bug uniquement sur Safari."
+        },
+        {
+          "id": "cross-browser-testing-2",
+          "text_en": "We do cross-browser testing on Chrome, Firefox and Safari.",
+          "text_fr": "Nous testons sur Chrome, Firefox et Safari."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-data",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        },
+        {
+          "role": "data-engineer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test data",
+      "translation_fr": "données de test",
+      "part_of_speech": "noun",
+      "definition_en": "Data created or prepared specifically to run tests, without using real personal data.",
+      "explanation_fr": "Données créées ou préparées spécialement pour les tests, sans utiliser de vraies données personnelles.",
+      "why_it_matters_fr": "On ne teste jamais avec les vraies données des clients.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-data-1",
+          "text_en": "We generate test data with fake names.",
+          "text_fr": "Nous générons des données de test avec de faux noms."
+        },
+        {
+          "id": "test-data-2",
+          "text_en": "Reset the test data before each run.",
+          "text_fr": "Réinitialise les données de test avant chaque exécution."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}

@@ -369,40 +369,45 @@
       "level": "B1",
       "roles": [
         {
-          "role": "ai-ml-engineer",
-          "priority": 70
+          "role": "qa-testing",
+          "priority": 75
         },
         {
-          "role": "data-analyst",
-          "priority": 60
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 45
         }
       ],
       "categories": [
-        "machine-learning",
-        "data-analysis"
+        "testing",
+        "code-quality"
       ],
       "term_en": "regression",
-      "translation_fr": "régression",
+      "translation_fr": "régression (bug)",
       "part_of_speech": "noun",
-      "definition_en": "A task where a model predicts a continuous number, such as a price or a delivery time.",
-      "explanation_fr": "Tâche où un modèle prédit un nombre continu, comme un prix ou un délai de livraison.",
-      "why_it_matters_fr": "À distinguer de la classification ; très utilisée en analyse de données.",
+      "definition_en": "A bug where a feature that used to work stops working after a change.",
+      "explanation_fr": "Bug où une fonctionnalité qui marchait cesse de fonctionner après une modification.",
+      "why_it_matters_fr": "Faux ami partiel : en test logiciel, ce n’est pas la régression statistique.",
       "context_fr": [],
       "sentences": [
         {
           "id": "regression-1",
-          "text_en": "We used regression to predict house prices.",
-          "text_fr": "Nous avons utilisé une régression pour prédire le prix des maisons."
+          "text_en": "The update introduced a regression in the login page.",
+          "text_fr": "La mise à jour a introduit une régression sur la page de connexion."
         },
         {
           "id": "regression-2",
-          "text_en": "Linear regression is a simple baseline.",
-          "text_fr": "La régression linéaire est une base de comparaison simple."
+          "text_en": "We added a test so this regression cannot come back.",
+          "text_fr": "Nous avons ajouté un test pour que cette régression ne revienne pas."
         }
       ],
       "common_mistakes": [],
       "related_terms": [],
-      "quiz": []
+      "quiz": [],
+      "review_note": "Distinct de la régression statistique (terme « regression » en data)."
     },
     {
       "id": "overfitting",
