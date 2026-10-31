@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TechLingo — Speak Tech. Think Global.</title>
+  <meta name="description" content="L'anglais technique de ton métier : un mot par jour, la prononciation, des quiz et la préparation aux entretiens. Gratuit, léger, hors ligne.">
+  <meta name="theme-color" content="#EAF6FF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="TechLingo">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="preload" href="/fonts/DMSans-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Nunito-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    try {
+      var s = localStorage.getItem('techlingo.theme');
+      var dark = s ? s === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>TechLingo a besoin de JavaScript pour fonctionner.</noscript>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,2196 @@
+{
+  "role": "web-developer",
+  "terms": [
+    {
+      "id": "rest-api",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 95
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "REST API",
+      "translation_fr": "API REST",
+      "part_of_speech": "noun",
+      "definition_en": "An interface that lets programs exchange data over HTTP, using standard methods such as GET, POST, PUT and DELETE on resources identified by URLs.",
+      "explanation_fr": "Interface qui permet à des programmes d’échanger des données en HTTP, avec des méthodes standard (GET, POST, PUT, DELETE) sur des ressources identifiées par des URL.",
+      "why_it_matters_fr": "Presque tout front-end ou app mobile consomme une API REST : tu dois savoir en parler en réunion comme en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "rest-api-1",
+          "text_en": "The mobile app fetches the user profile from our REST API.",
+          "text_fr": "L’application mobile récupère le profil utilisateur depuis notre API REST."
+        },
+        {
+          "id": "rest-api-2",
+          "text_en": "We versioned the REST API to avoid breaking existing clients.",
+          "text_fr": "Nous avons versionné l’API REST pour ne pas casser les clients existants."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "endpoint",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 90
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "endpoint",
+      "translation_fr": "point de terminaison",
+      "part_of_speech": "noun",
+      "definition_en": "A specific URL of an API that accepts requests and returns a response, such as /users or /orders/42.",
+      "explanation_fr": "Une URL précise d’une API qui reçoit des requêtes et renvoie une réponse, par exemple /users ou /orders/42.",
+      "why_it_matters_fr": "On parle d’endpoints en permanence quand on décrit une API ou un bug côté serveur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "endpoint-1",
+          "text_en": "The /login endpoint returns a token when the password is correct.",
+          "text_fr": "L’endpoint /login renvoie un jeton quand le mot de passe est correct."
+        },
+        {
+          "id": "endpoint-2",
+          "text_en": "This endpoint is slow because it loads too much data.",
+          "text_fr": "Cet endpoint est lent parce qu’il charge trop de données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "http-status-code",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 85
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        },
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "api"
+      ],
+      "term_en": "status code",
+      "translation_fr": "code de statut HTTP",
+      "part_of_speech": "noun",
+      "definition_en": "A three-digit number in an HTTP response that tells the client whether the request succeeded, such as 200 OK, 404 Not Found or 500 Internal Server Error.",
+      "explanation_fr": "Nombre à trois chiffres dans une réponse HTTP qui indique au client si la requête a réussi : 200 (OK), 404 (introuvable), 500 (erreur serveur)…",
+      "why_it_matters_fr": "Lire un code de statut est le premier réflexe pour diagnostiquer un appel d’API.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "http-status-code-1",
+          "text_en": "The API returns a 401 status code when the token has expired.",
+          "text_fr": "L’API renvoie un code 401 quand le jeton a expiré."
+        },
+        {
+          "id": "http-status-code-2",
+          "text_en": "We log every 5xx status code to find server errors quickly.",
+          "text_fr": "Nous enregistrons chaque code 5xx pour repérer vite les erreurs serveur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "payload",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "api"
+      ],
+      "term_en": "payload",
+      "translation_fr": "charge utile",
+      "part_of_speech": "noun",
+      "definition_en": "The actual data carried by a request or a response, such as the JSON body, as opposed to headers and metadata.",
+      "explanation_fr": "Les données réellement transportées par une requête ou une réponse (par exemple le corps JSON), par opposition aux en-têtes.",
+      "why_it_matters_fr": "Le mot revient dès qu’on décrit ce qu’une API envoie ou reçoit.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "payload-1",
+          "text_en": "The payload of this POST request contains the new user’s name and email.",
+          "text_fr": "La charge utile de cette requête POST contient le nom et l’e-mail du nouvel utilisateur."
+        },
+        {
+          "id": "payload-2",
+          "text_en": "Keep the payload small to make the app faster on mobile networks.",
+          "text_fr": "Garde une charge utile légère pour accélérer l’app sur les réseaux mobiles."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "json",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 85
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "data-engineer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "api",
+        "programming"
+      ],
+      "term_en": "JSON",
+      "translation_fr": "JSON",
+      "part_of_speech": "acronym",
+      "definition_en": "JavaScript Object Notation: a lightweight text format for structured data, made of key-value pairs and lists.",
+      "explanation_fr": "JavaScript Object Notation : format texte léger pour des données structurées, fait de paires clé-valeur et de listes.",
+      "why_it_matters_fr": "C’est le format d’échange de données le plus courant entre front-end, back-end et apps mobiles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "json-1",
+          "text_en": "The API sends its response as JSON.",
+          "text_fr": "L’API envoie sa réponse au format JSON."
+        },
+        {
+          "id": "json-2",
+          "text_en": "I parsed the JSON file to read the configuration.",
+          "text_fr": "J’ai analysé le fichier JSON pour lire la configuration."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "idempotent",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "idempotent",
+      "translation_fr": "idempotent",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes an operation that has the same effect whether it is performed once or several times with the same input.",
+      "explanation_fr": "Qualifie une opération qui produit le même effet qu’on l’exécute une ou plusieurs fois avec les mêmes paramètres.",
+      "why_it_matters_fr": "Indispensable pour concevoir des paiements ou des webhooks fiables, et question classique en entretien back-end.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "idempotent-1",
+          "text_en": "GET, PUT and DELETE requests should be idempotent.",
+          "text_fr": "Les requêtes GET, PUT et DELETE doivent être idempotentes."
+        },
+        {
+          "id": "idempotent-2",
+          "text_en": "Our payment endpoint is idempotent, so a retry never charges twice.",
+          "text_fr": "Notre endpoint de paiement est idempotent : une nouvelle tentative ne débite jamais deux fois."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "webhook",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "webhook",
+      "translation_fr": "webhook",
+      "part_of_speech": "noun",
+      "definition_en": "An HTTP request that a service sends automatically to your URL when an event happens, so you do not have to keep asking for updates.",
+      "explanation_fr": "Requête HTTP qu’un service envoie automatiquement vers ton URL quand un événement se produit, pour éviter d’interroger sans cesse.",
+      "why_it_matters_fr": "Les paiements, Git et la plupart des services en ligne notifient ton application par webhook.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "webhook-1",
+          "text_en": "The payment provider calls our webhook when a payment succeeds.",
+          "text_fr": "Le prestataire de paiement appelle notre webhook quand un paiement réussit."
+        },
+        {
+          "id": "webhook-2",
+          "text_en": "We verify the webhook signature before trusting the data.",
+          "text_fr": "Nous vérifions la signature du webhook avant de faire confiance aux données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "middleware",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "backend",
+        "architecture"
+      ],
+      "term_en": "middleware",
+      "translation_fr": "intergiciel",
+      "part_of_speech": "noun",
+      "definition_en": "Code that runs between receiving a request and sending the response, often used for authentication, logging or validation.",
+      "explanation_fr": "Code qui s’exécute entre la réception d’une requête et l’envoi de la réponse : authentification, logs, validation…",
+      "why_it_matters_fr": "Les frameworks back-end (Express, Laravel, Django) s’organisent autour de middlewares.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "middleware-1",
+          "text_en": "The authentication middleware rejects requests without a valid token.",
+          "text_fr": "Le middleware d’authentification rejette les requêtes sans jeton valide."
+        },
+        {
+          "id": "middleware-2",
+          "text_en": "I added a logging middleware to trace slow requests.",
+          "text_fr": "J’ai ajouté un middleware de logs pour tracer les requêtes lentes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "responsive-design",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 90
+        },
+        {
+          "role": "product-design",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "frontend",
+        "ux-ui"
+      ],
+      "term_en": "responsive design",
+      "translation_fr": "design adaptatif",
+      "part_of_speech": "noun",
+      "definition_en": "An approach where a web page adapts its layout to the screen size, from phones to large monitors.",
+      "explanation_fr": "Approche où une page web adapte sa mise en page à la taille de l’écran, du téléphone au grand moniteur.",
+      "why_it_matters_fr": "La majorité des visiteurs arrivent sur mobile : c’est une exigence de base de tout projet web.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "responsive-design-1",
+          "text_en": "We built the dashboard mobile-first with responsive design.",
+          "text_fr": "Nous avons construit le tableau de bord en mobile-first, avec un design adaptatif."
+        },
+        {
+          "id": "responsive-design-2",
+          "text_en": "Media queries make the layout responsive.",
+          "text_fr": "Les media queries rendent la mise en page adaptative."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "component",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 85
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 75
+        },
+        {
+          "role": "product-design",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "frontend"
+      ],
+      "term_en": "component",
+      "translation_fr": "composant",
+      "part_of_speech": "noun",
+      "definition_en": "A reusable, self-contained piece of user interface, such as a button or a form, with its own structure, style and behavior.",
+      "explanation_fr": "Morceau d’interface réutilisable et autonome (un bouton, un formulaire…) avec sa structure, son style et son comportement.",
+      "why_it_matters_fr": "React, Vue, Angular et Flutter sont entièrement pensés en composants.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "component-1",
+          "text_en": "I split the page into small components that are easy to test.",
+          "text_fr": "J’ai découpé la page en petits composants faciles à tester."
+        },
+        {
+          "id": "component-2",
+          "text_en": "This button component is used on every screen.",
+          "text_fr": "Ce composant bouton est utilisé sur tous les écrans."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "state",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 80
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "frontend",
+        "programming"
+      ],
+      "term_en": "state",
+      "translation_fr": "état",
+      "part_of_speech": "noun",
+      "definition_en": "The data an application or a component holds at a given moment, which determines what is displayed.",
+      "explanation_fr": "Les données que détient une application ou un composant à un instant donné, et qui déterminent ce qui s’affiche.",
+      "why_it_matters_fr": "La gestion de l’état est le cœur des questions d’entretien front-end et mobile.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "state-1",
+          "text_en": "When the state changes, React re-renders the component.",
+          "text_fr": "Quand l’état change, React réaffiche le composant."
+        },
+        {
+          "id": "state-2",
+          "text_en": "We store the cart state in a global store.",
+          "text_fr": "Nous stockons l’état du panier dans un store global."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "framework",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 80
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "framework",
+      "translation_fr": "framework (cadre de développement)",
+      "part_of_speech": "noun",
+      "definition_en": "A set of ready-made code and rules that gives structure to an application and handles common tasks, such as React, Django or Laravel.",
+      "explanation_fr": "Ensemble de code prêt à l’emploi et de règles qui structure une application et gère les tâches courantes (React, Django, Laravel…).",
+      "why_it_matters_fr": "En entretien, on te demande quasiment toujours quels frameworks tu maîtrises et pourquoi.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "framework-1",
+          "text_en": "We chose a framework that our whole team already knows.",
+          "text_fr": "Nous avons choisi un framework que toute l’équipe connaît déjà."
+        },
+        {
+          "id": "framework-2",
+          "text_en": "The framework handles routing and authentication for us.",
+          "text_fr": "Le framework gère pour nous le routage et l’authentification."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "library",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "library",
+      "translation_fr": "bibliothèque",
+      "part_of_speech": "noun",
+      "definition_en": "A collection of reusable code that you call from your program to perform specific tasks.",
+      "explanation_fr": "Ensemble de code réutilisable que ton programme appelle pour réaliser des tâches précises.",
+      "why_it_matters_fr": "Faux ami classique : « library » veut dire bibliothèque de code, pas librairie.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "library-1",
+          "text_en": "We use a library to format dates.",
+          "text_fr": "Nous utilisons une bibliothèque pour formater les dates."
+        },
+        {
+          "id": "library-2",
+          "text_en": "Before adding a new library, check its size and maintenance.",
+          "text_fr": "Avant d’ajouter une bibliothèque, vérifie sa taille et sa maintenance."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "review: faux ami à mettre aussi en common_mistakes"
+    },
+    {
+      "id": "dependency",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "dependency",
+      "translation_fr": "dépendance",
+      "part_of_speech": "noun",
+      "definition_en": "An external package or library that your project needs in order to work.",
+      "explanation_fr": "Paquet ou bibliothèque externe dont ton projet a besoin pour fonctionner.",
+      "why_it_matters_fr": "Gérer et mettre à jour les dépendances fait partie du quotidien et des questions de sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dependency-1",
+          "text_en": "Run npm install to download all the dependencies.",
+          "text_fr": "Lance npm install pour télécharger toutes les dépendances."
+        },
+        {
+          "id": "dependency-2",
+          "text_en": "We removed an unused dependency to reduce the bundle size.",
+          "text_fr": "Nous avons retiré une dépendance inutilisée pour réduire la taille du bundle."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "deploy",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 80
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 85
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "deploy",
+      "translation_fr": "déployer",
+      "part_of_speech": "verb",
+      "definition_en": "To install a new version of an application on servers or devices so that users can access it.",
+      "explanation_fr": "Installer une nouvelle version d’une application sur des serveurs ou des appareils pour la rendre accessible aux utilisateurs.",
+      "why_it_matters_fr": "« We deploy every day » : le verbe le plus utilisé pour parler de mise en production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "deploy-1",
+          "text_en": "We deploy to production every Friday morning.",
+          "text_fr": "Nous déployons en production chaque vendredi matin."
+        },
+        {
+          "id": "deploy-2",
+          "text_en": "The build failed, so we could not deploy the fix.",
+          "text_fr": "Le build a échoué, nous n’avons donc pas pu déployer le correctif."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "production",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 80
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "production",
+      "translation_fr": "production",
+      "part_of_speech": "noun",
+      "definition_en": "The live environment where real users use the application, as opposed to development or testing environments.",
+      "explanation_fr": "L’environnement réel où les utilisateurs utilisent l’application, par opposition aux environnements de développement ou de test.",
+      "why_it_matters_fr": "« Prod » est partout : incident en prod, déploiement en prod, bug en prod.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "production-1",
+          "text_en": "The bug only happens in production, not on my laptop.",
+          "text_fr": "Le bug n’apparaît qu’en production, pas sur mon ordinateur."
+        },
+        {
+          "id": "production-2",
+          "text_en": "Never test a risky change directly in production.",
+          "text_fr": "Ne teste jamais un changement risqué directement en production."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "staging",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "staging environment",
+      "translation_fr": "environnement de préproduction",
+      "part_of_speech": "noun",
+      "definition_en": "An environment that copies production as closely as possible, used for final testing before release.",
+      "explanation_fr": "Environnement qui reproduit au plus près la production, utilisé pour les derniers tests avant une mise en ligne.",
+      "why_it_matters_fr": "Les équipes valident toujours sur staging avant la prod : le mot revient en daily et en revue.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "staging-1",
+          "text_en": "QA tested the new feature on staging yesterday.",
+          "text_fr": "L’équipe QA a testé la nouvelle fonctionnalité en préproduction hier."
+        },
+        {
+          "id": "staging-2",
+          "text_en": "Can you deploy this branch to staging?",
+          "text_fr": "Peux-tu déployer cette branche en préproduction ?"
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "frontend",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 85
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "frontend"
+      ],
+      "term_en": "front-end",
+      "translation_fr": "front-end (interface)",
+      "part_of_speech": "noun",
+      "definition_en": "The part of an application that users see and interact with, running in the browser or on the device.",
+      "explanation_fr": "La partie d’une application que l’utilisateur voit et manipule, exécutée dans le navigateur ou sur l’appareil.",
+      "why_it_matters_fr": "Base du vocabulaire pour présenter ton rôle : « I’m a front-end developer ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "frontend-1",
+          "text_en": "I work mostly on the front-end with React.",
+          "text_fr": "Je travaille surtout sur le front-end, avec React."
+        },
+        {
+          "id": "frontend-2",
+          "text_en": "The front-end calls the API to load the products.",
+          "text_fr": "Le front-end appelle l’API pour charger les produits."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "backend",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 85
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "backend"
+      ],
+      "term_en": "back-end",
+      "translation_fr": "back-end (serveur)",
+      "part_of_speech": "noun",
+      "definition_en": "The server side of an application, which stores data, applies business rules and exposes APIs.",
+      "explanation_fr": "La partie serveur d’une application : elle stocke les données, applique les règles métier et expose des API.",
+      "why_it_matters_fr": "Indispensable pour présenter ton profil et décrire l’architecture d’un projet.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "backend-1",
+          "text_en": "The back-end is written in Node.js and uses PostgreSQL.",
+          "text_fr": "Le back-end est écrit en Node.js et utilise PostgreSQL."
+        },
+        {
+          "id": "backend-2",
+          "text_en": "We moved the validation logic to the back-end for security.",
+          "text_fr": "Nous avons déplacé la logique de validation côté back-end, pour la sécurité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "full-stack",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "full-stack",
+      "translation_fr": "full stack",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes a developer or a project that covers both the front-end and the back-end.",
+      "explanation_fr": "Qualifie un développeur ou un projet qui couvre à la fois le front-end et le back-end.",
+      "why_it_matters_fr": "Titre de poste très fréquent dans les offres d’emploi.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "full-stack-1",
+          "text_en": "I’m a full-stack developer: React on the front-end, Laravel on the back-end.",
+          "text_fr": "Je suis développeur full stack : React côté front-end, Laravel côté back-end."
+        },
+        {
+          "id": "full-stack-2",
+          "text_en": "As a full-stack team, we own the feature from the database to the UI.",
+          "text_fr": "En tant qu’équipe full stack, nous gérons la fonctionnalité de la base de données jusqu’à l’interface."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "authentication",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 80
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "security",
+        "backend"
+      ],
+      "term_en": "authentication",
+      "translation_fr": "authentification",
+      "part_of_speech": "noun",
+      "definition_en": "The process of verifying who a user is, for example with a password, a code or a fingerprint.",
+      "explanation_fr": "Le fait de vérifier l’identité d’un utilisateur : mot de passe, code, empreinte…",
+      "why_it_matters_fr": "À ne pas confondre avec l’autorisation : c’est une question d’entretien très classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "authentication-1",
+          "text_en": "We added two-factor authentication to protect user accounts.",
+          "text_fr": "Nous avons ajouté l’authentification à deux facteurs pour protéger les comptes."
+        },
+        {
+          "id": "authentication-2",
+          "text_en": "Authentication happens before the API returns any private data.",
+          "text_fr": "L’authentification a lieu avant que l’API ne renvoie la moindre donnée privée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "authorization",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "security",
+        "backend"
+      ],
+      "term_en": "authorization",
+      "translation_fr": "autorisation",
+      "part_of_speech": "noun",
+      "definition_en": "The process of deciding what an authenticated user is allowed to do or access.",
+      "explanation_fr": "Le fait de décider ce qu’un utilisateur authentifié a le droit de faire ou de consulter.",
+      "why_it_matters_fr": "Authentification = qui tu es ; autorisation = ce que tu as le droit de faire.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "authorization-1",
+          "text_en": "Only admins have authorization to delete accounts.",
+          "text_fr": "Seuls les administrateurs ont l’autorisation de supprimer des comptes."
+        },
+        {
+          "id": "authorization-2",
+          "text_en": "The bug was an authorization check missing on one endpoint.",
+          "text_fr": "Le bug venait d’un contrôle d’autorisation manquant sur un endpoint."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "token",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security",
+        "api"
+      ],
+      "term_en": "token",
+      "translation_fr": "jeton",
+      "part_of_speech": "noun",
+      "definition_en": "A string issued after login that the client sends with each request to prove its identity or permissions.",
+      "explanation_fr": "Chaîne délivrée après la connexion, que le client envoie avec chaque requête pour prouver son identité ou ses droits.",
+      "why_it_matters_fr": "Les API modernes reposent sur des jetons (JWT, OAuth) : sujet fréquent en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "token-1",
+          "text_en": "The app stores the token securely and sends it in the Authorization header.",
+          "text_fr": "L’app stocke le jeton de façon sécurisée et l’envoie dans l’en-tête Authorization."
+        },
+        {
+          "id": "token-2",
+          "text_en": "The token expires after one hour, so the user must refresh it.",
+          "text_fr": "Le jeton expire au bout d’une heure : l’utilisateur doit le renouveler."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cookie",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        },
+        {
+          "role": "product-design",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "frontend",
+        "security"
+      ],
+      "term_en": "cookie",
+      "translation_fr": "cookie",
+      "part_of_speech": "noun",
+      "definition_en": "A small piece of data that a website stores in the browser, used for sessions, preferences or tracking.",
+      "explanation_fr": "Petite donnée qu’un site enregistre dans le navigateur, pour les sessions, les préférences ou le suivi.",
+      "why_it_matters_fr": "Sessions, consentement RGPD, sécurité : les cookies reviennent souvent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cookie-1",
+          "text_en": "The session cookie keeps the user logged in.",
+          "text_fr": "Le cookie de session garde l’utilisateur connecté."
+        },
+        {
+          "id": "cookie-2",
+          "text_en": "We ask for consent before setting analytics cookies.",
+          "text_fr": "Nous demandons le consentement avant de déposer des cookies d’analyse."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cors",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "security",
+        "api"
+      ],
+      "term_en": "CORS",
+      "translation_fr": "CORS (partage de ressources entre origines)",
+      "part_of_speech": "acronym",
+      "definition_en": "Cross-Origin Resource Sharing: a browser mechanism that lets a server declare which other origins may call it.",
+      "explanation_fr": "Cross-Origin Resource Sharing : mécanisme du navigateur qui permet à un serveur d’indiquer quels autres domaines peuvent l’appeler.",
+      "why_it_matters_fr": "L’erreur CORS est l’une des plus rencontrées par les développeurs front-end.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cors-1",
+          "text_en": "The request failed because of a CORS error.",
+          "text_fr": "La requête a échoué à cause d’une erreur CORS."
+        },
+        {
+          "id": "cors-2",
+          "text_en": "We configured CORS to allow only our own domain.",
+          "text_fr": "Nous avons configuré CORS pour n’autoriser que notre propre domaine."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cache",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "performance"
+      ],
+      "term_en": "cache",
+      "translation_fr": "cache (mémoire cache)",
+      "part_of_speech": "noun",
+      "definition_en": "A storage layer that keeps copies of frequently used data so it can be served faster.",
+      "explanation_fr": "Zone de stockage qui garde une copie des données souvent utilisées pour les servir plus vite.",
+      "why_it_matters_fr": "Le cache est la première piste pour améliorer les performances, et un sujet d’entretien récurrent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cache-1",
+          "text_en": "We cache the product list for five minutes.",
+          "text_fr": "Nous mettons la liste des produits en cache pendant cinq minutes."
+        },
+        {
+          "id": "cache-2",
+          "text_en": "Clear the browser cache if you still see the old version.",
+          "text_fr": "Vide le cache du navigateur si tu vois encore l’ancienne version."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cache-invalidation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "performance"
+      ],
+      "term_en": "cache invalidation",
+      "translation_fr": "invalidation de cache",
+      "part_of_speech": "noun",
+      "definition_en": "The process of removing or refreshing cached data when the original data changes, so users do not see outdated content.",
+      "explanation_fr": "Le fait de supprimer ou rafraîchir les données en cache quand la donnée d’origine change, pour ne pas afficher de contenu obsolète.",
+      "why_it_matters_fr": "Réputé pour être l’un des problèmes les plus délicats en informatique ; il revient en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cache-invalidation-1",
+          "text_en": "After a price update, cache invalidation makes sure customers see the new price.",
+          "text_fr": "Après une mise à jour des prix, l’invalidation de cache garantit que les clients voient le nouveau prix."
+        },
+        {
+          "id": "cache-invalidation-2",
+          "text_en": "The bug came from missing cache invalidation after the deploy.",
+          "text_fr": "Le bug venait d’une invalidation de cache oubliée après le déploiement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "latency",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 90
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "performance",
+        "networking"
+      ],
+      "term_en": "latency",
+      "translation_fr": "latence",
+      "part_of_speech": "noun",
+      "definition_en": "The delay between an action, such as sending a request, and the start of the response, usually measured in milliseconds.",
+      "explanation_fr": "Le délai entre une action (par exemple l’envoi d’une requête) et le début de la réponse, généralement mesuré en millisecondes.",
+      "why_it_matters_fr": "On compare la latence en ms pour juger la rapidité d’une API ou d’un réseau.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "latency-1",
+          "text_en": "The latency of our API is around 80 milliseconds.",
+          "text_fr": "La latence de notre API est d’environ 80 millisecondes."
+        },
+        {
+          "id": "latency-2",
+          "text_en": "Users far from the server experience higher latency.",
+          "text_fr": "Les utilisateurs éloignés du serveur subissent une latence plus élevée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "asynchronous",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 85
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "asynchronous",
+      "translation_fr": "asynchrone",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes code that starts a task and continues without waiting for it to finish, handling the result later.",
+      "explanation_fr": "Qualifie du code qui lance une tâche et continue sans attendre sa fin, puis traite le résultat plus tard.",
+      "why_it_matters_fr": "Promesses, async/await, appels réseau : impossible de coder une app moderne sans l’asynchrone.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "asynchronous-1",
+          "text_en": "Network calls are asynchronous, so the interface stays responsive.",
+          "text_fr": "Les appels réseau sont asynchrones : l’interface reste fluide."
+        },
+        {
+          "id": "asynchronous-2",
+          "text_en": "Use async and await to handle asynchronous code more clearly.",
+          "text_fr": "Utilise async et await pour écrire le code asynchrone plus clairement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "promise",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "promise",
+      "translation_fr": "promesse",
+      "part_of_speech": "noun",
+      "definition_en": "A JavaScript object that represents the future result of an asynchronous operation, which may succeed or fail.",
+      "explanation_fr": "Objet JavaScript qui représente le résultat futur d’une opération asynchrone, qui peut réussir ou échouer.",
+      "why_it_matters_fr": "Base du JavaScript moderne, question incontournable en entretien front-end.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "promise-1",
+          "text_en": "fetch() returns a promise that resolves with the response.",
+          "text_fr": "fetch() renvoie une promesse qui se résout avec la réponse."
+        },
+        {
+          "id": "promise-2",
+          "text_en": "Always handle the case where the promise is rejected.",
+          "text_fr": "Gère toujours le cas où la promesse est rejetée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "refactor",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "refactor",
+      "translation_fr": "refactoriser",
+      "part_of_speech": "verb",
+      "definition_en": "To restructure existing code to make it cleaner and easier to maintain, without changing what it does.",
+      "explanation_fr": "Restructurer du code existant pour le rendre plus propre et plus maintenable, sans changer ce qu’il fait.",
+      "why_it_matters_fr": "Mot clé des revues de code et des entretiens sur la qualité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "refactor-1",
+          "text_en": "I refactored the payment module into smaller functions.",
+          "text_fr": "J’ai refactorisé le module de paiement en fonctions plus petites."
+        },
+        {
+          "id": "refactor-2",
+          "text_en": "We should refactor this code before adding new features.",
+          "text_fr": "Nous devrions refactoriser ce code avant d’ajouter de nouvelles fonctionnalités."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "deprecate",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "code-quality",
+        "api"
+      ],
+      "term_en": "deprecate",
+      "translation_fr": "déprécier (rendre obsolète)",
+      "part_of_speech": "verb",
+      "definition_en": "To mark a feature or an API as outdated and planned for removal, while keeping it working for a while.",
+      "explanation_fr": "Marquer une fonctionnalité ou une API comme obsolète et vouée à disparaître, tout en la laissant fonctionner un temps.",
+      "why_it_matters_fr": "Tu le liras dans toute documentation ou changelog.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "deprecate-1",
+          "text_en": "Version 1 of the API is deprecated and will be removed in June.",
+          "text_fr": "La version 1 de l’API est dépréciée et sera supprimée en juin."
+        },
+        {
+          "id": "deprecate-2",
+          "text_en": "The compiler warns you when you call a deprecated function.",
+          "text_fr": "Le compilateur t’avertit quand tu appelles une fonction dépréciée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bug",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "qa-testing",
+          "priority": 80
+        },
+        {
+          "role": "general-tech",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "code-quality",
+        "testing"
+      ],
+      "term_en": "bug",
+      "translation_fr": "bug (anomalie)",
+      "part_of_speech": "noun",
+      "definition_en": "An error in software that makes it behave in an unexpected or incorrect way.",
+      "explanation_fr": "Erreur dans un logiciel qui le fait se comporter de façon inattendue ou incorrecte.",
+      "why_it_matters_fr": "Le mot le plus utilisé de la tech : savoir décrire un bug en anglais est essentiel.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bug-1",
+          "text_en": "I found a bug in the login form.",
+          "text_fr": "J’ai trouvé un bug dans le formulaire de connexion."
+        },
+        {
+          "id": "bug-2",
+          "text_en": "This bug only happens on older Android phones.",
+          "text_fr": "Ce bug n’apparaît que sur les anciens téléphones Android."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "debug",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "debug",
+      "translation_fr": "déboguer",
+      "part_of_speech": "verb",
+      "definition_en": "To find and fix the cause of an error in a program.",
+      "explanation_fr": "Trouver et corriger la cause d’une erreur dans un programme.",
+      "why_it_matters_fr": "« How do you debug? » est une question d’entretien fréquente.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "debug-1",
+          "text_en": "I debugged the issue with breakpoints in the browser.",
+          "text_fr": "J’ai débogué le problème avec des points d’arrêt dans le navigateur."
+        },
+        {
+          "id": "debug-2",
+          "text_en": "It took me two hours to debug this crash.",
+          "text_fr": "Il m’a fallu deux heures pour déboguer ce plantage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pull-request",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 80
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 80
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "version-control",
+        "collaboration"
+      ],
+      "term_en": "pull request",
+      "translation_fr": "demande de fusion (pull request)",
+      "part_of_speech": "noun",
+      "definition_en": "A request to merge code changes into a branch, which teammates review and discuss first.",
+      "explanation_fr": "Proposition de fusion de modifications de code dans une branche, relue et discutée par l’équipe avant la fusion.",
+      "why_it_matters_fr": "Le cœur du travail en équipe sur GitHub ou GitLab.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pull-request-1",
+          "text_en": "I opened a pull request and asked two teammates for a review.",
+          "text_fr": "J’ai ouvert une pull request et demandé une relecture à deux collègues."
+        },
+        {
+          "id": "pull-request-2",
+          "text_en": "Please keep pull requests small and focused.",
+          "text_fr": "Merci de garder des pull requests petites et ciblées."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "code-review",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 80
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 80
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "collaboration",
+        "code-quality"
+      ],
+      "term_en": "code review",
+      "translation_fr": "revue de code",
+      "part_of_speech": "noun",
+      "definition_en": "The practice of having teammates read and comment on code changes before they are merged.",
+      "explanation_fr": "Pratique où des collègues relisent et commentent les modifications de code avant leur fusion.",
+      "why_it_matters_fr": "On en parle en entretien pour montrer qu’on sait travailler en équipe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "code-review-1",
+          "text_en": "The code review caught a security issue before release.",
+          "text_fr": "La revue de code a repéré un problème de sécurité avant la mise en ligne."
+        },
+        {
+          "id": "code-review-2",
+          "text_en": "I always leave kind and specific comments in code reviews.",
+          "text_fr": "Je laisse toujours des commentaires bienveillants et précis lors des revues de code."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "merge-conflict",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "merge conflict",
+      "translation_fr": "conflit de fusion",
+      "part_of_speech": "noun",
+      "definition_en": "A situation where Git cannot combine two branches automatically because both changed the same lines.",
+      "explanation_fr": "Situation où Git ne peut pas fusionner deux branches automatiquement car les deux ont modifié les mêmes lignes.",
+      "why_it_matters_fr": "Arrive à tout le monde : savoir l’expliquer et le résoudre fait partie du quotidien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "merge-conflict-1",
+          "text_en": "I resolved a merge conflict in the configuration file.",
+          "text_fr": "J’ai résolu un conflit de fusion dans le fichier de configuration."
+        },
+        {
+          "id": "merge-conflict-2",
+          "text_en": "Pull the main branch often to avoid big merge conflicts.",
+          "text_fr": "Récupère souvent la branche principale pour éviter les gros conflits de fusion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "commit",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 75
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "commit",
+      "translation_fr": "commit (enregistrement de modifications)",
+      "part_of_speech": "noun",
+      "definition_en": "A saved snapshot of changes in a Git repository, with a message describing what changed.",
+      "explanation_fr": "Instantané enregistré des modifications dans un dépôt Git, accompagné d’un message qui décrit le changement.",
+      "why_it_matters_fr": "Écrire de bons messages de commit en anglais est attendu dans la plupart des équipes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "commit-1",
+          "text_en": "Write a clear commit message that explains why you made the change.",
+          "text_fr": "Écris un message de commit clair qui explique pourquoi tu as fait ce changement."
+        },
+        {
+          "id": "commit-2",
+          "text_en": "This commit fixed the crash on startup.",
+          "text_fr": "Ce commit a corrigé le plantage au démarrage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "branch",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "branch",
+      "translation_fr": "branche",
+      "part_of_speech": "noun",
+      "definition_en": "An independent line of development in a Git repository, used to work on a change without affecting the main code.",
+      "explanation_fr": "Ligne de développement indépendante dans un dépôt Git, pour travailler sur un changement sans toucher au code principal.",
+      "why_it_matters_fr": "Les workflows d’équipe (feature branch, main, release) reposent sur les branches.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "branch-1",
+          "text_en": "I created a new branch for the checkout feature.",
+          "text_fr": "J’ai créé une nouvelle branche pour la fonctionnalité de paiement."
+        },
+        {
+          "id": "branch-2",
+          "text_en": "The main branch must always be deployable.",
+          "text_fr": "La branche principale doit toujours pouvoir être déployée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "repository",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "version-control"
+      ],
+      "term_en": "repository",
+      "translation_fr": "dépôt",
+      "part_of_speech": "noun",
+      "definition_en": "A storage location for a project’s code and its full history of changes, usually managed with Git.",
+      "explanation_fr": "Espace qui contient le code d’un projet et tout l’historique de ses modifications, généralement géré avec Git.",
+      "why_it_matters_fr": "« Repo » est employé partout : dans les offres, les README et les échanges d’équipe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "repository-1",
+          "text_en": "Clone the repository and run the install script.",
+          "text_fr": "Clone le dépôt puis lance le script d’installation."
+        },
+        {
+          "id": "repository-2",
+          "text_en": "The repository contains both the web app and the API.",
+          "text_fr": "Le dépôt contient à la fois l’application web et l’API."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "scalability",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 80
+        },
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "architecture"
+      ],
+      "term_en": "scalability",
+      "translation_fr": "scalabilité (montée en charge)",
+      "part_of_speech": "noun",
+      "definition_en": "The ability of a system to handle a growing amount of work by adding resources.",
+      "explanation_fr": "Capacité d’un système à absorber une charge croissante en ajoutant des ressources.",
+      "why_it_matters_fr": "Question classique d’entretien : « How would you make this system scale? »",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "scalability-1",
+          "text_en": "We designed the service for horizontal scalability.",
+          "text_fr": "Nous avons conçu le service pour une scalabilité horizontale."
+        },
+        {
+          "id": "scalability-2",
+          "text_en": "Scalability was a key requirement for the launch.",
+          "text_fr": "La scalabilité était une exigence clé pour le lancement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "seo",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "frontend"
+      ],
+      "term_en": "SEO",
+      "translation_fr": "référencement naturel (SEO)",
+      "part_of_speech": "acronym",
+      "definition_en": "Search Engine Optimization: improving a website so it ranks higher in search engine results.",
+      "explanation_fr": "Search Engine Optimization : améliorer un site pour qu’il apparaisse plus haut dans les résultats des moteurs de recherche.",
+      "why_it_matters_fr": "Les sites vitrines et e-commerce en dépendent : le sujet revient avec les clients et en agence.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "seo-1",
+          "text_en": "Server-side rendering improved our SEO.",
+          "text_fr": "Le rendu côté serveur a amélioré notre référencement."
+        },
+        {
+          "id": "seo-2",
+          "text_en": "Use descriptive titles and alt text for better SEO.",
+          "text_fr": "Utilise des titres descriptifs et des textes alternatifs pour un meilleur référencement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "accessibility",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 85
+        }
+      ],
+      "categories": [
+        "ux-ui",
+        "frontend"
+      ],
+      "term_en": "accessibility",
+      "translation_fr": "accessibilité",
+      "part_of_speech": "noun",
+      "definition_en": "The practice of making products usable by everyone, including people with disabilities.",
+      "explanation_fr": "Le fait de rendre un produit utilisable par tous, y compris les personnes en situation de handicap.",
+      "why_it_matters_fr": "Souvent abrégé « a11y » ; de plus en plus exigé par la loi et par les clients.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "accessibility-1",
+          "text_en": "We tested the form with a screen reader to check accessibility.",
+          "text_fr": "Nous avons testé le formulaire avec un lecteur d’écran pour vérifier l’accessibilité."
+        },
+        {
+          "id": "accessibility-2",
+          "text_en": "Good color contrast is a basic accessibility rule.",
+          "text_fr": "Un bon contraste des couleurs est une règle d’accessibilité de base."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "server-side-rendering",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "frontend",
+        "performance"
+      ],
+      "term_en": "server-side rendering",
+      "translation_fr": "rendu côté serveur",
+      "part_of_speech": "noun",
+      "definition_en": "Generating the HTML of a page on the server for each request, so the browser receives ready-to-display content.",
+      "explanation_fr": "Générer le HTML d’une page sur le serveur à chaque requête, pour que le navigateur reçoive un contenu prêt à afficher.",
+      "why_it_matters_fr": "Notion centrale des frameworks comme Next.js ou Nuxt, liée au SEO et à la performance.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "server-side-rendering-1",
+          "text_en": "We use server-side rendering so the first page loads faster.",
+          "text_fr": "Nous utilisons le rendu côté serveur pour que la première page s’affiche plus vite."
+        },
+        {
+          "id": "server-side-rendering-2",
+          "text_en": "Server-side rendering helps search engines read our content.",
+          "text_fr": "Le rendu côté serveur aide les moteurs de recherche à lire notre contenu."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bundle",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "frontend",
+        "performance"
+      ],
+      "term_en": "bundle",
+      "translation_fr": "bundle (paquet de fichiers)",
+      "part_of_speech": "noun",
+      "definition_en": "The optimized file or set of files produced by a build tool, combining the code and assets the browser needs.",
+      "explanation_fr": "Le fichier (ou l’ensemble de fichiers) optimisé produit par un outil de build, qui regroupe le code et les ressources dont le navigateur a besoin.",
+      "why_it_matters_fr": "La taille du bundle conditionne la vitesse de chargement, surtout en 3G.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bundle-1",
+          "text_en": "The bundle is too big, so the page loads slowly.",
+          "text_fr": "Le bundle est trop gros, la page se charge donc lentement."
+        },
+        {
+          "id": "bundle-2",
+          "text_en": "We split the bundle so each page loads only what it needs.",
+          "text_fr": "Nous avons découpé le bundle pour que chaque page ne charge que ce dont elle a besoin."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "environment-variable",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 70
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "backend",
+        "security"
+      ],
+      "term_en": "environment variable",
+      "translation_fr": "variable d’environnement",
+      "part_of_speech": "noun",
+      "definition_en": "A value set outside the code, such as an API key or a database URL, that the application reads at runtime.",
+      "explanation_fr": "Valeur définie en dehors du code (clé d’API, URL de base de données…) que l’application lit à l’exécution.",
+      "why_it_matters_fr": "Règle de base : ne jamais écrire un secret dans le code, mais dans une variable d’environnement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "environment-variable-1",
+          "text_en": "Store the API key in an environment variable, not in the code.",
+          "text_fr": "Stocke la clé d’API dans une variable d’environnement, pas dans le code."
+        },
+        {
+          "id": "environment-variable-2",
+          "text_en": "The app crashed because an environment variable was missing on the server.",
+          "text_fr": "L’app a planté parce qu’une variable d’environnement manquait sur le serveur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "orm",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "data-engineer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "databases",
+        "backend"
+      ],
+      "term_en": "ORM",
+      "translation_fr": "ORM (mapping objet-relationnel)",
+      "part_of_speech": "acronym",
+      "definition_en": "Object-Relational Mapping: a tool that lets you read and write database data using objects in your programming language instead of raw SQL.",
+      "explanation_fr": "Object-Relational Mapping : outil qui permet de lire et d’écrire en base avec des objets de ton langage plutôt qu’en SQL brut.",
+      "why_it_matters_fr": "Prisma, Eloquent, Hibernate ou Django ORM : présent dans la plupart des back-ends.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "orm-1",
+          "text_en": "We use an ORM, so we rarely write raw SQL.",
+          "text_fr": "Nous utilisons un ORM, nous écrivons donc rarement du SQL brut."
+        },
+        {
+          "id": "orm-2",
+          "text_en": "The ORM generated a slow query that we had to optimize.",
+          "text_fr": "L’ORM a généré une requête lente que nous avons dû optimiser."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "database-migration",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 65
+        },
+        {
+          "role": "data-engineer",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "migration",
+      "translation_fr": "migration (de base de données)",
+      "part_of_speech": "noun",
+      "definition_en": "A versioned script that changes the structure of a database, such as adding a table or a column, in a repeatable way.",
+      "explanation_fr": "Script versionné qui modifie la structure d’une base de données (ajout d’une table, d’une colonne…) de façon rejouable.",
+      "why_it_matters_fr": "Indispensable pour faire évoluer une base en équipe sans casser la production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "database-migration-1",
+          "text_en": "I wrote a migration to add a phone column to the users table.",
+          "text_fr": "J’ai écrit une migration pour ajouter une colonne téléphone à la table des utilisateurs."
+        },
+        {
+          "id": "database-migration-2",
+          "text_en": "Run the migrations before starting the server.",
+          "text_fr": "Lance les migrations avant de démarrer le serveur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pagination",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 65
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "api",
+        "frontend"
+      ],
+      "term_en": "pagination",
+      "translation_fr": "pagination",
+      "part_of_speech": "noun",
+      "definition_en": "Splitting a long list of results into pages so that only a small part is loaded and displayed at a time.",
+      "explanation_fr": "Découper une longue liste de résultats en pages pour n’en charger et afficher qu’une partie à la fois.",
+      "why_it_matters_fr": "Toute API qui renvoie des listes doit être paginée : sujet fréquent en conception d’API.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pagination-1",
+          "text_en": "The API returns 20 items per page with pagination.",
+          "text_fr": "L’API renvoie 20 éléments par page grâce à la pagination."
+        },
+        {
+          "id": "pagination-2",
+          "text_en": "Without pagination, the request would load ten thousand rows.",
+          "text_fr": "Sans pagination, la requête chargerait dix mille lignes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "rate-limiting",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "api",
+        "security"
+      ],
+      "term_en": "rate limiting",
+      "translation_fr": "limitation de débit",
+      "part_of_speech": "noun",
+      "definition_en": "Restricting how many requests a client can make in a given time, to protect a service from abuse or overload.",
+      "explanation_fr": "Limiter le nombre de requêtes qu’un client peut faire dans un temps donné, pour protéger un service des abus ou de la surcharge.",
+      "why_it_matters_fr": "Protection indispensable des API publiques et des formulaires de connexion.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "rate-limiting-1",
+          "text_en": "We added rate limiting to stop brute-force attacks on the login form.",
+          "text_fr": "Nous avons ajouté une limitation de débit pour bloquer les attaques par force brute sur la connexion."
+        },
+        {
+          "id": "rate-limiting-2",
+          "text_en": "The API returns 429 when you hit the rate limit.",
+          "text_fr": "L’API renvoie 429 quand tu dépasses la limite de débit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "type-safety",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming",
+        "code-quality"
+      ],
+      "term_en": "type safety",
+      "translation_fr": "sûreté du typage",
+      "part_of_speech": "noun",
+      "definition_en": "The extent to which a language prevents type errors, such as using text where a number is expected.",
+      "explanation_fr": "Degré auquel un langage empêche les erreurs de type, par exemple utiliser du texte là où un nombre est attendu.",
+      "why_it_matters_fr": "Argument principal en faveur de TypeScript, souvent discuté en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "type-safety-1",
+          "text_en": "TypeScript adds type safety to JavaScript.",
+          "text_fr": "TypeScript ajoute la sûreté du typage à JavaScript."
+        },
+        {
+          "id": "type-safety-2",
+          "text_en": "Type safety catches many bugs before the code even runs.",
+          "text_fr": "La sûreté du typage détecte beaucoup de bugs avant même l’exécution du code."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}

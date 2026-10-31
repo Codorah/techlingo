@@ -1,0 +1,30 @@
+{
+  "app": { "name": "TechLingo", "tagline": "Speak Tech. Think Global." },
+  "common": { "back": "Retour", "cancel": "Annuler", "confirm": "Confirmer", "close": "Fermer", "loading": "Chargement…" },
+  "update": { "available": "Une nouvelle version est prête.", "reload": "Mettre à jour", "offlineReady": "TechLingo fonctionne maintenant hors ligne." },
+  "home": {
+    "title": "Fondations prêtes",
+    "subtitle": "Le contenu, le stockage local et la sauvegarde fonctionnent. Les écrans arrivent à l’étape suivante.",
+    "content": "{{count}} mots dans {{roles}} métiers",
+    "drafts": "Version de travail : brouillons inclus",
+    "data": "Mes données"
+  },
+  "data": {
+    "title": "Mes données",
+    "intro": "Ta progression est enregistrée uniquement sur ce téléphone. Aucun compte, rien n’est envoyé.",
+    "lastBackup": "Dernière sauvegarde : {{date}}",
+    "neverBacked": "Aucune sauvegarde pour l’instant",
+    "export": { "title": "Sauvegarder ma progression", "text": "Crée un fichier à garder (Drive, e-mail, WhatsApp…). Il te permet de tout récupérer.", "action": "Créer la sauvegarde", "share": "Partager le fichier", "done": "Sauvegarde créée" },
+    "import": { "title": "Restaurer une sauvegarde", "text": "Choisis un fichier TechLingo. Il sera fusionné avec ce téléphone, sans rien perdre.", "action": "Choisir un fichier", "done": "Restauré : {{added}} ajoutés, {{updated}} mis à jour" },
+    "move": { "title": "Changer de téléphone", "steps": ["Sur l’ancien téléphone, crée une sauvegarde et partage-la.", "Sur le nouveau, installe TechLingo.", "Ouvre Mes données puis Restaurer une sauvegarde."] },
+    "wipe": { "title": "Tout effacer", "text": "Supprime ta progression de ce téléphone. Action définitive.", "action": "Effacer mes données", "confirm": "Tout effacer ? Fais une sauvegarde avant si tu veux garder ta progression.", "done": "Données effacées" },
+    "errors": {
+      "too_large": "Ce fichier est trop volumineux.",
+      "not_json": "Ce fichier n’est pas une sauvegarde TechLingo.",
+      "bad_format": "Ce fichier n’est pas une sauvegarde TechLingo.",
+      "too_new": "Cette sauvegarde vient d’une version plus récente. Mets l’application à jour.",
+      "checksum": "Ce fichier est abîmé ou a été modifié.",
+      "unknown": "Impossible de lire ce fichier."
+    }
+  }
+}
