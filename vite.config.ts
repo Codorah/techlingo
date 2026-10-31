@@ -4,8 +4,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
-// The React app builds to build/ so it never collides with the legacy www/ app
-// (still deployed by vercel.json and packaged by Capacitor until the switch-over).
+// The React app builds to build/ so it never collides with the legacy www/ app.
 export default defineConfig({
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   build: { outDir: 'build', emptyOutDir: true, target: 'es2020' },
@@ -42,10 +41,11 @@ export default defineConfig({
         navigateFallback: '/index.html',
         runtimeCaching: [
           {
-            // Role packs are downloaded on demand and kept for offline use.
+            // Role packs are downloaded on demand and kept for offline use; the network
+            // wins when reachable so new words show up right after a deploy.
             urlPattern: ({ url }) => url.pathname.startsWith('/content/'),
-            handler: 'StaleWhileRevalidate',
-            options: { cacheName: 'content-packs', expiration: { maxEntries: 60 } }
+            handler: 'NetworkFirst',
+            options: { cacheName: 'content-packs', networkTimeoutSeconds: 4, expiration: { maxEntries: 60 } }
           }
         ]
       }

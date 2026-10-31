@@ -1,16 +1,30 @@
-import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
+import { useLocation } from 'wouter';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
-/** "New version" prompt (spec §5.18): the app never reloads under the user's feet. */
+/** Screens holding unsaved in-memory state: an update waits until the user leaves them. */
+const BUSY_ROUTES = [/^\/lesson\//, /^\/practice\/(?!$)/, /^\/career\/(q|pitch)/, /^\/spin/];
+const CHECK_EVERY_MS = 30 * 60 * 1000;
+
+/**
+ * Keeps the installed app on the latest deployed version. A new version is applied
+ * automatically (progress lives in IndexedDB, so a reload loses nothing), except in
+ * the middle of a lesson or session, where it waits for the next navigation.
+ */
 export function UpdatePrompt() {
-  const { t } = useTranslation();
-  const { needRefresh: [needRefresh, setNeedRefresh], updateServiceWorker } = useRegisterSW();
-  if (!needRefresh) return null;
-  return (
-    <div role="status" className="fixed inset-x-4 bottom-[calc(env(safe-area-inset-bottom)+16px)] z-30 mx-auto flex max-w-md items-center gap-3 rounded-2xl bg-ink px-4 py-3 text-mist shadow-lg">
-      <span className="flex-1 font-bold">{t('update.available')}</span>
-      <button type="button" className="min-h-11 rounded-xl px-3 font-bold text-sky" onClick={() => setNeedRefresh(false)}>{t('common.close')}</button>
-      <button type="button" className="min-h-11 rounded-xl bg-sky px-4 font-bold text-ink" onClick={() => void updateServiceWorker(true)}>{t('update.reload')}</button>
-    </div>
-  );
+  const [location] = useLocation();
+  const { needRefresh: [needRefresh], updateServiceWorker } = useRegisterSW({
+    onRegisteredSW(_url, registration) {
+      if (!registration) return;
+      const check = () => { if (navigator.onLine) void registration.update().catch(() => {}); };
+      setInterval(check, CHECK_EVERY_MS);
+      document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') check(); });
+    }
+  });
+
+  useEffect(() => {
+    if (needRefresh && !BUSY_ROUTES.some((r) => r.test(location))) void updateServiceWorker(true);
+  }, [needRefresh, location, updateServiceWorker]);
+
+  return null;
 }
