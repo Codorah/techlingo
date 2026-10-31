@@ -1,0 +1,1709 @@
+{
+  "role": "mobile-developer",
+  "terms": [
+    {
+      "id": "cross-platform",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 90
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "mobile-platforms"
+      ],
+      "term_en": "cross-platform",
+      "translation_fr": "multiplateforme",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes an app built from a single codebase that runs on several platforms, such as Android and iOS.",
+      "explanation_fr": "Qualifie une application développée avec un seul code source qui fonctionne sur plusieurs plateformes, comme Android et iOS.",
+      "why_it_matters_fr": "Flutter et React Native dominent les offres mobiles : il faut savoir défendre ce choix face au natif.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cross-platform-1",
+          "text_en": "We chose a cross-platform framework to ship on Android and iOS faster.",
+          "text_fr": "Nous avons choisi un framework multiplateforme pour sortir plus vite sur Android et iOS."
+        },
+        {
+          "id": "cross-platform-2",
+          "text_en": "Cross-platform apps share most of their code between platforms.",
+          "text_fr": "Les apps multiplateformes partagent l’essentiel de leur code entre plateformes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "native-app",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 85
+        }
+      ],
+      "categories": [
+        "mobile-platforms"
+      ],
+      "term_en": "native app",
+      "translation_fr": "application native",
+      "part_of_speech": "noun",
+      "definition_en": "An app written specifically for one platform with its official language and tools, such as Kotlin for Android or Swift for iOS.",
+      "explanation_fr": "Application écrite spécialement pour une plateforme avec son langage et ses outils officiels, comme Kotlin pour Android ou Swift pour iOS.",
+      "why_it_matters_fr": "Le débat natif contre multiplateforme revient dans presque tous les entretiens mobiles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "native-app-1",
+          "text_en": "The camera features work better in the native app.",
+          "text_fr": "Les fonctions photo marchent mieux dans l’application native."
+        },
+        {
+          "id": "native-app-2",
+          "text_en": "We rewrote the payment screen as a native module for performance.",
+          "text_fr": "Nous avons réécrit l’écran de paiement en module natif pour les performances."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "push-notification",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 85
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "mobile-platforms"
+      ],
+      "term_en": "push notification",
+      "translation_fr": "notification push",
+      "part_of_speech": "noun",
+      "definition_en": "A short message sent by a server to a user’s device, even when the app is not open.",
+      "explanation_fr": "Court message envoyé par un serveur sur l’appareil de l’utilisateur, même quand l’application est fermée.",
+      "why_it_matters_fr": "Outil principal de rétention : on te demandera comment l’utiliser sans agacer les utilisateurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "push-notification-1",
+          "text_en": "Users receive a push notification when their order ships.",
+          "text_fr": "Les utilisateurs reçoivent une notification push quand leur commande est expédiée."
+        },
+        {
+          "id": "push-notification-2",
+          "text_en": "We limit push notifications to avoid annoying users.",
+          "text_fr": "Nous limitons les notifications push pour ne pas agacer les utilisateurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "offline-first",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "architecture",
+        "mobile-platforms"
+      ],
+      "term_en": "offline-first",
+      "translation_fr": "hors ligne d’abord",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes an app designed to work without a network connection and to sync its data when the connection returns.",
+      "explanation_fr": "Qualifie une application conçue pour fonctionner sans connexion et synchroniser ses données au retour du réseau.",
+      "why_it_matters_fr": "Essentiel là où le réseau est instable : un vrai argument pour les marchés africains.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "offline-first-1",
+          "text_en": "Our app is offline-first, so field agents can keep working without a signal.",
+          "text_fr": "Notre app est pensée hors ligne d’abord : les agents de terrain travaillent même sans réseau."
+        },
+        {
+          "id": "offline-first-2",
+          "text_en": "Changes are saved locally and synced later.",
+          "text_fr": "Les modifications sont enregistrées localement puis synchronisées plus tard."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "app-store",
+      "status": "draft",
+      "level": "A1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "mobile-platforms"
+      ],
+      "term_en": "app store",
+      "translation_fr": "magasin d’applications",
+      "part_of_speech": "noun",
+      "definition_en": "An online platform where users download apps, such as Google Play or Apple’s App Store.",
+      "explanation_fr": "Plateforme en ligne où l’on télécharge des applications, comme Google Play ou l’App Store d’Apple.",
+      "why_it_matters_fr": "Publier, mettre à jour et respecter les règles des stores fait partie du métier.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "app-store-1",
+          "text_en": "We published version 2.0 on the app stores yesterday.",
+          "text_fr": "Nous avons publié la version 2.0 sur les stores hier."
+        },
+        {
+          "id": "app-store-2",
+          "text_en": "The app was rejected because it did not follow the store guidelines.",
+          "text_fr": "L’app a été refusée car elle ne respectait pas les règles du store."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "release",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "ci-cd"
+      ],
+      "term_en": "release",
+      "translation_fr": "version publiée (mise en ligne)",
+      "part_of_speech": "noun",
+      "definition_en": "A version of software made available to users, or the act of making it available.",
+      "explanation_fr": "Version d’un logiciel mise à disposition des utilisateurs, ou le fait de la publier.",
+      "why_it_matters_fr": "On parle de « release » en planning, en réunion et dans les notes de version.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "release-1",
+          "text_en": "The next release includes dark mode.",
+          "text_fr": "La prochaine version inclut le mode sombre."
+        },
+        {
+          "id": "release-2",
+          "text_en": "We plan a release every two weeks.",
+          "text_fr": "Nous prévoyons une mise en ligne toutes les deux semaines."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "beta-testing",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        },
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "mobile-platforms"
+      ],
+      "term_en": "beta testing",
+      "translation_fr": "test bêta",
+      "part_of_speech": "noun",
+      "definition_en": "Giving a nearly finished version of an app to a limited group of real users to find problems before the public release.",
+      "explanation_fr": "Confier une version presque finie à un groupe restreint d’utilisateurs réels pour trouver les problèmes avant la sortie publique.",
+      "why_it_matters_fr": "Les tests bêta (TestFlight, tests fermés Google Play) sont une étape normale avant une publication.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "beta-testing-1",
+          "text_en": "We invited fifty users to the beta testing program.",
+          "text_fr": "Nous avons invité cinquante utilisateurs au programme de test bêta."
+        },
+        {
+          "id": "beta-testing-2",
+          "text_en": "Beta testing revealed a crash on older phones.",
+          "text_fr": "Le test bêta a révélé un plantage sur les anciens téléphones."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "crash",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 80
+        },
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "code-quality",
+        "testing"
+      ],
+      "term_en": "crash",
+      "translation_fr": "plantage",
+      "part_of_speech": "noun",
+      "definition_en": "An unexpected failure that makes an application stop or close suddenly.",
+      "explanation_fr": "Arrêt brutal et inattendu d’une application.",
+      "why_it_matters_fr": "Le taux de plantage est un indicateur clé suivi par toutes les équipes mobiles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "crash-1",
+          "text_en": "The app had a crash when users rotated the screen.",
+          "text_fr": "L’app plantait quand l’utilisateur tournait l’écran."
+        },
+        {
+          "id": "crash-2",
+          "text_en": "Our crash rate dropped below one percent after the update.",
+          "text_fr": "Notre taux de plantage est passé sous un pour cent après la mise à jour."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "permission",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 80
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "security"
+      ],
+      "term_en": "permission",
+      "translation_fr": "autorisation (permission)",
+      "part_of_speech": "noun",
+      "definition_en": "Access that the user must grant to an app before it can use sensitive features such as the camera, location or microphone.",
+      "explanation_fr": "Accès que l’utilisateur doit accorder à une application avant qu’elle utilise des fonctions sensibles comme l’appareil photo, la localisation ou le micro.",
+      "why_it_matters_fr": "Demander les permissions au bon moment change fortement le taux d’acceptation.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "permission-1",
+          "text_en": "The app asks for camera permission only when you scan a document.",
+          "text_fr": "L’app demande l’accès à l’appareil photo seulement quand tu scannes un document."
+        },
+        {
+          "id": "permission-2",
+          "text_en": "If the user denies the permission, show a clear explanation.",
+          "text_fr": "Si l’utilisateur refuse l’autorisation, affiche une explication claire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "deep-link",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        },
+        {
+          "role": "product-design",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "mobile-platforms"
+      ],
+      "term_en": "deep link",
+      "translation_fr": "lien profond",
+      "part_of_speech": "noun",
+      "definition_en": "A link that opens a specific screen inside an app instead of just launching it.",
+      "explanation_fr": "Lien qui ouvre directement un écran précis d’une application au lieu de simplement la lancer.",
+      "why_it_matters_fr": "Indispensable pour les campagnes marketing, les e-mails et le partage de contenu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "deep-link-1",
+          "text_en": "The email contains a deep link to the order details screen.",
+          "text_fr": "L’e-mail contient un lien profond vers l’écran de détail de la commande."
+        },
+        {
+          "id": "deep-link-2",
+          "text_en": "Deep links did not work after the update, so we fixed the routing.",
+          "text_fr": "Les liens profonds ne marchaient plus après la mise à jour, nous avons donc corrigé le routage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "splash-screen",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "ux-ui"
+      ],
+      "term_en": "splash screen",
+      "translation_fr": "écran de démarrage",
+      "part_of_speech": "noun",
+      "definition_en": "The screen shown briefly while an app is launching, usually displaying the logo.",
+      "explanation_fr": "Écran affiché brièvement pendant le lancement d’une application, souvent avec le logo.",
+      "why_it_matters_fr": "Un détail visible de tous : on veille à ce qu’il reste court.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "splash-screen-1",
+          "text_en": "The splash screen hides the loading time.",
+          "text_fr": "L’écran de démarrage masque le temps de chargement."
+        },
+        {
+          "id": "splash-screen-2",
+          "text_en": "Keep the splash screen under two seconds.",
+          "text_fr": "Garde l’écran de démarrage sous les deux secondes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "navigation-stack",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "frontend"
+      ],
+      "term_en": "navigation stack",
+      "translation_fr": "pile de navigation",
+      "part_of_speech": "noun",
+      "definition_en": "The ordered list of screens a user has opened, where the back action returns to the previous one.",
+      "explanation_fr": "La liste ordonnée des écrans ouverts par l’utilisateur ; le bouton retour revient au précédent.",
+      "why_it_matters_fr": "Comprendre la pile de navigation évite des bugs de retour très fréquents en mobile.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "navigation-stack-1",
+          "text_en": "Opening a product pushes a new screen onto the navigation stack.",
+          "text_fr": "Ouvrir un produit ajoute un nouvel écran à la pile de navigation."
+        },
+        {
+          "id": "navigation-stack-2",
+          "text_en": "After payment, we reset the navigation stack to the home screen.",
+          "text_fr": "Après le paiement, nous réinitialisons la pile de navigation sur l’accueil."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hot-reload",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "hot reload",
+      "translation_fr": "rechargement à chaud",
+      "part_of_speech": "noun",
+      "definition_en": "A development feature that applies code changes to a running app instantly, without restarting it.",
+      "explanation_fr": "Fonction de développement qui applique instantanément les modifications de code à l’app en cours d’exécution, sans la redémarrer.",
+      "why_it_matters_fr": "Argument fort de Flutter et React Native pour la productivité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hot-reload-1",
+          "text_en": "With hot reload, I see my UI changes in one second.",
+          "text_fr": "Avec le rechargement à chaud, je vois mes changements d’interface en une seconde."
+        },
+        {
+          "id": "hot-reload-2",
+          "text_en": "Hot reload keeps the current state of the screen.",
+          "text_fr": "Le rechargement à chaud conserve l’état actuel de l’écran."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "emulator",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "mobile-platforms"
+      ],
+      "term_en": "emulator",
+      "translation_fr": "émulateur",
+      "part_of_speech": "noun",
+      "definition_en": "Software that imitates a phone on a computer so you can run and test an app without a real device.",
+      "explanation_fr": "Logiciel qui imite un téléphone sur un ordinateur pour lancer et tester une app sans appareil réel.",
+      "why_it_matters_fr": "Pratique au quotidien, mais il faut aussi tester sur de vrais appareils.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "emulator-1",
+          "text_en": "I tested the layout on an Android emulator.",
+          "text_fr": "J’ai testé la mise en page sur un émulateur Android."
+        },
+        {
+          "id": "emulator-2",
+          "text_en": "The bug does not appear on the emulator, only on real phones.",
+          "text_fr": "Le bug n’apparaît pas sur l’émulateur, seulement sur de vrais téléphones."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "apk",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "mobile-platforms"
+      ],
+      "term_en": "APK",
+      "translation_fr": "APK (fichier d’installation Android)",
+      "part_of_speech": "acronym",
+      "definition_en": "Android Package: the file format used to distribute and install apps on Android.",
+      "explanation_fr": "Android Package : format de fichier utilisé pour distribuer et installer des applications sur Android.",
+      "why_it_matters_fr": "On partage souvent un APK pour faire tester une app avant la publication.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "apk-1",
+          "text_en": "I sent the APK to the client for testing.",
+          "text_fr": "J’ai envoyé l’APK au client pour qu’il le teste."
+        },
+        {
+          "id": "apk-2",
+          "text_en": "Google Play now asks for an app bundle instead of an APK.",
+          "text_fr": "Google Play demande maintenant un app bundle plutôt qu’un APK."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sdk",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "SDK",
+      "translation_fr": "SDK (kit de développement)",
+      "part_of_speech": "acronym",
+      "definition_en": "Software Development Kit: a set of tools, libraries and documentation for building software for a platform or service.",
+      "explanation_fr": "Software Development Kit : ensemble d’outils, de bibliothèques et de documentation pour développer sur une plateforme ou un service.",
+      "why_it_matters_fr": "On intègre des SDK tous les jours : paiement, cartes, analytics, notifications.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sdk-1",
+          "text_en": "We integrated the payment provider’s SDK into the app.",
+          "text_fr": "Nous avons intégré le SDK du prestataire de paiement dans l’app."
+        },
+        {
+          "id": "sdk-2",
+          "text_en": "Update the Android SDK before building the project.",
+          "text_fr": "Mets à jour le SDK Android avant de compiler le projet."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "gesture",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        },
+        {
+          "role": "product-design",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "ux-ui",
+        "mobile-platforms"
+      ],
+      "term_en": "gesture",
+      "translation_fr": "geste",
+      "part_of_speech": "noun",
+      "definition_en": "A touch action such as a tap, swipe, pinch or long press that the user performs on the screen.",
+      "explanation_fr": "Action tactile comme un appui, un balayage, un pincement ou un appui long effectué sur l’écran.",
+      "why_it_matters_fr": "Les gestes structurent l’ergonomie mobile ; ils doivent rester découvrables.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "gesture-1",
+          "text_en": "Users can delete an item with a swipe gesture.",
+          "text_fr": "Les utilisateurs peuvent supprimer un élément d’un geste de balayage."
+        },
+        {
+          "id": "gesture-2",
+          "text_en": "We added a long-press gesture to open the menu.",
+          "text_fr": "Nous avons ajouté un appui long pour ouvrir le menu."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "local-storage",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "databases",
+        "mobile-platforms"
+      ],
+      "term_en": "local storage",
+      "translation_fr": "stockage local",
+      "part_of_speech": "noun",
+      "definition_en": "Saving data directly on the user’s device so the app can use it without a server or a connection.",
+      "explanation_fr": "Enregistrer des données directement sur l’appareil pour que l’app les utilise sans serveur ni connexion.",
+      "why_it_matters_fr": "Clé du fonctionnement hors ligne, avec ses limites (perte de données, sécurité).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "local-storage-1",
+          "text_en": "We keep the user’s preferences in local storage.",
+          "text_fr": "Nous gardons les préférences de l’utilisateur dans le stockage local."
+        },
+        {
+          "id": "local-storage-2",
+          "text_en": "Never keep passwords in plain local storage.",
+          "text_fr": "Ne garde jamais de mots de passe en clair dans le stockage local."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "background-task",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "performance"
+      ],
+      "term_en": "background task",
+      "translation_fr": "tâche en arrière-plan",
+      "part_of_speech": "noun",
+      "definition_en": "Work that an app performs while it is not on screen, such as syncing data or uploading files.",
+      "explanation_fr": "Travail qu’une application effectue quand elle n’est pas affichée, comme synchroniser des données ou envoyer des fichiers.",
+      "why_it_matters_fr": "Android et iOS limitent fortement ces tâches : il faut connaître leurs règles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "background-task-1",
+          "text_en": "Photos upload in a background task when the phone is charging.",
+          "text_fr": "Les photos s’envoient en tâche de fond quand le téléphone charge."
+        },
+        {
+          "id": "background-task-2",
+          "text_en": "iOS stops background tasks that run too long.",
+          "text_fr": "iOS arrête les tâches en arrière-plan qui durent trop longtemps."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "battery-drain",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "performance",
+        "mobile-platforms"
+      ],
+      "term_en": "battery drain",
+      "translation_fr": "consommation de batterie",
+      "part_of_speech": "noun",
+      "definition_en": "Excessive use of a phone’s battery caused by an app, for example through constant location tracking.",
+      "explanation_fr": "Usure excessive de la batterie causée par une application, par exemple à cause d’un suivi GPS permanent.",
+      "why_it_matters_fr": "Critère majeur des avis négatifs sur les stores.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "battery-drain-1",
+          "text_en": "Users complained about battery drain after the update.",
+          "text_fr": "Les utilisateurs se sont plaints de la consommation de batterie après la mise à jour."
+        },
+        {
+          "id": "battery-drain-2",
+          "text_en": "We reduced battery drain by checking the location less often.",
+          "text_fr": "Nous avons réduit la consommation de batterie en vérifiant la position moins souvent."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "in-app-purchase",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "product"
+      ],
+      "term_en": "in-app purchase",
+      "translation_fr": "achat intégré",
+      "part_of_speech": "noun",
+      "definition_en": "A payment made inside an app to buy content, features or a subscription, handled by the app store.",
+      "explanation_fr": "Paiement effectué dans une application pour acheter du contenu, des fonctions ou un abonnement, géré par le store.",
+      "why_it_matters_fr": "Les stores imposent souvent leur système de paiement pour les contenus numériques.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "in-app-purchase-1",
+          "text_en": "Premium features are unlocked with an in-app purchase.",
+          "text_fr": "Les fonctions premium se débloquent avec un achat intégré."
+        },
+        {
+          "id": "in-app-purchase-2",
+          "text_en": "Apple takes a commission on each in-app purchase.",
+          "text_fr": "Apple prélève une commission sur chaque achat intégré."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "widget",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "frontend",
+        "mobile-platforms"
+      ],
+      "term_en": "widget",
+      "translation_fr": "widget",
+      "part_of_speech": "noun",
+      "definition_en": "A UI element; on phones it also means a small app view placed on the home screen. In Flutter, every UI element is called a widget.",
+      "explanation_fr": "Élément d’interface ; sur téléphone, c’est aussi une mini-vue d’app posée sur l’écran d’accueil. Dans Flutter, tout élément d’interface s’appelle un widget.",
+      "why_it_matters_fr": "Mot polysémique : précise toujours de quel widget tu parles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "widget-1",
+          "text_en": "In Flutter, the whole screen is built from widgets.",
+          "text_fr": "Dans Flutter, tout l’écran est construit avec des widgets."
+        },
+        {
+          "id": "widget-2",
+          "text_en": "We added a home screen widget that shows today’s balance.",
+          "text_fr": "Nous avons ajouté un widget d’écran d’accueil qui affiche le solde du jour."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "lifecycle",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "programming"
+      ],
+      "term_en": "lifecycle",
+      "translation_fr": "cycle de vie",
+      "part_of_speech": "noun",
+      "definition_en": "The sequence of states an app, a screen or a component goes through, such as created, paused, resumed and destroyed.",
+      "explanation_fr": "La suite d’états par lesquels passe une app, un écran ou un composant : créé, en pause, repris, détruit…",
+      "why_it_matters_fr": "Beaucoup de bugs mobiles viennent d’une mauvaise gestion du cycle de vie.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "lifecycle-1",
+          "text_en": "Save the form data when the activity is paused in its lifecycle.",
+          "text_fr": "Enregistre les données du formulaire quand l’activité passe en pause dans son cycle de vie."
+        },
+        {
+          "id": "lifecycle-2",
+          "text_en": "The video stops at this point of the screen lifecycle.",
+          "text_fr": "La vidéo s’arrête à cette étape du cycle de vie de l’écran."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "thread",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "programming",
+        "operating-systems"
+      ],
+      "term_en": "thread",
+      "translation_fr": "fil d’exécution (thread)",
+      "part_of_speech": "noun",
+      "definition_en": "The smallest unit of execution in a program; several threads can run at the same time and share the same memory.",
+      "explanation_fr": "La plus petite unité d’exécution d’un programme ; plusieurs threads peuvent tourner en même temps et partager la même mémoire.",
+      "why_it_matters_fr": "Sur mobile, bloquer le thread principal fige l’interface : sujet d’entretien classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "thread-1",
+          "text_en": "We run network calls on a background thread to keep the UI smooth.",
+          "text_fr": "Nous lançons les appels réseau sur un thread secondaire pour garder l’interface fluide."
+        },
+        {
+          "id": "thread-2",
+          "text_en": "Two threads updated the same value and caused a race condition.",
+          "text_fr": "Deux threads ont modifié la même valeur et provoqué une situation de concurrence."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "main-thread",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "performance",
+        "programming"
+      ],
+      "term_en": "main thread",
+      "translation_fr": "thread principal",
+      "part_of_speech": "noun",
+      "definition_en": "The thread that handles the user interface; heavy work on it makes the app freeze.",
+      "explanation_fr": "Le thread qui gère l’interface ; y faire un travail lourd fige l’application.",
+      "why_it_matters_fr": "« Don’t block the main thread » : règle d’or du mobile et du front-end.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "main-thread-1",
+          "text_en": "Parsing this big file on the main thread froze the screen.",
+          "text_fr": "Analyser ce gros fichier sur le thread principal a figé l’écran."
+        },
+        {
+          "id": "main-thread-2",
+          "text_en": "Move image processing off the main thread.",
+          "text_fr": "Sors le traitement des images du thread principal."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "memory-leak",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "performance",
+        "programming"
+      ],
+      "term_en": "memory leak",
+      "translation_fr": "fuite de mémoire",
+      "part_of_speech": "noun",
+      "definition_en": "A bug where a program keeps memory it no longer needs, so memory use grows until the app slows down or crashes.",
+      "explanation_fr": "Bug où un programme garde de la mémoire dont il n’a plus besoin : la consommation grimpe jusqu’au ralentissement ou au plantage.",
+      "why_it_matters_fr": "Cause fréquente de plantages difficiles à reproduire.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "memory-leak-1",
+          "text_en": "A listener that was never removed caused a memory leak.",
+          "text_fr": "Un écouteur jamais supprimé a provoqué une fuite de mémoire."
+        },
+        {
+          "id": "memory-leak-2",
+          "text_en": "We used the profiler to find the memory leak.",
+          "text_fr": "Nous avons utilisé le profileur pour trouver la fuite de mémoire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "garbage-collection",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 40
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming"
+      ],
+      "term_en": "garbage collection",
+      "translation_fr": "ramasse-miettes",
+      "part_of_speech": "noun",
+      "definition_en": "Automatic memory management that frees memory a program no longer uses.",
+      "explanation_fr": "Gestion automatique de la mémoire qui libère celle qu’un programme n’utilise plus.",
+      "why_it_matters_fr": "Kotlin, Java, Dart ou JavaScript l’utilisent : il explique certains ralentissements.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "garbage-collection-1",
+          "text_en": "Java uses garbage collection, so you do not free memory manually.",
+          "text_fr": "Java utilise un ramasse-miettes : on ne libère pas la mémoire à la main."
+        },
+        {
+          "id": "garbage-collection-2",
+          "text_en": "A long garbage collection pause caused a visible stutter.",
+          "text_fr": "Une longue pause du ramasse-miettes a provoqué une saccade visible."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "app-bundle",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "ci-cd"
+      ],
+      "term_en": "app bundle",
+      "translation_fr": "app bundle (paquet de publication)",
+      "part_of_speech": "noun",
+      "definition_en": "A publishing format, required by Google Play, from which the store generates optimized APKs for each device.",
+      "explanation_fr": "Format de publication, exigé par Google Play, à partir duquel le store génère des APK optimisés pour chaque appareil.",
+      "why_it_matters_fr": "Obligatoire pour publier sur Google Play aujourd’hui.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "app-bundle-1",
+          "text_en": "Upload the signed app bundle to the Play Console.",
+          "text_fr": "Envoie l’app bundle signé dans la Play Console."
+        },
+        {
+          "id": "app-bundle-2",
+          "text_en": "The app bundle makes the download smaller for users.",
+          "text_fr": "L’app bundle réduit la taille du téléchargement pour les utilisateurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "code-signing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 30
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "security",
+        "ci-cd"
+      ],
+      "term_en": "code signing",
+      "translation_fr": "signature du code",
+      "part_of_speech": "noun",
+      "definition_en": "Adding a digital signature to an app so that stores and devices can verify who published it and that it was not modified.",
+      "explanation_fr": "Ajouter une signature numérique à une app pour que les stores et les appareils vérifient qui l’a publiée et qu’elle n’a pas été modifiée.",
+      "why_it_matters_fr": "Perdre sa clé de signature Android empêche de publier des mises à jour : sujet sérieux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "code-signing-1",
+          "text_en": "Keep the code signing key in a safe place.",
+          "text_fr": "Garde la clé de signature du code en lieu sûr."
+        },
+        {
+          "id": "code-signing-2",
+          "text_en": "The iOS build failed because of a code signing error.",
+          "text_fr": "Le build iOS a échoué à cause d’une erreur de signature."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "responsive-layout",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "ux-ui",
+        "frontend"
+      ],
+      "term_en": "adaptive layout",
+      "translation_fr": "mise en page adaptative",
+      "part_of_speech": "noun",
+      "definition_en": "A layout that adjusts to different screen sizes and orientations, from small phones to tablets.",
+      "explanation_fr": "Mise en page qui s’adapte aux tailles et orientations d’écran, du petit téléphone à la tablette.",
+      "why_it_matters_fr": "Le parc de téléphones Android est très varié : impossible d’y échapper.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "responsive-layout-1",
+          "text_en": "The adaptive layout shows two columns on tablets.",
+          "text_fr": "La mise en page adaptative affiche deux colonnes sur tablette."
+        },
+        {
+          "id": "responsive-layout-2",
+          "text_en": "Test the adaptive layout on a small screen too.",
+          "text_fr": "Teste aussi la mise en page adaptative sur un petit écran."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "haptic-feedback",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 45
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "ux-ui",
+        "mobile-platforms"
+      ],
+      "term_en": "haptic feedback",
+      "translation_fr": "retour haptique",
+      "part_of_speech": "noun",
+      "definition_en": "A short vibration that confirms an action, such as a successful payment or a long press.",
+      "explanation_fr": "Courte vibration qui confirme une action, comme un paiement réussi ou un appui long.",
+      "why_it_matters_fr": "Petit détail qui rend une app plus agréable et plus « native ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "haptic-feedback-1",
+          "text_en": "We added haptic feedback when the payment succeeds.",
+          "text_fr": "Nous avons ajouté un retour haptique quand le paiement réussit."
+        },
+        {
+          "id": "haptic-feedback-2",
+          "text_en": "Do not overuse haptic feedback.",
+          "text_fr": "N’abuse pas du retour haptique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dark-mode",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "product-design",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "ux-ui"
+      ],
+      "term_en": "dark mode",
+      "translation_fr": "mode sombre",
+      "part_of_speech": "noun",
+      "definition_en": "A display setting that shows light text on a dark background, often following the system preference.",
+      "explanation_fr": "Réglage d’affichage qui présente un texte clair sur fond sombre, souvent selon le réglage du système.",
+      "why_it_matters_fr": "Attendu par les utilisateurs ; il faut le prévoir dès le design.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dark-mode-1",
+          "text_en": "The app follows the system dark mode setting.",
+          "text_fr": "L’app suit le réglage de mode sombre du système."
+        },
+        {
+          "id": "dark-mode-2",
+          "text_en": "Check the contrast of your colors in dark mode.",
+          "text_fr": "Vérifie le contraste de tes couleurs en mode sombre."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "onboarding",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        },
+        {
+          "role": "product-design",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "ux-ui",
+        "product"
+      ],
+      "term_en": "onboarding",
+      "translation_fr": "parcours d’accueil (onboarding)",
+      "part_of_speech": "noun",
+      "definition_en": "The first screens and steps that help a new user understand and start using a product.",
+      "explanation_fr": "Les premiers écrans et étapes qui aident un nouvel utilisateur à comprendre et à prendre en main un produit.",
+      "why_it_matters_fr": "Un bon onboarding améliore fortement la rétention : on le mesure de près.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "onboarding-1",
+          "text_en": "We shortened the onboarding from five screens to three.",
+          "text_fr": "Nous avons raccourci l’onboarding de cinq à trois écrans."
+        },
+        {
+          "id": "onboarding-2",
+          "text_en": "Most users quit during the onboarding.",
+          "text_fr": "La plupart des utilisateurs abandonnent pendant l’onboarding."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "api-level",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "mobile-platforms"
+      ],
+      "term_en": "API level",
+      "translation_fr": "niveau d’API (Android)",
+      "part_of_speech": "noun",
+      "definition_en": "A number that identifies a version of the Android platform; apps declare a minimum and a target API level.",
+      "explanation_fr": "Nombre qui identifie une version de la plateforme Android ; une app déclare un niveau minimum et un niveau cible.",
+      "why_it_matters_fr": "Google Play impose régulièrement un niveau d’API cible récent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "api-level-1",
+          "text_en": "Our minimum API level is 24, which covers most phones.",
+          "text_fr": "Notre niveau d’API minimum est 24, ce qui couvre la plupart des téléphones."
+        },
+        {
+          "id": "api-level-2",
+          "text_en": "We raised the target API level to meet Google Play rules.",
+          "text_fr": "Nous avons relevé le niveau d’API cible pour respecter les règles de Google Play."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "fragmentation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        },
+        {
+          "role": "qa-testing",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "mobile-platforms",
+        "testing"
+      ],
+      "term_en": "device fragmentation",
+      "translation_fr": "fragmentation des appareils",
+      "part_of_speech": "noun",
+      "definition_en": "The large variety of devices, screen sizes and OS versions an app must support, especially on Android.",
+      "explanation_fr": "La grande variété d’appareils, de tailles d’écran et de versions de système qu’une app doit supporter, surtout sur Android.",
+      "why_it_matters_fr": "Explique pourquoi on teste sur plusieurs téléphones et pourquoi les bugs varient.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "fragmentation-1",
+          "text_en": "Device fragmentation makes Android testing harder.",
+          "text_fr": "La fragmentation des appareils complique les tests sur Android."
+        },
+        {
+          "id": "fragmentation-2",
+          "text_en": "We support phones from Android 7 to reduce fragmentation issues.",
+          "text_fr": "Nous supportons les téléphones à partir d’Android 7 pour limiter les problèmes de fragmentation."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "image-caching",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "performance"
+      ],
+      "term_en": "image caching",
+      "translation_fr": "mise en cache des images",
+      "part_of_speech": "noun",
+      "definition_en": "Keeping downloaded images on the device so they load instantly and do not use data again.",
+      "explanation_fr": "Garder les images téléchargées sur l’appareil pour qu’elles s’affichent instantanément sans consommer à nouveau de données.",
+      "why_it_matters_fr": "Économise les données mobiles, un vrai enjeu pour les utilisateurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "image-caching-1",
+          "text_en": "Image caching made the product list scroll smoothly.",
+          "text_fr": "La mise en cache des images a rendu la liste de produits fluide."
+        },
+        {
+          "id": "image-caching-2",
+          "text_en": "Clear the image cache when storage is low.",
+          "text_fr": "Vide le cache des images quand le stockage est presque plein."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sync",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "data-engineer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "architecture",
+        "databases"
+      ],
+      "term_en": "sync",
+      "translation_fr": "synchroniser",
+      "part_of_speech": "verb",
+      "definition_en": "To make data identical on two places, such as the phone and the server, by exchanging the latest changes.",
+      "explanation_fr": "Rendre des données identiques à deux endroits (par exemple le téléphone et le serveur) en échangeant les dernières modifications.",
+      "why_it_matters_fr": "Les conflits de synchronisation sont un sujet technique et d’entretien classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sync-1",
+          "text_en": "The app syncs your notes when you are back online.",
+          "text_fr": "L’app synchronise tes notes quand tu es de nouveau en ligne."
+        },
+        {
+          "id": "sync-2",
+          "text_en": "We sync only the changes, not the whole database.",
+          "text_fr": "Nous synchronisons seulement les modifications, pas toute la base."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "accessibility-label",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "ux-ui"
+      ],
+      "term_en": "accessibility label",
+      "translation_fr": "libellé d’accessibilité",
+      "part_of_speech": "noun",
+      "definition_en": "A text description attached to a UI element, read aloud by screen readers when the element has no visible text.",
+      "explanation_fr": "Description textuelle associée à un élément d’interface, lue par les lecteurs d’écran quand l’élément n’a pas de texte visible.",
+      "why_it_matters_fr": "Obligatoire pour les boutons avec icône seule.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "accessibility-label-1",
+          "text_en": "Every icon button needs an accessibility label.",
+          "text_fr": "Chaque bouton à icône a besoin d’un libellé d’accessibilité."
+        },
+        {
+          "id": "accessibility-label-2",
+          "text_en": "The screen reader read the accessibility label “Delete photo”.",
+          "text_fr": "Le lecteur d’écran a lu le libellé d’accessibilité « Supprimer la photo »."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "kotlin",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "programming",
+        "mobile-platforms"
+      ],
+      "term_en": "Kotlin",
+      "translation_fr": "Kotlin",
+      "part_of_speech": "noun",
+      "definition_en": "A modern programming language officially recommended by Google for Android development.",
+      "explanation_fr": "Langage de programmation moderne officiellement recommandé par Google pour développer sur Android.",
+      "why_it_matters_fr": "Langage de référence des offres Android natives.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "kotlin-1",
+          "text_en": "We migrated the Android app from Java to Kotlin.",
+          "text_fr": "Nous avons migré l’app Android de Java vers Kotlin."
+        },
+        {
+          "id": "kotlin-2",
+          "text_en": "Kotlin’s null safety prevents many crashes.",
+          "text_fr": "La gestion du null de Kotlin évite beaucoup de plantages."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "swift",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "programming",
+        "mobile-platforms"
+      ],
+      "term_en": "Swift",
+      "translation_fr": "Swift",
+      "part_of_speech": "noun",
+      "definition_en": "Apple’s programming language for building apps on iOS, macOS and other Apple platforms.",
+      "explanation_fr": "Langage de programmation d’Apple pour créer des apps sur iOS, macOS et les autres plateformes Apple.",
+      "why_it_matters_fr": "Langage de référence des offres iOS natives.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "swift-1",
+          "text_en": "The iOS app is written in Swift with SwiftUI.",
+          "text_fr": "L’app iOS est écrite en Swift avec SwiftUI."
+        },
+        {
+          "id": "swift-2",
+          "text_en": "I learned Swift to build our iPhone widget.",
+          "text_fr": "J’ai appris Swift pour créer notre widget iPhone."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "flutter",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "programming",
+        "mobile-platforms"
+      ],
+      "term_en": "Flutter",
+      "translation_fr": "Flutter",
+      "part_of_speech": "noun",
+      "definition_en": "Google’s open-source framework for building cross-platform apps from a single codebase written in Dart.",
+      "explanation_fr": "Framework open source de Google pour créer des apps multiplateformes à partir d’un seul code écrit en Dart.",
+      "why_it_matters_fr": "Très demandé, notamment dans les startups et en Afrique de l’Ouest.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "flutter-1",
+          "text_en": "We built the app with Flutter for Android and iOS.",
+          "text_fr": "Nous avons créé l’app avec Flutter pour Android et iOS."
+        },
+        {
+          "id": "flutter-2",
+          "text_en": "Flutter draws its own widgets instead of using native ones.",
+          "text_fr": "Flutter dessine ses propres widgets au lieu d’utiliser ceux du système."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "react-native",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "mobile-developer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "programming",
+        "mobile-platforms"
+      ],
+      "term_en": "React Native",
+      "translation_fr": "React Native",
+      "part_of_speech": "noun",
+      "definition_en": "A framework for building mobile apps with JavaScript or TypeScript and React, rendering native UI components.",
+      "explanation_fr": "Framework pour créer des apps mobiles en JavaScript ou TypeScript avec React, qui affiche des composants d’interface natifs.",
+      "why_it_matters_fr": "Pont naturel pour les développeurs web React qui passent au mobile.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "react-native-1",
+          "text_en": "Our web team moved to mobile thanks to React Native.",
+          "text_fr": "Notre équipe web est passée au mobile grâce à React Native."
+        },
+        {
+          "id": "react-native-2",
+          "text_en": "React Native lets us share business logic with the web app.",
+          "text_fr": "React Native nous permet de partager la logique métier avec l’app web."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    }
+  ]
+}
