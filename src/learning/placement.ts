@@ -1,7 +1,8 @@
 // Adaptive placement test (spec §5.1): 10 questions, a staircase that moves one level up
 // after a correct answer and one down after a mistake. The result is the level where the
 // user answered correctly at least twice, starting from the top.
-import { LEVELS, type Level, type Term } from '@/content/schema';
+import { LEVELS, type Level } from '@/content/levels';
+import type { Term } from '@/content/schema';
 
 export const PLACEMENT_QUESTIONS = 10;
 export const PLACEMENT_START: Level = 'B1';

@@ -1,6 +1,7 @@
 // Daily Spin selection (spec §5.3). Pure: every input is passed in, randomness included,
 // so it is fully testable and runs offline.
-import { LEVELS, type Level, type Term } from '@/content/schema';
+import { LEVELS, type Level } from '@/content/levels';
+import type { Term } from '@/content/schema';
 import type { FsrsCard, UserTerm } from '@/db/db';
 
 export interface SpinInput {

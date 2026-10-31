@@ -1,13 +1,136 @@
 {
   "app": { "name": "TechLingo", "tagline": "Speak Tech. Think Global." },
-  "common": { "back": "Retour", "cancel": "Annuler", "confirm": "Confirmer", "close": "Fermer", "loading": "Chargement…" },
+  "common": { "back": "Retour", "cancel": "Annuler", "confirm": "Confirmer", "close": "Fermer", "loading": "Chargement…", "continue": "Continuer", "skip": "Passer", "optional": "facultatif", "listen": "Écouter", "listenSlow": "Lentement", "draft": "Brouillon" },
   "update": { "available": "Une nouvelle version est prête.", "reload": "Mettre à jour", "offlineReady": "TechLingo fonctionne maintenant hors ligne." },
+  "tabs": { "home": "Accueil", "dictionary": "Dico", "profile": "Profil" },
+  "levels": {
+    "A1": { "name": "Débutant", "desc": "Je connais quelques mots" },
+    "A2": { "name": "Élémentaire", "desc": "Je comprends des phrases simples" },
+    "B1": { "name": "Intermédiaire", "desc": "Je lis la doc avec un peu d’aide" },
+    "B2": { "name": "Avancé", "desc": "Je travaille en anglais sans trop de mal" },
+    "C1": { "name": "Expert", "desc": "Je parle tech en anglais avec aisance" }
+  },
+  "goals": {
+    "docs": "Comprendre la documentation",
+    "work": "Parler anglais au travail",
+    "interviews": "Réussir mes entretiens",
+    "vocabulary": "Enrichir mon vocabulaire"
+  },
+  "onboarding": {
+    "welcome": { "title": "L’anglais tech de ton métier", "text": "Un mot par jour, tiré pour ton métier. Tu l’écoutes, tu le répètes, tu le retiens.", "start": "Commencer", "restore": "J’ai déjà une sauvegarde", "privacy": "Sans compte. Ta progression reste sur ton téléphone." },
+    "step": "Étape {{n}} sur {{total}}",
+    "role": { "title": "Quel est ton métier ?", "text": "Choisis ton métier principal. Tu peux en ajouter deux autres.", "primary": "Principal", "secondary": "En plus", "count": "{{count}} mots", "soon": "Bientôt" },
+    "level": { "title": "Ton niveau d’anglais tech ?", "text": "On adapte les mots à ton niveau. Tu pourras le changer.", "unknown": "Je ne sais pas, fais-moi passer un test" },
+    "placement": { "title": "Test de niveau", "progress": "Question {{n}} sur {{total}}", "prompt": "Que veut dire « {{term}} » ?", "resultTitle": "Ton niveau : {{level}}", "resultText": "{{name}}. Tu pourras l’ajuster dans ton profil.", "keep": "Garder ce niveau" },
+    "goal": { "title": "Pourquoi apprends-tu ?", "text": "Ça nous aide à choisir les bons exemples." },
+    "rhythm": { "title": "Combien de temps par jour ?", "text": "Commence petit : la régularité compte plus que la durée.", "minutes": "{{count}} min", "reminder": "Heure du rappel", "reminderHint": "Tu pourras l’ajouter à ton agenda." },
+    "profile": { "title": "Comment veux-tu qu’on t’appelle ?", "text": "Ton profil reste sur ce téléphone.", "name": "Prénom ou pseudo", "placeholder": "Ex. Ama", "avatar": "Ton avatar", "cta": "Tourner ma première roue" }
+  },
   "home": {
-    "title": "Fondations prêtes",
-    "subtitle": "Le contenu, le stockage local et la sauvegarde fonctionnent. Les écrans arrivent à l’étape suivante.",
-    "content": "{{count}} mots dans {{roles}} métiers",
-    "drafts": "Version de travail : brouillons inclus",
-    "data": "Mes données"
+    "hello": "Bonjour {{name}}",
+    "helloAnon": "Bonjour",
+    "subtitle": "Niveau {{level}} · {{role}}",
+    "streak": "{{count}} jour",
+    "streak_other": "{{count}} jours",
+    "xp": "{{count}} XP",
+    "spin": {
+      "free": { "title": "Ton mot du jour t’attend", "text": "Tourne la roue de ton métier.", "cta": "Tourner la roue" },
+      "done": { "title": "Mot du jour tiré", "text": "Reprends ta leçon ou reviens demain pour un nouveau tour.", "cta": "Reprendre" },
+      "bonus": { "title": "Tour bonus débloqué", "text": "Bravo pour ta leçon. Un mot de plus ?", "cta": "Tour bonus" }
+    },
+    "tasks": { "title": "Tâches du jour", "spin": "Tourner la roue", "lesson": "Étudier le mot du jour", "review": "Réviser {{count}} mot", "review_other": "Réviser {{count}} mots", "noReview": "Aucune révision due" },
+    "reviews": { "title": "{{count}} mot à réviser", "title_other": "{{count}} mots à réviser", "text": "Révise maintenant pour ne pas oublier.", "cta": "Réviser" },
+    "week": { "title": "Cette semaine", "text": "{{count}} jour actif sur 7", "text_other": "{{count}} jours actifs sur 7" },
+    "welcomeBack": { "title": "Content de te revoir !", "text": "Ça fait {{count}} jours. On reprend en douceur avec un seul mot ?", "adjust": "Ajuster mon objectif" },
+    "drafts": "Version de travail : brouillons inclus"
+  },
+  "spin": {
+    "title": "Roue du jour",
+    "modes": { "random": "Au hasard", "category": "Par catégorie" },
+    "chooseCategory": "Choisis une catégorie",
+    "cta": "Tourner",
+    "spinning": "La roue tourne…",
+    "resultLabel": "Ton mot",
+    "start": "Découvrir ce mot",
+    "bonus": "Tour bonus",
+    "empty": "Plus de nouveaux mots ici pour l’instant. Essaie une autre catégorie.",
+    "surprise": "Mot surprise : il sera révélé à la fin de la leçon."
+  },
+  "lesson": {
+    "quit": "Quitter la leçon",
+    "steps": { "discover": "Découvrir", "understand": "Comprendre", "context": "En situation", "examples": "Exemples", "related": "À retenir", "repeat": "Répéter", "quiz": "Quiz" },
+    "translation": "Traduction",
+    "definition": "Definition",
+    "explanation": "En français",
+    "why": "Pourquoi c’est important pour toi",
+    "context": "Où tu le rencontres",
+    "mistakes": "Erreurs fréquentes",
+    "related": "Mots associés",
+    "nothingRelated": "Retiens surtout la phrase d’exemple : c’est elle qui fixe le mot.",
+    "next": "Continuer"
+  },
+  "repeat": {
+    "title": "Répète la phrase",
+    "text": "Écoute, puis dis la phrase à voix haute en anglais.",
+    "tap": "Appuie et parle",
+    "listening": "Je t’écoute…",
+    "stop": "Arrêter",
+    "score": "{{score}}/10 mots reconnus",
+    "honesty": "On mesure ce que la machine a reconnu, pas ta prononciation exacte.",
+    "retry": "Réessayer",
+    "permission": "TechLingo a besoin du micro pour cet exercice. Rien n’est enregistré : seul le texte reconnu est utilisé.",
+    "denied": "Micro refusé. Tu peux l’autoriser dans les réglages du navigateur, ou utiliser l’auto-évaluation.",
+    "noSpeech": "Je n’ai rien entendu. Réessaie un peu plus près du micro.",
+    "error": "La reconnaissance vocale n’a pas fonctionné. Utilise l’auto-évaluation.",
+    "fallbackTitle": "Répète-la à voix haute",
+    "fallbackText": "La reconnaissance vocale n’est pas disponible sur cet appareil. Répète la phrase, puis dis-nous comment ça s’est passé.",
+    "easy": "Facile",
+    "hard": "Difficile",
+    "said": "J’ai entendu :"
+  },
+  "quiz": {
+    "title": "Quiz",
+    "progress": "Question {{n}} sur {{total}}",
+    "check": "Vérifier",
+    "correct": "Bonne réponse !",
+    "wrong": "Pas tout à fait",
+    "answer": "Réponse : {{answer}}",
+    "fillGap": "Complète la phrase",
+    "next": "Continuer",
+    "finish": "Voir mon résultat"
+  },
+  "result": {
+    "title": "Leçon terminée !",
+    "soft": "Bien joué !",
+    "text": "« {{term}} » est dans ton vocabulaire.",
+    "xp": "XP gagnés",
+    "quiz": "Quiz",
+    "next": "Prochaine révision",
+    "nextIn": "{{date}}",
+    "freeze": "Ton gel de série a protégé ta série.",
+    "home": "Retour à l’accueil",
+    "bonus": "Tour bonus",
+    "install": { "title": "Garde TechLingo sous la main", "text": "Installe l’app pour l’ouvrir en un geste et protéger ta progression.", "cta": "Installer" }
+  },
+  "dictionary": {
+    "title": "Dictionnaire",
+    "search": "Rechercher en anglais ou en français",
+    "count": "{{count}} mots",
+    "empty": "Aucun mot ne correspond. Vérifie l’orthographe ou essaie en français.",
+    "learned": "Appris",
+    "study": "Étudier ce mot"
+  },
+  "profile": {
+    "title": "Profil",
+    "roles": "Métiers",
+    "level": "Niveau",
+    "stats": { "streak": "jours de suite", "words": "mots appris", "mastered": "maîtrisés", "xp": "XP" },
+    "data": "Mes données",
+    "dataText": "Sauvegarde, restauration, changer de téléphone",
+    "theme": "Mode sombre",
+    "retention": "Mémorisation visée",
+    "retentionText": "Plus c’est haut, plus les révisions sont fréquentes.",
+    "editLevel": "Changer de niveau"
   },
   "data": {
     "title": "Mes données",
@@ -26,5 +149,6 @@
       "checksum": "Ce fichier est abîmé ou a été modifié.",
       "unknown": "Impossible de lire ce fichier."
     }
-  }
+  },
+  "errors": { "content": "Le contenu n’a pas pu être chargé. Vérifie ta connexion pour le premier téléchargement." }
 }

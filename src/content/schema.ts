@@ -1,7 +1,9 @@
 // Content schema, shared by the build scripts (validation) and the app (runtime parsing of packs).
 import { z } from 'zod';
 
-export const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'] as const;
+import { LEVELS } from './levels';
+
+export { LEVELS };
 export const Level = z.enum(LEVELS);
 export type Level = z.infer<typeof Level>;
 
