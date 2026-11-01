@@ -1,8 +1,9 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { Bell, Briefcase, ChevronRight, Database, FileText, HelpCircle, Moon, Shield, Trash2, UserRound, Volume2 } from 'lucide-react';
+import { Bell, Briefcase, ChevronRight, Database, Download, FileText, HelpCircle, Moon, Shield, Trash2, UserRound, Volume2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
+import { openInstallSheet } from '@/app/InstallSheet';
 import { Avatar } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -11,13 +12,14 @@ import { LEVELS, type Level } from '@/content/levels';
 import { getRetention, saveProfile, setSetting } from '@/data/progress';
 import { db } from '@/db/db';
 import { domainOf } from '@/lib/domains';
+import { isIOS, isStandalone } from '@/lib/install';
 import {
   type NotificationStatus,
-  notificationsEnabled,
   notificationStatus,
   requestNotificationPermission,
-  setNotificationsEnabled,
-  showLocalNotification
+  showLocalNotification,
+  subscribePush,
+  unsubscribePush
 } from '@/lib/notifications';
 import { setSoundEnabled, soundEnabled, sounds } from '@/lib/sound';
 import { useContent } from '@/lib/useContent';
@@ -35,7 +37,7 @@ export function SettingsScreen() {
   const [dark, setDark] = useState(() => document.documentElement.dataset.theme === 'dark');
   const [sound, setSound] = useState(soundEnabled);
   const [notifPerm, setNotifPerm] = useState<NotificationStatus>(notificationStatus);
-  const [notifOn, setNotifOn] = useState(notificationsEnabled);
+  const [askingNotif, setAskingNotif] = useState(false);
   const [name, setName] = useState('');
 
   useEffect(() => { void getRetention().then(setRetention); }, []);
@@ -53,20 +55,36 @@ export function SettingsScreen() {
     try { localStorage.setItem('techlingo.theme', next ? 'dark' : 'light'); } catch { /* storage unavailable */ }
   }
 
-  async function toggleNotifications() {
-    if (notifOn) {
-      setNotificationsEnabled(false);
-      setNotifOn(false);
-      return;
-    }
+  // Reminders are on when the browser allows them AND a time is saved (profile.reminderTime is the only source).
+  const notifOn = notifPerm === 'granted' && !!profile.reminderTime;
+  const iosNeedsInstall = isIOS() && !isStandalone();
+
+  async function enableNotifications() {
+    setAskingNotif(false);
     const perm = await requestNotificationPermission();
     setNotifPerm(perm);
-    if (perm === 'granted') {
-      setNotificationsEnabled(true);
-      setNotifOn(true);
-      if (!profile?.reminderTime) await saveProfile({ reminderTime: '18:30' });
-      void showLocalNotification(t('settings.notifications.testTitle'), t('settings.notifications.testBody'));
+    if (perm !== 'granted') return;
+    const time = profile?.reminderTime ?? '18:30';
+    await saveProfile({ reminderTime: time });
+    // Background reminders via Web Push; if unavailable, the in-app reminder stays the silent fallback.
+    void subscribePush(time);
+    void showLocalNotification(t('settings.notifications.testTitle'), t('settings.notifications.testBody'));
+  }
+
+  function toggleNotifications() {
+    if (notifOn) {
+      void saveProfile({ reminderTime: null });
+      void unsubscribePush();
+      return;
     }
+    // Explain first, then let the browser ask (a refused prompt is hard to undo).
+    if (notifPerm === 'default') setAskingNotif(true);
+    else void enableNotifications();
+  }
+
+  function changeReminderTime(time: string) {
+    void saveProfile({ reminderTime: time });
+    void subscribePush(time);
   }
 
   return (
@@ -119,14 +137,23 @@ export function SettingsScreen() {
             </div>
             {notifPerm !== 'unsupported' && (
               <button type="button" role="switch" aria-checked={notifOn} aria-label={t('settings.notifications.title')}
-                onClick={() => void toggleNotifications()}
+                onClick={toggleNotifications}
                 className={`relative h-8 w-14 flex-none rounded-full transition-colors ${notifOn ? 'bg-[var(--accent)]' : 'bg-line'}`}>
                 <span className={`absolute left-0 top-1 h-6 w-6 rounded-full bg-white shadow transition-transform duration-200 ${notifOn ? 'translate-x-7' : 'translate-x-1'}`} />
               </button>
             )}
           </div>
-          {notifPerm === 'unsupported' && <p className="mt-2 text-sm text-ink-2">{t('settings.notifications.unsupported')}</p>}
+          {iosNeedsInstall
+            ? <p className="mt-2 text-sm text-ink-2">{t('settings.notifications.iosHint')}</p>
+            : notifPerm === 'unsupported' && <p className="mt-2 text-sm text-ink-2">{t('settings.notifications.unsupported')}</p>}
           {notifPerm === 'denied' && <p className="mt-2 text-sm text-danger">{t('settings.notifications.denied')}</p>}
+          {askingNotif && !notifOn && (
+            <div className="mt-4 rounded-xl border-2 border-line p-3.5">
+              <p className="text-sm">{t('settings.notifications.explain')}</p>
+              <Button className="mt-3" onClick={() => void enableNotifications()}>{t('settings.notifications.explainCta')}</Button>
+              <Button variant="ghost" onClick={() => setAskingNotif(false)}>{t('settings.notifications.explainLater')}</Button>
+            </div>
+          )}
           {notifOn && (
             <div className="mt-4">
               <p className="text-sm font-bold text-ink-2">{t('settings.notifications.hour')}</p>
@@ -135,7 +162,7 @@ export function SettingsScreen() {
                   const active = (profile.reminderTime ?? '18:30') === tm;
                   return (
                     <button key={tm} type="button" role="radio" aria-checked={active}
-                      onClick={() => void saveProfile({ reminderTime: tm })}
+                      onClick={() => changeReminderTime(tm)}
                       className={`min-h-11 rounded-xl border-2 text-sm font-bold ${active ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
                       {tm}
                     </button>
@@ -177,6 +204,23 @@ export function SettingsScreen() {
         </Card>
 
         <Card className="mt-5 p-1">
+          {!isStandalone() && (
+            <>
+              <button
+                type="button"
+                onClick={openInstallSheet}
+                className="flex min-h-14 w-full items-center gap-3 rounded-2xl px-3 text-left transition-colors active:bg-mist"
+              >
+                <Download size={22} className="text-[var(--accent)]" aria-hidden />
+                <span className="flex-1">
+                  <span className="block font-bold">{t('install.title')}</span>
+                  <span className="block text-sm text-ink-2">{t('install.text')}</span>
+                </span>
+                <ChevronRight size={20} className="text-ink-2" aria-hidden />
+              </button>
+              <div className="mx-3 h-0.5 bg-line" />
+            </>
+          )}
           <Link href="/settings/help" className="flex min-h-14 items-center gap-3 rounded-2xl px-3">
             <HelpCircle size={22} className="text-[var(--accent)]" aria-hidden />
             <span className="flex-1"><span className="block font-bold">{t('help.title')}</span><span className="block text-sm text-ink-2">{t('settings.helpText')}</span></span>

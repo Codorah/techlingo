@@ -4,26 +4,54 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
 import { canPromptInstall, isIOS, isStandalone, onInstallChange, promptInstall } from '@/lib/install';
 
-const DISMISS_KEY = 'techlingo.installDismissedAt';
+const DISMISS_SESSION_KEY = 'techlingo.installDismissedSession';
 const isAndroid = () => /android/i.test(navigator.userAgent);
 const isNativeShell = () => !!(window as { Capacitor?: unknown }).Capacitor;
 
-/** Install card shown on the first web visit (PWA prompt or manual steps per platform). */
+/** Open the install bottom sheet on demand from settings or a banner. */
+export function openInstallSheet() {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('techlingo:open-install'));
+  }
+}
+
+/** Install card shown when opening the app (PWA prompt or manual steps per platform). */
 export function InstallSheet() {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [, force] = useState(0);
 
   useEffect(() => {
-    if (isStandalone() || isNativeShell()) return;
-    try { if (Date.now() - Number(localStorage.getItem(DISMISS_KEY) ?? 0) < 3 * 86_400_000) return; } catch { /* storage unavailable */ }
-    const timer = setTimeout(() => setOpen(true), 2500);
+    const handleOpenReq = () => setOpen(true);
+    window.addEventListener('techlingo:open-install', handleOpenReq);
+
+    // If already installed as a standalone PWA or native app, never auto-show
+    if (isStandalone() || isNativeShell()) {
+      return () => window.removeEventListener('techlingo:open-install', handleOpenReq);
+    }
+
+    // Suppress only during the active browser session if the user clicked "Plus tard"
+    try {
+      if (sessionStorage.getItem(DISMISS_SESSION_KEY)) {
+        return () => window.removeEventListener('techlingo:open-install', handleOpenReq);
+      }
+    } catch { /* storage unavailable */ }
+
+    // Smooth prompt 1.2s after the app opens
+    const timer = setTimeout(() => setOpen(true), 1200);
     const off = onInstallChange(() => force((n) => n + 1));
-    return () => { clearTimeout(timer); off(); };
+
+    return () => {
+      clearTimeout(timer);
+      off();
+      window.removeEventListener('techlingo:open-install', handleOpenReq);
+    };
   }, []);
 
   const close = () => {
-    try { localStorage.setItem(DISMISS_KEY, String(Date.now())); } catch { /* storage unavailable */ }
+    try {
+      sessionStorage.setItem(DISMISS_SESSION_KEY, '1');
+    } catch { /* storage unavailable */ }
     setOpen(false);
   };
 
@@ -37,36 +65,51 @@ export function InstallSheet() {
 
   return (
     <>
-      <div className="fixed inset-0 z-40 animate-[enter_.2s_ease-out] bg-ink/40" onClick={close} aria-hidden />
-      <div role="dialog" aria-modal="true" aria-labelledby="install-title"
-        className="fixed inset-x-0 bottom-0 z-50 mx-auto max-w-[520px] animate-[sheet_.3s_var(--ease-out-quart)] rounded-t-3xl bg-surface px-5 pb-[calc(env(safe-area-inset-bottom)+18px)] pt-3 shadow-[0_-8px_32px_rgba(15,34,56,0.18)]">
+      <div className="fixed inset-0 z-50 animate-[enter_.2s_ease-out] bg-ink/40" onClick={close} aria-hidden />
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="install-title"
+        className="fixed inset-x-0 bottom-0 z-50 mx-auto max-w-[520px] animate-[sheet_.3s_var(--ease-out-quart)] rounded-t-3xl bg-surface px-5 pb-[calc(env(safe-area-inset-bottom)+18px)] pt-3 shadow-[0_-8px_32px_rgba(15,34,56,0.22)]"
+      >
         <div className="mx-auto mb-4 h-1.5 w-10 rounded-full bg-line" />
         <div className="flex items-center gap-3.5">
-          <img src="/icons/icon-192.png" width={60} height={60} alt="" className="rounded-2xl" />
+          <img src="/icons/icon-192.png" width={60} height={60} alt="" className="rounded-2xl shadow-xs" />
           <div>
             <h2 id="install-title" className="text-xl font-black">{t('install.title')}</h2>
             <p className="text-sm text-ink-2">{t('install.text')}</p>
           </div>
         </div>
+
         <div className="my-4 flex flex-wrap gap-2">
           {[{ Icon: Feather, k: 'light' }, { Icon: WifiOff, k: 'offline' }, { Icon: Lock, k: 'private' }].map(({ Icon, k }) => (
-            <span key={k} className="inline-flex items-center gap-1.5 rounded-full bg-mist px-3 py-1.5 text-sm font-bold text-[var(--accent)]"><Icon size={16} aria-hidden />{t(`install.perks.${k}`)}</span>
+            <span key={k} className="inline-flex items-center gap-1.5 rounded-full bg-mist px-3 py-1.5 text-sm font-bold text-[var(--accent)]">
+              <Icon size={16} aria-hidden />{t(`install.perks.${k}`)}
+            </span>
           ))}
         </div>
+
         {canPromptInstall() ? (
-          <Button icon={<Download size={20} aria-hidden />} onClick={() => void promptInstall().then(close)}>{t('install.cta')}</Button>
+          <Button icon={<Download size={20} aria-hidden />} onClick={() => void promptInstall().then(close)}>
+            {t('install.cta')}
+          </Button>
         ) : (
           <ol className="mb-2">
             {steps.map(({ text, Icon }, i) => (
               <li key={text} className={`flex min-h-12 items-center gap-3 ${i ? 'border-t-2 border-line' : ''}`}>
-                <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-[var(--accent)] text-sm font-bold text-on-ocean">{i + 1}</span>
-                <span className="flex-1">{text}</span>
+                <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-[var(--accent)] text-sm font-bold text-on-ocean">
+                  {i + 1}
+                </span>
+                <span className="flex-1 font-semibold text-sm">{text}</span>
                 <Icon size={22} className="text-[var(--accent)]" aria-hidden />
               </li>
             ))}
           </ol>
         )}
-        <button type="button" onClick={close} className="mt-2 min-h-11 w-full font-bold text-[var(--accent)]">{t('install.later')}</button>
+
+        <button type="button" onClick={close} className="mt-2 min-h-11 w-full font-bold text-[var(--accent)]">
+          {t('install.later')}
+        </button>
       </div>
     </>
   );
