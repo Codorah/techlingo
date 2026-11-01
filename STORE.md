@@ -4,7 +4,7 @@ Ce guide liste ce que **toi seul peux faire** (comptes, signature, captures) et 
 
 ## 0. Avant tout : à remplir
 
-- [ ] **Email de contact** : remplace `À_REMPLACER_EMAIL_DE_CONTACT` dans `www/privacy.html` et `www/terms.html`.
+- [x] **Email de contact** : services@codorah.com (page de confidentialité `public/legal/confidentialite.html`).
 - [ ] **Nom du développeur** exact, tel qu'il apparaîtra sur les stores.
 - [ ] **Identifiant de l'app** : `com.techlingo.app` (dans `capacitor.config.json`). Il est **définitif** une fois publié. Change-le avant si tu veux utiliser ton propre domaine (ex. `com.tonnom.techlingo`), puis relance `npx cap sync`.
 - [ ] Déploie le site sur Vercel : l'URL de `privacy.html` sert de **lien de politique de confidentialité** exigé par les deux stores (ex. `https://ton-site.vercel.app/privacy.html`).

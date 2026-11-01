@@ -6,7 +6,7 @@ Read PRODUCT.md first (who it is for, what it must feel like). This file is how 
 - Answer in **French**; code, identifiers and commit subjects stay in English or French as already used.
 - **Commit and push to GitHub after every finished step**, then give a short audit (what changed, what is left). Don't ask before each step; keep going until the list is done.
 - The owner deploys on Vercel (project `techlingo`, auto-deploy from `main`). PWA only: **no APK** anymore.
-- Never publish the owner's personal email; legal pages use the placeholder `À_REMPLACER_EMAIL_DE_CONTACT`.
+- Never publish the owner's personal email. The public contact address is services@codorah.com (legal pages, store listings).
 - Content must be accurate, never invented: new words are `status: draft`, doubts go in `review_note`.
 - Destructive shell commands (`rm`) are blocked here: don't work around it, use new paths instead.
 
