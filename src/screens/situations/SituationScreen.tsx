@@ -215,7 +215,7 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
   return (
     <div className="flex flex-1 animate-[enter_.25s_var(--ease-out-quart)] flex-col">
       <p className="text-sm font-bold text-[var(--accent)]">{t('situations.steps.production')}</p>
-      <h1 className="mt-1 text-[1.35rem] font-black leading-snug">{p.prompt_fr}</h1>
+      <h1 className="mt-1 text-lg font-bold leading-relaxed [text-wrap:pretty]">{p.prompt_fr}</h1>
       {p.context_en && (
         <Workspace channel={p.channel}><p lang="en" className="p-1 leading-relaxed">{p.context_en}</p></Workspace>
       )}
