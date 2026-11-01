@@ -1,0 +1,2577 @@
+{
+  "role": "network-systems",
+  "status": "draft",
+  "title_fr": "L’anglais de ta semaine d’admin systèmes et réseaux",
+  "units": [
+    {
+      "id": "network-systems-helpdesk-and-workstations",
+      "title_fr": "Traiter les tickets du support et dépanner les postes",
+      "title_en": "Handle support tickets and troubleshoot workstations",
+      "situation_fr": "Le lundi matin commence au service desk : la file de tickets est pleine, une utilisatrice a son écran figé et un portable plante avec un écran bleu après une mise à jour.",
+      "guide": {
+        "intro_fr": "Au support informatique (« help desk » ou « service desk »), ta journée s’organise autour de la file d’attente des tickets (« ticket queue »). Selon le référentiel « ITIL », on distingue un « incident » (quelque chose est cassé) d’une « service request » (une demande standard, comme un logiciel ou un écran). Le support de niveau 1 (« first-line support ») traite les cas courants et prend la main sur le poste de travail (« workstation ») de l’utilisateur final (« end user ») grâce au partage d’écran (« screen sharing ») ou au bureau à distance (« remote desktop »). Si une machine affiche un écran bleu (« blue screen of death »), on redémarre en mode sans échec (« safe mode »), on inspecte l’Observateur d’événements (« Event Viewer ») pour isoler le pilote (« driver ») fautif, et si le système est trop abîmé, on le réinstalle (« to reimage ») avant de mettre à jour l’inventaire du parc (« IT asset inventory »).",
+        "key_phrases": [
+          {
+            "en": "I’ll pick up the next ticket from the queue.",
+            "fr": "Je prends le prochain ticket de la file d’attente."
+          },
+          {
+            "en": "Can you share your screen so I can see what happens?",
+            "fr": "Peux-tu partager ton écran pour que je voie ce qui se passe ?"
+          },
+          {
+            "en": "Let me connect to your laptop over remote desktop.",
+            "fr": "Laisse-moi me connecter à ton portable via le bureau à distance."
+          },
+          {
+            "en": "Boot into safe mode and roll back the graphics driver.",
+            "fr": "Démarre en mode sans échec et reviens à l’ancien pilote graphique."
+          },
+          {
+            "en": "It’s faster to reimage the workstation than to repair it.",
+            "fr": "C’est plus rapide de réinstaller le poste que de le réparer."
+          },
+          {
+            "en": "Don’t forget to update the IT asset inventory.",
+            "fr": "N’oublie pas de mettre à jour l’inventaire du parc."
+          }
+        ],
+        "tip_fr": "Attention au faux ami « to support » : au support, on dit « I’ll help the user » ou « I’ll handle this ticket », pas « I’ll support the user » si l’on veut dire l’aider ponctuellement. Et pour un programme figé, préfère « unresponsive » ou « frozen » à « blocked », qui évoque un blocage volontaire ou un compte verrouillé."
+      },
+      "lessons": [
+        {
+          "id": "network-systems-triage-the-ticket-queue",
+          "title_fr": "Trier la file de tickets au service desk",
+          "term_ids": [
+            "service-desk",
+            "ticket-queue",
+            "service-request",
+            "first-line-support",
+            "itil"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Morning Tomasz! The service desk queue already has thirty open tickets. Where do we start?",
+              "text_fr": "Bonjour Tomasz ! La file du service desk compte déjà trente tickets ouverts. Par où commence-t-on ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Let’s sort them following ITIL rules: separate real incidents from standard service requests first.",
+              "text_fr": "Trions-les selon les règles ITIL : séparons d’abord les vrais incidents des demandes de service standard."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Right. Half of them are just people asking for a second monitor or a Visio install.",
+              "text_fr": "C’est vrai. La moitié concerne simplement des gens qui demandent un deuxième écran ou l’installation de Visio."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Those are service requests, so they have a three-day target. First-line support can handle them this afternoon.",
+              "text_fr": "Ce sont des demandes de service, elles ont donc un délai cible de trois jours. Le support de niveau 1 peut les traiter cet après-midi."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "What about the five tickets from accounting saying their shared printer is offline?",
+              "text_fr": "Et les cinq tickets de la comptabilité qui disent que leur imprimante partagée est hors ligne ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "That’s one incident affecting a whole team. Link the five tickets together and pick it up first.",
+              "text_fr": "C’est un seul incident qui touche toute une équipe. Lie les cinq tickets ensemble et prends-le en premier."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Selon ITIL, quelle demande doit être classée comme une « service request » plutôt qu’un « incident » ?",
+              "choices": [
+                "Un serveur de fichiers qui ne répond plus depuis dix minutes",
+                "L’attribution d’un casque audio et d’un accès au dossier marketing pour une nouvelle recrue",
+                "Une coupure du Wi-Fi dans la salle du conseil avant une présentation"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une « service request » est une demande standard prévue au catalogue (matériel, logiciel, droit d’accès), alors qu’un « incident » est une interruption ou une dégradation imprévue d’un service existant, comme un serveur muet ou un Wi-Fi coupé."
+            },
+            {
+              "prompt_fr": "Comment dire « Je prends le prochain ticket de la file d’attente » ?",
+              "choices": [
+                "I take the next ticket of the waiting line.",
+                "I’ll pick up the next ticket from the queue.",
+                "I’ll catch the next ticket in the file."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Au support, l’expression consacrée est « pick up a ticket from the queue ». « Waiting line » s’emploie pour une file de personnes au supermarché, et « file » en anglais veut dire fichier ou dossier, jamais file d’attente (faux ami classique)."
+            },
+            {
+              "prompt_fr": "Complète : « First-line support ___ common issues and escalates complex ones to Level 2. »",
+              "choices": [
+                "handles",
+                "supports",
+                "treats"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Pour dire « traiter » un problème ou un ticket, on utilise « to handle » (ou « to deal with »). « Treats » est un calque du français « traiter » qui s’emploie en médecine (treat a patient), et « supports » ne se construit pas avec « issues »."
+            },
+            {
+              "prompt_fr": "Cinq utilisateurs du même service ouvrent chacun un ticket pour la même panne d’imprimante. Que réponds-tu à ton collègue du niveau 1 ?",
+              "choices": [
+                "Delete four tickets so our queue looks smaller.",
+                "Link them to one parent incident so we update everyone at once when it’s fixed.",
+                "Close them all because printing is a service request."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La bonne pratique consiste à regrouper les signalements sous un ticket parent (« link them to a parent incident ») pour garder la trace de l’impact et prévenir tous les utilisateurs d’un coup. Supprimer des tickets fausse le suivi, et une panne d’imprimante est bien un incident."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un message Slack à l’équipe du support de niveau 1 : la file d’attente compte trente tickets ce matin ; demande-leur de regrouper les cinq tickets sur l’imprimante de la comptabilité sous un seul incident prioritaire et de garder les demandes de service pour cet après-midi.",
+            "model_answer_en": "Morning team, the ticket queue has thirty open items this morning. Please link the five accounting printer tickets under one priority incident and handle it first. We can process the standard service requests this afternoon.",
+            "model_answer_fr": "Bonjour l’équipe, la file d’attente compte trente tickets ouverts ce matin. Merci de lier les cinq tickets sur l’imprimante de la comptabilité sous un seul incident prioritaire et de le traiter en premier. Nous pourrons traiter les demandes de service standard cet après-midi.",
+            "key_phrases": [
+              "the ticket queue",
+              "under one priority incident",
+              "handle it first",
+              "standard service requests"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-help-a-user-remotely",
+          "title_fr": "Prendre la main à distance sur le poste d’un utilisateur",
+          "term_ids": [
+            "helpdesk",
+            "end-user",
+            "remote-desktop",
+            "screen-sharing",
+            "unresponsive"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Priya",
+              "text_en": "Hi Kenji, this is Priya from the help desk. You reported that Outlook keeps freezing?",
+              "text_fr": "Bonjour Kenji, c’est Priya du support informatique. Tu as signalé qu’Outlook n’arrête pas de se figer ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, every time I open an attachment with a large spreadsheet, the window becomes completely unresponsive.",
+              "text_fr": "Oui, chaque fois que j’ouvre une pièce jointe avec un gros tableau, la fenêtre ne répond plus du tout."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Let’s start with screen sharing on Teams so you can show me the exact behavior.",
+              "text_fr": "Commençons par un partage d’écran sur Teams pour que tu me montres le comportement exact."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Sure, I’m sharing my screen now. Look, the top bar says “Not Responding”.",
+              "text_fr": "Bien sûr, je partage mon écran maintenant. Regarde, la barre du haut affiche « Ne répond pas »."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "I see it. An old add-in is probably hanging. May I take control through remote desktop to disable it?",
+              "text_fr": "Je vois. Un ancien module complémentaire bloque probablement. Puis-je prendre la main via le bureau à distance pour le désactiver ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Go ahead, I just clicked Accept on the prompt. Tell me when I can use my mouse again.",
+              "text_fr": "Vas-y, je viens de cliquer sur Accepter dans la fenêtre. Dis-moi quand je pourrai réutiliser ma souris."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « the window becomes completely unresponsive » ?",
+              "choices": [
+                "La fenêtre se ferme toute seule sans afficher d’erreur",
+                "La fenêtre est figée et ne réagit plus aux clics ni au clavier",
+                "La fenêtre refuse l’accès parce que l’utilisateur n’a pas les droits"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Unresponsive » décrit un programme ou un serveur figé qui ne répond plus aux sollicitations. Une fermeture brutale se dit « it crashes » ou « it closes unexpectedly », et un refus de droits afficherait « access denied »."
+            },
+            {
+              "prompt_fr": "Comment demander poliment à un utilisateur final de prendre la main sur son poste ?",
+              "choices": [
+                "Give me your computer with remote desktop now.",
+                "May I take control of your screen to disable the add-in?",
+                "Can I take the hand on your computer by distance?"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En anglais, « prendre la main » se dit « take control (of your screen / computer) » ou « connect over remote desktop ». « Take the hand » et « by distance » sont des calques mot à mot du français (« prendre la main à distance ») qui sont incompréhensibles."
+            },
+            {
+              "prompt_fr": "Complète : « Keep your explanation simple so any ___ can follow the steps without jargon. »",
+              "choices": [
+                "final user",
+                "end user",
+                "last user"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le terme consacré est « end user » (utilisateur final). « Final user » et « last user » sont des calques du français qui ne s’emploient pas dans le métier."
+            },
+            {
+              "prompt_fr": "Dans quel cas passes-tu du simple « screen sharing » à une vraie session « remote desktop » ?",
+              "choices": [
+                "Quand tu dois exécuter une action avec des identifiants administrateur que l’utilisateur ne doit pas voir ni taper",
+                "Uniquement quand l’utilisateur travaille dans le même bâtiment que toi",
+                "Quand tu veux simplement voir le message d’erreur affiché à l’écran"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le simple partage d’écran (« screen sharing ») suffit pour observer une erreur, mais un outil de prise en main à distance (« remote desktop » ou outil de support dédié) permet d’agir sur le poste et d’élever ses privilèges sans confier le mot de passe admin à l’utilisateur."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Un utilisateur final, Marcus, t’écrit sur Slack car son application de messagerie ne répond plus dès qu’il ouvre une pièce jointe. Réponds-lui : propose d’abord un partage d’écran pour voir l’erreur, puis demande-lui l’autorisation de te connecter via le bureau à distance pour désactiver le module fautif.",
+            "context_en": "Hi! My email app freezes every time I open a PDF attachment. Can someone at the help desk look at it?",
+            "model_answer_en": "Hi Marcus, I can help you with that. Could we start with screen sharing so I can see what happens when the app becomes unresponsive? Then, with your permission, I’ll connect over remote desktop to disable the faulty add-in.",
+            "model_answer_fr": "Salut Marcus, je peux t’aider là-dessus. Pourrait-on commencer par un partage d’écran pour que je voie ce qui se passe quand l’application ne répond plus ? Ensuite, avec ton accord, je me connecterai via le bureau à distance pour désactiver le module défaillant.",
+            "key_phrases": [
+              "start with screen sharing",
+              "becomes unresponsive",
+              "connect over remote desktop",
+              "disable the faulty add-in"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-fix-a-crashing-laptop",
+          "title_fr": "Dépanner un portable qui plante au démarrage",
+          "term_ids": [
+            "workstation",
+            "blue-screen",
+            "safe-mode",
+            "device-driver",
+            "event-viewer"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Moussa, Nadia’s workstation keeps crashing with a blue screen right after she logs in.",
+              "text_fr": "Moussa, le poste de travail de Nadia n’arrête pas de planter avec un écran bleu juste après l’ouverture de session."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Did anything change on her laptop yesterday?",
+              "text_fr": "Est-ce que quelque chose a changé sur son portable hier ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Windows installed a new graphics driver yesterday evening. Can we even get in if it crashes that fast?",
+              "text_fr": "Windows a installé un nouveau pilote graphique hier soir. On peut quand même entrer dans la session si ça plante aussi vite ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Yes, boot into safe mode first. It only loads essential components, so the faulty driver won’t crash the system.",
+              "text_fr": "Oui, démarre d’abord en mode sans échec. Il ne charge que les composants essentiels, donc le pilote défectueux ne fera pas planter le système."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Good idea. I’m in safe mode now, and I opened Event Viewer to check the system logs.",
+              "text_fr": "Bonne idée. Je suis en mode sans échec maintenant, et j’ai ouvert l’Observateur d’événements pour vérifier les journaux système."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Great. If the critical error points to the display driver, roll it back to the previous version and reboot normally.",
+              "text_fr": "Parfait. Si l’erreur critique désigne le pilote d’affichage, reviens à la version précédente et redémarre normalement."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi le poste ne plante-t-il plus lorsque Lucía le démarre en « safe mode » ?",
+              "choices": [
+                "Parce que le mode sans échec répare automatiquement tous les fichiers endommagés du disque",
+                "Parce que Windows démarre avec le strict minimum de services et un pilote d’affichage générique",
+                "Parce que le mode sans échec bloque l’accès au disque dur local"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le « safe mode » (mode sans échec) ne charge que les composants et pilotes génériques indispensables au démarrage, ce qui permet d’intervenir sans que le pilote graphique tiers ne provoque l’écran bleu. Il ne répare pas les fichiers tout seul et laisse bien accès au disque."
+            },
+            {
+              "prompt_fr": "Comment dire « Reviens à la version précédente du pilote » ?",
+              "choices": [
+                "Roll back the driver to the previous version.",
+                "Go behind the pilot to the old version.",
+                "Return the driver back in the last version."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En informatique, un pilote matériel se dit « driver » (jamais « pilot », qui pilote un avion), et revenir à la version précédente se dit « to roll back a driver » (c’est d’ailleurs le nom du bouton « Roll Back Driver » dans Windows)."
+            },
+            {
+              "prompt_fr": "Complète : « Check ___ to see the critical system errors recorded right before the crash. »",
+              "choices": [
+                "Event Viewer",
+                "Task Observer",
+                "Screen Watcher"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L’outil intégré à Windows qui regroupe les journaux système, sécurité et applications s’appelle « Event Viewer » (l’Observateur d’événements). Les deux autres noms sont inventés."
+            },
+            {
+              "prompt_fr": "Un utilisateur t’appelle : son PC portable vient de faire un écran bleu pour la première fois, mais a redémarré normalement. Que lui réponds-tu ?",
+              "choices": [
+                "Throw the workstation away, the motherboard is dead.",
+                "Keep working for now, and I’ll check Event Viewer remotely to see which driver caused the blue screen.",
+                "Unplug your keyboard, blue screens always come from peripherals."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un écran bleu isolé laisse une trace précise dans l’Observateur d’événements (et un fichier minidump) que l’on peut analyser à distance sans immobiliser l’utilisateur. Jeter la machine ou accuser d’emblée le clavier n’a aucun sens technique."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige la note de clôture du ticket pour le poste de Nadia : le portable plantait avec un écran bleu après l’ouverture de session ; tu as démarré en mode sans échec, vérifié l’Observateur d’événements qui désignait le nouveau pilote graphique, et remis la version précédente du pilote.",
+            "model_answer_en": "The workstation kept crashing with a blue screen right after login. I booted the laptop into safe mode and checked Event Viewer, which pointed to the new graphics driver. Rolling back the driver to the previous version resolved the issue.",
+            "model_answer_fr": "Le poste de travail plantait sans cesse avec un écran bleu juste après la connexion. J’ai démarré le portable en mode sans échec et vérifié l’Observateur d’événements, qui désignait le nouveau pilote graphique. Le retour à la version précédente du pilote a résolu le problème.",
+            "key_phrases": [
+              "crashing with a blue screen",
+              "into safe mode",
+              "checked Event Viewer",
+              "Rolling back the driver"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-reimage-and-update-inventory",
+          "title_fr": "Réinstaller un poste et mettre à jour l’inventaire",
+          "term_ids": [
+            "reimage",
+            "peripheral",
+            "it-asset-inventory",
+            "knowledge-base",
+            "restart"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Ivan, I’ve spent two hours on this laptop. Even after a restart, core Windows services fail to load.",
+              "text_fr": "Ivan, j’ai passé deux heures sur ce portable. Même après un redémarrage, des services Windows essentiels refusent de se charger."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Don’t waste more time on it. Back up the user’s local files and reimage the machine from our master image.",
+              "text_fr": "Ne perds pas plus de temps dessus. Sauvegarde les fichiers locaux de l’utilisateur et réinstalle la machine à partir de notre image maître."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Will do. While it runs, I’ll give him a spare laptop and test his docking station and other peripherals.",
+              "text_fr": "Ça marche. Pendant que ça tourne, je vais lui donner un portable de prêt et tester sa station d’accueil et ses autres périphériques."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Make sure you update the IT asset inventory with the spare laptop’s serial number and the new owner.",
+              "text_fr": "Assure-toi de mettre à jour l’inventaire du parc avec le numéro de série du portable de prêt et le nouveau responsable."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Already on my checklist. By the way, our USB-C dock fix from yesterday worked on three other desks.",
+              "text_fr": "C’est déjà sur ma liste. Au fait, notre correctif d’hier pour la station USB-C a fonctionné sur trois autres bureaux."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Nice! Write a short article in the knowledge base so the rest of the team doesn’t have to guess.",
+              "text_fr": "Super ! Rédige un court article dans la base de connaissances pour que le reste de l’équipe n’ait pas à deviner."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que fait un technicien lorsqu’il décide de « reimage a laptop » ?",
+              "choices": [
+                "Il remplace l’écran cassé de l’ordinateur portable",
+                "Il change uniquement le fond d’écran par celui de l’entreprise",
+                "Il écrase le disque et réinstalle un système propre préconfiguré par l’équipe IT"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To reimage » (remasteriser ou réinstaller à partir d’une image) consiste à déployer une image système standard contenant l’OS, les pilotes et les logiciels de base de l’entreprise. Cela n’a rien à voir avec l’écran physique ni le fond d’écran (« wallpaper »)."
+            },
+            {
+              "prompt_fr": "Pourquoi Ivan insiste-t-il pour mettre à jour l’« IT asset inventory » lors d’un prêt de machine ?",
+              "choices": [
+                "Pour savoir à tout moment quel salarié détient quel matériel en cas d’audit ou de perte",
+                "Pour augmenter automatiquement la mémoire vive de l’ordinateur à distance",
+                "Pour vider le cache du navigateur de l’ancien propriétaire"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L’inventaire du parc (« IT asset inventory ») trace chaque équipement (numéro de série, détenteur, lieu, état). Sans mise à jour lors d’un échange, on perd la trace du matériel en cas d’audit de sécurité ou de départ du salarié."
+            },
+            {
+              "prompt_fr": "Complète : « Unplug all external ___ like the dock and headset before running the hardware test. »",
+              "choices": [
+                "peripherics",
+                "peripherals",
+                "materials"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En anglais, un périphérique se dit « a peripheral » (au pluriel « peripherals »). « Peripherics » est un calque fréquent du français, et « materials » désigne des matériaux de construction ou des supports de cours, jamais du matériel informatique (« hardware »)."
+            },
+            {
+              "prompt_fr": "Tu trouves une manipulation simple qui règle un bug récurrent sur les stations d’accueil. Quelle initiative prends-tu ?",
+              "choices": [
+                "I keep the trick to myself so I remain the fastest technician.",
+                "I document the steps in the knowledge base so both users and Level 1 can solve it faster.",
+                "I reimage every laptop in the company just in case."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Enrichir la base de connaissances (« knowledge base ») fait gagner du temps à toute l’équipe et évite les tickets répétitifs. Garder l’astuce pour soi nuit au service, et réinstaller tous les postes pour un souci de station d’accueil est disproportionné."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail à ton collègue Ivan : tu as sauvegardé les fichiers de l’utilisateur et lancé la réinstallation complète de son poste ; tu lui as remis un portable de prêt avec ses périphériques, tu as mis à jour l’inventaire du parc, et tu as ajouté la procédure dans la base de connaissances.",
+            "model_answer_en": "Hi Ivan, I backed up the user’s files and started reimaging his workstation. I gave him a spare laptop, tested his peripherals, and updated the IT asset inventory with the new assignment. I also added the docking station fix to our knowledge base.",
+            "model_answer_fr": "Bonjour Ivan, j’ai sauvegardé les fichiers de l’utilisateur et lancé la réinstallation de son poste de travail. Je lui ai remis un portable de prêt, j’ai testé ses périphériques et j’ai mis à jour l’inventaire du parc avec la nouvelle attribution. J’ai aussi ajouté le correctif de la station d’accueil dans notre base de connaissances.",
+            "key_phrases": [
+              "reimaging his workstation",
+              "tested his peripherals",
+              "updated the IT asset inventory",
+              "to our knowledge base"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "network-systems-accounts-and-access",
+      "title_fr": "Gérer les comptes, les droits et le parc mobile",
+      "title_en": "Manage user accounts, permissions and mobile devices",
+      "situation_fr": "Un commercial est bloqué hors de son compte, une nouvelle arrivée à la finance attend ses accès aux dossiers partagés, et un téléphone professionnel vient d’être perdu dans le train.",
+      "guide": {
+        "intro_fr": "La gestion des identités et des accès occupe une grande partie de la semaine d’un administrateur systèmes. Dans un environnement Windows, les comptes et les postes sont centralisés dans « Active Directory », hébergé sur des contrôleurs de domaine (« domain controllers »). Après trop d’échecs, un compte subit un verrouillage (« account lockout ») : il faut le déverrouiller (« unlock »), parfois faire une réinitialisation du mot de passe (« password reset ») et vider le cache (« clear the cache ») des anciens identifiants. Pour les arrivées, on configure les boîtes partagées (« shared mailboxes »), les listes de diffusion (« distribution lists ») et les partages réseau (« network shares ») montés en lecteurs réseau (« mapped drives ») via une stratégie de groupe (« Group Policy »). Enfin, on applique le moindre privilège (« least privilege ») lors des revues d’accès (« access reviews ») et l’on protège la flotte mobile avec un « MDM » capable de lancer un effacement à distance (« remote wipe »).",
+        "key_phrases": [
+          {
+            "en": "Your account keeps locking out because of an old saved password.",
+            "fr": "Ton compte se verrouille sans arrêt à cause d’un ancien mot de passe enregistré."
+          },
+          {
+            "en": "I added her to the finance security group in Active Directory.",
+            "fr": "Je l’ai ajoutée au groupe de sécurité de la finance dans Active Directory."
+          },
+          {
+            "en": "The login policy maps the S: drive automatically.",
+            "fr": "La stratégie de connexion monte automatiquement le lecteur S:."
+          },
+          {
+            "en": "Users shouldn’t have permanent local admin rights.",
+            "fr": "Les utilisateurs ne devraient pas avoir de droits administrateur locaux permanents."
+          },
+          {
+            "en": "We triggered a remote wipe through MDM as soon as the phone was reported lost.",
+            "fr": "Nous avons lancé un effacement à distance via le MDM dès que la perte du téléphone a été signalée."
+          },
+          {
+            "en": "Please revoke all active SSO sessions and disable the account.",
+            "fr": "Merci de révoquer toutes les sessions SSO actives et de désactiver le compte."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « permission » et « right » : pour des fichiers ou des dossiers, on parle toujours de « file permissions » (read, write, execute), tandis que pour les pouvoirs sur le système (installer un programme, redémarrer un service), on parle d’« admin rights » ou de « privileges »."
+      },
+      "lessons": [
+        {
+          "id": "network-systems-unlock-an-account",
+          "title_fr": "Déverrouiller un compte et réinitialiser un mot de passe",
+          "term_ids": [
+            "active-directory",
+            "domain-controller",
+            "account-lockout",
+            "password-reset",
+            "clear-cache"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Mei",
+              "text_en": "Kofi, Diego just called. I did a password reset for him ten minutes ago, but he already has another account lockout.",
+              "text_fr": "Kofi, Diego vient d’appeler. Je lui ai fait une réinitialisation de mot de passe il y a dix minutes, mais il a déjà un nouveau verrouillage de compte."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Let’s check the security logs on the domain controller to see which device is sending the bad password.",
+              "text_fr": "Vérifions les journaux de sécurité sur le contrôleur de domaine pour voir quel appareil envoie le mauvais mot de passe."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Good call. In Active Directory, the failed attempts are coming from his tablet on the office Wi-Fi.",
+              "text_fr": "Bien vu. Dans Active Directory, les tentatives échouées viennent de sa tablette sur le Wi-Fi du bureau."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Classic! The tablet is still trying to connect with his old credentials in the background.",
+              "text_fr": "Classique ! La tablette essaie encore de se connecter en arrière-plan avec ses anciens identifiants."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "So I’ll ask him to forget the Wi-Fi network on the tablet and clear the cache in Windows Credential Manager.",
+              "text_fr": "Je vais donc lui demander d’oublier le réseau Wi-Fi sur sa tablette et de vider le cache dans le Gestionnaire d’identifiants Windows."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Exactly. Do that first, then unlock his account in Active Directory so it doesn’t lock right back up.",
+              "text_fr": "Exactement. Fais ça d’abord, puis déverrouille son compte dans Active Directory pour qu’il ne se reverrouille pas aussitôt."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi le compte de Diego se reverrouille-t-il quelques minutes après sa réinitialisation de mot de passe ?",
+              "choices": [
+                "Parce que le contrôleur de domaine est en panne",
+                "Parce qu’un second appareil tente toujours de s’authentifier automatiquement avec l’ancien mot de passe",
+                "Parce qu’Active Directory impose de changer de mot de passe toutes les dix minutes"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Quand un utilisateur change son mot de passe, un téléphone, une tablette ou un lecteur réseau qui a gardé l’ancien mot de passe en cache continue d’envoyer des requêtes en arrière-plan, ce qui déclenche un nouveau verrouillage (« account lockout »)."
+            },
+            {
+              "prompt_fr": "Comment dire « J’ai déverrouillé ton compte dans Active Directory » ?",
+              "choices": [
+                "I unlocked your account in Active Directory.",
+                "I deblocked your account on Active Directory.",
+                "I opened your locked account at Active Directory."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En anglais, déverrouiller un compte se dit « to unlock an account » (à l’inverse de « to lock »). « Deblocked » est un calque du français « débloquer » qui n’existe pas dans ce contexte."
+            },
+            {
+              "prompt_fr": "Complète : « Check the security logs on the ___ to see where the failed logins come from. »",
+              "choices": [
+                "domain controller",
+                "domain master",
+                "directory router"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le serveur qui exécute Active Directory et traite l’authentification du domaine s’appelle un « domain controller » (contrôleur de domaine, souvent abrégé DC)."
+            },
+            {
+              "prompt_fr": "Dans quel ordre dois-tu agir quand un téléphone verrouille en boucle le compte AD d’un salarié ?",
+              "choices": [
+                "Unlock the account ten times until the phone stops trying.",
+                "Update or clear the cached credentials on the phone first, then unlock the account in Active Directory.",
+                "Delete the user’s account in Active Directory and recreate it from scratch."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Si tu déverrouilles le compte avant d’avoir coupé ou mis à jour l’appareil qui envoie le mauvais mot de passe, le compte sera verrouillé à nouveau en quelques secondes. Supprimer le compte ferait perdre tous ses identifiants uniques (SID) et accès."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris à Diego sur Slack : explique-lui que son verrouillage de compte venait de sa tablette qui utilisait encore l’ancien mot de passe ; demande-lui de vider le cache des identifiants et de mettre à jour le mot de passe Wi-Fi sur sa tablette, puis dis-lui que tu viens de déverrouiller son compte dans Active Directory.",
+            "model_answer_en": "Hi Diego, your repeated account lockout was caused by your tablet still using your old password. Please clear the cache of saved credentials and update the Wi-Fi password on your tablet. I’ve just unlocked your account in Active Directory, so you should be able to log in now.",
+            "model_answer_fr": "Salut Diego, le verrouillage répété de ton compte venait de ta tablette qui utilisait encore ton ancien mot de passe. Merci de vider le cache des identifiants enregistrés et de mettre à jour le mot de passe Wi-Fi sur ta tablette. Je viens de déverrouiller ton compte dans Active Directory, tu devrais donc pouvoir te connecter maintenant.",
+            "key_phrases": [
+              "account lockout",
+              "clear the cache",
+              "unlocked your account",
+              "in Active Directory"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-set-up-shares-and-mailboxes",
+          "title_fr": "Configurer les partages réseau et les boîtes partagées",
+          "term_ids": [
+            "network-share",
+            "mapped-drive",
+            "shared-mailbox",
+            "distribution-list",
+            "group-policy"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Fatou",
+              "text_en": "Daniel, the new financial analyst started this morning. Did she get all her access?",
+              "text_fr": "Daniel, la nouvelle analyste financière a commencé ce matin. A-t-elle reçu tous ses accès ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Almost. I added her to the finance distribution list and granted her access to the invoices shared mailbox.",
+              "text_fr": "Presque. Je l’ai ajoutée à la liste de diffusion de la finance et je lui ai donné accès à la boîte partagée des factures."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "She says she can’t see the S: mapped drive on her laptop, though.",
+              "text_fr": "Par contre, elle dit qu’elle ne voit pas le lecteur réseau S: sur son portable."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Let me check. The S: drive points to the budget network share, which is deployed by a Group Policy.",
+              "text_fr": "Laisse-moi vérifier. Le lecteur S: pointe vers le partage réseau du budget, qui est déployé par une stratégie de groupe."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Did you add her account to the Finance-ReadWrite security group before she logged in?",
+              "text_fr": "As-tu ajouté son compte au groupe de sécurité Finance-ReadWrite avant qu’elle ne se connecte ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Ah, I added her five minutes after she logged in! Ask her to sign out and sign back in so the Group Policy applies.",
+              "text_fr": "Ah, je l’ai ajoutée cinq minutes après sa connexion ! Demande-lui de fermer sa session et de se reconnecter pour que la stratégie de groupe s’applique."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre une « distribution list » et une « shared mailbox » ?",
+              "choices": [
+                "Une liste de diffusion envoie une copie dans la boîte de chaque membre, tandis qu’une boîte partagée est un espace commun où l’équipe lit et répond avec la même adresse",
+                "Une liste de diffusion ne fonctionne qu’en interne, alors qu’une boîte partagée nécessite un mot de passe partagé écrit sur un post-it",
+                "Il n’y a aucune différence : ce sont deux synonymes pour un dossier partagé sur un serveur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une « distribution list » redistribue l’e-mail à chaque destinataire individuel, sans vision de qui a déjà répondu. Une « shared mailbox » (comme `invoices@` ou `support@`) est une boîte commune à laquelle on donne des droits aux membres sans partager de mot de passe."
+            },
+            {
+              "prompt_fr": "Pourquoi l’analyste doit-elle fermer et rouvrir sa session Windows après avoir été ajoutée au groupe de sécurité ?",
+              "choices": [
+                "Parce que le serveur de fichiers redémarre à chaque nouvel utilisateur",
+                "Parce que le jeton d’appartenance aux groupes AD et le montage du lecteur par GPO sont évalués à l’ouverture de session",
+                "Parce qu’Outlook bloque les lecteurs réseau tant qu’il est ouvert"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Sous Windows / Active Directory, le jeton de sécurité de l’utilisateur (qui contient ses groupes) est généré lors de l’ouverture de session (« logon »), moment où la stratégie de groupe (« Group Policy ») monte le lecteur réseau (« mapped drive »)."
+            },
+            {
+              "prompt_fr": "Complète : « A ___ mounts the finance network share as the S: drive for everyone in the department. »",
+              "choices": [
+                "Group Strategy",
+                "Group Policy",
+                "Team Rule"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En français on parle de « stratégie de groupe », mais le terme officiel de Microsoft en anglais est « Group Policy » (ou « Group Policy Object », GPO). « Group Strategy » est un calque direct du français."
+            },
+            {
+              "prompt_fr": "Un utilisateur te demande de lui créer le lecteur Z: manuellement sur son poste pour aller plus vite. Que lui réponds-tu ?",
+              "choices": [
+                "I’ll add you to the right security group instead, so Group Policy maps the drive automatically even if you change laptops.",
+                "No, mapped drives only work on Linux servers.",
+                "Sure, give me your password and I’ll type it in every morning."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Passer par le groupe de sécurité et la GPO garantit que le droit est tracé et que le lecteur suivra l’utilisateur sur n’importe quel poste, contrairement à un bricolage manuel local."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail de bienvenue à la nouvelle analyste, Elena : confirme que tu l’as ajoutée à la liste de diffusion de la finance et à la boîte aux lettres partagée des factures ; explique-lui que pour voir son lecteur réseau S: relié au partage réseau, elle doit simplement fermer sa session Windows et se reconnecter afin d’appliquer la stratégie de groupe.",
+            "model_answer_en": "Welcome aboard, Elena! I have added you to the finance distribution list and granted you access to the invoices shared mailbox. To see your S: mapped drive for the budget network share, please sign out of Windows and sign back in so the Group Policy applies.",
+            "model_answer_fr": "Bienvenue dans l’équipe, Elena ! Je vous ai ajoutée à la liste de diffusion de la finance et vous ai donné accès à la boîte partagée des factures. Pour voir votre lecteur réseau S: correspondant au partage réseau du budget, merci de fermer votre session Windows et de vous reconnecter afin que la stratégie de groupe s’applique.",
+            "key_phrases": [
+              "finance distribution list",
+              "invoices shared mailbox",
+              "mapped drive",
+              "the Group Policy applies"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-review-admin-rights",
+          "title_fr": "Contrôler les droits d’accès et les licences",
+          "term_ids": [
+            "admin-rights",
+            "least-privilege",
+            "file-permissions",
+            "software-license",
+            "access-review"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Inès",
+              "text_en": "Sofia, I’m running our quarterly access review. Fifteen laptops still have permanent local admin rights.",
+              "text_fr": "Sofia, je mène notre revue d’accès trimestrielle. Quinze portables ont encore des droits administrateur locaux permanents."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "That goes against the principle of least privilege. Why were they granted in the first place?",
+              "text_fr": "Cela va à l’encontre du principe du moindre privilège. Pourquoi avaient-ils été accordés au départ ?"
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Mostly for one-off software installs months ago, and nobody revoked them afterward.",
+              "text_fr": "Surtout pour des installations ponctuelles de logiciels il y a des mois, et personne ne les a révoqués ensuite."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Let’s remove permanent admin rights this week and only grant temporary elevation when a ticket justifies it.",
+              "text_fr": "Retirons les droits administrateur permanents cette semaine et n’accordons qu’une élévation temporaire quand un ticket le justifie."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Agreed. I also checked the HR folder: the file permissions let the whole company read the contractors’ subfolder.",
+              "text_fr": "D’accord. J’ai aussi vérifié le dossier RH : les droits sur les fichiers permettent à toute l’entreprise de lire le sous-dossier des prestataires."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Lock that down right away to the HR group only. And while you’re at it, reclaim any unused Adobe software licenses.",
+              "text_fr": "Restreins ça tout de suite au seul groupe RH. Et tant que tu y es, récupère toutes les licences logicielles Adobe inutilisées."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "En quoi consiste le « principle of least privilege » ?",
+              "choices": [
+                "Donner uniquement les droits strictement nécessaires à chaque utilisateur ou service pour accomplir sa tâche",
+                "Réserver les ordinateurs les plus performants aux administrateurs systèmes",
+                "Interdire toute installation de nouveau logiciel dans l’entreprise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le principe du moindre privilège (« principle of least privilege ») limite la surface d’attaque : si un poste sans droits admin locaux est piégé par une pièce jointe malveillante, le programme ne peut pas modifier le système."
+            },
+            {
+              "prompt_fr": "Comment dire « Récupère les licences logicielles inutilisées » ?",
+              "choices": [
+                "Reclaim the unused software licenses.",
+                "Recuperate the software permits not used.",
+                "Take again the unused software licenses."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En gestion de parc, récupérer une licence ou de l’espace disque se dit « to reclaim » (ou « to reassign »). « Recuperate » est un faux ami qui veut dire se remettre d’une maladie, et « permit » s’utilise pour un permis de construire ou de conduire."
+            },
+            {
+              "prompt_fr": "Complète : « We need to tighten the ___ on the HR folder so only the HR group can read it. »",
+              "choices": [
+                "file permissions",
+                "file authorizations",
+                "folder warranties"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les droits de lecture, d’écriture et d’exécution sur des fichiers ou dossiers s’appellent « file permissions » (ou « NTFS permissions » sous Windows)."
+            },
+            {
+              "prompt_fr": "Un développeur se plaint qu’on lui retire ses droits administrateur permanents sur son poste. Quelle réponse professionnelle lui donnes-tu ?",
+              "choices": [
+                "We don’t trust developers with computers anymore.",
+                "To follow least privilege and block malware, we’re removing permanent admin rights, but you can request temporary elevation whenever you need to install a tool.",
+                "You don’t need any tools to write code."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Expliquer la raison de sécurité (moindre privilège, protection contre les malwares) tout en proposant une solution pratique (élévation temporaire à la demande) désamorce le conflit sans céder sur la sécurité."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le bilan de ta revue d’accès trimestrielle : pour appliquer le principe du moindre privilège, tu as retiré les droits administrateur permanents sur quinze postes ; tu as corrigé les droits sur les fichiers du sous-dossier RH et récupéré huit licences logicielles inutilisées.",
+            "model_answer_en": "Here is the summary of our quarterly access review. Following the principle of least privilege, I removed permanent local admin rights from fifteen workstations. I also restricted the file permissions on the HR subfolder and reclaimed eight unused software licenses.",
+            "model_answer_fr": "Voici le résumé de notre revue d’accès trimestrielle. Selon le principe du moindre privilège, j’ai retiré les droits administrateur locaux permanents sur quinze postes de travail. J’ai également restreint les droits sur les fichiers du sous-dossier RH et récupéré huit licences logicielles inutilisées.",
+            "key_phrases": [
+              "quarterly access review",
+              "principle of least privilege",
+              "local admin rights",
+              "restricted the file permissions",
+              "unused software licenses"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-wipe-a-lost-phone",
+          "title_fr": "Sécuriser un appareil perdu avec le MDM",
+          "term_ids": [
+            "mdm",
+            "remote-wipe",
+            "deprovisioning",
+            "mfa",
+            "sso"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Yasmine, urgent ticket: Samuel just left his company phone in a taxi at the airport.",
+              "text_fr": "Yasmine, ticket urgent : Samuel vient d’oublier son téléphone professionnel dans un taxi à l’aéroport."
+            },
+            {
+              "speaker": "Yasmine",
+              "text_en": "Is the phone enrolled in our MDM?",
+              "text_fr": "Est-ce que le téléphone est enrôlé dans notre MDM ?"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Yes, it’s online right now. Should I lock it first or trigger a remote wipe immediately?",
+              "text_fr": "Oui, il est en ligne en ce moment. Je le verrouille d’abord ou je lance un effacement à distance tout de suite ?"
+            },
+            {
+              "speaker": "Yasmine",
+              "text_en": "Lock it first and display our service desk number on the lock screen. If the taxi driver doesn’t call within two hours, trigger a remote wipe.",
+              "text_fr": "Verrouille-le d’abord et affiche le numéro de notre service desk sur l’écran de verrouillage. Si le chauffeur de taxi n’appelle pas d’ici deux heures, lance un effacement à distance."
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Got it. In the meantime, I’ll revoke his active SSO sessions and register his new temporary phone for MFA.",
+              "text_fr": "Compris. En attendant, je vais révoquer ses sessions SSO actives et enregistrer son nouveau téléphone temporaire pour l’authentification multifacteur."
+            },
+            {
+              "speaker": "Yasmine",
+              "text_en": "Good thinking. Also, don’t forget we have three contractor accounts due for deprovisioning at 6 p.m. today.",
+              "text_fr": "Bien pensé. D’ailleurs, n’oublie pas que nous avons trois comptes de prestataires dont la désactivation est prévue à 18 h aujourd’hui."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "À quelle condition un « remote wipe » lancé depuis la console MDM prend-il effet sur un téléphone volé ?",
+              "choices": [
+                "Dès que le téléphone dispose d’une connexion Wi-Fi ou mobile pour recevoir l’ordre de la console",
+                "Même si le téléphone est éteint et sans batterie, grâce aux ondes radio",
+                "Uniquement si le voleur saisit le bon code PIN d’abord"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La commande d’effacement à distance (« remote wipe ») est mise en file d’attente par le MDM et s’exécute dès que l’appareil est allumé et connecté au réseau (cellulaire ou Wi-Fi), sans avoir besoin de déverrouiller l’écran."
+            },
+            {
+              "prompt_fr": "Pourquoi Jean-Baptiste révoque-t-il aussi les sessions SSO et réinitialise-t-il le MFA de Samuel ?",
+              "choices": [
+                "Pour supprimer définitivement le contrat de travail de Samuel",
+                "Pour couper les accès déjà ouverts sur le téléphone perdu et permettre à Samuel de valider ses connexions sur un nouvel appareil",
+                "Pour accélérer la vitesse du Wi-Fi à l’aéroport"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Même verrouillé, le téléphone contenait des jetons de session SSO actifs et l’application d’authentification MFA : révoquer les sessions protège les applications métier et réinitialiser le MFA évite que Samuel ne soit bloqué hors de son poste."
+            },
+            {
+              "prompt_fr": "Complète : « When an employee leaves the company, HR opens a ticket for account ___. »",
+              "choices": [
+                "deprovisioning",
+                "uninstallation",
+                "disconnection"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En gestion des identités (IAM), la création et l’attribution des accès à l’arrivée s’appellent « provisioning », et le retrait méthodique des accès au départ s’appelle « deprovisioning » (ou « offboarding »)."
+            },
+            {
+              "prompt_fr": "Comment dire « Tous les téléphones de l’entreprise sont gérés dans le MDM » ?",
+              "choices": [
+                "All company phones are enrolled in MDM.",
+                "All enterprise phones are subscribed at the MDM.",
+                "Every society phones are registered on MDM."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le verbe consacré pour inscrire un appareil dans une solution de gestion de flotte est « to enroll a device in MDM ». Attention aussi au faux ami « society » (la société au sens de vie en société), alors que l’entreprise se dit « company »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un message Slack à Samuel après la perte de son téléphone : confirme que tu as verrouillé l’appareil dans le MDM et que tu lanceras un effacement à distance s’il n’est pas retrouvé d’ici deux heures ; précise que tu as révoqué ses sessions SSO par sécurité et que tu peux l’appeler pour configurer le MFA sur son téléphone de remplacement.",
+            "model_answer_en": "Hi Samuel, I’ve locked your lost phone through our MDM and will trigger a remote wipe if it isn’t found within two hours. For security, I also revoked your active SSO sessions. Let me know when you have your spare phone so we can set up MFA again.",
+            "model_answer_fr": "Salut Samuel, j’ai verrouillé ton téléphone perdu via notre MDM et je lancerai un effacement à distance s’il n’est pas retrouvé d’ici deux heures. Par sécurité, j’ai aussi révoqué tes sessions SSO actives. Dis-moi quand tu auras ton téléphone de prêt pour que nous reconfigurions le MFA.",
+            "key_phrases": [
+              "through our MDM",
+              "trigger a remote wipe",
+              "revoked your active SSO sessions",
+              "set up MFA"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "network-systems-office-network-and-wifi",
+      "title_fr": "Diagnostiquer une panne réseau et stabiliser le Wi-Fi",
+      "title_en": "Troubleshoot an office network and Wi-Fi issue",
+      "situation_fr": "Tout le deuxième étage vient de perdre la connexion, une imprimante prend l’adresse IP d’un portable, et la direction se plaint d’appels vidéo hachés en salle de réunion.",
+      "guide": {
+        "intro_fr": "Quand un problème de connexion (« connectivity issue ») survient sur le réseau local (« LAN »), un bon administrateur remonte méthodiquement les couches du modèle OSI (« OSI model »). Sur le réseau filaire, on vérifie d’abord le commutateur (« switch ») de l’étage, puis le routeur (« router ») qui sert de passerelle par défaut (« default gateway »). Côté adressage, le serveur « DHCP » distribue les adresses IP (« IP addresses ») dynamiques, mais les imprimantes et serveurs utilisent une adresse IP fixe (« static IP address ») ou une réservation liée à leur adresse matérielle (« MAC address »), tandis que le « DNS » traduit les noms de domaine. Côté sans-fil (« Wi-Fi »), on surveille chaque borne (« access point ») et chaque nom de réseau (« SSID ») : la perte de paquets (« packet loss ») et la gigue (« jitter ») dégradent immédiatement la voix et la vidéo, que l’on diagnostique avec « ping » et « traceroute ».",
+        "key_phrases": [
+          {
+            "en": "We’re seeing connectivity issues on the second floor.",
+            "fr": "Nous constatons des problèmes de connexion au deuxième étage."
+          },
+          {
+            "en": "Can you ping the default gateway from your laptop?",
+            "fr": "Peux-tu faire un ping vers la passerelle par défaut depuis ton portable ?"
+          },
+          {
+            "en": "The DHCP pool is full, so new devices can’t get an IP address.",
+            "fr": "La plage DHCP est pleine, donc les nouveaux appareils n’obtiennent pas d’adresse IP."
+          },
+          {
+            "en": "Reserve a static IP address for the printer using its MAC address.",
+            "fr": "Réserve une adresse IP fixe pour l’imprimante à l’aide de son adresse MAC."
+          },
+          {
+            "en": "High packet loss and jitter are making the video calls choppy.",
+            "fr": "Une forte perte de paquets et de la gigue rendent les appels vidéo saccadés."
+          },
+          {
+            "en": "Traceroute shows the delay starts at the provider’s router.",
+            "fr": "Traceroute montre que le délai commence au routeur de l’opérateur."
+          }
+        ],
+        "tip_fr": "En anglais, « ping » et « traceroute » s’utilisent très souvent comme verbes directs sans préposition : on dit « Ping the gateway » (et non « Make a ping to the gateway »). Et ne confonds pas « bandwidth » (le débit maximal, la largeur du tuyau) avec « latency » ou « jitter » (le délai et sa variation)."
+      },
+      "lessons": [
+        {
+          "id": "network-systems-diagnose-floor-outage",
+          "title_fr": "Localiser une coupure réseau sur un étage",
+          "term_ids": [
+            "connectivity-issue",
+            "lan",
+            "switch",
+            "router",
+            "gateway"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ana",
+              "text_en": "Omar, we have a major connectivity issue on the second floor. Nobody there can reach the internet or the file server.",
+              "text_fr": "Omar, nous avons un gros problème de connexion au deuxième étage. Personne là-haut ne peut joindre internet ni le serveur de fichiers."
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "Are the first and third floors still working normally?",
+              "text_fr": "Est-ce que le premier et le troisième étage fonctionnent toujours normalement ?"
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "Yes, their LAN connection is fine and they can reach the main router without any trouble.",
+              "text_fr": "Oui, leur connexion au réseau local va bien et ils joignent le routeur principal sans problème."
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "Then our internet link and the default gateway are up. The problem must be isolated to the second floor.",
+              "text_fr": "Alors notre lien internet et la passerelle par défaut sont en ligne. Le problème doit être isolé au deuxième étage."
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "I just tried to connect to the second-floor switch from the management console, and it’s not responding.",
+              "text_fr": "Je viens d’essayer de me connecter au switch du deuxième étage depuis la console d’administration, et il ne répond pas."
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "Let’s head to the wiring closet. Either the switch lost power or its uplink cable to the core router came loose.",
+              "text_fr": "Allons au local de brassage. Soit le switch n’a plus d’alimentation, soit son câble de liaison montante vers le routeur cœur s’est débranché."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment Omar déduit-il immédiatement que le routeur principal et la passerelle par défaut ne sont pas en cause ?",
+              "choices": [
+                "Parce que le deuxième étage n’utilise pas de passerelle pour aller sur internet",
+                "Parce que les autres étages accèdent toujours au réseau local et à internet par ce même routeur",
+                "Parce qu’un routeur ne peut jamais tomber en panne en journée"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En dépannage réseau, comparer le périmètre touché permet d’isoler la panne : si les autres étages sortent sur internet, le routeur (« router ») et la passerelle (« default gateway ») fonctionnent, ce qui pointe vers le switch de distribution de l’étage touché."
+            },
+            {
+              "prompt_fr": "Quelle est la différence de rôle entre un « switch » et un « router » dans un bureau ?",
+              "choices": [
+                "Le switch ne fonctionne qu’en Wi-Fi, alors que le routeur utilise uniquement des câbles",
+                "Le routeur alimente les écrans en électricité, tandis que le switch filtre les virus",
+                "Le switch relie les appareils au sein du même réseau local (LAN), tandis que le routeur achemine le trafic entre des réseaux différents"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le commutateur (« switch », couche 2) relie les postes, imprimantes et bornes d’un même réseau local (« LAN »), tandis que le routeur (« router », couche 3) interconnecte différents sous-réseaux et sert de passerelle vers internet."
+            },
+            {
+              "prompt_fr": "Complète : « Users on the second floor cannot reach the default ___ at 10.0.2.1. »",
+              "choices": [
+                "passway",
+                "portal",
+                "gateway"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "En réseau, la passerelle par défaut se dit « default gateway ». « Passway » et « portal » ne s’emploient pas pour désigner l’adresse IP du routeur de sortie d’un sous-réseau."
+            },
+            {
+              "prompt_fr": "Comment annoncer sobrement à l’équipe qu’il y a un souci réseau en cours d’analyse au bureau de Lyon ?",
+              "choices": [
+                "The network in Lyon is completely broken and dead.",
+                "We’re investigating a connectivity issue at the Lyon office.",
+                "There is a connection problem of network in the Lyon desk."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« We’re investigating a connectivity issue at the Lyon office » est la tournure professionnelle standard. « Desk » désigne un bureau-meuble (pas des locaux, qui se disent « office »), et « broken and dead » est familier et alarmiste."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Poste un message sur le canal Slack du bureau : informe les équipes que tu analyses un problème de connexion au deuxième étage ; précise que le routeur principal et la passerelle fonctionnent normalement pour le reste du réseau local, et que tu vérifies l’alimentation du switch de l’étage.",
+            "model_answer_en": "Hi everyone, we’re investigating a connectivity issue on the second floor. The main router and default gateway are working normally for the rest of the LAN. I’m heading to the wiring closet now to check the floor switch.",
+            "model_answer_fr": "Bonjour à tous, nous analysons un problème de connexion au deuxième étage. Le routeur principal et la passerelle par défaut fonctionnent normalement pour le reste du réseau local. Je vais au local technique maintenant pour vérifier le switch de l’étage.",
+            "key_phrases": [
+              "connectivity issue",
+              "main router",
+              "default gateway",
+              "rest of the LAN",
+              "floor switch"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-fix-ip-and-dns",
+          "title_fr": "Résoudre un conflit d’adresses IP et de DNS",
+          "term_ids": [
+            "ip-address",
+            "dhcp",
+            "static-ip",
+            "dns",
+            "mac-address"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Marcus, the marketing printer keeps going offline every morning around 9 a.m., right when people arrive.",
+              "text_fr": "Marcus, l’imprimante du marketing passe hors ligne tous les matins vers 9 h, pile quand les gens arrivent."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Wait, let me check its IP address. Someone typed 10.10.4.50 manually on the printer, right inside our DHCP range!",
+              "text_fr": "Attends, laisse-moi vérifier son adresse IP. Quelqu’un a tapé 10.10.4.50 manuellement sur l’imprimante, en plein dans notre plage DHCP !"
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "No wonder! Before the printer wakes up, the DHCP server gives that same IP address to a laptop.",
+              "text_fr": "Pas étonnant ! Avant que l’imprimante ne sorte de veille, le serveur DHCP attribue cette même adresse IP à un ordinateur portable."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Exactly. Let’s bind a static IP address outside the pool, or create a DHCP reservation using the printer’s MAC address.",
+              "text_fr": "Exactement. Attribuons une adresse IP fixe en dehors de la plage, ou créons une réservation DHCP avec l’adresse MAC de l’imprimante."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "I’ll add the reservation by MAC address and update the internal DNS record so `mkt-printer.corp` points to the new IP.",
+              "text_fr": "Je vais ajouter la réservation par adresse MAC et mettre à jour l’enregistrement DNS interne pour que `mkt-printer.corp` pointe vers la nouvelle IP."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Perfect. That way nobody has to reconfigure the printer port on their workstation.",
+              "text_fr": "Parfait. Comme ça, personne n’aura besoin de reconfigurer le port d’imprimante sur son poste de travail."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi est-ce une erreur d’attribuer manuellement sur une imprimante une adresse IP située au milieu de la plage DHCP active ?",
+              "choices": [
+                "Parce que le protocole DHCP bloque automatiquement toutes les impressions couleur",
+                "Parce qu’une imprimante ne peut fonctionner qu’avec une adresse IPv6",
+                "Parce que le serveur DHCP risque d’attribuer cette même adresse à un autre appareil, créant un conflit d’adresses IP"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Si une adresse IP fixe (« static IP address ») est configurée manuellement sur l’appareil au sein de la plage dynamique sans réservation sur le serveur DHCP, le serveur ne le sait pas et peut louer cette adresse à un portable, provoquant un conflit."
+            },
+            {
+              "prompt_fr": "À quoi sert l’adresse MAC (« MAC address ») lors de la création d’une réservation sur le serveur DHCP ?",
+              "choices": [
+                "À identifier de manière unique la carte réseau de l’imprimante pour lui redonner toujours la même adresse IP",
+                "À permettre uniquement aux ordinateurs de la marque Apple d’imprimer",
+                "À chiffrer les documents envoyés vers l’imprimante"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L’adresse MAC (« Media Access Control address ») est l’identifiant matériel unique de l’interface réseau. Le serveur DHCP la reconnaît et lui attribue systématiquement l’adresse IP réservée (sans aucun rapport avec les ordinateurs Mac d’Apple)."
+            },
+            {
+              "prompt_fr": "Complète : « Update the ___ record so the hostname points to the new IP address. »",
+              "choices": [
+                "DHCP",
+                "MAC",
+                "DNS"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "C’est le DNS (« Domain Name System ») qui associe un nom d’hôte (`mkt-printer.corp`) à une adresse IP via un enregistrement (« DNS record »)."
+            },
+            {
+              "prompt_fr": "Comment dire « Le serveur DHCP attribue une adresse IP à chaque portable » ?",
+              "choices": [
+                "The DHCP server gives each laptop an IP address.",
+                "The DHCP server attributes an IP address at every laptop.",
+                "The server DHCP gives to each laptop an address IP."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En anglais, on dit « gives each laptop an IP address » ou « assigns an IP address to each laptop ». « Attributes … at » est un calque du français « attribuer à », et l’ordre des mots « server DHCP » / « address IP » calque la syntaxe française."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Réponds par e-mail à la responsable marketing qui a signalé les coupures de l’imprimante : explique que l’imprimante avait une adresse IP fixe placée par erreur dans la plage DHCP, ce qui causait un conflit ; indique que tu as créé une réservation avec son adresse MAC et mis à jour le DNS pour que tout fonctionne.",
+            "model_answer_en": "Hi Claire, the printer kept dropping offline because its static IP address was inside our active DHCP range, causing an IP conflict. I created a DHCP reservation using the printer’s MAC address and updated the internal DNS record. Everything is back online now.",
+            "model_answer_fr": "Bonjour Claire, l’imprimante passait hors ligne parce que son adresse IP fixe se trouvait dans notre plage DHCP active, ce qui provoquait un conflit d’IP. J’ai créé une réservation DHCP à partir de l’adresse MAC de l’imprimante et mis à jour l’enregistrement DNS interne. Tout est de nouveau en ligne.",
+            "key_phrases": [
+              "static IP address",
+              "active DHCP range",
+              "printer’s MAC address",
+              "internal DNS record"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-improve-wifi-and-calls",
+          "title_fr": "Corriger un Wi-Fi instable en salle de réunion",
+          "term_ids": [
+            "wifi",
+            "access-point",
+            "ssid",
+            "packet-loss",
+            "jitter"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Nadia",
+              "text_en": "Ravi, people in the large boardroom say their video calls freeze whenever more than ten people join.",
+              "text_fr": "Ravi, les gens dans la grande salle du conseil disent que leurs appels vidéo se figent dès que plus de dix personnes se connectent."
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "Let’s check the Wi-Fi controller. Which access point are their laptops connecting to?",
+              "text_fr": "Vérifions le contrôleur Wi-Fi. À quel point d’accès leurs portables se connectent-ils ?"
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Wait: the access point inside the boardroom is offline, so everyone is connecting to a distant one down the hall!",
+              "text_fr": "Attends : le point d’accès situé dans la salle du conseil est hors ligne, donc tout le monde se connecte à une borne éloignée au fond du couloir !"
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "That explains the weak signal. Look at the stats: 8% packet loss and jitter over 60 milliseconds.",
+              "text_fr": "Cela explique le signal faible. Regarde les statistiques : 8 % de perte de paquets et une gigue supérieure à 60 millisecondes."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Plus, thirty visitors in the lobby are streaming video on the same SSID instead of the guest network.",
+              "text_fr": "En plus, trente visiteurs dans le hall regardent de la vidéo en continu sur le même SSID au lieu du réseau invités."
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "Let’s reboot the PoE port to bring the boardroom access point back up, and move visitors to the Guest SSID with a bandwidth limit.",
+              "text_fr": "Redémarrons le port PoE pour remettre en ligne le point d’accès de la salle, et basculons les visiteurs sur le SSID Invités avec une limite de débit."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu’est-ce que le « jitter » (la gigue) et pourquoi gêne-t-il particulièrement les appels vocaux et vidéo ?",
+              "choices": [
+                "C’est l’épuisement des adresses IP disponibles sur le réseau sans fil",
+                "C’est l’usure matérielle des antennes de la borne Wi-Fi",
+                "C’est la variation irrégulière du délai d’arrivée des paquets, qui rend le son haché ou robotique en temps réel"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le « jitter » (la gigue) mesure l’écart de temps d’arrivée entre les paquets successifs. Si les paquets arrivent à intervalles très irréguliers, un appel en direct ne peut pas reconstituer un flux audio ou vidéo fluide."
+            },
+            {
+              "prompt_fr": "Comment dire « Le point d’accès de la salle de réunion est en panne » ?",
+              "choices": [
+                "The Wi-Fi terminal of the reunion room is broken.",
+                "The access point in the meeting room is down.",
+                "The entry point of the meeting room is out of order."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une borne Wi-Fi se dit « an access point » (abrégé AP), une salle de réunion « a meeting room » (faux ami : « reunion » désigne des retrouvailles d’anciens élèves ou de famille), et être hors ligne / en panne se dit « is down »."
+            },
+            {
+              "prompt_fr": "Complète : « Employees should connect to the Corp ___, while visitors use the Guest network. »",
+              "choices": [
+                "SSID",
+                "RAID",
+                "ICMP"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le « SSID » (« Service Set Identifier ») est le nom du réseau Wi-Fi diffusé par les bornes et visible dans la liste des réseaux sans fil."
+            },
+            {
+              "prompt_fr": "Un utilisateur te dit : « J’ai un bon débit en téléchargement, mais ma voix coupe sur Teams. » Quelle explication technique est la plus pertinente ?",
+              "choices": [
+                "Teams requires at least 10 Gbps of bandwidth for a voice call.",
+                "Voice calls need very little bandwidth, but they are very sensitive to packet loss and high jitter on weak Wi-Fi.",
+                "Your screen resolution is too high for the microphone."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un appel audio consomme très peu de bande passante (« bandwidth »), mais la moindre perte de paquets (« packet loss ») ou une gigue (« jitter ») élevée sur un Wi-Fi instable hache immédiatement la conversation."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un message Slack à l’assistante de direction : explique que les coupures d’appels vidéo dans la salle du conseil venaient d’une perte de paquets et d’une gigue élevées parce que le point d’accès de la salle était éteint ; indique que tu l’as remis en ligne et que tu as déplacé les visiteurs sur le SSID invités.",
+            "model_answer_en": "Hi Clara, the choppy video calls in the boardroom were caused by high packet loss and jitter because the room’s access point was offline. I brought the access point back up and moved visitors to the Guest SSID so the Wi-Fi stays stable.",
+            "model_answer_fr": "Salut Clara, les appels vidéo hachés dans la salle du conseil étaient dus à une forte perte de paquets et à de la gigue car le point d’accès de la salle était hors ligne. J’ai remis le point d’accès en service et déplacé les visiteurs sur le SSID Invités pour que le Wi-Fi reste stable.",
+            "key_phrases": [
+              "high packet loss and jitter",
+              "access point",
+              "Guest SSID",
+              "Wi-Fi stays stable"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-trace-slow-traffic",
+          "title_fr": "Analyser une lenteur réseau avec ping et traceroute",
+          "term_ids": [
+            "ping",
+            "traceroute",
+            "bandwidth",
+            "packet",
+            "osi-model"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Tomasz, the design team says transferring large files to the Madrid server is terribly slow today.",
+              "text_fr": "Tomasz, l’équipe design dit que le transfert de gros fichiers vers le serveur de Madrid est terriblement lent aujourd’hui."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Let’s check if our internet link is saturated. How is the bandwidth usage on the firewall?",
+              "text_fr": "Vérifions si notre lien internet est saturé. Comment est l’utilisation de la bande passante sur le pare-feu ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Only 25% of our available bandwidth is in use, so the pipe isn’t full. However, when I ping the Madrid server, the response time is 280 ms.",
+              "text_fr": "Seulement 25 % de notre bande passante disponible est utilisée, donc le tuyau n’est pas plein. En revanche, quand je fais un ping vers le serveur de Madrid, le temps de réponse est de 280 ms."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "That’s way too high for Europe. Run a traceroute to see where the packets are getting delayed along the path.",
+              "text_fr": "C’est beaucoup trop élevé pour l’Europe. Lance un traceroute pour voir où les paquets prennent du retard sur le chemin."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Look at hop six: the packets jump from 12 ms to 270 ms at our provider’s peering router.",
+              "text_fr": "Regarde le sixième saut : les paquets passent de 12 ms à 270 ms sur le routeur d’interconnexion de notre opérateur."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "So it’s a Layer 3 routing issue on our ISP’s side, not our server. Open a ticket with them and attach the traceroute output.",
+              "text_fr": "C’est donc un problème de routage de couche 3 au sens du modèle OSI chez notre opérateur, pas sur notre serveur. Ouvre un ticket chez eux en joignant le résultat du traceroute."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel renseignement supplémentaire « traceroute » apporte-t-il par rapport à un simple « ping » ?",
+              "choices": [
+                "Il affiche le mot de passe administrateur de chaque serveur traversé",
+                "Il détaille chaque routeur intermédiaire (saut) traversé par les paquets et le temps de réponse à chaque étape",
+                "Il double automatiquement la bande passante disponible sur le lien"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Alors que « ping » mesure uniquement l’aller-retour de bout en bout avec la cible finale, « traceroute » révèle chaque saut (« hop ») intermédiaire sur la route IP et permet de voir exactement à quel routeur le délai apparaît."
+            },
+            {
+              "prompt_fr": "Pourquoi Tomasz parle-t-il de « Layer 3 » du « OSI model » à propos de cet incident ?",
+              "choices": [
+                "Parce que le routage des paquets IP entre différents réseaux relève de la couche 3 (couche Réseau) du modèle OSI",
+                "Parce que la panne se trouve au troisième étage de l’immeuble",
+                "Parce qu’il y a trois câbles branchés sur le serveur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Dans le modèle OSI en 7 couches (« OSI model »), la couche 1 est physique (câbles), la couche 2 est la liaison de données (switch, MAC, VLAN) et la couche 3 est la couche réseau (adressage IP et routage des paquets)."
+            },
+            {
+              "prompt_fr": "Complète : « Only a quarter of our ___ is in use, so the slow transfer is caused by high latency, not congestion. »",
+              "choices": [
+                "passband",
+                "bandwidth",
+                "broadway"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En réseau informatique, la bande passante (la capacité maximale de transfert d’un lien) se traduit par « bandwidth ». « Passband » est un terme de traitement du signal radio/électronique."
+            },
+            {
+              "prompt_fr": "Comment dire « Lance un traceroute pour voir quel chemin prennent les paquets » ?",
+              "choices": [
+                "Make a traceroute for seeing which road take the packets.",
+                "Run a traceroute to see what path the packets take.",
+                "Launch a route trace to watch the packets way."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En anglais, on exécute un outil ou une commande avec « run » (« run a traceroute »), le chemin réseau se dit « the path », et une subordonnée interrogative indirecte garde l’ordre sujet + verbe (« what path the packets take »)."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail au support de votre opérateur télécom : signale une forte latence vers votre serveur de Madrid bien que votre bande passante ne soit utilisée qu’à 25 % ; précise que le ping atteint 280 ms et que le traceroute montre un ralentissement des paquets au sixième saut sur leur routeur.",
+            "model_answer_en": "Hello, we are experiencing high latency to our Madrid server even though only 25% of our bandwidth is in use. When we ping the server, response times reach 280 ms, and our traceroute output shows that packets are delayed starting at hop six on your router. Could your Layer 3 team investigate this routing issue?",
+            "model_answer_fr": "Bonjour, nous constatons une forte latence vers notre serveur de Madrid alors que seulement 25 % de notre bande passante est utilisée. Lorsque nous faisons un ping vers le serveur, le temps de réponse atteint 280 ms, et notre traceroute montre que les paquets sont retardés à partir du sixième saut sur votre routeur. Votre équipe de niveau 3 peut-elle analyser ce problème de routage ?",
+            "key_phrases": [
+              "25% of our bandwidth",
+              "ping the server",
+              "traceroute output",
+              "packets are delayed"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "network-systems-linux-and-server-maintenance",
+      "title_fr": "Administrer les serveurs Linux et les machines virtuelles",
+      "title_en": "Manage Linux servers and virtual machines",
+      "situation_fr": "Un serveur applicatif Linux répond au ralenti, la partition des journaux frôle la saturation, et tu dois préparer la fenêtre de maintenance du mois sur l’hyperviseur.",
+      "guide": {
+        "intro_fr": "Côté serveurs, l’administrateur systèmes travaille quotidiennement sous « Linux » en se connectant à distance via « SSH » dans un interpréteur de commandes (« shell »). Lorsqu’un serveur (« server ») ralentit, on vérifie quel processus (« process ») consomme tout le processeur (« CPU ») ou la mémoire vive (« RAM »), et l’on surveille l’espace disque (« disk space ») en automatisant le nettoyage avec une tâche planifiée (« cron job »), sans jamais faire tourner les applications sous le superutilisateur (« root user »). Dans la salle serveur ou le cloud privé, la virtualisation (« virtualization ») permet d’héberger de nombreuses machines virtuelles (« virtual machines ») sur un hyperviseur (« hypervisor »). Enfin, la gestion des correctifs (« patch management ») impose de mettre à jour le système d’exploitation (« operating system »), le noyau (« kernel ») et le micrologiciel (« firmware ») des équipements en limitant l’indisponibilité (« downtime ») grâce au répartiteur de charge (« load balancer »).",
+        "key_phrases": [
+          {
+            "en": "I connected to the Linux server over SSH to check the running processes.",
+            "fr": "Je me suis connecté au serveur Linux en SSH pour vérifier les processus en cours."
+          },
+          {
+            "en": "One stuck process is pegging the CPU at 100%.",
+            "fr": "Un processus bloqué maintient le processeur à 100 %."
+          },
+          {
+            "en": "The `/var` partition is running out of disk space.",
+            "fr": "La partition `/var` commence à manquer d’espace disque."
+          },
+          {
+            "en": "Never run a web application as the root user.",
+            "fr": "Ne fais jamais tourner une application web en tant que superutilisateur root."
+          },
+          {
+            "en": "Drain the virtual machine from the load balancer before rebooting it.",
+            "fr": "Retire la machine virtuelle du répartiteur de charge avant de la redémarrer."
+          },
+          {
+            "en": "The kernel update requires a reboot during tonight’s maintenance window.",
+            "fr": "La mise à jour du noyau nécessite un redémarrage pendant la fenêtre de maintenance de ce soir."
+          }
+        ],
+        "tip_fr": "Pour dire « se connecter en SSH », l’anglais utilise « over SSH » ou directement le verbe « to SSH into a server » (« I SSH’d into the box »). Et attention à la prononciation et à l’usage de « process » : un processus informatique en cours se dit « a running process », et le terminer de force se dit « to kill a process »."
+      },
+      "lessons": [
+        {
+          "id": "network-systems-investigate-high-cpu",
+          "title_fr": "Identifier un processus qui sature un serveur Linux",
+          "term_ids": [
+            "linux",
+            "server",
+            "ssh",
+            "process",
+            "cpu"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Priya",
+              "text_en": "Kenji, the reporting server is taking thirty seconds to load a single page. Can you take a look?",
+              "text_fr": "Kenji, le serveur de rapports met trente secondes à charger une seule page. Peux-tu jeter un œil ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Sure, I just connected to the Linux server over SSH and ran `htop`.",
+              "text_fr": "Bien sûr, je viens de me connecter au serveur Linux en SSH et de lancer `htop`."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "What does the CPU usage look like?",
+              "text_fr": "À quoi ressemble l’utilisation du processeur ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "All four CPU cores are pinned at 100%. A stuck PDF export process has been running for six hours.",
+              "text_fr": "Les quatre cœurs du processeur sont bloqués à 100 %. Un processus d’export PDF coincé tourne depuis six heures."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Can we kill that process without restarting the whole web service?",
+              "text_fr": "Peut-on arrêter ce processus sans redémarrer tout le service web ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, it’s a separate worker process. I’ll send it a termination signal first, and CPU load should drop right away.",
+              "text_fr": "Oui, c’est un processus de traitement séparé. Je lui envoie d’abord un signal d’arrêt propre, et la charge CPU devrait redescendre tout de suite."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « All four CPU cores are pinned at 100% » ?",
+              "choices": [
+                "Les quatre cœurs du processeur sont plafonnés à 100 % d’utilisation en continu",
+                "Le serveur possède cent processeurs physiques différents",
+                "Les quatre cœurs du processeur sont éteints pour économiser de l’énergie"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Pinned at 100% » (ou « pegged at 100% ») est l’image d’une aiguille de compteur bloquée au maximum : les quatre cœurs (« cores ») du processeur (« CPU ») travaillent à pleine capacité sans relâche."
+            },
+            {
+              "prompt_fr": "Comment dire « Je me suis connecté au serveur en SSH » ?",
+              "choices": [
+                "I connected myself at the server with SSH.",
+                "I connected to the server over SSH.",
+                "I logged on the server by the SSH."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To connect » ne prend pas de pronom réfléchi (« myself » est un calque de « je me suis connecté »), se construit avec « to » (« to the server ») et le protocole s’introduit par « over SSH » (ou « via SSH »)."
+            },
+            {
+              "prompt_fr": "Complète : « A runaway background ___ was consuming all available CPU resources. »",
+              "choices": [
+                "proceeding",
+                "process",
+                "procedure"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un programme en cours d’exécution sur un système d’exploitation s’appelle « a process » (avec un PID, Process ID). « Procedure » désigne une consigne écrite et « proceeding » une démarche juridique."
+            },
+            {
+              "prompt_fr": "Pourquoi Kenji envoie-t-il d’abord un signal d’arrêt normal (`SIGTERM`) au processus plutôt que de redémarrer toute la machine ?",
+              "choices": [
+                "Parce que Linux interdit de redémarrer un serveur en semaine",
+                "Parce que cibler uniquement le processus fautif libère le CPU sans couper les autres utilisateurs connectés au serveur",
+                "Parce que la commande SSH se désinstalle si on redémarre le serveur"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Arrêter proprement le seul processus (« worker process ») coincé rétablit aussitôt les performances sans interrompre les sessions des autres utilisateurs actifs sur le serveur."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un message Slack à Priya : tu t’es connecté au serveur Linux en SSH, tu as repéré un processus d’export PDF bloqué qui utilisait 100 % du CPU, et après l’avoir arrêté, la charge du serveur est redevenue normale.",
+            "model_answer_en": "Hi Priya, I connected to the Linux server over SSH to investigate the slowdown. A stuck PDF export process was using 100% of the CPU across all four cores. I terminated that process, and CPU usage on the server is back to normal now.",
+            "model_answer_fr": "Salut Priya, je me suis connecté au serveur Linux en SSH pour analyser le ralentissement. Un processus d’export PDF bloqué utilisait 100 % du CPU sur les quatre cœurs. J’ai arrêté ce processus et l’utilisation du CPU sur le serveur est revenue à la normale.",
+            "key_phrases": [
+              "Linux server over SSH",
+              "stuck PDF export process",
+              "100% of the CPU",
+              "back to normal"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-free-up-disk-and-ram",
+          "title_fr": "Libérer de l’espace disque et automatiser le nettoyage",
+          "term_ids": [
+            "disk-space",
+            "ram",
+            "shell",
+            "root-user",
+            "cron-job"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Moussa, we just got a warning on `app-srv-02`: available disk space on `/var` dropped below 8%.",
+              "text_fr": "Moussa, nous venons de recevoir un avertissement sur `app-srv-02` : l’espace disque disponible sur `/var` est passé sous les 8 %."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Let’s check what’s filling it up. Are the application logs rotating properly?",
+              "text_fr": "Regardons ce qui le remplit. Est-ce que la rotation des journaux de l’application fonctionne bien ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "No, someone enabled debug logging last week, and uncompressed dumps are eating forty gigabytes of disk space.",
+              "text_fr": "Non, quelqu’un a activé les logs de débogage la semaine dernière, et des archives non compressées prennent quarante gigaoctets d’espace disque."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Clean up the files older than seven days and set up a nightly cron job with a shell script to compress the rest.",
+              "text_fr": "Supprime les fichiers de plus de sept jours et configure une tâche cron nocturne avec un script shell pour compresser le reste."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Should the cron job run as the root user?",
+              "text_fr": "Est-ce que la tâche cron doit tourner en tant que superutilisateur root ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "No, run it under the dedicated `appservice` account, and check RAM usage too: debug mode often leaks memory.",
+              "text_fr": "Non, fais-la tourner sous le compte dédié `appservice`, et vérifie aussi l’utilisation de la RAM : le mode debug provoque souvent des fuites de mémoire."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Moussa déconseille-t-il de faire tourner le script de nettoyage en tant que « root user » ?",
+              "choices": [
+                "Parce que le compte root n’a pas le droit de compresser des fichiers sous Linux",
+                "Parce qu’une erreur de chemin ou de variable dans un script exécuté en root pourrait supprimer des fichiers système critiques",
+                "Parce que le compte root consomme deux fois plus de RAM qu’un compte standard"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le « root user » ayant tous les pouvoirs sur le système Linux, un bug dans un script shell (par exemple `rm -rf` avec une variable vide) peut détruire le système entier, alors qu’un compte de service dédié est limité à son propre dossier."
+            },
+            {
+              "prompt_fr": "Qu’est-ce qu’un « cron job » sur un serveur Linux ?",
+              "choices": [
+                "Une tâche planifiée pour s’exécuter automatiquement à heures ou intervalles fixes",
+                "Une barrette de mémoire vive supplémentaire installée dans le serveur",
+                "Un pare-feu matériel placé devant la salle informatique"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un « cron job » est une tâche programmée dans le démon `cron` de Linux (par exemple toutes les nuits à 2 h du matin) pour automatiser des sauvegardes, des nettoyages ou des rapports."
+            },
+            {
+              "prompt_fr": "Complète : « The database crashed because the server ran out of ___ on the main partition. »",
+              "choices": [
+                "disk place",
+                "disk room",
+                "disk space"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "En anglais, l’espace disque se dit toujours « disk space » (et manquer d’espace disque se dit « to run out of disk space »). « Disk place » est un calque du français « de la place sur le disque »."
+            },
+            {
+              "prompt_fr": "Comment distinguer le rôle de la « RAM » de celui du « disk space » quand tu l’expliques à un collègue junior ?",
+              "choices": [
+                "RAM holds the data of currently running programs in fast volatile memory, while disk space stores files persistently on the drive.",
+                "RAM stores backups for several years, while disk space is erased every time you reboot.",
+                "They are two names for the exact same component."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La « RAM » (mémoire vive) est rapide et temporaire pour les processus actifs, tandis que l’espace disque (« disk space ») conserve les fichiers et bases de données de manière permanente sur le support de stockage."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige un compte-rendu d’intervention sur `app-srv-02` : pour libérer de l’espace disque, tu as supprimé les anciens journaux de débogage et vérifié que l’utilisation de la RAM était stable ; tu as ensuite écrit un script shell lancé par une tâche cron nocturne sous un compte dédié plutôt qu’avec le compte root.",
+            "model_answer_en": "To free up disk space on `app-srv-02`, I removed the old debug logs and verified that RAM usage is stable. I also wrote a shell script and scheduled a nightly cron job to compress future logs. For security, the job runs under a dedicated service account instead of the root user.",
+            "model_answer_fr": "Pour libérer de l’espace disque sur `app-srv-02`, j’ai supprimé les anciens journaux de débogage et vérifié que l’utilisation de la RAM est stable. J’ai aussi écrit un script shell et planifié une tâche cron nocturne pour compresser les prochains journaux. Par sécurité, la tâche tourne sous un compte de service dédié au lieu du superutilisateur root.",
+            "key_phrases": [
+              "free up disk space",
+              "RAM usage is stable",
+              "wrote a shell script",
+              "nightly cron job",
+              "the root user"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-manage-vms-and-hypervisor",
+          "title_fr": "Redimensionner des machines virtuelles sur l’hyperviseur",
+          "term_ids": [
+            "virtualization",
+            "virtual-machine",
+            "hypervisor",
+            "operating-system",
+            "load-balancer"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Ivan, we need to upgrade the operating system on our two front-end virtual machines this week.",
+              "text_fr": "Ivan, nous devons mettre à niveau le système d’exploitation sur nos deux machines virtuelles front-end cette semaine."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Can we do it during business hours without dropping user traffic?",
+              "text_fr": "Peut-on le faire pendant les heures ouvrées sans couper le trafic des utilisateurs ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Yes, both VMs sit behind the load balancer. We can drain `web-vm-01` first so all new requests go to `web-vm-02`.",
+              "text_fr": "Oui, les deux VM sont placées derrière le répartiteur de charge. Nous pouvons drainer `web-vm-01` d’abord pour que toutes les nouvelles requêtes aillent vers `web-vm-02`."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Smart. Before you start the upgrade, take a snapshot of the virtual machine on the hypervisor.",
+              "text_fr": "Bien vu. Avant de lancer la mise à niveau, prends un instantané de la machine virtuelle sur l’hyperviseur."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Of course! That’s the best part of virtualization: if the upgrade fails, we can revert the snapshot in two minutes.",
+              "text_fr": "Bien sûr ! C’est le grand avantage de la virtualisation : si la mise à niveau échoue, nous pouvons revenir à l’instantané en deux minutes."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Just remember to delete the snapshot tomorrow once everything is validated, so it doesn’t slow down the hypervisor storage.",
+              "text_fr": "Pense juste à supprimer l’instantané demain une fois que tout sera validé, pour qu’il ne ralentisse pas le stockage de l’hyperviseur."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est le rôle de l’« hypervisor » dans une infrastructure de virtualisation ?",
+              "choices": [
+                "C’est un écran géant accroché au mur de la salle de supervision",
+                "C’est la couche logicielle qui crée, isole et fait tourner les machines virtuelles en partageant le matériel physique",
+                "C’est le câble réseau qui relie le routeur au fournisseur d’accès"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L’hyperviseur (« hypervisor », comme VMware ESXi, Proxmox ou Hyper-V) gère le matériel du serveur physique (CPU, RAM, stockage) et le répartit entre plusieurs machines virtuelles (« virtual machines ») indépendantes."
+            },
+            {
+              "prompt_fr": "Que signifie « drain `web-vm-01` from the load balancer » ?",
+              "choices": [
+                "Supprimer définitivement le disque dur de la machine virtuelle",
+                "Vider le refroidissement liquide du serveur dans la baie",
+                "Demander au répartiteur de charge de ne plus envoyer de nouvelles connexions à cette VM et d’attendre la fin des sessions en cours"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "En administration systèmes, « connection draining » consiste à retirer progressivement un nœud du répartiteur de charge (« load balancer ») : les sessions actives se terminent proprement et les nouvelles vont vers les autres serveurs."
+            },
+            {
+              "prompt_fr": "Complète : « Each virtual machine runs its own guest ___ independently of the others. »",
+              "choices": [
+                "operating system",
+                "exploitation system",
+                "system operator"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Système d’exploitation » se dit toujours « operating system » (OS). « Exploitation system » est un calque français très courant en entretien qu’il faut absolument éviter."
+            },
+            {
+              "prompt_fr": "Pourquoi Ivan rappelle-t-il de supprimer le snapshot de la VM sur l’hyperviseur une fois la mise à jour validée ?",
+              "choices": [
+                "Parce qu’un snapshot conservé longtemps grossit sur le disque et dégrade les performances de stockage de l’hyperviseur",
+                "Parce qu’un hyperviseur s’éteint automatiquement au bout de 24 heures s’il y a un snapshot",
+                "Parce que supprimer le snapshot efface aussi la machine virtuelle de production"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un snapshot de VM fige le disque de base et écrit toutes les modifications dans un fichier delta qui grossit avec le temps. Le garder des semaines consomme de l’espace disque et alourdit les lectures/écritures sur l’hyperviseur."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Annonce à l’équipe sur Slack ton plan pour mettre à niveau le système d’exploitation de `web-vm-01` sans coupure : tu vas d’abord prendre un snapshot de la machine virtuelle sur l’hyperviseur, puis la retirer du répartiteur de charge avant de lancer la mise à jour.",
+            "model_answer_en": "Hi team, I’m about to upgrade the operating system on `web-vm-01` with zero downtime. First, I’ll take a snapshot of the virtual machine on the hypervisor. Then I’ll drain it from the load balancer before starting the upgrade.",
+            "model_answer_fr": "Salut l’équipe, je m’apprête à mettre à niveau le système d’exploitation sur `web-vm-01` sans interruption de service. D’abord, je vais prendre un instantané de la machine virtuelle sur l’hyperviseur. Ensuite, je la retirerai du répartiteur de charge avant de lancer la mise à niveau.",
+            "key_phrases": [
+              "upgrade the operating system",
+              "virtual machine on the hypervisor",
+              "from the load balancer"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-plan-patch-window",
+          "title_fr": "Planifier une fenêtre de maintenance et de correctifs",
+          "term_ids": [
+            "patch-management",
+            "patch",
+            "kernel",
+            "firmware",
+            "downtime"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Mei",
+              "text_en": "Kofi, as part of our monthly patch management cycle, we have a critical security patch for the Linux kernel.",
+              "text_fr": "Kofi, dans le cadre de notre cycle mensuel de gestion des correctifs, nous avons un correctif de sécurité critique pour le noyau Linux."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Did it pass all checks on the staging servers this week?",
+              "text_fr": "A-t-il passé tous les contrôles sur les serveurs de préproduction cette semaine ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Yes, no issues at all. Since it’s a kernel update, though, the database server will need a reboot.",
+              "text_fr": "Oui, aucun problème. En revanche, comme c’est une mise à jour du noyau, le serveur de base de données aura besoin d’un redémarrage."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "How much downtime should we announce to the business teams?",
+              "text_fr": "Quelle durée d’indisponibilité devons-nous annoncer aux équipes métier ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "About fifteen minutes on Saturday night, because I also want to update the firmware on the top-of-rack switch.",
+              "text_fr": "Environ quinze minutes samedi soir, parce que je veux aussi mettre à jour le firmware du switch de tête de baie."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Good idea to bundle both into one maintenance window. Send out the notice forty-eight hours in advance.",
+              "text_fr": "Bonne idée de regrouper les deux dans une seule fenêtre de maintenance. Envoie l’avis quarante-huit heures à l’avance."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre mettre à jour le « kernel » d’un serveur Linux et mettre à jour le « firmware » d’un switch ?",
+              "choices": [
+                "Le noyau (kernel) est le cœur du système d’exploitation du serveur, tandis que le micrologiciel (firmware) est le logiciel bas niveau intégré au matériel du switch",
+                "Le kernel ne concerne que les écrans d’ordinateur, alors que le firmware est un câble électrique",
+                "Il n’y a aucune différence : tous deux désignent une application bureautique"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le « kernel » est le cœur de l’OS (Linux, Windows) qui gère processus et mémoire, tandis que le « firmware » est le logiciel embarqué directement dans la mémoire flash d’un équipement matériel (switch, routeur, carte contrôleur, BIOS/UEFI)."
+            },
+            {
+              "prompt_fr": "Pourquoi une mise à jour du « kernel » nécessite-t-elle généralement un redémarrage du serveur ?",
+              "choices": [
+                "Pour vider la corbeille du bureau Windows",
+                "Pour charger la nouvelle version du noyau en mémoire au démarrage du système",
+                "Parce que le câble réseau doit être débranché à chaque correctif"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Sauf utilisation d’outils spécifiques de live-patching, un serveur continue d’exécuter en mémoire l’ancien noyau (« kernel ») tant qu’il n’a pas redémarré sur le nouveau."
+            },
+            {
+              "prompt_fr": "Complète : « We scheduled the maintenance on Saturday night to keep ___ under fifteen minutes for users. »",
+              "choices": [
+                "breakdown time",
+                "off-time",
+                "downtime"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "En exploitation informatique, une période d’indisponibilité (planifiée ou subie) se dit « downtime » (par opposition à « uptime », le temps de disponibilité)."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous allons installer un correctif de sécurité ce soir » ?",
+              "choices": [
+                "We will install a security corrective tonight.",
+                "We’re going to install a security patch tonight.",
+                "We go to put a safety correction this evening."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un correctif logiciel ou de sécurité se dit « a patch » (« a security patch »), jamais « a corrective ». Attention aussi à « security » (sécurité informatique contre les malveillances) par opposition à « safety » (sécurité physique contre les accidents)."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige un e-mail d’annonce de maintenance aux équipes : dans le cadre de la gestion des correctifs, tu appliqueras samedi à 22 h un correctif de sécurité sur le noyau Linux et une mise à jour du firmware du switch principal ; prévois quinze minutes d’indisponibilité.",
+            "model_answer_en": "Hello everyone, as part of our monthly patch management, we have scheduled a maintenance window this Saturday at 10 p.m. We will apply a critical security patch to the Linux kernel and update the firmware on our main switch. Please expect about fifteen minutes of downtime during this window.",
+            "model_answer_fr": "Bonjour à tous, dans le cadre de notre gestion mensuelle des correctifs, nous avons planifié une fenêtre de maintenance ce samedi à 22 h. Nous appliquerons un correctif de sécurité critique sur le noyau Linux et mettrons à jour le firmware de notre switch principal. Merci de prévoir environ quinze minutes d’indisponibilité pendant ce créneau.",
+            "key_phrases": [
+              "monthly patch management",
+              "security patch",
+              "Linux kernel",
+              "update the firmware",
+              "fifteen minutes of downtime"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "network-systems-backups-and-high-availability",
+      "title_fr": "Garantir les sauvegardes et la continuité de service",
+      "title_en": "Ensure backups, storage resilience and high availability",
+      "situation_fr": "Un disque dur vient de lâcher sur la baie de stockage, l’équipe teste le plan de reprise après sinistre, et tu passes la consigne à l’astreinte du soir.",
+      "guide": {
+        "intro_fr": "La résilience d’une infrastructure repose sur la redondance matérielle et sur des sauvegardes (« backups ») régulièrement testées. Sur un serveur de stockage, le « RAID » combine plusieurs disques physiques (« hardware ») pour tolérer la panne d’un disque sans couper le service : la supervision (« monitoring ») envoie une alerte (« alert ») tandis que la surveillance de disponibilité (« uptime monitoring ») vérifie que l’application répond toujours. Mais le RAID ne protège pas contre un rançongiciel (« ransomware ») : un vrai plan de reprise d’activité (« disaster recovery ») exige des sauvegardes chiffrées (« encryption ») et hors ligne pour tenir les engagements de niveau de service (« SLA » et « uptime »). En cas de panne majeure (« outage »), la haute disponibilité (« high availability ») déclenche une bascule (« failover ») guidée par le « runbook », avant le passage de consigne (« handover ») à l’ingénieur d’astreinte (« on-call »).",
+        "key_phrases": [
+          {
+            "en": "Monitoring sent an alert: one drive failed in the RAID array.",
+            "fr": "La supervision a envoyé une alerte : un disque est tombé en panne dans la grappe RAID."
+          },
+          {
+            "en": "The array is degraded, but the server is still online.",
+            "fr": "La grappe est en mode dégradé, mais le serveur est toujours en ligne."
+          },
+          {
+            "en": "We test our disaster recovery procedure every quarter.",
+            "fr": "Nous testons notre procédure de reprise après sinistre chaque trimestre."
+          },
+          {
+            "en": "Offline encrypted backups protect us against ransomware.",
+            "fr": "Des sauvegardes chiffrées et hors ligne nous protègent contre les rançongiciels."
+          },
+          {
+            "en": "The database cluster triggered an automatic failover to the standby node.",
+            "fr": "Le cluster de base de données a déclenché une bascule automatique vers le nœud de secours."
+          },
+          {
+            "en": "Here is the handover before you take over the on-call shift.",
+            "fr": "Voici le passage de consigne avant que tu ne prennes l’astreinte."
+          }
+        ],
+        "tip_fr": "Attention à la différence entre le nom « a backup » (en un mot : « the nightly backup succeeded ») et le verbe à particule « to back up » (en deux mots : « make sure you back up the database before the upgrade »). De même, « a failover » (nom) s’oppose à « to fail over to the secondary server » (verbe)."
+      },
+      "lessons": [
+        {
+          "id": "network-systems-handle-a-failed-disk",
+          "title_fr": "Remplacer un disque défaillant sur une grappe RAID",
+          "term_ids": [
+            "raid",
+            "hardware",
+            "alert",
+            "monitoring",
+            "uptime-monitoring"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Diego",
+              "text_en": "Fatou, our infrastructure monitoring just fired a critical alert on the file server.",
+              "text_fr": "Fatou, notre supervision d’infrastructure vient de déclencher une alerte critique sur le serveur de fichiers."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Is the service down? Uptime monitoring still shows green from all branch offices.",
+              "text_fr": "Le service est-il coupé ? La surveillance de disponibilité affiche toujours vert depuis toutes les agences."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Users aren’t affected because the server uses RAID 10, but slot three has a physical hardware failure.",
+              "text_fr": "Les utilisateurs ne sont pas touchés parce que le serveur utilise du RAID 10, mais l’emplacement numéro trois a une panne matérielle physique."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "So the RAID array is running in degraded mode. Do we have a spare drive in the server room?",
+              "text_fr": "La grappe RAID tourne donc en mode dégradé. Avons-nous un disque de rechange dans la salle serveur ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Yes, same model and capacity, and the bays support hot-swapping.",
+              "text_fr": "Oui, même modèle et même capacité, et les baies permettent le remplacement à chaud."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Great. Swap the faulty drive now and watch the RAID rebuild progress so performance doesn’t dip too much.",
+              "text_fr": "Parfait. Remplace le disque défectueux maintenant et surveille la progression de la reconstruction RAID pour que les performances ne baissent pas trop."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie le fait qu’une grappe RAID soit en « degraded mode » (mode dégradé) ?",
+              "choices": [
+                "Toutes les données ont été effacées et le serveur est éteint",
+                "Un disque est tombé en panne : le serveur fonctionne toujours grâce à la redondance, mais n’est plus protégé si le disque miroir lâche à son tour",
+                "Le câble réseau du serveur a été débranché"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En mode dégradé (« degraded mode »), la grappe RAID continue de servir les données grâce aux disques restants, mais la tolérance de panne est entamée et la reconstruction (« rebuild ») sur un disque neuf est urgente."
+            },
+            {
+              "prompt_fr": "Quelle est la différence entre « infrastructure monitoring » et « uptime monitoring » ?",
+              "choices": [
+                "La supervision d’infrastructure suit la santé interne des équipements (disques, CPU, RAM), tandis que l’uptime monitoring teste de l’extérieur si le service répond",
+                "L’uptime monitoring remplace automatiquement les disques durs cassés",
+                "Ce sont deux noms pour désigner l’antivirus installé sur les postes"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Ici, l’« uptime monitoring » reste au vert car le serveur répond toujours aux utilisateurs, tandis que le « monitoring » interne détecte la panne matérielle (« hardware failure ») d’un disque du RAID."
+            },
+            {
+              "prompt_fr": "Complète : « Because the server bays support hot-swapping, we can replace the failed ___ without turning the server off. »",
+              "choices": [
+                "material",
+                "software",
+                "hardware"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le matériel informatique physique (disques, barrettes, cartes, châssis) se dit « hardware » (nom indénombrable : on ne dit jamais « a hardware »). « Material » est un faux ami qui désigne un matériau ou du tissu."
+            },
+            {
+              "prompt_fr": "Un manager te dit : « Pas besoin de remplacer le disque tout de suite puisque le RAID fonctionne encore. » Que lui réponds-tu ?",
+              "choices": [
+                "You’re right, RAID can run forever with half its disks broken.",
+                "We should replace it right away: while the RAID array is degraded, a second drive failure in the same mirror would cause data loss and downtime.",
+                "Let’s format the server immediately."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Tant que la grappe RAID n’est pas reconstruite (« rebuilt ») sur un disque sain, la redondance est réduite et les disques restants subissent davantage de lecture/écriture, augmentant le risque d’une seconde panne fatale."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Informe l’équipe sur Slack : la supervision a envoyé une alerte pour une panne matérielle sur un disque du serveur de fichiers ; grâce au RAID 10, la surveillance de disponibilité confirme qu’il n’y a aucun impact pour les utilisateurs, et tu viens de remplacer le disque à chaud.",
+            "model_answer_en": "Hi team, our monitoring sent an alert for a hardware failure on one drive of the file server. Thanks to RAID 10, uptime monitoring shows zero impact for users. I just hot-swapped the faulty drive, and the RAID array is now rebuilding.",
+            "model_answer_fr": "Salut l’équipe, notre supervision a envoyé une alerte pour une panne matérielle sur un disque du serveur de fichiers. Grâce au RAID 10, la surveillance de disponibilité montre qu’il n’y a aucun impact pour les utilisateurs. Je viens de remplacer le disque défectueux à chaud et la grappe RAID est en cours de reconstruction.",
+            "key_phrases": [
+              "monitoring sent an alert",
+              "hardware failure",
+              "uptime monitoring",
+              "the RAID array"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-test-backup-restore",
+          "title_fr": "Tester la restauration d’une sauvegarde",
+          "term_ids": [
+            "backup",
+            "disaster-recovery",
+            "ransomware",
+            "encryption",
+            "sla"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Daniel",
+              "text_en": "Inès, it’s time for our quarterly disaster recovery drill. Which system are we restoring today?",
+              "text_fr": "Inès, c’est l’heure de notre exercice trimestriel de reprise après sinistre. Quel système restaurons-nous aujourd’hui ?"
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "The customer billing database. Our internal SLA requires us to restore it in under two hours.",
+              "text_fr": "La base de données de facturation client. Notre SLA interne nous impose de la restaurer en moins de deux heures."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Are we pulling the backup from the local NAS or from our immutable offsite storage?",
+              "text_fr": "Récupérons-nous la sauvegarde depuis le NAS local ou depuis notre stockage hors site immuable ?"
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "From the offsite copy. We want to simulate a worst-case ransomware attack where the local network is compromised.",
+              "text_fr": "Depuis la copie hors site. Nous voulons simuler le pire scénario d’attaque par rançongiciel où le réseau local est compromis."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Smart. I’ve retrieved the decryption key from the vault so we can verify the backup encryption as well.",
+              "text_fr": "Bien vu. J’ai récupéré la clé de déchiffrement dans le coffre-fort pour que nous puissions aussi vérifier le chiffrement de la sauvegarde."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Great. Start the timer and restore the dump onto an isolated test VM so we can check data integrity.",
+              "text_fr": "Super. Lance le chronomètre et restaure l’archive sur une VM de test isolée pour que nous contrôlions l’intégrité des données."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Inès choisit-elle de tester la restauration à partir de la copie hors site immuable plutôt que du NAS local ?",
+              "choices": [
+                "Parce qu’un rançongiciel présent sur le réseau local tente souvent de chiffrer ou supprimer aussi les sauvegardes accessibles sur le LAN",
+                "Parce qu’un NAS local ne peut stocker que des fichiers texte",
+                "Parce que le téléchargement depuis internet est toujours dix fois plus rapide que le réseau local"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Lors d’une attaque par rançongiciel (« ransomware »), les attaquants ciblent en priorité les partages et serveurs de sauvegarde joignables sur le réseau local. Une copie hors site et immuable (« immutable / offline backup ») garantit de pouvoir repartir même si le LAN est compromis."
+            },
+            {
+              "prompt_fr": "Comment écrire correctement : « Nous sauvegardons la base toutes les nuits et nous vérifions la sauvegarde chaque matin » ?",
+              "choices": [
+                "We backup the database every night and check the back up each morning.",
+                "We back up the database every night and check the backup each morning.",
+                "We make a back-upping of the database every night."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En anglais, le verbe s’écrit en deux mots (« to back up a database ») tandis que le nom ou l’adjectif s’écrit en un seul mot (« a backup », « a backup copy »)."
+            },
+            {
+              "prompt_fr": "Complète : « All offsite archives are protected with AES-256 ___ so nadie can read them without the key. »",
+              "choices": [
+                "crypting",
+                "encryption",
+                "codification"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le chiffrement se dit « encryption » en anglais (et le verbe est « to encrypt »). « Crypting » est un calque du français familier « cryptage » et ne s’emploie pas en anglais professionnel."
+            },
+            {
+              "prompt_fr": "Que valide concrètement cet exercice de « disaster recovery » par rapport au « SLA » ?",
+              "choices": [
+                "Que le prix de l’abonnement internet a baissé ce trimestre",
+                "Que l’équipe est réellement capable de déchiffrer et remonter une base intègre dans le délai maximal promis (moins de deux heures)",
+                "Que les utilisateurs n’oublieront plus jamais leur mot de passe"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Avoir des tâches de sauvegarde au vert ne suffit pas : seul un test de restauration (« restore drill ») prouve que l’archive est lisible, que les clés de déchiffrement sont accessibles et que la durée de remise en service respecte le SLA (et le RTO)."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le bilan de l’exercice de reprise après sinistre : vous avez restauré la sauvegarde hors site de la base de facturation pour simuler une attaque par rançongiciel ; le chiffrement et l’intégrité des données ont été validés en 85 minutes, ce qui respecte le SLA de deux heures.",
+            "model_answer_en": "We completed our quarterly disaster recovery drill today by restoring the offsite backup of the billing database to simulate a ransomware scenario. We verified both the backup encryption and data integrity on an isolated VM. The full restore took 85 minutes, well within our two-hour SLA.",
+            "model_answer_fr": "Nous avons réalisé aujourd’hui notre exercice trimestriel de reprise après sinistre en restaurant la sauvegarde hors site de la base de facturation pour simuler un scénario de rançongiciel. Nous avons vérifié le chiffrement de la sauvegarde ainsi que l’intégrité des données sur une VM isolée. La restauration complète a pris 85 minutes, bien en dessous de notre SLA de deux heures.",
+            "key_phrases": [
+              "disaster recovery drill",
+              "offsite backup",
+              "ransomware scenario",
+              "backup encryption",
+              "two-hour SLA"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-trigger-a-failover",
+          "title_fr": "Basculer sur le serveur de secours",
+          "term_ids": [
+            "high-availability",
+            "failover",
+            "outage",
+            "uptime",
+            "runbook"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sofia",
+              "text_en": "Jean-Baptiste, the primary database node in Rack A just lost power because of a faulty PDU!",
+              "text_fr": "Jean-Baptiste, le nœud de base de données principal dans la baie A vient de perdre son alimentation à cause d’un bandeau électrique défectueux !"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Stay calm, the cluster is configured for high availability. Did the automatic failover trigger?",
+              "text_fr": "Reste calme, le cluster est configuré en haute disponibilité. La bascule automatique s’est-elle déclenchée ?"
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Checking now… Yes! The standby node in Rack B was promoted to primary within twenty seconds.",
+              "text_fr": "Je vérifie… Oui ! Le nœud de secours dans la baie B a été promu principal en moins de vingt secondes."
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Awesome. That prevented a full outage and kept our monthly uptime above 99.95%.",
+              "text_fr": "Génial. Cela a évité une panne complète et maintenu notre taux de disponibilité mensuel au-dessus de 99,95 %."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Before we bring Node A back online, how do we avoid a split-brain issue?",
+              "text_fr": "Avant de remettre le nœud A en ligne, comment évite-t-on un conflit de double maître (split-brain) ?"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Follow the cluster runbook step by step: rejoin Node A strictly as a read-only replica first until it catches up.",
+              "text_fr": "Suis le runbook du cluster étape par étape : réintègre d’abord le nœud A strictement comme réplica en lecture seule jusqu’à ce qu’il ait rattrapé son retard."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que s’est-il passé lors du « automatic failover » décrit par Sofia ?",
+              "choices": [
+                "Les utilisateurs ont dû ressaisir toutes leurs commandes de la journée",
+                "Le serveur de secours situé dans une autre baie a automatiquement pris le relais du serveur principal tombé en panne",
+                "Le pare-feu a bloqué l’accès au site web pendant deux heures"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Dans une architecture à haute disponibilité (« high availability »), le « failover » est le basculement automatique ou manuel du service vers un nœud de secours (« standby / secondary node ») lorsque le nœud principal (« primary node ») défaille."
+            },
+            {
+              "prompt_fr": "Pourquoi les deux nœuds du cluster étaient-ils installés dans deux baies (Rack A et Rack B) avec des alimentations séparées ?",
+              "choices": [
+                "Pour éviter qu’une simple panne électrique sur une baie ne fasse tomber à la fois le serveur principal et son secours",
+                "Parce que les câbles réseau ne peuvent pas mesurer moins de dix mètres",
+                "Pour doubler la facture d’électricité du datacenter"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La haute disponibilité (« high availability ») consiste à éliminer les points de défaillance uniques (« single points of failure ») : si les deux serveurs sont branchés sur le même bandeau électrique (PDU), une panne de ce bandeau provoque une panne totale (« outage »)."
+            },
+            {
+              "prompt_fr": "Complète : « Follow the ___ carefully before rejoining the old primary node to the cluster. »",
+              "choices": [
+                "roadbook",
+                "copybook",
+                "runbook"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "En exploitation informatique, la fiche de procédure opérationnelle qui détaille les commandes exactes à suivre lors d’une intervention ou d’un incident s’appelle un « runbook » (ou « playbook »)."
+            },
+            {
+              "prompt_fr": "Comment dire « La bascule automatique a évité une panne complète » ?",
+              "choices": [
+                "The automatic failover prevented a full outage.",
+                "The automatic rockering avoided a total breakdown of current.",
+                "The failover automatic has empêched a complete panne."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Automatic failover » (bascule automatique) et « full outage » (panne complète / interruption totale de service) sont les termes exacts. « Prevented » est le verbe naturel pour dire qu’un mécanisme a empêché un incident de se produire."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail de point de situation à ton responsable : un bandeau électrique a lâché dans la baie A, mais l’architecture en haute disponibilité a déclenché une bascule automatique vers la baie B en vingt secondes, évitant une panne complète et préservant la disponibilité ; précise que tu suis le runbook pour réintégrer le nœud A.",
+            "model_answer_en": "Hi Marc, a power distribution unit failed in Rack A this morning, stopping our primary database node. Thanks to our high-availability setup, an automatic failover promoted the standby node in Rack B within twenty seconds, preventing a customer-facing outage and protecting our uptime. We are now following the runbook to rejoin Node A safely as a replica.",
+            "model_answer_fr": "Bonjour Marc, un bandeau d’alimentation est tombé en panne dans la baie A ce matin, arrêtant notre nœud de base de données principal. Grâce à notre configuration en haute disponibilité, une bascule automatique a promu le nœud de secours de la baie B en vingt secondes, évitant une panne visible pour les clients et préservant notre taux de disponibilité. Nous suivons maintenant le runbook pour réintégrer le nœud A en toute sécurité comme réplica.",
+            "key_phrases": [
+              "high-availability setup",
+              "automatic failover",
+              "customer-facing outage",
+              "protecting our uptime",
+              "following the runbook"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-handover-to-on-call",
+          "title_fr": "Passer la consigne à l’astreinte",
+          "term_ids": [
+            "on-call",
+            "handover",
+            "ticket",
+            "troubleshoot",
+            "escalate"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Yasmine",
+              "text_en": "Samuel, you’re on-call tonight, right? Do you have five minutes for the shift handover?",
+              "text_fr": "Samuel, tu es d’astreinte ce soir, n’est-ce pas ? As-tu cinq minutes pour le passage de consigne ?"
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "Sure, go ahead. Anything risky I should watch out for tonight?",
+              "text_fr": "Bien sûr, vas-y. Y a-t-il quelque chose de sensible que je dois surveiller ce soir ?"
+            },
+            {
+              "speaker": "Yasmine",
+              "text_en": "One thing: we replaced a faulty drive on the storage server this afternoon, and the RAID rebuild is at 65%.",
+              "text_fr": "Une chose : nous avons remplacé un disque défectueux sur le serveur de stockage cet après-midi, et la reconstruction RAID en est à 65 %."
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "Did you leave the details in the open ticket?",
+              "text_fr": "As-tu laissé les détails dans le ticket ouvert ?"
+            },
+            {
+              "speaker": "Yasmine",
+              "text_en": "Yes, ticket `INC-4082` has all the commands I used to troubleshoot it. It should finish rebuilding around 9 p.m.",
+              "text_fr": "Oui, le ticket `INC-4082` contient toutes les commandes que j’ai utilisées pour le diagnostiquer. La reconstruction devrait se terminer vers 21 h."
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "And if the storage controller throws another hardware error during the night?",
+              "text_fr": "Et si le contrôleur de stockage remonte une nouvelle erreur matérielle pendant la nuit ?"
+            },
+            {
+              "speaker": "Yasmine",
+              "text_en": "Don’t reboot it yourself: escalate immediately to the vendor’s 24/7 hardware support with our contract number.",
+              "text_fr": "Ne le redémarre pas toi-même : escalade immédiatement vers le support matériel 24/7 du constructeur avec notre numéro de contrat."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « You’re on-call tonight » ?",
+              "choices": [
+                "Tu es en conversation téléphonique en ce moment",
+                "Tu es d’astreinte ce soir : joignable en dehors des heures de bureau en cas d’incident critique",
+                "Tu dois appeler tous les clients de l’entreprise ce soir"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Être d’astreinte se dit « to be on-call » (ou « to take the on-call shift »). Pour dire que quelqu’un est actuellement au téléphone, on dit « he’s on a call » (avec l’article « a »)."
+            },
+            {
+              "prompt_fr": "Que doit contenir un bon « shift handover » entre deux administrateurs ?",
+              "choices": [
+                "La liste des opérations en cours, les tickets ouverts à surveiller, ce qui a déjà été testé et la consigne d’escalade en cas d’alerte",
+                "Uniquement la météo prévue pour le lendemain",
+                "La liste complète de tous les tickets résolus depuis la création de l’entreprise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un passage de consigne (« handover » ou « handoff ») donne à la personne qui prend le relais tout le contexte utile pour ne pas repartir de zéro si une alerte se déclenche la nuit."
+            },
+            {
+              "prompt_fr": "Complète : « If you cannot resolve the storage fault within thirty minutes, ___ it to the vendor’s Level 3 team. »",
+              "choices": [
+                "climb",
+                "mount",
+                "escalate"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Transmettre un ticket ou un incident à un niveau de support supérieur ou plus spécialisé se dit toujours « to escalate (an issue / a ticket) to… »."
+            },
+            {
+              "prompt_fr": "Comment dire « J’ai diagnostiqué le problème réseau pendant une heure » ?",
+              "choices": [
+                "I troubleshot the network issue for an hour.",
+                "I troubleshooted on the network problem during one hour.",
+                "I made troubleshooting of the network during an hour."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le prétérit de « troubleshoot » est irrégulier (« troubleshot », comme « shoot -> shot »), le verbe est transitif direct (sans « on »), et une durée s’introduit par « for » (« for an hour »), pas par « during »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris le message de passage de consigne sur Slack pour Samuel qui prend l’astreinte : indique que la reconstruction RAID suivie dans le ticket `INC-4082` est à 65 %, résume ce que tu as diagnostiqué cet après-midi, et rappelle d’escalader au support du constructeur si une autre erreur disque apparaît.",
+            "model_answer_en": "Hi Samuel, here is the handover for your on-call shift tonight. The RAID rebuild tracked in ticket `INC-4082` is currently at 65% after I troubleshot and replaced the failed drive this afternoon. If another disk error appears tonight, please escalate immediately to the hardware vendor’s 24/7 support.",
+            "model_answer_fr": "Salut Samuel, voici le passage de consigne pour ton astreinte de ce soir. La reconstruction RAID suivie dans le ticket `INC-4082` est actuellement à 65 % après le diagnostic et le remplacement du disque défaillant cet après-midi. Si une autre erreur disque apparaît cette nuit, merci d’escalader immédiatement auprès du support 24/7 du constructeur.",
+            "key_phrases": [
+              "handover for your on-call shift",
+              "tracked in ticket",
+              "troubleshot and replaced",
+              "escalate immediately"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "network-systems-firewall-vpn-and-security",
+      "title_fr": "Sécuriser les flux réseau, le VPN et les changements",
+      "title_en": "Secure network traffic, VPN access and firewall changes",
+      "situation_fr": "Un développeur demande d’ouvrir un port sur le pare-feu en urgence, de nouvelles caméras IP doivent être isolées sur leur propre VLAN, et des télétravailleurs n’accèdent plus à l’intranet via le VPN.",
+      "guide": {
+        "intro_fr": "La sécurité réseau fait le lien entre l’administration systèmes et l’équipe cybersécurité. Toute modification des règles du pare-feu (« firewall ») passe par la gestion des changements (« change management ») : on vérifie le port (« port »), le protocole (« protocol », « TCP » ou « UDP ») et l’on restreint les adresses sources au lieu d’utiliser une redirection de port (« port forwarding ») ouverte à tout internet. En interne, la segmentation réseau (« network segmentation ») isole les flux grâce aux réseaux locaux virtuels (« VLAN ») et aux sous-réseaux (« subnets »), tandis que le « NAT » traduit les adresses privées en sortie. Pour les travailleurs distants, on dépanne le « VPN », le serveur mandataire (« proxy server »), le « reverse proxy », les certificats « SSL/TLS » et parfois le routage « IPv6 ». Enfin, on applique le durcissement (« hardening ») des serveurs et l’on s’appuie sur la protection des postes (« endpoint security » et « EDR ») en cas d’alerte « phishing » ou « malware ».",
+        "key_phrases": [
+          {
+            "en": "Every firewall rule change must go through change management.",
+            "fr": "Toute modification de règle de pare-feu doit passer par la gestion des changements."
+          },
+          {
+            "en": "We only allow TCP port 5432 from the application subnet, not from anywhere.",
+            "fr": "Nous n’autorisons le port TCP 5432 que depuis le sous-réseau applicatif, pas depuis n’importe où."
+          },
+          {
+            "en": "Put the security cameras on an isolated VLAN with no internet access.",
+            "fr": "Mets les caméras de sécurité sur un VLAN isolé sans accès à internet."
+          },
+          {
+            "en": "The SSL/TLS certificate on the reverse proxy expired this morning.",
+            "fr": "Le certificat SSL/TLS sur le reverse proxy a expiré ce matin."
+          },
+          {
+            "en": "The EDR agent isolated the laptop after detecting malware.",
+            "fr": "L’agent EDR a isolé le portable après avoir détecté un logiciel malveillant."
+          },
+          {
+            "en": "We follow a strict hardening checklist before exposing any server.",
+            "fr": "Nous suivons une liste stricte de durcissement avant d’exposer le moindre serveur."
+          }
+        ],
+        "tip_fr": "Quand tu décris une règle de pare-feu en anglais, précise toujours quatre éléments dans cet ordre : l’action (« allow » ou « block / drop »), le protocole et le port (« TCP port 443 »), la source (« from the app subnet ») et la destination (« to the database server »). Évite « open the firewall », qui donne l’impression qu’on désactive toute la protection."
+      },
+      "lessons": [
+        {
+          "id": "network-systems-review-firewall-change",
+          "title_fr": "Instruire une demande d’ouverture de flux pare-feu",
+          "term_ids": [
+            "firewall",
+            "port",
+            "protocol",
+            "tcp-udp",
+            "change-management"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ana",
+              "text_en": "Omar, a developer just asked me on Slack to open port 5432 on the production firewall right now.",
+              "text_fr": "Omar, un développeur vient de me demander sur Slack d’ouvrir le port 5432 sur le pare-feu de production tout de suite."
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "Hold on. First, any production firewall rule has to go through change management with a ticket.",
+              "text_fr": "Attends. D’abord, toute règle sur le pare-feu de production doit passer par la gestion des changements avec un ticket."
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "He did open a ticket afterward, but he wrote: “Allow port 5432 from any source, both TCP and UDP.”",
+              "text_fr": "Il a bien ouvert un ticket ensuite, mais il a écrit : « Autoriser le port 5432 depuis n’importe quelle source, en TCP et UDP. »"
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "No way! Port 5432 is PostgreSQL. It only uses the TCP protocol, so there is no reason to open UDP.",
+              "text_fr": "Hors de question ! Le port 5432, c’est PostgreSQL. Il utilise uniquement le protocole TCP, il n’y a donc aucune raison d’ouvrir UDP."
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "And allowing “any source” would expose the database to the whole network, right?",
+              "text_fr": "Et autoriser « n’importe quelle source » exposerait la base de données à tout le réseau, n’est-ce pas ?"
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "Exactly. Ask him for the exact IP address of the backend server that needs access, and restrict the rule to TCP 5432 from that single host.",
+              "text_fr": "Exactement. Demande-lui l’adresse IP exacte du serveur back-end qui a besoin de l’accès, et limite la règle au port TCP 5432 depuis cet unique hôte."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Omar refuse-t-il d’ouvrir à la fois TCP et UDP depuis « any source » pour PostgreSQL ?",
+              "choices": [
+                "Parce qu’une règle pare-feu propre ne doit ouvrir que le protocole réellement utilisé (TCP 5432) et uniquement depuis l’adresse IP du serveur autorisé",
+                "Parce qu’un pare-feu ne peut filtrer qu’un seul port à la fois",
+                "Parce que le protocole TCP est obsolète depuis dix ans"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En sécurité réseau, on évite toujours les règles trop larges (« any/any » ou « TCP+UDP » par paresse) : on limite la règle au protocole exact (« TCP »), au port précis (`5432`) et aux seules adresses IP sources légitimes."
+            },
+            {
+              "prompt_fr": "À quoi sert le processus de « change management » avant de modifier un pare-feu de production ?",
+              "choices": [
+                "À ralentir volontairement les développeurs pour qu’ils codent moins",
+                "À évaluer le risque de sécurité ou de coupure, faire valider la règle et garder une trace précise de qui a modifié quoi et pourquoi",
+                "À changer de marque de pare-feu tous les mois"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La gestion des changements (« change management ») protège la production contre les ouvertures de flux dangereuses ou les erreurs de frappe qui couperaient un service critique, tout en assurant la traçabilité pour les audits."
+            },
+            {
+              "prompt_fr": "Complète : « The ___ blocks all incoming traffic by default unless a rule explicitly allows it. »",
+              "choices": [
+                "fireguard",
+                "firewall",
+                "firegate"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le pare-feu se dit « firewall » en anglais. Une politique qui bloque tout par défaut sauf ce qui est explicitement autorisé s’appelle « default deny » (ou « implicit deny »)."
+            },
+            {
+              "prompt_fr": "Comment demander poliment au développeur de préciser sa demande d’ouverture de flux ?",
+              "choices": [
+                "Your firewall request is terrible, learn networking first.",
+                "Could you specify the exact source IP address? For security, we only open TCP port 5432 from the backend server, not from any source.",
+                "I opened all ports on the firewall so you won’t bother me again."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La deuxième réponse est courtoise, explique la règle de sécurité et pose la question précise qui permet de faire avancer le ticket dans le cadre du « change management »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Réponds sur Slack au développeur qui a demandé l’ouverture du port 5432 : explique que selon votre procédure de gestion des changements, tu ne peux pas ouvrir ce port à toutes les sources ni en UDP ; précise que PostgreSQL n’utilise que le protocole TCP et demande-lui l’adresse IP exacte du serveur source pour configurer le pare-feu.",
+            "context_en": "Hey, can you approve my ticket and open port 5432 (TCP/UDP) from any source to the prod database?",
+            "model_answer_en": "Hi Leo, following our change management policy, we cannot open port 5432 from any source. Also, PostgreSQL only uses the TCP protocol, so UDP isn’t needed. Could you share the exact source IP address of the backend server so I can add the firewall rule?",
+            "model_answer_fr": "Salut Léo, conformément à notre politique de gestion des changements, nous ne pouvons pas ouvrir le port 5432 depuis n’importe quelle source. De plus, PostgreSQL n’utilise que le protocole TCP, donc UDP n’est pas nécessaire. Peux-tu m’indiquer l’adresse IP source exacte du serveur back-end pour que j’ajoute la règle sur le pare-feu ?",
+            "key_phrases": [
+              "change management policy",
+              "open port 5432",
+              "the TCP protocol",
+              "add the firewall rule"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-segment-the-network",
+          "title_fr": "Segmenter le réseau avec des VLAN et sous-réseaux",
+          "term_ids": [
+            "vlan",
+            "subnet",
+            "network-segmentation",
+            "nat",
+            "port-forwarding"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Marcus, Facilities just installed twenty smart security cameras, and they plugged them straight into the employee LAN!",
+              "text_fr": "Marcus, les services généraux viennent d’installer vingt caméras de sécurité connectées, et ils les ont branchées directement sur le réseau local des salariés !"
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "We need proper network segmentation right away. IoT cameras often have weak firmware and shouldn’t sit next to workstations.",
+              "text_fr": "Il nous faut une vraie segmentation réseau tout de suite. Les caméras connectées ont souvent un firmware fragile et ne doivent pas côtoyer les postes de travail."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "I’ll create VLAN 40 with a dedicated `/24` subnet just for the cameras and tag those switch ports.",
+              "text_fr": "Je vais créer le VLAN 40 avec un sous-réseau `/24` dédié uniquement aux caméras et marquer ces ports sur le switch."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Good. Also, the installer asked for port forwarding on the main router so he can watch the cameras from home.",
+              "text_fr": "Bien. D’ailleurs, l’installateur a demandé une redirection de port sur le routeur principal pour pouvoir regarder les caméras depuis chez lui."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Absolutely not! Port forwarding would expose the camera interface directly on our public NAT address.",
+              "text_fr": "Absolument pas ! Une redirection de port exposerait l’interface des caméras directement sur notre adresse publique NAT."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Agreed. Block outbound internet access for that subnet too, and require a VPN account for the security guard.",
+              "text_fr": "Tout à fait d’accord. Bloque aussi l’accès internet sortant pour ce sous-réseau, et exige un compte VPN pour l’agent de sécurité."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est l’objectif principal de la « network segmentation » à l’aide de VLAN et de sous-réseaux ?",
+              "choices": [
+                "Cloisonner les groupes d’équipements pour qu’un appareil compromis (comme une caméra IoT) ne puisse pas atteindre directement les serveurs ou les postes de travail",
+                "Permettre d’utiliser des câbles réseau deux fois plus fins",
+                "Supprimer le besoin d’avoir un pare-feu dans l’entreprise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La segmentation réseau (« network segmentation ») découpe le réseau physique en plusieurs réseaux logiques isolés (« VLANs » et « subnets »), empêchant tout déplacement latéral (« lateral movement ») d’un attaquant."
+            },
+            {
+              "prompt_fr": "Pourquoi Elena refuse-t-elle catégoriquement de configurer du « port forwarding » vers les caméras ?",
+              "choices": [
+                "Parce que le port forwarding ralentit la vitesse des disques durs",
+                "Parce que rediriger un port depuis l’adresse IP publique vers les caméras les rendrait directement attaquables depuis tout internet",
+                "Parce que le NAT ne fonctionne qu’avec les imprimantes"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le « port forwarding » (redirection de port entrants à travers le NAT) expose directement un équipement interne sur l’IP publique de l’entreprise : les scanners automatisés sur internet le trouveraient en quelques minutes. On passe toujours par un VPN authentifié."
+            },
+            {
+              "prompt_fr": "Complète : « The router uses ___ so all internal devices on private subnets can share a single public IP address. »",
+              "choices": [
+                "SSH",
+                "RAID",
+                "NAT"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le « NAT » (« Network Address Translation ») réécrit les adresses IP privées (comme `10.x.x.x` ou `192.168.x.x`) des paquets sortants avec l’adresse IP publique du routeur ou du pare-feu."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous avons placé les caméras dans un VLAN et un sous-réseau séparés » ?",
+              "choices": [
+                "We placed the cameras in a separate VLAN and subnet.",
+                "We putted the cameras on a separated VLAN and under-network.",
+                "We ranged the cameras in a apart VLAN and sub-net."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En anglais, « sous-réseau » se dit « subnet » (jamais « under-network »), l’adjectif « séparé / distinct » avant un nom se dit « separate » (sans `-d`), et le prétérit de « put » est invariable (« put », jamais « putted »)."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Réponds par e-mail au responsable des services généraux : explique que pour la segmentation réseau, tu as déplacé les vingt caméras sur un VLAN et un sous-réseau dédiés ; indique que tu refuses la redirection de port sur l’adresse NAT publique par sécurité et que l’accès à distance se fera uniquement via le VPN.",
+            "model_answer_en": "Hi Thomas, for network segmentation and security, I moved the twenty new cameras to a dedicated VLAN and subnet isolated from employee laptops. We cannot set up port forwarding on our public NAT address because it would expose the cameras to the internet. Instead, the security team can access them remotely over the corporate VPN.",
+            "model_answer_fr": "Bonjour Thomas, pour assurer la segmentation et la sécurité du réseau, j’ai déplacé les vingt nouvelles caméras sur un VLAN et un sous-réseau dédiés, isolés des portables des salariés. Nous ne pouvons pas configurer de redirection de port sur notre adresse NAT publique car cela exposerait les caméras sur internet. L’équipe de sécurité pourra y accéder à distance via le VPN de l’entreprise.",
+            "key_phrases": [
+              "network segmentation",
+              "dedicated VLAN and subnet",
+              "port forwarding",
+              "public NAT address"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-troubleshoot-vpn-and-proxy",
+          "title_fr": "Dépanner un accès VPN et un serveur proxy",
+          "term_ids": [
+            "vpn",
+            "proxy",
+            "ssl-tls",
+            "ipv6",
+            "reverse-proxy"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Nadia",
+              "text_en": "Ravi, several remote workers say they are connected to the VPN, but they get a security warning on the HR portal.",
+              "text_fr": "Ravi, plusieurs télétravailleurs disent qu’ils sont connectés au VPN, mais qu’ils obtiennent un avertissement de sécurité sur le portail RH."
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "Let me check the internal reverse proxy in front of the HR portal. Look: its SSL/TLS certificate expired at midnight!",
+              "text_fr": "Laisse-moi vérifier le reverse proxy interne placé devant le portail RH. Regarde : son certificat SSL/TLS a expiré à minuit !"
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Good catch! Why didn’t the auto-renewal script deploy the new certificate?",
+              "text_fr": "Bien vu ! Pourquoi le script de renouvellement automatique n’a-t-il pas déployé le nouveau certificat ?"
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "Because the reverse proxy couldn’t reach the certificate authority through our outbound proxy server.",
+              "text_fr": "Parce que le reverse proxy n’arrivait pas à joindre l’autorité de certification à travers notre serveur proxy sortant."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "I’ll renew the SSL/TLS certificate manually right now and fix the proxy whitelist rule.",
+              "text_fr": "Je renouvelle le certificat SSL/TLS manuellement tout de suite et je corrige la liste blanche du proxy."
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "Also, check the VPN client profile: one user had IPv6 traffic bypassing the VPN tunnel on his home router.",
+              "text_fr": "Vérifie aussi le profil du client VPN : chez un utilisateur, le trafic IPv6 contournait le tunnel VPN sur sa box domestique."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre un « proxy server » (forward proxy) et un « reverse proxy » ?",
+              "choices": [
+                "Un proxy sortant relaie et filtre les requêtes des utilisateurs internes vers internet, tandis qu’un reverse proxy est placé devant des serveurs pour recevoir les requêtes des clients et gérer notamment le SSL/TLS",
+                "Le proxy fonctionne uniquement le matin et le reverse proxy uniquement l’après-midi",
+                "Le reverse proxy sert à inverser le sens des câbles Ethernet dans la baie"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le « forward proxy » (souvent appelé simplement « proxy server » en entreprise) se place côté clients pour contrôler leur sortie vers internet, alors que le « reverse proxy » (comme Nginx, HAProxy ou Traefik) se place devant les serveurs d’application."
+            },
+            {
+              "prompt_fr": "Pourquoi les télétravailleurs voient-ils une alerte de sécurité dans leur navigateur en ouvrant le portail RH ?",
+              "choices": [
+                "Parce que leur tunnel VPN n’est pas connecté",
+                "Parce que le certificat SSL/TLS présenté par le reverse proxy a dépassé sa date de validité",
+                "Parce que le portail RH n’accepte que les connexions en Wi-Fi"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Dès qu’un certificat « SSL/TLS » expire, les navigateurs affichent un avertissement bloquant (« Your connection is not private ») pour prévenir que l’identité du serveur n’est plus garantie à jour."
+            },
+            {
+              "prompt_fr": "Complète : « Connect to the corporate ___ before trying to open internal applications from home. »",
+              "choices": [
+                "VPN",
+                "CPU",
+                "RAID"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le « VPN » (« Virtual Private Network ») établit un tunnel chiffré entre l’ordinateur distant et le réseau de l’entreprise à travers internet."
+            },
+            {
+              "prompt_fr": "Quel problème peut survenir si un tunnel VPN d’entreprise ne gère qu’IPv4 alors que la box internet de l’employé utilise « IPv6 » ?",
+              "choices": [
+                "L’écran de l’ordinateur portable passe en noir et blanc",
+                "Une partie du trafic ou des requêtes DNS peut sortir directement en IPv6 hors du tunnel VPN si IPv6 n’est pas pris en charge ou bloqué dans le profil VPN",
+                "Les adresses IPv6 sont plus courtes que les adresses IPv4"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "C’est ce qu’on appelle une fuite IPv6 (« IPv6 leak ») : si le client VPN ne route que l’IPv4 sans acheminer ni bloquer l’IPv6 local, le système d’exploitation peut envoyer directement des flux en IPv6 via la box domestique."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Poste un message sur Slack pour les télétravailleurs : explique que l’alerte sur le portail RH venait d’un certificat SSL/TLS expiré sur le reverse proxy ; indique que tu as renouvelé le certificat, corrigé la règle du serveur proxy sortant et mis à jour le profil VPN pour gérer correctement l’IPv6.",
+            "model_answer_en": "Hi everyone, the security warning on the HR portal was caused by an expired SSL/TLS certificate on our internal reverse proxy. I renewed the certificate and updated our outbound proxy server rule so auto-renewal works smoothly. I also pushed a VPN profile update to handle IPv6 traffic properly.",
+            "model_answer_fr": "Bonjour à tous, l’avertissement de sécurité sur le portail RH était dû à un certificat SSL/TLS expiré sur notre reverse proxy interne. J’ai renouvelé le certificat et mis à jour la règle de notre serveur proxy sortant pour que le renouvellement automatique fonctionne. J’ai aussi déployé une mise à jour du profil VPN pour gérer correctement le trafic IPv6.",
+            "key_phrases": [
+              "expired SSL/TLS certificate",
+              "internal reverse proxy",
+              "proxy server",
+              "VPN profile",
+              "IPv6 traffic"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-harden-and-contain",
+          "title_fr": "Durcir un serveur et isoler un poste suspect",
+          "term_ids": [
+            "system-hardening",
+            "endpoint-security",
+            "edr",
+            "malware",
+            "phishing"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Tomasz, our EDR console just raised a high-severity alert on a laptop in the sales department!",
+              "text_fr": "Tomasz, notre console EDR vient de remonter une alerte de gravité élevée sur un portable du service commercial !"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "What triggered the endpoint security alert?",
+              "text_fr": "Qu’est-ce qui a déclenché l’alerte de sécurité sur le poste ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "The user clicked a link in a phishing email, and a script tried to download malware in the background.",
+              "text_fr": "L’utilisateur a cliqué sur un lien dans un e-mail d’hameçonnage, et un script a tenté de télécharger un logiciel malveillant en arrière-plan."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Did the EDR block the execution?",
+              "text_fr": "Est-ce que l’EDR a bloqué l’exécution ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Yes, it killed the process and isolated the laptop from the network so it can only talk to the EDR console.",
+              "text_fr": "Oui, il a arrêté le processus et isolé le portable du réseau pour qu’il ne puisse communiquer qu’avec la console EDR."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Good. Our system hardening and PowerShell restrictions paid off. Call the user, revoke his tokens, and reimage the laptop to be safe.",
+              "text_fr": "Parfait. Notre durcissement système et nos restrictions PowerShell ont porté leurs fruits. Appelle l’utilisateur, révoque ses jetons et réinstalle le portable par précaution."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que fait concrètement l’agent « EDR » lorsqu’il « isolates the laptop from the network » ?",
+              "choices": [
+                "Il coupe toutes les communications réseau du poste (vers le LAN et internet) à l’exception du canal chiffré vers la console d’administration EDR",
+                "Il éteint le chauffage dans le bureau de l’employé",
+                "Il supprime le compte Active Directory de toute l’entreprise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L’isolation réseau (« network containment / isolation ») par l’agent EDR (« Endpoint Detection and Response ») empêche tout logiciel malveillant de se propager sur le réseau ou d’exfiltrer des données, tout en laissant la main à distance aux administrateurs."
+            },
+            {
+              "prompt_fr": "En quoi consiste le « system hardening » (durcissement système) sur les postes et serveurs ?",
+              "choices": [
+                "À renforcer la coque en plastique des ordinateurs portables",
+                "À réduire la surface d’attaque en désactivant les services, ports et scripts inutiles et en appliquant des configurations de sécurité strictes",
+                "À rendre les mots de passe impossibles à taper au clavier"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le « hardening » consiste à sécuriser la configuration d’un OS ou d’un serveur (guides CIS, GPO de restriction PowerShell/macros, fermeture des ports et services superflus) pour bloquer l’exploitation d’une attaque."
+            },
+            {
+              "prompt_fr": "Complète : « The attack started with a ___ email pretending to come from the parcel delivery service. »",
+              "choices": [
+                "fishing",
+                "phishing",
+                "flashing"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L’hameçonnage par e-mail ou SMS s’écrit toujours « phishing » (avec `ph`). « Fishing » désigne la pêche à la ligne au bord de l’eau."
+            },
+            {
+              "prompt_fr": "Même si l’EDR indique avoir bloqué le « malware », pourquoi Tomasz demande-t-il de révoquer les jetons de session et de réinstaller le poste ?",
+              "choices": [
+                "Parce qu’après un clic sur un lien de phishing et une tentative d’exécution, on applique le principe de précaution : s’assurer qu’aucun jeton n’a fuité et repartir sur une image saine",
+                "Parce qu’un agent EDR ne fonctionne qu’une seule fois dans sa vie",
+                "Pour punir l’employé d’avoir signalé l’alerte"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un lien de « phishing » a pu dérober un cookie de session ou un mot de passe avant même le téléchargement du « malware » : révoquer les sessions et réinstaller (« reimage ») la machine garantit qu’aucune trace ni persistance ne subsiste."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le rapport d’incident de sécurité : un employé a cliqué sur un e-mail de phishing qui a tenté d’exécuter un logiciel malveillant ; grâce au durcissement système et à votre solution de sécurité des postes (EDR), le processus a été bloqué et le portable a été isolé du réseau avant d’être réinstallé.",
+            "model_answer_en": "An employee clicked a link in a phishing email that attempted to run malware on his workstation. Thanks to our system hardening rules and endpoint security, the EDR agent blocked the process and automatically isolated the laptop from the network. We revoked the user’s active sessions and reimaged the machine as a precaution.",
+            "model_answer_fr": "Un employé a cliqué sur un lien dans un e-mail d’hameçonnage qui a tenté d’exécuter un logiciel malveillant sur son poste de travail. Grâce à nos règles de durcissement système et à la sécurité des postes, l’agent EDR a bloqué le processus et isolé automatiquement le portable du réseau. Nous avons révoqué les sessions actives de l’utilisateur et réinstallé la machine par précaution.",
+            "key_phrases": [
+              "phishing email",
+              "run malware",
+              "system hardening",
+              "endpoint security",
+              "the EDR agent"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
-import { ArrowRight, ChartColumn, Check, Circle, FileText, GitPullRequest, Hash, Languages, Lightbulb, Mail, Megaphone, Mic, Square, Users, Video, Volume2, X, Zap } from 'lucide-react';
-import { useMemo, useRef, useState } from 'react';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { ArrowRight, ChartColumn, Check, Circle, FileText, Flame, GitPullRequest, Hash, Languages, Lightbulb, Mail, Megaphone, Mic, Sparkles, Square, Trophy, Users, Video, Volume2, X, Zap } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NotFound } from '@/components/NotFound';
 import { useLocation, useParams } from 'wouter';
@@ -8,7 +9,10 @@ import { Confetti } from '@/components/ui/Confetti';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import type { PathLesson, PathUnitDef, ShippedPath } from '@/content/schema';
 import { completeNode } from '@/data/path';
+import { db } from '@/db/db';
+import { computeLevel } from '@/learning/badges';
 import { phraseHits } from '@/learning/situations';
+import { displayedStreak, localDay } from '@/learning/streak';
 import { sounds } from '@/lib/sound';
 import { canRecognize, listen, speak, stopSpeaking } from '@/lib/speech';
 import { QuizStep, type Playable } from '@/screens/lesson/QuizStep';
@@ -263,17 +267,67 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
 
 export function Done({ xp, title, accuracy, confetti = true, replay, onContinue }: { xp: number; title: string; accuracy?: number; confetti?: boolean; replay?: boolean; onContinue: () => void }) {
   const { t } = useTranslation();
+  const profile = useLiveQuery(() => db.profile.get('me'));
+  const [countXp, setCountXp] = useState(0);
+
+  useEffect(() => {
+    if (xp <= 0) { setCountXp(0); return; }
+    let frame = 0;
+    const steps = 18;
+    const timer = window.setInterval(() => {
+      frame++;
+      setCountXp(Math.round((xp * frame) / steps));
+      if (frame >= steps) window.clearInterval(timer);
+    }, 28);
+    return () => window.clearInterval(timer);
+  }, [xp]);
+
+  const streak = profile ? displayedStreak(profile, localDay()) : 0;
+  const lvl = profile ? computeLevel(profile.xp) : null;
+  const perfect = accuracy != null && accuracy >= 100;
+
   return (
     <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-[calc(env(safe-area-inset-top)+24px)] text-center">
       {confetti && <Confetti />}
       <div className="flex flex-1 flex-col items-center justify-center">
-        <span className="grid h-28 w-28 animate-[bounce-in_.55s_var(--ease-out-quart)] place-items-center rounded-full bg-sun font-title text-4xl font-black text-sun-ink">+{xp}</span>
-        <h1 className="mt-6 text-3xl font-black">{title}</h1>
+        <div className="relative grid h-32 w-32 animate-[bounce-in_.55s_var(--ease-out-quart)] place-items-center rounded-full bg-sun text-sun-ink shadow-[0_6px_0_var(--color-gold-press)]">
+          <Trophy size={54} strokeWidth={2.4} aria-hidden />
+          <span className="absolute -bottom-3 rounded-full bg-[var(--accent)] px-3.5 py-1 font-title text-base font-black text-on-ocean shadow">+{countXp} XP</span>
+        </div>
+        {perfect && (
+          <span className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-mint px-3.5 py-1 text-xs font-black uppercase tracking-wider text-mint-ink">
+            <Sparkles size={14} aria-hidden />{t('badges.perfect')}
+          </span>
+        )}
+        <h1 className="mt-4 text-3xl font-black">{title}</h1>
         {replay && <p className="mt-2 text-ink-2">{t('path.replay')}</p>}
-        {accuracy != null && (
-          <div className="mt-7 grid w-full max-w-sm grid-cols-2 gap-2.5">
-            <div className="rounded-2xl border-2 border-gold bg-surface p-3"><p className="text-xs font-black text-sun-ink">{t('result.xp')}</p><p className="mt-1 flex items-center justify-center gap-1 text-2xl font-black text-[#C28A00]"><Zap size={20} aria-hidden />{xp}</p></div>
-            <div className="rounded-2xl border-2 border-mint-strong bg-surface p-3"><p className="text-xs font-black text-mint-ink">{t('path.accuracy')}</p><p className="mt-1 text-2xl font-black text-mint-ink">{accuracy} %</p></div>
+
+        <div className="mt-6 grid w-full max-w-sm grid-cols-3 gap-2.5">
+          <div className="rounded-2xl border-2 border-gold bg-surface p-3">
+            <p className="text-xs font-black text-sun-ink">{t('result.xp')}</p>
+            <p className="mt-1 flex items-center justify-center gap-1 text-xl font-black text-gold-ink"><Zap size={18} aria-hidden />+{countXp}</p>
+          </div>
+          {accuracy != null && (
+            <div className="rounded-2xl border-2 border-mint-strong bg-surface p-3">
+              <p className="text-xs font-black text-mint-ink">{t('path.accuracy')}</p>
+              <p className="mt-1 text-xl font-black text-mint-ink">{accuracy} %</p>
+            </div>
+          )}
+          <div className="rounded-2xl border-2 border-line bg-surface p-3">
+            <p className="text-xs font-black text-flame-ink">{t('profile.stats.streak')}</p>
+            <p className="mt-1 flex items-center justify-center gap-1 text-xl font-black text-flame-ink"><Flame size={18} aria-hidden fill="currentColor" />{streak}</p>
+          </div>
+        </div>
+
+        {lvl && (
+          <div className="mt-5 w-full max-w-sm rounded-2xl border-2 border-line bg-surface p-3.5 text-left">
+            <div className="flex items-center justify-between text-xs font-extrabold">
+              <span className="text-[var(--accent)]">{t('profile.levelTitle', { level: lvl.level })} · {t(`badges.ranks.${lvl.titleKey}`)}</span>
+              <span className="text-ink-2">{lvl.currentXp}/{lvl.nextLevelXp} XP</span>
+            </div>
+            <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-line">
+              <div className="h-full rounded-full bg-[var(--accent)] transition-[width] duration-700" style={{ width: `${Math.max(6, Math.round(lvl.progressRatio * 100))}%` }} />
+            </div>
           </div>
         )}
       </div>

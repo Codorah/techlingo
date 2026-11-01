@@ -1,0 +1,216 @@
+{
+  "questions": [
+    {
+      "id": "data-engineer-etl-vs-elt-lakehouse",
+      "status": "draft",
+      "roles": ["data-engineer"],
+      "level": "B2",
+      "topic_fr": "Architecture ETL, ELT et lakehouse",
+      "question_en": "How do you choose between ETL and ELT, and how do you organize transformations in a lakehouse?",
+      "question_fr": "Comment choisissez-vous entre ETL et ELT, et comment organisez-vous les transformations dans un lakehouse ?",
+      "hint_fr": "Expliquez pourquoi l’ELT domine sur le cloud (coût du stockage, puissance SQL), détaillez les couches bronze/argent/or, et citez les cas où l’ETL en amont reste préférable.",
+      "answer_outline_fr": [
+        "Privilégier l’ELT par défaut grâce au stockage peu coûteux et aux moteurs SQL",
+        "Conserver les données brutes en couche bronze pour pouvoir retraiter l’historique",
+        "Structurer les modèles dbt en couches argent (nettoyé) et or (datamarts métier)",
+        "Garder une étape d’ETL avant chargement pour masquer les PII ou filtrer de gros journaux"
+      ],
+      "model_answer_en": "In modern cloud data warehouses and lakehouses, I default to ELT because storage is cheap and SQL engines are very fast. We ingest raw data into object storage or bronze tables first, so we always keep the original records for reprocessing. Then we transform the data in place with dbt, moving from cleaned silver tables to aggregated gold data marts. However, I still use traditional ETL before loading when we must mask sensitive PII early, filter massive streaming logs to cut storage costs, or normalize complex nested payloads from legacy systems.",
+      "model_answer_fr": "Dans les entrepôts cloud et les lakehouses modernes, je privilégie l’ELT par défaut car le stockage coûte peu et les moteurs SQL sont très rapides. Nous ingérons d’abord les données brutes dans du stockage objet ou des tables bronze, afin de toujours conserver les enregistrements d’origine en cas de retraitement. Ensuite, nous transformons les données sur place avec dbt, en passant des tables argent nettoyées aux datamarts or agrégés. En revanche, j’utilise encore un ETL classique avant le chargement lorsqu’il faut masquer tôt des données personnelles sensibles, filtrer d’immenses journaux en continu pour réduire les coûts, ou normaliser des formats imbriqués complexes.",
+      "key_phrases": [
+        "default to ELT",
+        "ingest raw data",
+        "transform the data in place",
+        "aggregated gold data marts",
+        "mask sensitive PII early"
+      ],
+      "vocabulary_term_ids": [
+        "elt",
+        "etl",
+        "data-warehouse",
+        "data-lakehouse",
+        "raw-data",
+        "medallion-architecture",
+        "dbt",
+        "pii"
+      ]
+    },
+    {
+      "id": "data-engineer-design-idempotent-pipeline",
+      "status": "draft",
+      "roles": ["data-engineer"],
+      "level": "B2",
+      "topic_fr": "Idempotence et chargements incrémentaux",
+      "question_en": "Walk me through how you design a daily data pipeline so that rerunning or backfilling it never creates duplicates.",
+      "question_fr": "Expliquez-moi étape par étape comment vous concevez un pipeline quotidien pour qu’une relance ou un rechargement d’historique ne crée jamais de doublons.",
+      "hint_fr": "Définissez l’idempotence, parlez du paramétrage par fenêtre logique, du passage par une table de staging avec dédoublonnage, puis du remplacement de partition ou de l’upsert.",
+      "answer_outline_fr": [
+        "Définir l’objectif : une ou cinq exécutions doivent produire exactement le même état",
+        "Paramétrer le job sur la date logique d’exécution plutôt que sur l’heure système",
+        "Charger dans une table de staging et dédoublonner sur la clé primaire métier",
+        "Écraser la partition cible de façon atomique ou appliquer un MERGE en upsert"
+      ],
+      "model_answer_en": "To make a pipeline idempotent, I ensure that running the same job once or five times produces the exact same table state. First, I parameterize every run by its logical execution date rather than the current wall-clock time. Next, I load incoming records into a temporary staging table and run deduplication on the business primary key. Finally, instead of appending rows blindly, I either overwrite the target date partition atomically or execute a SQL MERGE upsert. That way, a pipeline rerun or a historical backfill never creates duplicate records downstream.",
+      "model_answer_fr": "Pour rendre un pipeline idempotent, je m’assure qu’exécuter le même traitement une ou cinq fois produit exactement le même état dans la table. D’abord, je paramètre chaque exécution avec sa date logique plutôt qu’avec l’heure courante du serveur. Ensuite, je charge les enregistrements entrants dans une table intermédiaire de staging et j’applique un dédoublonnage sur la clé primaire métier. Enfin, au lieu d’ajouter des lignes à l’aveugle, j’écrase la partition de date cible de façon atomique ou j’exécute un upsert via SQL MERGE. Ainsi, une relance du pipeline ou un backfill d’historique ne crée jamais de doublons en aval.",
+      "key_phrases": [
+        "produces the exact same table state",
+        "logical execution date",
+        "temporary staging table",
+        "overwrite the target date partition",
+        "never creates duplicate records"
+      ],
+      "vocabulary_term_ids": [
+        "data-pipeline",
+        "parameter",
+        "staging-table",
+        "deduplication",
+        "upsert",
+        "partitioning",
+        "pipeline-rerun",
+        "backfill"
+      ]
+    },
+    {
+      "id": "data-engineer-debug-silent-data-corruption",
+      "status": "draft",
+      "roles": ["data-engineer"],
+      "level": "B2",
+      "topic_fr": "Qualité des données et résolution d’incident",
+      "question_en": "Tell me about a time when a pipeline ran without errors, but the data in the warehouse was wrong.",
+      "question_fr": "Parlez-moi d’une situation où un pipeline a tourné sans erreur, mais où les données de l’entrepôt étaient fausses.",
+      "hint_fr": "Utilisez la méthode STAR : le symptôme métier, l’enquête via la traçabilité (lineage), la correction avec backfill, et les garde-fous ajoutés (tests dbt, observabilité, contrat de données).",
+      "answer_outline_fr": [
+        "Situation : un tableau de bord affichait des chiffres faux alors que le DAG Airflow était au vert",
+        "Action d’investigation : remonter la traçabilité jusqu’aux données brutes et identifier le changement en amont",
+        "Correction : corriger la règle, dédoublonner la table de staging et recharger l’historique",
+        "Prévention : ajouter des tests de qualité dbt, des alertes de volume et un contrat de données"
+      ],
+      "model_answer_en": "In my previous role, a finance dashboard showed a sudden drop in daily revenue even though our Airflow DAG was completely green. I traced the data lineage back to the raw orders table and discovered that an upstream service had started sending prices in cents instead of euros for a new payment method, alongside duplicate webhook events. I fixed the transformation logic, deduplicated the staging table on transaction ID, and ran a backfill for the affected week. To prevent a repeat, I added dbt data quality tests and volume anomaly alerts under a formal data contract.",
+      "model_answer_fr": "Dans mon poste précédent, un tableau de bord financier affichait une chute brutale du chiffre d’affaires quotidien alors que notre DAG Airflow était entièrement au vert. J’ai remonté la traçabilité des données jusqu’à la table des commandes brutes et découvert qu’un service en amont envoyait désormais les prix en centimes au lieu d’euros pour un nouveau moyen de paiement, avec des événements webhook en double. J’ai corrigé la logique de transformation, dédoublonné la table de staging sur l’identifiant de transaction et lancé un backfill sur la semaine touchée. Pour éviter que cela ne se reproduise, j’ai ajouté des tests de qualité dbt et des alertes de volume adossés à un contrat de données.",
+      "key_phrases": [
+        "showed a sudden drop",
+        "traced the data lineage",
+        "deduplicated the staging table",
+        "ran a backfill",
+        "under a formal data contract"
+      ],
+      "vocabulary_term_ids": [
+        "apache-airflow",
+        "dag",
+        "data-lineage",
+        "deduplication",
+        "backfill",
+        "dbt",
+        "data-quality",
+        "data-contract"
+      ]
+    },
+    {
+      "id": "data-engineer-batch-vs-streaming-cdc",
+      "status": "draft",
+      "roles": ["data-engineer"],
+      "level": "C1",
+      "topic_fr": "Traitement par lots, streaming et CDC",
+      "question_en": "How do you decide between scheduled batch ingestion and real-time streaming with CDC and Kafka?",
+      "question_fr": "Comment tranchez-vous entre une ingestion par lots planifiée et du streaming temps réel avec CDC et Kafka ?",
+      "hint_fr": "Partez du besoin réel de fraîcheur des données et du coût d’exploitation, puis expliquez comment fonctionnent la CDC, le temps de l’événement, les watermarks et la DLQ en streaming.",
+      "answer_outline_fr": [
+        "Partir du besoin métier de fraîcheur des données et du coût de maintenance",
+        "Choisir un chargement incrémental par lots quand une mise à jour horaire ou nocturne suffit",
+        "Utiliser la CDC vers des topics Kafka quand l’opérationnel exige moins d’une minute de latence",
+        "Gérer le temps de l’événement, les données en retard avec un watermark et les erreurs via une DLQ"
+      ],
+      "model_answer_en": "I always start from the business data freshness requirement because real-time streaming is more expensive to build and maintain than batch processing. If analysts only check a dashboard every morning, an hourly or nightly incremental load is simpler and much cheaper. When an application needs sub-minute updates, such as fraud detection or live inventory, I use change data capture on the OLTP database to publish row changes into Apache Kafka topics. In streaming, I group records by event time with a watermark to handle late-arriving data and route malformed payloads to a dead letter queue.",
+      "model_answer_fr": "Je pars toujours du besoin métier en fraîcheur de données, car le streaming temps réel est plus coûteux à construire et à maintenir que le traitement par lots. Si les analystes ne consultent un tableau de bord que le matin, un chargement incrémental horaire ou nocturne est plus simple et bien moins cher. Lorsqu’une application exige des mises à jour en moins d’une minute, comme pour la détection de fraude ou les stocks en direct, j’active la capture de changements de données sur la base OLTP afin de publier les modifications dans des topics Apache Kafka. En streaming, je regroupe les enregistrements par temps de l’événement avec un watermark pour gérer les données en retard, et j’envoie les messages mal formés vers une file de messages en échec.",
+      "key_phrases": [
+        "data freshness requirement",
+        "simpler and much cheaper",
+        "use change data capture",
+        "group records by event time",
+        "route malformed payloads"
+      ],
+      "vocabulary_term_ids": [
+        "data-freshness",
+        "batch-processing",
+        "stream-processing",
+        "incremental-load",
+        "change-data-capture",
+        "oltp",
+        "kafka",
+        "event-time",
+        "watermark",
+        "dead-letter-queue"
+      ]
+    },
+    {
+      "id": "data-engineer-dimensional-modeling-scd",
+      "status": "draft",
+      "roles": ["data-engineer"],
+      "level": "B2",
+      "topic_fr": "Modélisation décisionnelle et historisation",
+      "question_en": "How do you model tables in an analytical warehouse and handle attributes that change over time?",
+      "question_fr": "Comment modélisez-vous les tables dans un entrepôt analytique et comment gérez-vous les attributs qui évoluent dans le temps ?",
+      "hint_fr": "Présentez le schéma en étoile (table de faits centrale et tables de dimensions), puis expliquez les dimensions à évolution lente (SCD Type 2) et le rôle des clés de substitution.",
+      "answer_outline_fr": [
+        "Structurer l’entrepôt OLAP en schéma en étoile pour simplifier les requêtes analytiques",
+        "Séparer les mesures dans la table de faits et les attributs descriptifs dans les dimensions",
+        "Appliquer une dimension à évolution lente (SCD Type 2) pour garder la trace des changements",
+        "Utiliser une clé de substitution par version pour préserver l’exactitude historique des jointures"
+      ],
+      "model_answer_en": "For analytical workloads in an OLAP warehouse, I model business processes as a star schema so queries stay fast and intuitive for analysts. Quantitative events like order lines go into a central fact table, while descriptive context like customers and products lives in dimension tables. Because business attributes change over time, I handle slowly changing dimensions using Type 2 history: each time a customer changes region or plan, we close the previous row and insert a new version with a fresh surrogate key. Joining facts on that surrogate key preserves accurate historical reporting.",
+      "model_answer_fr": "Pour les usages analytiques dans un entrepôt OLAP, je modélise les processus métier en schéma en étoile afin que les requêtes restent rapides et lisibles pour les analystes. Les événements chiffrés comme les lignes de commande vont dans une table de faits centrale, tandis que le contexte descriptif comme les clients et les produits réside dans des tables de dimensions. Comme les attributs métier évoluent, je gère les dimensions à évolution lente en type 2 : chaque fois qu’un client change de région ou d’offre, nous clôturons la ligne précédente et insérons une nouvelle version dotée d’une nouvelle clé de substitution. Joindre les faits sur cette clé de substitution préserve des rapports historiques exacts.",
+      "key_phrases": [
+        "model business processes as a star schema",
+        "central fact table",
+        "slowly changing dimensions",
+        "with a fresh surrogate key",
+        "preserves accurate historical reporting"
+      ],
+      "vocabulary_term_ids": [
+        "olap",
+        "star-schema",
+        "fact-table",
+        "dimension-table",
+        "slowly-changing-dimension",
+        "surrogate-key",
+        "join"
+      ]
+    },
+    {
+      "id": "data-engineer-optimize-slow-spark-or-query",
+      "status": "draft",
+      "roles": ["data-engineer"],
+      "level": "C1",
+      "topic_fr": "Optimisation Spark et requêtes d’entrepôt",
+      "question_en": "Walk me through how you diagnose and fix a slow Spark job or an expensive warehouse query.",
+      "question_fr": "Expliquez-moi comment vous diagnostiquez et corrigez un traitement Spark trop lent ou une requête d’entrepôt coûteuse.",
+      "hint_fr": "Commencez par l’observation (plan d’exécution, interface Spark), puis distinguez les leviers côté entrepôt (partitionnement, colonnes, vue matérialisée) et côté Spark (shuffle, skew, broadcast join).",
+      "answer_outline_fr": [
+        "Lire le plan d’exécution ou l’interface Spark avant toute modification",
+        "Dans l’entrepôt : éviter le parcours complet de table par le partitionnement et le stockage en colonnes",
+        "Dans Spark : repérer les étapes bloquées par un shuffle massif ou un déséquilibre de données (skew)",
+        "Filtrer tôt, utiliser une jointure broadcast pour les petites tables ou saler les clés déséquilibrées"
+      ],
+      "model_answer_en": "I always inspect the query plan or the Spark UI before changing any code. In a SQL warehouse, the bottleneck is often a full table scan on a huge table, which I fix by partitioning the table by date, pruning unused columns in columnar storage, or pre-aggregating into a materialized view. In Apache Spark, slow stages usually come from a heavy shuffle or data skew where one partition holds most of the records. To fix that, I filter early, use a broadcast join for small dimension tables, or salt skewed keys so tasks finish evenly.",
+      "model_answer_fr": "J’examine toujours le plan d’exécution ou l’interface Spark avant de modifier le code. Dans un entrepôt SQL, le goulot d’étranglement vient souvent d’un parcours complet sur une très grande table, que je corrige en partitionnant la table par date, en ne lisant que les colonnes utiles grâce au stockage en colonnes, ou en pré-agrégeant dans une vue matérialisée. Dans Apache Spark, les étapes lentes proviennent généralement d’un shuffle lourd ou d’un déséquilibre des données où une partition concentre la majorité des lignes. Pour y remédier, je filtre au plus tôt, j’utilise une jointure broadcast pour les petites dimensions, ou je sale les clés déséquilibrées afin d’équilibrer les tâches.",
+      "key_phrases": [
+        "inspect the query plan",
+        "full table scan",
+        "partitioning the table by date",
+        "heavy shuffle or data skew",
+        "use a broadcast join"
+      ],
+      "vocabulary_term_ids": [
+        "query-plan",
+        "full-table-scan",
+        "partitioning",
+        "columnar-storage",
+        "materialized-view",
+        "spark",
+        "shuffle",
+        "data-skew"
+      ]
+    }
+  ],
+  "verbs": []
+}

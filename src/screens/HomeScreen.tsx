@@ -10,6 +10,7 @@ import { dueTermIds, type SpinStatus, spinStatus } from '@/data/progress';
 import { db } from '@/db/db';
 import { daysAway, displayedStreak, localDay } from '@/learning/streak';
 import { domainOf, generalRoleOf } from '@/lib/domains';
+import { checkDailyReminder } from '@/lib/notifications';
 import { courseRoles, useCourse } from '@/lib/useCourse';
 import { useManifest } from '@/lib/useContent';
 import { courseNodeHref } from '@/screens/course/CourseScreen';
@@ -27,9 +28,21 @@ export function HomeScreen() {
   const lessonsDone = useLiveQuery(() => db.lessonSessions.filter((l) => !!l.completedAt).toArray(), [], []);
   useEffect(() => { void spinStatus().then(setStatus); void dueTermIds().then((d) => setDue(d.length)); }, [lessonsDone.length]);
 
+  const today = localDay();
+  const studiedToday = lessonsDone.some((l) => l.completedAt && localDay(new Date(l.completedAt)) === today);
+  useEffect(() => {
+    if (!profile) return;
+    void checkDailyReminder({
+      reminderTime: profile.reminderTime,
+      studiedToday,
+      today,
+      title: t('settings.notifications.reminderTitle'),
+      body: t('settings.notifications.reminderBody')
+    });
+  }, [profile, studiedToday, today, t]);
+
   if (!profile) return null;
   const domain = domainOf(manifest, profile.primaryRole);
-  const today = localDay();
   const streak = displayedStreak(profile, today);
   const away = daysAway(profile, today);
   const activeDays = new Set(lessonsDone.map((l) => localDay(new Date(l.completedAt!))).filter((d) => (Date.parse(today) - Date.parse(d)) / 86_400_000 < 7)).size;
@@ -192,4 +205,3 @@ function CourseRow({ role, general }: { role: string; general: boolean }) {
     </Link>
   );
 }
-

@@ -1,0 +1,231 @@
+{
+  "questions": [
+    {
+      "id": "project-management-agile-vs-waterfall",
+      "status": "draft",
+      "roles": ["project-management"],
+      "level": "B1",
+      "topic_fr": "Méthodologies de projet",
+      "question_en": "How do you decide between an agile and a waterfall approach for a project?",
+      "question_fr": "Comment choisissez-vous entre une approche agile et un cycle en V pour un projet ?",
+      "hint_fr": "Comparez le niveau d’incertitude, la stabilité des exigences et le besoin de retours fréquents. Montrez que vous savez aussi combiner les deux.",
+      "answer_outline_fr": [
+        "Évaluer la clarté et la stabilité des exigences dès le départ",
+        "Choisir Scrum ou Kanban quand le produit évolue avec les retours utilisateurs",
+        "Choisir le cycle en V quand le périmètre est fixe ou très réglementé",
+        "Expliquer comment combiner un cadrage macro avec des sprints d’exécution"
+      ],
+      "model_answer_en": "I look at how stable the requirements are and how fast we need user feedback. When we build a digital product where priorities evolve, I use Scrum or Kanban so we can deliver in short sprints and adjust the backlog after each sprint review. By contrast, when the scope is strictly fixed, such as an infrastructure cutover or a regulatory compliance project, a waterfall plan with clear milestones and a Gantt chart works better. In practice, I often combine both: a high-level timeline and budget baseline for the steering committee, and two-week agile sprints for the delivery team.",
+      "model_answer_fr": "Je regarde à quel point les exigences sont stables et à quelle vitesse nous avons besoin de retours utilisateurs. Quand nous construisons un produit numérique où les priorités évoluent, j’utilise Scrum ou Kanban pour livrer en sprints courts et ajuster le backlog après chaque revue de sprint. À l’inverse, quand le périmètre est strictement figé, comme pour une bascule d’infrastructure ou un projet de conformité réglementaire, un cycle en V avec des jalons clairs et un diagramme de Gantt fonctionne mieux. En pratique, je combine souvent les deux : un calendrier macro et un budget de référence pour le comité de pilotage, et des sprints agiles de deux semaines pour l’équipe de réalisation.",
+      "key_phrases": [
+        "how stable the requirements are",
+        "deliver in short sprints",
+        "adjust the backlog",
+        "when the scope is strictly fixed",
+        "combine both"
+      ],
+      "vocabulary_term_ids": [
+        "agile",
+        "waterfall",
+        "requirement",
+        "scrum",
+        "kanban",
+        "sprint",
+        "backlog",
+        "sprint-review",
+        "scope",
+        "milestone",
+        "gantt-chart"
+      ]
+    },
+    {
+      "id": "project-management-handle-scope-creep",
+      "status": "draft",
+      "roles": ["project-management"],
+      "level": "B2",
+      "topic_fr": "Gestion du périmètre",
+      "question_en": "Walk me through how you would handle scope creep when a key stakeholder asks for extra features mid-project.",
+      "question_fr": "Expliquez-moi étape par étape comment vous géreriez la dérive du périmètre lorsqu’une partie prenante clé demande des fonctionnalités supplémentaires en cours de projet.",
+      "hint_fr": "Ne dites pas non brutalement : écoutez le besoin, chiffrez l’impact sur le planning et le budget, puis proposez des options d’arbitrage au sponsor.",
+      "answer_outline_fr": [
+        "Comprendre le besoin métier derrière la demande sans dire oui immédiatement",
+        "Évaluer l’effort avec l’équipe et vérifier l’impact sur le chemin critique",
+        "Présenter des options claires : décaler une autre tâche, repousser la date ou créer une demande de changement",
+        "Faire valider l’arbitrage par le product owner ou le sponsor et mettre à jour la baseline"
+      ],
+      "model_answer_en": "First, I listen to understand the business value behind the request instead of saying no right away. Next, I ask the team for a rough estimate in story points or person-days and check if it affects our critical path. Then I go back to the stakeholder with clear trade-offs: we can swap the new feature with a lower-priority item in the backlog, push back the deadline, or submit a formal change request if it is a fixed-price contract. Once the project sponsor or product owner makes the call, I document the decision and update our project baseline.",
+      "model_answer_fr": "D’abord, j’écoute pour comprendre la valeur métier derrière la demande au lieu de dire non tout de suite. Ensuite, je demande à l’équipe une estimation rapide en story points ou en jours-homme et je vérifie si cela touche notre chemin critique. Puis je reviens vers la partie prenante avec des compromis clairs : nous pouvons échanger la nouvelle fonctionnalité contre un élément moins prioritaire du backlog, repousser l’échéance, ou soumettre une demande de changement formelle s’il s’agit d’un contrat au forfait. Une fois que le sponsor du projet ou le product owner a tranché, je documente la décision et je mets à jour notre plan de référence.",
+      "key_phrases": [
+        "understand the business value",
+        "a rough estimate",
+        "clear trade-offs",
+        "submit a formal change request",
+        "update our project baseline"
+      ],
+      "vocabulary_term_ids": [
+        "scope-creep",
+        "stakeholder",
+        "rough-estimate",
+        "story-points",
+        "person-day",
+        "critical-path",
+        "backlog",
+        "deadline",
+        "change-request",
+        "fixed-price",
+        "project-sponsor",
+        "project-baseline"
+      ]
+    },
+    {
+      "id": "project-management-project-behind-schedule",
+      "status": "draft",
+      "roles": ["project-management"],
+      "level": "B2",
+      "topic_fr": "Retard et redressement",
+      "question_en": "Tell me about a time when a project you managed fell behind schedule. How did you get it back on track?",
+      "question_fr": "Parlez-moi d’une situation où un projet que vous pilotiez a pris du retard. Comment l’avez-vous remis sur les rails ?",
+      "hint_fr": "Utilisez la méthode STAR : la cause du retard, comment vous avez alerté tôt, le découpage du périmètre ou le déblocage, et le résultat final.",
+      "answer_outline_fr": [
+        "Situation : la dépendance ou le blocage qui a fait glisser le planning",
+        "Action immédiate : transparence sur le statut RAG et analyse du chemin critique",
+        "Plan de redressement : réduction du périmètre au MVP et levée du point bloquant",
+        "Résultat : livraison de la version principale à temps et enseignements tirés"
+      ],
+      "model_answer_en": "On a payment integration project, we fell two weeks behind schedule because an external vendor delivered their API late. As soon as I saw the slip on our critical path, I moved our RAG status to amber and flagged the issue to the steering committee. I organized a quick workshop with the product owner and tech lead to split the scope: we kept the core card payment for the initial go-live and moved recurring billing to the following sprint. Our developers also used a mock API as a mitigation plan. Thanks to that trade-off, we hit our launch milestone on time.",
+      "model_answer_fr": "Sur un projet d’intégration de paiement, nous avons pris deux semaines de retard sur le planning parce qu’un prestataire externe a livré son API en retard. Dès que j’ai vu le glissement sur notre chemin critique, j’ai passé notre statut RAG à l’orange et j’ai signalé le problème au comité de pilotage. J’ai organisé un atelier rapide avec le product owner et le tech lead pour découper le périmètre : nous avons gardé le paiement par carte de base pour la mise en ligne initiale et décalé le paiement récurrent au sprint suivant. Nos développeurs ont aussi utilisé une API simulée comme plan d’atténuation. Grâce à ce compromis, nous avons tenu notre jalon de lancement à temps.",
+      "key_phrases": [
+        "fell two weeks behind schedule",
+        "on our critical path",
+        "moved our RAG status to amber",
+        "split the scope",
+        "hit our launch milestone"
+      ],
+      "vocabulary_term_ids": [
+        "behind-schedule",
+        "on-track",
+        "slip",
+        "critical-path",
+        "rag-status",
+        "steering-committee",
+        "product-owner",
+        "scope",
+        "mitigation-plan",
+        "milestone"
+      ]
+    },
+    {
+      "id": "project-management-manage-risks-and-dependencies",
+      "status": "draft",
+      "roles": ["project-management"],
+      "level": "B2",
+      "topic_fr": "Risques et dépendances",
+      "question_en": "What tools and methods do you use to track dependencies and mitigate risks across multiple teams?",
+      "question_fr": "Quels outils et quelles méthodes utilisez-vous pour suivre les dépendances et atténuer les risques entre plusieurs équipes ?",
+      "hint_fr": "Parlez du registre des risques, du journal des problèmes, de la matrice RACI et des points de synchronisation inter-équipes.",
+      "answer_outline_fr": [
+        "Identifier les dépendances dès le découpage en chantiers (WBS et RACI)",
+        "Tenir un registre des risques vivant avec probabilité, impact, responsable et plan d’atténuation",
+        "Basculer un risque avéré dans le journal des problèmes et escalader si nécessaire",
+        "Animer un point régulier entre les référents de chaque chantier"
+      ],
+      "model_answer_en": "At the start of a multi-team project, I map all workstreams in a work breakdown structure and agree on a RACI matrix so every deliverable has one clear owner. We log cross-team dependencies in our planning tool and review them weekly. For risks, I maintain a risk register where each item is scored by likelihood and impact, with a named owner and a concrete mitigation plan. When a risk turns into a real blocker, I move it to the issue log and escalate it early if the teams cannot resolve it themselves. This keeps surprises to a minimum.",
+      "model_answer_fr": "Au début d’un projet multi-équipes, je cartographie tous les chantiers dans un organigramme des tâches et je fais valider une matrice RACI pour que chaque livrable ait un responsable unique et clair. Nous notons les dépendances inter-équipes dans notre outil de planification et nous les revoyons chaque semaine. Pour les risques, je tiens un registre des risques où chaque élément est évalué selon sa probabilité et son impact, avec un responsable nommé et un plan d’atténuation concret. Quand un risque devient un vrai point bloquant, je le bascule dans le journal des problèmes et je l’escalade tôt si les équipes ne peuvent pas le résoudre seules. Cela réduit les mauvaises surprises au minimum.",
+      "key_phrases": [
+        "map all workstreams",
+        "every deliverable has one clear owner",
+        "maintain a risk register",
+        "a concrete mitigation plan",
+        "move it to the issue log"
+      ],
+      "vocabulary_term_ids": [
+        "dependency-project",
+        "workstream",
+        "work-breakdown-structure",
+        "raci-matrix",
+        "deliverable",
+        "risk-register",
+        "mitigation-plan",
+        "blocker",
+        "issue-log",
+        "escalate"
+      ]
+    },
+    {
+      "id": "project-management-facilitate-retrospective",
+      "status": "draft",
+      "roles": ["project-management"],
+      "level": "B1",
+      "topic_fr": "Animation Scrum et amélioration continue",
+      "question_en": "How do you run sprint retrospectives so that they lead to real improvements instead of just complaints?",
+      "question_fr": "Comment animez-vous les rétrospectives de sprint pour qu’elles débouchent sur de vraies améliorations plutôt que sur de simples plaintes ?",
+      "hint_fr": "Montrez votre posture de Scrum master : cadre bienveillant, timeboxing, revue des actions précédentes, et sélection de 2 ou 3 actions concrètes avec un responsable.",
+      "answer_outline_fr": [
+        "Ouvrir la séance en relisant les actions de la rétrospective précédente",
+        "Créer un cadre sans reproches et limiter le temps de parole (timebox)",
+        "Faire voter l’équipe sur un ou deux points de friction prioritaires",
+        "Transformer les idées en actions concrètes avec un responsable et les suivre au sprint suivant"
+      ],
+      "model_answer_en": "I always start a retrospective by reviewing the action items from the previous sprint: when people see that their ideas are actually implemented, they stay engaged. Next, I set a blameless tone and timebox the brainstorming phase so we don’t spend the whole hour venting. Once we group the main pain points, the team votes on the top two topics to solve. For each one, we define a small, testable action item with a single owner, and I put it directly into the next sprint backlog so it gets done.",
+      "model_answer_fr": "Je commence toujours une rétrospective en passant en revue les actions du sprint précédent : quand les membres de l’équipe voient que leurs idées sont réellement mises en œuvre, ils restent impliqués. Ensuite, je pose un cadre sans reproches et je limite dans le temps la phase de réflexion pour éviter de passer toute l’heure à se plaindre. Une fois les principaux points de friction regroupés, l’équipe vote pour les deux sujets prioritaires à traiter. Pour chacun, nous définissons une petite action vérifiable avec un seul responsable, et je l’intègre directement au backlog du sprint suivant pour qu’elle soit réalisée.",
+      "key_phrases": [
+        "reviewing the action items",
+        "set a blameless tone",
+        "timebox the brainstorming phase",
+        "votes on the top two topics",
+        "with a single owner"
+      ],
+      "vocabulary_term_ids": [
+        "retrospective",
+        "action-item",
+        "sprint",
+        "timebox",
+        "pain-point",
+        "ownership",
+        "backlog"
+      ]
+    },
+    {
+      "id": "project-management-executive-reporting",
+      "status": "draft",
+      "roles": ["project-management"],
+      "level": "C1",
+      "topic_fr": "Gouvernance et comité de pilotage",
+      "question_en": "How do you communicate project status, budget risks and trade-offs to a steering committee?",
+      "question_fr": "Comment communiquez-vous l’avancement du projet, les risques budgétaires et les arbitrages à un comité de pilotage ?",
+      "hint_fr": "Les dirigeants veulent la conclusion d’abord : statut RAG, écart par rapport à la baseline, consommation de la réserve, et options chiffrées pour décider.",
+      "answer_outline_fr": [
+        "Aller droit au but avec le statut RAG, l’avancement des jalons et l’état du budget",
+        "Expliquer tout écart par rapport à la baseline sans noyer le comité dans les détails techniques",
+        "Présenter les risques majeurs (dépassement de coût, délai) avec leur plan d’atténuation",
+        "Demander une décision claire entre deux ou trois options chiffrées"
+      ],
+      "model_answer_en": "With a steering committee, I always lead with the headline: the current RAG status, progress against our main milestones, and how we stand against the project baseline. Executives don’t need ticket-level details; they need to know if our OKRs, timeline or budget are at risk. If we face a potential cost overrun or a schedule slip, I explain the business impact, how much contingency reserve we have left, and our mitigation plan. Finally, I never bring a problem without options: I present two or three clear trade-offs and ask the project sponsor for a decision before we wrap up.",
+      "model_answer_fr": "Avec un comité de pilotage, je commence toujours par l’essentiel : le statut RAG actuel, l’avancement par rapport à nos jalons principaux, et notre situation par rapport au plan de référence. Les dirigeants n’ont pas besoin du détail des tickets ; ils doivent savoir si nos OKR, notre calendrier ou notre budget sont à risque. Si nous faisons face à un dépassement de budget potentiel ou à un glissement de planning, j’explique l’impact métier, ce qu’il nous reste de réserve pour aléas et notre plan d’atténuation. Enfin, je n’apporte jamais un problème sans options : je présente deux ou trois compromis clairs et je demande une décision au sponsor du projet avant de conclure.",
+      "key_phrases": [
+        "lead with the headline",
+        "against the project baseline",
+        "a potential cost overrun",
+        "how much contingency reserve we have left",
+        "ask the project sponsor for a decision"
+      ],
+      "vocabulary_term_ids": [
+        "steering-committee",
+        "rag-status",
+        "milestone",
+        "project-baseline",
+        "okr",
+        "timeline",
+        "project-budget",
+        "at-risk",
+        "cost-overrun",
+        "slip",
+        "contingency-reserve",
+        "mitigation-plan",
+        "project-sponsor",
+        "wrap-up"
+      ]
+    }
+  ],
+  "verbs": []
+}

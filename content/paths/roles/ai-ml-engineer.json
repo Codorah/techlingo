@@ -1,0 +1,1760 @@
+{
+  "role": "ai-ml-engineer",
+  "status": "draft",
+  "title_fr": "L’anglais de ta semaine en IA et Machine Learning",
+  "units": [
+    {
+      "id": "ai-ml-engineer-framing-and-data",
+      "title_fr": "Cadrer le projet et préparer les données",
+      "title_en": "Frame the ML problem and prepare the dataset",
+      "situation_fr": "En réunion avec le chef de produit, tu définis si le besoin relève du machine learning et tu planifies la préparation du jeu de données.",
+      "guide": {
+        "intro_fr": "Dans un projet de machine learning, la première étape consiste à cadrer le problème : s'agit-il d'un apprentissage supervisé avec des étiquettes (labels) ou d'un clustering non supervisé ? On identifie les variables explicatives (features), la cible (target ou label) et la métrique de succès. On prépare ensuite le jeu de données (dataset), qu'on divise rigoureusement entre ensemble d'entraînement (training set), ensemble de validation et ensemble de test (test set) pour éviter toute fuite de données (data leakage). Les verbes clés : to label, to clean, to split, to extract, to predict.",
+        "key_phrases": [
+          {
+            "en": "What is our target variable for this model?",
+            "fr": "Quelle est notre variable cible pour ce modèle ?"
+          },
+          {
+            "en": "We need to split the dataset into training and test sets.",
+            "fr": "Nous devons diviser le jeu de données en ensembles d'entraînement et de test."
+          },
+          {
+            "en": "Missing values in these features could bias the predictions.",
+            "fr": "Des valeurs manquantes dans ces variables pourraient biaiser les prédictions."
+          },
+          {
+            "en": "Is this a supervised classification or a regression task?",
+            "fr": "Est-ce une classification supervisée ou une régression ?"
+          },
+          {
+            "en": "Let's make sure there is no data leakage before training.",
+            "fr": "Assurons-nous qu'il n'y a aucune fuite de données avant l'entraînement."
+          },
+          {
+            "en": "We need high quality ground truth to evaluate properly.",
+            "fr": "Il nous faut une vérité terrain de haute qualité pour bien évaluer."
+          }
+        ],
+        "tip_fr": "Attention au faux ami « feature » : en développement web c'est une fonctionnalité produit, mais en machine learning c'est une variable prédictive (une caractéristique mathématique de la donnée). Ne dis pas « we code features », mais « we engineer features »."
+      },
+      "lessons": [
+        {
+          "id": "ai-ml-engineer-define-task-and-labels",
+          "title_fr": "Définir la tâche et les étiquettes",
+          "term_ids": [
+            "supervised-learning",
+            "label",
+            "classification",
+            "regression"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "Sarah, the product team wants us to predict churn before users cancel.",
+              "text_fr": "Sarah, l'équipe produit veut qu'on prédise l'attrition avant que les utilisateurs n'annulent."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "That sounds like a classic supervised learning task. Do we have historical labels?",
+              "text_fr": "Ça ressemble à une tâche classique d'apprentissage supervisé. Avons-nous des étiquettes historiques ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, we know who canceled over the past twelve months. Should we frame it as classification?",
+              "text_fr": "Oui, nous savons qui a résilié ces douze derniers mois. Devrions-nous formuler cela comme une classification ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "A binary classification will give us a risk probability, which is much better than a regression on contract duration.",
+              "text_fr": "Une classification binaire nous donnera une probabilité de risque, ce qui est bien mieux qu'une régression sur la durée du contrat."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Agreed. Let's define the positive label as users who canceled within thirty days.",
+              "text_fr": "D'accord. Définissons l'étiquette positive comme les utilisateurs ayant résilié sous trente jours."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Sarah propose-t-elle « supervised learning » ?",
+              "choices": [
+                "Parce qu'on dispose d'exemples passés avec le résultat déjà connu (label)",
+                "Parce que l'algorithme doit apprendre sans aucune supervision humaine",
+                "Parce que le modèle n'a pas besoin de données d'entraînement"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'apprentissage supervisé (supervised learning) apprend à partir d'exemples où la réponse attendue (le label) est fournie."
+            },
+            {
+              "prompt_fr": "Quelle est la différence fondamentale entre « classification » et « regression » ?",
+              "choices": [
+                "La classification prédit une catégorie discrète tandis que la régression prédit une valeur numérique continue",
+                "La classification sert uniquement aux images et la régression aux textes",
+                "La régression est toujours plus rapide que la classification"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En classification, la sortie est une catégorie (ex: churn ou non-churn) ; en régression, la sortie est un nombre continu (ex: chiffre d'affaires, durée)."
+            },
+            {
+              "prompt_fr": "Comment traduire en anglais professionnel « variable cible ou étiquette » ?",
+              "choices": [
+                "Target or label",
+                "Pointer or sign",
+                "Mark or tagger"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En machine learning, la valeur que l'on cherche à prédire s'appelle « target » ou « label »."
+            },
+            {
+              "prompt_fr": "Complète : « The model will output a probability for the positive ___ . »",
+              "choices": [
+                "label",
+                "ticket",
+                "button"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Dans une classification binaire, on prédit la probabilité associée au label positif (positive label)."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour annoncer au product manager que le problème est cadré en classification binaire, mentionne l'utilisation d'apprentissage supervisé et demande la confirmation de la fenêtre de prédiction.",
+            "context_en": "Slack channel #ml-churn-project",
+            "model_answer_en": "Hi team, we decided to frame the churn problem as a supervised learning binary classification task. This will allow the model to output a clear churn probability for each active subscriber. Could you confirm whether a thirty-day prediction window fits your retention campaigns?",
+            "model_answer_fr": "Bonjour l'équipe, nous avons décidé de formuler le problème d'attrition comme une tâche de classification binaire en apprentissage supervisé. Cela permettra au modèle de produire une probabilité d'attrition claire pour chaque abonné actif. Pourriez-vous confirmer si une fenêtre de prédiction de trente jours convient à vos campagnes de rétention ?",
+            "key_phrases": [
+              "supervised learning",
+              "binary classification",
+              "churn probability"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-dataset-and-features",
+          "title_fr": "Construire le jeu de données et extraire les variables",
+          "term_ids": [
+            "dataset",
+            "feature",
+            "training-set",
+            "test-set"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "How many samples do we have in our cleaned dataset?",
+              "text_fr": "Combien d'échantillons avons-nous dans notre jeu de données nettoyé ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Around fifty thousand rows. I extracted thirty behavioral features from event logs.",
+              "text_fr": "Environ cinquante mille lignes. J'ai extrait trente variables comportementales depuis les journaux d'événements."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Great. Did you perform a stratified split between the training set and the test set?",
+              "text_fr": "Super. As-tu effectué un découpage stratifié entre l'ensemble d'entraînement et l'ensemble de test ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Yes, eighty percent for training and twenty percent held out as the test set to avoid any data leakage.",
+              "text_fr": "Oui, quatre-vingts pour cent pour l'entraînement et vingt pour cent conservés comme ensemble de test pour éviter toute fuite."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Perfect. We must never touch the test set during feature engineering.",
+              "text_fr": "Parfait. Nous ne devons jamais toucher à l'ensemble de test pendant l'ingénierie des variables."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que désigne une « feature » dans ce dialogue ?",
+              "choices": [
+                "Une fonctionnalité logicielle livrée sur l'application",
+                "Une variable d'entrée mathématique utilisée par l'algorithme pour prédire",
+                "Un bogue détecté dans le pipeline"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Dans le vocabulaire du ML, une feature est une propriété mesurable, une colonne d'entrée servant à la prédiction."
+            },
+            {
+              "prompt_fr": "Pourquoi Lucía conserve-t-elle un « test set » séparé ?",
+              "choices": [
+                "Pour stocker les données corrompues",
+                "Pour évaluer impartialement le modèle sur des données qu'il n'a jamais vues",
+                "Pour accélérer les calculs de la carte graphique"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'ensemble de test sert exclusivement à mesurer la performance finale sur des données inédites, sans biais."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous devons extraire des variables pertinentes » ?",
+              "choices": [
+                "We must extract relevant features.",
+                "We must design relevant functions.",
+                "We should take out good qualities."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Extract features » ou « engineer features » est la formulation technique standard."
+            },
+            {
+              "prompt_fr": "Complète : « Never use the ___ set to train your weights. »",
+              "choices": [
+                "test",
+                "source",
+                "main"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le test set ne doit jamais servir à l'entraînement, sous peine de surapprentissage indétectable."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Explique à l'équipe data (3 phrases) comment le jeu de données a été découpé, le nombre de features créées et pourquoi le test set reste hermétique.",
+            "model_answer_en": "We compiled a clean dataset containing fifty thousand user records and thirty engineered features. We split the data into an eighty percent training set and a twenty percent test set. The test set remains strictly isolated until final validation to prevent any data leakage.",
+            "model_answer_fr": "Nous avons compilé un jeu de données propre contenant cinquante mille enregistrements utilisateurs et trente variables calculées. Nous avons divisé les données en un ensemble d'entraînement de quatre-vingts pour cent et un ensemble de test de vingt pour cent. L'ensemble de test reste strictement isolé jusqu'à la validation finale pour éviter toute fuite de données.",
+            "key_phrases": [
+              "clean dataset",
+              "training set",
+              "prevent any data leakage"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-unsupervised-and-clustering",
+          "title_fr": "Explorer avec l'apprentissage non supervisé",
+          "term_ids": [
+            "unsupervised-learning",
+            "machine-learning",
+            "dataset",
+            "feature"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "Before building the predictor, should we explore unsupervised learning on user behaviors?",
+              "text_fr": "Avant de construire le prédicteur, devrions-nous explorer l'apprentissage non supervisé sur les comportements ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Good idea. Running clustering might reveal natural segments we didn't know existed.",
+              "text_fr": "Bonne idée. Lancer un partitionnement pourrait révéler des segments naturels dont nous ignorions l'existence."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Which features should we include in the clustering algorithm?",
+              "text_fr": "Quelles variables devrions-nous inclure dans l'algorithme de partitionnement ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Session frequency, time spent in app, and export actions. Then we can inspect the cluster centroids.",
+              "text_fr": "La fréquence des sessions, le temps passé et les actions d'export. Ensuite nous inspecterons les centroïdes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la caractéristique principale d'un algorithme « unsupervised » ?",
+              "choices": [
+                "Il nécessite deux fois plus de serveurs",
+                "Il apprend des structures cachées sans labels préexistants",
+                "Il s'exécute uniquement la nuit sans ingénieur"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'apprentissage non supervisé (unsupervised learning) découvre des régularités dans les données sans étiquettes cibles."
+            },
+            {
+              "prompt_fr": "Que signifie « clustering » dans ce contexte ?",
+              "choices": [
+                "Le regroupement automatique d'éléments similaires en grappes",
+                "Le redémarrage en série d'une flotte de serveurs",
+                "La suppression des doublons dans une base SQL"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le clustering regroupe les données non étiquetées en sous-groupes (clusters) présentant des caractéristiques proches."
+            },
+            {
+              "prompt_fr": "Comment dire « Les centroïdes de chaque cluster » ?",
+              "choices": [
+                "The centroids of each cluster",
+                "The center points of every grouping",
+                "The median dots of segments"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le mot technique est « centroid » (pluriel centroids), point central représentatif d'un cluster."
+            },
+            {
+              "prompt_fr": "Complète : « We rely on ___ learning to detect anomalous activity without manual tags. »",
+              "choices": [
+                "unsupervised",
+                "overfitted",
+                "scripted"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'apprentissage non supervisé est idéal pour la détection d'anomalies sans annotations manuelles."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige une conclusion de rapport d'exploration (3 phrases) indiquant que l'analyse non supervisée a identifié 3 clusters d'utilisateurs distincts et suggère d'utiliser ces clusters comme features.",
+            "model_answer_en": "Our unsupervised learning exploration identified three distinct user behavioral clusters within the dataset. Highly engaged power users form a separate group from low-frequency visitors. We recommend incorporating these cluster memberships as features into our downstream prediction models.",
+            "model_answer_fr": "Notre exploration en apprentissage non supervisé a identifié trois groupes comportementaux distincts dans le jeu de données. Les utilisateurs intensifs forment un groupe séparé des visiteurs occasionnels. Nous recommandons d'intégrer ces appartenances de clusters comme variables dans nos modèles prédictifs avals.",
+            "key_phrases": [
+              "unsupervised learning exploration",
+              "distinct user behavioral clusters",
+              "as features into our downstream"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-training-and-tuning",
+      "title_fr": "Entraîner le modèle et ajuster les hyperparamètres",
+      "title_en": "Train the model and prevent overfitting",
+      "situation_fr": "Tu lances l'entraînement de modèles de référence (baselines), surveilles la convergence des fonctions de perte et traques le surapprentissage.",
+      "guide": {
+        "intro_fr": "L'entraînement d'un modèle (model training) consiste à optimiser ses poids pour minimiser une fonction de perte (loss function). Le risque majeur est le surapprentissage (overfitting) : le modèle mémorise le jeu d'entraînement mais échoue à généraliser sur des données inconnues. À l'inverse, le sous-apprentissage (underfitting) indique une capacité insuffisante du modèle. On procède à un réglage fin des hyperparamètres (hyperparameters) avec une validation croisée (cross-validation) et des techniques de régularisation. Les verbes clés : to train, to converge, to overfit, to tune, to regularize.",
+        "key_phrases": [
+          {
+            "en": "The validation loss started to diverge while training loss kept decreasing.",
+            "fr": "La perte de validation a commencé à diverger tandis que la perte d'entraînement continuait de baisser."
+          },
+          {
+            "en": "We are clearly seeing signs of overfitting on this epoch.",
+            "fr": "Nous observons clairement des signes de surapprentissage sur cette époque."
+          },
+          {
+            "en": "Let's tune the hyperparameters using Bayesian optimization.",
+            "fr": "Ajustons les hyperparamètres avec une optimisation bayésienne."
+          },
+          {
+            "en": "Adding regularization helped bridge the generalization gap.",
+            "fr": "L'ajout de régularisation a permis de réduire l'écart de généralisation."
+          },
+          {
+            "en": "The linear baseline is underfitting the complex interaction patterns.",
+            "fr": "Le modèle de référence linéaire sous-apprend les motifs d'interaction complexes."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « parameters » et « hyperparameters ». Les parameters (les poids du modèle) sont appris automatiquement pendant l'entraînement. Les hyperparameters (taux d'apprentissage, profondeur des arbres, taille des lots) sont choisis par l'ingénieur avant de lancer l'apprentissage."
+      },
+      "lessons": [
+        {
+          "id": "ai-ml-engineer-diagnose-overfitting",
+          "title_fr": "Diagnostiquer le surapprentissage",
+          "term_ids": [
+            "training",
+            "overfitting",
+            "underfitting",
+            "model"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Lucía, take a look at these learning curves. The training loss is near zero.",
+              "text_fr": "Lucía, regarde ces courbes d'apprentissage. La perte d'entraînement est proche de zéro."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Yes, but the validation loss is climbing rapidly. We have severe overfitting.",
+              "text_fr": "Oui, mais la perte de validation grimpe rapidement. Nous avons un surapprentissage sévère."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "The model is simply memorizing the training samples instead of learning general patterns.",
+              "text_fr": "Le modèle mémorise simplement les exemples d'entraînement au lieu d'apprendre des motifs généraux."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Let's introduce early stopping and increase dropout to force the model to generalize.",
+              "text_fr": "Introduisons un arrêt anticipé et augmentons le dropout pour forcer le modèle à généraliser."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment reconnaît-on l'overfitting sur une courbe d'apprentissage ?",
+              "choices": [
+                "La perte d'entraînement continue de baisser alors que la perte de validation augmente",
+                "Les deux courbes de perte restent parfaitement à zéro",
+                "Le modèle s'arrête d'apprendre dès la première époque"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'overfitting se traduit par un écart croissant : le modèle performe sur le train mais se dégrade sur la validation."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que l'« underfitting » ?",
+              "choices": [
+                "Une situation où le modèle est trop complexe et trop coûteux",
+                "Une situation où le modèle est trop simple et ne parvient pas à capturer la structure des données",
+                "Une erreur liée à un manque d'espace disque"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'underfitting arrive quand le modèle a une capacité trop faible pour apprendre le signal même sur le jeu d'entraînement."
+            },
+            {
+              "prompt_fr": "Que signifie « early stopping » en pratique ?",
+              "choices": [
+                "Couper l'ordinateur en fin de journée",
+                "Interrompre l'entraînement dès que la métrique de validation cesse de s'améliorer",
+                "Arrêter le prétraitement des données après 100 lignes"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Early stopping est une régularisation qui stoppe l'apprentissage quand la validation commence à régresser."
+            },
+            {
+              "prompt_fr": "Complète : « The gap between training and validation error signals ___. »",
+              "choices": [
+                "overfitting",
+                "compiling",
+                "labeling"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'écart entre l'erreur train et validation est le symptôme direct de l'overfitting."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Dans une description de Pull Request (3 phrases), explique les modifications apportées pour combattre le surapprentissage (ajout de régularisation, early stopping) et le résultat obtenu sur la validation.",
+            "context_en": "PR on ml-training repository: fix/overfitting-regularization",
+            "model_answer_en": "This PR introduces L2 regularization and an early stopping callback to tackle model overfitting. Training now halts automatically when validation loss stagnates for five consecutive epochs. As a result, the generalization gap narrowed by forty percent on the test split.",
+            "model_answer_fr": "Cette PR introduit une régularisation L2 et un rappel d'arrêt anticipé pour lutter contre le surapprentissage du modèle. L'entraînement s'interrompt désormais automatiquement lorsque la perte de validation stagne pendant cinq époques consécutives. En conséquence, l'écart de généralisation s'est réduit de quarante pour cent sur le jeu de test.",
+            "key_phrases": [
+              "tackle model overfitting",
+              "early stopping callback",
+              "generalization gap narrowed"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-tune-hyperparameters",
+          "title_fr": "Optimiser les hyperparamètres",
+          "term_ids": [
+            "training",
+            "model",
+            "feature",
+            "classification"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "Which search strategy are you using to find the optimal hyperparameters?",
+              "text_fr": "Quelle stratégie de recherche utilises-tu pour trouver les hyperparamètres optimaux ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "I set up a random search with five-fold cross-validation across learning rates and tree depths.",
+              "text_fr": "J'ai configuré une recherche aléatoire avec validation croisée en 5 blocs sur les taux d'apprentissage et profondeurs d'arbres."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Did you notice any sensitivity to the learning rate parameter?",
+              "text_fr": "As-tu remarqué une sensibilité particulière au paramètre de taux d'apprentissage ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, values above zero point one cause the optimizer to oscillate and diverge.",
+              "text_fr": "Oui, les valeurs au-dessus de 0,1 provoquent des oscillations et font diverger l'optimiseur."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi utiliser une validation croisée (cross-validation) ?",
+              "choices": [
+                "Pour s'assurer que la performance est stable et ne dépend pas d'un découpage chanceux des données",
+                "Pour envoyer automatiquement les résultats au client",
+                "Pour réduire par deux le temps de calcul"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La validation croisée k-fold évalue le modèle sur plusieurs sous-ensembles pour garantir la robustesse des métriques."
+            },
+            {
+              "prompt_fr": "Comment qualifier le « learning rate » (taux d'apprentissage) ?",
+              "choices": [
+                "Un paramètre interne calculé par rétropropagation",
+                "Un hyperparamètre qui contrôle l'amplitude des mises à jour des poids à chaque itération",
+                "Le pourcentage d'étiquettes manquantes dans le dataset"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le learning rate est un hyperparamètre fondamental dictant la taille des pas dans la descente de gradient."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous avons optimisé la profondeur maximale de l'arbre » ?",
+              "choices": [
+                "We tuned the maximum tree depth.",
+                "We heightened the tree roof.",
+                "We cleaned the biggest branch."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On dit « tune hyperparameters » et « maximum tree depth »."
+            },
+            {
+              "prompt_fr": "Complète : « Running five-fold cross-___ ensures reliable performance estimates. »",
+              "choices": [
+                "validation",
+                "overfitting",
+                "prediction"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La validation croisée (cross-validation) est la méthode standard de validation empirique."
+            }
+          ],
+          "production": {
+            "channel": "standup",
+            "prompt_fr": "Fais ton point au standup (3 phrases) : tu as terminé l'exploration d'hyperparamètres, tu as identifié la configuration optimale et tu vas lancer l'entraînement final sur GPU.",
+            "model_answer_en": "Yesterday I completed the hyperparameter tuning job using five-fold cross-validation. The optimal configuration combines a smaller learning rate with moderate depth to balance bias and variance. Today I am launching the final model training run on the GPU cluster.",
+            "model_answer_fr": "Hier, j'ai terminé l'ajustement des hyperparamètres par validation croisée à cinq plis. La configuration optimale combine un taux d'apprentissage plus faible avec une profondeur modérée pour équilibrer biais et variance. Aujourd'hui, je lance l'entraînement final du modèle sur le cluster GPU.",
+            "key_phrases": [
+              "hyperparameter tuning job",
+              "balance bias and variance",
+              "final model training run"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-gradient-and-loss",
+          "title_fr": "Surveiller le gradient et la fonction de perte",
+          "term_ids": [
+            "training",
+            "model",
+            "machine-learning"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Tomasz, the deep network stopped making progress after the tenth epoch.",
+              "text_fr": "Tomasz, le réseau profond ne progresse plus après la dixième époque."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Are the gradients vanishing or exploding? Let's check TensorBoard.",
+              "text_fr": "Les gradients s'annulent-ils ou explosent-ils ? Vérifions TensorBoard."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Gradient norms in the first layers are practically zero. We have vanishing gradients.",
+              "text_fr": "Les normes des gradients dans les premières couches sont presque nulles. Les gradients s'évanouissent."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Switching to residual connections and batch normalization should fix this bottleneck.",
+              "text_fr": "Passer à des connexions résiduelles et à la normalisation par lots devrait résoudre ce goulot d'étranglement."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie le problème du « vanishing gradient » ?",
+              "choices": [
+                "Les gradients deviennent infinitésimaux dans les couches profondes, bloquant la mise à jour des poids",
+                "La carte graphique a planté par manque de mémoire VRAM",
+                "Les données ont été écrasées par erreur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le problème d'évanouissement du gradient (vanishing gradient) empêche l'apprentissage efficace des couches initiales."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'une « epoch » (époque) en machine learning ?",
+              "choices": [
+                "Une période de l'histoire de l'intelligence artificielle",
+                "Un passage complet de l'ensemble du jeu d'entraînement à travers le modèle",
+                "Une seconde de calcul sur processeur"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une époque correspond à une itération complète sur l'ensemble des données d'entraînement."
+            },
+            {
+              "prompt_fr": "Comment dire « La fonction de perte a convergé » ?",
+              "choices": [
+                "The loss function converged.",
+                "The loss recipe stopped moving.",
+                "The waste calculation is complete."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'expression consacrée est « the loss function converged »."
+            },
+            {
+              "prompt_fr": "Complète : « Residual connections help gradients ___ back to initial layers. »",
+              "choices": [
+                "flow",
+                "crash",
+                "delete"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les connexions résiduelles permettent aux gradients de se propager (to flow) sans s'atténuer."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour informer l'équipe d'ingénierie que l'entraînement a été corrigé après avoir résolu le problème de gradient, avec une convergence stable.",
+            "context_en": "#ai-research channel",
+            "model_answer_en": "Quick update on the deep vision model training: we resolved the vanishing gradient issue by adding skip connections. The loss function is now converging steadily without numerical instability. We expect the full benchmark results by tomorrow morning.",
+            "model_answer_fr": "Point rapide sur l'entraînement du modèle de vision profonde : nous avons résolu le problème d'évanouissement du gradient en ajoutant des connexions résiduelles. La fonction de perte converge désormais de façon stable sans instabilité numérique. Nous attendons les résultats complets des benchmarks pour demain matin.",
+            "key_phrases": [
+              "vanishing gradient issue",
+              "loss function is now converging",
+              "numerical instability"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-evaluation-and-metrics",
+      "title_fr": "Évaluer et expliquer les métriques de performance",
+      "title_en": "Evaluate the model and explain performance metrics",
+      "situation_fr": "Tu présentes l'évaluation chiffrée de ton modèle aux équipes métiers en arbitrant entre faux positifs et faux négatifs.",
+      "guide": {
+        "intro_fr": "L'exactitude brute (accuracy) est souvent trompeuse, en particulier sur des jeux de données déséquilibrés (imbalanced datasets). En classification, on s'appuie sur la matrice de confusion (confusion matrix) pour mesurer la précision (precision : parmi nos prédictions positives, combien sont réelles ?) et le rappel (recall : parmi tous les vrais cas positifs, combien avons-nous détectés ?). Le score F1 (F1-score) combine les deux, tandis que l'AUC-ROC mesure la capacité discriminante à différents seuils (thresholds). Les verbes clés : to evaluate, to trade off, to detect, to penalize, to calibrate.",
+        "key_phrases": [
+          {
+            "en": "Accuracy is misleading because the dataset is highly imbalanced.",
+            "fr": "L'exactitude est trompeuse car le jeu de données est très déséquilibré."
+          },
+          {
+            "en": "We need to optimize for recall to avoid missing fraudulent transactions.",
+            "fr": "Nous devons optimiser le rappel pour éviter de manquer des transactions frauduleuses."
+          },
+          {
+            "en": "What is the trade-off between precision and recall at this threshold?",
+            "fr": "Quel est le compromis entre précision et rappel à ce seuil ?"
+          },
+          {
+            "en": "The confusion matrix reveals too many false positives.",
+            "fr": "La matrice de confusion révèle trop de faux positifs."
+          },
+          {
+            "en": "The area under the ROC curve reached zero point ninety-two.",
+            "fr": "L'aire sous la courbe ROC a atteint 0,92."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « false positive » (fausse alerte : le modèle prédit positif à tort) et « false negative » (cas manqué : le modèle prédit négatif alors que c'était positif). En détection de fraude ou médicale, un faux négatif est souvent bien plus grave qu'un faux positif."
+      },
+      "lessons": [
+        {
+          "id": "ai-ml-engineer-precision-vs-recall",
+          "title_fr": "Arbitrer entre précision et rappel",
+          "term_ids": [
+            "accuracy",
+            "classification",
+            "model",
+            "test-set"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "The overall accuracy is ninety-six percent, but our business sponsor is unhappy.",
+              "text_fr": "L'exactitude globale est de quatre-vingt-seize pour cent, mais notre responsable métier n'est pas satisfait."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Because only two percent of transactions are fraudulent. A naive dummy model would get ninety-eight percent.",
+              "text_fr": "Parce que seulement deux pour cent des transactions sont frauduleuses. Un modèle naïf obtiendrait quatre-vingt-dix-huit pour cent."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Exactly. Looking at the recall, we are only catching fifty percent of actual frauds.",
+              "text_fr": "Exactement. En regardant le rappel, nous n'attrapons que cinquante pour cent des fraudes réelles."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Let's lower the classification decision threshold to boost recall, even if precision drops slightly.",
+              "text_fr": "Abaissons le seuil de décision de classification pour doper le rappel, même si la précision diminue légèrement."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi l'« accuracy » est-elle un mauvais indicateur sur des données déséquilibrées ?",
+              "choices": [
+                "Parce qu'un modèle qui prédit toujours la classe majoritaire affiche un score trompeur sans rien détecter",
+                "Parce que l'accuracy ne fonctionne qu'avec des nombres négatifs",
+                "Parce que l'ordinateur fait des erreurs d'arrondi"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Avec 98 % de cas négatifs, prédire systématiquement 'non' donne 98 % d'accuracy sans détecter la moindre fraude."
+            },
+            {
+              "prompt_fr": "Que mesure exactement le « recall » (rappel) ?",
+              "choices": [
+                "La proportion de vrais positifs détectés parmi l'ensemble des cas positifs réels",
+                "La vitesse de réponse de l'API en millisecondes",
+                "Le pourcentage de mémoire vive économisé"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Recall = Vrais Positifs / (Vrais Positifs + Faux Négatifs). C'est le taux de détection exhaustif."
+            },
+            {
+              "prompt_fr": "Que provoque l'abaissement du seuil de décision (decision threshold) ?",
+              "choices": [
+                "Il augmente le rappel tout en augmentant généralement les faux positifs",
+                "Il arrête définitivement le modèle",
+                "Il supprime des lignes du jeu de test"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un seuil plus bas rend le modèle plus sensible : il détecte plus de cas réels (meilleur recall) mais fait plus de fausses alertes."
+            },
+            {
+              "prompt_fr": "Complète : « In fraud detection, missing a fraud is a costly false ___ . »",
+              "choices": [
+                "negative",
+                "positive",
+                "baseline"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Manquer un fraudeur est un faux négatif (false negative) : on a prédit 'non coupable' à tort."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige une note de synthèse (3 phrases) pour expliquer au directeur des risques pourquoi vous privilégiez le rappel sur la précision et l'impact sur le volume d'alertes.",
+            "model_answer_en": "We configured the fraud classification model to prioritize recall over raw precision. This ensures we catch ninety percent of fraudulent attempts, reducing unrecovered financial loss. In exchange, the compliance team will handle a fifteen percent increase in false positive review alerts.",
+            "model_answer_fr": "Nous avons configuré le modèle de classification des fraudes pour prioriser le rappel par rapport à la précision brute. Cela garantit la capture de quatre-vingt-dix pour cent des tentatives frauduleuses, réduisant ainsi les pertes financières non recouvrées. En contrepartie, l'équipe de conformité gérera une hausse de quinze pour cent des alertes de vérification pour faux positifs.",
+            "key_phrases": [
+              "prioritize recall over raw precision",
+              "fraudulent attempts",
+              "false positive review alerts"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-confusion-matrix-auc",
+          "title_fr": "Analyser la matrice de confusion et l'AUC-ROC",
+          "term_ids": [
+            "classification",
+            "model",
+            "test-set",
+            "accuracy"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "Here is the confusion matrix generated on the hold-out test set.",
+              "text_fr": "Voici la matrice de confusion générée sur l'ensemble de test isolé."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "We have four hundred true positives, thirty false negatives, and fifty false positives.",
+              "text_fr": "Nous avons quatre cents vrais positifs, trente faux négatifs et cinquante faux positifs."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "The F1-score is zero point nine one, and our ROC-AUC curve is very strong.",
+              "text_fr": "Le score F1 est de 0,91, et notre courbe ROC-AUC est très solide."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Excellent. The ROC-AUC proves the model ranks probabilities reliably regardless of threshold.",
+              "text_fr": "Excellent. Le ROC-AUC prouve que le modèle classe les probabilités de manière fiable quel que soit le seuil."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "À quoi sert la matrice de confusion (confusion matrix) ?",
+              "choices": [
+                "À visualiser en détail les effectifs de vrais positifs, faux positifs, vrais négatifs et faux négatifs",
+                "À embrouiller les données pour protéger la vie privée",
+                "À chiffrer les communications entre serveurs"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La matrice de confusion compare terme à terme les classes prédites et les classes réelles du test set."
+            },
+            {
+              "prompt_fr": "Que signifie un score AUC-ROC proche de 1.0 ?",
+              "choices": [
+                "Le modèle classe parfaitement les exemples positifs au-dessus des exemples négatifs",
+                "Le modèle prédit toujours la moyenne",
+                "Le modèle a échoué à converger"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une aire sous la courbe ROC proche de 1.0 démontre une excellente capacité de discrimination."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que le « F1-score » ?",
+              "choices": [
+                "La moyenne harmonique de la précision et du rappel",
+                "La vitesse du processeur en giga-hertz",
+                "Le pourcentage d'entraînement accompli"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le F1-score est la moyenne harmonique de la précision et du rappel : 2 * (P * R) / (P + R)."
+            },
+            {
+              "prompt_fr": "Complète : « The ___ matrix displays true positives alongside false alarms. »",
+              "choices": [
+                "confusion",
+                "identity",
+                "null"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On parle de « confusion matrix »."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige la section métriques d'un rapport de validation (3 phrases) en citant l'AUC-ROC, le score F1 et le nombre de faux négatifs observés sur le jeu de test.",
+            "model_answer_en": "On the held-out test split, the model achieved an area under the ROC curve of zero point ninety-three. The balanced F1-score reached zero point ninety-one with only thirty false negatives observed across five thousand samples. These results satisfy all acceptance criteria defined with business stakeholders.",
+            "model_answer_fr": "Sur le jeu de test isolé, le modèle a obtenu une aire sous la courbe ROC de 0,93. Le score F1 équilibré a atteint 0,91 avec seulement trente faux négatifs observés sur cinq mille échantillons. Ces résultats satisfont tous les critères d'acceptation définis avec les parties prenantes métier.",
+            "key_phrases": [
+              "area under the ROC curve",
+              "balanced F1-score reached",
+              "acceptance criteria defined"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-regression-metrics",
+          "title_fr": "Mesurer l'erreur en régression",
+          "term_ids": [
+            "regression",
+            "model",
+            "training",
+            "test-set"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "For our pricing regression model, how should we quantify error?",
+              "text_fr": "Pour notre modèle de régression tarifaire, comment devrions-nous quantifier l'erreur ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "We should track both Mean Absolute Error and Root Mean Squared Error.",
+              "text_fr": "Nous devrions suivre à la fois l'erreur absolue moyenne (MAE) et la racine de l'erreur quadratique moyenne (RMSE)."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Why both? Isn't MAE easier to interpret for sales teams?",
+              "text_fr": "Pourquoi les deux ? Le MAE n'est-il pas plus facile à interpréter pour les équipes commerciales ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "MAE gives the average dollar error, but RMSE heavily penalizes large outlier mistakes.",
+              "text_fr": "Le MAE donne l'erreur moyenne en dollars, mais le RMSE pénalise lourdement les gros écarts aberrants."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la particularité du RMSE par rapport au MAE ?",
+              "choices": [
+                "Il élève les écarts au carré et pénalise donc beaucoup plus sévèrement les grosses erreurs de prédiction",
+                "Il est toujours égal à zéro",
+                "Il ne s'applique qu'aux textes"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En élevant les écarts au carré, le RMSE (Root Mean Squared Error) sanctionne drastiquement les erreurs de grande amplitude."
+            },
+            {
+              "prompt_fr": "Comment interpréter un MAE de 5 dollars sur une prédiction de prix ?",
+              "choices": [
+                "En moyenne, la prédiction du modèle s'écarte de 5 dollars du prix réel",
+                "Le modèle rapporte 5 dollars par minute",
+                "Le modèle est faux 5 pour cent du temps"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le MAE (Mean Absolute Error) est exprimé directement dans la même unité physique que la cible."
+            },
+            {
+              "prompt_fr": "Comment dire « Le coefficient de détermination R-deux » ?",
+              "choices": [
+                "The R-squared metric",
+                "The square coefficient",
+                "The determination scale"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'indice de qualité d'une régression s'appelle « R-squared » (R²)."
+            },
+            {
+              "prompt_fr": "Complète : « RMSE penalizes ___ much more severely than mean absolute error. »",
+              "choices": [
+                "outliers",
+                "tokens",
+                "prompts"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le RMSE pénalise très lourdement les erreurs atypiques ou extrêmes (outliers)."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Présente en réunion (3 phrases) les résultats du modèle de régression : cite le MAE et le R-deux, et rassure sur l'absence de grosses erreurs d'estimation.",
+            "model_answer_en": "Our pricing regression model achieved a Mean Absolute Error of four dollars across the test set. The R-squared value indicates the model explains eighty-eight percent of price variance. By keeping RMSE close to MAE, we confirmed there are no catastrophic outlier miscalculations.",
+            "model_answer_fr": "Notre modèle de régression tarifaire a atteint une erreur absolue moyenne de quatre dollars sur l'ensemble de test. La valeur de R-deux indique que le modèle explique quatre-vingt-huit pour cent de la variance des prix. En maintenant le RMSE proche du MAE, nous confirmons l'absence d'erreurs d'estimation aberrantes catastrophiques.",
+            "key_phrases": [
+              "Mean Absolute Error",
+              "R-squared value indicates",
+              "outlier miscalculations"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-genai-llm-and-rag",
+      "title_fr": "Construire avec les LLM et le RAG",
+      "title_en": "Build generative AI and RAG architectures",
+      "situation_fr": "Tu conçois un système d'IA générative connectant un grand modèle de langage à une base de connaissances vectorielle.",
+      "guide": {
+        "intro_fr": "L'essor de l'IA générative repose sur les grands modèles de langage (large language models ou LLMs). Pour dépasser leurs limites de connaissances et réduire les hallucinations, on implémente une architecture RAG (retrieval-augmented generation). Les documents sont découpés en fragments (chunks), transformés en représentations denses (embeddings) et stockés dans une base de données vectorielle (vector database). À chaque requête, le système recherche les passages les plus proches par similarité cosinus et enrichit le prompt envoyé au modèle. Les verbes clés : to embed, to retrieve, to augment, to fine-tune, to hallucinate.",
+        "key_phrases": [
+          {
+            "en": "We use dense embeddings to search our knowledge base semantically.",
+            "fr": "Nous utilisons des plongements denses pour chercher sémantiquement dans notre base."
+          },
+          {
+            "en": "The RAG pipeline retrieves relevant context before prompting the LLM.",
+            "fr": "Le pipeline RAG extrait le contexte pertinent avant de solliciter le LLM."
+          },
+          {
+            "en": "Hallucinations happen when the model generates false facts with high confidence.",
+            "fr": "Les hallucinations surviennent quand le modèle invente de faux faits avec assurance."
+          },
+          {
+            "en": "Do we need to fine-tune the foundation model or is prompt engineering sufficient?",
+            "fr": "Faut-il affiner le modèle de fondation ou l'ingénierie de prompt suffit-elle ?"
+          },
+          {
+            "en": "We index document chunks into a managed vector database.",
+            "fr": "Nous indexons les fragments de documents dans une base vectorielle managée."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « fine-tuning » et « RAG ». Le RAG apporte des faits frais et vérifiables au moment de la requête sans modifier les poids du modèle. Le fine-tuning réentraîne une partie des poids pour adapter le style, le ton ou la syntaxe d'un domaine spécialisé."
+      },
+      "lessons": [
+        {
+          "id": "ai-ml-engineer-rag-pipeline-design",
+          "title_fr": "Concevoir un pipeline RAG",
+          "term_ids": [
+            "model",
+            "dataset",
+            "feature",
+            "training"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Kenji, users are asking technical questions that our base LLM cannot answer correctly.",
+              "text_fr": "Kenji, les utilisateurs posent des questions techniques auxquelles notre LLM de base ne peut pas répondre correctement."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "We need a Retrieval-Augmented Generation pipeline connected to our documentation.",
+              "text_fr": "Il nous faut un pipeline RAG connecté à notre documentation."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "How are you handling document ingestion and chunking?",
+              "text_fr": "Comment gères-tu l'ingestion et le découpage en fragments des documents ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "We split Markdown files into five-hundred token chunks, generate embeddings, and index them into a vector database.",
+              "text_fr": "Nous découpons les fichiers Markdown en morceaux de 500 tokens, générons des embeddings et les indexons dans une base vectorielle."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Then at query time, we retrieve the top three matching chunks and inject them into the system prompt.",
+              "text_fr": "Puis à la requête, nous récupérons les trois meilleurs fragments et les injectons dans le prompt système."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est le rôle principal d'une base de données vectorielle (vector database) dans un système RAG ?",
+              "choices": [
+                "Indexer des vecteurs d'embeddings pour effectuer des recherches par similarité sémantique",
+                "Stocker les mots de passe des utilisateurs en clair",
+                "Remplacer les serveurs web par des GPU"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une base vectorielle permet de rechercher les passages textuels les plus proches mathématiquement du sens de la requête."
+            },
+            {
+              "prompt_fr": "Que représente le « chunking » ?",
+              "choices": [
+                "Le découpage de longs documents en passages textuels digestes et cohérents",
+                "La suppression de la moitié des fichiers",
+                "La conversion d'une image en audio"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le chunking divise un corpus volumineux en morceaux de texte optimaux pour la fenêtre de contexte du modèle."
+            },
+            {
+              "prompt_fr": "Comment dire « Recherche par similarité sémantique » ?",
+              "choices": [
+                "Semantic similarity search",
+                "Word resemblance seeking",
+                "Alphabetical look-up"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'expression standard est « semantic similarity search »."
+            },
+            {
+              "prompt_fr": "Complète : « The RAG architecture injects fresh facts directly into the ___ context window. »",
+              "choices": [
+                "LLM",
+                "CPU",
+                "SQL"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le RAG injecte les fragments extraits dans la fenêtre de contexte du LLM (Large Language Model)."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Annonce sur Slack (3 phrases) le déploiement du pipeline RAG : mentionne le découpage des docs, l'indexation vectorielle et la réduction drastique des hallucinations.",
+            "context_en": "#ai-announcements channel",
+            "model_answer_en": "We successfully deployed our new RAG architecture on company technical documentation. All articles were chunked, converted into dense embeddings, and indexed in our vector database. As a result, model hallucinations dropped significantly when answering customer troubleshooting queries.",
+            "model_answer_fr": "Nous avons déployé avec succès notre nouvelle architecture RAG sur la documentation technique de l'entreprise. Tous les articles ont été découpés, convertis en embeddings denses et indexés dans notre base vectorielle. En conséquence, les hallucinations du modèle ont chuté de manière spectaculaire lors des réponses aux questions de dépannage client.",
+            "key_phrases": [
+              "new RAG architecture",
+              "dense embeddings",
+              "model hallucinations dropped"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-prompt-vs-fine-tuning",
+          "title_fr": "Choisir entre prompt engineering et fine-tuning",
+          "term_ids": [
+            "model",
+            "training",
+            "supervised-learning"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Our legal team wants the LLM to output structured compliance contracts in a very strict JSON format.",
+              "text_fr": "Notre équipe juridique veut que le LLM génère des contrats de conformité dans un format JSON très strict."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Can we achieve reliable JSON output with few-shot prompting and system instructions?",
+              "text_fr": "Pouvons-nous obtenir un JSON fiable avec du few-shot prompting et des instructions système ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "We tried, but prompt engineering fails about ten percent of the time on edge cases.",
+              "text_fr": "Nous avons essayé, mais l'ingénierie de prompt échoue environ 10 % du temps sur les cas limites."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "In that case, fine-tuning an open-source base model on paired contract examples is worth the training effort.",
+              "text_fr": "Dans ce cas, affiner un modèle de base open-source sur des exemples de contrats appariés vaut l'effort d'entraînement."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce que le « few-shot prompting » ?",
+              "choices": [
+                "Donner quelques exemples types dans le prompt avant de poser la consigne",
+                "Entraîner un modèle sur quelques secondes seulement",
+                "Prendre des photos du serveur avec une caméra"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le few-shot prompting guide le modèle en incluant 2 ou 3 exemples d'entrée/sortie directement dans la consigne."
+            },
+            {
+              "prompt_fr": "Pourquoi le « fine-tuning » est-il parfois nécessaire face à du simple prompt engineering ?",
+              "choices": [
+                "Pour ancrer durablement une grammaire, un format ou un style particulier sans encombrer la fenêtre de contexte",
+                "Parce que le prompt engineering est interdit par la loi",
+                "Pour éviter de payer une connexion internet"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le fine-tuning adapte les paramètres internes du modèle pour maîtriser un formatage rigide ou un jargon métier récurrent."
+            },
+            {
+              "prompt_fr": "Comment dire « Un modèle de fondation pré-entraîné » ?",
+              "choices": [
+                "A pre-trained foundation model",
+                "A primary building robot",
+                "An early drafted intelligence"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On emploie « pre-trained foundation model »."
+            },
+            {
+              "prompt_fr": "Complète : « We fine-tuned the model weights on labeled pairs to enforce strict ___ output. »",
+              "choices": [
+                "JSON",
+                "hardware",
+                "analog"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On fine-tune souvent pour forcer un schéma de données structuré comme du JSON."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige une recommandation technique (3 phrases) comparant le coût et la fiabilité du prompt engineering face au fine-tuning pour la génération de contrats structurés.",
+            "model_answer_en": "While prompt engineering is faster to iterate on, it exhibits unacceptable failure rates on complex schema constraints. We recommend fine-tuning an open-weights model on two thousand curated contract examples. This approach ensures ninety-nine percent JSON validity while reducing inference token costs.",
+            "model_answer_fr": "Bien que l'ingénierie de prompt soit plus rapide à itérer, elle présente des taux d'échec inacceptables sur les contraintes de schémas complexes. Nous recommandons d'affiner un modèle aux poids ouverts sur deux mille exemples de contrats vérifiés. Cette approche garantit quatre-vingt-dix-neuf pour cent de validité JSON tout en réduisant le coût des jetons à l'inférence.",
+            "key_phrases": [
+              "prompt engineering is faster",
+              "fine-tuning an open-weights model",
+              "reducing inference token costs"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-mitigate-hallucinations",
+          "title_fr": "Réduire et détecter les hallucinations",
+          "term_ids": [
+            "model",
+            "accuracy",
+            "test-set"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "Sarah, our internal testers noticed the bot sometimes cites legal precedents that do not exist.",
+              "text_fr": "Sarah, nos testeurs internes ont remarqué que le bot cite parfois des précédents juridiques inexistants."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "That is a critical hallucination issue. Are we asking the model to strictly cite sources?",
+              "text_fr": "C'est un problème critique d'hallucination. Demandons-nous au modèle de citer strictement ses sources ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "We should enforce ground-truth verification and lower the temperature to zero.",
+              "text_fr": "Nous devrions imposer une vérification par rapport à la vérité terrain et baisser la température à zéro."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Let's also add an automated judge model to reject answers lacking source attribution.",
+              "text_fr": "Ajoutons aussi un modèle juge automatisé pour rejeter les réponses sans attribution de source."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce qu'une « hallucination » dans un grand modèle de langage ?",
+              "choices": [
+                "Une génération de contenu factuellement faux ou invérifiable présentée avec une grande certitude",
+                "Un problème d'affichage sur l'écran de l'utilisateur",
+                "Une surchauffe des ventilateurs du processeur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'hallucination désigne une réponse plausible mais erronée inventée par le modèle statistique."
+            },
+            {
+              "prompt_fr": "Quel effet a une « température » proche de 0 sur un LLM ?",
+              "choices": [
+                "Elle rend les réponses plus déterministes et axées sur les tokens les plus probables",
+                "Elle gèle les serveurs pour économiser l'électricité",
+                "Elle force le modèle à répondre en plusieurs langues"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une basse température rend l'échantillonnage déterministe et réduit la créativité non désirée."
+            },
+            {
+              "prompt_fr": "Comment dire « Vérifier par rapport à la vérité terrain » ?",
+              "choices": [
+                "Verify against ground truth",
+                "Check with dirt facts",
+                "Confirm on floor reality"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Ground truth » est le terme technique universel pour désigner la vérité terrain incontestable."
+            },
+            {
+              "prompt_fr": "Complète : « Setting a lower ___ reduces random token sampling during inference. »",
+              "choices": [
+                "temperature",
+                "battery",
+                "keyboard"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le paramètre « temperature » pilote l'entropie de la sélection des tokens."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Explique au comité d'éthique et produit (3 phrases) les mesures techniques mises en place pour éliminer les hallucinations : température déterministe, attribution stricte et modèle d'évaluation de conformité.",
+            "model_answer_en": "To eliminate hallucinations, we restricted the generative model to a zero temperature setting for maximum determinism. The prompt now strictly instructs the system to reply only when retrieved source evidence is present. Furthermore, a secondary verification guardrail rejects any statement lacking cited ground truth.",
+            "model_answer_fr": "Pour éliminer les hallucinations, nous avons restreint le modèle génératif à une température de zéro pour un déterminisme maximal. Le prompt ordonne désormais strictement au système de ne répondre qu'en présence de preuves sources extraites. De plus, un garde-fou de vérification secondaire rejette toute affirmation dépourvue de vérité terrain citée.",
+            "key_phrases": [
+              "zero temperature setting",
+              "retrieved source evidence",
+              "lacking cited ground truth"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-deployment-and-monitoring",
+      "title_fr": "Déployer, servir et superviser les modèles",
+      "title_en": "Deploy, serve and monitor models in production",
+      "situation_fr": "Ton modèle passe en production derrière une API. Tu mesures la latence d'inférence, le débit et tu surveilles la dérive des données (data drift).",
+      "guide": {
+        "intro_fr": "Le déploiement d'un modèle en production (model serving) requiert de concilier précision, débit (throughput) et latence (latency). On encapsule le modèle dans un service conteneurisé ou une plateforme d'inférence managée avec accélération matérielle. Une fois en ligne, la performance statistique doit être surveillée en continu : la dérive des données (data drift) ou la dérive de concept (concept drift) survient lorsque les comportements réels s'éloignent du jeu d'entraînement d'origine, nécessitant un réentraînement planifié. Les verbes clés : to serve, to deploy, to monitor, to drift, to scale, to retrain.",
+        "key_phrases": [
+          {
+            "en": "Inference latency must stay under fifty milliseconds at peak traffic.",
+            "fr": "La latence d'inférence doit rester sous cinquante millisecondes aux pics de trafic."
+          },
+          {
+            "en": "We observed significant feature drift on user age distributions this week.",
+            "fr": "Nous avons observé une dérive significative sur la distribution d'âge cette semaine."
+          },
+          {
+            "en": "Can we quantize the model weights from float-thirty-two to int-eight?",
+            "fr": "Peut-on quantifier les poids du modèle de float32 vers int8 ?"
+          },
+          {
+            "en": "The service scales automatically based on request throughput.",
+            "fr": "Le service s'adapte automatiquement selon le débit de requêtes."
+          },
+          {
+            "en": "Concept drift caused our model accuracy to degrade over the past quarter.",
+            "fr": "La dérive de concept a dégradé la précision du modèle au dernier trimestre."
+          }
+        ],
+        "tip_fr": "Distingue bien « data drift » et « concept drift ». Le data drift est un changement dans la distribution des entrées X (ex: nouveaux appareils, nouvelle démographie). Le concept drift est un changement dans la relation entre X et la cible Y (ex: suite à une crise ou un changement de loi, un même profil client adopte un comportement d'achat totalement différent)."
+      },
+      "lessons": [
+        {
+          "id": "ai-ml-engineer-latency-and-serving",
+          "title_fr": "Optimiser la latence d'inférence",
+          "term_ids": [
+            "model",
+            "machine-learning",
+            "accuracy"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "Our real-time recommendation API is taking two hundred milliseconds per request.",
+              "text_fr": "Notre API de recommandation en temps réel met deux cents millisecondes par requête."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "That is way above our fifty millisecond service level objective. What is causing the latency?",
+              "text_fr": "C'est bien au-dessus de notre objectif de cinquante millisecondes. Qu'est-ce qui cause la latence ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "The uncompressed transformer weights are too heavy for CPU inference.",
+              "text_fr": "Les poids non compressés du transformer sont trop lourds pour une inférence sur CPU."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Let's export the model to ONNX runtime and apply INT8 quantization to speed up inference without hurting accuracy.",
+              "text_fr": "Exportons le modèle sous le runtime ONNX et appliquons une quantification INT8 pour accélérer l'inférence sans dégrader la précision."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce que la « quantization » (quantification) d'un modèle ?",
+              "choices": [
+                "Réduire la précision numérique des poids (ex: de 32 bits à 8 bits) pour accélérer le calcul et réduire la mémoire",
+                "Supprimer les colonnes inutiles dans la base SQL",
+                "Augmenter le nombre d'époques d'entraînement"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La quantification convertit les poids en entiers de moindre précision pour diviser l'empreinte mémoire et le temps d'inférence."
+            },
+            {
+              "prompt_fr": "Que mesure la « latency » (latence) d'une API d'inférence ?",
+              "choices": [
+                "Le temps écoulé entre l'envoi d'une requête et la réception de la prédiction",
+                "Le nombre de requêtes traitées par minute",
+                "Le coût en dollars du serveur cloud"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La latence est le délai de réponse aller-retour perçu par l'application appelante."
+            },
+            {
+              "prompt_fr": "Comment dire « Le débit de requêtes par seconde » ?",
+              "choices": [
+                "Request throughput per second",
+                "Requests movement rate",
+                "Asking flow speeds"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le terme technique pour le débit est « throughput »."
+            },
+            {
+              "prompt_fr": "Complète : « Deploying to an optimized runtime drastically cut inference ___. »",
+              "choices": [
+                "latency",
+                "labeling",
+                "clustering"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un moteur d'inférence optimisé réduit la latence (latency)."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Rédige une note de version de déploiement (3 phrases) décrivant l'optimisation par quantification INT8, le passage sous ONNX et le gain de latence obtenu.",
+            "context_en": "PR #142: optimize-model-serving-onnx",
+            "model_answer_en": "This release migrates model serving to ONNX runtime with INT8 post-training quantization. Peak inference latency dropped from two hundred milliseconds down to thirty-five milliseconds on commodity CPUs. Benchmark validations confirmed that predictive accuracy remains identical to the original float thirty-two checkpoint.",
+            "model_answer_fr": "Cette version migre le service de modèle vers le runtime ONNX avec une quantification post-entraînement en INT8. La latence d'inférence de pointe est passée de deux cents millisecondes à trente-cinq millisecondes sur des processeurs standards. Les validations par benchmark ont confirmé que la précision prédictive reste identique au point de contrôle d'origine en flottant 32 bits.",
+            "key_phrases": [
+              "model serving to ONNX runtime",
+              "Peak inference latency dropped",
+              "predictive accuracy remains identical"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-data-drift-monitoring",
+          "title_fr": "Détecter la dérive des données en production",
+          "term_ids": [
+            "model",
+            "training-set",
+            "test-set",
+            "dataset"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Sarah, our automated monitoring dashboard triggered a high alert on the churn model.",
+              "text_fr": "Sarah, notre tableau de bord de supervision automatisé a déclenché une alerte haute sur le modèle de churn."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Is it a service latency failure or statistical drift?",
+              "text_fr": "S'agit-il d'une panne de latence de service ou d'une dérive statistique ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Statistical drift. The Kolmogorov-Smirnov test detected significant feature drift on transaction frequencies.",
+              "text_fr": "Une dérive statistique. Le test Kolmogorov-Smirnov a détecté une dérive significative sur la fréquence des transactions."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "The live production data distribution has shifted away from our original training set. We need to trigger a retraining pipeline.",
+              "text_fr": "La distribution des données de production s'est éloignée de notre jeu d'entraînement d'origine. Il faut lancer un pipeline de réentraînement."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce que le « data drift » (dérive des données) ?",
+              "choices": [
+                "Un changement dans la distribution statistique des données d'entrée par rapport au jeu d'entraînement initial",
+                "Un disque dur qui se déplace physiquement dans la baie de serveurs",
+                "Une fuite de mémoire sur un script Python"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le data drift survient lorsque les données du monde réel changent de distribution par rapport aux données d'apprentissage."
+            },
+            {
+              "prompt_fr": "Pourquoi le data drift est-il dangereux pour une entreprise ?",
+              "choices": [
+                "Parce que le modèle commence à faire de mauvaises prédictions sans renvoyer d'erreur logicielle visible",
+                "Parce qu'il efface les sauvegardes de la base de données",
+                "Parce qu'il augmente la taille des fichiers sur GitHub"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "C'est une défaillance silencieuse : le code tourne sans bug apparent, mais la pertinence métier des décisions s'effondre."
+            },
+            {
+              "prompt_fr": "Comment dire « Réentraîner le modèle sur des données récentes » ?",
+              "choices": [
+                "Retrain the model on fresh data",
+                "Re-educate the program with newer rows",
+                "Practice again the algorithm"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On utilise le verbe « to retrain »."
+            },
+            {
+              "prompt_fr": "Complète : « Monitoring tools alert us when production inputs ___ from training baselines. »",
+              "choices": [
+                "drift",
+                "compile",
+                "typecheck"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les entrées dérivent (drift) par rapport aux valeurs de référence."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Alerte l'équipe sur Slack (3 phrases) en signalant la dérive détectée sur les entrées de production et le déclenchement immédiat d'un pipeline de réentraînement.",
+            "context_en": "#mlops-incidents channel",
+            "model_answer_en": "Automated drift monitoring flagged a significant covariate shift on input features over the past forty-eight hours. The current model performance is degrading because live user behaviors diverge from historical training data. We triggered an automated retraining pipeline on last month's refreshed dataset to restore baseline performance.",
+            "model_answer_fr": "La supervision automatisée de dérive a signalé un décalage significatif des variables d'entrée au cours des dernières quarante-huit heures. La performance actuelle du modèle se dégrade car les comportements réels des utilisateurs divergent des données d'entraînement historiques. Nous avons déclenché un pipeline de réentraînement automatisé sur le jeu de données actualisé du mois dernier pour restaurer la performance de référence.",
+            "key_phrases": [
+              "flagged a significant covariate shift",
+              "live user behaviors diverge",
+              "automated retraining pipeline"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-canary-and-ab-deployment",
+          "title_fr": "Déployer en canary et tests A/B",
+          "term_ids": [
+            "model",
+            "machine-learning",
+            "accuracy"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "The retrained model is ready, but we cannot switch one hundred percent of user traffic immediately.",
+              "text_fr": "Le modèle réentraîné est prêt, mais nous ne pouvons pas basculer immédiatement 100 % du trafic utilisateur."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Let's perform a canary deployment: route five percent of requests to candidate model B.",
+              "text_fr": "Faisons un déploiement canary : routons cinq pour cent des requêtes vers le modèle candidat B."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "We will compare real-time inference latency and conversion rates against baseline model A.",
+              "text_fr": "Nous comparerons la latence d'inférence en temps réel et les taux de conversion face au modèle A de base."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "If the metrics remain positive without increased error rates, we will progressively ramp up to full rollout.",
+              "text_fr": "Si les métriques restent positives sans hausse d'erreurs, nous monterons progressivement vers un déploiement complet."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "En quoi consiste un « canary deployment » pour un modèle de ML ?",
+              "choices": [
+                "Déployer la nouvelle version sur une petite fraction du trafic réel pour valider son comportement avant déploiement total",
+                "Faire écouter le son d'un canari au modèle pour tester l'audio",
+                "Déployer uniquement sur les machines des développeurs"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le déploiement canary expose un pourcentage restreint d'utilisateurs au nouveau modèle afin de limiter les risques en cas d'anomalie."
+            },
+            {
+              "prompt_fr": "Que signifie « ramp up traffic » dans une phase de rollout ?",
+              "choices": [
+                "Augmenter progressivement le pourcentage de requêtes dirigées vers la nouvelle version",
+                "Bloquer tout le trafic pendant une heure de maintenance",
+                "Changer le nom du dépôt GitHub"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Ramp up » signifie monter en charge ou augmenter graduellement le volume de trafic alloué."
+            },
+            {
+              "prompt_fr": "Comment dire « Revenir en arrière en cas de dégradation » ?",
+              "choices": [
+                "Roll back in case of degradation",
+                "Turn around if bad",
+                "Reverse car if failing"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'expression consacrée en déploiement est « roll back »."
+            },
+            {
+              "prompt_fr": "Complète : « The canary deployment routes ten percent of traffic to the candidate ___. »",
+              "choices": [
+                "model",
+                "dataset",
+                "folder"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une fraction du trafic est routée vers le modèle candidat (candidate model)."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige une mise à jour d'incident ou de déploiement (3 phrases) confirmant que le modèle canary a surperformé la version précédente et autorisant le déploiement à 100 %.",
+            "model_answer_en": "The twenty-four-hour canary deployment of model version two point four completed without any regressions. The candidate model demonstrated a five percent uplift in conversion while maintaining sub-forty millisecond inference latencies. We authorized the infrastructure team to ramp up traffic to one hundred percent across all production clusters.",
+            "model_answer_fr": "Le déploiement canary de vingt-quatre heures de la version 2.4 du modèle s'est achevé sans aucune régression. Le modèle candidat a démontré une hausse de cinq pour cent des conversions tout en maintenant des latences d'inférence inférieures à quarante millisecondes. Nous avons autorisé l'équipe d'infrastructure à porter le trafic à cent pour cent sur tous les clusters de production.",
+            "key_phrases": [
+              "canary deployment of model",
+              "uplift in conversion",
+              "ramp up traffic to one hundred percent"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-responsible-ai-and-governance",
+      "title_fr": "Garantir l'éthique, l'équité et l'explicabilité",
+      "title_en": "Ensure fairness, explainability and governance",
+      "situation_fr": "Tu audites un modèle décisionnel pour prévenir les biais discriminatoires et fournir des explications conformes aux exigences réglementaires.",
+      "guide": {
+        "intro_fr": "L'ingénierie moderne de l'IA exige une gouvernance rigoureuse (AI governance). Un modèle peut perpétuer ou amplifier des biais historiques (bias) présents dans le jeu d'entraînement, violant l'équité (fairness) entre différents groupes démographiques. Pour respecter des réglementations comme l'AI Act européen ou le RGPD, les modèles critiques doivent être explicables (explainability) : on emploie des méthodes comme SHAP ou LIME pour décomposer la contribution de chaque variable dans une décision individuelle. Les verbes clés : to audit, to mitigate, to explain, to comply, to govern.",
+        "key_phrases": [
+          {
+            "en": "We must audit the dataset for demographic bias across sub-populations.",
+            "fr": "Nous devons auditer le jeu de données pour détecter les biais démographiques entre sous-populations."
+          },
+          {
+            "en": "SHAP values help explain individual feature contributions to non-technical auditors.",
+            "fr": "Les valeurs SHAP aident à expliquer la contribution de chaque variable aux auditeurs non techniques."
+          },
+          {
+            "en": "Does our credit scoring model satisfy disparate impact regulations?",
+            "fr": "Notre modèle d'attribution de crédit respecte-t-il la réglementation sur l'impact disparate ?"
+          },
+          {
+            "en": "We added automated guardrails to filter sensitive protected attributes.",
+            "fr": "Nous avons ajouté des garde-fous pour filtrer les attributs protégés sensibles."
+          },
+          {
+            "en": "Model explainability is a legal requirement under the new AI regulations.",
+            "fr": "L'explicabilité des modèles est une obligation légale sous les nouvelles réglementations IA."
+          }
+        ],
+        "tip_fr": "Attention : supprimer une colonne sensible (comme le genre ou le code postal) ne suffit pas à éliminer un biais. D'autres variables peuvent agir comme des proxys indirects très corrélés. Il faut auditer les prédictions finales par sous-groupes plutôt que de simplement masquer une colonne."
+      },
+      "lessons": [
+        {
+          "id": "ai-ml-engineer-detect-and-mitigate-bias",
+          "title_fr": "Détecter et atténuer les biais d'entraînement",
+          "term_ids": [
+            "dataset",
+            "training-set",
+            "model",
+            "supervised-learning"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Kenji, our fairness audit showed a discrepancy in approval rates between demographic groups.",
+              "text_fr": "Kenji, notre audit d'équité a montré un écart dans les taux d'approbation entre groupes démographiques."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Did the training dataset have unequal representation or historical human bias?",
+              "text_fr": "Le jeu d'entraînement présentait-il une sous-représentation ou un biais humain historique ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Both. Certain applicant segments were heavily underrepresented in historical positive labels.",
+              "text_fr": "Les deux. Certains segments de candidats étaient très sous-représentés dans les labels positifs historiques."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "We should reweight the training samples and apply demographic parity constraints before deployment.",
+              "text_fr": "Nous devrions repondérer les exemples d'entraînement et appliquer des contraintes de parité démographique avant le déploiement."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "D'où proviennent le plus souvent les biais d'un modèle d'apprentissage supervisé ?",
+              "choices": [
+                "Des données historiques qui reflètent des inégalités ou des disparités de collecte réelles",
+                "D'un bug dans le compilateur C++",
+                "Du choix du câble d'alimentation du serveur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les modèles apprennent ce qu'on leur donne : si l'historique contient des biais humains ou des lacunes, le modèle les reproduit."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que la « demographic parity » (parité démographique) ?",
+              "choices": [
+                "Une métrique d'équité exigeant que le taux de décision positive soit similaire entre tous les groupes protégés",
+                "L'obligation d'avoir 50 % d'hommes et de femmes dans l'équipe de data scientists",
+                "La sauvegarde des modèles dans plusieurs pays"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La parité démographique vérifie que la probabilité d'obtenir un résultat positif est égale quel que soit le groupe d'appartenance."
+            },
+            {
+              "prompt_fr": "Comment dire « Atténuer les disparités dans les prédictions » ?",
+              "choices": [
+                "Mitigate disparities in predictions",
+                "Soft the gaps in foreseeing",
+                "Decrease the differences of answers"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To mitigate disparities » est le terme formel et rigoureux."
+            },
+            {
+              "prompt_fr": "Complète : « The fairness audit ensures our automated pipeline does not ___ against vulnerable groups. »",
+              "choices": [
+                "discriminate",
+                "tokenize",
+                "overfit"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'audit d'équité vise à s'assurer que le système ne discrimine pas (does not discriminate)."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige la conclusion d'un audit d'équité (3 phrases) expliquant que la technique de repondération a rétabli l'équité des taux d'approbation sans altérer la robustesse générale.",
+            "model_answer_en": "Our fairness audit revealed historical representation gaps that skewed baseline acceptance rates against younger applicants. We mitigated this disparity by applying sample reweighting and fairness constraints during training. The updated model satisfies all demographic parity thresholds while preserving overall risk prediction fidelity.",
+            "model_answer_fr": "Notre audit d'équité a révélé des lacunes historiques de représentation qui faussaient les taux d'acceptation de référence au détriment des candidats plus jeunes. Nous avons atténué cette disparité en appliquant une repondération des échantillons et des contraintes d'équité pendant l'entraînement. Le modèle mis à jour satisfait tous les seuils de parité démographique tout en préservant la fidélité de prédiction des risques.",
+            "key_phrases": [
+              "fairness audit revealed",
+              "applying sample reweighting",
+              "demographic parity thresholds"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-model-explainability",
+          "title_fr": "Expliquer les décisions individuelles avec SHAP",
+          "term_ids": [
+            "feature",
+            "model",
+            "classification"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "Our compliance team requires us to explain why a customer was denied a credit limit increase.",
+              "text_fr": "Notre équipe de conformité nous demande d'expliquer pourquoi une hausse de limite de crédit a été refusée à un client."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "We computed the SHAP values for that individual prediction. The top negative drivers are debt ratio and late payments.",
+              "text_fr": "Nous avons calculé les valeurs SHAP pour cette prédiction individuelle. Les principaux facteurs négatifs sont le taux d'endettement et les retards de paiement."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Can we generate a customer-friendly summary from those feature importance scores?",
+              "text_fr": "Pouvons-nous générer un résumé compréhensible pour le client à partir de ces scores d'importance des variables ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Yes, we map the highest magnitude SHAP features into plain English reason codes.",
+              "text_fr": "Oui, nous convertissons les variables SHAP de plus forte amplitude en codes motifs en anglais clair."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que permettent de mesurer les « SHAP values » (valeurs de Shapley) ?",
+              "choices": [
+                "La contribution positive ou négative précise de chaque variable dans une décision individuelle",
+                "Le coût de calcul du serveur pour une inférence",
+                "La vitesse de rotation des disques durs"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Issues de la théorie des jeux, les valeurs SHAP quantifient l'impact exact de chaque feature sur le score d'une observation donnée."
+            },
+            {
+              "prompt_fr": "Pourquoi l'explicabilité (explainability) est-elle cruciale dans les modèles « boîte noire » ?",
+              "choices": [
+                "Pour justifier légalement les décisions à fort impact auprès des utilisateurs et des régulateurs",
+                "Pour rendre le code Python plus joli à lire",
+                "Pour accélérer les temps de réponse de l'API"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'explicabilité garantit la transparence, la conformité légale et la confiance humaine envers les systèmes automatisés."
+            },
+            {
+              "prompt_fr": "Comment dire « Les facteurs déterminants de cette décision » ?",
+              "choices": [
+                "The key drivers of this decision",
+                "The main motors of that choice",
+                "The pushing parts of this verdict"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On dit « the key drivers of this decision »."
+            },
+            {
+              "prompt_fr": "Complète : « Feature ___ analysis proves which variables influenced the prediction most. »",
+              "choices": [
+                "importance",
+                "compilation",
+                "latency"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'analyse d'importance des variables (feature importance analysis) révèle les colonnes prépondérantes."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige un email professionnel (3 phrases) au responsable de conformité expliquant comment le pipeline d'explicabilité SHAP fournit les motifs de chaque décision automatisée.",
+            "context_en": "Email to Chief Compliance Officer",
+            "model_answer_en": "Dear Marcus, our scoring service now incorporates local SHAP explainability pipelines for every automated customer decision. Whenever an application is declined, the system automatically outputs the top three contributing feature drivers as plain reason codes. This mechanism brings our decision infrastructure into full compliance with algorithmic transparency mandates.",
+            "model_answer_fr": "Cher Marcus, notre service de scoring intègre désormais des pipelines d'explicabilité SHAP locale pour chaque décision client automatisée. Chaque fois qu'une demande est refusée, le système génère automatiquement les trois principales variables contributrices sous forme de codes motifs clairs. Ce mécanisme met notre infrastructure décisionnelle en totale conformité avec les exigences de transparence algorithmique.",
+            "key_phrases": [
+              "local SHAP explainability pipelines",
+              "top three contributing feature drivers",
+              "algorithmic transparency mandates"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-ai-governance-and-audit",
+          "title_fr": "Conduire un audit de gouvernance IA",
+          "term_ids": [
+            "machine-learning",
+            "model",
+            "dataset"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "The external auditor is reviewing our model registry and lineage documentation.",
+              "text_fr": "L'auditeur externe examine notre registre de modèles et la documentation de lignage."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Do we have complete provenance tracking from raw data ingestion to production deployment?",
+              "text_fr": "Avons-nous un suivi complet de la provenance, de l'ingestion brute jusqu'au déploiement en production ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, every artifact has a versioned hash, training parameters, and signed evaluation benchmarks.",
+              "text_fr": "Oui, chaque artefact a un hash versionné, des paramètres d'entraînement et des benchmarks d'évaluation signés."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "That guarantees full reproducibility, which is the cornerstone of regulatory compliance.",
+              "text_fr": "Cela garantit une reproductibilité totale, ce qui est la pierre angulaire de la conformité réglementaire."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce que le « data lineage » (lignage des données) en MLOps ?",
+              "choices": [
+                "La traçabilité complète de l'origine, des transformations et du cycle de vie des données utilisées pour entraîner un modèle",
+                "L'ordre alphabétique des colonnes dans une table",
+                "La hiérarchie des managers dans l'entreprise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le lignage (lineage) permet de savoir exactement quelles données brutes et quelles transformations ont produit un modèle donné."
+            },
+            {
+              "prompt_fr": "Pourquoi la « reproducibility » (reproductibilité) est-elle essentielle en IA ?",
+              "choices": [
+                "Pour être capable de recréer à l'identique un modèle et ses résultats à des fins d'audit ou de débogage",
+                "Pour faire tourner le modèle deux fois plus vite",
+                "Pour pouvoir copier le travail d'une autre entreprise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La reproductibilité prouve la rigueur scientifique et technique : mêmes données + même code = même modèle."
+            },
+            {
+              "prompt_fr": "Comment dire « Registre centralisé des modèles » ?",
+              "choices": [
+                "Centralized model registry",
+                "Middle model library",
+                "Core machine shop"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le terme MLOps est « model registry »."
+            },
+            {
+              "prompt_fr": "Complète : « Full model ___ tracks code, datasets, and hyperparameters from development to release. »",
+              "choices": [
+                "lineage",
+                "dropout",
+                "outlier"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le « model lineage » (ou tracking) assure la traçabilité intégrale."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Présente aux auditeurs externes (3 phrases) la gouvernance de vos modèles en mettant en avant le model registry, la reproductibilité des entraînements et la traçabilité complète.",
+            "model_answer_en": "All models operating across our production clusters are cataloged within a centralized model registry. We maintain immutable lineage records linking every trained binary to its exact source code commit and dataset version. This architecture guarantees full auditability and mathematical reproducibility required by upcoming regulatory frameworks.",
+            "model_answer_fr": "Tous les modèles en exploitation sur nos clusters de production sont répertoriés dans un registre centralisé de modèles. Nous maintenons des enregistrements de traçabilité immuables reliant chaque binaire entraîné à son commit de code source exact et à sa version de jeu de données. Cette architecture garantit l'auditabilité totale et la reproductibilité mathématique requises par les cadres réglementaires à venir.",
+            "key_phrases": [
+              "centralized model registry",
+              "immutable lineage records",
+              "full auditability and mathematical reproducibility"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

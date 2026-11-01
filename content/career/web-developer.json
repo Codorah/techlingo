@@ -1,0 +1,194 @@
+{
+  "questions": [
+    {
+      "id": "web-developer-ssr-vs-spa",
+      "status": "draft",
+      "roles": ["web-developer"],
+      "level": "B2",
+      "topic_fr": "Rendu serveur et SPA",
+      "question_en": "When would you choose server-side rendering over a single-page application?",
+      "question_fr": "Quand choisiriez-vous le rendu côté serveur plutôt qu’une application monopage ?",
+      "hint_fr": "Compare deux cas concrets : un outil interne derrière une connexion (SPA) et un site public où comptent le SEO et le premier affichage (SSR ou SSG).",
+      "answer_outline_fr": [
+        "Critère de choix : qui utilise l’application et comment on la trouve",
+        "Quand une SPA suffit : tableau de bord connecté, navigation fluide",
+        "Quand préférer SSR ou SSG : pages publiques, SEO et premier affichage sur mobile"
+      ],
+      "model_answer_en": "I choose between a single-page application and server-side rendering based on who uses the app and how they find it. For an internal dashboard behind a login page, a single-page application works very well because SEO does not matter and transitions between screens feel instant after the first load. For a public catalog, a blog or an e-commerce site, I prefer server-side rendering or static site generation. Because the server sends ready-to-display HTML, the first page loads faster on slow mobile connections and search engines can index the content easily.",
+      "model_answer_fr": "Je choisis entre une application monopage et le rendu côté serveur selon les utilisateurs et la façon dont ils arrivent sur le site. Pour un tableau de bord interne derrière une page de connexion, une application monopage convient très bien car le référencement ne compte pas et le passage d’un écran à l’autre est immédiat après le premier chargement. Pour un catalogue public, un blog ou un site e-commerce, je préfère le rendu côté serveur ou la génération statique : comme le serveur envoie du HTML prêt à afficher, la première page se charge plus vite sur mobile et les moteurs de recherche indexent facilement le contenu.",
+      "key_phrases": [
+        "single-page application",
+        "behind a login page",
+        "server-side rendering",
+        "ready-to-display HTML",
+        "search engines can index"
+      ],
+      "vocabulary_term_ids": [
+        "single-page-application",
+        "server-side-rendering",
+        "static-site-generation",
+        "seo",
+        "html"
+      ]
+    },
+    {
+      "id": "web-developer-optimize-slow-page",
+      "status": "draft",
+      "roles": ["web-developer"],
+      "level": "B2",
+      "topic_fr": "Performance web",
+      "question_en": "Walk me through how you would speed up a web page that takes six seconds to load.",
+      "question_fr": "Expliquez-moi étape par étape comment vous accéléreriez une page web qui met six secondes à se charger.",
+      "hint_fr": "Mesure d’abord avec les DevTools, puis distingue les actions côté front-end (bundle, images) et côté back-end (API, cache), et remesure à la fin.",
+      "answer_outline_fr": [
+        "Mesurer avec les outils de développement pour isoler le goulot d’étranglement",
+        "Alléger le front-end : découpage du code, tree shaking, chargement différé des images",
+        "Accélérer le back-end et le cache, puis vérifier le gain sur une connexion ralentie"
+      ],
+      "model_answer_en": "First, I open the browser developer tools and run a performance audit to see whether the bottleneck is the network, the server or the JavaScript bundle. On the front-end, I enable code splitting by route, remove unused dependencies so tree shaking can shrink the bundle, and add lazy loading for images below the fold. On the back-end, I check the slowest endpoints, add caching for frequent reads and make sure static assets are served with cache busting headers. Finally, I measure again on a throttled connection to confirm the improvement.",
+      "model_answer_fr": "D’abord, j’ouvre les outils de développement du navigateur et je lance un audit de performance pour voir si le blocage vient du réseau, du serveur ou du bundle JavaScript. Côté front-end, j’active le découpage du code par route, je retire les dépendances inutilisées pour que le tree shaking réduise le bundle, et j’ajoute le chargement différé des images hors écran. Côté back-end, je vérifie les endpoints les plus lents, j’ajoute du cache sur les lectures fréquentes et je sers les fichiers statiques avec du cache busting. Enfin, je remesure sur une connexion ralentie pour confirmer le gain.",
+      "key_phrases": [
+        "browser developer tools",
+        "code splitting by route",
+        "lazy loading for images",
+        "add caching for frequent reads",
+        "throttled connection"
+      ],
+      "vocabulary_term_ids": [
+        "browser-devtools",
+        "bundle",
+        "code-splitting",
+        "tree-shaking",
+        "lazy-loading",
+        "cache-busting"
+      ]
+    },
+    {
+      "id": "web-developer-state-management-choice",
+      "status": "draft",
+      "roles": ["web-developer"],
+      "level": "B1",
+      "topic_fr": "Gestion d’état",
+      "question_en": "How do you decide between local component state and global state management?",
+      "question_fr": "Comment choisissez-vous entre un état local au composant et une gestion d’état globale ?",
+      "hint_fr": "Pars du principe le plus simple : état local par défaut, store partagé seulement quand plusieurs écrans éloignés en ont besoin, et cache dédié pour les données serveur.",
+      "answer_outline_fr": [
+        "Garder l’état au plus près du composant qui l’utilise",
+        "Passer à un store partagé quand des écrans éloignés partagent la même donnée",
+        "Séparer l’état de l’interface et le cache des données venues de l’API"
+      ],
+      "model_answer_en": "I always keep state as close as possible to where it is used. If only one component or its direct child needs a value, like whether a modal is open or what the user typed in a search field, local state with a React hook is enough. I move data to a shared state management store only when distant components across several routes need the same information, such as the logged-in user or a shopping cart. For data coming from the REST API, I prefer a dedicated data-fetching library that handles caching and invalidation.",
+      "model_answer_fr": "Je garde toujours l’état au plus près de l’endroit où il sert. Si un seul composant ou son enfant direct a besoin d’une valeur, comme l’ouverture d’une modale ou le texte d’un champ de recherche, un état local avec un hook React suffit. Je ne déplace une donnée dans un store de gestion d’état partagé que lorsque des composants éloignés sur plusieurs routes utilisent la même information, comme l’utilisateur connecté ou le panier. Pour les données issues de l’API REST, je préfère une bibliothèque dédiée qui gère le cache et son invalidation.",
+      "key_phrases": [
+        "as close as possible",
+        "local state",
+        "shared state management",
+        "across several routes",
+        "caching and invalidation"
+      ],
+      "vocabulary_term_ids": [
+        "state",
+        "component",
+        "hook",
+        "state-management",
+        "routing",
+        "cache-invalidation"
+      ]
+    },
+    {
+      "id": "web-developer-prevent-double-payment",
+      "status": "draft",
+      "roles": ["web-developer"],
+      "level": "B2",
+      "topic_fr": "Fiabilité d’une API",
+      "question_en": "Walk me through how you would design a checkout endpoint so a user is never charged twice.",
+      "question_fr": "Expliquez-moi comment vous concevriez un endpoint de paiement pour qu’un utilisateur ne soit jamais débité deux fois.",
+      "hint_fr": "Montre que désactiver le bouton côté front ne suffit pas : il faut une clé d’idempotence et une transaction côté serveur.",
+      "answer_outline_fr": [
+        "Empêcher le double clic dans l’interface en désactivant le bouton",
+        "Envoyer une clé d’idempotence unique dans l’en-tête de la requête",
+        "Enregistrer le paiement et la commande dans une transaction et renvoyer le même résultat en cas de nouvelle tentative"
+      ],
+      "model_answer_en": "To prevent double charges, I protect both the front-end and the back-end. On the front-end, I disable the submit button as soon as the user clicks it and show a loading state so they do not click twice. However, network retries can still send two requests, so the real protection is on the server: the client generates a unique idempotency key for the checkout attempt and sends it in an HTTP header. On the back-end, I wrap the payment and the order update in a database transaction and return the saved result if the same key arrives again.",
+      "model_answer_fr": "Pour éviter un double débit, je protège à la fois le front-end et le back-end. Côté front-end, je désactive le bouton d’envoi dès le clic et j’affiche un état de chargement pour éviter un second clic. Mais les nouvelles tentatives réseau peuvent quand même envoyer deux requêtes, donc la vraie protection est côté serveur : le client génère une clé d’idempotence unique pour la tentative de paiement et l’envoie dans un en-tête HTTP. Côté back-end, j’exécute le paiement et la mise à jour de la commande dans une transaction et je renvoie le résultat enregistré si la même clé revient.",
+      "key_phrases": [
+        "disable the submit button",
+        "network retries",
+        "unique idempotency key",
+        "in an HTTP header",
+        "database transaction"
+      ],
+      "vocabulary_term_ids": [
+        "retry",
+        "idempotent",
+        "idempotency-key",
+        "http-header",
+        "transaction"
+      ]
+    },
+    {
+      "id": "web-developer-n-plus-one-story",
+      "status": "draft",
+      "roles": ["web-developer"],
+      "level": "B2",
+      "topic_fr": "Base de données et ORM",
+      "question_en": "Tell me about a time you diagnosed and fixed a database performance issue in a web application.",
+      "question_fr": "Parlez-moi d’une situation où vous avez diagnostiqué et corrigé un problème de performance de base de données dans une application web.",
+      "hint_fr": "Raconte un cas concret et crédible comme le problème des requêtes N+1 générées par un ORM : symptôme, diagnostic dans les logs, correction et résultat.",
+      "answer_outline_fr": [
+        "Le symptôme : une page de liste qui ralentit quand le volume grandit",
+        "Le diagnostic : repérer les requêtes N+1 générées par l’ORM",
+        "La correction : chargement anticipé et pagination",
+        "Le résultat sur le temps de réponse"
+      ],
+      "model_answer_en": "On a previous project, our orders page became very slow whenever a customer had more than a few dozen orders. I inspected the server logs and noticed that our ORM was running one query to fetch the orders list and then one extra query per order to load the customer details. That classic N+1 query problem meant hundreds of round trips to the relational database for a single page. I updated the repository method to eager load the related records in one query and added pagination, which brought the response time back under a hundred milliseconds.",
+      "model_answer_fr": "Sur un projet précédent, notre page de commandes devenait très lente dès qu’un client avait plus de quelques dizaines de commandes. J’ai inspecté les journaux du serveur et remarqué que notre ORM lançait une requête pour récupérer la liste des commandes, puis une requête supplémentaire par commande pour charger les informations du client. Ce problème classique de requêtes N+1 représentait des centaines d’allers-retours vers la base relationnelle pour une seule page. J’ai modifié la méthode pour charger les données liées en une seule requête et j’ai ajouté la pagination, ce qui a ramené le temps de réponse sous les cent millisecondes.",
+      "key_phrases": [
+        "one extra query per order",
+        "N+1 query problem",
+        "relational database",
+        "eager load the related records",
+        "added pagination"
+      ],
+      "vocabulary_term_ids": [
+        "orm",
+        "n-plus-one-query",
+        "relational-database",
+        "pagination",
+        "latency"
+      ]
+    },
+    {
+      "id": "web-developer-accessibility-workflow",
+      "status": "draft",
+      "roles": ["web-developer"],
+      "level": "B1",
+      "topic_fr": "Accessibilité web",
+      "question_en": "How do you build and test web interfaces to make sure they are accessible?",
+      "question_fr": "Comment construisez-vous et testez-vous vos interfaces web pour vérifier qu’elles sont accessibles ?",
+      "hint_fr": "Montre que l’accessibilité commence dès le code (HTML sémantique, labels, contraste) et se vérifie au clavier et au lecteur d’écran.",
+      "answer_outline_fr": [
+        "Partir d’un HTML sémantique plutôt que de div cliquables",
+        "Soigner les libellés de formulaire, les boutons icônes et le contraste",
+        "Tester au clavier et avec un lecteur d’écran en plus du linter"
+      ],
+      "model_answer_en": "I treat accessibility as part of building a component, not as a final checklist. I start with semantic HTML: real button, nav and form elements give keyboard navigation and focus handling for free, whereas clickable divs break both. I make sure every input has a label, every icon-only button has an accessible name, and color contrast meets the guidelines in both light and dark themes. Before opening a pull request, I navigate the page using only the keyboard and test the main flow with a screen reader to catch issues that automated linters miss.",
+      "model_answer_fr": "J’intègre l’accessibilité dès la construction d’un composant, pas comme une vérification de dernière minute. Je pars d’un HTML sémantique : de vrais éléments button, nav et form offrent gratuitement la navigation au clavier et la gestion du focus, alors que des div cliquables cassent les deux. Je vérifie que chaque champ a un libellé, que chaque bouton réduit à une icône a un nom accessible et que le contraste des couleurs est suffisant en thème clair comme en thème sombre. Avant d’ouvrir une pull request, je parcours la page uniquement au clavier et je teste le parcours principal avec un lecteur d’écran pour repérer ce que les linters automatiques ne voient pas.",
+      "key_phrases": [
+        "semantic HTML",
+        "keyboard navigation",
+        "every icon-only button",
+        "color contrast",
+        "using only the keyboard"
+      ],
+      "vocabulary_term_ids": [
+        "accessibility",
+        "semantic-html",
+        "html",
+        "component",
+        "linter"
+      ]
+    }
+  ],
+  "verbs": []
+}

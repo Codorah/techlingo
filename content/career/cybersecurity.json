@@ -1,0 +1,212 @@
+{
+  "questions": [
+    {
+      "id": "cybersecurity-triage-soc-alert",
+      "status": "draft",
+      "roles": ["cybersecurity"],
+      "level": "B1",
+      "topic_fr": "Tri d’alerte en SOC",
+      "question_en": "Walk me through how you triage a suspicious login alert in the SOC.",
+      "question_fr": "Expliquez-moi étape par étape comment vous triez une alerte de connexion suspecte au SOC.",
+      "hint_fr": "Montre une méthode structurée : vérifier le contexte dans le SIEM, croiser avec le renseignement et l’EDR, contacter l’utilisateur ou contenir si le risque est avéré.",
+      "answer_outline_fr": [
+        "Vérifier les détails de l’alerte dans le SIEM (IP, pays, heure, MFA)",
+        "Enrichir avec le renseignement sur les menaces et l’historique de l’utilisateur",
+        "Contrôler l’activité du poste dans l’EDR",
+        "Classer en faux positif documenté ou confiner le compte et escalader"
+      ],
+      "model_answer_en": "When a suspicious login alert fires in the SIEM, I first check the context: the source IP address, the device, the time and whether MFA was used. Next, I enrich the alert with threat intelligence to see if the IP is a known indicator of compromise, and I look at the user’s recent travel or VPN usage. I also check the EDR console for any unusual process on their laptop. If everything matches normal activity, I close the ticket as a documented false positive. If I see signs of account takeover, I revoke the active sessions, reset the credentials and escalate the security incident right away.",
+      "model_answer_fr": "Quand une alerte de connexion suspecte se déclenche dans le SIEM, je vérifie d’abord le contexte : l’adresse IP source, l’appareil, l’heure et l’utilisation de la MFA. Ensuite, j’enrichis l’alerte avec le renseignement sur les menaces pour voir si l’IP est un indicateur de compromission connu, et je regarde les déplacements récents ou l’usage du VPN. Je contrôle aussi la console EDR pour repérer tout processus inhabituel sur l’ordinateur. Si tout correspond à une activité normale, je clos le ticket en faux positif documenté. Si je vois des signes de compromission du compte, je révoque les sessions actives, je réinitialise les identifiants et j’escalade l’incident de sécurité immédiatement.",
+      "key_phrases": [
+        "fires in the SIEM",
+        "enrich the alert with threat intelligence",
+        "indicator of compromise",
+        "documented false positive",
+        "revoke the active sessions"
+      ],
+      "vocabulary_term_ids": [
+        "soc",
+        "siem",
+        "alert-triage",
+        "threat-intelligence",
+        "indicator-of-compromise",
+        "edr",
+        "false-positive",
+        "security-incident"
+      ]
+    },
+    {
+      "id": "cybersecurity-vulnerability-prioritization",
+      "status": "draft",
+      "roles": ["cybersecurity"],
+      "level": "B2",
+      "topic_fr": "Priorisation des vulnérabilités",
+      "question_en": "When a scanner reports dozens of vulnerabilities, how do you decide what to patch first?",
+      "question_fr": "Quand un scanner remonte des dizaines de vulnérabilités, comment décidez-vous quoi corriger en premier ?",
+      "hint_fr": "Explique pourquoi le score CVSS seul ne suffit pas : exposition sur internet, présence d’un exploit public, criticité de l’actif et mesures compensatoires.",
+      "answer_outline_fr": [
+        "Partir du score CVSS mais ne pas s’y limiter",
+        "Vérifier si un exploit public existe ou est utilisé activement",
+        "Évaluer l’exposition de l’actif et la sensibilité des données",
+        "Mettre une règle WAF en atténuation immédiate pendant le test du correctif"
+      ],
+      "model_answer_en": "I start with the CVSS score, but I never rely on it alone because context matters more. First, I check whether a public exploit exists or if the CVE is actively exploited in the wild. Second, I look at exposure: a vulnerability on an internet-facing API that handles personal data comes before a flaw on an isolated test server. Third, I check whether existing controls, such as network segmentation or a WAF, already reduce the risk. For the most critical issues, we deploy a WAF rule as a temporary mitigation while the engineering team tests and applies the security patch.",
+      "model_answer_fr": "Je pars du score CVSS, mais je ne m’y fie jamais seul car le contexte compte davantage. D’abord, je vérifie s’il existe un exploit public ou si la CVE est activement exploitée. Ensuite, je regarde l’exposition : une vulnérabilité sur une API exposée sur internet qui traite des données personnelles passe avant une faille sur un serveur de test isolé. Troisièmement, je vérifie si les contrôles existants, comme la segmentation réseau ou un WAF, réduisent déjà le risque. Pour les problèmes les plus critiques, nous déployons une règle WAF en atténuation temporaire pendant que l’équipe technique teste et applique le correctif de sécurité.",
+      "key_phrases": [
+        "CVSS score",
+        "public exploit",
+        "internet-facing",
+        "network segmentation",
+        "temporary mitigation"
+      ],
+      "vocabulary_term_ids": [
+        "vulnerability-scanning",
+        "cve",
+        "cvss",
+        "exploit",
+        "network-segmentation",
+        "waf",
+        "patch"
+      ]
+    },
+    {
+      "id": "cybersecurity-ransomware-response",
+      "status": "draft",
+      "roles": ["cybersecurity"],
+      "level": "B2",
+      "topic_fr": "Réponse à un rançongiciel",
+      "question_en": "How would you respond in the first hour after detecting ransomware on a workstation?",
+      "question_fr": "Comment réagiriez-vous dans la première heure après avoir détecté un rançongiciel sur un poste de travail ?",
+      "hint_fr": "Confinement immédiat pour stopper le déplacement latéral, préservation de la mémoire pour le forensique (ne pas éteindre), recherche d’IoC et communication.",
+      "answer_outline_fr": [
+        "Isoler immédiatement le poste via l’EDR et désactiver les comptes liés",
+        "Ne pas éteindre la machine pour préserver les preuves en mémoire",
+        "Chercher des déplacements latéraux et bloquer le domaine C2",
+        "Informer les parties prenantes selon le plan de réponse à incident"
+      ],
+      "model_answer_en": "In the first hour, containment is my top priority so the ransomware cannot spread across the network. I immediately isolate the workstation from the EDR console and disable the user’s accounts in the identity provider to stop lateral movement. I make sure nobody powers off the laptop, because digital forensics needs the volatile memory intact before we take a forensic image. At the same time, I extract indicators of compromise, block any command and control domains at the firewall, and check the SIEM for other affected hosts. Finally, I open an incident channel to keep stakeholders updated.",
+      "model_answer_fr": "Dans la première heure, le confinement est ma priorité absolue pour que le rançongiciel ne se propage pas sur le réseau. J’isole immédiatement le poste depuis la console EDR et je désactive les comptes de l’utilisateur dans le fournisseur d’identité pour bloquer tout déplacement latéral. Je m’assure que personne n’éteint l’ordinateur, car l’investigation numérique a besoin de la mémoire vive intacte avant de réaliser une image forensique. En parallèle, j’extrais les indicateurs de compromission, je bloque les domaines de commande et contrôle sur le pare-feu et je vérifie dans le SIEM si d’autres machines sont touchées. Enfin, j’ouvre un canal d’incident pour informer les parties prenantes.",
+      "key_phrases": [
+        "containment is my top priority",
+        "isolate the workstation",
+        "stop lateral movement",
+        "digital forensics",
+        "command and control"
+      ],
+      "vocabulary_term_ids": [
+        "incident-response",
+        "ransomware",
+        "containment",
+        "edr",
+        "lateral-movement",
+        "digital-forensics",
+        "forensic-image",
+        "command-and-control"
+      ]
+    },
+    {
+      "id": "cybersecurity-pentest-experience",
+      "status": "draft",
+      "roles": ["cybersecurity"],
+      "level": "B2",
+      "topic_fr": "Pentest et relation développeurs",
+      "question_en": "Tell me about a vulnerability you found or helped fix, and how you worked with developers.",
+      "question_fr": "Parlez-moi d’une vulnérabilité que vous avez découverte ou aidé à corriger, et de votre façon de travailler avec les développeurs.",
+      "hint_fr": "Méthode STAR : la faille trouvée (ex. contrôle d’accès ou injection), la démonstration de l’impact sans blâmer, l’accompagnement sur le correctif et le retest.",
+      "answer_outline_fr": [
+        "Contexte : test d’intrusion ou revue avant mise en production",
+        "Constat : la vulnérabilité et le risque concret d’élévation de privilèges",
+        "Collaboration : expliquer la cause et co-construire le correctif",
+        "Résultat : retest validé et contrôle automatisé ajouté"
+      ],
+      "model_answer_en": "During penetration testing on a customer portal, I found a broken access control flaw on the invoice endpoint. By changing an identifier in the request, a regular user could download another company’s invoices, which created a serious data breach risk. Instead of just sending a long PDF report, I met with the developers, walked them through the steps to reproduce and explained the business impact. Together, we added server-side authorization checks based on the user’s role and wrote automated tests to prevent regressions. I retested the fix the next day and closed the finding before the release.",
+      "model_answer_fr": "Lors d’un test d’intrusion sur un portail client, j’ai découvert une faille de contrôle d’accès sur l’endpoint des factures. En modifiant un identifiant dans la requête, un utilisateur normal pouvait télécharger les factures d’une autre entreprise, ce qui créait un risque sérieux de fuite de données. Au lieu d’envoyer simplement un long rapport PDF, j’ai rencontré les développeurs, je leur ai montré les étapes pour reproduire la faille et j’ai expliqué l’impact métier. Ensemble, nous avons ajouté des vérifications d’autorisation côté serveur basées sur le rôle et écrit des tests automatisés. J’ai retesté le correctif le lendemain avant la mise en ligne.",
+      "key_phrases": [
+        "During penetration testing",
+        "broken access control",
+        "data breach risk",
+        "server-side authorization checks",
+        "I retested the fix"
+      ],
+      "vocabulary_term_ids": [
+        "penetration-testing",
+        "access-control",
+        "data-breach",
+        "authorization",
+        "role-based-access-control"
+      ]
+    },
+    {
+      "id": "cybersecurity-least-privilege-zero-trust",
+      "status": "draft",
+      "roles": ["cybersecurity"],
+      "level": "C1",
+      "topic_fr": "Moindre privilège et zero trust",
+      "question_en": "How do you apply the principle of least privilege and zero trust in a cloud environment?",
+      "question_fr": "Comment appliquez-vous le principe du moindre privilège et le modèle zero trust dans un environnement cloud ?",
+      "hint_fr": "Identités humaines (SSO, MFA, PAM, revues d’accès) et comptes de service (permissions minimales, rotation des clés), plus surveillance continue via CSPM.",
+      "answer_outline_fr": [
+        "Vérifier l’identité et l’appareil à chaque accès (SSO, MFA, zero trust)",
+        "Limiter les droits des comptes humains et de service au strict nécessaire",
+        "Encadrer les accès administrateurs avec du PAM et des revues régulières",
+        "Surveiller les dérives de configuration avec un outil CSPM"
+      ],
+      "model_answer_en": "In a zero trust model, we never trust a request just because it comes from inside the network. For human users, I enforce SSO with phishing-resistant MFA and role-based access control, and we use privileged access management so admins only elevate their rights for a short time. For workloads, every application runs under a dedicated service account with only the permissions it needs, and we automate key rotation through KMS. Finally, we run quarterly access reviews to remove unused rights and use a CSPM tool to catch any cloud misconfiguration early.",
+      "model_answer_fr": "Dans un modèle zero trust, nous ne faisons jamais confiance à une requête sous prétexte qu’elle vient du réseau interne. Pour les utilisateurs, j’impose le SSO avec une MFA résistante au phishing et un contrôle d’accès par rôle, et nous utilisons la gestion des accès à privilèges pour que les administrateurs n’élèvent leurs droits que temporairement. Pour les applications, chacune tourne sous un compte de service dédié avec uniquement les permissions nécessaires, et nous automatisons la rotation des clés via KMS. Enfin, nous menons des revues d’accès trimestrielles et utilisons un outil CSPM pour détecter tôt toute mauvaise configuration cloud.",
+      "key_phrases": [
+        "zero trust model",
+        "role-based access control",
+        "privileged access management",
+        "dedicated service account",
+        "quarterly access reviews"
+      ],
+      "vocabulary_term_ids": [
+        "zero-trust",
+        "least-privilege",
+        "sso",
+        "mfa",
+        "role-based-access-control",
+        "privileged-access-management",
+        "service-account",
+        "key-rotation",
+        "kms",
+        "access-review",
+        "cspm",
+        "cloud-misconfiguration"
+      ]
+    },
+    {
+      "id": "cybersecurity-reduce-alert-fatigue",
+      "status": "draft",
+      "roles": ["cybersecurity"],
+      "level": "B2",
+      "topic_fr": "Réduction des faux positifs",
+      "question_en": "How do you reduce false positives and alert fatigue without missing real threats?",
+      "question_fr": "Comment réduisez-vous les faux positifs et la lassitude face aux alertes sans passer à côté de vraies menaces ?",
+      "hint_fr": "Mesurer les règles les plus bruyantes, ajouter du contexte aux règles SIEM/IDS, automatiser l’enrichissement via SOAR, et tester la détection avec MITRE ATT&CK.",
+      "answer_outline_fr": [
+        "Identifier les règles qui génèrent le plus de faux positifs",
+        "Affiner les seuils et exclure les comportements légitimes connus",
+        "Automatiser l’enrichissement des alertes avec un playbook SOAR",
+        "Vérifier la couverture de détection avec MITRE ATT&CK et des tests"
+      ],
+      "model_answer_en": "Alert fatigue is dangerous because analysts can miss a real attack hidden in the noise. I start by reviewing metrics every week to find the detection rules that trigger the most false positives. Instead of disabling a noisy rule, I tune it by adding context, such as excluding known vulnerability scanners or scheduled backup scripts. We also use SOAR playbooks to enrich alerts automatically before an analyst even opens them. Before putting a tuned rule in production, I test it against past incidents and map our coverage to MITRE ATT&CK so we do not create blind spots.",
+      "model_answer_fr": "La lassitude face aux alertes est dangereuse car les analystes peuvent rater une vraie attaque noyée dans le bruit. Je commence par analyser les métriques chaque semaine pour repérer les règles de détection qui génèrent le plus de faux positifs. Au lieu de désactiver une règle bruyante, je l’affine en ajoutant du contexte, par exemple en excluant les scanners de vulnérabilités connus ou les scripts de sauvegarde planifiés. Nous utilisons aussi des playbooks SOAR pour enrichir automatiquement les alertes. Avant de mettre une règle ajustée en production, je la teste sur d’anciens incidents et je vérifie notre couverture avec MITRE ATT&CK.",
+      "key_phrases": [
+        "Alert fatigue",
+        "false positives",
+        "Instead of disabling a noisy rule",
+        "SOAR playbooks",
+        "map our coverage to MITRE ATT&CK"
+      ],
+      "vocabulary_term_ids": [
+        "alert-fatigue",
+        "false-positive",
+        "soar",
+        "mitre-attack",
+        "siem"
+      ]
+    }
+  ],
+  "verbs": []
+}

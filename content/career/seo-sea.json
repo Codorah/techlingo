@@ -1,0 +1,232 @@
+{
+  "questions": [
+    {
+      "id": "seo-sea-diagnose-traffic-drop",
+      "status": "draft",
+      "roles": ["seo-sea"],
+      "level": "B2",
+      "topic_fr": "Diagnostic d'une chute de trafic SEO",
+      "question_en": "Walk me through how you would investigate a sudden drop in organic traffic.",
+      "question_fr": "Expliquez-moi comment vous analyseriez une chute soudaine du trafic organique.",
+      "hint_fr": "Montre une méthode structurée : vérifier le suivi avant tout, isoler les pages et requêtes dans la Search Console, puis croiser causes techniques et mises à jour de Google.",
+      "answer_outline_fr": [
+        "Vérifier que la baisse n'est pas un bug de suivi analytique",
+        "Segmenter dans Google Search Console par page, requête, appareil et pays",
+        "Contrôler les changements techniques récents (noindex, robots.txt, redirections)",
+        "Comparer la date avec les core updates et formuler un plan d'action"
+      ],
+      "model_answer_en": "First, I check whether the drop is real or caused by broken analytics tracking, by comparing analytics data with Google Search Console clicks. Next, I segment the data in Search Console by page template, search query, country and device to see if the loss is site-wide or limited to a few key pages. Then I check for recent deployments or technical SEO mistakes, such as an accidental noindex tag, a robots.txt change or broken redirects. Finally, I check whether the timing matches a Google core update and compare our pages against the current SERP before proposing fixes.",
+      "model_answer_fr": "D'abord, je vérifie si la baisse est réelle ou liée à un problème de suivi analytique, en comparant les données analytics avec les clics de Google Search Console. Ensuite, je segmente les données dans la Search Console par modèle de page, requête, pays et appareil pour voir si la perte touche tout le site ou quelques pages clés. Puis je vérifie les mises en production récentes ou les erreurs de SEO technique, comme une balise noindex accidentelle, un changement du robots.txt ou des redirections cassées. Enfin, je regarde si la date correspond à une core update de Google et je compare nos pages à la SERP actuelle avant de proposer des corrections.",
+      "key_phrases": [
+        "Google Search Console",
+        "I segment the data",
+        "search query",
+        "technical SEO",
+        "accidental noindex tag",
+        "core update"
+      ],
+      "vocabulary_term_ids": [
+        "organic-traffic",
+        "google-search-console",
+        "search-query",
+        "technical-seo",
+        "noindex",
+        "robots-txt",
+        "core-update",
+        "serp"
+      ]
+    },
+    {
+      "id": "seo-sea-keyword-research-to-brief",
+      "status": "draft",
+      "roles": ["seo-sea"],
+      "level": "B1",
+      "topic_fr": "Recherche de mots-clés et intention",
+      "question_en": "How do you prioritize keywords when you build an SEO roadmap for a site?",
+      "question_fr": "Comment priorisez-vous les mots-clés lorsque vous construisez une feuille de route SEO ?",
+      "hint_fr": "Ne parle pas seulement du volume : explique l'équilibre entre pertinence business, intention de recherche, difficulté et attribution aux pages existantes ou à créer.",
+      "answer_outline_fr": [
+        "Partir des objectifs business et des problèmes des clients",
+        "Évaluer l'intention de recherche et analyser la SERP réelle",
+        "Croiser volume de recherche et difficulté par rapport à l'autorité du site",
+        "Faire le keyword mapping en clusters pour éviter la cannibalisation"
+      ],
+      "model_answer_en": "I don't start with search volume alone, because high-volume keywords often bring visitors who never convert. I begin with business relevance and customer pain points, then I check the search intent directly on the SERP to see whether Google ranks guides, category pages or product pages. Next, I weigh search volume against keyword difficulty, often choosing long-tail keywords with clearer transactional or commercial intent when the site is still building authority. Finally, I organize the topics into topic clusters and do keyword mapping so each page has one clear target and we avoid keyword cannibalization.",
+      "model_answer_fr": "Je ne pars jamais du seul volume de recherche, car les mots-clés à fort volume amènent souvent des visiteurs qui ne convertissent pas. Je commence par la pertinence business et les problèmes des clients, puis je vérifie l'intention de recherche directement sur la SERP pour voir si Google positionne des guides, des pages catégories ou des pages produits. Ensuite, je mets en balance le volume et la difficulté du mot-clé, en privilégiant souvent la longue traîne à intention commerciale ou transactionnelle quand le site construit encore son autorité. Enfin, j'organise les sujets en clusters thématiques et j'attribue les mots-clés aux pages pour éviter la cannibalisation.",
+      "key_phrases": [
+        "search volume",
+        "search intent",
+        "keyword difficulty",
+        "long-tail keywords",
+        "topic clusters",
+        "keyword cannibalization"
+      ],
+      "vocabulary_term_ids": [
+        "keyword-research",
+        "search-volume",
+        "search-intent",
+        "serp",
+        "keyword-difficulty",
+        "long-tail-keyword",
+        "topic-cluster",
+        "keyword-mapping",
+        "keyword-cannibalization"
+      ]
+    },
+    {
+      "id": "seo-sea-structure-google-ads",
+      "status": "draft",
+      "roles": ["seo-sea"],
+      "level": "B2",
+      "topic_fr": "Architecture d'un compte Google Ads",
+      "question_en": "How do you structure a new Google Ads search account from scratch?",
+      "question_fr": "Comment structurez-vous un nouveau compte Google Ads sur le Réseau de Recherche en partant de zéro ?",
+      "hint_fr": "Explique la séparation marque / hors-marque, le regroupement thématique pour nourrir le Smart Bidding, les types de correspondance et le suivi des conversions.",
+      "answer_outline_fr": [
+        "Vérifier le suivi des conversions avant de dépenser le moindre euro",
+        "Séparer les campagnes de marque et les campagnes génériques par objectif",
+        "Créer des groupes d'annonces thématiques avec des annonces responsives alignées sur les landing pages",
+        "Choisir les types de correspondance et préparer une liste de mots-clés négatifs"
+      ],
+      "model_answer_en": "Before building any campaign, I make sure conversion tracking is accurate and records real business goals. Then I design a clean account structure that separates branded keywords from non-brand campaigns, because they have very different conversion rates and costs. Inside each campaign, I group keywords into tightly themed ad groups rather than creating dozens of tiny groups, so Smart Bidding has enough data to learn. I pair phrase match and exact match keywords with a negative keyword list from day one, and I write responsive search ads that closely match each landing page to start with a strong Quality Score.",
+      "model_answer_fr": "Avant de créer la moindre campagne, je m'assure que le suivi des conversions est fiable et remonte de vrais objectifs business. Ensuite, je conçois une structure de compte propre qui sépare les mots-clés de marque des campagnes génériques, car leurs taux de conversion et leurs coûts sont très différents. Dans chaque campagne, je regroupe les mots-clés en groupes d'annonces cohérents par thème plutôt que de multiplier de tout petits groupes, afin que le Smart Bidding ait assez de données pour apprendre. J'associe expression exacte et mot-clé exact à une liste de mots-clés négatifs dès le premier jour, et je rédige des annonces responsives alignées sur chaque landing page pour démarrer avec un bon Quality Score.",
+      "key_phrases": [
+        "conversion tracking",
+        "account structure",
+        "branded keywords",
+        "Smart Bidding",
+        "negative keyword list",
+        "Quality Score"
+      ],
+      "vocabulary_term_ids": [
+        "google-ads",
+        "conversion-tracking",
+        "account-structure",
+        "brand-keywords",
+        "ad-group",
+        "smart-bidding",
+        "phrase-match",
+        "exact-match",
+        "negative-keyword",
+        "responsive-search-ad",
+        "quality-score"
+      ]
+    },
+    {
+      "id": "seo-sea-turn-around-high-cpa",
+      "status": "draft",
+      "roles": ["seo-sea"],
+      "level": "B2",
+      "topic_fr": "Optimisation d'une campagne SEA",
+      "question_en": "Tell me about a time when a paid search campaign had a CPA that was too high, and how you fixed it.",
+      "question_fr": "Parlez-moi d'une situation où le CPA d'une campagne de recherche payante était trop élevé, et de la façon dont vous l'avez corrigé.",
+      "hint_fr": "Utilise la méthode STAR : le constat, l'analyse du rapport sur les termes de recherche et de la landing page, les actions concrètes, et l'amélioration obtenue.",
+      "answer_outline_fr": [
+        "Contexte : une campagne Search générique dont le CPA dépassait l'objectif",
+        "Diagnostic : requêtes hors cible en requête large et page de destination trop générique",
+        "Actions : nettoyage des termes de recherche, mots-clés négatifs, ad copy plus précis et landing page dédiée",
+        "Résultat : hausse du taux de conversion et retour du CPA sous la cible"
+      ],
+      "model_answer_en": "In a previous role, I took over a paid search campaign where the CPA was well above our target. I started by reviewing the search terms report and found that broad match keywords were triggering our ads on student and job-seeker queries. I added negative keywords and tightened the match types on the most expensive terms. I also noticed that the ads sent traffic to the homepage, so our landing page experience score was below average. I worked with the team to launch a dedicated landing page matching the ad copy. Within a few weeks, the conversion rate improved and the CPA dropped back below our target.",
+      "model_answer_fr": "Dans un poste précédent, j'ai repris une campagne de recherche payante dont le CPA dépassait largement notre objectif. J'ai commencé par analyser le rapport sur les termes de recherche et j'ai vu que des mots-clés en requête large déclenchaient nos annonces sur des recherches d'étudiants et de candidats. J'ai ajouté des mots-clés négatifs et resserré les types de correspondance sur les termes les plus coûteux. J'ai aussi remarqué que les annonces renvoyaient vers la page d'accueil, ce qui dégradait l'expérience sur la page de destination. J'ai travaillé avec l'équipe pour créer une landing page dédiée alignée sur le texte d'annonce. En quelques semaines, le taux de conversion a progressé et le CPA est repassé sous notre cible.",
+      "key_phrases": [
+        "paid search campaign",
+        "search terms report",
+        "broad match keywords",
+        "negative keywords",
+        "landing page experience",
+        "ad copy"
+      ],
+      "vocabulary_term_ids": [
+        "paid-search",
+        "cpa",
+        "search-terms-report",
+        "broad-match",
+        "negative-keyword",
+        "match-type",
+        "landing-page-experience",
+        "ad-copy"
+      ]
+    },
+    {
+      "id": "seo-sea-handle-site-migration",
+      "status": "draft",
+      "roles": ["seo-sea"],
+      "level": "C1",
+      "topic_fr": "Migration de site sans perte SEO",
+      "question_en": "How do you manage a site migration with developers to protect organic rankings?",
+      "question_fr": "Comment gérez-vous une migration de site avec les développeurs pour protéger le positionnement organique ?",
+      "hint_fr": "Découpe ta réponse en trois temps : avant (crawl et plan de redirections 301), pendant (recette en préproduction et retrait du noindex), et après (suivi dans la Search Console).",
+      "answer_outline_fr": [
+        "Avant : crawler le site actuel, sauvegarder les URL qui génèrent du trafic ou des backlinks, et préparer le plan de redirections 301",
+        "En préproduction : vérifier les balises title, les canoniques, le maillage interne et l'absence de chaînes de redirections",
+        "Jour du lancement : retirer le noindex de préproduction, mettre à jour le sitemap XML et tester les codes HTTP",
+        "Après : surveiller l'indexation, les erreurs 404 et les logs ou la Search Console pendant plusieurs semaines"
+      ],
+      "model_answer_en": "I treat a site migration in three phases: before, during and after launch. Before the migration, I crawl the existing site and export every URL that receives organic traffic or backlinks, so we can build a one-to-one 301 redirect map and avoid redirect chains. On the staging site, I check with the developers that title tags, canonical tags, internal linking and Core Web Vitals are preserved. On launch day, I verify that the staging noindex directive is removed, test the redirects and submit the new XML sitemap in Google Search Console. Over the following weeks, I monitor indexing and 404 errors daily to fix any missed URLs quickly.",
+      "model_answer_fr": "Je gère une migration de site en trois phases : avant, pendant et après la mise en ligne. Avant la migration, je crawle le site existant et j'exporte toutes les URL qui reçoivent du trafic organique ou des backlinks, afin de préparer un plan de redirections 301 page à page et d'éviter les chaînes de redirections. En préproduction, je vérifie avec les développeurs que les balises title, les canoniques, le maillage interne et les Core Web Vitals sont conservés. Le jour du lancement, je contrôle le retrait du noindex de préproduction, je teste les redirections et j'envoie le nouveau sitemap XML dans Google Search Console. Les semaines suivantes, je surveille chaque jour l'indexation et les erreurs 404 pour corriger vite tout oubli.",
+      "key_phrases": [
+        "site migration",
+        "301 redirect",
+        "redirect chains",
+        "canonical tags",
+        "XML sitemap",
+        "404 errors"
+      ],
+      "vocabulary_term_ids": [
+        "site-migration",
+        "crawl",
+        "backlink",
+        "redirect-301",
+        "redirect-chain",
+        "title-tag",
+        "canonical-tag",
+        "internal-linking",
+        "core-web-vitals",
+        "noindex",
+        "xml-sitemap",
+        "indexing",
+        "error-404"
+      ]
+    },
+    {
+      "id": "seo-sea-combine-organic-and-paid",
+      "status": "draft",
+      "roles": ["seo-sea"],
+      "level": "B2",
+      "topic_fr": "Synergie entre SEO et SEA",
+      "question_en": "How do you make SEO and SEA work together instead of competing in silos?",
+      "question_fr": "Comment faites-vous travailler le SEO et le SEA ensemble plutôt qu'en silos ?",
+      "hint_fr": "Donne des exemples concrets de partage de données (termes de recherche qui convertissent, tests d'accroches) et d'arbitrage budgétaire entre court terme et long terme.",
+      "answer_outline_fr": [
+        "Partager les données du rapport sur les termes de recherche SEA pour prioriser les contenus SEO qui convertissent",
+        "Utiliser les tests d'annonces SEA pour améliorer les balises title et méta-descriptions en SEO",
+        "Couvrir en SEA les requêtes stratégiques où le site ne se positionne pas encore en organique",
+        "Réduire ou réallouer la dépense payante quand une page domine déjà la SERP et que les clics payants cannibalisent le naturel"
+      ],
+      "model_answer_en": "I use paid search data to speed up SEO decisions, because Google Ads gives conversion data in days while SEO takes months. For example, I share the search terms report with the content team so we write SEO pages around queries that already drive conversions, not just traffic. We also reuse high-CTR headlines from responsive search ads to improve our organic title tags and meta descriptions. On the budget side, we bid higher on keywords where our organic ranking is still weak, and we test reducing ad spend on non-contested queries where we already rank first and have a high impression share.",
+      "model_answer_fr": "J'utilise les données de la recherche payante pour accélérer les décisions SEO, car Google Ads fournit des données de conversion en quelques jours alors que le SEO prend des mois. Par exemple, je partage le rapport sur les termes de recherche avec l'équipe contenu pour créer des pages SEO sur les requêtes qui génèrent déjà des conversions, et pas seulement du trafic. Nous réutilisons aussi les titres à fort CTR des annonces responsives pour améliorer nos balises title et nos méta-descriptions organiques. Côté budget, nous enchérissons davantage sur les mots-clés où notre positionnement naturel est encore faible, et nous testons une baisse des dépenses sur les requêtes peu disputées où nous sommes déjà premiers.",
+      "key_phrases": [
+        "search terms report",
+        "drive conversions",
+        "responsive search ads",
+        "title tags",
+        "organic ranking",
+        "impression share"
+      ],
+      "vocabulary_term_ids": [
+        "paid-search",
+        "search-terms-report",
+        "conversion",
+        "ctr",
+        "responsive-search-ad",
+        "title-tag",
+        "meta-description",
+        "ranking",
+        "ad-spend",
+        "impression-share"
+      ]
+    }
+  ],
+  "verbs": []
+}

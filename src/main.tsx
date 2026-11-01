@@ -23,6 +23,8 @@ const LessonScreen = named(() => import('@/screens/lesson/LessonScreen'), 'Lesso
 const DictionaryScreen = named(() => import('@/screens/DictionaryScreen'), 'DictionaryScreen');
 const WordScreen = named(() => import('@/screens/WordScreen'), 'WordScreen');
 const ProfileScreen = named(() => import('@/screens/ProfileScreen'), 'ProfileScreen');
+const SettingsScreen = named(() => import('@/screens/SettingsScreen'), 'SettingsScreen');
+const HelpScreen = named(() => import('@/screens/HelpScreen'), 'HelpScreen');
 const PracticeScreen = named(() => import('@/screens/practice/PracticeScreen'), 'PracticeScreen');
 const ReviewScreen = named(() => import('@/screens/practice/ReviewScreen'), 'ReviewScreen');
 const SessionScreen = named(() => import('@/screens/practice/SessionScreen'), 'SessionScreen');
@@ -50,6 +52,7 @@ function App() {
     return (
       <Switch>
         <Route path="/settings/data"><DataScreen /></Route>
+        <Route path="/settings/help"><HelpScreen /></Route>
         <Route><OnboardingScreen /></Route>
       </Switch>
     );
@@ -69,6 +72,9 @@ function App() {
       <Route path="/career"><CareerScreen /></Route>
       <Route path="/profile"><ProfileScreen /></Route>
       <Route path="/settings/roles"><RolesScreen /></Route>
+      <Route path="/settings/data"><DataScreen /></Route>
+      <Route path="/settings/help"><HelpScreen /></Route>
+      <Route path="/settings"><SettingsScreen /></Route>
       <Route path="/path/:category/:nodeId"><NodeScreen /></Route>
       <Route path="/path/:category"><ThemeScreen /></Route>
       <Route path="/situations/:nodeId"><SituationScreen /></Route>
@@ -76,7 +82,6 @@ function App() {
       <Route path="/parcours/:role/:nodeId"><CourseNodeScreen /></Route>
       <Route path="/parcours/:role"><CourseScreen /></Route>
       <Route path="/knowledge"><KnowledgeScreen /></Route>
-      <Route path="/settings/data"><DataScreen /></Route>
       <Route><HomeScreen /></Route>
     </Switch>
     {/* Offered once the learner is in the app, never on top of the onboarding. */}

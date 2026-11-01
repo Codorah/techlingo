@@ -1,0 +1,241 @@
+{
+  "questions": [
+    {
+      "id": "marketing-data-attribution-models",
+      "status": "draft",
+      "roles": ["marketing-data"],
+      "level": "B2",
+      "topic_fr": "Comparer les modèles d'attribution marketing",
+      "question_en": "How do you explain the trade-offs between last-click, first-click, and multi-touch attribution to a marketing team?",
+      "question_fr": "Comment expliquez-vous les compromis entre l'attribution au dernier clic, au premier clic et multi-touch à une équipe marketing ?",
+      "hint_fr": "Montrez ce que chaque modèle favorise (bas de tunnel, découverte, parcours complet) et pourquoi il est utile de croiser avec l'attribution déclarée.",
+      "answer_outline_fr": [
+        "Expliquer pourquoi le dernier clic surévalue le bas d'entonnoir et la recherche de marque",
+        "Montrer l'intérêt du premier clic pour mesurer le haut d'entonnoir",
+        "Présenter l'attribution multi-touch ou basée sur les données et le rôle de la fenêtre d'attribution",
+        "Compléter la lecture par de l'attribution déclarée à l'inscription"
+      ],
+      "model_answer_en": "I explain that no single attribution model tells the whole truth, because each one answers a different question. Last-click attribution gives all the credit to the final touchpoint, which favors bottom-of-funnel search and retargeting while starving awareness campaigns. First-click attribution shows what brings new visitors into the top of funnel, whereas multi-touch attribution and data-driven attribution distribute credit across the journey within a set attribution window. Because privacy rules limit cross-device tracking, I recommend combining digital models with self-reported attribution on the sign-up form so we do not miss dark social or podcasts.",
+      "model_answer_fr": "J'explique qu'aucun modèle d'attribution unique ne dit toute la vérité, car chacun répond à une question différente. L'attribution au dernier clic donne tout le crédit au dernier point de contact, ce qui favorise la recherche en bas de tunnel et le reciblage au détriment de la notoriété. L'attribution au premier clic montre ce qui attire de nouveaux visiteurs en haut d'entonnoir, tandis que l'attribution multi-touch et l'attribution basée sur les données répartissent le crédit sur le parcours dans une fenêtre d'attribution donnée. Comme les règles de confidentialité limitent le suivi multi-appareils, je recommande de combiner ces modèles avec de l'attribution déclarée dans le formulaire d'inscription.",
+      "key_phrases": [
+        "no single attribution model",
+        "Last-click attribution gives all the credit",
+        "multi-touch attribution and data-driven attribution",
+        "within a set attribution window",
+        "combining digital models with self-reported attribution"
+      ],
+      "vocabulary_term_ids": [
+        "attribution",
+        "attribution-model",
+        "last-click-attribution",
+        "first-click-attribution",
+        "top-of-funnel",
+        "multi-touch-attribution",
+        "data-driven-attribution",
+        "attribution-window",
+        "cross-device-tracking",
+        "self-reported-attribution"
+      ]
+    },
+    {
+      "id": "marketing-data-tracking-plan-setup",
+      "status": "draft",
+      "roles": ["marketing-data"],
+      "level": "B2",
+      "topic_fr": "Concevoir un plan de marquage et le suivi d'événements",
+      "question_en": "Walk me through how you would design a tracking plan and set up event tracking for a new website or funnel.",
+      "question_fr": "Expliquez-moi étape par étape comment vous concevriez un plan de marquage et mettriez en place le suivi d'événements pour un nouveau site ou parcours.",
+      "hint_fr": "Partez des besoins métier pour rédiger le plan de marquage, passez par la couche de données (dataLayer), le gestionnaire de balises, le mode consentement et les tests.",
+      "answer_outline_fr": [
+        "Traduire les objectifs métier en événements clés et propriétés dans un plan de marquage",
+        "Spécifier la couche de données (dataLayer) avec les développeurs",
+        "Configurer le gestionnaire de balises, le suivi côté serveur et le mode consentement",
+        "Effectuer un contrôle de cohérence en préproduction avant la mise en ligne"
+      ],
+      "model_answer_en": "I never open a tag manager before writing a clean tracking plan. First, I sit down with stakeholders to define each key event and its exact metric definition. Next, I write clear specifications for the engineering team so they push structured parameters into the data layer instead of making us scrape fragile CSS selectors. In the tag manager, I configure event tracking for GA4 and marketing tags, wired strictly to the consent management platform and consent mode, often paired with server-side tracking. Before release, I run a thorough sanity check in staging to verify every payload.",
+      "model_answer_fr": "Je n'ouvre jamais un gestionnaire de balises avant d'avoir rédigé un plan de marquage propre. D'abord, je définis avec les équipes métier chaque événement clé et la définition exacte de l'indicateur associé. Ensuite, je rédige des spécifications claires pour les développeurs afin qu'ils envoient des paramètres structurés dans la couche de données au lieu de nous obliger à cibler des sélecteurs CSS fragiles. Dans le gestionnaire de balises, je configure le suivi d'événements pour GA4 et les balises marketing, reliés strictement à la CMP et au mode consentement, souvent avec du suivi côté serveur. Avant la mise en ligne, j'effectue un contrôle de cohérence complet en préproduction.",
+      "key_phrases": [
+        "writing a clean tracking plan",
+        "define each key event",
+        "structured parameters into the data layer",
+        "consent management platform and consent mode",
+        "run a thorough sanity check"
+      ],
+      "vocabulary_term_ids": [
+        "tag-manager",
+        "tracking-plan",
+        "key-event",
+        "metric-definition",
+        "data-layer",
+        "event-tracking",
+        "ga4",
+        "marketing-tag",
+        "consent-management-platform",
+        "consent-mode",
+        "server-side-tracking",
+        "sanity-check"
+      ]
+    },
+    {
+      "id": "marketing-data-discrepancy-investigation",
+      "status": "draft",
+      "roles": ["marketing-data"],
+      "level": "B1",
+      "topic_fr": "Expliquer un écart de données entre les régies, GA4 et le back-office",
+      "question_en": "How do you investigate and explain a data discrepancy between ad platforms, GA4, and back-office revenue?",
+      "question_fr": "Comment investiguez-vous et expliquez-vous un écart de données entre les régies publicitaires, GA4 et le chiffre d'affaires du back-office ?",
+      "hint_fr": "Distinguez les écarts structurels normaux (taux de consentement, bloqueurs de pub, conversions après affichage) d'un vrai problème de marquage.",
+      "answer_outline_fr": [
+        "Rappeler que le back-office ou l'entrepôt est la source de vérité financière",
+        "Vérifier le taux de consentement et l'impact des bloqueurs de publicité sur GA4",
+        "Comparer les fenêtres d'attribution et les conversions après affichage des régies",
+        "Tester le parcours pour écarter un vrai problème de marquage ou du trafic de robots"
+      ],
+      "model_answer_en": "When a stakeholder panics over a data discrepancy, I start by reminding them that our back-office database is the financial source of truth, while analytics tools are directional. Then I check three structural causes. First, GA4 misses users who decline the cookie banner or use an ad blocker, so I compare the gap against our consent rate. Second, ad platforms count view-through conversions and use different attribution windows, which naturally inflates their numbers. Third, I check for a real tracking issue, such as broken redirects stripping source-medium parameters or a spike in bot traffic.",
+      "model_answer_fr": "Quand un interlocuteur s'inquiète d'un écart de données, je commence par rappeler que notre base back-office est la source de vérité financière, tandis que les outils web donnent une tendance indicative. Ensuite, je vérifie trois causes structurelles. D'abord, GA4 ne voit pas les visiteurs qui refusent le bandeau cookies ou utilisent un bloqueur de publicité ; je compare donc l'écart à notre taux de consentement. Deuxièmement, les régies comptent les conversions après affichage et utilisent d'autres fenêtres d'attribution, ce qui gonfle leurs chiffres. Troisièmement, je vérifie s'il y a un vrai problème de marquage, comme une redirection qui écrase le couple source / support ou un pic de trafic de robots.",
+      "key_phrases": [
+        "panics over a data discrepancy",
+        "financial source of truth",
+        "decline the cookie banner",
+        "compare the gap against our consent rate",
+        "check for a real tracking issue"
+      ],
+      "vocabulary_term_ids": [
+        "data-discrepancy",
+        "source-of-truth",
+        "directional",
+        "ga4",
+        "cookie-banner",
+        "ad-blocker",
+        "consent-rate",
+        "view-through-conversion",
+        "attribution-window",
+        "tracking-issue",
+        "source-medium",
+        "spike",
+        "bot-traffic"
+      ]
+    },
+    {
+      "id": "marketing-data-broken-tracking-star",
+      "status": "draft",
+      "roles": ["marketing-data"],
+      "level": "B2",
+      "topic_fr": "Détecter et corriger une anomalie de suivi en production",
+      "question_en": "Tell me about a time you caught a tracking issue or data anomaly that was distorting marketing reporting.",
+      "question_fr": "Racontez-moi une situation où vous avez détecté un problème de marquage ou une anomalie de données qui faussait les rapports marketing.",
+      "hint_fr": "Utilisez la méthode STAR : l'anomalie repérée dans le reporting, l'audit des balises et des sources de trafic, le correctif et la prévention.",
+      "answer_outline_fr": [
+        "Situation : hausse soudaine du trafic direct et chute apparente des campagnes payantes",
+        "Tâche : identifier la cause avant que l'équipe ne coupe le budget des campagnes",
+        "Action : auditer le parcours, repérer la perte des balises ou la double exécution d'un pixel",
+        "Résultat : rétablissement de l'attribution par canal et mise en place d'alertes"
+      ],
+      "model_answer_en": "In a previous role, weekly reporting suddenly showed a sharp dip in paid conversions while direct traffic appeared to outperform every other channel. Before the team cut budget allocation, I ran a sanity check on the checkout flow. I discovered that a recent payment gateway update was redirecting users across domains without preserving session parameters, which overwrote the original traffic source and broke our channel grouping. I worked with developers to add the gateway to the referral exclusion list in GA4 and fixed the data layer event. Accurate attribution returned immediately, saving a profitable campaign.",
+      "model_answer_fr": "Dans un poste précédent, le reporting hebdomadaire a soudain affiché une chute brutale des conversions payantes tandis que le trafic direct semblait surperformer tous les autres canaux. Avant que l'équipe ne coupe l'allocation budgétaire, j'ai lancé un contrôle de cohérence sur le tunnel de paiement. J'ai découvert qu'une mise à jour du prestataire de paiement redirigeait les utilisateurs entre domaines sans conserver les paramètres de session, ce qui écrasait la source de trafic initiale et faussait notre regroupement de canaux. J'ai travaillé avec les développeurs pour exclure le domaine référent dans GA4 et corriger l'événement du dataLayer. Une attribution juste est revenue immédiatement, sauvant une campagne rentable.",
+      "key_phrases": [
+        "weekly reporting suddenly showed a sharp dip",
+        "direct traffic appeared to outperform",
+        "Before the team cut budget allocation",
+        "overwrote the original traffic source",
+        "broke our channel grouping"
+      ],
+      "vocabulary_term_ids": [
+        "reporting",
+        "dip",
+        "direct-traffic",
+        "outperform",
+        "budget-allocation",
+        "sanity-check",
+        "traffic-source",
+        "channel-grouping",
+        "ga4",
+        "data-layer"
+      ]
+    },
+    {
+      "id": "marketing-data-incrementality-mmm",
+      "status": "draft",
+      "roles": ["marketing-data"],
+      "level": "C1",
+      "topic_fr": "Mesurer l'incrémentalité et le mix marketing sans cookies tiers",
+      "question_en": "How do you measure true incrementality and guide budget allocation in a cookieless environment?",
+      "question_fr": "Comment mesurez-vous l'incrémentalité réelle et guidez-vous l'allocation budgétaire dans un environnement sans cookies tiers ?",
+      "hint_fr": "Montrez comment vous combinez tests d'incrémentalité (groupe d'exclusion, test géographique), modélisation du mix marketing (MMM) et ratio d'efficacité marketing (MER).",
+      "answer_outline_fr": [
+        "Expliquer pourquoi la fin des cookies tiers rend le ROAS des régies incomplet",
+        "Mettre en place des tests d'incrémentalité avec un groupe d'exclusion ou un test géographique",
+        "Utiliser la modélisation du mix marketing (MMM) pour estimer les rendements décroissants et l'effet de rémanence",
+        "Suivre le ratio d'efficacité marketing (MER) et le ROAS seuil de rentabilité"
+      ],
+      "model_answer_en": "As third-party cookies disappear, relying only on platform-reported numbers is risky because ad networks gladly claim credit for organic buyers. To measure true incrementality, I design experiments with a clean holdout group or run a geo experiment where we pause or scale spend in matched regions to measure the real lift. At a macro level, I combine those tests with marketing mix modeling to estimate adstock and spot diminishing returns across channels. Day to day, I also track the overall marketing efficiency ratio against our break-even ROAS so budget allocation stays grounded in real business growth.",
+      "model_answer_fr": "Avec la disparition des cookies tiers, se fier uniquement aux chiffres déclarés par les régies est risqué, car elles s'attribuent volontiers des acheteurs organiques. Pour mesurer l'incrémentalité réelle, je conçois des tests avec un groupe d'exclusion propre ou je mène un test géographique en coupant ou augmentant les dépenses sur des zones comparables afin de mesurer le gain incrémental réel. Au niveau macro, je combine ces tests avec la modélisation du mix marketing pour estimer l'effet de rémanence publicitaire et repérer les rendements décroissants. Au quotidien, je suis aussi le ratio d'efficacité marketing global face à notre ROAS seuil de rentabilité pour guider l'allocation budgétaire.",
+      "key_phrases": [
+        "measure true incrementality",
+        "clean holdout group or run a geo experiment",
+        "combine those tests with marketing mix modeling",
+        "spot diminishing returns across channels",
+        "overall marketing efficiency ratio"
+      ],
+      "vocabulary_term_ids": [
+        "third-party-cookie",
+        "incrementality",
+        "holdout-group",
+        "geo-experiment",
+        "lift",
+        "marketing-mix-modeling",
+        "adstock",
+        "diminishing-returns",
+        "marketing-efficiency-ratio",
+        "break-even-roas",
+        "budget-allocation"
+      ]
+    },
+    {
+      "id": "marketing-data-cdp-rfm-segmentation",
+      "status": "draft",
+      "roles": ["marketing-data"],
+      "level": "B2",
+      "topic_fr": "Segmenter la base client avec une CDP et l'analyse RFM",
+      "question_en": "Walk me through how you use a Customer Data Platform and RFM analysis to build customer segments while respecting privacy rules.",
+      "question_fr": "Expliquez-moi comment vous utilisez une plateforme de données clients (CDP) et l'analyse RFM pour construire des segments clients tout en respectant les règles de confidentialité.",
+      "hint_fr": "Expliquez l'unification des données propriétaires dans une vue client unique, le découpage RFM (récence, fréquence, montant) et le respect strict du consentement et du droit à l'effacement.",
+      "answer_outline_fr": [
+        "Unifier les données transactionnelles et comportementales dans une CDP (vue client unique)",
+        "Appliquer l'analyse RFM pour isoler les clients à forte valeur et les clients à risque",
+        "Vérifier l'hygiène du CRM et synchroniser les segments vers les outils d'activation",
+        "Appliquer la minimisation des données, le consentement et le droit à l'effacement"
+      ],
+      "model_answer_en": "In a Customer Data Platform, I start with identity resolution to unify first-party data, combining behavioral data from the site with transactional data from the CRM into a single customer view. Once CRM hygiene is clean, I run an RFM analysis based on recency, purchase frequency, and spend to create actionable customer segments: high-value customers for VIP programs, at-risk customers for retention flows, and lapsed customers for win-back campaigns. Throughout this pipeline, I work closely with our DPO to enforce data minimization, sync opt-out status in real time, and honor every right to erasure request.",
+      "model_answer_fr": "Dans une plateforme de données clients (CDP), je commence par la résolution d'identité pour unifier les données propriétaires, en croisant les données comportementales du site et les données transactionnelles du CRM dans une vue client unique. Une fois l'hygiène du CRM assurée, je lance une analyse RFM fondée sur la récence, la fréquence d'achat et le montant pour créer des segments actionnables : clients à forte valeur pour les programmes VIP, clients à risque pour la rétention et clients inactifs pour la réactivation. Sur toute la chaîne, je travaille avec notre DPO pour appliquer la minimisation des données, synchroniser chaque désinscription et respecter le droit à l'effacement.",
+      "key_phrases": [
+        "start with identity resolution",
+        "into a single customer view",
+        "run an RFM analysis",
+        "high-value customers for VIP programs",
+        "enforce data minimization"
+      ],
+      "vocabulary_term_ids": [
+        "customer-data-platform",
+        "identity-resolution",
+        "first-party-data",
+        "behavioral-data",
+        "transactional-data",
+        "single-customer-view",
+        "crm-hygiene",
+        "rfm-analysis",
+        "recency",
+        "purchase-frequency",
+        "customer-segment",
+        "high-value-customer",
+        "at-risk-customer",
+        "lapsed-customer",
+        "dpo",
+        "data-minimization",
+        "opt-out",
+        "right-to-erasure"
+      ]
+    }
+  ],
+  "verbs": []
+}

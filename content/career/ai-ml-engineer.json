@@ -1,0 +1,201 @@
+{
+  "questions": [
+    {
+      "id": "ai-ml-engineer-imbalanced-dataset",
+      "status": "draft",
+      "roles": ["ai-ml-engineer"],
+      "level": "B2",
+      "topic_fr": "Évaluation et métriques",
+      "question_en": "How do you evaluate a classification model when the classes are heavily imbalanced?",
+      "question_fr": "Comment évaluez-vous un modèle de classification quand les classes sont très déséquilibrées ?",
+      "hint_fr": "Explique pourquoi l’exactitude est trompeuse, distingue précision et rappel, mentionne le score F1 et le choix du seuil selon le coût métier.",
+      "answer_outline_fr": [
+        "Expliquer pourquoi l’exactitude seule est trompeuse",
+        "Regarder la matrice de confusion, la précision et le rappel",
+        "Combiner avec le score F1 et régler le seuil selon le coût métier"
+      ],
+      "model_answer_en": "When classes are imbalanced, accuracy is misleading because a model that always predicts the majority class still gets a high score. Instead, I start with the confusion matrix and look at precision and recall separately. Next, I choose the main metric with the business team: for fraud detection, missing a real case is costly, so I prioritize recall, whereas for spam filtering I care more about precision. Finally, I track the F1 score and tune the classification threshold on the validation set to match that trade-off.",
+      "model_answer_fr": "Quand les classes sont déséquilibrées, l’exactitude est trompeuse car un modèle qui prédit toujours la classe majoritaire obtient quand même un score élevé. Je commence plutôt par la matrice de confusion et je regarde séparément la précision et le rappel. Ensuite, je choisis la métrique principale avec l’équipe métier : pour la détection de fraude, rater un vrai cas coûte cher, donc je privilégie le rappel, tandis que pour un filtre anti-spam je veille davantage à la précision. Enfin, je suis le score F1 et j’ajuste le seuil de classification sur le jeu de validation selon ce compromis.",
+      "key_phrases": [
+        "accuracy is misleading",
+        "confusion matrix",
+        "precision and recall",
+        "prioritize recall",
+        "tune the classification threshold"
+      ],
+      "vocabulary_term_ids": [
+        "classification",
+        "accuracy",
+        "precision-recall",
+        "f1-score",
+        "confusion-matrix",
+        "validation-set"
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-rag-vs-fine-tuning",
+      "status": "draft",
+      "roles": ["ai-ml-engineer"],
+      "level": "B2",
+      "topic_fr": "Architecture LLM",
+      "question_en": "When would you choose fine-tuning over RAG for a large language model?",
+      "question_fr": "Dans quels cas choisiriez-vous le fine-tuning plutôt que le RAG pour un grand modèle de langage ?",
+      "hint_fr": "Rappelle que le RAG apporte des faits à jour et des sources, alors que le fine-tuning adapte le style, le format ou un petit modèle spécialisé.",
+      "answer_outline_fr": [
+        "Commencer par l’ingénierie de prompts et des évaluations",
+        "Utiliser le RAG quand les connaissances changent souvent ou doivent être citées",
+        "Choisir le fine-tuning (par exemple LoRA) pour le ton, le format ou réduire le coût",
+        "Combiner les deux si nécessaire"
+      ],
+      "model_answer_en": "I always start with prompt engineering and a clear set of evals before training anything. I choose RAG when the model needs up-to-date facts or internal documents, and when it must cite its sources to reduce hallucinations. I choose fine-tuning when the problem is not missing knowledge, but behavior: for example, enforcing a strict output format, learning a domain-specific tone, or adapting a smaller open-weight model with LoRA to cut latency and token costs. In many projects, the two approaches complement each other.",
+      "model_answer_fr": "Je commence toujours par l’ingénierie de prompts et un jeu clair d’évaluations avant d’entraîner quoi que ce soit. Je choisis le RAG quand le modèle a besoin de faits à jour ou de documents internes, et qu’il doit citer ses sources pour réduire les hallucinations. Je choisis le fine-tuning quand le problème n’est pas un manque de connaissances, mais de comportement : par exemple imposer un format de sortie strict, adopter un ton métier ou adapter un modèle à poids ouverts plus petit avec LoRA pour réduire la latence et le coût en jetons. Souvent, les deux approches se complètent.",
+      "key_phrases": [
+        "start with prompt engineering",
+        "cite its sources",
+        "reduce hallucinations",
+        "open-weight model",
+        "cut latency and token costs"
+      ],
+      "vocabulary_term_ids": [
+        "prompt-engineering",
+        "evals",
+        "rag",
+        "fine-tuning",
+        "open-weight-model",
+        "lora"
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-detect-data-drift",
+      "status": "draft",
+      "roles": ["ai-ml-engineer"],
+      "level": "B2",
+      "topic_fr": "MLOps et production",
+      "question_en": "Walk me through how you would monitor a model in production and handle data drift.",
+      "question_fr": "Expliquez-moi étape par étape comment vous surveilleriez un modèle en production et géreriez une dérive des données.",
+      "hint_fr": "Surveiller les entrées et les prédictions, comparer à la vérité terrain dès qu’elle arrive, alerter et réentraîner via le pipeline.",
+      "answer_outline_fr": [
+        "Suivre la distribution des variables d’entrée et des prédictions",
+        "Mesurer la métrique d’évaluation dès que la vérité terrain est disponible",
+        "Analyser la cause de la dérive avant de réentraîner",
+        "Réentraîner et redéployer via le pipeline MLOps"
+      ],
+      "model_answer_en": "First, I log the input features and the model’s predictions in production so we can compare their distributions with the training set every week. Because ground truth often arrives late, tracking data drift on the inputs gives us an early warning. As soon as real labels are available, I compute our main evaluation metric automatically. If we detect a drop, I first check whether it comes from a broken data pipeline or a real change in user behavior. Then I retrain the model on recent data through our ML pipeline and validate it before deployment.",
+      "model_answer_fr": "D’abord, j’enregistre les variables d’entrée et les prédictions du modèle en production pour comparer chaque semaine leur distribution à celle du jeu d’entraînement. Comme la vérité terrain arrive souvent avec du retard, suivre la dérive des données en entrée nous donne une alerte précoce. Dès que les vraies étiquettes sont disponibles, je calcule automatiquement notre métrique d’évaluation principale. Si nous détectons une baisse, je vérifie d’abord si elle vient d’un bug du pipeline de données ou d’un vrai changement de comportement. Ensuite, je réentraîne le modèle sur des données récentes via notre pipeline ML et je le valide avant le déploiement.",
+      "key_phrases": [
+        "input features",
+        "ground truth",
+        "early warning",
+        "evaluation metric",
+        "retrain the model"
+      ],
+      "vocabulary_term_ids": [
+        "mlops",
+        "data-drift",
+        "ground-truth",
+        "evaluation-metric",
+        "pipeline-ml",
+        "model-deployment"
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-llm-evals-in-production",
+      "status": "draft",
+      "roles": ["ai-ml-engineer"],
+      "level": "C1",
+      "topic_fr": "Évaluation d’IA générative",
+      "question_en": "How do you evaluate a generative AI application before and after shipping changes?",
+      "question_fr": "Comment évaluez-vous une application d’IA générative avant et après la mise en production d’un changement ?",
+      "hint_fr": "Jeu de cas réels, vérifications déterministes sur le format, LLM évaluateur recalé sur l’humain, suivi en production.",
+      "answer_outline_fr": [
+        "Construire un jeu d’évaluation représentatif avec des cas limites",
+        "Combiner contrôles de format et LLM-as-a-judge",
+        "Calibrer le juge automatique sur des annotations humaines",
+        "Lancer les evals à chaque changement de prompt ou de modèle"
+      ],
+      "model_answer_en": "I start by building an evaluation dataset from real user questions, including tricky edge cases where the model previously failed. For tasks that require structured output, I run deterministic checks on the JSON schema and required fields. For open-ended answers, I use an LLM-as-a-judge with a strict grading rubric to score faithfulness and relevance, and I regularly check its agreement with human reviews. We run these evals automatically whenever we change a system prompt, the chunking strategy or the underlying model.",
+      "model_answer_fr": "Je commence par construire un jeu d’évaluation à partir de vraies questions d’utilisateurs, en incluant les cas limites où le modèle a déjà échoué. Pour les tâches qui demandent une sortie structurée, je lance des vérifications déterministes sur le schéma JSON et les champs obligatoires. Pour les réponses ouvertes, j’utilise un LLM évaluateur avec une grille de notation stricte pour juger la fidélité et la pertinence, et je vérifie régulièrement son accord avec des relectures humaines. Nous lançons ces evals automatiquement à chaque modification d’un prompt système, du découpage ou du modèle.",
+      "key_phrases": [
+        "evaluation dataset",
+        "structured output",
+        "LLM-as-a-judge",
+        "human reviews",
+        "run these evals automatically"
+      ],
+      "vocabulary_term_ids": [
+        "evals",
+        "structured-output",
+        "llm-as-a-judge",
+        "system-prompt",
+        "chunking"
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-reduce-inference-latency",
+      "status": "draft",
+      "roles": ["ai-ml-engineer"],
+      "level": "C1",
+      "topic_fr": "Performance et inférence",
+      "question_en": "Tell me about a time when a model was too slow or too expensive in production, and how you fixed it.",
+      "question_fr": "Parlez-moi d’une situation où un modèle était trop lent ou trop coûteux en production, et de la façon dont vous l’avez résolue.",
+      "hint_fr": "Méthode STAR : le goulot d’étranglement en inférence, les leviers concrets (quantification, distillation, modèle plus petit) et l’impact mesuré.",
+      "answer_outline_fr": [
+        "Le contexte : latence d’inférence et coût GPU trop élevés",
+        "Le diagnostic et la référence sur le jeu de test",
+        "La solution : distillation vers un modèle plus petit et quantification",
+        "Le résultat sur la latence et la précision"
+      ],
+      "model_answer_en": "On a ticket classification project, our initial model was accurate, but inference took almost two seconds per request and required expensive GPUs. First, I locked a clean test set so we could measure any quality loss. Then I used distillation: we generated labels with the large model on unlabeled tickets and trained a much smaller pre-trained model on them. Finally, I applied quantization to reduce memory usage. Latency dropped to under a hundred milliseconds, and the F1 score stayed within one point of the original model.",
+      "model_answer_fr": "Sur un projet de classification de tickets, notre premier modèle était précis, mais l’inférence prenait près de deux secondes par requête et demandait des GPU coûteux. J’ai d’abord figé un jeu de test propre pour mesurer toute perte de qualité. Ensuite, j’ai utilisé la distillation : nous avons étiqueté des tickets avec le grand modèle pour entraîner un modèle pré-entraîné bien plus léger. Enfin, j’ai appliqué une quantification pour réduire la mémoire utilisée. La latence est passée sous les cent millisecondes, et le score F1 est resté à moins d’un point du modèle initial.",
+      "key_phrases": [
+        "inference took",
+        "expensive GPUs",
+        "clean test set",
+        "applied quantization",
+        "Latency dropped"
+      ],
+      "vocabulary_term_ids": [
+        "inference",
+        "gpu",
+        "test-set",
+        "knowledge-distillation",
+        "pretrained-model",
+        "quantization"
+      ]
+    },
+    {
+      "id": "ai-ml-engineer-secure-ai-agent",
+      "status": "draft",
+      "roles": ["ai-ml-engineer"],
+      "level": "B2",
+      "topic_fr": "Agents IA et sécurité",
+      "question_en": "How would you design an AI agent that can call internal APIs without creating security risks?",
+      "question_fr": "Comment concevriez-vous un agent IA capable d’appeler des API internes sans créer de risques de sécurité ?",
+      "hint_fr": "Limiter les outils et leurs permissions, traiter les documents externes comme des données contre l’injection de prompt, garde-fous et humain dans la boucle.",
+      "answer_outline_fr": [
+        "Restreindre les outils disponibles et valider leurs paramètres",
+        "Séparer instructions et données pour contrer l’injection de consigne",
+        "Ajouter des garde-fous en entrée et en sortie",
+        "Exiger un humain dans la boucle pour les actions sensibles"
+      ],
+      "model_answer_en": "I start by giving the AI agent the minimum set of tools it needs, with strict JSON schemas and read-only permissions by default. Because external documents or emails can contain a prompt injection, I treat retrieved text strictly as data and validate every tool calling argument in code before calling an API. I also add guardrails to block off-topic requests and prevent personal data leaks. Finally, for any sensitive action like issuing a refund or sending an email, I keep a human in the loop for approval.",
+      "model_answer_fr": "Je commence par donner à l’agent IA le strict minimum d’outils nécessaires, avec des schémas JSON précis et des droits en lecture seule par défaut. Comme des documents externes ou des e-mails peuvent contenir une injection de consigne, je traite les textes récupérés comme de simples données et je valide chaque argument d’appel d’outil dans le code avant d’interroger une API. J’ajoute aussi des garde-fous pour bloquer les demandes hors sujet et éviter les fuites de données personnelles. Enfin, pour toute action sensible comme un remboursement ou l’envoi d’un e-mail, je garde un humain dans la boucle pour validation.",
+      "key_phrases": [
+        "minimum set of tools",
+        "prompt injection",
+        "tool calling",
+        "add guardrails",
+        "human in the loop"
+      ],
+      "vocabulary_term_ids": [
+        "ai-agent",
+        "tool-calling",
+        "prompt-injection",
+        "guardrails",
+        "human-in-the-loop",
+        "responsible-ai"
+      ]
+    }
+  ],
+  "verbs": []
+}

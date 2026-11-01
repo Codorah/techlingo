@@ -1,0 +1,1487 @@
+{
+  "role": "seo-sea",
+  "status": "draft",
+  "title_fr": "L'anglais de ta semaine en SEO et SEA",
+  "units": [
+    {
+      "id": "seo-sea-keyword-strategy-intent",
+      "title_fr": "Recherche de mots-clés et intention de recherche",
+      "title_en": "Keyword research and search intent",
+      "situation_fr": "En réunion de cadrage marketing, tu présentes l'analyse sémantique pour cibler des requêtes qualifiées à fort taux de conversion.",
+      "guide": {
+        "intro_fr": "La recherche de mots-clés (keyword research) est le point de départ de toute stratégie d'acquisition organique. On analyse le volume de recherche (search volume) et la difficulté (keyword difficulty) pour repérer des opportunités sur la longue traîne (long-tail keywords). L'élément décisif reste l'intention de recherche (search intent) : informationnelle, transactionnelle, commerciale ou navigationnelle. Ne pas aligner le contenu avec l'intention de l'internaute garantit un échec de positionnement dans la SERP.",
+        "key_phrases": [
+          {
+            "en": "What is the primary search intent behind this keyword?",
+            "fr": "Quelle est l'intention de recherche principale derrière ce mot-clé ?"
+          },
+          {
+            "en": "Targeting long-tail keywords will drive lower volume but much higher conversion rates.",
+            "fr": "Cibler des mots-clés de longue traîne générera moins de volume mais un taux de conversion bien plus élevé."
+          },
+          {
+            "en": "The keyword difficulty is too high for our current domain authority.",
+            "fr": "La difficulté du mot-clé est trop élevée pour notre autorité de domaine actuelle."
+          },
+          {
+            "en": "Let's check the SERP to see what type of content Google ranks on page one.",
+            "fr": "Regardons la SERP pour voir quel type de contenu Google positionne en première page."
+          },
+          {
+            "en": "We should prioritize commercial queries over purely informational searches.",
+            "fr": "Nous devrions donner la priorité aux requêtes commerciales plutôt qu'aux recherches purement informationnelles."
+          },
+          {
+            "en": "Search volume peaks every year in early November.",
+            "fr": "Le volume de recherche culmine chaque année début novembre."
+          }
+        ],
+        "tip_fr": "En anglais, « SERP » signifie Search Engine Results Page (la page de résultats de recherche). On dit « to rank on page one » ou « to rank in the top three »."
+      },
+      "lessons": [
+        {
+          "id": "seo-sea-keyword-research-and-volume",
+          "title_fr": "Identifier les mots-clés et analyser le volume",
+          "term_ids": [
+            "keyword",
+            "keyword-research",
+            "search-volume",
+            "keyword-difficulty"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Chloe",
+              "text_en": "Tom, our organic traffic plateaued last quarter. Where should we look for growth?",
+              "text_fr": "Tom, notre trafic organique a stagné le trimestre dernier. Où devrions-nous chercher la croissance ?"
+            },
+            {
+              "speaker": "Tom",
+              "text_en": "I ran a comprehensive keyword research audit. We are only competing on broad, highly competitive head terms.",
+              "text_fr": "J'ai mené un audit complet de recherche de mots-clés. Nous ne rivalisons que sur des termes génériques très concurrentiels."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "What does the data say about keyword difficulty?",
+              "text_fr": "Que disent les données sur la difficulté des mots-clés ?"
+            },
+            {
+              "speaker": "Tom",
+              "text_en": "Head terms have a keyword difficulty above eighty, whereas long-tail opportunities have solid monthly search volume with minimal competition.",
+              "text_fr": "Les termes génériques ont une difficulté supérieure à 80, tandis que des opportunités de longue traîne ont un solide volume mensuel avec peu de concurrence."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que mesure la métrique de « keyword difficulty » (KD) ?",
+              "choices": [
+                "Le niveau d'effort et de profil de liens nécessaire pour se positionner en première page sur un mot-clé",
+                "Le nombre de fautes d'orthographe tapées par les utilisateurs",
+                "Le temps de chargement du serveur web"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La « keyword difficulty » estime la concurrence pour figurer sur la première page de Google en analysant la force des domaines déjà classés."
+            },
+            {
+              "prompt_fr": "Pourquoi le « search volume » seul n'est-il pas suffisant pour choisir un mot-clé ?",
+              "choices": [
+                "Parce que Google interdit de consulter les volumes de recherche",
+                "Parce qu'un fort volume sans intention d'achat ni faisabilité concurrentielle n'apporte que du trafic non qualifié",
+                "Parce que les mots-clés à fort volume coûtent toujours de l'argent en SEO gratuit"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un volume élevé est inutile si l'intention ne correspond pas à votre offre ou si la concurrence rend la première page inaccessible."
+            },
+            {
+              "prompt_fr": "Comment désigne-t-on le processus d'identification des termes saisis par les utilisateurs cibles ?",
+              "choices": [
+                "Database compilation",
+                "Network sniffing",
+                "Keyword research"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La recherche de mots-clés (« keyword research ») consiste à découvrir et qualifier les requêtes de votre audience."
+            },
+            {
+              "prompt_fr": "Complète : « The monthly ___ volume for this query dropped by twenty percent after the holidays. »",
+              "choices": [
+                "search",
+                "display",
+                "cable"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On parle de « search volume » pour exprimer le nombre de recherches mensuelles d'une requête."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour annoncer à l'équipe contenu les résultats de la recherche de mots-clés et proposer de prioriser les requêtes à moyenne difficulté.",
+            "context_en": "Slack channel #marketing-seo",
+            "model_answer_en": "Hi team, I finished our latest keyword research analysis for the software category. While head terms have severe keyword difficulty scores above eighty, we uncovered fifty high-potential queries with moderate search volume and low competition. I suggest prioritizing these terms for next month's editorial calendar to accelerate traffic gains.",
+            "model_answer_fr": "Bonjour l'équipe, j'ai terminé notre dernière analyse de recherche de mots-clés pour la catégorie logiciels. Alors que les termes génériques affichent des scores de difficulté sévères supérieurs à 80, nous avons déniché cinquante requêtes à fort potentiel avec un volume moyen et une faible concurrence. Je suggère de prioriser ces termes pour le calendrier éditorial du mois prochain afin d'accélérer les gains de trafic.",
+            "key_phrases": [
+              "keyword research analysis",
+              "keyword difficulty scores",
+              "moderate search volume"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-search-intent-and-long-tail",
+          "title_fr": "Intention de recherche et Longue Traîne",
+          "term_ids": [
+            "search-intent",
+            "long-tail-keyword",
+            "search-query",
+            "serp"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tom",
+              "text_en": "Our blog article on project management tools ranks position 4, but the bounce rate is eighty-five percent.",
+              "text_fr": "Notre article de blog sur les outils de gestion de projet est position 4, mais le taux de rebond est de 85 %."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "Let's inspect the SERP. What is the dominant search intent?",
+              "text_fr": "Examinons la SERP. Quelle est l'intention de recherche dominante ?"
+            },
+            {
+              "speaker": "Tom",
+              "text_en": "Users typing that search query are looking for free comparisons and templates, not our enterprise demo page.",
+              "text_fr": "Les internautes qui tapent cette requête recherchent des comparatifs gratuits et des modèles, pas notre page de démo entreprise."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "We should create dedicated landing pages targeting long-tail keywords with explicit transactional intent.",
+              "text_fr": "Nous devrions créer des pages d'atterrissage dédiées ciblant des mots-clés de longue traîne avec une intention transactionnelle explicite."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce que la « search intent » (intention de recherche) ?",
+              "choices": [
+                "La vitesse à laquelle l'utilisateur appuie sur la touche Entrée",
+                "L'objectif réel et l'attente de l'internaute lorsqu'il saisit une requête dans le moteur de recherche",
+                "Le nom du navigateur utilisé"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'intention de recherche est la finalité de l'utilisateur : trouver une information, comparer des solutions ou acheter un produit précis."
+            },
+            {
+              "prompt_fr": "Pourquoi les « long-tail keywords » sont-ils cruciaux dans une stratégie SEO ?",
+              "choices": [
+                "Ils sont invisibles pour Google",
+                "Ils ne fonctionnent que le week-end",
+                "Ils sont plus spécifiques, moins concurrentiels et convertissent généralement beaucoup mieux que les termes génériques"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La longue traîne (long tail) regroupe des requêtes plus longues et précises avec une intention d'achat bien plus claire."
+            },
+            {
+              "prompt_fr": "Que désigne le terme « search query » par rapport à « keyword » ?",
+              "choices": [
+                "La phrase ou suite de mots exacte tapée par un internaute dans la barre de recherche",
+                "Un bouton dans Google Analytics",
+                "Une balise HTML obligatoire"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La requête (search query) est ce que tape l'utilisateur réel, tandis que le mot-clé (keyword) est le concept sémantique ciblé par le référenceur."
+            },
+            {
+              "prompt_fr": "Complète : « The first page of the ___ is dominated by video carousels and comparison tables. »",
+              "choices": [
+                "DNS",
+                "SERP",
+                "RAM"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La page de résultats du moteur de recherche s'appelle la SERP (Search Engine Results Page)."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige un email (3 phrases) au responsable produit pour lui expliquer qu'il faut adapter le contenu de la landing page pour correspondre à l'intention commerciale de la SERP plutôt qu'à un texte purement institutionnel.",
+            "context_en": "Email to Head of Product Marketing",
+            "model_answer_en": "Hi Marc, after reviewing the SERP for our target search query, I noticed that Google exclusively ranks detailed product comparison guides. Our current page fails to rank because its search intent does not match what evaluators expect. I recommend adding feature breakdown tables and transparent pricing to satisfy commercial intent and boost conversions.",
+            "model_answer_fr": "Bonjour Marc, après avoir examiné la SERP pour notre requête cible, j'ai remarqué que Google positionne exclusivement des guides comparatifs détaillés. Notre page actuelle peine à se positionner car son intention de recherche ne correspond pas à l'attente des évaluateurs. Je recommande d'ajouter des tableaux de fonctionnalités et des tarifs transparents pour satisfaire l'intention commerciale et doper les conversions.",
+            "key_phrases": [
+              "reviewing the SERP",
+              "search intent",
+              "commercial intent"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-cannibalization-and-eeat",
+          "title_fr": "Cannibalisation sémantique et critères E-E-A-T",
+          "term_ids": [
+            "keyword-cannibalization",
+            "eeat",
+            "organic-traffic",
+            "search-engine"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Chloe",
+              "text_en": "Tom, our rankings for our core product term dropped from position 3 to position 18.",
+              "text_fr": "Tom, nos positions sur notre mot-clé produit principal ont chuté de la 3e à la 18e place."
+            },
+            {
+              "speaker": "Tom",
+              "text_en": "We published three separate blog posts targeting the exact same keyword. It is a severe case of keyword cannibalization.",
+              "text_fr": "Nous avons publié trois articles de blog distincts ciblant exactement le même mot-clé. C'est un cas flagrant de cannibalisation."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "Google doesn't know which page to rank! Should we consolidate them?",
+              "text_fr": "Google ne sait plus quelle page positionner ! Devrions-nous les consolider ?"
+            },
+            {
+              "speaker": "Tom",
+              "text_en": "Yes, we will merge the content into one authoritative pillar page with verified author credentials to strengthen our EEAT signals.",
+              "text_fr": "Oui, nous fusionnerons le contenu en une seule page pilier de référence avec des biographies d'auteurs vérifiées pour renforcer nos signaux E-E-A-T."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce que la « keyword cannibalization » (cannibalisation de mots-clés) ?",
+              "choices": [
+                "Quand un concurrent achète votre marque sur Google Ads",
+                "Quand un robot supprime les balises meta de votre site",
+                "Quand plusieurs pages d'un même site se font concurrence sur le même mot-clé, dégradant leurs positions respectives"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La cannibalisation survient lorsque plusieurs pages visent la même requête, divisant les signaux d'autorité et semant le doute dans l'algorithme."
+            },
+            {
+              "prompt_fr": "Que signifient les lettres de « E-E-A-T » dans les consignes de qualité de Google ?",
+              "choices": [
+                "Experience, Expertise, Authoritativeness, Trustworthiness",
+                "Efficiency, Engagement, Action, Tracking",
+                "Email, Encryption, Authentication, Token"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "E-E-A-T évalue l'expérience vécue, l'expertise démontrée, l'autorité du domaine et la confiance globale de la source."
+            },
+            {
+              "prompt_fr": "Comment résout-on le plus efficacement un problème de cannibalisation entre deux articles similaires ?",
+              "choices": [
+                "En bloquant l'accès du site aux internautes mobiles",
+                "En fusionnant les contenus dans la page la plus forte et en effectuant une redirection 301 depuis l'ancienne page",
+                "En changeant le nom de domaine complet"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Consolider le contenu sur une URL unique avec une redirection 301 concentre la popularité et élimine la concurrence interne."
+            },
+            {
+              "prompt_fr": "Complète : « The drop in ___ was caused by two internal pages competing for the same search ranking. »",
+              "choices": [
+                "keyboard battery",
+                "screen resolution",
+                "organic traffic"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La cannibalisation fait chuter le trafic organique (« organic traffic »)."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour avertir l'équipe éditoriale qu'une fusion de pages est nécessaire pour stopper la cannibalisation de mots-clés et consolider les signaux E-E-A-T.",
+            "context_en": "Slack channel #content-strategy",
+            "model_answer_en": "Heads up team: our two CRM comparison articles are causing serious keyword cannibalization on Google. Search engines are constantly swapping rankings between them, hurting our overall organic traffic. I will merge the best sections into the primary guide and set up 301 redirects, adding author credentials to bolster our EEAT authority.",
+            "model_answer_fr": "Attention l'équipe : nos deux articles comparatifs CRM provoquent une sérieuse cannibalisation de mots-clés sur Google. Les moteurs de recherche alternent sans cesse les classements entre eux, nuisant à notre trafic organique global. Je vais fusionner les meilleures sections dans le guide principal et poser des redirections 301, en ajoutant les profils d'auteurs pour renforcer notre autorité E-E-A-T.",
+            "key_phrases": [
+              "serious keyword cannibalization",
+              "organic traffic",
+              "bolster our EEAT authority"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "seo-sea-on-page-and-content",
+      "title_fr": "Optimisation On-Page et Topic Clusters",
+      "title_en": "On-page SEO, internal linking, and topic clusters",
+      "situation_fr": "Tu audites les balises sémantiques et structures l'architecture en silos pour booster le maillage interne.",
+      "guide": {
+        "intro_fr": "Le SEO on-page concerne toutes les optimisations directement réalisées sur la page web. Cela commence par les balises HTML stratégiques : le title tag (facteur de positionnement direct), la meta-description (déterminante pour le taux de clic CTR), les heading tags (H1, H2, H3 structurant la hiérarchie) et les attributs alt-text des images. Pour assoir une autorité thématique durable, on organise le site en topic clusters (grappes thématiques) reliés par un maillage interne (internal linking) rigoureux vers une pillar page.",
+        "key_phrases": [
+          {
+            "en": "The title tag must contain our primary keyword within sixty characters.",
+            "fr": "Le title tag doit contenir notre mot-clé principal en moins de soixante caractères."
+          },
+          {
+            "en": "A compelling meta description will increase our organic click-through rate.",
+            "fr": "Une méta-description percutante augmentera notre taux de clic organique."
+          },
+          {
+            "en": "Ensure every article has a single H1 heading and logical H2 subheadings.",
+            "fr": "Veille à ce que chaque article ait un seul titre H1 et des sous-titres H2 logiques."
+          },
+          {
+            "en": "Descriptive alt text helps visually impaired users and improves image indexing.",
+            "fr": "Un texte alternatif descriptif aide les malvoyants et améliore l'indexation des images."
+          },
+          {
+            "en": "Our topic cluster links five supporting articles directly back to the pillar page.",
+            "fr": "Notre topic cluster relie cinq articles satellites directement vers la page pilier."
+          },
+          {
+            "en": "Strategic internal linking distributes link equity throughout the entire catalog.",
+            "fr": "Le maillage interne stratégique distribue le jus de lien à travers tout le catalogue."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « Title tag » (balise HTML `<title>` affichée dans la SERP et l'onglet du navigateur) et « H1 » (titre visible en haut de la page dans le corps de texte). Les deux doivent être complémentaires sans être obligatoirement identiques au mot près."
+      },
+      "lessons": [
+        {
+          "id": "seo-sea-title-meta-and-headings",
+          "title_fr": "Balises Title, Meta-description et Hiérarchie Hn",
+          "term_ids": [
+            "title-tag",
+            "meta-description",
+            "heading-tags",
+            "alt-text"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lina",
+              "text_en": "David, our new pricing guide is ranking position 2, but nobody is clicking on it.",
+              "text_fr": "David, notre nouveau guide des tarifs est classé en 2e position, mais personne ne clique dessus."
+            },
+            {
+              "speaker": "David",
+              "text_en": "The title tag is cut off on mobile devices, and the meta description is just automated boilerplate text.",
+              "text_fr": "Le title tag est tronqué sur mobile, et la méta-description n'est qu'un texte passe-partout automatique."
+            },
+            {
+              "speaker": "Lina",
+              "text_en": "We need a concise title under sixty characters with an active hook.",
+              "text_fr": "Il nous faut un title concis de moins de soixante caractères avec une accroche dynamique."
+            },
+            {
+              "speaker": "David",
+              "text_en": "And let's rewrite the meta description to include a clear benefit and call-to-action.",
+              "text_fr": "Et réécrivons la méta-description pour inclure un avantage clair et un appel à l'action."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la longueur maximale recommandée pour un « title tag » afin d'éviter la troncature dans les résultats Google ?",
+              "choices": [
+                "Environ 50 à 60 caractères (ou 600 pixels)",
+                "Au moins 250 caractères",
+                "Il n'y a aucune limite d'affichage"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Au-delà de 60 caractères ou ~600 pixels, Google tronque le titre avec des points de suspension, réduisant la lisibilité et le CTR."
+            },
+            {
+              "prompt_fr": "La « meta-description » est-elle un facteur direct de positionnement dans l'algorithme Google ?",
+              "choices": [
+                "Oui, c'est le critère le plus important de l'algorithme",
+                "Non, mais elle influence directement le taux de clic (CTR) qui impacte le trafic et les conversions",
+                "Non, elle a été totalement supprimée des SERP en 2024"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Google ne classe pas les pages en fonction des mots-clés de la méta-description, mais elle est cruciale pour convaincre l'internaute de cliquer."
+            },
+            {
+              "prompt_fr": "À quoi sert la balise « alt-text » d'une image ?",
+              "choices": [
+                "À masquer l'image sur les écrans d'ordinateur",
+                "À compresser automatiquement la photo en format ZIP",
+                "À décrire le contenu de l'image pour l'accessibilité des personnes malvoyantes et l'indexation de Google Images"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'attribut alt décrit l'image textuellement pour les lecteurs d'écran et permet aux moteurs de comprendre son sujet."
+            },
+            {
+              "prompt_fr": "Complète : « The page structure was broken because it contained four different ___ tags instead of one. »",
+              "choices": [
+                "H1",
+                "CSS",
+                "URL"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une page ne doit comporter qu'une seule balise H1 principale pour structurer clairement le sujet du document."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Commente une PR de template de blog (3 phrases) en demandant de limiter la génération du title tag à 60 caractères, d'ajouter l'attribut alt obligatoire sur les images et d'insérer une seule balise H1 par page.",
+            "context_en": "GitHub PR review on blog-layout-template",
+            "model_answer_en": "Thanks for updating the blog layout template! Please ensure the rendered title tag is clamped to sixty characters to prevent mobile truncation in SERP snippets. Additionally, verify that images enforce a mandatory alt-text prop and that only one H1 heading is generated per page.",
+            "model_answer_fr": "Merci pour la mise à jour du template de blog ! Veille à ce que le title tag généré soit plafonné à 60 caractères pour éviter la troncature sur mobile dans les snippets de la SERP. De plus, vérifie que les images imposent un attribut alt-text obligatoire et qu'une seule balise H1 est générée par page.",
+            "key_phrases": [
+              "title tag is clamped",
+              "SERP snippets",
+              "mandatory alt-text"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-internal-linking-and-clusters",
+          "title_fr": "Maillage interne et Topic Clusters",
+          "term_ids": [
+            "internal-linking",
+            "topic-cluster",
+            "pillar-page",
+            "on-page-seo"
+          ],
+          "dialogue": [
+            {
+              "speaker": "David",
+              "text_en": "Lina, our high-converting product pages are hidden five clicks deep into the navigation.",
+              "text_fr": "David, nos pages produits à forte conversion sont cachées à cinq clics de profondeur dans la navigation."
+            },
+            {
+              "speaker": "Lina",
+              "text_en": "That is terrible for crawl depth and page authority. We need a topic cluster strategy.",
+              "text_fr": "C'est terrible pour la profondeur de crawl et l'autorité de page. Il nous faut une stratégie de topic cluster."
+            },
+            {
+              "speaker": "David",
+              "text_en": "How do we structure the cluster?",
+              "text_fr": "Comment structure-t-on le cluster ?"
+            },
+            {
+              "speaker": "Lina",
+              "text_en": "We build one comprehensive pillar page, surrounded by ten detailed cluster articles, with bidirectional internal linking using descriptive anchor text.",
+              "text_fr": "On construit une page pilier complète, entourée de dix articles satellites, avec un maillage interne bidirectionnel utilisant des ancres descriptives."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce qu'une « pillar page » au sein d'un topic cluster ?",
+              "choices": [
+                "Une page de contact affichant le plan d'accès de l'entreprise",
+                "Une page de référence exhaustive couvrant largement un sujet central et renvoyant vers des sous-thématiques spécialisées",
+                "Une page protégée par mot de passe"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La pillar page (page pilier) offre une vue complète d'une thématique majeure et distribue du trafic et de l'autorité aux articles satellites."
+            },
+            {
+              "prompt_fr": "Quel est l'impact d'un bon « internal linking » (maillage interne) ?",
+              "choices": [
+                "Il augmente automatiquement la facture d'hébergement",
+                "Il empêche Google d'indexer les pages satellites",
+                "Il aide les moteurs à découvrir de nouvelles pages, transmet l'autorité et guide l'internaute dans son parcours d'achat"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le maillage interne optimise le crawl de Googlebot et transmet le PageRank interne vers les pages stratégiques."
+            },
+            {
+              "prompt_fr": "Comment désigne-t-on l'organisation thématique de contenus satellites gravitant autour d'un sujet parent ?",
+              "choices": [
+                "A topic cluster",
+                "A database trigger",
+                "A cookie policy"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le modèle en « topic cluster » regroupe les contenus connexes pour établir une autorité sémantique incontestable auprès de Google."
+            },
+            {
+              "prompt_fr": "Complète : « By strengthening our ___, we reduced average click depth from five to two clicks. »",
+              "choices": [
+                "wifi antenna",
+                "internal linking",
+                "screen contrast"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le maillage interne (« internal linking ») permet d'amener les pages stratégiques à moins de trois clics de la page d'accueil."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour proposer à l'équipe marketing de déployer un topic cluster autour de la facturation électronique afin de renforcer la pillar page par un maillage interne cohérent.",
+            "context_en": "Slack channel #seo-growth",
+            "model_answer_en": "Hi team, I propose building a topic cluster around electronic invoicing for Q3. We will create an in-depth pillar page supported by six focused guides covering compliance, formats, and vendor migration. Structuring tight bidirectional internal linking will concentrate topical authority and propel our main landing page into the top 3.",
+            "model_answer_fr": "Bonjour l'équipe, je propose de construire un topic cluster autour de la facturation électronique pour le T3. Nous allons créer une page pilier approfondie appuyée par six guides thématiques couvrant la conformité, les formats et la migration de prestataires. Structurer un maillage interne bidirectionnel resserré concentrera l'autorité thématique et propulsera notre landing page principale dans le top 3.",
+            "key_phrases": [
+              "topic cluster",
+              "in-depth pillar page",
+              "bidirectional internal linking"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-rich-results-and-schema",
+          "title_fr": "Données structurées et Rich Results",
+          "term_ids": [
+            "schema-markup",
+            "rich-results",
+            "featured-snippet",
+            "serp-features"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lina",
+              "text_en": "Competitors on page one have star ratings, FAQ accordions, and pricing badges appearing directly in the search results.",
+              "text_fr": "Nos concurrents en page 1 ont des avis étoilés, des accordéons FAQ et des badges de prix qui s'affichent directement dans les résultats de recherche."
+            },
+            {
+              "speaker": "David",
+              "text_en": "They are utilizing JSON-LD schema markup to win rich results and featured snippets.",
+              "text_fr": "Ils utilisent le balisage schema JSON-LD pour décrocher des rich results et des featured snippets."
+            },
+            {
+              "speaker": "Lina",
+              "text_en": "Can we add FAQPage and Product schemas to our software reviews?",
+              "text_fr": "Pouvons-nous ajouter des schémas FAQPage et Product à nos avis logiciels ?"
+            },
+            {
+              "speaker": "David",
+              "text_en": "Absolutely. Validating our structured data in the Rich Results Test will significantly lift our SERP click-through rate.",
+              "text_fr": "Tout à fait. Valider nos données structurées dans le test des résultats enrichis boostera significativement notre taux de clic dans la SERP."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce que le « schema markup » (balisage Schema.org) ?",
+              "choices": [
+                "Un thème graphique pour CMS",
+                "Un bloqueur de fenêtres pop-up",
+                "Un format de code standardisé (le plus souvent en JSON-LD) permettant aux moteurs de comprendre explicitement les données d'une page"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le balisage Schema.org fournit aux moteurs des métadonnées sémantiques claires sur la nature du contenu (avis, recette, événement, produit)."
+            },
+            {
+              "prompt_fr": "Que sont les « rich results » (résultats enrichis) dans Google ?",
+              "choices": [
+                "Des extraits de recherche enrichis d'éléments visuels tels qu'étoiles d'avis, prix, photos ou questions fréquentes",
+                "Des résultats payants réservés aux entreprises du CAC 40",
+                "Des emails automatiques envoyés par Google"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les résultats enrichis (rich results) rendent le snippet de recherche beaucoup plus visible et interactif dans la SERP."
+            },
+            {
+              "prompt_fr": "Comment appelle-t-on le bloc de réponse encadré qui s'affiche tout en haut de la SERP avant la première position organique ?",
+              "choices": [
+                "A 404 header",
+                "A featured snippet (or position zero)",
+                "A footer link"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le « featured snippet » (position zéro) extrait directement une définition, une liste ou un tableau pour répondre instantanément à l'internaute."
+            },
+            {
+              "prompt_fr": "Complète : « Adding Product ___ generated rich snippets with review stars in Google search. »",
+              "choices": [
+                "antivirus protection",
+                "audio volume",
+                "schema markup"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "C'est l'intégration de « schema markup » (données structurées) qui déclenche l'affichage d'étoiles d'avis."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Commente une PR frontend (3 phrases) en demandant d'intégrer le script JSON-LD avec le balisage Schema.org FAQPage et Product afin de débloquer les rich results sur Google.",
+            "context_en": "GitHub PR review on pricing-page-schema",
+            "model_answer_en": "Great job completing the pricing redesign! Before launching, could you please inject a JSON-LD script containing valid Product and FAQPage schema markup? Having properly formatted structured data will allow us to qualify for rich results and stars in Google SERPs, which will give our organic CTR a major boost.",
+            "model_answer_fr": "Beau travail sur la refonte des tarifs ! Avant de lancer, pourrais-tu injecter un script JSON-LD contenant un balisage Schema.org valide pour Product et FAQPage ? Disposer de données structurées bien formées nous permettra de nous qualifier pour les rich results et les étoiles dans les SERP Google, ce qui offrira un coup de fouet majeur à notre CTR organique.",
+            "key_phrases": [
+              "JSON-LD script",
+              "schema markup",
+              "qualify for rich results"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "seo-sea-technical-seo-and-vitals",
+      "title_fr": "SEO Technique, Crawl et Core Web Vitals",
+      "title_en": "Technical SEO, indexing, and Core Web Vitals",
+      "situation_fr": "Lors de la refonte du site, tu garantis que les moteurs explorent et indexent efficacement les pages tout en respectant les critères de vitesse.",
+      "guide": {
+        "intro_fr": "Le SEO technique est le socle invisible sans lequel le meilleur contenu ne peut ranker. Il s'assure que Googlebot peut explorer (crawl) et indexer (indexing) sans gaspiller son crawl budget. On pilote le comportement des robots avec le fichier robots.txt et le sitemap XML, et on résout les contenus dupliqués via la balise canonical tag et les redirections 301. Enfin, l'expérience de page repose sur les Core Web Vitals : LCP (chargement du contenu principal), INP (réactivité aux clics) et CLS (stabilité visuelle).",
+        "key_phrases": [
+          {
+            "en": "Googlebot is wasting crawl budget on parameterized search filter URLs.",
+            "fr": "Googlebot gaspille du budget de crawl sur les URL de filtres de recherche paramétrées."
+          },
+          {
+            "en": "The canonical tag points to the preferred URL to prevent duplicate content penalties.",
+            "fr": "La balise canonique pointe vers l'URL préférée pour éviter les pénalités de contenu dupliqué."
+          },
+          {
+            "en": "We configured a 301 redirect to pass link equity from the obsolete page.",
+            "fr": "Nous avons configuré une redirection 301 pour transmettre le jus de lien depuis l'ancienne page."
+          },
+          {
+            "en": "Our Largest Contentful Paint must be under 2.5 seconds to pass Core Web Vitals.",
+            "fr": "Notre LCP doit être inférieur à 2,5 secondes pour valider les Core Web Vitals."
+          },
+          {
+            "en": "The robots.txt file must not disallow critical CSS and JavaScript assets.",
+            "fr": "Le fichier robots.txt ne doit pas bloquer les ressources CSS et JavaScript critiques."
+          },
+          {
+            "en": "Verify in Google Search Console that no essential landing pages are flagged with noindex.",
+            "fr": "Vérifie dans Google Search Console qu'aucune page stratégique n'est marquée avec noindex."
+          }
+        ],
+        "tip_fr": "Attention au faux ami « redirect 301 » vs « 302 » : le code 301 est une redirection permanente qui transmet la popularité (link equity / SEO juice), tandis que le code 302 est temporaire et ne transmet pas le classement."
+      },
+      "lessons": [
+        {
+          "id": "seo-sea-crawl-index-and-sitemaps",
+          "title_fr": "Crawl, Indexation et Fichiers Robots / Sitemap",
+          "term_ids": [
+            "crawl",
+            "indexing",
+            "xml-sitemap",
+            "robots-txt"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Karim",
+              "text_en": "Sarah, our newly launched customer stories have not appeared in Google after three weeks.",
+              "text_fr": "Sarah, nos nouvelles études de cas clients ne sont pas apparues dans Google après trois semaines."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Let's check Google Search Console. Was the URL crawled or is indexing blocked?",
+              "text_fr": "Regardons Google Search Console. L'URL a-t-elle été crawlée ou l'indexation est-elle bloquée ?"
+            },
+            {
+              "speaker": "Karim",
+              "text_en": "It says 'Discovered - currently not indexed'. Also, the sitemap wasn't updated.",
+              "text_fr": "Elle indique « Détectée - actuellement non indexée ». De plus, le sitemap n'a pas été actualisé."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "We need to add the new routes to our automated XML sitemap and verify robots.txt isn't blocking the subfolder.",
+              "text_fr": "Nous devons ajouter les nouvelles routes à notre sitemap XML automatisé et vérifier que le robots.txt ne bloque pas le sous-dossier."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence fondamentale entre « crawling » et « indexing » ?",
+              "choices": [
+                "Le crawl est l'exploration des pages par les robots, tandis que l'indexation est l'enregistrement et l'organisation des pages dans la base de données de Google",
+                "Le crawling concerne uniquement les vidéos et l'indexation les images",
+                "Ce sont deux synonymes stricts désignant exactement la même opération"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un robot peut crawler une page sans pour autant décider de l'indexer s'il juge son contenu de faible valeur ou dupliqué."
+            },
+            {
+              "prompt_fr": "À quoi sert le fichier « robots.txt » à la racine d'un site web ?",
+              "choices": [
+                "À bloquer les attaques de pirates informatiques",
+                "À donner des directives d'exploration aux robots des moteurs de recherche (indiquer ce qu'ils ont le droit ou non de crawler)",
+                "À définir le style CSS des pages du site"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le fichier robots.txt informe les robots d'exploration des répertoires ou URL qu'ils ne doivent pas explorer."
+            },
+            {
+              "prompt_fr": "Quel est le rôle d'un « XML sitemap » ?",
+              "choices": [
+                "Afficher le plan du site dans le pied de page pour les utilisateurs",
+                "Stocker les coordonnées bancaires des clients",
+                "Fournir aux moteurs une liste claire et à jour de toutes les URL importantes à explorer avec leur date de modification"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le sitemap XML est un fichier structuré conçu spécialement pour guider Googlebot vers les pages prioritaires."
+            },
+            {
+              "prompt_fr": "Complète : « The page was excluded from search because of a meta ___ tag inserted by the staging environment. »",
+              "choices": [
+                "noindex",
+                "bluetooth",
+                "print"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La directive `noindex` ordonne formellement aux moteurs de ne pas faire figurer la page dans leurs résultats."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour prévenir l'équipe de développement web qu'une directive noindex a été laissée par erreur sur les pages de production et doit être retirée immédiatement.",
+            "context_en": "Slack channel #dev-alerts",
+            "model_answer_en": "Urgent issue detected: following yesterday's release, our product category pages still carry a meta noindex tag inherited from the staging environment. This is actively blocking Googlebot from indexing our core commercial pages. Please push a hotfix immediately to remove the noindex directive and ping the XML sitemap in Google Search Console.",
+            "model_answer_fr": "Problème urgent détecté : suite au déploiement d'hier, nos pages de catégories de produits portent toujours une balise meta noindex héritée de l'environnement de préproduction. Cela bloque l'indexation de nos pages commerciales clés par Googlebot. Merci de déployer un correctif d'urgence immédiatement pour retirer la directive noindex et de relancer le sitemap XML dans Google Search Console.",
+            "key_phrases": [
+              "meta noindex tag",
+              "blocking Googlebot from indexing",
+              "push a hotfix immediately"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-canonicals-and-redirects",
+          "title_fr": "Balises Canoniques et Redirections 301",
+          "term_ids": [
+            "canonical-tag",
+            "redirect-301",
+            "duplicate-content",
+            "crawl-budget"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Karim, our e-commerce filter parameters are creating thousands of near-identical URLs.",
+              "text_fr": "Karim, nos filtres e-commerce créent des milliers d'URL quasi-identiques."
+            },
+            {
+              "speaker": "Karim",
+              "text_en": "That is depleting our crawl budget and causing massive duplicate content issues.",
+              "text_fr": "Ça épuise notre budget de crawl et provoque des problèmes majeurs de contenu dupliqué."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "We must implement self-referencing canonical tags on main categories and point all filtered variations to the root category URL.",
+              "text_fr": "Nous devons implémenter des balises canoniques autoréférentes sur les catégories principales et faire pointer toutes les déclinaisons de filtres vers l'URL racine."
+            },
+            {
+              "speaker": "Karim",
+              "text_en": "And for deleted out-of-stock items, we should set up 301 redirects to the closest relevant category to preserve link equity.",
+              "text_fr": "Et pour les articles supprimés en rupture, posons des redirections 301 vers la catégorie équivalente pour préserver le jus de lien."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est le rôle d'une balise « canonical tag » (`rel=\"canonical\"`) ?",
+              "choices": [
+                "Changer automatiquement la devise affichée sur le site",
+                "Indiquer aux moteurs de recherche l'URL officielle et préférée d'une page lorsqu'elle existe sous plusieurs adresses ou paramètres",
+                "Empêcher les utilisateurs de copier du texte"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La balise canonique unifie les signaux d'indexation et d'autorité sur une seule URL maîtresse face à des déclinaisons dupliquées."
+            },
+            {
+              "prompt_fr": "Pourquoi utilise-t-on une redirection « 301 » plutôt qu'une redirection 302 pour une page déplacée définitivement ?",
+              "choices": [
+                "Parce que la 302 ne fonctionne pas sur les navigateurs Chrome",
+                "Parce que la redirection 301 est payante auprès de Google",
+                "Parce que le statut HTTP 301 indique un déplacement permanent et transfère l'historique et la popularité (link equity) vers la nouvelle URL"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La redirection 301 (Moved Permanently) transfère environ 90-99% du jus de référencement de l'ancienne vers la nouvelle URL."
+            },
+            {
+              "prompt_fr": "Qu'entend-on par « crawl budget » ?",
+              "choices": [
+                "Le nombre maximal de pages que Googlebot peut et veut explorer sur un site web dans un intervalle de temps donné",
+                "Le budget financier alloué aux campagnes de publicité Google",
+                "Le salaire mensuel de l'expert technique SEO"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le budget de crawl correspond au temps et aux ressources que Google accorde à l'exploration d'un site en fonction de sa taille et de sa vitesse."
+            },
+            {
+              "prompt_fr": "Complète : « The crawler identified twenty thousand duplicate pages caused by missing ___ tags. »",
+              "choices": [
+                "battery",
+                "canonical",
+                "audio"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'absence de balises canoniques (« canonical tags ») engendre des contenus dupliqués sur les URL paramétrées."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige un email (3 phrases) au lead developer expliquant l'importance de paramétrer les balises canoniques et les redirections 301 pour préserver le budget de crawl et éliminer le contenu dupliqué avant le lancement.",
+            "context_en": "Email to Lead Fullstack Developer",
+            "model_answer_en": "Hi Julien, during our pre-launch technical SEO review, I identified that sorting filters generate tens of thousands of duplicate URLs. To protect our crawl budget, we must implement self-referencing canonical tags pointing to the clean base category URL. Additionally, please make sure all migrated legacy URLs return a 301 redirect to retain existing link equity.",
+            "model_answer_fr": "Bonjour Julien, lors de notre revue technique SEO avant lancement, j'ai identifié que les filtres de tri génèrent des dizaines de milliers d'URL dupliquées. Pour protéger notre budget de crawl, nous devons implémenter des balises canoniques pointant vers l'URL de catégorie de base propre. De plus, merci de t'assurer que toutes les anciennes URL migrées renvoient une redirection 301 pour conserver le jus de lien existant.",
+            "key_phrases": [
+              "protect our crawl budget",
+              "self-referencing canonical tags",
+              "return a 301 redirect"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-core-web-vitals-and-speed",
+          "title_fr": "Core Web Vitals et Vitesse de Chargement",
+          "term_ids": [
+            "core-web-vitals",
+            "lcp",
+            "inp",
+            "cls"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Karim",
+              "text_en": "Google rolled out a core algorithm update and our mobile rankings took a hit.",
+              "text_fr": "Google a déployé une mise à jour d'algorithme principale et nos positions mobiles ont baissé."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Our Core Web Vitals report in PageSpeed Insights shows failing grades on mobile devices.",
+              "text_fr": "Notre rapport Core Web Vitals dans PageSpeed Insights affiche des notes insuffisantes sur mobile."
+            },
+            {
+              "speaker": "Karim",
+              "text_en": "Which specific metrics are hurting us?",
+              "text_fr": "Quelles métriques précises nous pénalisent ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Our LCP is above 4 seconds because of an uncompressed hero image, and our INP suffers from long JavaScript execution blocking the main thread.",
+              "text_fr": "Notre LCP dépasse 4 secondes à cause d'une image hero non compressée, et notre INP souffre de longues exécutions JavaScript bloquant le thread principal."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que mesure la métrique « LCP » (Largest Contentful Paint) ?",
+              "choices": [
+                "Le nombre de requêtes SQL exécutées par le serveur",
+                "Le temps écoulé avant la fermeture du navigateur",
+                "Le temps nécessaire pour afficher le bloc de contenu visible le plus volumineux de la page (image ou bloc de texte)"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le LCP évalue la vitesse de chargement perçue en mesurant l'instant où l'élément principal de l'écran est entièrement rendu (idéalement sous 2,5s)."
+            },
+            {
+              "prompt_fr": "À quoi sert la métrique « INP » (Interaction to Next Paint) qui a remplacé le FID ?",
+              "choices": [
+                "À mesurer la réactivité globale de la page face à toutes les interactions de l'utilisateur (clics, frappes au clavier) tout au long de la visite",
+                "À compter le nombre de visiteurs venant d'Instagram",
+                "À tester le volume audio des vidéos intégrées"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'INP mesure le délai entre une interaction de l'utilisateur et la mise à jour visuelle suivante de la page (idéalement sous 200 ms)."
+            },
+            {
+              "prompt_fr": "Que prévient la métrique « CLS » (Cumulative Layout Shift) ?",
+              "choices": [
+                "Les erreurs de syntaxe dans les feuilles de style",
+                "Les sauts visuels inopinés d'éléments à l'écran pendant le chargement qui trompent le clic de l'utilisateur",
+                "Les déconnexions du réseau Wi-Fi"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le CLS mesure la stabilité visuelle : un bon score (inférieur à 0,1) garantit que les boutons ou textes ne bougent pas pendant que la page charge."
+            },
+            {
+              "prompt_fr": "Complète : « To pass the ___ benchmark, our LCP must stay under 2.5 seconds on mobile 4G networks. »",
+              "choices": [
+                "Screen Resolution",
+                "Bluetooth Pairing",
+                "Core Web Vitals"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Les indicateurs clés de performance d'expérience de page définis par Google sont les Core Web Vitals."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige un ticket Jira (3 phrases) pour demander l'optimisation des images et la réduction des scripts tiers afin d'amener le LCP sous 2,5s et de valider les Core Web Vitals sur mobile.",
+            "context_en": "Jira issue for Web Performance",
+            "model_answer_en": "Our mobile landing pages are currently failing Google's Core Web Vitals due to a poor Largest Contentful Paint of 4.2 seconds. We need to convert our hero image to WebP with responsive srcsets and preload critical fonts. Please also defer non-essential third-party analytics scripts to lower INP and keep total blocking time below 200 milliseconds.",
+            "model_answer_fr": "Nos landing pages mobiles échouent actuellement aux Core Web Vitals de Google en raison d'un mauvais LCP de 4,2 secondes. Nous devons convertir notre image hero en WebP avec des srcsets réactifs et précharger les polices critiques. Merci de différer également les scripts d'analyse tiers non essentiels pour réduire l'INP et maintenir le temps de blocage total sous 200 millisecondes.",
+            "key_phrases": [
+              "failing Google's Core Web Vitals",
+              "Largest Contentful Paint",
+              "defer non-essential third-party scripts"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "seo-sea-google-ads-and-campaigns",
+      "title_fr": "Campagnes Google Ads, Ciblage et Annonces",
+      "title_en": "Google Ads campaigns, structure, and ad copy",
+      "situation_fr": "Tu lances de nouvelles campagnes payantes sur le réseau de recherche Google Ads pour capturer des prospects intentionnistes.",
+      "guide": {
+        "intro_fr": "Le SEA (Search Engine Advertising) permet de générer du trafic qualifié immédiat via le modèle PPC (Pay-Per-Click). Dans Google Ads, une structure de compte claire (Account -> Campaigns -> Ad Groups -> Ads & Keywords) est essentielle. On rédige des annonces responsives sur le réseau de recherche (Responsive Search Ads - RSA) en testant plusieurs titres et descriptions pour maximiser le taux de clic (CTR). On gère la portée des requêtes grâce aux types de correspondance (Match types : exact, phrase, broad) et aux mots-clés négatifs.",
+        "key_phrases": [
+          {
+            "en": "We are structuring our ad groups by high-intent product features.",
+            "fr": "Nous structurons nos groupes d'annonces par fonctionnalités produit à forte intention."
+          },
+          {
+            "en": "Responsive Search Ads allow Google's machine learning to find the best headline combinations.",
+            "fr": "Les annonces responsives permettent au machine learning de Google de trouver les meilleures combinaisons de titres."
+          },
+          {
+            "en": "Adding negative keywords prevented our ads from showing on irrelevant job seeker queries.",
+            "fr": "Ajouter des mots-clés négatifs a empêché la diffusion de nos annonces sur des requêtes de chercheurs d'emploi non pertinentes."
+          },
+          {
+            "en": "Phrase match captures queries containing our core phrase while allowing context around it.",
+            "fr": "La correspondance expression capture les requêtes contenant notre expression clé tout en autorisant du contexte autour."
+          },
+          {
+            "en": "Let's review the search terms report to eliminate wasteful ad spend.",
+            "fr": "Examinons le rapport sur les termes de recherche pour éliminer les dépenses publicitaires inutiles."
+          },
+          {
+            "en": "Our average cost per click decreased by fifteen percent following ad copy testing.",
+            "fr": "Notre coût par clic moyen a baissé de quinze pour cent suite aux tests des textes d'annonces."
+          }
+        ],
+        "tip_fr": "Dans Google Ads, ne confonds pas « Search terms » (les vraies requêtes tapées par les utilisateurs) et « Keywords » (les mots-clés configurés dans ton groupe d'annonces). C'est le « Search terms report » qui permet de trouver des mots-clés négatifs."
+      },
+      "lessons": [
+        {
+          "id": "seo-sea-account-structure-and-rsa",
+          "title_fr": "Structure de compte et Annonces Responsives (RSA)",
+          "term_ids": [
+            "sea",
+            "google-ads",
+            "responsive-search-ad",
+            "ad-group"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Chloe",
+              "text_en": "Alex, our previous agency lumped fifty unrelated keywords into a single Google Ads ad group.",
+              "text_fr": "Alex, notre ancienne agence a regroupé cinquante mots-clés sans rapport dans un seul groupe d'annonces Google Ads."
+            },
+            {
+              "speaker": "Alex",
+              "text_en": "That destroys ad relevance. We need tightly themed ad groups aligned with specific buyer intents.",
+              "text_fr": "Cela détruit la pertinence des annonces. Il nous faut des groupes d'annonces thématiques resserrés alignés sur des intentions d'achat précises."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "Are we creating Responsive Search Ads with varied value propositions?",
+              "text_fr": "Créons-nous des annonces responsives avec des propositions de valeur variées ?"
+            },
+            {
+              "speaker": "Alex",
+              "text_en": "Yes, we will provide ten distinct headlines and four descriptions so Google tests the best performing combinations.",
+              "text_fr": "Oui, nous fournirons dix titres distincts et quatre descriptions pour que Google teste les combinaisons les plus performantes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi est-il crucial d'organiser un compte Google Ads en « ad groups » thématiques resserrés ?",
+              "choices": [
+                "Pour assurer une adéquation parfaite entre le mot-clé cherché, le texte de l'annonce et la landing page",
+                "Pour dépenser son budget le plus rapidement possible dès le matin",
+                "Pour empêcher les concurrents de voir vos annonces"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une forte cohérence thématique dans le groupe d'annonces garantit un Quality Score élevé et un coût par clic plus bas."
+            },
+            {
+              "prompt_fr": "Comment fonctionne une « Responsive Search Ad » (RSA) dans Google Ads ?",
+              "choices": [
+                "Elle crée automatiquement des images animées sans texte",
+                "L'annonceur fournit plusieurs titres et descriptions, et Google assemble automatiquement la meilleure combinaison pour chaque requête",
+                "Elle envoie des emails aux clients sans leur accord"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les RSA exploitent le machine learning pour tester dynamiquement les combinaisons d'annonces les plus pertinentes pour chaque utilisateur."
+            },
+            {
+              "prompt_fr": "Quel acronyme désigne la publicité payante sur les moteurs de recherche ?",
+              "choices": [
+                "FTP (File Transfer Protocol)",
+                "CRM (Customer Relationship Management)",
+                "SEA (Search Engine Advertising)"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le SEA regroupe l'ensemble des leviers publicitaires payants sur les moteurs de recherche."
+            },
+            {
+              "prompt_fr": "Complète : « By splitting the campaign into three themed ___ , click-through rates doubled. »",
+              "choices": [
+                "ad groups",
+                "sound tracks",
+                "wifi routers"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Découper la campagne en plusieurs « ad groups » resserrés permet de personnaliser le message publicitaire."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour annoncer à l'équipe marketing la restructuration des groupes d'annonces Google Ads et la création de Responsive Search Ads adaptées.",
+            "context_en": "Slack channel #marketing-acquisition",
+            "model_answer_en": "Hi team, I finished restructuring our Google Ads search campaigns into tightly themed ad groups. Each ad group now features customized Responsive Search Ads with unique value propositions and clear calls-to-action. This tighter alignment will improve our ad relevance and lower our average cost per click.",
+            "model_answer_fr": "Bonjour l'équipe, j'ai terminé la restructuration de nos campagnes de recherche Google Ads en groupes d'annonces thématiques resserrés. Chaque groupe d'annonces propose désormais des Responsive Search Ads personnalisées avec des propositions de valeur uniques et des appels à l'action clairs. Cet alignement renforcé améliorera la pertinence de nos annonces et réduira notre coût moyen par clic.",
+            "key_phrases": [
+              "Google Ads search campaigns",
+              "Responsive Search Ads",
+              "ad relevance"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-match-types-and-negatives",
+          "title_fr": "Types de Correspondance et Mots-clés Négatifs",
+          "term_ids": [
+            "match-type",
+            "exact-match",
+            "phrase-match",
+            "negative-keyword"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Alex",
+              "text_en": "Chloe, our broad match keywords are generating clicks from people searching for free student downloads.",
+              "text_fr": "Chloe, nos mots-clés en requête large génèrent des clics d'étudiants qui cherchent des téléchargements gratuits."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "We are wasting twenty percent of our daily budget on non-converting traffic.",
+              "text_fr": "Nous gaspillons vingt pour cent de notre budget quotidien sur du trafic sans conversion."
+            },
+            {
+              "speaker": "Alex",
+              "text_en": "Let's tighten our match types to phrase match and exact match for high-intent keywords.",
+              "text_fr": "Resserrons nos types de correspondance en expression et exact pour les mots-clés à forte intention."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "And I will immediately add 'free', 'jobs', 'internship', and 'cracked' as account-level negative keywords.",
+              "text_fr": "Et j'ajouterai immédiatement 'gratuit', 'emploi', 'stage' et 'crack' en mots-clés négatifs au niveau du compte."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi ajoute-t-on des « negative keywords » (mots-clés à exclure) dans une campagne ?",
+              "choices": [
+                "Pour masquer les annonces aux concurrents",
+                "Pour empêcher la diffusion de nos annonces sur des termes non pertinents ou non rentables (ex: gratuit, recrutement)",
+                "Pour faire baisser la note globale du site web"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les mots-clés négatifs filtrent le trafic non qualifié, évitant de payer pour des clics sans intention d'achat."
+            },
+            {
+              "prompt_fr": "Quelle est la caractéristique d'un mot-clé en « exact match » [crochets] ?",
+              "choices": [
+                "L'annonce s'affiche sur n'importe quel mot du dictionnaire",
+                "L'annonce ne s'affiche qu'à minuit",
+                "L'annonce ne s'affiche que sur la requête exacte ou des variantes très proches partageant la même signification précise"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La correspondance exacte (exact match) offre le contrôle le plus strict sur les recherches des internautes."
+            },
+            {
+              "prompt_fr": "Quel type de correspondance permet de capter des requêtes incluant l'expression avec d'autres mots avant ou après (\"guillemets\") ?",
+              "choices": [
+                "Phrase match",
+                "Wildcard match",
+                "Domain match"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La correspondance expression (phrase match) préserve le sens de l'expression tout en acceptant des préfixes ou suffixes."
+            },
+            {
+              "prompt_fr": "Complète : « Adding 'free download' as a ___ saved over a thousand dollars of wasted budget. »",
+              "choices": [
+                "social share",
+                "negative keyword",
+                "browser bookmark"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Exclure des termes inutiles comme « negative keyword » protège la rentabilité des campagnes."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige un email (3 phrases) au directeur marketing pour expliquer que l'ajout d'une liste de mots-clés négatifs et le passage en correspondance expression ont permis d'éliminer 25 % de clics hors cible.",
+            "context_en": "Email to Marketing Director",
+            "model_answer_en": "Hi Sophie, following our weekly PPC audit, we identified substantial budget waste originating from informational search queries. We transitioned our main ad groups from broad match to phrase match and applied an extensive list of negative keywords. This optimization has already eliminated twenty-five percent of irrelevant clicks while increasing qualified demo inquiries.",
+            "model_answer_fr": "Bonjour Sophie, suite à notre audit PPC hebdomadaire, nous avons identifié un gaspillage substantiel de budget provenant de requêtes de recherche informationnelles. Nous avons basculé nos principaux groupes d'annonces de la requête large vers la correspondance expression et appliqué une liste complète de mots-clés négatifs. Cette optimisation a déjà éliminé 25 % de clics non pertinents tout en augmentant les demandes de démonstration qualifiées.",
+            "key_phrases": [
+              "budget waste",
+              "phrase match",
+              "list of negative keywords"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-search-terms-report-and-cpc",
+          "title_fr": "Rapport sur les Termes de Recherche et CPC",
+          "term_ids": [
+            "search-terms-report",
+            "cpc",
+            "ctr",
+            "ad-spend"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Alex",
+              "text_en": "Our average CPC jumped from two dollars to five dollars over the last two weeks.",
+              "text_fr": "Notre CPC moyen est passé de deux dollars à cinq dollars ces deux dernières semaines."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "Let's dig into the search terms report to see which exact queries were triggered.",
+              "text_fr": "Creusons dans le rapport sur les termes de recherche pour voir quelles requêtes exactes ont été déclenchées."
+            },
+            {
+              "speaker": "Alex",
+              "text_en": "Three broad search queries consumed forty percent of our total ad spend with zero conversions.",
+              "text_fr": "Trois requêtes larges ont consommé quarante pour cent de nos dépenses publicitaires totales sans aucune conversion."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "We will pause those keywords and reallocate the ad spend to high-converting phrase match terms.",
+              "text_fr": "Nous allons mettre ces mots-clés en pause et réallouer les dépenses publicitaires vers les termes en correspondance expression qui convertissent bien."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "À quoi sert le « search terms report » (rapport sur les termes de recherche) dans Google Ads ?",
+              "choices": [
+                "À voir les mots de passe des visiteurs",
+                "À vérifier la vitesse de connexion de votre bureau",
+                "À voir les requêtes réelles exactes tapées par les utilisateurs ayant déclenché la diffusion de vos annonces et clics"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le rapport sur les termes de recherche est indispensable pour déceler de nouvelles opportunités de mots-clés ou identifier des termes à exclure."
+            },
+            {
+              "prompt_fr": "Que signifie le sigle « CPC » et comment est-il calculé ?",
+              "choices": [
+                "Cost Per Click : le montant réel payé pour chaque clic enregistré sur votre annonce publicitaire",
+                "Central Processing Center",
+                "Client Payment Certificate"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le CPC (Coût Par Clic) correspond au montant facturé lorsqu'un internaute clique sur votre annonce."
+            },
+            {
+              "prompt_fr": "Que représente le « CTR » (Click-Through Rate) d'une annonce ?",
+              "choices": [
+                "Le nombre de personnes qui ont acheté le produit",
+                "Le pourcentage d'utilisateurs qui ont cliqué sur l'annonce par rapport au nombre total de fois où elle a été affichée (impressions)",
+                "Le montant total dépensé par jour"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le CTR (taux de clic = clics / impressions) mesure l'attractivité et la pertinence d'une annonce."
+            },
+            {
+              "prompt_fr": "Complète : « Monitoring our ___ enabled us to stop bidding on queries that never convert. »",
+              "choices": [
+                "mouse pad",
+                "coffee machine",
+                "search terms report"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'analyse du « search terms report » permet d'ajuster les enchères en éliminant les requêtes non rentables."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) après l'analyse du rapport sur les termes de recherche pour expliquer que trois requêtes coûteuses sans conversion ont été coupées, réduisant le CPC moyen.",
+            "context_en": "Slack channel #paid-growth",
+            "model_answer_en": "Following our search terms report review, I identified three generic queries consuming forty percent of our daily ad spend without generating any demo signups. I added them to our negative keyword list and reallocated the budget toward our highest-converting terms. This quick adjustment already lowered our average CPC by eighteen percent.",
+            "model_answer_fr": "Suite à notre revue du rapport sur les termes de recherche, j'ai identifié trois requêtes génériques consommant 40 % de nos dépenses publicitaires quotidiennes sans générer la moindre inscription de démo. Je les ai ajoutées à notre liste de mots-clés négatifs et réalloué le budget vers nos termes les plus rentables. Cet ajustement rapide a déjà réduit notre CPC moyen de 18 %.",
+            "key_phrases": [
+              "search terms report review",
+              "daily ad spend",
+              "lowered our average CPC"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "seo-sea-bidding-roas-and-performance-max",
+      "title_fr": "Enchères Intelligentes, ROAS et Performance Max",
+      "title_en": "Smart bidding, Target ROAS, and Performance Max",
+      "situation_fr": "Tu pilotes l'optimisation avancée des conversions pour maximiser le retour sur investissement des budgets d'acquisition.",
+      "guide": {
+        "intro_fr": "L'optimisation moderne de Google Ads s'appuie sur le Smart Bidding (enchères intelligentes automatisées par machine learning). Selon la maturité du compte, on choisit entre Target CPA (coût par acquisition cible) et Target ROAS (retour sur dépenses publicitaires cible). Le Quality Score (note de qualité de 1 à 10) reste le multiplicateur secret qui détermine l'Ad Rank à moindre coût. Pour couvrir tous les canaux Google (Search, YouTube, Display, Gmail, Maps), les campagnes Performance Max regroupent créatifs et signaux d'audience.",
+        "key_phrases": [
+          {
+            "en": "Our Target ROAS strategy achieved a four hundred percent return on ad spend.",
+            "fr": "Notre stratégie Target ROAS a atteint 400 % de retour sur les dépenses publicitaires."
+          },
+          {
+            "en": "Improving our landing page experience raised our Quality Score from 6 to 9.",
+            "fr": "Améliorer l'expérience sur la page de destination a fait passer notre Quality Score de 6 à 9."
+          },
+          {
+            "en": "Performance Max leverages machine learning across YouTube, Search, and Display.",
+            "fr": "Performance Max exploite le machine learning sur YouTube, le Search et le Display."
+          },
+          {
+            "en": "Do not touch campaign budgets during the initial seven-day learning phase.",
+            "fr": "Ne modifie pas les budgets de campagne pendant la phase d'apprentissage initiale de sept jours."
+          },
+          {
+            "en": "Accurate conversion tracking is mandatory for smart bidding algorithms to learn.",
+            "fr": "Un suivi précis des conversions est obligatoire pour que les algorithmes d'enchères apprennent."
+          },
+          {
+            "en": "A higher Quality Score allows us to win ad auctions while paying lower CPCs.",
+            "fr": "Un Quality Score plus élevé nous permet de remporter les enchères publicitaires tout en payant un CPC plus bas."
+          }
+        ],
+        "tip_fr": "« ROAS » (Return on Ad Spend) s'exprime en ratio ou en pourcentage (ex: un ROAS de 400% signifie 4 € de chiffre d'affaires généré pour chaque 1 € dépensé). « Ad Rank » est la formule : Enchère x Quality Score x Impact des composants d'annonce."
+      },
+      "lessons": [
+        {
+          "id": "seo-sea-quality-score-and-ad-rank",
+          "title_fr": "Quality Score et Ad Rank",
+          "term_ids": [
+            "quality-score",
+            "ad-rank",
+            "landing-page-experience",
+            "ad-auction"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucas",
+              "text_en": "Emma, our competitor is outranking us on our main keyword even though their maximum bid is lower.",
+              "text_fr": "Emma, notre concurrent nous dépasse sur notre mot-clé principal même si son enchère maximale est plus basse."
+            },
+            {
+              "speaker": "Emma",
+              "text_en": "That is because Google determines position via Ad Rank, which multiplies bid by Quality Score.",
+              "text_fr": "C'est parce que Google détermine la position via l'Ad Rank, qui multiplie l'enchère par le Quality Score."
+            },
+            {
+              "speaker": "Lucas",
+              "text_en": "Our Quality Score is only 5 out of 10. Which component is dragging us down?",
+              "text_fr": "Notre Quality Score n'est que de 5 sur 10. Quel composant nous tire vers le bas ?"
+            },
+            {
+              "speaker": "Emma",
+              "text_en": "Our landing page experience is rated below average due to slow load speeds and high bounce rate.",
+              "text_fr": "Notre expérience sur la page de destination est jugée inférieure à la moyenne à cause de lenteurs et d'un fort rebond."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quels sont les trois facteurs qui composent le « Quality Score » dans Google Ads ?",
+              "choices": [
+                "Le taux de clic attendu (CTR attendu), la pertinence de l'annonce et la convivialité de la page de destination (landing page experience)",
+                "Le budget bancaire de l'entreprise, le nombre d'employés et l'ancienneté du compte",
+                "Le nombre de followers sur LinkedIn et Twitter"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le Quality Score (noté de 1 à 10) évalue le CTR attendu, la pertinence de l'annonce par rapport à la recherche, et l'expérience sur la landing page."
+            },
+            {
+              "prompt_fr": "Comment l'Ad Rank est-il calculé lors d'une enchère publicitaire (ad auction) ?",
+              "choices": [
+                "En prenant uniquement l'enchère la plus chère sans regarder la qualité",
+                "En combinant le montant de l'enchère, le Quality Score et l'impact attendu des composants d'annonce (assets)",
+                "Par tirage au sort parmi les comptes enregistrés"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'Ad Rank récompense les annonces de qualité : une annonce très pertinente peut dépasser un concurrent qui mise plus cher."
+            },
+            {
+              "prompt_fr": "Quel est l'avantage direct d'augmenter son Quality Score de 5 à 9 ?",
+              "choices": [
+                "Ne plus payer aucune taxe",
+                "Empêcher les utilisateurs de fermer la fenêtre du navigateur",
+                "Obtenir de meilleures positions tout en payant un coût par clic (CPC) significativement moins cher"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Un Quality Score élevé accorde une remise substantielle sur le coût par clic pour se positionner en haut de page."
+            },
+            {
+              "prompt_fr": "Complète : « Improving our ___ lifted our Quality Score and lowered our average acquisition cost. »",
+              "choices": [
+                "landing page experience",
+                "desk height",
+                "printer ink"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La convivialité de la page de destination (« landing page experience ») est un pilier du Quality Score."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Commente une PR de landing page (3 phrases) en expliquant que l'alignement du contenu avec les mots-clés d'annonce et l'accélération du temps de chargement permettront d'augmenter le Quality Score et de réduire le CPC moyen.",
+            "context_en": "GitHub PR review on landing-page-speed",
+            "model_answer_en": "Thanks for optimizing the landing page assets! Accelerating the page speed and mirroring the exact headline keywords from our Google Ads groups will directly improve our landing page experience score. This will raise our overall Quality Score and lower the CPC required to win ad auctions.",
+            "model_answer_fr": "Merci pour l'optimisation des ressources de la landing page ! Accélérer la vitesse de chargement et reprendre les mots-clés exacts de nos groupes Google Ads améliorera directement notre score d'expérience sur la page de destination. Cela fera grimper notre Quality Score global et réduira le CPC nécessaire pour remporter les enchères.",
+            "key_phrases": [
+              "landing page experience score",
+              "raise our overall Quality Score",
+              "win ad auctions"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-smart-bidding-and-roas",
+          "title_fr": "Stratégies d'Enchères Intelligentes et Target ROAS",
+          "term_ids": [
+            "smart-bidding",
+            "target-roas",
+            "target-cpa",
+            "conversion-tracking"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Emma",
+              "text_en": "Lucas, our manual bidding adjustments cannot keep up with changing device, location, and time-of-day trends.",
+              "text_fr": "Lucas, nos ajustements d'enchères manuels ne peuvent pas suivre les tendances d'appareils, de localisation et d'heures."
+            },
+            {
+              "speaker": "Lucas",
+              "text_en": "We should switch to Smart Bidding. Now that conversion tracking is recording over fifty sales per week, the algorithm has enough data.",
+              "text_fr": "Nous devrions passer au Smart Bidding. Maintenant que le suivi des conversions enregistre plus de cinquante ventes par semaine, l'algorithme a assez de données."
+            },
+            {
+              "speaker": "Emma",
+              "text_en": "Should we use Target CPA or Target ROAS?",
+              "text_fr": "Devrions-nous utiliser Target CPA ou Target ROAS ?"
+            },
+            {
+              "speaker": "Lucas",
+              "text_en": "Since our shopping cart values vary widely from thirty to five hundred dollars, Target ROAS will maximize total revenue rather than just order volume.",
+              "text_fr": "Comme nos paniers varient fortement de trente à cinq cents dollars, Target ROAS maximisera le chiffre d'affaires global plutôt que le simple volume de commandes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi le « Target ROAS » (ROAS cible) est-il adapté aux sites e-commerce avec des valeurs de paniers hétérogènes ?",
+              "choices": [
+                "Parce qu'il garantit que toutes les ventes se feront au même prix",
+                "Parce qu'il optimise les enchères pour maximiser la valeur financière totale des conversions plutôt que le seul nombre de transactions",
+                "Parce qu'il ne nécessite aucun suivi de conversions"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Target ROAS prend en compte le panier moyen et privilégie les requêtes susceptibles de rapporter le plus de chiffre d'affaires."
+            },
+            {
+              "prompt_fr": "Quel prérequis est indispensable avant d'activer une stratégie de « Smart Bidding » ?",
+              "choices": [
+                "Avoir plus de cent mille abonnés sur YouTube",
+                "Utiliser exclusivement des ordinateurs Mac",
+                "Un suivi des conversions (conversion tracking) fiable et un volume suffisant de données historiques pour entraîner l'algorithme"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Sans balises de conversion fonctionnelles et sans historique de ventes, les algorithmes de Smart Bidding enchérissent à l'aveugle."
+            },
+            {
+              "prompt_fr": "Quelle est la particularité de la « learning phase » (phase d'apprentissage) lors du passage au Smart Bidding ?",
+              "choices": [
+                "Une période d'environ sept à quatorze jours où l'algorithme calibre ses enchères et durant laquelle il ne faut pas modifier drastiquement les budgets",
+                "Une formation vidéo obligatoire que l'annonceur doit regarder",
+                "Une période où les annonces ne sont diffusées qu'aux employés de l'entreprise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Durant la phase d'apprentissage, Google explore différents signaux contextuels ; perturber les budgets à ce moment réinitialise l'apprentissage."
+            },
+            {
+              "prompt_fr": "Complète : « By switching to ___ bidding with a Target ROAS of 450%, revenue rose by thirty percent. »",
+              "choices": [
+                "random",
+                "smart",
+                "static"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les enchères intelligentes (« smart bidding ») ajustent les enchères en temps réel lors de chaque requête d'internaute."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige un email (3 phrases) au directeur e-commerce pour recommander la migration des campagnes vers une stratégie Smart Bidding Target ROAS afin d'augmenter le retour sur investissement.",
+            "context_en": "Email to E-Commerce Director",
+            "model_answer_en": "Hi Claire, with our conversion tracking now recording over one hundred transactions weekly, I recommend migrating our search campaigns to a Smart Bidding Target ROAS model. This strategy will optimize real-time bids around high-value cart orders rather than flat acquisition costs. We will set an initial target of 400% and avoid budget adjustments during the initial learning phase.",
+            "model_answer_fr": "Bonjour Claire, notre suivi des conversions enregistrant désormais plus de cent transactions par semaine, je recommande de migrer nos campagnes de recherche vers un modèle Smart Bidding Target ROAS. Cette stratégie optimisera les enchères en temps réel autour des paniers à forte valeur plutôt que sur des coûts d'acquisition fixes. Nous fixerons un objectif initial de 400 % et éviterons toute modification de budget pendant la phase d'apprentissage initiale.",
+            "key_phrases": [
+              "conversion tracking",
+              "Smart Bidding Target ROAS",
+              "initial learning phase"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-performance-max-and-audiences",
+          "title_fr": "Campagnes Performance Max et Signaux d'Audience",
+          "term_ids": [
+            "performance-max",
+            "custom-audience",
+            "learning-phase",
+            "cpa"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucas",
+              "text_en": "Our search campaigns are doing well, but we are missing customer touchpoints across YouTube and Discover.",
+              "text_fr": "Nos campagnes de recherche tournent bien, mais nous manquons des points de contact clients sur YouTube et Discover."
+            },
+            {
+              "speaker": "Emma",
+              "text_en": "We should launch a Performance Max campaign to unify inventory across all Google channels.",
+              "text_fr": "Nous devrions lancer une campagne Performance Max pour unifier l'inventaire sur tous les canaux Google."
+            },
+            {
+              "speaker": "Lucas",
+              "text_en": "How do we guide the machine learning algorithm toward our ideal customer profile?",
+              "text_fr": "Comment guide-t-on l'algorithme de machine learning vers notre profil client idéal ?"
+            },
+            {
+              "speaker": "Emma",
+              "text_en": "By feeding it audience signals: customer match lists, high-intent website visitors, and custom audiences searching for our competitors.",
+              "text_fr": "En lui fournissant des signaux d'audience : listes de clients, visiteurs de site à forte intention, et audiences personnalisées cherchant nos concurrents."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la particularité d'une campagne « Performance Max » (PMax) dans Google Ads ?",
+              "choices": [
+                "Elle ne s'affiche que sur les téléviseurs connectés",
+                "Elle est strictement réservée aux organisations à but non lucratif",
+                "Elle diffuse des annonces sur l'intégralité de l'inventaire de Google (Search, YouTube, Display, Discover, Gmail, Maps) au sein d'une seule campagne pilotée par l'IA"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Performance Max est une campagne multi-canaux tout-en-un où Google alloue dynamiquement le budget là où le retour est le meilleur."
+            },
+            {
+              "prompt_fr": "À quoi servent les « audience signals » (signaux d'audience) dans Performance Max ?",
+              "choices": [
+                "À donner des indications de départ à l'IA sur les profils d'utilisateurs les plus susceptibles de convertir, accélérant la phase d'apprentissage",
+                "À bloquer les connexions Internet des utilisateurs qui n'achètent pas",
+                "À traduire automatiquement le site web en trente langues"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les signaux d'audience aident l'algorithme à trouver plus rapidement les bons segments de prospects sans restreindre la diffusion."
+            },
+            {
+              "prompt_fr": "Que désigne une « custom audience » (audience personnalisée) basée sur l'intention ?",
+              "choices": [
+                "Une liste de contacts écrite sur un carnet papier",
+                "Un groupe de prospects ayant récemment recherché des mots-clés spécifiques ou visité des URL concurrentes",
+                "Un groupe d'employés de l'agence publicitaire"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les audiences personnalisées ciblent les personnes démontrant une intention active via leurs recherches ou centres d'intérêt récents."
+            },
+            {
+              "prompt_fr": "Complète : « During the initial ___, Performance Max explores various placements to find the best conversion paths. »",
+              "choices": [
+                "coffee break",
+                "battery charging",
+                "learning phase"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La « learning phase » permet à Performance Max de tester les emplacements et formats les plus performants."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Rédige un message Slack (3 phrases) pour annoncer le lancement de la première campagne Performance Max avec des signaux d'audience basés sur la liste clients et les concurrents.",
+            "context_en": "Slack channel #marketing-paid-media",
+            "model_answer_en": "Exciting news: our first Google Performance Max campaign is officially live today across Search, YouTube, and Display. We configured strong audience signals using our validated first-party customer list and custom competitor search audiences. We expect the learning phase to stabilize within ten days, after which we will scale budget on top-performing assets.",
+            "model_answer_fr": "Excellente nouvelle : notre première campagne Google Performance Max est officiellement en ligne aujourd'hui sur le Search, YouTube et Display. Nous avons configuré de solides signaux d'audience grâce à notre liste de clients vérifiée et des audiences personnalisées sur nos concurrents. Nous prévoyons une stabilisation de la phase d'apprentissage sous dix jours, après quoi nous augmenterons le budget sur les composants les plus performants.",
+            "key_phrases": [
+              "Performance Max campaign",
+              "strong audience signals",
+              "learning phase to stabilize"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

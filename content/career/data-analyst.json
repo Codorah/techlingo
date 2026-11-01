@@ -1,0 +1,221 @@
+{
+  "questions": [
+    {
+      "id": "data-analyst-data-cleaning",
+      "status": "draft",
+      "roles": ["data-analyst"],
+      "level": "B1",
+      "topic_fr": "Nettoyer un jeu de données avant l'analyse",
+      "question_en": "How do you approach data cleaning and deal with missing values, duplicate records, and outliers before starting an analysis?",
+      "question_fr": "Comment abordez-vous le nettoyage des données et comment gérez-vous les valeurs manquantes, les doublons et les valeurs aberrantes avant de lancer une analyse ?",
+      "hint_fr": "Montrez que vous n'effacez pas les anomalies à l'aveugle : vous vérifiez l'unicité de la clé primaire, la distribution et l'origine du problème.",
+      "answer_outline_fr": [
+        "Vérifier l'unicité de la clé primaire et dédoublonner les enregistrements",
+        "Comprendre pourquoi une valeur est manquante avant de l'imputer ou de l'exclure",
+        "Inspecter la distribution pour distinguer une erreur de saisie d'une vraie valeur extrême",
+        "Comparer la moyenne et la médiane pour éviter de fausser les conclusions"
+      ],
+      "model_answer_en": "Before running any analysis, I spend time on data cleaning because dirty inputs always produce misleading conclusions. First, I check primary key uniqueness to spot and remove duplicate records caused by logging glitches or bad joins. Next, I audit every missing value to understand whether it is random or tied to a broken step in the tracking. Finally, I plot the distribution to inspect each outlier. I never delete an outlier blindly: if it is a data entry error, I fix or filter it, and if it is real behavior, I report both mean and median so extreme values do not skew the picture.",
+      "model_answer_fr": "Avant de lancer la moindre analyse, je consacre du temps au nettoyage des données, car des données brutes sales produisent toujours des conclusions trompeuses. D'abord, je vérifie l'unicité de la clé primaire pour repérer et supprimer les doublons causés par des bugs de collecte ou de mauvaises jointures. Ensuite, j'examine chaque valeur manquante pour comprendre si elle est aléatoire ou liée à une étape cassée du suivi. Enfin, j'affiche la distribution pour inspecter chaque valeur aberrante. Je ne supprime jamais une valeur aberrante à l'aveugle : s'il s'agit d'une erreur de saisie, je la corrige ou la filtre, et s'il s'agit d'un vrai comportement, je présente à la fois la moyenne et la médiane pour que les extrêmes ne faussent pas la lecture.",
+      "key_phrases": [
+        "spend time on data cleaning",
+        "remove duplicate records",
+        "audit every missing value",
+        "never delete an outlier blindly",
+        "report both mean and median"
+      ],
+      "vocabulary_term_ids": [
+        "data-cleaning",
+        "primary-key",
+        "duplicate-records",
+        "join",
+        "missing-value",
+        "distribution",
+        "outlier",
+        "mean-median"
+      ]
+    },
+    {
+      "id": "data-analyst-sql-complex-queries",
+      "status": "draft",
+      "roles": ["data-analyst"],
+      "level": "B2",
+      "topic_fr": "Structurer des requêtes SQL lisibles et performantes",
+      "question_en": "How do you structure complex SQL queries so they stay readable, and when do you reach for CTEs or window functions?",
+      "question_fr": "Comment structurez-vous des requêtes SQL complexes pour qu'elles restent lisibles, et dans quels cas utilisez-vous des CTE ou des fonctions de fenêtrage ?",
+      "hint_fr": "Expliquez pourquoi une CTE est plus lisible que des sous-requêtes imbriquées et donnez un exemple concret d'utilisation d'une fonction de fenêtrage.",
+      "answer_outline_fr": [
+        "Découper la logique étape par étape avec des CTE nommées clairement",
+        "Filtrer tôt et vérifier la granularité avant chaque jointure",
+        "Utiliser des fonctions de fenêtrage pour calculer un classement ou un cumul sans écraser les lignes",
+        "Valider les totaux après chaque agrégation"
+      ],
+      "model_answer_en": "When a SQL query grows complex, I avoid deeply nested subqueries and break the logic into step-by-step CTEs with clear names. Each CTE has a single grain that is easy to test and debug. Before every join between a primary key and a foreign key, I verify row counts so I do not accidentally multiply rows before an aggregation. I reach for a window function whenever I need to rank rows, compare a row to the previous period with lag, or compute a running total without collapsing the table with a group by.",
+      "model_answer_fr": "Quand une requête SQL devient complexe, j'évite les sous-requêtes profondément imbriquées et je découpe la logique en CTE étape par étape avec des noms clairs. Chaque CTE a une granularité unique facile à tester et à déboguer. Avant chaque jointure entre une clé primaire et une clé étrangère, je vérifie le nombre de lignes pour ne pas multiplier accidentellement les enregistrements avant une agrégation. J'utilise une fonction de fenêtrage dès que j'ai besoin de classer des lignes, de comparer une ligne à la période précédente ou de calculer un cumul sans écraser la table avec un GROUP BY.",
+      "key_phrases": [
+        "break the logic into step-by-step CTEs",
+        "Before every join",
+        "verify row counts",
+        "reach for a window function",
+        "without collapsing the table"
+      ],
+      "vocabulary_term_ids": [
+        "sql",
+        "query",
+        "subquery",
+        "cte",
+        "join",
+        "primary-key",
+        "foreign-key",
+        "aggregation",
+        "window-function",
+        "table",
+        "group-by"
+      ]
+    },
+    {
+      "id": "data-analyst-dashboard-design",
+      "status": "draft",
+      "roles": ["data-analyst"],
+      "level": "B2",
+      "topic_fr": "Concevoir un tableau de bord utile aux équipes métier",
+      "question_en": "Walk me through how you would design a dashboard in a BI tool for a business team that asks for too many metrics.",
+      "question_fr": "Expliquez-moi comment vous concevriez un tableau de bord dans un outil de BI pour une équipe métier qui demande trop d'indicateurs.",
+      "hint_fr": "Partez des décisions à prendre plutôt que d'une liste de graphiques, hiérarchisez les KPI en haut et ajoutez des filtres d'exploration.",
+      "answer_outline_fr": [
+        "Questionner l'équipe sur les décisions concrètes que le tableau de bord doit éclairer",
+        "Limiter le haut de l'écran aux KPI principaux avec une définition claire",
+        "Organiser la visualisation des données du global vers le détail (drill-down)",
+        "Documenter les sources et tester l'outil avec les utilisateurs finaux"
+      ],
+      "model_answer_en": "When a team asks for twenty charts on one screen, I start by asking which weekly decisions the dashboard needs to drive. Together, we narrow the top row down to three or four core KPIs with agreed definitions. Below that, I organize the BI tool so users can follow a logical flow, such as the conversion funnel or retention trends, and drill down by date or segmentation filters when something looks off. I choose simple, readable data visualization over flashy charts, and I always add a short note on data freshness so everyone trusts the numbers.",
+      "model_answer_fr": "Quand une équipe demande vingt graphiques sur un seul écran, je commence par demander quelles décisions hebdomadaires le tableau de bord doit guider. Ensemble, nous réduisons la première ligne à trois ou quatre KPI clés avec des définitions partagées. En dessous, j'organise l'outil de BI pour que les utilisateurs suivent une lecture logique, comme l'entonnoir de conversion ou les tendances de rétention, et puissent creuser dans le détail par date ou par filtres de segmentation quand un chiffre semble anormal. Je privilégie une visualisation de données simple et lisible plutôt que des graphiques tape-à-l'œil, et j'ajoute toujours une note sur la fraîcheur des données pour que chacun ait confiance dans les chiffres.",
+      "key_phrases": [
+        "which weekly decisions the dashboard needs to drive",
+        "three or four core KPIs",
+        "conversion funnel or retention trends",
+        "drill down by date or segmentation",
+        "readable data visualization"
+      ],
+      "vocabulary_term_ids": [
+        "dashboard",
+        "metric",
+        "kpi",
+        "bi-tool",
+        "funnel",
+        "drill-down",
+        "segmentation",
+        "data-visualization"
+      ]
+    },
+    {
+      "id": "data-analyst-ab-test-analysis",
+      "status": "draft",
+      "roles": ["data-analyst"],
+      "level": "C1",
+      "topic_fr": "Cadrer et analyser les résultats d'un test A/B",
+      "question_en": "How do you help a product or marketing team design and interpret an A/B test without jumping to false conclusions?",
+      "question_fr": "Comment aidez-vous une équipe produit ou marketing à cadrer et à interpréter un test A/B sans tirer de fausses conclusions ?",
+      "hint_fr": "Insistez sur la formulation de l'hypothèse avant le test, le calcul de la taille d'échantillon, le seuil de significativité statistique et le piège de l'arrêt prématuré.",
+      "answer_outline_fr": [
+        "Formuler une hypothèse claire et choisir une métrique principale unique avant le lancement",
+        "Calculer la taille d'échantillon nécessaire et la durée minimale du test",
+        "Attendre la significativité statistique sans arrêter le test au premier pic",
+        "Analyser les résultats par segment et distinguer corrélation et causalité"
+      ],
+      "model_answer_en": "Before launching an A/B test, I make sure we write down a clear hypothesis, pick one primary metric like conversion rate, and calculate the required sample size based on our baseline traffic. During the test, I push back against peeking at results early, because stopping as soon as a chart looks green inflates false positives. Once we reach the planned sample size, I check statistical significance and confidence intervals, and I also segment the results by device or user cohort to ensure a global average is not hiding a regression on a key segment.",
+      "model_answer_fr": "Avant de lancer un test A/B, je m'assure que nous rédigeons une hypothèse claire, que nous choisissons une métrique principale unique comme le taux de conversion et que nous calculons la taille d'échantillon nécessaire selon notre trafic de départ. Pendant le test, je m'oppose à la tentation de regarder les résultats trop tôt, car arrêter dès qu'une courbe passe au vert gonfle les faux positifs. Une fois la taille d'échantillon atteinte, je vérifie la significativité statistique et les intervalles de confiance, et je segmente aussi les résultats par appareil ou par cohorte pour vérifier qu'une moyenne globale ne masque pas une baisse sur un segment clé.",
+      "key_phrases": [
+        "write down a clear hypothesis",
+        "calculate the required sample size",
+        "peeking at results early",
+        "check statistical significance",
+        "segment the results by device or user cohort"
+      ],
+      "vocabulary_term_ids": [
+        "ab-test",
+        "hypothesis",
+        "metric",
+        "conversion-rate",
+        "sample-size",
+        "statistical-significance",
+        "cohort",
+        "segmentation"
+      ]
+    },
+    {
+      "id": "data-analyst-cohort-churn-star",
+      "status": "draft",
+      "roles": ["data-analyst"],
+      "level": "B2",
+      "topic_fr": "Découvrir un enseignement clé grâce à une analyse de cohortes",
+      "question_en": "Tell me about a time an ad-hoc analysis or cohort study helped you uncover a non-obvious driver of churn or conversion.",
+      "question_fr": "Racontez-moi une situation où une analyse ponctuelle ou une étude par cohortes vous a permis de découvrir un facteur non évident d'attrition ou de conversion.",
+      "hint_fr": "Utilisez la structure STAR : une métrique globale trompeuse, le découpage par cohorte ou dans l'entonnoir, la découverte et l'action prise.",
+      "answer_outline_fr": [
+        "Situation : le taux de rétention global semblait stable mais le désabonnement augmentait",
+        "Tâche : mener une analyse ponctuelle pour isoler l'origine de la perte d'utilisateurs",
+        "Action : croiser les cohortes d'acquisition avec les étapes de l'entonnoir d'activation",
+        "Résultat : identification d'un blocage précis et recommandation actionnable pour l'équipe"
+      ],
+      "model_answer_en": "In a previous role, leadership thought our retention rate was healthy because top-line active users were growing, yet revenue was plateauing. I ran an ad-hoc analysis breaking users down by monthly sign-up cohort and tracking churn over their first weeks. By combining that cohort table with our onboarding funnel in Python, I discovered that users acquired through a specific promotional channel dropped off right after the first session. The insight was clear: high acquisition volume was masking worsening early churn. Presenting this allowed the team to reallocate budget and fix the first-week experience.",
+      "model_answer_fr": "Dans un poste précédent, la direction pensait que notre taux de rétention était sain parce que le nombre global d'utilisateurs actifs progressait, alors que le chiffre d'affaires plafonnait. J'ai mené une analyse ponctuelle en découpant les utilisateurs par cohorte mensuelle d'inscription et en suivant le désabonnement sur leurs premières semaines. En croisant ce tableau de cohortes avec notre entonnoir d'intégration en Python, j'ai découvert que les utilisateurs acquis via un canal promotionnel précis décrochaient juste après la première session. L'enseignement était clair : un fort volume d'acquisition masquait une dégradation du désabonnement précoce. Présenter ce constat a permis à l'équipe de réallouer le budget et de corriger l'expérience de la première semaine.",
+      "key_phrases": [
+        "retention rate was healthy",
+        "ran an ad-hoc analysis",
+        "monthly sign-up cohort",
+        "onboarding funnel in Python",
+        "The insight was clear"
+      ],
+      "vocabulary_term_ids": [
+        "retention-rate",
+        "ad-hoc-analysis",
+        "cohort",
+        "churn",
+        "funnel",
+        "python",
+        "insight"
+      ]
+    },
+    {
+      "id": "data-analyst-data-storytelling-privacy",
+      "status": "draft",
+      "roles": ["data-analyst"],
+      "level": "B1",
+      "topic_fr": "Présenter ses conclusions et protéger les données personnelles",
+      "question_en": "How do you turn raw analysis into clear data storytelling for stakeholders while handling personal data responsibly?",
+      "question_fr": "Comment transformez-vous une analyse brute en une présentation claire (« data storytelling ») pour vos interlocuteurs tout en traitant les données personnelles de façon responsable ?",
+      "hint_fr": "Expliquez que vous commencez par la conclusion et la recommandation métier, et que vous anonymisez ou agrégez toujours les données personnelles avant tout partage.",
+      "answer_outline_fr": [
+        "Ouvrir par l'enseignement principal et la recommandation plutôt que par la requête SQL",
+        "Illustrer le constat avec un graphique lisible et expliquer l'écart entre corrélation et causalité",
+        "Appliquer l'anonymisation et supprimer toute donnée personnelle dans les exports CSV ou tableurs",
+        "Conclure sur les prochaines actions et les limites de l'analyse"
+      ],
+      "model_answer_en": "Good data storytelling starts with the business question, not the SQL query or the Python dataframe. When I present to stakeholders, I lead with the main insight and a concrete recommendation, then back it up with one clean chart per slide. I also make sure to remind the room that correlation does not prove causation when we look at observational trends. Finally, whenever someone asks for a CSV export or a spreadsheet to explore on their own, I apply strict anonymization and strip all personal data so we stay compliant and protect user privacy.",
+      "model_answer_fr": "Un bon « data storytelling » commence par la question métier, pas par la requête SQL ou le DataFrame Python. Quand je présente à des parties prenantes, j'ouvre par l'enseignement principal et une recommandation concrète, puis je les appuie avec un seul graphique lisible par diapositive. Je veille aussi à rappeler que la corrélation ne prouve pas la causalité lorsque nous observons des tendances historiques. Enfin, chaque fois que quelqu'un demande un export CSV ou un tableur pour explorer les chiffres de son côté, j'applique une anonymisation stricte et je retire toute donnée personnelle afin de rester conforme et de protéger la vie privée des utilisateurs.",
+      "key_phrases": [
+        "Good data storytelling starts with",
+        "lead with the main insight",
+        "correlation does not prove causation",
+        "apply strict anonymization",
+        "strip all personal data"
+      ],
+      "vocabulary_term_ids": [
+        "data-storytelling",
+        "sql",
+        "query",
+        "python",
+        "dataframe",
+        "insight",
+        "correlation",
+        "causation",
+        "csv",
+        "spreadsheet",
+        "anonymization",
+        "personal-data"
+      ]
+    }
+  ],
+  "verbs": []
+}

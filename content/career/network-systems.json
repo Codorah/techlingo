@@ -1,0 +1,161 @@
+{
+  "questions": [
+    {
+      "id": "network-systems-tcp-vs-udp",
+      "status": "draft",
+      "roles": ["network-systems"],
+      "level": "B1",
+      "topic_fr": "Protocoles de transport",
+      "question_en": "What is the difference between TCP and UDP, and when would you use each?",
+      "question_fr": "Quelle est la différence entre TCP et UDP, et dans quels cas utilisez-vous chacun d’eux ?",
+      "hint_fr": "Compare la fiabilité et la vitesse : connexion et accusés de réception pour TCP, envoi direct à faible latence pour UDP, puis donne deux exemples concrets.",
+      "answer_outline_fr": [
+        "TCP : orienté connexion, garantit l’ordre et la livraison des paquets",
+        "UDP : sans connexion, plus rapide mais sans reprise sur perte",
+        "Exemples d’usages pour TCP (web, transfert de fichiers, SSH)",
+        "Exemples d’usages pour UDP (appels vidéo, VoIP, requêtes DNS)"
+      ],
+      "model_answer_en": "TCP and UDP are both transport protocols, but they make different trade-offs between reliability and speed. TCP establishes a connection, numbers each packet, and retransmits anything that is lost, so the data arrives complete and in the right order. I rely on TCP for web traffic, SSH sessions, and file transfers, where a single missing byte would corrupt the result. UDP sends packets without a handshake or retransmission. Because it adds very little overhead, it is ideal for live voice or video calls and standard DNS queries, where low latency matters more than recovering a few lost packets.",
+      "model_answer_fr": "TCP et UDP sont tous deux des protocoles de transport, mais ils font un compromis différent entre fiabilité et vitesse. TCP établit une connexion, numérote chaque paquet et retransmet tout ce qui est perdu, afin que les données arrivent complètes et dans le bon ordre. J’utilise TCP pour le trafic web, les sessions SSH et les transferts de fichiers, où un seul octet manquant corromprait le résultat. UDP envoie les paquets sans négociation ni retransmission. Comme il ajoute très peu de surcharge, il est idéal pour les appels vocaux ou vidéo en direct et les requêtes DNS courantes, où une faible latence compte plus que la récupération de quelques paquets perdus.",
+      "key_phrases": [
+        "transport protocols",
+        "establishes a connection",
+        "in the right order",
+        "without a handshake",
+        "low latency matters more"
+      ],
+      "vocabulary_term_ids": ["tcp-udp", "protocol", "packet", "packet-loss", "dns"]
+    },
+    {
+      "id": "network-systems-raid-vs-backup",
+      "status": "draft",
+      "roles": ["network-systems"],
+      "level": "B2",
+      "topic_fr": "Stockage et sauvegardes",
+      "question_en": "Why is RAID not a substitute for backups, and how do you organize your backup strategy?",
+      "question_fr": "Pourquoi le RAID ne remplace-t-il pas les sauvegardes, et comment organisez-vous votre stratégie de sauvegarde ?",
+      "hint_fr": "Explique ce que le RAID protège (panne matérielle d’un disque) et ce qu’il ne protège pas (suppression, corruption, rançongiciel), puis décris la règle 3-2-1 et les tests de restauration.",
+      "answer_outline_fr": [
+        "Le rôle du RAID : continuité de service en cas de panne d’un disque physique",
+        "Pourquoi ce n’est pas une sauvegarde : toute suppression ou chiffrement est répliqué aussitôt",
+        "La règle 3-2-1 avec chiffrement et copie hors ligne ou immuable",
+        "Tester régulièrement la restauration pour valider le plan de reprise"
+      ],
+      "model_answer_en": "RAID only protects availability when a physical drive fails; it does not protect the data itself. If an administrator accidentally deletes a table, or if ransomware encrypts a volume, RAID immediately mirrors that damage across every disk in the array. For real protection, I follow the three-two-one backup rule: three copies of the data on two different media, with one copy stored offsite and offline or immutable. I always enable encryption on backups and, most importantly, I schedule regular restore tests in an isolated environment, because a backup is only trustworthy once you have proven you can recover from it.",
+      "model_answer_fr": "Le RAID protège uniquement la disponibilité lorsqu’un disque physique tombe en panne ; il ne protège pas les données elles-mêmes. Si un administrateur supprime une table par erreur, ou si un rançongiciel chiffre un volume, le RAID réplique immédiatement les dégâts sur chaque disque de la grappe. Pour une vraie protection, j’applique la règle de sauvegarde 3-2-1 : trois copies des données sur deux supports différents, dont une conservée hors site et hors ligne ou immuable. J’active toujours le chiffrement des sauvegardes et, surtout, je planifie des tests de restauration réguliers dans un environnement isolé, car une sauvegarde n’est fiable que lorsqu’on a prouvé qu’on sait restaurer.",
+      "key_phrases": [
+        "physical drive fails",
+        "mirrors that damage",
+        "stored offsite and offline",
+        "enable encryption",
+        "regular restore tests"
+      ],
+      "vocabulary_term_ids": ["raid", "backup", "ransomware", "disaster-recovery", "encryption"]
+    },
+    {
+      "id": "network-systems-secure-active-directory",
+      "status": "draft",
+      "roles": ["network-systems"],
+      "level": "B2",
+      "topic_fr": "Annuaire et droits d’accès",
+      "question_en": "How do you manage users and permissions securely in Active Directory?",
+      "question_fr": "Comment gérez-vous les utilisateurs et les droits de manière sécurisée dans Active Directory ?",
+      "hint_fr": "Parle des groupes par rôle, du principe du moindre privilège, de la séparation des comptes d’administration, des GPO et de la révocation lors d’un départ.",
+      "answer_outline_fr": [
+        "Attribuer les droits via des groupes de sécurité liés au métier, jamais en direct",
+        "Appliquer le moindre privilège et séparer les comptes quotidiens des comptes admin",
+        "Utiliser les stratégies de groupe (GPO) pour imposer les règles de sécurité",
+        "Automatiser la désactivation des comptes et mener des revues d’accès régulières"
+      ],
+      "model_answer_en": "I never assign permissions directly to individual accounts; instead, I organize users into role-based security groups in Active Directory and grant access to network shares through those groups. Following the principle of least privilege, employees do not have local admin rights on their workstations, and administrators use separate accounts for daily email and for privileged tasks. I use Group Policy to enforce screen locks, password rules, and software restrictions across all domain computers. Finally, I work closely with HR so deprovisioning happens the day someone leaves, and I run periodic access reviews to clean up stale group memberships.",
+      "model_answer_fr": "Je n’attribue jamais de droits directement à un compte individuel : je regroupe les utilisateurs dans des groupes de sécurité par métier dans Active Directory et je donne accès aux partages réseau via ces groupes. Selon le principe du moindre privilège, les salariés n’ont pas les droits administrateur locaux sur leur poste, et les administrateurs utilisent des comptes distincts pour leur messagerie quotidienne et pour les tâches à privilèges. J’utilise les stratégies de groupe pour imposer le verrouillage d’écran, les règles de mot de passe et les restrictions logicielles. Enfin, je travaille avec les RH pour que la révocation ait lieu le jour d’un départ, avec des revues d’accès régulières.",
+      "key_phrases": [
+        "role-based security groups",
+        "principle of least privilege",
+        "local admin rights",
+        "Group Policy",
+        "periodic access reviews"
+      ],
+      "vocabulary_term_ids": ["active-directory", "group-policy", "least-privilege", "admin-rights", "deprovisioning"]
+    },
+    {
+      "id": "network-systems-vlan-segmentation",
+      "status": "draft",
+      "roles": ["network-systems"],
+      "level": "B2",
+      "topic_fr": "Segmentation réseau",
+      "question_en": "Walk me through how you would segment an office network for employees, guests and IoT devices.",
+      "question_fr": "Expliquez-moi étape par étape comment vous segmenteriez un réseau de bureau pour les salariés, les invités et les objets connectés.",
+      "hint_fr": "Découpe en VLAN et sous-réseaux distincts, sépare les SSID Wi-Fi, filtre le routage inter-VLAN sur le pare-feu et isole les invités vers internet uniquement.",
+      "answer_outline_fr": [
+        "Créer un VLAN et un sous-réseau distinct par population (salariés, serveurs, invités, IoT)",
+        "Associer chaque SSID Wi-Fi au VLAN correspondant sur les bornes et les switchs",
+        "Bloquer le trafic entre VLAN par défaut sur le pare-feu et n’ouvrir que les ports nécessaires",
+        "Limiter le VLAN invités à un accès internet direct avec isolation des clients"
+      ],
+      "model_answer_en": "I would start by designing separate VLANs and IP subnets for corporate workstations, internal servers, guest devices, and IoT hardware such as printers or cameras. On the access points and switches, I map each Wi-Fi SSID and switch port to its matching VLAN. Then I route all traffic between VLANs through the firewall, with a default-deny policy. The guest VLAN only gets internet access with client isolation enabled, so visitors cannot see each other or reach the internal LAN. For IoT devices, I only open the specific ports required, such as printing from the employee subnet, while blocking everything else.",
+      "model_answer_fr": "Je commencerais par concevoir des VLAN et des sous-réseaux IP distincts pour les postes de travail de l’entreprise, les serveurs internes, les appareils invités et les équipements connectés comme les imprimantes ou les caméras. Sur les bornes Wi-Fi et les switchs, j’associe chaque SSID et chaque port de switch au VLAN correspondant. Ensuite, je fais passer tout le trafic inter-VLAN par le pare-feu, avec un blocage par défaut. Le VLAN invités n’a accès qu’à internet avec l’isolation des clients activée, afin que les visiteurs ne voient pas le réseau local. Pour l’IoT, je n’ouvre que les ports strictement nécessaires depuis le sous-réseau des salariés.",
+      "key_phrases": [
+        "separate VLANs and IP subnets",
+        "default-deny policy",
+        "client isolation enabled",
+        "internal LAN",
+        "specific ports required"
+      ],
+      "vocabulary_term_ids": ["vlan", "subnet", "firewall", "ssid", "network-segmentation"]
+    },
+    {
+      "id": "network-systems-patch-management-process",
+      "status": "draft",
+      "roles": ["network-systems"],
+      "level": "B2",
+      "topic_fr": "Maintenance et correctifs",
+      "question_en": "How do you roll out security patches on production servers without disrupting users?",
+      "question_fr": "Comment déployez-vous les correctifs de sécurité sur des serveurs de production sans perturber les utilisateurs ?",
+      "hint_fr": "Inventaire, test en préproduction, snapshot de VM, déploiement progressif derrière un répartiteur de charge ou pendant une fenêtre de maintenance, et plan de retour arrière.",
+      "answer_outline_fr": [
+        "Tester d’abord les correctifs sur un environnement de préproduction représentatif",
+        "Prendre un instantané (snapshot) ou vérifier la sauvegarde avant d’intervenir",
+        "Drainer les serveurs un par un derrière le répartiteur de charge ou planifier une fenêtre annoncée",
+        "Vérifier les services et la supervision après redémarrage, avec un plan de retour arrière prêt"
+      ],
+      "model_answer_en": "A safe patch management process starts with testing updates on staging virtual machines for a few days to catch compatibility issues. Before touching production, I verify the latest backup, take a VM snapshot, and agree on a maintenance window with stakeholders if any downtime is expected. For web or application clusters, I avoid downtime by draining one node at a time from the load balancer, applying the patch, rebooting if the kernel changed, and checking health metrics before putting it back in rotation. I always keep a rollback plan ready in case a service fails to start properly after the update.",
+      "model_answer_fr": "Une gestion sûre des correctifs commence par le test des mises à jour sur des machines virtuelles de préproduction pendant quelques jours pour repérer les incompatibilités. Avant de toucher à la production, je vérifie la dernière sauvegarde, je prends un snapshot de la VM et je conviens d’une fenêtre de maintenance avec les équipes si une coupure est prévue. Pour les serveurs derrière un répartiteur de charge, j’évite toute interruption en retirant un nœud à la fois du trafic, j’applique le correctif, je redémarre si le noyau a changé et je contrôle les indicateurs avant de le remettre en service, tout en gardant un plan de retour arrière prêt.",
+      "key_phrases": [
+        "patch management process",
+        "maintenance window",
+        "draining one node at a time",
+        "load balancer",
+        "rollback plan"
+      ],
+      "vocabulary_term_ids": ["patch-management", "patch", "virtual-machine", "load-balancer", "downtime"]
+    },
+    {
+      "id": "network-systems-difficult-outage-star",
+      "status": "draft",
+      "roles": ["network-systems"],
+      "level": "C1",
+      "topic_fr": "Gestion de panne critique",
+      "question_en": "Tell me about a critical server or network outage you resolved and what you changed afterward.",
+      "question_fr": "Parlez-moi d’une panne serveur ou réseau critique que vous avez résolue et de ce que vous avez modifié par la suite.",
+      "hint_fr": "Utilise la méthode STAR : le symptôme et l’impact, ton diagnostic méthodique, la remise en service, puis les actions préventives (redondance, supervision, runbook).",
+      "answer_outline_fr": [
+        "Situation : panne d’authentification et de résolution de noms sur un site",
+        "Diagnostic : vérification réseau, découverte d’un contrôleur de domaine figé sans bascule DNS",
+        "Action immédiate : bascule vers le serveur secondaire et redémarrage contrôlé",
+        "Prévention : ajout d’alertes de supervision et mise à jour du runbook"
+      ],
+      "model_answer_en": "In a previous role, users at one office suddenly could not log in or open internal tools on Monday morning. I quickly checked the network switches and confirmed that IP connectivity was fine, which pointed to authentication and DNS. The primary domain controller, which also ran DNS, had become unresponsive after a storage stall, and clients were only configured with that single DNS server. I updated the DHCP scope to push the secondary DNS server immediately, restored service within twenty minutes, and repaired the stalled virtual machine. Afterward, we configured redundant DNS entries everywhere, added monitoring alerts on DNS response time, and documented the procedure in our runbook.",
+      "model_answer_fr": "Dans un poste précédent, les utilisateurs d’un bureau ne pouvaient soudain plus se connecter ni ouvrir les outils internes un lundi matin. J’ai rapidement vérifié les switchs et confirmé que la connectivité IP fonctionnait, ce qui orientait vers l’authentification et le DNS. Le contrôleur de domaine principal, qui assurait aussi le DNS, ne répondait plus après un blocage du stockage, et les postes n’avaient que ce seul serveur DNS configuré. J’ai modifié l’étendue DHCP pour diffuser aussitôt le serveur DNS secondaire, rétabli le service en vingt minutes et réparé la machine virtuelle. Ensuite, nous avons généralisé le double DNS, ajouté des alertes de supervision et documenté la procédure dans notre runbook.",
+      "key_phrases": [
+        "IP connectivity was fine",
+        "primary domain controller",
+        "become unresponsive",
+        "redundant DNS entries",
+        "documented the procedure in our runbook"
+      ],
+      "vocabulary_term_ids": ["outage", "domain-controller", "dns", "monitoring", "runbook"]
+    }
+  ],
+  "verbs": []
+}

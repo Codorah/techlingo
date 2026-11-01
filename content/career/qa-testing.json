@@ -1,0 +1,202 @@
+{
+  "questions": [
+    {
+      "id": "qa-testing-test-pyramid-strategy",
+      "status": "draft",
+      "roles": ["qa-testing"],
+      "level": "B2",
+      "topic_fr": "Stratégie et pyramide des tests",
+      "question_en": "How do you decide which tests should be unit, integration, or end-to-end tests?",
+      "question_fr": "Comment décidez-vous quels tests doivent être unitaires, d’intégration ou de bout en bout ?",
+      "hint_fr": "S’appuyer sur la pyramide des tests : rapidité, coût de maintenance et parcours critiques.",
+      "answer_outline_fr": [
+        "La logique métier isolée va dans les tests unitaires, rapides et nombreux",
+        "Les échanges entre services ou avec la base vont dans les tests d’intégration et d’API",
+        "Les parcours critiques du point de vue utilisateur restent en bout en bout",
+        "Un exemple d’équilibre pour garder une CI rapide et fiable"
+      ],
+      "model_answer_en": "I follow the test pyramid to keep feedback fast and maintenance low. Business rules and edge cases belong in unit tests because they run in seconds. When we need to check how the service talks to the database or an external API, I write integration tests or contract tests. I save end-to-end tests in Playwright for critical user flows like signup and checkout, because UI tests are slower and more fragile.",
+      "model_answer_fr": "Je suis la pyramide des tests pour garder un retour rapide et une maintenance légère. Les règles métier et les cas limites vont dans les tests unitaires, car ils tournent en quelques secondes. Quand il faut vérifier comment le service dialogue avec la base ou une API externe, j’écris des tests d’intégration ou de contrat. Je réserve les tests de bout en bout sous Playwright aux parcours critiques comme l’inscription et le paiement, car les tests d’interface sont plus lents et plus fragiles.",
+      "key_phrases": [
+        "follow the test pyramid",
+        "business rules and edge cases",
+        "run in seconds",
+        "critical user flows",
+        "slower and more fragile"
+      ],
+      "vocabulary_term_ids": [
+        "test-pyramid",
+        "unit-test",
+        "integration-test",
+        "end-to-end-test",
+        "contract-testing",
+        "playwright"
+      ]
+    },
+    {
+      "id": "qa-testing-handle-flaky-tests",
+      "status": "draft",
+      "roles": ["qa-testing"],
+      "level": "B2",
+      "topic_fr": "Fiabilité de l’automatisation",
+      "question_en": "What do you do when automated tests become flaky in the CI pipeline?",
+      "question_fr": "Que faites-vous quand des tests automatisés deviennent instables dans le pipeline CI ?",
+      "hint_fr": "Ne pas ignorer ni relancer en boucle : isoler, analyser les traces, corriger la cause (attentes, sélecteurs, isolation des données).",
+      "answer_outline_fr": [
+        "Protéger la confiance de l’équipe en mettant le test en quarantaine si besoin",
+        "Analyser les traces et les journaux pour trouver la cause réelle",
+        "Remplacer les pauses fixes, stabiliser les sélecteurs et isoler les données de test",
+        "Vérifier la stabilité sur plusieurs exécutions avant de le remettre dans la barrière qualité"
+      ],
+      "model_answer_en": "Flaky tests destroy trust in the test suite, so I never just rerun the pipeline until it passes. First, I check the Playwright trace to see whether it is a timing issue, a fragile selector, or poor test isolation. Most of the time, I fix it by replacing fixed sleeps with explicit waits on network responses, using stable data-testid selectors, and resetting test data before each run.",
+      "model_answer_fr": "Les tests instables détruisent la confiance dans la suite de tests, donc je ne me contente jamais de relancer le pipeline jusqu’à ce qu’il passe. D’abord, je regarde la trace Playwright pour voir s’il s’agit d’un problème de synchronisation, d’un sélecteur fragile ou d’une mauvaise isolation des tests. Le plus souvent, je le corrige en remplaçant les pauses fixes par des attentes explicites sur les réponses réseau, en utilisant des sélecteurs data-testid stables et en réinitialisant les données de test avant chaque exécution.",
+      "key_phrases": [
+        "destroy trust in the test suite",
+        "rerun the pipeline",
+        "poor test isolation",
+        "stable data-testid selectors",
+        "resetting test data"
+      ],
+      "vocabulary_term_ids": [
+        "flaky-test",
+        "test-suite",
+        "selector",
+        "test-isolation",
+        "test-data"
+      ]
+    },
+    {
+      "id": "qa-testing-developer-cannot-reproduce",
+      "status": "draft",
+      "roles": ["qa-testing"],
+      "level": "B1",
+      "topic_fr": "Investigation et collaboration",
+      "question_en": "How do you handle a situation where a developer closes your bug report as “cannot reproduce”?",
+      "question_fr": "Comment réagissez-vous quand un développeur ferme votre rapport de bug en « non reproductible » ?",
+      "hint_fr": "Comparer l’environnement et les données, vérifier si le bug est intermittent, fournir des traces et faire un point ensemble.",
+      "answer_outline_fr": [
+        "Vérifier les différences entre ton environnement de test et le poste du développeur",
+        "Tester à nouveau pour voir si le problème est intermittent ou lié aux données",
+        "Enrichir le ticket avec les journaux, une vidéo ou une reproduction minimale",
+        "Rouvrir le ticket avec ces éléments ou déboguer cinq minutes ensemble"
+      ],
+      "model_answer_en": "I don’t take it personally; “works on my machine” usually means a difference in the test environment or the test data. First, I check the browser version, user role, and feature flags I used, and I test again to see if the bug is intermittent. Then I attach the network logs and a short screen recording with a minimal repro, and I reopen the ticket or jump on a quick call with the developer.",
+      "model_answer_fr": "Je ne le prends pas personnellement : « ça marche chez moi » indique en général une différence d’environnement de test ou de données de test. D’abord, je vérifie la version du navigateur, le rôle utilisateur et les configurations utilisés, et je reteste pour voir si le bug est intermittent. Ensuite, je joins les journaux réseau et une courte capture vidéo avec une reproduction minimale, puis je rouvre le ticket ou je fais un appel rapide avec le développeur.",
+      "key_phrases": [
+        "works on my machine",
+        "difference in the test environment",
+        "see if the bug is intermittent",
+        "a minimal repro",
+        "I reopen the ticket"
+      ],
+      "vocabulary_term_ids": [
+        "cannot-reproduce",
+        "works-on-my-machine",
+        "test-environment",
+        "intermittent",
+        "repro",
+        "reopen"
+      ]
+    },
+    {
+      "id": "qa-testing-severity-vs-priority",
+      "status": "draft",
+      "roles": ["qa-testing"],
+      "level": "B1",
+      "topic_fr": "Tri et priorisation des anomalies",
+      "question_en": "Can you explain the difference between severity and priority with concrete examples?",
+      "question_fr": "Pouvez-vous expliquer la différence entre la gravité et la priorité avec des exemples concrets ?",
+      "hint_fr": "Définir les deux axes (impact technique vs urgence métier) et donner les deux cas croisés classiques.",
+      "answer_outline_fr": [
+        "Définir la gravité (impact sur le système) et la priorité (urgence pour l’entreprise)",
+        "Exemple de gravité haute mais priorité basse",
+        "Exemple de gravité basse mais priorité haute",
+        "Rappeler comment ces critères guident le tri des bugs avec le product owner"
+      ],
+      "model_answer_en": "Severity measures how badly a defect impacts the system, while priority defines how urgently we need to fix it. During bug triage, I set the severity and the product owner helps set the priority. For example, a crash on an old export page used once a year has high severity but low priority. Conversely, a typo in the company name on the homepage has low severity, but high priority.",
+      "model_answer_fr": "La gravité mesure à quel point un défaut affecte le système, tandis que la priorité définit avec quelle urgence nous devons le corriger. Lors du tri des bugs, je fixe la gravité et le product owner aide à fixer la priorité. Par exemple, un plantage sur une vieille page d’export utilisée une fois par an a une gravité haute mais une priorité basse. À l’inverse, une faute de frappe dans le nom de l’entreprise sur la page d’accueil a une gravité basse, mais une priorité haute.",
+      "key_phrases": [
+        "how badly a defect impacts",
+        "how urgently we need to fix it",
+        "during bug triage",
+        "high severity but low priority",
+        "low severity, but high priority"
+      ],
+      "vocabulary_term_ids": [
+        "severity",
+        "priority",
+        "defect",
+        "bug-triage"
+      ]
+    },
+    {
+      "id": "qa-testing-bug-found-before-release",
+      "status": "draft",
+      "roles": ["qa-testing"],
+      "level": "C1",
+      "topic_fr": "Gestion de crise avant mise en production",
+      "question_en": "Walk me through what you do if you find a major regression two hours before a scheduled release.",
+      "question_fr": "Expliquez-moi étape par étape ce que vous faites si vous trouvez une régression majeure deux heures avant une mise en production prévue.",
+      "hint_fr": "Reproduire et mesurer l’impact, alerter sans paniquer, évaluer les critères de sortie et proposer des options claires (correctif, contournement ou report).",
+      "answer_outline_fr": [
+        "Confirmer les étapes de reproduction et la portée exacte de la régression",
+        "Alerter immédiatement le tech lead et le product owner avec des faits précis",
+        "Vérifier si c’est un vrai bloquant vis-à-vis des critères de sortie",
+        "Aider à trancher : bloquer la sortie, livrer avec un problème connu documenté, ou préparer un correctif urgent"
+      ],
+      "model_answer_en": "First, I confirm the steps to reproduce and check whether the regression affects all users or only a specific edge case. I immediately share a clear bug report with the product owner and tech lead so we can assess the risk against our exit criteria. If it is a showstopper on a core flow, I recommend holding the release until we retest a fix. If there is a safe workaround, we can document it as a known issue in the release notes and ship a hotfix right after.",
+      "model_answer_fr": "D’abord, je confirme les étapes pour reproduire et je vérifie si la régression touche tous les utilisateurs ou seulement un cas limite précis. Je partage immédiatement un rapport de bug clair avec le product owner et le tech lead afin d’évaluer le risque par rapport à nos critères de sortie. Si c’est un bug bloquant sur un parcours cœur, je recommande de retenir la mise en production jusqu’à ce que nous retestions un correctif. S’il existe un contournement sûr, nous pouvons le documenter comme problème connu dans les notes de version et livrer un correctif urgent juste après.",
+      "key_phrases": [
+        "confirm the steps to reproduce",
+        "assess the risk against our exit criteria",
+        "if it is a showstopper",
+        "recommend holding the release",
+        "document it as a known issue"
+      ],
+      "vocabulary_term_ids": [
+        "software-regression",
+        "steps-to-reproduce",
+        "exit-criteria",
+        "showstopper",
+        "known-issue",
+        "release-notes",
+        "hotfix"
+      ]
+    },
+    {
+      "id": "qa-testing-test-without-clear-specs",
+      "status": "draft",
+      "roles": ["qa-testing"],
+      "level": "B2",
+      "topic_fr": "Méthodologie et test au plus tôt",
+      "question_en": "How do you test a new feature when the acceptance criteria are vague or incomplete?",
+      "question_fr": "Comment testez-vous une nouvelle fonctionnalité quand les critères d’acceptation sont flous ou incomplets ?",
+      "hint_fr": "Pratiquer le shift-left : clarifier en amont avec produit et dev, formaliser en Given/When/Then, compléter par du test exploratoire et des tests négatifs.",
+      "answer_outline_fr": [
+        "Intervenir tôt (shift left) en posant des questions au product owner et au développeur",
+        "Transformer les zones floues en scénarios concrets (Gherkin) incluant les valeurs limites",
+        "Compléter le scénario nominal par des tests négatifs et une session de test exploratoire",
+        "Mettre à jour le ticket pour que les critères servent de référence à toute l’équipe"
+      ],
+      "model_answer_en": "I prefer shift-left testing, so I try to catch vague acceptance criteria before development starts. I sit down with the product owner and the developer to clarify what happens beyond the happy path, using boundary value analysis and negative testing questions. We turn those answers into concrete Gherkin scenarios so everyone shares the same expected result. Once the build is ready, I also run a time-boxed exploratory testing session to uncover edge cases nobody thought of.",
+      "model_answer_fr": "Je privilégie le test au plus tôt, donc j’essaie de repérer les critères d’acceptation flous avant le début du développement. Je fais un point avec le product owner et le développeur pour clarifier ce qui se passe au-delà du scénario nominal, en posant des questions d’analyse des valeurs limites et de tests négatifs. Nous transformons ces réponses en scénarios Gherkin concrets pour que tout le monde partage le même résultat attendu. Une fois le build prêt, je mène aussi une session de test exploratoire limitée dans le temps pour découvrir des cas limites auxquels personne n’avait pensé.",
+      "key_phrases": [
+        "prefer shift-left testing",
+        "beyond the happy path",
+        "concrete Gherkin scenarios",
+        "shares the same expected result",
+        "exploratory testing session"
+      ],
+      "vocabulary_term_ids": [
+        "shift-left-testing",
+        "acceptance-criteria",
+        "happy-path",
+        "boundary-value-analysis",
+        "negative-testing",
+        "gherkin",
+        "exploratory-testing"
+      ]
+    }
+  ],
+  "verbs": []
+}

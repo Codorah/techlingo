@@ -1,0 +1,223 @@
+{
+  "questions": [
+    {
+      "id": "devops-cloud-containers-vs-vms",
+      "status": "draft",
+      "roles": ["devops-cloud"],
+      "level": "B1",
+      "topic_fr": "Conteneurs et virtualisation",
+      "question_en": "What is the difference between a virtual machine and a container, and when would you choose each?",
+      "question_fr": "Quelle est la différence entre une machine virtuelle et un conteneur, et quand choisiriez-vous l’un ou l’autre ?",
+      "hint_fr": "Compare ce qui est virtualisé (matériel avec un OS complet contre noyau partagé), le poids et le temps de démarrage, puis donne un cas d’usage pour chacun.",
+      "answer_outline_fr": [
+        "La machine virtuelle embarque son propre système d’exploitation au-dessus d’un hyperviseur",
+        "Le conteneur partage le noyau de l’hôte, démarre en quelques secondes et garantit la parité des environnements",
+        "Quand choisir un conteneur (microservices, CI/CD) et quand garder une VM (isolation forte, OS différent ou application ancienne)"
+      ],
+      "model_answer_en": "A virtual machine emulates hardware on top of a hypervisor and runs its own full operating system, so it provides strong isolation but uses more memory and takes longer to boot. A container packages only the application and its dependencies while sharing the host kernel, which makes it lightweight, fast to start, and great for environment parity between a laptop and production. I use Docker containers by default for stateless web services and CI/CD jobs, and I choose virtual machines when a workload needs a different operating system, kernel-level isolation, or legacy software that is hard to containerize.",
+      "model_answer_fr": "Une machine virtuelle émule le matériel au-dessus d’un hyperviseur et fait tourner son propre système d’exploitation complet : elle offre une isolation forte, mais consomme plus de mémoire et met plus de temps à démarrer. Un conteneur n’embarque que l’application et ses dépendances tout en partageant le noyau de l’hôte, ce qui le rend léger, rapide à lancer et idéal pour la parité des environnements entre un poste portable et la production. J’utilise des conteneurs Docker par défaut pour les services web sans état et les tâches CI/CD, et je choisis des machines virtuelles quand une charge a besoin d’un autre système d’exploitation, d’une isolation au niveau du noyau ou d’un logiciel ancien difficile à conteneuriser.",
+      "key_phrases": [
+        "runs its own full operating system",
+        "sharing the host kernel",
+        "environment parity",
+        "stateless web services",
+        "kernel-level isolation"
+      ],
+      "vocabulary_term_ids": [
+        "virtual-machine",
+        "container",
+        "docker",
+        "hypervisor",
+        "environment-parity",
+        "stateless"
+      ]
+    },
+    {
+      "id": "devops-cloud-design-cicd-pipeline",
+      "status": "draft",
+      "roles": ["devops-cloud"],
+      "level": "B2",
+      "topic_fr": "Conception de pipeline CI/CD",
+      "question_en": "Walk me through how you would design a CI/CD pipeline for a new web service.",
+      "question_fr": "Expliquez-moi étape par étape comment vous concevriez un pipeline CI/CD pour un nouveau service web.",
+      "hint_fr": "Suis le chemin d’un commit : vérifications sur la pull request, construction d’un artefact unique signé, déploiement en préproduction avec tests, puis déploiement progressif en production.",
+      "answer_outline_fr": [
+        "Intégration continue sur chaque pull request : tests unitaires, analyse statique et scan de vulnérabilités",
+        "Construction d’une image de conteneur unique et immuable, stockée dans le registre",
+        "Déploiement automatique en préproduction suivi de smoke tests",
+        "Mise en production progressive (déploiement canari) avec retour arrière automatique si le taux d’erreur grimpe"
+      ],
+      "model_answer_en": "First, on every pull request, continuous integration runs unit tests, linting, and vulnerability scanning as a quality gate before anyone can merge. Once the change is merged into the main branch, the CI/CD pipeline builds a single immutable container image, tags it with the commit hash, and pushes that artifact to a private registry. Next, it deploys the exact same artifact to the staging environment and runs automated smoke tests against the key endpoints. Finally, for production, I use a canary release that sends a small share of traffic to the new version first and triggers an automatic rollback if error rates or latency cross our threshold.",
+      "model_answer_fr": "D’abord, sur chaque pull request, l’intégration continue lance les tests unitaires, l’analyse du code et un scan de vulnérabilités comme jalon de qualité avant toute fusion. Une fois le changement fusionné sur la branche principale, le pipeline CI/CD construit une seule image de conteneur immuable, la référence avec le hash du commit et pousse cet artefact dans un registre privé. Ensuite, il déploie exactement le même artefact sur l’environnement de préproduction et exécute des smoke tests automatisés sur les endpoints clés. Enfin, pour la production, j’utilise un déploiement canari qui envoie d’abord une petite part du trafic vers la nouvelle version et déclenche un retour arrière automatique si le taux d’erreur ou la latence dépasse notre seuil.",
+      "key_phrases": [
+        "vulnerability scanning",
+        "quality gate",
+        "immutable container image",
+        "the exact same artifact",
+        "canary release",
+        "automatic rollback"
+      ],
+      "vocabulary_term_ids": [
+        "cicd-pipeline",
+        "continuous-integration",
+        "vulnerability-scanning",
+        "quality-gate",
+        "container-image",
+        "artifact",
+        "staging",
+        "smoke-test",
+        "canary-release",
+        "rollback"
+      ]
+    },
+    {
+      "id": "devops-cloud-iac-and-drift",
+      "status": "draft",
+      "roles": ["devops-cloud"],
+      "level": "B2",
+      "topic_fr": "Infrastructure en tant que code et Terraform",
+      "question_en": "Why do you use Infrastructure as Code, and how do you prevent manual changes in the cloud console?",
+      "question_fr": "Pourquoi utilisez-vous l’infrastructure en tant que code, et comment évitez-vous les modifications manuelles dans la console cloud ?",
+      "hint_fr": "Explique les bénéfices (reproductibilité, revue par PR, historique Git), puis comment bloquer ou détecter le « configuration drift » (IAM en lecture seule, exécution via pipeline).",
+      "answer_outline_fr": [
+        "Pourquoi l’IaC : environnements reproductibles, revues de code et historique complet dans Git",
+        "Le risque des changements manuels : la dérive de configuration entre le code et la réalité",
+        "La parade : droits IAM en lecture seule dans la console en production et application par le pipeline après revue du plan Terraform"
+      ],
+      "model_answer_en": "Infrastructure as code lets us manage VPCs, databases, and IAM policies through versioned files rather than manual clicks, which gives us peer review and environment parity between staging and production. Manual changes in the cloud console create configuration drift, so the next Terraform run can overwrite them or fail unexpectedly. To prevent that, I follow a GitOps workflow: engineers have read-only IAM permissions in the production console, and only the CI/CD service account can apply changes after a teammate approves the Terraform plan on the pull request. I also schedule a daily plan check that alerts us if any resource has drifted.",
+      "model_answer_fr": "L’infrastructure en tant que code permet de gérer les VPC, les bases de données et les règles IAM via des fichiers versionnés plutôt que par des clics manuels, ce qui apporte la relecture par les pairs et la parité entre la préproduction et la production. Les modifications manuelles dans la console cloud créent une dérive de configuration, si bien que l’exécution suivante de Terraform peut les écraser ou échouer de façon imprévue. Pour éviter cela, je suis un flux GitOps : les ingénieurs ont des droits IAM en lecture seule dans la console de production, et seul le compte de service du CI/CD peut appliquer les changements après validation du plan Terraform sur la pull request. Je planifie aussi une vérification quotidienne du plan qui nous alerte si une ressource a dérivé.",
+      "key_phrases": [
+        "Infrastructure as code",
+        "configuration drift",
+        "GitOps workflow",
+        "read-only IAM permissions",
+        "approves the Terraform plan"
+      ],
+      "vocabulary_term_ids": [
+        "infrastructure-as-code",
+        "terraform",
+        "gitops",
+        "iam",
+        "service-account",
+        "vpc",
+        "environment-parity"
+      ]
+    },
+    {
+      "id": "devops-cloud-troubleshoot-crashing-pod",
+      "status": "draft",
+      "roles": ["devops-cloud"],
+      "level": "B2",
+      "topic_fr": "Dépannage sur Kubernetes",
+      "question_en": "A Kubernetes pod keeps restarting in production after a deployment. Walk me through how you would troubleshoot it.",
+      "question_fr": "Un pod Kubernetes redémarre en boucle en production après un déploiement. Comment diagnostiqueriez-vous le problème ?",
+      "hint_fr": "Protège d’abord les utilisateurs si nécessaire, puis inspecte les événements du pod, les logs du conteneur précédent, le code de sortie (OOMKilled, secret manquant, health check) avant de corriger.",
+      "answer_outline_fr": [
+        "Vérifier l’impact utilisateur et revenir à la version précédente si le service est dégradé",
+        "Inspecter l’état du pod, le code de sortie et les événements Kubernetes (mémoire insuffisante, sonde de santé, secret manquant)",
+        "Lire les logs du conteneur précédent avant le plantage",
+        "Corriger en préproduction et ajouter une vérification dans le pipeline"
+      ],
+      "model_answer_en": "First, I check whether users are affected; if the old replicas were replaced and traffic is failing, I roll back the deployment immediately to restore the service. Next, I inspect the pod events and exit code in the Kubernetes cluster to see why it is crashing. An exit code 137 points to an out-of-memory kill, whereas failed liveness health checks or a missing secret in an environment variable often stop the container at startup. I then read the logs of the previous container instance to find the exact stack trace, reproduce the fix in staging, and add a pre-deploy check so the issue cannot reach production again.",
+      "model_answer_fr": "D’abord, je vérifie si les utilisateurs sont touchés ; si les anciens réplicas ont été remplacés et que le trafic échoue, j’annule immédiatement le déploiement pour rétablir le service. Ensuite, j’examine les événements du pod et le code de sortie dans le cluster Kubernetes pour voir pourquoi il plante. Un code de sortie 137 indique un arrêt pour manque de mémoire, tandis que des sondes de santé en échec ou un secret manquant dans une variable d’environnement bloquent souvent le conteneur au démarrage. Je lis alors les logs de l’instance précédente du conteneur pour trouver l’erreur exacte, je reproduis le correctif en préproduction et j’ajoute une vérification avant déploiement pour que le problème n’atteigne plus la production.",
+      "key_phrases": [
+        "roll back the deployment",
+        "inspect the pod events",
+        "out-of-memory kill",
+        "health checks",
+        "logs of the previous container instance"
+      ],
+      "vocabulary_term_ids": [
+        "kubernetes",
+        "pod",
+        "cluster",
+        "replica",
+        "rollback",
+        "health-check",
+        "secret",
+        "environment-variable",
+        "log"
+      ]
+    },
+    {
+      "id": "devops-cloud-slo-and-error-budget",
+      "status": "draft",
+      "roles": ["devops-cloud"],
+      "level": "C1",
+      "topic_fr": "SRE : SLO et budget d’erreur",
+      "question_en": "How do you use SLOs and error budgets to balance release speed and reliability?",
+      "question_fr": "Comment utilisez-vous les SLO et le budget d’erreur pour équilibrer vitesse de livraison et fiabilité ?",
+      "hint_fr": "Distingue le SLA (contrat externe) du SLO (objectif interne plus strict), explique comment le budget d’erreur en découle et comment il sert de règle commune entre développeurs et SRE.",
+      "answer_outline_fr": [
+        "Différence entre SLA (engagement contractuel client) et SLO (objectif interne de fiabilité)",
+        "Définition du budget d’erreur : la marge d’indisponibilité ou d’erreurs autorisée sur la période",
+        "Comment il guide les décisions : tant qu’il reste du budget, on livre vite ; s’il est épuisé, on priorise la stabilité et les actions de post-mortem"
+      ],
+      "model_answer_en": "In SRE, we set an internal SLO that is stricter than the customer-facing SLA, for example 99.95% availability and p95 latency under 200 milliseconds on critical endpoints. The remaining 0.05% is our monthly error budget, which turns reliability into a shared number between product and operations rather than an emotional debate. As long as we have error budget left, teams can ship features quickly and run experiments such as chaos engineering tests. If an outage or degraded performance burns through the budget, we pause non-urgent releases and focus engineering time on postmortem action items, better observability, and automated failover until uptime recovers.",
+      "model_answer_fr": "En SRE, nous fixons un SLO interne plus strict que le SLA conclu avec les clients, par exemple 99,95 % de disponibilité et une latence au 95e centile sous 200 millisecondes sur les endpoints critiques. Les 0,05 % restants constituent notre budget d’erreur mensuel, ce qui transforme la fiabilité en un indicateur partagé entre le produit et l’exploitation plutôt qu’en un débat émotionnel. Tant qu’il nous reste du budget d’erreur, les équipes peuvent livrer vite et mener des expériences comme des tests d’ingénierie du chaos. Si une panne ou des performances dégradées consomment le budget, nous mettons en pause les sorties non urgentes et concentrons le temps d’ingénierie sur les actions de post-mortem, une meilleure observabilité et le basculement automatique jusqu’au rétablissement de la disponibilité.",
+      "key_phrases": [
+        "stricter than the customer-facing SLA",
+        "monthly error budget",
+        "ship features quickly",
+        "burns through the budget",
+        "postmortem action items"
+      ],
+      "vocabulary_term_ids": [
+        "sre",
+        "sla",
+        "slo",
+        "error-budget",
+        "uptime",
+        "percentile",
+        "latency",
+        "chaos-engineering",
+        "outage",
+        "degraded-performance",
+        "postmortem",
+        "observability",
+        "failover"
+      ]
+    },
+    {
+      "id": "devops-cloud-reduce-cloud-costs",
+      "status": "draft",
+      "roles": ["devops-cloud"],
+      "level": "B2",
+      "topic_fr": "Optimisation des coûts cloud",
+      "question_en": "Tell me about a time you reduced cloud costs or improved infrastructure efficiency without hurting reliability.",
+      "question_fr": "Racontez-moi une situation où vous avez réduit les coûts cloud ou amélioré l’efficacité de l’infrastructure sans nuire à la fiabilité.",
+      "hint_fr": "Utilise la méthode STAR : le constat sur la facture, l’analyse des métriques réelles, les leviers concrets (redimensionnement, autoscaling, cycle de vie du stockage) et le maintien de la haute disponibilité.",
+      "answer_outline_fr": [
+        "Situation : hausse de la facture cloud avec des environnements surdimensionnés",
+        "Analyse : étude des métriques CPU/mémoire et du stockage objet sur plusieurs semaines",
+        "Actions : arrêt nocturne des environnements de test, mise à l’échelle automatique et règles d’archivage des vieux compartiments",
+        "Résultat : baisse sensible des coûts tout en gardant la haute disponibilité sur deux zones en production"
+      ],
+      "model_answer_en": "In a previous role, our cloud bill grew much faster than our user traffic. I started by reviewing resource metrics over four weeks and saw that our staging cluster and several worker virtual machines ran at full size all weekend with under ten percent CPU usage. I configured autoscaling so stateless workers scaled down during off-peak hours, scheduled non-production environments to shut down at night, and added lifecycle rules on object storage buckets to move old backups to cold storage. We kept high availability across multiple zones in production, maintained our SLO, and significantly reduced our monthly cloud spending.",
+      "model_answer_fr": "Dans un poste précédent, notre facture cloud augmentait beaucoup plus vite que notre trafic utilisateur. J’ai commencé par analyser les métriques de ressources sur quatre semaines et j’ai constaté que notre cluster de préproduction et plusieurs machines virtuelles de traitement tournaient à pleine capacité tout le week-end avec moins de dix pour cent d’utilisation CPU. J’ai configuré la mise à l’échelle automatique pour réduire le nombre de workers sans état en heures creuses, planifié l’arrêt nocturne des environnements hors production et ajouté des règles de cycle de vie sur les compartiments de stockage objet pour déplacer les anciennes sauvegardes vers du stockage froid. Nous avons conservé la haute disponibilité sur plusieurs zones en production, tenu notre SLO et réduit sensiblement nos dépenses cloud mensuelles.",
+      "key_phrases": [
+        "reviewing resource metrics",
+        "configured autoscaling",
+        "scaled down during off-peak hours",
+        "object storage buckets",
+        "high availability across multiple zones"
+      ],
+      "vocabulary_term_ids": [
+        "cloud-cost",
+        "metric",
+        "staging",
+        "cluster",
+        "virtual-machine",
+        "cpu",
+        "autoscaling",
+        "stateless",
+        "object-storage",
+        "bucket",
+        "backup",
+        "high-availability",
+        "slo"
+      ]
+    }
+  ],
+  "verbs": []
+}

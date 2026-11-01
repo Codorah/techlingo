@@ -1,0 +1,220 @@
+{
+  "questions": [
+    {
+      "id": "mobile-developer-mvvm-architecture",
+      "status": "draft",
+      "roles": ["mobile-developer"],
+      "level": "B2",
+      "topic_fr": "Structurer une application avec l'architecture MVVM",
+      "question_en": "How do you structure a mobile app using MVVM, and how do you manage state across screens?",
+      "question_fr": "Comment structurez-vous une application mobile avec l'architecture MVVM, et comment gérez-vous l'état entre les écrans ?",
+      "hint_fr": "Expliquez la séparation entre la vue, le ViewModel et la couche de données, ainsi que la gestion du cycle de vie de l'écran.",
+      "answer_outline_fr": [
+        "Séparer l'interface déclarative (Jetpack Compose ou SwiftUI) de la logique métier",
+        "Exposer un état immuable depuis le ViewModel vers la vue",
+        "Respecter le cycle de vie de l'écran et la pile de navigation",
+        "Tester le ViewModel indépendamment de l'interface"
+      ],
+      "model_answer_en": "I structure mobile apps around a clean MVVM architecture so the UI stays dumb and predictable. Whether I use Jetpack Compose or SwiftUI, the view only renders an immutable state exposed by the ViewModel and sends user intents back. The ViewModel handles presentation logic, survives configuration changes, and respects the screen lifecycle. Below that, a repository layer coordinates network calls and local storage. For state shared across the navigation stack, I scope a shared ViewModel to the parent flow or pass minimal identifiers through routes. This separation makes unit testing straightforward without needing an emulator.",
+      "model_answer_fr": "Je structure les applications mobiles autour d'une architecture MVVM propre pour que l'interface reste simple et prévisible. Que j'utilise Jetpack Compose ou SwiftUI, la vue se contente d'afficher un état immuable exposé par le ViewModel et de renvoyer les actions de l'utilisateur. Le ViewModel gère la logique de présentation, survit aux changements de configuration et respecte le cycle de vie de l'écran. En dessous, une couche repository coordonne les appels réseau et le stockage local. Pour l'état partagé dans la pile de navigation, je lie un ViewModel partagé au flux parent ou je passe des identifiants minimaux dans les routes. Cette séparation simplifie les tests unitaires sans avoir besoin d'un émulateur.",
+      "key_phrases": [
+        "clean MVVM architecture",
+        "immutable state exposed by the ViewModel",
+        "respects the screen lifecycle",
+        "shared across the navigation stack"
+      ],
+      "vocabulary_term_ids": [
+        "mvvm",
+        "view-model",
+        "lifecycle",
+        "navigation-stack",
+        "local-storage",
+        "jetpack-compose",
+        "swiftui",
+        "emulator"
+      ]
+    },
+    {
+      "id": "mobile-developer-offline-first-sync",
+      "status": "draft",
+      "roles": ["mobile-developer"],
+      "level": "C1",
+      "topic_fr": "Concevoir un mode hors ligne et la synchronisation",
+      "question_en": "Walk me through how you would design an offline-first feature and handle data sync when connectivity returns.",
+      "question_fr": "Expliquez-moi étape par étape comment vous concevriez une fonctionnalité « offline-first » et géreriez la synchronisation des données au retour de la connexion.",
+      "hint_fr": "Montrez que la base locale est la source de vérité de l'interface et expliquez comment vous gérez la file d'attente en tâche de fond et les conflits.",
+      "answer_outline_fr": [
+        "Utiliser le stockage local comme source unique de vérité pour l'interface",
+        "Enregistrer les actions de l'utilisateur dans une file d'attente locale",
+        "Planifier une tâche de fond dès que le réseau revient",
+        "Gérer les erreurs, les tentatives et les conflits de synchronisation"
+      ],
+      "model_answer_en": "When I design an offline-first feature, I treat local storage as the single source of truth for the UI. The screen reads directly from the local database, so the user gets an instant response even on a subway with no signal. When the user edits data, I save the change locally with a pending status and queue a background task. Once connectivity returns, the sync worker pushes queued mutations to the server in order, using exponential backoff if the network drops again. Finally, I resolve conflicts with timestamps or server rules and update the local records.",
+      "model_answer_fr": "Quand je conçois une fonctionnalité « offline-first », je traite le stockage local comme la source unique de vérité pour l'interface. L'écran lit directement dans la base de données locale, pour que l'utilisateur ait une réponse instantanée même dans le métro sans réseau. Quand l'utilisateur modifie une donnée, j'enregistre le changement localement avec un statut en attente et j'ajoute une tâche de fond à la file. Dès que la connexion revient, le processus de synchronisation envoie les modifications en attente au serveur dans l'ordre, avec un délai exponentiel si le réseau coupe à nouveau. Enfin, je résous les conflits avec des horodatages ou des règles serveur et je mets à jour les enregistrements locaux.",
+      "key_phrases": [
+        "design an offline-first feature",
+        "single source of truth",
+        "queue a background task",
+        "Once connectivity returns"
+      ],
+      "vocabulary_term_ids": [
+        "offline-first",
+        "local-storage",
+        "background-task",
+        "sync"
+      ]
+    },
+    {
+      "id": "mobile-developer-app-store-release",
+      "status": "draft",
+      "roles": ["mobile-developer"],
+      "level": "B1",
+      "topic_fr": "Préparer et déployer une version sur les stores",
+      "question_en": "Walk me through your process for preparing and shipping a mobile release to the App Store and Google Play.",
+      "question_fr": "Expliquez-moi votre processus pour préparer et publier une version mobile sur l'App Store et sur Google Play.",
+      "hint_fr": "Décrivez la chaîne complète : compilation signée, bêta sur TestFlight et piste interne, validation par les stores et déploiement progressif.",
+      "answer_outline_fr": [
+        "Générer l'App Bundle et l'archive iOS avec la signature de code et la réduction du code",
+        "Distribuer la bêta sur TestFlight et la piste de test interne",
+        "Soumettre à la validation des stores avec les notes de version",
+        "Activer un déploiement progressif et surveiller le taux de sessions sans crash"
+      ],
+      "model_answer_en": "To ship a clean release, I rely on automated pipelines that handle code signing, code shrinking, and build variants. First, we generate an Android app bundle and an iOS build, then push them to our internal testing track and TestFlight for beta testing. Once QA signs off, we submit the build for app review on both the App Store and Google Play. After approval, I never release to everyone at once. Instead, I start a staged rollout to a small percentage of users while closely watching crash reporting and the crash-free rate. If metrics stay healthy, I gradually roll it out to everybody.",
+      "model_answer_fr": "Pour livrer une version propre, je m'appuie sur des pipelines automatisés qui gèrent la signature de code, la réduction du code et les variantes de build. D'abord, nous générons un App Bundle Android et un build iOS, puis nous les envoyons sur notre piste de test interne et sur TestFlight pour le bêta-test. Une fois que l'équipe QA valide, nous soumettons la version à la validation des deux stores. Après approbation, je ne déploie jamais pour tout le monde d'un coup. Je lance plutôt un déploiement progressif sur un petit pourcentage d'utilisateurs tout en surveillant de près les rapports de crash et le taux de sessions sans crash. Si les indicateurs restent bons, j'étends progressivement la version à tout le monde.",
+      "key_phrases": [
+        "handle code signing",
+        "internal testing track and TestFlight",
+        "submit the build for app review",
+        "start a staged rollout",
+        "watching crash reporting"
+      ],
+      "vocabulary_term_ids": [
+        "release",
+        "code-signing",
+        "code-shrinking",
+        "build-variant",
+        "app-bundle",
+        "internal-testing-track",
+        "testflight",
+        "beta-testing",
+        "app-review",
+        "app-store",
+        "staged-rollout",
+        "crash-reporting",
+        "crash-free-rate"
+      ]
+    },
+    {
+      "id": "mobile-developer-production-crash-jank",
+      "status": "draft",
+      "roles": ["mobile-developer"],
+      "level": "B2",
+      "topic_fr": "Diagnostiquer une fuite mémoire ou un crash en production",
+      "question_en": "Tell me about a time you diagnosed and fixed a tricky memory leak, UI jank, or crash in production.",
+      "question_fr": "Racontez-moi une situation où vous avez diagnostiqué et corrigé une fuite mémoire complexe, des saccades d'interface ou un crash en production.",
+      "hint_fr": "Utilisez la méthode STAR : décrivez l'alerte dans l'outil de suivi des crashs, l'analyse sur le thread principal ou la mémoire, le correctif et l'impact.",
+      "answer_outline_fr": [
+        "Situation : baisse du taux de sessions sans crash et saccades au défilement",
+        "Tâche : identifier l'origine de la fuite mémoire et du blocage du thread principal",
+        "Action : profiler la mémoire, ajouter du cache d'images et déporter le décodage hors du thread principal",
+        "Résultat : fréquence d'images fluide et disparition des crashs mémoire"
+      ],
+      "model_answer_en": "In a previous project, our crash reporting tool alerted us to out-of-memory crashes and severe jank on a media-heavy feed, particularly on older Android devices suffering from fragmentation. I profiled the screen and discovered two issues: high-resolution bitmaps were being decoded on the main thread, and an unregistered listener was holding a reference to the screen after navigation, causing a memory leak. I moved image decoding to a background thread, configured proper image caching with downsampling, and tied the listener strictly to the view lifecycle. As a result, the frame rate stayed smooth and the crash disappeared in the next release.",
+      "model_answer_fr": "Dans un projet précédent, notre outil de suivi des crashs nous a alertés sur des crashs de mémoire saturée et de fortes saccades sur un fil d'actualité riche en médias, surtout sur d'anciens appareils Android touchés par la fragmentation. J'ai profilé l'écran et découvert deux problèmes : des images haute résolution étaient décodées sur le thread principal, et un écouteur non détaché gardait une référence vers l'écran après la navigation, ce qui causait une fuite mémoire. J'ai déplacé le décodage sur un thread en arrière-plan, configuré un cache d'images adapté avec sous-échantillonnage et lié l'écouteur strictement au cycle de vie de la vue. Résultat : la fréquence d'images est restée fluide et le crash a disparu dès la version suivante.",
+      "key_phrases": [
+        "crash reporting tool alerted us",
+        "decoded on the main thread",
+        "causing a memory leak",
+        "configured proper image caching",
+        "frame rate stayed smooth"
+      ],
+      "vocabulary_term_ids": [
+        "crash-reporting",
+        "crash",
+        "jank",
+        "fragmentation",
+        "main-thread",
+        "memory-leak",
+        "thread",
+        "image-caching",
+        "lifecycle",
+        "frame-rate",
+        "release"
+      ]
+    },
+    {
+      "id": "mobile-developer-performance-battery",
+      "status": "draft",
+      "roles": ["mobile-developer"],
+      "level": "B2",
+      "topic_fr": "Optimiser le temps de démarrage et la batterie",
+      "question_en": "How do you optimize startup time, app size, and battery drain on mobile devices?",
+      "question_fr": "Comment optimisez-vous le temps de démarrage, le poids de l'application et la consommation de batterie sur les appareils mobiles ?",
+      "hint_fr": "Distinguez ce qui bloque l'écran de lancement au démarrage, le poids des ressources et des SDK, et le regroupement des tâches réseau en arrière-plan.",
+      "answer_outline_fr": [
+        "Retarder l'initialisation des SDK non critiques après l'écran de lancement",
+        "Réduire le poids de l'application en compressant les ressources et en nettoyant le code inutilisé",
+        "Limiter la consommation de batterie en regroupant les appels réseau et les tâches de fond",
+        "Mesurer sur de vrais appareils d'entrée de gamme et pas seulement sur un build de débogage"
+      ],
+      "model_answer_en": "To improve startup time, I audit everything running before the first frame after the splash screen and defer non-critical SDK initialization to background threads. To keep app size down, I enable code shrinking, strip unused resources, use vector graphics, and ship an app bundle so users only download assets matching their device. To prevent battery drain, I avoid waking the radio repeatedly: I batch network requests, respect system schedulers for any background task, and throttle location updates when the app is not active. Finally, I always benchmark release builds on low-end physical devices rather than relying on a debug build.",
+      "model_answer_fr": "Pour améliorer le temps de démarrage, j'audite tout ce qui s'exécute avant la première image après l'écran de lancement et je retarde l'initialisation des SDK non critiques sur des threads en arrière-plan. Pour limiter le poids de l'application, j'active la réduction du code, je supprime les ressources inutilisées, j'utilise des images vectorielles et je livre un App Bundle pour que les utilisateurs ne téléchargent que les fichiers adaptés à leur appareil. Pour éviter de vider la batterie, j'évite de réveiller la puce réseau sans arrêt : je regroupe les requêtes, je respecte les planificateurs système pour chaque tâche de fond et je réduis la géolocalisation quand l'application est inactive. Enfin, je mesure toujours des versions de production sur des appareils physiques d'entrée de gamme plutôt que sur un build de débogage.",
+      "key_phrases": [
+        "improve startup time",
+        "defer non-critical SDK initialization",
+        "keep app size down",
+        "prevent battery drain",
+        "rather than relying on a debug build"
+      ],
+      "vocabulary_term_ids": [
+        "startup-time",
+        "splash-screen",
+        "sdk",
+        "thread",
+        "app-size",
+        "code-shrinking",
+        "app-bundle",
+        "battery-drain",
+        "background-task",
+        "debug-build"
+      ]
+    },
+    {
+      "id": "mobile-developer-permissions-security",
+      "status": "draft",
+      "roles": ["mobile-developer"],
+      "level": "B1",
+      "topic_fr": "Gérer les autorisations, les liens profonds et la sécurité",
+      "question_en": "How do you handle runtime permissions, deep links, and sensitive user data securely in a mobile app?",
+      "question_fr": "Comment gérez-vous les autorisations à l'exécution, les liens profonds et les données sensibles des utilisateurs de manière sécurisée dans une application mobile ?",
+      "hint_fr": "Parlez du moment où vous demandez une autorisation, du stockage sécurisé (Keychain / Keystore), de la biométrie et de la validation des liens profonds.",
+      "answer_outline_fr": [
+        "Demander chaque autorisation à l'exécution en contexte et gérer le refus proprement",
+        "Stocker les jetons dans le stockage sécurisé matériel et proposer l'authentification biométrique",
+        "Valider les liens universels et les liens profonds avant de naviguer",
+        "Ne jamais exposer de données sensibles dans les logs ou le stockage local en clair"
+      ],
+      "model_answer_en": "For any runtime permission like camera or notifications, I never ask on the first screen during onboarding. I wait until the user triggers the feature, explain why we need the permission, and provide a graceful fallback if they decline. For security, I never store tokens in plain local storage; I keep them in hardware-backed secure storage such as the iOS Keychain or Android Keystore, often protected by biometric authentication. When handling a deep link or universal link, I validate parameters strictly before pushing a screen onto the navigation stack so malicious links cannot hijack internal flows.",
+      "model_answer_fr": "Pour toute autorisation à l'exécution comme l'appareil photo ou les notifications, je ne la demande jamais dès le premier écran d'onboarding. J'attends que l'utilisateur déclenche la fonctionnalité, j'explique pourquoi nous avons besoin de l'autorisation et je prévois un comportement de repli propre s'il refuse. Côté sécurité, je ne stocke jamais les jetons en clair dans le stockage local ; je les place dans le stockage sécurisé matériel comme le Keychain iOS ou le Keystore Android, souvent protégé par l'authentification biométrique. Lorsque je traite un lien profond ou un lien universel, je valide strictement les paramètres avant d'empiler un écran dans la pile de navigation afin que des liens malveillants ne puissent pas détourner les parcours internes.",
+      "key_phrases": [
+        "For any runtime permission",
+        "provide a graceful fallback",
+        "hardware-backed secure storage",
+        "protected by biometric authentication",
+        "handling a deep link or universal link"
+      ],
+      "vocabulary_term_ids": [
+        "runtime-permission",
+        "onboarding",
+        "permission",
+        "local-storage",
+        "secure-storage",
+        "biometric-authentication",
+        "deep-link",
+        "universal-link",
+        "navigation-stack"
+      ]
+    }
+  ],
+  "verbs": []
+}

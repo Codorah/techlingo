@@ -1,0 +1,1198 @@
+import { writeFileSync } from 'node:fs';
+
+const path = {
+  role: "data-engineer",
+  status: "draft",
+  title_fr: "L'anglais de ta semaine en Data Engineering",
+  units: [
+    {
+      id: "data-engineer-ingestion-pipelines",
+      title_fr: "Concevoir l'ingestion et les pipelines de données",
+      title_en: "Design ingestion and build data pipelines",
+      situation_fr: "En sprint planning avec l'équipe data, tu définis la stratégie d'ingestion depuis les bases sources vers la plateforme centrale.",
+      guide: {
+        intro_fr: "Le data engineer orchestre le flux de données depuis les systèmes opérationnels (OLTP) jusqu'aux plateformes analytiques. On choisit entre ETL (Extract, Transform, Load) et ELT (Extract, Load, Transform), et entre chargement incrémental (incremental load) ou rechargement historique (backfill). Pour capturer les modifications en direct sans saturer la base de production, on utilise le Change Data Capture (CDC). Les verbes d'action indispensables : to extract, to ingest, to backfill, to load, to deduplicate.",
+        key_phrases: [
+          { en: "Should we run an incremental load or a full historical backfill?", fr: "Devrions-nous faire un chargement incrémental ou un rechargement historique complet ?" },
+          { en: "We use change data capture to replicate transactions without overloading Postgres.", fr: "Nous utilisons le CDC pour répliquer les transactions sans surcharger Postgres." },
+          { en: "The batch pipeline runs every night at 2 AM UTC.", fr: "Le pipeline batch tourne chaque nuit à 2h UTC." },
+          { en: "Make sure you handle late-arriving data in the staging table.", fr: "Veille à bien gérer les données arrivées en retard dans la table de staging." },
+          { en: "We need an upsert strategy to avoid duplicate records.", fr: "Il nous faut une stratégie d'upsert pour éviter les enregistrements en double." },
+          { en: "Raw data lands in cloud storage before any transformation.", fr: "Les données brutes atterrissent dans le stockage cloud avant toute transformation." }
+        ],
+        tip_fr: "Ne confonds pas « pipeline » (le flux automatisé de transformation) et « queue » (la file d'attente de messages). En anglais technique, on parle d'ingestion « batch » par lots ou « streaming » au fil de l'eau."
+      },
+      lessons: [
+        {
+          id: "data-engineer-etl-vs-elt",
+          title_fr: "Choisir entre ETL et ELT",
+          term_ids: ["etl", "elt", "data-pipeline", "raw-data"],
+          dialogue: [
+            { speaker: "Marcus", text_en: "Hey Elena, for the new billing source, are we sticking with our legacy ETL process?", text_fr: "Salut Elena, pour la nouvelle source de facturation, on reste sur notre processus ETL historique ?" },
+            { speaker: "Elena", text_en: "I'd rather switch to ELT. We can load raw data directly into Snowflake first.", text_fr: "Je préférerais basculer en ELT. On peut charger les données brutes directement dans Snowflake d'abord." },
+            { speaker: "Marcus", text_en: "That makes sense. Transformations inside the warehouse are much easier to version control with dbt.", text_fr: "C'est logique. Les transformations dans l'entrepôt sont bien plus faciles à versionner avec dbt." },
+            { speaker: "Elena", text_en: "Exactly. The data pipeline will be faster and raw data stays intact for future replays.", text_fr: "Exactement. Le pipeline de données sera plus rapide et les données brutes restent intactes pour de futurs rejeux." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Quelle est la différence clé entre ETL et ELT ?",
+              choices: [
+                "En ELT, les transformations s'exécutent au sein même de l'entrepôt de données après le chargement",
+                "L'ETL ne permet pas de traiter de données volumineuses",
+                "L'ELT supprime systématiquement les données brutes après chargement"
+              ],
+              answer_index: 0,
+              explanation_fr: "En ELT (Extract, Load, Transform), on charge les données brutes dans le data warehouse avant d'effectuer les transformations avec la puissance de calcul de l'entrepôt."
+            },
+            {
+              prompt_fr: "Pourquoi conserve-t-on le « raw data » sans altération dans l'entrepôt ?",
+              choices: [
+                "Pour réduire l'espace disque consommé",
+                "Pour pouvoir recalculer ou corriger les transformations rétrospectivement si nécessaire",
+                "Pour empêcher les analystes de requêter la base"
+              ],
+              answer_index: 1,
+              explanation_fr: "Garder les données brutes (raw data) permet de rejouer des pipelines ou de modifier des métriques métier a posteriori sans perte d'information."
+            },
+            {
+              prompt_fr: "Comment désigne-t-on la suite d'étapes automatisées transportant et transformant la donnée ?",
+              choices: [
+                "A data mart",
+                "A proxy loop",
+                "A data pipeline"
+              ],
+              answer_index: 2,
+              explanation_fr: "Un « data pipeline » est l'ensemble ordonné de processus qui déplace et transforme la donnée d'une source à une cible."
+            },
+            {
+              prompt_fr: "Complète : « We ingest ___ data into the staging area before running business logic. »",
+              choices: [
+                "raw",
+                "dry",
+                "cooked"
+              ],
+              answer_index: 0,
+              explanation_fr: "On dit « raw data » pour désigner les données brutes telles qu'elles sortent du système d'origine."
+            }
+          ],
+          production: {
+            channel: "slack",
+            prompt_fr: "Rédige un message Slack (3 phrases) pour annoncer à l'équipe que tu préconises une approche ELT pour les données de facturation afin de conserver les données brutes et d'accélérer les transformations dans le data warehouse.",
+            context_en: "Slack channel #data-eng-architecture",
+            model_answer_en: "Hi team, I recommend moving forward with an ELT pattern for the billing data source. We will ingest raw data straight into the warehouse and handle transformations downstream with dbt. This keeps our ingestion pipelines lightweight and ensures full auditability of untransformed records.",
+            model_answer_fr: "Bonjour l'équipe, je recommande d'adopter un modèle ELT pour la source de données de facturation. Nous allons ingérer les données brutes directement dans l'entrepôt et gérer les transformations en aval avec dbt. Cela garde nos pipelines d'ingestion légers et garantit une auditabilité totale des enregistrements non transformés.",
+            key_phrases: [
+              "ELT pattern",
+              "raw data",
+              "ingestion pipelines"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-cdc-and-incremental-load",
+          title_fr: "Chargement incrémental et Change Data Capture",
+          term_ids: ["change-data-capture", "incremental-load", "backfill", "upsert"],
+          dialogue: [
+            { speaker: "Elena", text_en: "Marcus, our transactional table has over fifty million rows. Full dumps are taking four hours.", text_fr: "Marcus, notre table transactionnelle dépasse cinquante millions de lignes. Les dumps complets prennent quatre heures." },
+            { speaker: "Marcus", text_en: "Let's set up Change Data Capture using Debezium to stream row modifications.", text_fr: "Mettons en place le CDC avec Debezium pour streamer les modifications de lignes." },
+            { speaker: "Elena", text_en: "Great. Then we can do an incremental load every ten minutes instead of a giant daily batch.", text_fr: "Super. Ensuite nous pourrons faire un chargement incrémental toutes les dix minutes au lieu d'un énorme batch quotidien." },
+            { speaker: "Marcus", text_en: "We will also need a backfill strategy to backpopulate past months without creating duplicate primary keys.", text_fr: "Nous aurons aussi besoin d'une stratégie de backfill pour rattraper les mois passés sans créer de clés primaires en double." },
+            { speaker: "Elena", text_en: "An upsert based on the record ID and timestamp will ensure idempotency.", text_fr: "Un upsert basé sur l'identifiant de l'enregistrement et l'horodatage assurera l'idempotence." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Quel est le bénéfice principal du « Change Data Capture » (CDC) ?",
+              choices: [
+                "Il capture en temps quasi-réel uniquement les lignes insérées, modifiées ou supprimées sans surcharger la source",
+                "Il force la base source à bloquer toutes les écritures pendant l'export",
+                "Il compresse automatiquement les disques de la machine"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le CDC écoute les journaux de transactions (write-ahead log) pour extraire uniquement les deltas sans lancer de requêtes lourdes sur la base source."
+            },
+            {
+              prompt_fr: "Que signifie « backfill » en data engineering ?",
+              choices: [
+                "Recharger ou retraiter des données historiques sur une période passée",
+                "Supprimer définitivement les tables orphelines",
+                "Sauvegarder la base de données sur une bande magnétique"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le « backfill » consiste à exécuter un pipeline sur des plages de dates passées pour combler un vide ou recalculer un historique."
+            },
+            {
+              prompt_fr: "Pourquoi applique-t-on une opération d'« upsert » lors d'un chargement incrémental ?",
+              choices: [
+                "Pour insérer les nouvelles lignes et mettre à jour les existantes sans créer de doublons",
+                "Pour supprimer automatiquement toutes les colonnes contenant des valeurs nulles",
+                "Pour empêcher les analystes de lire la table pendant le rechargement"
+              ],
+              answer_index: 0,
+              explanation_fr: "L'upsert (update or insert) garantit qu'une ligne mise à jour ne sera pas dupliquée, garantissant l'idempotence du pipeline."
+            },
+            {
+              prompt_fr: "Complète : « If the incremental run fails, we can trigger a ___ for yesterday's partition. »",
+              choices: [
+                "backfill",
+                "rollback-commit",
+                "firewall-rule"
+              ],
+              answer_index: 0,
+              explanation_fr: "On lance un « backfill » pour retraiter une partition manquante ou défaillante."
+            }
+          ],
+          production: {
+            channel: "pull_request",
+            prompt_fr: "Commente une Pull Request (3 phrases) qui ajoute un script de chargement en expliquant qu'il faut utiliser un upsert plutôt qu'un simple insert pour éviter les doublons lors des rejeux ou des backfills.",
+            context_en: "GitHub PR review on data-ingestion-worker",
+            model_answer_en: "Thanks for this ingestion script! However, using a plain insert might cause duplicate rows whenever we retry a failed run or trigger a backfill. Could we implement an upsert on the primary key and updated_at timestamp instead? That would make the incremental pipeline fully idempotent.",
+            model_answer_fr: "Merci pour ce script d'ingestion ! Cependant, utiliser un simple insert risque de générer des doublons à chaque nouvel essai d'exécution échouée ou lors d'un backfill. Pourrions-nous plutôt implémenter un upsert sur la clé primaire et le timestamp updated_at ? Cela rendrait le pipeline incrémental totalement idempotent.",
+            key_phrases: [
+              "duplicate rows",
+              "trigger a backfill",
+              "implement an upsert"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-deduplication-and-staging",
+          title_fr: "Staging, déduplication et ordonnancement",
+          term_ids: ["staging-table", "deduplication", "data-freshness", "batch-processing"],
+          dialogue: [
+            { speaker: "Marcus", text_en: "The downstream dashboards are showing inflated user counts today.", text_fr: "Les tableaux de bord en aval affichent des comptages utilisateurs gonflés aujourd'hui." },
+            { speaker: "Elena", text_en: "Let me check the staging table. It looks like the source API sent duplicate webhooks.", text_fr: "Je vérifie la table de staging. On dirait que l'API source a envoyé des webhooks en double." },
+            { speaker: "Marcus", text_en: "We need a deduplication step using window functions before loading into final tables.", text_fr: "Il nous faut une étape de déduplication avec des fenêtres SQL avant de charger dans les tables finales." },
+            { speaker: "Elena", text_en: "Agreed. I will also add an alert on data freshness so we know if the batch processing gets delayed.", text_fr: "D'accord. J'ajouterai aussi une alerte sur la fraîcheur des données pour savoir si le traitement batch prend du retard." }
+          ],
+          questions: [
+            {
+              prompt_fr: "À quoi sert une « staging table » ?",
+              choices: [
+                "À héberger temporairement les données fraîchement ingérées avant nettoyage et transformations métier",
+                "À stocker les mots de passe des administrateurs",
+                "À remplacer définitivement le data warehouse"
+              ],
+              answer_index: 0,
+              explanation_fr: "Une table de staging est une zone tampon temporaire où la donnée brute est déposée avant d'être validée, dédupliquée et transformée."
+            },
+            {
+              prompt_fr: "Comment appelle-t-on l'élimination des enregistrements répétés ou redondants ?",
+              choices: [
+                "Partitioning",
+                "Deduplication",
+                "Sharding"
+              ],
+              answer_index: 1,
+              explanation_fr: "La « deduplication » consiste à filtrer ou fusionner les doublons pour ne conserver qu'une seule occurrence valide."
+            },
+            {
+              prompt_fr: "Que mesure l'indicateur de « data freshness » ?",
+              choices: [
+                "La température des serveurs dans la baie de stockage",
+                "Le délai entre l'occurrence d'un événement réel et sa disponibilité pour analyse",
+                "Le nombre de requêtes SQL écrites par heure"
+              ],
+              answer_index: 1,
+              explanation_fr: "La « data freshness » (fraîcheur de la donnée) indique le retard entre la production d'une donnée et son apparition dans les tables analytiques."
+            },
+            {
+              prompt_fr: "Complète : « The nightly ___ processing job failed due to memory limits. »",
+              choices: [
+                "batch",
+                "stream",
+                "socket"
+              ],
+              answer_index: 0,
+              explanation_fr: "Un traitement de nuit exécuté sur un gros volume d'un coup est un traitement « batch »."
+            }
+          ],
+          production: {
+            channel: "report",
+            prompt_fr: "Rédige la description d'un ticket Jira (3 phrases) demandant d'ajouter une étape de déduplication dans la table de staging pour corriger les comptes d'utilisateurs faussés.",
+            context_en: "Jira issue description for DE-412",
+            model_answer_en: "We detected duplicated webhook events that artificially inflate active user metrics in production dashboards. We need to introduce an automated deduplication step in the staging table before loading downstream tables. Please also configure a data freshness monitor to alert the on-call engineer if ingestion delays exceed thirty minutes.",
+            model_answer_fr: "Nous avons détecté des événements webhook dupliqués qui gonflent artificiellement les métriques d'utilisateurs actifs dans les tableaux de bord de production. Nous devons introduire une étape de déduplication automatisée dans la table de staging avant de charger les tables en aval. Merci de configurer également un moniteur de fraîcheur des données pour alerter l'ingénieur d'astreinte si le retard d'ingestion dépasse trente minutes.",
+            key_phrases: [
+              "duplicated webhook events",
+              "staging table",
+              "data freshness monitor"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      id: "data-engineer-storage-and-lakehouse",
+      title_fr: "Stockage analytique, Formats et Lakehouse",
+      title_en: "Analytical storage, file formats, and data lakehouse",
+      situation_fr: "Tu évalues l'architecture de stockage cloud pour réduire les coûts et accélérer les requêtes volumineuses.",
+      guide: {
+        intro_fr: "Le choix des technologies de stockage détermine le coût et la vitesse des analyses. Alors que le data warehouse excelle sur les données structurées et le data lake sur le stockage brut à bas coût, le data lakehouse réunit les deux grâce aux tables ouvertes (open table formats comme Delta Lake ou Iceberg) sur des formats colonnaires optimisés comme Parquet. On structure souvent selon l'architecture en médaillon (Bronze pour le brut, Silver pour le nettoyé, Gold pour l'agrégé métier).",
+        key_phrases: [
+          { en: "Parquet provides excellent compression and columnar storage for ad-hoc queries.", fr: "Parquet offre une excellente compression et un stockage colonnaire pour les requêtes ponctuelles." },
+          { en: "Our medallion architecture separates bronze raw files from gold business tables.", fr: "Notre architecture en médaillon sépare les fichiers bruts bronze des tables métier gold." },
+          { en: "The lakehouse architecture gives us ACID transactions right on top of object storage.", fr: "L'architecture lakehouse nous offre des transactions ACID directement au-dessus du stockage objet." },
+          { en: "Columnar storage scans only the requested columns, drastically cutting query costs.", fr: "Le stockage colonnaire ne scanne que les colonnes demandées, réduisant drastiquement les coûts de requête." },
+          { en: "Open table formats allow time travel and ACID guarantees on our data lake.", fr: "Les formats de table ouverts permettent le voyage dans le temps et les garanties ACID sur notre data lake." },
+          { en: "Let's migrate historical dumps to cold object storage to save budget.", fr: "Migrons les dumps historiques vers du stockage objet froid pour préserver le budget." }
+        ],
+        tip_fr: "« Columnar storage » signifie stockage colonnaire (par colonnes), opposé à « row-based storage » (par lignes). Pour l'analytique (OLAP), le stockage colonnaire est indispensable car il évite de lire les colonnes inutiles."
+      },
+      lessons: [
+        {
+          id: "data-engineer-parquet-and-columnar",
+          title_fr: "Formats colonnaires et compression Parquet",
+          term_ids: ["parquet", "columnar-storage", "olap", "oltp"],
+          dialogue: [
+            { speaker: "Liam", text_en: "Our Athena queries on CSV files are taking minutes and running up our cloud bill.", text_fr: "Nos requêtes Athena sur des fichiers CSV prennent des minutes et font grimper notre facture cloud." },
+            { speaker: "Fatima", text_en: "That is because CSV is row-based. We should convert all files to Parquet.", text_fr: "C'est parce que le CSV est orienté lignes. Nous devrions convertir tous les fichiers en Parquet." },
+            { speaker: "Liam", text_en: "How does columnar storage help us save on query scans?", text_fr: "En quoi le stockage colonnaire nous aide-t-il à économiser sur les volumes scannés ?" },
+            { speaker: "Fatima", text_en: "In OLAP workloads, queries usually filter on only three or four columns. Parquet reads only those specific columns.", text_fr: "Dans les charges OLAP, les requêtes ne filtrent d'ordinaire que trois ou quatre colonnes. Parquet ne lit que ces colonnes spécifiques." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Pourquoi le format Parquet est-il préféré aux formats CSV ou JSON pour les entrepôts analytiques ?",
+              choices: [
+                "Parce qu'il est binaire et stocké par colonne, ce qui optimise la compression et accélère les filtres",
+                "Parce qu'il peut être ouvert directement dans le Bloc-notes sans aucun logiciel",
+                "Parce qu'il ne nécessite aucune mémoire vive pour fonctionner"
+              ],
+              answer_index: 0,
+              explanation_fr: "Parquet est un format colonnaire binaire qui applique une compression forte et permet de ne lire que les colonnes ciblées par la requête."
+            },
+            {
+              prompt_fr: "Quelle est la principale différence entre OLTP et OLAP ?",
+              choices: [
+                "OLTP est optimisé pour les transactions rapides ligne à ligne, OLAP pour les requêtes analytiques sur de grands volumes",
+                "OLTP fonctionne uniquement sur mobile alors qu'OLAP tourne sur grand écran",
+                "OLAP ne supporte aucune fonction mathématique"
+              ],
+              answer_index: 0,
+              explanation_fr: "OLTP (Online Transaction Processing) gère les transactions quotidiennes d'une application ; OLAP (Online Analytical Processing) gère les agrégations complexes pour le reporting."
+            },
+            {
+              prompt_fr: "Quel terme décrit le mode de stockage où les valeurs d'une même colonne sont écrites ensemble sur le disque ?",
+              choices: [
+                "Row storage",
+                "Columnar storage",
+                "Flat storage"
+              ],
+              answer_index: 1,
+              explanation_fr: "« Columnar storage » (stockage colonnaire) organise les données colonne par colonne plutôt que ligne par ligne."
+            },
+            {
+              prompt_fr: "Complète : « By converting logs to ___, we reduced storage footprint by seventy percent. »",
+              choices: [
+                "Parquet",
+                "Word documents",
+                "Bitmap"
+              ],
+              answer_index: 0,
+              explanation_fr: "Convertir des logs bruts en fichiers Apache Parquet permet des gains de compression massifs."
+            }
+          ],
+          production: {
+            channel: "email",
+            prompt_fr: "Rédige un email (3 phrases) au responsable d'infrastructure expliquant le passage des logs applicatifs de JSON à Parquet pour réduire la facture de stockage et diviser le temps de requête par cinq.",
+            context_en: "Email to Infrastructure Lead",
+            model_answer_en: "Hi David, I am writing to propose migrating our application log archives from raw JSON to Apache Parquet. Parquet's columnar storage and Snappy compression will reduce our S3 footprint by up to seventy percent. Furthermore, our analytical OLAP queries will run five times faster because queries scan only the relevant columns.",
+            model_answer_fr: "Bonjour David, je t'écris pour proposer la migration de nos archives de logs applicatifs de JSON brut vers Apache Parquet. Le stockage colonnaire et la compression Snappy de Parquet réduiront notre empreinte S3 jusqu'à 70 %. De plus, nos requêtes analytiques OLAP tourneront cinq fois plus vite car elles ne scanneront que les colonnes pertinentes.",
+            key_phrases: [
+              "raw JSON to Apache Parquet",
+              "columnar storage",
+              "analytical OLAP queries"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-medallion-and-lakehouse",
+          title_fr: "Architecture médaillon et Data Lakehouse",
+          term_ids: ["data-lakehouse", "medallion-architecture", "open-table-format", "data-warehouse"],
+          dialogue: [
+            { speaker: "Fatima", text_en: "Our data team is struggling between the rigidity of our warehouse and the mess in our data lake.", text_fr: "Notre équipe data peine entre la rigidité de l'entrepôt et le désordre de notre data lake." },
+            { speaker: "Liam", text_en: "We should adopt a data lakehouse pattern using an open table format like Iceberg.", text_fr: "Nous devrions adopter un modèle de data lakehouse avec un format de table ouvert comme Iceberg." },
+            { speaker: "Fatima", text_en: "How do we organize the ingestion layers?", text_fr: "Comment organise-t-on les couches d'ingestion ?" },
+            { speaker: "Liam", text_en: "With a medallion architecture: bronze stores raw ingestion, silver cleans and deduplicates, and gold hosts aggregated business marts.", text_fr: "Avec une architecture en médaillon : le bronze stocke l'ingestion brute, l'argent nettoie et déduplique, et l'or héberge les marts métier agrégés." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Qu'apporte un « data lakehouse » par rapport à un data lake traditionnel ?",
+              choices: [
+                "Il apporte le support des transactions ACID, le versionnage des tables et des performances d'entrepôt sur du stockage objet",
+                "Il oblige à stocker toutes les données sur des disques durs locaux",
+                "Il interdit l'usage du langage SQL"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le lakehouse combine le faible coût du data lake avec les garanties de consistance ACID et l'optimisation des requêtes du data warehouse."
+            },
+            {
+              prompt_fr: "Dans une « medallion architecture », que contient la couche Gold ?",
+              choices: [
+                "Les données brutes jamais modifiées",
+                "Des tables agrégées, modélisées et optimisées pour les besoins métier et le reporting",
+                "Les archives de plus de dix ans prêtes à être effacées"
+              ],
+              answer_index: 1,
+              explanation_fr: "La couche Gold (or) fournit des données nettoyées, agrégées et enrichies, directement prêtes pour les analystes et tableaux de bord."
+            },
+            {
+              prompt_fr: "Comment nomme-t-on les standards ouverts comme Apache Iceberg ou Delta Lake ?",
+              choices: [
+                "Open table formats",
+                "Closed binary drivers",
+                "Text compilers"
+              ],
+              answer_index: 0,
+              explanation_fr: "Ces technologies sont appelées « open table formats » car elles apportent des métadonnées transactionnelles ouvertes au-dessus de fichiers Parquet."
+            },
+            {
+              prompt_fr: "Complète : « The ___ layer stores raw payload without any schema enforcement. »",
+              choices: [
+                "bronze",
+                "gold",
+                "platinum"
+              ],
+              answer_index: 0,
+              explanation_fr: "Dans l'architecture médaillon, la couche Bronze reçoit les données brutes telles quelles."
+            }
+          ],
+          production: {
+            channel: "slack",
+            prompt_fr: "Rédige un message Slack (3 phrases) pour expliquer aux data analysts que la nouvelle couche Gold de l'architecture médaillon est prête et leur permet d'accéder aux métriques financières nettoyées.",
+            context_en: "Slack channel #data-announcements",
+            model_answer_en: "Hello everyone, the financial metrics in our medallion architecture are now live in the Gold layer. We applied all currency conversions and deduplication rules in the Silver stage, so Gold tables are clean and ready for reporting. You can query them directly in your BI tools starting today.",
+            model_answer_fr: "Bonjour à tous, les métriques financières de notre architecture en médaillon sont désormais en ligne dans la couche Gold. Nous avons appliqué toutes les conversions de devises et les règles de déduplication dans l'étape Silver, les tables Gold sont donc propres et prêtes pour le reporting. Vous pouvez les requêter directement dans vos outils de BI dès aujourd'hui.",
+            key_phrases: [
+              "medallion architecture",
+              "Gold layer",
+              "clean and ready for reporting"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-partitioning-and-sharding",
+          title_fr: "Partitionnement et optimisation des requêtes",
+          term_ids: ["partitioning", "full-table-scan", "query-plan", "materialized-view"],
+          dialogue: [
+            { speaker: "Liam", text_en: "Elena, this monthly revenue query is triggering a full table scan across twenty terabytes.", text_fr: "Elena, cette requête de chiffre d'affaires mensuel déclenche un balayage complet de la table sur vingt téraoctets." },
+            { speaker: "Elena", text_en: "Let's inspect the query plan. We haven't configured date partitioning on the order date.", text_fr: "Inspectons le plan de requête. Nous n'avons pas configuré de partitionnement par date sur order_date." },
+            { speaker: "Liam", text_en: "If we partition by year and month, the engine will only scan the relevant directories.", text_fr: "Si nous partitionnons par année et mois, le moteur ne scannera que les répertoires pertinents." },
+            { speaker: "Elena", text_en: "We can also build a materialized view for frequent executive KPI rollups.", text_fr: "Nous pouvons aussi créer une vue matérialisée pour les agrégations fréquentes des KPI de direction." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Pourquoi veut-on éviter un « full table scan » sur une table de plusieurs téraoctets ?",
+              choices: [
+                "Parce qu'il parcourt l'intégralité des données sur disque, ce qui est extrêmement lent et très coûteux en cloud",
+                "Parce qu'il efface les index secondaires",
+                "Parce qu'il convertit les tables en CSV sans confirmation"
+              ],
+              answer_index: 0,
+              explanation_fr: "Un « full table scan » lit chaque bloc de la table, provoquant une surcharge réseau et des coûts facturés au volume analysé."
+            },
+            {
+              prompt_fr: "À quoi sert le « query plan » avant d'exécuter une requête SQL lourde ?",
+              choices: [
+                "À comprendre comment l'optimiseur de requêtes compte scanner, filtrer et joindre les tables pour identifier les goulots d'étranglement",
+                "À générer une facture PDF automatique",
+                "À redémarrer le serveur en mode sans échec"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le plan de requête (query plan ou EXPLAIN) montre le chemin d'exécution prévu par la base pour repérer les scans inutiles ou les jointures coûteuses."
+            },
+            {
+              prompt_fr: "Quel est l'intérêt d'une « materialized view » par rapport à une vue SQL simple ?",
+              choices: [
+                "Elle stocke physiquement le résultat précalculé sur le disque pour des réponses instantanées",
+                "Elle empêche tout utilisateur d'écrire des commentaires SQL",
+                "Elle ne fonctionne que si la base de données est éteinte"
+              ],
+              answer_index: 0,
+              explanation_fr: "Une vue matérialisée calcule et sauvegarde le résultat sur disque, évitant de refaire les calculs lourds à chaque consultation."
+            },
+            {
+              prompt_fr: "Complète : « By adding ___ on the event_date column, query time dropped from ten minutes to three seconds. »",
+              choices: [
+                "partitioning",
+                "a sound effect",
+                "a browser tab"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le partitionnement (partitioning) découpe physiquement les données pour cibler uniquement la tranche de date demandée (partition pruning)."
+            }
+          ],
+          production: {
+            channel: "report",
+            prompt_fr: "Rédige un ticket Jira (3 phrases) pour demander l'implémentation d'un partitionnement par date et d'une vue matérialisée afin d'éliminer les full table scans sur la table des commandes.",
+            context_en: "Jira ticket on query performance",
+            model_answer_en: "Analytics queries running against the orders table currently trigger full table scans across several terabytes of data. We need to introduce monthly date partitioning to enable partition pruning and lower scanning costs. In addition, let's create a materialized view for executive daily aggregates to speed up dashboard load times.",
+            model_answer_fr: "Les requêtes analytiques sur la table orders déclenchent actuellement des full table scans sur plusieurs téraoctets de données. Nous devons introduire un partitionnement mensuel par date pour permettre l'élagage des partitions et réduire les coûts de scan. De plus, créons une vue matérialisée pour les agrégats quotidiens de direction afin d'accélérer l'affichage des tableaux de bord.",
+            key_phrases: [
+              "trigger full table scans",
+              "date partitioning",
+              "create a materialized view"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      id: "data-engineer-modeling-and-dbt",
+      title_fr: "Modélisation dimensionnelle et dbt",
+      title_en: "Dimensional modeling and transformations with dbt",
+      situation_fr: "En collaboration avec les analystes, tu conçois le modèle dimensionnel et orchestres les modèles SQL via dbt.",
+      guide: {
+        intro_fr: "Pour rendre les données exploitables par la Business Intelligence, le data engineer conçoit des schémas en étoile (star schema) composés de tables de faits (fact tables) pour les événements numériques et de tables de dimensions (dimension tables) pour les attributs descriptifs. On gère les changements d'attributs avec les Slowly Changing Dimensions (SCD). Des outils modernes comme dbt (data build tool) permettent de gérer ces transformations en SQL avec tests, documentation et intégration continue.",
+        key_phrases: [
+          { en: "The star schema joins the orders fact table with customer and product dimension tables.", fr: "Le schéma en étoile joint la table de faits des commandes aux tables de dimensions clients et produits." },
+          { en: "We use a slowly changing dimension type 2 to preserve historical customer addresses.", fr: "Nous utilisons une SCD de type 2 pour conserver l'historique des adresses clients." },
+          { en: "dbt models run modular transformations and enforce data test assertions.", fr: "Les modèles dbt exécutent des transformations modulaires et appliquent des tests d'assertion." },
+          { en: "Surrogate keys isolate warehouse dimensions from unstable operational source IDs.", fr: "Les clés de substitution isolent les dimensions de l'entrepôt des identifiants opérationnels instables." },
+          { en: "Let's denormalize this reporting mart to improve query performance for PowerBI.", fr: "Dénormalisons ce mart de reporting pour améliorer les performances des requêtes pour PowerBI." },
+          { en: "Every dbt model must have unique and not_null schema tests.", fr: "Chaque modèle dbt doit posséder des tests de schéma unique et not_null." }
+        ],
+        tip_fr: "Ne confonds pas « fact table » (qui contient des métriques numériques observables : ventes, clics, paiements) et « dimension table » (qui contient le contexte : utilisateur, magasin, produit, date)."
+      },
+      lessons: [
+        {
+          id: "data-engineer-star-schema-and-facts",
+          title_fr: "Schéma en étoile et tables de faits",
+          term_ids: ["star-schema", "fact-table", "dimension-table", "surrogate-key"],
+          dialogue: [
+            { speaker: "Nils", text_en: "The analysts are writing eight-table joins just to compute monthly sales by region.", text_fr: "Les analystes écrivent des jointures à huit tables juste pour calculer les ventes mensuelles par région." },
+            { speaker: "Camille", text_en: "Our operational schema is normalized for writes, not for reporting. We need a star schema.", text_fr: "Notre schéma opérationnel est normalisé pour l'écriture, pas pour le reporting. Il nous faut un schéma en étoile." },
+            { speaker: "Nils", text_en: "Should we build a central fact table for daily subscriptions?", text_fr: "Devrions-nous construire une table de faits centrale pour les souscriptions quotidiennes ?" },
+            { speaker: "Camille", text_en: "Yes, surrounded by dimensions for customer, plan, and date, linked via surrogate keys.", text_fr: "Oui, entourée de dimensions pour le client, le forfait et la date, reliées par des clés de substitution." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Qu'est-ce qui caractérise un « star schema » ?",
+              choices: [
+                "Une table de faits centrale entourée de tables de dimensions dénormalisées en forme d'étoile",
+                "Un système de fichiers distribué sans base de données",
+                "Un serveur qui redémarre à chaque nouvelle requête"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le schéma en étoile relie une table de faits (métriques) à plusieurs tables de dimensions (contexte), simplifiant grandement les requêtes analytiques."
+            },
+            {
+              prompt_fr: "Que contient principalement une « fact table » ?",
+              choices: [
+                "Des mesures quantitatives numériques et des clés étrangères vers les dimensions",
+                "Des descriptions textuelles d'entreprises",
+                "Des scripts bash d'installation"
+              ],
+              answer_index: 0,
+              explanation_fr: "Une table de faits stocke des mesures (montants, quantités, durées) associées à un événement précis."
+            },
+            {
+              prompt_fr: "Pourquoi utilise-t-on une « surrogate key » plutôt que l'identifiant de la base source ?",
+              choices: [
+                "Pour créer un identifiant interne indépendant des changements de clé dans le système source",
+                "Pour rendre les requêtes illisibles aux non-développeurs",
+                "Pour empêcher l'indexation de la table"
+              ],
+              answer_index: 0,
+              explanation_fr: "Une clé de substitution (surrogate key) est générée dans l'entrepôt pour stabiliser les relations même si l'ID d'origine change ou est réutilisé."
+            },
+            {
+              prompt_fr: "Complète : « The ___ table holds attributes such as customer segment, country, and acquisition channel. »",
+              choices: [
+                "dimension",
+                "firewall",
+                "socket"
+              ],
+              answer_index: 0,
+              explanation_fr: "Les attributs contextuels (pays, canal, statut) sont regroupés dans une table de dimensions."
+            }
+          ],
+          production: {
+            channel: "slack",
+            prompt_fr: "Rédige un message Slack (3 phrases) expliquant à l'équipe BI que la nouvelle table de faits des commandes et ses dimensions sont déployées avec un schéma en étoile.",
+            context_en: "Slack channel #data-bi-team",
+            model_answer_en: "Hi BI team, we have completed the new star schema for sales reporting. The central fact table contains transaction amounts and links to customer and product dimension tables via surrogate keys. This will eliminate your multi-table joins and drastically simplify your dashboard queries.",
+            model_answer_fr: "Bonjour l'équipe BI, nous avons finalisé le nouveau schéma en étoile pour le reporting des ventes. La table de faits centrale contient les montants des transactions et se lie aux dimensions clients et produits via des clés de substitution. Cela éliminera vos jointures complexes et simplifiera considérablement vos requêtes de tableaux de bord.",
+            key_phrases: [
+              "new star schema",
+              "central fact table",
+              "surrogate keys"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-scd-and-normalization",
+          title_fr: "Slowly Changing Dimensions et dénormalisation",
+          term_ids: ["slowly-changing-dimension", "denormalization", "database-normalization", "data-mart"],
+          dialogue: [
+            { speaker: "Camille", text_en: "When a customer updates their address, last year's revenue attribution gets assigned to their new city.", text_fr: "Quand un client met à jour son adresse, l'attribution du chiffre d'affaires de l'an dernier est affectée à sa nouvelle ville." },
+            { speaker: "Nils", text_en: "That is a typical SCD Type 1 issue. We need a Slowly Changing Dimension Type 2.", text_fr: "C'est un problème typique de SCD de type 1. Il nous faut une SCD de type 2." },
+            { speaker: "Camille", text_en: "With valid_from and valid_to timestamp columns, right?", text_fr: "Avec des colonnes d'horodatage valid_from et valid_to, c'est bien ça ?" },
+            { speaker: "Nils", text_en: "Exactly. Then we can feed a denormalized data mart for marketing without distorting historical figures.", text_fr: "Exactement. Nous pourrons ensuite alimenter un data mart dénormalisé pour le marketing sans fausser les chiffres passés." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Que permet de résoudre une « Slowly Changing Dimension » (SCD) de Type 2 ?",
+              choices: [
+                "Elle conserve l'historique complet des modifications d'attributs en créant une nouvelle ligne avec date de validité",
+                "Elle supprime immédiatement les comptes clients inactifs",
+                "Elle convertit la base de données en mode lecture seule"
+              ],
+              answer_index: 0,
+              explanation_fr: "La SCD Type 2 ajoute une nouvelle ligne à chaque modification avec des bornes temporelles, préservant l'historique exact pour le reporting."
+            },
+            {
+              prompt_fr: "Pourquoi applique-t-on la « denormalization » dans un data mart ?",
+              choices: [
+                "Pour réduire le nombre de jointures nécessaires lors de la consultation des rapports",
+                "Pour s'assurer qu'aucun index ne sera créé",
+                "Pour dupliquer les tables sur tous les postes des analystes"
+              ],
+              answer_index: 0,
+              explanation_fr: "Dénormaliser consiste à regrouper des tables liées pour simplifier et accélérer les requêtes d'analyse en évitant des jointures coûteuses."
+            },
+            {
+              prompt_fr: "Comment appelle-t-on un sous-ensemble spécialisé d'un data warehouse dédié à un métier précis (ex: finance, marketing) ?",
+              choices: [
+                "A data mart",
+                "A root router",
+                "A cold disk"
+              ],
+              answer_index: 0,
+              explanation_fr: "Un « data mart » est un magasin de données ciblé sur un domaine métier particulier."
+            },
+            {
+              prompt_fr: "Complète : « SCD Type 2 uses valid_from and valid_to dates to track ___ changes. »",
+              choices: [
+                "historical",
+                "random",
+                "virtual"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le type 2 des SCD permet de tracer les changements historiques sans écraser les anciennes valeurs."
+            }
+          ],
+          production: {
+            channel: "email",
+            prompt_fr: "Rédige un email (3 phrases) au responsable marketing pour expliquer comment la mise en place d'une dimension SCD Type 2 résout le problème d'attribution historique des clients ayant déménagé.",
+            context_en: "Email to Head of Marketing",
+            model_answer_en: "Hi Sophie, we have updated our customer dimension to a Slowly Changing Dimension Type 2 structure. This means customer address updates now generate a new historical record instead of overwriting past data. Your regional marketing attribution reports will now accurately reflect where clients lived at the time of each purchase.",
+            model_answer_fr: "Bonjour Sophie, nous avons mis à jour notre dimension client vers une structure SCD de type 2. Cela signifie que les changements d'adresse génèrent désormais un nouvel enregistrement historique au lieu d'écraser le passé. Vos rapports d'attribution marketing régionaux refléteront désormais fidèlement le lieu de résidence des clients au moment de chaque achat.",
+            key_phrases: [
+              "Slowly Changing Dimension Type 2",
+              "overwriting past data",
+              "regional marketing attribution"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-dbt-and-testing",
+          title_fr: "Modèles dbt et tests de validation",
+          term_ids: ["dbt", "data-model", "schema-evolution", "schema"],
+          dialogue: [
+            { speaker: "Nils", text_en: "Our SQL transformations are spread across five different cron jobs without testing.", text_fr: "Nos transformations SQL sont dispersées sur cinq cron jobs différents sans aucun test." },
+            { speaker: "Camille", text_en: "Let's migrate everything into dbt models so we have version control and lineage graphs.", text_fr: "Migrons tout dans des modèles dbt pour avoir le contrôle de version et les graphes de lignage." },
+            { speaker: "Nils", text_en: "Can dbt automatically detect schema evolution or broken constraints?", text_fr: "Est-ce que dbt peut détecter automatiquement les évolutions de schéma ou les contraintes rompues ?" },
+            { speaker: "Camille", text_en: "Yes, we can define unique, not_null, and relationship tests right inside schema YAML files.", text_fr: "Oui, nous pouvons définir des tests d'unicité, de non-nullité et de clés étrangères directement dans les fichiers YAML." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Quel est le rôle principal de l'outil dbt (data build tool) ?",
+              choices: [
+                "Permettre aux équipes data de transformer, tester et documenter la donnée directement dans l'entrepôt en utilisant du SQL",
+                "Remplacer les bases relationnelles par des feuilles Excel",
+                "Gérer les adresses IP du réseau local"
+              ],
+              answer_index: 0,
+              explanation_fr: "dbt orchestre la couche de transformation (le T de ELT) en appliquant des pratiques de génie logiciel (tests, Git, CI/CD) au code SQL."
+            },
+            {
+              prompt_fr: "Que désigne l'expression « schema evolution » ?",
+              choices: [
+                "La capacité d'un pipeline ou d'un entrepôt à s'adapter quand de nouvelles colonnes ou types apparaissent dans la source",
+                "Le vieillissement physique des disques durs",
+                "Le changement annuel de mot de passe administrateur"
+              ],
+              answer_index: 0,
+              explanation_fr: "L'évolution de schéma (schema evolution) gère les ajouts, suppressions ou modifications de types de colonnes au cours du temps sans bloquer le pipeline."
+            },
+            {
+              prompt_fr: "Comment dbt s'assure-t-il qu'une colonne d'identifiant ne contient aucun doublon ?",
+              choices: [
+                "Grâce à un test d'assertion unique défini dans le fichier de schéma",
+                "En supprimant la colonne à chaque exécution",
+                "En demandant une validation manuelle par téléphone"
+              ],
+              answer_index: 0,
+              explanation_fr: "Dans dbt, on déclare des tests comme `unique` ou `not_null` dans les fichiers schema.yml, validés automatiquement à chaque `dbt test`."
+            },
+            {
+              prompt_fr: "Complète : « The dbt run failed because the ___ test detected five null values in the primary key. »",
+              choices: [
+                "not_null",
+                "audio",
+                "ping"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le test `not_null` vérifie qu'aucun enregistrement n'a de valeur nulle sur la colonne ciblée."
+            }
+          ],
+          questions_variation: true,
+          production: {
+            channel: "pull_request",
+            prompt_fr: "Rédige une revue de PR (3 phrases) demandant à un collègue d'ajouter des tests dbt schema sur le nouveau modèle de facturation pour garantir l'absence de valeurs nulles sur customer_id.",
+            context_en: "GitHub PR review on dbt-repo",
+            model_answer_en: "Great work modularizing this invoicing model with dbt! Before we merge into production, could you please add unique and not_null tests for invoice_id and customer_id in schema.yml? This will ensure our schema evolution handles upstream null values gracefully without breaking downstream marts.",
+            model_answer_fr: "Beau travail sur la modularisation de ce modèle de facturation avec dbt ! Avant de merger en production, pourrais-tu ajouter des tests unique et not_null pour invoice_id et customer_id dans schema.yml ? Cela permettra de vérifier que l'évolution de notre schéma gère convenablement les valeurs nulles en amont sans casser les marts en aval.",
+            key_phrases: [
+              "dbt model",
+              "unique and not_null tests",
+              "downstream marts"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      id: "data-engineer-orchestration-and-streaming",
+      title_fr: "Orchestration, DAGs et Streaming avec Kafka",
+      title_en: "Orchestration with Airflow and event streaming with Kafka",
+      situation_fr: "Tu planifies la gestion des dépendances complexes de pipelines et la mise en place d'un flux d'événements temps réel.",
+      guide: {
+        intro_fr: "L'orchestration structure l'enchaînement des tâches grâce à des DAG (Directed Acyclic Graphs), traditionnellement avec Apache Airflow. Lorsqu'une tâche échoue, on gère les reprises via le pipeline rerun. Pour les besoins temps réel, Apache Kafka diffuse des flux d'événements (event streams) organisés en kafka topics. On surveille attentivement le consumer lag pour s'assurer que les consommateurs ne prennent pas de retard, et on redirige les messages corrompus vers une dead letter queue.",
+        key_phrases: [
+          { en: "The Airflow DAG failed at the bronze transformation task due to an upstream timeout.", fr: "Le DAG Airflow a échoué à la tâche de transformation bronze en raison d'un timeout en amont." },
+          { en: "We configured automatic pipeline reruns with exponential backoff on transient errors.", fr: "Nous avons configuré des relances automatiques de pipeline avec backoff exponentiel sur les erreurs temporaires." },
+          { en: "Kafka topics partition event streams to allow parallel consumers.", fr: "Les topics Kafka partitionnent les flux d'événements pour permettre des consommateurs parallèles." },
+          { en: "Consumer lag spiked to fifty thousand messages after the network outage.", fr: "Le retard des consommateurs a grimpé à 50 000 messages après la coupure réseau." },
+          { en: "Unparseable payloads are routed to a dead letter queue for manual inspection.", fr: "Les messages impossibles à parser sont routés vers une dead letter queue pour inspection manuelle." },
+          { en: "Watermarks allow stream processing engines to process late-arriving data correctly.", fr: "Les watermarks permettent aux moteurs de streaming de traiter correctement les données arrivées en retard." }
+        ],
+        tip_fr: "Un « DAG » est un graphe orienté acyclique : les dépendances vont toujours vers l'avant et ne peuvent jamais former de boucle infinie. « Consumer lag » désigne le nombre de messages non encore lus par rapport à la tête du flux."
+      },
+      lessons: [
+        {
+          id: "data-engineer-airflow-and-dags",
+          title_fr: "Orchestration avec Airflow et DAGs",
+          term_ids: ["orchestration", "dag", "apache-airflow", "pipeline-rerun"],
+          dialogue: [
+            { speaker: "Sam", text_en: "Why did the customer lifetime value model run before the payment ingest was finished?", text_fr: "Pourquoi le modèle de valeur vie client a-t-il tourné avant que l'ingestion des paiements ne soit terminée ?" },
+            { speaker: "Priya", text_en: "Our previous scheduler was based on rigid clock times rather than true task dependencies.", text_fr: "Notre ancien ordonnanceur reposait sur des heures fixes plutôt que sur de véritables dépendances entre tâches." },
+            { speaker: "Sam", text_en: "We should define a proper DAG in Apache Airflow.", text_fr: "Nous devrions définir un vrai DAG dans Apache Airflow." },
+            { speaker: "Priya", text_en: "Agreed. That way, if an upstream step fails, the downstream tasks won't run, and we can trigger a safe pipeline rerun.", text_fr: "D'accord. De cette façon, si une étape en amont échoue, les tâches en aval ne tourneront pas, et nous pourrons déclencher un rejeu sécurisé." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Que garantit la nature acyclique d'un « DAG » dans Apache Airflow ?",
+              choices: [
+                "Qu'il n'existe aucune boucle infinie dans les dépendances de tâches",
+                "Que toutes les tâches s'exécutent en même temps sans ordre",
+                "Que le serveur Airflow n'utilise aucun disque dur"
+              ],
+              answer_index: 0,
+              explanation_fr: "Un graphe acyclique direct (DAG) garantit un ordre d'exécution strict et sans risque de cycle infini entre les étapes."
+            },
+            {
+              prompt_fr: "Pourquoi préfère-t-on l'orchestration par dépendances à un simple ordonnancement horaire (cron) ?",
+              choices: [
+                "Parce qu'elle empêche une tâche de s'exécuter si ses données prérequises ne sont pas prêtes ou ont échoué",
+                "Parce qu'elle utilise moins de mémoire que bash",
+                "Parce qu'elle supprime le besoin de surveiller les erreurs"
+              ],
+              answer_index: 0,
+              explanation_fr: "L'orchestrateur vérifie que les dépendances amont sont terminées avec succès avant de démarrer une tâche dépendante."
+            },
+            {
+              prompt_fr: "Comment appelle-t-on la réexécution d'une étape ou d'un DAG après résolution d'un bug ?",
+              choices: [
+                "Pipeline rerun",
+                "DNS lookup",
+                "Code linting"
+              ],
+              answer_index: 0,
+              explanation_fr: "Un « pipeline rerun » réexécute tout ou partie du pipeline pour recalculer les sorties défaillantes."
+            },
+            {
+              prompt_fr: "Complète : « The ___ orchestrates hundreds of daily data tasks and alerts us on Slack when errors occur. »",
+              choices: [
+                "Apache Airflow",
+                "CSS stylesheet",
+                "Graphic card"
+              ],
+              answer_index: 0,
+              explanation_fr: "Apache Airflow est la plateforme de référence pour orchestrer des workflows de données complexes."
+            }
+          ],
+          production: {
+            channel: "report",
+            prompt_fr: "Rédige un compte-rendu d'incident (3 phrases) expliquant qu'un échec de DAG sur Airflow a bloqué l'actualisation du reporting du matin et qu'un pipeline rerun a été déclenché après correction du timeout.",
+            context_en: "Incident postmortem channel #data-incidents",
+            model_answer_en: "This morning's executive dashboard was delayed due to a task failure in the Airflow ingestion DAG. An upstream API timeout prevented the payment task from completing, which properly stopped downstream jobs. We resolved the connectivity issue and triggered a successful pipeline rerun, restoring up-to-date figures by 9:30 AM.",
+            model_answer_fr: "Le tableau de bord de direction de ce matin a pris du retard suite à l'échec d'une tâche dans le DAG d'ingestion Airflow. Un timeout sur une API amont a empêché la tâche de paiement de se terminer, ce qui a stoppé à juste titre les jobs en aval. Nous avons résolu le souci de connectivité et déclenché un rejeu complet du pipeline avec succès, rétablissant les chiffres à jour à 9h30.",
+            key_phrases: [
+              "Airflow ingestion DAG",
+              "stopped downstream jobs",
+              "successful pipeline rerun"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-kafka-and-streaming",
+          title_fr: "Streaming avec Kafka et Consumer Lag",
+          term_ids: ["kafka", "stream-processing", "kafka-topic", "consumer-lag"],
+          dialogue: [
+            { speaker: "Priya", text_en: "Sam, the fraud detection team needs transaction events with less than two seconds of latency.", text_fr: "Sam, l'équipe de détection des fraudes a besoin des événements de transaction avec moins de deux secondes de latence." },
+            { speaker: "Sam", text_en: "Batch processing won't cut it. We must publish transaction payloads to an Apache Kafka topic.", text_fr: "Le traitement par lots ne suffira pas. Nous devons publier les charges utiles de transactions dans un topic Kafka." },
+            { speaker: "Priya", text_en: "What happens if their fraud scoring service goes down?", text_fr: "Que se passe-t-il si leur service de scoring de fraude tombe ?" },
+            { speaker: "Sam", text_en: "Messages persist in the topic log. When the service recovers, it will read off the consumer lag without losing any events.", text_fr: "Les messages persistent dans le log du topic. Quand le service repartira, il rattrapera le consumer lag sans perdre d'événements." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Qu'est-ce qu'un « kafka topic » ?",
+              choices: [
+                "Un flux ordonné et persistant de messages auquel les producteurs écrivent et duquel les consommateurs lisent",
+                "Un forum de discussion pour développeurs",
+                "Un mot de passe chiffré dans le bios"
+              ],
+              answer_index: 0,
+              explanation_fr: "Dans Kafka, un topic est une catégorie ou un canal où les événements sont publiés et conservés pour être consommés."
+            },
+            {
+              prompt_fr: "Que révèle une augmentation rapide du « consumer lag » ?",
+              choices: [
+                "Que le service consommateur traite les messages plus lentement que le producteur ne les publie",
+                "Que le disque dur du serveur est complètement vide",
+                "Que tous les utilisateurs se sont déconnectés"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le « consumer lag » correspond à l'écart entre le dernier message produit et le dernier message lu : s'il grimpe, le consommateur accumule du retard."
+            },
+            {
+              prompt_fr: "Comment qualifie-t-on le traitement de données au fur et à mesure de leur arrivée sans attendre un lot ?",
+              choices: [
+                "Stream processing",
+                "Batch dumping",
+                "Cold archiving"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le « stream processing » (traitement de flux) traite chaque message individuellement en temps réel."
+            },
+            {
+              prompt_fr: "Complète : « We set up an alert whenever ___ exceeds one million unread events. »",
+              choices: [
+                "consumer lag",
+                "screen brightness",
+                "mouse clicks"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le retard de consommation (« consumer lag ») est l'une des métriques de supervision les plus critiques sur Kafka."
+            }
+          ],
+          production: {
+            channel: "slack",
+            prompt_fr: "Rédige une alerte Slack (3 phrases) pour prévenir l'équipe que le consumer lag sur le topic des paiements est anormalement élevé et qu'il faut scaler les pods consommateurs.",
+            context_en: "Slack channel #oncall-alerts",
+            model_answer_en: "Alert: consumer lag on the payment-events Kafka topic just exceeded eighty thousand messages. The downstream fraud worker appears bottlenecked by database lookups. We recommend scaling out consumer pods immediately to drain the queue before SLAs are breached.",
+            model_answer_fr: "Alerte : le consumer lag sur le topic Kafka payment-events vient de dépasser 80 000 messages. Le worker de fraude en aval semble ralenti par des recherches en base de données. Nous recommandons de scaler les pods consommateurs immédiatement pour absorber la file avant le dépassement des SLA.",
+            key_phrases: [
+              "consumer lag",
+              "Kafka topic",
+              "scaling out consumer pods"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-dead-letter-queue-and-watermarks",
+          title_fr: "Dead Letter Queue et Watermarks",
+          term_ids: ["dead-letter-queue", "watermark", "late-arriving-data", "exactly-once"],
+          dialogue: [
+            { speaker: "Sam", text_en: "A malformed JSON payload in the clickstream crashed our streaming consumer yesterday.", text_fr: "Un payload JSON malformé dans le flux de clics a fait planter notre consommateur de streaming hier." },
+            { speaker: "Priya", text_en: "We must catch serialization exceptions and push the poison pills into a dead letter queue.", text_fr: "Nous devons intercepter les exceptions de sérialisation et envoyer ces messages toxiques dans une dead letter queue." },
+            { speaker: "Sam", text_en: "How are we handling mobile clicks that arrive hours late due to poor connectivity?", text_fr: "Comment gérons-nous les clics mobiles qui arrivent des heures plus tard à cause d'une mauvaise connexion ?" },
+            { speaker: "Priya", text_en: "By configuring a watermark in our Flink window. Late-arriving data within two hours is still merged into aggregations.", text_fr: "En configurant un watermark dans notre fenêtre Flink. Les données arrivant avec jusqu'à deux heures de retard sont toujours intégrées aux agrégations." }
+          ],
+          questions: [
+            {
+              prompt_fr: "À quoi sert une « dead letter queue » (DLQ) ?",
+              choices: [
+                "À isoler les messages erronés ou impossibles à traiter sans bloquer le reste du flux de données",
+                "À effacer silencieusement tous les emails rejetés",
+                "À suspendre l'ensemble des serveurs en cas d'attaque"
+              ],
+              answer_index: 0,
+              explanation_fr: "Une Dead Letter Queue (DLQ) stocke les messages rejetés (payloads corrompus, erreurs de schéma) pour permettre leur examen ultérieur sans interrompre le streaming."
+            },
+            {
+              prompt_fr: "Quel est le rôle d'un « watermark » dans le traitement de flux en temps réel ?",
+              choices: [
+                "À indiquer au moteur de calcul jusqu'à quel timestamp temporel il doit accepter des données arrivées en retard",
+                "À apposer un logo visuel sur les graphiques de données",
+                "À limiter la vitesse de téléchargement des utilisateurs"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le watermark fixe une limite temporelle permettant de fermer une fenêtre de calcul tout en tolérant un certain retard d'événements (late-arriving data)."
+            },
+            {
+              prompt_fr: "Que garantit la sémantique de traitement « exactly-once » ?",
+              choices: [
+                "Chaque événement entrant est pris en compte exactement une seule fois dans l'état final sans perte ni doublon",
+                "Le script ne peut être lancé qu'une seule fois dans toute la vie du projet",
+                "Chaque utilisateur ne peut se connecter qu'une seule fois par jour"
+              ],
+              answer_index: 0,
+              explanation_fr: "La sémantique « exactly-once » garantit qu'en dépit des pannes ou retries, chaque événement affecte l'état final comme s'il avait été traité exactement une fois."
+            },
+            {
+              prompt_fr: "Complète : « The streaming worker routed bad records to a ___ so the main pipeline stayed healthy. »",
+              choices: [
+                "dead letter queue",
+                "browser extension",
+                "virtual private network"
+              ],
+              answer_index: 0,
+              explanation_fr: "La « dead letter queue » recueille les données invalides pour protéger la santé du flux principal."
+            }
+          ],
+          production: {
+            channel: "pull_request",
+            prompt_fr: "Commente une PR de streaming (3 phrases) en demandant d'intégrer une dead letter queue pour les erreurs de parsing JSON et d'ajuster le watermark pour supporter les données en retard.",
+            context_en: "GitHub PR review on streaming-consumer",
+            model_answer_en: "Thanks for implementing this streaming consumer. To avoid pipeline halts when a corrupt payload arrives, please route serialization errors to a dead letter queue. In addition, let's configure a fifteen-minute watermark so late-arriving data from mobile clients doesn't get dropped silently.",
+            model_answer_fr: "Merci pour l'implémentation de ce consommateur de streaming. Pour éviter l'arrêt du pipeline lorsqu'un message corrompu arrive, merci de router les erreurs de sérialisation vers une dead letter queue. De plus, configurons un watermark de quinze minutes afin que les données mobiles arrivées en retard ne soient pas rejetées silencieusement.",
+            key_phrases: [
+              "dead letter queue",
+              "watermark",
+              "late-arriving data"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      id: "data-engineer-distributed-compute-and-spark",
+      title_fr: "Calcul distribué, Apache Spark et Optimisation",
+      title_en: "Distributed compute with Spark and performance tuning",
+      situation_fr: "Tu optimises des jobs Apache Spark volumineux confrontés à du déséquilibre de partitions et des temps de shuffle prohibitifs.",
+      guide: {
+        intro_fr: "Lorsqu'un volume de données dépasse la mémoire d'une seule machine, Apache Spark distribue les calculs sur un cluster de workers. Deux ennemis majeurs guettent le data engineer : le data skew (quand une clé disproportionnée surcharge un seul worker) et le shuffle excessif (redistribution massive de données à travers le réseau lors des jointures ou groupements). Optimiser un job exige de maîtriser le query plan, le repartitionnement et le broadcast join.",
+        key_phrases: [
+          { en: "A heavy shuffle across workers is causing out-of-memory errors on large joins.", fr: "Un shuffle lourd entre les workers provoque des erreurs mémoire sur les grosses jointures." },
+          { en: "Data skew on a popular vendor ID caused a single Spark task to run for three hours.", fr: "Le déséquilibre de données sur un ID vendeur populaire a fait tourner une seule tâche Spark pendant 3h." },
+          { en: "We used a broadcast join to send the small lookup table to all executors without shuffling.", fr: "Nous avons utilisé une broadcast join pour envoyer la petite table de référence à tous les exécuteurs sans shuffle." },
+          { en: "Inspect the Spark UI to identify the longest stages and spilling to disk.", fr: "Inspecte la Spark UI pour identifier les étapes les plus longues et les débordements sur disque." },
+          { en: "Salting the skewed key evenly distributes records across partitions.", fr: "Le salage de la clé déséquilibrée répartit uniformément les enregistrements entre les partitions." },
+          { en: "Tuning partition counts eliminates executor idle time and accelerates jobs.", fr: "Ajuster le nombre de partitions élimine le temps d'inactivité des exécuteurs et accélère les jobs." }
+        ],
+        tip_fr: "« Shuffle » en calcul distribué désigne le transfert physique de données entre machines d'un cluster à travers le réseau. C'est l'opération la plus lente et la plus coûteuse dans Spark."
+      },
+      lessons: [
+        {
+          id: "data-engineer-spark-and-shuffle",
+          title_fr: "Apache Spark et réduction du shuffle",
+          term_ids: ["spark", "shuffle", "partitioning", "query-plan"],
+          dialogue: [
+            { speaker: "Hassan", text_en: "Our daily aggregation job in PySpark took six hours last night instead of forty minutes.", text_fr: "Notre job d'agrégation quotidien en PySpark a pris six heures cette nuit au lieu de quarante minutes." },
+            { speaker: "Chloe", text_en: "I looked at the Spark UI. Stage four spent ninety percent of its time on shuffle read and write.", text_fr: "J'ai regardé la Spark UI. L'étape quatre a passé 90 % de son temps en lecture et écriture de shuffle." },
+            { speaker: "Hassan", text_en: "We are joining a two-hundred gigabyte table with a fifty megabyte country lookup table.", text_fr: "Nous joignons une table de 200 Go avec une table de référence pays de 50 Mo." },
+            { speaker: "Chloe", text_en: "We should use a broadcast join. Spark will copy the country table to each executor and completely bypass the network shuffle.", text_fr: "Nous devrions utiliser une broadcast join. Spark copiera la table pays sur chaque exécuteur et contournera totalement le shuffle réseau." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Pourquoi le « shuffle » est-il souvent l'étape la plus lente d'un job Apache Spark ?",
+              choices: [
+                "Parce qu'il force le cluster à sérialiser, transférer par le réseau et réécrire sur disque d'énormes volumes entre machines",
+                "Parce qu'il désactive le processeur des nœuds maîtres",
+                "Parce qu'il convertit automatiquement tout le code en Python 2"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le shuffle implique des transferts réseau massifs et des entrées/sorties disque pour redistribuer les données selon une nouvelle clé de partition."
+            },
+            {
+              prompt_fr: "Quand est-il recommandé d'utiliser une « broadcast join » dans Spark ?",
+              choices: [
+                "Quand l'une des deux tables est suffisamment petite pour tenir dans la mémoire de chaque exécuteur",
+                "Quand les deux tables dépassent dix téraoctets chacune",
+                "Quand la connexion Internet est coupée"
+              ],
+              answer_index: 0,
+              explanation_fr: "La broadcast join envoie une copie de la petite table à chaque nœud, éliminant tout shuffle pour la grande table."
+            },
+            {
+              prompt_fr: "Quel composant d'Apache Spark permet d'examiner le détail des étapes, du shuffle et de l'utilisation mémoire ?",
+              choices: [
+                "The Spark UI",
+                "The Windows Task Manager",
+                "The Chrome Bookmarks bar"
+              ],
+              answer_index: 0,
+              explanation_fr: "La Spark Web UI offre une vue granulaire des stages, tasks, shuffle read/write et de la mémoire consommée."
+            },
+            {
+              prompt_fr: "Complète : « By broadcasting the small dimension table, we eliminated seventy gigabytes of network ___ . »",
+              choices: [
+                "shuffle",
+                "cables",
+                "modems"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le broadcast de la petite table évite le transfert réseau massif généré par le shuffle."
+            }
+          ],
+          production: {
+            channel: "slack",
+            prompt_fr: "Rédige un message Slack (3 phrases) expliquant que l'optimisation par broadcast join a permis de faire chuter le temps d'exécution du job Spark de 6 heures à 25 minutes en éliminant le shuffle.",
+            context_en: "Slack channel #data-eng-performance",
+            model_answer_en: "Team update: we optimized the daily aggregation Spark job by broadcasting the country dimension table. This completely eliminated the heavy network shuffle that previously degraded performance. Job execution time dropped from six hours down to just twenty-five minutes.",
+            model_answer_fr: "Point d'équipe : nous avons optimisé le job Spark d'agrégation quotidienne en broadcastant la table de dimension pays. Cela a totalement éliminé le lourd shuffle réseau qui dégradait les performances. Le temps d'exécution du job est passé de six heures à seulement vingt-cinq minutes.",
+            key_phrases: [
+              "aggregation Spark job",
+              "network shuffle",
+              "broadcast dimension table"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-data-skew-and-tuning",
+          title_fr: "Résolution du Data Skew et salage",
+          term_ids: ["data-skew", "database-sharding", "spark", "query-plan"],
+          dialogue: [
+            { speaker: "Chloe", text_en: "Hassan, ninety-nine Spark tasks finished in two minutes, but one task has been hanging for an hour.", text_fr: "Hassan, 99 tâches Spark se sont finies en deux minutes, mais une tâche est bloquée depuis une heure." },
+            { speaker: "Hassan", text_en: "That is the hallmark of data skew. One single partition key holds eighty percent of the records.", text_fr: "C'est la signature typique du déséquilibre de données (data skew). Une seule clé de partition contient 80 % des enregistrements." },
+            { speaker: "Chloe", text_en: "Let's check which key it is. It looks like guest checkout users sharing a null user ID.", text_fr: "Regardons de quelle clé il s'agit. On dirait les commandes invités qui partagent toutes un user_id null." },
+            { speaker: "Hassan", text_en: "We can apply salting to that key with random prefixes so Spark distributes those rows across multiple executors.", text_fr: "Nous pouvons appliquer du salage à cette clé avec des préfixes aléatoires pour que Spark répartisse ces lignes sur plusieurs exécuteurs." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Qu'est-ce que le « data skew » dans un système distribué ?",
+              choices: [
+                "Une distribution très inégale des données où une ou quelques partitions concentrent l'essentiel du volume",
+                "Une panne complète du routeur central",
+                "Un problème d'encodage des caractères accentués"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le data skew crée un déséquilibre : un seul worker reçoit une quantité disproportionnée de données pendant que les autres restent inactifs."
+            },
+            {
+              prompt_fr: "En quoi consiste la technique du « salting » pour combattre le skew ?",
+              choices: [
+                "À ajouter une valeur aléatoire à la clé de jointure pour répartir la clé surchargée sur plusieurs partitions",
+                "À supprimer les enregistrements volumineux de la base",
+                "À redémarrer le cluster avec des paramètres de langue différents"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le salage (salting) divise artificiellement une clé très fréquente en plusieurs sous-clés pour paralléliser son traitement."
+            },
+            {
+              prompt_fr: "Pourquoi un simple `user_id IS NULL` cause-t-il souvent un goulot d'étranglement majeur dans Spark ?",
+              choices: [
+                "Parce que Spark envoie toutes les valeurs nulles vers la même partition par défaut lors d'une jointure ou d'un groupement",
+                "Parce que Spark refuse d'exécuter des requêtes contenant des valeurs nulles",
+                "Parce que les valeurs nulles consomment 100 fois plus de bande passante"
+              ],
+              answer_index: 0,
+              explanation_fr: "Toutes les lignes avec une clé identique (comme NULL) sont envoyées au même réducteur, provoquant un straggler task."
+            },
+            {
+              prompt_fr: "Complète : « The ___ task delayed the entire job because one partition held ten times more data than the rest. »",
+              choices: [
+                "straggler",
+                "monitor",
+                "printer"
+              ],
+              answer_index: 0,
+              explanation_fr: "On appelle « straggler task » une tâche traînante qui bloque la fin du stage à cause du skew."
+            }
+          ],
+          production: {
+            channel: "pull_request",
+            prompt_fr: "Rédige une revue de PR (3 phrases) suggérant l'ajout d'une technique de salting sur la clé client pour corriger le data skew constaté sur les commandes invités.",
+            context_en: "GitHub PR review on spark-orders-aggregation",
+            model_answer_en: "The current join on customer_id creates severe data skew because guest checkouts all share a dummy identifier. As a result, a single executor ends up processing millions of rows while others sit idle. Could we implement key salting for guest orders to distribute the load across multiple partitions?",
+            model_answer_fr: "La jointure actuelle sur customer_id crée un fort déséquilibre de données car les commandes invités partagent toutes un identifiant fictif. Par conséquent, un seul exécuteur se retrouve à traiter des millions de lignes pendant que les autres restent inactifs. Pourrions-nous implémenter du salage de clé pour les commandes invités afin de répartir la charge sur plusieurs partitions ?",
+            key_phrases: [
+              "severe data skew",
+              "single executor",
+              "key salting"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      id: "data-engineer-governance-quality-and-observability",
+      title_fr: "Qualité, Contrats de données et Observabilité",
+      title_en: "Data quality, data contracts, and observability",
+      situation_fr: "Face à des régressions fréquentes causées par des modifications non annoncées côté backend, tu mets en place des contrats de données et une observabilité complète.",
+      guide: {
+        intro_fr: "La confiance dans les données est la mission ultime du data engineer. Pour éviter que les développeurs backend ne cassent les pipelines lors de refontes de bases applicatives, on formalise des contrats de données (data contracts) et des contrôles de qualité (data quality checks). On documente le parcours des données avec le data lineage et le data catalog, tout en protégeant les données personnelles (PII) et en assurant l'observabilité globale (data observability).",
+        key_phrases: [
+          { en: "A broken data contract caused silent pipeline failures after the backend migration.", fr: "Un contrat de données rompu a causé des échecs silencieux du pipeline après la migration backend." },
+          { en: "Data lineage maps every transformation from raw database tables to executive dashboards.", fr: "Le lignage des données cartographie chaque transformation des tables brutes aux tableaux de bord de direction." },
+          { en: "We must mask PII fields such as email and phone numbers before loading analytics marts.", fr: "Nous devons masquer les champs PII comme les emails et numéros de téléphone avant de charger les marts analytiques." },
+          { en: "Automated data quality assertions block invalid rows before they contaminate BI reports.", fr: "Des assertions automatisées de qualité bloquent les lignes invalides avant qu'elles ne contaminent les rapports BI." },
+          { en: "Data observability tools alert on volume anomalies, schema shifts, and freshness degradation.", fr: "Les outils d'observabilité alertent sur les anomalies de volume, dérives de schéma et baisses de fraîcheur." },
+          { en: "The data catalog serves as a single source of truth for business definitions.", fr: "Le catalogue de données sert de source unique de vérité pour les définitions métier." }
+        ],
+        tip_fr: "« PII » signifie Personally Identifiable Information (données à caractère personnel : nom, email, téléphone, IP). En anglais, on dit « to mask » ou « to anonymize PII »."
+      },
+      lessons: [
+        {
+          id: "data-engineer-data-contracts-and-quality",
+          title_fr: "Contrats de données et validation en amont",
+          term_ids: ["data-contract", "data-quality", "single-source-of-truth", "pii"],
+          dialogue: [
+            { speaker: "Yann", text_en: "The mobile app team renamed the country_code column to user_geo, and our warehouse pipelines broke silently.", text_fr: "L'équipe application mobile a renommé la colonne country_code en user_geo, et nos pipelines d'entrepôt ont cassé silencieusement." },
+            { speaker: "Leila", text_en: "That is unacceptable. We need formal data contracts between software engineering and data teams.", text_fr: "C'est inacceptable. Nous avons besoin de contrats de données formels entre l'ingénierie logicielle et les équipes data." },
+            { speaker: "Yann", text_en: "What should the contract enforce?", text_fr: "Que doit imposer le contrat ?" },
+            { speaker: "Leila", text_en: "Schema types, required fields, SLA on delivery, and explicit masking of any PII before publication.", text_fr: "Les types de schéma, les champs obligatoires, le SLA de livraison, et le masquage explicite de tout PII avant publication." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Qu'est-ce qu'un « data contract » (contrat de données) ?",
+              choices: [
+                "Un accord technique et formel entre les producteurs de données (devs backend) et les consommateurs (data engineers) définissant le schéma, les règles et la qualité attendue",
+                "Un contrat de travail signé entre le freelance et le client",
+                "Une licence logicielle payante pour utiliser SQL"
+              ],
+              answer_index: 0,
+              explanation_fr: "Un contrat de données garantit que les producteurs s'engagent sur la stabilité du schéma, la sémantique et la fraîcheur des données émises."
+            },
+            {
+              prompt_fr: "Que désigne l'acronyme « PII » dans la gouvernance des données ?",
+              choices: [
+                "Personally Identifiable Information : toute donnée permettant d'identifier directement ou indirectement un individu",
+                "Primary Interface Index",
+                "Public Internet Infrastructure"
+              ],
+              answer_index: 0,
+              explanation_fr: "PII (Personally Identifiable Information) fait référence aux données personnelles sensibles soumises aux réglementations (RGPD, etc.)."
+            },
+            {
+              prompt_fr: "Que signifie établir une « single source of truth » (SSOT) ?",
+              choices: [
+                "S'assurer qu'il existe une référence unique et partagée pour chaque indicateur métier sans définitions contradictoires",
+                "Conserver tous les fichiers sur une seule clé USB",
+                "Faire en sorte qu'une seule personne ait le droit d'exécuter des requêtes"
+              ],
+              answer_index: 0,
+              explanation_fr: "Une source unique de vérité garantit que toute l'entreprise s'accorde sur les mêmes calculs et définitions de métriques."
+            },
+            {
+              prompt_fr: "Complète : « The automated ___ checks rejected twenty records with negative revenue amounts. »",
+              choices: [
+                "data quality",
+                "keyboard layout",
+                "screen saver"
+              ],
+              answer_index: 0,
+              explanation_fr: "Les contrôles de qualité (data quality checks) valident les plages de valeurs et la cohérence métier des enregistrements."
+            }
+          ],
+          production: {
+            channel: "email",
+            prompt_fr: "Rédige un email (3 phrases) au responsable du développement backend pour proposer la mise en place d'un contrat de données afin d'éviter les ruptures de schémas inopinées sur les événements mobiles.",
+            context_en: "Email to Mobile Engineering Lead",
+            model_answer_en: "Hi Lucas, following the recent field renaming that disrupted our analytics models, I would like to establish a formal data contract for mobile telemetry events. This contract will define the expected JSON schema, mandatory fields, and change notification procedures. Setting this up will protect downstream reporting while ensuring strict PII compliance across our data platform.",
+            model_answer_fr: "Bonjour Lucas, suite au récent renommage de champ qui a perturbé nos modèles analytiques, j'aimerais mettre en place un contrat de données formel pour les événements de télémétrie mobile. Ce contrat définira le schéma JSON attendu, les champs obligatoires et la procédure de notification des changements. Cette mise en place protégera le reporting en aval tout en garantissant une stricte conformité PII sur notre plateforme data.",
+            key_phrases: [
+              "formal data contract",
+              "downstream reporting",
+              "strict PII compliance"
+            ]
+          }
+        },
+        {
+          id: "data-engineer-lineage-and-observability",
+          title_fr: "Lignage de données et Observabilité",
+          term_ids: ["data-lineage", "data-observability", "data-catalog", "data-governance"],
+          dialogue: [
+            { speaker: "Leila", text_en: "The compliance team is asking which downstream dashboards consume the European customer database.", text_fr: "L'équipe de conformité demande quels tableaux de bord en aval consomment la base de données clients européens." },
+            { speaker: "Yann", text_en: "Thanks to our automated data lineage graph, we can trace all dependencies from table to column level.", text_fr: "Grâce à notre graphe de lignage automatisé, nous pouvons tracer toutes les dépendances de la table jusqu'au niveau colonne." },
+            { speaker: "Leila", text_en: "And how do we alert on volume anomalies when an ingestion pipeline drops fifty percent of records?", text_fr: "Et comment alertons-nous sur les anomalies de volume quand un pipeline d'ingestion perd 50 % de ses enregistrements ?" },
+            { speaker: "Yann", text_en: "Our data observability platform monitors row counts and column distributions, triggering an alert before anyone notices in BI.", text_fr: "Notre plateforme d'observabilité surveille les nombres de lignes et les distributions de colonnes, déclenchant une alerte avant que quiconque ne s'en aperçoive dans la BI." }
+          ],
+          questions: [
+            {
+              prompt_fr: "Qu'est-ce que le « data lineage » (lignage des données) ?",
+              choices: [
+                "La cartographie complète retraçant l'origine, les transformations successives et les destinations de la donnée à travers le système",
+                "La liste des adresses IP des serveurs de base de données",
+                "Le calendrier des congés des ingénieurs data"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le data lineage permet de remonter à la source d'un problème ou d'évaluer l'impact d'une modification sur les systèmes en aval."
+            },
+            {
+              prompt_fr: "Quels sont les piliers clés de la « data observability » ?",
+              choices: [
+                "La fraîcheur, le volume, la dérive de schéma, la distribution des valeurs et le lignage",
+                "Le prix des écrans d'ordinateur et le son du ventilateur",
+                "Le nombre de réunions tenues par semaine"
+              ],
+              answer_index: 0,
+              explanation_fr: "L'observabilité des données surveille en continu la santé des flux (fraîcheur, volume anormal, schémas inattendus) pour prévenir les pannes silencieuses."
+            },
+            {
+              prompt_fr: "À quoi sert un « data catalog » dans une entreprise ?",
+              choices: [
+                "À recenser, documenter et faciliter la découverte de tous les jeux de données disponibles pour les collaborateurs",
+                "À vendre des serveurs informatiques d'occasion",
+                "À imprimer des catalogues papier pour les clients"
+              ],
+              answer_index: 0,
+              explanation_fr: "Le data catalog est un inventaire organisé où les équipes recherchent des tables, comprennent leur signification métier et découvrent leurs propriétaires."
+            },
+            {
+              prompt_fr: "Complète : « The automated ___ tool flagged an abnormal drop in ingested row counts. »",
+              choices: [
+                "data observability",
+                "wallpaper changer",
+                "antivirus scan"
+              ],
+              answer_index: 0,
+              explanation_fr: "L'observabilité des données (data observability) détecte les anomalies statistiques de volume ou de fraîcheur."
+            }
+          ],
+          production: {
+            channel: "slack",
+            prompt_fr: "Rédige un message Slack (3 phrases) pour annoncer à l'entreprise que le data catalog et le data lineage sont désormais accessibles pour faciliter la recherche de tables et tracer l'utilisation des données.",
+            context_en: "Slack channel #company-data-governance",
+            model_answer_en: "We are thrilled to launch our new internal data catalog and automated data lineage explorer today. You can now search for validated business datasets, view table ownership, and track end-to-end data dependencies from source to BI dashboards. Check it out to find verified tables and better understand your data assets.",
+            model_answer_fr: "Nous sommes ravis de lancer aujourd'hui notre nouveau catalogue de données interne et notre explorateur de lignage automatisé. Vous pouvez désormais rechercher les jeux de données métier validés, voir les propriétaires des tables et tracer les dépendances de bout en bout depuis la source jusqu'aux tableaux de bord BI. Consultez-le pour trouver des tables vérifiées et mieux appréhender votre patrimoine de données.",
+            key_phrases: [
+              "new internal data catalog",
+              "automated data lineage",
+              "end-to-end data dependencies"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+};
+
+// Vary answer indexes
+let qCount = 0;
+for (const u of path.units) {
+  for (const l of u.lessons) {
+    for (const q of l.questions) {
+      const correctText = q.choices[q.answer_index];
+      const targetIdx = qCount % q.choices.length;
+      qCount++;
+      const wrongChoices = q.choices.filter((_, idx) => idx !== q.answer_index);
+      const newChoices = [];
+      let wrongIdx = 0;
+      for (let i = 0; i < q.choices.length; i++) {
+        if (i === targetIdx) {
+          newChoices.push(correctText);
+        } else {
+          newChoices.push(wrongChoices[wrongIdx++]);
+        }
+      }
+      q.choices = newChoices;
+      q.answer_index = targetIdx;
+    }
+  }
+}
+
+writeFileSync('content/paths/roles/data-engineer.json', JSON.stringify(path, null, 2), 'utf8');
+console.log('✓ data-engineer.json generated');
