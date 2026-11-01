@@ -36,13 +36,28 @@ export function CourseMap({ title, icon, back, done, total, units, onOpen, aside
   useEffect(() => {
     if (!selected) return;
     const close = (e: KeyboardEvent) => { if (e.key === 'Escape') setSelected(null); };
+    const onOutsideClick = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && !target.closest('[role="dialog"]') && !target.closest('button[aria-expanded]')) {
+        setSelected(null);
+      }
+    };
     window.addEventListener('keydown', close);
-    return () => window.removeEventListener('keydown', close);
+    const timer = setTimeout(() => {
+      window.addEventListener('click', onOutsideClick);
+      window.addEventListener('touchend', onOutsideClick);
+    }, 60);
+    return () => {
+      window.removeEventListener('keydown', close);
+      clearTimeout(timer);
+      window.removeEventListener('click', onOutsideClick);
+      window.removeEventListener('touchend', onOutsideClick);
+    };
   }, [selected]);
   let wind = 0;
 
   return (
-    <div className="min-h-dvh bg-mist" onClick={() => setSelected(null)}>
+    <div className="min-h-dvh bg-mist">
       <header className="sticky top-0 z-40 border-b-2 border-line bg-surface/95 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
         <div className="mx-auto flex max-w-[1080px] items-center gap-2 px-3 py-2">
           <button type="button" onClick={() => navigate(back)} aria-label={t('common.back')} className="grid h-11 w-11 place-items-center rounded-xl text-ink-2 active:bg-mist">
@@ -56,14 +71,6 @@ export function CourseMap({ title, icon, back, done, total, units, onOpen, aside
           <div className="h-full bg-[var(--accent)] transition-[width] duration-700 ease-out" style={{ width: `${total ? (done / total) * 100 : 0}%` }} />
         </div>
       </header>
-
-      {selected && (
-        <div
-          className="fixed inset-0 z-20 bg-ink/20 backdrop-blur-[1px] transition-opacity"
-          onClick={() => setSelected(null)}
-          aria-hidden="true"
-        />
-      )}
 
       <div className="mx-auto flex max-w-[1080px] gap-8 px-5 lg:px-8">
         <main className="mx-auto w-full max-w-[560px] pb-24 pt-5">
@@ -192,7 +199,10 @@ function Node({ node, state, x, y, open, buttonRef, onToggle, onStart }: {
           {state !== 'locked' && (
             <button
               type="button"
-              onClick={onStart}
+              onClick={(e) => {
+                e.stopPropagation();
+                onStart();
+              }}
               className="mt-3.5 inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.22)] transition-transform active:translate-y-1 active:shadow-none"
             >
               <Play size={18} aria-hidden />
