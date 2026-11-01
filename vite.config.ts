@@ -17,9 +17,9 @@ export default defineConfig({
       includeAssets: ['favicon.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'],
       manifest: {
         id: '/',
-        name: 'TechLingo — Speak Tech. Think Global.',
+        name: 'TechLingo : l’anglais de ton métier',
         short_name: 'TechLingo',
-        description: "L'anglais technique de ton métier : un mot par jour, la prononciation, des quiz et la préparation aux entretiens.",
+        description: "L'anglais de ton métier, informatique ou marketing : des parcours en situation, l'oral, des rappels et la préparation aux entretiens.",
         lang: 'fr',
         start_url: '/?source=pwa',
         scope: '/',
@@ -38,10 +38,11 @@ export default defineConfig({
       workbox: {
         importScripts: ['/sw-notify.js'],
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
-        globIgnores: ['content/**', 'decouvrir/**', 'legal/**'],
+        // SEO files (social preview image, robots, sitemap) are for crawlers, not for offline use.
+        globIgnores: ['content/**', 'decouvrir/**', 'legal/**', 'og-image.png', 'robots.txt', 'sitemap.xml'],
         navigateFallback: '/index.html',
         // The public landing page is a separate static page, never the app shell.
-        navigateFallbackDenylist: [/^\/decouvrir/, /^\/legal/],
+        navigateFallbackDenylist: [/^\/decouvrir/, /^\/legal/, /^\/api\//,/^\/(robots\.txt|sitemap\.xml|og-image\.png)$/],
         runtimeCaching: [
           {
             // Role packs are downloaded on demand and kept for offline use; the network

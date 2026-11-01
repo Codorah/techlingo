@@ -1,0 +1,7 @@
+# TechLingo
+# Les packs de contenu (/content/) restent accessibles : l'application en a besoin pour s'afficher
+# quand Google la rend. Ils sont exclus de l'index par l'en-tête X-Robots-Tag (vercel.json).
+User-agent: *
+Allow: /
+
+Sitemap: https://techlingo.vercel.app/sitemap.xml
