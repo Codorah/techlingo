@@ -1,0 +1,209 @@
+{
+  "domain": "tech",
+  "status": "draft",
+  "title_fr": "L’anglais de ta semaine de dev",
+  "units": [
+    {
+      "id": "error-messages",
+      "title_fr": "Comprendre un message d’erreur et le signaler",
+      "title_en": "Understand an error and report it",
+      "situation_fr": "Ton application plante, tu dois lire l’erreur, fouiller les logs et signaler le bug clairement à ton équipe.",
+      "guide": {
+        "intro_fr": "Quand quelque chose ne marche pas, tout commence par le message d’erreur. En anglais, on dit qu’une application « crashes » (plante) ou qu’une fonction « throws an exception » (lève une exception), et la stack trace montre où le problème est apparu. Les logs racontent ce qui s’est passé côté serveur : un code de statut, un timeout, un avertissement. Pour signaler le problème, on écrit un bug report clair : les étapes pour reproduire, le résultat attendu et le résultat obtenu. Les verbes clés restent simples : it fails, it returns, it crashes, I get an error.",
+        "key_phrases": [
+          { "en": "I get this error message: …", "fr": "J’obtiens ce message d’erreur : …" },
+          { "en": "The app crashes when I open the profile page.", "fr": "L’application plante quand j’ouvre la page profil." },
+          { "en": "Can you share the full stack trace?", "fr": "Peux-tu partager la stack trace complète ?" },
+          { "en": "The request times out after 30 seconds.", "fr": "La requête expire au bout de 30 secondes." },
+          { "en": "Here are the steps to reproduce.", "fr": "Voici les étapes pour reproduire." },
+          { "en": "Expected result: … Actual result: …", "fr": "Résultat attendu : … Résultat obtenu : …" },
+          { "en": "I can’t reproduce it on my machine.", "fr": "Je n’arrive pas à le reproduire sur ma machine." }
+        ],
+        "tip_fr": "Ne dis jamais seulement « I have an error » : précise quand (when I click Save), où (on the checkout page) et quoi (the error message says…). Et attention au faux ami : « to log in » veut dire se connecter, alors que « the logs » sont les journaux d’événements."
+      },
+      "lessons": [
+        {
+          "id": "read-an-error-message",
+          "title_fr": "Lire un message d’erreur",
+          "term_ids": ["error-message", "stack-trace", "exception", "warning", "crash"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "Hi Tomasz, the app crashes when I open the profile page. I get this error message: TypeError: Cannot read properties of undefined.", "text_fr": "Salut Tomasz, l’application plante quand j’ouvre la page profil. J’ai ce message d’erreur : TypeError: Cannot read properties of undefined." },
+            { "speaker": "Tomasz", "text_en": "Can you share the full stack trace? The top lines tell us where the exception is thrown.", "text_fr": "Tu peux partager la stack trace complète ? Les premières lignes nous disent où l’exception est levée." },
+            { "speaker": "Aïcha", "text_en": "Sure, here it is. It points to UserCard.tsx, line 42.", "text_fr": "Bien sûr, la voici. Elle pointe vers UserCard.tsx, ligne 42." },
+            { "speaker": "Tomasz", "text_en": "OK, so the user object is undefined when the component renders. Anything else in the console?", "text_fr": "D’accord, donc l’objet user est undefined quand le composant s’affiche. Autre chose dans la console ?" },
+            { "speaker": "Aïcha", "text_en": "Just a warning about a missing key, but I don’t think it’s related.", "text_fr": "Juste un avertissement sur une clé manquante, mais je ne pense pas que ce soit lié." },
+            { "speaker": "Tomasz", "text_en": "Agreed, a warning won’t crash the page. Check the API response first: I think the user data hasn’t loaded yet.", "text_fr": "D’accord, un avertissement ne fait pas planter la page. Vérifie d’abord la réponse de l’API : je pense que les données de l’utilisateur ne sont pas encore chargées." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « L’application plante quand j’ouvre la page profil » ?",
+              "choices": ["The app crashes when I open the profile page.", "The app is crashing me when I open the profile page.", "The app breaks the profile page when I open."],
+              "answer_index": 0,
+              "explanation_fr": "« To crash » est le verbe naturel pour une application qui plante, et il s’emploie sans complément : the app crashes. « Is crashing me » est un calque impossible en anglais, et la troisième phrase change le sens (l’application casserait la page)."
+            },
+            {
+              "prompt_fr": "Que demande Tomasz avec « Can you share the full stack trace? » ?",
+              "choices": ["La liste des appels de fonctions qui ont mené à l’erreur", "Une capture d’écran de la page", "L’historique des commits du projet"],
+              "answer_index": 0,
+              "explanation_fr": "La stack trace (pile d’appels) liste les fonctions appelées jusqu’à l’erreur, avec fichiers et numéros de ligne : c’est ce qui permet de trouver UserCard.tsx, ligne 42. Une capture d’écran montre le symptôme, pas l’endroit du code ; l’historique des commits est une autre notion (git log)."
+            },
+            {
+              "prompt_fr": "Aïcha voit un « warning » dans la console. Qu’est-ce que cela signifie ?",
+              "choices": ["Un problème possible, mais le programme continue de tourner", "Une erreur qui arrête le programme", "Un message de confirmation"],
+              "answer_index": 0,
+              "explanation_fr": "Un warning (avertissement) signale un risque sans bloquer l’exécution, d’où la réponse de Tomasz : « a warning won’t crash the page ». C’est une « error » ou une « exception » non gérée qui arrête le programme."
+            },
+            {
+              "prompt_fr": "Complète : « The function ___ an exception when the user is null. »",
+              "choices": ["throws", "launches", "sends"],
+              "answer_index": 0,
+              "explanation_fr": "En anglais, on dit « throw an exception » (lever ou lancer une exception) ; certains langages disent aussi « raise ». « Launches » est un calque du français « lancer » qui ne s’emploie pas ici, et « sends » s’utilise pour un message ou une requête."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "La page de paiement plante quand tu cliques sur « Pay ». Écris un message Slack à ton tech lead, Sam : décris le problème, donne le message d’erreur (TypeError: amount is undefined) et propose d’envoyer la stack trace.",
+            "model_answer_en": "Hi Sam, the checkout page crashes when I click Pay. I get this error message: TypeError: amount is undefined. I can share the full stack trace if that helps.",
+            "model_answer_fr": "Salut Sam, la page de paiement plante quand je clique sur Pay. J’obtiens ce message d’erreur : TypeError: amount is undefined. Je peux partager la stack trace complète si ça peut aider.",
+            "key_phrases": ["crashes when I click", "I get this error message", "share the full stack trace"]
+          }
+        },
+        {
+          "id": "read-the-logs",
+          "title_fr": "Fouiller les logs",
+          "term_ids": ["log", "http-status-code", "timeout", "debug", "troubleshoot"],
+          "dialogue": [
+            { "speaker": "Mei", "text_en": "Kofi, some customers say the export button does nothing. Can you check?", "text_fr": "Kofi, des clients disent que le bouton d’export ne fait rien. Tu peux vérifier ?" },
+            { "speaker": "Kofi", "text_en": "Sure, let me look at the logs. Here it is: the export request returns a 504 status code.", "text_fr": "Bien sûr, je regarde les logs. Voilà : la requête d’export renvoie un code de statut 504." },
+            { "speaker": "Mei", "text_en": "What does 504 mean?", "text_fr": "Ça veut dire quoi, 504 ?" },
+            { "speaker": "Kofi", "text_en": "It’s a gateway timeout: the server took too long to answer, so the request was cut off.", "text_fr": "C’est un gateway timeout : le serveur a mis trop de temps à répondre, donc la requête a été interrompue." },
+            { "speaker": "Mei", "text_en": "Is it happening for everyone?", "text_fr": "Ça arrive à tout le monde ?" },
+            { "speaker": "Kofi", "text_en": "Only for large exports, over ten thousand rows. I’ll debug it this afternoon and keep you posted.", "text_fr": "Seulement pour les gros exports, au-delà de dix mille lignes. Je le débogue cet après-midi et je te tiens au courant." },
+            { "speaker": "Mei", "text_en": "Great, I’ll tell the customers we’re troubleshooting the issue.", "text_fr": "Parfait, je vais dire aux clients qu’on est en train d’analyser le problème." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Kofi avec « Let me look at the logs » ?",
+              "choices": ["Je vais regarder les journaux d’événements", "Je vais me connecter au site", "Je vais regarder la maquette"],
+              "answer_index": 0,
+              "explanation_fr": "« The logs » sont les journaux où le serveur enregistre ce qui se passe (requêtes, erreurs, avertissements). Le piège : « to log in » veut dire se connecter, mais ici « logs » est un nom au pluriel, pas le verbe."
+            },
+            {
+              "prompt_fr": "Quel code de statut HTTP signifie que la ressource demandée n’existe pas ?",
+              "choices": ["404", "500", "401", "200"],
+              "answer_index": 0,
+              "explanation_fr": "404 Not Found : la ressource n’existe pas à cette adresse. 500 est une erreur interne du serveur, 401 signifie que l’utilisateur n’est pas authentifié, et 200 veut dire que tout s’est bien passé."
+            },
+            {
+              "prompt_fr": "Comment dire à un client « On est en train d’analyser le problème » ?",
+              "choices": ["We’re troubleshooting the issue.", "We’re troubleshooting on the issue.", "We make troubleshoot of the issue."],
+              "answer_index": 0,
+              "explanation_fr": "« To troubleshoot » est un verbe transitif : on troubleshoot something, sans préposition. « Troubleshooting on » ajoute une préposition inutile, et « make troubleshoot » est un calque incorrect."
+            },
+            {
+              "prompt_fr": "Complète : « The request ___ after 30 seconds. »",
+              "choices": ["timed out", "was out of time", "made a timeout"],
+              "answer_index": 0,
+              "explanation_fr": "Le verbe à particule « to time out » est la façon naturelle de dire qu’une requête a expiré. « Was out of time » se dit d’une personne qui manque de temps, et « made a timeout » ne s’emploie pas."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Mei, du support, te transfère la plainte d’un client : l’export CSV échoue. Dans les logs, tu as trouvé des erreurs 504 (timeout) sur les exports de plus de 10 000 lignes. Réponds-lui par e-mail : ce que tu as trouvé, la suite, et une solution de contournement (exporter des périodes plus courtes).",
+            "context_en": "Hi Kofi, a customer says the CSV export fails every time. Could you take a look? Thanks, Mei",
+            "model_answer_en": "Hi Mei, I checked the logs: the export request times out and returns a 504 status code, but only for exports over 10,000 rows. I’m debugging it today and will update you tomorrow. In the meantime, the customer can export shorter date ranges as a workaround.",
+            "model_answer_fr": "Bonjour Mei, j’ai vérifié les logs : la requête d’export expire et renvoie un code de statut 504, mais seulement pour les exports de plus de 10 000 lignes. Je le débogue aujourd’hui et je te fais un point demain. En attendant, le client peut exporter des périodes plus courtes pour contourner le problème.",
+            "key_phrases": ["I checked the logs", "times out", "returns a 504 status code", "as a workaround"]
+          }
+        },
+        {
+          "id": "write-a-bug-report",
+          "title_fr": "Écrire un bug report",
+          "term_ids": ["bug-report", "steps-to-reproduce", "expected-result", "severity", "priority"],
+          "dialogue": [
+            { "speaker": "Diego", "text_en": "Fatou, I read your bug report about the cart, but I’m not sure how to trigger the bug. Can you add steps to reproduce?", "text_fr": "Fatou, j’ai lu ton bug report sur le panier, mais je ne sais pas trop comment déclencher le bug. Tu peux ajouter les étapes pour reproduire ?" },
+            { "speaker": "Fatou", "text_en": "Sure. One: add two items to the cart. Two: remove one. Three: refresh the page. The cart is empty.", "text_fr": "Bien sûr. Un : ajoute deux articles au panier. Deux : retires-en un. Trois : actualise la page. Le panier est vide." },
+            { "speaker": "Diego", "text_en": "And what’s the expected result?", "text_fr": "Et quel est le résultat attendu ?" },
+            { "speaker": "Fatou", "text_en": "The cart should still contain one item. The actual result is an empty cart.", "text_fr": "Le panier devrait encore contenir un article. Le résultat obtenu, c’est un panier vide." },
+            { "speaker": "Diego", "text_en": "Got it. What severity did you set?", "text_fr": "Compris. Quelle gravité as-tu indiquée ?" },
+            { "speaker": "Fatou", "text_en": "Major, because users lose their cart. The priority is up to the product owner.", "text_fr": "Majeure, parce que les utilisateurs perdent leur panier. La priorité, c’est au product owner de la fixer." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Dans un bug report, que met-on sous « Expected result » ?",
+              "choices": ["Ce qui aurait dû se passer", "Ce qui s’est réellement passé", "La date prévue pour la correction"],
+              "answer_index": 0,
+              "explanation_fr": "« Expected result » décrit le comportement normal attendu (le panier garde un article). Ce qui s’est réellement passé va sous « Actual result ». Le piège : « expected » fait penser à une date prévue, mais ici il s’agit du comportement."
+            },
+            {
+              "prompt_fr": "Quel titre de bug report est le plus utile ?",
+              "choices": ["Cart is emptied after page refresh", "Big problem with the site, please help", "The cart, I think it is maybe bugged"],
+              "answer_index": 0,
+              "explanation_fr": "Un bon titre est court, factuel et dit quoi et quand : « Cart is emptied after page refresh ». « Big problem… » ne dit pas ce qui ne marche pas, et la troisième phrase est vague et hésitante."
+            },
+            {
+              "prompt_fr": "Quelle est la différence entre « severity » et « priority » ?",
+              "choices": ["Severity : la gravité de l’impact ; priority : l’urgence de la correction", "Severity : l’urgence de la correction ; priority : la gravité de l’impact", "Ce sont deux synonymes"],
+              "answer_index": 0,
+              "explanation_fr": "La severity mesure l’impact technique ou utilisateur (ici, perte du panier), la priority dit dans quel ordre on corrige, et c’est souvent le product owner qui la fixe. Les deux sont liées mais différentes : un bug grave sur une page peu utilisée peut avoir une priorité basse."
+            },
+            {
+              "prompt_fr": "Comment dire « Je n’arrive pas à reproduire le bug » ?",
+              "choices": ["I can’t reproduce the bug.", "I don’t arrive to reproduce the bug.", "I can’t reproduct the bug."],
+              "answer_index": 0,
+              "explanation_fr": "« I can’t reproduce the bug » est la formule standard. « Arrive » est un faux ami : en anglais, il veut seulement dire arriver quelque part. Et le verbe est « reproduce », pas « reproduct »."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige un bug report court (titre, étapes pour reproduire, résultat attendu, résultat obtenu) : sur mobile, le bouton « Send » du formulaire de contact ne fait rien après avoir joint un fichier PDF.",
+            "model_answer_en": "Title: Contact form cannot be sent after attaching a file (mobile). Steps to reproduce: 1. Open the contact page on a phone. 2. Attach a PDF file. 3. Tap Send. Expected result: the message is sent. Actual result: nothing happens and no error message is shown.",
+            "model_answer_fr": "Titre : impossible d’envoyer le formulaire de contact après avoir joint un fichier (mobile). Étapes pour reproduire : 1. Ouvrir la page de contact sur un téléphone. 2. Joindre un fichier PDF. 3. Appuyer sur Send. Résultat attendu : le message est envoyé. Résultat obtenu : rien ne se passe et aucun message d’erreur ne s’affiche.",
+            "key_phrases": ["Steps to reproduce", "Expected result", "Actual result", "nothing happens"]
+          }
+        },
+        {
+          "id": "triage-a-bug",
+          "title_fr": "Bug introuvable et contournement",
+          "term_ids": ["cannot-reproduce", "browser", "software-regression", "workaround", "retest"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "Next ticket: the date picker bug. Youssef, any news?", "text_fr": "Ticket suivant : le bug du sélecteur de date. Youssef, des nouvelles ?" },
+            { "speaker": "Youssef", "text_en": "I couldn’t reproduce it on Chrome or Firefox. Which browser was the customer using?", "text_fr": "Je n’ai pas réussi à le reproduire sur Chrome ni sur Firefox. Quel navigateur utilisait le client ?" },
+            { "speaker": "Fatou", "text_en": "Safari on an iPhone. And it worked last week, so it looks like a regression.", "text_fr": "Safari sur un iPhone. Et ça marchait la semaine dernière, donc ça ressemble à une régression." },
+            { "speaker": "Youssef", "text_en": "Then it probably came with yesterday’s release. I’ll check the recent changes to the date picker.", "text_fr": "Alors ça vient sûrement de la mise en ligne d’hier. Je vais regarder les changements récents sur le sélecteur de date." },
+            { "speaker": "Priya", "text_en": "Is there a workaround for users in the meantime?", "text_fr": "Il y a une solution de contournement pour les utilisateurs en attendant ?" },
+            { "speaker": "Youssef", "text_en": "Yes, they can type the date manually. Fatou, once the fix is on staging, can you retest it on Safari?", "text_fr": "Oui, ils peuvent taper la date à la main. Fatou, une fois le correctif sur staging, tu pourras le retester sur Safari ?" },
+            { "speaker": "Fatou", "text_en": "Sure, I’ll retest it as soon as it’s there.", "text_fr": "Bien sûr, je le reteste dès qu’il y est." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « It looks like a regression » ?",
+              "choices": ["Une fonctionnalité qui marchait avant ne marche plus", "Le code est revenu à une version précédente", "Les performances s’améliorent"],
+              "answer_index": 0,
+              "explanation_fr": "En test logiciel, une regression est un bug qui casse quelque chose qui fonctionnait avant, souvent après une mise en ligne. Revenir à une version précédente, c’est un « rollback », pas une régression."
+            },
+            {
+              "prompt_fr": "Que propose-t-on avec un « workaround » ?",
+              "choices": ["Une solution de contournement en attendant le correctif", "Le correctif définitif du bug", "Une réunion pour en parler"],
+              "answer_index": 0,
+              "explanation_fr": "Un workaround permet de contourner le problème (taper la date à la main) sans le corriger. Le correctif définitif, c’est « the fix »."
+            },
+            {
+              "prompt_fr": "Quelle phrase est correcte pour demander à une QA de retester ?",
+              "choices": ["Can you retest it on Safari once the fix is on staging?", "Can you retest it on Safari once the fix will be on staging?", "Can you test again it on Safari when the fix will be on staging?"],
+              "answer_index": 0,
+              "explanation_fr": "Après « once », « when » ou « as soon as », l’anglais utilise le présent même pour parler du futur : once the fix is on staging. « Will be » après « once » est une erreur fréquente des francophones, et « test again it » place mal le complément."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion de tri, on te demande où en est un bug client : le bouton « Export » du tableau de bord ne fait rien. Tu n’as pas pu le reproduire sur Chrome. Dis-le, demande quel navigateur et quel appareil le client utilisait, et propose une solution de contournement (exporter depuis la page Reports).",
+            "model_answer_en": "I couldn’t reproduce it on Chrome. Do we know which browser and device the customer was using? In the meantime, they can export the data from the Reports page as a workaround.",
+            "model_answer_fr": "Je n’ai pas réussi à le reproduire sur Chrome. Est-ce qu’on sait quel navigateur et quel appareil utilisait le client ? En attendant, il peut exporter les données depuis la page Reports pour contourner le problème.",
+            "key_phrases": ["I couldn’t reproduce it", "which browser", "In the meantime", "as a workaround"]
+          }
+        }
+      ]
+    }
+  ]
+}
