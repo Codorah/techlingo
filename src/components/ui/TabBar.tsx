@@ -6,7 +6,7 @@ import { Link, useLocation } from 'wouter';
 const TABS = [
   { href: '/', key: 'home', Icon: House, match: (l: string) => l === '/' },
   { href: '/dictionary', key: 'dictionary', Icon: BookOpen, match: (l: string) => l.startsWith('/dictionary') || l.startsWith('/word') },
-  { href: '/practice', key: 'practice', Icon: Dumbbell, match: (l: string) => l.startsWith('/practice') || l.startsWith('/path') },
+  { href: '/practice', key: 'practice', Icon: Dumbbell, match: (l: string) => l.startsWith('/practice') || l.startsWith('/path') || l.startsWith('/situations') },
   { href: '/career', key: 'career', Icon: BriefcaseBusiness, match: (l: string) => l.startsWith('/career') },
   { href: '/profile', key: 'profile', Icon: UserRound, match: (l: string) => l.startsWith('/profile') || l.startsWith('/settings') }
 ] as const;

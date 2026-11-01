@@ -50,3 +50,21 @@ describe('learning path', () => {
     expect(nextTheme(themes, progress)).toBe(theme);
   });
 });
+
+describe('situations path', () => {
+  it('orders guide then lessons per unit and unlocks one at a time', async () => {
+    const { situationNodes, situationStates, guideId } = await import('@/learning/situations');
+    for (const p of content.paths) {
+      const nodes = situationNodes(p);
+      expect(nodes[0]!.id).toBe(guideId(p.units[0]!.id));
+      expect(nodes.length).toBe(p.units.reduce((s, u) => s + 1 + u.lessons.length, 0));
+      const states = situationStates(nodes, { [nodes[0]!.id]: { at: 'x' } });
+      expect(states.get(nodes[1]!.id)).toBe('current');
+    }
+  });
+
+  it('finds key phrases regardless of case, accents and punctuation', async () => {
+    const { phraseHits } = await import('@/learning/situations');
+    expect(phraseHits('Hi team! The build is GREEN, we can deploy.', ['the build is green', 'roll back'])).toEqual([true, false]);
+  });
+});

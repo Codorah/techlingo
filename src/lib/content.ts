@@ -1,7 +1,7 @@
 // Loads the generated content manifest and role packs. Packs are cached by the service worker,
 // so once fetched they keep working offline.
 import MiniSearch from 'minisearch';
-import type { CareerPack, Manifest, RolePack, Term } from '@/content/schema';
+import type { CareerPack, Manifest, RolePack, ShippedPath, Term } from '@/content/schema';
 import { SEARCH_OPTIONS, type SearchDoc } from '@/content/search';
 
 let manifestPromise: Promise<Manifest> | null = null;
@@ -42,4 +42,17 @@ export function loadCareer(): Promise<CareerPack> {
     .then((r) => { if (!r.ok) throw new Error(`career ${r.status}`); return r.json(); })
     .then((json: CareerPack) => { if (!Array.isArray(json.questions)) throw new Error('career malformed'); return json; });
   return careerPromise;
+}
+
+const paths = new Map<string, Promise<ShippedPath>>();
+/** The hand-written path of a domain (work situations), cached offline like the packs. */
+export function loadPath(domain: string): Promise<ShippedPath> {
+  let p = paths.get(domain);
+  if (!p) {
+    p = fetch(`/content/paths/${domain}.json`)
+      .then((r) => { if (!r.ok) throw new Error(`path ${domain} ${r.status}`); return r.json(); })
+      .then((json: ShippedPath) => { if (!Array.isArray(json.units)) throw new Error('path malformed'); return json; });
+    paths.set(domain, p);
+  }
+  return p;
 }

@@ -3,6 +3,7 @@ import { ChevronRight, Ear, Layers, Link2, Mic, Trophy } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
+import { SituationsCard } from '@/components/SituationsCard';
 import { ThemeRow } from '@/components/ThemeRow';
 import { Button } from '@/components/ui/Button';
 import { TabBar } from '@/components/ui/TabBar';
@@ -33,7 +34,9 @@ export function PracticeScreen() {
         <h1 className="text-[1.75rem] font-black">{t('practice.title')}</h1>
         <p className="text-ink-2">{t('practice.subtitle')}</p>
 
-        <h2 className="mt-6 text-lg font-extrabold">{t('path.title')}</h2>
+        <div className="mt-5"><SituationsCard /></div>
+
+        <h2 className="mt-7 text-lg font-extrabold">{t('path.title')}</h2>
         <p className="text-sm text-ink-2">{t('path.subtitle')}</p>
         <ul className="mt-3 grid gap-3">
           {themes.map((theme) => (

@@ -5,7 +5,7 @@ import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import MiniSearch from 'minisearch';
 import { autoQuiz } from '../../src/content/autoQuiz';
-import type { Manifest, Term } from '../../src/content/schema';
+import type { Manifest, PathTerm, Term } from '../../src/content/schema';
 import { SEARCH_OPTIONS, type SearchDoc } from '../../src/content/search';
 import { loadContent } from './lib';
 
@@ -54,7 +54,16 @@ writeFileSync(join(out, 'career.json'), JSON.stringify({ contentVersion: content
 
 mkdirSync(join(out, 'paths'), { recursive: true });
 const pathsShipped = content.paths.filter((p) => includeDrafts || p.status === 'validated');
-for (const p of pathsShipped) writeFileSync(join(out, 'paths', `${p.domain}.json`), JSON.stringify({ contentVersion: content.contentVersion, ...p }));
+// Each path ships the short cards of the words it uses, so a lesson never needs other role packs.
+const byId = new Map(content.terms.map((t) => [t.id, t]));
+for (const p of pathsShipped) {
+  const terms: Record<string, PathTerm> = {};
+  for (const id of new Set(p.units.flatMap((u) => u.lessons.flatMap((l) => l.term_ids)))) {
+    const t = byId.get(id);
+    if (t) terms[id] = { id, term_en: t.term_en, translation_fr: t.translation_fr, ipa: t.ipa, explanation_fr: t.explanation_fr, sentence_en: t.sentences[0]?.text_en, sentence_fr: t.sentences[0]?.text_fr };
+  }
+  writeFileSync(join(out, 'paths', `${p.domain}.json`), JSON.stringify({ contentVersion: content.contentVersion, ...p, terms }));
+}
 manifest.paths = pathsShipped.map((p) => p.domain);
 
 writeFileSync(join(out, 'manifest.json'), JSON.stringify(manifest, null, 2));

@@ -3,6 +3,7 @@ import { ArrowRight, Check, Circle, Flame, Hand, RotateCw, Zap } from 'lucide-re
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
+import { SituationsCard } from '@/components/SituationsCard';
 import { ThemeRow } from '@/components/ThemeRow';
 import { Avatar } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
@@ -68,6 +69,8 @@ export function HomeScreen() {
             <div><p className="font-extrabold">{t('home.welcomeBack.title')}</p><p className="mt-0.5 text-sm text-ink-2">{t('home.welcomeBack.text', { count: away })}</p></div>
           </Card>
         )}
+
+        <div className="mt-5"><SituationsCard /></div>
 
         {resume && (
           <section className="mt-5">

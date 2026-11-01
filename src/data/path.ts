@@ -19,12 +19,13 @@ export const PATH_XP = { course: 5, recap: 10, lessonBase: 10, perCorrect: 5, ch
 export interface WordResult { termId: string; correct: number; total: number }
 
 /** Records a finished node and returns the XP earned. */
-export async function completeNode(nodeId: string, kind: 'course' | 'recap' | 'lesson' | 'challenge', results: WordResult[] = []): Promise<{ xp: number; firstTime: boolean }> {
+/** `score` overrides the word results when a step is not about single words (situations). */
+export async function completeNode(nodeId: string, kind: 'course' | 'recap' | 'lesson' | 'challenge', results: WordResult[] = [], score?: { correct: number; total: number }): Promise<{ xp: number; firstTime: boolean }> {
   const progress = await getSetting<PathProgress>(KEY, {});
   const firstTime = !progress[nodeId];
-  const correct = results.reduce((s, r) => s + r.correct, 0);
-  const total = results.reduce((s, r) => s + r.total, 0);
-  const score = total ? correct / total : 1;
+  const correct = score?.correct ?? results.reduce((s, r) => s + r.correct, 0);
+  const total = score?.total ?? results.reduce((s, r) => s + r.total, 0);
+  const ratio = total ? correct / total : 1;
 
   const xp = !firstTime ? correct * PATH_XP.replayPerCorrect
     : kind === 'course' ? PATH_XP.course
@@ -33,8 +34,8 @@ export async function completeNode(nodeId: string, kind: 'course' | 'recap' | 'l
     : PATH_XP.lessonBase + correct * PATH_XP.perCorrect;
 
   if (results.length) await scheduleWords(results);
-  if (firstTime) await setSetting(KEY, { ...progress, [nodeId]: { at: nowIso(), score } });
-  await logSession(results[0]?.termId ?? nodeId, score, xp);
+  if (firstTime) await setSetting(KEY, { ...progress, [nodeId]: { at: nowIso(), score: ratio } });
+  await logSession(results[0]?.termId ?? nodeId, ratio, xp);
   await addXP(xp);
   return { xp, firstTime };
 }
