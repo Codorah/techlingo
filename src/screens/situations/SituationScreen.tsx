@@ -1,6 +1,7 @@
 import { ArrowRight, ChartColumn, Check, Circle, FileText, GitPullRequest, Hash, Languages, Lightbulb, Mail, Megaphone, Mic, Square, Users, Video, Volume2, X, Zap } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { NotFound } from '@/components/NotFound';
 import { useLocation, useParams } from 'wouter';
 import { Button } from '@/components/ui/Button';
 import { Confetti } from '@/components/ui/Confetti';
@@ -39,7 +40,7 @@ export function SituationScreen() {
     <div style={accentStyle(domain)} className="min-h-dvh bg-mist">
       {unit ? <Guide unit={unit} nodeId={nodeId} onClose={back} />
         : lesson && lessonUnit ? <Lesson path={path} lesson={lesson} nodeId={nodeId} onClose={back} />
-        : <main className="grid min-h-dvh place-items-center p-6 text-center text-ink-2">{t('path.notFound')}</main>}
+        : <NotFound />}
     </div>
   );
 }

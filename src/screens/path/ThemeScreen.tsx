@@ -1,6 +1,7 @@
 import { BookOpen, Check, RotateCcw, Star, Trophy } from 'lucide-react';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
+import { NotFound } from '@/components/NotFound';
 import { useParams } from 'wouter';
 import { PathMap } from '@/components/PathMap';
 import { DynamicIcon } from '@/components/ui/DynamicIcon';
@@ -21,7 +22,7 @@ export function ThemeScreen() {
   const theme = themes.find((x) => x.category === category);
 
   if (content.loading) return <main className="grid min-h-dvh place-items-center text-ink-2">{t('common.loading')}</main>;
-  if (!theme) return <main className="grid min-h-dvh place-items-center p-6 text-center text-ink-2">{t('path.notFound')}</main>;
+  if (!theme) return <NotFound />;
 
   const cat = content.categories.get(theme.category);
   const states = nodeStates(theme, progress);

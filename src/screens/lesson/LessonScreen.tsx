@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, Download, House, Lightbulb, MapPin, RotateCw, Turtle, Volume2, X } from 'lucide-react';
+import { ArrowRight, Download, House, Lightbulb, Map, MapPin, RotateCw, Turtle, Volume2, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useParams } from 'wouter';
@@ -108,6 +108,11 @@ export function LessonScreen() {
             </Card>
           )}
         </div>
+        {term.categories[0] && (
+          <Button variant="secondary" className="mb-2" icon={<Map size={20} aria-hidden />} onClick={() => navigate(`/path/${term.categories[0]}`, { replace: true })}>
+            {t('result.toPath', { theme: content.categories.get(term.categories[0])?.name_fr ?? '' })}
+          </Button>
+        )}
         {outcome.bonus && <Button variant="secondary" className="mb-2" icon={<RotateCw size={20} aria-hidden />} onClick={() => navigate('/spin')}>{t('result.bonus')}</Button>}
         <Button icon={<House size={20} aria-hidden />} onClick={() => navigate('/', { replace: true })}>{t('result.home')}</Button>
       </main>

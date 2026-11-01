@@ -1,6 +1,7 @@
 import { ArrowRight, Lightbulb, RotateCw, Target, Trophy, Volume2, X, Zap } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { NotFound } from '@/components/NotFound';
 import { useLocation, useParams } from 'wouter';
 import { Button } from '@/components/ui/Button';
 import { Confetti } from '@/components/ui/Confetti';
@@ -50,7 +51,7 @@ export function NodeScreen() {
   const back = () => navigate(`/path/${category}`, { replace: true });
 
   if (content.loading) return <main className="grid min-h-dvh place-items-center text-ink-2">{t('common.loading')}</main>;
-  if (!theme || !node) return <main className="grid min-h-dvh place-items-center p-6 text-center text-ink-2">{t('path.notFound')}</main>;
+  if (!theme || !node) return <NotFound />;
 
   // A recap reviews the previous unit; everything else works on the node's own words.
   const unit = theme.units[node.unitIndex]!;
