@@ -69,3 +69,8 @@
 @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @keyframes pop { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: none; } }
 @keyframes sheet { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes shake { 10%, 90% { transform: translateX(-2px); } 20%, 80% { transform: translateX(4px); } 30%, 50%, 70% { transform: translateX(-7px); } 40%, 60% { transform: translateX(7px); } }
+@keyframes bounce-in { 0% { transform: scale(0.6); opacity: 0; } 60% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-sky) 55%, transparent); } 100% { box-shadow: 0 0 0 16px transparent; } }
+@keyframes float { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -5px); } }
+@keyframes confetti { 0% { transform: translate3d(0, 0, 0) rotate(0); opacity: 1; } 100% { transform: translate3d(var(--dx), 105vh, 0) rotate(var(--rot)); opacity: 0.9; } }

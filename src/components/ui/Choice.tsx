@@ -6,8 +6,8 @@ type State = 'idle' | 'selected' | 'correct' | 'wrong' | 'dim';
 const look: Record<State, string> = {
   idle: 'border-line bg-surface shadow-[0_4px_0_var(--color-line)]',
   selected: 'border-ocean bg-mist text-ocean shadow-[0_4px_0_var(--color-ocean)]',
-  correct: 'border-mint-strong bg-mint text-mint-ink shadow-[0_4px_0_var(--color-mint-strong)]',
-  wrong: 'border-danger bg-danger-soft text-danger shadow-[0_4px_0_var(--color-danger)]',
+  correct: 'border-mint-strong bg-mint text-mint-ink shadow-[0_4px_0_var(--color-mint-strong)] animate-[bounce-in_.35s_var(--ease-out-quart)]',
+  wrong: 'border-danger bg-danger-soft text-danger shadow-[0_4px_0_var(--color-danger)] animate-[shake_.45s_ease-in-out]',
   dim: 'border-line bg-surface opacity-55 shadow-[0_4px_0_var(--color-line)]'
 };
 

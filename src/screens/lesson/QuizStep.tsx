@@ -1,4 +1,4 @@
-import { Check, Turtle, Volume2, X } from 'lucide-react';
+import { Check, Flame, Turtle, Volume2, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
@@ -35,6 +35,7 @@ export function QuizStep({ questions, onAnswer, onDone }: {
   const [selected, setSelected] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
   const [score, setScore] = useState(0);
+  const [combo, setCombo] = useState(0);
   const q = questions[i]!;
   const correct = selected === q.answer;
   useEffect(() => { if (q.audio) speak(q.audio); }, [q]);
@@ -43,6 +44,7 @@ export function QuizStep({ questions, onAnswer, onDone }: {
     if (selected === null) return;
     setChecked(true);
     if (correct) setScore((s) => s + 1);
+    setCombo((c) => (correct ? c + 1 : 0));
     navigator.vibrate?.(correct ? 12 : [30, 40, 30]);
     onAnswer(q, selected, correct);
   }
@@ -76,7 +78,11 @@ export function QuizStep({ questions, onAnswer, onDone }: {
       {checked ? (
         <div role="alert" className={`fixed inset-x-0 bottom-0 z-30 animate-[sheet_.28s_var(--ease-out-quart)] px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-5 ${correct ? 'bg-mint text-mint-ink' : 'bg-danger-soft text-danger'}`}>
           <div className="mx-auto max-w-[640px]">
-            <p className="flex items-center gap-2 text-lg font-black">{correct ? <Check size={22} aria-hidden /> : <X size={22} aria-hidden />}{correct ? t('quiz.correct') : t('quiz.wrong')}</p>
+            <p className="flex items-center gap-2 text-lg font-black">
+              <span className="grid h-9 w-9 animate-[bounce-in_.4s_var(--ease-out-quart)] place-items-center rounded-full bg-surface">{correct ? <Check size={22} aria-hidden /> : <X size={22} aria-hidden />}</span>
+              {correct ? t('quiz.correct') : t('quiz.wrong')}
+              {correct && combo >= 3 && <span className="ml-auto inline-flex animate-[pop_.3s_ease-out] items-center gap-1 rounded-full bg-surface px-3 py-1 text-sm text-[#C2410C]"><Flame size={16} aria-hidden />{t('quiz.combo', { count: combo })}</span>}
+            </p>
             {!correct && <p className="mt-1 font-bold">{t('quiz.answer', { answer: q.choices[q.answer] })}</p>}
             <p className="mt-1 text-sm">{q.explanation}</p>
             <Button variant={correct ? 'success' : 'danger'} className="mt-4" onClick={next}>{i + 1 >= questions.length ? t('quiz.finish') : t('quiz.next')}</Button>
