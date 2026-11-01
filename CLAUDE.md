@@ -13,7 +13,7 @@ Read PRODUCT.md first (who it is for, what it must feel like). This file is how 
 ## Stack
 React 19 + Vite + TypeScript + Tailwind v4 (`@theme` tokens in `src/styles/index.css`), wouter, Dexie (IndexedDB), Zod (content schema, build-time only), i18next (`src/i18n/fr.json`, every UI string), lucide-react icons, ts-fsrs, MiniSearch, vite-plugin-pwa (auto-update, see `src/app/UpdatePrompt.tsx`).
 
-Legacy `www/` is the old app: not deployed, don't edit. `npm start` serves it; the real app is `npm run app:dev`.
+Legacy `www/` is the old app: not deployed, don't edit (`npm run legacy` serves it on 8081). `npm run dev` runs the real app on http://localhost:8080, the same as production.
 
 ## Commands
 - `npm run app:dev` / `npm run app:build:drafts` (what Vercel runs) / `npm run app:preview`

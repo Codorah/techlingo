@@ -15,8 +15,10 @@ export function WordScreen() {
   const [, navigate] = useLocation();
   const { id } = useParams<{ id: string }>();
   const profile = useLiveQuery(() => db.profile.get('me'));
+  // A word from the whole domain may live outside the user's roles: its pack comes in the link.
+  const pack = new URLSearchParams(window.location.search).get('pack');
   const roles = profile?.primaryRole ? [profile.primaryRole, ...profile.secondaryRoles] : [];
-  const content = useContent(roles);
+  const content = useContent(pack && !roles.includes(pack) ? [...roles, pack] : roles);
   const progress = useLiveQuery(() => db.userTerms.get(id), [id]);
   const term = content.byId.get(id);
 

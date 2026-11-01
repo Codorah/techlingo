@@ -1,7 +1,7 @@
 // Loads the generated content manifest and role packs. Packs are cached by the service worker,
 // so once fetched they keep working offline.
 import MiniSearch from 'minisearch';
-import type { CareerPack, Manifest, RolePack, ShippedPath, Term } from '@/content/schema';
+import type { CareerPack, DictEntry, Manifest, RolePack, ShippedPath, Term } from '@/content/schema';
 import { SEARCH_OPTIONS, type SearchDoc } from '@/content/search';
 
 let manifestPromise: Promise<Manifest> | null = null;
@@ -53,6 +53,19 @@ export function loadPath(domain: string): Promise<ShippedPath> {
       .then((r) => { if (!r.ok) throw new Error(`path ${domain} ${r.status}`); return r.json(); })
       .then((json: ShippedPath) => { if (!Array.isArray(json.units)) throw new Error('path malformed'); return json; });
     paths.set(domain, p);
+  }
+  return p;
+}
+
+const dicts = new Map<string, Promise<DictEntry[]>>();
+/** Every word of a domain, light fields only (list, search, filters). */
+export function loadDict(domain: string): Promise<DictEntry[]> {
+  let p = dicts.get(domain);
+  if (!p) {
+    p = fetch(`/content/dict/${domain}.json`)
+      .then((r) => { if (!r.ok) throw new Error(`dict ${domain} ${r.status}`); return r.json(); })
+      .then((json: { terms: DictEntry[] }) => { if (!Array.isArray(json.terms)) throw new Error('dict malformed'); return json.terms; });
+    dicts.set(domain, p);
   }
   return p;
 }

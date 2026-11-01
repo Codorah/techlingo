@@ -1,8 +1,7 @@
-import { ArrowRight, Check, ChevronLeft, Clock, Sparkles } from 'lucide-react';
+import { ArrowRight, ChevronLeft, Sparkles } from 'lucide-react';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
-import { Avatar, AVATARS } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
 import { DomainPicker, RolePicker } from '@/components/RolePicker';
 import { Choice } from '@/components/ui/Choice';
@@ -10,14 +9,13 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { LEVELS, type Level } from '@/content/levels';
 import type { Term } from '@/content/schema';
 import { saveProfile } from '@/data/progress';
-import type { Profile } from '@/db/db';
 import { nextPlacementLevel, pickPlacementTerm, PLACEMENT_QUESTIONS, PLACEMENT_START, type PlacementAnswer, placementResult } from '@/learning/placement';
 import { useContent } from '@/lib/useContent';
 
-type Step = 'welcome' | 'domain' | 'role' | 'level' | 'placement' | 'placementDone' | 'goal' | 'rhythm' | 'profile';
-const FLOW: Step[] = ['domain', 'role', 'level', 'goal', 'rhythm', 'profile'];
-const GOALS = ['docs', 'work', 'interviews', 'vocabulary'] as const;
-const MINUTES = [5, 10, 15, 20] as const;
+type Step = 'welcome' | 'domain' | 'role' | 'level' | 'placement' | 'placementDone';
+// Short on purpose: domain, role, level, then straight into the app. Name, goal and rhythm
+// can be set later in the profile.
+const FLOW: Step[] = ['domain', 'role', 'level'];
 
 export function OnboardingScreen() {
   const { t } = useTranslation();
@@ -27,11 +25,6 @@ export function OnboardingScreen() {
   const [primary, setPrimary] = useState<string | null>(null);
   const [secondary, setSecondary] = useState<string[]>([]);
   const [level, setLevel] = useState<Level | null>(null);
-  const [goal, setGoal] = useState<Profile['goal']>(null);
-  const [minutes, setMinutes] = useState<Profile['dailyMinutes']>(5);
-  const [reminder, setReminder] = useState('19:00');
-  const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState<string>('sky');
 
   const roles = primary ? [primary, ...secondary] : [];
   const content = useContent(roles.length ? roles : []);
@@ -42,11 +35,8 @@ export function OnboardingScreen() {
     setStep(flowIndex <= 0 ? 'welcome' : FLOW[flowIndex - 1]!);
   };
 
-  async function finish() {
-    await saveProfile({
-      displayName: name.trim().slice(0, 30), avatar, primaryRole: primary, secondaryRoles: secondary, level, goal,
-      dailyMinutes: minutes, reminderTime: reminder || null, onboardedAt: new Date().toISOString()
-    });
+  async function finish(chosen: Level | null = level) {
+    await saveProfile({ primaryRole: primary, secondaryRoles: secondary, level: chosen, onboardedAt: new Date().toISOString() });
     navigate('/spin?first=1', { replace: true });
   }
 
@@ -87,8 +77,8 @@ export function OnboardingScreen() {
   if (step === 'domain') {
     return shell(t('onboarding.domain.title'), t('onboarding.domain.text'),
       <DomainPicker manifest={content.manifest} value={domain}
-        onChange={(d) => { if (d !== domain) { setPrimary(null); setSecondary([]); } setDomain(d); }} />,
-      <Button disabled={!domain} onClick={() => setStep('role')}>{t('common.continue')}</Button>);
+        onChange={(d) => { if (d !== domain) { setPrimary(null); setSecondary([]); } setDomain(d); setStep('role'); }} />,
+      null);
   }
 
   if (step === 'role') {
@@ -110,7 +100,7 @@ export function OnboardingScreen() {
         ))}
         <Button variant="ghost" className="mt-1" icon={<Sparkles size={20} aria-hidden />} onClick={() => setStep('placement')}>{t('onboarding.level.unknown')}</Button>
       </div>,
-      <Button disabled={!level} onClick={() => setStep('goal')}>{t('common.continue')}</Button>);
+      <Button disabled={!level} onClick={() => void finish()} icon={<ArrowRight size={20} aria-hidden />}>{t('onboarding.profile.cta')}</Button>);
   }
 
   if (step === 'placement') {
@@ -120,55 +110,10 @@ export function OnboardingScreen() {
   if (step === 'placementDone' && level) {
     return shell(t('onboarding.placement.resultTitle', { level }), t('onboarding.placement.resultText', { name: t(`levels.${level}.name`) }),
       <div className="grid place-items-center py-10"><span className="grid h-32 w-32 place-items-center rounded-full bg-mint font-title text-5xl font-black text-mint-ink">{level}</span></div>,
-      <Button onClick={() => setStep('goal')}>{t('onboarding.placement.keep')}</Button>);
+      <Button onClick={() => void finish()} icon={<ArrowRight size={20} aria-hidden />}>{t('onboarding.placement.keep')}</Button>);
   }
 
-  if (step === 'goal') {
-    return shell(t('onboarding.goal.title'), t('onboarding.goal.text'),
-      <div className="grid gap-2.5">
-        {GOALS.map((g) => <Choice key={g} state={goal === g ? 'selected' : 'idle'} onClick={() => setGoal(g)}>{t(`goals.${g}`)}</Choice>)}
-      </div>,
-      <Button disabled={!goal} onClick={() => setStep('rhythm')}>{t('common.continue')}</Button>);
-  }
-
-  if (step === 'rhythm') {
-    return shell(t('onboarding.rhythm.title'), t('onboarding.rhythm.text'),
-      <div>
-        <div className="grid grid-cols-2 gap-2.5">
-          {MINUTES.map((m) => <Choice key={m} state={minutes === m ? 'selected' : 'idle'} onClick={() => setMinutes(m)} className="justify-center text-center">{t('onboarding.rhythm.minutes', { count: m })}</Choice>)}
-        </div>
-        <label className="mt-6 block">
-          <span className="flex items-center gap-2 font-bold"><Clock size={18} aria-hidden />{t('onboarding.rhythm.reminder')} <span className="font-normal text-ink-2">({t('common.optional')})</span></span>
-          <input type="time" value={reminder} onChange={(e) => setReminder(e.target.value)}
-            className="mt-2 min-h-[52px] w-full rounded-2xl border-2 border-line bg-surface px-4 text-lg outline-none focus:border-ocean" />
-          <span className="mt-1 block text-sm text-ink-2">{t('onboarding.rhythm.reminderHint')}</span>
-        </label>
-      </div>,
-      <Button onClick={() => setStep('profile')}>{t('common.continue')}</Button>);
-  }
-
-  return shell(t('onboarding.profile.title'), t('onboarding.profile.text'),
-    <div>
-      <div className="flex justify-center"><Avatar id={avatar} name={name || '?'} size={88} /></div>
-      <label className="mt-6 block">
-        <span className="font-bold">{t('onboarding.profile.name')} <span className="font-normal text-ink-2">({t('common.optional')})</span></span>
-        <input value={name} onChange={(e) => setName(e.target.value)} maxLength={30} autoComplete="given-name" placeholder={t('onboarding.profile.placeholder')}
-          className="mt-2 min-h-[52px] w-full rounded-2xl border-2 border-line bg-surface px-4 text-lg outline-none placeholder:text-ink-2 focus:border-ocean" />
-      </label>
-      <fieldset className="mt-6">
-        <legend className="font-bold">{t('onboarding.profile.avatar')}</legend>
-        <div className="mt-3 flex justify-between gap-2">
-          {AVATARS.map((a) => (
-            <button key={a.id} type="button" onClick={() => setAvatar(a.id)} aria-pressed={avatar === a.id} aria-label={a.id}
-              className={`grid h-12 w-12 place-items-center rounded-full border-4 transition-transform ${avatar === a.id ? 'scale-110 border-ink' : 'border-transparent'}`}
-              style={{ background: a.bg }}>
-              {avatar === a.id && <Check size={20} className="text-white" aria-hidden />}
-            </button>
-          ))}
-        </div>
-      </fieldset>
-    </div>,
-    <Button onClick={() => void finish()} icon={<ArrowRight size={20} aria-hidden />}>{t('onboarding.profile.cta')}</Button>);
+  return null;
 }
 
 function Placement({ terms, header, onDone }: { terms: Term[]; header: ReactNode; onDone: (l: Level) => void }) {

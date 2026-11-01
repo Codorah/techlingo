@@ -47,6 +47,7 @@ function App() {
     );
   }
   return (
+    <>
     <Switch>
       <Route path="/spin"><SpinScreen /></Route>
       <Route path="/lesson/:termId"><LessonScreen /></Route>
@@ -67,6 +68,9 @@ function App() {
       <Route path="/settings/data"><DataScreen /></Route>
       <Route><HomeScreen /></Route>
     </Switch>
+    {/* Offered once the learner is in the app, never on top of the onboarding. */}
+    <InstallSheet />
+    </>
   );
 }
 
@@ -74,6 +78,5 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={null}><App /></Suspense>
     <UpdatePrompt />
-    <InstallSheet />
   </StrictMode>
 );

@@ -5,7 +5,7 @@ import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import MiniSearch from 'minisearch';
 import { autoQuiz } from '../../src/content/autoQuiz';
-import type { Manifest, PathTerm, Term } from '../../src/content/schema';
+import type { DictEntry, Manifest, PathTerm, Term } from '../../src/content/schema';
 import { SEARCH_OPTIONS, type SearchDoc } from '../../src/content/search';
 import { loadContent } from './lib';
 
@@ -51,6 +51,18 @@ for (const domain of content.domains) {
 
 const careerShippable = content.questions.filter((q) => includeDrafts || q.status === 'validated');
 writeFileSync(join(out, 'career.json'), JSON.stringify({ contentVersion: content.contentVersion, questions: careerShippable, verbs: content.verbs }));
+
+// A light index per domain so the dictionary can list and filter every word of the domain
+// without downloading every pack; the full card loads from the word's own pack when opened.
+mkdirSync(join(out, 'dict'), { recursive: true });
+for (const domain of content.domains) {
+  const roleIds = new Set(content.roles.filter((r) => r.domain === domain.id).map((r) => r.id));
+  const terms: DictEntry[] = content.terms
+    .filter((t) => shippable(t) && t.roles.some((r) => roleIds.has(r.role)))
+    .map((t) => ({ id: t.id, en: t.term_en, fr: t.translation_fr, level: t.level, cats: t.categories, roles: t.roles.map((r) => r.role), pack: t.roles[0]!.role }))
+    .sort((a, b) => a.en.localeCompare(b.en, 'en'));
+  writeFileSync(join(out, 'dict', `${domain.id}.json`), JSON.stringify({ contentVersion: content.contentVersion, terms }));
+}
 
 mkdirSync(join(out, 'paths'), { recursive: true });
 const pathsShipped = content.paths.filter((p) => includeDrafts || p.status === 'validated');

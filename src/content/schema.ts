@@ -202,3 +202,6 @@ export type PathFile = z.infer<typeof PathFile>;
 // What the build ships for a path: the file plus the cards of the words it uses.
 export interface PathTerm { id: string; term_en: string; translation_fr: string; ipa?: string; explanation_fr: string; sentence_en?: string; sentence_fr?: string }
 export type ShippedPath = PathFile & { contentVersion: string; terms: Record<string, PathTerm> };
+
+// Light dictionary index of a domain (public/content/dict/<domain>.json).
+export interface DictEntry { id: string; en: string; fr: string; level: Level; cats: string[]; roles: string[]; pack: string }

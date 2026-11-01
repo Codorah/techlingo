@@ -1,6 +1,7 @@
-import { Download, HardDriveDownload, Share2, Smartphone, Trash2, Upload } from 'lucide-react';
+import { Download, HardDriveDownload, RotateCcw, Share2, Smartphone, Trash2, Upload } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
@@ -16,6 +17,9 @@ export function DataScreen() {
   const [file, setFile] = useState<File | null>(null);
   const [notice, setNotice] = useState<Notice>(null);
   const [busy, setBusy] = useState(false);
+  // The flag lives in the URL: after a wipe the app switches to its onboarding routes and remounts this screen.
+  const [wiped, setWiped] = useState(() => new URLSearchParams(window.location.search).has('wiped'));
+  const [, navigate] = useLocation();
   const input = useRef<HTMLInputElement>(null);
 
   useEffect(() => { void lastBackupAt(db).then(setLast); }, []);
@@ -48,7 +52,10 @@ export function DataScreen() {
     setBusy(true);
     try {
       const env = await parseBackup(await f.text());
+      const wasOnboarded = !!(await db.profile.get('me'))?.onboardedAt;
       const report = await importBackup(db, env);
+      // Restoring on a fresh phone: go straight into the app with the recovered progress.
+      if (!wasOnboarded && (await db.profile.get('me'))?.onboardedAt) { navigate('/', { replace: true }); return; }
       setNotice({ kind: 'ok', text: t('data.import.done', { added: report.added, updated: report.updated }) });
     } catch (e) {
       const code = e instanceof BackupError ? e.code : 'unknown';
@@ -63,7 +70,25 @@ export function DataScreen() {
     if (!window.confirm(t('data.wipe.confirm'))) return;
     await wipeUserData(db);
     setLast(null);
-    setNotice({ kind: 'ok', text: t('data.wipe.done') });
+    setWiped(true);
+    navigate('/settings/data?wiped=1', { replace: true });
+    window.scrollTo({ top: 0 });
+  }
+
+  // After a wipe the learner chooses: start over from the welcome screen, or restore a backup.
+  if (wiped) {
+    return (
+      <Screen title={t('data.title')}>
+        <div className="flex flex-1 flex-col items-center justify-center text-center">
+          <span className="grid h-20 w-20 place-items-center rounded-full bg-mint text-mint-ink"><Trash2 size={34} aria-hidden /></span>
+          <h1 className="mt-5 text-2xl font-black">{t('data.wipe.done')}</h1>
+          <p className="mt-2 max-w-[34ch] text-ink-2">{t('data.wipe.next')}</p>
+        </div>
+        <input ref={input} type="file" accept="application/json,.json" className="sr-only" onChange={(e) => { const f = e.target.files?.[0]; if (f) { setWiped(false); navigate('/settings/data', { replace: true }); void onImport(f); } }} />
+        <Button icon={<RotateCcw size={20} aria-hidden />} onClick={() => navigate('/', { replace: true })}>{t('data.wipe.restart')}</Button>
+        <Button variant="secondary" className="mt-2" icon={<Upload size={20} aria-hidden />} onClick={() => input.current?.click()}>{t('data.wipe.restore')}</Button>
+      </Screen>
+    );
   }
 
   const canShareFile = !!file && typeof navigator.canShare === 'function' && navigator.canShare({ files: [file] });

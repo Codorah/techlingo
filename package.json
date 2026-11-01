@@ -4,9 +4,10 @@
   "private": true,
   "description": "TechLingo — apprendre l'anglais technique (PWA + apps Android/iOS via Capacitor)",
   "scripts": {
-    "dev": "serve www -l 8080",
-    "start": "serve www -l 8080",
-    "app:dev": "npm run content:build -- --drafts && vite",
+    "dev": "npm run app:dev",
+    "start": "npm run app:build:drafts && vite preview --port 8080",
+    "legacy": "serve www -l 8081",
+    "app:dev": "npm run content:build -- --drafts && vite --port 8080",
     "app:build": "npm run content:build && vite build",
     "app:build:drafts": "npm run content:build -- --drafts && vite build",
     "app:preview": "vite preview",
