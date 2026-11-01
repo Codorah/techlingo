@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ChevronRight, Ear, Layers, Link2, Mic, Trophy } from 'lucide-react';
+import { ChevronRight, Ear, Layers, Link2, Map as MapIcon, Mic, Trophy } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
@@ -35,6 +35,11 @@ export function PracticeScreen() {
         <p className="text-ink-2">{t('practice.subtitle')}</p>
 
         <div className="mt-5"><SituationsCard /></div>
+        <Link href="/knowledge" className="mt-3 flex min-h-[68px] items-center gap-3.5 rounded-[var(--radius-card)] border-2 border-line bg-surface p-3.5 shadow-[0_4px_0_var(--color-line)] active:translate-y-1 active:shadow-none">
+          <span className="grid h-11 w-11 flex-none place-items-center rounded-2xl bg-sun text-sun-ink"><MapIcon size={22} aria-hidden /></span>
+          <span className="flex-1"><span className="block font-extrabold">{t('knowledge.entry')}</span><span className="block text-sm text-ink-2">{t('knowledge.entryText')}</span></span>
+          <ChevronRight size={20} className="text-ink-2" aria-hidden />
+        </Link>
 
         <h2 className="mt-7 text-lg font-extrabold">{t('path.title')}</h2>
         <p className="text-sm text-ink-2">{t('path.subtitle')}</p>

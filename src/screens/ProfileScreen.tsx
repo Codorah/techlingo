@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { BookOpen, Briefcase, ChevronRight, Database, Flame, Moon, Star, Volume2, Zap } from 'lucide-react';
+import { BookOpen, Briefcase, ChevronRight, Database, Flame, Map as MapIcon, Moon, Star, Volume2, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
@@ -83,6 +83,12 @@ export function ProfileScreen() {
         </div>
 
         <Card className="mt-7 p-1">
+          <Link href="/knowledge" className="flex min-h-14 items-center gap-3 rounded-2xl px-3">
+            <MapIcon size={22} className="text-[var(--accent)]" aria-hidden />
+            <span className="flex-1"><span className="block font-bold">{t('knowledge.entry')}</span><span className="block text-sm text-ink-2">{t('knowledge.entryText')}</span></span>
+            <ChevronRight size={20} className="text-ink-2" aria-hidden />
+          </Link>
+          <div className="mx-3 h-0.5 bg-line" />
           <Link href="/settings/roles" className="flex min-h-14 items-center gap-3 rounded-2xl px-3">
             <Briefcase size={22} className="text-[var(--accent)]" aria-hidden />
             <span className="flex-1"><span className="block font-bold">{t('roles.title')}</span><span className="block text-sm text-ink-2">{domainName} · {roleNames.join(', ')}</span></span>

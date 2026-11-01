@@ -35,6 +35,7 @@ const ThemeScreen = named(() => import('@/screens/path/ThemeScreen'), 'ThemeScre
 const NodeScreen = named(() => import('@/screens/path/NodeScreen'), 'NodeScreen');
 const SituationsScreen = named(() => import('@/screens/situations/SituationsScreen'), 'SituationsScreen');
 const SituationScreen = named(() => import('@/screens/situations/SituationScreen'), 'SituationScreen');
+const KnowledgeScreen = named(() => import('@/screens/KnowledgeScreen'), 'KnowledgeScreen');
 
 function App() {
   const profile = useLiveQuery(async () => (await db.profile.get('me')) ?? null);
@@ -70,6 +71,7 @@ function App() {
       <Route path="/path/:category"><ThemeScreen /></Route>
       <Route path="/situations/:nodeId"><SituationScreen /></Route>
       <Route path="/situations"><SituationsScreen /></Route>
+      <Route path="/knowledge"><KnowledgeScreen /></Route>
       <Route path="/settings/data"><DataScreen /></Route>
       <Route><HomeScreen /></Route>
     </Switch>
