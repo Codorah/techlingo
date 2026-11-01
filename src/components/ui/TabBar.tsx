@@ -2,9 +2,9 @@ import { BookOpen, BriefcaseBusiness, Dumbbell, House, UserRound } from 'lucide-
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 
-// Practice is the learning centre (paths, mini-courses, quizzes, reviews), so path screens light it up.
+// Home holds the job courses (/parcours/:role); Practice holds theme maps, drills and reviews.
 const TABS = [
-  { href: '/', key: 'home', Icon: House, match: (l: string) => l === '/' },
+  { href: '/', key: 'home', Icon: House, match: (l: string) => l === '/' || l.startsWith('/parcours') || l.startsWith('/spin') },
   { href: '/dictionary', key: 'dictionary', Icon: BookOpen, match: (l: string) => l.startsWith('/dictionary') || l.startsWith('/word') },
   { href: '/practice', key: 'practice', Icon: Dumbbell, match: (l: string) => l.startsWith('/practice') || l.startsWith('/path') || l.startsWith('/situations') || l.startsWith('/knowledge') },
   { href: '/career', key: 'career', Icon: BriefcaseBusiness, match: (l: string) => l.startsWith('/career') },

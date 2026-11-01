@@ -245,7 +245,7 @@ function Say({ ex, locked, onAnswer }: StepProps) {
         )}
       </div>
       {!locked && (
-        <Button variant="ghost" onClick={() => { stopRef.current(); onAnswer(supported ? 'close' : 'correct'); }}>
+        <Button variant="ghost" onClick={() => { stopRef.current(); onAnswer(supported ? 'wrong' : 'correct'); }}>
           {supported ? t('recall.say.skip') : t('recall.say.said')}
         </Button>
       )}

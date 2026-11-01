@@ -2,11 +2,12 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { ArrowRight, Check, CircleCheck, Languages, Lightbulb, Mic, Square, Volume2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useParams } from 'wouter';
+import { useLocation, useParams, useSearch } from 'wouter';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
 import type { CareerPack } from '@/content/schema';
+import { completeNode } from '@/data/path';
 import { addXP, saveAnswerDraft } from '@/data/progress';
 import { db } from '@/db/db';
 import { loadCareer } from '@/lib/content';
@@ -21,6 +22,10 @@ export function QuestionScreen() {
   const { t } = useTranslation();
   const [, navigate] = useLocation();
   const { id } = useParams<{ id: string }>();
+  // Opened from a job course: the step is marked done there, and back returns to the course map.
+  const search = new URLSearchParams(useSearch());
+  const courseNode = search.get('node');
+  const backTo = search.get('back') ?? '/career';
   const [career, setCareer] = useState<CareerPack | null>(null);
   const draft = useLiveQuery(() => db.answerDrafts.get(id), [id]);
   const profile = useLiveQuery(() => db.profile.get('me'));
@@ -36,7 +41,7 @@ export function QuestionScreen() {
   useEffect(() => { setSpoken(''); setText(null); setShowFr(false); }, [id]);
 
   const q = career?.questions.find((x) => x.id === id);
-  if (!q) return <Screen back="/career"><p className="text-ink-2">{t('common.loading')}</p></Screen>;
+  if (!q) return <Screen back={backTo}><p className="text-ink-2">{t('common.loading')}</p></Screen>;
 
   const written = text ?? draft?.text ?? '';
   const attempt = `${spoken} ${written}`;
@@ -59,11 +64,16 @@ export function QuestionScreen() {
 
   async function markDone() {
     await saveAnswerDraft(q!.id, { text: written, checklist: { practiced: true } });
+    if (courseNode) {
+      await completeNode(courseNode, 'lesson', [], { correct: hits.length, total: q!.key_phrases.length });
+      navigate(backTo, { replace: true });
+      return;
+    }
     if (!practiced) await addXP(15);
   }
 
   return (
-    <Screen back="/career">
+    <Screen back={backTo}>
       <p className="text-sm font-bold text-ink-2">{q.topic_fr} · {q.level}</p>
       <div className="mt-2 flex items-start gap-3">
         <h1 className="flex-1 text-2xl font-black leading-snug" lang="en">{q.question_en}</h1>
@@ -119,10 +129,10 @@ export function QuestionScreen() {
       </Card>
 
       <div className="mt-5 grid gap-2.5 pb-[env(safe-area-inset-bottom)]">
-        {practiced
+        {practiced && !courseNode
           ? <p className="flex items-center justify-center gap-2 font-bold text-mint-ink"><CircleCheck size={20} aria-hidden />{t('career.question.doneAlready')}</p>
           : <Button variant="success" icon={<Check size={20} aria-hidden />} onClick={() => void markDone()}>{t('career.question.done')}</Button>}
-        {next && next.id !== q.id && <Button variant="secondary" icon={<ArrowRight size={20} aria-hidden />} onClick={() => navigate(`/career/q/${next.id}`)}>{t('career.question.next')}</Button>}
+        {!courseNode && next && next.id !== q.id && <Button variant="secondary" icon={<ArrowRight size={20} aria-hidden />} onClick={() => navigate(`/career/q/${next.id}`)}>{t('career.question.next')}</Button>}
       </div>
     </Screen>
   );

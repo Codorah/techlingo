@@ -19,7 +19,8 @@ const STATE_LOOK: Record<SkillState, string> = {
 /** "My Knowledge Map": what the learner can actually do, situation by situation and theme by theme. */
 export function KnowledgeScreen() {
   const { t } = useTranslation();
-  const { path, themes, progress, content } = useSituations();
+  const { path, themes, progress, content, profile } = useSituations();
+  const courseHref = profile?.primaryRole ? `/parcours/${profile.primaryRole}` : '/situations';
   const words = useLiveQuery(async () => {
     const rows = await db.userTerms.toArray();
     return new Map(rows.filter((u) => u.card).map((u) => [u.termId, u.state]));
@@ -58,7 +59,7 @@ export function KnowledgeScreen() {
               const Icon = STATE_ICON[state];
               return (
                 <li key={unit.id}>
-                  <Link href="/situations" className="flex items-center gap-3 rounded-2xl border-2 border-line bg-surface p-3.5 shadow-[0_3px_0_var(--color-line)] active:translate-y-0.5 active:shadow-none">
+                  <Link href={courseHref} className="flex items-center gap-3 rounded-2xl border-2 border-line bg-surface p-3.5 shadow-[0_3px_0_var(--color-line)] active:translate-y-0.5 active:shadow-none">
                     <span className={`grid h-11 w-11 flex-none place-items-center rounded-xl ${STATE_LOOK[state]}`}><Icon size={22} aria-hidden /></span>
                     <span className="min-w-0 flex-1">
                       <span className="block font-bold leading-snug">{unit.title_fr}</span>

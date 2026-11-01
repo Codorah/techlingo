@@ -35,6 +35,8 @@ const ThemeScreen = named(() => import('@/screens/path/ThemeScreen'), 'ThemeScre
 const NodeScreen = named(() => import('@/screens/path/NodeScreen'), 'NodeScreen');
 const SituationsScreen = named(() => import('@/screens/situations/SituationsScreen'), 'SituationsScreen');
 const SituationScreen = named(() => import('@/screens/situations/SituationScreen'), 'SituationScreen');
+const CourseScreen = named(() => import('@/screens/course/CourseScreen'), 'CourseScreen');
+const CourseNodeScreen = named(() => import('@/screens/course/CourseNodeScreen'), 'CourseNodeScreen');
 const KnowledgeScreen = named(() => import('@/screens/KnowledgeScreen'), 'KnowledgeScreen');
 
 function App() {
@@ -71,6 +73,8 @@ function App() {
       <Route path="/path/:category"><ThemeScreen /></Route>
       <Route path="/situations/:nodeId"><SituationScreen /></Route>
       <Route path="/situations"><SituationsScreen /></Route>
+      <Route path="/parcours/:role/:nodeId"><CourseNodeScreen /></Route>
+      <Route path="/parcours/:role"><CourseScreen /></Route>
       <Route path="/knowledge"><KnowledgeScreen /></Route>
       <Route path="/settings/data"><DataScreen /></Route>
       <Route><HomeScreen /></Route>

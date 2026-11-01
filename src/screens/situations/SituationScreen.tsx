@@ -59,7 +59,7 @@ const Shell = ({ children, onClose, progress, label }: { children: React.ReactNo
   );
 };
 
-function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: string; onClose: () => void }) {
+export function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: string; onClose: () => void }) {
   const { t } = useTranslation();
   const [xp, setXp] = useState<number | null>(null);
   if (xp != null) return <Done xp={xp} title={t('path.courseDone')} onContinue={onClose} />;
@@ -89,7 +89,7 @@ function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: string; o
 type Step = 'words' | 'dialogue' | 'quiz' | 'production';
 const STEPS: Step[] = ['words', 'dialogue', 'quiz', 'production'];
 
-function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; lesson: PathLesson; nodeId: string; onClose: () => void }) {
+export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; lesson: PathLesson; nodeId: string; onClose: () => void }) {
   const { t } = useTranslation();
   const [step, setStep] = useState<Step>('words');
   const [quizCorrect, setQuizCorrect] = useState(0);
@@ -261,7 +261,7 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
   );
 }
 
-function Done({ xp, title, accuracy, confetti = true, replay, onContinue }: { xp: number; title: string; accuracy?: number; confetti?: boolean; replay?: boolean; onContinue: () => void }) {
+export function Done({ xp, title, accuracy, confetti = true, replay, onContinue }: { xp: number; title: string; accuracy?: number; confetti?: boolean; replay?: boolean; onContinue: () => void }) {
   const { t } = useTranslation();
   return (
     <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-[calc(env(safe-area-inset-top)+24px)] text-center">

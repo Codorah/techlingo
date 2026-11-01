@@ -118,6 +118,7 @@
     }
   },
   "home": {
+    "today": "Aujourd’hui",
     "hello": "Bonjour {{name}}",
     "helloAnon": "Bonjour",
     "subtitle": "Niveau {{level}} · {{role}}",
@@ -153,7 +154,9 @@
       "title": "{{count}} mot à réviser",
       "title_other": "{{count}} mots à réviser",
       "text": "Révise maintenant pour ne pas oublier.",
-      "cta": "Réviser"
+      "cta": "Réviser",
+      "none": "Aucune révision en attente",
+      "noneText": "Tes mots sont frais. Entraîne-toi quand tu veux."
     },
     "week": {
       "title": "Objectif de la semaine",
@@ -337,6 +340,63 @@
     "state": { "mastered": "Maîtrisée", "started": "En cours", "new": "À découvrir" },
     "lessons": "{{done}}/{{total}} leçons",
     "breakdown": "{{mastered}} maîtrisés · {{started}} en cours · {{left}} à découvrir"
+  },
+  "course": {
+    "progress": "Progression du parcours",
+    "start": "Commencer",
+    "go": "C’est parti",
+    "redo": "Refaire",
+    "locked": "Termine les étapes précédentes pour débloquer celle-ci.",
+    "stepsDone": "{{done}} étapes sur {{total}}",
+    "unitKind": { "situation": "Unité {{n}}", "recall": "Unité {{n}} · Rappel", "interview": "Unité {{n}} · Entretien" },
+    "node": { "guide": "Guide", "lesson": "Leçon en situation", "recall": "Rappel oral", "interview": "Question d’entretien" },
+    "what": {
+      "guide": "La situation, les expressions clés et une astuce. 2 minutes.",
+      "lesson": "Les mots, un échange réel, 4 questions et un message à écrire ou dire.",
+      "recall": "Pas de nouveau cours : tu tapes, tu reconstruis et tu dis les mots déjà vus.",
+      "interview": "Une vraie question de recruteur. Tu réponds à voix haute, puis tu compares."
+    },
+    "recall": { "title": "Rappel {{n}}", "subtitle": "Court et exigeant : tu ressors les mots des deux dernières unités, à l’écrit et à l’oral.", "node": "Rappel {{n}}" },
+    "interview": { "title": "Entretien blanc", "subtitle": "Les questions qu’un recruteur de ton métier pose vraiment. Réponds à voix haute." },
+    "mine": "Mes parcours",
+    "discover": "D’autres métiers à découvrir",
+    "otherDomain": "Dans l’autre domaine",
+    "continue": "Continuer",
+    "begin": "Commencer le parcours",
+    "finished": "Parcours terminé",
+    "next": "Prochaine étape",
+    "units": "{{count}} unité",
+    "units_other": "{{count}} unités",
+    "general": "Les bases communes",
+    "seeMap": "Voir tout le parcours"
+  },
+  "recall": {
+    "combo": "{{count}} bonnes réponses d’affilée",
+    "slow": "Écouter lentement",
+    "done": "Rappel terminé !",
+    "fb": {
+      "correct": "Exact !",
+      "streak": "{{count}} d’affilée !",
+      "close": "Presque : attention à l’orthographe",
+      "wrong": "Pas encore",
+      "answer": "La bonne réponse :"
+    },
+    "type": { "kicker": "Retrouve le mot", "title": "Comment dit-on en anglais ?", "placeholder": "Écris le mot en anglais" },
+    "dictation": { "kicker": "Dictée", "title": "Écris ce que tu entends", "placeholder": "Écris en anglais" },
+    "order": { "kicker": "Reconstruis la phrase", "title": "Remets les mots dans l’ordre", "answer": "Ta phrase" },
+    "say": {
+      "kicker": "À voix haute",
+      "title": "Écoute, puis dis la phrase",
+      "start": "Parler",
+      "stop": "Arrêter",
+      "tap": "Touche le micro et parle",
+      "listening": "Je t’écoute…",
+      "nothing": "Je n’ai rien entendu. Réessaie, plus près du micro.",
+      "denied": "Le micro est bloqué. Autorise-le dans les réglages du navigateur.",
+      "unsupported": "Ton navigateur ne reconnaît pas la voix. Dis la phrase à voix haute, puis continue.",
+      "skip": "Je ne peux pas parler maintenant",
+      "said": "Je l’ai dite à voix haute"
+    }
   },
   "help": {
     "title": "Aide",

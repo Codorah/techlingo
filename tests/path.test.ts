@@ -68,3 +68,22 @@ describe('situations path', () => {
     expect(phraseHits('Hi team! The build is GREEN, we can deploy.', ['the build is green', 'roll back'])).toEqual([true, false]);
   });
 });
+
+describe('job course', () => {
+  it('interleaves recall units after every two situation units and ends with the mock interview', async () => {
+    const { buildCourse, courseProgress, courseStates } = await import('@/learning/course');
+    const path = content.rolePaths[0] ?? content.paths[0]!;
+    const role = 'role' in path ? path.role : 'general-tech';
+    const course = buildCourse(role, path, content.questions, {
+      guide: 'Guide', recallTitle: (n) => `Rappel ${n}`, recallSubtitle: '', recallNode: (n) => `Étape ${n}`,
+      interviewTitle: 'Entretien', interviewSubtitle: ''
+    });
+    expect(course.units[2]?.kind).toBe('recall');
+    expect(course.units.at(-1)?.kind).toBe('interview');
+    const first = course.nodes[0]!.id;
+    const states = courseStates(course, { [first]: { at: 'x' } });
+    expect(states.get(first)).toBe('done');
+    expect(states.get(course.nodes[1]!.id)).toBe('current');
+    expect(courseProgress(course, { [first]: { at: 'x' } }).done).toBe(1);
+  });
+});
