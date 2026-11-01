@@ -37,8 +37,10 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
-        globIgnores: ['content/**'],
+        globIgnores: ['content/**', 'decouvrir/**'],
         navigateFallback: '/index.html',
+        // The public landing page is a separate static page, never the app shell.
+        navigateFallbackDenylist: [/^\/decouvrir/],
         runtimeCaching: [
           {
             // Role packs are downloaded on demand and kept for offline use; the network

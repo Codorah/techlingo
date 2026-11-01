@@ -18,8 +18,7 @@ export const PATH_XP = { course: 5, recap: 10, lessonBase: 10, perCorrect: 5, ch
 
 export interface WordResult { termId: string; correct: number; total: number }
 
-/** Records a finished node and returns the XP earned. */
-/** `score` overrides the word results when a step is not about single words (situations). */
+/** Records a finished node and returns the XP earned. `score` overrides the word results when a step is not about single words (situations). */
 export async function completeNode(nodeId: string, kind: 'course' | 'recap' | 'lesson' | 'challenge', results: WordResult[] = [], score?: { correct: number; total: number }): Promise<{ xp: number; firstTime: boolean }> {
   const progress = await getSetting<PathProgress>(KEY, {});
   const firstTime = !progress[nodeId];

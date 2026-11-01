@@ -32,7 +32,7 @@ function spread<T>(items: T[], k: number): T[][] {
 
 /** `roles` = primary, secondary roles, then the domain's general role (weighted lower). */
 export function buildThemes(terms: Term[], roles: string[], generalRole?: string): PathTheme[] {
-  const factor = (role: string) => (role === roles[0] ? 1 : role === generalRole ? 0.4 : 0.6);
+  const factor = (role: string) => (role === roles[0] ? 1 : role === generalRole ? 0.15 : 0.6);
   const all = generalRole && !roles.includes(generalRole) ? [...roles, generalRole] : roles;
   const weightOf = (t: Term) => Math.max(0, ...t.roles.filter((r) => all.includes(r.role)).map((r) => r.priority * factor(r.role)));
   const groups = new Map<string, Term[]>();
