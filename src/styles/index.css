@@ -24,6 +24,17 @@
   --color-gold: #f2b631;
   --color-gold-press: #c98f12;
   --color-danger-soft: #fde8e8;
+  /* Fixed roles, same meaning everywhere: violet = speaking, teal = recall, flame = streak. */
+  --color-violet: #6a48f0;
+  --color-violet-press: #4f31c4;
+  --color-violet-soft: #eeeaff;
+  --color-teal: #0b7f7b;
+  --color-teal-press: #075f5c;
+  --color-teal-soft: #dcf4f2;
+  --color-flame: #ea580c;
+  --color-flame-ink: #c2410c;
+  --color-flame-soft: #ffedd5;
+  --color-gold-ink: #9a6a00;
 
   --font-title: "Nunito", "DM Sans", system-ui, sans-serif;
   --font-sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -58,6 +69,15 @@
   --color-coral: #ff9a84;
   --color-coral-press: #c4513a;
   --color-coral-soft: #3a2220;
+  --color-violet: #a28bff;
+  --color-violet-press: #6a48f0;
+  --color-violet-soft: #29234a;
+  --color-teal: #4fd1c5;
+  --color-teal-press: #0b7f7b;
+  --color-teal-soft: #13343a;
+  --color-flame-soft: #3d2614;
+  --color-flame-ink: #ffb27a;
+  --color-gold-ink: #f3d68a;
   color-scheme: dark;
 }
 
@@ -92,3 +112,14 @@
 @keyframes rays { to { transform: rotate(360deg); } }
 /* Every screen fades in when it mounts; the tab bar sits outside <main> and stays still. */
 #root main { animation: screen-in .24s var(--ease-out-quart) both; }
+
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); } 50% { box-shadow: 0 0 0 10px transparent; } }
+@keyframes wave { 0%, 100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Skeleton placeholder while content loads (static under reduced motion). */
+.skeleton { background: linear-gradient(90deg, var(--color-line) 25%, color-mix(in srgb, var(--color-line) 40%, var(--color-surface)) 50%, var(--color-line) 75%); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; border-radius: 14px; }
+@media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }

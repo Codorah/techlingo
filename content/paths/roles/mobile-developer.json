@@ -1,0 +1,1144 @@
+{
+  "role": "mobile-developer",
+  "status": "draft",
+  "title_fr": "L’anglais de ta semaine de dev mobile",
+  "units": [
+    {
+      "id": "mobile-developer-screens-and-navigation",
+      "title_fr": "Construire un écran et sa navigation",
+      "title_en": "Build a screen and its navigation",
+      "situation_fr": "La designer t’envoie les maquettes d’une nouvelle fonctionnalité. Tu dois discuter de la navigation, construire les écrans et expliquer ton code à l’équipe.",
+      "guide": {
+        "intro_fr": "Sur mobile, une fonctionnalité commence presque toujours par des écrans et la façon de passer de l’un à l’autre. En anglais, on parle de « screens » (les « pages », c’est plutôt le web), de la « tab bar » en bas de l’écran et de la « navigation stack » : chaque écran ouvert est « pushed » sur la pile, et le retour le « pops ». Un « bottom sheet » monte depuis le bas pour afficher des options sans quitter l’écran. Côté code, tu expliqueras ton architecture : un « view model » garde les données de l’écran, la vue se contente de les afficher. Enfin, les détails comptent : un « pull to refresh », un léger retour haptique, un mode sombre bien géré. Les verbes clés : to tap, to swipe, to open, to go back, to dismiss.",
+        "key_phrases": [
+          { "en": "Tapping the card opens the detail screen.", "fr": "Toucher la carte ouvre l’écran de détail." },
+          { "en": "The back button pops the screen off the stack.", "fr": "Le bouton retour retire l’écran de la pile." },
+          { "en": "Should this be a new screen or a bottom sheet?", "fr": "Ce doit être un nouvel écran ou un panneau inférieur ?" },
+          { "en": "The user can swipe down to dismiss it.", "fr": "L’utilisateur peut le fermer en glissant vers le bas." },
+          { "en": "The view model holds the screen state.", "fr": "Le view model contient l’état de l’écran." },
+          { "en": "It looks off on small screens.", "fr": "Le rendu n’est pas bon sur les petits écrans." }
+        ],
+        "tip_fr": "Sur mobile, on « tap » (touche) un bouton : garde « click » pour la souris. Et attention à « to dismiss » : appliqué à une alerte ou à un panneau, il veut dire le fermer. Rien à voir avec démissionner, qui se dit « to resign »."
+      },
+      "lessons": [
+        {
+          "id": "mobile-developer-plan-the-navigation",
+          "title_fr": "Discuter de la navigation avec la designer",
+          "term_ids": ["tab-bar", "navigation-stack", "bottom-sheet", "gesture"],
+          "dialogue": [
+            { "speaker": "Lucía", "text_en": "Hi Kenji, did you see the new mockups? I added a Favorites section to the tab bar.", "text_fr": "Salut Kenji, tu as vu les nouvelles maquettes ? J’ai ajouté une section Favoris dans la barre d’onglets." },
+            { "speaker": "Kenji", "text_en": "Yes, it looks great. When the user taps a favorite, do we push a new screen onto the navigation stack?", "text_fr": "Oui, ça rend très bien. Quand l’utilisateur touche un favori, on ajoute un nouvel écran sur la pile de navigation ?" },
+            { "speaker": "Lucía", "text_en": "No, I’d rather show the details in a bottom sheet. It’s lighter, and the user stays on the list.", "text_fr": "Non, je préfère afficher les détails dans un panneau inférieur. C’est plus léger, et l’utilisateur reste sur la liste." },
+            { "speaker": "Kenji", "text_en": "OK. Can the user swipe down to dismiss it? That gesture feels natural on both platforms.", "text_fr": "D’accord. L’utilisateur peut le fermer en glissant vers le bas ? Ce geste est naturel sur les deux plateformes." },
+            { "speaker": "Lucía", "text_en": "Yes, swipe down or tap outside. And the Android back button should close it too.", "text_fr": "Oui, glisser vers le bas ou toucher à l’extérieur. Et le bouton retour d’Android doit aussi le fermer." },
+            { "speaker": "Kenji", "text_en": "Good point. I’ll make sure back closes the sheet first, before it pops the screen.", "text_fr": "Bien vu. Je m’assure que le retour ferme d’abord le panneau, avant de quitter l’écran." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « Quand l’utilisateur touche un favori » ?",
+              "choices": ["When the user clicks on a favorite", "When the user taps a favorite", "When the user touches on a favorite"],
+              "answer_index": 1,
+              "explanation_fr": "Sur un écran tactile, le verbe naturel est « to tap », sans préposition : tap a favorite. « Click on » évoque la souris : on l’entend, mais c’est moins précis sur mobile. « Touch on » est un calque : « touch » s’emploie sans « on » et sonne bizarre pour une interaction."
+            },
+            {
+              "prompt_fr": "Que propose Lucía avec « show the details in a bottom sheet » ?",
+              "choices": ["Afficher les détails en bas de la page, après la liste", "Ouvrir un nouvel écran en plein écran", "Afficher les détails dans un panneau qui monte depuis le bas, par-dessus la liste"],
+              "answer_index": 2,
+              "explanation_fr": "Un bottom sheet est un panneau qui glisse depuis le bas de l’écran, au-dessus du contenu : l’utilisateur garde sa liste derrière. Ce n’est pas du contenu placé en fin de page (ce serait un « footer »), ni un nouvel écran ajouté à la pile, ce que Lucía refuse justement."
+            },
+            {
+              "prompt_fr": "Complète : « When the user taps a favorite, do we ___ a new screen onto the navigation stack? »",
+              "choices": ["push", "put", "stack"],
+              "answer_index": 0,
+              "explanation_fr": "Avec une pile de navigation, on dit « push a screen » pour ajouter un écran et « pop » pour le retirer : ce sont les mots des API (Navigator.push en Flutter, pushViewController sur iOS). « Put » est trop vague, et « stack » est le nom de la pile, pas l’action."
+            },
+            {
+              "prompt_fr": "La designer demande comment l’utilisateur ferme le panneau. Que réponds-tu ?",
+              "choices": ["The user can resign the sheet with a swipe.", "The user can swipe down to dismiss it, or tap outside.", "The user can slide it to the down."],
+              "answer_index": 1,
+              "explanation_fr": "« Swipe down to dismiss » est la formule consacrée : glisser vers le bas pour fermer. « Resign » veut dire démissionner, une confusion classique avec « dismiss ». Et « to the down » n’existe pas : on dit simplement « down »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Lucía, la designer, te demande s’il faut ouvrir un nouvel écran pour les filtres. Réponds-lui sur Slack : tu proposes un panneau inférieur plutôt qu’un nouvel écran, pour que l’utilisateur reste sur les résultats ; il pourra le fermer en glissant vers le bas. Demande-lui si le bouton retour doit aussi le fermer.",
+            "context_en": "Hi! For the filters, should we open a new screen from the search tab? Let me know what works best.",
+            "model_answer_en": "Hi Lucía, I’d show the filters in a bottom sheet instead of a new screen, so the user stays on the search results. They can swipe down to dismiss it. Should the back button close it too?",
+            "model_answer_fr": "Salut Lucía, j’afficherais les filtres dans un panneau inférieur plutôt que dans un nouvel écran, pour que l’utilisateur reste sur les résultats de recherche. Il peut le fermer en glissant vers le bas. Le bouton retour doit-il aussi le fermer ?",
+            "key_phrases": ["in a bottom sheet", "instead of a new screen", "swipe down to dismiss it", "Should the back button close it too?"]
+          }
+        },
+        {
+          "id": "mobile-developer-build-a-flutter-screen",
+          "title_fr": "Construire un écran en Flutter",
+          "term_ids": ["flutter", "dart", "widget", "hot-reload", "responsive-layout"],
+          "dialogue": [
+            { "speaker": "Moussa", "text_en": "Priya, I’m building the order history screen in Flutter. Should the order card be its own widget, or just a function?", "text_fr": "Priya, je construis l’écran d’historique des commandes en Flutter. La carte de commande doit être un widget à part, ou juste une fonction ?" },
+            { "speaker": "Priya", "text_en": "Make it its own widget class. In Dart, a small StatelessWidget is cheap and easy to test.", "text_fr": "Fais-en une classe de widget à part. En Dart, un petit StatelessWidget ne coûte presque rien et se teste facilement." },
+            { "speaker": "Moussa", "text_en": "Done. Hot reload is great: I can tweak the padding and see it instantly.", "text_fr": "C’est fait. Le hot reload est génial : je peux ajuster les marges internes et voir le résultat tout de suite." },
+            { "speaker": "Priya", "text_en": "Careful, hot reload keeps the state. If you change the initial state, you need a hot restart.", "text_fr": "Attention, le hot reload conserve l’état. Si tu modifies l’état initial, il te faut un hot restart." },
+            { "speaker": "Moussa", "text_en": "Good to know. Also, the layout looks off on tablets: the cards are too wide.", "text_fr": "Bon à savoir. Autre chose : la mise en page n’est pas bonne sur tablette, les cartes sont trop larges." },
+            { "speaker": "Priya", "text_en": "We need an adaptive layout there. Check the width with a LayoutBuilder and show two columns on wide screens.", "text_fr": "Il faut une mise en page adaptative. Vérifie la largeur avec un LayoutBuilder et affiche deux colonnes sur les écrans larges." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « the layout looks off on tablets » ?",
+              "choices": ["La mise en page est désactivée sur tablette", "La mise en page est parfaite sur tablette", "La mise en page n’est pas bonne sur tablette"],
+              "answer_index": 2,
+              "explanation_fr": "« To look off » veut dire avoir un rendu bizarre, pas tout à fait juste. Rien à voir avec « off » au sens d’éteint (turned off) : la mise en page s’affiche, mais mal. Et c’est l’inverse de « parfaite » : Moussa explique justement que les cartes sont trop larges."
+            },
+            {
+              "prompt_fr": "Pourquoi Priya parle-t-elle de « hot restart » ?",
+              "choices": ["Le hot reload garde l’état de l’app, donc un changement d’état initial n’apparaît pas", "Le hot reload ne fonctionne pas avec Dart", "Le hot restart réinstalle l’application sur le téléphone"],
+              "answer_index": 0,
+              "explanation_fr": "Le hot reload injecte le nouveau code en gardant l’état en cours : c’est rapide, mais une valeur initiale modifiée n’est pas relue. Le hot restart relance l’app et remet l’état à zéro, sans la réinstaller. Et le hot reload est justement une force de Flutter avec Dart."
+            },
+            {
+              "prompt_fr": "Complète : « We need an ___ layout there: two columns on wide screens. »",
+              "choices": ["adapted", "adaptive", "adaptable"],
+              "answer_index": 1,
+              "explanation_fr": "« Adaptive layout » est le terme consacré pour une mise en page qui change selon la taille de l’écran (on dit aussi « responsive layout »). « Adapted » veut dire déjà adapté à un cas précis, et « adaptable » se comprend mais décrit plutôt une personne ou un plan capable de s’adapter : ce n’est pas le terme technique."
+            },
+            {
+              "prompt_fr": "Moussa veut réutiliser la carte de commande sur l’écran d’accueil. Que lui conseilles-tu ?",
+              "choices": ["Copy the code of the card in the home screen.", "Make the card more widget.", "Extract the card into its own widget and reuse it."],
+              "answer_index": 2,
+              "explanation_fr": "« Extract into its own widget » est la tournure naturelle pour isoler un morceau d’interface réutilisable. Copier le code crée des doublons à maintenir (et il faudrait dire « copy into »), et « more widget » n’a pas de sens : widget est un nom, pas un adjectif."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Tu ouvres une pull request pour l’écran d’historique des commandes. Décris-la : tu as extrait la carte de commande dans son propre widget pour la réutiliser sur l’accueil, tu as ajouté une mise en page adaptative (deux colonnes sur tablette), et tu demandes qu’on la teste sur un petit téléphone.",
+            "model_answer_en": "This PR adds the order history screen. I extracted the order card into its own widget, so we can reuse it on the home screen. I also added an adaptive layout with two columns on tablets. Could you test it on a small phone?",
+            "model_answer_fr": "Cette PR ajoute l’écran d’historique des commandes. J’ai extrait la carte de commande dans son propre widget, pour pouvoir la réutiliser sur l’écran d’accueil. J’ai aussi ajouté une mise en page adaptative avec deux colonnes sur tablette. Pourrais-tu la tester sur un petit téléphone ?",
+            "key_phrases": ["This PR adds", "into its own widget", "an adaptive layout", "Could you test it on a small phone?"]
+          }
+        },
+        {
+          "id": "mobile-developer-explain-screen-architecture",
+          "title_fr": "Expliquer l’architecture d’un écran",
+          "term_ids": ["view-model", "mvvm", "lifecycle", "jetpack-compose", "swiftui"],
+          "dialogue": [
+            { "speaker": "Ivan", "text_en": "Sarah, I’m new to the codebase. How is the profile screen structured?", "text_fr": "Sarah, je découvre le code. Comment est structuré l’écran de profil ?" },
+            { "speaker": "Sarah", "text_en": "We use MVVM. The view only displays the data, and the view model holds the state and the logic.", "text_fr": "On utilise MVVM. La vue ne fait qu’afficher les données, et le view model contient l’état et la logique." },
+            { "speaker": "Ivan", "text_en": "So on Android, the Jetpack Compose screen just observes the view model?", "text_fr": "Donc sur Android, l’écran en Jetpack Compose se contente d’observer le view model ?" },
+            { "speaker": "Sarah", "text_en": "Exactly. And on iOS, the SwiftUI view does the same with an observable object.", "text_fr": "Exactement. Et sur iOS, la vue SwiftUI fait pareil avec un objet observable." },
+            { "speaker": "Ivan", "text_en": "Why not keep the data in the screen itself?", "text_fr": "Pourquoi ne pas garder les données dans l’écran lui-même ?" },
+            { "speaker": "Sarah", "text_en": "Because of the lifecycle. On Android, rotating the phone recreates the screen, but the view model survives, so we don’t reload everything.", "text_fr": "À cause du cycle de vie. Sur Android, tourner le téléphone recrée l’écran, mais le view model survit : on ne recharge pas tout." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « La vue ne fait qu’afficher les données » ?",
+              "choices": ["The view does only display the data.", "The view only displays the data.", "The view displays the data only and nothing."],
+              "answer_index": 1,
+              "explanation_fr": "En anglais, « ne… que » se traduit par « only », placé avant le verbe : the view only displays. « Does only display » emploie le « do » d’insistance à tort, et « only and nothing » empile deux idées : ça ne se dit pas."
+            },
+            {
+              "prompt_fr": "Que veut dire Sarah avec « the view model survives » ?",
+              "choices": ["Le view model est supprimé puis recréé", "Le view model plante pendant la rotation", "Le view model reste en mémoire quand l’écran est recréé"],
+              "answer_index": 2,
+              "explanation_fr": "« To survive » s’emploie pour un objet qui reste en vie après un événement : ici, la rotation détruit et recrée l’écran, mais le view model est conservé avec ses données. C’est l’inverse d’être supprimé, et rien n’indique un plantage."
+            },
+            {
+              "prompt_fr": "Complète : « On Android, rotating the phone ___ the screen. »",
+              "choices": ["recreates", "reverses", "repeats"],
+              "answer_index": 0,
+              "explanation_fr": "Sur Android, un changement de configuration comme la rotation détruit l’écran (l’Activity) puis le recrée : « recreates ». « Reverses » voudrait dire inverser, et « repeats » répéter : aucun des deux ne décrit ce qui arrive dans le cycle de vie."
+            },
+            {
+              "prompt_fr": "Un collègue te demande pourquoi l’équipe utilise MVVM. Quelle réponse est la plus claire ?",
+              "choices": ["Because MVVM is more modern than the others.", "It keeps the logic out of the view, so we can test it without the UI.", "It makes the app run faster on all phones."],
+              "answer_index": 1,
+              "explanation_fr": "Le vrai intérêt de MVVM est de séparer la logique de l’interface : le view model se teste sans lancer d’écran. « More modern » n’est pas un argument technique, et MVVM n’accélère pas l’app : c’est une question d’organisation du code, pas de performance."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "En revue de code, un collègue a placé l’appel réseau directement dans l’écran Jetpack Compose. Écris un commentaire bienveillant : propose de déplacer l’appel dans le view model, et explique pourquoi (la rotation recrée l’écran et relance l’appel).",
+            "context_en": "LaunchedEffect(Unit) { profile = api.fetchProfile() }",
+            "model_answer_en": "Could we move this network call to the view model? On Android, rotating the phone recreates the screen, so this call runs again each time. The view model survives the rotation and keeps the profile.",
+            "model_answer_fr": "Pourrait-on déplacer cet appel réseau dans le view model ? Sur Android, tourner le téléphone recrée l’écran, donc cet appel se relance à chaque fois. Le view model survit à la rotation et garde le profil.",
+            "key_phrases": ["Could we move this network call to the view model?", "recreates the screen", "survives the rotation"]
+          }
+        },
+        {
+          "id": "mobile-developer-polish-interactions",
+          "title_fr": "Peaufiner les détails après un test",
+          "term_ids": ["pull-to-refresh", "haptic-feedback", "dark-mode", "splash-screen"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "Tomasz, I tested the news feed. Pull to refresh works, but there’s no loading indicator.", "text_fr": "Tomasz, j’ai testé le fil d’actualités. Le « tirer pour actualiser » marche, mais il n’y a pas d’indicateur de chargement." },
+            { "speaker": "Tomasz", "text_en": "Right, I’ll add the native spinner. Anything else?", "text_fr": "C’est vrai, je vais ajouter l’indicateur natif. Autre chose ?" },
+            { "speaker": "Aïcha", "text_en": "In dark mode, the card titles are almost invisible. They’re still dark grey.", "text_fr": "En mode sombre, les titres des cartes sont presque invisibles. Ils sont toujours en gris foncé." },
+            { "speaker": "Tomasz", "text_en": "My bad, I hardcoded the color. I’ll use the theme colors instead.", "text_fr": "C’est ma faute, j’ai codé la couleur en dur. Je vais utiliser les couleurs du thème à la place." },
+            { "speaker": "Aïcha", "text_en": "Great. Could we add light haptic feedback when the user saves an article?", "text_fr": "Parfait. On pourrait ajouter un léger retour haptique quand l’utilisateur enregistre un article ?" },
+            { "speaker": "Tomasz", "text_en": "Sure. Also, the splash screen stays too long. I’ll check what we load at launch.", "text_fr": "Bien sûr. Et l’écran de démarrage reste trop longtemps. Je vais vérifier ce qu’on charge au lancement." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Tomasz avec « I hardcoded the color » ?",
+              "choices": ["J’ai écrit la couleur directement dans le code, au lieu d’utiliser le thème", "J’ai choisi une couleur trop difficile à lire", "J’ai codé la couleur avec beaucoup d’efforts"],
+              "answer_index": 0,
+              "explanation_fr": "« To hardcode » veut dire écrire une valeur en dur dans le code : elle ne change pas avec le thème, d’où le problème en mode sombre. « Hard » ne veut pas dire « difficile » ici, et le manque de lisibilité est la conséquence, pas le sens du mot."
+            },
+            {
+              "prompt_fr": "Comment reconnaître une petite erreur de façon naturelle entre collègues ?",
+              "choices": ["It’s my fault of me.", "I’m guilty of it.", "My bad, I’ll fix it."],
+              "answer_index": 2,
+              "explanation_fr": "« My bad » est l’expression courante et détendue pour reconnaître une petite erreur, souvent suivie de « I’ll fix it ». « My fault of me » double le possessif, et « I’m guilty » sonne comme au tribunal : beaucoup trop dramatique pour une couleur oubliée."
+            },
+            {
+              "prompt_fr": "Complète : « Could we add light haptic ___ when the user saves an article? »",
+              "choices": ["return", "feedback", "vibe"],
+              "answer_index": 1,
+              "explanation_fr": "Le terme est « haptic feedback » (retour haptique) : une courte vibration qui confirme une action. « Return » est un calque de « retour » qui ne s’emploie pas ici, et « vibe » est de l’argot qui veut dire ambiance, pas vibration."
+            },
+            {
+              "prompt_fr": "La testeuse dit que les titres sont illisibles en mode sombre. Quelle réponse propose une vraie solution ?",
+              "choices": ["Users should switch to light mode.", "I’ll make the titles bigger.", "I’ll use the theme colors, so the text adapts to dark mode."],
+              "answer_index": 2,
+              "explanation_fr": "Utiliser les couleurs du thème règle la cause : le texte change automatiquement avec le mode sombre. Demander aux utilisateurs de changer de mode ignore le problème, et agrandir les titres ne corrige pas un contraste trop faible."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Après le test d’Aïcha, réponds-lui sur Slack : tu as ajouté l’indicateur de chargement au « tirer pour actualiser », tu as corrigé les couleurs du mode sombre en utilisant le thème, et le retour haptique sera dans la prochaine build.",
+            "model_answer_en": "Thanks for testing! I added the loading indicator to pull to refresh, and I fixed the dark mode colors by using the theme. The haptic feedback will be in the next build.",
+            "model_answer_fr": "Merci pour le test ! J’ai ajouté l’indicateur de chargement au « tirer pour actualiser », et j’ai corrigé les couleurs du mode sombre en utilisant le thème. Le retour haptique sera dans la prochaine build.",
+            "key_phrases": ["Thanks for testing!", "I fixed the dark mode colors", "will be in the next build"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobile-developer-offline-and-sync",
+      "title_fr": "Faire fonctionner l’app sans réseau",
+      "title_en": "Make the app work offline",
+      "situation_fr": "Tes utilisateurs prennent le métro et perdent le réseau. Tu dois expliquer comment l’app garde les données sur le téléphone, les synchronise et protège les informations sensibles.",
+      "guide": {
+        "intro_fr": "Un téléphone perd souvent le réseau : métro, avion, zone blanche. Une app « offline-first » est pensée pour fonctionner d’abord sans connexion : elle lit et écrit dans le « local storage » (une base sur l’appareil, comme SQLite), puis elle « syncs » (synchronise) avec le serveur quand la connexion revient. Il faut alors gérer les « conflicts », quand la même donnée a changé des deux côtés. La synchronisation tourne souvent dans une « background task », que le système limite pour protéger la batterie. Enfin, les secrets comme les jetons de connexion ne vont jamais dans un stockage simple : on utilise un « secure storage » (le Keychain sur iOS, le Keystore sur Android). Les verbes clés : to cache, to queue, to retry, to sync.",
+        "key_phrases": [
+          { "en": "The app should work offline.", "fr": "L’app doit fonctionner hors ligne." },
+          { "en": "We store the data locally and sync it later.", "fr": "On stocke les données en local et on les synchronise plus tard." },
+          { "en": "The change is queued until the connection comes back.", "fr": "La modification est mise en file d’attente jusqu’au retour de la connexion." },
+          { "en": "What happens if there’s a conflict?", "fr": "Que se passe-t-il en cas de conflit ?" },
+          { "en": "The system can delay background work.", "fr": "Le système peut retarder le travail en arrière-plan." },
+          { "en": "Never store tokens in plain text.", "fr": "Ne stocke jamais les jetons en clair." }
+        ],
+        "tip_fr": "Faux ami : « eventually » ne veut pas dire « éventuellement » mais « tôt ou tard, au bout du compte ». « The data will eventually sync » signifie que les données finiront par se synchroniser. Pour « éventuellement », dis « possibly » ou « if needed »."
+      },
+      "lessons": [
+        {
+          "id": "mobile-developer-explain-offline-mode",
+          "title_fr": "Expliquer le mode hors ligne",
+          "term_ids": ["offline-first", "local-storage", "sync", "image-caching"],
+          "dialogue": [
+            { "speaker": "Daniel", "text_en": "Mei, users complain that the app is empty in the subway. Can we fix that?", "text_fr": "Mei, des utilisateurs se plaignent que l’app est vide dans le métro. On peut corriger ça ?" },
+            { "speaker": "Mei", "text_en": "Yes, we should go offline-first. The app reads from local storage first, then updates from the server.", "text_fr": "Oui, on devrait passer en offline-first. L’app lit d’abord le stockage local, puis se met à jour depuis le serveur." },
+            { "speaker": "Daniel", "text_en": "And if they add a note without a connection?", "text_fr": "Et s’ils ajoutent une note sans connexion ?" },
+            { "speaker": "Mei", "text_en": "We save it locally and queue the change. It syncs when the connection comes back.", "text_fr": "On l’enregistre en local et on met la modification en file d’attente. Elle se synchronise quand la connexion revient." },
+            { "speaker": "Daniel", "text_en": "What about the photos? They’re the slowest part.", "text_fr": "Et les photos ? C’est ce qui charge le plus lentement." },
+            { "speaker": "Mei", "text_en": "With image caching, photos the user has already seen load instantly, even offline.", "text_fr": "Avec la mise en cache des images, les photos déjà vues par l’utilisateur s’affichent tout de suite, même hors ligne." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « On l’enregistre en local » ?",
+              "choices": ["We record it in local.", "We save it at local.", "We save it locally."],
+              "answer_index": 2,
+              "explanation_fr": "« Locally » est l’adverbe : save it locally, store it locally. « In local » et « at local » sont des calques de « en local » qui n’existent pas. Attention aussi à « record », qui veut surtout dire enregistrer du son ou de la vidéo."
+            },
+            {
+              "prompt_fr": "Que veut dire Mei avec « we queue the change » ?",
+              "choices": ["On met la modification en file d’attente pour l’envoyer plus tard", "On annule la modification", "On demande à l’utilisateur de réessayer"],
+              "answer_index": 0,
+              "explanation_fr": "« To queue » veut dire mettre en file d’attente : la modification attend son tour et partira quand le réseau reviendra. Rien n’est annulé, et l’utilisateur n’a rien à refaire : c’est tout l’intérêt de l’offline-first."
+            },
+            {
+              "prompt_fr": "Complète : « It ___ when the connection comes back. »",
+              "choices": ["synchronizes itself", "syncs", "is syncing back"],
+              "answer_index": 1,
+              "explanation_fr": "« To sync » s’emploie sans pronom réfléchi : the note syncs. « Synchronizes itself » calque le français « se synchroniser » ; l’anglais n’a pas besoin de « itself ». « Is syncing back » utilise un présent continu et une particule qui n’ont rien à faire ici."
+            },
+            {
+              "prompt_fr": "Ton PM demande si l’app marchera dans l’avion. Quelle réponse est juste et claire ?",
+              "choices": ["Yes, users can read and edit their notes offline, and changes sync when they’re back online.", "Yes, the app works without internet because it doesn’t use the server.", "No, a mobile app always needs a connection."],
+              "answer_index": 0,
+              "explanation_fr": "La première réponse décrit précisément l’offline-first : lecture et écriture hors ligne, puis synchronisation au retour du réseau (« back online »). L’app utilise toujours le serveur, simplement plus tard, et dire qu’une app a toujours besoin d’une connexion est faux."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion produit, explique en trois phrases comment l’app va fonctionner sans réseau : elle lit d’abord les données dans le stockage local, les notes ajoutées hors ligne sont mises en file d’attente, et tout se synchronise quand la connexion revient.",
+            "model_answer_en": "The app will read the data from local storage first, so it’s never empty. If users add a note offline, we queue the change. Everything syncs when the connection comes back.",
+            "model_answer_fr": "L’app lira d’abord les données dans le stockage local : elle ne sera donc jamais vide. Si les utilisateurs ajoutent une note hors ligne, on met la modification en file d’attente. Tout se synchronise quand la connexion revient.",
+            "key_phrases": ["from local storage first", "we queue the change", "Everything syncs when the connection comes back"]
+          }
+        },
+        {
+          "id": "mobile-developer-sync-in-the-background",
+          "title_fr": "Synchroniser en arrière-plan sans vider la batterie",
+          "term_ids": ["background-task", "battery-drain", "sync", "lifecycle"],
+          "dialogue": [
+            { "speaker": "Ivan", "text_en": "Lucía, our sync only runs when the app is open. Can we move it to a background task?", "text_fr": "Lucía, notre synchronisation ne tourne que quand l’app est ouverte. On peut la passer dans une tâche en arrière-plan ?" },
+            { "speaker": "Lucía", "text_en": "Yes, but be careful with battery drain. Last year, a sync every five minutes got us bad reviews.", "text_fr": "Oui, mais attention à la consommation de batterie. L’an dernier, une synchronisation toutes les cinq minutes nous a valu de mauvais avis." },
+            { "speaker": "Ivan", "text_en": "On Android, I’ll use WorkManager and only run it on Wi-Fi when the battery isn’t low.", "text_fr": "Sur Android, j’utiliserai WorkManager et je ne la lancerai qu’en Wi-Fi, quand la batterie n’est pas faible." },
+            { "speaker": "Lucía", "text_en": "Good. On iOS, remember that the system decides when background tasks run. There’s no guarantee.", "text_fr": "Bien. Sur iOS, n’oublie pas que le système décide quand les tâches en arrière-plan s’exécutent. Il n’y a aucune garantie." },
+            { "speaker": "Ivan", "text_en": "So we should also sync when the app comes back to the foreground.", "text_fr": "Donc on devrait aussi synchroniser quand l’app revient au premier plan." },
+            { "speaker": "Lucía", "text_en": "Exactly. Hook it to the lifecycle: every time the app resumes, check for changes.", "text_fr": "Exactement. Branche-la sur le cycle de vie : chaque fois que l’app reprend, vérifie s’il y a des changements." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « battery drain » ?",
+              "choices": ["Une batterie en charge", "Une app qui consomme trop de batterie", "Un téléphone qui chauffe"],
+              "answer_index": 1,
+              "explanation_fr": "« To drain » veut dire vider (comme on vide un évier) : le battery drain, c’est une app qui vide la batterie trop vite. Le téléphone peut chauffer en même temps, mais ce n’est pas le sens du mot, et une batterie en charge se dit « charging »."
+            },
+            {
+              "prompt_fr": "Que veut dire Ivan avec « when the app comes back to the foreground » ?",
+              "choices": ["Quand l’app est réinstallée", "Quand l’app passe en arrière-plan", "Quand l’utilisateur revient sur l’app et qu’elle s’affiche à nouveau"],
+              "answer_index": 2,
+              "explanation_fr": "Le « foreground » est le premier plan : l’app visible à l’écran. « Comes back to the foreground » veut dire que l’utilisateur la rouvre. C’est le contraire de « background » (arrière-plan), et rien n’est réinstallé."
+            },
+            {
+              "prompt_fr": "Complète : « Remember that the system decides when background tasks ___. »",
+              "choices": ["run", "turn", "roll"],
+              "answer_index": 0,
+              "explanation_fr": "Une tâche « runs » : elle s’exécute, elle tourne. « Turn » est un calque de « tourner » au sens de pivoter, et « roll » veut dire rouler : aucun des deux ne s’emploie pour du code qui s’exécute."
+            },
+            {
+              "prompt_fr": "Ton manager propose de synchroniser toutes les minutes, même en 4G. Quelle réponse est la plus professionnelle ?",
+              "choices": ["No way, it’s a terrible idea.", "That could cause battery drain. Could we sync on Wi-Fi and when the app resumes instead?", "OK, the users will charge their phone."],
+              "answer_index": 1,
+              "explanation_fr": "La deuxième réponse nomme le risque (battery drain) et propose une alternative concrète avec « Could we… instead? », une façon polie de dire non. « No way » est brutal face à un manager, et accepter sans réserve ignore un vrai problème pour les utilisateurs."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Annonce à ton équipe sur Slack que la synchronisation passe en tâche d’arrière-plan : pour éviter de vider la batterie, elle ne tourne qu’en Wi-Fi quand la batterie n’est pas faible ; elle se lance aussi quand l’app revient au premier plan.",
+            "model_answer_en": "Heads-up: the sync now runs as a background task. To avoid battery drain, it only runs on Wi-Fi when the battery isn’t low. It also runs when the app comes back to the foreground.",
+            "model_answer_fr": "Pour info : la synchronisation tourne maintenant en tâche d’arrière-plan. Pour éviter de vider la batterie, elle ne tourne qu’en Wi-Fi quand la batterie n’est pas faible. Elle se lance aussi quand l’app revient au premier plan.",
+            "key_phrases": ["Heads-up", "runs as a background task", "To avoid battery drain", "comes back to the foreground"]
+          }
+        },
+        {
+          "id": "mobile-developer-protect-sensitive-data",
+          "title_fr": "Protéger les données sensibles sur le téléphone",
+          "term_ids": ["secure-storage", "biometric-authentication", "local-storage"],
+          "dialogue": [
+            { "speaker": "Moussa", "text_en": "Priya, in your PR, the access token is saved in local storage with the user settings.", "text_fr": "Priya, dans ta PR, le jeton d’accès est enregistré dans le stockage local avec les réglages de l’utilisateur." },
+            { "speaker": "Priya", "text_en": "Is that a problem? It never leaves the device.", "text_fr": "C’est un problème ? Il ne quitte jamais l’appareil." },
+            { "speaker": "Moussa", "text_en": "Yes, that storage isn’t encrypted. Tokens should go in secure storage: the Keychain on iOS and the Keystore on Android.", "text_fr": "Oui, ce stockage n’est pas chiffré. Les jetons doivent aller dans un stockage sécurisé : le Keychain sur iOS et le Keystore sur Android." },
+            { "speaker": "Priya", "text_en": "Got it, I’ll move it. Product also wants login with Face ID or fingerprint.", "text_fr": "Compris, je le déplace. Le produit veut aussi la connexion avec Face ID ou l’empreinte digitale." },
+            { "speaker": "Moussa", "text_en": "Biometric authentication is a good fit. Just keep a fallback, like the device passcode, for users who can’t use it.", "text_fr": "L’authentification biométrique s’y prête bien. Garde juste une solution de repli, comme le code de l’appareil, pour les utilisateurs qui ne peuvent pas l’utiliser." },
+            { "speaker": "Priya", "text_en": "Makes sense. I’ll also add the Face ID usage description, or iOS won’t allow it.", "text_fr": "Logique. J’ajoute aussi la description d’usage de Face ID, sinon iOS ne l’autorisera pas." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « Ce stockage n’est pas chiffré » ?",
+              "choices": ["That storage isn’t encrypted.", "That storage isn’t ciphered.", "That storage isn’t crypted."],
+              "answer_index": 0,
+              "explanation_fr": "Chiffrer se dit « to encrypt », et chiffré « encrypted ». « Crypted » n’existe pas (calque de « crypté »), et « ciphered » est rare et vieilli : en équipe, tout le monde dit encrypted."
+            },
+            {
+              "prompt_fr": "Pourquoi Moussa demande-t-il une « fallback » ?",
+              "choices": ["Pour remplacer définitivement la biométrie", "Pour accélérer la connexion", "Pour que les utilisateurs sans biométrie puissent quand même se connecter"],
+              "answer_index": 2,
+              "explanation_fr": "Une « fallback » est une solution de repli quand la méthode principale ne marche pas : capteur absent, biométrie désactivée, doigt mouillé. Elle ne remplace pas la biométrie, elle la complète, et elle n’a rien à voir avec la vitesse."
+            },
+            {
+              "prompt_fr": "Complète : « Tokens should go in ___ storage, like the Keychain on iOS. »",
+              "choices": ["safety", "secure", "protected by"],
+              "answer_index": 1,
+              "explanation_fr": "« Secure storage » est le terme consacré pour le Keychain (iOS) ou un stockage chiffré avec le Keystore (Android). « Safety » est un nom qui parle surtout de sécurité physique (safety shoes, chaussures de sécurité), et « protected by storage » ne veut rien dire."
+            },
+            {
+              "prompt_fr": "En revue de code, tu vois un mot de passe enregistré en clair. Quel commentaire écris-tu ?",
+              "choices": ["This is very bad, please learn security.", "Maybe it’s OK, it’s only on the phone.", "Could we move this to secure storage? Plain text isn’t safe if the device is compromised."],
+              "answer_index": 2,
+              "explanation_fr": "Le bon commentaire propose une solution (« Could we move this… ») et donne la raison : en clair (« plain text »), la donnée est lisible si l’appareil est compromis. Le premier commentaire est blessant, et le deuxième laisse passer une vraie faille."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Décris ta pull request : tu as déplacé le jeton d’accès du stockage local vers le stockage sécurisé (Keychain sur iOS, Keystore sur Android), et ajouté la connexion biométrique avec le code de l’appareil comme solution de repli.",
+            "model_answer_en": "This PR moves the access token from local storage to secure storage, using the Keychain on iOS and the Keystore on Android. It also adds biometric login, with the device passcode as a fallback.",
+            "model_answer_fr": "Cette PR déplace le jeton d’accès du stockage local vers le stockage sécurisé, avec le Keychain sur iOS et le Keystore sur Android. Elle ajoute aussi la connexion biométrique, avec le code de l’appareil comme solution de repli.",
+            "key_phrases": ["This PR moves", "to secure storage", "biometric login", "as a fallback"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobile-developer-push-and-permissions",
+      "title_fr": "Envoyer des notifications et demander les autorisations",
+      "title_en": "Send notifications and ask for permissions",
+      "situation_fr": "L’équipe produit veut prévenir les utilisateurs quand leur commande est expédiée. Tu mets en place les notifications push, tu demandes l’autorisation au bon moment et tu ouvres le bon écran quand on touche la notification.",
+      "guide": {
+        "intro_fr": "Une « push notification » est envoyée par un serveur, même quand l’app est fermée. Pour cela, chaque appareil reçoit un « push token » que l’app transmet à ton backend ; les services d’Apple (APNs) et de Google (Firebase Cloud Messaging) se chargent ensuite de livrer le message. Mais l’utilisateur doit d’abord donner sa « permission » : sur iOS depuis toujours, et sur Android depuis la version 13. On parle de « runtime permission » quand l’app la demande pendant son utilisation, et le moment compte : demander au premier lancement fait souvent dire non. Enfin, toucher la notification doit ouvrir le bon écran grâce à un « deep link ». Les verbes clés : to grant, to deny, to prompt, to register, to open.",
+        "key_phrases": [
+          { "en": "The app registers for push notifications at launch.", "fr": "L’app s’enregistre pour les notifications push au lancement." },
+          { "en": "We send the push token to the backend.", "fr": "On envoie le jeton de notification au backend." },
+          { "en": "The user denied the permission.", "fr": "L’utilisateur a refusé l’autorisation." },
+          { "en": "Let’s ask for permission at the right moment.", "fr": "Demandons l’autorisation au bon moment." },
+          { "en": "Tapping the notification opens the order screen.", "fr": "Toucher la notification ouvre l’écran de la commande." },
+          { "en": "The deep link doesn’t work when the app is closed.", "fr": "Le lien profond ne marche pas quand l’app est fermée." }
+        ],
+        "tip_fr": "Sur Android, on parle de « permissions » ; Apple écrit souvent « authorization » dans ses API (requestAuthorization), mais à l’oral « permission » est compris partout. Retiens surtout le couple de verbes « to grant » (accorder) et « to deny » (refuser) : c’est ce qu’on dit en équipe, plutôt que « accept » et « refuse »."
+      },
+      "lessons": [
+        {
+          "id": "mobile-developer-set-up-push-notifications",
+          "title_fr": "Mettre en place les notifications push",
+          "term_ids": ["push-notification", "push-token", "sdk", "background-task"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "Kenji, I’m building the backend for order notifications. What do you need from me?", "text_fr": "Kenji, je construis le backend des notifications de commande. De quoi as-tu besoin de ma part ?" },
+            { "speaker": "Kenji", "text_en": "An endpoint to save the push token. The app gets it from the Firebase SDK and sends it after login.", "text_fr": "Un endpoint pour enregistrer le jeton de notification. L’app l’obtient avec le SDK Firebase et l’envoie après la connexion." },
+            { "speaker": "Sarah", "text_en": "OK. Is the token always the same for a device?", "text_fr": "D’accord. Le jeton est toujours le même pour un appareil ?" },
+            { "speaker": "Kenji", "text_en": "No, it can change, for example after a reinstall. So we send it again every time it’s refreshed.", "text_fr": "Non, il peut changer, par exemple après une réinstallation. Donc on le renvoie chaque fois qu’il est renouvelé." },
+            { "speaker": "Sarah", "text_en": "Got it. And can a push notification update data without showing anything?", "text_fr": "Compris. Et une notification push peut mettre à jour des données sans rien afficher ?" },
+            { "speaker": "Kenji", "text_en": "Yes, a silent push can wake the app for a short background task, but the system may delay it. Don’t rely on it for anything urgent.", "text_fr": "Oui, une notification silencieuse peut réveiller l’app pour une courte tâche en arrière-plan, mais le système peut la retarder. Ne compte pas dessus pour quoi que ce soit d’urgent." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que demande Kenji à Sarah ?",
+              "choices": ["Un SDK pour envoyer les notifications", "Un endpoint pour enregistrer le jeton de chaque appareil", "Une notification de test"],
+              "answer_index": 1,
+              "explanation_fr": "Kenji a besoin d’« an endpoint to save the push token » : une route d’API où l’app envoie le jeton, pour que le backend sache à quel appareil écrire. Le SDK, c’est l’app qui l’utilise côté mobile, et il ne parle pas de test."
+            },
+            {
+              "prompt_fr": "Comment dire « On le renvoie chaque fois qu’il est renouvelé » ?",
+              "choices": ["We resend it each time it’s renewed of.", "We send it back at each time it refreshes.", "We send it again every time it’s refreshed."],
+              "answer_index": 2,
+              "explanation_fr": "« Send it again » (le renvoyer) et « every time » (chaque fois, sans « at ») sont les tournures naturelles ; pour un jeton, on dit « refreshed ». « Send it back » veut dire le retourner à l’expéditeur, et « renewed of » ajoute une préposition qui n’a rien à faire là."
+            },
+            {
+              "prompt_fr": "Complète : « Don’t ___ on it for anything urgent. »",
+              "choices": ["rely", "trust", "base"],
+              "answer_index": 0,
+              "explanation_fr": "« To rely on » (compter sur, se fier à) est le verbe exact avec « on ». « Trust » s’emploie sans préposition (don’t trust it), et « base on » demande un complément (base a decision on something). On peut aussi dire « don’t count on it »."
+            },
+            {
+              "prompt_fr": "Sarah demande si une notification push arrive toujours immédiatement. Que réponds-tu ?",
+              "choices": ["Yes, push notifications are always instant.", "Usually, but delivery isn’t guaranteed, so the app should also sync when it opens.", "No, they arrive only when the app is open."],
+              "answer_index": 1,
+              "explanation_fr": "La livraison d’une notification est rapide en général, mais jamais garantie (téléphone éteint, mode économie d’énergie) : d’où l’idée de synchroniser aussi à l’ouverture. « Always instant » est faux, et une push arrive justement quand l’app est fermée."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris à Sarah, développeuse backend, ce dont l’app a besoin : un endpoint pour enregistrer le jeton de notification juste après la connexion, et la possibilité de le mettre à jour, car il peut changer.",
+            "model_answer_en": "Hi Sarah, could you add an endpoint to save the push token? The app sends it right after login. The token can change, so we need to update it every time it’s refreshed.",
+            "model_answer_fr": "Salut Sarah, pourrais-tu ajouter un endpoint pour enregistrer le jeton de notification ? L’app l’envoie juste après la connexion. Le jeton peut changer, donc il faut le mettre à jour chaque fois qu’il est renouvelé.",
+            "key_phrases": ["an endpoint to save the push token", "right after login", "The token can change", "every time it’s refreshed"]
+          }
+        },
+        {
+          "id": "mobile-developer-ask-for-permission",
+          "title_fr": "Demander une autorisation au bon moment",
+          "term_ids": ["permission", "runtime-permission", "onboarding", "api-level"],
+          "dialogue": [
+            { "speaker": "Daniel", "text_en": "Aïcha, a lot of new users don’t allow notifications. Any idea why?", "text_fr": "Aïcha, beaucoup de nouveaux utilisateurs n’autorisent pas les notifications. Tu as une idée de la raison ?" },
+            { "speaker": "Aïcha", "text_en": "We ask for the permission on the very first screen, before they understand the app.", "text_fr": "On demande l’autorisation dès le tout premier écran, avant qu’ils comprennent l’app." },
+            { "speaker": "Daniel", "text_en": "So we should move it out of the onboarding?", "text_fr": "Donc on devrait la sortir du parcours d’accueil ?" },
+            { "speaker": "Aïcha", "text_en": "Yes. Let’s ask after their first order, with a short screen that explains the benefit: tracking their delivery.", "text_fr": "Oui. Demandons-la après leur première commande, avec un court écran qui explique l’intérêt : suivre leur livraison." },
+            { "speaker": "Daniel", "text_en": "Makes sense. Does this affect Android too?", "text_fr": "Logique. Ça concerne aussi Android ?" },
+            { "speaker": "Aïcha", "text_en": "Yes. Since API level 33, so Android 13, notifications are a runtime permission too. And if the user denies it twice, Android stops showing the prompt.", "text_fr": "Oui. Depuis le niveau d’API 33, c’est-à-dire Android 13, les notifications sont aussi une autorisation à l’exécution. Et si l’utilisateur refuse deux fois, Android n’affiche plus la demande." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « if the user denies it twice » ?",
+              "choices": ["Si l’utilisateur refuse deux fois", "Si l’utilisateur l’ignore deux fois", "Si l’utilisateur la supprime deux fois"],
+              "answer_index": 0,
+              "explanation_fr": "« To deny a permission » veut dire la refuser ; son contraire est « to grant » (accorder). Ignorer se dirait « dismiss » ou « ignore », et « deny » n’a rien à voir avec supprimer (« delete »)."
+            },
+            {
+              "prompt_fr": "Comment dire « Demandons-la après leur première commande » ?",
+              "choices": ["Let’s demand it after their first order.", "Let’s ask for it after their first order.", "Let’s ask it after their first command."],
+              "answer_index": 1,
+              "explanation_fr": "« To ask for something » : demander quelque chose, avec « for ». « Demand » est un faux ami qui veut dire exiger, beaucoup trop fort. Et une commande client est « an order » : « command » désigne un ordre donné ou une commande de terminal."
+            },
+            {
+              "prompt_fr": "Complète : « Since API ___ 33, notifications are a runtime permission too. »",
+              "choices": ["version", "number", "level"],
+              "answer_index": 2,
+              "explanation_fr": "Sur Android, chaque version de la plateforme a un « API level » : 33 correspond à Android 13. On dit « Android 13 » ou « API level 33 », mais pas « API version 33 », et « API number » n’est le terme ni de la doc ni de Gradle (minSdk, targetSdk)."
+            },
+            {
+              "prompt_fr": "Ton PM veut demander toutes les autorisations (caméra, position, notifications) au premier lancement. Que réponds-tu ?",
+              "choices": ["I’d rather ask for each permission when the user needs the feature, so they understand why.", "OK, users always say yes on the first screen.", "We don’t need permissions on mobile."],
+              "answer_index": 0,
+              "explanation_fr": "Demander chaque autorisation au moment où la fonctionnalité sert (« when the user needs the feature ») est la pratique recommandée par Apple et Google : l’utilisateur comprend pourquoi. Au premier lancement, beaucoup refusent, et les autorisations sont bien obligatoires pour la caméra ou la position."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion, propose de sortir la demande d’autorisation des notifications du parcours d’accueil : tu veux la demander après la première commande, avec un court écran qui explique l’intérêt (suivre la livraison).",
+            "model_answer_en": "I suggest we move the notification permission out of the onboarding. Let’s ask for it after the first order, with a short screen that explains the benefit: tracking the delivery. Users will understand why we ask.",
+            "model_answer_fr": "Je propose qu’on sorte l’autorisation des notifications du parcours d’accueil. Demandons-la après la première commande, avec un court écran qui explique l’intérêt : suivre la livraison. Les utilisateurs comprendront pourquoi on la demande.",
+            "key_phrases": ["I suggest we move", "out of the onboarding", "Let’s ask for it after the first order", "explains the benefit"]
+          }
+        },
+        {
+          "id": "mobile-developer-open-the-right-screen",
+          "title_fr": "Ouvrir le bon écran depuis une notification ou un lien",
+          "term_ids": ["deep-link", "universal-link", "push-notification", "navigation-stack"],
+          "dialogue": [
+            { "speaker": "Tomasz", "text_en": "Lucía, when I tap the shipping notification, the app opens on the home screen, not on the order.", "text_fr": "Lucía, quand je touche la notification d’expédition, l’app s’ouvre sur l’accueil, pas sur la commande." },
+            { "speaker": "Lucía", "text_en": "Was the app closed? The deep link works when it’s running in the background.", "text_fr": "L’app était fermée ? Le lien profond marche quand elle tourne en arrière-plan." },
+            { "speaker": "Tomasz", "text_en": "Yes, completely closed. And then the back button quits the app.", "text_fr": "Oui, complètement fermée. Et ensuite, le bouton retour quitte l’app." },
+            { "speaker": "Lucía", "text_en": "I see. On a cold start, we must build the navigation stack ourselves: home first, then the order screen on top.", "text_fr": "Je vois. Au démarrage à froid, on doit construire la pile de navigation nous-mêmes : d’abord l’accueil, puis l’écran de la commande par-dessus." },
+            { "speaker": "Tomasz", "text_en": "And the links in our emails? On iOS, they open Safari instead of the app.", "text_fr": "Et les liens dans nos e-mails ? Sur iOS, ils ouvrent Safari au lieu de l’app." },
+            { "speaker": "Lucía", "text_en": "Those should be universal links. I’ll check the apple-app-site-association file on our domain.", "text_fr": "Ceux-là devraient être des liens universels. Je vais vérifier le fichier apple-app-site-association sur notre domaine." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « on a cold start » ?",
+              "choices": ["Quand le téléphone a froid", "Quand l’app revient de l’arrière-plan", "Quand l’app démarre alors qu’elle était complètement fermée"],
+              "answer_index": 2,
+              "explanation_fr": "Un « cold start » (démarrage à froid) se produit quand l’app n’était pas en mémoire : tout se lance de zéro. Quand elle revient simplement de l’arrière-plan, on parle plutôt de « hot start » ou de « resume ». Rien à voir avec la température du téléphone !"
+            },
+            {
+              "prompt_fr": "Comment dire « Les liens ouvrent Safari au lieu de l’app » ?",
+              "choices": ["The links open Safari instead of the app.", "The links open Safari instead the app.", "The links open Safari at the place of the app."],
+              "answer_index": 0,
+              "explanation_fr": "« Instead of » (au lieu de) demande toujours « of » devant un nom. « Instead the app » oublie ce « of », et « at the place of » est un calque de « à la place de » qui ne se dit pas."
+            },
+            {
+              "prompt_fr": "Complète : « We must build the navigation ___ ourselves: home first, then the order screen on top. »",
+              "choices": ["pile", "stack", "heap"],
+              "answer_index": 1,
+              "explanation_fr": "La pile de navigation se dit « navigation stack » : les écrans s’empilent et le retour dépile. « Pile » existe en anglais (un tas), mais ce n’est pas le terme technique, et « heap » désigne une zone de mémoire, une tout autre notion."
+            },
+            {
+              "prompt_fr": "Le testeur signale que le bouton retour quitte l’app après l’ouverture d’une notification. Comment résumes-tu le bug dans le ticket ?",
+              "choices": ["Back button is broken.", "The notification is bad on the app.", "On a cold start from a notification, the back button quits the app instead of going home."],
+              "answer_index": 2,
+              "explanation_fr": "Un bon titre de bug dit quand (« on a cold start from a notification »), quoi (« the back button quits the app ») et ce qui est attendu (« instead of going home »). « Is broken » est trop vague, et la deuxième phrase ne veut rien dire en anglais."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Décris ta correction dans la pull request : au démarrage à froid depuis une notification, l’app construit maintenant la pile de navigation (accueil, puis commande), donc le bouton retour ramène à l’accueil au lieu de quitter l’app. Tu as aussi corrigé les liens universels des e-mails.",
+            "model_answer_en": "This PR fixes deep links on a cold start. The app now builds the navigation stack with the home screen first, so the back button goes home instead of quitting the app. It also fixes the universal links in our emails.",
+            "model_answer_fr": "Cette PR corrige les liens profonds au démarrage à froid. L’app construit maintenant la pile de navigation avec l’écran d’accueil en premier, donc le bouton retour ramène à l’accueil au lieu de quitter l’app. Elle corrige aussi les liens universels de nos e-mails.",
+            "key_phrases": ["fixes deep links on a cold start", "builds the navigation stack", "instead of quitting the app", "universal links"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobile-developer-crashes-and-performance",
+      "title_fr": "Analyser les crashs et la performance",
+      "title_en": "Analyze crashes and performance",
+      "situation_fr": "Les avis sur le store parlent d’une app qui plante et qui rame. Tu dois lire les rapports de crash, trouver la cause et expliquer tes corrections à l’équipe.",
+      "guide": {
+        "intro_fr": "Sur mobile, tu ne vois pas les plantages de tes utilisateurs : un outil de « crash reporting » (comme Firebase Crashlytics ou Sentry) les remonte avec la stack trace, le modèle de téléphone et la version du système. L’indicateur suivi par toute l’équipe est le « crash-free rate », la part de sessions sans plantage. La performance compte autant : une app qui « stutters » (saccade) a du « jank », souvent parce qu’un travail lourd bloque le « main thread », celui qui dessine l’interface. Pour une animation fluide, chaque image doit être dessinée en 16 millisecondes environ, soit 60 images par seconde. Enfin, on surveille le « startup time » et la taille de l’app. Les verbes clés : to spike, to drop, to freeze, to profile.",
+        "key_phrases": [
+          { "en": "Crashes spiked after the last release.", "fr": "Les crashs ont bondi après la dernière version." },
+          { "en": "It only happens on older Android devices.", "fr": "Ça n’arrive que sur les anciens appareils Android." },
+          { "en": "Our crash-free rate dropped below our target.", "fr": "Notre taux de sessions sans crash est passé sous notre objectif." },
+          { "en": "The list stutters when you scroll fast.", "fr": "La liste saccade quand on fait défiler vite." },
+          { "en": "We’re blocking the main thread.", "fr": "On bloque le thread principal." },
+          { "en": "I profiled the app on a low-end phone.", "fr": "J’ai profilé l’app sur un téléphone d’entrée de gamme." }
+        ],
+        "tip_fr": "Faux ami : « performant » ne s’emploie presque pas en anglais pour une app. Dis « the app is fast », « it performs well » ou « it’s responsive ». Et retiens « low-end » et « high-end » pour les téléphones d’entrée et de haut de gamme."
+      },
+      "lessons": [
+        {
+          "id": "mobile-developer-read-crash-reports",
+          "title_fr": "Lire les rapports de crash",
+          "term_ids": ["crash", "crash-reporting", "crash-free-rate", "fragmentation"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "Ivan, did you see the crash reporting dashboard this morning? Crashes spiked after yesterday’s release.", "text_fr": "Ivan, tu as vu le tableau de bord des crashs ce matin ? Les crashs ont bondi après la version d’hier." },
+            { "speaker": "Ivan", "text_en": "Yes, our crash-free rate dropped below our target. Most of it is one crash on the checkout screen.", "text_fr": "Oui, notre taux de sessions sans crash est passé sous notre objectif. L’essentiel vient d’un seul crash sur l’écran de paiement." },
+            { "speaker": "Priya", "text_en": "Can you reproduce it?", "text_fr": "Tu arrives à le reproduire ?" },
+            { "speaker": "Ivan", "text_en": "Not on my phone. It only happens on older Android devices, mostly on Android 9 and 10.", "text_fr": "Pas sur mon téléphone. Ça n’arrive que sur des appareils Android plus anciens, surtout sous Android 9 et 10." },
+            { "speaker": "Priya", "text_en": "Classic fragmentation. Check the stack trace: maybe we call an API that doesn’t exist on those versions.", "text_fr": "La fragmentation classique. Regarde la stack trace : on appelle peut-être une API qui n’existe pas sur ces versions." },
+            { "speaker": "Ivan", "text_en": "Good idea. I’ll give an update at the stand-up.", "text_fr": "Bonne idée. Je ferai un point au stand-up." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « Crashes spiked after yesterday’s release » ?",
+              "choices": ["Les crashs ont disparu après la version d’hier", "Les crashs ont fortement augmenté après la version d’hier", "Les crashs ont été corrigés dans la version d’hier"],
+              "answer_index": 1,
+              "explanation_fr": "« To spike » veut dire faire un pic, augmenter brutalement, comme une pointe sur un graphique. C’est le contraire d’une disparition, et rien ne dit que les crashs ont été corrigés : c’est justement la nouvelle version qui pose problème."
+            },
+            {
+              "prompt_fr": "Que mesure le « crash-free rate » ?",
+              "choices": ["La part des sessions ou des utilisateurs qui n’ont subi aucun crash", "Le nombre total de crashs par jour", "Le temps passé à corriger les crashs"],
+              "answer_index": 0,
+              "explanation_fr": "« Crash-free » veut dire sans crash (comme « sugar-free », sans sucre) : c’est un pourcentage de sessions ou d’utilisateurs épargnés, et plus il est haut, mieux c’est. Le nombre de crashs par jour est un autre indicateur, et le temps de correction n’a rien à voir."
+            },
+            {
+              "prompt_fr": "Complète : « It only ___ on older Android devices. »",
+              "choices": ["arrives", "passes", "happens"],
+              "answer_index": 2,
+              "explanation_fr": "Pour un bug, on dit « it happens » (ça arrive, ça se produit). « Arrives » est un faux ami : en anglais, il veut dire arriver à un endroit, pas se produire. « Passes » voudrait dire passer ou réussir un test."
+            },
+            {
+              "prompt_fr": "Au stand-up, tu dois résumer la situation en une phrase. Laquelle choisis-tu ?",
+              "choices": ["There is a problem with the crashes, I look.", "A checkout crash is lowering our crash-free rate; it only affects older Android devices, and I’m investigating.", "The app is crashing everybody since yesterday."],
+              "answer_index": 1,
+              "explanation_fr": "La deuxième phrase dit quoi (un crash au paiement), l’impact (le taux de sessions sans crash baisse), qui est touché et ce que tu fais (« I’m investigating », au présent continu). « I look » est au mauvais temps, et « crashing everybody » est à la fois incorrect et exagéré."
+            }
+          ],
+          "production": {
+            "channel": "standup",
+            "prompt_fr": "Donne ton point au stand-up : depuis la version d’hier, un crash sur l’écran de paiement fait baisser le taux de sessions sans crash ; il ne touche que les anciens appareils Android ; tu penses qu’une API manque sur ces versions et tu enquêtes.",
+            "model_answer_en": "Since yesterday’s release, a crash on the checkout screen is lowering our crash-free rate. It only happens on older Android devices. I think we’re calling an API that doesn’t exist on those versions, and I’m investigating.",
+            "model_answer_fr": "Depuis la version d’hier, un crash sur l’écran de paiement fait baisser notre taux de sessions sans crash. Ça n’arrive que sur les anciens appareils Android. Je pense qu’on appelle une API qui n’existe pas sur ces versions, et j’enquête.",
+            "key_phrases": ["Since yesterday’s release", "lowering our crash-free rate", "It only happens on older Android devices", "I’m investigating"]
+          }
+        },
+        {
+          "id": "mobile-developer-track-a-memory-leak",
+          "title_fr": "Traquer une fuite de mémoire",
+          "term_ids": ["memory-leak", "garbage-collection", "view-model", "crash"],
+          "dialogue": [
+            { "speaker": "Kenji", "text_en": "Moussa, we get OutOfMemory crashes after people use the photo gallery for a while.", "text_fr": "Moussa, on a des crashs OutOfMemory quand les gens utilisent la galerie photo un moment." },
+            { "speaker": "Moussa", "text_en": "Sounds like a memory leak. Did you run LeakCanary?", "text_fr": "Ça ressemble à une fuite de mémoire. Tu as lancé LeakCanary ?" },
+            { "speaker": "Kenji", "text_en": "Yes. It says the gallery activity is still in memory after the user leaves the screen.", "text_fr": "Oui. Il indique que l’activité de la galerie est encore en mémoire après que l’utilisateur a quitté l’écran." },
+            { "speaker": "Moussa", "text_en": "Then something still holds a reference to it, so garbage collection can’t free it.", "text_fr": "Alors quelque chose garde encore une référence vers elle, et le ramasse-miettes ne peut pas la libérer." },
+            { "speaker": "Kenji", "text_en": "Found it: the view model keeps a reference to the activity to show a toast.", "text_fr": "Trouvé : le view model garde une référence vers l’activité pour afficher un toast." },
+            { "speaker": "Moussa", "text_en": "That’s the leak. A view model should never hold a reference to a view or an activity. Expose an event instead.", "text_fr": "Voilà la fuite. Un view model ne doit jamais garder de référence vers une vue ou une activité. Expose plutôt un événement." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « something still holds a reference to it » ?",
+              "choices": ["Quelque chose la cite encore dans la documentation", "Quelque chose la met en pause", "Un autre objet pointe encore vers elle, donc elle reste en mémoire"],
+              "answer_index": 2,
+              "explanation_fr": "En programmation, « to hold a reference » veut dire garder un lien vers un objet. Tant que ce lien existe, le ramasse-miettes considère l’objet comme utilisé et ne le libère pas. « Reference » n’a ici rien à voir avec une citation, et rien n’est mis en pause."
+            },
+            {
+              "prompt_fr": "Comment dire « Ça ressemble à une fuite de mémoire » ?",
+              "choices": ["Sounds like a memory leak.", "It resembles to a memory leak.", "It seems a memory flight."],
+              "answer_index": 0,
+              "explanation_fr": "« Sounds like… » (ou « Looks like… ») est la façon naturelle de proposer un diagnostic à l’oral. « Resemble » s’emploie sans « to » et sert surtout pour une ressemblance physique ; « flight » veut dire vol en avion : la fuite, c’est « leak »."
+            },
+            {
+              "prompt_fr": "Complète : « Garbage collection can’t ___ it. »",
+              "choices": ["liberate", "free", "release from"],
+              "answer_index": 1,
+              "explanation_fr": "On dit « free memory » ou « free an object » : libérer la mémoire. « Liberate » existe, mais s’emploie pour des peuples ou des prisonniers, jamais pour de la mémoire. « Release » se dit parfois, mais sans « from » dans cette phrase."
+            },
+            {
+              "prompt_fr": "En revue de code, tu vois un view model qui garde une référence vers l’activité. Quel commentaire écris-tu ?",
+              "choices": ["Please remove the activity, it’s useless.", "The view model is too big.", "This could leak the activity after rotation. Could we expose an event instead?"],
+              "answer_index": 2,
+              "explanation_fr": "Le bon commentaire nomme le risque précis (« leak the activity after rotation ») et propose une alternative polie. Dire que l’activité est inutile est faux (c’est la référence qui pose problème), et « too big » passe à côté du vrai sujet."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Décris ta pull request : tu as corrigé une fuite de mémoire dans la galerie photo ; le view model gardait une référence vers l’activité, ce qui provoquait des crashs OutOfMemory ; il expose maintenant un événement, et LeakCanary ne signale plus de fuite.",
+            "model_answer_en": "This PR fixes a memory leak in the photo gallery. The view model kept a reference to the activity, which caused OutOfMemory crashes. It now exposes an event instead, and LeakCanary reports no more leaks.",
+            "model_answer_fr": "Cette PR corrige une fuite de mémoire dans la galerie photo. Le view model gardait une référence vers l’activité, ce qui provoquait des crashs OutOfMemory. Il expose maintenant un événement à la place, et LeakCanary ne signale plus de fuite.",
+            "key_phrases": ["fixes a memory leak", "kept a reference to the activity", "which caused", "exposes an event instead"]
+          }
+        },
+        {
+          "id": "mobile-developer-smooth-scrolling",
+          "title_fr": "Rendre le défilement fluide",
+          "term_ids": ["jank", "frame-rate", "main-thread", "thread", "image-caching"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "Tomasz, the product list stutters when you scroll fast, especially on low-end phones.", "text_fr": "Tomasz, la liste des produits saccade quand on fait défiler vite, surtout sur les téléphones d’entrée de gamme." },
+            { "speaker": "Tomasz", "text_en": "I saw that. I profiled it: the frame rate drops to around 30 frames per second.", "text_fr": "Je l’ai vu. Je l’ai profilée : la fréquence d’images tombe à environ 30 images par seconde." },
+            { "speaker": "Sarah", "text_en": "That’s visible jank. What’s slowing it down?", "text_fr": "Ce sont des saccades visibles. Qu’est-ce qui la ralentit ?" },
+            { "speaker": "Tomasz", "text_en": "We decode the full-size images on the main thread, so each frame takes longer than 16 milliseconds.", "text_fr": "On décode les images en taille réelle sur le thread principal, donc chaque image met plus de 16 millisecondes à être dessinée." },
+            { "speaker": "Sarah", "text_en": "So we move the decoding to a background thread?", "text_fr": "Donc on déplace le décodage sur un thread en arrière-plan ?" },
+            { "speaker": "Tomasz", "text_en": "Yes, and we load thumbnails at the right size, with image caching. Our image library can do both.", "text_fr": "Oui, et on charge des miniatures à la bonne taille, avec une mise en cache des images. Notre bibliothèque d’images sait faire les deux." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « the frame rate drops to around 30 frames per second » ?",
+              "choices": ["L’app affiche environ deux fois moins d’images par seconde que les 60 attendues", "L’app plante 30 fois par seconde", "L’écran s’éteint au bout de 30 secondes"],
+              "answer_index": 0,
+              "explanation_fr": "Le « frame rate » est la fréquence d’images : à 60 images par seconde, le défilement est fluide ; à 30, l’œil voit des saccades. « Drops to » veut dire tomber à. Il ne s’agit ni de plantages ni d’un écran qui s’éteint."
+            },
+            {
+              "prompt_fr": "Comment dire « La liste saccade quand on fait défiler vite » ?",
+              "choices": ["The list jumps when we scroll quick.", "The list stutters when you scroll fast.", "The list is jerking when one scrolls rapid."],
+              "answer_index": 1,
+              "explanation_fr": "« To stutter » (bégayer, saccader) est le verbe naturel pour un défilement qui accroche, et l’anglais utilise « you » pour le « on » général. « Quick » et « rapid » sont des adjectifs : il faut l’adverbe « fast » (ou « quickly »)."
+            },
+            {
+              "prompt_fr": "Complète : « We decode the images on the main ___, so each frame takes too long. »",
+              "choices": ["wire", "line", "thread"],
+              "answer_index": 2,
+              "explanation_fr": "Le « main thread » (thread principal, aussi appelé UI thread) dessine l’interface : s’il est occupé, les images arrivent en retard. « Thread » veut aussi dire fil à coudre, d’où la tentation de « wire » (fil électrique) ou « line » : ce ne sont pas les termes techniques."
+            },
+            {
+              "prompt_fr": "Ton manager demande pourquoi la liste rame. Quelle explication est claire pour quelqu’un de non technique ?",
+              "choices": ["We do heavy image work at the same time as drawing the screen. We’re moving it to the background.", "The main thread has a jank on the frames.", "The phone is too old, it’s not our problem."],
+              "answer_index": 0,
+              "explanation_fr": "La première réponse explique la cause sans jargon et dit ce que vous faites (« We’re moving it »). La deuxième aligne des mots techniques de travers (on ne dit pas « has a jank on »), et rejeter la faute sur le téléphone ignore les utilisateurs d’appareils d’entrée de gamme."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris à l’équipe sur Slack : la liste des produits saccadait parce que les images étaient décodées sur le thread principal ; tu as déplacé le décodage sur un thread en arrière-plan et ajouté la mise en cache des images ; le défilement est revenu à 60 images par seconde sur votre téléphone de test d’entrée de gamme.",
+            "model_answer_en": "The product list was janky because we decoded images on the main thread. I moved the decoding to a background thread and added image caching. Scrolling is back to 60 frames per second on our low-end test phone.",
+            "model_answer_fr": "La liste des produits saccadait parce qu’on décodait les images sur le thread principal. J’ai déplacé le décodage sur un thread en arrière-plan et ajouté la mise en cache des images. Le défilement est revenu à 60 images par seconde sur notre téléphone de test d’entrée de gamme.",
+            "key_phrases": ["on the main thread", "to a background thread", "added image caching", "back to 60 frames per second"]
+          }
+        },
+        {
+          "id": "mobile-developer-startup-and-app-size",
+          "title_fr": "Réduire le temps de démarrage et la taille de l’app",
+          "term_ids": ["startup-time", "app-size", "code-shrinking", "splash-screen", "app-bundle"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "Nadia, users say the app takes ages to open. What’s our startup time?", "text_fr": "Nadia, les utilisateurs disent que l’app met une éternité à s’ouvrir. Quel est notre temps de démarrage ?" },
+            { "speaker": "Nadia", "text_en": "About four seconds on a cold start, on a mid-range phone. The splash screen hides it, but people notice.", "text_fr": "Environ quatre secondes au démarrage à froid, sur un téléphone milieu de gamme. L’écran de démarrage le cache, mais les gens le remarquent." },
+            { "speaker": "Aïcha", "text_en": "What happens during those four seconds?", "text_fr": "Que se passe-t-il pendant ces quatre secondes ?" },
+            { "speaker": "Nadia", "text_en": "We initialize every SDK at launch. Most of them can wait until the first screen is visible.", "text_fr": "On initialise tous les SDK au lancement. La plupart peuvent attendre que le premier écran soit affiché." },
+            { "speaker": "Aïcha", "text_en": "Good. And the app size? The download is getting big.", "text_fr": "Bien. Et la taille de l’app ? Le téléchargement devient lourd." },
+            { "speaker": "Nadia", "text_en": "We still upload an APK. If we switch to an app bundle and enable code shrinking with R8, users will download less.", "text_fr": "On envoie encore un APK. Si on passe à un app bundle et qu’on active la réduction du code avec R8, les utilisateurs téléchargeront moins." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « the app takes ages to open » ?",
+              "choices": ["L’app s’ouvre selon l’âge de l’utilisateur", "L’app met très longtemps à s’ouvrir", "L’app ne s’ouvre plus depuis des années"],
+              "answer_index": 1,
+              "explanation_fr": "« It takes ages » est une expression familière pour « ça prend une éternité ». Rien à voir avec l’âge des utilisateurs, et l’app s’ouvre bien : elle est juste lente."
+            },
+            {
+              "prompt_fr": "Pourquoi Nadia dit-elle que l’écran de démarrage « hides it » ?",
+              "choices": ["Parce que l’écran de démarrage accélère l’app", "Parce que l’écran de démarrage cache un bug d’affichage", "Parce qu’il occupe l’utilisateur pendant l’attente, mais l’attente reste réelle"],
+              "answer_index": 2,
+              "explanation_fr": "Le splash screen s’affiche pendant le chargement : il masque l’attente sans la réduire, d’où « but people notice ». Il n’accélère rien, et ce qu’il cache n’est pas un bug d’affichage mais un temps de démarrage trop long."
+            },
+            {
+              "prompt_fr": "Complète : « Most SDKs can ___ until the first screen is visible. »",
+              "choices": ["wait", "attend", "expect"],
+              "answer_index": 0,
+              "explanation_fr": "« Wait until » veut dire attendre jusqu’à ce que. « Attend » est un faux ami : il veut dire assister à (attend a meeting). « Expect » veut dire s’attendre à ou prévoir, pas patienter."
+            },
+            {
+              "prompt_fr": "Tu présentes ton plan pour réduire la taille de l’app. Quelle phrase est la plus précise ?",
+              "choices": ["We will make the app more little.", "We’ll switch to an app bundle and enable code shrinking, so users download less.", "The app will be lighter because we delete things."],
+              "answer_index": 1,
+              "explanation_fr": "La deuxième phrase donne les deux actions concrètes et leur effet (« so users download less »). « More little » n’existe pas (on dit « smaller »), et « delete things » est trop vague pour un plan technique."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le résumé d’un rapport de performance : le démarrage à froid prend environ quatre secondes, car tous les SDK s’initialisent au lancement ; tu recommandes d’en retarder la plupart jusqu’à l’affichage du premier écran, puis de passer à un app bundle avec réduction du code pour diminuer la taille de l’app.",
+            "model_answer_en": "Cold startup time is about four seconds, because we initialize every SDK at launch. We recommend delaying most of them until the first screen is visible. To reduce the app size, we also plan to switch to an app bundle and enable code shrinking.",
+            "model_answer_fr": "Le temps de démarrage à froid est d’environ quatre secondes, car on initialise tous les SDK au lancement. Nous recommandons d’en retarder la plupart jusqu’à l’affichage du premier écran. Pour réduire la taille de l’app, nous prévoyons aussi de passer à un app bundle et d’activer la réduction du code.",
+            "key_phrases": ["Cold startup time is about four seconds", "We recommend delaying", "To reduce the app size", "enable code shrinking"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobile-developer-store-release",
+      "title_fr": "Publier une nouvelle version sur les stores",
+      "title_en": "Ship a new version to the stores",
+      "situation_fr": "La version 3.2 est prête. Tu dois préparer une build signée, la faire tester, passer l’examen d’Apple et de Google, puis la déployer progressivement.",
+      "guide": {
+        "intro_fr": "Sur mobile, on ne déploie pas quand on veut : chaque version passe par les stores. Tu prépares d’abord une « release build », signée (« code signing ») pour prouver qu’elle vient bien de ton équipe. Avant le public, tu la fais tester : avec TestFlight sur iOS, avec l’« internal testing track » de Google Play sur Android. Puis vient l’« app review » : Apple et Google vérifient l’app et peuvent la « reject » (refuser) en citant une règle. Une fois l’app validée, on lance un « staged rollout » : la mise à jour part d’abord vers un petit pourcentage d’utilisateurs, et on surveille les crashs avant d’aller plus loin. Les verbes clés : to ship, to submit, to reject, to roll out, to halt.",
+        "key_phrases": [
+          { "en": "The release build is ready for testing.", "fr": "La build de release est prête à être testée." },
+          { "en": "I’ve uploaded the build to TestFlight.", "fr": "J’ai envoyé la build sur TestFlight." },
+          { "en": "We submitted the app for review yesterday.", "fr": "Nous avons soumis l’app à l’examen hier." },
+          { "en": "Apple rejected the update.", "fr": "Apple a refusé la mise à jour." },
+          { "en": "Let’s roll it out to 10% of users first.", "fr": "Déployons-la d’abord auprès de 10 % des utilisateurs." },
+          { "en": "We’ve halted the rollout.", "fr": "Nous avons interrompu le déploiement." }
+        ],
+        "tip_fr": "« To release » veut dire publier, mettre à disposition : une « release », c’est une version publiée. Et ne confonds pas « version » (le numéro visible, comme 3.2) et « build » (chaque compilation envoyée, avec son propre numéro) : une même version peut avoir plusieurs builds."
+      },
+      "lessons": [
+        {
+          "id": "mobile-developer-prepare-a-release-build",
+          "title_fr": "Préparer la bonne build",
+          "term_ids": ["build-variant", "gradle", "debug-build", "code-signing", "apk"],
+          "dialogue": [
+            { "speaker": "Lucía", "text_en": "Moussa, can you send me an APK of the new version? I want to test it on my own phone.", "text_fr": "Moussa, tu peux m’envoyer un APK de la nouvelle version ? Je veux la tester sur mon propre téléphone." },
+            { "speaker": "Moussa", "text_en": "Sure. Do you want the debug build or the staging build?", "text_fr": "Bien sûr. Tu veux la version de débogage ou la build de staging ?" },
+            { "speaker": "Lucía", "text_en": "What’s the difference?", "text_fr": "Quelle est la différence ?" },
+            { "speaker": "Moussa", "text_en": "They’re two build variants in Gradle. The debug build has extra logs and points to the test server. Staging uses the release settings with the staging server.", "text_fr": "Ce sont deux variantes de build dans Gradle. La version de débogage a des logs en plus et pointe vers le serveur de test. La build de staging utilise les réglages de release avec le serveur de staging." },
+            { "speaker": "Lucía", "text_en": "Staging, please. Can I upload that one to Google Play later?", "text_fr": "Staging, s’il te plaît. Je pourrai envoyer celle-là sur Google Play plus tard ?" },
+            { "speaker": "Moussa", "text_en": "No, the store build needs code signing with our upload key, and only the CI has it.", "text_fr": "Non, la build pour le store doit être signée avec notre clé d’envoi, et seule la CI l’a." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que sont « two build variants in Gradle » ?",
+              "choices": ["Deux applications différentes sur le store", "Deux versions de Gradle installées", "Deux façons de compiler la même app, avec des réglages différents"],
+              "answer_index": 2,
+              "explanation_fr": "Une « build variant » est une configuration de compilation d’une même app (debug, staging, release, gratuite ou payante), définie dans Gradle. Ce ne sont pas deux apps différentes publiées, ni deux versions de l’outil Gradle."
+            },
+            {
+              "prompt_fr": "Comment dire « Elle pointe vers le serveur de test » ?",
+              "choices": ["It points to the test server.", "It points on the test server.", "It shows the test server."],
+              "answer_index": 0,
+              "explanation_fr": "« Point to » (pointer vers) est la préposition attendue pour une adresse ou une configuration. « Point on » est un calque de « pointer sur », et « shows » voudrait dire afficher, ce qui change le sens."
+            },
+            {
+              "prompt_fr": "Complète : « The store build needs code ___ with our upload key. »",
+              "choices": ["signature", "signing", "sign"],
+              "answer_index": 1,
+              "explanation_fr": "« Code signing » est le nom de l’action de signer le code (avec -ing). « Signature » désigne le résultat, pas le processus, et « sign » est un verbe ou un panneau : « code sign » ne se dit pas comme nom."
+            },
+            {
+              "prompt_fr": "Une testeuse veut envoyer elle-même ta build de débogage sur Google Play. Que lui réponds-tu ?",
+              "choices": ["Yes, all builds are the same.", "Just rename the file to release.apk.", "The debug build can’t go to the store: the release build is signed by the CI."],
+              "answer_index": 2,
+              "explanation_fr": "Une build de débogage n’est pas faite pour le store : Google Play refuse les builds signées avec une clé de débogage, et c’est la CI qui signe la build de release. Toutes les builds ne se valent pas, et renommer le fichier ne change ni la signature ni les réglages."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Réponds à Lucía sur Slack : tu lui envoies l’APK de staging (réglages de release, serveur de staging), et tu précises que la build pour le store sera signée par la CI, donc qu’elle n’a rien à envoyer.",
+            "model_answer_en": "Here’s the staging APK. It uses the release settings and points to the staging server. The store build will be signed by the CI, so you don’t need to upload anything.",
+            "model_answer_fr": "Voici l’APK de staging. Il utilise les réglages de release et pointe vers le serveur de staging. La build pour le store sera signée par la CI, donc tu n’as rien à envoyer.",
+            "key_phrases": ["Here’s the staging APK", "points to the staging server", "will be signed by the CI"]
+          }
+        },
+        {
+          "id": "mobile-developer-send-to-beta-testers",
+          "title_fr": "Envoyer une version aux bêta-testeurs",
+          "term_ids": ["beta-testing", "testflight", "internal-testing-track", "app-bundle"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "Ivan, when can our beta testers try the new checkout?", "text_fr": "Ivan, quand nos bêta-testeurs pourront-ils essayer le nouveau paiement ?" },
+            { "speaker": "Ivan", "text_en": "Today. I’ve uploaded the app bundle to the internal testing track on Google Play.", "text_fr": "Aujourd’hui. J’ai envoyé l’app bundle sur la piste de test interne de Google Play." },
+            { "speaker": "Priya", "text_en": "And for iPhone users?", "text_fr": "Et pour les utilisateurs d’iPhone ?" },
+            { "speaker": "Ivan", "text_en": "The build is on TestFlight. Internal testers get it right away, but external testers need a quick review from Apple first.", "text_fr": "La build est sur TestFlight. Les testeurs internes l’ont tout de suite, mais pour les testeurs externes, Apple doit d’abord faire un examen rapide." },
+            { "speaker": "Priya", "text_en": "OK. What should testers focus on?", "text_fr": "D’accord. Sur quoi les testeurs doivent-ils se concentrer ?" },
+            { "speaker": "Ivan", "text_en": "The payment flow, on as many devices as possible. That’s the point of beta testing: real phones, real networks.", "text_fr": "Le parcours de paiement, sur le plus d’appareils possible. C’est tout l’intérêt du test bêta : de vrais téléphones, de vrais réseaux." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les testeurs externes doivent-ils attendre sur TestFlight ?",
+              "choices": ["Apple doit d’abord examiner la build", "Ils doivent payer l’app", "La build n’est pas encore compilée"],
+              "answer_index": 0,
+              "explanation_fr": "Sur TestFlight, les testeurs internes (l’équipe) reçoivent la build tout de suite, mais pour les testeurs externes Apple fait d’abord un examen rapide (la « Beta App Review »). La build est déjà compilée, et le test bêta est gratuit pour les testeurs."
+            },
+            {
+              "prompt_fr": "Comment dire « J’ai envoyé l’app bundle sur la piste de test interne » ?",
+              "choices": ["I’ve sent the app bundle on the internal test piste.", "I’ve uploaded the app bundle to the internal testing track.", "I’ve put up the app bundle in the intern testing track."],
+              "answer_index": 1,
+              "explanation_fr": "On « uploads » un fichier « to » une plateforme, et le nom officiel est « internal testing track ». « Piste » est un mot français, « on » est la mauvaise préposition, et « intern » désigne un stagiaire : l’adjectif est « internal »."
+            },
+            {
+              "prompt_fr": "Complète : « That’s the ___ of beta testing: real phones, real networks. »",
+              "choices": ["sense", "interest", "point"],
+              "answer_index": 2,
+              "explanation_fr": "« That’s the point of… » veut dire « c’est tout l’intérêt de… ». « Interest » est un faux ami ici : il désigne la curiosité ou les intérêts financiers. « Sense » s’emploie dans « it makes sense », pas dans cette tournure."
+            },
+            {
+              "prompt_fr": "Tu écris aux bêta-testeurs. Quelle phrase leur dit clairement quoi tester ?",
+              "choices": ["Please test everything you want.", "Please focus on the payment flow and report anything unexpected.", "Please make the payment work."],
+              "answer_index": 1,
+              "explanation_fr": "La deuxième phrase donne une priorité (« focus on the payment flow ») et une consigne claire (« report anything unexpected »). « Test everything you want » ne guide personne, et « make the payment work » demande aux testeurs de corriger, ce qui est ton travail."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail court aux bêta-testeurs : la nouvelle version est disponible sur TestFlight et sur la piste de test interne ; demande-leur de se concentrer sur le parcours de paiement et de signaler tout ce qui leur paraît inattendu d’ici vendredi.",
+            "model_answer_en": "Hi everyone, the new version is now available on TestFlight and on the internal testing track. Please focus on the payment flow and report anything unexpected by Friday. Thanks for your help!",
+            "model_answer_fr": "Bonjour à tous, la nouvelle version est disponible sur TestFlight et sur la piste de test interne. Merci de vous concentrer sur le parcours de paiement et de signaler tout ce qui vous paraît inattendu d’ici vendredi. Merci pour votre aide !",
+            "key_phrases": ["is now available on TestFlight", "Please focus on the payment flow", "report anything unexpected by Friday"]
+          }
+        },
+        {
+          "id": "mobile-developer-handle-a-review-rejection",
+          "title_fr": "Réagir à un refus de l’App Store",
+          "term_ids": ["app-review", "app-store", "in-app-purchase", "release"],
+          "dialogue": [
+            { "speaker": "Kenji", "text_en": "Sarah, bad news: Apple rejected our update during app review.", "text_fr": "Sarah, mauvaise nouvelle : Apple a refusé notre mise à jour pendant l’examen." },
+            { "speaker": "Sarah", "text_en": "Oh no. What’s the reason?", "text_fr": "Oh non. Quelle est la raison ?" },
+            { "speaker": "Kenji", "text_en": "Our new premium recipes link to a payment page on our website. For digital content, the reviewer says we must use in-app purchase.", "text_fr": "Nos nouvelles recettes premium renvoient vers une page de paiement sur notre site. Pour un contenu numérique, l’examinateur dit qu’on doit utiliser l’achat intégré." },
+            { "speaker": "Sarah", "text_en": "That delays the release. Can we appeal?", "text_fr": "Ça retarde la sortie. On peut faire appel ?" },
+            { "speaker": "Kenji", "text_en": "We could, but the rule is clear. I’d rather remove the link, resubmit today, and add in-app purchase in the next version.", "text_fr": "On pourrait, mais la règle est claire. Je préfère retirer le lien, soumettre à nouveau aujourd’hui, et ajouter l’achat intégré dans la prochaine version." },
+            { "speaker": "Sarah", "text_en": "OK, let’s do that. I’ll update the App Store description so it doesn’t mention the premium recipes yet.", "text_fr": "D’accord, faisons ça. Je mets à jour la description sur l’App Store pour qu’elle ne mentionne pas encore les recettes premium." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « Apple rejected our update » ?",
+              "choices": ["Apple a retardé notre mise à jour", "Apple a refusé notre mise à jour", "Apple a supprimé notre app"],
+              "answer_index": 1,
+              "explanation_fr": "« To reject » veut dire refuser, rejeter. Un refus retarde bien la sortie, mais « delayed » serait le mot pour un simple retard. Et l’app reste en ligne dans sa version précédente : rien n’est supprimé (« removed »)."
+            },
+            {
+              "prompt_fr": "Comment dire « soumettre à nouveau aujourd’hui » ?",
+              "choices": ["Resubmit today.", "Submit it again of today.", "Remit today."],
+              "answer_index": 0,
+              "explanation_fr": "« To resubmit » est le verbe exact pour renvoyer une app à l’examen (on dit aussi « submit it again today »). « Of today » ajoute une préposition fausse, et « remit » est un faux ami : il veut dire verser de l’argent ou remettre une peine."
+            },
+            {
+              "prompt_fr": "Complète : « For digital content, we must use in-app ___. »",
+              "choices": ["buying", "shopping", "purchase"],
+              "answer_index": 2,
+              "explanation_fr": "Le terme officiel d’Apple et de Google est « in-app purchase » (achat intégré), souvent abrégé IAP. « In-app buying » et « in-app shopping » se comprennent, mais ce ne sont pas les termes des règles des stores ni des SDK."
+            },
+            {
+              "prompt_fr": "Ton PM demande si la sortie est retardée. Quelle réponse est honnête et rassurante ?",
+              "choices": ["No problem, Apple is always wrong.", "Yes, a little. I’ll remove the link and resubmit today.", "I don’t know, ask Apple."],
+              "answer_index": 1,
+              "explanation_fr": "La deuxième réponse est honnête (« Yes, a little ») et propose un plan concret. Accuser Apple ne règle rien, et « ask Apple » renvoie le problème au PM au lieu de le prendre en main."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris à ton équipe pour annoncer le refus : Apple a refusé la mise à jour parce que les recettes premium renvoient vers un paiement sur le site ; tu retires le lien et tu soumets à nouveau aujourd’hui ; l’achat intégré arrivera dans la prochaine version.",
+            "model_answer_en": "Hi team, Apple rejected our update because the premium recipes link to a payment page on our website. I’m removing the link and will resubmit today. We’ll add in-app purchase in the next release.",
+            "model_answer_fr": "Bonjour à tous, Apple a refusé notre mise à jour parce que les recettes premium renvoient vers une page de paiement sur notre site. Je retire le lien et je soumets à nouveau aujourd’hui. Nous ajouterons l’achat intégré dans la prochaine version.",
+            "key_phrases": ["Apple rejected our update", "I’m removing the link", "will resubmit today", "in the next release"]
+          }
+        },
+        {
+          "id": "mobile-developer-staged-rollout",
+          "title_fr": "Déployer une mise à jour progressivement",
+          "term_ids": ["staged-rollout", "release", "crash-free-rate", "forced-update"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "Tomasz, version 3.2 is approved on both stores. Do we release it to everyone?", "text_fr": "Tomasz, la version 3.2 est approuvée sur les deux stores. On la publie pour tout le monde ?" },
+            { "speaker": "Tomasz", "text_en": "Let’s do a staged rollout: 10% of users on Android, and a phased release on iOS.", "text_fr": "Faisons un déploiement progressif : 10 % des utilisateurs sur Android, et la publication progressive sur iOS." },
+            { "speaker": "Aïcha", "text_en": "And how do we decide to go further?", "text_fr": "Et comment décide-t-on d’aller plus loin ?" },
+            { "speaker": "Tomasz", "text_en": "We watch the crash-free rate for 48 hours. If it stays at the same level as 3.1, we go to 50%.", "text_fr": "On surveille le taux de sessions sans crash pendant 48 heures. S’il reste au même niveau que pour la 3.1, on passe à 50 %." },
+            { "speaker": "Aïcha", "text_en": "And if it drops?", "text_fr": "Et s’il baisse ?" },
+            { "speaker": "Tomasz", "text_en": "We halt the rollout and fix it in 3.2.1. Users who already have the update keep it, though.", "text_fr": "On interrompt le déploiement et on corrige dans la 3.2.1. Par contre, les utilisateurs qui ont déjà la mise à jour la gardent." },
+            { "speaker": "Aïcha", "text_en": "What about users who stay on very old versions?", "text_fr": "Et les utilisateurs qui restent sur de très vieilles versions ?" },
+            { "speaker": "Tomasz", "text_en": "Once the new API is live, we’ll show a forced update to versions older than 3.0.", "text_fr": "Une fois la nouvelle API en ligne, on affichera une mise à jour obligatoire aux versions antérieures à la 3.0." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « We halt the rollout » ?",
+              "choices": ["On accélère le déploiement", "On annule la mise à jour chez tous les utilisateurs", "On met le déploiement en pause : plus aucun nouvel utilisateur ne reçoit la mise à jour"],
+              "answer_index": 2,
+              "explanation_fr": "« To halt » veut dire arrêter, stopper. Interrompre un déploiement empêche de nouveaux utilisateurs de recevoir la version, mais ceux qui l’ont déjà la gardent : on ne peut pas la retirer à distance. Et c’est l’inverse d’accélérer."
+            },
+            {
+              "prompt_fr": "Comment dire « Déployons-la d’abord auprès de 10 % des utilisateurs » ?",
+              "choices": ["Let’s roll it out to 10% of users first.", "Let’s deploy it first at 10% users.", "Let’s roll it to 10% of the users in first."],
+              "answer_index": 0,
+              "explanation_fr": "« To roll out to » est le verbe consacré pour un déploiement progressif, et « first » se place en fin de phrase. « At 10% users » oublie le « of », et « in first » est un calque de « en premier »."
+            },
+            {
+              "prompt_fr": "Complète : « If the crash-free rate ___, we halt the rollout. »",
+              "choices": ["falls down", "drops", "goes under"],
+              "answer_index": 1,
+              "explanation_fr": "Pour un indicateur, on dit « it drops » : il baisse, il chute. « Falls down » s’emploie pour une personne ou un objet qui tombe par terre, et « goes under » veut dire couler ou faire faillite."
+            },
+            {
+              "prompt_fr": "Ton manager veut publier la mise à jour pour 100 % des utilisateurs dès le premier jour. Que proposes-tu ?",
+              "choices": ["OK, let’s ship it to everyone, we tested it.", "Could we start with a staged rollout and watch the crash-free rate before going to 100%?", "We can’t, the stores don’t allow it."],
+              "answer_index": 1,
+              "explanation_fr": "Un déploiement progressif avec un critère clair (le taux de sessions sans crash) limite les dégâts si un bug a échappé aux tests, qui ne couvrent jamais tous les appareils. Et il est faux de dire que les stores l’interdisent : publier pour tous est possible."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Annonce sur Slack la sortie de la version 3.2 : elle part vers 10 % des utilisateurs Android, avec une publication progressive sur iOS ; tu surveilles le taux de sessions sans crash pendant 48 heures avant de passer à 50 %.",
+            "model_answer_en": "Version 3.2 is live: we’re rolling it out to 10% of Android users, with a phased release on iOS. I’ll watch the crash-free rate for 48 hours before we go to 50%.",
+            "model_answer_fr": "La version 3.2 est en ligne : on la déploie auprès de 10 % des utilisateurs Android, avec une publication progressive sur iOS. Je surveille le taux de sessions sans crash pendant 48 heures avant de passer à 50 %.",
+            "key_phrases": ["Version 3.2 is live", "we’re rolling it out to 10% of Android users", "I’ll watch the crash-free rate"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobile-developer-accessibility-and-users",
+      "title_fr": "Rendre l’app accessible et écouter les utilisateurs",
+      "title_en": "Make the app accessible and listen to users",
+      "situation_fr": "Un test d’accessibilité révèle des problèmes, une utilisatrice se plaint au support et l’équipe doit choisir quels appareils supporter. Tu réponds à chacun avec les bons mots.",
+      "guide": {
+        "intro_fr": "Une app mobile doit marcher pour tout le monde, sur tous les téléphones. Pour l’accessibilité, tu testes avec un « screen reader » (VoiceOver sur iOS, TalkBack sur Android) : chaque bouton sans texte visible a besoin d’un « accessibility label ». Les « touch targets » doivent être assez grands, et le texte doit suivre la taille choisie dans les réglages (« Dynamic Type » sur iOS). Côté appareils, la « fragmentation » d’Android t’oblige à choisir une version minimale (« minimum API level ») et à tester sur des émulateurs et sur de vrais téléphones. Enfin, tu réponds aux utilisateurs : un message clair, qui reconnaît le problème et propose une solution. Les verbes clés : to support, to drop support, to read aloud, to scale.",
+        "key_phrases": [
+          { "en": "VoiceOver just reads “button” here.", "fr": "VoiceOver lit seulement « bouton » ici." },
+          { "en": "This icon needs an accessibility label.", "fr": "Cette icône a besoin d’un libellé d’accessibilité." },
+          { "en": "The touch target is too small.", "fr": "La zone tactile est trop petite." },
+          { "en": "The text doesn’t scale with the system settings.", "fr": "Le texte ne suit pas la taille choisie dans les réglages." },
+          { "en": "We’re dropping support for Android 8.", "fr": "Nous arrêtons de prendre en charge Android 8." },
+          { "en": "Thanks for reporting this, and sorry for the trouble.", "fr": "Merci de nous l’avoir signalé, et désolés pour la gêne." }
+        ],
+        "tip_fr": "« To support a device » veut dire le prendre en charge, faire en sorte que l’app y fonctionne, pas le « supporter » au sens d’endurer. À l’inverse, « to drop support » veut dire arrêter de le prendre en charge. Et face à un utilisateur, évite « sorry for the inconvenients » : on dit « sorry for the inconvenience », au singulier."
+      },
+      "lessons": [
+        {
+          "id": "mobile-developer-fix-accessibility-issues",
+          "title_fr": "Corriger les problèmes d’accessibilité",
+          "term_ids": ["screen-reader", "accessibility-label", "touch-target", "dynamic-type"],
+          "dialogue": [
+            { "speaker": "Mei", "text_en": "Ivan, I tested the app with a screen reader. On the cart screen, VoiceOver just says “button” for the delete icon.", "text_fr": "Ivan, j’ai testé l’app avec un lecteur d’écran. Sur l’écran du panier, VoiceOver dit seulement « bouton » pour l’icône de suppression." },
+            { "speaker": "Ivan", "text_en": "Right, it’s an icon with no text. I’ll add an accessibility label: “Remove item”.", "text_fr": "C’est vrai, c’est une icône sans texte. Je vais ajouter un libellé d’accessibilité : « Retirer l’article »." },
+            { "speaker": "Mei", "text_en": "Thanks. The plus and minus buttons are also hard to tap. They’re about 24 points.", "text_fr": "Merci. Les boutons plus et moins sont aussi difficiles à toucher. Ils font environ 24 points." },
+            { "speaker": "Ivan", "text_en": "Too small. Apple recommends a touch target of at least 44 by 44 points. I’ll keep the icon and make the tappable area bigger.", "text_fr": "Trop petit. Apple recommande une zone tactile d’au moins 44 sur 44 points. Je garde l’icône et j’agrandis la zone qu’on peut toucher." },
+            { "speaker": "Mei", "text_en": "Last thing: with the largest text size, the prices don’t grow at all.", "text_fr": "Dernière chose : avec la plus grande taille de texte, les prix ne grossissent pas du tout." },
+            { "speaker": "Ivan", "text_en": "We used a fixed font size there. I’ll switch to Dynamic Type styles so the text scales.", "text_fr": "On a utilisé une taille de police fixe à cet endroit. Je passe aux styles Dynamic Type pour que le texte s’adapte." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi VoiceOver dit-il seulement « button » ?",
+              "choices": ["L’icône n’a ni texte visible ni libellé d’accessibilité", "Le lecteur d’écran est mal réglé", "Le bouton est désactivé"],
+              "answer_index": 0,
+              "explanation_fr": "Un lecteur d’écran lit le texte d’un élément ; une icône seule n’en a pas, il faut donc lui donner un « accessibility label ». Ce n’est pas un problème de réglage de VoiceOver, et un bouton désactivé serait annoncé comme « dimmed »."
+            },
+            {
+              "prompt_fr": "Comment dire « Les boutons sont difficiles à toucher » ?",
+              "choices": ["The buttons are difficult to touch at.", "The buttons are hard for tapping.", "The buttons are hard to tap."],
+              "answer_index": 2,
+              "explanation_fr": "La structure est « hard to + verbe » : hard to tap, hard to read. « Hard for tapping » mélange deux constructions, et « touch at » ajoute une préposition inutile."
+            },
+            {
+              "prompt_fr": "Complète : « I’ll switch to Dynamic Type styles so the text ___. »",
+              "choices": ["grows up", "scales", "enlarges itself"],
+              "answer_index": 1,
+              "explanation_fr": "« To scale » veut dire changer de taille proportionnellement : the text scales. « Grows up » veut dire grandir au sens de devenir adulte, et « enlarges itself » calque un verbe pronominal français."
+            },
+            {
+              "prompt_fr": "Ton PM demande pourquoi corriger l’accessibilité maintenant. Quel argument est juste ?",
+              "choices": ["Because screen readers are a new trend.", "Because many users rely on these settings, and it makes the app easier for everyone.", "Because Apple will remove the app tomorrow."],
+              "answer_index": 1,
+              "explanation_fr": "Beaucoup de personnes utilisent un lecteur d’écran ou un grand texte, et de grandes zones tactiles aident tout le monde (dans un bus, d’une seule main). L’accessibilité n’est pas une mode, et menacer d’un retrait immédiat du store est faux."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le résumé de ton rapport d’accessibilité : l’icône de suppression n’a pas de libellé d’accessibilité, les boutons plus et moins ont une zone tactile trop petite, et les prix ne suivent pas la taille de texte du système. Indique que les trois corrections sont prévues pour ce sprint.",
+            "model_answer_en": "We found three accessibility issues on the cart screen. The delete icon has no accessibility label, the plus and minus buttons have a touch target that is too small, and the prices don’t scale with the system text size. All three fixes are planned for this sprint.",
+            "model_answer_fr": "Nous avons trouvé trois problèmes d’accessibilité sur l’écran du panier. L’icône de suppression n’a pas de libellé d’accessibilité, les boutons plus et moins ont une zone tactile trop petite, et les prix ne suivent pas la taille de texte du système. Les trois corrections sont prévues pour ce sprint.",
+            "key_phrases": ["three accessibility issues", "has no accessibility label", "a touch target that is too small", "don’t scale with the system text size"]
+          }
+        },
+        {
+          "id": "mobile-developer-choose-supported-devices",
+          "title_fr": "Choisir les appareils à prendre en charge",
+          "term_ids": ["fragmentation", "api-level", "emulator", "responsive-layout"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "Moussa, should we raise our minimum API level? Supporting old phones slows us down.", "text_fr": "Moussa, on devrait relever notre niveau d’API minimum ? Prendre en charge les vieux téléphones nous ralentit." },
+            { "speaker": "Moussa", "text_en": "Let’s check the data first. How many of our users are still on Android 8?", "text_fr": "Regardons d’abord les données. Combien de nos utilisateurs sont encore sous Android 8 ?" },
+            { "speaker": "Priya", "text_en": "Less than 2%, according to our analytics.", "text_fr": "Moins de 2 %, d’après nos statistiques." },
+            { "speaker": "Moussa", "text_en": "Then we can drop support for it. Fragmentation will still be a challenge, though: screen sizes, foldables, tablets…", "text_fr": "Alors on peut arrêter de le prendre en charge. La fragmentation restera quand même un défi : tailles d’écran, pliables, tablettes…" },
+            { "speaker": "Priya", "text_en": "How do we test all that without buying fifty phones?", "text_fr": "Comment tester tout ça sans acheter cinquante téléphones ?" },
+            { "speaker": "Moussa", "text_en": "Emulators for the screen sizes, to check the adaptive layout, and a few real devices for performance, especially a low-end one.", "text_fr": "Des émulateurs pour les tailles d’écran, pour vérifier la mise en page adaptative, et quelques vrais appareils pour la performance, surtout un d’entrée de gamme." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Moussa avec « we can drop support for it » ?",
+              "choices": ["On peut le supporter encore longtemps", "On peut arrêter de le prendre en charge", "On peut le faire tomber en panne"],
+              "answer_index": 1,
+              "explanation_fr": "« To drop support for » veut dire arrêter de prendre en charge une version : l’app ne s’installera plus dessus. « Support » ne veut pas dire endurer, et « drop » n’a ici rien à voir avec faire tomber quelque chose."
+            },
+            {
+              "prompt_fr": "Comment dire « Regardons d’abord les données » ?",
+              "choices": ["Let’s check the data first.", "Let’s look the data first.", "Let’s regard the data before."],
+              "answer_index": 0,
+              "explanation_fr": "« Let’s check… first » est la tournure naturelle. « Look » demande « at » (look at the data), et « regard » est un faux ami : il veut dire considérer, pas regarder. Pour « d’abord », on dit « first », pas « before »."
+            },
+            {
+              "prompt_fr": "Complète : « Should we raise our minimum API ___? »",
+              "choices": ["version", "grade", "level"],
+              "answer_index": 2,
+              "explanation_fr": "Sur Android, on parle de « minimum API level » (minSdk dans Gradle). « Grade » évoque une note scolaire, et « API version » n’est pas le terme officiel : on dit « Android 8 », mais « API level 26 »."
+            },
+            {
+              "prompt_fr": "En réunion, on te demande comment tester sur autant d’appareils. Quelle réponse est la plus réaliste ?",
+              "choices": ["We test only on my phone, it’s the most popular.", "We use emulators for screen sizes and a few real devices, including a low-end one, for performance.", "Fragmentation doesn’t exist on Android anymore."],
+              "answer_index": 1,
+              "explanation_fr": "Les émulateurs couvrent bien les tailles d’écran, mais la performance se mesure sur de vrais téléphones, surtout d’entrée de gamme. Tester sur un seul appareil laisse passer beaucoup de bugs, et la fragmentation reste une réalité d’Android."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion, propose d’arrêter de prendre en charge Android 8 : moins de 2 % des utilisateurs l’ont encore. Précise comment l’équipe testera ensuite : des émulateurs pour les tailles d’écran, quelques vrais appareils pour la performance.",
+            "model_answer_en": "Less than 2% of our users are still on Android 8, so I suggest we drop support for it. We’ll use emulators to check different screen sizes, and a few real devices, including a low-end one, for performance.",
+            "model_answer_fr": "Moins de 2 % de nos utilisateurs sont encore sous Android 8 : je propose donc qu’on arrête de le prendre en charge. Nous utiliserons des émulateurs pour vérifier les différentes tailles d’écran, et quelques vrais appareils, dont un d’entrée de gamme, pour la performance.",
+            "key_phrases": ["Less than 2% of our users", "I suggest we drop support for it", "We’ll use emulators", "a few real devices"]
+          }
+        },
+        {
+          "id": "mobile-developer-reply-to-an-unhappy-user",
+          "title_fr": "Répondre à une utilisatrice mécontente",
+          "term_ids": ["battery-drain", "app-store", "forced-update", "beta-testing"],
+          "dialogue": [
+            { "speaker": "Lucía", "text_en": "Kenji, a user wrote to support: since the last update, the app drains her battery. She gave us one star on the App Store.", "text_fr": "Kenji, une utilisatrice a écrit au support : depuis la dernière mise à jour, l’app vide sa batterie. Elle nous a mis une étoile sur l’App Store." },
+            { "speaker": "Kenji", "text_en": "Which version is she on? We fixed a battery drain issue in 3.2.1 last week.", "text_fr": "Elle est sur quelle version ? On a corrigé un problème de consommation de batterie dans la 3.2.1 la semaine dernière." },
+            { "speaker": "Lucía", "text_en": "She’s still on 3.2. Can we make her update?", "text_fr": "Elle est encore sur la 3.2. On peut l’obliger à mettre à jour ?" },
+            { "speaker": "Kenji", "text_en": "A forced update is only for serious issues, like security. Here, just ask her to update from the store.", "text_fr": "La mise à jour obligatoire, c’est seulement pour les problèmes graves, comme la sécurité. Ici, demande-lui simplement de mettre à jour depuis le store." },
+            { "speaker": "Lucía", "text_en": "OK. Should I offer anything else?", "text_fr": "D’accord. Je lui propose autre chose ?" },
+            { "speaker": "Kenji", "text_en": "You could invite her to beta testing. Users who report problems clearly make great beta testers.", "text_fr": "Tu pourrais l’inviter au test bêta. Les utilisateurs qui signalent clairement les problèmes font d’excellents bêta-testeurs." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « the app drains her battery » ?",
+              "choices": ["L’app recharge sa batterie", "L’app abîme définitivement sa batterie", "L’app vide sa batterie très vite"],
+              "answer_index": 2,
+              "explanation_fr": "« To drain » veut dire vider, épuiser : la batterie se décharge trop vite. Ce n’est pas une recharge, et rien ne dit que la batterie est abîmée pour toujours : une fois l’app corrigée, la consommation redevient normale."
+            },
+            {
+              "prompt_fr": "Comment dire « On peut l’obliger à mettre à jour ? » ?",
+              "choices": ["Can we make her update?", "Can we oblige her to update?", "Can we force her updating?"],
+              "answer_index": 0,
+              "explanation_fr": "« Make someone do something » (sans « to ») est la façon naturelle de dire obliger quelqu’un à faire quelque chose. « Oblige » est un faux ami : il veut surtout dire rendre service. « Force her updating » oublie la structure correcte, « force her to update »."
+            },
+            {
+              "prompt_fr": "Complète : « Thanks for reporting this, and sorry for the ___. »",
+              "choices": ["inconvenients", "inconvenience", "disturbing"],
+              "answer_index": 1,
+              "explanation_fr": "On dit « sorry for the inconvenience » (désolé pour la gêne), au singulier. « Inconvenients » est un calque du français « inconvénients » qui n’existe pas, et « disturbing » est un adjectif qui veut dire perturbant, voire choquant."
+            },
+            {
+              "prompt_fr": "L’utilisatrice est en colère. Quelle première phrase choisis-tu pour ta réponse ?",
+              "choices": ["You are wrong, the app is fine.", "Battery issues are normal on old phones.", "Thanks for reporting this, and sorry for the trouble. We fixed this issue in version 3.2.1."],
+              "answer_index": 2,
+              "explanation_fr": "La troisième phrase remercie, s’excuse et apporte tout de suite une solution : c’est la base d’une bonne réponse au support. Contredire l’utilisatrice l’énerve encore plus, et blâmer son téléphone est faux, puisque le bug venait de l’app."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Réponds par e-mail à l’utilisatrice : remercie-la, excuse-toi pour la gêne, explique que le problème de batterie est corrigé dans la version 3.2.1 et demande-lui de mettre l’app à jour depuis l’App Store. Propose-lui de rejoindre le programme de test bêta.",
+            "context_en": "Since your last update, the app drains my battery in a few hours. Very disappointed.",
+            "model_answer_en": "Thanks for reporting this, and sorry for the inconvenience. We fixed this battery issue in version 3.2.1, so please update the app from the App Store. If you’d like, we’d be happy to invite you to our beta testing program.",
+            "model_answer_fr": "Merci de nous l’avoir signalé, et désolés pour la gêne. Nous avons corrigé ce problème de batterie dans la version 3.2.1 : merci de mettre l’app à jour depuis l’App Store. Si vous le souhaitez, nous serions ravis de vous inviter à notre programme de test bêta.",
+            "key_phrases": ["Thanks for reporting this", "sorry for the inconvenience", "please update the app from the App Store", "invite you to our beta testing program"]
+          }
+        },
+        {
+          "id": "mobile-developer-propose-a-native-module",
+          "title_fr": "Proposer un module natif dans une app multiplateforme",
+          "term_ids": ["cross-platform", "native-app", "react-native", "kotlin", "swift", "over-the-air-update"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "Tomasz, the new payment terminal SDK only exists for Android and iOS. There’s no React Native version.", "text_fr": "Tomasz, le nouveau SDK du terminal de paiement n’existe que pour Android et iOS. Il n’y a pas de version React Native." },
+            { "speaker": "Tomasz", "text_en": "So do we rewrite that part as a native app?", "text_fr": "Donc on réécrit cette partie en application native ?" },
+            { "speaker": "Aïcha", "text_en": "No need. We stay cross-platform and write a small native module: Kotlin on Android, Swift on iOS.", "text_fr": "Pas besoin. On reste en multiplateforme et on écrit un petit module natif : Kotlin sur Android, Swift sur iOS." },
+            { "speaker": "Tomasz", "text_en": "And the JavaScript side calls it like any other module?", "text_fr": "Et le côté JavaScript l’appelle comme n’importe quel autre module ?" },
+            { "speaker": "Aïcha", "text_en": "Exactly. One thing, though: we can’t ship this with an over-the-air update. Native code changes need a store release.", "text_fr": "Exactement. Un point quand même : on ne peut pas livrer ça avec une mise à jour à distance. Les changements de code natif demandent une nouvelle version sur les stores." },
+            { "speaker": "Tomasz", "text_en": "Good to know. Let’s plan it for the next store release, then.", "text_fr": "Bon à savoir. Alors prévoyons-le pour la prochaine version sur les stores." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que propose Aïcha avec « We stay cross-platform and write a small native module » ?",
+              "choices": ["Réécrire toute l’app en natif", "Garder l’app en React Native et ajouter un peu de code natif pour le SDK", "Abandonner le SDK de paiement"],
+              "answer_index": 1,
+              "explanation_fr": "Aïcha garde la base multiplateforme et n’écrit en natif (Kotlin, Swift) que le pont vers le SDK. C’est le contraire de tout réécrire en natif, et le SDK est justement conservé grâce à ce module."
+            },
+            {
+              "prompt_fr": "Pourquoi ne peut-on pas livrer ce changement avec une « over-the-air update » ?",
+              "choices": ["Parce que les mises à jour à distance sont interdites", "Parce que le JavaScript ne peut pas appeler du code natif", "Parce qu’une mise à jour à distance remplace le code JavaScript, pas le code natif"],
+              "answer_index": 2,
+              "explanation_fr": "Une mise à jour OTA (avec EAS Update, par exemple) remplace le bundle JavaScript et les ressources, mais le code natif est compilé dans l’app : il faut une nouvelle version sur les stores. Les OTA sont autorisées dans le respect des règles des stores, et le JavaScript appelle bien le code natif grâce au module."
+            },
+            {
+              "prompt_fr": "Complète : « Native code changes ___ a store release. »",
+              "choices": ["need", "ask", "demand for"],
+              "answer_index": 0,
+              "explanation_fr": "« Need » (nécessiter, avoir besoin de) est le verbe simple et naturel. « Ask » voudrait dire poser une question ou demander à quelqu’un, et « demand for » est faux : le verbe « demand » veut dire exiger et s’emploie sans « for »."
+            },
+            {
+              "prompt_fr": "Ton tech lead propose de tout réécrire en natif pour un seul SDK. Comment le contredire poliment ?",
+              "choices": ["That’s a bad idea, you don’t understand React Native.", "I see the point, but a small native module would be enough, and we’d keep one shared codebase.", "Native apps are old-fashioned."],
+              "answer_index": 1,
+              "explanation_fr": "« I see the point, but… » reconnaît l’idée avant de proposer mieux, avec un argument concret : garder un seul code partagé. La première réponse attaque la personne, et dire que le natif est démodé est faux : beaucoup d’apps restent entièrement natives."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Explique à ton équipe sur Slack que le SDK du terminal de paiement n’existe pas pour React Native ; tu proposes d’écrire un petit module natif en Kotlin et en Swift, et tu précises que ce changement demandera une nouvelle version sur les stores, pas une mise à jour à distance.",
+            "model_answer_en": "The payment terminal SDK has no React Native version, so I suggest we write a small native module in Kotlin and Swift. We can’t ship it with an over-the-air update: it will need a store release.",
+            "model_answer_fr": "Le SDK du terminal de paiement n’a pas de version React Native : je propose donc d’écrire un petit module natif en Kotlin et en Swift. On ne pourra pas le livrer avec une mise à jour à distance : il faudra une nouvelle version sur les stores.",
+            "key_phrases": ["has no React Native version", "a small native module", "with an over-the-air update", "it will need a store release"]
+          }
+        }
+      ]
+    }
+  ]
+}

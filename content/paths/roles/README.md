@@ -63,6 +63,17 @@ how you would…"), a past experience (STAR), tools and methods. Each: `id` `<ro
 invented company names or numbers presented as facts), `model_answer_fr`, `key_phrases` (3 to 6 phrases
 present word for word in the model answer), `vocabulary_term_ids` (existing ids only).
 
+## Difficulty (the owner's rule: never Duolingo-easy)
+- Distractors are plausible and tempting: typical French-speaker mistakes (calques such as "make a
+  meeting", false friends, wrong preposition or collocation, wrong tense, wrong register). Never absurd
+  options; the 3 choices have similar length and form.
+- Test real skill, not recognition: the most natural reply in a tricky situation, the nuance between
+  near-synonyms (issue / problem / bug), the right collocation, the right tone for a manager vs a
+  colleague, a gap that needs the exact verb form.
+- At least half of the questions require reasoning beyond the dialogue (no answer copied from just above).
+- Productions are demanding: 3 to 4 sentences with a constraint (give a reason, propose a next step,
+  use a given tone).
+
 ## Rules
 - Accurate, never invented: real practices, real tools, correct English. If you doubt a claim, keep it
   simpler or drop it (paths have no `review_note` field).

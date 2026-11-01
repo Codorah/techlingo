@@ -1,0 +1,1186 @@
+{
+  "role": "product-design",
+  "status": "draft",
+  "title_fr": "L’anglais du produit et du design",
+  "units": [
+    {
+      "id": "product-design-user-interviews",
+      "title_fr": "Mener des entretiens utilisateurs",
+      "title_en": "Run user interviews",
+      "situation_fr": "Ton équipe prépare une nouvelle fonctionnalité et tu dois comprendre les vrais besoins des utilisateurs : préparer les entretiens, les mener, puis partager ce que tu as appris.",
+      "guide": {
+        "intro_fr": "Avant de dessiner le moindre écran, un designer produit fait de la user research (recherche utilisateur). Le format le plus courant est l’entretien : trente à quarante-cinq minutes avec un utilisateur, guidé par un discussion guide (guide d’entretien). On part d’une hypothesis (hypothèse) à vérifier, on recrute des participants, puis on pose des questions ouvertes : « Tell me about the last time you… », « Walk me through how you… ». Le but est de repérer les pain points (points de friction) et d’en tirer des insights (enseignements), pas de faire valider ses idées. Enfin, on partage ces résultats avec les stakeholders (parties prenantes) dans une synthèse courte, appuyée sur des faits et des citations.",
+        "key_phrases": [
+          { "en": "Tell me about the last time you did this.", "fr": "Racontez-moi la dernière fois que vous avez fait ça." },
+          { "en": "Can you walk me through it?", "fr": "Pouvez-vous me montrer comment vous faites, étape par étape ?" },
+          { "en": "What did you do next?", "fr": "Qu’avez-vous fait ensuite ?" },
+          { "en": "Why was that frustrating?", "fr": "Pourquoi était-ce frustrant ?" },
+          { "en": "The main pain point is…", "fr": "Le principal point de friction est…" },
+          { "en": "Five out of six participants said…", "fr": "Cinq participants sur six ont dit…" }
+        ],
+        "tip_fr": "Évite les questions hypothétiques comme « Would you use this feature? » : les gens répondent oui par politesse. Demande plutôt ce qu’ils ont fait la dernière fois. Et attention au faux ami : « to assist » veut dire aider ; pour assister à un entretien en observateur, on dit « to sit in on an interview »."
+      },
+      "lessons": [
+        {
+          "id": "product-design-plan-user-interviews",
+          "title_fr": "Préparer une série d’entretiens",
+          "term_ids": ["user-research", "hypothesis", "segmentation", "use-case"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "Kenji, before we design the new invoicing feature, I’d like to run some user research.", "text_fr": "Kenji, avant de concevoir la nouvelle fonctionnalité de facturation, j’aimerais faire de la recherche utilisateur." },
+            { "speaker": "Kenji", "text_en": "Good idea. What’s your hypothesis?", "text_fr": "Bonne idée. Quelle est ton hypothèse ?" },
+            { "speaker": "Priya", "text_en": "My hypothesis is that freelancers send invoices from a spreadsheet because our tool is too slow.", "text_fr": "Mon hypothèse, c’est que les freelances envoient leurs factures depuis un tableur parce que notre outil est trop lent." },
+            { "speaker": "Kenji", "text_en": "OK. Who do you want to talk to?", "text_fr": "D’accord. À qui veux-tu parler ?" },
+            { "speaker": "Priya", "text_en": "Six users from two segments: freelancers and small agencies. Our segmentation shows they have very different use cases.", "text_fr": "Six utilisateurs de deux segments : des freelances et des petites agences. Notre segmentation montre qu’ils ont des cas d’usage très différents." },
+            { "speaker": "Kenji", "text_en": "Makes sense. Send me the discussion guide and I’ll sit in on a couple of sessions.", "text_fr": "Logique. Envoie-moi le guide d’entretien et j’assisterai à deux sessions en observateur." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Kenji veut observer deux entretiens sans les animer. Quelle phrase est correcte ?",
+              "choices": ["I’ll assist to a couple of sessions.", "I’ll sit in on a couple of sessions.", "I’ll attend to a couple of sessions."],
+              "answer_index": 1,
+              "explanation_fr": "« To sit in on » veut dire assister à une réunion ou un entretien en observateur, sans le diriger. « To assist » est un faux ami : il signifie aider, et « assist to » n’existe pas. « To attend » veut bien dire assister à, mais sans préposition (I’ll attend two sessions) ; « attend to » signifie s’occuper de quelque chose."
+            },
+            {
+              "prompt_fr": "Quelle phrase présente une hypothèse de recherche de façon professionnelle ?",
+              "choices": ["I’m sure that freelancers avoid our tool because it’s too slow.", "My hypothese is that freelancers avoid our tool because it’s too slow.", "My hypothesis is that freelancers avoid our tool because it’s too slow."],
+              "answer_index": 2,
+              "explanation_fr": "En anglais, on écrit « hypothesis » (pluriel « hypotheses ») : « hypothese » est l’orthographe française transposée. « I’m sure that… » est correct grammaticalement, mais contredit l’idée même de recherche : une hypothèse est une idée qu’on veut vérifier, pas une certitude."
+            },
+            {
+              "prompt_fr": "Ton manager demande pourquoi tu ne fais que six entretiens. Quelle réponse est la plus juste ?",
+              "choices": ["Interviews are qualitative: with six, we usually start to see patterns.", "Six interviews give us statistically significant results.", "Six is enough because users always say the same things."],
+              "answer_index": 0,
+              "explanation_fr": "Les entretiens sont une méthode qualitative : on cherche des tendances récurrentes (patterns), pas des chiffres. Parler de « statistically significant » serait faux, cela concerne les méthodes quantitatives comme un test A/B. La troisième réponse généralise à tort : les utilisateurs ne disent pas tous la même chose, on observe ce qui revient souvent."
+            },
+            {
+              "prompt_fr": "Complète : « Our segmentation shows that freelancers and agencies have different ___ . »",
+              "choices": ["uses cases", "use cases", "cases of use"],
+              "answer_index": 1,
+              "explanation_fr": "Dans un nom composé anglais, le premier mot sert d’adjectif et reste au singulier : a use case, two use cases (comme test cases ou user stories). « Uses cases » met le pluriel au mauvais endroit, et « cases of use » est un calque mot à mot de « cas d’usage »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Tu veux interroger des utilisateurs avant de redessiner l’écran d’export. Écris un message Slack à ta PM, Lucía : donne ton hypothèse, dis qui tu veux interroger et pourquoi ces deux segments, puis propose-lui d’assister à une session à un créneau précis.",
+            "model_answer_en": "Hi Lucía, before we redesign the export screen, I’d like to run some user research. My hypothesis is that users export data because our reports are too limited. I plan to talk to six users from two segments, freelancers and agencies, because their use cases are very different. Do you want to sit in on a session on Thursday at 10?",
+            "model_answer_fr": "Salut Lucía, avant de redessiner l’écran d’export, j’aimerais faire de la recherche utilisateur. Mon hypothèse est que les utilisateurs exportent les données parce que nos rapports sont trop limités. Je prévois de parler à six utilisateurs de deux segments, des freelances et des agences, parce que leurs cas d’usage sont très différents. Tu veux assister à une session jeudi à 10 h ?",
+            "key_phrases": ["run some user research", "My hypothesis is that", "their use cases are very different", "sit in on a session"]
+          }
+        },
+        {
+          "id": "product-design-ask-open-questions",
+          "title_fr": "Poser des questions qui n’orientent pas la réponse",
+          "term_ids": ["pain-point", "workaround", "user-feedback", "bias"],
+          "dialogue": [
+            { "speaker": "Moussa", "text_en": "Great session. I noticed you never asked him if he liked the new design.", "text_fr": "Super session. J’ai remarqué que tu ne lui as jamais demandé s’il aimait le nouveau design." },
+            { "speaker": "Aïcha", "text_en": "On purpose. A question like that creates bias: people just say yes to be nice.", "text_fr": "Exprès. Une question comme ça crée un biais : les gens disent oui juste pour être gentils." },
+            { "speaker": "Moussa", "text_en": "So instead, you asked him about the last time he paid a supplier.", "text_fr": "Donc, à la place, tu l’as interrogé sur la dernière fois qu’il a payé un fournisseur." },
+            { "speaker": "Aïcha", "text_en": "Exactly. And we found a real pain point: he copies every amount by hand into his bank app.", "text_fr": "Exactement. Et on a trouvé un vrai point de friction : il recopie chaque montant à la main dans son appli bancaire." },
+            { "speaker": "Moussa", "text_en": "And he keeps a spreadsheet to check it all. That’s a workaround we should take seriously.", "text_fr": "Et il tient un tableur pour tout vérifier. C’est une solution de contournement qu’on devrait prendre au sérieux." },
+            { "speaker": "Aïcha", "text_en": "Agreed. I’ll add it to the user feedback board with his exact words.", "text_fr": "D’accord. Je l’ajoute au tableau des retours utilisateurs avec ses mots exacts." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Laquelle de ces questions risque le moins d’orienter la réponse du participant ?",
+              "choices": ["Would you use a faster way to pay suppliers?", "Don’t you find our payment screen a bit slow?", "How did you pay your last supplier?"],
+              "answer_index": 2,
+              "explanation_fr": "Une bonne question d’entretien porte sur un comportement passé et réel : « How did you… » laisse le participant raconter. « Would you use… » est hypothétique : presque tout le monde répond oui. « Don’t you find… » est une question orientée (leading question) : la forme négative suggère déjà la réponse attendue."
+            },
+            {
+              "prompt_fr": "Aïcha dit qu’une question fermée « creates bias ». Quelle reformulation est la plus fidèle ?",
+              "choices": ["It pushes people toward a particular answer.", "It makes people feel uncomfortable.", "It takes people too long to answer."],
+              "answer_index": 0,
+              "explanation_fr": "Un « bias » (biais) est une erreur systématique : ici, la question pousse les gens vers une réponse, qui ne reflète donc plus ce qu’ils pensent vraiment. Le malaise ou la durée de réponse sont d’autres problèmes possibles, mais ce n’est pas ce que désigne le mot bias."
+            },
+            {
+              "prompt_fr": "Complète : « He fixes the totals in a spreadsheet. That’s a ___ we should take seriously. »",
+              "choices": ["turnaround", "workaround", "bypass"],
+              "answer_index": 1,
+              "explanation_fr": "Un « workaround » est une solution de contournement, souvent bricolée par l’utilisateur pour compenser un manque du produit : c’est un signal précieux en recherche. « Turnaround » veut dire redressement ou délai de traitement (turnaround time). « Bypass » s’emploie pour une route de contournement ou pour contourner une sécurité, pas pour l’astuce d’un utilisateur."
+            },
+            {
+              "prompt_fr": "Un participant dit : « I export everything to Excel and fix it there. » Quelle relance est la meilleure ?",
+              "choices": ["Why don’t you use our reports instead?", "So our reports aren’t good enough for you?", "Can you show me how you do that?"],
+              "answer_index": 2,
+              "explanation_fr": "« Can you show me how you do that? » est neutre et fait découvrir le vrai processus, avec ses détails. « Why don’t you… instead? » sonne comme un reproche et met le participant sur la défensive. « So our reports aren’t good enough? » est une question orientée qui cherche la confirmation au lieu d’observer."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige ta note d’entretien : le principal point de friction, la solution de contournement de l’utilisateur, ce qu’il en dit (reformulé) et une question à creuser au prochain entretien.",
+            "model_answer_en": "Main pain point: the participant copies every amount by hand into his bank app. His workaround is a spreadsheet he updates every Friday. He says it takes him about an hour each week. Next time, we should ask how other users handle bank transfers.",
+            "model_answer_fr": "Principal point de friction : le participant recopie chaque montant à la main dans son appli bancaire. Sa solution de contournement est un tableur qu’il met à jour chaque vendredi. Il dit que ça lui prend environ une heure par semaine. La prochaine fois, il faudra demander comment les autres utilisateurs gèrent les virements.",
+            "key_phrases": ["Main pain point", "His workaround is", "He says it takes him", "Next time, we should ask"]
+          }
+        },
+        {
+          "id": "product-design-share-research-insights",
+          "title_fr": "Présenter les enseignements de la recherche",
+          "term_ids": ["insight", "stakeholder", "align", "user-feedback"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "Thanks for joining. I’ll share the key insights from last week’s interviews.", "text_fr": "Merci d’être là. Je vais partager les principaux enseignements des entretiens de la semaine dernière." },
+            { "speaker": "Ivan", "text_en": "Great. How many people did you talk to?", "text_fr": "Super. Tu as parlé à combien de personnes ?" },
+            { "speaker": "Sarah", "text_en": "Eight customers. Insight number one: most of them don’t trust the automatic totals, so they check them by hand.", "text_fr": "Huit clients. Premier enseignement : la plupart ne font pas confiance aux totaux automatiques, alors ils les vérifient à la main." },
+            { "speaker": "Ivan", "text_en": "That matches the user feedback we get in sales calls.", "text_fr": "Ça correspond aux retours utilisateurs qu’on reçoit lors des appels commerciaux." },
+            { "speaker": "Sarah", "text_en": "Good to know. Before we talk about solutions, I’d like all stakeholders to align on the problem.", "text_fr": "Bon à savoir. Avant de parler de solutions, j’aimerais que toutes les parties prenantes se mettent d’accord sur le problème." },
+            { "speaker": "Ivan", "text_en": "Fair enough. Can you send the slides after the meeting?", "text_fr": "C’est juste. Tu peux envoyer les slides après la réunion ?" }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Tu veux dire que cinq clients sur huit ne font pas confiance aux totaux. Quelle phrase est correcte ?",
+              "choices": ["Five on eight customers don’t trust the totals.", "Five out of eight customers don’t trust the totals.", "Five of the eight customers doesn’t trust the totals."],
+              "answer_index": 1,
+              "explanation_fr": "Pour une proportion, l’anglais dit « five out of eight ». « Five on eight » est un calque de « cinq sur huit ». « Five of the eight customers » est possible, mais le verbe doit être au pluriel (don’t) : le sujet, ce sont cinq clients, pas un seul."
+            },
+            {
+              "prompt_fr": "Ivan dit « That matches the user feedback we get ». Quelle phrase a le même sens et est correcte ?",
+              "choices": ["That’s consistent with what users tell us.", "That corresponds to the users’ feedbacks.", "That fits with what users are telling to us."],
+              "answer_index": 0,
+              "explanation_fr": "« To be consistent with » (concorder avec) exprime la même idée que « to match ». « Feedback » est indénombrable : jamais de s (on dit some feedback, a piece of feedback). Et « tell » prend directement la personne : users tell us, pas « tell to us »."
+            },
+            {
+              "prompt_fr": "Complète : « Before we talk about solutions, I’d like all stakeholders to ___ the problem. »",
+              "choices": ["align with", "be align on", "align on"],
+              "answer_index": 2,
+              "explanation_fr": "« To align on something » veut dire se mettre d’accord sur un sujet. « To align with someone » signifie s’aligner sur la position de quelqu’un : avec « the problem », le sens ne marche pas. « Be align » est incorrect : après be, il faut le participe passé (be aligned on)."
+            },
+            {
+              "prompt_fr": "Pendant ta présentation, le directeur commercial propose déjà une solution. Quelle réponse est la plus diplomate ?",
+              "choices": ["Let’s not discuss solutions, it’s not the moment.", "Good idea, let’s note it and agree on the problem first.", "Sorry, but solutions are the designers’ job."],
+              "answer_index": 1,
+              "explanation_fr": "La bonne réponse valorise l’idée (Good idea, let’s note it) tout en gardant le cap : d’abord le problème. La première coupe la parole sèchement et la troisième met en avant la hiérarchie des rôles : deux façons de perdre une partie prenante dont tu auras besoin plus tard."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion avec la direction, présente le principal enseignement de tes entretiens, appuie-le sur une proportion, relie-le à ce qu’entendent les commerciaux et propose de vous mettre d’accord sur le problème avant les solutions.",
+            "model_answer_en": "Last week, I talked to eight customers. The key insight is that five out of eight don’t trust the automatic totals, so they check them by hand. This matches the user feedback our sales team hears every week. Before we discuss solutions, I’d like us to align on this problem.",
+            "model_answer_fr": "La semaine dernière, j’ai parlé à huit clients. Le principal enseignement est que cinq sur huit ne font pas confiance aux totaux automatiques, alors ils les vérifient à la main. Cela correspond aux retours utilisateurs que notre équipe commerciale entend chaque semaine. Avant de parler de solutions, j’aimerais qu’on se mette d’accord sur ce problème.",
+            "key_phrases": ["The key insight is", "five out of eight", "This matches the user feedback", "align on this problem"]
+          }
+        },
+        {
+          "id": "product-design-check-the-funnel",
+          "title_fr": "Croiser les entretiens avec les données",
+          "term_ids": ["funnel", "drop-off", "conversion-rate", "cohort", "churn"],
+          "dialogue": [
+            { "speaker": "Tomasz", "text_en": "Lucía, users told us the sign-up form is too long. Do the numbers agree?", "text_fr": "Lucía, les utilisateurs nous ont dit que le formulaire d’inscription est trop long. Les chiffres vont dans ce sens ?" },
+            { "speaker": "Lucía", "text_en": "Yes. Look at the funnel: there’s a big drop-off at step three, the company details.", "text_fr": "Oui. Regarde le tunnel : il y a un gros décrochage à l’étape trois, les informations sur l’entreprise." },
+            { "speaker": "Tomasz", "text_en": "What’s the conversion rate from start to finish?", "text_fr": "Quel est le taux de conversion du début à la fin ?" },
+            { "speaker": "Lucía", "text_en": "Around thirty percent. And the March cohort churned faster than the others.", "text_fr": "Environ trente pour cent. Et la cohorte de mars est partie plus vite que les autres." },
+            { "speaker": "Tomasz", "text_en": "Interesting. In March, we added two extra fields to the form.", "text_fr": "Intéressant. En mars, on a ajouté deux champs de plus au formulaire." },
+            { "speaker": "Lucía", "text_en": "That could be a coincidence. Let’s check what else changed before we draw conclusions.", "text_fr": "C’est peut-être une coïncidence. Vérifions ce qui a changé d’autre avant de tirer des conclusions." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Lucía voit « a big drop-off at step three ». Que faut-il en conclure ?",
+              "choices": ["Beaucoup d’utilisateurs quittent le formulaire à cette étape", "L’étape trois met beaucoup de temps à se charger", "Peu d’utilisateurs arrivent jusqu’à l’étape trois"],
+              "answer_index": 0,
+              "explanation_fr": "Un « drop-off at a step » est un abandon à cette étape précise : les gens y arrivent, puis partent. Si peu d’utilisateurs arrivaient jusqu’à l’étape trois, le décrochage serait situé avant. Le temps de chargement peut être une cause possible, mais le mot ne dit rien de la vitesse."
+            },
+            {
+              "prompt_fr": "Comment dire « le taux de transformation du tunnel » à une analyste anglophone ?",
+              "choices": ["the tunnel transformation rate", "the funnel transformation rate", "the funnel conversion rate"],
+              "answer_index": 2,
+              "explanation_fr": "En anglais, le tunnel de conversion est un « funnel » (un entonnoir), jamais un « tunnel ». Et le français « taux de transformation » se dit « conversion rate » : « transformation rate » n’est pas employé dans ce sens."
+            },
+            {
+              "prompt_fr": "Complète : « Users who signed up in March ___ faster than the other cohorts. »",
+              "choices": ["churned out", "churned", "were churned off"],
+              "answer_index": 1,
+              "explanation_fr": "« To churn » s’emploie sans complément pour des clients qui partent : users churned. « To churn out » est un autre verbe qui veut dire produire en grande quantité (to churn out reports). « Were churned off » n’existe pas : le départ est le fait des clients, pas une action qu’on leur fait subir."
+            },
+            {
+              "prompt_fr": "Tomasz pense que les deux champs ajoutés en mars expliquent ce départ. Quelle réponse est la plus rigoureuse ?",
+              "choices": ["It’s only a correlation for now; let’s check other changes from March.", "The data proves it, so let’s remove the fields today.", "Data can’t tell us anything about why users leave."],
+              "answer_index": 0,
+              "explanation_fr": "Deux faits qui arrivent en même temps forment une corrélation, pas une preuve de causalité : d’autres changements de mars (prix, campagne marketing) peuvent expliquer le départ. « The data proves it » va trop vite, et la troisième réponse jette les données alors qu’elles aident à orienter l’enquête."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Des utilisateurs trouvent l’étape de paiement trop longue. Écris à Lucía, l’analyste data : demande-lui de vérifier le tunnel, précise exactement quelle donnée tu veux et explique quelle décision elle va permettre de prendre.",
+            "model_answer_en": "Hi Lucía, several users told us the payment step feels too long. Could you check the funnel for a drop-off at that step? The conversion rate per step over the last three months would help a lot. We need it to decide whether to redesign the step this sprint.",
+            "model_answer_fr": "Salut Lucía, plusieurs utilisateurs nous ont dit que l’étape de paiement leur paraît trop longue. Tu pourrais vérifier s’il y a un décrochage à cette étape du tunnel ? Le taux de conversion par étape sur les trois derniers mois nous aiderait beaucoup. On en a besoin pour décider si on redessine l’étape pendant ce sprint.",
+            "key_phrases": ["check the funnel", "a drop-off at that step", "The conversion rate per step", "We need it to decide"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "product-design-personas-and-journeys",
+      "title_fr": "Construire personas et parcours utilisateur",
+      "title_en": "Build personas and user journeys",
+      "situation_fr": "Tu transformes tes entretiens en outils pour toute l’équipe : des personas, une carte du parcours utilisateur et une navigation plus claire.",
+      "guide": {
+        "intro_fr": "Après la recherche, il faut rendre les résultats utilisables. Une persona est un portrait d’utilisateur type, construit à partir de vraies données : ses objectifs (goals), ses frustrations, son contexte. Le user journey (parcours utilisateur) raconte les étapes qu’il traverse pour atteindre son but ; on le représente dans une customer journey map, avec ses émotions et ses frictions à chaque étape. Le user flow est plus précis : c’est l’enchaînement des écrans et des actions dans le produit. Enfin, l’information architecture (architecture de l’information) organise les contenus et la navigation ; on la teste souvent avec un card sorting (tri par cartes). Verbes utiles : the user lands on, goes through, gets stuck at.",
+        "key_phrases": [
+          { "en": "Our main persona is a freelance designer.", "fr": "Notre persona principale est une designer freelance." },
+          { "en": "Her main goal is to get paid on time.", "fr": "Son objectif principal est d’être payée dans les délais." },
+          { "en": "At this stage, users feel lost.", "fr": "À cette étape, les utilisateurs se sentent perdus." },
+          { "en": "The user lands on the home page.", "fr": "L’utilisateur arrive sur la page d’accueil." },
+          { "en": "Most people get stuck at this step.", "fr": "La plupart des gens bloquent à cette étape." },
+          { "en": "Where would you expect to find this?", "fr": "Où vous attendriez-vous à trouver ceci ?" }
+        ],
+        "tip_fr": "Faux ami du métier : « a journey » est un parcours ou un trajet, pas une journée (« a day »). Et « on time » veut dire dans les délais, à l’heure prévue, alors que « in time » veut dire à temps, avant qu’il soit trop tard : une facture est « paid on time »."
+      },
+      "lessons": [
+        {
+          "id": "product-design-build-a-persona",
+          "title_fr": "Présenter une persona à l’équipe",
+          "term_ids": ["persona", "power-user", "use-case", "pain-point"],
+          "dialogue": [
+            { "speaker": "Kenji", "text_en": "Here’s our main persona: Nadia, a freelance designer who sends about ten invoices a month.", "text_fr": "Voici notre persona principale : Nadia, une designer freelance qui envoie une dizaine de factures par mois." },
+            { "speaker": "Aïcha", "text_en": "Is she a real person?", "text_fr": "C’est une vraie personne ?" },
+            { "speaker": "Kenji", "text_en": "No, she’s a composite of the eight people we interviewed. Every detail comes from our research.", "text_fr": "Non, c’est une synthèse des huit personnes qu’on a interrogées. Chaque détail vient de notre recherche." },
+            { "speaker": "Aïcha", "text_en": "What’s her biggest pain point?", "text_fr": "Quel est son plus gros point de friction ?" },
+            { "speaker": "Kenji", "text_en": "Chasing late payments. Her main use case is sending reminders, not creating invoices.", "text_fr": "Relancer les paiements en retard. Son cas d’usage principal, c’est envoyer des relances, pas créer des factures." },
+            { "speaker": "Aïcha", "text_en": "So she’s not a power user. She just wants to get paid on time.", "text_fr": "Donc ce n’est pas une utilisatrice intensive. Elle veut juste être payée dans les délais." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Le problème de Nadia, c’est « chasing late payments ». Que fait-elle concrètement ?",
+              "choices": ["Elle annule les paiements arrivés en retard", "Elle paie ses propres fournisseurs en retard", "Elle relance les clients qui paient en retard"],
+              "answer_index": 2,
+              "explanation_fr": "« To chase » veut dire courir après ; au travail, « to chase someone » ou « to chase a payment » signifie relancer pour obtenir quelque chose. Nadia est donc celle qui attend l’argent. Payer en retard se dirait « paying late », et annuler un paiement « cancelling a payment »."
+            },
+            {
+              "prompt_fr": "Un développeur doute : « Is she a real person? » Quelle réponse est la plus juste ?",
+              "choices": ["She’s a composite of real users; every detail comes from research.", "Yes, she’s our best customer, we interviewed her last week.", "No, we imagined her to represent our ideal customer."],
+              "answer_index": 0,
+              "explanation_fr": "Une persona est une synthèse (composite) de plusieurs vrais utilisateurs, construite sur des données. Ce n’est pas un vrai client unique : on généraliserait un seul cas. Ce n’est pas non plus une invention ou un « client idéal » : ce serait un souhait marketing, pas un outil de design fiable."
+            },
+            {
+              "prompt_fr": "Complète : « She’s not a power user: she just wants ___ on time. »",
+              "choices": ["to be payed", "to get paid", "being paid"],
+              "answer_index": 1,
+              "explanation_fr": "« Want » est suivi de l’infinitif avec to, et « to get paid » est la tournure la plus naturelle pour être payé. Le participe de « pay » est irrégulier : paid, pas « payed » (réservé à un sens nautique rare). « Being paid » ne peut pas suivre want."
+            },
+            {
+              "prompt_fr": "Quelle phrase décrit le mieux l’objectif de Nadia ?",
+              "choices": ["Her main goal is getting paid in time.", "Her principal objective is to be paid at time.", "Her main goal is to get paid on time."],
+              "answer_index": 2,
+              "explanation_fr": "« On time » veut dire dans les délais, à la date prévue : c’est le sens voulu pour une facture. « In time » veut dire à temps, juste avant qu’il soit trop tard (in time for the meeting). « At time » n’existe pas, et « principal objective » sonne lourd : on dit simplement « main goal »."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige le court texte qui accompagne la persona dans le dossier de design : qui elle est, son objectif, son plus gros point de friction et ce que l’équipe doit en conclure pour le produit.",
+            "model_answer_en": "Meet Nadia, our main persona: a freelance designer who sends about ten invoices a month. Her main goal is to get paid on time. Her biggest pain point is chasing late payments, which she does by email every week. For the product, this means reminders matter more than invoice templates.",
+            "model_answer_fr": "Voici Nadia, notre persona principale : une designer freelance qui envoie une dizaine de factures par mois. Son objectif principal est d’être payée dans les délais. Son plus gros point de friction est de relancer les paiements en retard, ce qu’elle fait par e-mail chaque semaine. Pour le produit, cela veut dire que les relances comptent plus que les modèles de facture.",
+            "key_phrases": ["our main persona", "Her main goal is", "Her biggest pain point is", "this means"]
+          }
+        },
+        {
+          "id": "product-design-map-the-user-journey",
+          "title_fr": "Cartographier le parcours utilisateur",
+          "term_ids": ["user-journey", "customer-journey-map", "onboarding", "friction"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "I’ve mapped the user journey for new accounts, from the first ad to the first invoice sent.", "text_fr": "J’ai cartographié le parcours utilisateur des nouveaux comptes, de la première pub jusqu’à la première facture envoyée." },
+            { "speaker": "Moussa", "text_en": "Nice. Where’s the biggest friction?", "text_fr": "Bien. Où est la plus grosse friction ?" },
+            { "speaker": "Priya", "text_en": "During onboarding. Users must connect their bank account before they see anything useful.", "text_fr": "Pendant l’onboarding. Les utilisateurs doivent connecter leur compte bancaire avant de voir quoi que ce soit d’utile." },
+            { "speaker": "Moussa", "text_en": "And how do they feel at that stage?", "text_fr": "Et comment se sentent-ils à cette étape ?" },
+            { "speaker": "Priya", "text_en": "Worried. On the customer journey map, the emotion line drops right there.", "text_fr": "Inquiets. Sur la carte du parcours client, la courbe des émotions chute exactement là." },
+            { "speaker": "Moussa", "text_en": "Then let’s move the bank step later and let them try the product first.", "text_fr": "Alors déplaçons l’étape bancaire plus tard et laissons-les d’abord essayer le produit." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « J’ai cartographié le parcours utilisateur des nouveaux comptes » ?",
+              "choices": ["I’ve cartographied the user journey of new accounts.", "I’ve mapped the user journey for new accounts.", "I’ve mapped the user’s journey of the new accounts."],
+              "answer_index": 1,
+              "explanation_fr": "Le verbe est « to map » (cartographier, schématiser) ; « cartography » existe comme nom, mais pas le verbe « to cartography ». On dit « the user journey for new accounts » : le parcours prévu pour ce groupe. « The user’s journey of the new accounts » accumule un possessif et un « of » qui alourdissent la phrase."
+            },
+            {
+              "prompt_fr": "Moussa demande la différence entre « user journey » et « user flow ». Quelle réponse est juste ?",
+              "choices": ["A journey covers the whole experience; a flow shows the screens and actions in the product.", "A flow covers the whole experience; a journey shows the screens and actions in the product.", "They mean the same thing, but flow is the word used for mobile apps."],
+              "answer_index": 0,
+              "explanation_fr": "Le user journey couvre toute l’expérience, y compris hors du produit (la pub, un e-mail, un appel au support), avec les émotions. Le user flow est l’enchaînement précis des écrans et des actions dans le produit. La deuxième réponse inverse les deux notions, et les deux termes ne dépendent pas de la plateforme."
+            },
+            {
+              "prompt_fr": "Complète : « On the map, the emotion line ___ right at the bank step. »",
+              "choices": ["falls down", "is lowering", "drops"],
+              "answer_index": 2,
+              "explanation_fr": "Pour une courbe ou un chiffre qui baisse brusquement, on dit « drops » (ou falls, sans down). « Falls down » décrit une chute physique, quelqu’un qui tombe par terre. « To lower » est transitif (to lower a price) : une courbe ne « se lower » pas."
+            },
+            {
+              "prompt_fr": "Pourquoi Moussa propose-t-il de déplacer l’étape bancaire ?",
+              "choices": ["Pour réduire le nombre total d’écrans de l’onboarding", "Pour que les utilisateurs voient la valeur du produit avant l’effort", "Parce que la connexion bancaire n’est pas assez sécurisée"],
+              "answer_index": 1,
+              "explanation_fr": "Le problème identifié est l’ordre : on demande un effort qui inquiète (connecter sa banque) avant que l’utilisateur ait vu le moindre bénéfice. En déplaçant l’étape, il découvre la valeur d’abord. Le nombre d’écrans reste le même, et la sécurité n’est pas évoquée dans la discussion."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Partage ta carte du parcours sur Slack : dis où se trouve la plus grosse friction, explique pourquoi elle se produit, et propose une piste concrète à tester.",
+            "model_answer_en": "Hi team, I’ve mapped the user journey for new users. The biggest friction is during onboarding, when we ask for the VAT number. Most users don’t have it at hand, so many leave at that stage. I suggest we make this field optional and ask for it before the first invoice.",
+            "model_answer_fr": "Bonjour l’équipe, j’ai cartographié le parcours des nouveaux utilisateurs. La plus grosse friction se trouve pendant l’onboarding, quand on demande le numéro de TVA. La plupart des utilisateurs ne l’ont pas sous la main, alors beaucoup partent à cette étape. Je propose de rendre ce champ facultatif et de le demander avant la première facture.",
+            "key_phrases": ["I’ve mapped the user journey", "The biggest friction is during onboarding", "at that stage", "I suggest we make this field optional"]
+          }
+        },
+        {
+          "id": "product-design-organize-the-navigation",
+          "title_fr": "Réorganiser la navigation avec un tri par cartes",
+          "term_ids": ["information-architecture", "card-sorting", "user-flow", "tab-bar"],
+          "dialogue": [
+            { "speaker": "Ivan", "text_en": "Users can’t find the tax settings. Should we just add another item to the tab bar?", "text_fr": "Les utilisateurs ne trouvent pas les paramètres de TVA. On ajoute simplement un élément dans la barre d’onglets ?" },
+            { "speaker": "Lucía", "text_en": "I’d rather fix the information architecture first. Right now, settings are spread over three menus.", "text_fr": "Je préférerais d’abord corriger l’architecture de l’information. Pour l’instant, les paramètres sont répartis dans trois menus." },
+            { "speaker": "Ivan", "text_en": "How do you decide where things go?", "text_fr": "Comment tu décides où va chaque chose ?" },
+            { "speaker": "Lucía", "text_en": "I’ll run a card sorting session: users group the labels in a way that makes sense to them.", "text_fr": "Je vais organiser une session de tri par cartes : les utilisateurs regroupent les libellés d’une façon qui a du sens pour eux." },
+            { "speaker": "Ivan", "text_en": "And after that?", "text_fr": "Et ensuite ?" },
+            { "speaker": "Lucía", "text_en": "Then I’ll draw the new user flow for changing tax settings. The goal is three taps or fewer.", "text_fr": "Ensuite, je dessinerai le nouveau parcours d’écrans pour modifier la TVA. L’objectif : trois appuis maximum." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Ivan propose d’ajouter un onglet. Pourquoi Lucía préfère-t-elle revoir l’architecture de l’information ?",
+              "choices": ["Parce que le vrai problème est l’organisation des paramètres, pas leur visibilité", "Parce qu’une barre d’onglets ne peut jamais contenir plus de trois éléments", "Parce que les développeurs ne peuvent pas modifier la barre d’onglets"],
+              "answer_index": 0,
+              "explanation_fr": "Les paramètres sont éparpillés dans trois menus : ajouter un onglet ne ferait que masquer un problème d’organisation. Une barre d’onglets contient en général trois à cinq éléments, la limite de trois est donc fausse, et rien n’indique un blocage technique."
+            },
+            {
+              "prompt_fr": "Complète : « Right now, settings are ___ over three menus. »",
+              "choices": ["spreaded", "spreading", "spread"],
+              "answer_index": 2,
+              "explanation_fr": "« Spread » est un verbe irrégulier dont les trois formes sont identiques : spread, spread, spread. « Spreaded » n’existe pas. « Are spreading » est un présent continu actif qui voudrait dire que les paramètres se répandent d’eux-mêmes, ici il faut le passif : are spread."
+            },
+            {
+              "prompt_fr": "Tu lances un card sorting. Quelle consigne donnes-tu aux participants ?",
+              "choices": ["Please rank these screens from the best to the worst.", "Please group these cards in a way that makes sense to you.", "Please find the tax settings as fast as you can."],
+              "answer_index": 1,
+              "explanation_fr": "Dans un tri par cartes, chaque carte porte un libellé et le participant les regroupe selon sa logique : on découvre ainsi son modèle mental. Classer des écrans du meilleur au pire est un test de préférence. Chercher un paramètre le plus vite possible correspond à un test de navigation (tree testing ou test d’utilisabilité)."
+            },
+            {
+              "prompt_fr": "Sur mobile, comment dire « trois appuis maximum » ?",
+              "choices": ["three taps or fewer", "three touches maximum", "three clicks at the most"],
+              "answer_index": 0,
+              "explanation_fr": "Sur un écran tactile, un appui se dit « a tap » ; « a click » s’emploie avec une souris. « Touches » veut plutôt dire contacts ou petites touches finales (finishing touches). Avec un nom comptable comme taps, la forme soignée est « or fewer » plutôt que « or less »."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Écris un court brief pour proposer un tri par cartes : le problème observé, sa cause probable, ce que tu vas faire et ce que l’équipe recevra ensuite.",
+            "model_answer_en": "Problem: users can’t find the tax settings. The likely cause is that settings are spread over three menus. I’ll run a card sorting session with eight users to fix the information architecture. Next week, I’ll share a new user flow for changing tax settings.",
+            "model_answer_fr": "Problème : les utilisateurs ne trouvent pas les paramètres de TVA. La cause probable est que les paramètres sont répartis dans trois menus. Je vais organiser une session de tri par cartes avec huit utilisateurs pour corriger l’architecture de l’information. La semaine prochaine, je partagerai un nouveau parcours d’écrans pour modifier la TVA.",
+            "key_phrases": ["users can’t find", "spread over three menus", "run a card sorting session", "share a new user flow"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "product-design-wireframes-and-critique",
+      "title_fr": "Présenter une maquette et recevoir une critique",
+      "title_en": "Present designs and run a critique",
+      "situation_fr": "Tu montres tes premiers écrans à l’équipe : tu expliques tes choix, tu reçois des retours en revue de design, puis tu soignes les textes et l’accessibilité.",
+      "guide": {
+        "intro_fr": "Un écran passe par plusieurs étapes. Le wireframe (maquette fonctionnelle) est un schéma en niveaux de gris qui montre la structure ; le mockup (maquette graphique) ajoute les couleurs, la typographie et les images. Les deux se font souvent dans Figma, où l’équipe commente directement. Pour présenter, on donne le but de l’écran, puis la visual hierarchy (hiérarchie visuelle) : ce que l’œil voit en premier, comme le call to action (bouton d’action principal). Pendant une design review ou une design critique, on reçoit du feedback : on écoute, on fait préciser, on ne se justifie pas trop vite. On soigne aussi la microcopy (les petits textes des boutons et messages) et l’accessibility, par exemple le color contrast.",
+        "key_phrases": [
+          { "en": "The goal of this screen is to…", "fr": "Le but de cet écran est de…" },
+          { "en": "The first thing you see is the main call to action.", "fr": "La première chose qu’on voit est le bouton d’action principal." },
+          { "en": "This is still a rough wireframe.", "fr": "Ce n’est encore qu’un wireframe brut." },
+          { "en": "What feedback do you have?", "fr": "Quels retours avez-vous ?" },
+          { "en": "Can you say more about that?", "fr": "Tu peux développer ?" },
+          { "en": "Good point, I’ll explore another option.", "fr": "Bonne remarque, je vais explorer une autre option." }
+        ],
+        "tip_fr": "En critique de design, on commente l’écran, pas la personne : « The button is hard to see » plutôt que « You made the button too small ». Et « a critique » (nom) désigne une séance de retours constructifs ; « to criticize » veut dire critiquer au sens négatif."
+      },
+      "lessons": [
+        {
+          "id": "product-design-walk-through-a-wireframe",
+          "title_fr": "Présenter un wireframe",
+          "term_ids": ["wireframe", "mockup", "figma", "visual-hierarchy", "call-to-action"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "Here’s the wireframe for the new dashboard. It’s still rough, so don’t worry about the grey boxes.", "text_fr": "Voici le wireframe du nouveau tableau de bord. C’est encore brut, donc ne fais pas attention aux boîtes grises." },
+            { "speaker": "Kenji", "text_en": "No problem. What should I look at first?", "text_fr": "Pas de souci. Je regarde quoi en premier ?" },
+            { "speaker": "Sarah", "text_en": "The visual hierarchy. The first thing you see is the unpaid total, then the main call to action: Send reminder.", "text_fr": "La hiérarchie visuelle. La première chose qu’on voit, c’est le total impayé, puis l’appel à l’action principal : Send reminder." },
+            { "speaker": "Kenji", "text_en": "Makes sense. When will we see colors and real content?", "text_fr": "Logique. Quand verra-t-on les couleurs et le vrai contenu ?" },
+            { "speaker": "Sarah", "text_en": "I’ll turn it into a mockup next week, once we agree on the structure.", "text_fr": "Je le transformerai en maquette graphique la semaine prochaine, une fois qu’on sera d’accord sur la structure." },
+            { "speaker": "Kenji", "text_en": "Perfect. I’ll leave my comments directly in Figma.", "text_fr": "Parfait. Je laisserai mes commentaires directement dans Figma." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle phrase décrit correctement l’étape suivante prévue par Sarah ?",
+              "choices": ["She will turn the mockup into a wireframe.", "She will build the wireframe directly in code.", "She will turn the wireframe into a mockup."],
+              "answer_index": 2,
+              "explanation_fr": "L’ordre habituel va du plus simple au plus détaillé : d’abord le wireframe (la structure), puis le mockup (le rendu visuel). La première réponse inverse les étapes. Coder le wireframe directement n’est pas ce qu’elle annonce : elle veut d’abord valider la structure."
+            },
+            {
+              "prompt_fr": "Comment dire « Je le transformerai en maquette graphique » ?",
+              "choices": ["I’ll transform it in a mockup.", "I’ll turn it into a mockup.", "I’ll change it to mockup."],
+              "answer_index": 1,
+              "explanation_fr": "« To turn something into something » est la tournure naturelle pour transformer. La préposition est « into » (mouvement vers un nouvel état), jamais « in » : « transform in » est un calque de « transformer en ». « Change it to mockup » oublie l’article (a mockup) et sonne comme un simple changement de réglage."
+            },
+            {
+              "prompt_fr": "Sarah dit « It’s still rough ». Que veut-elle faire comprendre ?",
+              "choices": ["Que c’est une ébauche et qu’il ne faut pas juger les détails", "Que l’écran est encore difficile à utiliser", "Que le design est trop chargé pour l’instant"],
+              "answer_index": 0,
+              "explanation_fr": "Appliqué à un travail, « rough » veut dire brut, approximatif, pas fini (a rough draft, a rough estimate). Ce n’est pas un jugement sur l’usage ni sur la densité de l’écran : c’est une façon d’orienter les retours vers la structure."
+            },
+            {
+              "prompt_fr": "Ton PM commente la couleur des boutons alors que tu présentes un wireframe. Quelle réponse est la plus professionnelle ?",
+              "choices": ["Colors don’t matter at this stage, let’s move on.", "Sorry, I’ll fix the colors before the next meeting.", "Good point for later; today I’d love feedback on the structure."],
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse accueille la remarque (for later) et recentre poliment sur l’objectif de la séance. La première est vraie sur le fond mais sonne sèche. La deuxième s’excuse à tort : un wireframe n’a pas de couleurs à corriger, et tu perds le contrôle de ta présentation."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Présente ton wireframe en réunion : le but de l’écran, ce qu’on voit en premier et pourquoi, puis le type de retour que tu attends aujourd’hui.",
+            "model_answer_en": "The goal of this screen is to help users chase unpaid invoices. The first thing you see is the unpaid total, because it’s what users check every morning. Then comes the main call to action, Send reminder. It’s still a rough wireframe, so today I’d love feedback on the structure, not the colors.",
+            "model_answer_fr": "Le but de cet écran est d’aider les utilisateurs à relancer les factures impayées. La première chose qu’on voit est le total impayé, parce que c’est ce que les utilisateurs vérifient chaque matin. Vient ensuite l’appel à l’action principal, Send reminder. C’est encore un wireframe brut, donc aujourd’hui j’aimerais des retours sur la structure, pas sur les couleurs.",
+            "key_phrases": ["The goal of this screen is to", "The first thing you see is", "the main call to action", "I’d love feedback on the structure"]
+          }
+        },
+        {
+          "id": "product-design-take-design-feedback",
+          "title_fr": "Recevoir des retours en revue de design",
+          "term_ids": ["design-review", "feedback", "white-space", "typography", "user-interface"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "Thanks for sharing, Tomasz. Can I give you some feedback before Thursday’s design review?", "text_fr": "Merci pour le partage, Tomasz. Je peux te faire quelques retours avant la revue de design de jeudi ?" },
+            { "speaker": "Tomasz", "text_en": "Sure, please be honest.", "text_fr": "Bien sûr, sois honnête." },
+            { "speaker": "Priya", "text_en": "The user interface feels crowded. I’d add more white space between the cards.", "text_fr": "L’interface paraît chargée. J’ajouterais plus d’espace entre les cartes." },
+            { "speaker": "Tomasz", "text_en": "Fair point. Anything else?", "text_fr": "C’est juste. Autre chose ?" },
+            { "speaker": "Priya", "text_en": "The typography: you use four font sizes on one screen. Two or three would feel calmer.", "text_fr": "La typographie : tu utilises quatre tailles de police sur un seul écran. Deux ou trois, ce serait plus apaisé." },
+            { "speaker": "Tomasz", "text_en": "Can you say more about that? I wanted the totals to stand out.", "text_fr": "Tu peux développer ? Je voulais que les totaux ressortent." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Priya trouve que « the user interface feels crowded ». Quel conseil va logiquement avec ce constat ?",
+              "choices": ["Add more white space between elements.", "Use brighter colors for the buttons.", "Make the cards smaller to fit more in."],
+              "answer_index": 0,
+              "explanation_fr": "« Crowded » veut dire surchargé, trop d’éléments serrés : la réponse logique est de donner de l’air avec du white space. Des couleurs plus vives ajouteraient du bruit visuel, et réduire les cartes pour en mettre plus aggraverait le problème."
+            },
+            {
+              "prompt_fr": "Tu proposes tes retours à un collègue. Quelle phrase est correcte ?",
+              "choices": ["Can I give you some feedbacks?", "Can I give you some feedback?", "Can I make you a feedback?"],
+              "answer_index": 1,
+              "explanation_fr": "« Feedback » est indénombrable en anglais : pas de s et pas de « a ». On dit some feedback, ou a piece of feedback pour un seul point. Et on « give » du feedback, on ne le « make » pas : c’est un calque de « faire un retour »."
+            },
+            {
+              "prompt_fr": "Complète : « I wanted the totals to stand ___ . »",
+              "choices": ["up", "off", "out"],
+              "answer_index": 2,
+              "explanation_fr": "« To stand out » veut dire ressortir, se distinguer visuellement : c’est un verbe clé en design. « To stand up » veut dire se lever, et « to stand off » se tenir à distance. La particule change complètement le sens du verbe."
+            },
+            {
+              "prompt_fr": "Tu n’es pas d’accord avec un retour, mais tu veux d’abord comprendre. Que dis-tu ?",
+              "choices": ["Can you say more about that?", "Can you explain me that?", "Can you precise what you mean?"],
+              "answer_index": 0,
+              "explanation_fr": "« Can you say more about that? » invite à développer, sans se défendre. « Explain me » est une erreur classique : explain n’a pas de complément de personne direct, on dit explain it to me. « Precise » est un adjectif en anglais ; le verbe préciser se dit clarify ou be more specific."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Après la revue de design, résume sur Slack les deux retours principaux et ce que tu vas changer, puis indique un point que tu gardes, avec ta raison.",
+            "model_answer_en": "Thanks all for the feedback in today’s design review. Two main points: the interface feels crowded and there are too many font sizes. I’ll add more white space and reduce the typography to three sizes. I’ll keep the large totals, though, because users told us they look at them first.",
+            "model_answer_fr": "Merci à tous pour vos retours lors de la revue de design d’aujourd’hui. Deux points principaux : l’interface paraît chargée et il y a trop de tailles de police. Je vais ajouter de l’espace et réduire la typographie à trois tailles. Je garde quand même les grands totaux, parce que les utilisateurs nous ont dit qu’ils les regardent en premier.",
+            "key_phrases": ["Thanks all for the feedback", "Two main points", "add more white space", "because users told us"]
+          }
+        },
+        {
+          "id": "product-design-write-microcopy",
+          "title_fr": "Écrire les micro-textes et les états vides",
+          "term_ids": ["microcopy", "empty-state", "form-validation", "call-to-action"],
+          "dialogue": [
+            { "speaker": "Moussa", "text_en": "Aïcha, what should we show when a user has no invoices yet? Right now the page is just blank.", "text_fr": "Aïcha, qu’est-ce qu’on affiche quand un utilisateur n’a encore aucune facture ? Pour l’instant, la page est juste vide." },
+            { "speaker": "Aïcha", "text_en": "We need a proper empty state: a short message and a clear call to action, like Create your first invoice.", "text_fr": "Il nous faut un vrai état vide : un message court et un appel à l’action clair, comme Create your first invoice." },
+            { "speaker": "Moussa", "text_en": "OK. And the form validation messages? Currently it just says Invalid input.", "text_fr": "D’accord. Et les messages de validation du formulaire ? Actuellement, ça dit juste Invalid input." },
+            { "speaker": "Aïcha", "text_en": "That microcopy doesn’t help anyone. Tell people what to fix, for example: Enter a date after today.", "text_fr": "Ce micro-texte n’aide personne. Dis aux gens quoi corriger, par exemple : Enter a date after today." },
+            { "speaker": "Moussa", "text_en": "Got it. Should the button say Submit?", "text_fr": "Compris. Le bouton doit dire Submit ?" },
+            { "speaker": "Aïcha", "text_en": "Better to describe what it does: Send invoice.", "text_fr": "Mieux vaut décrire ce qu’il fait : Send invoice." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Moussa dit « Currently it just says Invalid input ». Que veut dire « currently » ?",
+              "choices": ["En fait", "Actuellement", "Couramment"],
+              "answer_index": 1,
+              "explanation_fr": "« Currently » veut dire actuellement, en ce moment. C’est « actually » qui veut dire en fait : le piège classique, car actually ressemble à actuellement. « Couramment » se dirait commonly ou fluently (pour une langue)."
+            },
+            {
+              "prompt_fr": "La page Clients est vide. Quel état vide suit les bonnes pratiques ?",
+              "choices": ["No data available.", "You have 0 clients.", "No clients yet. Add your first client."],
+              "answer_index": 2,
+              "explanation_fr": "Un bon état vide explique la situation avec les mots de l’utilisateur (yet suggère que c’est normal au début) et propose l’action suivante. « No data available » est un message technique et froid. « You have 0 clients » constate sans aider, et peut même sonner comme un reproche."
+            },
+            {
+              "prompt_fr": "Quel texte de bouton est le plus clair pour envoyer une facture ?",
+              "choices": ["Send invoice", "Submit", "Validate"],
+              "answer_index": 0,
+              "explanation_fr": "Un bon libellé de bouton décrit l’action et son objet : verbe + nom. « Submit » est générique et ne dit pas ce qui va se passer. « Validate » est un faux ami de « valider » : en anglais, il veut surtout dire vérifier que quelque chose est correct, pas confirmer ou envoyer."
+            },
+            {
+              "prompt_fr": "Complète : « Better to ___ what the button does. »",
+              "choices": ["describe about", "describe", "explain about"],
+              "answer_index": 1,
+              "explanation_fr": "« Describe » est transitif direct, comme décrire en français : describe what it does. « Describe about » est une erreur fréquente. « Explain about » existe à l’oral mais reste maladroit, et ne s’emploie pas devant une proposition comme « what the button does »."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Propose le micro-texte de l’état vide de la page Clients : un titre, une phrase et un bouton, puis justifie en une phrase ton choix de libellé pour le bouton.",
+            "model_answer_en": "Empty state for the Clients page. Title: No clients yet. Text: Add your first client to start sending invoices. Button: Add a client, because it describes the action better than a generic Create.",
+            "model_answer_fr": "État vide de la page Clients. Titre : No clients yet. Texte : Add your first client to start sending invoices. Bouton : Add a client, parce que ce libellé décrit mieux l’action qu’un Create générique.",
+            "key_phrases": ["Empty state for", "No clients yet", "Add a client", "describes the action"]
+          }
+        },
+        {
+          "id": "product-design-check-accessibility",
+          "title_fr": "Vérifier l’accessibilité d’un écran",
+          "term_ids": ["accessibility", "color-contrast", "inclusive-design", "screen-reader", "touch-target", "user-experience"],
+          "dialogue": [
+            { "speaker": "Lucía", "text_en": "Before I hand this off to you, let’s do a quick accessibility check.", "text_fr": "Avant de te passer cet écran, faisons une vérification rapide de l’accessibilité." },
+            { "speaker": "Kenji", "text_en": "Sure. What worries you?", "text_fr": "Bien sûr. Qu’est-ce qui t’inquiète ?" },
+            { "speaker": "Lucía", "text_en": "The light grey text. The color contrast is too low, so I’ll darken it to meet WCAG AA.", "text_fr": "Le texte gris clair. Le contraste des couleurs est trop faible, donc je vais le foncer pour respecter le niveau WCAG AA." },
+            { "speaker": "Kenji", "text_en": "And the icons in the toolbar? They’re tiny on mobile.", "text_fr": "Et les icônes de la barre d’outils ? Elles sont minuscules sur mobile." },
+            { "speaker": "Lucía", "text_en": "Right, each touch target should be at least 44 by 44 points. And every icon needs a label for screen readers.", "text_fr": "C’est vrai, chaque zone tactile devrait faire au moins 44 points sur 44. Et chaque icône a besoin d’un libellé pour les lecteurs d’écran." },
+            { "speaker": "Kenji", "text_en": "Makes sense. Inclusive design improves the user experience for everyone, not just people with disabilities.", "text_fr": "Logique. Le design inclusif améliore l’expérience utilisateur de tout le monde, pas seulement des personnes en situation de handicap." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Lucía veut-elle foncer le texte gris clair ?",
+              "choices": ["Pour respecter la charte graphique de la marque", "Pour que le texte reste lisible en mode sombre", "Pour que le texte se distingue assez du fond"],
+              "answer_index": 2,
+              "explanation_fr": "Un « color contrast » trop faible veut dire que le texte se distingue mal de son fond ; les règles WCAG fixent un ratio minimum (4,5 pour 1 pour un texte courant au niveau AA). Il ne s’agit ni de la charte de la marque ni du mode sombre, qui n’est pas évoqué."
+            },
+            {
+              "prompt_fr": "Comment dire « les personnes en situation de handicap » de façon respectueuse ?",
+              "choices": ["people with disabilities", "handicapped people", "invalid people"],
+              "answer_index": 0,
+              "explanation_fr": "« People with disabilities » met la personne en premier : c’est la formule recommandée au travail (on entend aussi disabled people). « Handicapped » est daté et souvent mal perçu. « Invalid » est un faux ami blessant : en anglais, il veut d’abord dire non valide, comme un mot de passe invalide."
+            },
+            {
+              "prompt_fr": "Complète : « Every icon needs a label for screen ___ . »",
+              "choices": ["lecturers", "readers", "lectors"],
+              "answer_index": 1,
+              "explanation_fr": "Un lecteur d’écran est un « screen reader » (VoiceOver, TalkBack, NVDA). « Lecturer » est un faux ami : c’est un enseignant à l’université (maître de conférences). « Lector » est très rare et désigne une personne qui lit à voix haute, notamment à l’église."
+            },
+            {
+              "prompt_fr": "Un collègue dit : « Accessibility only concerns a few users. » Quelle réponse est la plus convaincante ?",
+              "choices": ["You’re right, so we can safely do it after launch.", "It’s required by law, so we have no choice anyway.", "It helps everyone: good contrast also helps people outside in the sun."],
+              "answer_index": 2,
+              "explanation_fr": "La réponse la plus convaincante corrige l’idée reçue avec un exemple concret : ce qui aide les personnes handicapées aide aussi tout le monde dans certaines situations (soleil, bras occupé, écran cassé). L’argument légal existe, mais il clôt la discussion sans convaincre. La première réponse accepte une idée fausse."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Tu relis la pull request d’un développeur. Laisse un commentaire : un point positif, les deux problèmes d’accessibilité avec une solution pour chacun, et ce qui bloque ou non la fusion.",
+            "model_answer_en": "Nice work on this screen! Two accessibility points: the light grey text doesn’t have enough color contrast, so please use the darker grey token. Also, the icon buttons need a label for screen readers. The contrast is a blocker for me, but the labels can go in a follow-up PR.",
+            "model_answer_fr": "Beau travail sur cet écran ! Deux points d’accessibilité : le texte gris clair n’a pas assez de contraste, donc utilise le token de gris plus foncé, s’il te plaît. Par ailleurs, les boutons-icônes ont besoin d’un libellé pour les lecteurs d’écran. Le contraste est bloquant pour moi, mais les libellés peuvent aller dans une PR de suivi.",
+            "key_phrases": ["Two accessibility points", "doesn’t have enough color contrast", "need a label for screen readers", "in a follow-up PR"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "product-design-prototype-and-test",
+      "title_fr": "Tester un prototype avec des utilisateurs",
+      "title_en": "Prototype and test with users",
+      "situation_fr": "Avant de faire construire quoi que ce soit, tu crées un prototype cliquable, tu le fais tester par de vrais utilisateurs et tu analyses les résultats.",
+      "guide": {
+        "intro_fr": "Un prototype permet de tester une idée sans écrire de code. Il peut être low-fidelity (quelques écrans simples reliés entre eux) ou high-fidelity (proche du produit final, avec les vraies interactions). Pendant un usability test (test d’utilisabilité), on donne une tâche au participant, par exemple « Try to send a reminder to a client », et on l’observe sans l’aider ; on lui demande de penser à voix haute (« Please think aloud »). On note où il hésite, où il se trompe et s’il réussit la tâche. Une heuristic evaluation (évaluation heuristique) complète ces tests : un expert passe l’interface en revue selon des principes reconnus. Enfin, pour départager deux versions en production, on lance un A/B test.",
+        "key_phrases": [
+          { "en": "Your task is to send a reminder to a client.", "fr": "Votre tâche est d’envoyer une relance à un client." },
+          { "en": "Please think aloud as you go.", "fr": "Pensez à voix haute au fur et à mesure." },
+          { "en": "We’re testing the design, not you.", "fr": "C’est le design que nous testons, pas vous." },
+          { "en": "What did you expect to happen?", "fr": "À quoi vous attendiez-vous ?" },
+          { "en": "Four out of five participants completed the task.", "fr": "Quatre participants sur cinq ont réussi la tâche." },
+          { "en": "She hesitated on the second screen.", "fr": "Elle a hésité sur le deuxième écran." }
+        ],
+        "tip_fr": "Pendant un test, si le participant demande « Should I click here? », ne réponds pas : renvoie la question (« What would you do if I weren’t here? »). Et un faux ami fréquent : « to realize » veut dire se rendre compte ; pour réaliser un prototype, on dit « to build » ou « to make a prototype »."
+      },
+      "lessons": [
+        {
+          "id": "product-design-build-a-prototype",
+          "title_fr": "Construire un prototype cliquable",
+          "term_ids": ["prototype", "high-fidelity", "interaction-design", "affordance", "gesture"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "Ivan, is the prototype ready for Thursday’s tests?", "text_fr": "Ivan, le prototype est prêt pour les tests de jeudi ?" },
+            { "speaker": "Ivan", "text_en": "Almost. I’m making it high-fidelity, because we want to test the swipe interaction, not just the layout.", "text_fr": "Presque. Je le fais en haute fidélité, parce qu’on veut tester l’interaction de balayage, pas seulement la mise en page." },
+            { "speaker": "Sarah", "text_en": "Why does the swipe matter so much?", "text_fr": "Pourquoi le balayage compte-t-il autant ?" },
+            { "speaker": "Ivan", "text_en": "It’s a new gesture for our users. Swiping left to archive is common in email apps, but here it has no affordance: nothing on screen tells you it’s possible.", "text_fr": "C’est un nouveau geste pour nos utilisateurs. Balayer vers la gauche pour archiver est courant dans les applis d’e-mail, mais ici, il n’a pas d’affordance : rien à l’écran n’indique que c’est possible." },
+            { "speaker": "Sarah", "text_en": "So we need to check if people discover it on their own.", "text_fr": "Donc il faut vérifier si les gens le découvrent seuls." },
+            { "speaker": "Ivan", "text_en": "Exactly. Good interaction design is about what users expect, not what looks clever.", "text_fr": "Exactement. Un bon design d’interaction, c’est ce à quoi les utilisateurs s’attendent, pas ce qui a l’air astucieux." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Ivan dit que le balayage « has no affordance ». Que veut-il dire ?",
+              "choices": ["Le geste coûte trop cher à développer", "Rien à l’écran ne suggère qu’on peut faire ce geste", "Le geste ne fonctionne pas sur tous les téléphones"],
+              "answer_index": 1,
+              "explanation_fr": "L’« affordance » est la capacité d’un élément à suggérer comment l’utiliser : un bouton en relief invite à appuyer, une poignée invite à tirer. Rien à voir avec « affordable » (abordable, pas cher), le piège tentant. La compatibilité des téléphones n’est pas en question."
+            },
+            {
+              "prompt_fr": "Pourquoi Ivan choisit-il un prototype haute fidélité plutôt qu’un simple wireframe cliquable ?",
+              "choices": ["Parce qu’il faut tester une interaction précise, pas seulement la structure", "Parce que les participants ne comprennent pas les wireframes", "Parce que les développeurs pourront réutiliser le prototype comme code"],
+              "answer_index": 0,
+              "explanation_fr": "On monte en fidélité quand la question à tester l’exige : ici, un geste de balayage, impossible à évaluer sur des écrans statiques. Les participants comprennent très bien les wireframes pour tester une structure, et un prototype Figma n’est pas du code réutilisable."
+            },
+            {
+              "prompt_fr": "Comment dire « Je réalise un prototype » ?",
+              "choices": ["I’m realizing a prototype.", "I’m doing a prototype.", "I’m building a prototype."],
+              "answer_index": 2,
+              "explanation_fr": "Pour fabriquer quelque chose, on dit « build » ou « make » a prototype. « Realize » est un faux ami : il veut dire se rendre compte (I realized it was wrong). « Do » s’emploie pour des activités (do research, do a test), pas pour fabriquer un objet."
+            },
+            {
+              "prompt_fr": "Complète : « We need to check if people discover the gesture on their ___ . »",
+              "choices": ["selves", "own", "alone"],
+              "answer_index": 1,
+              "explanation_fr": "L’expression figée est « on their own » (tout seuls, sans aide) ; son équivalent est « by themselves ». « On their selves » n’existe pas, et « alone » s’emploie sans « on their » : discover it alone."
+            }
+          ],
+          "production": {
+            "channel": "standup",
+            "prompt_fr": "Au stand-up, dis ce que tu as fait hier et ce que tu fais aujourd’hui sur le prototype, puis signale un risque pour les tests de jeudi et ton plan B.",
+            "model_answer_en": "Yesterday I worked on the high-fidelity prototype for Thursday’s tests. Today I’m adding the swipe interaction. One risk: the gesture has no affordance, so users may not discover it on their own. If that happens, we’ll test a second version with a visible hint.",
+            "model_answer_fr": "Hier, j’ai travaillé sur le prototype haute fidélité pour les tests de jeudi. Aujourd’hui, j’ajoute l’interaction de balayage. Un risque : le geste n’a pas d’affordance, donc les utilisateurs risquent de ne pas le découvrir seuls. Si c’est le cas, on testera une deuxième version avec un indice visible.",
+            "key_phrases": ["high-fidelity prototype", "Thursday’s tests", "discover it on their own", "If that happens"]
+          }
+        },
+        {
+          "id": "product-design-run-a-usability-test",
+          "title_fr": "Animer un test d’utilisabilité",
+          "term_ids": ["usability-testing", "happy-path", "edge-case", "prototype"],
+          "dialogue": [
+            { "speaker": "Tomasz", "text_en": "That was our third usability testing session today. How do you think it went?", "text_fr": "C’était notre troisième session de test d’utilisabilité aujourd’hui. Comment trouves-tu que ça s’est passé ?" },
+            { "speaker": "Priya", "text_en": "Mixed. On the happy path, she sent the reminder in less than a minute.", "text_fr": "Mitigé. Sur le scénario nominal, elle a envoyé la relance en moins d’une minute." },
+            { "speaker": "Tomasz", "text_en": "And when the client had no email address?", "text_fr": "Et quand le client n’avait pas d’adresse e-mail ?" },
+            { "speaker": "Priya", "text_en": "That edge case broke the prototype. She got stuck and asked me what to do.", "text_fr": "Ce cas limite a mis le prototype en échec. Elle a bloqué et m’a demandé quoi faire." },
+            { "speaker": "Tomasz", "text_en": "Did you help her?", "text_fr": "Tu l’as aidée ?" },
+            { "speaker": "Priya", "text_en": "No, I asked her what she would do if I weren’t there. She said she would call support.", "text_fr": "Non, je lui ai demandé ce qu’elle ferait si je n’étais pas là. Elle a dit qu’elle appellerait le support." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Sur le « happy path », la participante a réussi en moins d’une minute. Qu’est-ce que cela ne prouve PAS ?",
+              "choices": ["Que le scénario principal fonctionne", "Que la tâche de base est rapide", "Que l’écran gère bien les cas inhabituels"],
+              "answer_index": 2,
+              "explanation_fr": "Le « happy path » est le scénario idéal, où tout se passe comme prévu, avec des données valides. Le réussir prouve que le cas principal marche et qu’il est rapide, mais rien sur les cas limites (edge cases) : c’est justement là que la participante a bloqué."
+            },
+            {
+              "prompt_fr": "Comment dire « Elle a bloqué sur cet écran » ?",
+              "choices": ["She got stuck on that screen.", "She blocked on that screen.", "She was blocked at that screen."],
+              "answer_index": 0,
+              "explanation_fr": "« To get stuck » est la tournure naturelle pour quelqu’un qui ne peut plus avancer. « To block » est transitif (to block someone, to block a road) : « she blocked » laisse attendre un complément. « She was blocked » voudrait dire que quelqu’un l’a bloquée, par exemple sur un réseau social."
+            },
+            {
+              "prompt_fr": "Complète la consigne : « Please think ___ as you go. »",
+              "choices": ["loudly", "aloud", "at high voice"],
+              "answer_index": 1,
+              "explanation_fr": "L’expression consacrée est « think aloud » (penser à voix haute) ; on parle même de la méthode « think-aloud ». « Loudly » parle du volume (fort, bruyamment), pas du fait de verbaliser. « At high voice » est un calque de « à haute voix » qui n’existe pas."
+            },
+            {
+              "prompt_fr": "Pendant le test, la participante te demande : « Should I click here? » Que réponds-tu ?",
+              "choices": ["Yes, that’s the right button.", "Try another button first.", "What would you do if I weren’t here?"],
+              "answer_index": 2,
+              "explanation_fr": "Renvoyer la question permet d’observer ce que l’utilisateur ferait seul, ce qui est tout le but du test. Répondre oui ou orienter vers un autre bouton fausse le résultat : en production, personne ne sera là pour l’aider. Note le conditionnel « if I weren’t », forme soignée de l’hypothèse."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le compte rendu de la session 3 : ce que la participante a réussi, où elle a bloqué, sa réaction, et ta recommandation.",
+            "model_answer_en": "Participant 3 completed the happy path in less than a minute. She got stuck on the edge case where the client had no email address. She said she would call support. Recommendation: show a clear message and let users add the email address directly.",
+            "model_answer_fr": "La participante 3 a réussi le scénario nominal en moins d’une minute. Elle a bloqué sur le cas limite où le client n’avait pas d’adresse e-mail. Elle a dit qu’elle appellerait le support. Recommandation : afficher un message clair et permettre d’ajouter l’adresse e-mail directement.",
+            "key_phrases": ["completed the happy path", "got stuck on the edge case", "would call support", "Recommendation:"]
+          }
+        },
+        {
+          "id": "product-design-run-a-heuristic-evaluation",
+          "title_fr": "Faire une évaluation heuristique",
+          "term_ids": ["heuristic-evaluation", "iconography", "user-interface", "sprint"],
+          "dialogue": [
+            { "speaker": "Kenji", "text_en": "We don’t have budget for more user tests this sprint. Is there another way to find problems?", "text_fr": "On n’a pas de budget pour d’autres tests utilisateurs ce sprint. Il y a un autre moyen de trouver les problèmes ?" },
+            { "speaker": "Aïcha", "text_en": "I can run a heuristic evaluation. I review each screen against ten well-known usability principles.", "text_fr": "Je peux faire une évaluation heuristique. Je passe chaque écran en revue selon dix principes d’utilisabilité reconnus." },
+            { "speaker": "Kenji", "text_en": "Like what?", "text_fr": "Par exemple ?" },
+            { "speaker": "Aïcha", "text_en": "Consistency. Our iconography isn’t consistent across the user interface: the same pencil icon means edit on one screen and sign on another.", "text_fr": "La cohérence. Notre iconographie n’est pas cohérente dans l’interface : la même icône de crayon veut dire modifier sur un écran et signer sur un autre." },
+            { "speaker": "Kenji", "text_en": "Ouch. Is it as reliable as testing with real users?", "text_fr": "Aïe. C’est aussi fiable que de tester avec de vrais utilisateurs ?" },
+            { "speaker": "Aïcha", "text_en": "No, it doesn’t replace user tests. But it’s a cheap way to catch obvious issues before the next round.", "text_fr": "Non, ça ne remplace pas les tests utilisateurs. Mais c’est un moyen peu coûteux de repérer les problèmes évidents avant la prochaine série." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Aïcha propose-t-elle une évaluation heuristique ?",
+              "choices": ["C’est un moyen rapide et peu coûteux de repérer les problèmes évidents", "Elle remplace les tests utilisateurs quand le budget manque", "Elle mesure précisément le temps passé sur chaque écran"],
+              "answer_index": 0,
+              "explanation_fr": "Une évaluation heuristique, c’est un expert qui inspecte l’interface selon des principes reconnus (comme les dix heuristiques de Nielsen). Elle est rapide et économique, mais Aïcha le dit clairement : elle ne remplace pas les tests avec de vrais utilisateurs. Elle ne mesure rien de chiffré non plus."
+            },
+            {
+              "prompt_fr": "Comment dire « Notre iconographie n’est pas cohérente » au sens de « pas uniforme » ?",
+              "choices": ["Our iconography isn’t coherent.", "Our iconography isn’t consistent.", "Our iconography isn’t logic."],
+              "answer_index": 1,
+              "explanation_fr": "En design, « consistent » veut dire cohérent au sens d’uniforme : les mêmes éléments ont le même sens partout. « Coherent » veut plutôt dire logique, compréhensible (a coherent argument) : c’est le piège du mot transparent. « Logic » est un nom ; l’adjectif serait logical."
+            },
+            {
+              "prompt_fr": "Complète : « It’s a cheap way to ___ obvious issues before the next round. »",
+              "choices": ["capture", "seize", "catch"],
+              "answer_index": 2,
+              "explanation_fr": "On dit « catch issues » ou « catch bugs » pour repérer des problèmes à temps. « Capture » s’emploie pour des données ou une image (capture data, a screen capture). « Seize » veut dire saisir, souvent de force (seize an opportunity, seize goods)."
+            },
+            {
+              "prompt_fr": "Ton manager veut remplacer tous les tests utilisateurs par des évaluations heuristiques. Quelle réponse est la plus nuancée ?",
+              "choices": ["It’s a useful complement, but it can’t replace real users.", "Good idea, experts usually know better than users.", "No, heuristic evaluations are not useful at all."],
+              "answer_index": 0,
+              "explanation_fr": "La réponse nuancée reconnaît la valeur de la méthode tout en posant sa limite : un expert ne voit pas les besoins, le vocabulaire ou les habitudes réels des utilisateurs. Dire que les experts savent mieux est le biais classique du designer, et rejeter la méthode en bloc est tout aussi excessif."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris à l’équipe : tu as fait une évaluation heuristique de l’écran des paramètres. Donne le problème principal avec un exemple, rappelle la limite de la méthode et propose une prochaine étape.",
+            "model_answer_en": "Hi all, I ran a quick heuristic evaluation of the settings screen. The main issue is consistency: the same pencil icon means edit on one screen and sign on another. This doesn’t replace user tests, but it’s an easy fix. I suggest we fix it before the next round of testing.",
+            "model_answer_fr": "Bonjour à tous, j’ai fait une évaluation heuristique rapide de l’écran des paramètres. Le problème principal est la cohérence : la même icône de crayon veut dire modifier sur un écran et signer sur un autre. Ça ne remplace pas les tests utilisateurs, mais c’est facile à corriger. Je propose qu’on le corrige avant la prochaine série de tests.",
+            "key_phrases": ["ran a quick heuristic evaluation", "The main issue is consistency", "doesn’t replace user tests", "before the next round"]
+          }
+        },
+        {
+          "id": "product-design-read-ab-test-results",
+          "title_fr": "Lire les résultats d’un test A/B",
+          "term_ids": ["ab-test", "statistical-significance", "sample-size", "hypothesis", "guardrail-metric"],
+          "dialogue": [
+            { "speaker": "Moussa", "text_en": "The A/B test on the new pricing page ended yesterday. Version B has a higher sign-up rate.", "text_fr": "Le test A/B sur la nouvelle page des tarifs s’est terminé hier. La version B a un taux d’inscription plus élevé." },
+            { "speaker": "Lucía", "text_en": "Nice! Did we reach statistical significance?", "text_fr": "Super ! On a atteint la significativité statistique ?" },
+            { "speaker": "Moussa", "text_en": "Not yet. The sample size is too small: only four hundred visitors per version.", "text_fr": "Pas encore. La taille de l’échantillon est trop petite : seulement quatre cents visiteurs par version." },
+            { "speaker": "Lucía", "text_en": "Then we should keep it running. Remind me, what was our hypothesis?", "text_fr": "Alors on devrait le laisser tourner. Rappelle-moi, quelle était notre hypothèse ?" },
+            { "speaker": "Moussa", "text_en": "That showing the annual price first would increase sign-ups.", "text_fr": "Qu’afficher d’abord le prix annuel augmenterait les inscriptions." },
+            { "speaker": "Lucía", "text_en": "OK. Let’s also watch refunds as a guardrail metric: more sign-ups isn’t a win if people cancel later.", "text_fr": "D’accord. Surveillons aussi les remboursements comme indicateur garde-fou : plus d’inscriptions, ce n’est pas une victoire si les gens annulent ensuite." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "La version B fait mieux, mais « we haven’t reached statistical significance ». Que faut-il faire ?",
+              "choices": ["Déployer la version B tout de suite, puisqu’elle gagne", "Laisser tourner le test jusqu’à avoir assez de données", "Arrêter le test et garder la version A par prudence"],
+              "answer_index": 1,
+              "explanation_fr": "Sans significativité statistique, l’écart peut être dû au hasard : on ne peut conclure ni pour B ni pour A. La bonne décision est de continuer pour atteindre la taille d’échantillon prévue. Arrêter un test dès qu’une version semble gagner est une erreur classique (peeking)."
+            },
+            {
+              "prompt_fr": "Complète : « The ___ is too small: only four hundred visitors per version. »",
+              "choices": ["sampling size", "size of sample", "sample size"],
+              "answer_index": 2,
+              "explanation_fr": "La collocation figée est « sample size » (taille de l’échantillon) : en anglais, le nom qui précise vient en premier, sans « of ». « Size of sample » suit l’ordre français. « Sampling size » mélange avec « sampling » (l’échantillonnage, la méthode), ce qui n’est pas l’expression consacrée."
+            },
+            {
+              "prompt_fr": "Comment dire « On devrait le laisser tourner » (le test) ?",
+              "choices": ["We should keep it running.", "We should let it turn.", "We should make it continue running."],
+              "answer_index": 0,
+              "explanation_fr": "« To keep something running » veut dire le laisser fonctionner, sans interruption : on le dit d’un test, d’un serveur, d’une campagne. « Turn » est un calque de « tourner » : en anglais, il veut dire pivoter, faire un tour. « Make it continue running » est lourd et suggère qu’il faut le forcer."
+            },
+            {
+              "prompt_fr": "Pourquoi Lucía surveille-t-elle les remboursements comme « guardrail metric » ?",
+              "choices": ["Pour mesurer le chiffre d’affaires total généré par le test", "Pour vérifier que le gain d’inscriptions ne crée pas un problème ailleurs", "Pour décider quelle version a le design le plus clair"],
+              "answer_index": 1,
+              "explanation_fr": "Un indicateur garde-fou (guardrail metric) n’est pas l’objectif du test : il sert à vérifier qu’en améliorant une métrique, on n’en dégrade pas une autre importante. Ici, des inscriptions suivies d’annulations seraient une fausse victoire. Ce n’est ni une mesure du chiffre d’affaires ni un jugement esthétique."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris à l’équipe un point sur le test A/B : le résultat provisoire, pourquoi tu ne conclus pas encore, la durée supplémentaire et l’indicateur garde-fou.",
+            "model_answer_en": "Hi team, here’s a quick update on the pricing page A/B test. Version B has a higher sign-up rate, but we haven’t reached statistical significance yet because the sample size is still small. We’ll keep it running for two more weeks. We’re also watching refunds as a guardrail metric.",
+            "model_answer_fr": "Bonjour l’équipe, voici un point rapide sur le test A/B de la page des tarifs. La version B a un taux d’inscription plus élevé, mais nous n’avons pas encore atteint la significativité statistique, car l’échantillon est encore petit. Nous le laissons tourner deux semaines de plus. Nous surveillons aussi les remboursements comme indicateur garde-fou.",
+            "key_phrases": ["quick update on", "we haven’t reached statistical significance yet", "keep it running", "as a guardrail metric"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "product-design-roadmap-and-prioritization",
+      "title_fr": "Prioriser et défendre la roadmap",
+      "title_en": "Prioritize and share the roadmap",
+      "situation_fr": "Les demandes arrivent de partout : clients, commerciaux, direction. Tu dois trier, dire non avec des arguments et présenter une roadmap claire.",
+      "guide": {
+        "intro_fr": "Le product manager décide de ce que l’équipe construit, et surtout de ce qu’elle ne construit pas. Chaque semaine arrivent des feature requests (demandes de fonctionnalités) ; on les range dans le backlog, souvent sous forme de user stories (« As a freelancer, I want… so that… »). La prioritization (priorisation) s’appuie sur des méthodes simples comme RICE (Reach, Impact, Confidence, Effort) ou MoSCoW (Must, Should, Could, Won’t). La roadmap (feuille de route) montre les grandes priorités, souvent en trois colonnes : Now, Next, Later. Elle se relie aux objectifs de l’entreprise (OKR) et à une North Star metric, l’indicateur qui résume la valeur apportée aux utilisateurs. Savoir dire « not now » avec des arguments fait partie du métier.",
+        "key_phrases": [
+          { "en": "Thanks for the request, I’ve added it to the backlog.", "fr": "Merci pour la demande, je l’ai ajoutée au backlog." },
+          { "en": "What problem are we trying to solve?", "fr": "Quel problème essaie-t-on de résoudre ?" },
+          { "en": "It’s not a priority this quarter.", "fr": "Ce n’est pas une priorité ce trimestre." },
+          { "en": "If we do this, we’ll have to drop something else.", "fr": "Si on fait ça, on devra renoncer à autre chose." },
+          { "en": "Let’s start with an MVP and learn from it.", "fr": "Commençons par un MVP et tirons-en des leçons." },
+          { "en": "It’s on the roadmap for next quarter.", "fr": "C’est sur la roadmap du trimestre prochain." }
+        ],
+        "tip_fr": "Une roadmap n’est pas un planning avec des dates précises : évite « It will be ready on May 3rd » et préfère « We plan to work on it next quarter ». Faux ami du métier : « eventually » veut dire à terme, finalement, et non « éventuellement » (qui se dit « possibly » ou « maybe »)."
+      },
+      "lessons": [
+        {
+          "id": "product-design-triage-feature-requests",
+          "title_fr": "Trier les demandes de fonctionnalités",
+          "term_ids": ["feature-request", "backlog", "user-story", "product-manager", "priority", "prioritization"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "Kenji, a big client wants a dark mode. Can we add it this month?", "text_fr": "Kenji, un gros client veut un mode sombre. On peut l’ajouter ce mois-ci ?" },
+            { "speaker": "Kenji", "text_en": "Thanks for passing it on. I’ll log it as a feature request and add it to the backlog.", "text_fr": "Merci de me l’avoir transmis. Je vais l’enregistrer comme demande de fonctionnalité et l’ajouter au backlog." },
+            { "speaker": "Aïcha", "text_en": "Just the backlog? They pay a lot.", "text_fr": "Juste le backlog ? Ils paient cher." },
+            { "speaker": "Kenji", "text_en": "I know. As a product manager, I have to compare it with other requests. What problem are they trying to solve?", "text_fr": "Je sais. En tant que product manager, je dois la comparer aux autres demandes. Quel problème essaient-ils de résoudre ?" },
+            { "speaker": "Aïcha", "text_en": "Their team works at night and the white screen hurts their eyes.", "text_fr": "Leur équipe travaille la nuit et l’écran blanc leur fait mal aux yeux." },
+            { "speaker": "Kenji", "text_en": "That helps. I’ll write it as a user story, and we’ll discuss its priority in Monday’s prioritization meeting.", "text_fr": "Ça aide. Je vais l’écrire sous forme de user story, et on discutera de sa priorité à la réunion de priorisation de lundi." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment remercier une collègue qui te transmet une demande client ?",
+              "choices": ["Thanks to transmit it.", "Thanks for transmitting me this.", "Thanks for passing it on."],
+              "answer_index": 2,
+              "explanation_fr": "« To pass something on » est la façon naturelle de dire transmettre une information. « Transmit » existe mais s’emploie pour des signaux ou des maladies, et ne prend pas la personne en complément direct (transmitting me). Après « thanks », on utilise « for + -ing », jamais « to + verbe »."
+            },
+            {
+              "prompt_fr": "Pourquoi Kenji demande-t-il quel problème le client veut résoudre ?",
+              "choices": ["Pour trouver le vrai besoin, qui peut avoir une autre solution", "Pour avoir une bonne raison de refuser la demande", "Pour estimer le prix à facturer au client"],
+              "answer_index": 0,
+              "explanation_fr": "Un client exprime souvent une solution (un mode sombre) alors que le PM cherche le problème (la fatigue visuelle la nuit). Connaître le problème permet de comparer la demande aux autres et parfois de trouver une meilleure réponse. Il ne cherche ni un prétexte pour refuser, ni un prix."
+            },
+            {
+              "prompt_fr": "Complète la user story : « As a night worker, I want a dark theme ___ I can read without eye strain. »",
+              "choices": ["for that", "so that", "in order"],
+              "answer_index": 1,
+              "explanation_fr": "Le format d’une user story est « As a…, I want…, so that… » : « so that » introduit le but, suivi d’un sujet et d’un verbe. « For that » est un calque de « pour que ». « In order » doit être suivi de « to + verbe » (in order to read) et ne peut pas introduire « I can »."
+            },
+            {
+              "prompt_fr": "Un commercial insiste : « This client is huge, just build it. » Quelle réponse est la plus professionnelle ?",
+              "choices": ["OK, I’ll move it to the top of the sprint.", "Sorry, sales requests are not my priority.", "I hear you. Let’s compare its impact with our other priorities."],
+              "answer_index": 2,
+              "explanation_fr": "« I hear you » montre qu’on prend la demande au sérieux, puis on ramène la décision à des critères partagés (l’impact). Céder tout de suite casse la priorisation de l’équipe, et répondre que les ventes ne sont pas ta priorité est blessant et faux : un PM travaille avec les commerciaux."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Réponds à Grace : remercie-la, dis ce que tu as fait de la demande, demande quel problème le client veut résoudre et explique pourquoi tu poses cette question.",
+            "context_en": "Hi, one of our biggest clients is asking for a PDF export of their reports. Can we add it soon? Thanks, Grace",
+            "model_answer_en": "Hi Grace, thanks for passing it on. I’ve logged it as a feature request and added it to the backlog. Could you ask them what problem they are trying to solve with the PDF export? Sometimes a different solution works better, and it will help us set the right priority.",
+            "model_answer_fr": "Bonjour Grace, merci de me l’avoir transmis. Je l’ai enregistrée comme demande de fonctionnalité et ajoutée au backlog. Pourrais-tu leur demander quel problème ils veulent résoudre avec l’export PDF ? Parfois, une autre solution marche mieux, et cela nous aidera à fixer la bonne priorité.",
+            "key_phrases": ["thanks for passing it on", "logged it as a feature request", "what problem they are trying to solve", "set the right priority"]
+          }
+        },
+        {
+          "id": "product-design-present-the-roadmap",
+          "title_fr": "Présenter la roadmap du trimestre",
+          "term_ids": ["roadmap", "okr", "north-star-metric", "stakeholder", "timeline"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "Here’s the roadmap for next quarter. It’s organized in three columns: now, next and later.", "text_fr": "Voici la roadmap du trimestre prochain. Elle est organisée en trois colonnes : maintenant, ensuite et plus tard." },
+            { "speaker": "Ivan", "text_en": "Where’s the mobile app? Customers keep asking for it.", "text_fr": "Où est l’appli mobile ? Les clients la réclament sans arrêt." },
+            { "speaker": "Sarah", "text_en": "It’s in the later column. This quarter, our OKR is to reduce late payments, and the mobile app won’t move that number.", "text_fr": "Elle est dans la colonne plus tard. Ce trimestre, notre OKR est de réduire les retards de paiement, et l’appli mobile ne fera pas bouger ce chiffre." },
+            { "speaker": "Ivan", "text_en": "Can you give me a timeline? I need something to tell clients.", "text_fr": "Tu peux me donner un calendrier ? J’ai besoin de quelque chose à dire aux clients." },
+            { "speaker": "Sarah", "text_en": "I’d rather not promise a date. Our North Star metric is invoices paid on time, and every item is ranked by its impact on it.", "text_fr": "Je préfère ne pas promettre de date. Notre North Star metric, c’est le nombre de factures payées dans les délais, et chaque élément est classé selon son impact sur cet indicateur." },
+            { "speaker": "Ivan", "text_en": "Fair enough. Can you share the slides with the other stakeholders?", "text_fr": "Entendu. Tu peux partager les slides avec les autres parties prenantes ?" }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Ivan dit « Customers keep asking for it ». Quelle nuance apporte « keep + -ing » ?",
+              "choices": ["Les clients gardent cette demande en attente", "Les clients le demandent de façon répétée", "Les clients ont fini par arrêter de le demander"],
+              "answer_index": 1,
+              "explanation_fr": "« Keep + verbe en -ing » exprime la répétition ou la continuité, souvent avec une pointe d’agacement : ils n’arrêtent pas de le demander. Ce n’est pas le sens de « keep » = garder. L’idée d’arrêter se dirait « stop asking »."
+            },
+            {
+              "prompt_fr": "Comment dire « Je préfère ne pas promettre de date » ?",
+              "choices": ["I’d rather not promise a date.", "I prefer to not promise date.", "I’d rather to not promise a date."],
+              "answer_index": 0,
+              "explanation_fr": "« I’d rather » est suivi de la base verbale sans « to », et la négation se place juste après : I’d rather not promise. « I’d rather to » est donc fautif. « I prefer to not promise date » oublie l’article (a date) et sonne moins naturel que « I’d rather not » à l’oral."
+            },
+            {
+              "prompt_fr": "Pourquoi Sarah ne met-elle pas l’appli mobile dans la colonne « now » ?",
+              "choices": ["Parce que l’équipe n’a pas de développeur mobile", "Parce que les clients ne l’ont demandée qu’une seule fois", "Parce qu’elle n’aide pas l’objectif du trimestre"],
+              "answer_index": 2,
+              "explanation_fr": "Sarah relie chaque choix à l’OKR du trimestre et à la North Star metric : l’appli mobile ne réduit pas les retards de paiement, donc elle passe après. Ivan dit au contraire que les clients la demandent souvent, et la composition de l’équipe n’est pas évoquée."
+            },
+            {
+              "prompt_fr": "Complète : « Every item is ranked by its ___ on our North Star metric. »",
+              "choices": ["incidence", "impact", "repercussion"],
+              "answer_index": 1,
+              "explanation_fr": "On dit « impact on something » pour l’effet d’une action sur un résultat. « Incidence » est un faux ami : en anglais, il désigne surtout la fréquence d’un phénomène (the incidence of a disease). « Repercussion » s’emploie surtout au pluriel, pour des conséquences négatives et indirectes."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Un commercial te demande une date pour l’appli mobile. Réponds en réunion : reconnais sa demande, explique la priorité du trimestre, dis où se trouve la fonctionnalité sur la roadmap et propose ce que tu peux lui donner à la place d’une date.",
+            "model_answer_en": "I know customers keep asking for it. This quarter, our OKR is to reduce late payments, so the roadmap focuses on that. The mobile app is in the later column, and I’d rather not promise a date yet. What I can do is give you an update at the end of the quarter, when we plan the next one.",
+            "model_answer_fr": "Je sais que les clients la réclament sans arrêt. Ce trimestre, notre OKR est de réduire les retards de paiement, donc la roadmap se concentre là-dessus. L’appli mobile est dans la colonne plus tard, et je préfère ne pas promettre de date pour l’instant. Ce que je peux faire, c’est te faire un point à la fin du trimestre, quand on planifiera le suivant.",
+            "key_phrases": ["customers keep asking for it", "our OKR is to", "in the later column", "I’d rather not promise a date"]
+          }
+        },
+        {
+          "id": "product-design-push-back-on-scope",
+          "title_fr": "Dire non et protéger le périmètre",
+          "term_ids": ["scope", "scope-creep", "mvp", "trade-off", "push-back", "out-of-scope"],
+          "dialogue": [
+            { "speaker": "Tomasz", "text_en": "The marketing team wants us to add a referral program to the new onboarding.", "text_fr": "L’équipe marketing veut qu’on ajoute un programme de parrainage au nouvel onboarding." },
+            { "speaker": "Priya", "text_en": "That’s scope creep. Two weeks ago, the scope was just three screens.", "text_fr": "C’est de la dérive de périmètre. Il y a deux semaines, le périmètre se limitait à trois écrans." },
+            { "speaker": "Tomasz", "text_en": "I agree, but how do we push back without sounding negative?", "text_fr": "Je suis d’accord, mais comment dire non sans paraître négatifs ?" },
+            { "speaker": "Priya", "text_en": "We explain the trade-off: if we add referrals, the launch will slip by a month.", "text_fr": "On explique le compromis : si on ajoute le parrainage, le lancement prendra un mois de retard." },
+            { "speaker": "Tomasz", "text_en": "And we remind them that a small MVP helps us learn faster.", "text_fr": "Et on leur rappelle qu’un petit MVP nous aide à apprendre plus vite." },
+            { "speaker": "Priya", "text_en": "Exactly. Let’s keep referrals out of scope for now and look at them after launch.", "text_fr": "Exactement. Laissons le parrainage hors du périmètre pour l’instant et regardons-le après le lancement." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Priya dit « That’s scope creep ». Quelle situation y correspond ?",
+              "choices": ["Des demandes s’ajoutent peu à peu sans que le délai change", "Le périmètre a été réduit pour tenir la date prévue", "L’équipe a validé le périmètre avec le client"],
+              "answer_index": 0,
+              "explanation_fr": "« To creep » veut dire avancer lentement, discrètement : le « scope creep » est la dérive du périmètre, quand de petites demandes s’ajoutent une à une sans qu’on revoie le délai ou les ressources. Réduire ou valider le périmètre, c’est justement l’inverse."
+            },
+            {
+              "prompt_fr": "Comment dire « contester une demande, arguments à l’appui » ?",
+              "choices": ["to push off a request", "to refuse dry a request", "to push back on a request"],
+              "answer_index": 2,
+              "explanation_fr": "« To push back on something » veut dire résister à une demande, poliment et avec des arguments : c’est très courant entre collègues. « To push off » veut dire partir ou repousser physiquement. « Refuse dry » est un calque de « refuser sèchement », et l’adjectif ne peut pas se placer ainsi."
+            },
+            {
+              "prompt_fr": "Complète : « If we add referrals, the launch ___ by a month. »",
+              "choices": ["will glide", "will slip", "will slide off"],
+              "answer_index": 1,
+              "explanation_fr": "Pour un calendrier, « to slip » veut dire prendre du retard, glisser (the deadline slipped by a week). « To glide » veut dire planer, et « to slide off » glisser d’une surface. Note aussi la structure du premier conditionnel : if + présent, puis will + verbe."
+            },
+            {
+              "prompt_fr": "Quel argument défend le mieux un MVP plus petit auprès du marketing ?",
+              "choices": ["A smaller MVP lets us learn from real users sooner.", "A smaller MVP means less work for the designers.", "A smaller MVP is cheaper, so quality matters less."],
+              "answer_index": 0,
+              "explanation_fr": "Le but d’un MVP est d’apprendre vite au contact des vrais utilisateurs : c’est l’argument qui sert aussi les objectifs du marketing. Parler de la charge des designers semble égoïste, et un MVP n’autorise pas une qualité au rabais : il est petit, pas bâclé."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "La responsable marketing veut ajouter un parrainage à l’onboarding. Réponds sur Slack avec un ton diplomate : reconnais l’intérêt de l’idée, explique le compromis, demande à la garder hors du périmètre et propose un moment pour en reparler.",
+            "model_answer_en": "Thanks for the idea, referrals make a lot of sense for growth. The trade-off is that adding them now would delay the launch by a month. Can we keep them out of scope for the MVP? I’d suggest we look at them right after launch, in our next planning.",
+            "model_answer_fr": "Merci pour l’idée, le parrainage a beaucoup de sens pour la croissance. Le compromis, c’est que l’ajouter maintenant retarderait le lancement d’un mois. Est-ce qu’on peut le garder hors du périmètre du MVP ? Je propose qu’on le regarde juste après le lancement, lors de notre prochaine planification.",
+            "key_phrases": ["The trade-off is that", "delay the launch by a month", "keep them out of scope", "right after launch"]
+          }
+        },
+        {
+          "id": "product-design-define-success-metrics",
+          "title_fr": "Définir comment mesurer le succès",
+          "term_ids": ["kpi", "feature-adoption", "vanity-metric", "gamification", "retention-rate"],
+          "dialogue": [
+            { "speaker": "Kenji", "text_en": "Before we launch daily streaks, how will we measure success?", "text_fr": "Avant de lancer les séries quotidiennes, comment va-t-on mesurer le succès ?" },
+            { "speaker": "Lucía", "text_en": "Our main KPI is feature adoption: the share of active users who start a streak in the first month.", "text_fr": "Notre KPI principal est l’adoption de la fonctionnalité : la part d’utilisateurs actifs qui commencent une série le premier mois." },
+            { "speaker": "Kenji", "text_en": "Not the total number of streaks?", "text_fr": "Pas le nombre total de séries ?" },
+            { "speaker": "Lucía", "text_en": "That would be a vanity metric. Gamification only matters if people come back and actually learn.", "text_fr": "Ce serait un indicateur de vanité. La gamification ne compte que si les gens reviennent et apprennent vraiment." },
+            { "speaker": "Kenji", "text_en": "So we also track the seven-day retention rate.", "text_fr": "Donc on suit aussi le taux de rétention à sept jours." },
+            { "speaker": "Lucía", "text_en": "Yes. It tells us if the habit sticks.", "text_fr": "Oui. Il nous dit si l’habitude s’installe." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Lucía refuse de prendre le nombre total de séries comme objectif. Pourquoi ?",
+              "choices": ["Parce que ce chiffre est trop difficile à calculer", "Parce que ce chiffre peut monter sans prouver que les gens apprennent", "Parce que ce chiffre doit rester confidentiel"],
+              "answer_index": 1,
+              "explanation_fr": "Une « vanity metric » est un chiffre flatteur qui monte facilement (un total cumulé ne baisse jamais) mais n’aide pas à décider et ne prouve pas la valeur. Le problème n’est ni le calcul ni la confidentialité : c’est ce que le chiffre ne dit pas."
+            },
+            {
+              "prompt_fr": "Comment dire « la part d’utilisateurs actifs » (une proportion) ?",
+              "choices": ["the part of active users", "the active users part", "the share of active users"],
+              "answer_index": 2,
+              "explanation_fr": "Pour une proportion, on dit « the share of » ou « the percentage of ». « Part of » existe, mais veut dire une partie de quelque chose (part of the team), pas une proportion qu’on mesure. « The active users part » n’a pas de sens dans cet ordre."
+            },
+            {
+              "prompt_fr": "Le taux de rétention dira « if the habit sticks ». Que veut dire Lucía ?",
+              "choices": ["Si l’habitude s’installe dans la durée", "Si l’habitude devient gênante pour l’utilisateur", "Si l’habitude se transmet à d’autres utilisateurs"],
+              "answer_index": 0,
+              "explanation_fr": "« To stick » veut dire coller ; au figuré, une idée ou une habitude qui « sticks » reste, s’installe. C’est la même image que dans « stickiness », l’adhérence d’un produit. Rien ne parle de gêne ni de bouche-à-oreille, qui serait « word of mouth » ou « referrals »."
+            },
+            {
+              "prompt_fr": "Complète : « Gamification only ___ if people come back and actually learn. »",
+              "choices": ["counts for", "matters", "is important for"],
+              "answer_index": 1,
+              "explanation_fr": "« To matter » veut dire compter, avoir de l’importance, et s’emploie seul : it only matters if… « Counts for » et « is important for » attendent un complément (counts for something, is important for users) et laissent la phrase incomplète. Et attention : « actually » veut dire vraiment, en fait, pas actuellement."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Écris la section « Success metrics » du brief : le KPI principal défini précisément, un indicateur de rétention et son rôle, et un indicateur que tu écartes, avec la raison.",
+            "model_answer_en": "Success metrics: our main KPI is feature adoption, the share of active users who start a streak in the first month. We will also track the seven-day retention rate to check that the habit sticks. The total number of streaks is a vanity metric, so we won’t use it as a goal.",
+            "model_answer_fr": "Indicateurs de succès : notre KPI principal est l’adoption de la fonctionnalité, c’est-à-dire la part d’utilisateurs actifs qui commencent une série le premier mois. Nous suivrons aussi le taux de rétention à sept jours pour vérifier que l’habitude s’installe. Le nombre total de séries est un indicateur de vanité, donc nous ne l’utiliserons pas comme objectif.",
+            "key_phrases": ["our main KPI is feature adoption", "the seven-day retention rate", "is a vanity metric", "we won’t use it as a goal"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "product-design-handoff-and-design-system",
+      "title_fr": "Passer le relais aux développeurs",
+      "title_en": "Hand off designs to developers",
+      "situation_fr": "Le design est validé : tu le transmets aux développeurs, tu t’appuies sur le design system et tu vérifies le résultat avant la mise en production.",
+      "guide": {
+        "intro_fr": "Le design handoff (passation design-développement) est le moment où le designer transmet les écrans aux développeurs. Un bon handoff ne se limite pas à un lien Figma : il contient les états de chaque component (composant), comme hover, disabled ou error, les edge cases (cas limites), le comportement en responsive design et les acceptance criteria (critères d’acceptation). Le design system rassemble les composants réutilisables et les design tokens : des variables nommées pour les couleurs, les espacements et la typographie, partagées entre Figma et le code. Les raccourcis pris en chemin s’accumulent en design debt (dette de design), comme la dette technique. Enfin, avant de livrer (to ship), on vérifie que le résultat correspond au design.",
+        "key_phrases": [
+          { "en": "Here’s the Figma link with all the states.", "fr": "Voici le lien Figma avec tous les états." },
+          { "en": "Can we reuse an existing component?", "fr": "Peut-on réutiliser un composant existant ?" },
+          { "en": "What happens if the name is very long?", "fr": "Que se passe-t-il si le nom est très long ?" },
+          { "en": "Please use the spacing tokens, not hardcoded values.", "fr": "Utilise les tokens d’espacement, pas des valeurs codées en dur." },
+          { "en": "The padding doesn’t match the design.", "fr": "La marge intérieure ne correspond pas au design." },
+          { "en": "Let’s pair on it for ten minutes.", "fr": "Regardons ça à deux pendant dix minutes." }
+        ],
+        "tip_fr": "« La marge » ne se traduit pas toujours par « margin » : à l’intérieur d’un élément, entre le bord et le contenu, c’est le « padding » ; à l’extérieur, entre deux éléments, c’est la « margin ». Les développeurs font la différence, alors sois précis dans tes annotations."
+      },
+      "lessons": [
+        {
+          "id": "product-design-prepare-the-handoff",
+          "title_fr": "Préparer la passation aux développeurs",
+          "term_ids": ["handoff", "acceptance-criteria", "component", "edge-case", "requirement"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "Ivan, the reminder screen is ready for handoff. Here’s the Figma link with all the states.", "text_fr": "Ivan, l’écran de relance est prêt pour la passation. Voici le lien Figma avec tous les états." },
+            { "speaker": "Ivan", "text_en": "Thanks. Did you include the error and loading states for each component?", "text_fr": "Merci. Tu as inclus les états d’erreur et de chargement de chaque composant ?" },
+            { "speaker": "Aïcha", "text_en": "Yes, and I listed the edge cases: very long client names, no email address and zero invoices.", "text_fr": "Oui, et j’ai listé les cas limites : noms de clients très longs, pas d’adresse e-mail et zéro facture." },
+            { "speaker": "Ivan", "text_en": "Great. Are the acceptance criteria in the ticket?", "text_fr": "Super. Les critères d’acceptation sont dans le ticket ?" },
+            { "speaker": "Aïcha", "text_en": "Kenji wrote them with me. The key requirement is that a reminder can’t be sent twice on the same day.", "text_fr": "Kenji les a écrits avec moi. L’exigence clé, c’est qu’une relance ne puisse pas être envoyée deux fois le même jour." },
+            { "speaker": "Ivan", "text_en": "Perfect, that’s all I need to start. I’ll ping you if anything is unclear.", "text_fr": "Parfait, j’ai tout ce qu’il me faut pour commencer. Je te fais signe si quelque chose n’est pas clair." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Aïcha liste-t-elle les noms très longs, l’absence d’e-mail et le cas « zéro facture » ?",
+              "choices": ["Pour que les développeurs sachent comment l’écran réagit hors du cas idéal", "Pour fournir des exemples de données à mettre dans la base", "Pour que l’équipe QA puisse tester la vitesse du serveur"],
+              "answer_index": 0,
+              "explanation_fr": "Ce sont des « edge cases » : des situations aux limites de l’usage normal. Si le designer ne les prévoit pas, le développeur doit improviser, et l’écran casse souvent en production. Il ne s’agit ni de données de test ni de performance."
+            },
+            {
+              "prompt_fr": "Comment dire « Je te fais signe si quelque chose n’est pas clair » ?",
+              "choices": ["I’ll make you a sign if something isn’t clear.", "I’ll signal you if something isn’t clear.", "I’ll ping you if anything is unclear."],
+              "answer_index": 2,
+              "explanation_fr": "« To ping someone » veut dire envoyer un message rapide (Slack, chat) : c’est le verbe courant dans les équipes tech. « Make you a sign » est un calque littéral de « faire signe » qui évoque un geste de la main. « Signal you » n’est pas idiomatique dans ce sens."
+            },
+            {
+              "prompt_fr": "Complète : « The key ___ is that a reminder can’t be sent twice on the same day. »",
+              "choices": ["exigency", "requirement", "demand"],
+              "answer_index": 1,
+              "explanation_fr": "Une exigence de produit se dit « requirement ». « Exigency » existe mais est rare et veut dire urgence, nécessité pressante. « Demand » est un faux ami partiel : il désigne une revendication insistante ou la demande du marché (supply and demand), pas une règle de fonctionnement."
+            },
+            {
+              "prompt_fr": "Le développeur demande : « What happens if the client name is very long? » Quelle réponse est la plus utile ?",
+              "choices": ["It shouldn’t happen often, so don’t worry about it.", "Just make the card bigger when it’s needed.", "It should be truncated after two lines, with an ellipsis."],
+              "answer_index": 2,
+              "explanation_fr": "La réponse utile donne une règle précise et applicable : tronquer après deux lignes avec des points de suspension (an ellipsis). Minimiser le cas laisse le développeur sans solution, et agrandir la carte au cas par cas casse l’alignement de la liste."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Annonce à l’équipe de développement que l’écran est prêt pour la passation : donne le lien, ce qu’il contient, où trouver les critères d’acceptation, et propose un court appel pour le présenter.",
+            "model_answer_en": "Hi team, the reminder screen is ready for handoff. Here’s the Figma link with all the states and edge cases. The acceptance criteria are in the ticket. Happy to do a quick call tomorrow to walk you through it, and ping me if anything is unclear!",
+            "model_answer_fr": "Bonjour l’équipe, l’écran de relance est prêt pour la passation. Voici le lien Figma avec tous les états et les cas limites. Les critères d’acceptation sont dans le ticket. Je peux faire un court appel demain pour vous le présenter, et faites-moi signe si quelque chose n’est pas clair !",
+            "key_phrases": ["ready for handoff", "with all the states and edge cases", "The acceptance criteria are in the ticket", "ping me if anything is unclear"]
+          }
+        },
+        {
+          "id": "product-design-use-the-design-system",
+          "title_fr": "S’appuyer sur le design system",
+          "term_ids": ["design-system", "design-tokens", "component", "typography", "hardcoded"],
+          "dialogue": [
+            { "speaker": "Kenji", "text_en": "Priya, this new card looks a bit different from our other cards. Is it a new component?", "text_fr": "Priya, cette nouvelle carte a l’air un peu différente de nos autres cartes. C’est un nouveau composant ?" },
+            { "speaker": "Priya", "text_en": "No, it should be the standard card from the design system. I only changed the content.", "text_fr": "Non, ça devrait être la carte standard du design system. J’ai seulement changé le contenu." },
+            { "speaker": "Kenji", "text_en": "Then the difference comes from the code. I see hardcoded colors and a custom font size here.", "text_fr": "Alors la différence vient du code. Je vois des couleurs codées en dur et une taille de police personnalisée ici." },
+            { "speaker": "Priya", "text_en": "That explains it. Please use the design tokens: the primary text color and the body typography style.", "text_fr": "Ça explique tout. Utilise les design tokens, s’il te plaît : la couleur de texte principale et le style typographique body." },
+            { "speaker": "Kenji", "text_en": "Will do. If we ever change the brand color, we’ll only update one token.", "text_fr": "Je m’en occupe. Si un jour on change la couleur de la marque, on n’aura qu’un token à modifier." },
+            { "speaker": "Priya", "text_en": "Exactly, that’s the whole point.", "text_fr": "Exactement, c’est tout l’intérêt." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi la carte ne ressemble-t-elle pas aux autres ?",
+              "choices": ["Parce que Priya a dessiné un nouveau composant", "Parce que le code utilise des valeurs écrites en dur", "Parce que le design system n’est plus à jour"],
+              "answer_index": 1,
+              "explanation_fr": "Priya confirme qu’elle a utilisé la carte standard : l’écart vient du code, où les couleurs et la taille de police sont « hardcoded », écrites directement au lieu de passer par les tokens. Rien n’indique que le design system soit obsolète."
+            },
+            {
+              "prompt_fr": "Quel avantage des design tokens Kenji décrit-il ?",
+              "choices": ["Un seul changement suffit pour mettre à jour toute l’interface", "Ils rendent l’application plus rapide à charger", "Ils permettent aux développeurs de se passer de Figma"],
+              "answer_index": 0,
+              "explanation_fr": "Un design token est une variable nommée (une couleur, un espacement, un style de texte) partagée entre le design et le code : si on change sa valeur, tout ce qui l’utilise suit. Les tokens n’ont pas d’effet sur la vitesse, et ils ne remplacent pas les maquettes."
+            },
+            {
+              "prompt_fr": "Comment dire « c’est tout l’intérêt » ?",
+              "choices": ["that’s all the interest", "that’s the whole interest", "that’s the whole point"],
+              "answer_index": 2,
+              "explanation_fr": "« That’s the whole point » veut dire c’est justement le but, c’est tout l’intérêt. « Interest » est un faux ami ici : il désigne l’intérêt qu’on porte à quelque chose (I have an interest in design) ou les intérêts d’un prêt, pas la raison d’être d’une chose."
+            },
+            {
+              "prompt_fr": "Complète : « If we ___ change the brand color, we’ll only update one token. »",
+              "choices": ["eventually", "ever", "never"],
+              "answer_index": 1,
+              "explanation_fr": "Dans une hypothèse, « if we ever… » veut dire si un jour, si jamais. « Eventually » est le faux ami classique : il veut dire finalement, à terme, et non éventuellement. « Never » contredit le sens : on ne mettrait rien à jour si on ne change jamais la couleur."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Laisse un commentaire de revue sur la pull request de Kenji : un point positif, le problème des valeurs codées en dur, la solution, et pourquoi c’est important.",
+            "model_answer_en": "Thanks Kenji, the layout looks great! One thing: I see hardcoded colors in this component. Could you replace them with the design tokens from our design system? That way, it stays consistent with the other cards when we update the theme.",
+            "model_answer_fr": "Merci Kenji, la mise en page est super ! Une chose : je vois des couleurs codées en dur dans ce composant. Pourrais-tu les remplacer par les design tokens de notre design system ? Comme ça, il restera cohérent avec les autres cartes quand on mettra le thème à jour.",
+            "key_phrases": ["I see hardcoded colors", "replace them with the design tokens", "stays consistent with"]
+          }
+        },
+        {
+          "id": "product-design-review-responsive-layouts",
+          "title_fr": "Vérifier le rendu sur petit écran",
+          "term_ids": ["responsive-design", "grid-system", "media-query", "white-space", "staging"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "Moussa, I checked the staging build on my phone. The layout breaks below 400 pixels.", "text_fr": "Moussa, j’ai vérifié la version de préproduction sur mon téléphone. La mise en page casse en dessous de 400 pixels." },
+            { "speaker": "Moussa", "text_en": "Yes, the media query only covers tablets for now. What should happen on small phones?", "text_fr": "Oui, la media query ne couvre que les tablettes pour l’instant. Que doit-il se passer sur les petits téléphones ?" },
+            { "speaker": "Sarah", "text_en": "On mobile, our grid system goes from twelve columns to four, so the cards should stack in one column.", "text_fr": "Sur mobile, notre système de grille passe de douze colonnes à quatre, donc les cartes doivent s’empiler sur une seule colonne." },
+            { "speaker": "Moussa", "text_en": "Got it. And the spacing?", "text_fr": "Compris. Et les espacements ?" },
+            { "speaker": "Sarah", "text_en": "Keep the same white space between cards. Responsive design isn’t just shrinking everything.", "text_fr": "Garde le même espace entre les cartes. Le design adaptatif, ce n’est pas juste tout rétrécir." },
+            { "speaker": "Moussa", "text_en": "Fair. I’ll fix it and send you a new link this afternoon.", "text_fr": "C’est juste. Je corrige et je t’envoie un nouveau lien cet après-midi." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « The layout breaks below 400 pixels » ?",
+              "choices": ["La page met trop de temps à se charger sur mobile", "Les images sont coupées au-delà de 400 pixels de large", "La mise en page s’affiche mal sur les écrans de moins de 400 pixels"],
+              "answer_index": 2,
+              "explanation_fr": "« The layout breaks » veut dire que la mise en page ne tient plus : éléments qui se chevauchent, texte qui déborde. « Below 400 pixels » précise le seuil : les écrans plus étroits que 400 pixels. Ce n’est pas une question de vitesse, et « below » veut dire en dessous, pas au-delà."
+            },
+            {
+              "prompt_fr": "Complète : « On small phones, the cards should ___ in one column. »",
+              "choices": ["stack", "pile themselves", "superpose"],
+              "answer_index": 0,
+              "explanation_fr": "« To stack » veut dire s’empiler, se ranger les uns sous les autres : c’est le verbe consacré en responsive design. « Pile themselves » est un calque de la forme pronominale « s’empiler » : en anglais, on dirait pile up, sans themselves. « Superpose » veut dire placer l’un exactement sur l’autre, donc se chevaucher."
+            },
+            {
+              "prompt_fr": "Sarah dit « Responsive design isn’t just shrinking everything ». Qu’est-ce que cela implique ?",
+              "choices": ["Qu’il faut créer une application mobile séparée", "Qu’il faut réorganiser la mise en page, pas seulement tout réduire", "Qu’il faut tout réduire, mais garder les mêmes marges"],
+              "answer_index": 1,
+              "explanation_fr": "Le design adaptatif réorganise le contenu selon la largeur de l’écran (colonnes qui s’empilent, navigation qui change), au lieu de réduire la même page. « Shrinking » veut dire rétrécir. Une appli séparée n’est pas le sujet, et tout réduire est justement ce que Sarah rejette."
+            },
+            {
+              "prompt_fr": "Un développeur te montre l’écran mobile : le texte est minuscule pour que tout tienne. Que dis-tu ?",
+              "choices": ["It’s responsive now, so it’s fine as it is.", "Make the cards smaller too, so everything fits.", "The text is too small. Can we keep the body size and stack the cards?"],
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse nomme le problème et propose la solution responsive : garder une taille de texte lisible et réorganiser la mise en page. Les deux autres acceptent ou aggravent le rétrécissement, ce qui nuit à la lisibilité et à l’accessibilité."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Signale à Moussa le problème sur petits écrans : ce que tu as vu et où, ce qui doit se passer, puis demande-lui de te prévenir et dis quand tu pourras revérifier.",
+            "model_answer_en": "Hi Moussa, I checked the staging build on my phone and the layout breaks below 400 pixels. On small screens, the cards should stack in one column, with the same white space between them. Can you send me a new link when it’s fixed? I can check it again this afternoon.",
+            "model_answer_fr": "Salut Moussa, j’ai vérifié la version de préproduction sur mon téléphone et la mise en page casse en dessous de 400 pixels. Sur les petits écrans, les cartes doivent s’empiler sur une seule colonne, avec le même espace entre elles. Tu peux m’envoyer un nouveau lien quand c’est corrigé ? Je peux revérifier cet après-midi.",
+            "key_phrases": ["I checked the staging build", "the layout breaks below", "should stack in one column", "check it again"]
+          }
+        },
+        {
+          "id": "product-design-ship-and-log-design-debt",
+          "title_fr": "Valider avant la mise en production",
+          "term_ids": ["design-debt", "user-acceptance-testing", "dogfooding", "ship", "feature-flag", "blocker"],
+          "dialogue": [
+            { "speaker": "Tomasz", "text_en": "Are we ready to ship the new reminders on Thursday?", "text_fr": "On est prêts à livrer les nouvelles relances jeudi ?" },
+            { "speaker": "Lucía", "text_en": "Almost. User acceptance testing went well, but I found two small issues: a wrong icon size and a missing hover state.", "text_fr": "Presque. La recette s’est bien passée, mais j’ai trouvé deux petits problèmes : une icône à la mauvaise taille et un état de survol manquant." },
+            { "speaker": "Tomasz", "text_en": "Are they blockers?", "text_fr": "Ce sont des points bloquants ?" },
+            { "speaker": "Lucía", "text_en": "No. I’ll log them as design debt and we can fix them next sprint.", "text_fr": "Non. Je vais les noter comme dette de design et on pourra les corriger au prochain sprint." },
+            { "speaker": "Tomasz", "text_en": "Good. We’ll release it behind a feature flag and turn it on for our own team first.", "text_fr": "Bien. On le mettra en ligne derrière un feature flag et on l’activera d’abord pour notre propre équipe." },
+            { "speaker": "Lucía", "text_en": "Nice. A week of dogfooding will show us what we missed.", "text_fr": "Bien. Une semaine de dogfooding nous montrera ce qu’on a raté." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Lucía juge que les deux problèmes ne sont pas des « blockers ». Qu’est-ce que cela implique ?",
+              "choices": ["On peut livrer quand même et les corriger plus tard", "Il faut repousser la mise en production d’une semaine", "Les développeurs doivent les corriger avant jeudi"],
+              "answer_index": 0,
+              "explanation_fr": "Un « blocker » empêche d’avancer ou de livrer. Dire que ce n’en sont pas signifie qu’on peut livrer jeudi et traiter ces défauts plus tard, ici comme dette de design au prochain sprint. Les deux autres réponses décrivent ce qu’on ferait justement avec un bloquant."
+            },
+            {
+              "prompt_fr": "Pourquoi activer d’abord la fonctionnalité pour l’équipe interne ?",
+              "choices": ["Pour éviter d’écrire des tests automatisés", "Pour laisser au marketing le temps de préparer l’annonce", "Pour repérer des problèmes avant que les clients les voient"],
+              "answer_index": 2,
+              "explanation_fr": "Le « dogfooding » consiste à utiliser son propre produit en interne (de l’expression « eat your own dog food ») : l’équipe sert de premier filet de sécurité. Le feature flag permet de limiter l’accès à ce groupe sans redéployer. Cela ne remplace pas les tests automatisés, et l’annonce marketing n’est pas en jeu."
+            },
+            {
+              "prompt_fr": "Complète : « We’ll release it ___ a feature flag. »",
+              "choices": ["under", "behind", "inside"],
+              "answer_index": 1,
+              "explanation_fr": "La collocation consacrée est « behind a feature flag » : la fonctionnalité est cachée derrière un interrupteur qu’on active pour certains utilisateurs. « Under » et « inside » se comprendraient peut-être, mais ne sont pas employés par les équipes produit."
+            },
+            {
+              "prompt_fr": "Comment dire « On est prêts à livrer jeudi ? » dans une équipe produit ?",
+              "choices": ["Are we ready to livrate on Thursday?", "Are we ready for shipping at Thursday?", "Are we ready to ship on Thursday?"],
+              "answer_index": 2,
+              "explanation_fr": "« To ship » est le verbe courant pour mettre une fonctionnalité entre les mains des utilisateurs. « Livrate » n’existe pas en anglais. Et devant un jour de la semaine, la préposition est « on » (on Thursday), jamais « at », qui s’emploie pour une heure (at 3 pm)."
+            }
+          ],
+          "production": {
+            "channel": "standup",
+            "prompt_fr": "Au stand-up, fais le point avant la mise en production : le résultat de la recette, les deux problèmes et pourquoi ils ne bloquent pas, puis le plan de lancement en deux étapes.",
+            "model_answer_en": "User acceptance testing went well. I found two small issues, but they’re not blockers, so I’ll log them as design debt. We’ll ship on Thursday behind a feature flag. Our team will use it for a week before we turn it on for customers.",
+            "model_answer_fr": "La recette s’est bien passée. J’ai trouvé deux petits problèmes, mais ils ne sont pas bloquants, donc je vais les noter comme dette de design. On livre jeudi derrière un feature flag. Notre équipe l’utilisera pendant une semaine avant qu’on l’active pour les clients.",
+            "key_phrases": ["User acceptance testing went well", "they’re not blockers", "log them as design debt", "behind a feature flag"]
+          }
+        }
+      ]
+    }
+  ]
+}

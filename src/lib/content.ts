@@ -57,6 +57,24 @@ export function loadPath(domain: string): Promise<ShippedPath> {
   return p;
 }
 
+/** The course of one job role: its own path, or the domain path for the domain's general role. */
+export function loadCoursePath(manifest: Manifest, role: string): Promise<ShippedPath> | null {
+  if (manifest.rolePaths?.includes(role)) {
+    const key = `role:${role}`;
+    let p = paths.get(key);
+    if (!p) {
+      p = fetch(`/content/paths/roles/${role}.json`)
+        .then((r) => { if (!r.ok) throw new Error(`role path ${role} ${r.status}`); return r.json(); })
+        .then((json: ShippedPath) => { if (!Array.isArray(json.units)) throw new Error('path malformed'); return json; });
+      paths.set(key, p);
+    }
+    return p;
+  }
+  const domain = manifest.domains.find((d) => d.generalRole === role);
+  if (domain && manifest.paths.includes(domain.id)) return loadPath(domain.id);
+  return null;
+}
+
 const dicts = new Map<string, Promise<DictEntry[]>>();
 /** Every word of a domain, light fields only (list, search, filters). */
 export function loadDict(domain: string): Promise<DictEntry[]> {
