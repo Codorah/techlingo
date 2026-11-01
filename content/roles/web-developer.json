@@ -5609,6 +5609,905 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "query-parameter",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "query parameter",
+      "translation_fr": "paramètre de requête",
+      "part_of_speech": "noun",
+      "definition_en": "A key-value pair added to the end of a URL after a question mark, such as ?page=2, to pass information to the server.",
+      "explanation_fr": "Paire clé-valeur ajoutée à la fin d’une URL après un point d’interrogation, comme ?page=2, pour transmettre une information au serveur.",
+      "why_it_matters_fr": "Utilisé partout pour les filtres, la pagination et la recherche.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "query-parameter-1",
+          "text_en": "Pass the page number as a query parameter.",
+          "text_fr": "Passe le numéro de page en paramètre de requête."
+        },
+        {
+          "id": "query-parameter-2",
+          "text_en": "The search breaks when the query parameter is empty.",
+          "text_fr": "La recherche plante quand le paramètre de requête est vide."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "request-body",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "request body",
+      "translation_fr": "corps de la requête",
+      "part_of_speech": "noun",
+      "definition_en": "The data sent with an HTTP request, usually in JSON, for example when creating or updating a resource.",
+      "explanation_fr": "Données envoyées avec une requête HTTP, généralement en JSON, par exemple pour créer ou modifier une ressource.",
+      "why_it_matters_fr": "À distinguer des en-têtes et des paramètres d’URL.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "request-body-1",
+          "text_en": "The request body is missing the email field.",
+          "text_fr": "Il manque le champ e-mail dans le corps de la requête."
+        },
+        {
+          "id": "request-body-2",
+          "text_en": "Log the request body, but mask the password.",
+          "text_fr": "Journalise le corps de la requête, mais masque le mot de passe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "http-header",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "api",
+        "networking"
+      ],
+      "term_en": "HTTP header",
+      "translation_fr": "en-tête HTTP",
+      "part_of_speech": "noun",
+      "definition_en": "A key-value line sent with an HTTP request or response that carries metadata, such as content type or authorization.",
+      "explanation_fr": "Ligne clé-valeur envoyée avec une requête ou une réponse HTTP qui porte des métadonnées, comme le type de contenu ou l’autorisation.",
+      "why_it_matters_fr": "Beaucoup de bugs d’API viennent d’un en-tête manquant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "http-header-1",
+          "text_en": "Add the token in the Authorization header.",
+          "text_fr": "Ajoute le jeton dans l’en-tête Authorization."
+        },
+        {
+          "id": "http-header-2",
+          "text_en": "The response is missing the Content-Type header.",
+          "text_fr": "Il manque l’en-tête Content-Type dans la réponse."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "internal-server-error",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "500 Internal Server Error",
+      "translation_fr": "erreur 500 (erreur interne du serveur)",
+      "part_of_speech": "noun",
+      "definition_en": "An HTTP status code meaning the server hit an unexpected problem and couldn’t complete the request.",
+      "explanation_fr": "Code de statut HTTP indiquant que le serveur a rencontré un problème inattendu et n’a pas pu traiter la requête.",
+      "why_it_matters_fr": "Signal que le bug est côté serveur, pas côté client.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "internal-server-error-1",
+          "text_en": "The API returns a 500 when the cart is empty.",
+          "text_fr": "L’API renvoie une 500 quand le panier est vide."
+        },
+        {
+          "id": "internal-server-error-2",
+          "text_en": "A 500 means it’s our bug, not the user’s.",
+          "text_fr": "Une 500 signifie que c’est notre bug, pas celui de l’utilisateur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "health-check",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "backend",
+        "monitoring"
+      ],
+      "term_en": "health check",
+      "translation_fr": "contrôle de santé (health check)",
+      "part_of_speech": "noun",
+      "definition_en": "An endpoint or test that reports whether a service is running correctly, used by load balancers and monitoring.",
+      "explanation_fr": "Point d’accès ou test qui indique si un service fonctionne correctement, utilisé par les répartiteurs de charge et la supervision.",
+      "why_it_matters_fr": "Si le health check échoue, l’instance est retirée du trafic.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "health-check-1",
+          "text_en": "The health check endpoint is /healthz.",
+          "text_fr": "Le point de contrôle de santé est /healthz."
+        },
+        {
+          "id": "health-check-2",
+          "text_en": "Pods restart because the health check times out.",
+          "text_fr": "Les pods redémarrent car le health check expire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "connection-pool",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "data-engineer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "backend",
+        "databases",
+        "performance"
+      ],
+      "term_en": "connection pool",
+      "translation_fr": "pool de connexions",
+      "part_of_speech": "noun",
+      "definition_en": "A set of open database connections that an application reuses instead of opening a new one for each request.",
+      "explanation_fr": "Ensemble de connexions ouvertes vers la base, réutilisées par l’application au lieu d’en ouvrir une à chaque requête.",
+      "why_it_matters_fr": "Un pool épuisé est une cause classique de lenteurs sous charge.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "connection-pool-1",
+          "text_en": "The connection pool is exhausted under load.",
+          "text_fr": "Le pool de connexions est épuisé sous la charge."
+        },
+        {
+          "id": "connection-pool-2",
+          "text_en": "Increase the pool size to 20 connections.",
+          "text_fr": "Augmente la taille du pool à 20 connexions."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "n-plus-one-query",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "backend",
+        "databases",
+        "performance"
+      ],
+      "term_en": "N+1 query problem",
+      "translation_fr": "problème des requêtes N+1",
+      "part_of_speech": "noun",
+      "definition_en": "A performance issue where code runs one query to get a list, then one extra query for each item in it.",
+      "explanation_fr": "Problème de performance où le code fait une requête pour obtenir une liste, puis une requête supplémentaire par élément.",
+      "why_it_matters_fr": "Piège typique des ORM, souvent relevé en revue de code.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "n-plus-one-query-1",
+          "text_en": "This loop causes an N+1 query problem.",
+          "text_fr": "Cette boucle provoque un problème de requêtes N+1."
+        },
+        {
+          "id": "n-plus-one-query-2",
+          "text_en": "Eager loading fixed the N+1 queries.",
+          "text_fr": "Le chargement anticipé a corrigé les requêtes N+1."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "eventual-consistency",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "architecture",
+        "databases"
+      ],
+      "term_en": "eventual consistency",
+      "translation_fr": "cohérence à terme",
+      "part_of_speech": "noun",
+      "definition_en": "A guarantee in distributed systems that all copies of data will become identical over time, though they may differ briefly.",
+      "explanation_fr": "Garantie des systèmes distribués selon laquelle toutes les copies des données finiront par être identiques, même si elles diffèrent brièvement.",
+      "why_it_matters_fr": "Explique pourquoi une donnée peut mettre quelques secondes à apparaître partout.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "eventual-consistency-1",
+          "text_en": "Search is eventually consistent, so new items appear after a few seconds.",
+          "text_fr": "La recherche est cohérente à terme, les nouveaux éléments apparaissent après quelques secondes."
+        },
+        {
+          "id": "eventual-consistency-2",
+          "text_en": "We accepted eventual consistency for the analytics counters.",
+          "text_fr": "Nous avons accepté la cohérence à terme pour les compteurs analytiques."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "idempotency-key",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "api",
+        "backend"
+      ],
+      "term_en": "idempotency key",
+      "translation_fr": "clé d’idempotence",
+      "part_of_speech": "noun",
+      "definition_en": "A unique value sent with a request so the server can detect retries and avoid doing the same action twice, such as charging a card.",
+      "explanation_fr": "Valeur unique envoyée avec une requête pour que le serveur détecte les nouvelles tentatives et évite de refaire la même action, comme débiter une carte.",
+      "why_it_matters_fr": "Pratique standard des API de paiement comme Stripe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "idempotency-key-1",
+          "text_en": "Send an idempotency key with every payment request.",
+          "text_fr": "Envoie une clé d’idempotence avec chaque requête de paiement."
+        },
+        {
+          "id": "idempotency-key-2",
+          "text_en": "The retry was ignored thanks to the idempotency key.",
+          "text_fr": "La nouvelle tentative a été ignorée grâce à la clé d’idempotence."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "circuit-breaker",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "architecture",
+        "backend"
+      ],
+      "term_en": "circuit breaker",
+      "translation_fr": "disjoncteur (circuit breaker)",
+      "part_of_speech": "noun",
+      "definition_en": "A pattern that stops calling a failing service for a while, so failures don’t pile up and spread to the whole system.",
+      "explanation_fr": "Patron qui arrête temporairement d’appeler un service défaillant, pour que les erreurs ne s’accumulent pas et ne se propagent pas.",
+      "why_it_matters_fr": "Pièce essentielle de la résilience en microservices.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "circuit-breaker-1",
+          "text_en": "The circuit breaker opened after ten failed calls.",
+          "text_fr": "Le circuit breaker s’est ouvert après dix appels en échec."
+        },
+        {
+          "id": "circuit-breaker-2",
+          "text_en": "Add a circuit breaker around the shipping API.",
+          "text_fr": "Ajoute un circuit breaker autour de l’API de livraison."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "linter",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "linter",
+      "translation_fr": "linter (analyseur de code)",
+      "part_of_speech": "noun",
+      "definition_en": "A tool that checks code for errors, risky patterns and style problems without running it, such as ESLint.",
+      "explanation_fr": "Outil qui vérifie le code sans l’exécuter, pour repérer erreurs, pratiques risquées et problèmes de style, comme ESLint.",
+      "why_it_matters_fr": "Bloque souvent la CI quand une règle n’est pas respectée.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "linter-1",
+          "text_en": "The linter flags an unused variable.",
+          "text_fr": "Le linter signale une variable inutilisée."
+        },
+        {
+          "id": "linter-2",
+          "text_en": "Fix the lint errors before pushing.",
+          "text_fr": "Corrige les erreurs de lint avant de pousser."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "code-formatter",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "code-quality"
+      ],
+      "term_en": "formatter",
+      "translation_fr": "formateur de code",
+      "part_of_speech": "noun",
+      "definition_en": "A tool, such as Prettier, that automatically rewrites code to follow consistent formatting rules.",
+      "explanation_fr": "Outil, comme Prettier, qui réécrit automatiquement le code pour suivre des règles de mise en forme cohérentes.",
+      "why_it_matters_fr": "Met fin aux débats sur les espaces et les points-virgules en revue.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "code-formatter-1",
+          "text_en": "Run the formatter on save.",
+          "text_fr": "Lance le formateur à l’enregistrement."
+        },
+        {
+          "id": "code-formatter-2",
+          "text_en": "The diff is huge because the formatter changed every file.",
+          "text_fr": "Le diff est énorme car le formateur a modifié tous les fichiers."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "lockfile",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "programming",
+        "code-quality"
+      ],
+      "term_en": "lockfile",
+      "translation_fr": "fichier de verrouillage (lockfile)",
+      "part_of_speech": "noun",
+      "definition_en": "A file, such as package-lock.json, that records the exact versions of every installed dependency so installs are reproducible.",
+      "explanation_fr": "Fichier, comme package-lock.json, qui enregistre la version exacte de chaque dépendance installée pour des installations reproductibles.",
+      "why_it_matters_fr": "À committer ; un lockfile oublié explique des « ça marche chez moi ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "lockfile-1",
+          "text_en": "Commit the lockfile with your change.",
+          "text_fr": "Committe le lockfile avec ta modification."
+        },
+        {
+          "id": "lockfile-2",
+          "text_en": "The lockfile conflict is easy: just reinstall.",
+          "text_fr": "Le conflit sur le lockfile est simple : il suffit de réinstaller."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "transpile",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "programming",
+        "frontend"
+      ],
+      "term_en": "transpile",
+      "translation_fr": "transpiler",
+      "part_of_speech": "verb",
+      "definition_en": "To convert source code from one language or version into another at a similar level, such as TypeScript into JavaScript.",
+      "explanation_fr": "Convertir du code source d’un langage ou d’une version vers un autre de niveau proche, comme TypeScript vers JavaScript.",
+      "why_it_matters_fr": "Étape cachée de la plupart des builds front-end.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "transpile-1",
+          "text_en": "TypeScript is transpiled to JavaScript at build time.",
+          "text_fr": "Le TypeScript est transpilé en JavaScript au moment du build."
+        },
+        {
+          "id": "transpile-2",
+          "text_en": "We no longer transpile for Internet Explorer.",
+          "text_fr": "Nous ne transpilons plus pour Internet Explorer."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "minification",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "frontend",
+        "performance"
+      ],
+      "term_en": "minification",
+      "translation_fr": "minification",
+      "part_of_speech": "noun",
+      "definition_en": "Removing spaces, comments and long names from code to make files smaller and faster to download.",
+      "explanation_fr": "Suppression des espaces, commentaires et noms longs du code pour obtenir des fichiers plus légers et plus rapides à télécharger.",
+      "why_it_matters_fr": "Raison pour laquelle le code en production est illisible sans source map.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "minification-1",
+          "text_en": "Minification cut the bundle size by 40%.",
+          "text_fr": "La minification a réduit la taille du bundle de 40 %."
+        },
+        {
+          "id": "minification-2",
+          "text_en": "Errors are hard to read after minification.",
+          "text_fr": "Les erreurs sont difficiles à lire après minification."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "tree-shaking",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "frontend",
+        "performance"
+      ],
+      "term_en": "tree shaking",
+      "translation_fr": "tree shaking (élimination du code mort)",
+      "part_of_speech": "noun",
+      "definition_en": "A build optimization that removes code that is imported but never used from the final bundle.",
+      "explanation_fr": "Optimisation du build qui supprime du bundle final le code importé mais jamais utilisé.",
+      "why_it_matters_fr": "Explique pourquoi on préfère importer une seule fonction plutôt que toute une bibliothèque.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "tree-shaking-1",
+          "text_en": "Tree shaking removed the unused chart components.",
+          "text_fr": "Le tree shaking a supprimé les composants de graphiques inutilisés."
+        },
+        {
+          "id": "tree-shaking-2",
+          "text_en": "This library doesn’t support tree shaking.",
+          "text_fr": "Cette bibliothèque ne prend pas en charge le tree shaking."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "source-map",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "frontend",
+        "code-quality"
+      ],
+      "term_en": "source map",
+      "translation_fr": "source map (fichier de correspondance)",
+      "part_of_speech": "noun",
+      "definition_en": "A file that maps minified or compiled code back to the original source, so errors and debugging show real file names and lines.",
+      "explanation_fr": "Fichier qui relie le code minifié ou compilé au code source d’origine, pour que les erreurs et le débogage montrent les vrais fichiers et lignes.",
+      "why_it_matters_fr": "Indispensable pour lire les erreurs remontées par Sentry.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "source-map-1",
+          "text_en": "Upload source maps to Sentry on each release.",
+          "text_fr": "Envoie les source maps à Sentry à chaque version."
+        },
+        {
+          "id": "source-map-2",
+          "text_en": "Without source maps the stack trace is useless.",
+          "text_fr": "Sans source maps, la trace d’appels est inutilisable."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "content-security-policy",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "frontend"
+      ],
+      "term_en": "Content Security Policy (CSP)",
+      "translation_fr": "politique de sécurité du contenu (CSP)",
+      "part_of_speech": "noun",
+      "definition_en": "An HTTP header that tells the browser which sources of scripts, styles and other content are allowed, reducing the risk of XSS.",
+      "explanation_fr": "En-tête HTTP qui indique au navigateur quelles sources de scripts, styles et autres contenus sont autorisées, ce qui réduit le risque de XSS.",
+      "why_it_matters_fr": "Souvent demandé lors des audits de sécurité web.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "content-security-policy-1",
+          "text_en": "The CSP blocked the analytics script.",
+          "text_fr": "La CSP a bloqué le script d’analytics."
+        },
+        {
+          "id": "content-security-policy-2",
+          "text_en": "Add the CDN domain to the Content Security Policy.",
+          "text_fr": "Ajoute le domaine du CDN à la Content Security Policy."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "input-sanitization",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "backend"
+      ],
+      "term_en": "input sanitization",
+      "translation_fr": "assainissement des entrées",
+      "part_of_speech": "noun",
+      "definition_en": "Cleaning or rejecting user input so it can’t inject harmful code or break the application.",
+      "explanation_fr": "Nettoyage ou rejet des données saisies par l’utilisateur pour qu’elles ne puissent pas injecter de code malveillant ni casser l’application.",
+      "why_it_matters_fr": "Base de la prévention des injections SQL et des XSS.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "input-sanitization-1",
+          "text_en": "Input sanitization is missing on the comment form.",
+          "text_fr": "L’assainissement des entrées manque sur le formulaire de commentaires."
+        },
+        {
+          "id": "input-sanitization-2",
+          "text_en": "Never trust user input: validate and sanitize it.",
+          "text_fr": "Ne fais jamais confiance aux saisies : valide-les et assainis-les."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "soft-delete",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "databases",
+        "backend"
+      ],
+      "term_en": "soft delete",
+      "translation_fr": "suppression logique",
+      "part_of_speech": "noun",
+      "definition_en": "Marking a record as deleted, for example with a deleted_at column, instead of removing it from the database.",
+      "explanation_fr": "Marquer un enregistrement comme supprimé, par exemple avec une colonne deleted_at, au lieu de l’effacer de la base.",
+      "why_it_matters_fr": "Permet de restaurer, mais attention au RGPD et aux requêtes qui oublient le filtre.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "soft-delete-1",
+          "text_en": "We use soft delete so users can restore projects.",
+          "text_fr": "Nous utilisons la suppression logique pour que les utilisateurs puissent restaurer leurs projets."
+        },
+        {
+          "id": "soft-delete-2",
+          "text_en": "The report counted soft-deleted orders by mistake.",
+          "text_fr": "Le rapport a compté par erreur les commandes supprimées logiquement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "seed-data",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "qa-testing",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "databases",
+        "testing"
+      ],
+      "term_en": "seed data",
+      "translation_fr": "données d’amorçage (seed)",
+      "part_of_speech": "noun",
+      "definition_en": "Initial data loaded into a database for development, testing or a fresh install.",
+      "explanation_fr": "Données initiales chargées dans une base pour le développement, les tests ou une nouvelle installation.",
+      "why_it_matters_fr": "Permet à chaque développeur d’avoir une base utilisable en une commande.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "seed-data-1",
+          "text_en": "Run the seed script to get sample users.",
+          "text_fr": "Lance le script de seed pour avoir des utilisateurs d’exemple."
+        },
+        {
+          "id": "seed-data-2",
+          "text_en": "The seed data includes three demo companies.",
+          "text_fr": "Les données d’amorçage incluent trois entreprises de démonstration."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "static-site-generation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "frontend",
+        "performance"
+      ],
+      "term_en": "static site generation (SSG)",
+      "translation_fr": "génération de site statique (SSG)",
+      "part_of_speech": "noun",
+      "definition_en": "Building web pages as HTML files at build time, so they can be served very fast from a CDN.",
+      "explanation_fr": "Génération des pages web en fichiers HTML au moment du build, pour les servir très vite depuis un CDN.",
+      "why_it_matters_fr": "Alternative au rendu côté serveur pour les pages qui changent peu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "static-site-generation-1",
+          "text_en": "The blog uses static site generation.",
+          "text_fr": "Le blog utilise la génération de site statique."
+        },
+        {
+          "id": "static-site-generation-2",
+          "text_en": "SSG pages need a rebuild when content changes.",
+          "text_fr": "Les pages SSG doivent être régénérées quand le contenu change."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "api-reference",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "web-developer",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "api",
+        "collaboration"
+      ],
+      "term_en": "API reference",
+      "translation_fr": "référence de l’API",
+      "part_of_speech": "noun",
+      "definition_en": "Documentation that describes every endpoint, parameter and response of an API.",
+      "explanation_fr": "Documentation qui décrit chaque endpoint, paramètre et réponse d’une API.",
+      "why_it_matters_fr": "Premier document consulté par les développeurs qui intègrent une API.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "api-reference-1",
+          "text_en": "The field is described in the API reference.",
+          "text_fr": "Le champ est décrit dans la référence de l’API."
+        },
+        {
+          "id": "api-reference-2",
+          "text_en": "The API reference is generated from the OpenAPI spec.",
+          "text_fr": "La référence de l’API est générée à partir de la spécification OpenAPI."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }

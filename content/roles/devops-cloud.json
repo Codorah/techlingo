@@ -2882,6 +2882,213 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "status-page",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "collaboration"
+      ],
+      "term_en": "status page",
+      "translation_fr": "page de statut",
+      "part_of_speech": "noun",
+      "definition_en": "A public or internal web page that shows whether services are working and gives updates during incidents.",
+      "explanation_fr": "Page web publique ou interne qui indique si les services fonctionnent et donne des nouvelles pendant les incidents.",
+      "why_it_matters_fr": "Premier réflexe des clients en cas de panne.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "status-page-1",
+          "text_en": "I posted an update on the status page.",
+          "text_fr": "J’ai publié une mise à jour sur la page de statut."
+        },
+        {
+          "id": "status-page-2",
+          "text_en": "Check the status page before opening a ticket.",
+          "text_fr": "Consulte la page de statut avant d’ouvrir un ticket."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "degraded-performance",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "performance"
+      ],
+      "term_en": "degraded performance",
+      "translation_fr": "performances dégradées",
+      "part_of_speech": "noun",
+      "definition_en": "A state where a service works but more slowly or less reliably than normal.",
+      "explanation_fr": "État où un service fonctionne, mais plus lentement ou de façon moins fiable que d’habitude.",
+      "why_it_matters_fr": "Nuance importante entre « lent » et « en panne » dans la communication d’incident.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "degraded-performance-1",
+          "text_en": "The API is experiencing degraded performance.",
+          "text_fr": "L’API connaît des performances dégradées."
+        },
+        {
+          "id": "degraded-performance-2",
+          "text_en": "We moved the status from degraded performance to partial outage.",
+          "text_fr": "Nous sommes passés de « performances dégradées » à « panne partielle »."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "partial-outage",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "partial outage",
+      "translation_fr": "panne partielle",
+      "part_of_speech": "noun",
+      "definition_en": "An outage that affects only some users, regions or features.",
+      "explanation_fr": "Panne qui ne touche qu’une partie des utilisateurs, des régions ou des fonctionnalités.",
+      "why_it_matters_fr": "Permet de communiquer précisément l’étendue d’un incident.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "partial-outage-1",
+          "text_en": "We have a partial outage affecting users in Europe.",
+          "text_fr": "Nous avons une panne partielle qui touche les utilisateurs en Europe."
+        },
+        {
+          "id": "partial-outage-2",
+          "text_en": "Payments are down, it’s a partial outage.",
+          "text_fr": "Les paiements sont en panne, c’est une panne partielle."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mitigated",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "monitoring"
+      ],
+      "term_en": "mitigated",
+      "translation_fr": "atténué (sous contrôle)",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes an incident whose impact has been reduced or stopped, even if the root cause isn’t fixed yet.",
+      "explanation_fr": "Décrit un incident dont l’impact est réduit ou stoppé, même si la cause n’est pas encore corrigée.",
+      "why_it_matters_fr": "Étape distincte de « resolved » dans le suivi d’incident.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mitigated-1",
+          "text_en": "The issue is mitigated; we’re still working on the root cause.",
+          "text_fr": "Le problème est atténué ; nous travaillons encore sur la cause."
+        },
+        {
+          "id": "mitigated-2",
+          "text_en": "Impact was mitigated by rolling back the release.",
+          "text_fr": "L’impact a été atténué en revenant à la version précédente."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "incident-commander",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "monitoring",
+        "collaboration"
+      ],
+      "term_en": "incident commander",
+      "translation_fr": "responsable de l’incident (incident commander)",
+      "part_of_speech": "noun",
+      "definition_en": "The person who coordinates the response during a major incident, makes decisions and handles communication.",
+      "explanation_fr": "Personne qui coordonne la réponse pendant un incident majeur, prend les décisions et gère la communication.",
+      "why_it_matters_fr": "Rôle clé pour éviter que tout le monde fasse tout en même temps.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "incident-commander-1",
+          "text_en": "Sarah is the incident commander for this outage.",
+          "text_fr": "Sarah est responsable de l’incident pour cette panne."
+        },
+        {
+          "id": "incident-commander-2",
+          "text_en": "The incident commander asked for updates every 15 minutes.",
+          "text_fr": "Le responsable de l’incident a demandé un point toutes les 15 minutes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }

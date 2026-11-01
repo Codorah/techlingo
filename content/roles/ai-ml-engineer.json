@@ -3016,6 +3016,702 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "tool-calling",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 70
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "tool calling",
+      "translation_fr": "appel d’outils (function calling)",
+      "part_of_speech": "noun",
+      "definition_en": "The ability of an LLM to request that an application run a defined function or API, such as a search or database query, and use the result.",
+      "explanation_fr": "Capacité d’un LLM à demander à l’application d’exécuter une fonction ou une API définie, comme une recherche ou une requête en base, puis à utiliser le résultat.",
+      "why_it_matters_fr": "Mécanisme de base des agents IA ; aussi appelé « function calling ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "tool-calling-1",
+          "text_en": "The model uses tool calling to check the order status.",
+          "text_fr": "Le modèle utilise l’appel d’outils pour vérifier le statut de la commande."
+        },
+        {
+          "id": "tool-calling-2",
+          "text_en": "Define a JSON schema for each tool.",
+          "text_fr": "Définis un schéma JSON pour chaque outil."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mcp",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "api"
+      ],
+      "term_en": "MCP (Model Context Protocol)",
+      "translation_fr": "MCP (protocole de contexte de modèle)",
+      "part_of_speech": "acronym",
+      "definition_en": "An open protocol, introduced by Anthropic in 2024, that standardizes how AI applications connect to external tools and data sources.",
+      "explanation_fr": "Protocole ouvert, lancé par Anthropic en 2024, qui standardise la façon dont les applications d’IA se connectent à des outils et sources de données externes.",
+      "why_it_matters_fr": "Largement adopté en 2025 par les principaux éditeurs d’IA et outils de développement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mcp-1",
+          "text_en": "We built an MCP server for our internal docs.",
+          "text_fr": "Nous avons construit un serveur MCP pour notre documentation interne."
+        },
+        {
+          "id": "mcp-2",
+          "text_en": "The assistant reads Jira tickets through MCP.",
+          "text_fr": "L’assistant lit les tickets Jira via MCP."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "system-prompt",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 65
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "system prompt",
+      "translation_fr": "prompt système",
+      "part_of_speech": "noun",
+      "definition_en": "Instructions given to an LLM before the conversation, defining its role, rules and tone for all its answers.",
+      "explanation_fr": "Instructions données à un LLM avant la conversation, qui définissent son rôle, ses règles et son ton pour toutes ses réponses.",
+      "why_it_matters_fr": "Premier levier pour contrôler le comportement d’un assistant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "system-prompt-1",
+          "text_en": "The system prompt tells the bot to answer only about our product.",
+          "text_fr": "Le prompt système demande au bot de ne répondre que sur notre produit."
+        },
+        {
+          "id": "system-prompt-2",
+          "text_en": "Changing the system prompt fixed the tone.",
+          "text_fr": "Modifier le prompt système a corrigé le ton."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "structured-output",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "api"
+      ],
+      "term_en": "structured output",
+      "translation_fr": "sortie structurée",
+      "part_of_speech": "noun",
+      "definition_en": "Model output constrained to a defined format, usually JSON matching a schema, so code can parse it reliably.",
+      "explanation_fr": "Réponse du modèle contrainte dans un format défini, généralement du JSON conforme à un schéma, pour que le code puisse la lire de façon fiable.",
+      "why_it_matters_fr": "Évite de devoir analyser du texte libre fragile.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "structured-output-1",
+          "text_en": "Use structured output so we always get valid JSON.",
+          "text_fr": "Utilise la sortie structurée pour toujours obtenir du JSON valide."
+        },
+        {
+          "id": "structured-output-2",
+          "text_en": "The structured output includes a confidence field.",
+          "text_fr": "La sortie structurée inclut un champ de confiance."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "reasoning-model",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "reasoning model",
+      "translation_fr": "modèle de raisonnement",
+      "part_of_speech": "noun",
+      "definition_en": "An LLM trained to work through problems step by step before answering, which improves results on complex tasks at the cost of more time and tokens.",
+      "explanation_fr": "LLM entraîné à résoudre les problèmes étape par étape avant de répondre, ce qui améliore les tâches complexes au prix de plus de temps et de tokens.",
+      "why_it_matters_fr": "Catégorie de modèles devenue courante depuis fin 2024.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "reasoning-model-1",
+          "text_en": "Use a reasoning model for the code migration plan.",
+          "text_fr": "Utilise un modèle de raisonnement pour le plan de migration du code."
+        },
+        {
+          "id": "reasoning-model-2",
+          "text_en": "The reasoning model is slower but makes fewer mistakes.",
+          "text_fr": "Le modèle de raisonnement est plus lent mais fait moins d’erreurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "chain-of-thought",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "chain of thought",
+      "translation_fr": "chaîne de pensée",
+      "part_of_speech": "noun",
+      "definition_en": "A technique where a model produces intermediate reasoning steps before its final answer, which often improves accuracy.",
+      "explanation_fr": "Technique où le modèle produit des étapes de raisonnement intermédiaires avant sa réponse finale, ce qui améliore souvent la précision.",
+      "why_it_matters_fr": "Notion à la base des modèles de raisonnement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "chain-of-thought-1",
+          "text_en": "Asking for chain of thought improved the math answers.",
+          "text_fr": "Demander une chaîne de pensée a amélioré les réponses en maths."
+        },
+        {
+          "id": "chain-of-thought-2",
+          "text_en": "We hide the chain of thought from end users.",
+          "text_fr": "Nous masquons la chaîne de pensée aux utilisateurs finaux."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "evals",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "testing"
+      ],
+      "term_en": "evals",
+      "translation_fr": "évaluations (evals)",
+      "part_of_speech": "noun",
+      "definition_en": "Sets of test cases and scoring methods used to measure how well an AI model or application performs on specific tasks.",
+      "explanation_fr": "Ensembles de cas de test et de méthodes de notation pour mesurer la performance d’un modèle ou d’une application d’IA sur des tâches précises.",
+      "why_it_matters_fr": "L’équivalent des tests automatisés pour une application à base de LLM.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "evals-1",
+          "text_en": "Run the evals before switching to the new model.",
+          "text_fr": "Lance les evals avant de passer au nouveau modèle."
+        },
+        {
+          "id": "evals-2",
+          "text_en": "Our evals show a drop in answer accuracy.",
+          "text_fr": "Nos evals montrent une baisse de la justesse des réponses."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "llm-as-a-judge",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "testing"
+      ],
+      "term_en": "LLM-as-a-judge",
+      "translation_fr": "LLM évaluateur (LLM-as-a-judge)",
+      "part_of_speech": "noun",
+      "definition_en": "Using one language model to score or compare the outputs of another, following a defined rubric.",
+      "explanation_fr": "Utilisation d’un modèle de langage pour noter ou comparer les réponses d’un autre, selon une grille définie.",
+      "why_it_matters_fr": "Pratique pour évaluer à grande échelle, mais à valider contre des avis humains.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "llm-as-a-judge-1",
+          "text_en": "We use LLM-as-a-judge to grade support answers.",
+          "text_fr": "Nous utilisons un LLM évaluateur pour noter les réponses du support."
+        },
+        {
+          "id": "llm-as-a-judge-2",
+          "text_en": "Check the judge’s scores against human reviews.",
+          "text_fr": "Vérifie les notes du LLM évaluateur par rapport à des relectures humaines."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "reranking",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "machine-learning"
+      ],
+      "term_en": "reranking",
+      "translation_fr": "reclassement (reranking)",
+      "part_of_speech": "noun",
+      "definition_en": "A second step in search or RAG where a dedicated model reorders the retrieved results by relevance before they are used.",
+      "explanation_fr": "Seconde étape d’une recherche ou d’un RAG où un modèle dédié réordonne les résultats récupérés par pertinence avant leur utilisation.",
+      "why_it_matters_fr": "Améliore souvent la qualité d’un RAG à moindre coût.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "reranking-1",
+          "text_en": "Adding a reranking step improved answer quality.",
+          "text_fr": "Ajouter une étape de reranking a amélioré la qualité des réponses."
+        },
+        {
+          "id": "reranking-2",
+          "text_en": "We retrieve 50 chunks and keep the top 5 after reranking.",
+          "text_fr": "Nous récupérons 50 fragments et gardons les 5 meilleurs après reranking."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hybrid-search",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "databases"
+      ],
+      "term_en": "hybrid search",
+      "translation_fr": "recherche hybride",
+      "part_of_speech": "noun",
+      "definition_en": "Search that combines keyword matching with semantic vector search to get more relevant results.",
+      "explanation_fr": "Recherche qui combine la correspondance par mots-clés et la recherche sémantique vectorielle pour des résultats plus pertinents.",
+      "why_it_matters_fr": "Les mots-clés trouvent les codes produits, les vecteurs le sens : on combine les deux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hybrid-search-1",
+          "text_en": "Hybrid search finds both exact product codes and similar questions.",
+          "text_fr": "La recherche hybride trouve à la fois les codes produits exacts et les questions similaires."
+        },
+        {
+          "id": "hybrid-search-2",
+          "text_en": "We switched our RAG to hybrid search.",
+          "text_fr": "Nous sommes passés à la recherche hybride pour notre RAG."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "knowledge-cutoff",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "knowledge cutoff",
+      "translation_fr": "date limite des connaissances",
+      "part_of_speech": "noun",
+      "definition_en": "The date after which a model has no training data, so it doesn’t know about later events unless given that information.",
+      "explanation_fr": "Date après laquelle un modèle n’a plus de données d’entraînement, donc il ignore les événements ultérieurs sauf si on les lui fournit.",
+      "why_it_matters_fr": "Explique pourquoi un assistant ne connaît pas la dernière version d’une bibliothèque.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "knowledge-cutoff-1",
+          "text_en": "The model’s knowledge cutoff is before this library release.",
+          "text_fr": "La date limite des connaissances du modèle est antérieure à cette version de la bibliothèque."
+        },
+        {
+          "id": "knowledge-cutoff-2",
+          "text_en": "Use RAG to work around the knowledge cutoff.",
+          "text_fr": "Utilise le RAG pour contourner la date limite des connaissances."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "knowledge-distillation",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "generative-ai"
+      ],
+      "term_en": "distillation",
+      "translation_fr": "distillation (de modèle)",
+      "part_of_speech": "noun",
+      "definition_en": "Training a smaller model to imitate a larger one, keeping much of its quality while being cheaper and faster.",
+      "explanation_fr": "Entraînement d’un modèle plus petit à imiter un plus grand, pour garder une grande partie de sa qualité en étant moins cher et plus rapide.",
+      "why_it_matters_fr": "Technique courante pour déployer des modèles légers en production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "knowledge-distillation-1",
+          "text_en": "The distilled model runs on a single GPU.",
+          "text_fr": "Le modèle distillé tourne sur un seul GPU."
+        },
+        {
+          "id": "knowledge-distillation-2",
+          "text_en": "Distillation cut inference costs by 80%.",
+          "text_fr": "La distillation a réduit les coûts d’inférence de 80 %."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "lora",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "generative-ai"
+      ],
+      "term_en": "LoRA",
+      "translation_fr": "LoRA (adaptation à faible rang)",
+      "part_of_speech": "acronym",
+      "definition_en": "Low-Rank Adaptation: a fine-tuning method that trains small extra matrices instead of all model weights, making fine-tuning much cheaper.",
+      "explanation_fr": "Low-Rank Adaptation : méthode de fine-tuning qui entraîne de petites matrices supplémentaires au lieu de tous les poids du modèle, ce qui rend l’opération bien moins coûteuse.",
+      "why_it_matters_fr": "Méthode de fine-tuning la plus répandue pour les modèles ouverts.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "lora-1",
+          "text_en": "We trained a LoRA adapter on our support tickets.",
+          "text_fr": "Nous avons entraîné un adaptateur LoRA sur nos tickets de support."
+        },
+        {
+          "id": "lora-2",
+          "text_en": "LoRA lets us fine-tune on one GPU.",
+          "text_fr": "LoRA nous permet de faire du fine-tuning sur un seul GPU."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "rlhf",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "generative-ai"
+      ],
+      "term_en": "RLHF",
+      "translation_fr": "RLHF (apprentissage par renforcement avec retour humain)",
+      "part_of_speech": "acronym",
+      "definition_en": "Reinforcement Learning from Human Feedback: a training method where human preferences between model answers are used to improve the model.",
+      "explanation_fr": "Reinforcement Learning from Human Feedback : méthode d’entraînement où les préférences humaines entre réponses du modèle servent à l’améliorer.",
+      "why_it_matters_fr": "Étape clé qui rend les assistants plus utiles et mieux alignés.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "rlhf-1",
+          "text_en": "RLHF made the model follow instructions better.",
+          "text_fr": "Le RLHF a amélioré la façon dont le modèle suit les instructions."
+        },
+        {
+          "id": "rlhf-2",
+          "text_en": "Annotators ranked answers for the RLHF dataset.",
+          "text_fr": "Les annotateurs ont classé des réponses pour le jeu de données RLHF."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "open-weight-model",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "generative-ai"
+      ],
+      "term_en": "open-weight model",
+      "translation_fr": "modèle à poids ouverts",
+      "part_of_speech": "noun",
+      "definition_en": "A model whose trained weights are published so anyone can download and run it, even if its training data or code are not fully open.",
+      "explanation_fr": "Modèle dont les poids entraînés sont publiés pour que chacun puisse le télécharger et l’exécuter, même si ses données ou son code d’entraînement ne sont pas entièrement ouverts.",
+      "why_it_matters_fr": "Distinction importante avec « open source » au sens strict.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "open-weight-model-1",
+          "text_en": "We host an open-weight model to keep data in the EU.",
+          "text_fr": "Nous hébergeons un modèle à poids ouverts pour garder les données dans l’UE."
+        },
+        {
+          "id": "open-weight-model-2",
+          "text_en": "Llama and Mistral offer open-weight models.",
+          "text_fr": "Llama et Mistral proposent des modèles à poids ouverts."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "jailbreak",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "security"
+      ],
+      "term_en": "jailbreak",
+      "translation_fr": "contournement (jailbreak)",
+      "part_of_speech": "noun",
+      "definition_en": "A prompt designed to trick an AI model into ignoring its safety rules or instructions.",
+      "explanation_fr": "Prompt conçu pour pousser un modèle d’IA à ignorer ses règles de sécurité ou ses instructions.",
+      "why_it_matters_fr": "Différent de l’injection de prompt, qui passe par des données externes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "jailbreak-1",
+          "text_en": "Users shared a jailbreak that makes the bot swear.",
+          "text_fr": "Des utilisateurs ont partagé un jailbreak qui fait jurer le bot."
+        },
+        {
+          "id": "jailbreak-2",
+          "text_en": "Our red team tests new jailbreaks every week.",
+          "text_fr": "Notre red team teste de nouveaux jailbreaks chaque semaine."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "human-in-the-loop",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "generative-ai",
+        "machine-learning"
+      ],
+      "term_en": "human in the loop",
+      "translation_fr": "humain dans la boucle",
+      "part_of_speech": "phrase",
+      "definition_en": "A setup where a person reviews or approves an AI system’s decisions or actions before they take effect.",
+      "explanation_fr": "Organisation où une personne vérifie ou valide les décisions ou actions d’un système d’IA avant qu’elles ne s’appliquent.",
+      "why_it_matters_fr": "Exigence fréquente pour les actions risquées ou réglementées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "human-in-the-loop-1",
+          "text_en": "Refunds above 100 euros need a human in the loop.",
+          "text_fr": "Les remboursements de plus de 100 euros nécessitent un humain dans la boucle."
+        },
+        {
+          "id": "human-in-the-loop-2",
+          "text_en": "We keep a human in the loop for every email the agent sends.",
+          "text_fr": "Nous gardons un humain dans la boucle pour chaque e-mail envoyé par l’agent."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cosine-similarity",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "ai-ml-engineer",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "machine-learning",
+        "generative-ai"
+      ],
+      "term_en": "cosine similarity",
+      "translation_fr": "similarité cosinus",
+      "part_of_speech": "noun",
+      "definition_en": "A measure of how similar two vectors are based on the angle between them, widely used to compare embeddings.",
+      "explanation_fr": "Mesure de la proximité de deux vecteurs selon l’angle qui les sépare, très utilisée pour comparer des embeddings.",
+      "why_it_matters_fr": "Calcul au cœur de la recherche sémantique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cosine-similarity-1",
+          "text_en": "We rank documents by cosine similarity to the query.",
+          "text_fr": "Nous classons les documents par similarité cosinus avec la requête."
+        },
+        {
+          "id": "cosine-similarity-2",
+          "text_en": "A cosine similarity of 0.9 means the texts are very close.",
+          "text_fr": "Une similarité cosinus de 0,9 signifie que les textes sont très proches."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
