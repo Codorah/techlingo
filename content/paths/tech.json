@@ -11,13 +11,34 @@
       "guide": {
         "intro_fr": "Quand quelque chose ne marche pas, tout commence par le message d’erreur. En anglais, on dit qu’une application « crashes » (plante) ou qu’une fonction « throws an exception » (lève une exception), et la stack trace montre où le problème est apparu. Les logs racontent ce qui s’est passé côté serveur : un code de statut, un timeout, un avertissement. Pour signaler le problème, on écrit un bug report clair : les étapes pour reproduire, le résultat attendu et le résultat obtenu. Les verbes clés restent simples : it fails, it returns, it crashes, I get an error.",
         "key_phrases": [
-          { "en": "I get this error message: …", "fr": "J’obtiens ce message d’erreur : …" },
-          { "en": "The app crashes when I open the profile page.", "fr": "L’application plante quand j’ouvre la page profil." },
-          { "en": "Can you share the full stack trace?", "fr": "Peux-tu partager la stack trace complète ?" },
-          { "en": "The request times out after 30 seconds.", "fr": "La requête expire au bout de 30 secondes." },
-          { "en": "Here are the steps to reproduce.", "fr": "Voici les étapes pour reproduire." },
-          { "en": "Expected result: … Actual result: …", "fr": "Résultat attendu : … Résultat obtenu : …" },
-          { "en": "I can’t reproduce it on my machine.", "fr": "Je n’arrive pas à le reproduire sur ma machine." }
+          {
+            "en": "I get this error message: …",
+            "fr": "J’obtiens ce message d’erreur : …"
+          },
+          {
+            "en": "The app crashes when I open the profile page.",
+            "fr": "L’application plante quand j’ouvre la page profil."
+          },
+          {
+            "en": "Can you share the full stack trace?",
+            "fr": "Peux-tu partager la stack trace complète ?"
+          },
+          {
+            "en": "The request times out after 30 seconds.",
+            "fr": "La requête expire au bout de 30 secondes."
+          },
+          {
+            "en": "Here are the steps to reproduce.",
+            "fr": "Voici les étapes pour reproduire."
+          },
+          {
+            "en": "Expected result: … Actual result: …",
+            "fr": "Résultat attendu : … Résultat obtenu : …"
+          },
+          {
+            "en": "I can’t reproduce it on my machine.",
+            "fr": "Je n’arrive pas à le reproduire sur ma machine."
+          }
         ],
         "tip_fr": "Ne dis jamais seulement « I have an error » : précise quand (when I click Save), où (on the checkout page) et quoi (the error message says…). Et attention au faux ami : « to log in » veut dire se connecter, alors que « the logs » sont les journaux d’événements."
       },
@@ -25,37 +46,83 @@
         {
           "id": "read-an-error-message",
           "title_fr": "Lire un message d’erreur",
-          "term_ids": ["error-message", "stack-trace", "exception", "warning", "crash"],
+          "term_ids": [
+            "error-message",
+            "stack-trace",
+            "exception",
+            "warning",
+            "crash"
+          ],
           "dialogue": [
-            { "speaker": "Aïcha", "text_en": "Hi Tomasz, the app crashes when I open the profile page. I get this error message: TypeError: Cannot read properties of undefined.", "text_fr": "Salut Tomasz, l’application plante quand j’ouvre la page profil. J’ai ce message d’erreur : TypeError: Cannot read properties of undefined." },
-            { "speaker": "Tomasz", "text_en": "Can you share the full stack trace? The top lines tell us where the exception is thrown.", "text_fr": "Tu peux partager la stack trace complète ? Les premières lignes nous disent où l’exception est levée." },
-            { "speaker": "Aïcha", "text_en": "Sure, here it is. It points to UserCard.tsx, line 42.", "text_fr": "Bien sûr, la voici. Elle pointe vers UserCard.tsx, ligne 42." },
-            { "speaker": "Tomasz", "text_en": "OK, so the user object is undefined when the component renders. Anything else in the console?", "text_fr": "D’accord, donc l’objet user est undefined quand le composant s’affiche. Autre chose dans la console ?" },
-            { "speaker": "Aïcha", "text_en": "Just a warning about a missing key, but I don’t think it’s related.", "text_fr": "Juste un avertissement sur une clé manquante, mais je ne pense pas que ce soit lié." },
-            { "speaker": "Tomasz", "text_en": "Agreed, a warning won’t crash the page. Check the API response first: I think the user data hasn’t loaded yet.", "text_fr": "D’accord, un avertissement ne fait pas planter la page. Vérifie d’abord la réponse de l’API : je pense que les données de l’utilisateur ne sont pas encore chargées." }
+            {
+              "speaker": "Aïcha",
+              "text_en": "Hi Tomasz, the app crashes when I open the profile page. I get this error message: TypeError: Cannot read properties of undefined.",
+              "text_fr": "Salut Tomasz, l’application plante quand j’ouvre la page profil. J’ai ce message d’erreur : TypeError: Cannot read properties of undefined."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Can you share the full stack trace? The top lines tell us where the exception is thrown.",
+              "text_fr": "Tu peux partager la stack trace complète ? Les premières lignes nous disent où l’exception est levée."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Sure, here it is. It points to UserCard.tsx, line 42.",
+              "text_fr": "Bien sûr, la voici. Elle pointe vers UserCard.tsx, ligne 42."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "OK, so the user object is undefined when the component renders. Anything else in the console?",
+              "text_fr": "D’accord, donc l’objet user est undefined quand le composant s’affiche. Autre chose dans la console ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Just a warning about a missing key, but I don’t think it’s related.",
+              "text_fr": "Juste un avertissement sur une clé manquante, mais je ne pense pas que ce soit lié."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Agreed, a warning won’t crash the page. Check the API response first: I think the user data hasn’t loaded yet.",
+              "text_fr": "D’accord, un avertissement ne fait pas planter la page. Vérifie d’abord la réponse de l’API : je pense que les données de l’utilisateur ne sont pas encore chargées."
+            }
           ],
           "questions": [
             {
               "prompt_fr": "Comment dire « L’application plante quand j’ouvre la page profil » ?",
-              "choices": ["The app crashes when I open the profile page.", "The app is crashing me when I open the profile page.", "The app breaks the profile page when I open."],
+              "choices": [
+                "The app crashes when I open the profile page.",
+                "The app is crashing me when I open the profile page.",
+                "The app breaks the profile page when I open."
+              ],
               "answer_index": 0,
               "explanation_fr": "« To crash » est le verbe naturel pour une application qui plante, et il s’emploie sans complément : the app crashes. « Is crashing me » est un calque impossible en anglais, et la troisième phrase change le sens (l’application casserait la page)."
             },
             {
               "prompt_fr": "Que demande Tomasz avec « Can you share the full stack trace? » ?",
-              "choices": ["La liste des appels de fonctions qui ont mené à l’erreur", "Une capture d’écran de la page", "L’historique des commits du projet"],
+              "choices": [
+                "La liste des appels de fonctions qui ont mené à l’erreur",
+                "Une capture d’écran de la page",
+                "L’historique des commits du projet"
+              ],
               "answer_index": 0,
               "explanation_fr": "La stack trace (pile d’appels) liste les fonctions appelées jusqu’à l’erreur, avec fichiers et numéros de ligne : c’est ce qui permet de trouver UserCard.tsx, ligne 42. Une capture d’écran montre le symptôme, pas l’endroit du code ; l’historique des commits est une autre notion (git log)."
             },
             {
               "prompt_fr": "Aïcha voit un « warning » dans la console. Qu’est-ce que cela signifie ?",
-              "choices": ["Un problème possible, mais le programme continue de tourner", "Une erreur qui arrête le programme", "Un message de confirmation"],
+              "choices": [
+                "Un problème possible, mais le programme continue de tourner",
+                "Une erreur qui arrête le programme",
+                "Un message de confirmation"
+              ],
               "answer_index": 0,
               "explanation_fr": "Un warning (avertissement) signale un risque sans bloquer l’exécution, d’où la réponse de Tomasz : « a warning won’t crash the page ». C’est une « error » ou une « exception » non gérée qui arrête le programme."
             },
             {
               "prompt_fr": "Complète : « The function ___ an exception when the user is null. »",
-              "choices": ["throws", "launches", "sends"],
+              "choices": [
+                "throws",
+                "launches",
+                "sends"
+              ],
               "answer_index": 0,
               "explanation_fr": "En anglais, on dit « throw an exception » (lever ou lancer une exception) ; certains langages disent aussi « raise ». « Launches » est un calque du français « lancer » qui ne s’emploie pas ici, et « sends » s’utilise pour un message ou une requête."
             }
@@ -65,44 +132,99 @@
             "prompt_fr": "La page de paiement plante quand tu cliques sur « Pay ». Écris un message Slack à ton tech lead, Sam : décris le problème, donne le message d’erreur (TypeError: amount is undefined) et propose d’envoyer la stack trace.",
             "model_answer_en": "Hi Sam, the checkout page crashes when I click Pay. I get this error message: TypeError: amount is undefined. I can share the full stack trace if that helps.",
             "model_answer_fr": "Salut Sam, la page de paiement plante quand je clique sur Pay. J’obtiens ce message d’erreur : TypeError: amount is undefined. Je peux partager la stack trace complète si ça peut aider.",
-            "key_phrases": ["crashes when I click", "I get this error message", "share the full stack trace"]
+            "key_phrases": [
+              "crashes when I click",
+              "I get this error message",
+              "share the full stack trace"
+            ]
           }
         },
         {
           "id": "read-the-logs",
           "title_fr": "Fouiller les logs",
-          "term_ids": ["log", "http-status-code", "timeout", "debug", "troubleshoot"],
+          "term_ids": [
+            "log",
+            "http-status-code",
+            "timeout",
+            "debug",
+            "troubleshoot"
+          ],
           "dialogue": [
-            { "speaker": "Mei", "text_en": "Kofi, some customers say the export button does nothing. Can you check?", "text_fr": "Kofi, des clients disent que le bouton d’export ne fait rien. Tu peux vérifier ?" },
-            { "speaker": "Kofi", "text_en": "Sure, let me look at the logs. Here it is: the export request returns a 504 status code.", "text_fr": "Bien sûr, je regarde les logs. Voilà : la requête d’export renvoie un code de statut 504." },
-            { "speaker": "Mei", "text_en": "What does 504 mean?", "text_fr": "Ça veut dire quoi, 504 ?" },
-            { "speaker": "Kofi", "text_en": "It’s a gateway timeout: the server took too long to answer, so the request was cut off.", "text_fr": "C’est un gateway timeout : le serveur a mis trop de temps à répondre, donc la requête a été interrompue." },
-            { "speaker": "Mei", "text_en": "Is it happening for everyone?", "text_fr": "Ça arrive à tout le monde ?" },
-            { "speaker": "Kofi", "text_en": "Only for large exports, over ten thousand rows. I’ll debug it this afternoon and keep you posted.", "text_fr": "Seulement pour les gros exports, au-delà de dix mille lignes. Je le débogue cet après-midi et je te tiens au courant." },
-            { "speaker": "Mei", "text_en": "Great, I’ll tell the customers we’re troubleshooting the issue.", "text_fr": "Parfait, je vais dire aux clients qu’on est en train d’analyser le problème." }
+            {
+              "speaker": "Mei",
+              "text_en": "Kofi, some customers say the export button does nothing. Can you check?",
+              "text_fr": "Kofi, des clients disent que le bouton d’export ne fait rien. Tu peux vérifier ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Sure, let me look at the logs. Here it is: the export request returns a 504 status code.",
+              "text_fr": "Bien sûr, je regarde les logs. Voilà : la requête d’export renvoie un code de statut 504."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "What does 504 mean?",
+              "text_fr": "Ça veut dire quoi, 504 ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "It’s a gateway timeout: the server took too long to answer, so the request was cut off.",
+              "text_fr": "C’est un gateway timeout : le serveur a mis trop de temps à répondre, donc la requête a été interrompue."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Is it happening for everyone?",
+              "text_fr": "Ça arrive à tout le monde ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Only for large exports, over ten thousand rows. I’ll debug it this afternoon and keep you posted.",
+              "text_fr": "Seulement pour les gros exports, au-delà de dix mille lignes. Je le débogue cet après-midi et je te tiens au courant."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Great, I’ll tell the customers we’re troubleshooting the issue.",
+              "text_fr": "Parfait, je vais dire aux clients qu’on est en train d’analyser le problème."
+            }
           ],
           "questions": [
             {
               "prompt_fr": "Que veut dire Kofi avec « Let me look at the logs » ?",
-              "choices": ["Je vais regarder les journaux d’événements", "Je vais me connecter au site", "Je vais regarder la maquette"],
+              "choices": [
+                "Je vais regarder les journaux d’événements",
+                "Je vais me connecter au site",
+                "Je vais regarder la maquette"
+              ],
               "answer_index": 0,
               "explanation_fr": "« The logs » sont les journaux où le serveur enregistre ce qui se passe (requêtes, erreurs, avertissements). Le piège : « to log in » veut dire se connecter, mais ici « logs » est un nom au pluriel, pas le verbe."
             },
             {
               "prompt_fr": "Quel code de statut HTTP signifie que la ressource demandée n’existe pas ?",
-              "choices": ["404", "500", "401", "200"],
+              "choices": [
+                "404",
+                "500",
+                "401",
+                "200"
+              ],
               "answer_index": 0,
               "explanation_fr": "404 Not Found : la ressource n’existe pas à cette adresse. 500 est une erreur interne du serveur, 401 signifie que l’utilisateur n’est pas authentifié, et 200 veut dire que tout s’est bien passé."
             },
             {
               "prompt_fr": "Comment dire à un client « On est en train d’analyser le problème » ?",
-              "choices": ["We’re troubleshooting the issue.", "We’re troubleshooting on the issue.", "We make troubleshoot of the issue."],
+              "choices": [
+                "We’re troubleshooting the issue.",
+                "We’re troubleshooting on the issue.",
+                "We make troubleshoot of the issue."
+              ],
               "answer_index": 0,
               "explanation_fr": "« To troubleshoot » est un verbe transitif : on troubleshoot something, sans préposition. « Troubleshooting on » ajoute une préposition inutile, et « make troubleshoot » est un calque incorrect."
             },
             {
               "prompt_fr": "Complète : « The request ___ after 30 seconds. »",
-              "choices": ["timed out", "was out of time", "made a timeout"],
+              "choices": [
+                "timed out",
+                "was out of time",
+                "made a timeout"
+              ],
               "answer_index": 0,
               "explanation_fr": "Le verbe à particule « to time out » est la façon naturelle de dire qu’une requête a expiré. « Was out of time » se dit d’une personne qui manque de temps, et « made a timeout » ne s’emploie pas."
             }
@@ -113,43 +235,94 @@
             "context_en": "Hi Kofi, a customer says the CSV export fails every time. Could you take a look? Thanks, Mei",
             "model_answer_en": "Hi Mei, I checked the logs: the export request times out and returns a 504 status code, but only for exports over 10,000 rows. I’m debugging it today and will update you tomorrow. In the meantime, the customer can export shorter date ranges as a workaround.",
             "model_answer_fr": "Bonjour Mei, j’ai vérifié les logs : la requête d’export expire et renvoie un code de statut 504, mais seulement pour les exports de plus de 10 000 lignes. Je le débogue aujourd’hui et je te fais un point demain. En attendant, le client peut exporter des périodes plus courtes pour contourner le problème.",
-            "key_phrases": ["I checked the logs", "times out", "returns a 504 status code", "as a workaround"]
+            "key_phrases": [
+              "I checked the logs",
+              "times out",
+              "returns a 504 status code",
+              "as a workaround"
+            ]
           }
         },
         {
           "id": "write-a-bug-report",
           "title_fr": "Écrire un bug report",
-          "term_ids": ["bug-report", "steps-to-reproduce", "expected-result", "severity", "priority"],
+          "term_ids": [
+            "bug-report",
+            "steps-to-reproduce",
+            "expected-result",
+            "severity",
+            "priority"
+          ],
           "dialogue": [
-            { "speaker": "Diego", "text_en": "Fatou, I read your bug report about the cart, but I’m not sure how to trigger the bug. Can you add steps to reproduce?", "text_fr": "Fatou, j’ai lu ton bug report sur le panier, mais je ne sais pas trop comment déclencher le bug. Tu peux ajouter les étapes pour reproduire ?" },
-            { "speaker": "Fatou", "text_en": "Sure. One: add two items to the cart. Two: remove one. Three: refresh the page. The cart is empty.", "text_fr": "Bien sûr. Un : ajoute deux articles au panier. Deux : retires-en un. Trois : actualise la page. Le panier est vide." },
-            { "speaker": "Diego", "text_en": "And what’s the expected result?", "text_fr": "Et quel est le résultat attendu ?" },
-            { "speaker": "Fatou", "text_en": "The cart should still contain one item. The actual result is an empty cart.", "text_fr": "Le panier devrait encore contenir un article. Le résultat obtenu, c’est un panier vide." },
-            { "speaker": "Diego", "text_en": "Got it. What severity did you set?", "text_fr": "Compris. Quelle gravité as-tu indiquée ?" },
-            { "speaker": "Fatou", "text_en": "Major, because users lose their cart. The priority is up to the product owner.", "text_fr": "Majeure, parce que les utilisateurs perdent leur panier. La priorité, c’est au product owner de la fixer." }
+            {
+              "speaker": "Diego",
+              "text_en": "Fatou, I read your bug report about the cart, but I’m not sure how to trigger the bug. Can you add steps to reproduce?",
+              "text_fr": "Fatou, j’ai lu ton bug report sur le panier, mais je ne sais pas trop comment déclencher le bug. Tu peux ajouter les étapes pour reproduire ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Sure. One: add two items to the cart. Two: remove one. Three: refresh the page. The cart is empty.",
+              "text_fr": "Bien sûr. Un : ajoute deux articles au panier. Deux : retires-en un. Trois : actualise la page. Le panier est vide."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "And what’s the expected result?",
+              "text_fr": "Et quel est le résultat attendu ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "The cart should still contain one item. The actual result is an empty cart.",
+              "text_fr": "Le panier devrait encore contenir un article. Le résultat obtenu, c’est un panier vide."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Got it. What severity did you set?",
+              "text_fr": "Compris. Quelle gravité as-tu indiquée ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Major, because users lose their cart. The priority is up to the product owner.",
+              "text_fr": "Majeure, parce que les utilisateurs perdent leur panier. La priorité, c’est au product owner de la fixer."
+            }
           ],
           "questions": [
             {
               "prompt_fr": "Dans un bug report, que met-on sous « Expected result » ?",
-              "choices": ["Ce qui aurait dû se passer", "Ce qui s’est réellement passé", "La date prévue pour la correction"],
+              "choices": [
+                "Ce qui aurait dû se passer",
+                "Ce qui s’est réellement passé",
+                "La date prévue pour la correction"
+              ],
               "answer_index": 0,
               "explanation_fr": "« Expected result » décrit le comportement normal attendu (le panier garde un article). Ce qui s’est réellement passé va sous « Actual result ». Le piège : « expected » fait penser à une date prévue, mais ici il s’agit du comportement."
             },
             {
               "prompt_fr": "Quel titre de bug report est le plus utile ?",
-              "choices": ["Cart is emptied after page refresh", "Big problem with the site, please help", "The cart, I think it is maybe bugged"],
+              "choices": [
+                "Cart is emptied after page refresh",
+                "Big problem with the site, please help",
+                "The cart, I think it is maybe bugged"
+              ],
               "answer_index": 0,
               "explanation_fr": "Un bon titre est court, factuel et dit quoi et quand : « Cart is emptied after page refresh ». « Big problem… » ne dit pas ce qui ne marche pas, et la troisième phrase est vague et hésitante."
             },
             {
               "prompt_fr": "Quelle est la différence entre « severity » et « priority » ?",
-              "choices": ["Severity : la gravité de l’impact ; priority : l’urgence de la correction", "Severity : l’urgence de la correction ; priority : la gravité de l’impact", "Ce sont deux synonymes"],
+              "choices": [
+                "Severity : la gravité de l’impact ; priority : l’urgence de la correction",
+                "Severity : l’urgence de la correction ; priority : la gravité de l’impact",
+                "Ce sont deux synonymes"
+              ],
               "answer_index": 0,
               "explanation_fr": "La severity mesure l’impact technique ou utilisateur (ici, perte du panier), la priority dit dans quel ordre on corrige, et c’est souvent le product owner qui la fixe. Les deux sont liées mais différentes : un bug grave sur une page peu utilisée peut avoir une priorité basse."
             },
             {
               "prompt_fr": "Comment dire « Je n’arrive pas à reproduire le bug » ?",
-              "choices": ["I can’t reproduce the bug.", "I don’t arrive to reproduce the bug.", "I can’t reproduct the bug."],
+              "choices": [
+                "I can’t reproduce the bug.",
+                "I don’t arrive to reproduce the bug.",
+                "I can’t reproduct the bug."
+              ],
               "answer_index": 0,
               "explanation_fr": "« I can’t reproduce the bug » est la formule standard. « Arrive » est un faux ami : en anglais, il veut seulement dire arriver quelque part. Et le verbe est « reproduce », pas « reproduct »."
             }
@@ -159,38 +332,89 @@
             "prompt_fr": "Rédige un bug report court (titre, étapes pour reproduire, résultat attendu, résultat obtenu) : sur mobile, le bouton « Send » du formulaire de contact ne fait rien après avoir joint un fichier PDF.",
             "model_answer_en": "Title: Contact form cannot be sent after attaching a file (mobile). Steps to reproduce: 1. Open the contact page on a phone. 2. Attach a PDF file. 3. Tap Send. Expected result: the message is sent. Actual result: nothing happens and no error message is shown.",
             "model_answer_fr": "Titre : impossible d’envoyer le formulaire de contact après avoir joint un fichier (mobile). Étapes pour reproduire : 1. Ouvrir la page de contact sur un téléphone. 2. Joindre un fichier PDF. 3. Appuyer sur Send. Résultat attendu : le message est envoyé. Résultat obtenu : rien ne se passe et aucun message d’erreur ne s’affiche.",
-            "key_phrases": ["Steps to reproduce", "Expected result", "Actual result", "nothing happens"]
+            "key_phrases": [
+              "Steps to reproduce",
+              "Expected result",
+              "Actual result",
+              "nothing happens"
+            ]
           }
         },
         {
           "id": "triage-a-bug",
           "title_fr": "Bug introuvable et contournement",
-          "term_ids": ["cannot-reproduce", "browser", "software-regression", "workaround", "retest"],
+          "term_ids": [
+            "cannot-reproduce",
+            "browser",
+            "software-regression",
+            "workaround",
+            "retest"
+          ],
           "dialogue": [
-            { "speaker": "Priya", "text_en": "Next ticket: the date picker bug. Youssef, any news?", "text_fr": "Ticket suivant : le bug du sélecteur de date. Youssef, des nouvelles ?" },
-            { "speaker": "Youssef", "text_en": "I couldn’t reproduce it on Chrome or Firefox. Which browser was the customer using?", "text_fr": "Je n’ai pas réussi à le reproduire sur Chrome ni sur Firefox. Quel navigateur utilisait le client ?" },
-            { "speaker": "Fatou", "text_en": "Safari on an iPhone. And it worked last week, so it looks like a regression.", "text_fr": "Safari sur un iPhone. Et ça marchait la semaine dernière, donc ça ressemble à une régression." },
-            { "speaker": "Youssef", "text_en": "Then it probably came with yesterday’s release. I’ll check the recent changes to the date picker.", "text_fr": "Alors ça vient sûrement de la mise en ligne d’hier. Je vais regarder les changements récents sur le sélecteur de date." },
-            { "speaker": "Priya", "text_en": "Is there a workaround for users in the meantime?", "text_fr": "Il y a une solution de contournement pour les utilisateurs en attendant ?" },
-            { "speaker": "Youssef", "text_en": "Yes, they can type the date manually. Fatou, once the fix is on staging, can you retest it on Safari?", "text_fr": "Oui, ils peuvent taper la date à la main. Fatou, une fois le correctif sur staging, tu pourras le retester sur Safari ?" },
-            { "speaker": "Fatou", "text_en": "Sure, I’ll retest it as soon as it’s there.", "text_fr": "Bien sûr, je le reteste dès qu’il y est." }
+            {
+              "speaker": "Priya",
+              "text_en": "Next ticket: the date picker bug. Youssef, any news?",
+              "text_fr": "Ticket suivant : le bug du sélecteur de date. Youssef, des nouvelles ?"
+            },
+            {
+              "speaker": "Youssef",
+              "text_en": "I couldn’t reproduce it on Chrome or Firefox. Which browser was the customer using?",
+              "text_fr": "Je n’ai pas réussi à le reproduire sur Chrome ni sur Firefox. Quel navigateur utilisait le client ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Safari on an iPhone. And it worked last week, so it looks like a regression.",
+              "text_fr": "Safari sur un iPhone. Et ça marchait la semaine dernière, donc ça ressemble à une régression."
+            },
+            {
+              "speaker": "Youssef",
+              "text_en": "Then it probably came with yesterday’s release. I’ll check the recent changes to the date picker.",
+              "text_fr": "Alors ça vient sûrement de la mise en ligne d’hier. Je vais regarder les changements récents sur le sélecteur de date."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Is there a workaround for users in the meantime?",
+              "text_fr": "Il y a une solution de contournement pour les utilisateurs en attendant ?"
+            },
+            {
+              "speaker": "Youssef",
+              "text_en": "Yes, they can type the date manually. Fatou, once the fix is on staging, can you retest it on Safari?",
+              "text_fr": "Oui, ils peuvent taper la date à la main. Fatou, une fois le correctif sur staging, tu pourras le retester sur Safari ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Sure, I’ll retest it as soon as it’s there.",
+              "text_fr": "Bien sûr, je le reteste dès qu’il y est."
+            }
           ],
           "questions": [
             {
               "prompt_fr": "Que signifie « It looks like a regression » ?",
-              "choices": ["Une fonctionnalité qui marchait avant ne marche plus", "Le code est revenu à une version précédente", "Les performances s’améliorent"],
+              "choices": [
+                "Une fonctionnalité qui marchait avant ne marche plus",
+                "Le code est revenu à une version précédente",
+                "Les performances s’améliorent"
+              ],
               "answer_index": 0,
               "explanation_fr": "En test logiciel, une regression est un bug qui casse quelque chose qui fonctionnait avant, souvent après une mise en ligne. Revenir à une version précédente, c’est un « rollback », pas une régression."
             },
             {
               "prompt_fr": "Que propose-t-on avec un « workaround » ?",
-              "choices": ["Une solution de contournement en attendant le correctif", "Le correctif définitif du bug", "Une réunion pour en parler"],
+              "choices": [
+                "Une solution de contournement en attendant le correctif",
+                "Le correctif définitif du bug",
+                "Une réunion pour en parler"
+              ],
               "answer_index": 0,
               "explanation_fr": "Un workaround permet de contourner le problème (taper la date à la main) sans le corriger. Le correctif définitif, c’est « the fix »."
             },
             {
               "prompt_fr": "Quelle phrase est correcte pour demander à une QA de retester ?",
-              "choices": ["Can you retest it on Safari once the fix is on staging?", "Can you retest it on Safari once the fix will be on staging?", "Can you test again it on Safari when the fix will be on staging?"],
+              "choices": [
+                "Can you retest it on Safari once the fix is on staging?",
+                "Can you retest it on Safari once the fix will be on staging?",
+                "Can you test again it on Safari when the fix will be on staging?"
+              ],
               "answer_index": 0,
               "explanation_fr": "Après « once », « when » ou « as soon as », l’anglais utilise le présent même pour parler du futur : once the fix is on staging. « Will be » après « once » est une erreur fréquente des francophones, et « test again it » place mal le complément."
             }
@@ -200,7 +424,445 @@
             "prompt_fr": "En réunion de tri, on te demande où en est un bug client : le bouton « Export » du tableau de bord ne fait rien. Tu n’as pas pu le reproduire sur Chrome. Dis-le, demande quel navigateur et quel appareil le client utilisait, et propose une solution de contournement (exporter depuis la page Reports).",
             "model_answer_en": "I couldn’t reproduce it on Chrome. Do we know which browser and device the customer was using? In the meantime, they can export the data from the Reports page as a workaround.",
             "model_answer_fr": "Je n’ai pas réussi à le reproduire sur Chrome. Est-ce qu’on sait quel navigateur et quel appareil utilisait le client ? En attendant, il peut exporter les données depuis la page Reports pour contourner le problème.",
-            "key_phrases": ["I couldn’t reproduce it", "which browser", "In the meantime", "as a workaround"]
+            "key_phrases": [
+              "I couldn’t reproduce it",
+              "which browser",
+              "In the meantime",
+              "as a workaround"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "read-the-docs",
+      "title_fr": "Lire et utiliser une documentation",
+      "title_en": "Read and use the docs",
+      "situation_fr": "Tu installes un projet, tu intègres une API ou tu mets à jour une bibliothèque, et tout passe par la documentation en anglais.",
+      "guide": {
+        "intro_fr": "Avant d’utiliser un outil ou une API, on lit sa documentation. Le README explique comment installer le projet (Installation), le lancer (Usage) et le configurer (Configuration). La doc d’une API décrit chaque endpoint, ses paramètres (required ou optional), leurs valeurs par défaut et les codes de réponse. Quand une fonction est « deprecated », elle marche encore mais va disparaître : le changelog dit par quoi la remplacer et signale les breaking changes. Pour poser une question sur une doc, cite la section précise et ce que tu as déjà essayé.",
+        "key_phrases": [
+          {
+            "en": "According to the docs, …",
+            "fr": "D’après la doc, …"
+          },
+          {
+            "en": "I followed the README, but the installation fails.",
+            "fr": "J’ai suivi le README, mais l’installation échoue."
+          },
+          {
+            "en": "This parameter is optional and defaults to 20.",
+            "fr": "Ce paramètre est facultatif et vaut 20 par défaut."
+          },
+          {
+            "en": "Is this parameter required?",
+            "fr": "Ce paramètre est-il obligatoire ?"
+          },
+          {
+            "en": "This method is deprecated: use createPayment() instead.",
+            "fr": "Cette méthode est dépréciée : utilise createPayment() à la place."
+          },
+          {
+            "en": "Is upgrading to version 5 a breaking change?",
+            "fr": "Passer à la version 5, est-ce un changement cassant ?"
+          },
+          {
+            "en": "The docs don’t mention …",
+            "fr": "La doc ne mentionne pas …"
+          }
+        ],
+        "tip_fr": "« Documentation » est indénombrable : on dit « the documentation » ou, à l’oral, « the docs », jamais « a documentation » ni « documentations ». Et « default » est un faux ami : « it defaults to 1 » veut dire « sa valeur par défaut est 1 », pas qu’il a un défaut."
+      },
+      "lessons": [
+        {
+          "id": "follow-the-readme",
+          "title_fr": "Installer un projet avec le README",
+          "term_ids": [
+            "readme",
+            "install",
+            "dependency",
+            "package-manager",
+            "command-line"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Inès",
+              "text_en": "Hi Olu, I’m setting up the project. I followed the README, but npm install fails with a dependency error.",
+              "text_fr": "Salut Olu, j’installe le projet. J’ai suivi le README, mais npm install échoue avec une erreur de dépendance."
+            },
+            {
+              "speaker": "Olu",
+              "text_en": "Which version of Node are you using? The README says you need Node 20 or later.",
+              "text_fr": "Quelle version de Node utilises-tu ? Le README dit qu’il faut Node 20 ou plus récent."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Ah, I have Node 18. I missed that line.",
+              "text_fr": "Ah, j’ai Node 18. J’ai raté cette ligne."
+            },
+            {
+              "speaker": "Olu",
+              "text_en": "No worries, it’s easy to miss. Update Node, then run npm install again from the command line.",
+              "text_fr": "Pas de souci, c’est facile à rater. Mets Node à jour, puis relance npm install depuis la ligne de commande."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "It works now! Maybe we should move the requirements to the top of the README?",
+              "text_fr": "Ça marche maintenant ! On devrait peut-être mettre les prérequis en haut du README ?"
+            },
+            {
+              "speaker": "Olu",
+              "text_en": "Good idea. Feel free to open a pull request for it.",
+              "text_fr": "Bonne idée. N’hésite pas à ouvrir une pull request pour ça."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « The README says you need Node 20 or later » ?",
+              "choices": [
+                "Il faut Node 20 ou une version plus récente",
+                "Il faut installer Node 20 plus tard",
+                "Node 20 sera obligatoire à partir de demain"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Or later » signifie « ou une version ultérieure » : Node 20, 22, etc. conviennent. Le piège est de lire « later » comme « plus tard » dans le temps, alors qu’ici il s’applique au numéro de version."
+            },
+            {
+              "prompt_fr": "Comment dire « J’ai suivi le README, mais l’installation échoue » ?",
+              "choices": [
+                "I followed the README, but the installation fails.",
+                "I followed the README, but the installation is failing me.",
+                "I did follow the README, but the installation makes an error."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« The installation fails » est simple et naturel. « Is failing me » signifie « me laisse tomber » (sens émotionnel), et « makes an error » est un calque : en anglais, une installation ne « fait » pas d’erreur, elle échoue (fails) ou renvoie une erreur (throws, returns an error)."
+            },
+            {
+              "prompt_fr": "À quoi sert un « package manager » comme npm ?",
+              "choices": [
+                "À installer et mettre à jour les dépendances d’un projet",
+                "À suivre les colis d’une boutique en ligne",
+                "À gérer le planning de l’équipe"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un package manager (gestionnaire de paquets) télécharge et met à jour les bibliothèques dont dépend le projet. « Package » fait penser à un colis, mais en informatique c’est un paquet de code."
+            },
+            {
+              "prompt_fr": "Complète : « Run npm install again ___ the command line. »",
+              "choices": [
+                "from",
+                "by",
+                "with"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On dit « run a command from the command line » (ou « in the terminal »). « By » est un calque de « par » et ne s’emploie pas ici ; « with » s’utilise pour un outil ou une option, pas pour l’endroit où l’on tape la commande."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Tu ouvres une pull request qui ajoute une section « Requirements » en haut du README (Node 20 ou plus récent), parce que l’installation échoue avec Node 18 et que l’info était perdue en bas de page. Écris la description de la PR.",
+            "model_answer_en": "This PR adds a Requirements section at the top of the README. The installation fails with Node 18, and the minimum version was easy to miss at the bottom of the page. New developers will now see that they need Node 20 or later before they run npm install.",
+            "model_answer_fr": "Cette PR ajoute une section Requirements en haut du README. L’installation échoue avec Node 18, et la version minimale était facile à rater en bas de la page. Les nouveaux développeurs verront désormais qu’il leur faut Node 20 ou plus récent avant de lancer npm install.",
+            "key_phrases": [
+              "This PR adds",
+              "The installation fails with",
+              "Node 20 or later",
+              "before they run npm install"
+            ]
+          }
+        },
+        {
+          "id": "read-api-docs",
+          "title_fr": "Lire la doc d’une API",
+          "term_ids": [
+            "rest-api",
+            "endpoint",
+            "parameter",
+            "authentication",
+            "pagination",
+            "rate-limiting"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Nadia",
+              "text_en": "Samuel, quick question about the orders API. The docs say the page parameter is optional. What’s the default?",
+              "text_fr": "Samuel, petite question sur l’API des commandes. La doc dit que le paramètre page est facultatif. Quelle est sa valeur par défaut ?"
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "It defaults to 1. Each response also includes a link to the next page, so pagination is easy to handle.",
+              "text_fr": "Il vaut 1 par défaut. Chaque réponse contient aussi un lien vers la page suivante, donc la pagination est facile à gérer."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "OK. And I get a 401 on the orders endpoint, even though I’m logged in.",
+              "text_fr": "D’accord. Et j’ai une 401 sur l’endpoint des commandes, alors que je suis connectée."
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "You need to send your token in the Authorization header. It’s explained in the Authentication section of the docs.",
+              "text_fr": "Il faut envoyer ton token dans l’en-tête Authorization. C’est expliqué dans la section Authentication de la doc."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Found it, thanks. Is there a rate limit?",
+              "text_fr": "Trouvé, merci. Il y a une limite de requêtes ?"
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "Yes, 100 requests per minute. After that, you get a 429, so don’t call it in a loop.",
+              "text_fr": "Oui, 100 requêtes par minute. Au-delà, tu reçois une 429, donc ne l’appelle pas dans une boucle."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « The page parameter is optional » ?",
+              "choices": [
+                "On peut ne pas envoyer le paramètre page",
+                "Le paramètre page est obligatoire",
+                "Le paramètre page n’existe plus"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Optional » veut dire facultatif : si on ne l’envoie pas, l’API utilise la valeur par défaut. Le contraire est « required » (obligatoire). Un paramètre qui va disparaître serait « deprecated »."
+            },
+            {
+              "prompt_fr": "Que veut dire Samuel avec « It defaults to 1 » ?",
+              "choices": [
+                "Sa valeur par défaut est 1",
+                "Il a un défaut à la ligne 1",
+                "Il échoue une fois sur deux"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To default to » signifie « avoir pour valeur par défaut ». C’est un faux ami : le défaut au sens de « problème » se dit « flaw » ou « defect » en anglais."
+            },
+            {
+              "prompt_fr": "Quel code de statut reçoit-on quand on dépasse la limite de requêtes (rate limit) ?",
+              "choices": [
+                "429",
+                "404",
+                "401",
+                "500"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "429 Too Many Requests indique qu’on a envoyé trop de requêtes dans un temps donné. 401 (celui de Nadia au départ) signale une authentification manquante, 404 une ressource introuvable et 500 une erreur du serveur."
+            },
+            {
+              "prompt_fr": "Quelle question est correcte et polie ?",
+              "choices": [
+                "Where can I find how authentication works in the docs?",
+                "Where is the authentication in the documentations?",
+                "Can you explain me the authentication?"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La première phrase est naturelle et précise. « Documentations » est faux car « documentation » est indénombrable, et « explain me » est une erreur classique : on dit « explain to me » ou « explain it to me »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Tu intègres l’endpoint /invoices de l’API de facturation. La doc liste un paramètre « status » mais ne dit pas s’il est obligatoire ni quelle est sa valeur par défaut. Pose la question à l’équipe API sur Slack, en citant la doc.",
+            "model_answer_en": "Hi team, quick question about the /invoices endpoint. The docs list a status parameter, but they don’t say if it’s required or what the default value is. Could you clarify?",
+            "model_answer_fr": "Bonjour l’équipe, petite question sur l’endpoint /invoices. La doc liste un paramètre status, mais elle ne dit pas s’il est obligatoire ni quelle est sa valeur par défaut. Pourriez-vous préciser ?",
+            "key_phrases": [
+              "quick question about the /invoices endpoint",
+              "The docs list",
+              "required",
+              "default value",
+              "Could you clarify?"
+            ]
+          }
+        },
+        {
+          "id": "deprecated-and-breaking-changes",
+          "title_fr": "Fonction dépréciée et mise à jour",
+          "term_ids": [
+            "deprecate",
+            "breaking-change",
+            "changelog",
+            "semantic-versioning"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Chloé",
+              "text_en": "Hiroshi, I see a warning in the terminal: the formatDate function is deprecated.",
+              "text_fr": "Hiroshi, je vois un avertissement dans le terminal : la fonction formatDate est dépréciée."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Yes, it’s been deprecated since version 4.2. It still works, but it will be removed in the next major version.",
+              "text_fr": "Oui, elle est dépréciée depuis la version 4.2. Elle marche encore, mais elle sera supprimée dans la prochaine version majeure."
+            },
+            {
+              "speaker": "Chloé",
+              "text_en": "What should we use instead?",
+              "text_fr": "On doit utiliser quoi à la place ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "The changelog says to use formatDateTime. It takes the same arguments, but the output format is different.",
+              "text_fr": "Le changelog dit d’utiliser formatDateTime. Elle prend les mêmes arguments, mais le format de sortie est différent."
+            },
+            {
+              "speaker": "Chloé",
+              "text_en": "So upgrading to version 5 is a breaking change for us?",
+              "text_fr": "Donc passer à la version 5, c’est un changement cassant pour nous ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Exactly. With semantic versioning, a new major version can break things. Let’s plan the migration for the next sprint.",
+              "text_fr": "Exactement. Avec le versionnage sémantique, une nouvelle version majeure peut casser des choses. Prévoyons la migration pour le prochain sprint."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « This function is deprecated » ?",
+              "choices": [
+                "Elle marche encore, mais elle va être supprimée",
+                "Elle ne marche plus du tout",
+                "Elle a perdu de la valeur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une fonction deprecated fonctionne toujours, mais elle est officiellement vouée à disparaître : il faut prévoir de la remplacer. Elle n’est pas encore cassée, et le sens financier de « déprécier » ne s’applique pas ici."
+            },
+            {
+              "prompt_fr": "Avec le semantic versioning (MAJOR.MINOR.PATCH), quelle mise à jour peut contenir des breaking changes ?",
+              "choices": [
+                "4.2.1 vers 5.0.0",
+                "4.2.1 vers 4.3.0",
+                "4.2.1 vers 4.2.2"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Seul le changement du premier chiffre (MAJOR) annonce des changements incompatibles. Une version MINOR (4.3.0) ajoute des fonctionnalités sans casser l’existant, et une version PATCH (4.2.2) ne fait que corriger des bugs."
+            },
+            {
+              "prompt_fr": "Où cherche-t-on ce qui a changé entre deux versions d’une bibliothèque ?",
+              "choices": [
+                "In the changelog",
+                "In the backlog",
+                "In the stack trace"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le changelog liste les changements de chaque version. Le backlog, malgré le son proche, est la liste des tâches à faire de l’équipe, et la stack trace concerne une erreur précise."
+            },
+            {
+              "prompt_fr": "Comment dire « Utilise formatDateTime à la place » ?",
+              "choices": [
+                "Use formatDateTime instead.",
+                "Use formatDateTime at the place.",
+                "Use instead of formatDateTime."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Instead », placé en fin de phrase, veut dire « à la place ». « At the place » est un calque mot à mot, et « use instead of formatDateTime » dit l’inverse (utiliser autre chose que formatDateTime) et reste incomplet."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "La version 3 de la bibliothèque de paiement de ton équipe déprécie la méthode charge() au profit de createPayment(), et la version 4 la supprimera. Écris un court e-mail à l’équipe pour prévenir et proposer de faire la migration au prochain sprint, avant de passer en version 4.",
+            "model_answer_en": "Hi team, heads-up: version 3 of the payment library deprecates the charge() method, and version 4 will remove it. According to the changelog, we should use createPayment() instead. I suggest we plan the migration for the next sprint, before we upgrade to version 4.",
+            "model_answer_fr": "Bonjour l’équipe, pour info : la version 3 de la bibliothèque de paiement déprécie la méthode charge(), et la version 4 la supprimera. D’après le changelog, il faut utiliser createPayment() à la place. Je propose de prévoir la migration au prochain sprint, avant de passer en version 4.",
+            "key_phrases": [
+              "deprecates the charge() method",
+              "will remove it",
+              "According to the changelog",
+              "instead",
+              "plan the migration"
+            ]
+          }
+        },
+        {
+          "id": "configure-the-project",
+          "title_fr": "Configurer le projet",
+          "term_ids": [
+            "environment-variable",
+            "documentation",
+            "secret",
+            "best-practice"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ana",
+              "text_en": "Mamadou, the app starts, but it can’t connect to the database.",
+              "text_fr": "Mamadou, l’appli démarre, mais elle n’arrive pas à se connecter à la base de données."
+            },
+            {
+              "speaker": "Mamadou",
+              "text_en": "Did you create the .env file? The documentation lists all the environment variables you need.",
+              "text_fr": "Tu as créé le fichier .env ? La documentation liste toutes les variables d’environnement nécessaires."
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "I copied .env.example, but DATABASE_URL is empty.",
+              "text_fr": "J’ai copié .env.example, mais DATABASE_URL est vide."
+            },
+            {
+              "speaker": "Mamadou",
+              "text_en": "Right, that one is a secret, so it’s not in the repository. I’ll send it to you through the password manager.",
+              "text_fr": "Oui, celle-là est un secret, donc elle n’est pas dans le dépôt. Je te l’envoie via le gestionnaire de mots de passe."
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "Thanks. Shouldn’t we add a note about that in the docs?",
+              "text_fr": "Merci. On ne devrait pas ajouter une note là-dessus dans la doc ?"
+            },
+            {
+              "speaker": "Mamadou",
+              "text_en": "Good point. It’s a best practice to explain where to get each secret, without writing the value itself.",
+              "text_fr": "Bonne remarque. C’est une bonne pratique d’expliquer où obtenir chaque secret, sans écrire la valeur elle-même."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi DATABASE_URL n’est-il pas dans le dépôt ?",
+              "choices": [
+                "Parce que c’est un secret : on ne le commite jamais",
+                "Parce que Mamadou a oublié de le commiter",
+                "Parce que cette variable est dépréciée"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Mamadou le dit : « that one is a secret, so it’s not in the repository ». Les secrets (mots de passe, clés d’API) ne doivent jamais être commités. Ce n’est pas un oubli, et rien n’indique que la variable soit dépréciée."
+            },
+            {
+              "prompt_fr": "Que fait la doc quand « it lists all the environment variables » ?",
+              "choices": [
+                "Elle énumère toutes les variables d’environnement nécessaires",
+                "Elle crée automatiquement les variables",
+                "Elle chiffre les variables"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To list » veut dire énumérer, dresser la liste. La doc ne crée rien et ne chiffre rien : c’est toi qui remplis le fichier .env. Attention aussi à ne pas confondre avec « listen » (écouter)."
+            },
+            {
+              "prompt_fr": "Quelle phrase est correcte ?",
+              "choices": [
+                "The docs are clear.",
+                "The documentations are clear.",
+                "A documentation is clear."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« The docs » (pluriel, familier) ou « the documentation is clear » (singulier) sont corrects. « Documentation » est indénombrable : pas de « s » ni d’article « a »."
+            },
+            {
+              "prompt_fr": "Complète : « It’s a best practice ___ explain where to get each secret. »",
+              "choices": [
+                "to",
+                "for",
+                "of"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La structure est « it’s a best practice to + verbe ». « For » et « of » se construisent avec un nom ou un verbe en -ing (a best practice for security), pas avec la base verbale « explain »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Lucas, un nouveau collègue, t’écrit que l’application démarre mais affiche une erreur de clé manquante. Explique-lui de copier .env.example vers un nouveau fichier .env, que PAYMENT_API_KEY est un secret absent du dépôt, et que tu la lui envoies via le gestionnaire de mots de passe.",
+            "context_en": "Hey, the app starts but I get Missing PAYMENT_API_KEY. Any idea?",
+            "model_answer_en": "Hi Lucas, first copy .env.example to a new .env file: the documentation lists all the environment variables. PAYMENT_API_KEY is a secret, so it’s not in the repository. I’ll send it to you through the password manager.",
+            "model_answer_fr": "Salut Lucas, commence par copier .env.example vers un nouveau fichier .env : la documentation liste toutes les variables d’environnement. PAYMENT_API_KEY est un secret, donc elle n’est pas dans le dépôt. Je te l’envoie via le gestionnaire de mots de passe.",
+            "key_phrases": [
+              "copy .env.example",
+              "environment variables",
+              "is a secret",
+              "not in the repository"
+            ]
           }
         }
       ]
