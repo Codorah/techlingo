@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
-import { type ActionVerb, CareerFile, Category, Domain, type InterviewQuestion, PathFile, Role, RoleFile, type Term } from '../../src/content/schema';
+import { type ActionVerb, CareerFile, Category, Domain, type InterviewQuestion, PathFile, Role, RoleFile, RolePathFile, type Term } from '../../src/content/schema';
 import { existsSync } from 'node:fs';
 
 export const CONTENT_DIR = join(process.cwd(), 'content');
@@ -16,6 +16,7 @@ export interface LoadedContent {
   questions: InterviewQuestion[];
   verbs: ActionVerb[];
   paths: PathFile[];
+  rolePaths: RolePathFile[];
   errors: string[];
   warnings: string[];
   contentVersion: string;
@@ -100,6 +101,22 @@ export function loadContent(): LoadedContent {
     }
   }
 
+  // One path per job role: content/paths/roles/<role>.json
+  const rolePaths: RolePathFile[] = [];
+  const rolePathsDir = join(pathsDir, 'roles');
+  if (existsSync(rolePathsDir)) {
+    for (const file of readdirSync(rolePathsDir).filter((f) => f.endsWith('.json')).sort()) {
+      const raw = readFileSync(join(rolePathsDir, file), 'utf8');
+      hash.update(raw);
+      let json: unknown;
+      try { json = JSON.parse(raw); } catch (e) { errors.push(`paths/roles/${file}: invalid JSON (${(e as Error).message})`); continue; }
+      const parsed = RolePathFile.safeParse(json);
+      if (!parsed.success) { errors.push(...formatIssues(`paths/roles/${file}`, parsed.error)); continue; }
+      if (`${parsed.data.role}.json` !== file) errors.push(`paths/roles/${file}: "role" must match the file name`);
+      rolePaths.push(parsed.data);
+    }
+  }
+
   // Cross references
   const roleIds = new Set(roles.map((r) => r.id));
   const domainIds = new Set(domains.map((d) => d.id));
@@ -127,21 +144,29 @@ export function loadContent(): LoadedContent {
     q.vocabulary_term_ids.forEach((v) => { if (!termIds.has(v)) warnings.push(`question ${q.id}: vocabulary term "${v}" does not exist yet`); });
   }
 
-  for (const p of paths) {
-    if (!domains.some((d) => d.id === p.domain)) errors.push(`paths/${p.domain}.json: unknown domain`);
-    const ids = new Set<string>();
+  for (const p of paths) if (!domains.some((d) => d.id === p.domain)) errors.push(`paths/${p.domain}.json: unknown domain`);
+  for (const p of rolePaths) if (!roleIds.has(p.role)) errors.push(`paths/roles/${p.role}.json: unknown role`);
+  // Unit and lesson ids are progress keys: unique across every path file.
+  const pathIds = new Map<string, string>();
+  const allPaths = [...paths.map((p) => ({ file: `paths/${p.domain}.json`, units: p.units, role: undefined as string | undefined })),
+    ...rolePaths.map((p) => ({ file: `paths/roles/${p.role}.json`, units: p.units, role: p.role }))];
+  for (const p of allPaths) {
+    const claim = (id: string) => {
+      const prev = pathIds.get(id);
+      if (prev) errors.push(`${p.file}: duplicate id "${id}" (already in ${prev})`);
+      pathIds.set(id, p.file);
+      if (p.role && !id.startsWith(`${p.role}-`)) errors.push(`${p.file}: id "${id}" must start with "${p.role}-"`);
+    };
     for (const u of p.units) {
-      if (ids.has(u.id)) errors.push(`paths/${p.domain}.json: duplicate id "${u.id}"`);
-      ids.add(u.id);
+      claim(u.id);
       for (const l of u.lessons) {
-        if (ids.has(l.id)) errors.push(`paths/${p.domain}.json: duplicate id "${l.id}"`);
-        ids.add(l.id);
-        l.term_ids.forEach((tid) => { if (!termIds.has(tid)) errors.push(`paths/${p.domain}.json › ${l.id}: unknown term "${tid}"`); });
+        claim(l.id);
+        l.term_ids.forEach((tid) => { if (!termIds.has(tid)) errors.push(`${p.file} › ${l.id}: unknown term "${tid}"`); });
       }
     }
   }
 
-  return { domains, roles, categories, terms, questions, verbs, paths, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
+  return { domains, roles, categories, terms, questions, verbs, paths, rolePaths, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
 }
 
 export function coverage(content: LoadedContent) {

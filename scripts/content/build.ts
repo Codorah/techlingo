@@ -30,7 +30,8 @@ const manifest: Manifest = {
   categories: content.categories,
   domains: [],
   roles: [],
-  paths: []
+  paths: [],
+  rolePaths: []
 };
 
 for (const role of content.roles) {
@@ -64,19 +65,27 @@ for (const domain of content.domains) {
   writeFileSync(join(out, 'dict', `${domain.id}.json`), JSON.stringify({ contentVersion: content.contentVersion, terms }));
 }
 
-mkdirSync(join(out, 'paths'), { recursive: true });
-const pathsShipped = content.paths.filter((p) => includeDrafts || p.status === 'validated');
+mkdirSync(join(out, 'paths', 'roles'), { recursive: true });
 // Each path ships the short cards of the words it uses, so a lesson never needs other role packs.
 const byId = new Map(content.terms.map((t) => [t.id, t]));
-for (const p of pathsShipped) {
+const cardsOf = (units: { lessons: { term_ids: string[] }[] }[]) => {
   const terms: Record<string, PathTerm> = {};
-  for (const id of new Set(p.units.flatMap((u) => u.lessons.flatMap((l) => l.term_ids)))) {
+  for (const id of new Set(units.flatMap((u) => u.lessons.flatMap((l) => l.term_ids)))) {
     const t = byId.get(id);
     if (t) terms[id] = { id, term_en: t.term_en, translation_fr: t.translation_fr, ipa: t.ipa, explanation_fr: t.explanation_fr, sentence_en: t.sentences[0]?.text_en, sentence_fr: t.sentences[0]?.text_fr };
   }
-  writeFileSync(join(out, 'paths', `${p.domain}.json`), JSON.stringify({ contentVersion: content.contentVersion, ...p, terms }));
+  return terms;
+};
+const pathsShipped = content.paths.filter((p) => includeDrafts || p.status === 'validated');
+for (const p of pathsShipped) {
+  writeFileSync(join(out, 'paths', `${p.domain}.json`), JSON.stringify({ contentVersion: content.contentVersion, ...p, terms: cardsOf(p.units) }));
 }
 manifest.paths = pathsShipped.map((p) => p.domain);
+const rolePathsShipped = content.rolePaths.filter((p) => includeDrafts || p.status === 'validated');
+for (const p of rolePathsShipped) {
+  writeFileSync(join(out, 'paths', 'roles', `${p.role}.json`), JSON.stringify({ contentVersion: content.contentVersion, ...p, terms: cardsOf(p.units) }));
+}
+manifest.rolePaths = rolePathsShipped.map((p) => p.role);
 
 writeFileSync(join(out, 'manifest.json'), JSON.stringify(manifest, null, 2));
-console.log(`✓ content ${content.contentVersion} built${includeDrafts ? ' (with drafts)' : ''}: ${manifest.totalTerms} terms in ${manifest.roles.length} packs, ${careerShippable.length} interview questions`);
+console.log(`✓ content ${content.contentVersion} built${includeDrafts ? ' (with drafts)' : ''}: ${manifest.totalTerms} terms in ${manifest.roles.length} packs, ${careerShippable.length} interview questions, ${rolePathsShipped.length} role paths`);
