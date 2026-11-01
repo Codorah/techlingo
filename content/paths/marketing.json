@@ -1,0 +1,212 @@
+{
+  "domain": "marketing",
+  "status": "draft",
+  "title_fr": "L'anglais du marketing digital, situation par situation",
+  "units": [
+    {
+      "id": "audience-et-marque",
+      "title_fr": "Audience et marque",
+      "title_en": "Audience and brand",
+      "situation_fr": "Vous démarrez un projet avec un client et devez définir à qui la marque parle, ce qui la distingue et sur quel ton elle s'exprime.",
+      "guide": {
+        "intro_fr": "Au début de chaque projet, l'équipe marketing se pose deux questions : à qui parle-t-on, et comment ? En anglais, on parle de target audience (l'audience cible) et on la décrit avec des personas, des profils fictifs mais construits à partir de données réelles. On définit ensuite ce qui rend la marque différente de ses competitors : sa value proposition et son positionnement. Enfin, le tone of voice et les brand guidelines fixent la façon de s'exprimer, pour que tous les contenus semblent venir de la même marque. Ces mots reviennent dans chaque brief, chaque atelier et chaque échange avec une agence.",
+        "key_phrases": [
+          { "en": "Who exactly is our target audience?", "fr": "Qui est exactement notre audience cible ?" },
+          { "en": "Let's turn that into a persona.", "fr": "Transformons ça en persona." },
+          { "en": "What sets us apart from our competitors?", "fr": "Qu'est-ce qui nous distingue de nos concurrents ?" },
+          { "en": "Our value proposition should focus on...", "fr": "Notre proposition de valeur doit se concentrer sur..." },
+          { "en": "This caption feels a bit off-brand.", "fr": "Cette légende ne colle pas tout à fait à la marque." },
+          { "en": "Please stick to the brand guidelines.", "fr": "Merci de respecter la charte de marque." }
+        ],
+        "tip_fr": "Faux ami classique : « nos concurrents » se dit our competitors, pas our concurrents (en anglais, concurrent veut dire « simultané »). Retenez aussi on-brand et off-brand, très utilisés pour dire qu'un contenu respecte ou non l'identité de la marque."
+      },
+      "lessons": [
+        {
+          "id": "decrire-audience-cible",
+          "title_fr": "Décrire l'audience cible",
+          "term_ids": ["target-audience", "persona", "demographics", "pain-point", "customer-needs"],
+          "dialogue": [
+            { "speaker": "Claire", "text_en": "Before we talk about channels, who exactly is your target audience?", "text_fr": "Avant de parler des canaux, qui est exactement votre audience cible ?" },
+            { "speaker": "Marcus", "text_en": "Mostly young professionals in big cities, 25 to 35, who don't have time to cook.", "text_fr": "Surtout de jeunes actifs dans les grandes villes, de 25 à 35 ans, qui n'ont pas le temps de cuisiner." },
+            { "speaker": "Claire", "text_en": "Great. Let's turn that into a persona. Imagine Léa, 29, a project manager in Lyon. What are her main pain points?", "text_fr": "Très bien. Transformons ça en persona. Imaginons Léa, 29 ans, cheffe de projet à Lyon. Quels sont ses principaux problèmes ?" },
+            { "speaker": "Marcus", "text_en": "She gets home late, she's tired, and she ends up ordering fast food.", "text_fr": "Elle rentre tard, elle est fatiguée et elle finit par commander de la restauration rapide." },
+            { "speaker": "Claire", "text_en": "So her real need is quick, healthy meals, not more recipes. Demographics tell us who she is; her needs tell us what to say.", "text_fr": "Donc son vrai besoin, ce sont des repas rapides et sains, pas plus de recettes. Les données démographiques nous disent qui elle est ; ses besoins nous disent quoi lui dire." },
+            { "speaker": "Marcus", "text_en": "That makes sense. Can you share the persona with my team?", "text_fr": "C'est logique. Vous pouvez partager le persona avec mon équipe ?" }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie target audience ?",
+              "choices": ["The group of people a brand wants to reach", "The people who work at the agency", "The brand's main competitors", "The budget set aside for ads"],
+              "answer_index": 0,
+              "explanation_fr": "La target audience, c'est le groupe de personnes que la marque veut toucher. Ce n'est ni l'équipe, ni les concurrents, ni le budget : c'est « à qui on parle »."
+            },
+            {
+              "prompt_fr": "Dans le dialogue, qu'est-ce qu'un persona ?",
+              "choices": ["A fictional profile, based on real data, of a typical customer", "A real customer who signed a contract", "A celebrity who promotes the brand"],
+              "answer_index": 0,
+              "explanation_fr": "Un persona est un profil fictif (Léa n'existe pas) mais fondé sur des données réelles. Ce n'est pas une célébrité qui fait la promotion de la marque : ça, c'est un ambassadeur ou un influenceur."
+            },
+            {
+              "prompt_fr": "Comment dire « Quels sont ses principaux problèmes ? » dans le vocabulaire marketing ?",
+              "choices": ["What are her main pain points?", "What are her main pain spots?", "What are her main hurts?"],
+              "answer_index": 0,
+              "explanation_fr": "L'expression consacrée est pain points : les frustrations ou difficultés d'un client. « Pain spots » ou « hurts » ne s'emploient pas dans ce sens."
+            },
+            {
+              "prompt_fr": "Complétez la phrase de Claire : « Demographics tell us ___ she is. »",
+              "choices": ["who", "what", "how"],
+              "answer_index": 0,
+              "explanation_fr": "Les demographics (âge, ville, métier) décrivent qui est la personne : who. On dit « what she needs » pour les besoins, mais « who she is » pour l'identité."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Vous rédigez la partie « Audience » du brief créatif pour l'équipe design. En 2 ou 3 phrases en anglais, décrivez la cible et le persona principal, avec son problème principal.",
+            "context_en": "Creative brief, section 2: Audience",
+            "model_answer_en": "Our target audience is young urban professionals aged 25 to 35 who have little time to cook. Our main persona, Léa, is a 29-year-old project manager whose main pain point is eating healthily after long workdays. Every message should show how we save her time.",
+            "model_answer_fr": "Notre audience cible, ce sont de jeunes actifs urbains de 25 à 35 ans qui ont peu de temps pour cuisiner. Notre persona principal, Léa, est une cheffe de projet de 29 ans dont le principal problème est de manger sainement après de longues journées de travail. Chaque message doit montrer comment nous lui faisons gagner du temps.",
+            "key_phrases": ["Our target audience is", "aged 25 to 35", "Our main persona", "whose main pain point is"]
+          }
+        },
+        {
+          "id": "etude-de-marche-insights",
+          "title_fr": "Présenter une étude de marché",
+          "term_ids": ["market-research", "survey", "focus-group", "insight", "customer-needs"],
+          "dialogue": [
+            { "speaker": "Nadia", "text_en": "Here are the results of the market research. We ran an online survey with about 800 respondents.", "text_fr": "Voici les résultats de l'étude de marché. Nous avons mené un questionnaire en ligne auprès d'environ 800 répondants." },
+            { "speaker": "Paul", "text_en": "And what's the key insight?", "text_fr": "Et quel est l'enseignement principal ?" },
+            { "speaker": "Nadia", "text_en": "Most people don't care about the number of recipes. What they want is to spend less than 20 minutes in the kitchen.", "text_fr": "La plupart des gens se moquent du nombre de recettes. Ce qu'ils veulent, c'est passer moins de 20 minutes en cuisine." },
+            { "speaker": "Paul", "text_en": "Interesting. Did the focus groups confirm that?", "text_fr": "Intéressant. Les groupes de discussion l'ont confirmé ?" },
+            { "speaker": "Nadia", "text_en": "Yes. In both focus groups, people kept talking about time, not price.", "text_fr": "Oui. Dans les deux groupes, les participants parlaient sans cesse du temps, pas du prix." },
+            { "speaker": "Paul", "text_en": "Then let's put that at the heart of the campaign.", "text_fr": "Alors mettons ça au cœur de la campagne." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Paul par « What's the key insight? » ?",
+              "choices": ["What is the most useful thing we learned about customers?", "What is the final price of the study?", "Who is the main competitor?"],
+              "answer_index": 0,
+              "explanation_fr": "Un insight est un enseignement utile sur les clients, souvent une vérité qu'on ne voyait pas. Ce n'est pas un chiffre de budget ni un concurrent."
+            },
+            {
+              "prompt_fr": "Quelle est la différence entre un survey et un focus group ?",
+              "choices": ["A survey is a questionnaire for many people; a focus group is a guided discussion with a small group", "A survey is always done face to face; a focus group is always online", "They mean exactly the same thing"],
+              "answer_index": 0,
+              "explanation_fr": "Un survey (questionnaire) touche beaucoup de personnes avec des questions fixes. Un focus group réunit quelques personnes pour une discussion animée. Les deux peuvent se faire en ligne ou en présentiel."
+            },
+            {
+              "prompt_fr": "Comment traduire « Nous avons mené un questionnaire » ?",
+              "choices": ["We ran a survey", "We made a survey run", "We did run of a survey"],
+              "answer_index": 0,
+              "explanation_fr": "To run a survey est la tournure naturelle (on dit aussi to conduct a survey, plus formel). Les deux autres phrases ne sont pas grammaticales."
+            },
+            {
+              "prompt_fr": "« Market research » se traduit par :",
+              "choices": ["étude de marché", "recherche d'un marché couvert", "marché de la recherche"],
+              "answer_index": 0,
+              "explanation_fr": "Market research, c'est l'étude de marché : collecter des informations sur les clients, les concurrents et les tendances. En anglais, le mot qui précise (market) vient avant le mot principal (research)."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion de lancement, le client vous demande ce que l'étude a révélé. Résumez à l'oral en anglais la méthode et l'enseignement principal, puis proposez une suite.",
+            "model_answer_en": "We ran an online survey with about 800 people and two focus groups. The key insight is that our audience cares more about time than about choice. I suggest we build the campaign around meals ready in under 20 minutes.",
+            "model_answer_fr": "Nous avons mené un questionnaire en ligne auprès d'environ 800 personnes et deux groupes de discussion. L'enseignement principal, c'est que notre audience accorde plus d'importance au temps qu'au choix. Je propose de construire la campagne autour de repas prêts en moins de 20 minutes.",
+            "key_phrases": ["We ran an online survey", "The key insight is that", "cares more about", "I suggest we build the campaign around"]
+          }
+        },
+        {
+          "id": "positionnement-concurrents",
+          "title_fr": "Se démarquer des concurrents",
+          "term_ids": ["competitive-analysis", "competitor", "differentiation", "usp", "value-proposition", "positioning-statement"],
+          "dialogue": [
+            { "speaker": "Amina", "text_en": "I've finished the competitive analysis. Three competitors sell almost the same box at the same price.", "text_fr": "J'ai terminé l'analyse concurrentielle. Trois concurrents vendent presque la même box au même prix." },
+            { "speaker": "Tom", "text_en": "So what's our differentiation? Price alone won't do it.", "text_fr": "Alors, quelle est notre différenciation ? Le prix seul ne suffira pas." },
+            { "speaker": "Amina", "text_en": "Our USP is next-day delivery with ingredients from local farms. Nobody else offers both.", "text_fr": "Notre argument unique, c'est la livraison le lendemain avec des ingrédients de fermes locales. Personne d'autre ne propose les deux." },
+            { "speaker": "Tom", "text_en": "Good. Then our value proposition should focus on freshness and speed, not on choice.", "text_fr": "Bien. Alors notre proposition de valeur doit se concentrer sur la fraîcheur et la rapidité, pas sur le choix." },
+            { "speaker": "Amina", "text_en": "Agreed. I'll draft a one-line positioning statement for the client review on Friday.", "text_fr": "D'accord. Je rédige une phrase de positionnement pour la revue client de vendredi." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie USP ?",
+              "choices": ["Unique selling proposition: the benefit that makes a product different", "Universal sales process: the steps of a sale", "User support platform: a help center"],
+              "answer_index": 0,
+              "explanation_fr": "USP veut dire unique selling proposition : l'avantage que l'on est seul à offrir. Ici, livraison le lendemain plus ingrédients locaux. Les autres développements n'existent pas dans ce sens."
+            },
+            {
+              "prompt_fr": "Comment dire « nos concurrents » ?",
+              "choices": ["our competitors", "our concurrents", "our rivals companies"],
+              "answer_index": 0,
+              "explanation_fr": "On dit competitors. Concurrent est un faux ami : en anglais, il signifie « simultané » (concurrent sessions). Rivals existe, mais « rivals companies » est faux : l'adjectif ne prend pas de s."
+            },
+            {
+              "prompt_fr": "Que veut dire Tom par « Price alone won't do it » ?",
+              "choices": ["Price by itself won't make us stand out", "We can't change the price alone", "The price is too low"],
+              "answer_index": 0,
+              "explanation_fr": "« Won't do it » signifie ici « ne suffira pas ». Tom veut dire que le prix seul ne peut pas être notre différence, puisque les concurrents ont le même."
+            },
+            {
+              "prompt_fr": "Comment traduire « notre proposition de valeur » ?",
+              "choices": ["our value proposition", "our value proposal", "our worth offer"],
+              "answer_index": 0,
+              "explanation_fr": "L'expression figée est value proposition. Le piège est proposal, qui désigne une proposition commerciale ou un devis envoyé à un client."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Votre directrice de clientèle vous demande sur Slack où en est l'analyse concurrentielle. Résumez la situation et proposez un axe de différenciation.",
+            "context_en": "#client-freshbox: \"Hey, any news on the competitive analysis?\"",
+            "model_answer_en": "Just wrapped up the competitive analysis: three competitors offer a similar box at the same price, so price can't be our differentiation. I suggest we build our value proposition around next-day delivery and local ingredients. Happy to walk you through it before Friday's review.",
+            "model_answer_fr": "Je viens de terminer l'analyse concurrentielle : trois concurrents proposent une box similaire au même prix, donc le prix ne peut pas être notre différenciation. Je propose de construire notre proposition de valeur autour de la livraison le lendemain et des ingrédients locaux. Je peux te présenter ça avant la revue de vendredi.",
+            "key_phrases": ["Just wrapped up", "can't be our differentiation", "build our value proposition around", "Happy to walk you through it"]
+          }
+        },
+        {
+          "id": "ton-et-charte-de-marque",
+          "title_fr": "Faire respecter le ton de la marque",
+          "term_ids": ["tone-of-voice", "brand-guidelines", "brand-identity", "on-brand"],
+          "dialogue": [
+            { "speaker": "Sofia", "text_en": "I've reviewed the new captions. A few of them feel a bit off-brand.", "text_fr": "J'ai relu les nouvelles légendes. Quelques-unes ne collent pas vraiment à la marque." },
+            { "speaker": "Kevin", "text_en": "Which ones? I tried to make them fun.", "text_fr": "Lesquelles ? J'ai essayé de les rendre drôles." },
+            { "speaker": "Sofia", "text_en": "Fun is fine, but our tone of voice is warm and simple, not sarcastic. The joke about Mondays doesn't fit.", "text_fr": "Drôle, c'est bien, mais notre ton est chaleureux et simple, pas sarcastique. La blague sur les lundis ne colle pas." },
+            { "speaker": "Kevin", "text_en": "Got it. Is that written somewhere?", "text_fr": "Compris. C'est écrit quelque part ?" },
+            { "speaker": "Sofia", "text_en": "Yes, in the brand guidelines, page 12: no slang, no irony, and we always speak directly to the reader. I'll send you the PDF.", "text_fr": "Oui, dans la charte de marque, page 12 : pas d'argot, pas d'ironie, et on s'adresse toujours directement au lecteur. Je t'envoie le PDF." },
+            { "speaker": "Kevin", "text_en": "Thanks. I'll rewrite them so they match the brand identity.", "text_fr": "Merci. Je les réécris pour qu'elles correspondent à l'identité de la marque." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « off-brand » dans la phrase de Sofia ?",
+              "choices": ["It doesn't match the brand's identity or style", "It is sold without a brand name", "It was posted on the wrong account"],
+              "answer_index": 0,
+              "explanation_fr": "Off-brand signifie qu'un contenu ne correspond pas au style ou aux valeurs de la marque. Son contraire est on-brand. Le piège « vendu sans marque » vient d'un autre emploi (off-brand product = produit générique), qui ne s'applique pas ici."
+            },
+            {
+              "prompt_fr": "Quel est le meilleur équivalent de tone of voice ?",
+              "choices": ["le ton de la marque, sa façon de s'exprimer", "la voix off d'une vidéo", "le volume sonore d'une publicité"],
+              "answer_index": 0,
+              "explanation_fr": "Le tone of voice décrit la personnalité de la marque à l'écrit et à l'oral (chaleureux, expert, décalé). Ce n'est pas la voix off, qui se dit voice-over."
+            },
+            {
+              "prompt_fr": "Où trouve-t-on les règles de logo, de couleurs et de ton ?",
+              "choices": ["In the brand guidelines", "In the brand guidance line", "In the brand rules book of page"],
+              "answer_index": 0,
+              "explanation_fr": "La charte de marque se dit brand guidelines (toujours au pluriel). On entend aussi brand book ou style guide. Les deux autres formulations ne sont pas naturelles."
+            },
+            {
+              "prompt_fr": "Comment Sofia pourrait-elle dire poliment « respecte la charte » ?",
+              "choices": ["Could you please stick to the brand guidelines?", "You must obey the guidelines.", "Stick the guidelines, please."],
+              "answer_index": 0,
+              "explanation_fr": "To stick to something veut dire « s'en tenir à, respecter ». « Could you please » rend la demande polie. « You must obey » est trop autoritaire, et « stick the guidelines » sans to n'a pas le bon sens (coller)."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Vous êtes brand manager. Un rédacteur freelance vous a envoyé des légendes trop ironiques. Écrivez-lui un e-mail court et bienveillant : remerciez, expliquez le problème, renvoyez à la charte et demandez une nouvelle version pour jeudi.",
+            "model_answer_en": "Hi Kevin, thanks for the captions. A few of them feel off-brand: our tone of voice is warm and simple, so please avoid irony and slang. You'll find all the details in the brand guidelines attached (page 12). Could you send me a revised version by Thursday?",
+            "model_answer_fr": "Bonjour Kevin, merci pour les légendes. Quelques-unes ne collent pas à la marque : notre ton est chaleureux et simple, donc merci d'éviter l'ironie et l'argot. Tu trouveras tous les détails dans la charte de marque en pièce jointe (page 12). Pourrais-tu m'envoyer une version révisée d'ici jeudi ?",
+            "key_phrases": ["A few of them feel off-brand", "our tone of voice is", "in the brand guidelines attached", "Could you send me a revised version by Thursday?"]
+          }
+        }
+      ]
+    }
+  ]
+}
