@@ -1,6 +1,6 @@
 # Référencement (SEO)
 
-Adresse utilisée partout : **https://techlingo.vercel.app**. Si un autre domaine est choisi, remplace-la dans `index.html`, `public/robots.txt`, `public/sitemap.xml`, `public/legal/*.html` et `public/decouvrir/index.html`.
+Adresse utilisée partout : **https://techlinngo.vercel.app**. Si un autre domaine est choisi, remplace-la dans `index.html`, `public/robots.txt`, `public/sitemap.xml`, `public/legal/*.html` et `public/decouvrir/index.html`.
 
 ## Ce qui est en place
 - **`index.html` (l'app)** : titre et description en français avec les mots-clés (anglais professionnel, informatique, marketing digital), canonical, Open Graph et Twitter card avec `og-image.png`, JSON-LD `Organization` (contact services@codorah.com), `WebSite` et `WebApplication` (gratuite, en français, catégorie éducation). Le `<noscript>` renvoie vers /decouvrir/.
@@ -20,7 +20,7 @@ Limites connues :
 ## Déclarer le site
 ### Google Search Console
 1. Va sur https://search.google.com/search-console, puis « Ajouter une propriété ».
-2. Choisis **Préfixe d'URL** et saisis `https://techlingo.vercel.app/`. (Le type « Domaine » demande un domaine à toi, impossible avec un sous-domaine vercel.app.)
+2. Choisis **Préfixe d'URL** et saisis `https://techlinngo.vercel.app/`. (Le type « Domaine » demande un domaine à toi, impossible avec un sous-domaine vercel.app.)
 3. Validation : choisis « Balise HTML ». Copie la balise `<meta name="google-site-verification" ...>` dans le `<head>` de `index.html`, déploie, puis clique sur « Valider ». Autre option : un fichier `googleXXXX.html` dans `public/`, à ajouter aussi à la liste d'exclusion de la réécriture dans `vercel.json`.
 4. Menu **Sitemaps** : saisis `sitemap.xml` et envoie.
 5. **Inspection d'URL** : teste `/` et `/decouvrir/`, regarde la capture rendue, puis « Demander l'indexation ».
@@ -29,7 +29,7 @@ Limites connues :
 ### Bing Webmaster Tools (sert aussi DuckDuckGo, Ecosia, Qwant en partie et Copilot)
 1. Va sur https://www.bing.com/webmasters et connecte-toi.
 2. Le plus rapide : « Importer depuis Google Search Console ». Sinon, ajoute le site et valide avec la balise meta `msvalidate.01`.
-3. Menu **Sitemaps** : envoie `https://techlingo.vercel.app/sitemap.xml`.
+3. Menu **Sitemaps** : envoie `https://techlinngo.vercel.app/sitemap.xml`.
 4. Option : active **IndexNow** pour signaler chaque mise à jour.
 
 ### Vérifier les partages
