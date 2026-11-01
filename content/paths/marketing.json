@@ -207,6 +207,214 @@
           }
         }
       ]
+    },
+    {
+      "id": "contenu-et-reseaux-sociaux",
+      "title_fr": "Contenu et réseaux sociaux",
+      "title_en": "Content and social media",
+      "situation_fr": "Vous gérez les réseaux sociaux d'une marque : préparer les posts, lire les statistiques, répondre à la communauté et réagir quand une conversation dérape.",
+      "guide": {
+        "intro_fr": "Le quotidien d'un community manager tient en quelques verbes anglais : to post, to schedule, to reply, to moderate. Chaque semaine, on prépare des posts (avec une caption, des hashtags, parfois un carousel) puis on les programme dans un outil. Ensuite, on lit les chiffres : la reach (le nombre de personnes touchées), les impressions (le nombre d'affichages) et l'engagement (likes, commentaires, partages, enregistrements). Enfin, on anime la communauté : répondre aux commentaires et aux DMs, appliquer les community guidelines, et repérer très tôt une crise grâce au social listening. Dans les agences internationales, ces échanges se font souvent en anglais, sur Slack ou en stand-up.",
+        "key_phrases": [
+          { "en": "Are next week's posts ready for review?", "fr": "Les posts de la semaine prochaine sont prêts à être relus ?" },
+          { "en": "I'll schedule them for Tuesday at 6 p.m.", "fr": "Je les programme pour mardi à 18 h." },
+          { "en": "The carousel reached about 12,000 people.", "fr": "Le carrousel a touché environ 12 000 personnes." },
+          { "en": "The video underperformed.", "fr": "La vidéo a moins bien marché que prévu." },
+          { "en": "We've just sent you a DM.", "fr": "Nous venons de vous envoyer un message privé." },
+          { "en": "Heads-up: mentions are spiking this morning.", "fr": "Pour info : les mentions s'envolent ce matin." }
+        ],
+        "tip_fr": "Ne confondez pas reach et impressions : une personne qui voit trois fois le même post compte pour 1 en reach mais pour 3 en impressions. Et « programmer un post » se dit to schedule a post, pas to program a post (program, c'est pour le code)."
+      },
+      "lessons": [
+        {
+          "id": "preparer-posts-semaine",
+          "title_fr": "Préparer les posts de la semaine",
+          "term_ids": ["social-post", "caption", "hashtag", "carousel", "schedule-post", "best-time-to-post"],
+          "dialogue": [
+            { "speaker": "Inès", "text_en": "Morning! Are next week's posts ready for review?", "text_fr": "Bonjour ! Les posts de la semaine prochaine sont prêts à être relus ?" },
+            { "speaker": "Hugo", "text_en": "Almost. I've got three: a carousel with recipe tips, a short video and a customer quote.", "text_fr": "Presque. J'en ai trois : un carrousel avec des astuces de recettes, une courte vidéo et une citation client." },
+            { "speaker": "Inès", "text_en": "Nice. Can you keep the captions short? Two lines max, then the call to action.", "text_fr": "Super. Tu peux garder des légendes courtes ? Deux lignes maximum, puis l'appel à l'action." },
+            { "speaker": "Hugo", "text_en": "Sure. What about hashtags? I usually add around ten.", "text_fr": "Bien sûr. Et les hashtags ? J'en mets une dizaine d'habitude." },
+            { "speaker": "Inès", "text_en": "Three or four relevant ones are enough. Too many looks spammy.", "text_fr": "Trois ou quatre pertinents suffisent. Trop, ça fait spam." },
+            { "speaker": "Hugo", "text_en": "OK. I'll schedule them for Tuesday and Thursday at 6 p.m., when our audience is most active.", "text_fr": "OK. Je les programme mardi et jeudi à 18 h, quand notre audience est la plus active." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que désigne caption sur les réseaux sociaux ?",
+              "choices": ["The text that goes with a photo or video", "A screenshot of the post", "The name of the account"],
+              "answer_index": 0,
+              "explanation_fr": "La caption est le texte qui accompagne l'image ou la vidéo (la légende). Attention, une capture d'écran se dit screenshot, pas capture."
+            },
+            {
+              "prompt_fr": "Comment dire « Je les programme pour mardi » ?",
+              "choices": ["I'll schedule them for Tuesday.", "I'll program them for Tuesday.", "I'll plan them on Tuesday program."],
+              "answer_index": 0,
+              "explanation_fr": "Pour une publication, on dit to schedule. To program s'utilise pour écrire du code ou régler une machine : c'est le faux ami tentant."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'un carousel ?",
+              "choices": ["A single post with several images or slides people can swipe through", "A video that plays in a loop", "A list of the most popular accounts"],
+              "answer_index": 0,
+              "explanation_fr": "Un carousel est un seul post qui contient plusieurs visuels qu'on fait défiler. Une vidéo qui tourne en boucle est un autre format."
+            },
+            {
+              "prompt_fr": "Que veut dire Inès par « Too many looks spammy » ?",
+              "choices": ["Using too many hashtags makes the post look like spam", "The post has too many photos", "There are too many comments under the post"],
+              "answer_index": 0,
+              "explanation_fr": "Inès parle des hashtags : en mettre trop donne une impression de spam. « Spammy » est un adjectif familier mais très courant dans le métier."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "La cliente demande sur Slack quand les posts de la semaine prochaine seront publiés. Dites-lui ce qui est prêt, qu'il faut sa validation, et quand ils seront programmés.",
+            "context_en": "Client: \"Hi! When are next week's posts going live?\"",
+            "model_answer_en": "Hi! Next week's three posts are ready for your review: a carousel, a short video and a customer quote. Once you approve them, I'll schedule them for Tuesday and Thursday at 6 p.m., when our audience is most active.",
+            "model_answer_fr": "Bonjour ! Les trois posts de la semaine prochaine sont prêts pour votre relecture : un carrousel, une courte vidéo et une citation client. Dès que vous les validez, je les programme pour mardi et jeudi à 18 h, quand notre audience est la plus active.",
+            "key_phrases": ["ready for your review", "Once you approve them", "I'll schedule them for", "when our audience is most active"]
+          }
+        },
+        {
+          "id": "lire-statistiques-posts",
+          "title_fr": "Commenter les statistiques des posts",
+          "term_ids": ["reach", "impressions", "engagement-rate", "saves", "organic-reach"],
+          "dialogue": [
+            { "speaker": "Yann", "text_en": "Quick update on last week's posts. The carousel was our best post: it reached about 12,000 people.", "text_fr": "Petit point sur les posts de la semaine dernière. Le carrousel a été notre meilleur post : il a touché environ 12 000 personnes." },
+            { "speaker": "Mei", "text_en": "Is that reach or impressions?", "text_fr": "C'est la portée ou les impressions ?" },
+            { "speaker": "Yann", "text_en": "Reach. Impressions were higher, around 18,000, because some people saw it several times.", "text_fr": "La portée. Les impressions étaient plus élevées, autour de 18 000, parce que certaines personnes l'ont vu plusieurs fois." },
+            { "speaker": "Mei", "text_en": "And engagement?", "text_fr": "Et l'engagement ?" },
+            { "speaker": "Yann", "text_en": "The engagement rate was about 4%, mostly saves and shares. People keep the tips for later.", "text_fr": "Le taux d'engagement était d'environ 4 %, surtout des enregistrements et des partages. Les gens gardent les astuces pour plus tard." },
+            { "speaker": "Mei", "text_en": "Great. The video, on the other hand, had a very low organic reach.", "text_fr": "Super. La vidéo, en revanche, a eu une portée organique très faible." },
+            { "speaker": "Yann", "text_en": "Yes, I think the first seconds weren't strong enough. I'll test a new hook this week.", "text_fr": "Oui, je pense que les premières secondes n'étaient pas assez fortes. Je teste une nouvelle accroche cette semaine." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les impressions (18 000) sont-elles plus élevées que la reach (12 000) ?",
+              "choices": ["Because some people saw the post several times", "Because impressions only count followers", "Because reach includes paid ads"],
+              "answer_index": 0,
+              "explanation_fr": "La reach compte des personnes uniques, les impressions comptent chaque affichage. Si quelqu'un voit le post trois fois, cela fait 1 en reach et 3 en impressions. Rien n'indique ici qu'il s'agisse uniquement d'abonnés ou de publicité."
+            },
+            {
+              "prompt_fr": "Que signifie organic reach ?",
+              "choices": ["The people reached without paying for ads", "The people who bought organic products", "The number of new followers"],
+              "answer_index": 0,
+              "explanation_fr": "Organic veut dire « non payé ». L'organic reach est la portée obtenue sans publicité, par opposition à la paid reach. Rien à voir avec le bio."
+            },
+            {
+              "prompt_fr": "Quelle phrase utiliser pour dire que la vidéo a moins bien marché que prévu ?",
+              "choices": ["The video underperformed.", "The video was under-made.", "The video performed lowly."],
+              "answer_index": 0,
+              "explanation_fr": "To underperform est le verbe standard pour des résultats en dessous des attentes. Son contraire est to outperform. Les deux autres formulations ne sont pas naturelles."
+            },
+            {
+              "prompt_fr": "Dans « on the other hand », Mei introduit :",
+              "choices": ["a contrast", "an example", "a conclusion"],
+              "answer_index": 0,
+              "explanation_fr": "On the other hand (en revanche) marque une opposition : le carrousel a bien marché, la vidéo beaucoup moins. Pour un exemple, on dirait for example ; pour conclure, so ou overall."
+            }
+          ],
+          "production": {
+            "channel": "standup",
+            "prompt_fr": "C'est le stand-up social media du lundi. Donnez votre point sur la semaine dernière : le meilleur post avec ses chiffres, ce qui a moins bien marché, et ce que vous testez cette semaine.",
+            "model_answer_en": "Last week, our carousel was the top post: it reached about 12,000 people with an engagement rate of around 4%, mostly saves and shares. The video underperformed, so this week I'm testing a stronger hook in the first three seconds.",
+            "model_answer_fr": "La semaine dernière, notre carrousel a été le meilleur post : il a touché environ 12 000 personnes avec un taux d'engagement d'environ 4 %, surtout des enregistrements et des partages. La vidéo a moins bien marché, donc cette semaine je teste une accroche plus forte dans les trois premières secondes.",
+            "key_phrases": ["was the top post", "it reached about", "with an engagement rate of around", "The video underperformed", "this week I'm testing"]
+          }
+        },
+        {
+          "id": "repondre-client-mecontent",
+          "title_fr": "Répondre à un client mécontent",
+          "term_ids": ["complaint", "comment-social", "direct-message", "saved-reply", "community-guidelines", "hide-comment"],
+          "dialogue": [
+            { "speaker": "Lucie", "text_en": "We've got an angry comment under yesterday's post. A customer says her order arrived damaged.", "text_fr": "On a un commentaire énervé sous le post d'hier. Une cliente dit que sa commande est arrivée abîmée." },
+            { "speaker": "Omar", "text_en": "OK. Don't delete it, that would make things worse. Reply publicly first, then move the conversation to DMs.", "text_fr": "OK. Ne le supprime pas, ça empirerait les choses. Réponds d'abord publiquement, puis passe la conversation en message privé." },
+            { "speaker": "Lucie", "text_en": "Should I use our saved reply?", "text_fr": "J'utilise notre réponse type ?" },
+            { "speaker": "Omar", "text_en": "Use it as a starting point, but personalize it. Use her first name and apologize properly.", "text_fr": "Pars de celle-là, mais personnalise-la. Utilise son prénom et excuse-toi vraiment." },
+            { "speaker": "Lucie", "text_en": "And the other comment that insults the team? It breaks our community guidelines.", "text_fr": "Et l'autre commentaire qui insulte l'équipe ? Il ne respecte pas nos règles de communauté." },
+            { "speaker": "Omar", "text_en": "That one you can hide. And try to answer complaints within the hour.", "text_fr": "Celui-là, tu peux le masquer. Et essaie de répondre aux réclamations dans l'heure." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « move the conversation to DMs » ?",
+              "choices": ["Continue the conversation in private messages", "Delete the conversation", "Send the conversation to the manager"],
+              "answer_index": 0,
+              "explanation_fr": "DM signifie direct message, le message privé. On répond en public pour montrer qu'on réagit, puis on règle les détails (numéro de commande, adresse) en privé."
+            },
+            {
+              "prompt_fr": "Comment dire « ça empirerait les choses » ?",
+              "choices": ["That would make things worse.", "That would make things worst.", "That would do things more bad."],
+              "answer_index": 0,
+              "explanation_fr": "Worse est le comparatif de bad (pire, plus mauvais). Worst est le superlatif (le pire) et ne va pas ici. « More bad » ne se dit pas."
+            },
+            {
+              "prompt_fr": "Pourquoi Omar conseille-t-il de masquer et non de supprimer le commentaire insultant ?",
+              "choices": ["Hiding removes it from public view without deleting it, which avoids escalating the situation", "Hiding sends the comment to the police", "Hiding automatically bans the user forever"],
+              "answer_index": 0,
+              "explanation_fr": "Hide a comment le rend invisible pour le public, alors que l'auteur le voit souvent encore, ce qui limite les réactions en chaîne. Masquer ne bannit pas l'utilisateur : ce serait to ban a user."
+            },
+            {
+              "prompt_fr": "Que désigne community guidelines ?",
+              "choices": ["The rules people must follow when they post on the brand's page", "The list of the community's members", "The legal terms of sale"],
+              "answer_index": 0,
+              "explanation_fr": "Les community guidelines (règles de communauté) disent ce qui est accepté ou non dans les commentaires : pas d'insulte, pas de spam. Les conditions de vente sont les terms and conditions."
+            }
+          ],
+          "production": {
+            "channel": "social_post",
+            "prompt_fr": "Rédigez la réponse publique au commentaire de Sarah, dont la commande est arrivée abîmée. Excusez-vous sincèrement et indiquez que vous poursuivez en message privé.",
+            "context_en": "Sarah: \"My order arrived completely damaged. Really disappointed.\"",
+            "model_answer_en": "Hi Sarah, we're really sorry your order arrived damaged. That's not the experience we want for you. We've just sent you a DM so we can sort this out as quickly as possible.",
+            "model_answer_fr": "Bonjour Sarah, nous sommes vraiment désolés que votre commande soit arrivée abîmée. Ce n'est pas l'expérience que nous voulons pour vous. Nous venons de vous envoyer un message privé pour régler cela au plus vite.",
+            "key_phrases": ["we're really sorry", "That's not the experience we want for you", "We've just sent you a DM", "sort this out as quickly as possible"]
+          }
+        },
+        {
+          "id": "gerer-bad-buzz",
+          "title_fr": "Réagir à un début de bad buzz",
+          "term_ids": ["social-listening", "social-mention", "go-viral", "backlash", "heads-up", "sign-off"],
+          "dialogue": [
+            { "speaker": "Jade", "text_en": "Heads-up: our social listening tool picked up a spike in mentions this morning.", "text_fr": "Pour info : notre outil de veille a repéré un pic de mentions ce matin." },
+            { "speaker": "Robert", "text_en": "What's going on?", "text_fr": "Qu'est-ce qui se passe ?" },
+            { "speaker": "Jade", "text_en": "A customer's video about a late delivery is going viral. It has over 200,000 views and the comments are turning into a backlash.", "text_fr": "La vidéo d'un client sur une livraison en retard devient virale. Elle dépasse les 200 000 vues et les commentaires tournent à la levée de boucliers." },
+            { "speaker": "Robert", "text_en": "Should we respond right away?", "text_fr": "On doit répondre tout de suite ?" },
+            { "speaker": "Jade", "text_en": "I'd suggest a short holding statement within the hour, then a full answer once we have the facts from logistics.", "text_fr": "Je suggère une courte déclaration d'attente dans l'heure, puis une réponse complète quand on aura les faits de la logistique." },
+            { "speaker": "Robert", "text_en": "OK. Draft it and send it to me and legal for sign-off.", "text_fr": "OK. Rédige-la et envoie-la-moi, ainsi qu'au juridique, pour validation." },
+            { "speaker": "Jade", "text_en": "Will do. I'll also pause today's scheduled posts so we don't look out of touch.", "text_fr": "Je m'en occupe. Je mets aussi en pause les posts programmés aujourd'hui pour ne pas paraître déconnectés." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « Heads-up » au début du message de Jade ?",
+              "choices": ["A quick warning so the other person is aware", "A request for a meeting", "A compliment on someone's work"],
+              "answer_index": 0,
+              "explanation_fr": "Heads-up sert à prévenir quelqu'un d'une information importante (« pour info », « attention »). Ce n'est ni une demande de réunion ni un compliment."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'un holding statement ?",
+              "choices": ["A short first message saying you are aware and looking into it", "A long press release with all the details", "A post that stays pinned at the top of the page"],
+              "answer_index": 0,
+              "explanation_fr": "Un holding statement est une courte déclaration d'attente : on montre qu'on a vu le problème et qu'on enquête, avant d'avoir tous les faits. La réponse complète vient après. Un post épinglé se dit a pinned post."
+            },
+            {
+              "prompt_fr": "Pourquoi Jade met-elle en pause les posts programmés ?",
+              "choices": ["So the brand doesn't seem to ignore the crisis by posting cheerful content", "Because the scheduling tool is broken", "To save advertising budget"],
+              "answer_index": 0,
+              "explanation_fr": "« So we don't look out of touch » : publier un post joyeux en pleine crise donnerait l'impression que la marque est déconnectée de ce qui se passe. Il ne s'agit ni d'une panne ni d'une économie de budget."
+            },
+            {
+              "prompt_fr": "« The comments are turning into a backlash » signifie :",
+              "choices": ["Many people are reacting strongly and negatively", "The comments are being deleted", "People are sharing the video to support the brand"],
+              "answer_index": 0,
+              "explanation_fr": "Un backlash est une vague de réactions négatives et fortes contre une marque ou une décision. C'est l'inverse d'un soutien."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écrivez à Robert, votre client, pour résumer la situation, lui soumettre la déclaration d'attente pour validation et lui dire ce que vous avez déjà fait.",
+            "model_answer_en": "Hi Robert, as discussed, a customer video about a late delivery is going viral and we're seeing a strong backlash in the comments. Please find below a short holding statement for your sign-off. In the meantime, we've paused today's scheduled posts and we're monitoring mentions every hour.",
+            "model_answer_fr": "Bonjour Robert, comme convenu, la vidéo d'un client sur une livraison en retard devient virale et nous constatons une forte vague de réactions négatives dans les commentaires. Vous trouverez ci-dessous une courte déclaration d'attente à valider. En attendant, nous avons mis en pause les posts programmés aujourd'hui et nous surveillons les mentions toutes les heures.",
+            "key_phrases": ["as discussed", "is going viral", "Please find below", "for your sign-off", "In the meantime"]
+          }
+        }
+      ]
     }
   ]
 }
