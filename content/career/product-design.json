@@ -1,0 +1,125 @@
+{
+  "questions": [
+    {
+      "id": "product-design-design-process",
+      "status": "draft",
+      "roles": ["product-design"],
+      "level": "B1",
+      "topic_fr": "Méthode de design",
+      "question_en": "Can you walk me through your design process?",
+      "question_fr": "Pouvez-vous me décrire votre processus de design, étape par étape ?",
+      "hint_fr": "Des étapes claires, de la compréhension du problème à la mesure après lancement. Montrez que vous partez du problème, pas de la solution.",
+      "answer_outline_fr": [
+        "Comprendre le problème : recherche utilisateur et données",
+        "Explorer des idées avec des wireframes, partagés tôt",
+        "Prototyper et tester avec des utilisateurs, puis itérer",
+        "Préparer la passation aux développeurs et mesurer après le lancement"
+      ],
+      "model_answer_en": "My process always starts with the problem, not the solution. First, I run user research and look at the data to understand the main pain points. Then I explore ideas with quick wireframes and share them early with developers and the product manager. Once we agree on a direction, I build a prototype and test it with five or six users. I iterate on what I observe, prepare a clear handoff for developers, and after launch I check the metrics to see if we really solved the problem.",
+      "model_answer_fr": "Mon processus part toujours du problème, pas de la solution. D’abord, je fais de la recherche utilisateur et j’examine les données pour comprendre les principaux points de friction. Ensuite, j’explore des idées avec des wireframes rapides que je partage tôt avec les développeurs et le product manager. Une fois qu’on est d’accord sur une direction, je construis un prototype et je le teste avec cinq ou six utilisateurs. J’itère selon ce que j’observe, je prépare une passation claire pour les développeurs, et après le lancement, je regarde les indicateurs pour vérifier qu’on a vraiment résolu le problème.",
+      "key_phrases": ["starts with the problem", "run user research", "build a prototype", "prepare a clear handoff", "check the metrics"],
+      "vocabulary_term_ids": ["user-research", "pain-point", "wireframe", "prototype", "handoff", "metric"]
+    },
+    {
+      "id": "product-design-test-a-new-flow",
+      "status": "draft",
+      "roles": ["product-design"],
+      "level": "B2",
+      "topic_fr": "Tester un parcours",
+      "question_en": "How would you test a new checkout flow before launch?",
+      "question_fr": "Comment testeriez-vous un nouveau parcours de paiement avant son lancement ?",
+      "hint_fr": "Un cas pratique : dites ce que vous voulez apprendre, comment vous testez (prototype, tâches réalistes, observation) et comment vous mesurez après le lancement.",
+      "answer_outline_fr": [
+        "Définir ce que l’on veut apprendre",
+        "Construire un prototype réaliste",
+        "Mener des tests d’utilisabilité avec des tâches concrètes et des cas limites",
+        "Corriger les problèmes principaux, puis lancer progressivement et mesurer"
+      ],
+      "model_answer_en": "First, I would define what we need to learn, for example whether users understand the delivery options. Then I would build a high-fidelity prototype and run usability tests with five or six people who match our main persona. I’d give them realistic tasks, like buying a gift with a promo code, and ask them to think aloud. I’d also check edge cases, such as an expired card. After fixing the main issues, I’d suggest launching behind a feature flag and comparing the conversion rate with the old flow.",
+      "model_answer_fr": "D’abord, je définirais ce que nous devons apprendre, par exemple si les utilisateurs comprennent les options de livraison. Ensuite, je construirais un prototype haute fidélité et je mènerais des tests d’utilisabilité avec cinq ou six personnes correspondant à notre persona principale. Je leur donnerais des tâches réalistes, comme acheter un cadeau avec un code promo, et je leur demanderais de penser à voix haute. Je vérifierais aussi les cas limites, comme une carte expirée. Après avoir corrigé les problèmes principaux, je proposerais un lancement derrière un feature flag, en comparant le taux de conversion avec l’ancien parcours.",
+      "key_phrases": ["define what we need to learn", "run usability tests", "think aloud", "behind a feature flag", "conversion rate"],
+      "vocabulary_term_ids": ["high-fidelity", "usability-testing", "persona", "edge-case", "feature-flag", "conversion-rate"]
+    },
+    {
+      "id": "product-design-build-the-roadmap",
+      "status": "draft",
+      "roles": ["product-design"],
+      "level": "B2",
+      "topic_fr": "Priorisation et roadmap",
+      "question_en": "How do you decide what goes on the roadmap?",
+      "question_fr": "Comment décidez-vous de ce qui figure sur la roadmap ?",
+      "hint_fr": "Citez une méthode réelle (RICE, MoSCoW), reliez-la aux objectifs de l’entreprise et montrez que vous savez dire non en expliquant pourquoi.",
+      "answer_outline_fr": [
+        "Partir des objectifs de l’entreprise (OKR)",
+        "Évaluer les demandes avec une méthode simple",
+        "Croiser les données et les retours utilisateurs",
+        "Partager la roadmap et expliquer les compromis"
+      ],
+      "model_answer_en": "I start from the company goals, usually our OKRs for the quarter. Every feature request goes into the backlog, and I score the main candidates with a simple framework like RICE: reach, impact, confidence and effort. I combine that with data and user feedback, because a loud request is not always an important one. Then I share the roadmap with stakeholders in a now, next, later format and explain the trade-offs. Saying no is part of the job, but I always explain why.",
+      "model_answer_fr": "Je pars des objectifs de l’entreprise, en général nos OKR du trimestre. Chaque demande de fonctionnalité va dans le backlog, et j’évalue les principales candidates avec une méthode simple comme RICE : portée, impact, confiance et effort. Je croise cela avec les données et les retours utilisateurs, car une demande insistante n’est pas toujours une demande importante. Ensuite, je partage la roadmap avec les parties prenantes au format maintenant, ensuite, plus tard, et j’explique les compromis. Dire non fait partie du métier, mais j’explique toujours pourquoi.",
+      "key_phrases": ["start from the company goals", "score the main candidates", "reach, impact, confidence and effort", "explain the trade-offs", "Saying no is part of the job"],
+      "vocabulary_term_ids": ["roadmap", "okr", "feature-request", "backlog", "prioritization", "user-feedback", "stakeholder", "trade-off"]
+    },
+    {
+      "id": "product-design-stakeholder-disagreement",
+      "status": "draft",
+      "roles": ["product-design"],
+      "level": "B2",
+      "topic_fr": "Gérer un désaccord",
+      "question_en": "Tell me about a time a stakeholder disagreed with your design.",
+      "question_fr": "Parlez-moi d’une situation où une partie prenante n’était pas d’accord avec votre design.",
+      "hint_fr": "Méthode STAR : situation, tâche, action, résultat. Montrez que vous avez tranché avec des faits et des utilisateurs, pas avec vos goûts.",
+      "answer_outline_fr": [
+        "Situation : le désaccord et ce qui était en jeu",
+        "Tâche : ce que vous deviez protéger",
+        "Action : proposer un test plutôt qu’un débat d’opinions",
+        "Résultat et ce que vous en avez retenu"
+      ],
+      "model_answer_en": "In my last role, our head of sales wanted to add a large promotional banner to the dashboard. I was worried it would push the main call to action down and hurt the user experience. Instead of arguing about taste, I suggested a quick test. I built two prototypes and tested them with five customers. With the banner, most of them missed the main button. I shared the recordings, and we agreed on a smaller banner. I learned that evidence works better than opinions.",
+      "model_answer_fr": "Dans mon dernier poste, notre directeur commercial voulait ajouter une grande bannière promotionnelle sur le tableau de bord. Je craignais qu’elle repousse l’appel à l’action principal vers le bas et nuise à l’expérience utilisateur. Plutôt que de débattre de goûts, j’ai proposé un test rapide. J’ai construit deux prototypes et je les ai testés avec cinq clients. Avec la bannière, la plupart n’ont pas vu le bouton principal. J’ai partagé les enregistrements, et nous nous sommes mis d’accord sur une bannière plus petite. J’en ai retenu que les preuves convainquent mieux que les opinions.",
+      "key_phrases": ["Instead of arguing about taste", "I suggested a quick test", "I shared the recordings", "evidence works better than opinions"],
+      "vocabulary_term_ids": ["stakeholder", "call-to-action", "user-experience", "prototype"]
+    },
+    {
+      "id": "product-design-work-with-developers",
+      "status": "draft",
+      "roles": ["product-design"],
+      "level": "B1",
+      "topic_fr": "Collaboration avec les développeurs",
+      "question_en": "How do you work with developers during the design handoff?",
+      "question_fr": "Comment travaillez-vous avec les développeurs lors de la passation du design ?",
+      "hint_fr": "Outils et méthode : impliquer les développeurs tôt, un handoff complet, le design system et ses tokens, la vérification avant la mise en production.",
+      "answer_outline_fr": [
+        "Impliquer les développeurs dès les premières maquettes",
+        "Préparer un handoff complet : états, cas limites, critères d’acceptation",
+        "S’appuyer sur le design system et les design tokens",
+        "Vérifier le résultat avant la mise en production"
+      ],
+      "model_answer_en": "I try to involve developers early, so the handoff is never a surprise. I share wireframes in Figma and ask them what is hard to build. When the design is ready, I prepare every state of each component, the edge cases and the acceptance criteria. I reuse components from our design system, and we use design tokens so colors and spacing match the code. Before we ship, I review the staging version and log small gaps as design debt instead of blocking the release.",
+      "model_answer_fr": "J’essaie d’impliquer les développeurs tôt, pour que la passation ne soit jamais une surprise. Je partage les wireframes dans Figma et je leur demande ce qui est difficile à construire. Quand le design est prêt, je prépare tous les états de chaque composant, les cas limites et les critères d’acceptation. Je réutilise les composants de notre design system, et nous utilisons des design tokens pour que les couleurs et les espacements correspondent au code. Avant de livrer, je vérifie la version de préproduction et je note les petits écarts comme dette de design au lieu de bloquer la mise en production.",
+      "key_phrases": ["involve developers early", "every state of each component", "design tokens", "log small gaps as design debt"],
+      "vocabulary_term_ids": ["handoff", "figma", "component", "edge-case", "acceptance-criteria", "design-system", "design-tokens", "staging", "design-debt"]
+    },
+    {
+      "id": "product-design-measure-success",
+      "status": "draft",
+      "roles": ["product-design"],
+      "level": "C1",
+      "topic_fr": "Mesurer le succès",
+      "question_en": "How do you know if a feature is successful after launch?",
+      "question_fr": "Comment savez-vous si une fonctionnalité est un succès après son lancement ?",
+      "hint_fr": "Définir le succès avant le lancement, un indicateur principal et un garde-fou, éviter les indicateurs de vanité, croiser chiffres et retours qualitatifs.",
+      "answer_outline_fr": [
+        "Définir le succès avant le lancement",
+        "Choisir un indicateur principal et un indicateur garde-fou",
+        "Écarter les indicateurs de vanité",
+        "Croiser les chiffres avec des entretiens"
+      ],
+      "model_answer_en": "I define success before launch, not after. For each feature, I pick one main metric linked to our North Star metric, for example feature adoption, and one guardrail metric to make sure we don’t hurt something else, like support tickets. I avoid vanity metrics such as page views, because they can go up without proving any value. After launch, I look at the numbers by cohort and I also talk to users, because the data tells me what happens, and interviews tell me why.",
+      "model_answer_fr": "Je définis le succès avant le lancement, pas après. Pour chaque fonctionnalité, je choisis un indicateur principal lié à notre North Star metric, par exemple l’adoption de la fonctionnalité, et un indicateur garde-fou pour m’assurer qu’on ne dégrade pas autre chose, comme le nombre de tickets au support. J’évite les indicateurs de vanité comme les pages vues, car ils peuvent monter sans prouver aucune valeur. Après le lancement, j’analyse les chiffres par cohorte et je parle aussi aux utilisateurs : les données me disent ce qui se passe, les entretiens me disent pourquoi.",
+      "key_phrases": ["define success before launch", "one main metric", "one guardrail metric", "vanity metrics", "interviews tell me why"],
+      "vocabulary_term_ids": ["north-star-metric", "feature-adoption", "guardrail-metric", "vanity-metric", "cohort", "metric"]
+    }
+  ],
+  "verbs": []
+}

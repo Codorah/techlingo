@@ -1,0 +1,2578 @@
+{
+  "role": "marketing-data",
+  "status": "draft",
+  "title_fr": "L'anglais du data marketing",
+  "units": [
+    {
+      "id": "marketing-data-plan-de-marquage",
+      "title_fr": "Préparer le plan de marquage avec les développeurs",
+      "title_en": "Building the tracking plan with developers",
+      "situation_fr": "Le site lance un nouveau parcours d'inscription. Tu dois définir ce qu'on mesure, le faire installer par les développeurs et vérifier que les campagnes arrivent dans les bons canaux.",
+      "guide": {
+        "intro_fr": "Avant de mesurer, il faut décider quoi mesurer. Le tracking plan (plan de marquage) liste chaque event à suivre, ses paramètres et le moment où il se déclenche. Les plus importants deviennent des key events, comme une inscription ou un achat. Côté technique, les développeurs envoient les informations dans la data layer, puis le tag manager déclenche les tags (balises) et les tracking pixels des plateformes publicitaires. Pour les campagnes, tout repose sur les UTM parameters : ils remplissent la source / medium de chaque visite, et le channel grouping range ensuite le trafic par canal. En anglais, une balise qui se déclenche fires : the tag fires on the confirmation page.",
+        "key_phrases": [
+          {
+            "en": "Can we add this event to the tracking plan?",
+            "fr": "On peut ajouter cet événement au plan de marquage ?"
+          },
+          {
+            "en": "The tag fires on every page.",
+            "fr": "La balise se déclenche sur toutes les pages."
+          },
+          {
+            "en": "Could you push the order value to the data layer?",
+            "fr": "Tu pourrais envoyer le montant de la commande dans la data layer ?"
+          },
+          {
+            "en": "It shows up as direct traffic.",
+            "fr": "Ça apparaît en trafic direct."
+          },
+          {
+            "en": "Let's agree on a naming convention.",
+            "fr": "Mettons-nous d'accord sur une convention de nommage."
+          },
+          {
+            "en": "I'll check it in preview mode first.",
+            "fr": "Je vais d'abord vérifier en mode aperçu."
+          }
+        ],
+        "tip_fr": "Ne traduis pas « plan de marquage » par marking plan : on dit tracking plan (ou measurement plan), et « baliser » se dit to tag. Attention aussi à event : en analytics, c'est une action mesurée (un clic, un envoi de formulaire), pas un « événement » au sens de soirée ou de salon."
+      },
+      "lessons": [
+        {
+          "id": "marketing-data-definir-evenements",
+          "title_fr": "Définir les événements à mesurer",
+          "term_ids": [
+            "tracking-plan",
+            "event-tracking",
+            "key-event",
+            "data-layer",
+            "pageview"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "The new sign-up flow goes live next sprint. What do you need from us for tracking?",
+              "text_fr": "Le nouveau parcours d'inscription sort au prochain sprint. De quoi as-tu besoin de notre part pour le tracking ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "I've shared the tracking plan. A pageview isn't enough here: the steps don't load new pages, so we need event tracking on each one.",
+              "text_fr": "J'ai partagé le plan de marquage. Une page vue ne suffit pas ici : les étapes ne chargent pas de nouvelle page, donc il nous faut un suivi des événements sur chacune."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "So one event per step? Like step_one_completed?",
+              "text_fr": "Donc un événement par étape ? Genre step_one_completed ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Yes. And the last one, sign_up, will be a key event. That's the number marketing reports on.",
+              "text_fr": "Oui. Et le dernier, sign_up, sera un événement clé. C'est le chiffre que le marketing suit dans ses rapports."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Where do you want the plan type? In the URL?",
+              "text_fr": "Où veux-tu le type d'abonnement ? Dans l'URL ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "No, please push it to the data layer with the event. The tag manager will pick it up from there.",
+              "text_fr": "Non, envoie-le plutôt dans la data layer avec l'événement. Le tag manager le récupérera à partir de là."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « il nous faut un suivi des événements sur chaque étape » ?",
+              "choices": [
+                "We need to follow the events of each stage.",
+                "We need event tracking on each step.",
+                "We need an events follow-up on each step."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Event tracking est l'expression consacrée pour le suivi des actions des visiteurs. Follow the events fait penser à suivre l'actualité, et a follow-up est une relance ou un suivi de dossier, pas une mesure technique."
+            },
+            {
+              "prompt_fr": "Pourquoi Aïcha dit-elle qu'une pageview ne suffit pas ?",
+              "choices": [
+                "Because the steps don't load new pages, so only events can measure them",
+                "Because pageviews are not allowed without consent",
+                "Because pageviews are only counted once a day"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une pageview n'est enregistrée que lorsqu'une page s'affiche. Si les étapes changent sans charger de page, il faut suivre des events (actions). Le consentement concerne toutes les mesures, pas seulement les pages vues, et une page vue est comptée à chaque affichage."
+            },
+            {
+              "prompt_fr": "Complète : « The last one, sign_up, will be a ___ event. »",
+              "choices": [
+                "main",
+                "keyed",
+                "key"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Dans GA4, les événements les plus importants pour l'entreprise s'appellent des key events (événements clés). Main event serait compris mais ce n'est pas le terme de l'outil, et keyed ne veut rien dire ici."
+            },
+            {
+              "prompt_fr": "Tomasz propose de mettre le type d'abonnement dans l'URL. Que lui réponds-tu ?",
+              "choices": [
+                "Sure, any place works for me.",
+                "Please push it to the data layer with the event.",
+                "Please write it in the page title."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La data layer est prévue pour transmettre proprement des informations au tag manager. L'URL et le titre de page sont fragiles et peuvent exposer des données, et « any place works » laisse le tracking au hasard. Retiens le verbe : on push une donnée dans la data layer."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Tomasz te demande sur Slack ce qu'il doit implémenter. Réponds-lui en résumant les événements à suivre, l'événement clé et ce qu'il faut envoyer dans la data layer.",
+            "context_en": "Tomasz: Hey, what exactly do you need tracked on the new sign-up flow?",
+            "model_answer_en": "Hi Tomasz! It's all in the tracking plan, but in short: one event per step of the flow, plus sign_up at the end, which will be our key event. Could you push the plan type to the data layer with each event? I'll check everything in preview mode before the release.",
+            "model_answer_fr": "Salut Tomasz ! Tout est dans le plan de marquage, mais en bref : un événement par étape du parcours, plus sign_up à la fin, qui sera notre événement clé. Tu pourrais envoyer le type d'abonnement dans la data layer avec chaque événement ? Je vérifierai tout en mode aperçu avant la mise en production.",
+            "key_phrases": [
+              "It's all in the tracking plan",
+              "one event per step",
+              "which will be our key event",
+              "push the plan type to the data layer"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-installer-balise",
+          "title_fr": "Faire installer une balise publicitaire",
+          "term_ids": [
+            "tag-manager",
+            "marketing-tag",
+            "tracking-pixel",
+            "tracking-code"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "The agency sent us a tracking pixel for the new campaign. Can a developer paste the tracking code on the site?",
+              "text_fr": "L'agence nous a envoyé un pixel de suivi pour la nouvelle campagne. Un développeur peut coller le code de suivi sur le site ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Let's not hardcode it. I'll add it as a tag in the tag manager instead.",
+              "text_fr": "Évitons de le coder en dur. Je vais plutôt l'ajouter comme balise dans le tag manager."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "What's the difference? It does the same thing.",
+              "text_fr": "Quelle différence ? Ça fait la même chose."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "The result is the same, but I can control when it fires, and remove it without a release.",
+              "text_fr": "Le résultat est le même, mais je peux contrôler quand elle se déclenche, et la retirer sans mise en production."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Fair enough. Should it fire on every page?",
+              "text_fr": "D'accord. Elle doit se déclencher sur toutes les pages ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Only after consent, and the conversion tag only on the confirmation page. I'll test it in preview mode before publishing.",
+              "text_fr": "Seulement après le consentement, et la balise de conversion uniquement sur la page de confirmation. Je la teste en mode aperçu avant de publier."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « Let's not hardcode it » ?",
+              "choices": [
+                "Let's not make it too complicated",
+                "Let's not pay for it",
+                "Let's not write it directly into the website's code"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To hardcode, c'est écrire en dur dans le code source : chaque modification demande alors un développeur et une mise en production. Hard ne veut pas dire « difficile » ici, et il n'est pas question de prix."
+            },
+            {
+              "prompt_fr": "Comment dit-on qu'une balise « se déclenche » ?",
+              "choices": [
+                "The tag starts off.",
+                "The tag fires.",
+                "The tag launches itself."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En analytics, une balise fires (se déclenche) selon un trigger (déclencheur). Starts off et launches itself sont des calques du français qu'un collègue anglophone ne dirait pas."
+            },
+            {
+              "prompt_fr": "Pourquoi Priya préfère-t-elle passer par le tag manager ?",
+              "choices": [
+                "Because she can control and remove the tag without a new release",
+                "Because it makes the site faster for every visitor",
+                "Because the agency's code doesn't work otherwise"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le tag manager permet au marketing de gérer les balises (quand elles se déclenchent, leur retrait) sans toucher au code du site. Il ne rend pas le site plus rapide en soi, et le code de l'agence fonctionnerait aussi en dur."
+            },
+            {
+              "prompt_fr": "Complète : « Can a developer paste the tracking ___ on the site? »",
+              "choices": [
+                "key",
+                "program",
+                "code"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le bout de code fourni par une plateforme s'appelle le tracking code (code de suivi), ou snippet. Tracking key n'existe pas, et program désigne un logiciel entier."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "L'agence demande quand son pixel sera en place. Écris-lui un court e-mail : tu l'installes via le tag manager, il se déclenche après consentement, et la balise de conversion seulement sur la page de confirmation.",
+            "context_en": "Hi, just checking: when will our tracking pixel be live on your site?",
+            "model_answer_en": "Hi, thanks for sending the tracking code. Rather than hardcoding it, I'm setting it up as a tag in our tag manager. It will only fire after consent, and the conversion tag will fire on the confirmation page only. I'll test it in preview mode and confirm once it's live.",
+            "model_answer_fr": "Bonjour, merci pour le code de suivi. Plutôt que de le coder en dur, je le configure comme balise dans notre tag manager. Elle ne se déclenchera qu'après consentement, et la balise de conversion uniquement sur la page de confirmation. Je la teste en mode aperçu et je vous confirme dès qu'elle est en ligne.",
+            "key_phrases": [
+              "Rather than hardcoding it",
+              "as a tag in our tag manager",
+              "It will only fire after consent",
+              "confirm once it's live"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-convention-utm",
+          "title_fr": "Faire respecter la convention UTM",
+          "term_ids": [
+            "utm-parameters",
+            "source-medium",
+            "traffic-source",
+            "channel-grouping",
+            "direct-traffic"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Moussa",
+              "text_en": "Our newsletter brought almost no traffic last week. That's strange, lots of people clicked.",
+              "text_fr": "Notre newsletter n'a presque pas apporté de trafic la semaine dernière. C'est bizarre, beaucoup de gens ont cliqué."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "The links had no UTM parameters, so many of those visits show up as direct traffic.",
+              "text_fr": "Les liens n'avaient pas de paramètres UTM, donc beaucoup de ces visites apparaissent en trafic direct."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Ouch. And the Instagram links? Those were tagged.",
+              "text_fr": "Aïe. Et les liens Instagram ? Eux étaient tagués."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Yes, but with different names: Insta, IG, instagram_story... In the source / medium report, the same traffic source is split across several lines.",
+              "text_fr": "Oui, mais avec des noms différents : Insta, IG, instagram_story... Dans le rapport source / support, la même source de trafic est éclatée sur plusieurs lignes."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "So how do we fix it?",
+              "text_fr": "Alors comment on corrige ça ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "One naming convention for everyone, all in lowercase: source instagram, medium social. Then the channel grouping puts them all in Organic Social.",
+              "text_fr": "Une seule convention de nommage pour tout le monde, tout en minuscules : source instagram, support social. Ensuite, le regroupement de canaux les range tous dans Organic Social."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les visites de la newsletter apparaissent-elles en direct traffic ?",
+              "choices": [
+                "Because people typed the URL themselves",
+                "Because the links had no UTM parameters, so the tool couldn't tell where the visits came from",
+                "Because the newsletter was sent to the wrong list"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le direct traffic regroupe les visites dont l'outil ne connaît pas l'origine. Sans UTM, beaucoup de clics venus d'une application de messagerie arrivent sans référent et tombent dans ce fourre-tout. Les gens n'ont pas tapé l'adresse eux-mêmes, et la liste d'envoi n'y est pour rien."
+            },
+            {
+              "prompt_fr": "Dans « source / medium », que désigne le medium ?",
+              "choices": [
+                "The type of channel, such as email, cpc or social",
+                "The website or platform that sent the visit",
+                "The device the visitor used"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La source dit qui envoie la visite (google, newsletter, instagram) ; le medium dit par quel type de canal (organic, cpc, email, social). En français, on le traduit par « support », pas par « média ». L'appareil utilisé, c'est le device."
+            },
+            {
+              "prompt_fr": "Complète : « The same traffic source is ___ across several lines. »",
+              "choices": [
+                "shared",
+                "cut",
+                "split"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To be split across, c'est être éclaté ou réparti sur plusieurs éléments. Cut (couper) ne s'emploie pas pour des données réparties, et shared voudrait dire partagé entre plusieurs personnes."
+            },
+            {
+              "prompt_fr": "Un collègue demande pourquoi il faut tout écrire en minuscules. Que réponds-tu ?",
+              "choices": [
+                "Because capital letters break the link",
+                "Because UTM values are case-sensitive, so Instagram and instagram are counted as two sources",
+                "Because GA4 deletes values with capital letters"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Case-sensitive veut dire sensible à la casse : Instagram et instagram deviennent deux lignes différentes dans les rapports. Les majuscules ne cassent pas le lien et ne sont pas supprimées, elles éparpillent simplement les chiffres."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un court message dans le canal #marketing pour imposer la convention UTM et expliquer pourquoi.",
+            "model_answer_en": "Quick heads-up on UTM parameters: from now on, please use the shared template and write every value in lowercase. Last week, untagged newsletter links showed up as direct traffic, and our Instagram traffic was split across several sources. With one naming convention, every campaign lands in the right channel.",
+            "model_answer_fr": "Petite info sur les paramètres UTM : à partir de maintenant, utilisez le modèle commun et écrivez chaque valeur en minuscules. La semaine dernière, les liens de la newsletter sans UTM sont apparus en trafic direct, et notre trafic Instagram était éclaté sur plusieurs sources. Avec une seule convention de nommage, chaque campagne arrive dans le bon canal.",
+            "key_phrases": [
+              "Quick heads-up on UTM parameters",
+              "write every value in lowercase",
+              "showed up as direct traffic",
+              "lands in the right channel"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-tracking-cote-serveur",
+          "title_fr": "Proposer le tracking côté serveur",
+          "term_ids": [
+            "server-side-tracking",
+            "ad-blocker",
+            "tracking-issue",
+            "cross-device-tracking",
+            "conversions-api"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "The paid social team says they're losing conversions. Is it a tracking issue?",
+              "text_fr": "L'équipe social ads dit qu'elle perd des conversions. C'est un problème de tracking ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Partly. Browser restrictions and ad blockers stop some of our tags from firing, so the platforms see fewer conversions.",
+              "text_fr": "En partie. Les restrictions des navigateurs et les bloqueurs de publicité empêchent certaines de nos balises de se déclencher, donc les plateformes voient moins de conversions."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "What can we do about it?",
+              "text_fr": "Qu'est-ce qu'on peut faire ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "We could move to server-side tracking: our server sends the purchase directly, for example through Meta's Conversions API.",
+              "text_fr": "On pourrait passer au tracking côté serveur : notre serveur envoie directement l'achat, par exemple via la Conversions API de Meta."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Does that mean we can ignore consent?",
+              "text_fr": "Ça veut dire qu'on peut ignorer le consentement ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "No, the same consent rules apply. It gives us more reliable data, but it won't fix cross-device tracking on its own.",
+              "text_fr": "Non, les mêmes règles de consentement s'appliquent. Ça nous donne des données plus fiables, mais ça ne réglera pas à lui seul le suivi multi-appareils."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire « c'est un problème de tracking ? »",
+              "choices": [
+                "Is it a tracking question?",
+                "Is it a pursuit problem?",
+                "Is it a tracking issue?"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Issue est le mot courant pour un problème, surtout technique (faux ami : ce n'est pas une « issue » de secours, qui se dit exit). A question est une question qu'on pose, et pursuit veut dire poursuite, comme dans une course."
+            },
+            {
+              "prompt_fr": "Avec le server-side tracking, qui envoie l'information de conversion à la plateforme ?",
+              "choices": [
+                "The visitor's browser",
+                "The company's own server",
+                "The ad blocker"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Server-side : c'est le serveur de l'entreprise qui transmet la conversion, au lieu d'un script dans le navigateur (client-side). C'est justement pour ça que les bloqueurs de publicité ont moins d'effet, et ils n'envoient évidemment rien eux-mêmes."
+            },
+            {
+              "prompt_fr": "Que répond Ivan quand Sarah demande si on peut ignorer le consentement ?",
+              "choices": [
+                "No, the same consent rules still apply",
+                "Yes, because the data no longer goes through the browser",
+                "Yes, but only for purchases"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le tracking côté serveur change le chemin technique des données, pas les obligations légales : sans consentement, on n'envoie pas ces données à des fins publicitaires. Croire le contraire est une erreur fréquente, et risquée."
+            },
+            {
+              "prompt_fr": "Que veut dire « it won't fix cross-device tracking on its own » ?",
+              "choices": [
+                "It won't work on mobile devices",
+                "It won't be ready before next month",
+                "By itself, it won't solve the problem of following one person across their phone and laptop"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Cross-device tracking : reconnaître une même personne sur plusieurs appareils, ce qui demande en général une connexion à un compte. On its own veut dire « à lui seul ». Ivan ne parle ni d'un problème sur mobile ni d'un délai."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Sarah te demande une recommandation écrite. Écris un court e-mail qui explique le problème, propose le tracking côté serveur et précise ses limites.",
+            "model_answer_en": "Hi Sarah, we're losing some conversions because ad blockers and browser restrictions stop our tags from firing. I recommend moving our purchase tracking to server-side tracking, starting with the Conversions API. The same consent rules will still apply, and it won't solve cross-device tracking on its own, but it should make our data more reliable.",
+            "model_answer_fr": "Bonjour Sarah, nous perdons une partie des conversions car les bloqueurs de publicité et les restrictions des navigateurs empêchent nos balises de se déclencher. Je recommande de passer le suivi des achats en tracking côté serveur, en commençant par la Conversions API. Les mêmes règles de consentement s'appliqueront, et cela ne réglera pas à lui seul le suivi multi-appareils, mais nos données devraient être plus fiables.",
+            "key_phrases": [
+              "stop our tags from firing",
+              "I recommend moving",
+              "The same consent rules will still apply",
+              "on its own"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marketing-data-consentement-et-vie-privee",
+      "title_fr": "Mesurer dans le respect du consentement",
+      "title_en": "Measuring with consent and privacy in mind",
+      "situation_fr": "Le nouveau bandeau cookies fait baisser les chiffres, le DPO pose des questions sur un outil et une cliente demande l'effacement de ses données. Tu dois expliquer, rassurer et agir correctement.",
+      "guide": {
+        "intro_fr": "En Europe, le RGPD (GDPR en anglais) encadre tout ce que tu mesures. Le cookie banner, géré par une consent management platform (CMP), recueille le consent de chaque visiteur ; le consent rate indique la part de visiteurs qui acceptent. Le Consent Mode de Google adapte ensuite le comportement des balises à ce choix. Comme plusieurs navigateurs bloquent déjà les third-party cookies, les équipes misent sur la first-party data, collectée directement auprès des clients. Chaque traitement a besoin d'une legal basis (base légale) : le consentement ou, dans certains cas, le legitimate interest. Les personnes peuvent aussi exercer leurs droits, comme le right to erasure. Ton rôle : parler de ces sujets avec précision, sans jouer au juriste, et impliquer le DPO.",
+        "key_phrases": [
+          {
+            "en": "Our consent rate dropped after the new banner went live.",
+            "fr": "Notre taux de consentement a baissé après la mise en ligne du nouveau bandeau."
+          },
+          {
+            "en": "These tags only fire if the visitor opts in.",
+            "fr": "Ces balises ne se déclenchent que si le visiteur accepte."
+          },
+          {
+            "en": "What's the legal basis for this?",
+            "fr": "Quelle est la base légale pour ça ?"
+          },
+          {
+            "en": "Let's loop in the DPO.",
+            "fr": "Mettons le DPO dans la boucle."
+          },
+          {
+            "en": "We need a DPA with the vendor.",
+            "fr": "Il nous faut un contrat de sous-traitance avec le fournisseur."
+          },
+          {
+            "en": "We have one month to respond.",
+            "fr": "Nous avons un mois pour répondre."
+          }
+        ],
+        "tip_fr": "Faux ami : data controller n'est pas un « contrôleur de données » qui vérifie les chiffres, c'est le responsable de traitement, l'entreprise qui décide pourquoi et comment les données sont utilisées. Le prestataire qui les traite pour son compte est le data processor (sous-traitant)."
+      },
+      "lessons": [
+        {
+          "id": "marketing-data-baisse-taux-consentement",
+          "title_fr": "Expliquer la baisse du taux de consentement",
+          "term_ids": [
+            "consent",
+            "cookie-banner",
+            "consent-management-platform",
+            "consent-rate",
+            "consent-mode"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Amara",
+              "text_en": "Traffic in GA4 is down 25% since Monday, but sales are stable. What's going on?",
+              "text_fr": "Le trafic dans GA4 a baissé de 25 % depuis lundi, mais les ventes sont stables. Que se passe-t-il ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "It's the new cookie banner. It now has a Reject all button on the first screen, so our consent rate dropped.",
+              "text_fr": "C'est le nouveau bandeau cookies. Il a maintenant un bouton Tout refuser dès le premier écran, donc notre taux de consentement a baissé."
+            },
+            {
+              "speaker": "Amara",
+              "text_en": "So we're not losing visitors, we're just not seeing them?",
+              "text_fr": "Donc on ne perd pas de visiteurs, on ne les voit simplement plus ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Exactly. Without consent, our analytics tags don't set cookies, so those visits aren't measured in the usual way.",
+              "text_fr": "Exactement. Sans consentement, nos balises d'analytics ne déposent pas de cookies, donc ces visites ne sont pas mesurées de la façon habituelle."
+            },
+            {
+              "speaker": "Amara",
+              "text_en": "Can we get some of that data back?",
+              "text_fr": "Peut-on récupérer une partie de ces données ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Consent Mode can help: Google models part of the missing data. I'll also review the settings in our consent management platform with legal.",
+              "text_fr": "Le Consent Mode peut aider : Google modélise une partie des données manquantes. Je vais aussi revoir les réglages de notre plateforme de gestion du consentement avec le juridique."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « we're not losing visitors, we're just not seeing them » ?",
+              "choices": [
+                "The visitors are still there, but they are no longer measured",
+                "Fewer people visit the site",
+                "The visitors can't see the site anymore"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les visiteurs viennent toujours (les ventes sont stables), mais ceux qui refusent ne sont plus mesurés comme avant. Ce n'est pas une vraie baisse d'audience, et le site reste visible pour tout le monde."
+            },
+            {
+              "prompt_fr": "Comment dire « notre taux de consentement a baissé » ?",
+              "choices": [
+                "Our agreement level went down.",
+                "Our consent rate dropped.",
+                "Our consentment rate fell down."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Consent rate est le terme du métier. Agreement désigne un accord ou un contrat ; consentment n'existe pas en anglais, et fell down veut dire « tomber par terre » : pour un chiffre, on dit dropped ou fell."
+            },
+            {
+              "prompt_fr": "Que fait le Consent Mode de Google ?",
+              "choices": [
+                "It hides the cookie banner for returning visitors",
+                "It forces visitors to accept cookies",
+                "It adjusts how Google tags behave based on each visitor's choice, and can model missing data"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le Consent Mode adapte le comportement des balises Google au choix de chaque visiteur et peut modéliser une partie des données manquantes. Il n'oblige personne à accepter et ne remplace pas le bandeau, qui reste géré par la CMP."
+            },
+            {
+              "prompt_fr": "Ta responsable veut retirer le bouton « Tout refuser » pour faire remonter le taux. Que réponds-tu ?",
+              "choices": [
+                "I'd rather not: refusing must be as easy as accepting. Let's check with legal first.",
+                "Good idea, let's hide it on mobile first.",
+                "Sure, consent is optional for analytics."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En France, la CNIL demande que refuser soit aussi simple qu'accepter : cacher le bouton expose l'entreprise à une sanction. Et le consentement n'est pas facultatif pour la plupart des outils d'analytics. I'd rather not est une façon polie de dire non."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Ajoute une note dans le reporting hebdomadaire pour expliquer aux équipes la baisse de trafic dans GA4.",
+            "model_answer_en": "Note: traffic in GA4 is down since Monday because the new cookie banner makes rejecting as easy as accepting, and our consent rate dropped. Sales are stable, so this is a measurement change, not a real loss of visitors. Consent Mode will model part of the missing data, so please compare trends rather than absolute numbers for now.",
+            "model_answer_fr": "Note : le trafic dans GA4 baisse depuis lundi car le nouveau bandeau cookies rend le refus aussi simple que l'acceptation, et notre taux de consentement a baissé. Les ventes sont stables : c'est un changement de mesure, pas une vraie perte de visiteurs. Le Consent Mode va modéliser une partie des données manquantes, donc pour l'instant, comparez les tendances plutôt que les chiffres bruts.",
+            "key_phrases": [
+              "our consent rate dropped",
+              "this is a measurement change, not a real loss of visitors",
+              "Consent Mode will model part of the missing data",
+              "compare trends rather than absolute numbers"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-donnees-first-party",
+          "title_fr": "Miser sur les données first-party",
+          "term_ids": [
+            "first-party-data",
+            "zero-party-data",
+            "third-party-data",
+            "third-party-cookie",
+            "cookieless"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Our retargeting agency says our audiences are shrinking. Is that because of cookies?",
+              "text_fr": "Notre agence de retargeting dit que nos audiences rétrécissent. C'est à cause des cookies ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Largely, yes. Safari and Firefox already block third-party cookies, so third-party data is getting less reliable.",
+              "text_fr": "En grande partie, oui. Safari et Firefox bloquent déjà les cookies tiers, donc les données tierces deviennent moins fiables."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "So what's the plan? Go cookieless?",
+              "text_fr": "Alors, quel est le plan ? Passer au sans cookies ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Cookieless is more of a direction than a switch. The real plan is to grow our first-party data: accounts, purchases, newsletter sign-ups.",
+              "text_fr": "Le sans cookies, c'est plus une direction qu'un interrupteur. Le vrai plan, c'est de développer nos données first-party : comptes, achats, inscriptions à la newsletter."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "And the style quiz on the homepage, does that count?",
+              "text_fr": "Et le quiz de style sur la page d'accueil, ça compte ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Yes, that's zero-party data: people tell us their preferences directly. It's very valuable, as long as we use it the way we said we would.",
+              "text_fr": "Oui, ce sont des données déclaratives : les gens nous donnent directement leurs préférences. C'est très précieux, à condition de les utiliser comme nous l'avons annoncé."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre first-party data et third-party data ?",
+              "choices": [
+                "First-party data comes from the first visit only",
+                "First-party data is collected directly from your own customers; third-party data comes from other companies",
+                "First-party data is free; third-party data is always illegal"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Party veut dire « partie », au sens d'acteur : first party, c'est toi (l'entreprise qui collecte auprès de ses clients), third party, un tiers. Rien à voir avec la première visite, et les données tierces ne sont pas illégales en soi, elles sont surtout moins fiables et plus encadrées."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que la zero-party data ?",
+              "choices": [
+                "Data with no value for marketing",
+                "Data deleted after 30 days",
+                "Information that customers share with you on purpose, like their preferences in a quiz"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Les zero-party data sont les informations que le client donne volontairement : préférences, centres d'intérêt, réponses à un quiz. Zero ne veut pas dire « sans valeur », et la durée de conservation n'a rien à voir avec le nom."
+            },
+            {
+              "prompt_fr": "Que veut dire Moussa par « Cookieless is more of a direction than a switch » ?",
+              "choices": [
+                "It's a gradual change, not something you turn on in one day",
+                "It's a new setting in GA4",
+                "It's a decision for the legal team"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "A switch est un interrupteur : Moussa veut dire qu'on ne devient pas « sans cookies » d'un coup, c'est une évolution progressive. Ce n'est pas un réglage de GA4, ni une décision purement juridique."
+            },
+            {
+              "prompt_fr": "Complète : « Our audiences are ___ because browsers block third-party cookies. »",
+              "choices": [
+                "shortening",
+                "shrinking",
+                "reducing themselves"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "To shrink, c'est rétrécir, diminuer en taille : le mot naturel pour une audience. Shorten concerne une longueur ou une durée, et reduce themselves est un calque du pronominal français « se réduire »."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion de direction, explique en trois phrases pourquoi l'équipe doit investir dans les données first-party.",
+            "model_answer_en": "Our retargeting audiences are shrinking because many browsers already block third-party cookies. Instead of relying on third-party data, I suggest we grow our first-party data through accounts and newsletter sign-ups. Our quiz also gives us zero-party data, which is valuable as long as we use it the way we promised.",
+            "model_answer_fr": "Nos audiences de retargeting rétrécissent car de nombreux navigateurs bloquent déjà les cookies tiers. Plutôt que de dépendre de données tierces, je propose de développer nos données first-party grâce aux comptes et aux inscriptions à la newsletter. Notre quiz nous apporte aussi des données déclaratives, précieuses à condition de les utiliser comme nous l'avons promis.",
+            "key_phrases": [
+              "are shrinking",
+              "Instead of relying on third-party data",
+              "grow our first-party data",
+              "as long as we use it the way we promised"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-repondre-au-dpo",
+          "title_fr": "Répondre au DPO sur un nouvel outil",
+          "term_ids": [
+            "dpo",
+            "legal-basis",
+            "legitimate-interest",
+            "data-controller",
+            "data-processing-agreement",
+            "data-minimization"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Jonas",
+              "text_en": "I hear you want to add a heatmap tool. What data will it collect?",
+              "text_fr": "J'ai entendu dire que tu veux ajouter un outil de heatmap. Quelles données va-t-il collecter ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Clicks and scrolls on our product pages. We've turned off session recordings and masked all form fields.",
+              "text_fr": "Les clics et le défilement sur nos pages produit. Nous avons désactivé les enregistrements de session et masqué tous les champs de formulaire."
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "Good, that's data minimization. What's the legal basis? Consent or legitimate interest?",
+              "text_fr": "Bien, c'est de la minimisation des données. Quelle est la base légale ? Le consentement ou l'intérêt légitime ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "We planned to load it only after consent, through the banner. But I'd like your view on that.",
+              "text_fr": "Nous avions prévu de le charger seulement après consentement, via le bandeau. Mais j'aimerais ton avis là-dessus."
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "Consent is the safer option for this kind of tool. Also, we're the data controller, so we need a data processing agreement with the vendor before go-live.",
+              "text_fr": "Le consentement est l'option la plus sûre pour ce type d'outil. Et puis nous sommes responsables de traitement, donc il nous faut un contrat de sous-traitance avec le fournisseur avant la mise en ligne."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Understood. I'll ask their sales team for the DPA today.",
+              "text_fr": "Compris. Je demande le DPA à leur équipe commerciale aujourd'hui."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire data minimization ?",
+              "choices": [
+                "Compressing data to save storage space",
+                "Deleting all data at the end of each month",
+                "Collecting only the data you really need for a given purpose"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La minimisation des données est un principe du RGPD : ne collecter que ce qui est nécessaire à l'objectif. Ce n'est pas une question de compression technique, ni une suppression systématique chaque mois."
+            },
+            {
+              "prompt_fr": "Dans cette situation, qui est le data controller ?",
+              "choices": [
+                "The heatmap vendor",
+                "Priya's company, because it decides why and how the data is used",
+                "The DPO personally"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le data controller (responsable de traitement) est l'entreprise qui décide des finalités et des moyens : ici, l'employeur de Priya. Le fournisseur est le data processor (sous-traitant), et le DPO conseille et contrôle, mais n'est pas responsable de traitement à titre personnel."
+            },
+            {
+              "prompt_fr": "Comment demander poliment l'avis du DPO ?",
+              "choices": [
+                "I'd like your view on that.",
+                "Give me your opinion.",
+                "What do you think of it, you?"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "I'd like your view on that est poli et professionnel. Give me your opinion sonne comme un ordre, et What do you think of it, you? calque la tournure orale française « et toi, t'en penses quoi ? »."
+            },
+            {
+              "prompt_fr": "Pourquoi faut-il un DPA avant la mise en ligne ?",
+              "choices": [
+                "Because the tool costs more than the budget",
+                "Because the vendor will process personal data on the company's behalf",
+                "Because the DPA replaces the cookie banner"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le DPA (data processing agreement) est le contrat qui encadre un sous-traitant qui traite des données pour le compte du responsable de traitement : le RGPD l'exige. Il n'a rien à voir avec le prix et ne remplace pas le recueil du consentement."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris au DPO pour lui présenter l'outil avant sa validation : données collectées, base légale envisagée, contrat avec le fournisseur.",
+            "model_answer_en": "Hi Jonas, here's a summary of the heatmap tool before your review. It will only collect clicks and scrolls on product pages, with recordings turned off and form fields masked. We plan to rely on consent as the legal basis, and I've asked the vendor for their data processing agreement. Let me know if you need anything else.",
+            "model_answer_fr": "Bonjour Jonas, voici un résumé de l'outil de heatmap avant ta validation. Il collectera uniquement les clics et le défilement sur les pages produit, avec les enregistrements désactivés et les champs de formulaire masqués. Nous prévoyons de nous appuyer sur le consentement comme base légale, et j'ai demandé au fournisseur son contrat de sous-traitance. Dis-moi si tu as besoin d'autre chose.",
+            "key_phrases": [
+              "before your review",
+              "with recordings turned off",
+              "rely on consent as the legal basis",
+              "data processing agreement"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-demande-effacement",
+          "title_fr": "Traiter une demande d'effacement",
+          "term_ids": [
+            "data-subject-request",
+            "right-to-erasure",
+            "privacy-policy",
+            "pseudonymization",
+            "opt-out"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "A customer has asked us to delete all her data. Support has logged it as a data subject request.",
+              "text_fr": "Une cliente nous a demandé de supprimer toutes ses données. Le support l'a enregistrée comme demande d'exercice de droits."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "OK, it's a right to erasure request. Our privacy policy says we answer within one month, so let's start today.",
+              "text_fr": "OK, c'est une demande au titre du droit à l'effacement. Notre politique de confidentialité indique que nous répondons sous un mois, donc commençons aujourd'hui."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Is unsubscribing her from our emails enough?",
+              "text_fr": "La désinscrire de nos e-mails, ça suffit ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "No, an opt-out only stops marketing emails. Erasure means removing her from the CRM, the email tool and our analytics exports.",
+              "text_fr": "Non, un opt-out arrête seulement les e-mails marketing. L'effacement veut dire la supprimer du CRM, de l'outil d'e-mailing et de nos exports d'analytics."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "What about the data in our reporting tables?",
+              "text_fr": "Et les données dans nos tables de reporting ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Those use pseudonymization: IDs instead of names. But pseudonymized data is still personal data, so I'll check with the DPO.",
+              "text_fr": "Elles utilisent la pseudonymisation : des identifiants au lieu des noms. Mais des données pseudonymisées restent des données personnelles, donc je vérifie avec le DPO."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que contient une privacy policy ?",
+              "choices": [
+                "How the company collects and uses personal data, and the rights people have",
+                "The internal rules for employees' passwords",
+                "A private document that only the legal team can read"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La privacy policy (politique de confidentialité) est publique : elle explique quelles données sont collectées, pourquoi, combien de temps, et comment exercer ses droits. Privacy renvoie ici à la vie privée, pas à un document « privé » ou secret."
+            },
+            {
+              "prompt_fr": "Des données pseudonymisées sont-elles encore des données personnelles ?",
+              "choices": [
+                "No, once names are replaced by IDs, the GDPR no longer applies",
+                "Yes, because they can still be linked back to a person with extra information",
+                "Only if they include an email address"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Pseudonymiser (remplacer le nom par un identifiant) n'est pas anonymiser : avec la table de correspondance, on peut retrouver la personne. Le RGPD s'applique donc toujours, même sans adresse e-mail dans la table."
+            },
+            {
+              "prompt_fr": "Complète : « Support has ___ it as a data subject request. »",
+              "choices": [
+                "booked",
+                "noted down",
+                "logged"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To log a request, c'est l'enregistrer dans un outil, par exemple sous forme de ticket. Booked se dit d'une réservation, et noted down évoque une note prise à la main, pas un suivi officiel."
+            },
+            {
+              "prompt_fr": "Une collègue propose de simplement désinscrire la cliente. Que réponds-tu ?",
+              "choices": [
+                "Perfect, that's enough.",
+                "An opt-out isn't enough here: she asked for erasure, so we need to delete her data everywhere.",
+                "Let's wait until she asks again."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un opt-out arrête les messages marketing, mais la personne reste dans les bases. Une demande d'effacement oblige à supprimer ses données partout où c'est nécessaire, dans le délai prévu : attendre une relance n'est pas une option."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un message Slack aux équipes CRM et e-mailing pour lancer l'effacement : délai, outils concernés, point avec le DPO.",
+            "model_answer_en": "Hi team, we've received a right to erasure request from a customer, and we have one month to respond. An opt-out isn't enough here: please delete her contact from the CRM and the email tool, and remove her from any exports. I'm checking with the DPO about our pseudonymized reporting tables.",
+            "model_answer_fr": "Bonjour à tous, nous avons reçu une demande d'effacement de la part d'une cliente, et nous avons un mois pour répondre. Un opt-out ne suffit pas ici : merci de supprimer son contact du CRM et de l'outil d'e-mailing, et de la retirer de tous les exports. Je vérifie avec le DPO pour nos tables de reporting pseudonymisées.",
+            "key_phrases": [
+              "right to erasure request",
+              "we have one month to respond",
+              "An opt-out isn't enough here",
+              "checking with the DPO"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marketing-data-debat-attribution",
+      "title_fr": "Défendre un modèle d'attribution",
+      "title_en": "Debating attribution",
+      "situation_fr": "Chaque canal affirme avoir généré les mêmes ventes. Tu dois expliquer les modèles d'attribution et les écarts entre outils, puis proposer une mesure plus solide de ce que le marketing rapporte vraiment.",
+      "guide": {
+        "intro_fr": "L'attribution consiste à répartir le mérite d'une conversion entre les points de contact du parcours. Avec le last-click, tout revient au dernier clic ; avec le first-click, au premier. Le multi-touch partage le crédit, et la data-driven attribution utilise un algorithme. Chaque plateforme publicitaire a ses propres règles, notamment son attribution window et les view-through conversions, d'où des data discrepancies avec GA4. Mais l'attribution ne dit pas si une campagne a vraiment créé des ventes en plus : c'est la question de l'incrementality, qu'on mesure avec des tests (holdout group, geo experiment). Pour arbitrer le budget global, on utilise aussi le marketing mix modeling. L'analyste joue souvent l'arbitre entre des équipes qui veulent toutes le mérite.",
+        "key_phrases": [
+          {
+            "en": "Which attribution model are we using?",
+            "fr": "Quel modèle d'attribution utilisons-nous ?"
+          },
+          {
+            "en": "Last click gives all the credit to search.",
+            "fr": "Le dernier clic donne tout le mérite au search."
+          },
+          {
+            "en": "Both platforms are counting the same sale.",
+            "fr": "Les deux plateformes comptent la même vente."
+          },
+          {
+            "en": "Would those sales have happened anyway?",
+            "fr": "Ces ventes auraient-elles eu lieu de toute façon ?"
+          },
+          {
+            "en": "Let's run a holdout test.",
+            "fr": "Faisons un test avec un groupe témoin."
+          },
+          {
+            "en": "We're seeing diminishing returns on this channel.",
+            "fr": "On observe des rendements décroissants sur ce canal."
+          }
+        ],
+        "tip_fr": "Credit désigne ici le mérite d'une conversion : to give credit to, to take credit for. Ce n'est pas un crédit bancaire. Et attention à eventually, qui veut dire « finalement, à terme », jamais « éventuellement » (qui se dit possibly)."
+      },
+      "lessons": [
+        {
+          "id": "marketing-data-comparer-modeles-attribution",
+          "title_fr": "Comparer les modèles d'attribution",
+          "term_ids": [
+            "attribution",
+            "attribution-model",
+            "last-click-attribution",
+            "first-click-attribution",
+            "multi-touch-attribution",
+            "data-driven-attribution"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Paid social looks terrible in the weekly report again. Hardly any conversions.",
+              "text_fr": "Le social payant a encore l'air catastrophique dans le rapport hebdomadaire. Presque aucune conversion."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "That's because the report uses last-click attribution. Many people see your ads, then search for us on Google and buy.",
+              "text_fr": "C'est parce que le rapport utilise l'attribution au dernier clic. Beaucoup de gens voient tes publicités, puis nous cherchent sur Google et achètent."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "So search gets all the credit. Can we switch to first-click attribution?",
+              "text_fr": "Donc le search récupère tout le mérite. On peut passer à l'attribution au premier clic ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "That would just give all the credit to you instead. No attribution model is perfect.",
+              "text_fr": "Ça te donnerait juste tout le mérite à sa place. Aucun modèle d'attribution n'est parfait."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "What about multi-touch attribution, then?",
+              "text_fr": "Et l'attribution multitouch, alors ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Better. GA4 uses data-driven attribution by default, which shares the credit across touchpoints. I'll show both views side by side.",
+              "text_fr": "C'est mieux. GA4 utilise par défaut l'attribution basée sur les données, qui partage le mérite entre les points de contact. Je vais montrer les deux vues côte à côte."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Avec la last-click attribution, à qui revient la vente ?",
+              "choices": [
+                "To the first ad the customer saw",
+                "To the last channel the customer clicked before buying",
+                "To every channel equally"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Last click : tout le mérite va au dernier canal cliqué avant l'achat, souvent le search ou le direct. La première pub vue correspond au first-click, et le partage égal est un modèle multi-touch (linéaire)."
+            },
+            {
+              "prompt_fr": "Que veut dire « search gets all the credit » ?",
+              "choices": [
+                "Search gets a bigger budget next month",
+                "Search pays for all the sales",
+                "Search is seen as the reason for all the sales"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Credit, c'est ici le mérite : le search est considéré comme la cause de toutes les ventes. Le mot n'a rien de financier dans ce contexte, même si un meilleur mérite peut ensuite influencer le budget."
+            },
+            {
+              "prompt_fr": "Pourquoi Kenji n'est-il pas convaincu par le first-click ?",
+              "choices": [
+                "Because it would just move all the credit to another channel",
+                "Because first-click only works for mobile apps",
+                "Because first-click is forbidden by the GDPR"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le first-click a le défaut inverse du last-click : il donne tout au premier contact au lieu du dernier. Il n'est réservé ni aux applications, ni interdit par le RGPD, qui ne concerne pas le choix d'un modèle d'attribution."
+            },
+            {
+              "prompt_fr": "Comment dire « je vais montrer les deux vues côte à côte » ?",
+              "choices": [
+                "I'll show both views next to next.",
+                "I'll show both views side by side.",
+                "I'll show the two views coast to coast."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Côte à côte se dit side by side. Next to next n'existe pas (on dit next to each other), et coast to coast veut dire « d'une côte à l'autre », comme traverser les États-Unis."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Lucía te demande sur Slack pourquoi ses campagnes semblent inutiles. Réponds-lui en expliquant le biais du dernier clic et ce que tu proposes.",
+            "context_en": "Lucía: Honestly, should I stop paid social? The report says it brings nothing.",
+            "model_answer_en": "Not so fast! The weekly report uses last-click attribution, so search gets the credit for sales that often start with your ads. Switching to first-click would only move the problem. From next week, I'll show the data-driven attribution view side by side, so we can see how each channel contributes.",
+            "model_answer_fr": "Pas si vite ! Le rapport hebdomadaire utilise l'attribution au dernier clic, donc le search récupère le mérite de ventes qui commencent souvent avec tes publicités. Passer au premier clic ne ferait que déplacer le problème. Dès la semaine prochaine, je montrerai la vue en attribution basée sur les données côte à côte, pour voir ce que chaque canal apporte.",
+            "key_phrases": [
+              "uses last-click attribution",
+              "gets the credit for",
+              "would only move the problem",
+              "side by side"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-ecarts-plateformes-ga4",
+          "title_fr": "Expliquer l'écart entre les plateformes et GA4",
+          "term_ids": [
+            "data-discrepancy",
+            "view-through-conversion",
+            "attribution-window",
+            "ga4",
+            "source-of-truth"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Grace",
+              "text_en": "Meta reports 900 purchases last month, Google Ads 700, and our shop only had 1,000 orders. That doesn't add up.",
+              "text_fr": "Meta annonce 900 achats le mois dernier, Google Ads 700, et notre boutique n'a eu que 1 000 commandes. Ça ne colle pas."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "It's a classic data discrepancy. Each platform claims every sale it touched, so the same order can be counted twice.",
+              "text_fr": "C'est un écart de données classique. Chaque plateforme revendique toutes les ventes auxquelles elle a contribué, donc une même commande peut être comptée deux fois."
+            },
+            {
+              "speaker": "Grace",
+              "text_en": "Why would Meta count a sale if nobody clicked?",
+              "text_fr": "Pourquoi Meta compterait-il une vente si personne n'a cliqué ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Those are view-through conversions: someone saw the ad, didn't click, and bought within a day. The attribution window also differs between platforms.",
+              "text_fr": "Ce sont des conversions après affichage : quelqu'un a vu la pub, n'a pas cliqué, et a acheté dans la journée. La fenêtre d'attribution varie aussi d'une plateforme à l'autre."
+            },
+            {
+              "speaker": "Grace",
+              "text_en": "So which number goes in the board deck?",
+              "text_fr": "Alors, quel chiffre je mets dans la présentation au conseil ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Shop orders are our source of truth. GA4 helps us split them by channel, and the platform numbers are for optimising campaigns.",
+              "text_fr": "Les commandes de la boutique sont notre source de référence. GA4 nous aide à les répartir par canal, et les chiffres des plateformes servent à optimiser les campagnes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « That doesn't add up » ?",
+              "choices": [
+                "That number is too low",
+                "That doesn't make sense: the numbers don't match",
+                "We need to add the numbers together"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "It doesn't add up est une expression : « ça ne colle pas, ce n'est pas cohérent ». Ici, 900 + 700 dépasse le total réel de commandes. Grace ne demande pas d'additionner, elle constate l'incohérence."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'une view-through conversion ?",
+              "choices": [
+                "A purchase by someone who saw an ad without clicking on it",
+                "A purchase made after watching a full video",
+                "A visit that lasted longer than one minute"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "View-through : la personne a vu la publicité (impression), n'a pas cliqué, puis a converti dans la fenêtre prévue. Il ne s'agit ni d'une vidéo regardée en entier, ni d'une durée de visite."
+            },
+            {
+              "prompt_fr": "Complète : « Shop orders are our source of ___. »",
+              "choices": [
+                "reality",
+                "true",
+                "truth"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Source of truth (source de référence) est l'expression consacrée : il faut le nom truth. True est un adjectif, et source of reality ne se dit pas."
+            },
+            {
+              "prompt_fr": "Grace veut additionner les conversions de Meta et de Google Ads dans le rapport. Que réponds-tu ?",
+              "choices": [
+                "Let's not add them up: the same order can be counted by both platforms.",
+                "Sure, and let's add GA4 too, to be complete.",
+                "Yes, but only for last month."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Additionner les plateformes compte plusieurs fois les mêmes commandes, puisque chacune revendique les ventes qu'elle a touchées. Ajouter GA4 aggraverait le double comptage, et limiter la période ne règle rien."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris à Grace un e-mail qui explique l'écart entre les chiffres et indique lequel utiliser dans la présentation.",
+            "model_answer_en": "Hi Grace, the platforms report more purchases than we actually had because each one claims every sale it touched, including view-through conversions. Their attribution windows are also different, so the numbers can't be added up. For the board deck, please use shop orders as our source of truth, with the GA4 split by channel.",
+            "model_answer_fr": "Bonjour Grace, les plateformes annoncent plus d'achats que nous n'en avons réellement eu, car chacune revendique toutes les ventes auxquelles elle a contribué, y compris les conversions après affichage. Leurs fenêtres d'attribution sont aussi différentes, donc on ne peut pas additionner ces chiffres. Pour la présentation au conseil, utilise les commandes de la boutique comme source de référence, avec la répartition par canal de GA4.",
+            "key_phrases": [
+              "claims every sale it touched",
+              "including view-through conversions",
+              "can't be added up",
+              "as our source of truth"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-mesurer-incrementalite",
+          "title_fr": "Prouver l'impact réel d'une campagne",
+          "term_ids": [
+            "incrementality",
+            "lift",
+            "holdout-group",
+            "geo-experiment",
+            "confidence-interval"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Our retargeting campaign has a ROAS of 12. It's our best channel by far.",
+              "text_fr": "Notre campagne de retargeting a un ROAS de 12. C'est de loin notre meilleur canal."
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "Maybe. But many of those people were already about to buy. The real question is incrementality: would they have bought anyway?",
+              "text_fr": "Peut-être. Mais beaucoup de ces personnes allaient déjà acheter. La vraie question, c'est l'incrémentalité : auraient-elles acheté de toute façon ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "How do we find out?",
+              "text_fr": "Comment on le sait ?"
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "We keep a holdout group, say 10% of the audience, who don't see the ads, and compare their sales with everyone else's. The difference is the lift.",
+              "text_fr": "On garde un groupe témoin, disons 10 % de l'audience, qui ne voit pas les pubs, et on compare ses ventes avec celles des autres. La différence, c'est le lift."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "And for TV or billboards, where we can't exclude people?",
+              "text_fr": "Et pour la télé ou l'affichage, où on ne peut exclure personne ?"
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "Then we run a geo experiment: we advertise in some regions and not in similar ones. I'll report the lift with a confidence interval, not just one number.",
+              "text_fr": "Alors on fait un test géographique : on fait de la pub dans certaines régions et pas dans d'autres, comparables. Je présenterai le lift avec un intervalle de confiance, pas un seul chiffre."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que mesure l'incrementality ?",
+              "choices": [
+                "How much the budget increases each month",
+                "The extra sales a campaign really caused, compared with no campaign",
+                "How many times an ad was shown"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'incrémentalité, ce sont les ventes en plus réellement causées par la campagne, par rapport à ce qui se serait passé sans elle. Increment ne parle pas ici de hausse de budget, et le nombre d'affichages, ce sont les impressions."
+            },
+            {
+              "prompt_fr": "Comment dire « auraient-elles acheté de toute façon ? »",
+              "choices": [
+                "Would they have bought in any way?",
+                "Had they buy anyway?",
+                "Would they have bought anyway?"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "De toute façon se dit anyway, avec would have + participe passé (bought) pour le conditionnel passé. In any way signifie « de quelque manière que ce soit », et had they buy est grammaticalement faux."
+            },
+            {
+              "prompt_fr": "À quoi sert un holdout group ?",
+              "choices": [
+                "It's a group that doesn't see the campaign, used as a comparison",
+                "It's the group of the best customers",
+                "It's a group of people waiting for approval"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le holdout group est volontairement exclu de la campagne : on compare ses ventes à celles du groupe exposé pour mesurer le vrai effet. Ce n'est ni un segment de meilleurs clients, ni une liste d'attente (to hold on veut dire « patienter », mais to hold out ici, c'est « mettre de côté »)."
+            },
+            {
+              "prompt_fr": "Pourquoi Rafael veut-il donner un intervalle de confiance ?",
+              "choices": [
+                "Because the director doesn't trust him",
+                "To show the range where the real effect probably lies, instead of a falsely precise number",
+                "To make the result harder to read"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un intervalle de confiance donne la fourchette dans laquelle se situe probablement le vrai effet : c'est plus honnête qu'un chiffre unique trop précis. Confidence n'a rien à voir avec la confiance qu'on accorde à une personne, et le but est d'être clair, pas de compliquer."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige la partie « Méthode » d'une proposition de test d'incrémentalité pour la campagne de retargeting.",
+            "context_en": "Test proposal: Is retargeting incremental?",
+            "model_answer_en": "We will keep a holdout group of 10% of the retargeting audience, who won't see the ads for four weeks. We'll compare their sales with the exposed group to measure the lift, and report it with a confidence interval. This will tell us whether the campaign drives incremental sales or mostly reaches people who would have bought anyway.",
+            "model_answer_fr": "Nous garderons un groupe témoin de 10 % de l'audience de retargeting, qui ne verra pas les publicités pendant quatre semaines. Nous comparerons ses ventes avec celles du groupe exposé pour mesurer le lift, et nous le présenterons avec un intervalle de confiance. Cela nous dira si la campagne génère des ventes incrémentales ou touche surtout des personnes qui auraient acheté de toute façon.",
+            "key_phrases": [
+              "keep a holdout group",
+              "to measure the lift",
+              "with a confidence interval",
+              "would have bought anyway"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-presenter-mmm",
+          "title_fr": "Présenter un modèle de mix marketing",
+          "term_ids": [
+            "marketing-mix-modeling",
+            "diminishing-returns",
+            "adstock",
+            "budget-allocation",
+            "marketing-measurement",
+            "self-reported-attribution"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Before we plan next year, I want one view of what each channel really brings in.",
+              "text_fr": "Avant de planifier l'année prochaine, je veux une vue unique de ce que chaque canal rapporte vraiment."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "That's what the marketing mix modeling is for. It uses weekly spend and sales over two years, so it doesn't need cookies.",
+              "text_fr": "C'est le rôle du modèle de mix marketing. Il utilise les dépenses et les ventes hebdomadaires sur deux ans, donc il n'a pas besoin de cookies."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "And what does it say?",
+              "text_fr": "Et que dit-il ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Paid search is showing diminishing returns: each extra thousand euros brings fewer sales than the last. TV has a strong adstock, so its effect lasts several weeks after the ads stop.",
+              "text_fr": "Le search payant montre des rendements décroissants : chaque millier d'euros supplémentaire rapporte moins de ventes que le précédent. La télé a un fort effet de rémanence : son effet dure plusieurs semaines après l'arrêt des pubs."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "So you'd change the budget allocation?",
+              "text_fr": "Donc tu changerais la répartition du budget ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Slightly, yes. But I'd check it against our tests and self-reported attribution first. Good marketing measurement combines several methods.",
+              "text_fr": "Légèrement, oui. Mais je le confronterais d'abord à nos tests et à l'attribution déclarative. Une bonne mesure de la performance marketing combine plusieurs méthodes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire diminishing returns ?",
+              "choices": [
+                "Each extra euro spent brings less result than the previous one",
+                "The channel is losing money",
+                "Customers are returning fewer products"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Rendements décroissants : chaque euro supplémentaire rapporte moins que le précédent, sans forcément perdre de l'argent. Returns veut dire ici « retours sur investissement », pas retours de produits."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que l'adstock ?",
+              "choices": [
+                "A stock of ads that were never used",
+                "The idea that an ad's effect lasts for some time after it was shown",
+                "The price of ad space on TV"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'adstock modélise l'effet de rémanence : une publicité continue d'agir quelque temps après sa diffusion, surtout à la télé. Stock ne désigne pas un stock de publicités, et le prix de l'espace publicitaire est le coût média."
+            },
+            {
+              "prompt_fr": "Complète : « I'd check it ___ our tests first. »",
+              "choices": [
+                "towards",
+                "in front of",
+                "against"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To check something against something, c'est le confronter, le comparer à une autre source. Towards veut dire « vers », et in front of « devant » : deux calques possibles de « par rapport à » qui ne fonctionnent pas ici."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que la self-reported attribution ?",
+              "choices": [
+                "Asking customers directly how they heard about the brand",
+                "Each platform reporting its own conversions",
+                "A model that the analyst builds alone"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'attribution déclarative, c'est la question « Comment nous avez-vous connus ? » posée au client. Self renvoie au client qui se déclare, pas aux plateformes qui se notent elles-mêmes, ni à l'analyste."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En comité budget, présente en trois ou quatre phrases ce que dit le MMM et ta recommandation prudente.",
+            "model_answer_en": "Our marketing mix model shows diminishing returns on paid search, so the last part of that budget brings fewer sales. TV has a strong adstock, which means its effect lasts several weeks. I'd suggest a small shift in budget allocation, and we'll check it against our next incrementality test before going further.",
+            "model_answer_fr": "Notre modèle de mix marketing montre des rendements décroissants sur le search payant : la dernière partie de ce budget rapporte moins de ventes. La télé a un fort effet de rémanence, ce qui veut dire que son effet dure plusieurs semaines. Je propose un léger ajustement de la répartition du budget, et nous le confronterons à notre prochain test d'incrémentalité avant d'aller plus loin.",
+            "key_phrases": [
+              "shows diminishing returns on paid search",
+              "has a strong adstock",
+              "a small shift in budget allocation",
+              "check it against"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marketing-data-segmentation-crm",
+      "title_fr": "Segmenter la base clients pour une campagne",
+      "title_en": "Segmenting the customer base for a campaign",
+      "situation_fr": "L'équipe CRM prépare une campagne de fidélisation. Tu dois unifier les données, construire les segments, repérer les clients à risque et nettoyer la base avant l'envoi.",
+      "guide": {
+        "intro_fr": "Une bonne campagne CRM commence par de bonnes données. La customer data platform (CDP) rassemble les données transactionnelles (achats) et comportementales (visites, clics) pour créer une single customer view, grâce à l'identity resolution qui relie les identifiants d'une même personne. On découpe ensuite la customer base en customer segments, souvent avec une RFM analysis : recency (date du dernier achat), frequency (fréquence) et monetary value (montant dépensé). Des modèles prédictifs, comme la churn prediction, repèrent les at-risk customers. Avant l'envoi, on vérifie la CRM hygiene : doublons, champs vides, contacts inactifs. En anglais, on pull une liste (on l'extrait) et on build un segment.",
+        "key_phrases": [
+          {
+            "en": "Can you pull a list of customers who haven't bought in six months?",
+            "fr": "Tu peux extraire une liste des clients qui n'ont pas acheté depuis six mois ?"
+          },
+          {
+            "en": "Let's split the customer base into segments.",
+            "fr": "Découpons la base clients en segments."
+          },
+          {
+            "en": "These are our high-value customers.",
+            "fr": "Ce sont nos clients à forte valeur."
+          },
+          {
+            "en": "The model flags them as at risk.",
+            "fr": "Le modèle les signale comme à risque."
+          },
+          {
+            "en": "We have a lot of duplicates in the CRM.",
+            "fr": "Nous avons beaucoup de doublons dans le CRM."
+          },
+          {
+            "en": "Let's exclude inactive subscribers.",
+            "fr": "Excluons les abonnés inactifs."
+          }
+        ],
+        "tip_fr": "Faux ami : un client « fidèle » se dit a loyal customer, et la fidélisation customer retention, pas fidelization, qui n'existe pas. Pour « relancer » des clients partis, on dit to win back ou to re-engage, pas to relaunch."
+      },
+      "lessons": [
+        {
+          "id": "marketing-data-unifier-donnees-clients",
+          "title_fr": "Unifier les données clients dans la CDP",
+          "term_ids": [
+            "customer-data-platform",
+            "single-customer-view",
+            "identity-resolution",
+            "transactional-data",
+            "behavioral-data"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Chloé",
+              "text_en": "For the loyalty campaign, I want to target people based on what they browse, not just what they buy.",
+              "text_fr": "Pour la campagne de fidélité, je veux cibler les gens selon ce qu'ils consultent, pas seulement ce qu'ils achètent."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "That's the point of the customer data platform. It brings together transactional data from the shop and behavioral data from the website and app.",
+              "text_fr": "C'est tout l'intérêt de la plateforme de données clients. Elle rassemble les données transactionnelles de la boutique et les données comportementales du site et de l'appli."
+            },
+            {
+              "speaker": "Chloé",
+              "text_en": "But the same person often has two or three profiles, right?",
+              "text_fr": "Mais une même personne a souvent deux ou trois profils, non ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, that's where identity resolution comes in. When someone logs in, the CDP links their email, customer ID and devices to one profile.",
+              "text_fr": "Oui, c'est là qu'intervient la résolution d'identité. Quand quelqu'un se connecte, la CDP relie son e-mail, son identifiant client et ses appareils à un seul profil."
+            },
+            {
+              "speaker": "Chloé",
+              "text_en": "So we finally get a single customer view?",
+              "text_fr": "Donc on obtient enfin une vue client unique ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "For logged-in customers, yes. For anonymous visitors, it stays partial, so don't expect 100% coverage.",
+              "text_fr": "Pour les clients connectés, oui. Pour les visiteurs anonymes, elle reste partielle, donc ne t'attends pas à une couverture à 100 %."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre transactional data et behavioral data ?",
+              "choices": [
+                "Transactional data is bought from banks; behavioral data is free",
+                "Transactional data is always older than behavioral data",
+                "Transactional data is about purchases; behavioral data is about actions like visits and clicks"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Les données transactionnelles décrivent les achats (date, montant, produits) ; les données comportementales, ce que la personne fait : pages vues, clics, recherches. Elles ne viennent pas des banques, et leur ancienneté n'a rien à voir avec leur nom."
+            },
+            {
+              "prompt_fr": "Que fait l'identity resolution ?",
+              "choices": [
+                "It checks people's ID cards",
+                "It links several identifiers of the same person to one profile",
+                "It deletes anonymous visitors"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La résolution d'identité rapproche e-mail, identifiant client, appareils et cookies d'une même personne pour en faire un seul profil. Il ne s'agit pas de vérifier une carte d'identité, ni de supprimer les visiteurs anonymes."
+            },
+            {
+              "prompt_fr": "Que veut dire « that's where identity resolution comes in » ?",
+              "choices": [
+                "That's the moment when identity resolution becomes useful",
+                "That's when the identity team enters the room",
+                "That's when identity resolution gets installed"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "That's where X comes in veut dire « c'est là que X intervient, devient utile ». Come in n'a pas ici son sens littéral d'entrer dans une pièce, et il n'est pas question d'installation."
+            },
+            {
+              "prompt_fr": "Comment dire « ne t'attends pas à une couverture à 100 % » ?",
+              "choices": [
+                "Don't wait for 100% coverage.",
+                "Don't expect 100% coverage.",
+                "Don't hope a 100% covering."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "S'attendre à se dit to expect. To wait for veut dire « attendre » (le temps qui passe) : c'est l'erreur classique des francophones. Hope demande for ou that, et covering n'est pas le mot pour une couverture de données."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Chloé demande sur Slack si elle peut cibler tous les visiteurs selon leur navigation. Réponds-lui avec ce que la CDP permet et ses limites.",
+            "context_en": "Chloé: Can we target everyone who looked at the new collection, even if they didn't buy?",
+            "model_answer_en": "Yes for logged-in customers: the CDP combines their transactional data and behavioral data into one profile. For anonymous visitors, identity resolution can't link their visits to a person, so the single customer view stays partial. I'd start with logged-in customers and expand later.",
+            "model_answer_fr": "Oui pour les clients connectés : la CDP réunit leurs données transactionnelles et comportementales dans un seul profil. Pour les visiteurs anonymes, la résolution d'identité ne peut pas relier leurs visites à une personne, donc la vue client unique reste partielle. Je commencerais par les clients connectés et j'élargirais ensuite.",
+            "key_phrases": [
+              "combines their transactional data and behavioral data",
+              "can't link their visits to a person",
+              "the single customer view stays partial",
+              "expand later"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-segments-rfm",
+          "title_fr": "Construire des segments RFM",
+          "term_ids": [
+            "rfm-analysis",
+            "recency",
+            "purchase-frequency",
+            "customer-segment",
+            "high-value-customer",
+            "customer-base"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Fatou",
+              "text_en": "Can you split the customer base for the loyalty campaign? I don't want to send the same email to everyone.",
+              "text_fr": "Tu peux découper la base clients pour la campagne de fidélité ? Je ne veux pas envoyer le même e-mail à tout le monde."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Sure. I'll run an RFM analysis: recency, frequency and monetary value.",
+              "text_fr": "Bien sûr. Je vais faire une analyse RFM : récence, fréquence et montant."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "What does recency tell us?",
+              "text_fr": "Que nous dit la récence ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "How long ago someone last bought. It's usually a strong sign that they'll buy again.",
+              "text_fr": "Il y a combien de temps une personne a acheté pour la dernière fois. C'est en général un bon indicateur qu'elle rachètera."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "And our high-value customers?",
+              "text_fr": "Et nos clients à forte valeur ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "That segment has recent purchases, a high purchase frequency and big baskets. I'd give them early access, not a discount. I'll share six customer segments by Thursday.",
+              "text_fr": "Ce segment a des achats récents, une fréquence d'achat élevée et de gros paniers. Je leur offrirais un accès en avant-première, pas une remise. Je partage six segments de clients d'ici jeudi."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifient les trois lettres de RFM ?",
+              "choices": [
+                "Reach, Frequency, Media",
+                "Recency, Frequency, Monetary value",
+                "Revenue, Funnel, Marketing"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "RFM = Recency (récence du dernier achat), Frequency (fréquence d'achat), Monetary value (montant dépensé). Reach et media appartiennent au vocabulaire de la publicité, et funnel au tunnel de conversion."
+            },
+            {
+              "prompt_fr": "Que mesure la recency ?",
+              "choices": [
+                "How long ago a customer last bought",
+                "How old the customer's account is",
+                "How often a customer opens emails"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La récence, c'est le temps écoulé depuis le dernier achat. Ne la confonds pas avec l'ancienneté du compte (tenure), ni avec l'engagement e-mail, qui est un autre indicateur."
+            },
+            {
+              "prompt_fr": "Complète : « I'll share six customer segments ___ Thursday. »",
+              "choices": [
+                "until",
+                "by",
+                "for"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "By Thursday veut dire « d'ici jeudi, au plus tard jeudi ». Until indique une durée continue (« jusqu'à jeudi », par exemple I'm off until Thursday) : c'est l'erreur fréquente des francophones. For Thursday serait compris mais moins précis sur l'échéance."
+            },
+            {
+              "prompt_fr": "Pourquoi Tomasz propose-t-il un accès en avant-première plutôt qu'une remise aux high-value customers ?",
+              "choices": [
+                "Because discounts are not allowed in emails",
+                "Because they are the least loyal customers",
+                "Because they already buy often, so a discount would cut margin on sales they'd make anyway"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Ces clients achètent déjà souvent et beaucoup : une remise réduirait la marge sur des ventes qui auraient eu lieu de toute façon. Un avantage exclusif les valorise sans coûter de marge. Les remises sont autorisées par e-mail, et ce sont au contraire les clients les plus fidèles."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige pour l'équipe CRM la description du segment « clients à forte valeur » : critères et action recommandée.",
+            "context_en": "Loyalty campaign: segment brief",
+            "model_answer_en": "High-value customers: people with a recent purchase, a high purchase frequency and a large average basket, based on our RFM analysis. They already buy often, so a discount would mostly cut our margin. I recommend early access to the new collection instead.",
+            "model_answer_fr": "Clients à forte valeur : personnes ayant un achat récent, une fréquence d'achat élevée et un panier moyen important, d'après notre analyse RFM. Ils achètent déjà souvent, donc une remise réduirait surtout notre marge. Je recommande plutôt un accès en avant-première à la nouvelle collection.",
+            "key_phrases": [
+              "High-value customers",
+              "a high purchase frequency",
+              "based on our RFM analysis",
+              "I recommend early access"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-reperer-clients-a-risque",
+          "title_fr": "Repérer les clients à risque",
+          "term_ids": [
+            "at-risk-customer",
+            "lapsed-customer",
+            "churn-prediction",
+            "propensity-model",
+            "uplift-modeling"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "I want a win-back campaign for customers we're about to lose. Who should we target?",
+              "text_fr": "Je veux une campagne de reconquête pour les clients qu'on est sur le point de perdre. Qui devons-nous cibler ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Our churn prediction model scores every customer. About 8,000 are flagged as at-risk customers this month.",
+              "text_fr": "Notre modèle de prédiction de l'attrition attribue un score à chaque client. Environ 8 000 sont signalés comme clients à risque ce mois-ci."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "And the lapsed customers, the ones who haven't bought in over a year?",
+              "text_fr": "Et les clients inactifs, ceux qui n'ont rien acheté depuis plus d'un an ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "They're a separate segment. They need a different message, and we should expect lower response rates.",
+              "text_fr": "C'est un segment à part. Il leur faut un autre message, et on doit s'attendre à des taux de réponse plus faibles."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Could we use the propensity model to pick the ones most likely to buy?",
+              "text_fr": "On pourrait utiliser le modèle de propension pour choisir ceux qui ont le plus de chances d'acheter ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Careful: people who are likely to buy might buy without the email. Uplift modeling targets the people the email will actually change. It's harder, but it saves budget.",
+              "text_fr": "Attention : les gens qui ont de fortes chances d'acheter pourraient acheter sans l'e-mail. La modélisation de l'uplift cible les personnes que l'e-mail va vraiment faire changer d'avis. C'est plus difficile, mais ça économise du budget."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre un at-risk customer et un lapsed customer ?",
+              "choices": [
+                "An at-risk customer may leave soon; a lapsed customer has already stopped buying",
+                "They mean exactly the same thing",
+                "A lapsed customer is someone with a late payment"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "At risk : le client achète encore mais risque de partir. Lapsed : il a déjà cessé d'acheter depuis longtemps. Ce ne sont donc pas des synonymes, et lapsed n'a rien à voir avec un retard de paiement."
+            },
+            {
+              "prompt_fr": "Que veut dire « flagged as at-risk customers » ?",
+              "choices": [
+                "Blocked from receiving emails",
+                "Moved to another country's list",
+                "Marked as likely to stop buying"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To flag, c'est signaler, marquer d'un drapeau dans un outil. Le modèle ne bloque personne, et le drapeau n'a ici aucun lien avec un pays."
+            },
+            {
+              "prompt_fr": "Pourquoi Moussa se méfie-t-il du propensity model pour cette campagne ?",
+              "choices": [
+                "Because it's too expensive to run",
+                "Because people likely to buy might buy anyway, without the email",
+                "Because it only works on new customers"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un modèle de propension prédit qui va acheter, pas qui va acheter grâce à l'e-mail. Cibler ces personnes peut gaspiller le budget sur des ventes acquises. Le coût et le type de clients ne sont pas le problème soulevé."
+            },
+            {
+              "prompt_fr": "Comment dire « s'attendre à des taux de réponse plus faibles » ?",
+              "choices": [
+                "Expect lower response rates.",
+                "Wait lower response rates.",
+                "Attend weaker response rates."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "S'attendre à se dit to expect. To wait demande for et parle du temps qui passe, et to attend est un faux ami : il veut dire « assister à » (to attend a meeting)."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Envoie à Sarah ta recommandation de ciblage pour la campagne de reconquête.",
+            "model_answer_en": "Hi Sarah, I suggest two separate audiences: at-risk customers flagged by our churn prediction model, and lapsed customers with a dedicated win-back message. Rather than targeting the people most likely to buy, I'd like to test uplift modeling, so we focus on customers the email can actually influence. I'll share the lists by Wednesday.",
+            "model_answer_fr": "Bonjour Sarah, je propose deux audiences distinctes : les clients à risque signalés par notre modèle de prédiction de l'attrition, et les clients inactifs avec un message de reconquête dédié. Plutôt que de cibler les personnes les plus susceptibles d'acheter, j'aimerais tester la modélisation de l'uplift, pour nous concentrer sur les clients que l'e-mail peut vraiment influencer. Je partage les listes d'ici mercredi.",
+            "key_phrases": [
+              "two separate audiences",
+              "flagged by our churn prediction model",
+              "a dedicated win-back message",
+              "can actually influence"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-nettoyer-crm",
+          "title_fr": "Nettoyer le CRM avant l'envoi",
+          "term_ids": [
+            "crm-hygiene",
+            "contact-record",
+            "custom-field",
+            "lifecycle-stage",
+            "inactive-subscriber",
+            "lead-source"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ivan",
+              "text_en": "Before we send the campaign, we need to talk about CRM hygiene. I found about 4,000 duplicate contact records.",
+              "text_fr": "Avant d'envoyer la campagne, il faut parler de la qualité des données du CRM. J'ai trouvé environ 4 000 fiches contact en double."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Duplicates? How did that happen?",
+              "text_fr": "Des doublons ? Comment c'est arrivé ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Mostly from webinar sign-ups. The form didn't check if the email already existed, and the lead source field was often empty.",
+              "text_fr": "Surtout à cause des inscriptions aux webinaires. Le formulaire ne vérifiait pas si l'e-mail existait déjà, et le champ origine du lead était souvent vide."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Can you merge them? And what about people who never open our emails?",
+              "text_fr": "Tu peux les fusionner ? Et les gens qui n'ouvrent jamais nos e-mails ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "I'll merge them this week. For inactive subscribers, let's exclude anyone with no click in twelve months. It protects our sender reputation.",
+              "text_fr": "Je les fusionne cette semaine. Pour les abonnés inactifs, excluons tous ceux qui n'ont pas cliqué depuis douze mois. Ça protège notre réputation d'expéditeur."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Good. Also, half the contacts have no lifecycle stage, and people write the webinar topic in the notes.",
+              "text_fr": "Bien. Et puis la moitié des contacts n'ont pas d'étape du cycle de vie, et les gens écrivent le thème du webinaire dans les notes."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "I'll fill in the stage from their purchase history, and create a custom field for the webinar topic.",
+              "text_fr": "Je vais renseigner l'étape à partir de leur historique d'achats, et créer un champ personnalisé pour le thème du webinaire."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire CRM hygiene ?",
+              "choices": [
+                "Cleaning the computers that run the CRM",
+                "Keeping the CRM data clean, complete and without duplicates",
+                "Changing CRM passwords regularly"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La CRM hygiene, c'est la qualité des données : pas de doublons, des champs remplis, des contacts à jour. Il ne s'agit ni de nettoyer le matériel, ni de sécurité des mots de passe."
+            },
+            {
+              "prompt_fr": "Pourquoi Ivan exclut-il les contacts sans aucun clic depuis douze mois ?",
+              "choices": [
+                "To protect the sender reputation, so emails keep reaching the inbox",
+                "Because the law forbids emailing them",
+                "Because sending to them costs nothing"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Écrire à des contacts qui ne réagissent jamais abîme la réputation d'expéditeur, et les e-mails finissent plus souvent en spam. Il choisit le clic plutôt que l'ouverture, car les ouvertures sont devenues peu fiables. La loi n'interdit pas d'écrire à un abonné inactif, et chaque envoi a un coût."
+            },
+            {
+              "prompt_fr": "Complète : « I found about 4,000 duplicate contact ___. »",
+              "choices": [
+                "files",
+                "cards",
+                "records"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Dans un CRM, une fiche contact se dit a contact record (un enregistrement). File veut dire « fichier », et card « carte » : deux traductions trop littérales de « fiche »."
+            },
+            {
+              "prompt_fr": "Comment dire « je vais créer un champ personnalisé » ?",
+              "choices": [
+                "I'll create a personal field.",
+                "I'll create a custom field.",
+                "I'll create a personalised champ."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Dans un outil, un champ créé sur mesure est a custom field. Personal veut dire « personnel, privé », et champ n'est pas un mot anglais pour un champ de formulaire (en anglais, a champ est un champion)."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Préviens l'équipe CRM sur Slack de ce que tu vas faire avant l'envoi de la campagne.",
+            "model_answer_en": "Before Thursday's send, I'm doing some CRM hygiene: I'll merge about 4,000 duplicate contact records and exclude inactive subscribers with no click in twelve months. I'm also adding a custom field for the webinar topic, so please stop using the notes for that. Shout if you have any questions.",
+            "model_answer_fr": "Avant l'envoi de jeudi, je fais un peu de nettoyage dans le CRM : je vais fusionner environ 4 000 fiches contact en double et exclure les abonnés inactifs sans aucun clic depuis douze mois. J'ajoute aussi un champ personnalisé pour le thème du webinaire, donc merci de ne plus utiliser les notes pour ça. Faites-moi signe si vous avez des questions.",
+            "key_phrases": [
+              "I'm doing some CRM hygiene",
+              "merge about 4,000 duplicate contact records",
+              "exclude inactive subscribers",
+              "adding a custom field"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marketing-data-tableau-de-bord",
+      "title_fr": "Construire le tableau de bord marketing",
+      "title_en": "Building the marketing dashboard",
+      "situation_fr": "La direction veut un seul tableau de bord pour suivre le marketing chaque semaine. Tu dois définir les indicateurs, suivre l'objectif, parler rentabilité avec la finance et gérer les demandes de chiffres.",
+      "guide": {
+        "intro_fr": "Un dashboard utile commence par des metric definitions écrites : qu'est-ce qu'un unique visitor, un bounce rate, une conversion ? Sans définition commune, deux équipes trouvent deux chiffres différents. Pour le suivi, on compare target vs. actual (objectif et réalisé), on regarde le month-to-date (MTD) et on projette le run rate, c'est-à-dire où l'on finira à ce rythme. On ajoute le year-over-year (YoY) pour neutraliser la saisonnalité. Avec la finance, on parle rentabilité : ROMI, MER (marketing efficiency ratio), break-even ROAS, cost per order. Enfin, pour limiter les ad hoc requests, on propose du self-serve reporting : chacun peut break down les chiffres par canal ou par pays sans attendre l'analyste.",
+        "key_phrases": [
+          {
+            "en": "How exactly do we define a conversion?",
+            "fr": "Comment définit-on exactement une conversion ?"
+          },
+          {
+            "en": "We're at 62% of target month-to-date.",
+            "fr": "Nous sommes à 62 % de l'objectif depuis le début du mois."
+          },
+          {
+            "en": "At this run rate, we'll miss the target.",
+            "fr": "À ce rythme, nous allons manquer l'objectif."
+          },
+          {
+            "en": "Revenue is up 12% year over year.",
+            "fr": "Le chiffre d'affaires est en hausse de 12 % sur un an."
+          },
+          {
+            "en": "Can you break it down by country?",
+            "fr": "Tu peux le ventiler par pays ?"
+          },
+          {
+            "en": "It's all in the dashboard, you can filter it yourself.",
+            "fr": "Tout est dans le tableau de bord, tu peux filtrer toi-même."
+          }
+        ],
+        "tip_fr": "Faux ami : en français, « un reporting » désigne souvent un rapport ; en anglais, on dit a report, et reporting désigne l'activité ou le système. Autre piège : revenue veut dire chiffre d'affaires, pas « revenu » au sens de bénéfice (profit)."
+      },
+      "lessons": [
+        {
+          "id": "marketing-data-definir-indicateurs",
+          "title_fr": "Se mettre d'accord sur la définition des indicateurs",
+          "term_ids": [
+            "metric-definition",
+            "unique-visitor",
+            "returning-visitor",
+            "bounce-rate",
+            "web-analytics"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Daniel",
+              "text_en": "Your dashboard says 40,000 visitors last week, but the product team says 55,000. Who's right?",
+              "text_fr": "Ton tableau de bord indique 40 000 visiteurs la semaine dernière, mais l'équipe produit en annonce 55 000. Qui a raison ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Probably both. I count unique visitors; they count sessions. Someone who comes back three times is one visitor for me, but three sessions for them. Returning visitors make the gap bigger.",
+              "text_fr": "Probablement les deux. Je compte des visiteurs uniques ; eux comptent des sessions. Quelqu'un qui revient trois fois, c'est un visiteur pour moi, mais trois sessions pour eux. Les visiteurs récurrents creusent l'écart."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "That's confusing. Which one should we use?",
+              "text_fr": "C'est déroutant. Lequel devons-nous utiliser ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "It depends on the question. That's why I want a written metric definition for every number on the dashboard.",
+              "text_fr": "Ça dépend de la question. C'est pour ça que je veux une définition écrite pour chaque chiffre du tableau de bord."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Fine. And the bounce rate? Ours looks very low now.",
+              "text_fr": "D'accord. Et le taux de rebond ? Le nôtre paraît très bas maintenant."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "In GA4, it's the share of sessions that weren't engaged, so it's not the same as in our old tool. Every web analytics tool has its own rules, so we write them down.",
+              "text_fr": "Dans GA4, c'est la part des sessions non engagées, donc ce n'est pas la même chose que dans notre ancien outil. Chaque outil de web analytics a ses propres règles, donc on les écrit noir sur blanc."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les deux équipes ont-elles des chiffres différents ?",
+              "choices": [
+                "The product team made a calculation error",
+                "The dashboard stopped updating",
+                "One counts unique visitors, the other counts sessions"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Personne ne s'est trompé : un visiteur unique peut faire plusieurs sessions. Les deux chiffres sont justes, mais ils ne mesurent pas la même chose, d'où l'intérêt d'une définition écrite."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'un returning visitor ?",
+              "choices": [
+                "A visitor who asks for a refund",
+                "Someone who has already visited the site before",
+                "A visitor who leaves after one page"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un returning visitor est un visiteur récurrent, déjà venu sur le site. Return n'évoque pas ici un retour de produit ou un remboursement, et le visiteur qui part après une page, c'est un rebond."
+            },
+            {
+              "prompt_fr": "Comment dire « on les écrit noir sur blanc » ?",
+              "choices": [
+                "We write them down.",
+                "We write them black on white.",
+                "We put them on paper and pen."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "To write something down, c'est le mettre par écrit. Black on white est un calque qui ne se dit pas (l'anglais dit in black and white, plutôt pour un texte imprimé), et paper and pen ne s'emploie pas comme ça."
+            },
+            {
+              "prompt_fr": "Dans GA4, que mesure le bounce rate ?",
+              "choices": [
+                "The share of emails that bounced back",
+                "The share of sessions that weren't engaged",
+                "The share of visitors who never came back"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Dans GA4, le bounce rate est la part des sessions non engagées (l'inverse du taux d'engagement). Le bounce d'un e-mail est une erreur de délivrance, et les visiteurs qui ne reviennent pas relèvent de la rétention."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Écris la note de définition qui apparaîtra sous l'indicateur « Visitors » du tableau de bord.",
+            "model_answer_en": "Visitors: the number of unique visitors in the period, based on GA4. A person who comes back several times counts once, so this number is lower than sessions. Bounce rate is the share of sessions that weren't engaged, which is not the same definition as in our old tool.",
+            "model_answer_fr": "Visiteurs : nombre de visiteurs uniques sur la période, d'après GA4. Une personne qui revient plusieurs fois compte une seule fois, donc ce chiffre est inférieur au nombre de sessions. Le taux de rebond est la part des sessions non engagées, ce qui n'est pas la même définition que dans notre ancien outil.",
+            "key_phrases": [
+              "the number of unique visitors in the period",
+              "counts once",
+              "lower than sessions",
+              "the share of sessions that weren't engaged"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-suivre-objectif",
+          "title_fr": "Suivre l'objectif du mois",
+          "term_ids": [
+            "target-vs-actual",
+            "month-to-date",
+            "run-rate",
+            "year-over-year",
+            "reporting"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Quick update before the leadership meeting: where are we on sign-ups?",
+              "text_fr": "Petit point avant la réunion de direction : où en est-on des inscriptions ?"
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "Month-to-date, we're at 6,200 sign-ups against a target of 10,000.",
+              "text_fr": "Depuis le début du mois, nous sommes à 6 200 inscriptions pour un objectif de 10 000."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "It's the 20th. Will we make it?",
+              "text_fr": "On est le 20. On va y arriver ?"
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "At the current run rate, we'll land around 9,300, so slightly below target. But we're up 15% year over year.",
+              "text_fr": "Au rythme actuel, on finira autour de 9 300, donc un peu en dessous de l'objectif. Mais on est en hausse de 15 % sur un an."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Good. Can you add a target vs. actual chart to the weekly reporting?",
+              "text_fr": "Bien. Tu peux ajouter un graphique objectif vs réalisé au reporting hebdomadaire ?"
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "Sure, with a line for the run rate. That way, nobody is surprised at the end of the month.",
+              "text_fr": "Bien sûr, avec une ligne pour le rythme projeté. Comme ça, personne n'est surpris à la fin du mois."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire month-to-date ?",
+              "choices": [
+                "From the first day of the month until today",
+                "For the whole previous month",
+                "Until the end of the current month"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Month-to-date (MTD) : du 1er du mois jusqu'à aujourd'hui. Le mois précédent complet, c'est last month, et la projection jusqu'à la fin du mois, c'est le run rate."
+            },
+            {
+              "prompt_fr": "Que calcule le run rate ici ?",
+              "choices": [
+                "The speed of the website",
+                "Where we'll end the month if we keep the current pace",
+                "The number of sign-ups per hour"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le run rate projette le résultat final au rythme actuel : 6 200 inscriptions en 20 jours, soit 310 par jour, donnent environ 9 300 sur 30 jours. Run n'a rien à voir avec la vitesse du site, et on ne raisonne pas à l'heure."
+            },
+            {
+              "prompt_fr": "Complète : « We're up 15% year ___ year. »",
+              "choices": [
+                "after",
+                "by",
+                "over"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Year over year (YoY) compare à la même période de l'année précédente ; on entend aussi year on year en anglais britannique. Year after year veut dire « année après année », et by ne s'emploie pas dans cette expression."
+            },
+            {
+              "prompt_fr": "Comment dire « on va y arriver ? » à propos d'un objectif ?",
+              "choices": [
+                "Will we arrive there?",
+                "Will we make it?",
+                "Will we succeed it?"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "To make it, c'est réussir, atteindre l'objectif. Arrive there parle d'un lieu, et succeed demande in (succeed in reaching the target) : succeed it est incorrect."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Elena te demande un point rapide par écrit sur les inscriptions. Réponds en trois phrases.",
+            "context_en": "Elena: Can you send me the sign-up numbers before the meeting?",
+            "model_answer_en": "Month-to-date, we're at 6,200 sign-ups against a target of 10,000. At the current run rate, we'll land around 9,300, slightly below target, but we're up 15% year over year. I've added a target vs. actual chart to the weekly reporting.",
+            "model_answer_fr": "Depuis le début du mois, nous sommes à 6 200 inscriptions pour un objectif de 10 000. Au rythme actuel, nous finirons autour de 9 300, un peu en dessous de l'objectif, mais nous sommes en hausse de 15 % sur un an. J'ai ajouté un graphique objectif vs réalisé au reporting hebdomadaire.",
+            "key_phrases": [
+              "Month-to-date",
+              "against a target of",
+              "At the current run rate",
+              "up 15% year over year"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-parler-rentabilite",
+          "title_fr": "Parler rentabilité avec la finance",
+          "term_ids": [
+            "romi",
+            "marketing-efficiency-ratio",
+            "break-even-roas",
+            "cost-per-order"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Grace",
+              "text_en": "Finance wants to cut 20% of the marketing budget. Convince me otherwise.",
+              "text_fr": "La finance veut réduire le budget marketing de 20 %. Convaincs-moi du contraire."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Let's look at the MER first: total revenue divided by total marketing spend. It's been stable at 6 for a year.",
+              "text_fr": "Regardons d'abord le MER : le chiffre d'affaires total divisé par les dépenses marketing totales. Il est stable à 6 depuis un an."
+            },
+            {
+              "speaker": "Grace",
+              "text_en": "Revenue isn't profit, though.",
+              "text_fr": "Le chiffre d'affaires, ce n'est pas du bénéfice, pourtant."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "True. That's why I also track the break-even ROAS. With a 40% margin, a campaign needs a ROAS of 2.5 just to cover its costs.",
+              "text_fr": "C'est vrai. C'est pour ça que je suis aussi le ROAS de rentabilité. Avec une marge de 40 %, une campagne a besoin d'un ROAS de 2,5 rien que pour couvrir ses coûts."
+            },
+            {
+              "speaker": "Grace",
+              "text_en": "And which campaigns are below that?",
+              "text_fr": "Et quelles campagnes sont en dessous ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Two display campaigns: their cost per order is too high. Cutting those first would improve our ROMI without touching what works.",
+              "text_fr": "Deux campagnes display : leur coût par commande est trop élevé. Couper celles-là d'abord améliorerait notre ROMI sans toucher à ce qui fonctionne."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment se calcule le MER ?",
+              "choices": [
+                "The revenue of one campaign divided by its clicks",
+                "Total revenue divided by total marketing spend",
+                "Orders divided by visitors"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le MER (marketing efficiency ratio) divise le chiffre d'affaires total par l'ensemble des dépenses marketing, tous canaux confondus. Diviser par les clics ou par les visiteurs donnerait d'autres indicateurs, comme le taux de conversion."
+            },
+            {
+              "prompt_fr": "Que veut dire « Revenue isn't profit, though » ?",
+              "choices": [
+                "Sales are not the same as what we earn after costs",
+                "Revenue is going down",
+                "We don't make any profit at all"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Revenue, c'est le chiffre d'affaires ; profit, le bénéfice après les coûts. Though en fin de phrase veut dire « pourtant, quand même ». Grace ne dit pas que le chiffre baisse ni que l'entreprise perd de l'argent."
+            },
+            {
+              "prompt_fr": "Avec une marge de 50 %, quel est le break-even ROAS ?",
+              "choices": [
+                "Un ROAS de 0,5",
+                "Un ROAS de 5",
+                "Un ROAS de 2"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le ROAS de rentabilité se calcule en divisant 1 par la marge : 1 / 0,5 = 2. Pour 1 euro de publicité, il faut 2 euros de ventes, dont la marge de 1 euro couvre la dépense. 0,5 est la marge elle-même, et 5 serait bien trop exigeant."
+            },
+            {
+              "prompt_fr": "Grace veut couper 20 % partout. Que proposes-tu ?",
+              "choices": [
+                "Let's cut everything by 20%, it's fairer.",
+                "Let's cut the campaigns below break-even first, and keep what works.",
+                "Let's stop all marketing for a month."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une coupe uniforme pénalise aussi les campagnes rentables. Mieux vaut couper d'abord ce qui est sous le seuil de rentabilité. Tout arrêter un mois casserait les campagnes qui fonctionnent, sans rien apprendre."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris à Grace un e-mail qui propose une alternative à la coupe de 20 %.",
+            "model_answer_en": "Hi Grace, our MER has been stable at 6 for a year, so overall marketing spend is still efficient. Two display campaigns are below our break-even ROAS, with a cost per order that is too high. I suggest cutting those first, which would improve our ROMI without touching the channels that work.",
+            "model_answer_fr": "Bonjour Grace, notre MER est stable à 6 depuis un an, donc l'ensemble des dépenses marketing reste efficace. Deux campagnes display sont sous notre ROAS de rentabilité, avec un coût par commande trop élevé. Je propose de couper celles-là d'abord, ce qui améliorerait notre ROMI sans toucher aux canaux qui fonctionnent.",
+            "key_phrases": [
+              "has been stable at 6 for a year",
+              "below our break-even ROAS",
+              "cost per order",
+              "without touching the channels that work"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-demandes-ponctuelles",
+          "title_fr": "Gérer les demandes de chiffres ponctuelles",
+          "term_ids": [
+            "ad-hoc-request",
+            "self-serve-reporting",
+            "break-down-by",
+            "marketing-analytics",
+            "data-driven"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Hi Ivan, sorry, another quick one: can you break down last month's sales by country and by channel?",
+              "text_fr": "Salut Ivan, désolée, encore une petite demande : tu peux ventiler les ventes du mois dernier par pays et par canal ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Sure. That's the fourth ad hoc request like this this week, though. I think we can do better.",
+              "text_fr": "Bien sûr. Mais c'est la quatrième demande ponctuelle de ce genre cette semaine. Je pense qu'on peut faire mieux."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Sorry! We just want to be more data-driven.",
+              "text_fr": "Désolée ! On veut juste s'appuyer davantage sur les données."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "And that's great. So let's set up self-serve reporting: a dashboard where you filter by country and channel yourself.",
+              "text_fr": "Et c'est très bien. Alors mettons en place un reporting en libre-service : un tableau de bord où tu filtres toi-même par pays et par canal."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Would that free up your time?",
+              "text_fr": "Ça te libérerait du temps ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Yes, for real marketing analytics work, like the incrementality tests. I'll run a short training session for your team next week.",
+              "text_fr": "Oui, pour du vrai travail d'analyse marketing, comme les tests d'incrémentalité. J'organise une courte formation pour ton équipe la semaine prochaine."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « another quick one » ?",
+              "choices": [
+                "Another short, simple request",
+                "Another fast employee",
+                "Another quick meeting"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "A quick one désigne à l'oral une petite demande rapide, sous-entendu a quick question ou a quick request. Il ne s'agit ni d'une personne, ni d'une réunion."
+            },
+            {
+              "prompt_fr": "Comment dire « ventiler les ventes par pays » ?",
+              "choices": [
+                "Ventilate sales per country",
+                "Break sales on countries",
+                "Break down sales by country"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Ventiler des chiffres se dit to break down by. To ventilate est un faux ami : il veut dire « aérer » une pièce. Break sales on countries n'a pas de sens : il faut down et by."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que le self-serve reporting ?",
+              "choices": [
+                "Reports sent by email once a year",
+                "Dashboards people can explore and filter themselves, without asking an analyst",
+                "Reports that only the analyst can open"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Self-serve, c'est le libre-service : chaque équipe filtre et explore les chiffres seule, sans passer par l'analyste. C'est l'inverse d'un rapport réservé à l'analyste, et la fréquence d'envoi n'a rien à voir."
+            },
+            {
+              "prompt_fr": "Que veut dire « Would that free up your time? » ?",
+              "choices": [
+                "Would that make your time available for other work?",
+                "Would that give you a day off?",
+                "Would that make your work free of charge?"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "To free up time, c'est libérer du temps pour autre chose. Free ne veut pas dire ici « gratuit », et il n'est pas question de congé."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Propose à l'équipe de Sarah, sur Slack, un reporting en libre-service, sans avoir l'air agacé.",
+            "model_answer_en": "Thanks for all the requests, it's great to see the team being so data-driven! To get you answers faster, I've built a self-serve reporting dashboard where you can break down sales by country and channel yourselves. I'll run a 30-minute training next Tuesday, and I'm still here for anything more complex.",
+            "model_answer_fr": "Merci pour toutes vos demandes, c'est super de voir l'équipe s'appuyer autant sur les données ! Pour vous répondre plus vite, j'ai créé un tableau de bord en libre-service où vous pouvez ventiler vous-mêmes les ventes par pays et par canal. J'organise une formation de 30 minutes mardi prochain, et je reste disponible pour tout ce qui est plus complexe.",
+            "key_phrases": [
+              "being so data-driven",
+              "To get you answers faster",
+              "break down sales by country and channel",
+              "still here for anything more complex"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marketing-data-baisse-des-conversions",
+      "title_fr": "Expliquer une baisse des conversions",
+      "title_en": "Explaining a drop in conversions",
+      "situation_fr": "Lundi matin, les conversions ont chuté dans le tableau de bord et tout le monde s'inquiète. Tu dois vérifier les chiffres, trouver la cause et expliquer la situation avec les bonnes nuances.",
+      "guide": {
+        "intro_fr": "Quand une courbe bouge, l'analyste vérifie avant d'alerter. Un spike (pic) ou un dip (creux) peut venir d'un vrai changement, mais aussi de bot traffic ou d'un tracking issue après une mise en production. On commence donc par un sanity check : les commandes du back-office suivent-elles la même tendance ? Ensuite, on compare la période avant et après le changement (pre/post analysis) et on regarde chaque étape du tunnel. Côté e-mail, les ouvertures sont devenues peu fiables avec la Mail Privacy Protection d'Apple : on s'appuie plutôt sur les clics et le revenue per email. Enfin, on écrit une synthèse claire : la key takeaway d'abord, puis les caveats (réserves). Des données directional donnent une tendance, pas une preuve.",
+        "key_phrases": [
+          {
+            "en": "Conversions dipped over the weekend.",
+            "fr": "Les conversions ont un peu baissé ce week-end."
+          },
+          {
+            "en": "Let me run a sanity check first.",
+            "fr": "Laisse-moi d'abord vérifier la cohérence des chiffres."
+          },
+          {
+            "en": "It looks like a tracking issue, not a real drop.",
+            "fr": "Ça ressemble à un problème de tracking, pas à une vraie baisse."
+          },
+          {
+            "en": "Sessions spiked, but orders stayed flat.",
+            "fr": "Les sessions ont bondi, mais les commandes sont restées stables."
+          },
+          {
+            "en": "The key takeaway is that...",
+            "fr": "Le point clé à retenir, c'est que..."
+          },
+          {
+            "en": "One caveat: the data is still directional.",
+            "fr": "Une réserve : les données restent indicatives."
+          }
+        ],
+        "tip_fr": "Flat ne veut pas dire « plat » au sens d'ennuyeux : pour un chiffre, c'est stable, sans évolution (sales were flat). Et pour « les chiffres ont chuté », évite fell down, qui veut dire tomber par terre : dis dropped, fell, ou dipped pour une petite baisse passagère."
+      },
+      "lessons": [
+        {
+          "id": "marketing-data-reperer-anomalie",
+          "title_fr": "Repérer une anomalie dans les chiffres",
+          "term_ids": [
+            "spike",
+            "dip",
+            "flat",
+            "sanity-check",
+            "bot-traffic"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Amara",
+              "text_en": "The conversion rate fell from 3% to just under 2% overnight. Should I alert the team?",
+              "text_fr": "Le taux de conversion est passé de 3 % à un peu moins de 2 % du jour au lendemain. Je dois alerter l'équipe ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Not yet, let me run a sanity check first. Orders in the back office are flat, so sales didn't really drop.",
+              "text_fr": "Pas encore, laisse-moi d'abord vérifier la cohérence. Les commandes dans le back-office sont stables, donc les ventes n'ont pas vraiment baissé."
+            },
+            {
+              "speaker": "Amara",
+              "text_en": "Then why did the rate go down?",
+              "text_fr": "Alors pourquoi le taux a-t-il baissé ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Sessions spiked on Sunday: plus 50%, almost all from one country, with zero seconds on site. It looks like bot traffic.",
+              "text_fr": "Les sessions ont bondi dimanche : plus 50 %, presque toutes depuis un seul pays, avec zéro seconde sur le site. Ça ressemble à du trafic de robots."
+            },
+            {
+              "speaker": "Amara",
+              "text_en": "So more visits, same orders, lower rate.",
+              "text_fr": "Donc plus de visites, autant de commandes, un taux plus bas."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Exactly. Without the spike, there's only a small dip, which is normal for a Sunday. I'll exclude that traffic and share the corrected numbers.",
+              "text_fr": "Exactement. Sans ce pic, il ne reste qu'un léger creux, normal pour un dimanche. Je vais exclure ce trafic et partager les chiffres corrigés."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « orders are flat » ?",
+              "choices": [
+                "Orders have collapsed",
+                "Orders have stayed about the same",
+                "Orders were cancelled"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Flat, pour un chiffre, veut dire stable, sans hausse ni baisse. Ce n'est ni un effondrement, ni une annulation : c'est justement la preuve que les ventes n'ont pas chuté."
+            },
+            {
+              "prompt_fr": "Pourquoi Tomasz pense-t-il à du bot traffic ?",
+              "choices": [
+                "Because the visits came from one country, with zero seconds on site",
+                "Because orders went up on Sunday",
+                "Because the conversion rate is usually higher on Sundays"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Des visites massives, d'un seul pays, sans aucun temps passé sur le site : c'est le profil typique de robots. Les commandes n'ont pas bougé, et Tomasz dit au contraire qu'un petit creux est normal le dimanche."
+            },
+            {
+              "prompt_fr": "Complète : « Sessions ___ on Sunday: plus 50%. »",
+              "choices": [
+                "dipped",
+                "flattened",
+                "spiked"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To spike, c'est faire un pic, une hausse brutale. To dip, c'est l'inverse (un petit creux), et to flatten veut dire se stabiliser."
+            },
+            {
+              "prompt_fr": "Ta responsable veut alerter toute l'équipe tout de suite. Que réponds-tu ?",
+              "choices": [
+                "Yes, let's pause all campaigns right now.",
+                "Not yet, let me run a sanity check first.",
+                "Let's wait until next month and see."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le bon réflexe est de vérifier la cohérence des chiffres avant d'alerter : couper les campagnes sur une fausse alerte coûterait cher. Attendre un mois serait l'excès inverse, si le problème est réel."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un message dans le canal #growth pour rassurer l'équipe sur la baisse du taux de conversion.",
+            "model_answer_en": "Quick update on the conversion rate drop: orders are flat, so this isn't a real loss of sales. Sessions spiked on Sunday because of bot traffic from one country, which pushed the rate down. I'm excluding that traffic now and will share corrected numbers by noon.",
+            "model_answer_fr": "Petit point sur la baisse du taux de conversion : les commandes sont stables, donc ce n'est pas une vraie perte de ventes. Les sessions ont bondi dimanche à cause de trafic de robots venant d'un seul pays, ce qui a fait baisser le taux. J'exclus ce trafic maintenant et je partage les chiffres corrigés d'ici midi.",
+            "key_phrases": [
+              "orders are flat",
+              "this isn't a real loss of sales",
+              "Sessions spiked on Sunday",
+              "share corrected numbers"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-trouver-la-cause",
+          "title_fr": "Trouver la cause d'une vraie baisse",
+          "term_ids": [
+            "tracking-issue",
+            "key-event",
+            "pre-post-analysis",
+            "top-of-funnel",
+            "exit-rate"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Purchases in GA4 are down 30% since Thursday, but the back office only shows a 5% drop. What's going on?",
+              "text_fr": "Les achats dans GA4 ont baissé de 30 % depuis jeudi, mais le back-office ne montre qu'une baisse de 5 %. Que se passe-t-il ?"
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "Two things, I think. The purchase key event stopped firing for Apple Pay orders after Thursday's release. That's a tracking issue, and the developers are fixing it.",
+              "text_fr": "Deux choses, je pense. L'événement clé purchase ne se déclenche plus pour les commandes Apple Pay depuis la mise en production de jeudi. C'est un problème de tracking, et les développeurs le corrigent."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "And the real 5%?",
+              "text_fr": "Et les 5 % bien réels ?"
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "I did a pre/post analysis around the release. The top of the funnel is stable: same traffic, same add-to-carts.",
+              "text_fr": "J'ai fait une analyse avant/après autour de la mise en production. Le haut du tunnel est stable : même trafic, mêmes ajouts au panier."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "So the problem is at the end.",
+              "text_fr": "Donc le problème est à la fin."
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "Yes. The exit rate on the payment page went up from 20% to 26%. The new address form seems to block some mobile users, so I'd test a rollback.",
+              "text_fr": "Oui. Le taux de sortie de la page de paiement est passé de 20 % à 26 %. Le nouveau formulaire d'adresse semble bloquer certains utilisateurs sur mobile, donc je testerais un retour à l'ancienne version."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « The purchase key event stopped firing » ?",
+              "choices": [
+                "The purchase event is no longer sent when people buy",
+                "People stopped buying",
+                "The purchase page was deleted"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Stopped firing : l'événement ne se déclenche plus, donc GA4 ne voit plus ces achats, alors qu'ils ont bien lieu (le back-office les compte). Les clients achètent toujours, et la page existe encore."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'une pre/post analysis ?",
+              "choices": [
+                "Analysing social media posts before publishing them",
+                "Sending the report by post",
+                "Comparing results before and after a change"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Pre/post vient du latin : avant / après. On compare les résultats avant et après un changement, ici la mise en production. Post n'a rien à voir avec une publication sur les réseaux ni avec La Poste."
+            },
+            {
+              "prompt_fr": "Que mesure l'exit rate d'une page ?",
+              "choices": [
+                "The number of links leaving the site",
+                "The share of that page's views that were the last in the session",
+                "The share of visitors who arrived on that page"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'exit rate (taux de sortie) indique, parmi les vues d'une page, la part où la visite s'est arrêtée là. Ce n'est pas le nombre de liens sortants, ni la part des visiteurs arrivés sur la page (ça, ce sont les entrées)."
+            },
+            {
+              "prompt_fr": "Comment dire « le taux de sortie est passé de 20 % à 26 % » ?",
+              "choices": [
+                "The exit rate went up from 20% to 26%.",
+                "The exit rate passed of 20% at 26%.",
+                "The exit rate went from 20% until 26%."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Pour une évolution, on dit went up (ou rose) from... to... « Passer de » ne se traduit pas par pass of, et until s'emploie pour le temps, pas pour des chiffres."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Écris le compte rendu de ton analyse pour l'équipe e-commerce : ce qui relève du tracking, ce qui est une vraie baisse, et ta recommandation.",
+            "model_answer_en": "Most of the drop in GA4 is a tracking issue: the purchase key event stopped firing for Apple Pay orders after Thursday's release, and a fix is in progress. The real decline is about 5%. A pre/post analysis shows the top of the funnel is stable, but the exit rate on the payment page went up from 20% to 26%. We recommend testing a rollback of the new address form.",
+            "model_answer_fr": "L'essentiel de la baisse dans GA4 est un problème de tracking : l'événement clé purchase ne se déclenche plus pour les commandes Apple Pay depuis la mise en production de jeudi, et une correction est en cours. La vraie baisse est d'environ 5 %. Une analyse avant/après montre que le haut du tunnel est stable, mais que le taux de sortie de la page de paiement est passé de 20 % à 26 %. Nous recommandons de tester un retour à l'ancien formulaire d'adresse.",
+            "key_phrases": [
+              "is a tracking issue",
+              "stopped firing",
+              "A pre/post analysis shows",
+              "went up from 20% to 26%"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-taux-ouverture-trompeur",
+          "title_fr": "Expliquer un taux d'ouverture trompeur",
+          "term_ids": [
+            "mail-privacy-protection",
+            "click-to-open-rate",
+            "revenue-per-email",
+            "unsubscribe-rate"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Moussa",
+              "text_en": "Something's wrong with the newsletter. The open rate is 60%, but the click-to-open rate has halved.",
+              "text_fr": "Il y a un souci avec la newsletter. Le taux d'ouverture est de 60 %, mais le taux de réactivité a été divisé par deux."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "It's probably Mail Privacy Protection. Apple Mail preloads emails, so many opens are counted even if nobody reads them.",
+              "text_fr": "C'est probablement la Mail Privacy Protection. Apple Mail précharge les e-mails, donc beaucoup d'ouvertures sont comptées même si personne ne les lit."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "So clicks didn't fall?",
+              "text_fr": "Donc les clics n'ont pas baissé ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "No, clicks are stable. Opens are inflated, so clicks divided by opens looks worse.",
+              "text_fr": "Non, les clics sont stables. Les ouvertures sont gonflées, donc les clics divisés par les ouvertures paraissent moins bons."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "What should I report to my manager, then?",
+              "text_fr": "Qu'est-ce que je présente à ma manager, alors ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Clicks, revenue per email and the unsubscribe rate. They show real behaviour. I'd stop using the open rate as a KPI.",
+              "text_fr": "Les clics, le chiffre d'affaires par e-mail et le taux de désabonnement. Ils reflètent un vrai comportement. J'arrêterais d'utiliser le taux d'ouverture comme KPI."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi le taux d'ouverture est-il gonflé ?",
+              "choices": [
+                "Because the subject line was excellent",
+                "Because Apple Mail preloads emails, so opens are counted even when nobody reads them",
+                "Because the newsletter was sent twice"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Avec la Mail Privacy Protection, Apple Mail télécharge le contenu des e-mails à l'avance : le pixel d'ouverture se déclenche sans lecture réelle. Un bon objet ou un double envoi n'expliqueraient pas que le taux de réactivité s'effondre en même temps."
+            },
+            {
+              "prompt_fr": "Comment se calcule le click-to-open rate ?",
+              "choices": [
+                "Clicks divided by emails sent",
+                "Opens divided by emails sent",
+                "Unique clicks divided by unique opens"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le CTOR (taux de réactivité) divise les cliqueurs par les ouvreurs. Clics divisés par envois, c'est le taux de clic ; ouvertures divisées par envois, le taux d'ouverture. C'est pour ça que des ouvertures gonflées font baisser le CTOR."
+            },
+            {
+              "prompt_fr": "Que veut dire « Opens are inflated » ?",
+              "choices": [
+                "Opens are artificially higher than reality",
+                "Opens are going down",
+                "Opens are more expensive than before"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Inflated veut dire gonflé, artificiellement élevé (comme un ballon qu'on gonfle). Le mot n'indique ni une baisse, ni un coût, même s'il rappelle l'inflation des prix."
+            },
+            {
+              "prompt_fr": "Complète : « The click-to-open rate has ___. »",
+              "choices": [
+                "half",
+                "halved",
+                "divided itself by two"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "To halve, c'est diviser par deux : the rate has halved. Half est un nom ou un adjectif, pas un verbe, et divided itself by two calque le pronominal français."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Moussa doit expliquer à sa manager, Sophie, pourquoi les chiffres de la newsletter semblent étranges. Écris l'e-mail à sa place.",
+            "model_answer_en": "Hi Sophie, the open rate looks very high this month, but it's inflated by Apple's Mail Privacy Protection, which counts opens even when nobody reads the email. As a result, the click-to-open rate looks worse, although clicks are stable. From now on, I suggest we track clicks, revenue per email and the unsubscribe rate instead of opens.",
+            "model_answer_fr": "Bonjour Sophie, le taux d'ouverture paraît très élevé ce mois-ci, mais il est gonflé par la Mail Privacy Protection d'Apple, qui compte des ouvertures même quand personne ne lit l'e-mail. Résultat, le taux de réactivité paraît moins bon, alors que les clics sont stables. Désormais, je propose de suivre les clics, le chiffre d'affaires par e-mail et le taux de désabonnement plutôt que les ouvertures.",
+            "key_phrases": [
+              "it's inflated by",
+              "Mail Privacy Protection",
+              "although clicks are stable",
+              "revenue per email and the unsubscribe rate"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-synthese-direction",
+          "title_fr": "Écrire la synthèse pour la direction",
+          "term_ids": [
+            "key-takeaway",
+            "caveat",
+            "directional",
+            "outperform",
+            "underperform"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "I've got five minutes before the board meeting. What's the key takeaway from this month?",
+              "text_fr": "J'ai cinq minutes avant le conseil. Quel est le point clé à retenir de ce mois-ci ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Conversions are down 5%, most likely because of the new checkout form. Search outperformed its target, and email underperformed.",
+              "text_fr": "Les conversions baissent de 5 %, très probablement à cause du nouveau formulaire de paiement. Le search a dépassé son objectif, et l'e-mail est resté en deçà."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Can I say the form caused the whole drop?",
+              "text_fr": "Je peux dire que le formulaire a causé toute la baisse ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "I'd add a caveat: we only have ten days of data, so it's directional, not proof.",
+              "text_fr": "J'ajouterais une réserve : nous n'avons que dix jours de données, donc c'est indicatif, pas une preuve."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Fair. What can I promise them?",
+              "text_fr": "C'est juste. Qu'est-ce que je peux leur promettre ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "That we're testing the old form against the new one, and we'll have a clear answer in two weeks.",
+              "text_fr": "Que nous testons l'ancien formulaire contre le nouveau, et que nous aurons une réponse claire dans deux semaines."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce qu'une key takeaway ?",
+              "choices": [
+                "The full list of all the numbers",
+                "The last slide of the deck",
+                "The main point people should remember"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La key takeaway est le message principal à retenir, ce que l'auditoire « emporte » (take away). Ce n'est ni la liste complète des chiffres, ni forcément la dernière diapositive : on la donne même souvent en premier."
+            },
+            {
+              "prompt_fr": "Que veut dire « Search outperformed its target » ?",
+              "choices": [
+                "Search did better than its target",
+                "Search performed in front of its target",
+                "Search missed its target"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "To outperform, c'est faire mieux que (un objectif, un concurrent). Le préfixe out- marque le dépassement. Le contraire, rester en deçà, c'est to underperform."
+            },
+            {
+              "prompt_fr": "Que signifie « it's directional, not proof » ?",
+              "choices": [
+                "It tells us which direction the company should take",
+                "It shows a trend, but it isn't strong enough to be sure",
+                "It comes from the directors"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Directional se dit de données qui indiquent une tendance sans permettre de conclusion ferme. Le mot n'a rien à voir avec la stratégie de l'entreprise ni avec la direction (les dirigeants)."
+            },
+            {
+              "prompt_fr": "Comment dire « j'ajouterais une réserve » ?",
+              "choices": [
+                "I'd add a reserve.",
+                "I'd add a caveat.",
+                "I'd add a reservation."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une réserve, au sens de mise en garde, se dit a caveat. A reserve est un stock ou une réserve naturelle, et a reservation est surtout une réservation (hôtel, restaurant) : on dit plutôt I have reservations about it pour exprimer des doutes."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le paragraphe de synthèse du rapport mensuel pour la direction, avec le point clé, les performances par canal et une réserve.",
+            "model_answer_en": "Key takeaway: conversions are down 5% this month, most likely because of the new checkout form. Search outperformed its target, while email underperformed. One caveat: we only have ten days of data since the change, so this is directional. We're testing the old form against the new one and will share a clear answer in two weeks.",
+            "model_answer_fr": "Point clé : les conversions baissent de 5 % ce mois-ci, très probablement à cause du nouveau formulaire de paiement. Le search a dépassé son objectif, tandis que l'e-mail est resté en deçà. Une réserve : nous n'avons que dix jours de données depuis le changement, donc ce résultat est indicatif. Nous testons l'ancien formulaire contre le nouveau et partagerons une réponse claire dans deux semaines.",
+            "key_phrases": [
+              "Key takeaway",
+              "Search outperformed its target",
+              "while email underperformed",
+              "One caveat",
+              "this is directional"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

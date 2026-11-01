@@ -1,0 +1,1511 @@
+{
+  "role": "pr-events",
+  "status": "draft",
+  "title_fr": "L'anglais des relations presse et de l'événementiel",
+  "units": [
+    {
+      "id": "pr-events-annonce-presse",
+      "title_fr": "Lancer une annonce presse",
+      "title_en": "Launching a press announcement",
+      "situation_fr": "Ton client lance une basket fabriquée à partir de bouteilles recyclées. Tu dois trouver l'angle, écrire le communiqué, le proposer aux bons journalistes, puis mesurer les retombées.",
+      "guide": {
+        "intro_fr": "Une annonce presse commence par une question : est-ce que c'est newsworthy, c'est-à-dire digne d'intérêt pour un journaliste ? Pour le devenir, il faut un angle (l'histoire que tu racontes) et souvent un news hook, une accroche liée à l'actualité qui donne une raison d'en parler maintenant. Le press release (communiqué de presse) s'ouvre sur le lede, le premier paragraphe qui dit l'essentiel, et se termine par le boilerplate, le paragraphe « À propos » standard. Tu l'envoies avec un press kit à une media list choisie avec soin : tier-one media, trade press, journalistes spécialisés. Après la publication, tu suis la media coverage (les retombées) grâce à la media monitoring, et tu compares ta share of voice à celle des concurrents.",
+        "key_phrases": [
+          { "en": "What's the news hook here?", "fr": "Quelle est l'accroche d'actualité ?" },
+          { "en": "I'm not sure journalists will bite.", "fr": "Je ne suis pas sûr que les journalistes vont mordre à l'hameçon." },
+          { "en": "The lede needs to answer who, what and when.", "fr": "Le chapeau doit dire qui, quoi et quand." },
+          { "en": "I'll pitch it to the trade press first.", "fr": "Je vais d'abord le proposer à la presse spécialisée." },
+          { "en": "I'd like to offer you an exclusive.", "fr": "J'aimerais vous proposer une exclusivité." },
+          { "en": "The story was picked up by several outlets.", "fr": "L'info a été reprise par plusieurs médias." }
+        ],
+        "tip_fr": "Un dossier de presse se dit press kit, pas « press file ». Et en anglais, on pitch une histoire à un journaliste (to pitch a story to a journalist) : c'est le verbe de base du métier, qui veut dire « proposer un sujet de façon convaincante ». Attention à la préposition : pitch to someone, jamais « pitch at » ni « pitch for »."
+      },
+      "lessons": [
+        {
+          "id": "pr-events-trouver-l-angle",
+          "title_fr": "Trouver l'angle du communiqué",
+          "term_ids": ["press-release", "angle", "news-hook", "newsworthy"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "The client wants a press release about the new sneaker. But honestly, a new shoe isn't very newsworthy.", "text_fr": "Le client veut un communiqué de presse sur la nouvelle basket. Mais franchement, une nouvelle chaussure, ce n'est pas vraiment une info pour la presse." },
+            { "speaker": "Tomasz", "text_en": "Agreed. We need a stronger angle. What's different about it?", "text_fr": "D'accord. Il nous faut un angle plus fort. Qu'est-ce qu'elle a de différent ?" },
+            { "speaker": "Aïcha", "text_en": "It's made from recycled plastic bottles collected in France.", "text_fr": "Elle est fabriquée à partir de bouteilles en plastique recyclées collectées en France." },
+            { "speaker": "Tomasz", "text_en": "That's the story. And the news hook could be World Environment Day, in early June.", "text_fr": "Voilà l'histoire. Et l'accroche d'actualité pourrait être la Journée mondiale de l'environnement, début juin." },
+            { "speaker": "Aïcha", "text_en": "Good idea. Journalists will be writing about recycling that week anyway.", "text_fr": "Bonne idée. Les journalistes écriront de toute façon sur le recyclage cette semaine-là." },
+            { "speaker": "Tomasz", "text_en": "Perfect. Let's lead with the bottles, not the shoe.", "text_fr": "Parfait. Mettons les bouteilles en avant, pas la chaussure." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Tomasz veut-il « lead with the bottles, not the shoe » ?",
+              "choices": [
+                "Because the recycled bottles are the part of the story that journalists will find new.",
+                "Because photos of bottles are easier for journalists to use than product shots.",
+                "Because the client wants to keep the design of the shoe secret until the launch."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Lead with something = commencer par, mettre en avant. Tomasz met en avant ce qui est nouveau (des bouteilles collectées en France devenues des baskets) : c'est l'angle qui rend le sujet newsworthy. Le dialogue ne parle ni de photos ni de secret sur le design : ces raisons semblent logiques mais ne sont pas les siennes."
+            },
+            {
+              "prompt_fr": "Le client te demande la différence entre « l'angle » et le « news hook ». Quelle définition est juste ?",
+              "choices": [
+                "The angle is the headline; the hook is the first paragraph of the release.",
+                "The angle is for the trade press; the hook is for national media only.",
+                "The angle is the story you tell; the hook is why it matters right now."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'angle, c'est la façon de raconter l'histoire (ici : le recyclage local). Le news hook, c'est le lien avec l'actualité qui pousse à publier maintenant (la Journée mondiale de l'environnement). Le titre se dit headline et le premier paragraphe lede : ce sont des parties du communiqué, pas ces deux notions. Et les deux servent pour tous les médias."
+            },
+            {
+              "prompt_fr": "Complète : « We could ___ the release with World Environment Day. » (caler la date de diffusion sur)",
+              "choices": ["time", "date", "fix"],
+              "answer_index": 0,
+              "explanation_fr": "To time something with (ou to coincide with) = programmer pour que ça tombe au même moment. To date veut dire « dater » (mettre une date sur un document) ou « sortir avec quelqu'un ». To fix, c'est réparer ou fixer un prix, une règle : « fix the release » voudrait dire corriger le communiqué."
+            },
+            {
+              "prompt_fr": "Ta directrice veut envoyer tel quel un communiqué « Nouvelle basket ». Quelle réponse est à la fois honnête et diplomate ?",
+              "choices": [
+                "Journalists will never read that. We really need to change everything.",
+                "I'm not sure journalists will bite. Could we lead with the recycling angle?",
+                "It's fine for me, but in my opinion it's not very interesting for them."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Journalists will bite » (mordre à l'hameçon) exprime un doute sans juger, et la question propose une solution : c'est le bon ton avec une manager. La première réponse est trop brutale. La troisième est un calque (« it's fine for me » se dit plutôt « it's fine by me ») et critique sans rien proposer."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Le client te demande sur Slack pourquoi tu ne veux pas d'un communiqué « nouvelle basket ». Réponds en 3 phrases, sur un ton diplomate : pourquoi le produit seul ne suffit pas, l'angle que tu proposes, et l'accroche d'actualité.",
+            "context_en": "Why can't we just announce the new sneaker? It's our biggest launch this year.",
+            "model_answer_en": "A new product on its own isn't very newsworthy for journalists, even when it's a big launch for us. I suggest a different angle: a sneaker made from recycled bottles collected in France. As a news hook, we can time the press release with World Environment Day, when the media cover recycling anyway.",
+            "model_answer_fr": "Un nouveau produit seul n'est pas vraiment une info pour les journalistes, même quand c'est un gros lancement pour nous. Je propose un autre angle : une basket fabriquée à partir de bouteilles recyclées collectées en France. Comme accroche d'actualité, on peut caler le communiqué sur la Journée mondiale de l'environnement, quand les médias parlent de toute façon de recyclage.",
+            "key_phrases": ["isn't very newsworthy", "I suggest a different angle", "As a news hook", "time the press release with"]
+          }
+        },
+        {
+          "id": "pr-events-rediger-le-communique",
+          "title_fr": "Rédiger le chapeau et le paragraphe « À propos »",
+          "term_ids": ["lede", "boilerplate", "fact-sheet", "press-kit"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "I've read your draft. The lede is too long. It takes three sentences to say what's new.", "text_fr": "J'ai lu ton brouillon. Le chapeau est trop long. Il faut trois phrases pour dire ce qui est nouveau." },
+            { "speaker": "Kenji", "text_en": "OK. So who, what, when and where in the first sentence?", "text_fr": "D'accord. Donc qui, quoi, quand et où dès la première phrase ?" },
+            { "speaker": "Priya", "text_en": "Exactly. The technical details can go in the fact sheet.", "text_fr": "Exactement. Les détails techniques peuvent aller dans la fiche d'information." },
+            { "speaker": "Kenji", "text_en": "And the boilerplate? I wrote a new one.", "text_fr": "Et le paragraphe « À propos » ? J'en ai écrit un nouveau." },
+            { "speaker": "Priya", "text_en": "Please use the approved boilerplate. It has to be the same in every release.", "text_fr": "Utilise plutôt le paragraphe « À propos » validé, s'il te plaît. Il doit être identique dans chaque communiqué." },
+            { "speaker": "Kenji", "text_en": "Got it. I'll add the photos and the fact sheet to the press kit.", "text_fr": "Compris. J'ajoute les photos et la fiche d'information au dossier de presse." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Laquelle de ces phrases ferait le meilleur lede pour ce communiqué ?",
+              "choices": [
+                "Founded in 2015, the brand has always believed in a more sustainable future.",
+                "Today in Paris, the brand launches a sneaker made from bottles collected in France.",
+                "We are very proud and excited to share some wonderful news with you today."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un bon lede donne l'info tout de suite : qui (la marque), quoi (une basket en bouteilles recyclées), quand et où (aujourd'hui, à Paris). L'historique de la marque relève du boilerplate, en fin de communiqué. Et les formules d'enthousiasme sans information (« proud and excited ») font partie de ce que les journalistes coupent en premier."
+            },
+            {
+              "prompt_fr": "Où place-t-on le boilerplate dans un communiqué en anglais ?",
+              "choices": [
+                "At the end, under a heading such as \"About the brand\", before the media contact.",
+                "Right after the headline, so journalists know who is speaking before the news.",
+                "In the body of the email, while the release itself goes in the attachment."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le boilerplate est le paragraphe de présentation standard, repris tel quel à chaque communiqué, toujours à la fin (« About... »), suivi des contacts presse et souvent de la marque de fin « ENDS » ou « ### ». Le placer après le titre retarderait l'info, ce qui est l'erreur que Priya reproche au lede."
+            },
+            {
+              "prompt_fr": "Complète l'email de Kenji à Priya : « I've ___ the technical details to the fact sheet. »",
+              "choices": ["displaced", "moved", "removed"],
+              "answer_index": 1,
+              "explanation_fr": "Move something to = déplacer vers : c'est le verbe simple et naturel. Removed veut dire « supprimé », ce qui changerait le sens (les détails disparaîtraient). Displaced est un faux ami de « déplacer » : il s'emploie pour des personnes déplacées ou pour quelque chose remplacé de force, pas pour du texte."
+            },
+            {
+              "prompt_fr": "Tu veux que Priya valide le dossier de presse avant l'envoi. Quelle phrase est correcte et naturelle ?",
+              "choices": [
+                "Can you validate me the press kit before I send it?",
+                "Could you approve to the press kit before sending?",
+                "Could you sign off on the press kit before I send it?"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Sign off on something = donner son feu vert, valider officiellement. « Validate me the press kit » est un calque : validate signifie surtout vérifier la validité (d'un mot de passe, d'une donnée) et ne prend pas de complément « me ». Approve est possible, mais sans « to » : approve the press kit."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Tu renvoies le communiqué corrigé à Priya. En 4 phrases, explique ce que tu as changé et termine en lui demandant de valider avant une heure précise, en donnant la raison.",
+            "model_answer_en": "Here is the new version of the press release. I shortened the lede so the first sentence says who, what, when and where, and I moved the technical details to the fact sheet. I also used the approved boilerplate. Could you sign off on the press kit by 3 p.m. so I can send it tonight?",
+            "model_answer_fr": "Voici la nouvelle version du communiqué. J'ai raccourci le chapeau pour que la première phrase dise qui, quoi, quand et où, et j'ai déplacé les détails techniques dans la fiche d'information. J'ai aussi utilisé le paragraphe « À propos » validé. Pourrais-tu valider le dossier de presse d'ici 15 h pour que je puisse l'envoyer ce soir ?",
+            "key_phrases": ["I shortened the lede", "I moved the technical details to the fact sheet", "the approved boilerplate", "Could you sign off on"]
+          }
+        },
+        {
+          "id": "pr-events-cibler-et-pitcher",
+          "title_fr": "Choisir les journalistes et proposer une exclusivité",
+          "term_ids": ["media-list", "trade-press", "tier-one-media", "journalist", "exclusive"],
+          "dialogue": [
+            { "speaker": "Lucía", "text_en": "How many people are on the media list?", "text_fr": "Combien de personnes sont dans le fichier presse ?" },
+            { "speaker": "Moussa", "text_en": "About sixty. Some tier-one media, like national dailies, and a lot of trade press in fashion and retail.", "text_fr": "Une soixantaine. Quelques médias de premier plan, comme les quotidiens nationaux, et beaucoup de presse spécialisée mode et distribution." },
+            { "speaker": "Lucía", "text_en": "Good mix. Is there one journalist we really want?", "text_fr": "Bon équilibre. Il y a un journaliste en particulier qu'on veut absolument ?" },
+            { "speaker": "Moussa", "text_en": "Yes, the sustainability reporter at a big national daily. She wrote about recycled fashion last month.", "text_fr": "Oui, la journaliste développement durable d'un grand quotidien national. Elle a écrit sur la mode recyclée le mois dernier." },
+            { "speaker": "Lucía", "text_en": "Then offer her an exclusive. She gets the story first, 24 hours before everyone else.", "text_fr": "Alors propose-lui une exclusivité. Elle a l'info en premier, 24 heures avant tout le monde." },
+            { "speaker": "Moussa", "text_en": "OK. If she says no, we'll send it to everyone on Tuesday.", "text_fr": "D'accord. Si elle refuse, on l'envoie à tout le monde mardi." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Moussa offre une exclusivité à une journaliste. Quel risque faut-il gérer ensuite ?",
+              "choices": [
+                "The journalist must pay the brand a fee in exchange for the story.",
+                "Other journalists may be less keen once a rival has run the story first.",
+                "The brand can no longer send the same release to any other media."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une exclusive donne l'info à un seul média en premier. Le revers : les autres journalistes peuvent être moins intéressés par une info déjà publiée par un concurrent, d'où l'importance d'avoir un plan pour la suite. Un journaliste ne paie jamais pour une info, et l'exclusivité n'interdit pas d'envoyer ensuite le communiqué à tout le fichier (c'est le plan de Moussa)."
+            },
+            {
+              "prompt_fr": "Complète : « If she says no, I'll pitch the story ___ the whole list. »",
+              "choices": ["to", "at", "for"],
+              "answer_index": 0,
+              "explanation_fr": "On pitch something to someone : on propose un sujet à quelqu'un. « Pitched at » veut dire « destiné à un niveau » (a talk pitched at beginners), et « pitch for » veut dire « se porter candidat pour » (pitch for a new client). Trois prépositions, trois sens différents."
+            },
+            {
+              "prompt_fr": "Une revue spécialisée lue par les acheteurs des magasins de chaussures. Dans quelle catégorie de ta media list la ranges-tu ?",
+              "choices": ["Tier-one media", "Earned media", "Trade press"],
+              "answer_index": 2,
+              "explanation_fr": "La trade press est la presse professionnelle d'un secteur : ici, la distribution de chaussures. Tier-one media désigne les grands médias nationaux à très forte audience. Earned media n'est pas une catégorie de journalistes mais un type de visibilité (les retombées obtenues sans payer)."
+            },
+            {
+              "prompt_fr": "Une journaliste te répond : « Thanks, but I'm not covering sneakers at the moment. » Quelle réponse préserve le mieux la relation ?",
+              "choices": [
+                "No problem, thanks for letting me know. Can I keep you posted on future stories?",
+                "Are you sure? It's really a great story, I think you should reconsider it.",
+                "OK, I understand. I'll remove you from all of our media lists right away."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Remercier et proposer de la tenir au courant (keep someone posted) garde la porte ouverte pour un prochain sujet. Insister après un refus est la pire habitude d'un attaché de presse. La supprimer de toutes tes listes est excessif : elle a refusé ce sujet, pas toute relation avec toi."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris l'email de pitch à la journaliste développement durable, en 4 phrases : montre que tu connais son travail, présente l'info, propose l'exclusivité avec sa condition, et donne une date limite de réponse.",
+            "model_answer_en": "Hi Claire, I really enjoyed your article on recycled fashion last month. Next week, our client is launching a sneaker made from plastic bottles collected in France. I'd like to offer you an exclusive: you would get the story 24 hours before other media. Could you let me know by Thursday if you're interested?",
+            "model_answer_fr": "Bonjour Claire, j'ai beaucoup aimé votre article sur la mode recyclée le mois dernier. La semaine prochaine, notre client lance une basket fabriquée à partir de bouteilles en plastique collectées en France. J'aimerais vous proposer une exclusivité : vous auriez l'information 24 heures avant les autres médias. Pourriez-vous me dire d'ici jeudi si cela vous intéresse ?",
+            "key_phrases": ["I really enjoyed your article on", "I'd like to offer you an exclusive", "24 hours before other media", "let me know by Thursday"]
+          }
+        },
+        {
+          "id": "pr-events-bilan-des-retombees",
+          "title_fr": "Faire le bilan des retombées",
+          "term_ids": ["media-coverage", "press-clipping", "media-monitoring", "share-of-voice"],
+          "dialogue": [
+            { "speaker": "Sarah", "text_en": "So, how did the launch go in the media?", "text_fr": "Alors, comment s'est passé le lancement côté médias ?" },
+            { "speaker": "Ivan", "text_en": "Really well. We got media coverage in two national dailies and twelve trade magazines.", "text_fr": "Très bien. On a eu des retombées dans deux quotidiens nationaux et douze magazines spécialisés." },
+            { "speaker": "Sarah", "text_en": "Great. Can you put the press clippings in the report?", "text_fr": "Super. Tu peux mettre les retombées presse dans le rapport ?" },
+            { "speaker": "Ivan", "text_en": "Sure. Our media monitoring tool found thirty-five articles in total.", "text_fr": "Bien sûr. Notre outil de veille médias a trouvé trente-cinq articles au total." },
+            { "speaker": "Sarah", "text_en": "And how do we compare with competitors?", "text_fr": "Et comment on se situe par rapport aux concurrents ?" },
+            { "speaker": "Ivan", "text_en": "Our share of voice went up. This month, we had more mentions than any other sneaker brand.", "text_fr": "Notre part de voix a augmenté. Ce mois-ci, on a eu plus de mentions que toutes les autres marques de baskets." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment dire au client « On a eu de belles retombées dans deux quotidiens nationaux » ?",
+              "choices": [
+                "We had great fallout in two national dailies.",
+                "We got great coverage in two national dailies.",
+                "We got great repercussions in two national dailies."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les retombées presse se disent coverage (ou media coverage). Fallout est un faux ami dangereux : il désigne des conséquences négatives (comme les retombées radioactives), donc « great fallout » sonnerait comme une crise. Repercussions a aussi un sens plutôt négatif : les suites, souvent fâcheuses, d'une décision."
+            },
+            {
+              "prompt_fr": "Le client demande « the clippings ». Que lui envoies-tu ?",
+              "choices": [
+                "A copy or a link of each article that mentions the brand",
+                "A short video montage of the launch for social media",
+                "The list of journalists who received the press release"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une press clipping (coupure de presse) est la trace d'une retombée : autrefois découpée dans le journal, aujourd'hui une capture ou un lien. Ne confonds pas avec a clip, un extrait vidéo. La liste des destinataires, c'est la media list : elle montre à qui tu as écrit, pas ce qui a été publié."
+            },
+            {
+              "prompt_fr": "Le mois prochain, tu obtiens plus d'articles qu'en ce mois-ci, mais ta share of voice baisse. Quelle est l'explication la plus probable ?",
+              "choices": [
+                "Our press releases were shorter and less detailed than usual.",
+                "We sent the release to fewer journalists than the month before.",
+                "Our competitors got even more mentions than we did."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La share of voice est une part relative : ta part de l'ensemble des mentions de ton marché. Si les concurrents progressent plus vite que toi, ta part baisse même quand ton nombre d'articles monte. La longueur des communiqués ou le nombre de destinataires peuvent jouer sur tes articles, mais pas expliquer à eux seuls une baisse de part avec plus d'articles."
+            },
+            {
+              "prompt_fr": "Complète : « The story was ___ up by several news sites the next day. » (reprise par)",
+              "choices": ["caught", "picked", "taken"],
+              "answer_index": 1,
+              "explanation_fr": "To pick up a story = reprendre une info (et a monitoring tool picks up articles = l'outil les repère). Caught up veut dire « rattrapé » ou « pris dans » (caught up in a scandal), et taken up veut dire « adopté, commencé » (take up a sport) : aucun des deux n'a le sens de reprise par les médias."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le résumé en tête du rapport de retombées pour le client, en 4 phrases : un chiffre clé, les justificatifs, la comparaison avec la concurrence et une recommandation pour la suite.",
+            "model_answer_en": "The launch generated strong media coverage: 35 articles, including two national dailies. All press clippings are attached at the end of this report. According to our media monitoring, our share of voice went up compared with other sneaker brands this month. Next, we recommend pitching a follow-up story to the trade press.",
+            "model_answer_fr": "Le lancement a généré de très bonnes retombées : 35 articles, dont deux quotidiens nationaux. Toutes les retombées presse sont jointes à la fin de ce rapport. D'après notre veille médias, notre part de voix a progressé par rapport aux autres marques de baskets ce mois-ci. Pour la suite, nous recommandons de proposer un nouveau sujet à la presse spécialisée.",
+            "key_phrases": ["generated strong media coverage", "All press clippings are attached", "According to our media monitoring", "we recommend pitching"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pr-events-interview-presse",
+      "title_fr": "Préparer une interview presse",
+      "title_en": "Preparing a media interview",
+      "situation_fr": "Un journaliste veut interviewer la PDG de ton client avant l'annonce d'une nouvelle usine, encore sous embargo. Tu fixes les règles, tu prépares la porte-parole et tu proposes une tribune.",
+      "guide": {
+        "intro_fr": "Quand un journaliste te contacte, c'est une media inquiry, une demande presse. Si l'information n'est pas encore publique, tu peux la partager sous embargo : le journaliste la reçoit à l'avance mais s'engage à ne rien publier avant une date et une heure précises. Avant la media interview, tu prépares le spokesperson (porte-parole) avec un media training, des talking points (éléments de langage) et un soundbite, une phrase courte facile à citer. Pendant l'échange, tout est on the record par défaut, donc citable. Off the record veut dire « en off » : à ne pas publier, et seulement si le journaliste l'accepte avant. Et si ta dirigeante veut défendre une idée, tu peux proposer une op-ed, une tribune signée de son nom.",
+        "key_phrases": [
+          { "en": "This is embargoed until Tuesday at 9 a.m.", "fr": "C'est sous embargo jusqu'à mardi 9 h." },
+          { "en": "What's your deadline?", "fr": "Quelle est votre heure limite ?" },
+          { "en": "Let's stick to the talking points.", "fr": "Restons sur les éléments de langage." },
+          { "en": "Is this on the record?", "fr": "Je peux vous citer ?" },
+          { "en": "Can I come back to you with the exact figures?", "fr": "Je peux revenir vers vous avec les chiffres exacts ?" },
+          { "en": "She's happy to do the interview.", "fr": "Elle est d'accord pour faire l'interview." }
+        ],
+        "tip_fr": "Faux ami : un editor n'est pas un éditeur. C'est le rédacteur en chef ou le responsable d'une rubrique, celui qui commande et valide les articles. L'éditeur (la maison d'édition) se dit publisher. Retiens aussi deadline : l'heure limite du journaliste, à toujours demander en premier."
+      },
+      "lessons": [
+        {
+          "id": "pr-events-demande-sous-embargo",
+          "title_fr": "Répondre à une demande presse sous embargo",
+          "term_ids": ["media-inquiry", "embargo", "editor", "press-officer"],
+          "dialogue": [
+            { "speaker": "Inès", "text_en": "Hi, I'm the press officer for the brand. I saw your media inquiry this morning.", "text_fr": "Bonjour, je suis l'attachée de presse de la marque. J'ai vu votre demande presse ce matin." },
+            { "speaker": "Daniel", "text_en": "Thanks for calling back. My editor wants a piece on your new factory. What's the news?", "text_fr": "Merci de me rappeler. Mon rédacteur en chef veut un article sur votre nouvelle usine. Quelle est l'info ?" },
+            { "speaker": "Inès", "text_en": "We're announcing it on Tuesday. I can send you the details today, but they're under embargo until Tuesday morning.", "text_fr": "Nous l'annonçons mardi. Je peux vous envoyer les détails aujourd'hui, mais ils sont sous embargo jusqu'à mardi matin." },
+            { "speaker": "Daniel", "text_en": "No problem, I'll respect the embargo. Can I also talk to your CEO?", "text_fr": "Pas de problème, je respecterai l'embargo. Je peux aussi parler à votre PDG ?" },
+            { "speaker": "Inès", "text_en": "I'll check her diary. When do you need to file your story?", "text_fr": "Je regarde son agenda. Quand devez-vous rendre votre article ?" },
+            { "speaker": "Daniel", "text_en": "Monday evening. The piece goes online on Tuesday morning.", "text_fr": "Lundi soir. L'article sera en ligne mardi matin." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Un journaliste publie l'info deux heures avant la fin de l'embargo. Comment le dit-on en anglais ?",
+              "choices": ["He broke the embargo.", "He cracked the embargo.", "He passed the embargo."],
+              "answer_index": 0,
+              "explanation_fr": "On break an embargo (rompre l'embargo), comme on break a promise. On dit aussi respect, honour ou lift an embargo (le lever). « Crack » s'emploie pour un code ou un problème difficile, et « pass » voudrait dire « dépasser » ou « réussir », pas « violer un accord »."
+            },
+            {
+              "prompt_fr": "Daniel parle de « my editor ». Qui est-ce, le plus probablement ?",
+              "choices": [
+                "The publishing house that prints and sells his newspaper",
+                "The person at his media who commissions and approves his articles",
+                "The colleague who only checks the spelling of his articles"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Dans une rédaction, the editor est le rédacteur en chef ou le chef de rubrique : il commande les sujets et valide les articles. La maison qui publie se dit publisher (faux ami d'« éditeur »). Celui qui relit l'orthographe et le style est un copy editor ou un proofreader : un poste précis, pas « my editor » tout court."
+            },
+            {
+              "prompt_fr": "Comment écrire « sous embargo jusqu'à mardi 9 h » en tête d'un communiqué en anglais ?",
+              "choices": [
+                "In embargo up to Tuesday, 9 o'clock",
+                "Under embargo until Tuesday at 9 h",
+                "Embargoed until Tuesday, 9 a.m. CET"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La mention standard est EMBARGOED UNTIL + jour + heure + fuseau horaire (CET pour Paris), car tes journalistes ne sont pas tous en France. « 9 h » est une notation française : en anglais, 9 a.m. (ou 09:00). « In embargo » a la mauvaise préposition (under embargo), et « up to » s'emploie pour une quantité (up to 50 people), pas pour une date."
+            },
+            {
+              "prompt_fr": "La PDG n'est libre que quinze minutes lundi. Quelle réponse au journaliste est la plus professionnelle ?",
+              "choices": [
+                "She can do fifteen minutes on Monday. Would that work with your deadline?",
+                "She can make a short interview on Monday, if this is okay for you.",
+                "She is not available before Monday, so it's impossible for her, sorry."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On do an interview (pas make), et la question « Would that work with your deadline? » montre que tu tiens compte de ses contraintes. La deuxième phrase cumule deux calques (make an interview, okay for you). La troisième commence par le négatif et ferme la porte, alors qu'un créneau existe."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Confirme par email au journaliste l'envoi des informations et le créneau d'interview, en 4 phrases. Rappelle l'embargo sans ambiguïté (jour, heure, fuseau) et termine par une question qui vérifie que ça lui convient.",
+            "model_answer_en": "Thanks for your interest in our new factory. Please find the details attached; they are embargoed until Tuesday at 9 a.m. CET. Our CEO is available for a 15-minute interview on Monday at 2 p.m. Could you confirm that this works with your deadline?",
+            "model_answer_fr": "Merci pour votre intérêt pour notre nouvelle usine. Vous trouverez les détails en pièce jointe ; ils sont sous embargo jusqu'à mardi 9 h, heure de Paris. Notre PDG est disponible pour une interview de 15 minutes lundi à 14 h. Pouvez-vous me confirmer que cela convient à votre heure de bouclage ?",
+            "key_phrases": ["Thanks for your interest in", "embargoed until Tuesday at 9 a.m.", "is available for a 15-minute interview", "works with your deadline"]
+          }
+        },
+        {
+          "id": "pr-events-preparer-la-porte-parole",
+          "title_fr": "Préparer la porte-parole",
+          "term_ids": ["spokesperson", "media-training", "talking-points", "soundbite"],
+          "dialogue": [
+            { "speaker": "Mei", "text_en": "Our spokesperson has never done a live interview. Should we book a media training?", "text_fr": "Notre porte-parole n'a jamais fait d'interview en direct. On réserve un média-training ?" },
+            { "speaker": "Rafael", "text_en": "Yes, half a day is enough, including the tough questions.", "text_fr": "Oui, une demi-journée suffit, questions difficiles comprises." },
+            { "speaker": "Mei", "text_en": "I've drafted three talking points: local jobs, recycled materials and a fair price.", "text_fr": "J'ai rédigé trois éléments de langage : les emplois locaux, les matériaux recyclés et un prix juste." },
+            { "speaker": "Rafael", "text_en": "Good. Now we need a soundbite, one short line that journalists will want to quote.", "text_fr": "Bien. Maintenant il nous faut une petite phrase, une formule courte que les journalistes auront envie de citer." },
+            { "speaker": "Mei", "text_en": "What about: \"Your old bottles are your next sneakers\"?", "text_fr": "Que penses-tu de : « Vos vieilles bouteilles sont vos prochaines baskets » ?" },
+            { "speaker": "Rafael", "text_en": "I love it. It's short, visual and easy to remember.", "text_fr": "J'adore. C'est court, visuel et facile à retenir." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les talking points ne doivent-ils pas être un texte à réciter mot à mot ?",
+              "choices": [
+                "Because journalists are not allowed to hear the talking points.",
+                "Because talking points are only used in written interviews.",
+                "Because answers that sound learned by heart lose credibility."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Les talking points sont des messages clés à faire passer avec ses propres mots, quelle que soit la question. Une réponse récitée sonne fausse, surtout en direct. Ils ne sont pas secrets au point d'être interdits, ils sont simplement internes. Et ils servent justement à l'oral : interviews radio, télé, conférences."
+            },
+            {
+              "prompt_fr": "Laquelle de ces phrases ferait le meilleur soundbite pour la radio ?",
+              "choices": [
+                "We have implemented a circular model across our supply chain.",
+                "Every pair of our sneakers starts its life as plastic bottles.",
+                "We believe that recycling is quite an important topic today."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un bon soundbite est court, concret et visuel : on « voit » les bouteilles devenir des baskets. La première phrase est du jargon d'entreprise (implemented, supply chain) que personne ne retient. La troisième est vague et prudente (quite, we believe) : aucun journaliste ne la citera."
+            },
+            {
+              "prompt_fr": "Complète : « Should we book a media ___ for the CEO? »",
+              "choices": ["formation", "training", "preparation"],
+              "answer_index": 1,
+              "explanation_fr": "L'expression consacrée est media training. Formation est un faux ami : en anglais, il désigne une forme ou une disposition (a rock formation, a flight formation), jamais un stage. Preparation se comprend, mais « media preparation » n'est pas le nom de cette prestation."
+            },
+            {
+              "prompt_fr": "Comment dire « Pendant le média-training, on travaillera aussi les questions difficiles » ?",
+              "choices": [
+                "We'll also practise the tough questions.",
+                "We'll also work the tough questions.",
+                "We'll also rehearse to the tough questions."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Travailler » quelque chose pour s'entraîner se dit practise (practice en anglais américain) ou rehearse, sans préposition : rehearse the answers. « Work the questions » est un calque de « travailler » qui n'a pas ce sens en anglais."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige la note de préparation que la PDG lira avant l'interview, en 4 phrases, sur un ton respectueux : le sujet, les éléments de langage, la petite phrase à placer, et quoi faire si elle ne connaît pas une réponse.",
+            "model_answer_en": "The interview will focus on the new factory. Please stick to our three talking points: local jobs, recycled materials and a fair price. Try to use our soundbite early: \"Your old bottles are your next sneakers.\" If you don't know an answer, say that you will come back to the journalist with the exact figures.",
+            "model_answer_fr": "L'interview portera sur la nouvelle usine. Merci de vous en tenir à nos trois éléments de langage : les emplois locaux, les matériaux recyclés et un prix juste. Essayez de placer notre petite phrase tôt : « Vos vieilles bouteilles sont vos prochaines baskets. » Si vous ne connaissez pas une réponse, dites que vous reviendrez vers le journaliste avec les chiffres exacts.",
+            "key_phrases": ["The interview will focus on", "stick to our three talking points", "use our soundbite early", "come back to the journalist"]
+          }
+        },
+        {
+          "id": "pr-events-on-ou-off",
+          "title_fr": "Savoir ce qui est citable ou en off",
+          "term_ids": ["on-the-record", "off-the-record", "media-interview", "q-and-a"],
+          "dialogue": [
+            { "speaker": "Lars", "text_en": "During the media interview, can I tell the journalist about our next factory? Just off the record?", "text_fr": "Pendant l'interview, je peux parler au journaliste de notre prochaine usine ? Juste en off ?" },
+            { "speaker": "Fatou", "text_en": "I wouldn't. Off the record only works if both sides agree before you speak.", "text_fr": "À ta place, je ne le ferais pas. Le off ne fonctionne que si les deux parties sont d'accord avant que tu parles." },
+            { "speaker": "Lars", "text_en": "So everything I say is on the record by default?", "text_fr": "Donc tout ce que je dis est citable par défaut ?" },
+            { "speaker": "Fatou", "text_en": "Exactly. Assume every word can end up in the article, even what you say after the interview.", "text_fr": "Exactement. Pars du principe que chaque mot peut finir dans l'article, même ce que tu dis après l'interview." },
+            { "speaker": "Lars", "text_en": "OK. And what about the Q&A at the end of the conference?", "text_fr": "D'accord. Et pour les questions-réponses à la fin de la conférence ?" },
+            { "speaker": "Fatou", "text_en": "Same rules. If you're not ready to share it, don't say it.", "text_fr": "Mêmes règles. Si tu n'es pas prêt à le partager, ne le dis pas." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Le dirigeant donne un chiffre confidentiel, puis ajoute : « But that's off the record. » Le journaliste peut-il le publier ?",
+              "choices": [
+                "Yes, unless he had agreed to go off the record before you said it.",
+                "No, saying \"off the record\" always protects what was just said.",
+                "Only if he quotes an anonymous source instead of your name."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le off est un accord passé avant de parler. Dire « c'était en off » après coup n'engage pas le journaliste : il peut publier, même si beaucoup choisissent de ne pas le faire pour préserver la relation. Le mot magique ne protège donc rien, et l'anonymisation n'est pas une règle automatique."
+            },
+            {
+              "prompt_fr": "Comment dire « Tout ce que tu dis peut être cité dans l'article » ?",
+              "choices": [
+                "Everything you say can be cited in the article.",
+                "Everything you say can be mentioned in the article.",
+                "Everything you say can be quoted in the article."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To quote someone = reprendre ses mots exacts, entre guillemets : c'est le verbe de la presse. To cite s'emploie surtout pour une source, une étude ou un exemple (cite a report). Mentioned veut dire « évoqué », sans reprendre les mots exacts : c'est plus faible que le risque réel."
+            },
+            {
+              "prompt_fr": "Après l'interview, autour d'un café, le journaliste glisse : « Off the record, how bad are your sales? » Que réponds-tu ?",
+              "choices": [
+                "Off the record, they're not great, but please don't write it.",
+                "I'd rather stick to what I can say on the record, if you don't mind.",
+                "No comment. You know very well I can't talk about that."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le café d'après l'interview reste du travail pour le journaliste. Décliner poliment en restant sur le citable est la bonne réflexe : « I'd rather stick to... » est ferme sans être sec. Se confier en espérant qu'il ne l'écrira pas est risqué, et un « no comment » agacé laisse penser que les chiffres sont mauvais."
+            },
+            {
+              "prompt_fr": "Complète l'invitation : « The CEO will speak for twenty minutes, followed by a short ___. »",
+              "choices": ["Q&A", "FAQ", "debriefing"],
+              "answer_index": 0,
+              "explanation_fr": "Q&A (questions and answers) est le temps de questions-réponses en direct avec le public ou la presse. Une FAQ est une page écrite de questions fréquentes, et a debriefing est un bilan fait après coup, en interne, pas un échange avec la salle."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Le dirigeant te demande sur Slack s'il peut « tout dire en off » au journaliste. Réponds en 3 phrases : refuse poliment, explique la règle et propose une alternative pour plus tard.",
+            "context_en": "Can I tell the journalist about our next project if I say it's off the record?",
+            "model_answer_en": "I'd rather you didn't. Everything you say is on the record by default, and off the record only works if the journalist agrees before you speak. Let's keep the project out of the interview and offer her an exclusive when it's ready.",
+            "model_answer_fr": "Je préférerais que tu ne le fasses pas. Tout ce que tu dis est citable par défaut, et le off ne fonctionne que si le journaliste l'accepte avant que tu parles. Gardons le projet en dehors de l'interview et proposons-lui une exclusivité quand il sera prêt.",
+            "key_phrases": ["I'd rather you didn't", "on the record by default", "only works if the journalist agrees", "offer her an exclusive"]
+          }
+        },
+        {
+          "id": "pr-events-proposer-une-tribune",
+          "title_fr": "Proposer une tribune à un journal",
+          "term_ids": ["op-ed", "byline", "advertorial", "newsroom"],
+          "dialogue": [
+            { "speaker": "Hannah", "text_en": "Our CEO wants to write about plastic waste. Could we place an op-ed in a national paper?", "text_fr": "Notre PDG veut écrire sur les déchets plastiques. On pourrait placer une tribune dans un journal national ?" },
+            { "speaker": "Olu", "text_en": "We can try. The opinion editor will want a strong idea, not a product pitch.", "text_fr": "On peut essayer. Le responsable des pages Opinions voudra une idée forte, pas une présentation de produit." },
+            { "speaker": "Hannah", "text_en": "Of course. And it would be signed with her name?", "text_fr": "Bien sûr. Et elle serait signée de son nom ?" },
+            { "speaker": "Olu", "text_en": "Yes, it's her byline, with her title. If the paper says no, I don't want to pay for an advertorial instead. Readers trust it less.", "text_fr": "Oui, c'est sa signature, avec sa fonction. Si le journal refuse, je ne veux pas payer un publireportage à la place. Les lecteurs y font moins confiance." },
+            { "speaker": "Hannah", "text_en": "Agreed. Once it's published, let's share it in the newsroom on our website.", "text_fr": "D'accord. Une fois publiée, partageons-la dans l'espace presse de notre site." },
+            { "speaker": "Olu", "text_en": "Good idea. I'll draft a first version for her by Thursday.", "text_fr": "Bonne idée. Je lui rédige une première version d'ici jeudi." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la vraie différence entre une op-ed et un advertorial ?",
+              "choices": [
+                "An op-ed is written by journalists; an advertorial is written by the brand.",
+                "The paper chooses to run an op-ed; an advertorial is space the brand pays for.",
+                "An op-ed is published online; an advertorial only appears in print."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La différence tient à qui décide et qui paie. Une op-ed (tribune, de « opposite the editorial page ») est écrite par une personne extérieure, mais c'est le journal qui choisit de la publier, gratuitement. Un advertorial est un espace acheté, qui doit être signalé comme publicité. Les deux peuvent paraître en ligne comme sur papier."
+            },
+            {
+              "prompt_fr": "Complète : « The piece would run ___ her byline next Monday. »",
+              "choices": ["under", "with", "by"],
+              "answer_index": 0,
+              "explanation_fr": "On dit under someone's byline : publié sous la signature de quelqu'un. Et run, pour un article, veut dire « paraître » (the piece runs on Monday). « By » fait partie de la byline elle-même (« By Jane Smith »), mais on ne dit pas « by her byline ». « With her byline » se comprend mais n'est pas la collocation naturelle."
+            },
+            {
+              "prompt_fr": "Quelle phrase ouvre le mieux ton email à la responsable des pages Opinions ?",
+              "choices": [
+                "We would be very happy if you could publish our article about our new shoe.",
+                "Please find attached our CEO's op-ed, to be published next Monday if possible.",
+                "I'd like to offer you an op-ed by our CEO on plastic waste in the fashion industry."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« I'd like to offer you » propose et laisse la décision au journal, et la phrase donne tout de suite l'auteur et le sujet. La première parle du produit : c'est exactement ce qu'Olu veut éviter dans une tribune. La deuxième impose une date de parution, ce qui est mal vu : c'est la rédaction qui décide du calendrier."
+            },
+            {
+              "prompt_fr": "Dans un journal (et non sur le site d'une marque), que désigne newsroom ?",
+              "choices": [
+                "The editorial team and the place where the journalists work",
+                "The meeting room where press conferences take place",
+                "The page of the paper that lists the latest headlines"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Newsroom a deux sens dans le métier : dans un média, c'est la rédaction (l'équipe et le lieu où elle travaille) ; sur le site d'une entreprise, c'est l'espace presse en ligne, comme dans le dialogue. Une salle de conférence de presse se dit press room ou briefing room, et une page de dernières infos se dit plutôt latest news."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris à la responsable des pages Opinions d'un journal pour proposer la tribune de ta PDG, en 4 phrases : l'auteur et le sujet, l'idée défendue, le format, et une question finale qui laisse la décision au journal.",
+            "model_answer_en": "Dear Ms Walker, I'd like to offer you an op-ed by our CEO on plastic waste in the fashion industry. Her main argument is that brands should pay for the collection of the plastic they use. It would run under her byline, at about 700 words. Would this fit your opinion pages?",
+            "model_answer_fr": "Madame, j'aimerais vous proposer une tribune de notre PDG sur les déchets plastiques dans la mode. Son idée principale est que les marques devraient financer la collecte du plastique qu'elles utilisent. Elle serait signée de son nom et ferait environ 700 mots. Cela pourrait-il convenir à vos pages Opinions ?",
+            "key_phrases": ["I'd like to offer you an op-ed by", "Her main argument is that", "It would run under her byline", "Would this fit your opinion pages?"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pr-events-influence",
+      "title_fr": "Monter un partenariat avec des influenceurs",
+      "title_en": "Setting up an influencer partnership",
+      "situation_fr": "Pour le lancement, ta cliente veut des influenceurs. Tu choisis les bons profils, tu rédiges le brief d'un partenariat rémunéré, tu envoies des produits et tu expliques où l'influence se place dans la stratégie.",
+      "guide": {
+        "intro_fr": "L'influencer marketing (marketing d'influence) consiste à travailler avec des créateurs de contenu qui parlent à ton audience. Un influencer a souvent une grande communauté ; un micro-influencer en a une plus petite, mais très engagée. Avant de choisir, tu demandes leur media kit, qui présente leur audience et souvent leurs tarifs. Quand la marque paie, c'est un paid partnership (partenariat rémunéré) et la disclosure est obligatoire : le post doit indiquer clairement qu'il s'agit de publicité. Le product seeding consiste à envoyer des produits sans exiger de post en échange : si le créateur en parle, ce sont des earned media, des médias gagnés. Le PESO model aide à situer tout ça : paid, earned, shared, owned.",
+        "key_phrases": [
+          { "en": "What does their audience look like?", "fr": "À quoi ressemble leur audience ?" },
+          { "en": "Could you send us your media kit?", "fr": "Pourriez-vous nous envoyer votre kit média ?" },
+          { "en": "Every post must be clearly labeled as an ad.", "fr": "Chaque post doit être clairement signalé comme publicité." },
+          { "en": "There's no obligation to post.", "fr": "Il n'y a aucune obligation de publier." },
+          { "en": "We'd love to work with you on our launch.", "fr": "Nous aimerions beaucoup travailler avec vous sur notre lancement." },
+          { "en": "Where does this fit in the PESO model?", "fr": "Où cela se place-t-il dans le modèle PESO ?" }
+        ],
+        "tip_fr": "Faux ami : « influent » se dit influential, pas « influent » ni « influencing ». Un influencer est la personne qui crée du contenu ; une personne ou un média qui a du poids est influential : « She's very influential in sustainable fashion. » En France, un partenariat rémunéré doit porter la mention « publicité » ou « collaboration commerciale »."
+      },
+      "lessons": [
+        {
+          "id": "pr-events-choisir-les-influenceurs",
+          "title_fr": "Choisir les bons profils",
+          "term_ids": ["influencer", "micro-influencer", "influencer-marketing", "brand-ambassador", "media-kit"],
+          "dialogue": [
+            { "speaker": "Yasmin", "text_en": "The client wants one big influencer with two million followers for the launch.", "text_fr": "La cliente veut un gros influenceur avec deux millions d'abonnés pour le lancement." },
+            { "speaker": "Marco", "text_en": "It's an option, but I'd suggest five micro-influencers instead. Their communities are smaller but much more engaged.", "text_fr": "C'est une option, mais je proposerais plutôt cinq micro-influenceurs. Leurs communautés sont plus petites mais beaucoup plus engagées." },
+            { "speaker": "Yasmin", "text_en": "And they post about sustainable fashion, which fits our influencer marketing strategy.", "text_fr": "Et ils publient sur la mode durable, ce qui colle à notre stratégie de marketing d'influence." },
+            { "speaker": "Marco", "text_en": "Exactly. Let's ask each of them for their media kit to check their audience.", "text_fr": "Exactement. Demandons à chacun son kit média pour vérifier son audience." },
+            { "speaker": "Yasmin", "text_en": "If one of them works really well, could we make her a brand ambassador for the year?", "text_fr": "Si l'une d'entre elles fonctionne vraiment bien, on pourrait en faire une ambassadrice de la marque pour l'année ?" },
+            { "speaker": "Marco", "text_en": "Good idea. A long-term partner is more credible than a one-off post.", "text_fr": "Bonne idée. Une partenaire sur la durée est plus crédible qu'un post ponctuel." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "La star a 0,5 % d'engagement, les micro-influenceurs 6 % en moyenne. Quel argument est juste face à la cliente ?",
+              "choices": [
+                "More people will see the posts, and they'll be cheaper for us too.",
+                "Fewer people will see the posts, but a much bigger share will engage.",
+                "The reach is exactly the same, so we should just pick the cheaper option."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Cinq micro-influenceurs touchent moins de monde au total (reach plus faible), mais une part bien plus grande de leur audience réagit (engagement rate douze fois plus élevé). C'est l'argument honnête. Dire qu'ils toucheront plus de monde ou autant est faux avec deux millions d'abonnés en face, et le prix n'est pas dans les données."
+            },
+            {
+              "prompt_fr": "Comment dire « C'est une créatrice très influente dans la mode durable » ?",
+              "choices": [
+                "She's a very influent creator in sustainable fashion.",
+                "She's a very influencing creator in sustainable fashion.",
+                "She's a very influential creator in sustainable fashion."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'adjectif est influential. « Influent » n'existe pas en anglais : c'est un calque du français. « Influencing » est le participe du verbe to influence (en train d'influencer quelque chose) et ne s'emploie pas comme adjectif pour décrire une personne qui a du poids."
+            },
+            {
+              "prompt_fr": "Que demandes-tu en écrivant « Could you send us your media kit? » à une créatrice ?",
+              "choices": [
+                "The products and visuals she would like the brand to send her",
+                "Her audience statistics, past partnerships and usually her rates",
+                "The contract she has signed with her talent management agency"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le media kit d'un créateur présente son audience (âge, pays, engagement), ses collaborations passées et souvent ses tarifs : c'est ce qui permet de comparer les profils. Les produits et visuels sont fournis par la marque. Le contrat avec son agence est confidentiel et ne fait jamais partie du media kit."
+            },
+            {
+              "prompt_fr": "Complète : « The client wants an influencer with two ___ followers. »",
+              "choices": ["million", "millions", "millions of"],
+              "answer_index": 0,
+              "explanation_fr": "Après un nombre précis, million reste invariable et sans « of » : two million followers, three hundred people. On met un s et « of » seulement sans nombre précis : millions of followers (des millions d'abonnés). C'est une erreur très fréquente chez les francophones, à cause de « deux millions de »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "La cliente insiste pour un seul gros influenceur. Réponds-lui sur Slack en 3 phrases : reconnais que son idée est une option, donne une raison concrète de préférer des micro-influenceurs, et propose une prochaine étape.",
+            "context_en": "Why not just one big influencer? It would be faster and simpler.",
+            "model_answer_en": "One big influencer is an option, but I'd suggest five micro-influencers instead. Their communities are smaller but much more engaged, and they all talk about sustainable fashion. I'll ask for their media kits so we can compare their audiences on Thursday.",
+            "model_answer_fr": "Un gros influenceur est une option, mais je proposerais plutôt cinq micro-influenceurs. Leurs communautés sont plus petites mais beaucoup plus engagées, et ils parlent tous de mode durable. Je vais demander leurs kits média pour qu'on puisse comparer leurs audiences jeudi.",
+            "key_phrases": ["I'd suggest five micro-influencers instead", "much more engaged", "I'll ask for their media kits"]
+          }
+        },
+        {
+          "id": "pr-events-brief-partenariat",
+          "title_fr": "Rédiger le brief d'un partenariat rémunéré",
+          "term_ids": ["paid-partnership", "disclosure", "partnership", "influencer"],
+          "dialogue": [
+            { "speaker": "Chloé", "text_en": "I'm writing the brief for the paid partnership with Nina. What should go in it?", "text_fr": "J'écris le brief du partenariat rémunéré avec Nina. Qu'est-ce que je dois y mettre ?" },
+            { "speaker": "Arjun", "text_en": "The key message, the deliverables, the dates and her payment. For example, one reel and three stories in the launch week.", "text_fr": "Le message clé, les livrables, les dates et sa rémunération. Par exemple, un reel et trois stories pendant la semaine du lancement." },
+            { "speaker": "Chloé", "text_en": "And the disclosure rules?", "text_fr": "Et les règles de transparence ?" },
+            { "speaker": "Arjun", "text_en": "Very important. Every post must say clearly that it's an ad, with the platform's paid partnership label.", "text_fr": "Très important. Chaque post doit dire clairement que c'est de la publicité, avec l'étiquette « partenariat rémunéré » de la plateforme." },
+            { "speaker": "Chloé", "text_en": "Should we also write her captions?", "text_fr": "On écrit aussi ses légendes ?" },
+            { "speaker": "Arjun", "text_en": "No, give her the key points and let her use her own voice. That's why people follow an influencer.", "text_fr": "Non, donne-lui les points clés et laisse-la parler avec ses propres mots. C'est pour ça qu'on suit un influenceur." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Laquelle de ces pratiques respecte vraiment l'obligation de disclosure ?",
+              "choices": [
+                "Adding #ad at the very end of the caption, after twenty other hashtags",
+                "Thanking the brand in a comment under the post a few days later",
+                "Writing \"Ad\" at the start of the caption and using the platform's label"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La disclosure doit être claire et visible immédiatement, sans cliquer ni faire défiler : une mention en début de légende plus l'outil de la plateforme. Un #ad noyé dans vingt hashtags ou un remerciement en commentaire plus tard ne permettent pas au public de comprendre tout de suite que c'est payé : les autorités (en France comme aux États-Unis) les jugent insuffisants."
+            },
+            {
+              "prompt_fr": "Complète le brief : « Deliverables, dates and ___ : 1 reel and 3 stories. » (la rémunération de la créatrice)",
+              "choices": ["salary", "fee", "wage"],
+              "answer_index": 1,
+              "explanation_fr": "Une prestataire payée à la mission touche un fee (honoraires, cachet). Salary est le salaire mensuel ou annuel d'un employé, et wage le salaire horaire ou hebdomadaire, souvent d'un emploi d'exécution. Une créatrice indépendante n'est ni l'un ni l'autre pour la marque."
+            },
+            {
+              "prompt_fr": "Que veut dire Arjun par « let her use her own voice » ?",
+              "choices": [
+                "Let her say things in her own style and words.",
+                "Let her record her own voice-over for the reel.",
+                "Let her choose her own hashtags for the posts."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Ici, voice veut dire le ton, le style personnel (comme brand voice pour une marque). Arjun conseille de ne pas écrire les légendes à sa place : son authenticité fait sa valeur. Il ne parle ni de voix off (voice-over) ni de hashtags, même si ces réponses ont l'air logiques."
+            },
+            {
+              "prompt_fr": "L'influenceuse propose de publier sans mention « pour que ça fasse plus naturel ». Quelle réponse est ferme mais aimable ?",
+              "choices": [
+                "Sure, as long as you mention the brand somewhere in the caption.",
+                "I understand, but we have to label it clearly. It protects you too.",
+                "OK, but please add the label later if any followers ask about it."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« I understand, but... » reconnaît son souci puis pose la règle, et « It protects you too » rappelle qu'elle risque aussi des sanctions. Citer la marque n'est pas une mention de partenariat. Ajouter l'étiquette « si quelqu'un demande » revient à faire de la publicité cachée, interdite en France et dans de nombreux pays."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige la partie « Livrables et transparence » du brief envoyé à l'influenceuse, en 4 phrases : les livrables précis, la liberté de ton, la règle de mention et le délai pour envoyer les projets.",
+            "context_en": "Influencer brief, section 3: Deliverables and disclosure",
+            "model_answer_en": "For this paid partnership, we'd like one reel and three stories during the launch week. Please share the key message in your own words. Every post must be clearly labeled as an ad, using the platform's paid partnership tool. Please send us your drafts two days before posting.",
+            "model_answer_fr": "Pour ce partenariat rémunéré, nous aimerions un reel et trois stories pendant la semaine du lancement. Merci de transmettre le message clé avec vos propres mots. Chaque post doit être clairement signalé comme publicité, avec l'outil « partenariat rémunéré » de la plateforme. Merci de nous envoyer vos projets deux jours avant publication.",
+            "key_phrases": ["For this paid partnership", "in your own words", "clearly labeled as an ad", "two days before posting"]
+          }
+        },
+        {
+          "id": "pr-events-envoyer-des-produits",
+          "title_fr": "Envoyer des produits sans contrepartie",
+          "term_ids": ["product-seeding", "earned-media", "micro-influencer", "journalist"],
+          "dialogue": [
+            { "speaker": "Zoé", "text_en": "We have forty pairs left. Should we start a product seeding campaign?", "text_fr": "Il nous reste quarante paires. On lance une campagne d'envoi de produits ?" },
+            { "speaker": "Emeka", "text_en": "Yes. We send the sneakers to micro-influencers and a few journalists, with a nice note.", "text_fr": "Oui. On envoie les baskets à des micro-influenceurs et à quelques journalistes, avec un petit mot." },
+            { "speaker": "Zoé", "text_en": "Do they have to post about it?", "text_fr": "Ils sont obligés d'en parler ?" },
+            { "speaker": "Emeka", "text_en": "No, they don't. That's the big difference with a paid partnership.", "text_fr": "Non. C'est la grande différence avec un partenariat rémunéré." },
+            { "speaker": "Zoé", "text_en": "So if they talk about it, it's earned media.", "text_fr": "Donc s'ils en parlent, ce sont des médias gagnés." },
+            { "speaker": "Emeka", "text_en": "Exactly. We don't pay for it, which makes it more credible. But even with a gift, they should say they received it for free.", "text_fr": "Exactement. On ne paie pas, ce qui le rend plus crédible. Mais même pour un cadeau, ils doivent dire qu'ils l'ont reçu gratuitement." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Une créatrice reçoit les baskets en seeding et te demande quand elle doit poster. Que réponds-tu ?",
+              "choices": [
+                "Within a week, please, so it matches our launch calendar.",
+                "As soon as possible, and please tag us in at least three stories.",
+                "Whenever you like, or not at all. There's no obligation to post."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "En product seeding, il n'y a aucune contrepartie exigée : c'est ce qui le distingue d'un partenariat rémunéré. Imposer un délai ou un nombre de stories transformerait l'envoi en commande, avec alors un contrat, une rémunération et une mention publicitaire obligatoire."
+            },
+            {
+              "prompt_fr": "Une journaliste reçoit une paire et écrit un article positif sans que la marque paie. Dans le modèle PESO, c'est :",
+              "choices": ["earned media", "owned media", "shared media"],
+              "answer_index": 0,
+              "explanation_fr": "Earned media = visibilité « gagnée », obtenue sans payer l'espace, grâce à l'intérêt d'un journaliste ou d'un créateur. Owned media, ce sont les canaux de la marque (site, newsletter). Shared media, ce sont les réseaux sociaux et les partages : un article de presse n'en fait pas partie."
+            },
+            {
+              "prompt_fr": "Complète : « People ___ these posts more than ads, because no one paid for them. »",
+              "choices": ["believe", "trust", "rely"],
+              "answer_index": 1,
+              "explanation_fr": "To trust something = faire confiance à quelque chose : c'est le verbe de la crédibilité. Believe s'emploie avec une personne ou une affirmation précise (I believe you, believe a story). Rely demande la préposition on (rely on a source) : « rely these posts » est incorrect."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous voulions que vous soyez parmi les premières à les essayer » ?",
+              "choices": [
+                "We wanted you to be between the first to try them.",
+                "We wanted that you are among the first to try them.",
+                "We wanted you to be among the first to try them."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Parmi » se dit among (between, c'est « entre » deux éléments). Et après want, l'anglais n'utilise pas « that » : want someone to do something. « We wanted that you are » est un calque direct de « nous voulions que vous soyez »."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris le petit mot qui accompagne les baskets envoyées à une micro-influenceuse, en 3 phrases : un ton chaleureux, aucune pression, et le rappel de mentionner le cadeau si elle en parle.",
+            "model_answer_en": "Hi Sofia, we love your content on sustainable fashion, so we wanted you to be among the first to try our new recycled sneakers. There's no obligation to post, of course. If you do share them, please mention that they were a gift.",
+            "model_answer_fr": "Bonjour Sofia, nous adorons vos contenus sur la mode durable, alors nous voulions que vous soyez parmi les premières à essayer nos nouvelles baskets recyclées. Il n'y a bien sûr aucune obligation de publier. Si vous les partagez, merci de mentionner qu'il s'agit d'un cadeau.",
+            "key_phrases": ["we love your content on", "among the first to try", "There's no obligation to post", "please mention that they were a gift"]
+          }
+        },
+        {
+          "id": "pr-events-modele-peso",
+          "title_fr": "Expliquer le modèle PESO au client",
+          "term_ids": ["peso-model", "earned-media", "public-relations", "media-relations", "paid-partnership"],
+          "dialogue": [
+            { "speaker": "Jonas", "text_en": "I don't really see the difference between your public relations work and our ads.", "text_fr": "Je ne vois pas vraiment la différence entre votre travail de relations publiques et nos publicités." },
+            { "speaker": "Leila", "text_en": "Let me use the PESO model: paid, earned, shared and owned media.", "text_fr": "Laissez-moi utiliser le modèle PESO : médias payés, gagnés, partagés et propres." },
+            { "speaker": "Jonas", "text_en": "OK. And the influencer campaign, which part is that?", "text_fr": "D'accord. Et la campagne d'influence, c'est quelle partie ?" },
+            { "speaker": "Leila", "text_en": "The paid partnerships are paid media. The articles our media relations team gets are earned media.", "text_fr": "Les partenariats rémunérés sont des médias payés. Les articles que notre équipe de relations presse obtient sont des médias gagnés." },
+            { "speaker": "Jonas", "text_en": "And shared and owned?", "text_fr": "Et partagés et propres ?" },
+            { "speaker": "Leila", "text_en": "Shared is social media, when people repost your content. Owned is what you control, like your website. It works best when all four support each other.", "text_fr": "Les médias partagés, ce sont les réseaux sociaux, quand les gens repartagent votre contenu. Les médias propres, c'est ce que vous contrôlez, comme votre site. Ça marche mieux quand les quatre se renforcent." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Un influenceur publie un post payé par la marque, sur son propre compte. Dans PESO, c'est :",
+              "choices": [
+                "earned media, because it's on his own account",
+                "paid media, because the brand paid for it",
+                "shared media, because it's on social media"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le critère, c'est qui paie, pas où le post est publié : la marque a payé, donc ce sont des paid media (comme le dit Leila pour les paid partnerships). Le compte de l'influenceur ne rend pas la visibilité « gagnée ». Et le fait d'être sur un réseau social ne suffit pas à en faire des shared media."
+            },
+            {
+              "prompt_fr": "Comment demander naturellement « Où se situe la campagne d'influence dans ce modèle ? »",
+              "choices": [
+                "Where does the influencer campaign fit in this model?",
+                "Where is situated the influencer campaign in this model?",
+                "Where does the influencer campaign place in this model?"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Where does X fit (in)? est la tournure naturelle pour demander la place d'un élément dans un ensemble. « Where is situated » garde l'ordre des mots du français (on dirait where is X situated, très formel). Place est transitif : on place quelque chose, une campagne ne « place » pas toute seule."
+            },
+            {
+              "prompt_fr": "Complète : « Our ___ team pitches stories to journalists every week. »",
+              "choices": ["press relationships", "media contacts", "media relations"],
+              "answer_index": 2,
+              "explanation_fr": "Media relations est l'expression figée pour l'activité de relations presse (a media relations team, a media relations manager). Relationships désigne des liens personnels entre des gens, et media contacts sont les journalistes eux-mêmes, pas l'équipe qui leur écrit."
+            },
+            {
+              "prompt_fr": "Le client conclut : « So PR is just free advertising? » Quelle réponse est la plus juste ?",
+              "choices": [
+                "Not quite. We don't pay for the space, but we don't control what journalists write.",
+                "Exactly. It's the same thing as advertising, but we never pay for any of it.",
+                "Not at all. Public relations has nothing to do with the visibility of the brand."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La nuance clé des earned media : on ne paie pas l'espace, mais on ne contrôle ni le contenu ni la date. C'est aussi ce qui les rend crédibles. Dire « exactement » est faux (la publicité, elle, se contrôle) et le travail RP a un coût. Dire que les RP n'ont rien à voir avec la visibilité est tout aussi faux."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion, résume au client en 4 phrases comment ses actions se répartissent dans le modèle PESO, et termine par une recommandation concrète.",
+            "model_answer_en": "Using the PESO model, your paid influencer posts are paid media, and the articles from our media relations work are earned media. Your social posts are shared media, and your website is owned media. The goal is to make all four work together. That's why I suggest sharing every article we get on your social accounts and on your website.",
+            "model_answer_fr": "Selon le modèle PESO, vos posts d'influenceurs payés sont des médias payés, et les articles obtenus grâce à nos relations presse sont des médias gagnés. Vos posts sur les réseaux sociaux sont des médias partagés, et votre site web, des médias propres. L'objectif est de faire travailler les quatre ensemble. C'est pourquoi je propose de partager chaque article obtenu sur vos réseaux sociaux et sur votre site.",
+            "key_phrases": ["Using the PESO model", "are earned media", "make all four work together", "That's why I suggest"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pr-events-preparer-evenement",
+      "title_fr": "Préparer un événement avec les prestataires",
+      "title_en": "Planning an event with suppliers",
+      "situation_fr": "Tu organises le lancement de la basket à Paris : une après-midi de conférences pour les professionnels, puis une soirée pour 150 invités. Tu réserves le lieu, tu gères les invitations, tu construis le programme et tu cales le conducteur.",
+      "guide": {
+        "intro_fr": "Un événement se prépare d'abord avec des prestataires (suppliers) : le venue (le lieu), le catering (le traiteur), l'équipe AV (son, lumière, vidéo). L'event planner gère toute la logistics et doit connaître le headcount, le nombre de personnes attendues. Côté invités, tu envoies un save the date, puis l'invitation avec un RSVP, et tu suis la guest list et les registrations. Attention aux no-shows, les inscrits qui ne viennent pas. Le programme peut mêler keynote, panel discussion animée par un moderator et breakout sessions. Enfin, le run of show, le déroulé minute par minute, est testé lors d'un dry run avant l'ouverture des portes.",
+        "key_phrases": [
+          { "en": "Do you still have the 12th of June?", "fr": "Le 12 juin est-il encore disponible ?" },
+          { "en": "We'll confirm the final headcount a week before.", "fr": "Nous confirmerons le nombre définitif une semaine avant." },
+          { "en": "Please RSVP by June 1st.", "fr": "Merci de répondre avant le 1er juin." },
+          { "en": "Who's moderating the panel?", "fr": "Qui anime la table ronde ?" },
+          { "en": "Let's walk through the run of show.", "fr": "Passons en revue le conducteur." },
+          { "en": "Can we do a sound check at 4?", "fr": "On peut faire les balances à 16 h ?" }
+        ],
+        "tip_fr": "Faux ami : louer une salle ne se dit pas « location ». En anglais, location veut dire « emplacement ». On dit to book a venue (réserver un lieu) ou to rent a venue (louer un lieu). Autre piège : disponible se dit available, car disposable veut dire « jetable »."
+      },
+      "lessons": [
+        {
+          "id": "pr-events-reserver-le-lieu",
+          "title_fr": "Réserver le lieu et le traiteur",
+          "term_ids": ["event-planner", "venue", "headcount", "catering", "logistics", "hybrid-event"],
+          "dialogue": [
+            { "speaker": "Mariam", "text_en": "Hi Hugo, I'm the event planner for the sneaker launch, so I handle all the logistics. Do you still have the 12th of June?", "text_fr": "Bonjour Hugo, je suis la cheffe de projet événementiel du lancement de la basket, donc je gère toute la logistique. Le 12 juin est-il encore libre ?" },
+            { "speaker": "Hugo", "text_en": "Yes, the venue is free that day. How many guests are you expecting?", "text_fr": "Oui, le lieu est libre ce jour-là. Combien d'invités attendez-vous ?" },
+            { "speaker": "Mariam", "text_en": "Around 150, but I'll confirm the final headcount a week before.", "text_fr": "Environ 150, mais je confirmerai le nombre définitif une semaine avant." },
+            { "speaker": "Hugo", "text_en": "Perfect. Our catering partner needs that number for the food and drinks.", "text_fr": "Parfait. Notre traiteur partenaire a besoin de ce chiffre pour la nourriture et les boissons." },
+            { "speaker": "Mariam", "text_en": "Understood. It's also a hybrid event: we'll stream the talks online.", "text_fr": "Compris. C'est aussi un événement hybride : nous diffuserons les interventions en ligne." },
+            { "speaker": "Hugo", "text_en": "Then you'll need our dedicated internet line. I'll send you the access times and the parking details today.", "text_fr": "Alors il vous faudra notre ligne internet dédiée. Je vous envoie aujourd'hui les horaires d'accès et les infos de stationnement." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "La fiche du lieu indique « Capacity: 200 standing, 120 seated ». Ton headcount est de 150. Que demandes-tu ?",
+              "choices": [
+                "Could we add thirty more seats to the capacity of the room?",
+                "Could we do a standing reception with a few tables, then?",
+                "Could you reduce the headcount of the venue for our event?"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La capacity est la limite maximale du lieu, fixée pour la sécurité : 150 personnes tiennent debout (200 max), pas assises (120 max). Il faut donc un cocktail debout. On ne « rajoute » pas de places au-delà de la capacité autorisée, et le headcount, c'est ton nombre d'invités, pas une donnée du lieu."
+            },
+            {
+              "prompt_fr": "Comment écrire au lieu « La salle est-elle disponible le 12 juin ? »",
+              "choices": [
+                "Is the venue disposable on June 12th?",
+                "Is the venue free the June 12th?",
+                "Is the venue available on June 12th?"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Disponible se dit available. Disposable est un faux ami : il veut dire « jetable » (disposable cups). Free est possible, mais la date demande la préposition on : on June 12th. « The June 12th » sans préposition est un calque de « le 12 juin »."
+            },
+            {
+              "prompt_fr": "Comment dire au lieu « Nous souhaitons louer la salle pour la soirée » ?",
+              "choices": [
+                "We'd like to book the venue for the evening.",
+                "We'd like to locate the venue for the evening.",
+                "We'd like to reserve us the venue for the evening."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "To book (ou to rent) a venue = réserver ou louer un lieu. To locate veut dire « localiser, trouver l'emplacement » : c'est le piège de « location ». « Reserve us the venue » calque « nous réserver » : en anglais, reserve se construit sans pronom (reserve the venue for us)."
+            },
+            {
+              "prompt_fr": "Complète : « The event planner sends the suppliers a document with all the ___: deliveries, access times, parking. »",
+              "choices": ["logistic", "logistics", "logisticals"],
+              "answer_index": 1,
+              "explanation_fr": "Le nom est logistics, toujours avec un s (comme mathematics), et il désigne l'ensemble de l'organisation pratique. Logistic est un adjectif rare (on dit plutôt logistical support). « Logisticals » n'existe pas."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris au lieu pour confirmer la réservation, en 4 phrases : la date et les horaires, le nombre d'invités avec la date de confirmation, et ce dont tu as besoin pour le format hybride.",
+            "model_answer_en": "Thank you for your quick reply. We'd like to book the venue for June 12th, from 2 p.m. to midnight. We're expecting around 150 guests, and I'll confirm the final headcount a week before. As it's a hybrid event, we'll need the dedicated internet line for streaming.",
+            "model_answer_fr": "Merci pour votre réponse rapide. Nous souhaitons réserver le lieu pour le 12 juin, de 14 h à minuit. Nous attendons environ 150 invités, et je confirmerai le nombre définitif une semaine avant. Comme il s'agit d'un événement hybride, nous aurons besoin de la ligne internet dédiée pour la diffusion.",
+            "key_phrases": ["We'd like to book the venue for", "We're expecting around 150 guests", "confirm the final headcount", "As it's a hybrid event"]
+          }
+        },
+        {
+          "id": "pr-events-gerer-les-invitations",
+          "title_fr": "Gérer les invitations et les inscriptions",
+          "term_ids": ["launch-event", "save-the-date", "guest-list", "rsvp", "registration", "no-show"],
+          "dialogue": [
+            { "speaker": "Elif", "text_en": "The save the date went out last week. When do we send the real invitations for the launch event?", "text_fr": "Le save the date est parti la semaine dernière. Quand envoie-t-on les vraies invitations pour la soirée de lancement ?" },
+            { "speaker": "Kwame", "text_en": "Three weeks before. Guests will have until June 1st to answer.", "text_fr": "Trois semaines avant. Les invités auront jusqu'au 1er juin pour répondre." },
+            { "speaker": "Elif", "text_en": "Does the RSVP button go to an online registration form?", "text_fr": "Le bouton RSVP renvoie vers un formulaire d'inscription en ligne ?" },
+            { "speaker": "Kwame", "text_en": "Yes, it updates the guest list automatically, so the door team can check names on a tablet.", "text_fr": "Oui, il met à jour la liste des invités automatiquement, donc l'équipe à l'entrée peut vérifier les noms sur une tablette." },
+            { "speaker": "Elif", "text_en": "How many invitations should we send for 150 people?", "text_fr": "Combien d'invitations on envoie pour 150 personnes ?" },
+            { "speaker": "Kwame", "text_en": "For a free evening event, expect quite a few no-shows. We usually invite more people than we have places.", "text_fr": "Pour une soirée gratuite, attends-toi à pas mal d'absents. En général, on invite plus de monde qu'on a de places." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Complète l'invitation : « Please ___ by June 1st. »",
+              "choices": ["RSVP", "reply us", "confirm us"],
+              "answer_index": 0,
+              "explanation_fr": "En anglais, RSVP (de « répondez s'il vous plaît ») s'emploie comme un verbe : please RSVP by June 1st. « Reply us » est fautif (reply to us), et confirm ne prend pas de pronom personnel comme complément : on confirm your attendance, pas « confirm us »."
+            },
+            {
+              "prompt_fr": "Dans quel ordre envoie-t-on ces trois messages aux invités ?",
+              "choices": [
+                "Invitation, then save the date, then reminder",
+                "Reminder, then save the date, then invitation",
+                "Save the date, then invitation, then reminder"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le save the date part en premier, parfois des mois avant, pour bloquer la date. L'invitation vient ensuite, avec le programme et le lien d'inscription (RSVP). Le reminder (rappel) se fait quelques jours avant l'événement. Un save the date après l'invitation n'aurait plus de sens."
+            },
+            {
+              "prompt_fr": "Le soir du lancement, vingt personnes arrivent sans s'être inscrites. Comment les appelle-t-on en anglais ?",
+              "choices": ["no-shows", "walk-ins", "drop-outs"],
+              "answer_index": 1,
+              "explanation_fr": "Un walk-in arrive sans réservation ni inscription. C'est l'inverse d'un no-show, la personne inscrite qui ne vient pas. A drop-out est quelqu'un qui abandonne en cours de route (des études, une course, un programme), pas un invité imprévu."
+            },
+            {
+              "prompt_fr": "Une invitée importante t'écrit la veille : elle n'est pas inscrite mais veut venir. Il reste de la place. Que réponds-tu ?",
+              "choices": [
+                "Of course, I'll add you to the guest list. See you tomorrow!",
+                "Of course, I'll put you on the invited list for tomorrow.",
+                "Of course, you can register you on the list tomorrow."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La liste des invités se dit the guest list, et on add someone to the list (ajouter quelqu'un à la liste). « Invited list » n'est pas une expression anglaise. « Register you » calque le pronominal français « t'inscrire » : en anglais, register s'emploie seul (you can register online)."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige le texte de l'invitation par email à la soirée de lancement, en 3 phrases : la date et le lieu, ce qui attend les invités, et l'appel à répondre avec une date limite et le moyen de le faire.",
+            "model_answer_en": "You're invited to the launch event of our new recycled sneaker on June 12th at 7 p.m. in Paris. Join us for a short keynote, drinks and a first look at the collection. Please RSVP by June 1st using the registration link below.",
+            "model_answer_fr": "Vous êtes invité à la soirée de lancement de notre nouvelle basket recyclée le 12 juin à 19 h à Paris. Rejoignez-nous pour une courte intervention d'ouverture, un verre et une première découverte de la collection. Merci de répondre avant le 1er juin grâce au lien d'inscription ci-dessous.",
+            "key_phrases": ["You're invited to the launch event", "Join us for", "Please RSVP by June 1st", "the registration link below"]
+          }
+        },
+        {
+          "id": "pr-events-construire-le-programme",
+          "title_fr": "Construire le programme et trouver les intervenants",
+          "term_ids": ["keynote", "panel-discussion", "moderator", "breakout-session", "call-for-speakers"],
+          "dialogue": [
+            { "speaker": "Ivan", "text_en": "For the afternoon, I'd open with a keynote by the CEO, about twenty minutes.", "text_fr": "Pour l'après-midi, j'ouvrirais avec une plénière de la PDG, une vingtaine de minutes." },
+            { "speaker": "Lucía", "text_en": "Then a panel discussion with a designer, a recycling expert and a retailer?", "text_fr": "Ensuite une table ronde avec une designer, un expert du recyclage et un distributeur ?" },
+            { "speaker": "Ivan", "text_en": "Yes. We need a good moderator to keep it lively and on time. Maybe a journalist from the trade press.", "text_fr": "Oui. Il nous faut un bon modérateur pour que ce soit vivant et dans les temps. Peut-être un journaliste de la presse spécialisée." },
+            { "speaker": "Lucía", "text_en": "And after the break, two breakout sessions in smaller rooms: one on materials, one on retail.", "text_fr": "Et après la pause, deux ateliers dans des salles plus petites : un sur les matériaux, un sur la distribution." },
+            { "speaker": "Ivan", "text_en": "Great. Should we launch a call for speakers for the sessions?", "text_fr": "Super. On lance un appel à intervenants pour les ateliers ?" },
+            { "speaker": "Lucía", "text_en": "Yes, let's post it this week and close it at the end of April.", "text_fr": "Oui, publions-le cette semaine et clôturons-le fin avril." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "La PDG parle seule vingt minutes, puis trois experts échangent sur scène. Comment présenter ce programme ?",
+              "choices": [
+                "A conference by the CEO, followed by a round table talk.",
+                "A keynote by the CEO, followed by a panel discussion.",
+                "A panel by the CEO, followed by a keynote discussion."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une intervention principale en solo est une keynote ; un échange entre plusieurs intervenants sur scène est un panel (panel discussion). Conference est un faux ami : il désigne l'événement entier (un congrès), pas une intervention. Round table existe, mais s'emploie plutôt pour une réunion de travail autour d'une table que pour un débat devant un public."
+            },
+            {
+              "prompt_fr": "Complète : « We need someone to ___ the panel and keep it on time. »",
+              "choices": ["moderate", "animate", "lead up"],
+              "answer_index": 0,
+              "explanation_fr": "Animer un débat se dit to moderate (ou to chair, plus formel ; to host pour un événement entier). Animate est un faux ami : il veut dire donner vie, faire un dessin animé. « Lead up » veut dire « précéder, mener à » (in the weeks leading up to the event)."
+            },
+            {
+              "prompt_fr": "Comment écrire dans l'annonce « Les candidatures sont ouvertes jusqu'au 30 avril » ?",
+              "choices": [
+                "Candidatures are open until April 30th.",
+                "Applications are open since April 30th.",
+                "Applications are open until April 30th."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une candidature se dit an application (candidature, en anglais, est très rare et réservé à la politique). « Jusqu'à » une date se dit until. Since veut dire « depuis » : « open since April 30th » signifierait que l'appel a commencé le 30 avril."
+            },
+            {
+              "prompt_fr": "Tu veux que trente personnes travaillent en petit groupe sur les matériaux, pendant qu'un autre groupe parle distribution. Quel format proposes-tu ?",
+              "choices": ["A plenary session", "A keynote speech", "A breakout session"],
+              "answer_index": 2,
+              "explanation_fr": "Une breakout session est une session en petit groupe, en parallèle d'autres sessions, souvent après une plénière. La plenary session réunit au contraire tout le monde dans la même salle, et la keynote est une intervention d'une seule personne devant tout le public."
+            }
+          ],
+          "production": {
+            "channel": "social_post",
+            "prompt_fr": "Rédige un post LinkedIn de 3 phrases pour lancer l'appel à intervenants : l'événement (date, lieu), le format des sessions avec leurs thèmes, et la date limite avec l'action à faire.",
+            "model_answer_en": "We're looking for speakers for our sustainable fashion afternoon in Paris on June 12th. We're running two breakout sessions, one on recycled materials and one on retail. Our call for speakers is open until April 30th: apply via the link below.",
+            "model_answer_fr": "Nous recherchons des intervenants pour notre après-midi consacrée à la mode durable, à Paris, le 12 juin. Nous organisons deux ateliers, l'un sur les matériaux recyclés, l'autre sur la distribution. Notre appel à intervenants est ouvert jusqu'au 30 avril : candidatez via le lien ci-dessous.",
+            "key_phrases": ["We're looking for speakers for", "two breakout sessions", "Our call for speakers is open until", "apply via the link below"]
+          }
+        },
+        {
+          "id": "pr-events-caler-le-conducteur",
+          "title_fr": "Caler le conducteur et la répétition",
+          "term_ids": ["run-of-show", "dry-run", "master-of-ceremonies", "av-equipment", "signage"],
+          "dialogue": [
+            { "speaker": "Rania", "text_en": "Let's walk through the run of show. Doors open at 6:30, and the keynote starts at 7.", "text_fr": "Passons en revue le conducteur. Ouverture des portes à 18 h 30, et la plénière commence à 19 h." },
+            { "speaker": "Paul", "text_en": "Who introduces the CEO?", "text_fr": "Qui présente la PDG ?" },
+            { "speaker": "Rania", "text_en": "Our master of ceremonies. She welcomes the guests and links every part of the evening.", "text_fr": "Notre maîtresse de cérémonie. Elle accueille les invités et fait les transitions entre chaque moment de la soirée." },
+            { "speaker": "Paul", "text_en": "And the AV team? The video for the reveal is quite heavy.", "text_fr": "Et l'équipe AV ? La vidéo de la révélation est assez lourde." },
+            { "speaker": "Rania", "text_en": "They arrive at 2 p.m. We'll do a full dry run at 4, with the sound, the video and the lights.", "text_fr": "Ils arrivent à 14 h. On fera une répétition complète à 16 h, avec le son, la vidéo et les lumières." },
+            { "speaker": "Paul", "text_en": "Perfect. I'll check the signage too, so guests can find the cloakroom and the bar.", "text_fr": "Parfait. Je vérifierai aussi la signalétique, pour que les invités trouvent le vestiaire et le bar." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre le programme envoyé aux invités et le run of show ?",
+              "choices": [
+                "The run of show is the public program, shorter than the agenda.",
+                "The run of show is only used for TV shows, not for live events.",
+                "The run of show is the internal minute-by-minute plan, with cues."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le programme (agenda) donne aux invités les grandes étapes. Le run of show est le document interne de l'équipe : minute par minute, qui parle, quelle musique, quelle vidéo, quel micro (les cues, les tops). Il vient de la télévision, mais il est utilisé pour tout événement en direct."
+            },
+            {
+              "prompt_fr": "Comment proposer à l'équipe AV « On fait les balances à 16 h ? »",
+              "choices": [
+                "Can we do the balances at 4?",
+                "Can we do a sound check at 4?",
+                "Can we do the sound balance at 4?"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les balances (le test du son avant le show) se disent sound check. « Balances » est une traduction mot à mot qui ne veut rien dire ici (balance, c'est l'équilibre ou un solde bancaire). « Sound balance » désigne le réglage de l'équilibre entre les sources sonores, pas la séance de test."
+            },
+            {
+              "prompt_fr": "Quelle est la différence entre un master of ceremonies et un moderator ?",
+              "choices": [
+                "The MC hosts the whole event; a moderator runs one discussion.",
+                "The MC runs one discussion; a moderator hosts the whole event.",
+                "They're the same role, but MC is only used for weddings."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le master of ceremonies (MC, prononcé « em-si ») anime toute la soirée : accueil, transitions, annonces. Le moderator anime une séquence précise, comme une table ronde, en posant les questions et en distribuant la parole. MC s'emploie aussi pour les mariages, mais pas seulement."
+            },
+            {
+              "prompt_fr": "Complète : « I'll check the ___ so guests can find the cloakroom. »",
+              "choices": ["signalisation", "signage", "signalling"],
+              "answer_index": 1,
+              "explanation_fr": "La signalétique d'un événement (panneaux, flèches, kakémonos) se dit signage, un nom indénombrable. Signalisation n'existe pas en anglais. Signalling désigne l'envoi de signaux (ferroviaires, radio) ou, au figuré, le fait de faire passer un message."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Envoie sur Slack à l'équipe le planning de l'après-midi du jour J, en 3 phrases : les horaires précis de l'équipe AV et de la répétition, ce que doit faire la maîtresse de cérémonie, et une demande concrète à l'équipe avec une heure.",
+            "model_answer_en": "Quick update on the run of show for tomorrow: the AV team arrives at 2 p.m. and we'll do a full dry run at 4. Our master of ceremonies needs to be there by 3:30 to rehearse her links. Doors open at 6:30, so please check the signage before 6.",
+            "model_answer_fr": "Petit point sur le conducteur de demain : l'équipe AV arrive à 14 h et on fera une répétition complète à 16 h. Notre maîtresse de cérémonie doit être là à 15 h 30 pour répéter ses transitions. Ouverture des portes à 18 h 30, alors merci de vérifier la signalétique avant 18 h.",
+            "key_phrases": ["Quick update on the run of show", "we'll do a full dry run at 4", "needs to be there by 3:30", "please check the signage"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pr-events-sponsoring",
+      "title_fr": "Négocier un sponsoring",
+      "title_en": "Negotiating a sponsorship",
+      "situation_fr": "Ton client veut financer une partie de sa journée de la mode durable grâce à des sponsors, et il expose aussi sur un salon professionnel. Tu présentes les offres, tu négocies, tu fais vivre le stand et tu rends des comptes aux partenaires.",
+      "guide": {
+        "intro_fr": "Le sponsorship (sponsoring) permet de financer un événement en échange de visibilité. Tu proposes aux sponsors des sponsorship packages, des offres par niveau : logo, prise de parole, stand. Le title sponsor, le partenaire principal, donne son nom à l'événement. Un partenaire peut aussi payer en nature : c'est l'in-kind sponsorship, par exemple des boissons ou du merchandise. Sur un trade show (salon professionnel), la marque est exhibitor et tient un booth (stand) ; elle y organise une brand activation, une animation qui fait vivre la marque, parfois avec du sampling. Après l'événement, tu envoies aux sponsors un bilan : turnout, profil des attendees, résultats du post-event survey.",
+        "key_phrases": [
+          { "en": "We have three sponsorship packages.", "fr": "Nous avons trois offres de sponsoring." },
+          { "en": "What's included in the gold package?", "fr": "Qu'est-ce qui est compris dans l'offre or ?" },
+          { "en": "Could you cover the drinks instead?", "fr": "Pourriez-vous plutôt prendre en charge les boissons ?" },
+          { "en": "Let's put it in writing.", "fr": "Mettons-le par écrit." },
+          { "en": "Come and see us at booth B12.", "fr": "Venez nous voir au stand B12." },
+          { "en": "Turnout was higher than expected.", "fr": "L'affluence a été plus forte que prévu." }
+        ],
+        "tip_fr": "En anglais, « goodies » se comprend mais désigne surtout des friandises ou les petits cadeaux d'un goodie bag. Pour les objets promotionnels, dis plutôt merch, swag ou giveaways. Et un stand se dit booth en anglais américain, stand en anglais britannique. Enfin, sponsor est aussi un verbe : to sponsor an event, jamais « sponsorise »."
+      },
+      "lessons": [
+        {
+          "id": "pr-events-presenter-les-offres",
+          "title_fr": "Présenter les offres de sponsoring",
+          "term_ids": ["sponsorship", "sponsor", "sponsorship-package", "title-sponsor"],
+          "dialogue": [
+            { "speaker": "Kenji", "text_en": "Thanks for your time. We're looking for sponsors for our sustainable fashion day in June.", "text_fr": "Merci de nous accorder du temps. Nous cherchons des sponsors pour notre journée de la mode durable en juin." },
+            { "speaker": "Grace", "text_en": "Sure. What kind of sponsorship do you offer?", "text_fr": "Bien sûr. Quel type de sponsoring proposez-vous ?" },
+            { "speaker": "Kenji", "text_en": "We have three sponsorship packages: bronze, silver and gold. Gold includes a booth, ten minutes on stage and your logo on all materials.", "text_fr": "Nous avons trois offres de sponsoring : bronze, argent et or. L'offre or comprend un stand, dix minutes sur scène et votre logo sur tous les supports." },
+            { "speaker": "Grace", "text_en": "And is there a title sponsor?", "text_fr": "Et il y a un sponsor titre ?" },
+            { "speaker": "Kenji", "text_en": "Not yet. The title sponsor would have its name in the title of the event, before or after \"Sustainable Fashion Day\".", "text_fr": "Pas encore. Le sponsor titre aurait son nom dans le titre de l'événement, avant ou après « Sustainable Fashion Day »." },
+            { "speaker": "Grace", "text_en": "Interesting. Can you send me the details and the prices?", "text_fr": "Intéressant. Vous pouvez m'envoyer le détail et les tarifs ?" }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Complète : « We're looking for companies to ___ our event. »",
+              "choices": ["sponsorise", "sponsor", "be sponsor of"],
+              "answer_index": 1,
+              "explanation_fr": "En anglais, sponsor est à la fois un nom et un verbe : to sponsor an event. « Sponsorise » est un calque de « sponsoriser » qui n'existe pas. « Be sponsor of » oublie l'article : on dirait be a sponsor of our event, plus lourd que le verbe."
+            },
+            {
+              "prompt_fr": "Lequel de ces noms d'événement montre qu'il y a un title sponsor ?",
+              "choices": [
+                "\"Sustainable Fashion Day, with the support of [Brand]\"",
+                "\"Sustainable Fashion Day, official drinks partner: [Brand]\"",
+                "\"[Brand] Sustainable Fashion Day\""
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le title sponsor intègre son nom au titre même de l'événement (ou « ... presented by [Brand] »). « With the support of » signale un partenaire ou un mécène, et « official drinks partner » un partenaire de catégorie, souvent en nature : ce sont des niveaux inférieurs."
+            },
+            {
+              "prompt_fr": "Complète : « The gold package includes a ten-minute speaking ___ on the main stage. »",
+              "choices": ["slot", "window", "turn"],
+              "answer_index": 0,
+              "explanation_fr": "Un speaking slot est un créneau de prise de parole dans le programme (slot = créneau, comme a time slot). A window est une fenêtre de temps disponible (a two-hour window), pas une place dans un programme. Turn veut dire « tour » (it's your turn), pas un créneau réservé."
+            },
+            {
+              "prompt_fr": "Grace demande franchement : « What's in it for us? » Quelle réponse convainc le mieux ?",
+              "choices": [
+                "It's a great opportunity, you will see, everybody will be there.",
+                "Direct access to 150 buyers and designers, plus visibility before and after.",
+                "You'll support a good cause, and it's really not very expensive for you."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« What's in it for us? » demande un bénéfice concret : la bonne réponse parle de leur public cible (acheteurs, designers) et chiffre l'audience. « Everybody will be there » est une promesse vague. La bonne cause et le prix bas ne disent pas ce que le sponsor y gagne, et « pas cher » dévalorise ton offre."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Envoie à Grace le détail des offres en 4 phrases : remercie-la, présente les offres jointes, détaille l'offre or et propose une prochaine étape pour le sponsoring titre.",
+            "model_answer_en": "Thank you again for your interest in our event. Please find attached our three sponsorship packages. The gold package includes a booth, a speaking slot and your logo on all event materials. If you'd like to become our title sponsor, I'd be happy to discuss it on a call next week.",
+            "model_answer_fr": "Merci encore pour l'intérêt que vous portez à notre événement. Vous trouverez ci-joint nos trois offres de sponsoring. L'offre or comprend un stand, un temps de parole et votre logo sur tous les supports de l'événement. Si vous souhaitez devenir notre sponsor titre, je serais ravi d'en parler lors d'un appel la semaine prochaine.",
+            "key_phrases": ["Please find attached our three sponsorship packages", "The gold package includes", "a speaking slot", "become our title sponsor"]
+          }
+        },
+        {
+          "id": "pr-events-sponsoring-en-nature",
+          "title_fr": "Négocier un sponsoring en nature",
+          "term_ids": ["in-kind-sponsorship", "sponsor", "merchandise", "partnership", "sampling"],
+          "dialogue": [
+            { "speaker": "Grace", "text_en": "We don't have much money left this year. Could we do an in-kind sponsorship instead?", "text_fr": "Il ne nous reste pas beaucoup d'argent cette année. Pourrait-on faire un sponsoring en nature à la place ?" },
+            { "speaker": "Kenji", "text_en": "Possibly. What could you offer?", "text_fr": "C'est possible. Que pourriez-vous offrir ?" },
+            { "speaker": "Grace", "text_en": "We make organic juices. We could provide all the drinks for the evening.", "text_fr": "Nous fabriquons des jus bio. Nous pourrions fournir toutes les boissons de la soirée." },
+            { "speaker": "Kenji", "text_en": "That's worth about the silver package. You'd get your logo on the bar and in the program.", "text_fr": "Ça représente à peu près l'offre argent. Vous auriez votre logo sur le bar et dans le programme." },
+            { "speaker": "Grace", "text_en": "Could we also do some sampling of our new juice at the entrance, and add merchandise, like reusable bottles, to the guest bags?", "text_fr": "Pourrait-on aussi faire goûter notre nouveau jus à l'entrée, et ajouter des objets promotionnels, comme des gourdes réutilisables, dans les sacs des invités ?" },
+            { "speaker": "Kenji", "text_en": "Yes, both fit the theme. Let's put the partnership in writing, so every sponsor knows what's agreed.", "text_fr": "Oui, les deux collent au thème. Mettons le partenariat par écrit, pour que chaque sponsor sache ce qui est convenu." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Dans ton bilan financier, comment présentes-tu l'accord avec Grace ?",
+              "choices": [
+                "As an in-kind sponsorship, valued at the price of the drinks",
+                "As a cash sponsorship, paid directly by the juice company",
+                "As a donation, because no money changed hands at all"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "In kind = en nature : Grace « paie » en boissons, et on valorise cet apport à sa valeur réelle pour le comparer aux offres. Ce n'est pas du cash. Ce n'est pas non plus un don : il y a une contrepartie claire (logo, visibilité), ce qui en fait un partenariat commercial."
+            },
+            {
+              "prompt_fr": "Comment dire « Notre budget est serré cette année » ?",
+              "choices": [
+                "Our budget is narrow this year.",
+                "Our budget is tight this year.",
+                "Our budget is closed this year."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Pour un budget ou un planning, « serré » se dit tight (a tight budget, a tight deadline). Narrow veut dire « étroit » au sens physique (a narrow street) ou « de justesse » (a narrow win). « Closed » suggérerait qu'il n'y a plus du tout de budget, ce qui est faux."
+            },
+            {
+              "prompt_fr": "Complète : « In return for the logo, you would ___ all the drinks for the evening. » (prendre en charge)",
+              "choices": ["furnish", "cover", "charge"],
+              "answer_index": 1,
+              "explanation_fr": "To cover = prendre en charge, payer ou fournir (cover the drinks, cover the costs). Furnish s'emploie surtout pour meubler une pièce. Charge est le contresens : il veut dire « facturer » (charge for the drinks), donc l'inverse de ce que propose le sponsor."
+            },
+            {
+              "prompt_fr": "Que fera concrètement l'équipe de Grace avec le « sampling » à l'entrée ?",
+              "choices": [
+                "Ask guests to fill in a short survey about the brand",
+                "Sell bottles of the new juice at a special price",
+                "Give guests small free tastes of the new juice"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le sampling consiste à faire tester gratuitement un produit (a sample = un échantillon) : ici, des petites dégustations. Un questionnaire est un survey, pas du sampling. Et vendre à prix réduit relève de la promotion commerciale : le sampling, lui, est gratuit."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Résume par email à Grace l'accord de sponsoring en nature, en 4 phrases : ce qu'elle fournit, ce qu'elle reçoit en échange, et la prochaine étape avec une date.",
+            "model_answer_en": "Thank you for the call today. To confirm our in-kind sponsorship, you will cover all the drinks for the evening, run a sampling stand at the entrance and add reusable bottles to the guest bags. In return, your logo will appear on the bar and in the program. I'll send you the partnership agreement by Friday.",
+            "model_answer_fr": "Merci pour notre appel d'aujourd'hui. Pour confirmer notre sponsoring en nature : vous prendrez en charge toutes les boissons de la soirée, tiendrez un stand de dégustation à l'entrée et ajouterez des gourdes réutilisables dans les sacs des invités. En échange, votre logo figurera sur le bar et dans le programme. Je vous envoie l'accord de partenariat d'ici vendredi.",
+            "key_phrases": ["To confirm our in-kind sponsorship", "you will cover all the drinks", "In return", "the partnership agreement"]
+          }
+        },
+        {
+          "id": "pr-events-tenir-le-stand",
+          "title_fr": "Faire vivre le stand sur un salon",
+          "term_ids": ["trade-show", "booth", "exhibitor", "brand-activation", "roll-up-banner"],
+          "dialogue": [
+            { "speaker": "Aïcha", "text_en": "The trade show opens on Thursday. Is our booth ready?", "text_fr": "Le salon ouvre jeudi. Notre stand est prêt ?" },
+            { "speaker": "Rafael", "text_en": "Almost. The roll-up banners arrive tomorrow, and the screen is already installed.", "text_fr": "Presque. Les kakémonos arrivent demain, et l'écran est déjà installé." },
+            { "speaker": "Aïcha", "text_en": "There are more than four hundred exhibitors. How do we get people to stop?", "text_fr": "Il y a plus de quatre cents exposants. Comment on fait pour que les gens s'arrêtent ?" },
+            { "speaker": "Rafael", "text_en": "With a brand activation: visitors design their own laces, and we print them in five minutes.", "text_fr": "Avec une activation de marque : les visiteurs créent leurs propres lacets, et on les imprime en cinq minutes." },
+            { "speaker": "Aïcha", "text_en": "Love it. People will wait, so we'll have time to talk to buyers.", "text_fr": "J'adore. Les gens vont attendre, donc on aura le temps de parler aux acheteurs." },
+            { "speaker": "Rafael", "text_en": "Exactly. And let's put our booth number on every post this week.", "text_fr": "Exactement. Et mettons notre numéro de stand dans chaque post cette semaine." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment annoncer sur LinkedIn « Nous exposons au salon de Paris » ?",
+              "choices": [
+                "We're exposing at the Paris trade show.",
+                "We're exhibiting at the Paris trade show.",
+                "We're presenting us at the Paris trade show."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Exposer sur un salon se dit to exhibit (d'où exhibitor, l'exposant). To expose est un faux ami : il veut dire « exposer à un danger » ou « dévoiler un scandale », et « we're exposing » ferait sourire. « Presenting us » calque le pronominal « se présenter » : en anglais, on dirait presenting ourselves, peu naturel ici."
+            },
+            {
+              "prompt_fr": "Comment écrire dans le post « Venez nous voir au stand B12 » ?",
+              "choices": [
+                "Come and see us at booth B12.",
+                "Come and see us at the stall B12.",
+                "Come and see us in the booth number B12."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La formule figée est Come and see us at booth B12 (stand B12 en anglais britannique), sans article devant le numéro. A stall est un étal de marché ou une échoppe, pas un stand de salon. « In the booth number B12 » accumule l'article et « number » : trop lourd."
+            },
+            {
+              "prompt_fr": "Lequel de ces exemples est une vraie brand activation ?",
+              "choices": [
+                "A full-page ad in the official trade show catalogue",
+                "A discount code emailed to every visitor after the show",
+                "A mini street court where visitors test the sneakers"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une brand activation fait vivre la marque en direct, par une expérience : essayer les baskets sur un mini terrain, créer ses lacets. Une pub dans le catalogue est de l'espace acheté (paid media), et un code promo envoyé après coup est une action commerciale, pas une expérience sur place."
+            },
+            {
+              "prompt_fr": "Ton manager trouve l'atelier lacets trop cher. Quel argument tient le mieux ?",
+              "choices": [
+                "It makes our booth look bigger than the other exhibitors' booths.",
+                "It gives visitors a reason to stop, and their wait gives us time to talk.",
+                "It means we won't need to bring any sales staff to the trade show."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Avec quatre cents exposants, le défi est d'arrêter les visiteurs : l'atelier leur donne une raison de s'arrêter, et les cinq minutes d'attente créent le temps de parler aux acheteurs. C'est l'argument d'Aïcha, relié à l'objectif commercial. L'atelier ne change pas la taille du stand et ne remplace pas l'équipe commerciale : au contraire, il lui amène des contacts."
+            }
+          ],
+          "production": {
+            "channel": "social_post",
+            "prompt_fr": "Rédige un post LinkedIn de 3 phrases pour inviter les professionnels à venir sur ton stand : les dates, le numéro de stand avec ce qu'on y découvre, et l'expérience proposée.",
+            "model_answer_en": "We're exhibiting at the Paris trade show from Thursday to Saturday. Come and see us at booth B12 to discover our recycled sneaker. You can even design your own laces and take them home in five minutes.",
+            "model_answer_fr": "Nous exposons au salon de Paris de jeudi à samedi. Venez nous voir au stand B12 pour découvrir notre basket recyclée. Vous pourrez même créer vos propres lacets et repartir avec en cinq minutes.",
+            "key_phrases": ["We're exhibiting at the Paris trade show", "Come and see us at booth B12", "design your own laces"]
+          }
+        },
+        {
+          "id": "pr-events-bilan-sponsors",
+          "title_fr": "Faire le bilan pour les sponsors",
+          "term_ids": ["turnout", "attendee", "post-event-survey", "networking", "experiential-marketing"],
+          "dialogue": [
+            { "speaker": "Inès", "text_en": "The sponsors are asking for the event report. How was the turnout?", "text_fr": "Les sponsors demandent le bilan de l'événement. Comment était l'affluence ?" },
+            { "speaker": "Moussa", "text_en": "Very good. 162 people came, out of 190 registrations.", "text_fr": "Très bonne. 162 personnes sont venues, sur 190 inscrits." },
+            { "speaker": "Inès", "text_en": "Great. What did attendees say in the post-event survey?", "text_fr": "Super. Qu'ont dit les participants dans le questionnaire de satisfaction ?" },
+            { "speaker": "Moussa", "text_en": "They loved the networking time after the panel. Many asked for a longer one next year.", "text_fr": "Ils ont adoré le moment de networking après la table ronde. Beaucoup ont demandé qu'il soit plus long l'année prochaine." },
+            { "speaker": "Inès", "text_en": "And the juice sampling?", "text_fr": "Et la dégustation de jus ?" },
+            { "speaker": "Moussa", "text_en": "Very popular. It's a good example of experiential marketing: people tasted the product instead of just seeing a logo.", "text_fr": "Très appréciée. C'est un bon exemple de marketing expérientiel : les gens ont goûté le produit au lieu de simplement voir un logo." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "190 inscrits, 162 présents. Quelle phrase du bilan est juste ?",
+              "choices": [
+                "Registration was 85%, so we had very few no-shows.",
+                "Attendance was 85%, so we had very few walk-ins.",
+                "Turnout was 85%, so we had relatively few no-shows."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le turnout (taux de présence) compare les présents aux inscrits : 162 / 190 ≈ 85 %, donc 28 no-shows, ce qui est peu pour une soirée gratuite. Le chiffre ne mesure pas les inscriptions (registration). Et les walk-ins (venus sans inscription) n'ont rien à voir avec ce calcul."
+            },
+            {
+              "prompt_fr": "Comment écrire « 162 participants sont venus » dans le bilan ?",
+              "choices": [
+                "We welcomed 162 assistants.",
+                "We welcomed 162 attendees.",
+                "We welcomed 162 audiences."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les participants à un événement sont des attendees (de to attend, assister à). Assistant est un faux ami : c'est un poste (un ou une assistante). Audience est un nom collectif : on dit an audience of 162, jamais « 162 audiences »."
+            },
+            {
+              "prompt_fr": "Pourquoi la dégustation est-elle plus convaincante pour le sponsor qu'un logo sur le bar ?",
+              "choices": [
+                "Guests experienced the product, which they remember better than a logo.",
+                "A tasting is always cheaper for a sponsor than printing a large logo.",
+                "Logos are not allowed at events where drinks are served to the guests."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "C'est le principe de l'experiential marketing : vivre la marque (goûter, toucher, essayer) marque bien plus qu'un logo vu en passant. Une dégustation n'est pas forcément moins chère (personnel, produits), et aucune règle n'interdit les logos là où on sert des boissons."
+            },
+            {
+              "prompt_fr": "Quelle phrase convient le mieux pour ouvrir le bilan envoyé aux sponsors ?",
+              "choices": [
+                "Thanks a lot guys for the support, it was really awesome!",
+                "Thank you for supporting our sustainable fashion day.",
+                "We thank you for your sponsorship of which we are grateful."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un bilan à des partenaires demande un ton professionnel mais simple : Thank you for supporting... La première phrase est trop familière (guys, awesome) pour un document officiel. La troisième est une construction calquée du français (« dont nous sommes reconnaissants ») : en anglais, on dirait simplement we are grateful for your sponsorship."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige le résumé du bilan envoyé aux sponsors, en 4 phrases : un remerciement, l'affluence chiffrée, un résultat du questionnaire, et une amélioration prévue pour l'an prochain.",
+            "model_answer_en": "Thank you for supporting our sustainable fashion day. Turnout was strong, with 162 attendees out of 190 registrations, and your juice sampling was one of the most popular moments. In the post-event survey, many guests asked for more networking time. Next year, we'll plan a longer networking break after the panel.",
+            "model_answer_fr": "Merci d'avoir soutenu notre journée de la mode durable. L'affluence a été forte, avec 162 participants sur 190 inscrits, et votre dégustation de jus a été l'un des moments les plus appréciés. Dans le questionnaire de satisfaction, beaucoup d'invités ont demandé plus de temps de networking. L'an prochain, nous prévoirons une pause networking plus longue après la table ronde.",
+            "key_phrases": ["Thank you for supporting", "Turnout was strong", "In the post-event survey", "Next year, we'll plan"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pr-events-crise",
+      "title_fr": "Gérer une question difficile et une crise",
+      "title_en": "Handling tough media questions in a crisis",
+      "situation_fr": "Des clients se plaignent sur les réseaux : les semelles de la nouvelle basket se décollent. Les journalistes appellent. Tu dois réagir vite, répondre sans mentir, faire corriger les erreurs publiées et préparer la déclaration officielle.",
+      "guide": {
+        "intro_fr": "En crise, chaque mot compte. Quand les media inquiries arrivent sur un sujet sensible, tu publies d'abord un holding statement, une déclaration d'attente : on reconnaît le problème, on dit qu'on enquête et quand on reviendra vers la presse. Certaines entreprises préparent un dark site, un site de crise prêt mais invisible, qu'on met en ligne en quelques minutes. Évite le « no comment », qui sonne comme un aveu, et ne deny (démens) jamais un fait vrai. Évite aussi le spin, la présentation arrangée des faits : les journalistes la repèrent tout de suite. Vient ensuite l'official statement, parfois lu en press conference. Si un article contient une erreur, tu demandes un rectificatif, voire une retraction. Bien gérée, une crise ne devient pas un PR disaster.",
+        "key_phrases": [
+          { "en": "We're aware of the issue and we're looking into it.", "fr": "Nous avons connaissance du problème et nous l'examinons." },
+          { "en": "We'll share an update by 5 p.m.", "fr": "Nous ferons un point d'ici 17 h." },
+          { "en": "I don't have that information yet, but I'll get back to you.", "fr": "Je n'ai pas encore cette information, mais je reviens vers vous." },
+          { "en": "That's not accurate.", "fr": "Ce n'est pas exact." },
+          { "en": "Could you please correct the article?", "fr": "Pourriez-vous corriger l'article, s'il vous plaît ?" },
+          { "en": "Our priority is our customers.", "fr": "Notre priorité, ce sont nos clients." }
+        ],
+        "tip_fr": "Faux ami : « une polémique » ne se dit pas a polemic (un texte d'attaque, rare), mais a controversy. « Démentir » se dit to deny : « We deny these claims. » Et attention à eventually, qui veut dire « finalement », alors qu'« éventuellement » se dit possibly : une erreur grave dans une déclaration de crise."
+      },
+      "lessons": [
+        {
+          "id": "pr-events-premieres-heures",
+          "title_fr": "Réagir dans la première heure",
+          "term_ids": ["pr-disaster", "holding-statement", "media-inquiry", "dark-site"],
+          "dialogue": [
+            { "speaker": "Priya", "text_en": "We've had three media inquiries in an hour about the soles coming off. What do we say?", "text_fr": "On a eu trois demandes presse en une heure sur les semelles qui se décollent. Qu'est-ce qu'on dit ?" },
+            { "speaker": "Tomasz", "text_en": "We don't have all the facts yet, so let's send a holding statement.", "text_fr": "On n'a pas encore tous les éléments, alors envoyons une déclaration d'attente." },
+            { "speaker": "Priya", "text_en": "Something like: we know, we're checking, and we'll update them this afternoon?", "text_fr": "Quelque chose comme : on est au courant, on vérifie, et on leur fait un point cet après-midi ?" },
+            { "speaker": "Tomasz", "text_en": "Yes, short and honest. Silence is how a small problem becomes a PR disaster.", "text_fr": "Oui, court et honnête. C'est le silence qui transforme un petit problème en désastre d'image." },
+            { "speaker": "Priya", "text_en": "Should we activate the dark site?", "text_fr": "On active le site de crise ?" },
+            { "speaker": "Tomasz", "text_en": "Not yet. If more customers report the problem, we'll put it online with the FAQ and the return process.", "text_fr": "Pas encore. Si d'autres clients signalent le problème, on le mettra en ligne avec la FAQ et la procédure de retour." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre un holding statement et un official statement ?",
+              "choices": [
+                "The holding statement is longer and gives the final explanation.",
+                "The holding statement comes first, before all the facts are known.",
+                "The holding statement is only for employees, not for journalists."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le holding statement (déclaration d'attente) sort vite, quand on ne sait pas encore tout : il reconnaît le problème, dit qu'on enquête et quand on reviendra. L'official statement vient ensuite, avec les faits et les mesures. Le holding statement est court, et il est bien destiné aux journalistes (et souvent aux clients)."
+            },
+            {
+              "prompt_fr": "Complète la formule standard : « We're ___ of the issue and we're looking into it. »",
+              "choices": ["aware", "conscious", "informed"],
+              "answer_index": 0,
+              "explanation_fr": "Be aware of something = avoir connaissance de quelque chose : c'est la formule consacrée des déclarations de crise. Conscious s'emploie surtout pour un état (être conscient, éveillé) ou une attention (cost-conscious). « Informed » demanderait une autre construction : we have been informed of the issue."
+            },
+            {
+              "prompt_fr": "Complète : « We're looking ___ it and will share an update by 5 p.m. » (nous examinons la situation)",
+              "choices": ["after", "for", "into"],
+              "answer_index": 2,
+              "explanation_fr": "To look into something = examiner, enquêter sur. La préposition change tout : look after = s'occuper de (look after the children), look for = chercher (look for a solution). « We're looking for it » voudrait dire que vous cherchez le problème lui-même !"
+            },
+            {
+              "prompt_fr": "Pourquoi Tomasz attend-il avant de mettre le dark site en ligne ?",
+              "choices": [
+                "A full crisis website could make a small problem look much bigger.",
+                "A dark site can only be activated after the police have been told.",
+                "The dark site is not ready yet and has to be built by the agency first."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un dark site est déjà prêt (c'est tout son intérêt), mais l'activer est un signal fort : un site de crise complet pour quelques plaintes donnerait l'impression d'un scandale. Tomasz attend donc de voir si le problème s'étend. Aucune autorité n'a à autoriser sa mise en ligne."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris le holding statement envoyé aux journalistes qui ont appelé, en 3 phrases : reconnais le problème sans conclure, montre ce que les clients peuvent faire dès maintenant, et engage-toi sur une heure précise de mise à jour.",
+            "model_answer_en": "We're aware that some customers have reported problems with the soles of our new sneaker, and we're looking into it. Our priority is our customers: anyone affected can already contact our customer service for a replacement. We'll share an update by 5 p.m. today.",
+            "model_answer_fr": "Nous savons que certains clients ont signalé des problèmes avec les semelles de notre nouvelle basket, et nous examinons la situation. Notre priorité, ce sont nos clients : toute personne concernée peut dès maintenant contacter notre service client pour un remplacement. Nous ferons un point aujourd'hui d'ici 17 h.",
+            "key_phrases": ["We're aware that", "we're looking into it", "Our priority is our customers", "We'll share an update by 5 p.m."]
+          }
+        },
+        {
+          "id": "pr-events-question-difficile",
+          "title_fr": "Répondre à une question piège",
+          "term_ids": ["no-comment", "deny", "talking-points", "spokesperson"],
+          "dialogue": [
+            { "speaker": "Daniel", "text_en": "Is it true that you knew about the problem before the launch?", "text_fr": "Est-il vrai que vous connaissiez le problème avant le lancement ?" },
+            { "speaker": "Lucía", "text_en": "No. We found out on Monday, when the first customers contacted us.", "text_fr": "Non. Nous l'avons appris lundi, quand les premiers clients nous ont contactés." },
+            { "speaker": "Daniel", "text_en": "So you deny any problem in the factory tests?", "text_fr": "Donc vous démentez tout problème lors des tests en usine ?" },
+            { "speaker": "Lucía", "text_en": "I can neither confirm nor deny that until the investigation is finished. What I can tell you is that every affected customer will get a new pair.", "text_fr": "Je ne peux ni confirmer ni démentir tant que l'enquête n'est pas terminée. Ce que je peux vous dire, c'est que chaque client concerné recevra une nouvelle paire." },
+            { "speaker": "Kenji", "text_en": "Well done. You didn't say \"no comment\", and you stayed on our talking points.", "text_fr": "Bravo. Tu n'as pas dit « no comment », et tu es restée sur nos éléments de langage." },
+            { "speaker": "Lucía", "text_en": "Thanks. Being a spokesperson in a crisis is much harder than at a launch!", "text_fr": "Merci. Être porte-parole en pleine crise, c'est beaucoup plus dur que pour un lancement !" }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi éviter un « no comment » sec face à un journaliste en pleine crise ?",
+              "choices": [
+                "It's considered rude and can be reported to the media regulator.",
+                "It legally counts as an admission of guilt in most countries.",
+                "It often sounds as if the brand has something to hide."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« No comment » n'a aucune valeur juridique, et ce n'est pas une faute professionnelle signalable. Le problème est l'image : le public l'entend comme un aveu. Mieux vaut dire ce qu'on peut dire, et quand on en dira plus, comme Lucía qui ramène tout de suite la réponse vers les clients."
+            },
+            {
+              "prompt_fr": "Le journaliste avance un chiffre faux. Quelle réponse est ferme mais professionnelle ?",
+              "choices": [
+                "That's not exact. The real figure is 500 pairs.",
+                "That's not accurate. The correct figure is 500 pairs.",
+                "That's completely false, you invented this figure."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Pour une information erronée, on dit not accurate (ou not correct). Exact en anglais veut dire « précis au détail près » (the exact time) : « not exact » sonne comme « pas tout à fait précis », c'est trop faible et peu idiomatique. Accuser le journaliste d'avoir inventé le chiffre ferait sûrement le titre de l'article."
+            },
+            {
+              "prompt_fr": "Le porte-parole ne participera pas à un débat télévisé. Comment le dire à la production ?",
+              "choices": [
+                "He has declined the invitation.",
+                "He has denied the invitation.",
+                "He has negated the invitation."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Refuser poliment une invitation se dit to decline. To deny veut dire « démentir, nier » un fait ou une accusation (deny the claims) : « denied the invitation » voudrait dire qu'il nie l'avoir reçue ! To negate signifie « annuler l'effet de » (negate the benefits)."
+            },
+            {
+              "prompt_fr": "Le journaliste demande combien de paires sont concernées. Tu n'as pas encore le chiffre. Que réponds-tu ?",
+              "choices": [
+                "No comment on figures. We never communicate on this kind of data.",
+                "I don't have that figure yet, but I'll get back to you by 5 p.m.",
+                "I can't say officially, but between us, it's not a big number."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Dire honnêtement que tu n'as pas encore l'info et promettre un délai précis garde la confiance. Refuser par principe de donner des chiffres paraît suspect en pleine crise. « Between us » est un off improvisé : rien ne garantit que le journaliste l'a accepté, et la phrase peut être publiée."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Après l'interview, tu fais un débrief oral à la direction, en 4 phrases : le bilan général, ce qu'a bien fait la porte-parole, la question la plus difficile, et la prochaine étape urgente.",
+            "model_answer_en": "The interview went well overall. Our spokesperson stayed on the talking points and never said \"no comment\". The journalist asked if we knew about the problem before the launch, and she clearly said that's not accurate. Next, we need the exact number of affected pairs by 5 p.m., because we promised it to him.",
+            "model_answer_fr": "L'interview s'est bien passée dans l'ensemble. Notre porte-parole est restée sur les éléments de langage et n'a jamais dit « no comment ». Le journaliste a demandé si nous connaissions le problème avant le lancement, et elle a clairement répondu que ce n'était pas exact. Maintenant, il nous faut le nombre exact de paires concernées d'ici 17 h, car nous le lui avons promis.",
+            "key_phrases": ["The interview went well overall", "stayed on the talking points", "The journalist asked if", "that's not accurate"]
+          }
+        },
+        {
+          "id": "pr-events-faire-corriger-un-article",
+          "title_fr": "Faire corriger un article erroné",
+          "term_ids": ["retraction", "editor", "media-coverage", "press-officer"],
+          "dialogue": [
+            { "speaker": "Inès", "text_en": "Hello, I'm the press officer for the brand. I'm calling about this morning's article on our sneakers.", "text_fr": "Bonjour, je suis l'attachée de presse de la marque. J'appelle au sujet de l'article de ce matin sur nos baskets." },
+            { "speaker": "Jonas", "text_en": "Yes, I'm the editor of that section. What's the problem?", "text_fr": "Oui, je suis le responsable de cette rubrique. Quel est le problème ?" },
+            { "speaker": "Inès", "text_en": "The article says we recalled 50,000 pairs. In fact, 500 customers can exchange their pair. Nothing was taken off the market.", "text_fr": "L'article dit que nous avons rappelé 50 000 paires. En réalité, 500 clients peuvent échanger leur paire. Rien n'a été retiré du marché." },
+            { "speaker": "Jonas", "text_en": "I see. Can you send me the official figures? If there's a mistake on our side, we'll publish a correction.", "text_fr": "Je vois. Pouvez-vous m'envoyer les chiffres officiels ? S'il y a une erreur de notre côté, nous publierons un rectificatif." },
+            { "speaker": "Inès", "text_en": "Thank you. We're not asking for a retraction of the whole article, just the correct figures.", "text_fr": "Merci. Nous ne demandons pas le retrait de tout l'article, seulement les bons chiffres." },
+            { "speaker": "Jonas", "text_en": "Understood. Other sites copied our number, so you may want to check the rest of your media coverage too.", "text_fr": "Compris. D'autres sites ont repris notre chiffre, donc vous devriez peut-être vérifier le reste de vos retombées aussi." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Seul le chiffre est faux, le reste de l'article est juste. Que demandes-tu au journal ?",
+              "choices": [
+                "A retraction, because any error means the whole article must go.",
+                "A correction, because only one figure is wrong, not the story.",
+                "A right of reply, so we can publish our own full article."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "A correction (rectificatif) corrige une erreur précise ; a retraction retire l'article ou l'affirmation entière, ce qui est réservé aux cas où toute l'histoire est fausse. Demander une retraction pour un chiffre serait disproportionné et abîmerait la relation. Le right of reply (droit de réponse) existe, mais il sert à donner ta version, pas à corriger un chiffre."
+            },
+            {
+              "prompt_fr": "Comment dire au journaliste « Si nous nous sommes trompés, nous le corrigerons » (du point de vue du journal) ?",
+              "choices": [
+                "If we were wrong of it, we'll correct it.",
+                "If we made it wrong, we'll correct it.",
+                "If we got it wrong, we'll correct it."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To get something wrong = se tromper sur quelque chose : c'est la tournure courante (we got the figure wrong). « Wrong of it » n'existe pas, et « made it wrong » voudrait dire qu'on a fabriqué quelque chose de travers. On peut aussi dire if we made a mistake."
+            },
+            {
+              "prompt_fr": "Comment dit-on « un rappel de produit » en anglais ?",
+              "choices": ["a product recall", "a product reminder", "a product callback"],
+              "answer_index": 0,
+              "explanation_fr": "Un rappel de produit se dit a product recall (to recall = rappeler un produit). A reminder est un rappel au sens de « pense-bête » ou de relance, et a callback est un rappel téléphonique. Bien distinguer recall et exchange change tout pour l'image de la marque."
+            },
+            {
+              "prompt_fr": "Quelle phrase ouvre le mieux ton appel au responsable de rubrique ?",
+              "choices": [
+                "I'm calling because your article is completely false and unfair.",
+                "I'm calling about a factual error in this morning's article.",
+                "I'm calling to ask you to delete this morning's article."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« A factual error » est précis et neutre : tu parles d'un fait vérifiable, pas d'un jugement. Accuser l'article d'être « faux et injuste » met le journaliste sur la défensive. Demander de supprimer l'article est excessif pour un chiffre erroné, et presque aucun journal ne l'accepterait."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Envoie au responsable de rubrique un email de 4 phrases : remercie-le pour l'appel, donne le bon chiffre en corrigeant le mot « recall », joins la preuve, et demande poliment le rectificatif.",
+            "model_answer_en": "Thank you for taking my call this morning. As discussed, the article says we recalled 50,000 pairs, but the correct figure is 500 pairs, and it's an exchange, not a recall. You'll find our official statement attached. Could you please correct the article?",
+            "model_answer_fr": "Merci d'avoir pris mon appel ce matin. Comme convenu, l'article indique que nous avons rappelé 50 000 paires, mais le bon chiffre est de 500 paires, et il s'agit d'un échange, pas d'un rappel. Vous trouverez notre déclaration officielle en pièce jointe. Pourriez-vous corriger l'article, s'il vous plaît ?",
+            "key_phrases": ["Thank you for taking my call", "the correct figure is", "an exchange, not a recall", "Could you please correct the article?"]
+          }
+        },
+        {
+          "id": "pr-events-declaration-officielle",
+          "title_fr": "Préparer la déclaration officielle",
+          "term_ids": ["official-statement", "press-conference", "spin", "on-the-record"],
+          "dialogue": [
+            { "speaker": "Mariam", "text_en": "The CEO will read the official statement at the press conference at 11.", "text_fr": "La PDG lira la déclaration officielle à la conférence de presse à 11 h." },
+            { "speaker": "Lars", "text_en": "I've read the draft. The second paragraph sounds like spin. \"A minor comfort issue\", when soles are coming off?", "text_fr": "J'ai lu le projet. Le deuxième paragraphe ressemble à de l'enfumage. « Un léger souci de confort », alors que des semelles se décollent ?" },
+            { "speaker": "Mariam", "text_en": "You're right. Journalists won't buy it.", "text_fr": "Tu as raison. Les journalistes ne vont pas y croire." },
+            { "speaker": "Lars", "text_en": "Let's be direct: what happened, what we're doing, and what customers should do.", "text_fr": "Soyons directs : ce qui s'est passé, ce que nous faisons et ce que les clients doivent faire." },
+            { "speaker": "Mariam", "text_en": "Agreed. And remind her that everything she says on the record can be quoted, including in the Q&A.", "text_fr": "D'accord. Et rappelle-lui que tout ce qu'elle dit officiellement peut être cité, y compris pendant les questions-réponses." },
+            { "speaker": "Lars", "text_en": "I will. I'll also post the statement in our online newsroom right after.", "text_fr": "Je le ferai. Je publierai aussi la déclaration dans notre espace presse en ligne juste après." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que reproche exactement Lars au deuxième paragraphe ?",
+              "choices": [
+                "It plays the problem down with words that don't match the facts.",
+                "It gives too many technical details about the glue and the factory.",
+                "It apologises too many times, so the brand sounds weak and guilty."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le spin, c'est présenter les faits de façon orientée pour les rendre plus flatteurs : ici, minimiser (play down) des semelles qui se décollent en « léger souci de confort ». Lars ne parle ni de détails techniques ni d'excuses. Ces défauts existent dans les déclarations de crise, mais ce n'est pas son reproche."
+            },
+            {
+              "prompt_fr": "Comment dire « Les journalistes ne seront pas dupes, ils verront tout de suite ce qui se cache derrière » ?",
+              "choices": [
+                "Journalists will see it through immediately.",
+                "Journalists will look through it immediately.",
+                "Journalists will see through it immediately."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To see through something = ne pas être dupe, percer à jour. L'ordre des mots change tout : to see something through veut dire « mener quelque chose à bien jusqu'au bout ». Et to look through = parcourir, feuilleter (look through the documents). Mariam dit la même idée avec « won't buy it »."
+            },
+            {
+              "prompt_fr": "Complète : « Remember, everything you say at the conference is ___ the record. »",
+              "choices": ["in", "on", "at"],
+              "answer_index": 1,
+              "explanation_fr": "L'expression figée est on the record (citable) et off the record (en off). « In the record » ou « at the record » n'existent pas dans ce sens. Retiens aussi to go on the record : accepter d'être cité nommément."
+            },
+            {
+              "prompt_fr": "La PDG veut commencer par « We're very proud of our brand's history ». Que lui conseilles-tu ?",
+              "choices": [
+                "Keep it. A strong opening about the brand will reassure journalists.",
+                "Start with the low price of the sneaker, to show it's still good value.",
+                "Start with the facts. Journalists came for the problem, not our history."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "En crise, on commence par les faits : ce qui s'est passé, puis ce que l'on fait. Parler d'abord de l'histoire de la marque ou du prix donne l'impression d'esquiver le sujet, et c'est exactement ce que les journalistes appelleront du spin. La fierté de la marque pourra venir, brièvement, à la fin."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Rédige le début de la déclaration officielle que la PDG lira en conférence de presse, en 4 phrases : sans enfumage, dis ce qui s'est passé, la cause trouvée, la mesure prise et ce que reçoivent les clients.",
+            "model_answer_en": "Good morning, and thank you for coming. Last week, some customers told us that the soles of our new sneaker were coming off. We have found the cause, a glue problem in one production batch, and we have stopped sales of that batch. Every affected customer will get a new pair, free of charge.",
+            "model_answer_fr": "Bonjour et merci d'être venus. La semaine dernière, des clients nous ont signalé que les semelles de notre nouvelle basket se décollaient. Nous avons identifié la cause, un problème de colle dans un lot de production, et nous avons arrêté la vente de ce lot. Chaque client concerné recevra une nouvelle paire, gratuitement.",
+            "key_phrases": ["thank you for coming", "We have found the cause", "we have stopped sales of", "free of charge"]
+          }
+        }
+      ]
+    }
+  ]
+}
