@@ -1709,6 +1709,434 @@
           }
         }
       ]
+    },
+    {
+      "id": "team-meetings",
+      "title_fr": "Réunions d’équipe : stand-up et présenter son travail",
+      "title_en": "Team meetings: stand-up and presenting your work",
+      "situation_fr": "Tu donnes ta mise à jour au daily, tu estimes une tâche en sprint planning, tu fais la démo de ton travail et tu défends un compromis.",
+      "guide": {
+        "intro_fr": "Chaque matin, le daily stand-up dure un quart d’heure : chacun dit ce qu’il a fait hier, ce qu’il fait aujourd’hui et s’il a un blocker. En sprint planning, on estime les tâches (en story points ou en jours) et on discute du scope, le périmètre. En fin de sprint, on fait la démo de son travail aux parties prenantes et on recueille leurs retours. Enfin, il faut savoir présenter un compromis (trade-off) : ce qu’on gagne, ce qu’on perd et ce qu’on recommande. L’anglais de réunion est court, structuré et poli.",
+        "key_phrases": [
+          {
+            "en": "Yesterday I finished …, today I’m working on …",
+            "fr": "Hier j’ai terminé …, aujourd’hui je travaille sur …"
+          },
+          {
+            "en": "I have one blocker: I’m waiting for …",
+            "fr": "J’ai un point bloquant : j’attends …"
+          },
+          {
+            "en": "I’m on track to finish by Thursday.",
+            "fr": "Je suis dans les temps pour finir jeudi."
+          },
+          {
+            "en": "I’d estimate it at five points.",
+            "fr": "Je l’estimerais à cinq points."
+          },
+          {
+            "en": "Could we reduce the scope?",
+            "fr": "Pourrait-on réduire le périmètre ?"
+          },
+          {
+            "en": "Let me walk you through the new flow.",
+            "fr": "Je vais vous présenter le nouveau parcours étape par étape."
+          },
+          {
+            "en": "The trade-off is …",
+            "fr": "Le compromis, c’est que …"
+          },
+          {
+            "en": "I’d recommend …",
+            "fr": "Je recommanderais de …"
+          }
+        ],
+        "tip_fr": "Au stand-up, va à l’essentiel : trois phrases suffisent. Pour un blocker, dis ce qui bloque et de qui tu as besoin (I need Kofi’s review). Et attention au faux ami : « actually » veut dire « en fait », pas « actuellement » (qui se dit « currently »)."
+      },
+      "lessons": [
+        {
+          "id": "daily-standup-update",
+          "title_fr": "Ta mise à jour au daily",
+          "term_ids": [
+            "daily-standup",
+            "blocker",
+            "on-track",
+            "follow-up"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Priya",
+              "text_en": "Morning everyone, let’s start the stand-up. Kofi?",
+              "text_fr": "Bonjour à tous, commençons le stand-up. Kofi ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Yesterday I finished the export fix. Today I’m writing tests for it. No blockers.",
+              "text_fr": "Hier j’ai terminé le correctif de l’export. Aujourd’hui j’écris les tests. Pas de blocage."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Thanks. Inès?",
+              "text_fr": "Merci. Inès ?"
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Yesterday I worked on the notification settings. Today I’ll connect them to the API, but I’m blocked: the endpoint isn’t deployed on staging yet.",
+              "text_fr": "Hier j’ai travaillé sur les paramètres de notification. Aujourd’hui je les connecte à l’API, mais je suis bloquée : l’endpoint n’est pas encore déployé sur staging."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "That’s on me, I’ll deploy it right after the stand-up.",
+              "text_fr": "C’est pour moi, je le déploie juste après le stand-up."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Great. Inès, are you still on track for Thursday?",
+              "text_fr": "Super. Inès, tu es toujours dans les temps pour jeudi ?"
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Yes, if I get the endpoint this morning. I’ll follow up with Kofi after the call.",
+              "text_fr": "Oui, si j’ai l’endpoint ce matin. Je fais le point avec Kofi après l’appel."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Inès avec « I’m blocked » ?",
+              "choices": [
+                "Elle ne peut pas avancer car elle attend quelque chose",
+                "Son compte a été bloqué",
+                "Elle refuse de faire la tâche"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Au stand-up, « I’m blocked » ou « I have a blocker » signifie qu’on ne peut pas avancer à cause d’une dépendance, ici l’endpoint pas encore déployé. Un compte bloqué se dirait « my account is locked », et il ne s’agit pas d’un refus."
+            },
+            {
+              "prompt_fr": "Que signifie « Are you still on track for Thursday? » ?",
+              "choices": [
+                "Tu es toujours dans les temps pour jeudi ?",
+                "Tu prends toujours le train jeudi ?",
+                "Tu es toujours en congé jeudi ?"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« On track » veut dire « dans les temps, sur la bonne voie ». L’image vient des rails (track), d’où le piège du train, mais au travail elle parle toujours d’avancement."
+            },
+            {
+              "prompt_fr": "Quelle mise à jour de stand-up est la plus claire ?",
+              "choices": [
+                "Yesterday I fixed the login bug. Today I’m reviewing Ana’s PR. No blockers.",
+                "So, I did many things, it was complicated, and maybe today I continue.",
+                "Yesterday login. Today PR."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La première suit la structure attendue : hier, aujourd’hui, blocages, en phrases courtes et complètes. La deuxième est vague, et la troisième est si abrégée qu’on ne sait pas ce qui a été fait."
+            },
+            {
+              "prompt_fr": "Comment dire « En fait, j’ai déjà fini » ?",
+              "choices": [
+                "Actually, I’ve already finished.",
+                "Currently, I’ve already finished.",
+                "Actually, I finish already."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Actually » veut dire « en fait » ; « currently » veut dire « actuellement ». Avec « already », on emploie le present perfect (I’ve already finished), pas le présent simple."
+            }
+          ],
+          "production": {
+            "channel": "standup",
+            "prompt_fr": "C’est ton tour au daily stand-up. Hier, tu as terminé la page de profil. Aujourd’hui, tu ajoutes l’upload de photo. Tu as un blocage : tu attends les maquettes de l’équipe design, et tu feras le point avec eux après le stand-up.",
+            "model_answer_en": "Yesterday I finished the profile page. Today I’m adding the photo upload. I have one blocker: I’m waiting for the mockups from the design team, so I’ll follow up with them after the stand-up.",
+            "model_answer_fr": "Hier j’ai terminé la page de profil. Aujourd’hui j’ajoute l’upload de photo. J’ai un point bloquant : j’attends les maquettes de l’équipe design, donc je fais le point avec eux après le stand-up.",
+            "key_phrases": [
+              "Yesterday I finished",
+              "Today I’m adding",
+              "I have one blocker",
+              "I’m waiting for",
+              "follow up"
+            ]
+          }
+        },
+        {
+          "id": "estimate-a-task",
+          "title_fr": "Estimer en sprint planning",
+          "term_ids": [
+            "sprint-planning",
+            "estimate",
+            "story-points",
+            "scope",
+            "user-story"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sofia",
+              "text_en": "Next user story: users can export their invoices as PDF. How big is it?",
+              "text_fr": "User story suivante : les utilisateurs peuvent exporter leurs factures en PDF. C’est gros comment ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "I’d estimate it at eight points. PDF generation is new for us, so there’s some uncertainty.",
+              "text_fr": "Je l’estimerais à huit points. La génération de PDF est nouvelle pour nous, donc il y a une part d’incertitude."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "That’s a lot for one story. Can we reduce the scope?",
+              "text_fr": "C’est beaucoup pour une seule story. On peut réduire le périmètre ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "We could start with exporting one invoice at a time and add bulk export later.",
+              "text_fr": "On pourrait commencer par l’export d’une facture à la fois et ajouter l’export groupé plus tard."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "That works for me. The client only needs the single export by the end of the month.",
+              "text_fr": "Ça me va. Le client a seulement besoin de l’export unitaire d’ici la fin du mois."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Then I’d say three points for the single export.",
+              "text_fr": "Alors je dirais trois points pour l’export unitaire."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que fait Diego avec « I’d estimate it at eight points » ?",
+              "choices": [
+                "Il estime l’effort relatif de la story à huit points",
+                "Il annonce exactement huit heures de travail",
+                "Il donne une note de huit sur dix à la story"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les story points mesurent l’effort relatif (complexité, incertitude), pas un nombre d’heures précis. Ce n’est pas non plus une note de qualité. « I’d estimate it at » (avec « at ») est la tournure correcte."
+            },
+            {
+              "prompt_fr": "Que signifie « Can we reduce the scope? » ?",
+              "choices": [
+                "Peut-on réduire le périmètre ?",
+                "Peut-on réduire le budget ?",
+                "Peut-on repousser la date de livraison ?"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le scope est le périmètre : ce qui est inclus dans la tâche ou le projet. Réduire le budget se dirait « cut the budget », et repousser la date « push back the deadline »."
+            },
+            {
+              "prompt_fr": "Comment exprimer une incertitude dans une estimation ?",
+              "choices": [
+                "It’s new for us, so there’s some uncertainty.",
+                "I am not sure at all of nothing.",
+                "It is maybe possible perhaps."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La première phrase donne la raison et nomme l’incertitude, ce qui est professionnel. La deuxième contient une double négation fautive (not… nothing), et la troisième empile « maybe » et « perhaps » sans rien dire."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En sprint planning, on te demande d’estimer la story « se connecter avec un compte Google ou Apple ». Tu l’estimes à 5 points car l’équipe n’a jamais utilisé OAuth sur ce projet, et tu proposes de réduire le périmètre : d’abord Google, Apple plus tard.",
+            "model_answer_en": "I’d estimate it at five points, because we’ve never used OAuth on this project, so there’s some uncertainty. To reduce the scope, we could start with Google sign-in and add Apple later.",
+            "model_answer_fr": "Je l’estimerais à cinq points, parce qu’on n’a jamais utilisé OAuth sur ce projet, donc il y a une part d’incertitude. Pour réduire le périmètre, on pourrait commencer par la connexion Google et ajouter Apple plus tard.",
+            "key_phrases": [
+              "I’d estimate it at",
+              "there’s some uncertainty",
+              "To reduce the scope",
+              "add Apple later"
+            ]
+          }
+        },
+        {
+          "id": "demo-your-work",
+          "title_fr": "Faire la démo de son travail",
+          "term_ids": [
+            "demo",
+            "acceptance-criteria",
+            "feedback",
+            "stakeholder"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Moussa",
+              "text_en": "For today’s demo, let me walk you through the new onboarding. I’ll share my screen.",
+              "text_fr": "Pour la démo d’aujourd’hui, je vais vous présenter le nouvel onboarding étape par étape. Je partage mon écran."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "As you can see, new users now pick their role in the first step. That covers the user story we planned last sprint.",
+              "text_fr": "Comme vous le voyez, les nouveaux utilisateurs choisissent maintenant leur rôle dès la première étape. Ça couvre la user story prévue au dernier sprint."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Does it meet all the acceptance criteria?",
+              "text_fr": "Est-ce que ça remplit tous les critères d’acceptation ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "All but one: the skip button isn’t done yet. It’s planned for next sprint.",
+              "text_fr": "Tous sauf un : le bouton pour passer l’étape n’est pas encore fait. Il est prévu au prochain sprint."
+            },
+            {
+              "speaker": "Yasmine",
+              "text_en": "Looks great. One piece of feedback: the progress bar is hard to see on mobile.",
+              "text_fr": "C’est très bien. Une remarque : la barre de progression est difficile à voir sur mobile."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Thanks, good catch. I’ll note it, and we’ll look at the contrast.",
+              "text_fr": "Merci, bien vu. Je le note, et on va regarder le contraste."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que va faire Moussa avec « Let me walk you through the new onboarding » ?",
+              "choices": [
+                "Présenter le nouvel onboarding étape par étape",
+                "Emmener l’équipe faire une promenade",
+                "Laisser l’équipe tester seule l’onboarding"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To walk someone through something » veut dire guider quelqu’un pas à pas. Le verbe « walk » trompe, mais il n’y a pas de promenade, et Moussa présente lui-même au lieu de laisser l’équipe tester seule."
+            },
+            {
+              "prompt_fr": "Que signifie « All but one » ?",
+              "choices": [
+                "Tous sauf un",
+                "Tous, plus un",
+                "Un seul"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Dans « all but one », « but » veut dire « sauf » : tous les critères sont remplis, à l’exception du bouton. Ce n’est pas une addition, et cela ne veut pas dire « un seul »."
+            },
+            {
+              "prompt_fr": "Quelle réponse à un retour pendant une démo est la plus professionnelle ?",
+              "choices": [
+                "Thanks, good catch. I’ll look into it.",
+                "No, it’s fine like this.",
+                "It’s not my fault, it’s the design."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Remercier (good catch, bien vu) et s’engager à regarder montre qu’on accueille le retour. Rejeter la remarque ou rejeter la faute sur une autre équipe crée des tensions devant les parties prenantes."
+            },
+            {
+              "prompt_fr": "Quelle phrase est correcte ?",
+              "choices": [
+                "One piece of feedback: the progress bar is hard to see.",
+                "One feedback: the progress bar is hard to see.",
+                "A feedbacks: the progress bar is hard to see."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Feedback » est indénombrable : on dit « some feedback » ou « a piece of feedback ». « One feedback » s’entend souvent, mais reste incorrect en anglais soigné, et « feedbacks » n’existe pas."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En démo de fin de sprint, tu présentes la nouvelle recherche du catalogue. Introduis la démo, montre qu’elle tolère maintenant les fautes de frappe, précise que tous les critères d’acceptation sont remplis sauf les filtres par prix (prévus au prochain sprint), et demande des retours.",
+            "model_answer_en": "Let me walk you through the new catalog search. As you can see, it now handles typos, so searching for labtop still finds laptops. All the acceptance criteria are met except the price filters, which are planned for next sprint. Any feedback?",
+            "model_answer_fr": "Je vais vous présenter la nouvelle recherche du catalogue. Comme vous le voyez, elle gère maintenant les fautes de frappe : chercher labtop trouve quand même les ordinateurs portables. Tous les critères d’acceptation sont remplis sauf les filtres par prix, prévus au prochain sprint. Des retours ?",
+            "key_phrases": [
+              "Let me walk you through",
+              "As you can see",
+              "acceptance criteria",
+              "planned for next sprint",
+              "Any feedback?"
+            ]
+          }
+        },
+        {
+          "id": "present-a-trade-off",
+          "title_fr": "Présenter un compromis",
+          "term_ids": [
+            "trade-off",
+            "technical-debt",
+            "push-back",
+            "align"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sofia",
+              "text_en": "Sales wants the new dashboard by Friday. Can we make it?",
+              "text_fr": "Les commerciaux veulent le nouveau tableau de bord pour vendredi. On peut y arriver ?"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "We can, but there’s a trade-off. If we ship on Friday, we skip the caching layer, and pages will load slowly for big accounts.",
+              "text_fr": "Oui, mais il y a un compromis. Si on livre vendredi, on fait l’impasse sur le cache, et les pages chargeront lentement pour les gros comptes."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "How slow?",
+              "text_fr": "Lentement à quel point ?"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Several seconds for the largest accounts. It also adds technical debt that we’d need to fix next sprint.",
+              "text_fr": "Plusieurs secondes pour les plus gros comptes. Et ça ajoute de la dette technique qu’il faudrait corriger au prochain sprint."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Then I’d push back on Friday. A slow dashboard in front of our biggest clients is a bad first impression.",
+              "text_fr": "Alors je m’opposerais à vendredi. Un tableau de bord lent devant nos plus gros clients, c’est une mauvaise première impression."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Fair point. Let’s align with sales: a beta for five clients on Friday, and the full release next week.",
+              "text_fr": "C’est juste. Mettons-nous d’accord avec les commerciaux : une bêta pour cinq clients vendredi, et la version complète la semaine prochaine."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu’est-ce qu’un « trade-off » ?",
+              "choices": [
+                "Un compromis : on gagne quelque chose en en sacrifiant une autre",
+                "Une négociation commerciale avec un client",
+                "Un échange de tâches entre collègues"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un trade-off est un arbitrage : ici, livrer vendredi (gain) contre des pages lentes et de la dette technique (perte). Le mot « trade » fait penser au commerce ou à un échange, mais dans ce contexte il désigne un compromis entre deux options."
+            },
+            {
+              "prompt_fr": "Que veut dire Mei avec « I’d push back on Friday » ?",
+              "choices": [
+                "Je m’opposerais à la date de vendredi",
+                "Je repousserais tout à vendredi",
+                "Je pousserais le code vendredi"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To push back on something » veut dire s’y opposer, exprimer un désaccord. Attention : sans « on », « to push back a meeting » signifie repousser une date, d’où le piège. Pousser du code se dit « to push code »."
+            },
+            {
+              "prompt_fr": "Quelle phrase présente un compromis de façon claire ?",
+              "choices": [
+                "We can ship on Friday, but the trade-off is slower pages for big accounts.",
+                "We can ship on Friday but it’s bad.",
+                "Friday is impossible, forget it."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La première dit ce qui est possible et ce que cela coûte, ce qui permet de décider. « It’s bad » ne dit pas en quoi, et « forget it » ferme la discussion au lieu de proposer des options."
+            },
+            {
+              "prompt_fr": "Que propose Sofia avec « Let’s align with sales » ?",
+              "choices": [
+                "Se mettre d’accord avec l’équipe commerciale",
+                "Se mettre en file derrière les commerciaux",
+                "Augmenter les ventes"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To align with someone » veut dire se coordonner, trouver une position commune. Le sens physique (s’aligner en rang) ne s’emploie pas ici, et « sales » désigne l’équipe commerciale, pas l’objectif de vendre plus."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Le client demande d’ajouter un export Excel avant la mise en ligne de lundi. Écris un court e-mail à Sofia, la product owner : présente le compromis (c’est faisable, mais sans tests automatisés, ce qui crée de la dette technique) et recommande de livrer lundi sans l’export, puis de l’ajouter la semaine suivante.",
+            "model_answer_en": "Hi Sofia, we can add the Excel export before Monday, but the trade-off is that we’d ship it without automated tests, which adds technical debt. I’d recommend releasing on Monday without the export and adding it the following week. Happy to discuss if needed.",
+            "model_answer_fr": "Bonjour Sofia, nous pouvons ajouter l’export Excel avant lundi, mais le compromis, c’est que nous le livrerions sans tests automatisés, ce qui ajoute de la dette technique. Je recommanderais de mettre en ligne lundi sans l’export et de l’ajouter la semaine suivante. Je suis disponible pour en discuter si besoin.",
+            "key_phrases": [
+              "the trade-off is",
+              "technical debt",
+              "I’d recommend",
+              "the following week"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
