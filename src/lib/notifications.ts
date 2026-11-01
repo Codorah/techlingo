@@ -81,7 +81,14 @@ export async function showLocalNotification(title: string, body: string, url = '
 }
 
 /** Checks once per session if the daily reminder time has passed today without study, and fires a gentle local notification. */
-export async function checkDailyReminder(opts: { reminderTime: string | null; studiedToday: boolean; today: string; title: string; body: string }) {
+export async function checkDailyReminder(opts: {
+  reminderTime: string | null;
+  studiedToday: boolean;
+  today: string;
+  title: string;
+  body: string;
+  url?: string;
+}) {
   if (!notificationsEnabled() || !opts.reminderTime || opts.studiedToday) return false;
   try {
     if (localStorage.getItem(LAST_SENT_KEY) === opts.today) return false;
@@ -91,7 +98,7 @@ export async function checkDailyReminder(opts: { reminderTime: string | null; st
     if (hh == null || mm == null || Number.isNaN(hh) || Number.isNaN(mm)) return false;
     const now = new Date();
     if (now.getHours() * 60 + now.getMinutes() < hh * 60 + mm) return false;
-    const ok = await showLocalNotification(opts.title, opts.body, '/');
+    const ok = await showLocalNotification(opts.title, opts.body, opts.url ?? '/');
     if (ok) localStorage.setItem(LAST_SENT_KEY, opts.today);
     return ok;
   } catch {
