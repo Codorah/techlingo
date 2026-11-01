@@ -14,6 +14,7 @@ import { domainOf } from '@/lib/domains';
 import { useContent } from '@/lib/useContent';
 
 const RETENTIONS = [0.8, 0.85, 0.9, 0.95];
+const FAQ = ['offline', 'install', 'backup', 'xp', 'content'] as const;
 
 export function ProfileScreen() {
   const { t } = useTranslation();
@@ -101,6 +102,23 @@ export function ProfileScreen() {
             </button>
           </div>
         </Card>
+
+        <h2 className="mt-7 text-lg font-extrabold">{t('help.title')}</h2>
+        <div className="mt-3 grid gap-2">
+          {FAQ.map((k) => (
+            <details key={k} className="group rounded-2xl border-2 border-line bg-surface px-4 [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 font-bold">
+                <span className="flex-1">{t(`help.faq.${k}.q`)}</span>
+                <ChevronRight size={20} className="text-ink-2 transition-transform group-open:rotate-90" aria-hidden />
+              </summary>
+              <p className="pb-4 text-ink-2">{t(`help.faq.${k}.a`)}</p>
+            </details>
+          ))}
+        </div>
+        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-ocean">
+          <a href="/decouvrir/" className="inline-flex min-h-11 items-center">{t('help.about')}</a>
+          <a href="/legal/confidentialite.html" className="inline-flex min-h-11 items-center">{t('help.privacy')}</a>
+        </div>
       </main>
       <TabBar />
     </>

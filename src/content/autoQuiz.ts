@@ -27,6 +27,9 @@ function withAnswer(correct: string, wrong: string[], rand: () => number) {
   return { choices, answer_index: choices.indexOf(correct) };
 }
 
+// "« TypeScript » (TypeScript)" reads as a bug, so the translation is only added when it differs.
+const named = (term: Term) => (term.translation_fr.toLowerCase() === term.term_en.toLowerCase() ? `« ${term.term_en} »` : `« ${term.term_en} » (${term.translation_fr})`);
+
 export function autoQuiz(term: Term, pool: Term[]): QuizQuestion[] {
   const rand = seeded(term.id);
   const out: QuizQuestion[] = [];
@@ -39,7 +42,7 @@ export function autoQuiz(term: Term, pool: Term[]): QuizQuestion[] {
     payload: {
       prompt_fr: `Que veut dire « ${term.term_en} » ?`,
       ...withAnswer(term.translation_fr, d.map((t) => t.translation_fr), rand),
-      explanation_fr: `${term.term_en} : ${term.explanation_fr}`
+      explanation_fr: `« ${term.term_en} » veut dire « ${term.translation_fr} ». ${term.explanation_fr}`
     }
   });
 
@@ -53,7 +56,7 @@ export function autoQuiz(term: Term, pool: Term[]): QuizQuestion[] {
         sentence_en: sentence.text_en.replace(re, '___'),
         answer: term.term_en,
         choices: withAnswer(term.term_en, d.map((t) => t.term_en), rand).choices,
-        explanation_fr: sentence.text_fr
+        explanation_fr: `Le mot manquant est « ${term.term_en} ». ${sentence.text_fr}`
       }
     });
   }
@@ -64,7 +67,7 @@ export function autoQuiz(term: Term, pool: Term[]): QuizQuestion[] {
     payload: {
       prompt_fr: `Quel terme correspond à cette définition ? « ${term.definition_en} »`,
       ...withAnswer(term.term_en, d.map((t) => t.term_en), rand),
-      explanation_fr: `C’est « ${term.term_en} » (${term.translation_fr}).`
+      explanation_fr: `C’est ${named(term)} : ${term.explanation_fr}`
     }
   });
 
