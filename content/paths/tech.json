@@ -1286,6 +1286,429 @@
           }
         }
       ]
+    },
+    {
+      "id": "deploys-and-incidents",
+      "title_fr": "Déploiement et incidents",
+      "title_en": "Deploys and incidents",
+      "situation_fr": "Tu mets une version en production, une alerte se déclenche, et tu dois gérer l’incident, informer l’équipe puis en tirer les leçons.",
+      "guide": {
+        "intro_fr": "Mettre en production (deploy, ship, release) est un moment clé : on annonce le déploiement, on vérifie avec un smoke test et on surveille les métriques. Quand ça casse, c’est un incident : une panne totale (outage) ou une dégradation partielle. La personne d’astreinte (on-call) reçoit l’alerte, évalue l’impact et choisit entre un rollback (revenir à la version précédente) et un hotfix (correctif urgent). Pendant l’incident, on publie des status updates courts et réguliers : ce qu’on sait, ce qu’on fait, l’heure du prochain point. Après, on écrit un postmortem sans chercher de coupable : chronologie, cause racine et actions.",
+        "key_phrases": [
+          {
+            "en": "Heads-up: I’m deploying version 2.4 to production at 2 pm.",
+            "fr": "Pour info : je déploie la version 2.4 en production à 14 h."
+          },
+          {
+            "en": "We’re seeing 500 errors on the login page.",
+            "fr": "On observe des erreurs 500 sur la page de connexion."
+          },
+          {
+            "en": "We’re investigating.",
+            "fr": "Nous enquêtons."
+          },
+          {
+            "en": "We’ve rolled back to the previous version.",
+            "fr": "Nous sommes revenus à la version précédente."
+          },
+          {
+            "en": "Next update in 20 minutes.",
+            "fr": "Prochain point dans 20 minutes."
+          },
+          {
+            "en": "The root cause was a configuration error.",
+            "fr": "La cause racine était une erreur de configuration."
+          },
+          {
+            "en": "Action items: …",
+            "fr": "Actions à mener : …"
+          }
+        ],
+        "tip_fr": "Dans un status update, sois factuel et daté : ce qui est touché, depuis quand, ce que tu fais et l’heure du prochain point. Évite « soon » ou « ASAP » sans précision. Et attention : « on call » veut dire d’astreinte, alors que « on a call » veut dire au téléphone."
+      },
+      "lessons": [
+        {
+          "id": "announce-a-deploy",
+          "title_fr": "Annoncer un déploiement",
+          "term_ids": [
+            "deploy",
+            "staging",
+            "production",
+            "smoke-test",
+            "feature-flag"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Olu",
+              "text_en": "Heads-up: I’m deploying the new checkout to production at 3 pm.",
+              "text_fr": "Pour info : je déploie le nouveau tunnel de paiement en production à 15 h."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Has it been tested on staging?",
+              "text_fr": "Il a été testé sur staging ?"
+            },
+            {
+              "speaker": "Olu",
+              "text_en": "Yes, QA signed off this morning. It’s behind a feature flag, so only 5% of users will see it at first.",
+              "text_fr": "Oui, la QA a donné son feu vert ce matin. Il est derrière un feature flag, donc seulement 5 % des utilisateurs le verront au début."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Nice. Who’s watching the dashboards after the deploy?",
+              "text_fr": "Bien. Qui surveille les tableaux de bord après le déploiement ?"
+            },
+            {
+              "speaker": "Olu",
+              "text_en": "Me. I’ll run a smoke test right after and keep an eye on the error rate for an hour.",
+              "text_fr": "Moi. Je lance un smoke test juste après et je surveille le taux d’erreur pendant une heure."
+            },
+            {
+              "speaker": "Olu",
+              "text_en": "Deploy done. The smoke test passed and the error rate is normal. I’ll turn the flag up to 50% tomorrow.",
+              "text_fr": "Déploiement terminé. Le smoke test est passé et le taux d’erreur est normal. Je monte le flag à 50 % demain."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « QA signed off this morning » ?",
+              "choices": [
+                "La QA a donné son feu vert ce matin",
+                "La QA s’est déconnectée ce matin",
+                "La QA a signé un contrat ce matin"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To sign off » (on something) veut dire valider officiellement, donner son accord. Se déconnecter se dit « to sign out » ou « to log out » : une seule petite particule change tout le sens."
+            },
+            {
+              "prompt_fr": "Pourquoi la fonctionnalité est-elle « behind a feature flag » ?",
+              "choices": [
+                "Pour l’activer progressivement ou la couper sans redéployer",
+                "Pour la cacher définitivement aux utilisateurs",
+                "Pour la traduire dans plusieurs langues"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un feature flag est un interrupteur dans le code : on peut ouvrir la fonctionnalité à 5 %, puis 50 % des utilisateurs, ou la désactiver en cas de problème sans nouveau déploiement. Le but n’est pas de la cacher pour toujours."
+            },
+            {
+              "prompt_fr": "À quoi sert un smoke test juste après un déploiement ?",
+              "choices": [
+                "À vérifier rapidement que les fonctions essentielles marchent",
+                "À mesurer la charge maximale que supporte le serveur",
+                "À tester toutes les fonctionnalités en détail"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un smoke test est un test rapide et superficiel des parcours essentiels (se connecter, payer…) pour détecter une casse évidente. Mesurer la charge maximale, c’est un load test ou un stress test, et tout tester en détail prendrait beaucoup plus de temps."
+            },
+            {
+              "prompt_fr": "Quelle phrase est la plus naturelle pour annoncer un déploiement sur Slack ?",
+              "choices": [
+                "Heads-up: I’m deploying the new checkout to production at 3 pm.",
+                "Attention: I deploy the new checkout in production at 15h.",
+                "Warning, I will make a deployment of the checkout at 15h."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Heads-up » est la façon amicale de prévenir, le présent continu (I’m deploying) exprime une action prévue, et on dit « deploy to production ». « Attention » et « Warning » sonnent comme une alerte, « make a deployment » est lourd, et « 15h » est un format français : en anglais, on écrit 3 pm ou 15:00."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Annonce dans le canal #deploys que tu vas déployer la version 2.4 de l’API en production à 14 h, qu’elle a été testée et validée sur staging, et que tu lanceras un smoke test juste après en publiant les résultats dans le canal.",
+            "model_answer_en": "Heads-up: I’m deploying version 2.4 of the API to production at 2 pm. It’s been tested and approved on staging. I’ll run a smoke test right after the deploy and post the results here.",
+            "model_answer_fr": "Pour info : je déploie la version 2.4 de l’API en production à 14 h. Elle a été testée et validée sur staging. Je lancerai un smoke test juste après le déploiement et je publierai les résultats ici.",
+            "key_phrases": [
+              "Heads-up",
+              "deploying version 2.4 of the API to production",
+              "tested and approved on staging",
+              "run a smoke test"
+            ]
+          }
+        },
+        {
+          "id": "handle-an-incident",
+          "title_fr": "Gérer un incident",
+          "term_ids": [
+            "on-call",
+            "alert",
+            "incident",
+            "outage",
+            "escalate"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Fatou",
+              "text_en": "I’m on call and I just got an alert: the login page returns 500 errors for about 30% of users.",
+              "text_fr": "Je suis d’astreinte et je viens de recevoir une alerte : la page de connexion renvoie des erreurs 500 pour environ 30 % des utilisateurs."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Is it a full outage?",
+              "text_fr": "C’est une panne totale ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "No, it’s partial. Some users can still log in. I’m declaring an incident and starting a status thread.",
+              "text_fr": "Non, elle est partielle. Certains utilisateurs arrivent encore à se connecter. Je déclare un incident et j’ouvre un fil de suivi."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "OK. Did anything change recently?",
+              "text_fr": "D’accord. Quelque chose a changé récemment ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Yes, the auth service was deployed twenty minutes ago. That’s my main lead.",
+              "text_fr": "Oui, le service d’authentification a été déployé il y a vingt minutes. C’est ma piste principale."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "If it’s not fixed in fifteen minutes, escalate to the auth team. I can page their on-call engineer.",
+              "text_fr": "Si ce n’est pas réglé dans quinze minutes, fais remonter à l’équipe auth. Je peux appeler leur ingénieur d’astreinte."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Fatou avec « I’m on call » ?",
+              "choices": [
+                "Je suis d’astreinte",
+                "Je suis au téléphone",
+                "Je suis en réunion"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To be on call » signifie être d’astreinte, joignable pour intervenir en cas d’incident. Être au téléphone se dit « to be on a call » ou « on the phone » : l’article « a » fait toute la différence."
+            },
+            {
+              "prompt_fr": "Quelle est la différence entre une « full outage » et une « partial outage » ?",
+              "choices": [
+                "Totale : le service est indisponible pour tous ; partielle : une partie seulement est touchée",
+                "Totale : une partie seulement est touchée ; partielle : le service est indisponible pour tous",
+                "Il n’y a aucune différence"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Full » veut dire complète : plus personne ne peut utiliser le service. Ici, l’outage est « partial » car certains utilisateurs se connectent encore. Cette précision change l’urgence et le message à envoyer."
+            },
+            {
+              "prompt_fr": "Que signifie « escalate to the auth team » ?",
+              "choices": [
+                "Faire remonter le problème à l’équipe auth",
+                "Monter à l’étage de l’équipe auth",
+                "Accuser l’équipe auth"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To escalate » veut dire transmettre un problème à une personne ou une équipe plus compétente ou plus haut placée. Ce n’est ni un déplacement physique (« escalator » trompe ici), ni une accusation."
+            },
+            {
+              "prompt_fr": "Comment dire « On observe des erreurs 500 sur la page de connexion » ?",
+              "choices": [
+                "We’re seeing 500 errors on the login page.",
+                "We’re watching 500 errors at the login page.",
+                "We observe us 500 errors on the login page."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« We’re seeing errors » est l’expression consacrée en incident, avec « on the page ». « Watching » veut dire regarder attentivement (un écran, une vidéo), et « observe us » calque un pronom réfléchi qui n’existe pas en anglais."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Tu es d’astreinte. Publie le premier status update dans le canal d’incident : depuis 21 h 10, environ 30 % des utilisateurs reçoivent des erreurs 500 sur la page de connexion ; tu enquêtes, et ta piste principale est le déploiement du service d’authentification de ce soir ; prochain point dans 20 minutes.",
+            "model_answer_en": "Status update: since 9:10 pm, about 30% of users get 500 errors on the login page. We’re investigating, and our main lead is this evening’s auth service deploy. Next update in 20 minutes.",
+            "model_answer_fr": "Point de situation : depuis 21 h 10, environ 30 % des utilisateurs reçoivent des erreurs 500 sur la page de connexion. Nous enquêtons, et notre piste principale est le déploiement du service d’authentification de ce soir. Prochain point dans 20 minutes.",
+            "key_phrases": [
+              "Status update",
+              "since 9:10 pm",
+              "We’re investigating",
+              "our main lead",
+              "Next update in 20 minutes"
+            ]
+          }
+        },
+        {
+          "id": "rollback-or-hotfix",
+          "title_fr": "Rollback ou hotfix ?",
+          "term_ids": [
+            "rollback",
+            "hotfix",
+            "root-cause",
+            "eta",
+            "stakeholder"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Where are we? Customers are asking for an ETA.",
+              "text_fr": "Où en est-on ? Les clients demandent une estimation de résolution."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "We found the root cause: the new auth config sets the wrong token expiry, so valid sessions are rejected.",
+              "text_fr": "On a trouvé la cause racine : la nouvelle config d’authentification définit une mauvaise durée de validité des tokens, donc des sessions valides sont rejetées."
+            },
+            {
+              "speaker": "Youssef",
+              "text_en": "I can write a hotfix, but it needs a review and a full deploy. That’s at least 45 minutes.",
+              "text_fr": "Je peux écrire un hotfix, mais il faut une revue et un déploiement complet. Ça prend au moins 45 minutes."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "And a rollback?",
+              "text_fr": "Et un rollback ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Rolling back to the previous version takes five minutes, and nothing else changed in that release.",
+              "text_fr": "Revenir à la version précédente prend cinq minutes, et rien d’autre n’a changé dans cette version."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Then let’s roll back now and ship the hotfix tomorrow, calmly. I’ll update the stakeholders.",
+              "text_fr": "Alors on revient en arrière maintenant et on livre le hotfix demain, au calme. Je préviens les parties prenantes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi l’équipe choisit-elle le rollback plutôt que le hotfix ?",
+              "choices": [
+                "Parce qu’il rétablit le service beaucoup plus vite, sans risque supplémentaire",
+                "Parce que la cause racine est encore inconnue",
+                "Parce que les hotfix sont interdits la nuit"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le rollback prend cinq minutes contre au moins 45 pour le hotfix, et rien d’autre n’a changé dans la version : c’est le moyen le plus sûr de rétablir le service. La cause racine est justement connue (la durée des tokens), et aucune règle n’interdit les hotfix la nuit."
+            },
+            {
+              "prompt_fr": "« Customers are asking for an ETA » : que veulent les clients ?",
+              "choices": [
+                "Une estimation de l’heure de résolution",
+                "Un remboursement",
+                "Le nom du responsable de la panne"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "ETA (estimated time of arrival) s’emploie au travail pour toute estimation de délai : ici, quand le service sera rétabli. Les clients ne parlent ni de remboursement ni de responsable."
+            },
+            {
+              "prompt_fr": "Comment dire « Revenons en arrière maintenant » ?",
+              "choices": [
+                "Let’s roll back now.",
+                "Let’s rollback now.",
+                "Let’s go back to behind now."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le verbe s’écrit en deux mots (to roll back), le nom en un seul (a rollback), comme « set up » et « a setup ». On voit parfois « rollback » utilisé comme verbe, mais la forme soignée est « roll back ». « Go back to behind » n’est pas de l’anglais idiomatique."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un court e-mail aux parties prenantes (support et produit) : l’incident de connexion a été résolu à 21 h 45 grâce à un rollback du service d’authentification ; la cause racine est une erreur de configuration dans la version d’hier ; un hotfix sera déployé demain ; un postmortem sera partagé d’ici vendredi.",
+            "model_answer_en": "Hi all, the login incident was resolved at 9:45 pm: we rolled back the auth service to the previous version. The root cause was a configuration error in yesterday’s release. We’ll deploy a hotfix tomorrow and share a postmortem by Friday.",
+            "model_answer_fr": "Bonjour à tous, l’incident de connexion a été résolu à 21 h 45 : nous avons ramené le service d’authentification à la version précédente. La cause racine était une erreur de configuration dans la version d’hier. Nous déploierons un correctif urgent demain et partagerons un postmortem d’ici vendredi.",
+            "key_phrases": [
+              "was resolved at",
+              "we rolled back",
+              "The root cause was",
+              "deploy a hotfix",
+              "share a postmortem"
+            ]
+          }
+        },
+        {
+          "id": "write-a-postmortem",
+          "title_fr": "Le postmortem",
+          "term_ids": [
+            "postmortem",
+            "timeline",
+            "monitoring",
+            "runbook",
+            "action-item"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ana",
+              "text_en": "Let’s go through the timeline. When did the first alert fire?",
+              "text_fr": "Reprenons la chronologie. Quand la première alerte s’est-elle déclenchée ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "At 9:10 pm, about ten minutes after the deploy. We rolled back at 9:45.",
+              "text_fr": "À 21 h 10, environ dix minutes après le déploiement. On a fait le rollback à 21 h 45."
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "Remember, this is a blameless postmortem: we’re looking at the process, not at people. What could we improve?",
+              "text_fr": "Rappel : c’est un postmortem sans recherche de coupable. On regarde le processus, pas les personnes. Qu’est-ce qu’on pourrait améliorer ?"
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "The config change wasn’t covered by any test, and our monitoring only checks that the login page loads, not that logins succeed.",
+              "text_fr": "Le changement de config n’était couvert par aucun test, et notre monitoring vérifie seulement que la page de connexion se charge, pas que les connexions réussissent."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Also, the runbook for the auth service was out of date, so I lost time.",
+              "text_fr": "Et le runbook du service d’authentification n’était plus à jour, donc j’ai perdu du temps."
+            },
+            {
+              "speaker": "Ana",
+              "text_en": "Good points. Let’s turn them into action items, each with an owner and a due date.",
+              "text_fr": "Bonnes remarques. Transformons-les en actions, chacune avec un responsable et une échéance."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire « blameless postmortem » ?",
+              "choices": [
+                "Une analyse qui étudie le processus sans chercher de coupable",
+                "Une analyse qui désigne la personne responsable",
+                "Une réunion annulée faute de participants"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Blameless » signifie « sans reproche » : on cherche ce qui, dans le processus, a permis l’erreur, pour que chacun parle franchement. Désigner un coupable est justement ce qu’on évite."
+            },
+            {
+              "prompt_fr": "« The first alert fired at 9:10 pm » : que s’est-il passé ?",
+              "choices": [
+                "La première alerte s’est déclenchée à 21 h 10",
+                "Quelqu’un a été licencié à 21 h 10",
+                "Un incendie s’est déclaré à 21 h 10"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Pour une alerte de monitoring, « to fire » veut dire se déclencher. Le verbe a d’autres sens (« to fire someone », licencier ; « a fire », un incendie), mais avec « alert », c’est toujours le déclenchement."
+            },
+            {
+              "prompt_fr": "Qu’est-ce qu’un « runbook » ?",
+              "choices": [
+                "Un guide pas à pas pour gérer une situation opérationnelle",
+                "Le planning des astreintes de l’équipe",
+                "Un carnet d’entraînement à la course"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un runbook décrit les étapes à suivre pour une opération ou un incident donné (redémarrer un service, vérifier une config). Le planning des astreintes s’appelle « on-call schedule »."
+            },
+            {
+              "prompt_fr": "Quelle « action item » est la mieux formulée ?",
+              "choices": [
+                "Add an alert on failed logins (owner: Samuel, due: May 15).",
+                "Be more careful next time.",
+                "Monitoring is bad."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une bonne action est concrète, vérifiable, avec un responsable et une échéance. « Be more careful » n’est pas mesurable et vise les personnes, et « Monitoring is bad » constate un problème sans dire quoi faire."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige la partie « Root cause and action items » du postmortem : un changement de configuration non testé a fait échouer 30 % des connexions pendant 35 minutes. Actions : ajouter un test sur la configuration (Samuel), une alerte sur les échecs de connexion (Fatou), et mettre à jour le runbook du service d’authentification (Ana).",
+            "model_answer_en": "Root cause: an untested configuration change caused 30% of logins to fail for 35 minutes. Action items: add a test for the auth configuration (owner: Samuel), add an alert on failed logins (owner: Fatou), and update the runbook for the auth service (owner: Ana).",
+            "model_answer_fr": "Cause racine : un changement de configuration non testé a fait échouer 30 % des connexions pendant 35 minutes. Actions : ajouter un test sur la configuration d’authentification (responsable : Samuel), ajouter une alerte sur les échecs de connexion (responsable : Fatou) et mettre à jour le runbook du service d’authentification (responsable : Ana).",
+            "key_phrases": [
+              "Root cause",
+              "caused 30% of logins to fail",
+              "Action items",
+              "add an alert",
+              "update the runbook"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
