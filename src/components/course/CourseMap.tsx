@@ -43,7 +43,7 @@ export function CourseMap({ title, icon, back, done, total, units, onOpen, aside
 
   return (
     <div className="min-h-dvh bg-mist" onClick={() => setSelected(null)}>
-      <header className="sticky top-0 z-20 border-b-2 border-line bg-surface/95 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
+      <header className="sticky top-0 z-40 border-b-2 border-line bg-surface/95 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
         <div className="mx-auto flex max-w-[1080px] items-center gap-2 px-3 py-2">
           <button type="button" onClick={() => navigate(back)} aria-label={t('common.back')} className="grid h-11 w-11 place-items-center rounded-xl text-ink-2 active:bg-mist">
             <ChevronLeft size={26} aria-hidden />
@@ -57,9 +57,18 @@ export function CourseMap({ title, icon, back, done, total, units, onOpen, aside
         </div>
       </header>
 
+      {selected && (
+        <div
+          className="fixed inset-0 z-20 bg-ink/20 backdrop-blur-[1px] transition-opacity"
+          onClick={() => setSelected(null)}
+          aria-hidden="true"
+        />
+      )}
+
       <div className="mx-auto flex max-w-[1080px] gap-8 px-5 lg:px-8">
         <main className="mx-auto w-full max-w-[560px] pb-24 pt-5">
           {units.map((unit) => {
+            const hasSelected = unit.nodes.some((n) => n.id === selected);
             const unitDone = unit.nodes.every((n) => unit.states.get(n.id) === 'done');
             const unitStarted = unit.nodes.some((n) => unit.states.get(n.id) !== 'locked');
             // Absolute layout so the dotted trail can join the node centres.
@@ -75,7 +84,12 @@ export function CourseMap({ title, icon, back, done, total, units, onOpen, aside
             const trail = placed.map((p, i) => `${i ? 'L' : 'M'}${p.x} ${p.y + NODE / 2}`).join(' ');
             const trophyX = WIND[wind % WIND.length]!;
             return (
-              <section key={unit.id} aria-labelledby={`${unit.id}-title`} className="mb-8" style={UNIT_COLORS[unit.kind]}>
+              <section
+                key={unit.id}
+                aria-labelledby={`${unit.id}-title`}
+                className={`mb-8 ${hasSelected ? 'relative z-30' : 'relative z-10'}`}
+                style={UNIT_COLORS[unit.kind]}
+              >
                 <div className={`relative overflow-hidden rounded-2xl px-5 py-4 ${unitStarted ? 'bg-[var(--accent)] text-on-ocean shadow-[0_5px_0_var(--accent-press)]' : 'border-2 border-line bg-surface text-ink'}`}>
                   <UnitGlyph kind={unit.kind} className={`absolute -right-3 -top-3 ${unitStarted ? 'opacity-20' : 'text-line'}`} />
                   <p className={`relative text-xs font-black uppercase tracking-wider ${unitStarted ? 'opacity-90' : 'text-ink-2'}`}>
@@ -124,8 +138,15 @@ function Node({ node, state, x, y, open, buttonRef, onToggle, onStart }: {
   const look = state === 'locked'
     ? 'bg-line text-ink-2 shadow-[0_6px_0_color-mix(in_srgb,var(--color-ink-2)_30%,transparent)]'
     : 'bg-[var(--accent)] text-on-ocean shadow-[0_6px_0_var(--accent-press)]';
+  // Shift the card back toward center when node is winding left/right to prevent screen clipping
+  const cardShift = Math.round(x * 0.7);
+
   return (
-    <div className="absolute" style={{ left: x, top: y, transform: 'translateX(-50%)' }} onClick={(e) => e.stopPropagation()}>
+    <div
+      className={`absolute ${open ? 'z-40' : 'z-10'}`}
+      style={{ left: x, top: y, transform: 'translateX(-50%)' }}
+      onClick={(e) => e.stopPropagation()}
+    >
       {state === 'current' && !open && (
         <span className="pointer-events-none absolute -top-12 left-1/2 z-[1] -translate-x-1/2">
           <span className="block animate-[bob_2.4s_ease-in-out_infinite] whitespace-nowrap rounded-xl border-2 border-line bg-surface px-3 py-1.5 text-sm font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_3px_0_var(--color-line)]">
@@ -142,19 +163,40 @@ function Node({ node, state, x, y, open, buttonRef, onToggle, onStart }: {
         {state === 'locked' && <span className="absolute -bottom-1 -right-1 grid h-7 w-7 place-items-center rounded-full border-2 border-mist bg-surface text-ink-2"><Lock size={14} aria-hidden /></span>}
       </button>
       {open && (
-        <div role="dialog" aria-label={node.title}
-          className="absolute left-1/2 top-[calc(100%+14px)] z-30 w-[min(300px,calc(100vw-40px))] -translate-x-1/2 animate-[pop_.18s_var(--ease-out-quart)] rounded-2xl p-4 text-left shadow-[0_8px_24px_rgba(15,34,56,0.18)]"
-          style={{ background: state === 'locked' ? 'var(--color-surface)' : 'var(--accent)' }}>
-          <span aria-hidden className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45" style={{ background: state === 'locked' ? 'var(--color-surface)' : 'var(--accent)' }} />
-          <p className={`text-xs font-black uppercase tracking-wider ${state === 'locked' ? 'text-ink-2' : 'text-on-ocean opacity-90'}`}>{t(`course.node.${node.kind}`)}</p>
-          <p className={`mt-0.5 text-lg font-black leading-snug ${state === 'locked' ? 'text-ink' : 'text-on-ocean'}`}>{node.title}</p>
+        <div
+          role="dialog"
+          aria-label={node.title}
+          className="absolute left-1/2 top-[calc(100%+14px)] z-50 w-[min(300px,calc(100vw-36px))] animate-[pop_.18s_var(--ease-out-quart)] rounded-2xl p-4 text-left shadow-[0_12px_32px_rgba(15,34,56,0.28)]"
+          style={{
+            background: state === 'locked' ? 'var(--color-surface)' : 'var(--accent)',
+            transform: `translateX(calc(-50% - ${cardShift}px))`
+          }}
+        >
+          <span
+            aria-hidden
+            className="absolute -top-2 left-1/2 h-4 w-4 rotate-45"
+            style={{
+              background: state === 'locked' ? 'var(--color-surface)' : 'var(--accent)',
+              transform: `translateX(calc(-50% + ${cardShift}px)) rotate(45deg)`
+            }}
+          />
+          <p className={`text-xs font-black uppercase tracking-wider ${state === 'locked' ? 'text-ink-2' : 'text-on-ocean opacity-90'}`}>
+            {t(`course.node.${node.kind}`)}
+          </p>
+          <p className={`mt-0.5 text-lg font-black leading-snug ${state === 'locked' ? 'text-ink' : 'text-on-ocean'}`}>
+            {node.title}
+          </p>
           <p className={`mt-1 text-sm ${state === 'locked' ? 'text-ink-2' : 'text-on-ocean opacity-90'}`}>
             {state === 'locked' ? t('course.locked') : t(`course.what.${node.kind}`)}
           </p>
           {state !== 'locked' && (
-            <button type="button" onClick={onStart}
-              className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-white font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.22)] active:translate-y-1 active:shadow-none">
-              <Play size={18} aria-hidden />{state === 'done' ? t('course.redo') : t('course.go')}
+            <button
+              type="button"
+              onClick={onStart}
+              className="mt-3.5 inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.22)] transition-transform active:translate-y-1 active:shadow-none"
+            >
+              <Play size={18} aria-hidden />
+              {state === 'done' ? t('course.redo') : t('course.go')}
             </button>
           )}
         </div>
