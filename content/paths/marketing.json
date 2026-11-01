@@ -229,9 +229,9 @@
         {
           "id": "preparer-posts-semaine",
           "title_fr": "Préparer les posts de la semaine",
-          "term_ids": ["social-post", "caption", "hashtag", "carousel", "schedule-post", "best-time-to-post"],
+          "term_ids": ["social-post", "caption", "hashtag", "carousel", "schedule-post", "editorial-calendar"],
           "dialogue": [
-            { "speaker": "Inès", "text_en": "Morning! Are next week's posts ready for review?", "text_fr": "Bonjour ! Les posts de la semaine prochaine sont prêts à être relus ?" },
+            { "speaker": "Inès", "text_en": "Morning! Are next week's posts from the editorial calendar ready for review?", "text_fr": "Bonjour ! Les posts de la semaine prochaine prévus au calendrier éditorial sont prêts à être relus ?" },
             { "speaker": "Hugo", "text_en": "Almost. I've got three: a carousel with recipe tips, a short video and a customer quote.", "text_fr": "Presque. J'en ai trois : un carrousel avec des astuces de recettes, une courte vidéo et une citation client." },
             { "speaker": "Inès", "text_en": "Nice. Can you keep the captions short? Two lines max, then the call to action.", "text_fr": "Super. Tu peux garder des légendes courtes ? Deux lignes maximum, puis l'appel à l'action." },
             { "speaker": "Hugo", "text_en": "Sure. What about hashtags? I usually add around ten.", "text_fr": "Bien sûr. Et les hashtags ? J'en mets une dizaine d'habitude." },
@@ -412,6 +412,216 @@
             "model_answer_en": "Hi Robert, as discussed, a customer video about a late delivery is going viral and we're seeing a strong backlash in the comments. Please find below a short holding statement for your sign-off. In the meantime, we've paused today's scheduled posts and we're monitoring mentions every hour.",
             "model_answer_fr": "Bonjour Robert, comme convenu, la vidéo d'un client sur une livraison en retard devient virale et nous constatons une forte vague de réactions négatives dans les commentaires. Vous trouverez ci-dessous une courte déclaration d'attente à valider. En attendant, nous avons mis en pause les posts programmés aujourd'hui et nous surveillons les mentions toutes les heures.",
             "key_phrases": ["as discussed", "is going viral", "Please find below", "for your sign-off", "In the meantime"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "seo-et-mesure",
+      "title_fr": "SEO et mesure",
+      "title_en": "SEO and measurement",
+      "situation_fr": "Vous travaillez sur le référencement naturel d'un site et devez choisir des mots-clés, corriger des pages, expliquer une baisse de trafic et présenter les bons indicateurs.",
+      "guide": {
+        "intro_fr": "En SEO, tout part des keywords : les mots que les gens tapent dans Google. On fait d'abord une keyword research pour comparer le search volume (nombre de recherches) et la difficulté, puis on vérifie le search intent : la personne veut-elle s'informer, comparer ou acheter ? On optimise ensuite les pages (title tag, meta description, alt text) pour mieux ranker, c'est-à-dire mieux se classer dans les résultats. Enfin, on mesure : organic traffic, conversion rate et quelques KPIs réunis dans un dashboard. Quand les chiffres baissent, il faut savoir l'expliquer prudemment à un client, avec des hypothèses plutôt que des certitudes.",
+        "key_phrases": [
+          { "en": "Which keyword should we target?", "fr": "Quel mot-clé devons-nous viser ?" },
+          { "en": "What's the search intent behind it?", "fr": "Quelle est l'intention de recherche derrière ?" },
+          { "en": "We rank on page one for this query.", "fr": "Nous sommes en première page pour cette requête." },
+          { "en": "Organic traffic dropped by 20% last month.", "fr": "Le trafic naturel a baissé de 20 % le mois dernier." },
+          { "en": "Our main hypothesis is...", "fr": "Notre hypothèse principale, c'est..." },
+          { "en": "The conversion rate is up from 1.6% to 2.1%.", "fr": "Le taux de conversion est passé de 1,6 % à 2,1 %." }
+        ],
+        "tip_fr": "Pour une variation, l'anglais utilise by : traffic dropped by 20% (a baissé de 20 %). Pour le point de départ et d'arrivée, from et to : up from 1.6% to 2.1%. Et KPI se prononce lettre par lettre, « kay-pee-eye », avec un s au pluriel : KPIs."
+      },
+      "lessons": [
+        {
+          "id": "choisir-mots-cles",
+          "title_fr": "Choisir les bons mots-clés",
+          "term_ids": ["keyword-research", "keyword", "search-volume", "keyword-difficulty", "long-tail-keyword", "search-intent"],
+          "dialogue": [
+            { "speaker": "Ben", "text_en": "I'm writing the blog post about meal prep. Which keyword should I target?", "text_fr": "J'écris l'article de blog sur la préparation de repas à l'avance. Quel mot-clé je dois viser ?" },
+            { "speaker": "Chloé", "text_en": "I did some keyword research. \"Meal prep\" has a huge search volume, but the keyword difficulty is very high.", "text_fr": "J'ai fait une recherche de mots-clés. « Meal prep » a un énorme volume de recherche, mais la difficulté est très élevée." },
+            { "speaker": "Ben", "text_en": "So we won't rank for it?", "text_fr": "Donc on ne se positionnera pas dessus ?" },
+            { "speaker": "Chloé", "text_en": "Not anytime soon. I'd go for a long-tail keyword like \"meal prep ideas for busy weeknights\". Fewer searches, but much less competition.", "text_fr": "Pas de sitôt. Je partirais sur un mot-clé de longue traîne comme « idées de repas à préparer pour les soirs de semaine chargés ». Moins de recherches, mais beaucoup moins de concurrence." },
+            { "speaker": "Ben", "text_en": "Makes sense. What's the search intent behind it?", "text_fr": "C'est logique. Quelle est l'intention de recherche derrière ?" },
+            { "speaker": "Chloé", "text_en": "Informational. People want ideas and tips, not to buy right away. So write a helpful guide, not a sales page.", "text_fr": "Informationnelle. Les gens veulent des idées et des astuces, pas acheter tout de suite. Donc écris un guide utile, pas une page de vente." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce qu'un long-tail keyword ?",
+              "choices": ["A longer, more specific search phrase with fewer searches and less competition", "A keyword that stays popular for a long time", "A keyword placed at the end of an article"],
+              "answer_index": 0,
+              "explanation_fr": "Un mot-clé de longue traîne est une expression plus longue et précise : moins de volume, mais moins de concurrence et une intention plus claire. « Long » ne parle ni de durée ni de position dans le texte."
+            },
+            {
+              "prompt_fr": "Que signifie un search intent « informational » ?",
+              "choices": ["The person wants to learn something", "The person wants to buy now", "The person is looking for a specific website"],
+              "answer_index": 0,
+              "explanation_fr": "Informational : on cherche une information ou des conseils. Si la personne veut acheter, l'intention est transactional ; si elle cherche un site précis, on parle d'intention navigational."
+            },
+            {
+              "prompt_fr": "« So we won't rank for it? » veut dire :",
+              "choices": ["So we won't appear high in the search results for this keyword?", "So we won't write about it?", "So we won't pay for this keyword?"],
+              "answer_index": 0,
+              "explanation_fr": "To rank for a keyword, c'est être bien classé dans les résultats pour ce mot-clé. Il ne s'agit pas de payer : ça, c'est le SEA, pas le SEO."
+            },
+            {
+              "prompt_fr": "Que mesure le search volume ?",
+              "choices": ["How many times a keyword is searched, usually per month", "How loud a voice search is", "How many pages a website has"],
+              "answer_index": 0,
+              "explanation_fr": "Le search volume est le nombre moyen de recherches d'un mot-clé, en général par mois. Volume ne désigne pas le son ici."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédigez la partie « Mot-clé » du brief SEO destiné au rédacteur : le mot-clé cible, pourquoi vous l'avez choisi, et ce que l'intention de recherche implique pour l'article.",
+            "context_en": "SEO brief: target keyword and intent",
+            "model_answer_en": "Target keyword: \"meal prep ideas for busy weeknights\". It's a long-tail keyword with a lower search volume but much less competition, so we have a real chance to rank. The search intent is informational, so the article should be a practical guide with tips, not a sales page.",
+            "model_answer_fr": "Mot-clé cible : « meal prep ideas for busy weeknights ». C'est un mot-clé de longue traîne avec un volume de recherche plus faible mais beaucoup moins de concurrence, donc nous avons une vraie chance de nous positionner. L'intention de recherche est informationnelle : l'article doit être un guide pratique avec des astuces, pas une page de vente.",
+            "key_phrases": ["Target keyword", "a long-tail keyword with a lower search volume", "we have a real chance to rank", "The search intent is informational"]
+          }
+        },
+        {
+          "id": "optimiser-pages-produit",
+          "title_fr": "Faire corriger des pages après un audit SEO",
+          "term_ids": ["seo-audit", "title-tag", "meta-description", "alt-text", "serp"],
+          "dialogue": [
+            { "speaker": "Fatou", "text_en": "I've run an SEO audit on the new product pages. There are a few quick fixes.", "text_fr": "J'ai fait un audit SEO des nouvelles pages produit. Il y a quelques corrections rapides." },
+            { "speaker": "Léo", "text_en": "Go ahead.", "text_fr": "Vas-y." },
+            { "speaker": "Fatou", "text_en": "First, half the pages have the same title tag. Each page needs a unique title with its main keyword.", "text_fr": "D'abord, la moitié des pages ont la même balise title. Chaque page a besoin d'un titre unique avec son mot-clé principal." },
+            { "speaker": "Léo", "text_en": "OK, we can generate it from the product name. What else?", "text_fr": "OK, on peut le générer à partir du nom du produit. Quoi d'autre ?" },
+            { "speaker": "Fatou", "text_en": "The meta descriptions are empty, so Google pulls whatever text it finds on the page into the SERP. And most images have no alt text.", "text_fr": "Les meta descriptions sont vides, donc Google reprend le texte qu'il trouve sur la page dans les résultats. Et la plupart des images n'ont pas de texte alternatif." },
+            { "speaker": "Léo", "text_en": "Alt text is for accessibility too, right?", "text_fr": "Le texte alternatif sert aussi à l'accessibilité, non ?" },
+            { "speaker": "Fatou", "text_en": "Exactly. It helps screen readers and search engines understand the image. Two wins in one.", "text_fr": "Exactement. Il aide les lecteurs d'écran et les moteurs de recherche à comprendre l'image. Deux bénéfices d'un coup." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Où apparaît généralement le title tag d'une page ?",
+              "choices": ["As the clickable headline in search results and in the browser tab", "Only in the footer of the page", "In the URL of every image"],
+              "answer_index": 0,
+              "explanation_fr": "Le title tag (balise title) s'affiche le plus souvent comme titre cliquable dans les résultats de recherche et dans l'onglet du navigateur. Il ne se trouve ni dans le pied de page ni dans les images."
+            },
+            {
+              "prompt_fr": "Que signifie SERP ?",
+              "choices": ["Search engine results page", "Search engine ranking policy", "Site error report page"],
+              "answer_index": 0,
+              "explanation_fr": "SERP veut dire search engine results page : la page de résultats affichée après une recherche. Les autres développements n'existent pas."
+            },
+            {
+              "prompt_fr": "À quoi sert l'alt text d'une image ?",
+              "choices": ["To describe the image for screen readers and search engines", "To add a copyright notice on the image", "To make the image load faster"],
+              "answer_index": 0,
+              "explanation_fr": "L'alt text décrit l'image pour les personnes malvoyantes (lecteurs d'écran) et pour les moteurs de recherche. Il n'accélère pas le chargement : ça, c'est la compression."
+            },
+            {
+              "prompt_fr": "Que veut dire Fatou par « a few quick fixes » ?",
+              "choices": ["Some problems that are easy and fast to correct", "Some urgent bugs that break the site", "Some long-term projects"],
+              "answer_index": 0,
+              "explanation_fr": "A quick fix est une correction simple et rapide. Fatou ne parle pas de bugs bloquants ni de projets de fond, ce qui rassure Léo."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Un développeur vous demande de relire sa pull request qui publie les nouvelles pages produit. Laissez un commentaire poli qui demande les corrections SEO avant la fusion.",
+            "context_en": "PR #214: Add new product pages",
+            "model_answer_en": "Thanks for this! Before we merge, could you make sure each product page has a unique title tag that includes the product name? The meta descriptions are still empty, and a few images are missing alt text. Happy to share the list of affected pages.",
+            "model_answer_fr": "Merci pour ce travail ! Avant de fusionner, pourrais-tu vérifier que chaque page produit a une balise title unique qui inclut le nom du produit ? Les meta descriptions sont encore vides, et quelques images n'ont pas de texte alternatif. Je peux te partager la liste des pages concernées.",
+            "key_phrases": ["Before we merge", "could you make sure", "a unique title tag", "are missing alt text", "Happy to share"]
+          }
+        },
+        {
+          "id": "expliquer-baisse-trafic",
+          "title_fr": "Expliquer une baisse de trafic au client",
+          "term_ids": ["organic-traffic", "ranking", "google-search-console", "core-update", "thin-content", "internal-linking"],
+          "dialogue": [
+            { "speaker": "Mr Grant", "text_en": "Our organic traffic dropped by about 20% last month. What happened?", "text_fr": "Notre trafic naturel a baissé d'environ 20 % le mois dernier. Que s'est-il passé ?" },
+            { "speaker": "Samir", "text_en": "We looked into it in Google Search Console. Most of the drop comes from five blog articles that lost rankings.", "text_fr": "Nous avons analysé ça dans Google Search Console. L'essentiel de la baisse vient de cinq articles de blog qui ont perdu des positions." },
+            { "speaker": "Mr Grant", "text_en": "Why those five?", "text_fr": "Pourquoi ces cinq-là ?" },
+            { "speaker": "Samir", "text_en": "Our main hypothesis is the core update Google rolled out mid-month. Those articles are quite old and a bit thin compared to competitors' pages.", "text_fr": "Notre hypothèse principale, c'est la mise à jour majeure déployée par Google en milieu de mois. Ces articles sont assez anciens et un peu pauvres par rapport aux pages des concurrents." },
+            { "speaker": "Mr Grant", "text_en": "So what do we do?", "text_fr": "Alors, qu'est-ce qu'on fait ?" },
+            { "speaker": "Samir", "text_en": "We'll refresh them with up-to-date content and better internal linking. It usually takes a few weeks to see the effect, so we'll track it closely.", "text_fr": "Nous allons les actualiser avec du contenu à jour et un meilleur maillage interne. Il faut généralement quelques semaines pour voir l'effet, donc nous allons suivre ça de près." },
+            { "speaker": "Mr Grant", "text_en": "OK, keep me posted.", "text_fr": "D'accord, tenez-moi au courant." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle phrase est correcte pour dire « le trafic a baissé de 20 % » ?",
+              "choices": ["Traffic dropped by 20%.", "Traffic dropped of 20%.", "Traffic dropped from 20%."],
+              "answer_index": 0,
+              "explanation_fr": "Pour l'ampleur d'une variation, on utilise by. « Of » est un calque du français. « From 20% » voudrait dire que le point de départ était 20 %, ce qui change le sens."
+            },
+            {
+              "prompt_fr": "Pourquoi Samir dit-il « Our main hypothesis is... » plutôt que « The cause is... » ?",
+              "choices": ["Because he can't be 100% sure, so he stays cautious with the client", "Because he doesn't know the client well", "Because hypothesis is more informal"],
+              "answer_index": 0,
+              "explanation_fr": "Google ne dit jamais exactement pourquoi un site perd des positions. Parler d'hypothèse est plus honnête et plus professionnel. Ce n'est pas une question de familiarité : c'est même plutôt soutenu."
+            },
+            {
+              "prompt_fr": "Que signifie thin content ?",
+              "choices": ["Pages with little useful or original content", "Pages that load very fast", "Pages with small fonts"],
+              "answer_index": 0,
+              "explanation_fr": "Thin content désigne des pages pauvres : peu de texte utile, peu de valeur ajoutée. Ça n'a rien à voir avec la vitesse ou la taille de la police."
+            },
+            {
+              "prompt_fr": "« Keep me posted » veut dire :",
+              "choices": ["Keep me informed", "Send me a letter", "Publish a post for me"],
+              "answer_index": 0,
+              "explanation_fr": "Keep me posted signifie « tenez-moi au courant ». Rien à voir avec la poste ni avec un post sur les réseaux."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Après l'appel, envoyez à Mr Grant un e-mail de récapitulatif : ce qui s'est passé (avec prudence), ce que vous allez faire, et quand il aura des nouvelles.",
+            "model_answer_en": "Hi Mr Grant, following our call, here's a quick summary. Organic traffic fell by about 20% last month, mainly because five older blog articles lost rankings, most likely after Google's core update. We'll refresh these articles and improve internal linking over the next two weeks, and we'll share the impact in the monthly report.",
+            "model_answer_fr": "Bonjour Monsieur Grant, suite à notre appel, voici un bref récapitulatif. Le trafic naturel a baissé d'environ 20 % le mois dernier, principalement parce que cinq anciens articles de blog ont perdu des positions, très probablement après la mise à jour majeure de Google. Nous allons actualiser ces articles et améliorer le maillage interne dans les deux prochaines semaines, et nous partagerons l'impact dans le rapport mensuel.",
+            "key_phrases": ["following our call", "fell by about 20%", "most likely after", "over the next two weeks"]
+          }
+        },
+        {
+          "id": "choisir-kpi-dashboard",
+          "title_fr": "Choisir les KPIs du tableau de bord",
+          "term_ids": ["kpi", "metric", "dashboard", "conversion-rate", "conversion-tracking"],
+          "dialogue": [
+            { "speaker": "David", "text_en": "Before the board meeting, which KPIs should we show?", "text_fr": "Avant le comité de direction, quels KPIs devons-nous montrer ?" },
+            { "speaker": "Rania", "text_en": "I'd keep it to three: organic traffic, conversion rate and the number of sign-ups.", "text_fr": "Je m'en tiendrais à trois : le trafic naturel, le taux de conversion et le nombre d'inscriptions." },
+            { "speaker": "David", "text_en": "Not followers or likes?", "text_fr": "Pas les abonnés ou les likes ?" },
+            { "speaker": "Rania", "text_en": "They're useful metrics for the social team, but they don't show business impact. For the board, they're vanity metrics.", "text_fr": "Ce sont des indicateurs utiles pour l'équipe social media, mais ils ne montrent pas l'impact business. Pour la direction, ce sont des indicateurs de vanité." },
+            { "speaker": "David", "text_en": "Fair point. Is the conversion rate reliable now?", "text_fr": "C'est juste. Le taux de conversion est fiable maintenant ?" },
+            { "speaker": "Rania", "text_en": "Yes, since we fixed conversion tracking. It's 2.1% this month, up from 1.6%.", "text_fr": "Oui, depuis qu'on a corrigé le suivi des conversions. Il est de 2,1 % ce mois-ci, contre 1,6 % avant." },
+            { "speaker": "David", "text_en": "Great. Add it to the dashboard with a one-line comment.", "text_fr": "Parfait. Ajoute-le au tableau de bord avec un commentaire d'une ligne." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre une metric et un KPI ?",
+              "choices": ["A KPI is a metric chosen because it measures progress toward a key goal", "A metric is always financial, a KPI never is", "There is no difference at all"],
+              "answer_index": 0,
+              "explanation_fr": "Tout KPI est une metric, mais toutes les metrics ne sont pas des KPIs : un KPI est un indicateur choisi parce qu'il suit un objectif important. Une metric n'est pas forcément financière."
+            },
+            {
+              "prompt_fr": "Que veut dire « It's 2.1% this month, up from 1.6% » ?",
+              "choices": ["It was 1.6% before and has risen to 2.1%", "It went down from 2.1% to 1.6%", "It will reach 2.1% next month"],
+              "answer_index": 0,
+              "explanation_fr": "Up from indique une hausse par rapport à la valeur précédente : de 1,6 % à 2,1 %. Pour une baisse, on dirait down from."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'une vanity metric ?",
+              "choices": ["A number that looks good but doesn't show real business results", "A metric that measures brand beauty", "A secret internal metric"],
+              "answer_index": 0,
+              "explanation_fr": "Une vanity metric flatte l'ego (beaucoup de likes, d'abonnés) sans prouver un impact réel sur les ventes ou les inscriptions. Elle peut rester utile en interne, comme le dit Rania."
+            },
+            {
+              "prompt_fr": "Pourquoi le taux de conversion n'était-il pas fiable avant ?",
+              "choices": ["Because conversion tracking wasn't working properly", "Because the website was offline", "Because there were no visitors"],
+              "answer_index": 0,
+              "explanation_fr": "Rania dit « since we fixed conversion tracking » : le suivi des conversions était cassé, donc les chiffres étaient faux. Le site n'était pas hors ligne pour autant."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédigez le commentaire de 2 ou 3 phrases qui accompagne les KPIs du tableau de bord mensuel pour la direction.",
+            "context_en": "Monthly dashboard: KPI commentary",
+            "model_answer_en": "This month, the conversion rate reached 2.1%, up from 1.6%, now that conversion tracking is fixed. Organic traffic remained stable and sign-ups grew by 18%. We recommend tracking these three KPIs every month rather than follower counts.",
+            "model_answer_fr": "Ce mois-ci, le taux de conversion a atteint 2,1 %, contre 1,6 % auparavant, maintenant que le suivi des conversions est corrigé. Le trafic naturel est resté stable et les inscriptions ont progressé de 18 %. Nous recommandons de suivre ces trois KPIs chaque mois plutôt que le nombre d'abonnés.",
+            "key_phrases": ["reached 2.1%, up from 1.6%", "remained stable", "grew by 18%", "We recommend tracking"]
           }
         }
       ]
