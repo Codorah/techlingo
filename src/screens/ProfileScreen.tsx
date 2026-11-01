@@ -146,9 +146,14 @@ export function ProfileScreen() {
         </div>
 
         <Card className="mt-5">
-          <div className="flex items-center justify-between">
-            <h2 className="flex items-center gap-2 text-base font-extrabold"><CalendarCheck size={20} className="text-mint-strong" aria-hidden />{t('profile.weekActivity')}</h2>
-            <span className="text-xs font-bold text-ink-2">{t('home.week.goal', { count: activeDaysWeek, goal: 4 })}</span>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="flex items-center gap-2 text-base font-extrabold">
+              <CalendarCheck size={20} className="text-mint-strong" aria-hidden />
+              {t('profile.weekActivity')}
+            </h2>
+            <span className="text-xs font-bold text-ink-2">
+              {t('home.week.goal', { count: activeDaysWeek, goal: 4 })}
+            </span>
           </div>
           <div className="mt-4 grid grid-cols-7 items-end gap-2 pt-2">
             {last7Days.map((d) => {
@@ -196,19 +201,23 @@ export function ProfileScreen() {
             </Card>
           )}
 
-          <ul className="mt-3 grid grid-cols-4 gap-2.5 sm:grid-cols-4">
+          <ul className="mt-3 grid grid-cols-4 gap-2">
             {badges.map((b) => {
               const locked = b.tier === 'locked';
               return (
-                <li key={b.id}>
+                <li key={b.id} className="min-w-0">
                   <button type="button" onClick={() => setSelectedBadge(selectedBadge?.id === b.id ? null : b)}
-                    className={`flex h-full w-full flex-col items-center rounded-2xl border-2 p-2.5 text-center transition-transform active:scale-95 ${TIER_LOOK[b.tier]}`}>
-                    <span className="relative grid h-11 w-11 place-items-center rounded-xl bg-white/60">
-                      <DynamicIcon name={b.icon} size={22} />
-                      {locked && <Lock size={12} className="absolute -bottom-1 -right-1 rounded-full bg-surface p-0.5 text-ink-2" aria-hidden />}
+                    className={`flex h-full w-full min-w-0 flex-col items-center justify-between rounded-2xl border-2 p-2 text-center transition-transform active:scale-95 ${TIER_LOOK[b.tier]}`}>
+                    <span className="relative grid h-10 w-10 flex-none place-items-center rounded-xl bg-white/70 shadow-xs">
+                      <DynamicIcon name={b.icon} size={20} />
+                      {locked && <Lock size={11} className="absolute -bottom-1 -right-1 rounded-full bg-surface p-0.5 text-ink-2 shadow-xs" aria-hidden />}
                     </span>
-                    <span className="mt-1.5 line-clamp-1 text-xs font-extrabold leading-tight">{t(`badges.list.${b.id}.title`)}</span>
-                    <span className="mt-0.5 text-[10px] font-bold opacity-80">{b.current}/{b.nextTarget}</span>
+                    <span className="mt-1.5 block w-full truncate text-[11px] font-extrabold leading-tight">
+                      {t(`badges.list.${b.id}.title`)}
+                    </span>
+                    <span className="mt-0.5 block text-[10px] font-bold opacity-80">
+                      {b.current}/{b.nextTarget}
+                    </span>
                   </button>
                 </li>
               );
