@@ -3764,6 +3764,751 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "consent",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 80
+        },
+        {
+          "role": "general-marketing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "marketing-analytics",
+        "crm"
+      ],
+      "term_en": "consent",
+      "translation_fr": "consentement",
+      "part_of_speech": "noun",
+      "definition_en": "A person’s free, specific, informed and clear agreement to the use of their data for a given purpose, such as marketing emails or cookies.",
+      "explanation_fr": "L’accord libre, spécifique, éclairé et univoque d’une personne à l’utilisation de ses données pour une finalité donnée (e-mails marketing, cookies…).",
+      "why_it_matters_fr": "Sous le RGPD, une case pré-cochée ou le silence ne valent pas consentement. On dit « give / withdraw consent ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "consent-1",
+          "text_en": "We can only email contacts who gave consent.",
+          "text_fr": "Nous ne pouvons écrire qu’aux contacts qui ont donné leur consentement."
+        },
+        {
+          "id": "consent-2",
+          "text_en": "Users can withdraw consent at any time.",
+          "text_fr": "Les utilisateurs peuvent retirer leur consentement à tout moment."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cookie-banner",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 75
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "marketing-analytics"
+      ],
+      "term_en": "cookie banner",
+      "translation_fr": "bandeau cookies",
+      "part_of_speech": "noun",
+      "definition_en": "The message shown on a website to inform visitors about cookies and let them accept, refuse or customize them.",
+      "explanation_fr": "Le message affiché sur un site pour informer des cookies et permettre de les accepter, refuser ou paramétrer.",
+      "why_it_matters_fr": "En Europe, refuser doit être aussi simple qu’accepter : les autorités sanctionnent les bandeaux trompeurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cookie-banner-1",
+          "text_en": "The new cookie banner has a clear « Reject all » button.",
+          "text_fr": "Le nouveau bandeau cookies a un bouton « Tout refuser » bien visible."
+        },
+        {
+          "id": "cookie-banner-2",
+          "text_en": "Analytics data dropped after we changed the cookie banner.",
+          "text_fr": "Les données d’analytics ont baissé après le changement du bandeau cookies."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Règles détaillées variables selon les pays et autorités : à faire valider par le juridique."
+    },
+    {
+      "id": "consent-management-platform",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "marketing-analytics"
+      ],
+      "term_en": "consent management platform (CMP)",
+      "translation_fr": "plateforme de gestion du consentement (CMP)",
+      "part_of_speech": "noun",
+      "definition_en": "A tool that displays the cookie banner, records each visitor’s choices and tells tags and partners what they are allowed to do.",
+      "explanation_fr": "Outil qui affiche le bandeau cookies, enregistre les choix de chaque visiteur et indique aux balises et partenaires ce qu’ils ont le droit de faire.",
+      "why_it_matters_fr": "Elle doit être reliée au gestionnaire de balises pour bloquer réellement les tags sans consentement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "consent-management-platform-1",
+          "text_en": "The CMP blocks marketing tags until the visitor accepts.",
+          "text_fr": "La CMP bloque les balises marketing tant que le visiteur n’a pas accepté."
+        },
+        {
+          "id": "consent-management-platform-2",
+          "text_en": "We need proof of consent stored in the CMP for audits.",
+          "text_fr": "Il nous faut des preuves de consentement stockées dans la CMP pour les audits."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "consent-rate",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "marketing-analytics"
+      ],
+      "term_en": "consent rate",
+      "translation_fr": "taux de consentement",
+      "part_of_speech": "noun",
+      "definition_en": "The percentage of visitors who accept cookies or tracking when the banner is shown.",
+      "explanation_fr": "Le pourcentage de visiteurs qui acceptent les cookies ou le suivi quand le bandeau s’affiche.",
+      "why_it_matters_fr": "Il explique souvent une partie des écarts entre ventes réelles et conversions mesurées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "consent-rate-1",
+          "text_en": "Our consent rate is around 60% on mobile.",
+          "text_fr": "Notre taux de consentement est d’environ 60 % sur mobile."
+        },
+        {
+          "id": "consent-rate-2",
+          "text_en": "Analytics only covers visitors who consented, so adjust for the consent rate.",
+          "text_fr": "L’analytics ne couvre que les visiteurs qui ont consenti : tiens compte du taux de consentement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Chiffre donné comme exemple."
+    },
+    {
+      "id": "consent-mode",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 55
+        },
+        {
+          "role": "seo-sea",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "marketing-analytics",
+        "paid-ads"
+      ],
+      "term_en": "consent mode",
+      "translation_fr": "mode consentement (Consent Mode)",
+      "part_of_speech": "noun",
+      "definition_en": "A Google feature that adjusts how its tags behave according to each visitor’s consent choices, and can model missing conversions.",
+      "explanation_fr": "Fonction Google qui adapte le comportement de ses balises selon les choix de consentement de chaque visiteur, et peut modéliser les conversions manquantes.",
+      "why_it_matters_fr": "Exigé pour certaines fonctions publicitaires de Google auprès des utilisateurs européens.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "consent-mode-1",
+          "text_en": "We implemented consent mode to recover modeled conversions.",
+          "text_fr": "Nous avons mis en place le mode consentement pour récupérer des conversions modélisées."
+        },
+        {
+          "id": "consent-mode-2",
+          "text_en": "Consent mode must be connected to our CMP.",
+          "text_fr": "Le mode consentement doit être relié à notre CMP."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Fonctionnalité Google (Consent Mode v2) : détails techniques à vérifier."
+    },
+    {
+      "id": "opt-out",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 65
+        },
+        {
+          "role": "general-marketing",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "email-marketing",
+        "crm"
+      ],
+      "term_en": "opt-out",
+      "translation_fr": "désinscription, refus (opt-out)",
+      "part_of_speech": "noun",
+      "definition_en": "A person’s choice to stop receiving communications or to refuse the use of their data; also a system where consent is assumed unless the person refuses.",
+      "explanation_fr": "Le choix d’une personne d’arrêter de recevoir des communications ou de refuser l’usage de ses données ; aussi un système où l’accord est présumé sauf refus.",
+      "why_it_matters_fr": "Le verbe est « to opt out » (en deux mots). En Europe, le marketing par e-mail vers les particuliers repose surtout sur l’opt-in.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "opt-out-1",
+          "text_en": "Every marketing email must include an easy opt-out.",
+          "text_fr": "Chaque e-mail marketing doit proposer une désinscription facile."
+        },
+        {
+          "id": "opt-out-2",
+          "text_en": "Opt-outs must be processed quickly.",
+          "text_fr": "Les demandes de désinscription doivent être traitées rapidement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "legal-basis",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 55
+        },
+        {
+          "role": "general-marketing",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "crm",
+        "marketing-analytics"
+      ],
+      "term_en": "legal basis",
+      "translation_fr": "base légale",
+      "part_of_speech": "noun",
+      "definition_en": "Under the GDPR, the legal reason that allows an organization to process personal data, such as consent, contract or legitimate interest.",
+      "explanation_fr": "Selon le RGPD, la raison juridique qui autorise une organisation à traiter des données personnelles : consentement, contrat, intérêt légitime…",
+      "why_it_matters_fr": "Chaque traitement marketing doit avoir une base légale documentée.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "legal-basis-1",
+          "text_en": "What is the legal basis for this email campaign?",
+          "text_fr": "Quelle est la base légale de cette campagne e-mail ?"
+        },
+        {
+          "id": "legal-basis-2",
+          "text_en": "The DPO asked us to document the legal basis for each data use.",
+          "text_fr": "Le DPO nous a demandé de documenter la base légale de chaque usage de données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "legitimate-interest",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 45
+        },
+        {
+          "role": "general-marketing",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "crm"
+      ],
+      "term_en": "legitimate interest",
+      "translation_fr": "intérêt légitime",
+      "part_of_speech": "noun",
+      "definition_en": "A GDPR legal basis allowing data processing without consent when the company’s interest is balanced against the person’s rights and expectations.",
+      "explanation_fr": "Base légale du RGPD qui permet un traitement sans consentement lorsque l’intérêt de l’entreprise est mis en balance avec les droits et attentes de la personne.",
+      "why_it_matters_fr": "Exige une analyse documentée ; elle ne remplace pas le consentement exigé pour les cookies marketing.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "legitimate-interest-1",
+          "text_en": "We rely on legitimate interest for B2B prospecting emails.",
+          "text_fr": "Nous nous appuyons sur l’intérêt légitime pour les e-mails de prospection B2B."
+        },
+        {
+          "id": "legitimate-interest-2",
+          "text_en": "Legal said legitimate interest doesn’t cover this use of data.",
+          "text_fr": "Le juridique a dit que l’intérêt légitime ne couvre pas cet usage des données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Application au marketing très dépendante du contexte et du pays : à faire valider."
+    },
+    {
+      "id": "data-controller",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "crm"
+      ],
+      "term_en": "data controller",
+      "translation_fr": "responsable de traitement",
+      "part_of_speech": "noun",
+      "definition_en": "Under the GDPR, the organization that decides why and how personal data is processed.",
+      "explanation_fr": "Selon le RGPD, l’organisation qui décide pourquoi et comment des données personnelles sont traitées.",
+      "why_it_matters_fr": "La marque est en général responsable de traitement ; l’agence ou l’outil qui traite pour elle est « sous-traitant » (processor).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-controller-1",
+          "text_en": "As data controller, we are responsible for our customers’ data, even in the ESP.",
+          "text_fr": "En tant que responsable de traitement, nous répondons des données clients, même dans l’outil d’emailing."
+        },
+        {
+          "id": "data-controller-2",
+          "text_en": "The agency acts as a processor, not as a data controller.",
+          "text_fr": "L’agence agit comme sous-traitant, pas comme responsable de traitement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-processing-agreement",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 45
+        },
+        {
+          "role": "general-marketing",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "crm"
+      ],
+      "term_en": "data processing agreement (DPA)",
+      "translation_fr": "contrat de sous-traitance des données (DPA)",
+      "part_of_speech": "noun",
+      "definition_en": "A contract between a company and a service provider that processes personal data on its behalf, setting out how the data must be protected.",
+      "explanation_fr": "Contrat entre une entreprise et un prestataire qui traite des données personnelles pour son compte, qui fixe la façon de les protéger.",
+      "why_it_matters_fr": "Obligatoire sous le RGPD avant de confier des données à un outil ou une agence.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-processing-agreement-1",
+          "text_en": "Has the new CRM vendor signed the data processing agreement?",
+          "text_fr": "Le nouvel éditeur du CRM a-t-il signé le contrat de sous-traitance des données ?"
+        },
+        {
+          "id": "data-processing-agreement-2",
+          "text_en": "We can’t upload customer data until the DPA is signed.",
+          "text_fr": "Nous ne pouvons pas importer les données clients avant la signature du DPA."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-minimization",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "crm",
+        "marketing-analytics"
+      ],
+      "term_en": "data minimization",
+      "translation_fr": "minimisation des données",
+      "part_of_speech": "noun",
+      "definition_en": "The principle of collecting and keeping only the personal data that is really needed for a given purpose.",
+      "explanation_fr": "Le principe qui consiste à ne collecter et conserver que les données personnelles vraiment nécessaires pour une finalité donnée.",
+      "why_it_matters_fr": "Principe du RGPD : un formulaire ne doit pas demander la date de naissance si elle ne sert à rien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-minimization-1",
+          "text_en": "For data minimization, remove the phone field from the newsletter form.",
+          "text_fr": "Pour minimiser les données, retire le champ téléphone du formulaire newsletter."
+        },
+        {
+          "id": "data-minimization-2",
+          "text_en": "Data minimization also reduces the risk if we have a breach.",
+          "text_fr": "La minimisation des données réduit aussi le risque en cas de fuite."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "privacy-policy",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 55
+        },
+        {
+          "role": "general-marketing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "crm"
+      ],
+      "term_en": "privacy policy",
+      "translation_fr": "politique de confidentialité",
+      "part_of_speech": "noun",
+      "definition_en": "The public document explaining what personal data a company collects, why, how long it keeps it and what rights people have.",
+      "explanation_fr": "Le document public qui explique quelles données personnelles l’entreprise collecte, pourquoi, combien de temps elle les garde et quels droits ont les personnes.",
+      "why_it_matters_fr": "Toute nouvelle collecte ou nouvel outil marketing peut obliger à la mettre à jour.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "privacy-policy-1",
+          "text_en": "Link the privacy policy under the sign-up form.",
+          "text_fr": "Mets le lien vers la politique de confidentialité sous le formulaire d’inscription."
+        },
+        {
+          "id": "privacy-policy-2",
+          "text_en": "We updated the privacy policy after adding the new chat tool.",
+          "text_fr": "Nous avons mis à jour la politique de confidentialité après l’ajout du nouvel outil de chat."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "right-to-erasure",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "crm"
+      ],
+      "term_en": "right to erasure",
+      "translation_fr": "droit à l’effacement",
+      "part_of_speech": "noun",
+      "definition_en": "The GDPR right that lets a person ask a company to delete their personal data, under certain conditions.",
+      "explanation_fr": "Le droit prévu par le RGPD qui permet de demander à une entreprise de supprimer ses données personnelles, sous certaines conditions.",
+      "why_it_matters_fr": "Souvent appelé « right to be forgotten » (droit à l’oubli). La suppression doit couvrir tous les outils : CRM, emailing, CDP…",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "right-to-erasure-1",
+          "text_en": "We received a right to erasure request from a former customer.",
+          "text_fr": "Nous avons reçu une demande d’effacement d’un ancien client."
+        },
+        {
+          "id": "right-to-erasure-2",
+          "text_en": "The deletion must also happen in the email tool and the CDP.",
+          "text_fr": "La suppression doit aussi être faite dans l’outil d’emailing et la CDP."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-subject-request",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "crm"
+      ],
+      "term_en": "data subject request (DSR)",
+      "translation_fr": "demande d’exercice de droits",
+      "part_of_speech": "noun",
+      "definition_en": "A request from a person to exercise their data rights, such as access, correction or deletion of their personal data.",
+      "explanation_fr": "Demande d’une personne pour exercer ses droits sur ses données : accès, rectification, suppression…",
+      "why_it_matters_fr": "Aussi appelée « DSAR » pour une demande d’accès. Le RGPD fixe en général un délai d’un mois pour répondre.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-subject-request-1",
+          "text_en": "Customer service forwards every data subject request to the privacy team.",
+          "text_fr": "Le service client transmet chaque demande d’exercice de droits à l’équipe vie privée."
+        },
+        {
+          "id": "data-subject-request-2",
+          "text_en": "We have one month to answer a data subject request.",
+          "text_fr": "Nous avons un mois pour répondre à une demande d’exercice de droits."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Délai légal (un mois, prolongeable) à vérifier selon la juridiction."
+    },
+    {
+      "id": "pseudonymization",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 45
+        },
+        {
+          "role": "data-engineer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "marketing-analytics",
+        "data-analysis"
+      ],
+      "term_en": "pseudonymization",
+      "translation_fr": "pseudonymisation",
+      "part_of_speech": "noun",
+      "definition_en": "Replacing directly identifying information, such as a name or email, with a code, so that data cannot be linked to a person without extra information kept separately.",
+      "explanation_fr": "Remplacer les informations directement identifiantes (nom, e-mail) par un code, pour que les données ne puissent être reliées à une personne sans une information gardée à part.",
+      "why_it_matters_fr": "Différent de l’anonymisation : des données pseudonymisées restent des données personnelles au sens du RGPD.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pseudonymization-1",
+          "text_en": "The analytics team only works on pseudonymized customer data.",
+          "text_fr": "L’équipe analytics travaille uniquement sur des données clients pseudonymisées."
+        },
+        {
+          "id": "pseudonymization-2",
+          "text_en": "Pseudonymization reduces risk, but the data is still personal data.",
+          "text_fr": "La pseudonymisation réduit le risque, mais les données restent personnelles."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hashed-email",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 50
+        },
+        {
+          "role": "seo-sea",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "marketing-analytics",
+        "paid-ads"
+      ],
+      "term_en": "hashed email",
+      "translation_fr": "e-mail haché",
+      "part_of_speech": "noun",
+      "definition_en": "An email address transformed by a one-way algorithm into a fixed code, used to match customers with platforms without sharing the address in clear text.",
+      "explanation_fr": "Adresse e-mail transformée par un algorithme à sens unique en code fixe, utilisée pour rapprocher des clients avec des plateformes sans partager l’adresse en clair.",
+      "why_it_matters_fr": "Courant pour les audiences personnalisées ; le hachage n’est pas une anonymisation et le consentement reste nécessaire.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hashed-email-1",
+          "text_en": "We upload hashed emails to build a custom audience.",
+          "text_fr": "Nous importons des e-mails hachés pour créer une audience personnalisée."
+        },
+        {
+          "id": "hashed-email-2",
+          "text_en": "A hashed email is still personal data under the GDPR.",
+          "text_fr": "Un e-mail haché reste une donnée personnelle au sens du RGPD."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-clean-room",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "marketing-analytics"
+      ],
+      "term_en": "data clean room",
+      "translation_fr": "salle blanche de données (data clean room)",
+      "part_of_speech": "noun",
+      "definition_en": "A secure environment where two companies, such as a brand and a media platform, can analyze their combined data without seeing each other’s raw personal data.",
+      "explanation_fr": "Environnement sécurisé où deux entreprises (par exemple une marque et une plateforme média) analysent leurs données combinées sans voir les données personnelles brutes de l’autre.",
+      "why_it_matters_fr": "Solution montante pour mesurer et cibler dans un monde sans cookies tiers ; coûteuse à mettre en place.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-clean-room-1",
+          "text_en": "The retailer offered us a data clean room to measure our campaign.",
+          "text_fr": "Le distributeur nous a proposé une data clean room pour mesurer notre campagne."
+        },
+        {
+          "id": "data-clean-room-2",
+          "text_en": "Clean rooms only return aggregated results.",
+          "text_fr": "Les data clean rooms ne renvoient que des résultats agrégés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cookieless",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 55
+        },
+        {
+          "role": "seo-sea",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "marketing-analytics",
+        "paid-ads"
+      ],
+      "term_en": "cookieless",
+      "translation_fr": "sans cookies",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes measurement or advertising that works without relying on third-party cookies.",
+      "explanation_fr": "Se dit de la mesure ou de la publicité qui fonctionne sans s’appuyer sur les cookies tiers.",
+      "why_it_matters_fr": "On parle du « cookieless world » ; en pratique, les cookies first-party restent souvent utilisés.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cookieless-1",
+          "text_en": "We are preparing our measurement for a cookieless future.",
+          "text_fr": "Nous préparons notre mesure pour un avenir sans cookies."
+        },
+        {
+          "id": "cookieless-2",
+          "text_en": "Contextual targeting is one cookieless option.",
+          "text_fr": "Le ciblage contextuel est une option sans cookies."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dpo",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "marketing-data",
+          "priority": 50
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "crm"
+      ],
+      "term_en": "DPO (data protection officer)",
+      "translation_fr": "délégué à la protection des données (DPO)",
+      "part_of_speech": "acronym",
+      "definition_en": "The person in charge of overseeing data protection compliance within an organization and of being the contact point for authorities and individuals.",
+      "explanation_fr": "La personne chargée de veiller au respect de la protection des données dans l’organisation et d’être le point de contact des autorités et des personnes.",
+      "why_it_matters_fr": "Les équipes marketing la consultent avant tout nouvel outil, nouvelle collecte ou nouveau partenaire de données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dpo-1",
+          "text_en": "Let’s ask the DPO before we buy this data enrichment tool.",
+          "text_fr": "Demandons l’avis du DPO avant d’acheter cet outil d’enrichissement de données."
+        },
+        {
+          "id": "dpo-2",
+          "text_en": "The DPO reviewed the new cookie banner.",
+          "text_fr": "Le DPO a relu le nouveau bandeau cookies."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
