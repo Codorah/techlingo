@@ -625,6 +625,215 @@
           }
         }
       ]
+    },
+    {
+      "id": "publicite-et-campagnes",
+      "title_fr": "Publicité et campagnes",
+      "title_en": "Advertising and campaigns",
+      "situation_fr": "Vous pilotez une campagne payante : comprendre le brief, répartir le budget, analyser les coûts et les performances, puis tester pour améliorer les résultats.",
+      "guide": {
+        "intro_fr": "Une campagne commence par un campaign brief : l'objectif, la cible, le key message et le call to action (CTA), c'est-à-dire l'action qu'on demande à la personne. Vient ensuite le media plan : comment on allocate (répartit) le budget entre les canaux, avec un daily budget pour ne pas tout dépenser d'un coup, et un ciblage (targeting, retargeting). Une fois la campagne en ligne, on suit des acronymes que l'on prononce lettre par lettre : CTR (taux de clic), CPC (coût par clic), ROAS (revenu généré pour chaque euro dépensé). Enfin, on améliore avec des A/B tests : on compare deux versions en ne changeant qu'un seul élément.",
+        "key_phrases": [
+          { "en": "Let's go through the brief.", "fr": "Passons le brief en revue." },
+          { "en": "The campaign runs for six weeks.", "fr": "La campagne dure six semaines." },
+          { "en": "I'd allocate 60% of the budget to paid social.", "fr": "J'attribuerais 60 % du budget aux réseaux sociaux payants." },
+          { "en": "CPC went up by 40%.", "fr": "Le CPC a augmenté de 40 %." },
+          { "en": "It looks like ad fatigue.", "fr": "On dirait de la lassitude publicitaire." },
+          { "en": "Let's A/B test the call to action.", "fr": "Testons le bouton d'appel à l'action en A/B." }
+        ],
+        "tip_fr": "Spend s'emploie aussi comme nom : ad spend, total spend (les dépenses). Et pour une campagne, to run veut dire « tourner, être diffusée » : the campaign runs until May (la campagne tourne jusqu'en mai). Rien à voir avec courir !"
+      },
+      "lessons": [
+        {
+          "id": "comprendre-brief-campagne",
+          "title_fr": "Comprendre le brief de campagne",
+          "term_ids": ["creative-brief", "campaign", "key-message", "call-to-action", "landing-page", "kickoff"],
+          "dialogue": [
+            { "speaker": "Elena", "text_en": "Let's go through the creative brief. The campaign launches on March 3rd and runs for six weeks.", "text_fr": "Passons le brief créatif en revue. La campagne démarre le 3 mars et dure six semaines." },
+            { "speaker": "Karim", "text_en": "What's the objective? Awareness or sales?", "text_fr": "Quel est l'objectif ? La notoriété ou les ventes ?" },
+            { "speaker": "Elena", "text_en": "Free-trial sign-ups. So every ad needs a clear call to action: \"Start your free trial\".", "text_fr": "Les inscriptions à l'essai gratuit. Donc chaque publicité a besoin d'un appel à l'action clair : « Commencez votre essai gratuit »." },
+            { "speaker": "Karim", "text_en": "And the key message?", "text_fr": "Et le message clé ?" },
+            { "speaker": "Elena", "text_en": "Dinner ready in 20 minutes, with fresh local ingredients. One message, no more.", "text_fr": "Le dîner prêt en 20 minutes, avec des ingrédients frais et locaux. Un seul message, pas plus." },
+            { "speaker": "Karim", "text_en": "Where do people land after they click?", "text_fr": "Où arrivent les gens après avoir cliqué ?" },
+            { "speaker": "Elena", "text_en": "On a dedicated landing page. The web team is building it, so please keep your visuals consistent with it.", "text_fr": "Sur une page d'atterrissage dédiée. L'équipe web est en train de la construire, donc garde des visuels cohérents avec elle." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce qu'un call to action ?",
+              "choices": ["The action you ask people to take, like \"Start your free trial\"", "A phone call with the client before launch", "A legal notice at the bottom of the ad"],
+              "answer_index": 0,
+              "explanation_fr": "Le call to action (CTA) est l'incitation à agir : un bouton ou une phrase comme « Commencez votre essai gratuit ». Malgré le mot call, il ne s'agit pas d'un appel téléphonique."
+            },
+            {
+              "prompt_fr": "« The campaign runs for six weeks » signifie :",
+              "choices": ["The campaign lasts six weeks", "The campaign is six weeks late", "The campaign was prepared in six weeks"],
+              "answer_index": 0,
+              "explanation_fr": "To run, pour une campagne, veut dire être en cours de diffusion. Run for six weeks : durer six semaines. Ce n'est ni un retard ni un temps de préparation."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'une landing page ?",
+              "choices": ["The page people arrive on after clicking an ad", "The home page of every website", "The last page of a report"],
+              "answer_index": 0,
+              "explanation_fr": "Une landing page (page d'atterrissage) est la page sur laquelle arrive la personne après avoir cliqué, souvent créée exprès pour la campagne. Ce n'est pas forcément la page d'accueil."
+            },
+            {
+              "prompt_fr": "Pourquoi Elena insiste-t-elle sur « One message, no more » ?",
+              "choices": ["Because several messages in one ad confuse people and weaken the impact", "Because the client can only pay for one ad", "Because the law limits the number of messages"],
+              "answer_index": 0,
+              "explanation_fr": "Une publicité est vue quelques secondes : un seul message clé est plus facile à retenir. Ce n'est ni une question de budget ni une obligation légale."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "La rédactrice n'a pas pu assister à la réunion de lancement. Envoyez-lui sur Slack un récapitulatif du brief : dates, objectif, appel à l'action, message clé et destination des clics.",
+            "context_en": "#freshbox-campaign: \"Sorry I missed the kickoff! What do I need to know?\"",
+            "model_answer_en": "No worries! Quick recap: the campaign launches on March 3rd and runs for six weeks. The goal is free-trial sign-ups, so every ad needs the same call to action, \"Start your free trial\", and one key message: dinner ready in 20 minutes. All ads will point to a dedicated landing page.",
+            "model_answer_fr": "Pas de souci ! Petit récap : la campagne démarre le 3 mars et dure six semaines. L'objectif, ce sont les inscriptions à l'essai gratuit, donc chaque publicité a besoin du même appel à l'action, « Commencez votre essai gratuit », et d'un seul message clé : le dîner prêt en 20 minutes. Toutes les publicités renverront vers une page d'atterrissage dédiée.",
+            "key_phrases": ["Quick recap", "launches on March 3rd and runs for six weeks", "The goal is", "one key message", "will point to a dedicated landing page"]
+          }
+        },
+        {
+          "id": "repartir-budget-media",
+          "title_fr": "Répartir le budget et choisir le ciblage",
+          "term_ids": ["media-plan", "allocate", "paid-social", "daily-budget", "ad-spend", "retargeting"],
+          "dialogue": [
+            { "speaker": "Thomas", "text_en": "We have 30,000 euros for this campaign. How would you split it?", "text_fr": "Nous avons 30 000 euros pour cette campagne. Comment le répartiriez-vous ?" },
+            { "speaker": "Aïcha", "text_en": "Based on last year's results, I'd allocate about 60% to paid social and 40% to Google Ads.", "text_fr": "D'après les résultats de l'an dernier, j'attribuerais environ 60 % aux réseaux sociaux payants et 40 % à Google Ads." },
+            { "speaker": "Thomas", "text_en": "Why more on social?", "text_fr": "Pourquoi plus sur les réseaux sociaux ?" },
+            { "speaker": "Aïcha", "text_en": "In our survey, most of your customers said they discover new food brands on social media. It was also our most cost-effective channel last year.", "text_fr": "Dans notre questionnaire, la plupart de vos clients disaient découvrir de nouvelles marques alimentaires sur les réseaux sociaux. C'était aussi notre canal le plus rentable l'an dernier." },
+            { "speaker": "Thomas", "text_en": "And who exactly will see the ads?", "text_fr": "Et qui verra exactement les publicités ?" },
+            { "speaker": "Aïcha", "text_en": "We'll target people who match our persona, plus retargeting for visitors who came to the site but didn't sign up.", "text_fr": "Nous ciblerons les personnes qui correspondent à notre persona, plus du reciblage pour les visiteurs venus sur le site sans s'inscrire." },
+            { "speaker": "Thomas", "text_en": "How do we avoid spending everything in the first week?", "text_fr": "Comment éviter de tout dépenser la première semaine ?" },
+            { "speaker": "Aïcha", "text_en": "We set a daily budget on each platform and I check ad spend every morning. If one channel performs better, we shift budget there.", "text_fr": "Nous fixons un budget quotidien sur chaque plateforme et je vérifie les dépenses publicitaires chaque matin. Si un canal performe mieux, nous y déplaçons du budget." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « to allocate 60% to paid social » ?",
+              "choices": ["To assign 60% of the budget to paid social media", "To save 60% of the budget", "To ask the client for 60% more"],
+              "answer_index": 0,
+              "explanation_fr": "To allocate, c'est attribuer ou répartir une part d'un budget. Le piège « allocation » en français (une aide versée) n'a rien à voir ici."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que le retargeting ?",
+              "choices": ["Showing ads to people who have already visited the site or interacted with the brand", "Changing the target audience every week", "Targeting the competitors' employees"],
+              "answer_index": 0,
+              "explanation_fr": "Le retargeting (reciblage) consiste à montrer des publicités aux personnes qui connaissent déjà la marque, par exemple des visiteurs qui ne se sont pas inscrits. Ce n'est pas changer de cible."
+            },
+            {
+              "prompt_fr": "Que veut dire cost-effective ?",
+              "choices": ["Giving good results for the money spent", "Cheap, whatever the results", "Very expensive but prestigious"],
+              "answer_index": 0,
+              "explanation_fr": "Cost-effective signifie rentable : de bons résultats par rapport au coût. Le piège est cheap : un canal peut être bon marché et pourtant inefficace."
+            },
+            {
+              "prompt_fr": "« We shift budget there » veut dire :",
+              "choices": ["We move part of the budget to that channel", "We cut the budget completely", "We ask the client for more budget"],
+              "answer_index": 0,
+              "explanation_fr": "To shift budget, c'est déplacer une partie du budget d'un canal vers un autre, sans changer le total."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Thomas vous demande par e-mail de justifier la répartition du budget avant de valider. Présentez la répartition, la raison principale, et la façon dont vous contrôlerez les dépenses.",
+            "model_answer_en": "Hi Thomas, here's our proposed media plan for the 30,000-euro budget. We suggest allocating 60% to paid social and 40% to Google Ads, as paid social was our most cost-effective channel last year. We'll set a daily budget on each platform and shift spend every week toward the best-performing channel.",
+            "model_answer_fr": "Bonjour Thomas, voici notre plan média proposé pour le budget de 30 000 euros. Nous suggérons d'attribuer 60 % aux réseaux sociaux payants et 40 % à Google Ads, car les réseaux sociaux payants ont été notre canal le plus rentable l'an dernier. Nous fixerons un budget quotidien sur chaque plateforme et déplacerons les dépenses chaque semaine vers le canal le plus performant.",
+            "key_phrases": ["here's our proposed media plan", "We suggest allocating 60% to", "our most cost-effective channel", "shift spend every week toward"]
+          }
+        },
+        {
+          "id": "analyser-cpc-ctr-roas",
+          "title_fr": "Analyser les performances : CTR, CPC, ROAS",
+          "term_ids": ["ctr", "cpc", "roas", "ad-fatigue", "ad-frequency", "creative"],
+          "dialogue": [
+            { "speaker": "Lina", "text_en": "Week two results are in. The CTR on the video ads dropped from 1.8% to 0.9%.", "text_fr": "Les résultats de la deuxième semaine sont arrivés. Le CTR des publicités vidéo est passé de 1,8 % à 0,9 %." },
+            { "speaker": "Max", "text_en": "What's the frequency?", "text_fr": "Quelle est la fréquence ?" },
+            { "speaker": "Lina", "text_en": "Over 6. The same people have seen the ads too many times. It looks like ad fatigue.", "text_fr": "Plus de 6. Les mêmes personnes ont vu les publicités trop de fois. On dirait de la lassitude publicitaire." },
+            { "speaker": "Max", "text_en": "What about costs?", "text_fr": "Et côté coûts ?" },
+            { "speaker": "Lina", "text_en": "CPC went up by 40% on social. But the search campaigns are doing well: ROAS is around 4, so every euro spent brings back about four euros in revenue.", "text_fr": "Le CPC a augmenté de 40 % sur les réseaux sociaux. Mais les campagnes sur le Search marchent bien : le ROAS est d'environ 4, donc chaque euro dépensé rapporte environ quatre euros de chiffre d'affaires." },
+            { "speaker": "Max", "text_en": "OK. Let's refresh the video creatives and move some budget to search.", "text_fr": "OK. Renouvelons les créations vidéo et déplaçons une partie du budget vers le Search." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie un ROAS de 4 ?",
+              "choices": ["Each euro spent on ads generated about four euros in revenue", "The campaign got four times more clicks", "Four ads were running at the same time"],
+              "answer_index": 0,
+              "explanation_fr": "ROAS veut dire return on ad spend : le chiffre d'affaires généré divisé par la dépense publicitaire. Un ROAS de 4 signifie environ 4 euros de revenu pour 1 euro dépensé. Attention, c'est du chiffre d'affaires, pas du bénéfice."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que l'ad fatigue ?",
+              "choices": ["When people have seen an ad so often that they stop reacting to it", "When the marketing team is tired after a launch", "When an ad is rejected by the platform"],
+              "answer_index": 0,
+              "explanation_fr": "L'ad fatigue apparaît quand une audience voit trop souvent la même publicité : le CTR baisse et les coûts montent. Le remède habituel est de renouveler les créations. Une publicité refusée se dit a disapproved ad."
+            },
+            {
+              "prompt_fr": "Que mesure le CTR ?",
+              "choices": ["The percentage of people who clicked after seeing the ad", "The cost of each click", "The total number of sales"],
+              "answer_index": 0,
+              "explanation_fr": "CTR veut dire click-through rate : clics divisés par impressions. Le coût de chaque clic, c'est le CPC. Les deux sont souvent confondus."
+            },
+            {
+              "prompt_fr": "Que veut dire Max par « Let's refresh the video creatives » ?",
+              "choices": ["Let's make new versions of the video ads", "Let's reload the ads manager page", "Let's ask the creative director to rest"],
+              "answer_index": 0,
+              "explanation_fr": "Creatives (au pluriel) désigne les éléments visuels des publicités. To refresh, c'est les renouveler avec de nouvelles versions. Rien à voir avec actualiser une page web."
+            }
+          ],
+          "production": {
+            "channel": "standup",
+            "prompt_fr": "Au point hebdomadaire de l'équipe acquisition, donnez votre point sur la campagne : ce qui baisse et pourquoi, ce qui marche, et ce que vous allez faire.",
+            "model_answer_en": "On social, the video ads are showing signs of ad fatigue: the CTR dropped from 1.8% to 0.9% and CPC went up by 40%. Search is performing well, with a ROAS of around 4. This week, we're refreshing the video creatives and moving part of the budget to search.",
+            "model_answer_fr": "Sur les réseaux sociaux, les publicités vidéo montrent des signes de lassitude : le CTR est passé de 1,8 % à 0,9 % et le CPC a augmenté de 40 %. Le Search performe bien, avec un ROAS d'environ 4. Cette semaine, nous renouvelons les créations vidéo et déplaçons une partie du budget vers le Search.",
+            "key_phrases": ["are showing signs of ad fatigue", "dropped from 1.8% to 0.9%", "went up by 40%", "with a ROAS of around 4", "we're refreshing the video creatives"]
+          }
+        },
+        {
+          "id": "proposer-test-ab",
+          "title_fr": "Proposer un test A/B",
+          "term_ids": ["ab-test", "control-group", "test-variant", "statistical-significance", "call-to-action", "conversion-rate"],
+          "dialogue": [
+            { "speaker": "Nora", "text_en": "Before we scale the campaign, I'd like to A/B test the landing page.", "text_fr": "Avant d'augmenter l'ampleur de la campagne, j'aimerais faire un test A/B sur la page d'atterrissage." },
+            { "speaker": "Julien", "text_en": "What exactly would you test?", "text_fr": "Que testerais-tu exactement ?" },
+            { "speaker": "Nora", "text_en": "Only the call to action. The control keeps \"Start your free trial\"; the variant says \"Get your first box free\".", "text_fr": "Seulement l'appel à l'action. La version de contrôle garde « Commencez votre essai gratuit » ; la variante dit « Recevez votre première box gratuite »." },
+            { "speaker": "Julien", "text_en": "Why just one change?", "text_fr": "Pourquoi un seul changement ?" },
+            { "speaker": "Nora", "text_en": "If we change the headline and the button at the same time, we won't know what made the difference in conversion rate.", "text_fr": "Si on change le titre et le bouton en même temps, on ne saura pas ce qui a fait la différence sur le taux de conversion." },
+            { "speaker": "Julien", "text_en": "Fair enough. How long will it run?", "text_fr": "C'est juste. Combien de temps va-t-il tourner ?" },
+            { "speaker": "Nora", "text_en": "Until the result is statistically significant, probably about two weeks with our traffic. We shouldn't stop it early just because one version looks better on day two.", "text_fr": "Jusqu'à ce que le résultat soit statistiquement significatif, sans doute environ deux semaines avec notre trafic. Il ne faut pas l'arrêter trop tôt juste parce qu'une version semble meilleure le deuxième jour." }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Dans un test A/B, qu'est-ce que le control ?",
+              "choices": ["The current version, used as a reference", "The new version being tested", "The person who checks the results"],
+              "answer_index": 0,
+              "explanation_fr": "Le control (version de contrôle) est la version actuelle qui sert de référence. La nouvelle version est la variant. On compare les deux pour voir si le changement améliore les résultats."
+            },
+            {
+              "prompt_fr": "Pourquoi Nora ne teste-t-elle qu'un seul élément ?",
+              "choices": ["To know exactly which change caused the difference", "Because the tool only allows one change", "To finish the test faster"],
+              "answer_index": 0,
+              "explanation_fr": "Si l'on change plusieurs éléments en même temps, on ne sait pas lequel explique le résultat. Ce n'est pas une limite de l'outil : tester plusieurs éléments est possible, mais c'est un autre type de test (multivarié), qui demande plus de trafic."
+            },
+            {
+              "prompt_fr": "Que signifie « statistically significant » ?",
+              "choices": ["The difference is unlikely to be due to chance", "The difference is very large", "The test has been running for a long time"],
+              "answer_index": 0,
+              "explanation_fr": "Un résultat statistiquement significatif a peu de chances d'être dû au hasard. Il ne veut pas forcément dire « grand » : une petite différence peut être significative avec beaucoup de trafic."
+            },
+            {
+              "prompt_fr": "« Before we scale the campaign » veut dire :",
+              "choices": ["Before we increase the campaign's budget and reach", "Before we measure the campaign", "Before we stop the campaign"],
+              "answer_index": 0,
+              "explanation_fr": "To scale (ou scale up), c'est passer à plus grande échelle : plus de budget, plus de portée. Rien à voir avec une échelle de mesure."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion growth, proposez à l'oral de lancer un test A/B sur l'appel à l'action de la page d'atterrissage avant d'augmenter le budget. Expliquez le principe et la durée.",
+            "model_answer_en": "Before we scale the campaign, I suggest we A/B test the call to action on the landing page. Half of the visitors will see the current version and half will see the new one. We'll keep the test running until the result is statistically significant, which should take about two weeks.",
+            "model_answer_fr": "Avant d'augmenter l'ampleur de la campagne, je propose de faire un test A/B sur l'appel à l'action de la page d'atterrissage. La moitié des visiteurs verra la version actuelle et l'autre moitié la nouvelle. Nous laisserons le test tourner jusqu'à ce que le résultat soit statistiquement significatif, ce qui devrait prendre environ deux semaines.",
+            "key_phrases": ["Before we scale the campaign", "I suggest we A/B test", "Half of the visitors will see", "until the result is statistically significant"]
+          }
+        }
+      ]
     }
   ]
 }
