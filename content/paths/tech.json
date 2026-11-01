@@ -866,6 +866,426 @@
           }
         }
       ]
+    },
+    {
+      "id": "git-and-code-review",
+      "title_fr": "Git et revue de code",
+      "title_en": "Git and code review",
+      "situation_fr": "Tu crées une branche, tu ouvres une pull request, tu réponds aux commentaires de revue et tu résous un conflit avant de merger.",
+      "guide": {
+        "intro_fr": "Dans une équipe, on ne pousse pas directement sur main : on crée une branche, on fait des commits avec des messages clairs, puis on ouvre une pull request (PR). Un ou une collègue fait la code review : il ou elle laisse des commentaires, demande des changements (request changes) ou approuve (approve). Les commentaires ont leurs codes : « nit » pour un petit détail non bloquant, « LGTM » (looks good to me) pour dire que tout est bon. Quand deux branches modifient les mêmes lignes, Git signale un merge conflict qu’il faut résoudre avant de merger.",
+        "key_phrases": [
+          {
+            "en": "I’ve pushed my branch.",
+            "fr": "J’ai poussé ma branche."
+          },
+          {
+            "en": "Could you review my PR when you have a moment?",
+            "fr": "Tu pourrais relire ma PR quand tu as un moment ?"
+          },
+          {
+            "en": "This PR fixes …",
+            "fr": "Cette PR corrige …"
+          },
+          {
+            "en": "Nit: …",
+            "fr": "Petit détail : …"
+          },
+          {
+            "en": "What happens if the list is empty?",
+            "fr": "Que se passe-t-il si la liste est vide ?"
+          },
+          {
+            "en": "I’ve addressed your comments.",
+            "fr": "J’ai pris en compte tes commentaires."
+          },
+          {
+            "en": "LGTM, approved!",
+            "fr": "Ça me paraît bon, approuvé !"
+          },
+          {
+            "en": "My branch has a merge conflict with main.",
+            "fr": "Ma branche a un conflit avec main."
+          }
+        ],
+        "tip_fr": "En revue de code, on commente le code, pas la personne : préfère « What about…? » ou « Could we…? » à « You did it wrong ». Et « to address a comment » ne veut pas dire « adresser » un commentaire : cela signifie le traiter, le prendre en compte."
+      },
+      "lessons": [
+        {
+          "id": "branch-and-commit",
+          "title_fr": "Branche et commits",
+          "term_ids": [
+            "branch",
+            "feature-branch",
+            "commit",
+            "commit-message",
+            "push-git"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Rania",
+              "text_en": "JB, I finished the password reset feature. Can I push it to main?",
+              "text_fr": "JB, j’ai fini la fonctionnalité de réinitialisation du mot de passe. Je peux la pousser sur main ?"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Not directly, main is protected. Create a feature branch first, something like feature/password-reset.",
+              "text_fr": "Pas directement, main est protégée. Crée d’abord une branche de fonctionnalité, du genre feature/password-reset."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "OK. I put all my changes in one big commit. Is that a problem?",
+              "text_fr": "D’accord. J’ai mis toutes mes modifications dans un seul gros commit. C’est un problème ?"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Smaller commits are better, one per logical change. And write clear commit messages: say what the commit does, in the imperative.",
+              "text_fr": "Des commits plus petits, c’est mieux, un par changement logique. Et écris des messages de commit clairs : dis ce que fait le commit, à l’impératif."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "Like Add password reset email?",
+              "text_fr": "Comme Add password reset email ?"
+            },
+            {
+              "speaker": "Jean-Baptiste",
+              "text_en": "Exactly. Then push your branch and open a pull request.",
+              "text_fr": "Exactement. Ensuite, pousse ta branche et ouvre une pull request."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Rania ne peut-elle pas pousser directement sur main ?",
+              "choices": [
+                "Parce que la branche main est protégée",
+                "Parce que son code contient un bug",
+                "Parce que la branche main a été supprimée"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Jean-Baptiste dit « main is protected » : la branche est protégée et n’accepte des changements que via une pull request relue. Personne n’a parlé de bug, et main existe toujours."
+            },
+            {
+              "prompt_fr": "Quel message de commit suit la convention conseillée par Jean-Baptiste ?",
+              "choices": [
+                "Add password reset email",
+                "Added some stuff",
+                "fixing things, see code"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La convention courante : un verbe à l’impératif et une description précise, comme si l’on complétait « If applied, this commit will… ». « Added some stuff » est au passé et vague, et « fixing things » ne dit pas ce qui est corrigé."
+            },
+            {
+              "prompt_fr": "Comment dire « J’ai poussé ma branche » ?",
+              "choices": [
+                "I’ve pushed my branch.",
+                "I’ve pulled my branch.",
+                "I’ve pushed on my branch."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To push a branch » envoie tes commits vers le dépôt distant. « Pull » fait l’inverse : récupérer les changements du distant. « Pushed on my branch » ajoute une préposition qu’on n’emploie pas ici."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Tu as terminé la fonctionnalité d’export PDF sur la branche feature/pdf-export. Écris sur Slack à ta collègue Léa que tu as poussé ta branche, que tu as découpé le travail en trois petits commits pour faciliter la revue, et que tu ouvres la pull request cet après-midi.",
+            "model_answer_en": "Hi Léa, I’ve pushed my branch feature/pdf-export. I split the work into three small commits, so it should be easy to review. I’ll open the pull request this afternoon.",
+            "model_answer_fr": "Salut Léa, j’ai poussé ma branche feature/pdf-export. J’ai découpé le travail en trois petits commits, donc ça devrait être facile à relire. J’ouvre la pull request cet après-midi.",
+            "key_phrases": [
+              "I’ve pushed my branch",
+              "split the work into",
+              "easy to review",
+              "open the pull request"
+            ]
+          }
+        },
+        {
+          "id": "open-a-pull-request",
+          "title_fr": "Ouvrir une pull request",
+          "term_ids": [
+            "pull-request",
+            "diff",
+            "code-review",
+            "unit-test",
+            "approve"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Léa",
+              "text_en": "Ibrahim, could you review my pull request when you have a moment? It fixes the time zone bug in the calendar.",
+              "text_fr": "Ibrahim, tu pourrais relire ma pull request quand tu as un moment ? Elle corrige le bug de fuseau horaire dans le calendrier."
+            },
+            {
+              "speaker": "Ibrahim",
+              "text_en": "Sure. How big is the diff?",
+              "text_fr": "Bien sûr. Le diff fait quelle taille ?"
+            },
+            {
+              "speaker": "Léa",
+              "text_en": "About eighty lines. Most of it is unit tests.",
+              "text_fr": "Environ quatre-vingts lignes. La plupart, ce sont des tests unitaires."
+            },
+            {
+              "speaker": "Ibrahim",
+              "text_en": "Perfect. Did you add screenshots? The change is visible in the UI.",
+              "text_fr": "Parfait. Tu as ajouté des captures d’écran ? Le changement se voit dans l’interface."
+            },
+            {
+              "speaker": "Léa",
+              "text_en": "Good point, I’ll add before and after screenshots to the description.",
+              "text_fr": "Bonne remarque, j’ajoute des captures avant et après dans la description."
+            },
+            {
+              "speaker": "Ibrahim",
+              "text_en": "Great. I’ll do the code review after lunch and approve it if everything looks good.",
+              "text_fr": "Super. Je fais la revue de code après le déjeuner et je l’approuve si tout est bon."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que demande Léa avec « Could you review my pull request when you have a moment? » ?",
+              "choices": [
+                "Qu’Ibrahim relise sa PR quand il aura un moment",
+                "Qu’Ibrahim fusionne sa PR tout de suite",
+                "Qu’Ibrahim réécrive son code"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To review » veut dire relire et commenter. « When you have a moment » rend la demande polie et non urgente. Fusionner se dit « to merge », et rien n’indique qu’Ibrahim doive réécrire le code."
+            },
+            {
+              "prompt_fr": "Dans « How big is the diff? », qu’est-ce que le diff ?",
+              "choices": [
+                "L’ensemble des lignes ajoutées et supprimées par la PR",
+                "La difficulté du ticket",
+                "Le délai avant la mise en ligne"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le diff montre les différences entre deux versions du code : lignes ajoutées en vert, supprimées en rouge. Ce n’est pas une abréviation de « difficulty », même si le mot y ressemble."
+            },
+            {
+              "prompt_fr": "Quelle phrase convient pour commencer la description d’une PR ?",
+              "choices": [
+                "This PR fixes the time zone bug in the calendar.",
+                "This PR is fixing maybe some bug.",
+                "In this PR I have fixed the bug of the time zone of the calendar, it’s done."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« This PR fixes… » au présent simple, suivi du problème précis, est la formule standard. « Maybe some bug » est flou et peu rassurant, et la troisième phrase empile les « of » (calque du français) au lieu de « the calendar time zone bug »."
+            },
+            {
+              "prompt_fr": "Que fait un reviewer qui « approves » une PR ?",
+              "choices": [
+                "Il valide les changements, qui peuvent être fusionnés",
+                "Il demande des modifications",
+                "Il ferme la PR sans la fusionner"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Approve » signifie valider : la PR peut alors être mergée. Demander des modifications se dit « request changes », et fermer sans fusionner, « close the PR »."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Écris la description de ta pull request : elle corrige le bug qui affichait les rendez-vous une heure trop tôt après le changement d’heure. Tu stockes maintenant les dates en UTC et tu les convertis dans le fuseau de l’utilisateur. Tu as ajouté des tests unitaires. Termine en demandant une revue.",
+            "model_answer_en": "This PR fixes the bug where appointments were shown one hour early after the daylight saving time change. Dates are now stored in UTC and converted to the user’s time zone. I added unit tests for both time changes. Could you review it when you have a moment?",
+            "model_answer_fr": "Cette PR corrige le bug qui affichait les rendez-vous une heure trop tôt après le changement d’heure. Les dates sont désormais stockées en UTC et converties dans le fuseau horaire de l’utilisateur. J’ai ajouté des tests unitaires pour les deux changements d’heure. Tu pourrais la relire quand tu as un moment ?",
+            "key_phrases": [
+              "This PR fixes",
+              "stored in UTC",
+              "I added unit tests",
+              "Could you review it"
+            ]
+          }
+        },
+        {
+          "id": "review-comments",
+          "title_fr": "Commentaires de revue",
+          "term_ids": [
+            "nitpick",
+            "edge-case",
+            "refactor",
+            "lgtm",
+            "feedback"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sofia",
+              "text_en": "Nit: this variable name is a bit vague. What about pendingInvoices instead of list?",
+              "text_fr": "Petit détail : ce nom de variable est un peu vague. Que dirais-tu de pendingInvoices au lieu de list ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Good idea, renamed.",
+              "text_fr": "Bonne idée, renommé."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Also, what happens if there are no invoices? I think we’re missing that edge case.",
+              "text_fr": "Autre chose : que se passe-t-il s’il n’y a aucune facture ? Je pense qu’on oublie ce cas limite."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "You’re right, it would crash. I’ve added a check and a test for it.",
+              "text_fr": "Tu as raison, ça planterait. J’ai ajouté une vérification et un test pour ce cas."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "Thanks! This function is also quite long. Could we refactor it in a follow-up PR?",
+              "text_fr": "Merci ! Cette fonction est aussi assez longue. On pourrait la refactoriser dans une PR suivante ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Sure, I’ll create a ticket. Thanks for the feedback, I’ve addressed all your comments.",
+              "text_fr": "Bien sûr, je crée un ticket. Merci pour les retours, j’ai pris en compte tous tes commentaires."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "LGTM, approved!",
+              "text_fr": "Ça me paraît bon, approuvé !"
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signale un commentaire de revue qui commence par « Nit: » ?",
+              "choices": [
+                "Un petit détail, non bloquant",
+                "Un bug critique à corriger avant de merger",
+                "Une question de sécurité"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Nit » vient de « nitpick » (pinailler) : le reviewer signale un détail, souvent de style ou de nommage, qui ne bloque pas la PR. Pour un bug critique, on écrit plutôt « Blocking: » ou on demande des changements (request changes)."
+            },
+            {
+              "prompt_fr": "Que signifie « LGTM » ?",
+              "choices": [
+                "Looks good to me : ça me paraît bon",
+                "Let’s go to the meeting : allons en réunion",
+                "Last good test message : dernier test réussi"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "LGTM, « looks good to me », indique que le reviewer est satisfait, souvent juste avant d’approuver. Les deux autres développements n’existent pas dans l’usage courant."
+            },
+            {
+              "prompt_fr": "Quelle formulation convient le mieux pour suggérer un changement en revue ?",
+              "choices": [
+                "What about renaming this variable to pendingInvoices?",
+                "This name is bad, change it.",
+                "You must rename this, it’s wrong."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« What about…? » propose une idée sans juger la personne, ce qui garde la revue constructive. Les deux autres phrases sont des ordres sur un ton sec, qui passent mal à l’écrit, surtout dans une équipe internationale."
+            },
+            {
+              "prompt_fr": "Que veut dire Moussa avec « I’ve addressed all your comments » ?",
+              "choices": [
+                "J’ai traité tous tes commentaires",
+                "J’ai envoyé tes commentaires par e-mail",
+                "J’ai refusé tous tes commentaires"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To address a comment » signifie le prendre en compte, le traiter (en corrigeant ou en répondant). C’est un faux ami : il n’a rien à voir avec une adresse postale ou un envoi."
+            }
+          ],
+          "production": {
+            "channel": "pull_request",
+            "prompt_fr": "Tu relis la PR d’un collègue. La ligne ci-dessous plante si l’utilisateur n’a pas d’adresse e-mail. Laisse un commentaire de revue bienveillant qui signale ce cas limite et suggère d’ajouter une vérification et un test unitaire.",
+            "context_en": "const domain = user.email.split('@')[1];",
+            "model_answer_en": "What happens if the user has no email address? I think this line would throw an exception in that edge case. Could we add a check and a unit test for it?",
+            "model_answer_fr": "Que se passe-t-il si l’utilisateur n’a pas d’adresse e-mail ? Je pense que cette ligne lèverait une exception dans ce cas limite. On pourrait ajouter une vérification et un test unitaire pour ce cas ?",
+            "key_phrases": [
+              "What happens if",
+              "throw an exception",
+              "edge case",
+              "Could we add"
+            ]
+          }
+        },
+        {
+          "id": "fix-a-merge-conflict",
+          "title_fr": "Résoudre un conflit de merge",
+          "term_ids": [
+            "merge-conflict",
+            "main-branch",
+            "rebase",
+            "merge",
+            "revert"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Nadia",
+              "text_en": "Diego, GitHub says my branch has a merge conflict with main.",
+              "text_fr": "Diego, GitHub dit que ma branche a un conflit avec main."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "It means someone changed the same lines on the main branch after you created yours. Which file is it?",
+              "text_fr": "Ça veut dire que quelqu’un a modifié les mêmes lignes sur la branche main après que tu as créé la tienne. C’est quel fichier ?"
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "The routes file. Should I merge main into my branch, or rebase?",
+              "text_fr": "Le fichier des routes. Je dois merger main dans ma branche, ou faire un rebase ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "On this team, we rebase. Fetch first, run git rebase origin/main, fix the conflict, then continue the rebase.",
+              "text_fr": "Dans cette équipe, on fait un rebase. Fais d’abord un fetch, lance git rebase origin/main, résous le conflit, puis continue le rebase."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Done, and the tests pass. I’ll merge the PR now.",
+              "text_fr": "C’est fait, et les tests passent. Je merge la PR maintenant."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Great. If anything breaks after the merge, we can always revert the commit.",
+              "text_fr": "Super. Si quelque chose casse après le merge, on peut toujours annuler le commit avec un revert."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu’est-ce qu’un « merge conflict » ?",
+              "choices": [
+                "Deux branches ont modifié les mêmes lignes et Git ne sait pas quelle version garder",
+                "Deux développeurs ne sont pas d’accord en réunion",
+                "Une branche a été supprimée par erreur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Git signale un conflit quand il ne peut pas combiner automatiquement deux modifications des mêmes lignes : c’est à toi de choisir. Le mot « conflict » ne désigne pas ici un désaccord entre personnes."
+            },
+            {
+              "prompt_fr": "Que signifie « We can always revert the commit » ?",
+              "choices": [
+                "On peut toujours annuler le commit avec un nouveau commit qui fait l’inverse",
+                "On peut toujours renvoyer le commit à son auteur",
+                "On peut toujours effacer le commit de l’historique"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« git revert » crée un nouveau commit qui annule les changements d’un commit précédent, sans réécrire l’historique. Effacer un commit de l’historique, c’est autre chose (reset, rebase), et c’est risqué sur une branche partagée."
+            },
+            {
+              "prompt_fr": "Comment dire « J’ai un conflit avec main sur le fichier des routes » ?",
+              "choices": [
+                "I have a merge conflict with main in the routes file.",
+                "I have a conflict of merge with main on the routes file.",
+                "My routes file is fighting with main."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Merge conflict » est un nom composé fixe, et on parle d’un conflit « in » un fichier. « Conflict of merge » calque l’ordre des mots français, et « fighting » est une image qu’on n’emploie pas."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Ta PR a un conflit avec main parce que Hugo et toi avez modifié le même fichier config.ts. Écris à Hugo sur Slack : explique le conflit, dis que tu vas faire un rebase sur main pour le résoudre, et demande-lui de vérifier que ta résolution garde bien ses changements.",
+            "model_answer_en": "Hi Hugo, my PR has a merge conflict with main because we both changed config.ts. I’m going to rebase on main and resolve it. Could you check that my resolution keeps your changes?",
+            "model_answer_fr": "Salut Hugo, ma PR a un conflit avec main parce qu’on a tous les deux modifié config.ts. Je vais faire un rebase sur main et le résoudre. Tu pourrais vérifier que ma résolution garde bien tes changements ?",
+            "key_phrases": [
+              "merge conflict with main",
+              "we both changed",
+              "rebase on main",
+              "Could you check"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
