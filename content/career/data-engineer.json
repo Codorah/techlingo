@@ -3,7 +3,9 @@
     {
       "id": "data-engineer-etl-vs-elt-lakehouse",
       "status": "draft",
-      "roles": ["data-engineer"],
+      "roles": [
+        "data-engineer"
+      ],
       "level": "B2",
       "topic_fr": "Architecture ETL, ELT et lakehouse",
       "question_en": "How do you choose between ETL and ELT, and how do you organize transformations in a lakehouse?",
@@ -38,7 +40,9 @@
     {
       "id": "data-engineer-design-idempotent-pipeline",
       "status": "draft",
-      "roles": ["data-engineer"],
+      "roles": [
+        "data-engineer"
+      ],
       "level": "B2",
       "topic_fr": "Idempotence et chargements incrémentaux",
       "question_en": "Walk me through how you design a daily data pipeline so that rerunning or backfilling it never creates duplicates.",
@@ -73,22 +77,24 @@
     {
       "id": "data-engineer-debug-silent-data-corruption",
       "status": "draft",
-      "roles": ["data-engineer"],
+      "roles": [
+        "data-engineer"
+      ],
       "level": "B2",
       "topic_fr": "Qualité des données et résolution d’incident",
       "question_en": "Tell me about a time when a pipeline ran without errors, but the data in the warehouse was wrong.",
       "question_fr": "Parlez-moi d’une situation où un pipeline a tourné sans erreur, mais où les données de l’entrepôt étaient fausses.",
       "hint_fr": "Utilisez la méthode STAR : le symptôme métier, l’enquête via la traçabilité (lineage), la correction avec backfill, et les garde-fous ajoutés (tests dbt, observabilité, contrat de données).",
       "answer_outline_fr": [
-        "Situation : un tableau de bord affichait des chiffres faux alors que le DAG Airflow était au vert",
+        "Situation : un tableau de bord affichait des chiffres anormalement hauts alors que le DAG Airflow était au vert",
         "Action d’investigation : remonter la traçabilité jusqu’aux données brutes et identifier le changement en amont",
         "Correction : corriger la règle, dédoublonner la table de staging et recharger l’historique",
         "Prévention : ajouter des tests de qualité dbt, des alertes de volume et un contrat de données"
       ],
-      "model_answer_en": "In my previous role, a finance dashboard showed a sudden drop in daily revenue even though our Airflow DAG was completely green. I traced the data lineage back to the raw orders table and discovered that an upstream service had started sending prices in cents instead of euros for a new payment method, alongside duplicate webhook events. I fixed the transformation logic, deduplicated the staging table on transaction ID, and ran a backfill for the affected week. To prevent a repeat, I added dbt data quality tests and volume anomaly alerts under a formal data contract.",
-      "model_answer_fr": "Dans mon poste précédent, un tableau de bord financier affichait une chute brutale du chiffre d’affaires quotidien alors que notre DAG Airflow était entièrement au vert. J’ai remonté la traçabilité des données jusqu’à la table des commandes brutes et découvert qu’un service en amont envoyait désormais les prix en centimes au lieu d’euros pour un nouveau moyen de paiement, avec des événements webhook en double. J’ai corrigé la logique de transformation, dédoublonné la table de staging sur l’identifiant de transaction et lancé un backfill sur la semaine touchée. Pour éviter que cela ne se reproduise, j’ai ajouté des tests de qualité dbt et des alertes de volume adossés à un contrat de données.",
+      "model_answer_en": "In my previous role, a finance dashboard showed a sudden spike in daily revenue even though our Airflow DAG was completely green. I traced the data lineage back to the raw orders table and discovered that an upstream service had started sending prices in cents instead of euros for a new payment method, alongside duplicate webhook events. I fixed the transformation logic, deduplicated the staging table on transaction ID, and ran a backfill for the affected week. To prevent a repeat, I added dbt data quality tests and volume anomaly alerts under a formal data contract.",
+      "model_answer_fr": "Dans mon poste précédent, un tableau de bord financier affichait une hausse brutale du chiffre d’affaires quotidien alors que notre DAG Airflow était entièrement au vert. J’ai remonté la traçabilité des données jusqu’à la table des commandes brutes et découvert qu’un service en amont envoyait désormais les prix en centimes au lieu d’euros pour un nouveau moyen de paiement, avec des événements webhook en double. J’ai corrigé la logique de transformation, dédoublonné la table de staging sur l’identifiant de transaction et lancé un backfill sur la semaine touchée. Pour éviter que cela ne se reproduise, j’ai ajouté des tests de qualité dbt et des alertes de volume adossés à un contrat de données.",
       "key_phrases": [
-        "showed a sudden drop",
+        "showed a sudden spike",
         "traced the data lineage",
         "deduplicated the staging table",
         "ran a backfill",
@@ -108,7 +114,9 @@
     {
       "id": "data-engineer-batch-vs-streaming-cdc",
       "status": "draft",
-      "roles": ["data-engineer"],
+      "roles": [
+        "data-engineer"
+      ],
       "level": "C1",
       "topic_fr": "Traitement par lots, streaming et CDC",
       "question_en": "How do you decide between scheduled batch ingestion and real-time streaming with CDC and Kafka?",
@@ -145,7 +153,9 @@
     {
       "id": "data-engineer-dimensional-modeling-scd",
       "status": "draft",
-      "roles": ["data-engineer"],
+      "roles": [
+        "data-engineer"
+      ],
       "level": "B2",
       "topic_fr": "Modélisation décisionnelle et historisation",
       "question_en": "How do you model tables in an analytical warehouse and handle attributes that change over time?",
@@ -179,7 +189,9 @@
     {
       "id": "data-engineer-optimize-slow-spark-or-query",
       "status": "draft",
-      "roles": ["data-engineer"],
+      "roles": [
+        "data-engineer"
+      ],
       "level": "C1",
       "topic_fr": "Optimisation Spark et requêtes d’entrepôt",
       "question_en": "Walk me through how you diagnose and fix a slow Spark job or an expensive warehouse query.",
