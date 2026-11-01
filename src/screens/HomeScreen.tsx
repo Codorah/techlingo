@@ -3,6 +3,7 @@ import { ArrowRight, Check, Circle, Flame, Hand, RotateCw, Zap } from 'lucide-re
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
+import { ThemeRow } from '@/components/ThemeRow';
 import { Avatar } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -10,14 +11,17 @@ import { TabBar } from '@/components/ui/TabBar';
 import { dueTermIds, type SpinStatus, spinStatus } from '@/data/progress';
 import { db } from '@/db/db';
 import { daysAway, displayedStreak, localDay } from '@/learning/streak';
-import { useContent } from '@/lib/useContent';
+import { nextTheme, themeProgress } from '@/learning/path';
+import { usePath } from '@/lib/usePath';
+import { accentStyle } from '@/screens/path/ThemeScreen';
+
+// A weekly goal (4 active days out of 7) instead of punishing every missed day.
+const WEEKLY_GOAL = 4;
 
 export function HomeScreen() {
   const { t } = useTranslation();
   const [, navigate] = useLocation();
-  const profile = useLiveQuery(() => db.profile.get('me'));
-  const roles = profile?.primaryRole ? [profile.primaryRole, ...profile.secondaryRoles] : [];
-  const content = useContent(roles);
+  const { profile, content, themes, progress, domain } = usePath();
   const [status, setStatus] = useState<SpinStatus | null>(null);
   const [due, setDue] = useState<string[]>([]);
   const lessonsDone = useLiveQuery(() => db.lessonSessions.filter((l) => !!l.completedAt).toArray(), [], []);
@@ -33,6 +37,8 @@ export function HomeScreen() {
   const studiedToday = lessonsDone.some((l) => l.completedAt && localDay(new Date(l.completedAt)) === today);
   const activeDays = new Set(lessonsDone.map((l) => localDay(new Date(l.completedAt!))).filter((d) => (Date.parse(today) - Date.parse(d)) / 86_400_000 < 7)).size;
 
+  const resume = nextTheme(themes, progress);
+  const recommended = themes.filter((th) => th !== resume && themeProgress(th, progress).done === 0).slice(0, 2);
   const spinCard = !status ? null : status.freeAvailable ? 'free' : status.bonusAvailable ? 'bonus' : 'done';
   const tasks = [
     { done: !!status && !status.freeAvailable, label: t('home.tasks.spin') },
@@ -42,7 +48,7 @@ export function HomeScreen() {
 
   return (
     <>
-      <main className="mx-auto max-w-[640px] px-5 pb-28 pt-[calc(env(safe-area-inset-top)+16px)]">
+      <main style={accentStyle(domain)} className="mx-auto max-w-[640px] px-5 pb-28 pt-[calc(env(safe-area-inset-top)+16px)]">
         <header className="flex items-center gap-3">
           <Link href="/profile" aria-label={t('profile.title')}><Avatar id={profile.avatar} name={profile.displayName || 'T'} size={44} /></Link>
           <span className="flex-1" />
@@ -61,6 +67,13 @@ export function HomeScreen() {
             <Hand size={26} className="flex-none text-ocean" aria-hidden />
             <div><p className="font-extrabold">{t('home.welcomeBack.title')}</p><p className="mt-0.5 text-sm text-ink-2">{t('home.welcomeBack.text', { count: away })}</p></div>
           </Card>
+        )}
+
+        {resume && (
+          <section className="mt-5">
+            <h2 className="mb-2 text-lg font-extrabold">{themeProgress(resume, progress).done ? t('path.resume') : t('path.startTheme')}</h2>
+            <ThemeRow theme={resume} category={content.categories.get(resume.category)} progress={progress} />
+          </section>
         )}
 
         {spinCard && (
@@ -95,14 +108,23 @@ export function HomeScreen() {
         {dueKnown.length > 0 && (
           <Card className="mt-4 flex items-center gap-4">
             <div className="flex-1"><p className="font-extrabold">{t('home.reviews.title', { count: dueKnown.length })}</p><p className="text-sm text-ink-2">{t('home.reviews.text')}</p></div>
-            <Button block={false} onClick={() => navigate(`/lesson/${dueKnown[0]}`)}>{t('home.reviews.cta')}</Button>
+            <Button block={false} onClick={() => navigate('/practice/review')}>{t('home.reviews.cta')}</Button>
           </Card>
         )}
 
-        <Card className="mt-4">
+        {recommended.length > 0 && (
+          <>
+            <h2 className="mt-7 text-lg font-extrabold">{t('path.recommended')}</h2>
+            <ul className="mt-3 grid gap-3">
+              {recommended.map((th) => <li key={th.category}><ThemeRow theme={th} category={content.categories.get(th.category)} progress={progress} /></li>)}
+            </ul>
+          </>
+        )}
+
+        <Card className="mt-6">
           <p className="font-extrabold">{t('home.week.title')}</p>
-          <div className="mt-3 flex gap-1.5" aria-hidden>{Array.from({ length: 7 }, (_, i) => <span key={i} className={`h-2.5 flex-1 rounded-full ${i < activeDays ? 'bg-mint-strong' : 'bg-line'}`} />)}</div>
-          <p className="mt-2 text-sm text-ink-2">{t('home.week.text', { count: activeDays })}</p>
+          <div className="mt-3 flex gap-1.5" aria-hidden>{Array.from({ length: WEEKLY_GOAL }, (_, i) => <span key={i} className={`h-2.5 flex-1 rounded-full ${i < activeDays ? 'bg-mint-strong' : 'bg-line'}`} />)}</div>
+          <p className="mt-2 text-sm text-ink-2">{activeDays >= WEEKLY_GOAL ? t('home.week.reached') : t('home.week.goal', { count: activeDays, goal: WEEKLY_GOAL })}</p>
         </Card>
       </main>
       <TabBar />

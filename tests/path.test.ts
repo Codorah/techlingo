@@ -4,10 +4,10 @@ import { loadContent } from '../scripts/content/lib';
 
 const content = loadContent();
 const roles = ['mobile-developer', 'web-developer'];
-const terms = content.terms.filter((t) => t.roles.some((r) => roles.includes(r.role)));
+const terms = content.terms.filter((t) => t.roles.some((r) => [...roles, 'general-tech'].includes(r.role)));
 
 describe('learning path', () => {
-  const themes = buildThemes(terms, roles);
+  const themes = buildThemes(terms, roles, 'general-tech');
 
   it('builds themes of 1 to 5 units, each opening with a reminder and closing with a test', () => {
     expect(themes.length).toBeGreaterThanOrEqual(5);
@@ -18,9 +18,10 @@ describe('learning path', () => {
         expect(u.nodes[0]!.kind).toBe(i === 0 ? 'course' : 'recap');
         expect(u.nodes.at(-1)!.kind).toBe('challenge');
         for (const n of u.nodes.filter((x) => x.kind === 'lesson')) {
-          expect(n.termIds.length).toBeGreaterThanOrEqual(3);
-          expect(n.termIds.length).toBeLessThanOrEqual(PATH.wordsPerLesson + 2);
+          expect(n.termIds.length).toBeGreaterThanOrEqual(2);
+          expect(n.termIds.length).toBeLessThanOrEqual(PATH.wordsPerLesson * 2);
         }
+        expect(u.nodes.filter((x) => x.kind === 'lesson').length).toBeLessThanOrEqual(PATH.maxLessons);
       });
     }
   });
@@ -34,7 +35,7 @@ describe('learning path', () => {
   });
 
   it('is deterministic so stored progress keeps matching', () => {
-    expect(buildThemes(terms, roles)).toEqual(themes);
+    expect(buildThemes(terms, roles, 'general-tech')).toEqual(themes);
   });
 
   it('unlocks nodes one at a time and tracks progress', () => {

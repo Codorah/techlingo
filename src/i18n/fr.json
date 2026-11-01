@@ -22,7 +22,7 @@
     "offlineReady": "TechLingo fonctionne maintenant hors ligne."
   },
   "tabs": {
-    "home": "Apprendre",
+    "home": "Accueil",
     "dictionary": "Dico",
     "profile": "Profil",
     "practice": "Pratique",
@@ -156,9 +156,10 @@
       "cta": "Réviser"
     },
     "week": {
-      "title": "Cette semaine",
-      "text": "{{count}} jour actif sur 7",
-      "text_other": "{{count}} jours actifs sur 7"
+      "title": "Objectif de la semaine",
+      "goal": "{{count}} jour actif sur {{goal}}. Pas besoin d’être parfait : 4 jours suffisent.",
+      "goal_other": "{{count}} jours actifs sur {{goal}}. Pas besoin d’être parfait : 4 jours suffisent.",
+      "reached": "Objectif atteint ! Chaque jour en plus est un bonus."
     },
     "welcomeBack": {
       "title": "Content de te revoir !",
@@ -233,6 +234,41 @@
     "fillGap": "Complète la phrase",
     "next": "Continuer",
     "finish": "Voir mon résultat"
+  },
+  "path": {
+    "title": "Mes parcours",
+    "subtitle": "Un thème de ton métier, des unités courtes, des mots en situation.",
+    "resume": "Reprendre",
+    "startTheme": "Commencer",
+    "recommended": "Recommandé pour toi",
+    "allThemes": "Tous les thèmes",
+    "progress": "{{done}} sur {{total}} étapes",
+    "unit": "Unité {{n}}",
+    "units": "{{count}} unité",
+    "units_other": "{{count}} unités",
+    "kind": { "course": "Mini-cours", "recap": "Rappel", "lesson": "Leçon", "challenge": "Test de l’unité" },
+    "state": { "done": "terminé", "current": "à faire maintenant", "locked": "verrouillé" },
+    "notFound": "Ce thème n’est pas disponible pour tes métiers.",
+    "themeDone": "Thème terminé !",
+    "themeGoal": "Termine toutes les unités",
+    "themeWords": "{{count}} mot à maîtriser",
+    "themeWords_other": "{{count}} mots à maîtriser",
+    "wordsOfUnit": "Les mots de l’unité ({{count}})",
+    "start": "C’est parti",
+    "newWord": "Nouveau mot {{n}} sur {{total}}",
+    "toQuiz": "Je teste mes connaissances",
+    "almost": "Presque !",
+    "almostText": "{{correct}} bonnes réponses sur {{total}}. Il en faut {{pass}} % pour valider l’unité. Les mots ratés reviendront dans tes révisions.",
+    "retry": "Réessayer",
+    "backToMap": "Revenir au parcours",
+    "unitDone": "Unité terminée !",
+    "courseDone": "Mini-cours lu",
+    "lessonDone": "Leçon terminée !",
+    "replay": "Révision : moins d’XP, mais tes mots restent frais.",
+    "accuracy": "Précision",
+    "mastered": "{{count}}/{{total}} mots maîtrisés",
+    "interview": "Entretien",
+    "interviewText": "La dernière étape : t’entraîner à l’oral dans Carrière."
   },
   "result": {
     "title": "Leçon terminée !",
@@ -416,8 +452,9 @@
     }
   },
   "practice": {
+    "train": "S’entraîner",
     "title": "Pratique",
-    "subtitle": "Renforce ce que tu as appris",
+    "subtitle": "Ton centre d’apprentissage : parcours, quiz et révisions",
     "revision": {
       "title": "Révisions",
       "due": "{{count}} mot à revoir",

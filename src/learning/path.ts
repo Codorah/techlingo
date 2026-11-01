@@ -12,18 +12,11 @@ export interface PathUnit { id: string; index: number; level: Level; termIds: st
 export interface PathTheme { category: string; level: Level; termIds: string[]; units: PathUnit[] }
 export type PathProgress = Record<string, { at: string; score?: number }>;
 
-export const PATH = { minWords: 6, wordsPerUnit: 10, maxUnits: 5, wordsPerLesson: 5, challengePass: 0.7 } as const;
+// A unit holds about 8 words split into 2 to 4 lessons; a theme has up to 5 units.
+export const PATH = { minWords: 6, wordsPerUnit: 8, maxUnits: 5, wordsPerLesson: 4, maxLessons: 4, challengePass: 0.7 } as const;
 
 const levelIndex = (l: Level) => LEVELS.indexOf(l);
 const meanLevel = (ts: Term[]) => ts.reduce((s, t) => s + levelIndex(t.level), 0) / ts.length;
-
-/** Splits ids into chunks of at most `size`, keeping every chunk at least 3 long. */
-function chunk(ids: string[], size: number): string[][] {
-  const out: string[][] = [];
-  for (let i = 0; i < ids.length; i += size) out.push(ids.slice(i, i + size));
-  if (out.length > 1 && out.at(-1)!.length < 3) out[out.length - 2]!.push(...out.pop()!);
-  return out;
-}
 
 /** Spreads n items over k groups as evenly as possible, in order. */
 function spread<T>(items: T[], k: number): T[][] {
@@ -37,9 +30,11 @@ function spread<T>(items: T[], k: number): T[][] {
   return out;
 }
 
-/** `roles` weights words of the primary role over secondary ones when ordering themes. */
-export function buildThemes(terms: Term[], roles: string[]): PathTheme[] {
-  const weightOf = (t: Term) => Math.max(0, ...t.roles.filter((r) => roles.includes(r.role)).map((r) => r.priority * (r.role === roles[0] ? 1 : 0.6)));
+/** `roles` = primary, secondary roles, then the domain's general role (weighted lower). */
+export function buildThemes(terms: Term[], roles: string[], generalRole?: string): PathTheme[] {
+  const factor = (role: string) => (role === roles[0] ? 1 : role === generalRole ? 0.4 : 0.6);
+  const all = generalRole && !roles.includes(generalRole) ? [...roles, generalRole] : roles;
+  const weightOf = (t: Term) => Math.max(0, ...t.roles.filter((r) => all.includes(r.role)).map((r) => r.priority * factor(r.role)));
   const groups = new Map<string, Term[]>();
   for (const t of terms) {
     const category = t.categories[0];
@@ -49,8 +44,9 @@ export function buildThemes(terms: Term[], roles: string[]): PathTheme[] {
 
   return [...groups.entries()]
     .filter(([, ts]) => ts.length >= PATH.minWords)
-    .map(([category, ts]) => ({ category, ts, weight: ts.reduce((s, t) => s + weightOf(t), 0) / Math.sqrt(ts.length) }))
-    .sort((a, b) => meanLevel(a.ts) - meanLevel(b.ts) || b.weight - a.weight || a.category.localeCompare(b.category))
+    // The themes that matter most for the user's job come first.
+    .map(([category, ts]) => ({ category, ts, weight: ts.reduce((s, t) => s + weightOf(t), 0) }))
+    .sort((a, b) => b.weight - a.weight || a.category.localeCompare(b.category))
     .map(({ category, ts }) => {
       const words = [...ts].sort((a, b) => levelIndex(a.level) - levelIndex(b.level) || weightOf(b) - weightOf(a) || a.id.localeCompare(b.id));
       const unitCount = Math.min(PATH.maxUnits, Math.max(1, Math.round(words.length / PATH.wordsPerUnit)));
@@ -59,7 +55,7 @@ export function buildThemes(terms: Term[], roles: string[]): PathTheme[] {
         const termIds = unitWords.map((t) => t.id);
         const kinds: { kind: NodeKind; termIds: string[] }[] = [
           { kind: u === 0 ? 'course' : 'recap', termIds },
-          ...chunk(termIds, PATH.wordsPerLesson).map((ids) => ({ kind: 'lesson' as const, termIds: ids })),
+          ...spread(termIds, Math.min(PATH.maxLessons, Math.max(1, Math.round(termIds.length / PATH.wordsPerLesson)))).map((ids) => ({ kind: 'lesson' as const, termIds: ids })),
           { kind: 'challenge', termIds }
         ];
         return {

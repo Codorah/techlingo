@@ -18,6 +18,11 @@
   --color-line: #d5e8f7;
   --color-surface: #ffffff;
   --color-danger: #c53b3b;
+  --color-coral: #c4513a;
+  --color-coral-press: #9e3f2c;
+  --color-coral-soft: #ffe6df;
+  --color-gold: #f2b631;
+  --color-gold-press: #c98f12;
   --color-danger-soft: #fde8e8;
 
   --font-title: "Nunito", "DM Sans", system-ui, sans-serif;
@@ -46,6 +51,9 @@
   --color-mint-ink: #8fe0b6;
   --color-danger-soft: #3d1d22;
   --color-danger: #ff8a8a;
+  --color-coral: #ff9a84;
+  --color-coral-press: #c4513a;
+  --color-coral-soft: #3a2220;
   color-scheme: dark;
 }
 
@@ -74,5 +82,5 @@
 @keyframes shake { 10%, 90% { transform: translateX(-2px); } 20%, 80% { transform: translateX(4px); } 30%, 50%, 70% { transform: translateX(-7px); } 40%, 60% { transform: translateX(7px); } }
 @keyframes bounce-in { 0% { transform: scale(0.6); opacity: 0; } 60% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); } }
 @keyframes ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-sky) 55%, transparent); } 100% { box-shadow: 0 0 0 16px transparent; } }
-@keyframes float { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -5px); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @keyframes confetti { 0% { transform: translate3d(0, 0, 0) rotate(0); opacity: 1; } 100% { transform: translate3d(var(--dx), 105vh, 0) rotate(var(--rot)); opacity: 0.9; } }
