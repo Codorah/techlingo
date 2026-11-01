@@ -9,6 +9,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import type { PathLesson, PathUnitDef, ShippedPath } from '@/content/schema';
 import { completeNode } from '@/data/path';
 import { phraseHits } from '@/learning/situations';
+import { sounds } from '@/lib/sound';
 import { canRecognize, listen, speak, stopSpeaking } from '@/lib/speech';
 import { QuizStep, type Playable } from '@/screens/lesson/QuizStep';
 import { accentStyle } from '@/screens/path/ThemeScreen';
@@ -105,6 +106,7 @@ function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; lesson: 
     const correct = quizCorrect + hits;
     const r = await completeNode(nodeId, 'lesson', [], { correct, total });
     navigator.vibrate?.([12, 40, 12]);
+    sounds.celebrate();
     setDone({ ...r, accuracy: Math.round((correct / total) * 100) });
   }
 

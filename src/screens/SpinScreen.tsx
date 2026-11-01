@@ -96,7 +96,7 @@ export function SpinScreen() {
         <div role="radiogroup" className="mx-auto mb-4 grid w-full max-w-sm grid-cols-2 rounded-2xl bg-surface p-1 shadow-[inset_0_0_0_2px_var(--color-line)]">
           {(['random', 'category'] as const).map((m) => (
             <button key={m} type="button" role="radio" aria-checked={mode === m} disabled={spinning} onClick={() => { setMode(m); if (m === 'random') setCategory(null); }}
-              className={`min-h-11 rounded-xl font-bold ${mode === m ? 'bg-ocean text-on-ocean' : 'text-ink-2'}`}>{t(`spin.modes.${m}`)}</button>
+              className={`min-h-11 rounded-xl font-bold ${mode === m ? 'bg-[var(--accent)] text-on-ocean' : 'text-ink-2'}`}>{t(`spin.modes.${m}`)}</button>
           ))}
         </div>
       )}
@@ -107,7 +107,7 @@ export function SpinScreen() {
           <div className="flex gap-2">
             {categories.map((c) => (
               <button key={c.id} type="button" disabled={spinning} onClick={() => setCategory(c.id)} aria-pressed={category === c.id}
-                className={`min-h-10 flex-none rounded-full border-2 px-4 text-sm font-bold ${category === c.id ? 'border-ocean bg-ocean text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
+                className={`min-h-10 flex-none rounded-full border-2 px-4 text-sm font-bold ${category === c.id ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
                 {content.categories.get(c.id)?.name_fr ?? c.id}
               </button>
             ))}

@@ -10,6 +10,7 @@ import type { Term } from '@/content/schema';
 import { completeLesson, type LessonOutcome, logQuizAttempt, logSpeakingAttempt, saveLessonStep, spinStatus, startLesson } from '@/data/progress';
 import { db } from '@/db/db';
 import { canPromptInstall, promptInstall } from '@/lib/install';
+import { sounds } from '@/lib/sound';
 import { speak } from '@/lib/speech';
 import { useContent } from '@/lib/useContent';
 import { QuizStep, toPlayable } from './QuizStep';
@@ -81,6 +82,7 @@ export function LessonScreen() {
     setOutcome({ ...result, quizCorrect, quizTotal: questions.length, bonus: status.bonusAvailable });
     setInstallable(canPromptInstall());
     navigator.vibrate?.([12, 40, 12]);
+    sounds.celebrate();
   }
 
   if (content.error) return <main className="grid min-h-dvh place-items-center p-6 text-center text-ink-2">{t('errors.content')}</main>;
@@ -95,7 +97,7 @@ export function LessonScreen() {
           <h1 className="mt-6 text-3xl font-black">{perfect ? t('result.title') : t('result.soft')}</h1>
           <p className="mt-2 text-lg text-ink-2">{t('result.text', { term: term.term_en })}</p>
           <div className="mt-6 grid w-full grid-cols-3 gap-2.5">
-            <Card className="p-3"><p className="text-xs font-bold text-ink-2">{t('result.xp')}</p><p className="mt-1 text-xl font-black text-ocean">{outcome.xp}</p></Card>
+            <Card className="p-3"><p className="text-xs font-bold text-ink-2">{t('result.xp')}</p><p className="mt-1 text-xl font-black text-[var(--accent)]">{outcome.xp}</p></Card>
             <Card className="p-3"><p className="text-xs font-bold text-ink-2">{t('result.quiz')}</p><p className="mt-1 text-xl font-black text-mint-ink">{outcome.quizCorrect}/{outcome.quizTotal}</p></Card>
             <Card className="p-3"><p className="text-xs font-bold text-ink-2">{t('result.next')}</p><p className="mt-1 text-base font-black">{relativeDay(outcome.nextDue)}</p></Card>
           </div>
@@ -136,13 +138,13 @@ export function LessonScreen() {
                 <h1 className="text-[2.2rem] font-black leading-tight">{term.term_en}</h1>
                 {term.ipa && <p className="mt-1 font-mono text-ink-2">{term.ipa}</p>}
                 <div className="mt-3 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-surface px-3 py-1 text-sm font-bold text-ocean shadow-[inset_0_0_0_2px_var(--color-line)]">{term.level}</span>
+                  <span className="rounded-full bg-surface px-3 py-1 text-sm font-bold text-[var(--accent)] shadow-[inset_0_0_0_2px_var(--color-line)]">{term.level}</span>
                   {term.categories.slice(0, 2).map((c) => <span key={c} className="rounded-full bg-surface px-3 py-1 text-sm font-bold text-ink-2 shadow-[inset_0_0_0_2px_var(--color-line)]">{content.categories.get(c)?.name_fr ?? c}</span>)}
                   {term.status !== 'validated' && <span className="rounded-full bg-sun px-3 py-1 text-sm font-bold text-sun-ink">{t('common.draft')}</span>}
                 </div>
               </div>
               <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')}
-                className="grid h-16 w-16 flex-none place-items-center rounded-2xl bg-ocean text-on-ocean shadow-[0_4px_0_var(--color-ocean-press)] active:translate-y-1 active:shadow-none"><Volume2 size={28} aria-hidden /></button>
+                className="grid h-16 w-16 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={28} aria-hidden /></button>
             </div>
             <Card className="mt-6"><p className="text-sm font-bold text-ink-2">{t('lesson.translation')}</p><p className="mt-1 text-2xl font-extrabold">{term.translation_fr}</p></Card>
           </>
@@ -153,7 +155,7 @@ export function LessonScreen() {
             <p className="text-sm font-bold uppercase tracking-wide text-ink-2">{t('lesson.steps.understand')}</p>
             <h1 className="mt-2 text-2xl font-black">{term.term_en}</h1>
             <section className="mt-5"><h2 className="text-sm font-bold text-ink-2">{t('lesson.definition')}</h2><p className="mt-1 text-lg leading-relaxed" lang="en">{term.definition_en}</p>
-              <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-ocean" onClick={() => speak(term.definition_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button></section>
+              <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-[var(--accent)]" onClick={() => speak(term.definition_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button></section>
             <section className="mt-3"><h2 className="text-sm font-bold text-ink-2">{t('lesson.explanation')}</h2><p className="mt-1 leading-relaxed text-ink-2">{term.explanation_fr}</p></section>
             <Card className="mt-5 bg-sun/60"><p className="flex items-center gap-2 font-extrabold text-sun-ink"><Lightbulb size={20} aria-hidden />{t('lesson.why')}</p><p className="mt-1 font-semibold">{term.why_it_matters_fr}</p></Card>
           </>
@@ -163,7 +165,7 @@ export function LessonScreen() {
           <>
             <p className="text-sm font-bold uppercase tracking-wide text-ink-2">{t('lesson.steps.context')}</p>
             <h1 className="mt-2 text-2xl font-black">{t('lesson.context')}</h1>
-            <ul className="mt-5 grid gap-2.5">{term.context_fr.map((c) => <li key={c} className="flex gap-3 rounded-2xl bg-surface p-4"><MapPin size={20} className="flex-none text-ocean" aria-hidden />{c}</li>)}</ul>
+            <ul className="mt-5 grid gap-2.5">{term.context_fr.map((c) => <li key={c} className="flex gap-3 rounded-2xl bg-surface p-4"><MapPin size={20} className="flex-none text-[var(--accent)]" aria-hidden />{c}</li>)}</ul>
           </>
         )}
 
@@ -177,8 +179,8 @@ export function LessonScreen() {
                   <p className="text-lg font-semibold leading-relaxed" lang="en">{s.text_en}</p>
                   <p className="mt-1 text-ink-2">{s.text_fr}</p>
                   <div className="mt-2 flex gap-1">
-                    <button type="button" className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 font-bold text-ocean" onClick={() => speak(s.text_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button>
-                    <button type="button" className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 font-bold text-ocean" onClick={() => speak(s.text_en, { slow: true })}><Turtle size={18} aria-hidden />{t('common.listenSlow')}</button>
+                    <button type="button" className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 font-bold text-[var(--accent)]" onClick={() => speak(s.text_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button>
+                    <button type="button" className="inline-flex min-h-11 items-center gap-2 rounded-xl px-2 font-bold text-[var(--accent)]" onClick={() => speak(s.text_en, { slow: true })}><Turtle size={18} aria-hidden />{t('common.listenSlow')}</button>
                   </div>
                 </Card></li>
               ))}
@@ -201,7 +203,7 @@ export function LessonScreen() {
             )}
             {term.related_terms.length > 0 && (
               <section className="mt-5"><h2 className="text-xl font-black">{t('lesson.related')}</h2>
-                <div className="mt-3 flex flex-wrap gap-2">{term.related_terms.map((r) => <span key={r} className="rounded-full bg-surface px-3 py-1.5 font-bold text-ocean shadow-[inset_0_0_0_2px_var(--color-line)]">{content.byId.get(r)?.term_en ?? r}</span>)}</div>
+                <div className="mt-3 flex flex-wrap gap-2">{term.related_terms.map((r) => <span key={r} className="rounded-full bg-surface px-3 py-1.5 font-bold text-[var(--accent)] shadow-[inset_0_0_0_2px_var(--color-line)]">{content.byId.get(r)?.term_en ?? r}</span>)}</div>
               </section>
             )}
           </>

@@ -56,7 +56,7 @@ export function HomeScreen() {
           <span className={`inline-flex min-h-10 items-center gap-1.5 rounded-xl px-3 font-black ${streak ? 'text-[#C2410C]' : 'text-ink-2'}`}>
             <Flame size={22} aria-hidden />{streak}<span className="sr-only">{t('home.streak', { count: streak })}</span>
           </span>
-          <span className="inline-flex min-h-10 items-center gap-1.5 rounded-xl px-3 font-black text-ocean"><Zap size={22} aria-hidden />{profile.xp}<span className="sr-only">XP</span></span>
+          <span className="inline-flex min-h-10 items-center gap-1.5 rounded-xl px-3 font-black text-[var(--accent)]"><Zap size={22} aria-hidden />{profile.xp}<span className="sr-only">XP</span></span>
         </header>
 
         <h1 className="mt-5 text-[1.75rem] font-black leading-tight">{profile.displayName ? t('home.hello', { name: profile.displayName }) : t('home.helloAnon')}</h1>
@@ -65,7 +65,7 @@ export function HomeScreen() {
 
         {away >= 3 && (
           <Card className="mt-5 flex gap-3">
-            <Hand size={26} className="flex-none text-ocean" aria-hidden />
+            <Hand size={26} className="flex-none text-[var(--accent)]" aria-hidden />
             <div><p className="font-extrabold">{t('home.welcomeBack.title')}</p><p className="mt-0.5 text-sm text-ink-2">{t('home.welcomeBack.text', { count: away })}</p></div>
           </Card>
         )}
@@ -80,7 +80,7 @@ export function HomeScreen() {
         )}
 
         {spinCard && (
-          <section className="relative mt-5 overflow-hidden rounded-[var(--radius-card)] bg-ocean p-5 text-on-ocean shadow-[0_4px_0_var(--color-ocean-press)]">
+          <section className="relative mt-5 overflow-hidden rounded-[var(--radius-card)] bg-[var(--accent)] p-5 text-on-ocean shadow-[0_4px_0_var(--accent-press)]">
             <svg viewBox="-100 -100 200 200" className="absolute -right-10 top-1/2 h-44 w-44 -translate-y-1/2 opacity-25" aria-hidden>
               {Array.from({ length: 8 }, (_, i) => {
                 const a0 = (i * 45 * Math.PI) / 180, a1 = ((i + 1) * 45 * Math.PI) / 180;
@@ -91,7 +91,7 @@ export function HomeScreen() {
               <h2 className="text-xl font-black">{t(`home.spin.${spinCard}.title`)}</h2>
               <p className="mt-1 text-sm opacity-90">{t(`home.spin.${spinCard}.text`)}</p>
               <button type="button" onClick={() => navigate(spinCard === 'done' && status?.todaysTermId ? `/lesson/${status.todaysTermId}` : '/spin')}
-                className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-xl bg-white px-4 font-bold text-[#2B6CB0] shadow-[0_4px_0_rgba(0,20,50,0.25)] active:translate-y-1 active:shadow-none">
+                className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-xl bg-white px-4 font-bold text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.25)] active:translate-y-1 active:shadow-none">
                 {spinCard === 'done' ? <ArrowRight size={18} aria-hidden /> : <RotateCw size={18} aria-hidden />}{t(`home.spin.${spinCard}.cta`)}
               </button>
             </div>

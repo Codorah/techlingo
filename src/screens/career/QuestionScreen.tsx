@@ -77,7 +77,7 @@ export function QuestionScreen() {
       <h2 className="mt-6 text-lg font-extrabold">{t('career.question.outline')}</h2>
       <ol className="mt-3 grid gap-2">
         {q.answer_outline_fr.map((step, i) => (
-          <li key={step} className="flex items-center gap-3 rounded-2xl bg-surface px-4 py-3"><span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-ocean text-sm font-bold text-on-ocean">{i + 1}</span>{step}</li>
+          <li key={step} className="flex items-center gap-3 rounded-2xl bg-surface px-4 py-3"><span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-[var(--accent)] text-sm font-bold text-on-ocean">{i + 1}</span>{step}</li>
         ))}
       </ol>
 
@@ -113,7 +113,7 @@ export function QuestionScreen() {
         <label className="mt-4 block">
           <span className="font-bold">{t('career.question.write')}</span>
           <textarea value={written} onChange={(e) => setText(e.target.value)} onBlur={() => void saveAnswerDraft(q.id, { text: written })} rows={5} lang="en"
-            placeholder={t('career.question.writePlaceholder')} className="mt-2 w-full rounded-2xl border-2 border-line bg-surface p-3 outline-none placeholder:text-ink-2 focus:border-ocean" />
+            placeholder={t('career.question.writePlaceholder')} className="mt-2 w-full rounded-2xl border-2 border-line bg-surface p-3 outline-none placeholder:text-ink-2 focus:border-[var(--accent)]" />
         </label>
         <p className="mt-2 text-sm font-bold" aria-live="polite">{t('career.question.keysHit', { count: hits.length })} / {q.key_phrases.length}</p>
       </Card>

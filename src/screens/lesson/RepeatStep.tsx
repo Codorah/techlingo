@@ -80,7 +80,7 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
             {!listening && <p className="mb-3 text-center text-xs text-ink-2">{t('repeat.permission')}</p>}
             {listening && partial && <p className="mb-3 text-center text-ink-2" aria-live="polite">{t('repeat.said')} « {partial} »</p>}
             <button type="button" onClick={() => (listening ? stopRef.current() : void start())}
-              className={`mx-auto grid h-20 w-20 place-items-center rounded-full text-white shadow-[0_5px_0_var(--color-ocean-press)] transition-transform active:translate-y-1 active:shadow-none ${listening ? 'animate-pulse bg-danger shadow-[0_5px_0_#8f2a2a]' : 'bg-ocean'}`}
+              className={`mx-auto grid h-20 w-20 place-items-center rounded-full text-white shadow-[0_5px_0_var(--accent-press)] transition-transform active:translate-y-1 active:shadow-none ${listening ? 'animate-pulse bg-danger shadow-[0_5px_0_#8f2a2a]' : 'bg-[var(--accent)]'}`}
               aria-label={listening ? t('repeat.stop') : t('repeat.tap')}>
               {listening ? <Square size={28} aria-hidden /> : <Mic size={32} aria-hidden />}
             </button>

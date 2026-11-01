@@ -32,17 +32,17 @@ export function WordScreen() {
           <h1 className="text-[2rem] font-black leading-tight">{term.term_en}</h1>
           <p className="text-lg text-ink-2">{term.translation_fr}</p>
           <div className="mt-2 flex flex-wrap gap-2">
-            <span className="rounded-full bg-surface px-3 py-1 text-sm font-bold text-ocean shadow-[inset_0_0_0_2px_var(--color-line)]">{term.level}</span>
+            <span className="rounded-full bg-surface px-3 py-1 text-sm font-bold text-[var(--accent)] shadow-[inset_0_0_0_2px_var(--color-line)]">{term.level}</span>
             {term.status !== 'validated' && <span className="rounded-full bg-sun px-3 py-1 text-sm font-bold text-sun-ink">{t('common.draft')}</span>}
           </div>
         </div>
         <div className="flex gap-2">
           <button type="button" onClick={() => void toggleFavorite(term.id)} aria-pressed={fav} aria-label="Favori"
-            className={`grid h-12 w-12 place-items-center rounded-2xl border-2 ${fav ? 'border-ocean bg-ocean text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
+            className={`grid h-12 w-12 place-items-center rounded-2xl border-2 ${fav ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
             <Bookmark size={22} fill={fav ? 'currentColor' : 'none'} aria-hidden />
           </button>
           <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')}
-            className="grid h-12 w-12 place-items-center rounded-2xl bg-ocean text-on-ocean shadow-[0_4px_0_var(--color-ocean-press)] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button>
+            className="grid h-12 w-12 place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export function WordScreen() {
         {term.sentences.map((s) => (
           <li key={s.id}><Card className="p-4">
             <p className="font-semibold leading-relaxed" lang="en">{s.text_en}</p><p className="mt-1 text-sm text-ink-2">{s.text_fr}</p>
-            <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-ocean" onClick={() => speak(s.text_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button>
+            <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-[var(--accent)]" onClick={() => speak(s.text_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button>
           </Card></li>
         ))}
       </ul>

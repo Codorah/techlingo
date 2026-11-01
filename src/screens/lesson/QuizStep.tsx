@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
 import { Choice } from '@/components/ui/Choice';
 import type { QuizQuestion } from '@/content/schema';
+import { sounds } from '@/lib/sound';
 import { speak } from '@/lib/speech';
 
 export type Playable = { id: string; termId?: string; prompt: string; sentence?: string; audio?: string; choices: string[]; answer: number; explanation: string };
@@ -46,6 +47,7 @@ export function QuizStep({ questions, onAnswer, onDone }: {
     if (correct) setScore((s) => s + 1);
     setCombo((c) => (correct ? c + 1 : 0));
     navigator.vibrate?.(correct ? 12 : [30, 40, 30]);
+    if (correct) sounds.correct(); else sounds.wrong();
     onAnswer(q, selected, correct);
   }
   function next() {

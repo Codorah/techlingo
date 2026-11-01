@@ -46,7 +46,7 @@ export function PitchScreen() {
           <label key={k} className="block">
             <span className="font-bold">{t(`career.pitch.fields.${k}`)}</span>
             <input value={pitch[k]} onChange={(e) => update(k, e.target.value)} placeholder={placeholders[k]} lang="en" inputMode={k === 'years' ? 'numeric' : 'text'}
-              className="mt-2 min-h-[52px] w-full rounded-2xl border-2 border-line bg-surface px-4 outline-none placeholder:text-ink-2 focus:border-ocean" />
+              className="mt-2 min-h-[52px] w-full rounded-2xl border-2 border-line bg-surface px-4 outline-none placeholder:text-ink-2 focus:border-[var(--accent)]" />
           </label>
         ))}
       </div>

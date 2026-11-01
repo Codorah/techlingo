@@ -53,7 +53,7 @@ export function CareerScreen() {
         </section>
 
         <Link href="/career/pitch" className="mt-4 flex items-center gap-4 rounded-[var(--radius-card)] border-2 border-line bg-surface p-4 shadow-[0_4px_0_var(--color-line)] active:translate-y-1 active:shadow-none">
-          <span className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-mist text-ocean"><UserRound size={24} aria-hidden /></span>
+          <span className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-mist text-[var(--accent)]"><UserRound size={24} aria-hidden /></span>
           <span className="flex-1"><span className="block font-extrabold">{t('career.pitch.title')}</span><span className="block text-sm text-ink-2">{t('career.pitch.card')}</span></span>
           <ChevronRight size={20} className="text-ink-2" aria-hidden />
         </Link>
@@ -76,9 +76,9 @@ export function CareerScreen() {
           {(career?.verbs ?? []).map((v) => (
             <li key={v.id}><Card className="p-4">
               <div className="flex items-center justify-between gap-3">
-                <p className="text-lg font-black text-ocean" lang="en">{v.verb}</p>
+                <p className="text-lg font-black text-[var(--accent)]" lang="en">{v.verb}</p>
                 <button type="button" onClick={() => speak(`${v.verb}. ${v.example_en}`)} aria-label={`${t('common.listen')} ${v.verb}`}
-                  className="grid h-10 w-10 place-items-center rounded-xl bg-mist text-ocean"><Volume2 size={18} aria-hidden /></button>
+                  className="grid h-10 w-10 place-items-center rounded-xl bg-mist text-[var(--accent)]"><Volume2 size={18} aria-hidden /></button>
               </div>
               <p className="text-sm font-semibold">{v.meaning_fr}</p>
               <p className="mt-2 text-sm" lang="en">{v.example_en}</p>

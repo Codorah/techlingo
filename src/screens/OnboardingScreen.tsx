@@ -49,7 +49,7 @@ export function OnboardingScreen() {
           <p className="mt-3 max-w-[32ch] text-lg text-ink-2">{t('onboarding.welcome.text')}</p>
         </div>
         <Button onClick={() => setStep('domain')} icon={<ArrowRight size={20} aria-hidden />}>{t('onboarding.welcome.start')}</Button>
-        <Link href="/settings/data" className="mt-2 flex min-h-11 items-center justify-center font-bold text-ocean">{t('onboarding.welcome.restore')}</Link>
+        <Link href="/settings/data" className="mt-2 flex min-h-11 items-center justify-center font-bold text-[var(--accent)]">{t('onboarding.welcome.restore')}</Link>
         <p className="mt-2 text-center text-sm text-ink-2">{t('onboarding.welcome.privacy')}</p>
       </main>
     );
@@ -93,7 +93,7 @@ export function OnboardingScreen() {
       <div className="grid gap-2.5">
         {LEVELS.map((l) => (
           <Choice key={l} state={level === l ? 'selected' : 'idle'} onClick={() => setLevel(l)}
-            leading={<span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist font-title font-black text-ocean">{l}</span>}>
+            leading={<span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist font-title font-black text-[var(--accent)]">{l}</span>}>
             <span className="block">{t(`levels.${l}.name`)}</span>
             <span className="block text-sm font-normal text-ink-2">{t(`levels.${l}.desc`)}</span>
           </Choice>

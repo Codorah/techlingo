@@ -104,24 +104,24 @@ export function DataScreen() {
       )}
 
       <Card className="mt-5">
-        <h2 className="flex items-center gap-2 text-lg font-extrabold"><HardDriveDownload size={22} className="text-ocean" aria-hidden />{t('data.export.title')}</h2>
+        <h2 className="flex items-center gap-2 text-lg font-extrabold"><HardDriveDownload size={22} className="text-[var(--accent)]" aria-hidden />{t('data.export.title')}</h2>
         <p className="mt-1 text-ink-2">{t('data.export.text')}</p>
         <Button className="mt-4" icon={<Download size={20} aria-hidden />} onClick={onExport} disabled={busy}>{t('data.export.action')}</Button>
         {canShareFile && <Button variant="secondary" className="mt-2" icon={<Share2 size={20} aria-hidden />} onClick={onShare}>{t('data.export.share')}</Button>}
       </Card>
 
       <Card className="mt-4">
-        <h2 className="flex items-center gap-2 text-lg font-extrabold"><Upload size={22} className="text-ocean" aria-hidden />{t('data.import.title')}</h2>
+        <h2 className="flex items-center gap-2 text-lg font-extrabold"><Upload size={22} className="text-[var(--accent)]" aria-hidden />{t('data.import.title')}</h2>
         <p className="mt-1 text-ink-2">{t('data.import.text')}</p>
         <input ref={input} type="file" accept="application/json,.json" className="sr-only" id="backup-file" onChange={(e) => { const f = e.target.files?.[0]; if (f) void onImport(f); }} />
         <Button variant="secondary" className="mt-4" icon={<Upload size={20} aria-hidden />} onClick={() => input.current?.click()} disabled={busy}>{t('data.import.action')}</Button>
       </Card>
 
       <Card className="mt-4">
-        <h2 className="flex items-center gap-2 text-lg font-extrabold"><Smartphone size={22} className="text-ocean" aria-hidden />{t('data.move.title')}</h2>
+        <h2 className="flex items-center gap-2 text-lg font-extrabold"><Smartphone size={22} className="text-[var(--accent)]" aria-hidden />{t('data.move.title')}</h2>
         <ol className="mt-3 space-y-3">
           {steps.map((s, i) => (
-            <li key={s} className="flex gap-3"><span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-ocean text-sm font-bold text-on-ocean">{i + 1}</span><span className="pt-0.5">{s}</span></li>
+            <li key={s} className="flex gap-3"><span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-[var(--accent)] text-sm font-bold text-on-ocean">{i + 1}</span><span className="pt-0.5">{s}</span></li>
           ))}
         </ol>
       </Card>

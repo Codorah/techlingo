@@ -50,7 +50,7 @@ export function InstallSheet() {
         </div>
         <div className="my-4 flex flex-wrap gap-2">
           {[{ Icon: Feather, k: 'light' }, { Icon: WifiOff, k: 'offline' }, { Icon: Lock, k: 'private' }].map(({ Icon, k }) => (
-            <span key={k} className="inline-flex items-center gap-1.5 rounded-full bg-mist px-3 py-1.5 text-sm font-bold text-ocean"><Icon size={16} aria-hidden />{t(`install.perks.${k}`)}</span>
+            <span key={k} className="inline-flex items-center gap-1.5 rounded-full bg-mist px-3 py-1.5 text-sm font-bold text-[var(--accent)]"><Icon size={16} aria-hidden />{t(`install.perks.${k}`)}</span>
           ))}
         </div>
         {canPromptInstall() ? (
@@ -59,14 +59,14 @@ export function InstallSheet() {
           <ol className="mb-2">
             {steps.map(({ text, Icon }, i) => (
               <li key={text} className={`flex min-h-12 items-center gap-3 ${i ? 'border-t-2 border-line' : ''}`}>
-                <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-ocean text-sm font-bold text-on-ocean">{i + 1}</span>
+                <span className="grid h-7 w-7 flex-none place-items-center rounded-full bg-[var(--accent)] text-sm font-bold text-on-ocean">{i + 1}</span>
                 <span className="flex-1">{text}</span>
-                <Icon size={22} className="text-ocean" aria-hidden />
+                <Icon size={22} className="text-[var(--accent)]" aria-hidden />
               </li>
             ))}
           </ol>
         )}
-        <button type="button" onClick={close} className="mt-2 min-h-11 w-full font-bold text-ocean">{t('install.later')}</button>
+        <button type="button" onClick={close} className="mt-2 min-h-11 w-full font-bold text-[var(--accent)]">{t('install.later')}</button>
       </div>
     </>
   );

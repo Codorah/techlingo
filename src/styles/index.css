@@ -35,6 +35,10 @@
 
 :root { color-scheme: light; }
 
+/* Accent of the learner's domain: ocean for IT, coral for marketing (set on <html data-domain>). */
+:root { --accent: var(--color-ocean); --accent-press: var(--color-ocean-press); --accent-soft: var(--color-mist); }
+:root[data-domain="marketing"] { --accent: var(--color-coral); --accent-press: var(--color-coral-press); --accent-soft: var(--color-coral-soft); }
+
 /* Dark theme: same names, so every utility follows automatically. */
 :root[data-theme="dark"] {
   --color-mist: #0f2238;
@@ -84,3 +88,7 @@
 @keyframes ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-sky) 55%, transparent); } 100% { box-shadow: 0 0 0 16px transparent; } }
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @keyframes confetti { 0% { transform: translate3d(0, 0, 0) rotate(0); opacity: 1; } 100% { transform: translate3d(var(--dx), 105vh, 0) rotate(var(--rot)); opacity: 0.9; } }
+@keyframes screen-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes rays { to { transform: rotate(360deg); } }
+/* Every screen fades in when it mounts; the tab bar sits outside <main> and stays still. */
+#root main { animation: screen-in .24s var(--ease-out-quart) both; }

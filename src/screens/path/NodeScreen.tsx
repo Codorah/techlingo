@@ -10,6 +10,7 @@ import type { Term } from '@/content/schema';
 import { completeNode, type WordResult } from '@/data/path';
 import { logQuizAttempt } from '@/data/progress';
 import { PATH, type PathNode } from '@/learning/path';
+import { sounds } from '@/lib/sound';
 import { speak } from '@/lib/speech';
 import { usePath } from '@/lib/usePath';
 import { QuizStep, type Playable, toPlayable } from '../lesson/QuizStep';
@@ -127,6 +128,7 @@ function Practice({ node, terms, onClose, onDone }: { node: PathNode; terms: Ter
     if (!passed) { onDone({ xp: 0, correct, total, passed, firstTime: false }); return; }
     const r = await completeNode(node.id, node.kind, [...results.values()]);
     navigator.vibrate?.([12, 40, 12]);
+    sounds.celebrate();
     onDone({ ...r, correct, total, passed });
   }
 
@@ -199,8 +201,14 @@ function Result({ outcome, kind, unitDone, onContinue, onRetry }: { outcome: Out
     <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-[calc(env(safe-area-inset-top)+24px)] text-center">
       {outcome.firstTime && <Confetti pieces={unitDone ? 110 : 60} />}
       <div className="flex flex-1 flex-col items-center justify-center">
-        <span className={`grid h-28 w-28 animate-[bounce-in_.55s_var(--ease-out-quart)] place-items-center rounded-full ${unitDone ? 'bg-gold text-white' : 'bg-sun text-sun-ink'}`}>
-          {unitDone ? <Trophy size={52} aria-hidden /> : <span className="font-title text-4xl font-black">+{outcome.xp}</span>}
+        <span className="relative grid place-items-center">
+          {unitDone && (
+            <span aria-hidden className="absolute h-56 w-56 animate-[rays_12s_linear_infinite] rounded-full opacity-60 motion-reduce:hidden"
+              style={{ background: 'repeating-conic-gradient(from 0deg, var(--color-gold) 0deg 10deg, transparent 10deg 30deg)', maskImage: 'radial-gradient(circle, black 30%, transparent 70%)' }} />
+          )}
+          <span className={`relative grid h-28 w-28 animate-[bounce-in_.55s_var(--ease-out-quart)] place-items-center rounded-full ${unitDone ? 'bg-gold text-white shadow-[0_6px_0_var(--color-gold-press)]' : 'bg-sun text-sun-ink'}`}>
+            {unitDone ? <Trophy size={52} aria-hidden /> : <span className="font-title text-4xl font-black">+{outcome.xp}</span>}
+          </span>
         </span>
         <h1 className="mt-6 text-3xl font-black">{unitDone ? t('path.unitDone') : kind === 'course' ? t('path.courseDone') : accuracy === 100 ? t('result.title') : t('path.lessonDone')}</h1>
         {!outcome.firstTime && <p className="mt-2 text-ink-2">{t('path.replay')}</p>}

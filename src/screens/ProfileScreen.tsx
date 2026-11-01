@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { BookOpen, Briefcase, ChevronRight, Database, Flame, Moon, Star, Zap } from 'lucide-react';
+import { BookOpen, Briefcase, ChevronRight, Database, Flame, Moon, Star, Volume2, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
@@ -11,6 +11,7 @@ import { getRetention, saveProfile, setSetting } from '@/data/progress';
 import { db } from '@/db/db';
 import { displayedStreak, localDay } from '@/learning/streak';
 import { domainOf } from '@/lib/domains';
+import { setSoundEnabled, soundEnabled, sounds } from '@/lib/sound';
 import { useContent } from '@/lib/useContent';
 
 const RETENTIONS = [0.8, 0.85, 0.9, 0.95];
@@ -23,6 +24,7 @@ export function ProfileScreen() {
   const content = useContent([]);
   const [retention, setRetention] = useState(0.9);
   const [dark, setDark] = useState(() => document.documentElement.dataset.theme === 'dark');
+  const [sound, setSound] = useState(soundEnabled);
 
   useEffect(() => { void getRetention().then(setRetention); }, []);
 
@@ -40,9 +42,9 @@ export function ProfileScreen() {
   const mastered = words.filter((w) => w.state === 'mastered').length;
   const stats = [
     { Icon: Flame, color: 'text-[#C2410C]', value: displayedStreak(profile, localDay()), label: t('profile.stats.streak') },
-    { Icon: BookOpen, color: 'text-ocean', value: words.length, label: t('profile.stats.words') },
+    { Icon: BookOpen, color: 'text-[var(--accent)]', value: words.length, label: t('profile.stats.words') },
     { Icon: Star, color: 'text-mint-ink', value: mastered, label: t('profile.stats.mastered') },
-    { Icon: Zap, color: 'text-ocean', value: profile.xp, label: t('profile.stats.xp') }
+    { Icon: Zap, color: 'text-[var(--accent)]', value: profile.xp, label: t('profile.stats.xp') }
   ];
 
   return (
@@ -67,7 +69,7 @@ export function ProfileScreen() {
         <div role="radiogroup" aria-label={t('profile.editLevel')} className="mt-3 grid grid-cols-5 gap-2">
           {LEVELS.map((l: Level) => (
             <button key={l} type="button" role="radio" aria-checked={profile.level === l} onClick={() => void saveProfile({ level: l })}
-              className={`min-h-12 rounded-xl border-2 font-title font-black ${profile.level === l ? 'border-ocean bg-ocean text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>{l}</button>
+              className={`min-h-12 rounded-xl border-2 font-title font-black ${profile.level === l ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>{l}</button>
           ))}
         </div>
 
@@ -76,28 +78,38 @@ export function ProfileScreen() {
         <div role="radiogroup" aria-label={t('profile.retention')} className="mt-3 grid grid-cols-4 gap-2">
           {RETENTIONS.map((r) => (
             <button key={r} type="button" role="radio" aria-checked={retention === r} onClick={() => { setRetention(r); void setSetting('retention', r); }}
-              className={`min-h-12 rounded-xl border-2 font-bold ${retention === r ? 'border-ocean bg-ocean text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>{Math.round(r * 100)} %</button>
+              className={`min-h-12 rounded-xl border-2 font-bold ${retention === r ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>{Math.round(r * 100)} %</button>
           ))}
         </div>
 
         <Card className="mt-7 p-1">
           <Link href="/settings/roles" className="flex min-h-14 items-center gap-3 rounded-2xl px-3">
-            <Briefcase size={22} className="text-ocean" aria-hidden />
+            <Briefcase size={22} className="text-[var(--accent)]" aria-hidden />
             <span className="flex-1"><span className="block font-bold">{t('roles.title')}</span><span className="block text-sm text-ink-2">{domainName} · {roleNames.join(', ')}</span></span>
             <ChevronRight size={20} className="text-ink-2" aria-hidden />
           </Link>
           <div className="mx-3 h-0.5 bg-line" />
           <Link href="/settings/data" className="flex min-h-14 items-center gap-3 rounded-2xl px-3">
-            <Database size={22} className="text-ocean" aria-hidden />
+            <Database size={22} className="text-[var(--accent)]" aria-hidden />
             <span className="flex-1"><span className="block font-bold">{t('profile.data')}</span><span className="block text-sm text-ink-2">{t('profile.dataText')}</span></span>
             <ChevronRight size={20} className="text-ink-2" aria-hidden />
           </Link>
           <div className="mx-3 h-0.5 bg-line" />
           <div className="flex min-h-14 items-center gap-3 px-3">
-            <Moon size={22} className="text-ocean" aria-hidden />
+            <Volume2 size={22} className="text-[var(--accent)]" aria-hidden />
+            <span className="flex-1 font-bold">{t('profile.sound')}</span>
+            <button type="button" role="switch" aria-checked={sound} aria-label={t('profile.sound')}
+              onClick={() => { const next = !sound; setSound(next); setSoundEnabled(next); if (next) sounds.correct(); }}
+              className={`relative h-8 w-14 flex-none rounded-full transition-colors ${sound ? 'bg-[var(--accent)]' : 'bg-line'}`}>
+              <span className={`absolute left-0 top-1 h-6 w-6 rounded-full bg-white shadow transition-transform duration-200 ${sound ? 'translate-x-7' : 'translate-x-1'}`} />
+            </button>
+          </div>
+          <div className="mx-3 h-0.5 bg-line" />
+          <div className="flex min-h-14 items-center gap-3 px-3">
+            <Moon size={22} className="text-[var(--accent)]" aria-hidden />
             <span className="flex-1 font-bold">{t('profile.theme')}</span>
             <button type="button" role="switch" aria-checked={dark} aria-label={t('profile.theme')} onClick={toggleTheme}
-              className={`relative h-8 w-14 flex-none rounded-full transition-colors ${dark ? 'bg-ocean' : 'bg-line'}`}>
+              className={`relative h-8 w-14 flex-none rounded-full transition-colors ${dark ? 'bg-[var(--accent)]' : 'bg-line'}`}>
               <span className={`absolute left-0 top-1 h-6 w-6 rounded-full bg-white shadow transition-transform duration-200 ${dark ? 'translate-x-7' : 'translate-x-1'}`} />
             </button>
           </div>
@@ -115,7 +127,7 @@ export function ProfileScreen() {
             </details>
           ))}
         </div>
-        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-ocean">
+        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-[var(--accent)]">
           <a href="/decouvrir/" className="inline-flex min-h-11 items-center">{t('help.about')}</a>
           <a href="/legal/confidentialite.html" className="inline-flex min-h-11 items-center">{t('help.privacy')}</a>
         </div>

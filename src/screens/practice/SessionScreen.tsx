@@ -57,7 +57,7 @@ export function SessionScreen() {
         <Trophy size={72} className="text-sun-ink" aria-hidden />
         <h1 className="mt-5 text-3xl font-black">{t('practice.result.title')}</h1>
         <p className="mt-2 text-xl font-bold">{t('practice.result.score', { correct: result.correct, total: result.total })}</p>
-        {result.correct > 0 && <p className="mt-1 font-bold text-ocean">{t('practice.result.xp', { xp: result.correct * XP_PER_CORRECT })}</p>}
+        {result.correct > 0 && <p className="mt-1 font-bold text-[var(--accent)]">{t('practice.result.xp', { xp: result.correct * XP_PER_CORRECT })}</p>}
         <div className="mt-8 grid w-full gap-2.5">
           <Button onClick={() => { setResult(null); setRound(round + 1); }}>{t('practice.result.again')}</Button>
           <Button variant="secondary" onClick={() => navigate('/practice')}>{t('practice.result.back')}</Button>

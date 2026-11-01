@@ -4,11 +4,11 @@ type Variant = 'primary' | 'secondary' | 'success' | 'danger' | 'ghost';
 
 // Thick "pressable" buttons: a solid bottom edge that collapses on press (spec §8).
 const styles: Record<Variant, string> = {
-  primary: 'bg-ocean text-on-ocean shadow-[0_4px_0_var(--color-ocean-press)]',
-  secondary: 'bg-surface text-ocean border-2 border-line shadow-[0_4px_0_var(--color-line)]',
+  primary: 'bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)]',
+  secondary: 'bg-surface text-[var(--accent)] border-2 border-line shadow-[0_4px_0_var(--color-line)]',
   success: 'bg-mint-strong text-on-ocean shadow-[0_4px_0_#227a4e]',
   danger: 'bg-danger text-white shadow-[0_4px_0_#8f2a2a]',
-  ghost: 'bg-transparent text-ocean'
+  ghost: 'bg-transparent text-[var(--accent)]'
 };
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {

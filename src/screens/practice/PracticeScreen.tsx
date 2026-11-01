@@ -14,7 +14,7 @@ import { accentStyle } from '@/screens/path/ThemeScreen';
 
 const MODES = [
   { id: 'challenge', Icon: Trophy, bg: 'bg-sun', fg: 'text-sun-ink' },
-  { id: 'listening', Icon: Ear, bg: 'bg-mist', fg: 'text-ocean' },
+  { id: 'listening', Icon: Ear, bg: 'bg-mist', fg: 'text-[var(--accent)]' },
   { id: 'speaking', Icon: Mic, bg: 'bg-[#E3DCFB]', fg: 'text-[#5B4FC4]' },
   { id: 'match', Icon: Link2, bg: 'bg-mint', fg: 'text-mint-ink' }
 ] as const;
@@ -50,7 +50,7 @@ export function PracticeScreen() {
         <h2 className="mt-8 text-lg font-extrabold">{t('practice.train')}</h2>
 
         <section className="mt-3 flex items-center gap-4 rounded-[var(--radius-card)] border-2 border-line bg-surface p-5 shadow-[0_4px_0_var(--color-line)]">
-          <span className="grid h-14 w-14 flex-none place-items-center rounded-2xl bg-ocean text-on-ocean"><Layers size={26} aria-hidden /></span>
+          <span className="grid h-14 w-14 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Layers size={26} aria-hidden /></span>
           <div className="flex-1">
             <p className="font-extrabold">{t('practice.revision.title')}</p>
             <p className="text-sm text-ink-2">{dueKnown.length ? t('practice.revision.due', { count: dueKnown.length }) : t('practice.revision.none')}</p>

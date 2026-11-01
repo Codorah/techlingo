@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { type ComponentType, lazy, StrictMode, Suspense } from 'react';
+import { type ComponentType, lazy, StrictMode, Suspense, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Route, Switch } from 'wouter';
 import '@/i18n';
@@ -7,7 +7,9 @@ import '@/styles/index.css';
 import { InstallSheet } from '@/app/InstallSheet';
 import { UpdatePrompt } from '@/app/UpdatePrompt';
 import { db, getDeviceId, requestPersistence } from '@/db/db';
+import { domainOf } from '@/lib/domains';
 import '@/lib/install';
+import { useManifest } from '@/lib/useContent';
 import { HomeScreen } from '@/screens/HomeScreen';
 
 void getDeviceId();
@@ -36,6 +38,9 @@ const SituationScreen = named(() => import('@/screens/situations/SituationScreen
 
 function App() {
   const profile = useLiveQuery(async () => (await db.profile.get('me')) ?? null);
+  const manifest = useManifest();
+  const domain = domainOf(manifest, profile?.primaryRole);
+  useEffect(() => { document.documentElement.dataset.domain = domain; }, [domain]);
   if (profile === undefined) return null; // first IndexedDB read
 
   if (!profile?.onboardedAt) {

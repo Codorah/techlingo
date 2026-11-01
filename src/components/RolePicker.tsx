@@ -4,7 +4,7 @@ import { DynamicIcon } from '@/components/ui/DynamicIcon';
 import type { Manifest } from '@/content/schema';
 
 const tile = (icon: string) => (
-  <span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist text-ocean"><DynamicIcon name={icon} /></span>
+  <span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist text-[var(--accent)]"><DynamicIcon name={icon} /></span>
 );
 
 /** Domain cards (IT, digital marketing…); a domain without content yet shows "Soon". */
@@ -52,8 +52,8 @@ export function RolePicker({ manifest, domain, primary, secondary, onChange }: {
         return (
           <li key={r.id}>
             <Choice state={isPrimary || isSecondary ? 'selected' : 'idle'} disabled={disabled} onClick={() => toggle(r.id)} leading={tile(r.icon)}
-              trailing={isPrimary ? <span className="rounded-full bg-ocean px-2.5 py-1 text-xs font-bold text-on-ocean">{t('onboarding.role.primary')}</span>
-                : isSecondary ? <span className="rounded-full bg-sky/30 px-2.5 py-1 text-xs font-bold text-ocean">{t('onboarding.role.secondary')}</span>
+              trailing={isPrimary ? <span className="rounded-full bg-[var(--accent)] px-2.5 py-1 text-xs font-bold text-on-ocean">{t('onboarding.role.primary')}</span>
+                : isSecondary ? <span className="rounded-full bg-sky/30 px-2.5 py-1 text-xs font-bold text-[var(--accent)]">{t('onboarding.role.secondary')}</span>
                 : disabled ? <span className="text-xs font-bold text-ink-2">{t('onboarding.role.soon')}</span> : null}>
               <span className="block">{r.name_fr}</span>
               <span className="block text-sm font-normal text-ink-2">{r.description_fr}</span>
