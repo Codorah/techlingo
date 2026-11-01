@@ -13,6 +13,7 @@ import {
   Settings,
   Sparkles,
   Star,
+  X,
   Zap
 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
@@ -183,7 +184,7 @@ export function ProfileScreen() {
       color: 'text-[var(--accent)]',
       bg: 'bg-[var(--accent-soft)]',
       value: words.length,
-      sub: `${favorites} ★ favoris`,
+      sub: `${favorites} favoris`,
       label: t('profile.stats.words')
     },
     {
@@ -401,9 +402,10 @@ export function ProfileScreen() {
                 <button
                   type="button"
                   onClick={() => setSelectedBadge(null)}
-                  className="rounded-lg p-1 text-xs font-bold text-ink-2 hover:bg-mist"
+                  aria-label={t('common.close')}
+                  className="grid h-11 w-11 place-items-center rounded-lg text-ink-2 hover:bg-mist"
                 >
-                  ✕
+                  <X size={20} aria-hidden />
                 </button>
               </div>
               <div className="mt-3 flex items-center gap-3">

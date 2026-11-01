@@ -62,13 +62,15 @@ export function notificationsEnabled(): boolean {
 
 export async function showLocalNotification(title: string, body: string, url = '/'): Promise<boolean> {
   if (!notificationsEnabled()) return false;
+  const options = { body, icon: '/icons/icon-192.png', badge: '/icons/icon-192.png', tag: 'techlingo-daily', data: { url } };
+  // Android Chrome forbids `new Notification()` in a page: notifications must go through the
+  // service worker (public/sw-notify.js opens the app on tap). The constructor is the desktop fallback.
   try {
-    const notif = new Notification(title, {
-      body,
-      icon: '/icon-192.png',
-      badge: '/icon-192.png',
-      tag: 'techlingo-daily',
-    });
+    const reg = 'serviceWorker' in navigator ? await navigator.serviceWorker.getRegistration() : undefined;
+    if (reg) { await reg.showNotification(title, options); return true; }
+  } catch { /* fall back below */ }
+  try {
+    const notif = new Notification(title, options);
     notif.onclick = () => {
       window.focus();
       if (url && window.location.pathname !== url) window.location.href = url;

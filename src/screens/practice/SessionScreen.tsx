@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { Mic, Sparkles, Trophy, Volume2, X } from 'lucide-react';
+import { Mic, Sparkles, Star, Trophy, Volume2, X } from 'lucide-react';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useParams } from 'wouter';
@@ -97,9 +97,7 @@ export function SessionScreen() {
         <Confetti pieces={80} />
         <div className="relative mb-3 grid h-24 w-24 place-items-center rounded-full bg-sun/40 ring-4 ring-gold/30">
           <Trophy size={54} className="text-sun-ink animate-bounce" aria-hidden />
-          <span className="absolute -top-1 -right-1 grid h-7 w-7 place-items-center rounded-full bg-gold text-white font-black text-xs shadow-md">
-            ★
-          </span>
+          <span className="absolute -top-1 -right-1 grid h-7 w-7 place-items-center rounded-full bg-gold text-white font-black text-xs shadow-md"><Star size={14} fill="currentColor" aria-hidden /></span>
         </div>
 
         <h1 className="mt-2 text-2xl sm:text-3xl font-black text-ink">
@@ -210,7 +208,7 @@ export function SessionScreen() {
               {t('practice.challenge.oralKicker', 'Défi du jour · Étape orale')} ({challengeSpeakingIndex + 1}/{speakingPool.length})
             </span>
             <h2 className="mt-0.5 text-base font-black text-ink">
-              {t('practice.challenge.oralTitle', 'Lis la phrase à voix haute 🎙️')}
+              {t('practice.challenge.oralTitle')}
             </h2>
             <p className="text-xs text-ink-2">
               {t('practice.challenge.oralSubtitle', 'Prononce ces phrases pour évaluer ton anglais parlé et valider ton défi.')}

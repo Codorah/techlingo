@@ -45,8 +45,8 @@ export function HomeScreen() {
       studiedToday,
       today,
       title: isWheelDue
-        ? t('settings.notifications.wheelTitle', '🎡 Tourne la roue du jour !')
-        : t('settings.notifications.studyTitle', "🎯 C'est l'heure de ton anglais pro !"),
+        ? t('settings.notifications.wheelTitle')
+        : t('settings.notifications.studyTitle'),
       body: isWheelDue
         ? t('settings.notifications.wheelBody', 'Ton mot du jour t’attend. 2 minutes chrono pour enrichir ton vocabulaire !')
         : t('settings.notifications.studyBody', 'Quelques minutes pour valider ta leçon du jour et garder ta série active.'),
