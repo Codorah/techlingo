@@ -126,7 +126,8 @@ export const Manifest = z.object({
   totalTerms: z.number().int(),
   domains: z.array(Domain.extend({ termCount: z.number().int() })),
   roles: z.array(Role.extend({ termCount: z.number().int(), categories: z.array(Slug) })),
-  categories: z.array(Category)
+  categories: z.array(Category),
+  paths: z.array(Slug).default([]) // domains that have a hand-written path in /content/paths/
 });
 export type Manifest = z.infer<typeof Manifest>;
 
@@ -163,3 +164,37 @@ export const CareerFile = z.object({ questions: z.array(InterviewQuestion), verb
 
 export const CareerPack = z.object({ contentVersion: z.string(), questions: z.array(InterviewQuestion), verbs: z.array(ActionVerb) });
 export type CareerPack = z.infer<typeof CareerPack>;
+
+// Hand-written learning paths (content/paths/<domain>.json): units built around real work
+// situations. Each lesson teaches a few dictionary words in context and ends with a
+// "Real World Challenge": something the learner would actually write or say at work.
+const PathLine = z.object({ speaker: text, text_en: text, text_fr: text });
+const PathQuestion = z.object({ prompt_fr: text, choices: z.array(text).min(2).max(4), answer_index: z.number().int().min(0), explanation_fr: text })
+  .refine((q) => q.answer_index < q.choices.length, { message: 'answer_index out of range' });
+export const PathLesson = z.object({
+  id: Slug,
+  title_fr: text,
+  term_ids: z.array(Slug).min(3).max(6),
+  dialogue: z.array(PathLine).min(2).max(8),
+  questions: z.array(PathQuestion).min(3).max(6),
+  production: z.object({
+    channel: z.enum(['slack', 'email', 'pull_request', 'standup', 'meeting', 'brief', 'report', 'social_post']),
+    prompt_fr: text,
+    context_en: text.optional(),
+    model_answer_en: text,
+    model_answer_fr: text,
+    key_phrases: z.array(text).min(2).max(6)
+  })
+});
+export type PathLesson = z.infer<typeof PathLesson>;
+export const PathUnitDef = z.object({
+  id: Slug,
+  title_fr: text,
+  title_en: text,
+  situation_fr: text,
+  guide: z.object({ intro_fr: text, key_phrases: z.array(z.object({ en: text, fr: text })).min(3).max(8), tip_fr: text }),
+  lessons: z.array(PathLesson).min(3).max(4)
+});
+export type PathUnitDef = z.infer<typeof PathUnitDef>;
+export const PathFile = z.object({ domain: Slug, status: Status, title_fr: text, units: z.array(PathUnitDef).min(1).max(6) });
+export type PathFile = z.infer<typeof PathFile>;

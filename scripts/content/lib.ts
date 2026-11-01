@@ -3,7 +3,8 @@ import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
-import { type ActionVerb, CareerFile, Category, Domain, type InterviewQuestion, Role, RoleFile, type Term } from '../../src/content/schema';
+import { type ActionVerb, CareerFile, Category, Domain, type InterviewQuestion, PathFile, Role, RoleFile, type Term } from '../../src/content/schema';
+import { existsSync } from 'node:fs';
 
 export const CONTENT_DIR = join(process.cwd(), 'content');
 
@@ -14,6 +15,7 @@ export interface LoadedContent {
   terms: Term[];
   questions: InterviewQuestion[];
   verbs: ActionVerb[];
+  paths: PathFile[];
   errors: string[];
   warnings: string[];
   contentVersion: string;
@@ -82,6 +84,22 @@ export function loadContent(): LoadedContent {
   const seenV = new Set<string>();
   for (const v of verbs) { if (seenV.has(v.id)) errors.push(`duplicate verb id "${v.id}"`); seenV.add(v.id); }
 
+  // Hand-written paths: one file per domain
+  const paths: PathFile[] = [];
+  const pathsDir = join(CONTENT_DIR, 'paths');
+  if (existsSync(pathsDir)) {
+    for (const file of readdirSync(pathsDir).filter((f) => f.endsWith('.json')).sort()) {
+      const raw = readFileSync(join(pathsDir, file), 'utf8');
+      hash.update(raw);
+      let json: unknown;
+      try { json = JSON.parse(raw); } catch (e) { errors.push(`paths/${file}: invalid JSON (${(e as Error).message})`); continue; }
+      const parsed = PathFile.safeParse(json);
+      if (!parsed.success) { errors.push(...formatIssues(`paths/${file}`, parsed.error)); continue; }
+      if (`${parsed.data.domain}.json` !== file) errors.push(`paths/${file}: "domain" must match the file name`);
+      paths.push(parsed.data);
+    }
+  }
+
   // Cross references
   const roleIds = new Set(roles.map((r) => r.id));
   const domainIds = new Set(domains.map((d) => d.id));
@@ -109,7 +127,21 @@ export function loadContent(): LoadedContent {
     q.vocabulary_term_ids.forEach((v) => { if (!termIds.has(v)) warnings.push(`question ${q.id}: vocabulary term "${v}" does not exist yet`); });
   }
 
-  return { domains, roles, categories, terms, questions, verbs, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
+  for (const p of paths) {
+    if (!domains.some((d) => d.id === p.domain)) errors.push(`paths/${p.domain}.json: unknown domain`);
+    const ids = new Set<string>();
+    for (const u of p.units) {
+      if (ids.has(u.id)) errors.push(`paths/${p.domain}.json: duplicate id "${u.id}"`);
+      ids.add(u.id);
+      for (const l of u.lessons) {
+        if (ids.has(l.id)) errors.push(`paths/${p.domain}.json: duplicate id "${l.id}"`);
+        ids.add(l.id);
+        l.term_ids.forEach((tid) => { if (!termIds.has(tid)) errors.push(`paths/${p.domain}.json › ${l.id}: unknown term "${tid}"`); });
+      }
+    }
+  }
+
+  return { domains, roles, categories, terms, questions, verbs, paths, errors, warnings, contentVersion: hash.digest('hex').slice(0, 12) };
 }
 
 export function coverage(content: LoadedContent) {

@@ -1,47 +1,51 @@
 import { describe, expect, it } from 'vitest';
-import { buildPath, nodeStates, PATH } from '@/learning/path';
+import { buildThemes, nextTheme, nodeStates, PATH, themeProgress } from '@/learning/path';
 import { loadContent } from '../scripts/content/lib';
 
 const content = loadContent();
+const roles = ['mobile-developer', 'web-developer'];
+const terms = content.terms.filter((t) => t.roles.some((r) => roles.includes(r.role)));
 
 describe('learning path', () => {
-  const units = buildPath(content.terms, 'mobile-developer', ['q1', 'q2']);
+  const themes = buildThemes(terms, roles);
 
-  it('builds themed units, easiest first, ending with the interview', () => {
-    expect(units.length).toBeGreaterThanOrEqual(3);
-    expect(units.length).toBeLessThanOrEqual(PATH.maxUnits + 1);
-    expect(units.at(-1)!.nodes[0]!.kind).toBe('interview');
-    const themed = units.slice(0, -1);
-    expect(new Set(themed.map((u) => u.id)).size).toBe(themed.length);
-    for (const u of themed) {
-      expect(u.nodes[0]!.kind).toBe('course');
-      expect(u.nodes.at(-1)!.kind).toBe('challenge');
-      for (const n of u.nodes.filter((x) => x.kind === 'lesson')) expect(n.termIds.length).toBeGreaterThanOrEqual(3);
+  it('builds themes of 1 to 5 units, each opening with a reminder and closing with a test', () => {
+    expect(themes.length).toBeGreaterThanOrEqual(5);
+    for (const theme of themes) {
+      expect(theme.units.length).toBeGreaterThanOrEqual(1);
+      expect(theme.units.length).toBeLessThanOrEqual(PATH.maxUnits);
+      theme.units.forEach((u, i) => {
+        expect(u.nodes[0]!.kind).toBe(i === 0 ? 'course' : 'recap');
+        expect(u.nodes.at(-1)!.kind).toBe('challenge');
+        for (const n of u.nodes.filter((x) => x.kind === 'lesson')) {
+          expect(n.termIds.length).toBeGreaterThanOrEqual(3);
+          expect(n.termIds.length).toBeLessThanOrEqual(PATH.wordsPerLesson + 2);
+        }
+      });
     }
   });
 
-  it('never puts the same word in two units and only uses the role\'s words', () => {
-    const ids = units.flatMap((u) => u.termIds);
-    expect(new Set(ids).size).toBe(ids.length);
-    const byId = new Map(content.terms.map((t) => [t.id, t]));
-    for (const id of ids) expect(byId.get(id)!.roles.some((r) => r.role === 'mobile-developer')).toBe(true);
+  it('puts every word of a theme in exactly one unit', () => {
+    for (const theme of themes) {
+      const ids = theme.units.flatMap((u) => u.termIds);
+      expect(new Set(ids).size).toBe(ids.length);
+      expect(ids.sort()).toEqual([...theme.termIds].sort());
+    }
   });
 
   it('is deterministic so stored progress keeps matching', () => {
-    expect(buildPath(content.terms, 'mobile-developer', ['q1', 'q2'])).toEqual(units);
+    expect(buildThemes(terms, roles)).toEqual(themes);
   });
 
-  it('unlocks nodes one at a time', () => {
-    const nodes = units.flatMap((u) => u.nodes);
-    const states = nodeStates(units, { [nodes[0]!.id]: { at: '2026-11-01' } });
+  it('unlocks nodes one at a time and tracks progress', () => {
+    const theme = themes[0]!;
+    const nodes = theme.units.flatMap((u) => u.nodes);
+    const progress = { [nodes[0]!.id]: { at: '2026-11-01' } };
+    const states = nodeStates(theme, progress);
     expect(states.get(nodes[0]!.id)).toBe('done');
     expect(states.get(nodes[1]!.id)).toBe('current');
     expect(states.get(nodes[2]!.id)).toBe('locked');
-  });
-
-  it('gives every role with content a path', () => {
-    for (const role of content.roles.filter((r) => content.terms.some((t) => t.roles.some((x) => x.role === r.id)))) {
-      expect(buildPath(content.terms, role.id).length, role.id).toBeGreaterThanOrEqual(3);
-    }
+    expect(themeProgress(theme, progress).done).toBe(1);
+    expect(nextTheme(themes, progress)).toBe(theme);
   });
 });

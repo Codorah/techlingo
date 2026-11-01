@@ -1,89 +1,99 @@
-// The learning path: a Duolingo-style sequence of units built from the role's words.
-// One unit per theme (category), easiest first; each unit = mini-course, lessons of a few
-// words and a challenge. The last unit is a mock interview. Deterministic for a given
-// content version, so progress stored by node id stays valid.
+// The learning path. Home lists the user's themes (categories of their roles' words);
+// opening a theme shows a Duolingo-style map of units. Each unit = a reminder (the
+// theme's mini-course for the first unit, a quick review of the previous unit after),
+// lessons of a few words, then a test. Deterministic for a given content version, so
+// progress stored by node id stays valid.
 import { LEVELS, type Level } from '@/content/levels';
 import type { Term } from '@/content/schema';
 
-export type NodeKind = 'course' | 'lesson' | 'challenge' | 'interview';
-export interface PathNode { id: string; kind: NodeKind; unitId: string; index: number; termIds: string[]; questionIds: string[] }
-export interface PathUnit { id: string; index: number; category: string | null; level: Level; termIds: string[]; nodes: PathNode[] }
+export type NodeKind = 'course' | 'recap' | 'lesson' | 'challenge';
+export interface PathNode { id: string; kind: NodeKind; unitIndex: number; index: number; termIds: string[] }
+export interface PathUnit { id: string; index: number; level: Level; termIds: string[]; nodes: PathNode[] }
+export interface PathTheme { category: string; level: Level; termIds: string[]; units: PathUnit[] }
 export type PathProgress = Record<string, { at: string; score?: number }>;
 
-export const PATH = { maxUnits: 6, wordsPerLesson: 5, lessonsPerUnit: 3, interviewQuestions: 5, challengePass: 0.7 } as const;
+export const PATH = { minWords: 6, wordsPerUnit: 10, maxUnits: 5, wordsPerLesson: 5, challengePass: 0.7 } as const;
 
 const levelIndex = (l: Level) => LEVELS.indexOf(l);
+const meanLevel = (ts: Term[]) => ts.reduce((s, t) => s + levelIndex(t.level), 0) / ts.length;
 
-export function buildPath(terms: Term[], role: string, questionIds: string[] = []): PathUnit[] {
-  const priority = (t: Term) => t.roles.find((r) => r.role === role)?.priority ?? 0;
+/** Splits ids into chunks of at most `size`, keeping every chunk at least 3 long. */
+function chunk(ids: string[], size: number): string[][] {
+  const out: string[][] = [];
+  for (let i = 0; i < ids.length; i += size) out.push(ids.slice(i, i + size));
+  if (out.length > 1 && out.at(-1)!.length < 3) out[out.length - 2]!.push(...out.pop()!);
+  return out;
+}
+
+/** Spreads n items over k groups as evenly as possible, in order. */
+function spread<T>(items: T[], k: number): T[][] {
+  const out: T[][] = [];
+  let start = 0;
+  for (let g = 0; g < k; g++) {
+    const end = start + Math.round((items.length - start) / (k - g));
+    out.push(items.slice(start, end));
+    start = end;
+  }
+  return out;
+}
+
+/** `roles` weights words of the primary role over secondary ones when ordering themes. */
+export function buildThemes(terms: Term[], roles: string[]): PathTheme[] {
+  const weightOf = (t: Term) => Math.max(0, ...t.roles.filter((r) => roles.includes(r.role)).map((r) => r.priority * (r.role === roles[0] ? 1 : 0.6)));
   const groups = new Map<string, Term[]>();
   for (const t of terms) {
-    if (t.status === 'deprecated' || !priority(t) || !t.categories[0]) continue;
-    const g = groups.get(t.categories[0]) ?? [];
-    g.push(t);
-    groups.set(t.categories[0], g);
+    const category = t.categories[0];
+    if (t.status === 'deprecated' || !category || !weightOf(t)) continue;
+    groups.set(category, [...(groups.get(category) ?? []), t]);
   }
 
-  const meanLevel = (ts: Term[]) => ts.reduce((s, t) => s + levelIndex(t.level), 0) / ts.length;
-  const byLevel = (a: Term, b: Term) => levelIndex(a.level) - levelIndex(b.level) || priority(b) - priority(a) || a.id.localeCompare(b.id);
-  const perUnit = PATH.wordsPerLesson * PATH.lessonsPerUnit;
-
-  // A big theme (e.g. "security" for a security analyst) is split by level into several units.
-  const blocks: { key: string; category: string; ts: Term[]; weight: number }[] = [];
-  for (const [category, ts] of groups) {
-    if (ts.length < PATH.wordsPerLesson) continue;
-    const sorted = [...ts].sort(byLevel);
-    const parts = Math.max(1, Math.floor(sorted.length / perUnit));
-    for (let k = 0; k < parts; k++) {
-      const chunk = sorted.slice(k * perUnit, k === parts - 1 ? Math.min(sorted.length, (k + 1) * perUnit) : (k + 1) * perUnit);
-      blocks.push({ key: parts > 1 ? `${category}-${k + 1}` : category, category, ts: chunk, weight: chunk.reduce((s, t) => s + priority(t), 0) });
-    }
-  }
-  const chosen = blocks
-    .sort((a, b) => b.weight - a.weight || a.key.localeCompare(b.key))
-    .slice(0, PATH.maxUnits)
-    .sort((a, b) => meanLevel(a.ts) - meanLevel(b.ts) || b.weight - a.weight);
-
-  const units: PathUnit[] = chosen.map(({ key, category, ts }, u) => {
-    const words = [...ts].sort(byLevel).slice(0, perUnit);
-    const lessons: string[][] = [];
-    for (let i = 0; i < words.length; i += PATH.wordsPerLesson) lessons.push(words.slice(i, i + PATH.wordsPerLesson).map((t) => t.id));
-    // A short last lesson joins the previous one rather than standing alone.
-    if (lessons.length > 1 && lessons.at(-1)!.length < 3) lessons[lessons.length - 2]!.push(...lessons.pop()!);
-    const id = `${role}:${key}`;
-    const termIds = lessons.flat();
-    const kinds: { kind: NodeKind; termIds: string[] }[] = [
-      { kind: 'course', termIds },
-      ...lessons.map((ids) => ({ kind: 'lesson' as const, termIds: ids })),
-      { kind: 'challenge', termIds }
-    ];
-    return {
-      id, index: u, category, termIds,
-      level: LEVELS[Math.round(meanLevel(words))] ?? 'B1',
-      nodes: kinds.map((k, i) => ({ id: `${id}:${k.kind}-${i}`, unitId: id, index: i, questionIds: [], ...k }))
-    };
-  });
-
-  if (questionIds.length) {
-    const id = `${role}:interview`;
-    units.push({
-      id, index: units.length, category: null, level: units.at(-1)?.level ?? 'B1', termIds: [],
-      nodes: [{ id: `${id}:interview-0`, unitId: id, index: 0, kind: 'interview', termIds: [], questionIds: questionIds.slice(0, PATH.interviewQuestions) }]
+  return [...groups.entries()]
+    .filter(([, ts]) => ts.length >= PATH.minWords)
+    .map(([category, ts]) => ({ category, ts, weight: ts.reduce((s, t) => s + weightOf(t), 0) / Math.sqrt(ts.length) }))
+    .sort((a, b) => meanLevel(a.ts) - meanLevel(b.ts) || b.weight - a.weight || a.category.localeCompare(b.category))
+    .map(({ category, ts }) => {
+      const words = [...ts].sort((a, b) => levelIndex(a.level) - levelIndex(b.level) || weightOf(b) - weightOf(a) || a.id.localeCompare(b.id));
+      const unitCount = Math.min(PATH.maxUnits, Math.max(1, Math.round(words.length / PATH.wordsPerUnit)));
+      const units = spread(words, unitCount).map((unitWords, u): PathUnit => {
+        const id = `${category}:u${u + 1}`;
+        const termIds = unitWords.map((t) => t.id);
+        const kinds: { kind: NodeKind; termIds: string[] }[] = [
+          { kind: u === 0 ? 'course' : 'recap', termIds },
+          ...chunk(termIds, PATH.wordsPerLesson).map((ids) => ({ kind: 'lesson' as const, termIds: ids })),
+          { kind: 'challenge', termIds }
+        ];
+        return {
+          id, index: u, termIds,
+          level: LEVELS[Math.round(meanLevel(unitWords))] ?? 'B1',
+          nodes: kinds.map((k, i) => ({ id: `${id}:${k.kind}-${i}`, unitIndex: u, index: i, ...k }))
+        };
+      });
+      return { category, level: LEVELS[Math.round(meanLevel(words))] ?? 'B1', termIds: words.map((t) => t.id), units };
     });
-  }
-  return units;
 }
 
 export type NodeState = 'done' | 'current' | 'locked';
 
-/** Nodes unlock one after another across the whole path. */
-export function nodeStates(units: PathUnit[], progress: PathProgress): Map<string, NodeState> {
+/** Inside a theme, nodes unlock one after another. */
+export function nodeStates(theme: PathTheme, progress: PathProgress): Map<string, NodeState> {
   const states = new Map<string, NodeState>();
   let currentGiven = false;
-  for (const node of units.flatMap((u) => u.nodes)) {
+  for (const node of theme.units.flatMap((u) => u.nodes)) {
     if (progress[node.id]) states.set(node.id, 'done');
     else if (!currentGiven) { states.set(node.id, 'current'); currentGiven = true; }
     else states.set(node.id, 'locked');
   }
   return states;
+}
+
+export function themeProgress(theme: PathTheme, progress: PathProgress) {
+  const nodes = theme.units.flatMap((u) => u.nodes);
+  const done = nodes.filter((n) => progress[n.id]).length;
+  return { done, total: nodes.length, ratio: nodes.length ? done / nodes.length : 0 };
+}
+
+/** The theme to suggest on Home: the one in progress, else the first not finished. */
+export function nextTheme(themes: PathTheme[], progress: PathProgress): PathTheme | undefined {
+  const started = themes.find((t) => { const p = themeProgress(t, progress); return p.done > 0 && p.done < p.total; });
+  return started ?? themes.find((t) => themeProgress(t, progress).done < themeProgress(t, progress).total);
 }

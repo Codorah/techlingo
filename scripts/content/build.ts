@@ -29,7 +29,8 @@ const manifest: Manifest = {
   totalTerms: content.terms.filter(shippable).length,
   categories: content.categories,
   domains: [],
-  roles: []
+  roles: [],
+  paths: []
 };
 
 for (const role of content.roles) {
@@ -50,6 +51,11 @@ for (const domain of content.domains) {
 
 const careerShippable = content.questions.filter((q) => includeDrafts || q.status === 'validated');
 writeFileSync(join(out, 'career.json'), JSON.stringify({ contentVersion: content.contentVersion, questions: careerShippable, verbs: content.verbs }));
+
+mkdirSync(join(out, 'paths'), { recursive: true });
+const pathsShipped = content.paths.filter((p) => includeDrafts || p.status === 'validated');
+for (const p of pathsShipped) writeFileSync(join(out, 'paths', `${p.domain}.json`), JSON.stringify({ contentVersion: content.contentVersion, ...p }));
+manifest.paths = pathsShipped.map((p) => p.domain);
 
 writeFileSync(join(out, 'manifest.json'), JSON.stringify(manifest, null, 2));
 console.log(`✓ content ${content.contentVersion} built${includeDrafts ? ' (with drafts)' : ''}: ${manifest.totalTerms} terms in ${manifest.roles.length} packs, ${careerShippable.length} interview questions`);
