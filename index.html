@@ -17,7 +17,8 @@
   <script>
     try {
       var s = localStorage.getItem('techlingo.theme');
-      var dark = s ? s === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      // Light by default on every phone, even when the system is in dark mode; dark only if chosen in the profile.
+      var dark = s === 'dark';
       document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     } catch (e) {}
   </script>
