@@ -1800,6 +1800,1739 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "actual-result",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "actual result",
+      "translation_fr": "résultat obtenu",
+      "part_of_speech": "noun",
+      "definition_en": "What really happened when a test was run, compared with the expected result.",
+      "explanation_fr": "Ce qui s’est réellement passé lors du test, comparé au résultat attendu.",
+      "why_it_matters_fr": "Tout rapport de bug oppose « expected result » et « actual result ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "actual-result-1",
+          "text_en": "Actual result: the page shows a blank screen.",
+          "text_fr": "Résultat obtenu : la page affiche un écran blanc."
+        },
+        {
+          "id": "actual-result-2",
+          "text_en": "The actual result doesn’t match the spec.",
+          "text_fr": "Le résultat obtenu ne correspond pas à la spécification."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-scenario",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test scenario",
+      "translation_fr": "scénario de test",
+      "part_of_speech": "noun",
+      "definition_en": "A high-level description of a feature or user situation to test, which can be broken down into several test cases.",
+      "explanation_fr": "Description générale d’une fonctionnalité ou situation utilisateur à tester, qui se décline en plusieurs cas de test.",
+      "why_it_matters_fr": "Plus large qu’un cas de test : « l’utilisateur réinitialise son mot de passe ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-scenario-1",
+          "text_en": "I wrote ten test scenarios for the checkout.",
+          "text_fr": "J’ai écrit dix scénarios de test pour le paiement."
+        },
+        {
+          "id": "test-scenario-2",
+          "text_en": "This scenario covers a user with an expired card.",
+          "text_fr": "Ce scénario couvre un utilisateur avec une carte expirée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-execution",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test execution",
+      "translation_fr": "exécution des tests",
+      "part_of_speech": "noun",
+      "definition_en": "The phase in which test cases are run and their results recorded.",
+      "explanation_fr": "Phase pendant laquelle les cas de test sont exécutés et leurs résultats consignés.",
+      "why_it_matters_fr": "Indicateur de suivi : combien de tests exécutés, réussis, échoués, bloqués.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-execution-1",
+          "text_en": "Test execution is 80% complete.",
+          "text_fr": "L’exécution des tests est terminée à 80 %."
+        },
+        {
+          "id": "test-execution-2",
+          "text_en": "Three tests are blocked during execution by a login bug.",
+          "text_fr": "Trois tests sont bloqués pendant l’exécution par un bug de connexion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-pass",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "pass",
+      "translation_fr": "réussir (passer)",
+      "part_of_speech": "verb",
+      "definition_en": "Of a test: to give the expected result. The opposite is fail.",
+      "explanation_fr": "Pour un test : donner le résultat attendu. Le contraire est « fail ».",
+      "why_it_matters_fr": "Verbe central en CI : « all tests pass », « the build fails ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-pass-1",
+          "text_en": "All tests pass on my branch.",
+          "text_fr": "Tous les tests passent sur ma branche."
+        },
+        {
+          "id": "test-pass-2",
+          "text_en": "Two tests fail only on Safari.",
+          "text_fr": "Deux tests échouent uniquement sur Safari."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sanity-testing",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "sanity testing",
+      "translation_fr": "test de cohérence (sanity test)",
+      "part_of_speech": "noun",
+      "definition_en": "A quick, narrow check that a specific fix or feature works, before deeper testing.",
+      "explanation_fr": "Vérification rapide et ciblée qu’une correction ou fonctionnalité précise fonctionne, avant des tests plus poussés.",
+      "why_it_matters_fr": "Souvent confondu avec le smoke test, qui vérifie plutôt l’ensemble de l’application.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sanity-testing-1",
+          "text_en": "Do a quick sanity test on the fix before merging.",
+          "text_fr": "Fais un test de cohérence rapide sur le correctif avant de merger."
+        },
+        {
+          "id": "sanity-testing-2",
+          "text_en": "The sanity check passed, we can start full regression.",
+          "text_fr": "Le sanity check est passé, nous pouvons lancer la régression complète."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Les frontières entre smoke et sanity testing varient selon les équipes."
+    },
+    {
+      "id": "boundary-value-analysis",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "boundary value analysis",
+      "translation_fr": "analyse des valeurs limites",
+      "part_of_speech": "noun",
+      "definition_en": "A test design technique that checks values at and just beyond the edges of valid ranges, where bugs are most likely.",
+      "explanation_fr": "Technique de conception de tests qui vérifie les valeurs aux limites des plages valides et juste au-delà, là où les bugs sont fréquents.",
+      "why_it_matters_fr": "Technique de base de la certification ISTQB.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "boundary-value-analysis-1",
+          "text_en": "For ages 18 to 65, test 17, 18, 65 and 66.",
+          "text_fr": "Pour un âge de 18 à 65 ans, teste 17, 18, 65 et 66."
+        },
+        {
+          "id": "boundary-value-analysis-2",
+          "text_en": "Boundary value analysis found the off-by-one error.",
+          "text_fr": "L’analyse des valeurs limites a trouvé l’erreur de décalage d’un."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "equivalence-partitioning",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "equivalence partitioning",
+      "translation_fr": "partitionnement en classes d’équivalence",
+      "part_of_speech": "noun",
+      "definition_en": "A technique that divides inputs into groups expected to behave the same way, so one value per group is tested.",
+      "explanation_fr": "Technique qui divise les entrées en groupes censés se comporter pareil, pour ne tester qu’une valeur par groupe.",
+      "why_it_matters_fr": "Réduit le nombre de tests sans perdre en couverture.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "equivalence-partitioning-1",
+          "text_en": "With equivalence partitioning we only need four test values.",
+          "text_fr": "Avec le partitionnement en classes d’équivalence, quatre valeurs de test suffisent."
+        },
+        {
+          "id": "equivalence-partitioning-2",
+          "text_en": "Negative numbers form one equivalence class.",
+          "text_fr": "Les nombres négatifs forment une classe d’équivalence."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "black-box-testing",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "black-box testing",
+      "translation_fr": "test en boîte noire",
+      "part_of_speech": "noun",
+      "definition_en": "Testing a system through its inputs and outputs without looking at its internal code.",
+      "explanation_fr": "Test d’un système par ses entrées et sorties, sans regarder son code interne.",
+      "why_it_matters_fr": "S’oppose au test en boîte blanche, qui s’appuie sur le code.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "black-box-testing-1",
+          "text_en": "Our QA team does mostly black-box testing.",
+          "text_fr": "Notre équipe QA fait surtout des tests en boîte noire."
+        },
+        {
+          "id": "black-box-testing-2",
+          "text_en": "Black-box testing checks behavior from the user’s view.",
+          "text_fr": "Le test en boîte noire vérifie le comportement du point de vue utilisateur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "white-box-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "white-box testing",
+      "translation_fr": "test en boîte blanche",
+      "part_of_speech": "noun",
+      "definition_en": "Testing based on knowledge of the internal code, for example to cover every branch of a function.",
+      "explanation_fr": "Test fondé sur la connaissance du code interne, par exemple pour couvrir chaque branche d’une fonction.",
+      "why_it_matters_fr": "Pratiqué surtout par les développeurs avec les tests unitaires.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "white-box-testing-1",
+          "text_en": "White-box testing showed this branch is never reached.",
+          "text_fr": "Le test en boîte blanche a montré que cette branche n’est jamais atteinte."
+        },
+        {
+          "id": "white-box-testing-2",
+          "text_en": "Unit tests are a form of white-box testing.",
+          "text_fr": "Les tests unitaires sont une forme de test en boîte blanche."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "negative-testing",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "negative testing",
+      "translation_fr": "test négatif",
+      "part_of_speech": "noun",
+      "definition_en": "Testing how a system handles invalid inputs or unexpected actions, to make sure it fails gracefully.",
+      "explanation_fr": "Test de la façon dont un système gère des entrées invalides ou des actions inattendues, pour vérifier qu’il échoue proprement.",
+      "why_it_matters_fr": "Les utilisateurs réels font rarement ce qui est prévu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "negative-testing-1",
+          "text_en": "Negative testing: what happens if the email field is empty?",
+          "text_fr": "Test négatif : que se passe-t-il si le champ e-mail est vide ?"
+        },
+        {
+          "id": "negative-testing-2",
+          "text_en": "Add negative tests for expired tokens.",
+          "text_fr": "Ajoute des tests négatifs pour les jetons expirés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "happy-path",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "happy path",
+      "translation_fr": "scénario nominal (happy path)",
+      "part_of_speech": "noun",
+      "definition_en": "The default scenario where everything goes as expected, with valid inputs and no errors.",
+      "explanation_fr": "Scénario par défaut où tout se passe comme prévu, avec des entrées valides et sans erreur.",
+      "why_it_matters_fr": "Ne tester que le happy path est un reproche fréquent en revue de code.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "happy-path-1",
+          "text_en": "The happy path works, but errors aren’t handled.",
+          "text_fr": "Le scénario nominal fonctionne, mais les erreurs ne sont pas gérées."
+        },
+        {
+          "id": "happy-path-2",
+          "text_en": "Let’s demo the happy path first.",
+          "text_fr": "Montrons d’abord le happy path."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-fixture",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test fixture",
+      "translation_fr": "jeu de test préparé (fixture)",
+      "part_of_speech": "noun",
+      "definition_en": "A fixed set of data or setup prepared before tests run, so they start from a known state.",
+      "explanation_fr": "Ensemble fixe de données ou de configuration préparé avant les tests, pour qu’ils partent d’un état connu.",
+      "why_it_matters_fr": "Rend les tests reproductibles.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-fixture-1",
+          "text_en": "The fixture creates a user and two orders.",
+          "text_fr": "La fixture crée un utilisateur et deux commandes."
+        },
+        {
+          "id": "test-fixture-2",
+          "text_en": "Update the JSON fixtures after the schema change.",
+          "text_fr": "Mets à jour les fixtures JSON après le changement de schéma."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "stub",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "stub",
+      "translation_fr": "bouchon (stub)",
+      "part_of_speech": "noun",
+      "definition_en": "A simple replacement for a real component that returns fixed answers during a test.",
+      "explanation_fr": "Remplacement simple d’un composant réel qui renvoie des réponses fixes pendant un test.",
+      "why_it_matters_fr": "Proche du mock, mais sans vérification des appels.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "stub-1",
+          "text_en": "We use a stub for the payment API in tests.",
+          "text_fr": "Nous utilisons un bouchon pour l’API de paiement dans les tests."
+        },
+        {
+          "id": "stub-2",
+          "text_en": "The stub always returns a successful response.",
+          "text_fr": "Le stub renvoie toujours une réponse réussie."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-double",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test double",
+      "translation_fr": "doublure de test",
+      "part_of_speech": "noun",
+      "definition_en": "A general term for any fake object used in place of a real one in tests, such as a mock, stub, spy or fake.",
+      "explanation_fr": "Terme général pour tout objet factice qui remplace un vrai dans les tests : mock, stub, spy ou fake.",
+      "why_it_matters_fr": "Terme parapluie utile pour éviter de confondre mock et stub.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-double-1",
+          "text_en": "Use a test double instead of calling the real email service.",
+          "text_fr": "Utilise une doublure de test au lieu d’appeler le vrai service d’e-mail."
+        },
+        {
+          "id": "test-double-2",
+          "text_en": "Mocks and stubs are both test doubles.",
+          "text_fr": "Les mocks et les stubs sont tous deux des doublures de test."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "snapshot-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing",
+        "frontend"
+      ],
+      "term_en": "snapshot testing",
+      "translation_fr": "test par instantané (snapshot)",
+      "part_of_speech": "noun",
+      "definition_en": "Testing by saving the output of a component once, then failing if a later output differs from the saved snapshot.",
+      "explanation_fr": "Test qui enregistre une fois le rendu d’un composant puis échoue si un rendu ultérieur diffère de l’instantané.",
+      "why_it_matters_fr": "Pratique avec Jest ou Vitest, mais les snapshots mis à jour sans relecture perdent leur intérêt.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "snapshot-testing-1",
+          "text_en": "The snapshot test failed because the button text changed.",
+          "text_fr": "Le test snapshot a échoué car le texte du bouton a changé."
+        },
+        {
+          "id": "snapshot-testing-2",
+          "text_en": "Don’t update snapshots without checking the diff.",
+          "text_fr": "Ne mets pas à jour les snapshots sans vérifier le diff."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "contract-testing",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "api"
+      ],
+      "term_en": "contract testing",
+      "translation_fr": "test de contrat",
+      "part_of_speech": "noun",
+      "definition_en": "Checking that a service provider and its consumers agree on the format of their API requests and responses.",
+      "explanation_fr": "Vérification qu’un fournisseur de service et ses consommateurs sont d’accord sur le format des requêtes et réponses d’API.",
+      "why_it_matters_fr": "Évite de casser une autre équipe sans s’en rendre compte, par exemple avec Pact.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "contract-testing-1",
+          "text_en": "Contract testing caught the renamed field before release.",
+          "text_fr": "Le test de contrat a repéré le champ renommé avant la sortie."
+        },
+        {
+          "id": "contract-testing-2",
+          "text_en": "We use Pact for contract testing between services.",
+          "text_fr": "Nous utilisons Pact pour les tests de contrat entre services."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mutation-testing",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "code-quality"
+      ],
+      "term_en": "mutation testing",
+      "translation_fr": "test de mutation",
+      "part_of_speech": "noun",
+      "definition_en": "Measuring test quality by introducing small changes into the code and checking whether the tests detect them.",
+      "explanation_fr": "Mesure de la qualité des tests en introduisant de petites modifications dans le code et en vérifiant que les tests les détectent.",
+      "why_it_matters_fr": "Montre qu’une forte couverture ne garantit pas de bons tests.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mutation-testing-1",
+          "text_en": "Mutation testing showed our tests miss many changes.",
+          "text_fr": "Le test de mutation a montré que nos tests ratent beaucoup de modifications."
+        },
+        {
+          "id": "mutation-testing-2",
+          "text_en": "Our mutation score is 70%.",
+          "text_fr": "Notre score de mutation est de 70 %."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-report",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test report",
+      "translation_fr": "rapport de test",
+      "part_of_speech": "noun",
+      "definition_en": "A document summarizing what was tested, the results, open defects and a recommendation.",
+      "explanation_fr": "Document qui résume ce qui a été testé, les résultats, les défauts ouverts et une recommandation.",
+      "why_it_matters_fr": "Base de la décision go/no-go.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-report-1",
+          "text_en": "The test report recommends releasing with two known issues.",
+          "text_fr": "Le rapport de test recommande de livrer avec deux problèmes connus."
+        },
+        {
+          "id": "test-report-2",
+          "text_en": "I’ll share the test report before the release meeting.",
+          "text_fr": "Je partagerai le rapport de test avant la réunion de mise en production."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "defect",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "defect",
+      "translation_fr": "défaut (anomalie)",
+      "part_of_speech": "noun",
+      "definition_en": "A flaw in software that makes it behave differently from requirements; a more formal word for bug.",
+      "explanation_fr": "Erreur dans un logiciel qui le fait fonctionner différemment des exigences ; mot plus formel pour « bug ».",
+      "why_it_matters_fr": "Employé dans les rapports et les processus qualité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "defect-1",
+          "text_en": "We found twelve defects in this release.",
+          "text_fr": "Nous avons trouvé douze défauts dans cette version."
+        },
+        {
+          "id": "defect-2",
+          "text_en": "Log the defect in Jira with a screenshot.",
+          "text_fr": "Enregistre l’anomalie dans Jira avec une capture d’écran."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bug-triage",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 65
+        },
+        {
+          "role": "project-management",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "agile"
+      ],
+      "term_en": "bug triage",
+      "translation_fr": "tri des bugs",
+      "part_of_speech": "noun",
+      "definition_en": "A regular review where new bugs are checked, prioritized and assigned.",
+      "explanation_fr": "Revue régulière où les nouveaux bugs sont vérifiés, priorisés et attribués.",
+      "why_it_matters_fr": "Évite un backlog de bugs que personne ne regarde.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bug-triage-1",
+          "text_en": "We hold bug triage every Monday.",
+          "text_fr": "Nous faisons le tri des bugs chaque lundi."
+        },
+        {
+          "id": "bug-triage-2",
+          "text_en": "This bug was marked low priority in triage.",
+          "text_fr": "Ce bug a été classé faible priorité lors du tri."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bug-lifecycle",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "bug lifecycle",
+      "translation_fr": "cycle de vie d’un bug",
+      "part_of_speech": "noun",
+      "definition_en": "The sequence of statuses a bug goes through, such as new, assigned, fixed, verified and closed.",
+      "explanation_fr": "Suite de statuts par lesquels passe un bug : nouveau, assigné, corrigé, vérifié, fermé.",
+      "why_it_matters_fr": "Comprendre les statuts évite des tickets bloqués.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bug-lifecycle-1",
+          "text_en": "In our bug lifecycle, only QA can close a ticket.",
+          "text_fr": "Dans notre cycle de vie des bugs, seule la QA peut fermer un ticket."
+        },
+        {
+          "id": "bug-lifecycle-2",
+          "text_en": "The bug went back to “open” in its lifecycle.",
+          "text_fr": "Le bug est revenu au statut « ouvert »."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "reopen",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "reopen",
+      "translation_fr": "rouvrir",
+      "part_of_speech": "verb",
+      "definition_en": "To set a closed ticket or bug back to open because the problem is still there.",
+      "explanation_fr": "Remettre au statut ouvert un ticket ou un bug fermé parce que le problème persiste.",
+      "why_it_matters_fr": "À accompagner d’une explication claire pour éviter les allers-retours.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "reopen-1",
+          "text_en": "I reopened the ticket: the bug still happens on Android.",
+          "text_fr": "J’ai rouvert le ticket : le bug se produit toujours sur Android."
+        },
+        {
+          "id": "reopen-2",
+          "text_en": "Please don’t reopen it without new steps to reproduce.",
+          "text_fr": "Merci de ne pas le rouvrir sans nouvelles étapes pour reproduire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "repro",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "collaboration"
+      ],
+      "term_en": "repro",
+      "translation_fr": "reproduction (cas reproductible)",
+      "part_of_speech": "noun",
+      "definition_en": "Informal short form of reproduction: a way to make a bug happen again, or a minimal example that shows it.",
+      "explanation_fr": "Forme familière de « reproduction » : moyen de refaire apparaître un bug, ou exemple minimal qui le montre.",
+      "why_it_matters_fr": "Très courant sur Slack et GitHub : « do you have a repro? ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "repro-1",
+          "text_en": "Do you have a repro for this crash?",
+          "text_fr": "As-tu un moyen de reproduire ce crash ?"
+        },
+        {
+          "id": "repro-2",
+          "text_en": "I made a minimal repro in a CodeSandbox.",
+          "text_fr": "J’ai fait une reproduction minimale dans un CodeSandbox."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "intermittent",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "intermittent",
+      "translation_fr": "intermittent",
+      "part_of_speech": "adjective",
+      "definition_en": "Happening only sometimes, not every time, which makes a bug hard to reproduce.",
+      "explanation_fr": "Qui ne se produit que de temps en temps, ce qui rend un bug difficile à reproduire.",
+      "why_it_matters_fr": "Un bug intermittent demande des logs et des conditions précises.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "intermittent-1",
+          "text_en": "It’s an intermittent issue, about one time in twenty.",
+          "text_fr": "C’est un problème intermittent, environ une fois sur vingt."
+        },
+        {
+          "id": "intermittent-2",
+          "text_en": "Intermittent failures often point to a race condition.",
+          "text_fr": "Les échecs intermittents indiquent souvent une condition de concurrence."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "works-on-my-machine",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "testing",
+        "collaboration"
+      ],
+      "term_en": "works on my machine",
+      "translation_fr": "ça marche chez moi",
+      "part_of_speech": "phrase",
+      "definition_en": "A common, often joking, reply when a bug can’t be reproduced on the developer’s own computer.",
+      "explanation_fr": "Réponse courante, souvent ironique, quand un bug ne se reproduit pas sur l’ordinateur du développeur.",
+      "why_it_matters_fr": "Expression célèbre ; les conteneurs sont souvent présentés comme sa solution.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "works-on-my-machine-1",
+          "text_en": "“Works on my machine” isn’t a fix.",
+          "text_fr": "« Ça marche chez moi » n’est pas une correction."
+        },
+        {
+          "id": "works-on-my-machine-2",
+          "text_en": "It works on my machine, so it may be a config issue.",
+          "text_fr": "Ça marche chez moi, c’est peut-être un problème de configuration."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "api-testing",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "api"
+      ],
+      "term_en": "API testing",
+      "translation_fr": "test d’API",
+      "part_of_speech": "noun",
+      "definition_en": "Testing an API directly by sending requests and checking responses, status codes and performance, without a user interface.",
+      "explanation_fr": "Test direct d’une API en envoyant des requêtes et en vérifiant réponses, codes de statut et performances, sans interface.",
+      "why_it_matters_fr": "Plus rapide et plus stable que les tests par l’interface.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "api-testing-1",
+          "text_en": "We do API testing with Postman and automated scripts.",
+          "text_fr": "Nous faisons les tests d’API avec Postman et des scripts automatisés."
+        },
+        {
+          "id": "api-testing-2",
+          "text_en": "API testing caught the wrong status code.",
+          "text_fr": "Le test d’API a repéré le mauvais code de statut."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "device-farm",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "mobile-platforms"
+      ],
+      "term_en": "device farm",
+      "translation_fr": "ferme d’appareils",
+      "part_of_speech": "noun",
+      "definition_en": "A service that gives access to many real phones and tablets, often in the cloud, to run tests on them.",
+      "explanation_fr": "Service qui donne accès à de nombreux vrais téléphones et tablettes, souvent dans le cloud, pour y exécuter des tests.",
+      "why_it_matters_fr": "Résout le problème de la fragmentation des appareils Android.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "device-farm-1",
+          "text_en": "We run the UI tests on a device farm every night.",
+          "text_fr": "Nous lançons les tests d’interface sur une ferme d’appareils chaque nuit."
+        },
+        {
+          "id": "device-farm-2",
+          "text_en": "The bug only appears on a Samsung in the device farm.",
+          "text_fr": "Le bug n’apparaît que sur un Samsung de la ferme d’appareils."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "playwright",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing",
+        "frontend"
+      ],
+      "term_en": "Playwright",
+      "translation_fr": "Playwright",
+      "part_of_speech": "noun",
+      "definition_en": "An open-source framework from Microsoft for automating end-to-end tests in Chromium, Firefox and WebKit browsers.",
+      "explanation_fr": "Framework open source de Microsoft pour automatiser des tests de bout en bout dans les navigateurs Chromium, Firefox et WebKit.",
+      "why_it_matters_fr": "Outil de test e2e très répandu en 2025, souvent préféré à Selenium.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "playwright-1",
+          "text_en": "I wrote a Playwright test for the signup flow.",
+          "text_fr": "J’ai écrit un test Playwright pour le parcours d’inscription."
+        },
+        {
+          "id": "playwright-2",
+          "text_en": "Playwright traces make failures easy to debug.",
+          "text_fr": "Les traces Playwright facilitent le débogage des échecs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cypress",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "testing",
+        "frontend"
+      ],
+      "term_en": "Cypress",
+      "translation_fr": "Cypress",
+      "part_of_speech": "noun",
+      "definition_en": "A JavaScript end-to-end testing framework that runs tests inside the browser with an interactive runner.",
+      "explanation_fr": "Framework JavaScript de tests de bout en bout qui exécute les tests dans le navigateur avec une interface interactive.",
+      "why_it_matters_fr": "Concurrent direct de Playwright, encore présent dans beaucoup de projets.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cypress-1",
+          "text_en": "Our Cypress suite takes 20 minutes.",
+          "text_fr": "Notre suite Cypress prend 20 minutes."
+        },
+        {
+          "id": "cypress-2",
+          "text_en": "The Cypress test times out waiting for the button.",
+          "text_fr": "Le test Cypress expire en attendant le bouton."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "selenium",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "Selenium",
+      "translation_fr": "Selenium",
+      "part_of_speech": "noun",
+      "definition_en": "A long-established open-source tool for automating web browsers, widely used for UI test automation.",
+      "explanation_fr": "Outil open source historique d’automatisation des navigateurs, très utilisé pour les tests d’interface.",
+      "why_it_matters_fr": "Encore très présent dans les grandes entreprises et les offres d’emploi QA.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "selenium-1",
+          "text_en": "The legacy tests are written with Selenium in Java.",
+          "text_fr": "Les anciens tests sont écrits avec Selenium en Java."
+        },
+        {
+          "id": "selenium-2",
+          "text_en": "We are migrating from Selenium to Playwright.",
+          "text_fr": "Nous migrons de Selenium vers Playwright."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "page-object-model",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "testing",
+        "code-quality"
+      ],
+      "term_en": "page object model",
+      "translation_fr": "modèle Page Object",
+      "part_of_speech": "noun",
+      "definition_en": "A test automation pattern where each page or screen is represented by a class that hides its selectors and actions.",
+      "explanation_fr": "Patron d’automatisation des tests où chaque page ou écran est représenté par une classe qui cache ses sélecteurs et ses actions.",
+      "why_it_matters_fr": "Rend les tests plus lisibles et plus faciles à maintenir quand l’interface change.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "page-object-model-1",
+          "text_en": "Add a login method to the LoginPage page object.",
+          "text_fr": "Ajoute une méthode de connexion à la page object LoginPage."
+        },
+        {
+          "id": "page-object-model-2",
+          "text_en": "With the page object model, a selector change is fixed in one place.",
+          "text_fr": "Avec le modèle Page Object, un changement de sélecteur se corrige à un seul endroit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-isolation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test isolation",
+      "translation_fr": "isolation des tests",
+      "part_of_speech": "noun",
+      "definition_en": "The principle that each test runs independently, without depending on the state left by other tests.",
+      "explanation_fr": "Principe selon lequel chaque test s’exécute de façon indépendante, sans dépendre de l’état laissé par les autres.",
+      "why_it_matters_fr": "Le manque d’isolation est une cause majeure de tests instables.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-isolation-1",
+          "text_en": "This test fails when run alone: poor test isolation.",
+          "text_fr": "Ce test échoue quand on le lance seul : mauvaise isolation des tests."
+        },
+        {
+          "id": "test-isolation-2",
+          "text_en": "Reset the database before each test for isolation.",
+          "text_fr": "Réinitialise la base avant chaque test pour l’isolation."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "quality-gate",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing",
+        "ci-cd"
+      ],
+      "term_en": "quality gate",
+      "translation_fr": "barrière qualité (quality gate)",
+      "part_of_speech": "noun",
+      "definition_en": "A set of conditions, such as passing tests or minimum coverage, that code must meet before moving to the next stage.",
+      "explanation_fr": "Ensemble de conditions, comme des tests réussis ou une couverture minimale, que le code doit remplir pour passer à l’étape suivante.",
+      "why_it_matters_fr": "Automatise le « on ne livre pas si… » dans la CI.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "quality-gate-1",
+          "text_en": "The build failed the quality gate: coverage dropped below 80%.",
+          "text_fr": "Le build n’a pas passé la barrière qualité : la couverture est tombée sous 80 %."
+        },
+        {
+          "id": "quality-gate-2",
+          "text_en": "SonarQube blocks the merge if the quality gate fails.",
+          "text_fr": "SonarQube bloque le merge si la quality gate échoue."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "shift-left-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "ci-cd"
+      ],
+      "term_en": "shift-left testing",
+      "translation_fr": "test au plus tôt (shift left)",
+      "part_of_speech": "noun",
+      "definition_en": "Moving testing and quality checks earlier in the development process instead of waiting until the end.",
+      "explanation_fr": "Avancer les tests et contrôles qualité plus tôt dans le développement au lieu d’attendre la fin.",
+      "why_it_matters_fr": "Un bug trouvé tôt coûte beaucoup moins cher à corriger.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "shift-left-testing-1",
+          "text_en": "Shift-left testing means QA joins refinement sessions.",
+          "text_fr": "Le shift left signifie que la QA participe aux séances d’affinage."
+        },
+        {
+          "id": "shift-left-testing-2",
+          "text_en": "We shifted security checks left into the pull request.",
+          "text_fr": "Nous avons avancé les contrôles de sécurité dès la pull request."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "traceability-matrix",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "project-management",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "requirements traceability matrix",
+      "translation_fr": "matrice de traçabilité des exigences",
+      "part_of_speech": "noun",
+      "definition_en": "A table that links each requirement to the test cases that verify it, showing what is covered.",
+      "explanation_fr": "Tableau qui relie chaque exigence aux cas de test qui la vérifient, pour montrer ce qui est couvert.",
+      "why_it_matters_fr": "Exigée dans les secteurs réglementés comme la santé ou la finance.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "traceability-matrix-1",
+          "text_en": "The traceability matrix shows two requirements without tests.",
+          "text_fr": "La matrice de traçabilité montre deux exigences sans tests."
+        },
+        {
+          "id": "traceability-matrix-2",
+          "text_en": "Auditors asked for our requirements traceability matrix.",
+          "text_fr": "Les auditeurs ont demandé notre matrice de traçabilité des exigences."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "test-strategy",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "test strategy",
+      "translation_fr": "stratégie de test",
+      "part_of_speech": "noun",
+      "definition_en": "A high-level plan describing what will be tested, how, with which tools and at which levels.",
+      "explanation_fr": "Plan général qui décrit ce qui sera testé, comment, avec quels outils et à quels niveaux.",
+      "why_it_matters_fr": "Plus général et durable que le plan de test d’une version.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "test-strategy-1",
+          "text_en": "Our test strategy relies mostly on API tests.",
+          "text_fr": "Notre stratégie de test repose surtout sur les tests d’API."
+        },
+        {
+          "id": "test-strategy-2",
+          "text_en": "Let’s agree on a test strategy for the new app.",
+          "text_fr": "Mettons-nous d’accord sur une stratégie de test pour la nouvelle application."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "exit-criteria",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "project-management",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "exit criteria",
+      "translation_fr": "critères de sortie",
+      "part_of_speech": "noun",
+      "definition_en": "The conditions that must be met to consider a test phase finished, such as no open critical bugs.",
+      "explanation_fr": "Conditions à remplir pour considérer une phase de test terminée, par exemple aucun bug critique ouvert.",
+      "why_it_matters_fr": "Rend la décision de fin de test objective.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "exit-criteria-1",
+          "text_en": "Exit criteria: no critical or major bugs open.",
+          "text_fr": "Critères de sortie : aucun bug critique ou majeur ouvert."
+        },
+        {
+          "id": "exit-criteria-2",
+          "text_en": "We haven’t met the exit criteria yet.",
+          "text_fr": "Nous n’avons pas encore rempli les critères de sortie."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "soak-test",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "performance"
+      ],
+      "term_en": "soak test",
+      "translation_fr": "test d’endurance",
+      "part_of_speech": "noun",
+      "definition_en": "A performance test that runs a normal load for a long time to find problems like memory leaks.",
+      "explanation_fr": "Test de performance qui maintient une charge normale pendant longtemps pour détecter des problèmes comme les fuites de mémoire.",
+      "why_it_matters_fr": "Révèle des bugs invisibles dans un test court.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "soak-test-1",
+          "text_en": "The 24-hour soak test revealed a memory leak.",
+          "text_fr": "Le test d’endurance de 24 heures a révélé une fuite de mémoire."
+        },
+        {
+          "id": "soak-test-2",
+          "text_en": "Run a soak test before the Black Friday release.",
+          "text_fr": "Lance un test d’endurance avant la mise en production du Black Friday."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bdd",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "agile"
+      ],
+      "term_en": "BDD",
+      "translation_fr": "BDD (développement piloté par le comportement)",
+      "part_of_speech": "acronym",
+      "definition_en": "Behavior-Driven Development: a practice where teams describe expected behavior in shared, plain-language scenarios that become automated tests.",
+      "explanation_fr": "Behavior-Driven Development : pratique où l’équipe décrit le comportement attendu dans des scénarios en langage courant, qui deviennent des tests automatisés.",
+      "why_it_matters_fr": "Rapproche produit, développeurs et QA autour des mêmes exemples.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bdd-1",
+          "text_en": "We write BDD scenarios with the product owner.",
+          "text_fr": "Nous écrivons les scénarios BDD avec le product owner."
+        },
+        {
+          "id": "bdd-2",
+          "text_en": "BDD helped us agree on edge cases early.",
+          "text_fr": "Le BDD nous a aidés à nous mettre d’accord tôt sur les cas limites."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "gherkin",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing"
+      ],
+      "term_en": "Gherkin (Given/When/Then)",
+      "translation_fr": "Gherkin (Étant donné / Quand / Alors)",
+      "part_of_speech": "noun",
+      "definition_en": "A plain-text syntax for BDD scenarios using the keywords Given, When and Then, used by tools like Cucumber.",
+      "explanation_fr": "Syntaxe en texte simple pour les scénarios BDD, avec les mots-clés Given, When et Then, utilisée par des outils comme Cucumber.",
+      "why_it_matters_fr": "Format lisible par les non-développeurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "gherkin-1",
+          "text_en": "Given a logged-in user, when they click Pay, then the order is created.",
+          "text_fr": "Étant donné un utilisateur connecté, quand il clique sur Payer, alors la commande est créée."
+        },
+        {
+          "id": "gherkin-2",
+          "text_en": "Please write the acceptance criteria in Gherkin.",
+          "text_fr": "Merci d’écrire les critères d’acceptation en Gherkin."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "localization-testing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "testing",
+        "ux-ui"
+      ],
+      "term_en": "localization testing",
+      "translation_fr": "test de localisation",
+      "part_of_speech": "noun",
+      "definition_en": "Checking that a product works correctly in each language and region: translations, date formats, currencies and text length.",
+      "explanation_fr": "Vérification qu’un produit fonctionne bien dans chaque langue et région : traductions, formats de date, devises et longueur des textes.",
+      "why_it_matters_fr": "Le français est souvent 20 à 30 % plus long que l’anglais : boutons tronqués garantis.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "localization-testing-1",
+          "text_en": "Localization testing found truncated French labels.",
+          "text_fr": "Le test de localisation a trouvé des libellés français tronqués."
+        },
+        {
+          "id": "localization-testing-2",
+          "text_en": "Check the date format during localization testing.",
+          "text_fr": "Vérifie le format de date pendant le test de localisation."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Le ratio d’allongement du français est un ordre de grandeur, pas une règle."
+    },
+    {
+      "id": "bug-bash",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        },
+        {
+          "role": "project-management",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "testing",
+        "collaboration"
+      ],
+      "term_en": "bug bash",
+      "translation_fr": "chasse aux bugs collective (bug bash)",
+      "part_of_speech": "noun",
+      "definition_en": "A session where people from the whole team try to find as many bugs as possible in a product before release.",
+      "explanation_fr": "Séance où des personnes de toute l’équipe essaient de trouver un maximum de bugs avant une sortie.",
+      "why_it_matters_fr": "Moment collectif et convivial, souvent avant un gros lancement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bug-bash-1",
+          "text_en": "Join the bug bash on Thursday at 2 p.m.",
+          "text_fr": "Rejoins la chasse aux bugs jeudi à 14 h."
+        },
+        {
+          "id": "bug-bash-2",
+          "text_en": "The bug bash found 30 issues in one hour.",
+          "text_fr": "Le bug bash a trouvé 30 problèmes en une heure."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dogfooding",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 45
+        },
+        {
+          "role": "product-design",
+          "priority": 45
+        },
+        {
+          "role": "general-tech",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "testing",
+        "product"
+      ],
+      "term_en": "dogfooding",
+      "translation_fr": "utilisation interne de son propre produit (dogfooding)",
+      "part_of_speech": "noun",
+      "definition_en": "Using your own product internally before or while customers use it, to find problems and improve it.",
+      "explanation_fr": "Utiliser son propre produit en interne avant ou pendant son usage par les clients, pour trouver des problèmes et l’améliorer.",
+      "why_it_matters_fr": "Vient de « eat your own dog food » ; très courant dans les entreprises tech.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dogfooding-1",
+          "text_en": "We’ve been dogfooding the new chat for two weeks.",
+          "text_fr": "Nous utilisons le nouveau chat en interne depuis deux semaines."
+        },
+        {
+          "id": "dogfooding-2",
+          "text_en": "Dogfooding revealed the search is too slow.",
+          "text_fr": "L’usage interne a révélé que la recherche est trop lente."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "hotfix",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "qa-testing",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "ci-cd",
+        "version-control"
+      ],
+      "term_en": "hotfix",
+      "translation_fr": "correctif urgent (hotfix)",
+      "part_of_speech": "noun",
+      "definition_en": "An urgent fix deployed quickly to production, outside the normal release cycle, to solve a serious problem.",
+      "explanation_fr": "Correction urgente déployée rapidement en production, hors du cycle normal de livraison, pour résoudre un problème grave.",
+      "why_it_matters_fr": "Mot quotidien des équipes en cas de bug bloquant en production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "hotfix-1",
+          "text_en": "We shipped a hotfix for the payment bug last night.",
+          "text_fr": "Nous avons livré un correctif urgent pour le bug de paiement hier soir."
+        },
+        {
+          "id": "hotfix-2",
+          "text_en": "Create the hotfix branch from main.",
+          "text_fr": "Crée la branche de hotfix à partir de main."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }

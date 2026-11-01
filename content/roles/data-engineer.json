@@ -1057,6 +1057,1693 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "data-lakehouse",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 75
+        },
+        {
+          "role": "data-analyst",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data lakehouse",
+      "translation_fr": "lakehouse (lac de données structuré)",
+      "part_of_speech": "noun",
+      "definition_en": "An architecture that combines the cheap, flexible storage of a data lake with the table management and SQL performance of a data warehouse.",
+      "explanation_fr": "Architecture qui combine le stockage souple et peu coûteux d’un data lake avec la gestion de tables et les performances SQL d’un entrepôt de données.",
+      "why_it_matters_fr": "Modèle mis en avant par Databricks et de nombreuses plateformes récentes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-lakehouse-1",
+          "text_en": "We are moving from a separate lake and warehouse to a lakehouse.",
+          "text_fr": "Nous passons d’un lac et d’un entrepôt séparés à un lakehouse."
+        },
+        {
+          "id": "data-lakehouse-2",
+          "text_en": "In the lakehouse, analysts query Parquet files directly with SQL.",
+          "text_fr": "Dans le lakehouse, les analystes interrogent directement les fichiers Parquet en SQL."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "change-data-capture",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "databases"
+      ],
+      "term_en": "change data capture (CDC)",
+      "translation_fr": "capture des changements de données (CDC)",
+      "part_of_speech": "noun",
+      "definition_en": "A technique that detects inserts, updates and deletes in a source database and streams them to other systems.",
+      "explanation_fr": "Technique qui détecte les insertions, mises à jour et suppressions dans une base source et les transmet à d’autres systèmes.",
+      "why_it_matters_fr": "Évite de recopier toute une table à chaque chargement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "change-data-capture-1",
+          "text_en": "We use CDC with Debezium to replicate orders to Kafka.",
+          "text_fr": "Nous utilisons la CDC avec Debezium pour répliquer les commandes vers Kafka."
+        },
+        {
+          "id": "change-data-capture-2",
+          "text_en": "CDC lag is about two seconds.",
+          "text_fr": "Le décalage de la CDC est d’environ deux secondes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "upsert",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-engineering"
+      ],
+      "term_en": "upsert",
+      "translation_fr": "upsert (insertion ou mise à jour)",
+      "part_of_speech": "noun",
+      "definition_en": "A database operation that updates a row if it already exists or inserts it if it doesn’t.",
+      "explanation_fr": "Opération qui met à jour une ligne si elle existe déjà, ou l’insère sinon.",
+      "why_it_matters_fr": "Contraction de « update » et « insert » ; base des chargements idempotents.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "upsert-1",
+          "text_en": "The job does an upsert on customer_id.",
+          "text_fr": "Le job fait un upsert sur customer_id."
+        },
+        {
+          "id": "upsert-2",
+          "text_en": "Use MERGE for the upsert instead of delete and insert.",
+          "text_fr": "Utilise MERGE pour l’upsert au lieu d’un delete puis insert."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "deduplication",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 65
+        },
+        {
+          "role": "data-analyst",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "data-analysis"
+      ],
+      "term_en": "deduplication",
+      "translation_fr": "dédoublonnage",
+      "part_of_speech": "noun",
+      "definition_en": "Removing duplicate copies of the same record from a dataset.",
+      "explanation_fr": "Suppression des copies en double d’un même enregistrement dans un jeu de données.",
+      "why_it_matters_fr": "Les doublons faussent les chiffres et cassent les jointures.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "deduplication-1",
+          "text_en": "Deduplication is based on the event ID.",
+          "text_fr": "Le dédoublonnage se fait sur l’identifiant d’événement."
+        },
+        {
+          "id": "deduplication-2",
+          "text_en": "After deduplication we had 2% fewer orders.",
+          "text_fr": "Après dédoublonnage, nous avions 2 % de commandes en moins."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "schema-evolution",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "schema evolution",
+      "translation_fr": "évolution du schéma",
+      "part_of_speech": "noun",
+      "definition_en": "Changing the structure of a dataset over time, such as adding columns, while keeping existing data and consumers working.",
+      "explanation_fr": "Modification de la structure d’un jeu de données dans le temps, par exemple l’ajout de colonnes, sans casser les données ni les consommateurs existants.",
+      "why_it_matters_fr": "Les formats comme Avro ou Iceberg ont des règles précises pour la gérer.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "schema-evolution-1",
+          "text_en": "Adding an optional field is a safe schema evolution.",
+          "text_fr": "Ajouter un champ optionnel est une évolution de schéma sans risque."
+        },
+        {
+          "id": "schema-evolution-2",
+          "text_en": "Renaming a column broke the downstream dashboards.",
+          "text_fr": "Renommer une colonne a cassé les tableaux de bord en aval."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-mart",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data mart",
+      "translation_fr": "datamart (magasin de données)",
+      "part_of_speech": "noun",
+      "definition_en": "A smaller, subject-focused part of a data warehouse built for one team or business area, such as finance or marketing.",
+      "explanation_fr": "Partie plus petite et thématique d’un entrepôt de données, conçue pour une équipe ou un métier, comme la finance ou le marketing.",
+      "why_it_matters_fr": "Permet de servir chaque équipe avec des données adaptées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-mart-1",
+          "text_en": "The marketing data mart refreshes every morning.",
+          "text_fr": "Le datamart marketing se met à jour chaque matin."
+        },
+        {
+          "id": "data-mart-2",
+          "text_en": "Finance wants its own data mart for budget reports.",
+          "text_fr": "La finance veut son propre datamart pour les rapports budgétaires."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "fact-table",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 65
+        },
+        {
+          "role": "data-analyst",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "databases"
+      ],
+      "term_en": "fact table",
+      "translation_fr": "table de faits",
+      "part_of_speech": "noun",
+      "definition_en": "The central table in a star schema that stores measurable events, such as sales, with keys to dimension tables.",
+      "explanation_fr": "Table centrale d’un schéma en étoile qui stocke des événements mesurables, comme les ventes, avec des clés vers les tables de dimensions.",
+      "why_it_matters_fr": "Notion de base de la modélisation décisionnelle (Kimball).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "fact-table-1",
+          "text_en": "Each row in the fact table is one order line.",
+          "text_fr": "Chaque ligne de la table de faits est une ligne de commande."
+        },
+        {
+          "id": "fact-table-2",
+          "text_en": "The fact table has 2 billion rows.",
+          "text_fr": "La table de faits contient 2 milliards de lignes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dimension-table",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "data-analyst",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "databases"
+      ],
+      "term_en": "dimension table",
+      "translation_fr": "table de dimension",
+      "part_of_speech": "noun",
+      "definition_en": "A table that holds descriptive attributes, such as customer, product or date, used to filter and group facts.",
+      "explanation_fr": "Table qui contient des attributs descriptifs, comme client, produit ou date, utilisés pour filtrer et regrouper les faits.",
+      "why_it_matters_fr": "Va de pair avec la table de faits dans un schéma en étoile.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dimension-table-1",
+          "text_en": "Add the region to the customer dimension table.",
+          "text_fr": "Ajoute la région à la table de dimension client."
+        },
+        {
+          "id": "dimension-table-2",
+          "text_en": "The date dimension makes monthly reports easy.",
+          "text_fr": "La dimension date facilite les rapports mensuels."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "oltp",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "OLTP",
+      "translation_fr": "OLTP (traitement transactionnel)",
+      "part_of_speech": "acronym",
+      "definition_en": "Online Transaction Processing: databases optimized for many small, fast reads and writes, such as an e-commerce app’s orders.",
+      "explanation_fr": "Online Transaction Processing : bases optimisées pour de nombreuses lectures et écritures petites et rapides, comme les commandes d’un site marchand.",
+      "why_it_matters_fr": "S’oppose à OLAP ; explique pourquoi on ne fait pas d’analytique lourde sur la base de production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "oltp-1",
+          "text_en": "Don’t run heavy reports on the OLTP database.",
+          "text_fr": "Ne lance pas de rapports lourds sur la base OLTP."
+        },
+        {
+          "id": "oltp-2",
+          "text_en": "Postgres is our OLTP system; BigQuery handles analytics.",
+          "text_fr": "Postgres est notre système OLTP ; BigQuery gère l’analytique."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "olap",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-analysis"
+      ],
+      "term_en": "OLAP",
+      "translation_fr": "OLAP (traitement analytique)",
+      "part_of_speech": "acronym",
+      "definition_en": "Online Analytical Processing: systems optimized for complex queries that aggregate large volumes of data.",
+      "explanation_fr": "Online Analytical Processing : systèmes optimisés pour des requêtes complexes qui agrègent de gros volumes de données.",
+      "why_it_matters_fr": "Les entrepôts de données sont des systèmes OLAP.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "olap-1",
+          "text_en": "This query belongs in the OLAP warehouse, not production.",
+          "text_fr": "Cette requête doit tourner sur l’entrepôt OLAP, pas en production."
+        },
+        {
+          "id": "olap-2",
+          "text_en": "OLAP databases usually store data by columns.",
+          "text_fr": "Les bases OLAP stockent généralement les données par colonnes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "columnar-storage",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "performance"
+      ],
+      "term_en": "columnar storage",
+      "translation_fr": "stockage en colonnes",
+      "part_of_speech": "noun",
+      "definition_en": "Storing data column by column instead of row by row, which makes analytical queries and compression much more efficient.",
+      "explanation_fr": "Stockage des données colonne par colonne plutôt que ligne par ligne, ce qui rend les requêtes analytiques et la compression bien plus efficaces.",
+      "why_it_matters_fr": "Explique pourquoi Parquet et les entrepôts cloud sont rapides sur les agrégations.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "columnar-storage-1",
+          "text_en": "Columnar storage means we only read the three columns we need.",
+          "text_fr": "Le stockage en colonnes permet de ne lire que les trois colonnes nécessaires."
+        },
+        {
+          "id": "columnar-storage-2",
+          "text_en": "Switching to columnar storage cut our query costs.",
+          "text_fr": "Passer au stockage en colonnes a réduit nos coûts de requêtes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-freshness",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "data-analyst",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "monitoring"
+      ],
+      "term_en": "data freshness",
+      "translation_fr": "fraîcheur des données",
+      "part_of_speech": "noun",
+      "definition_en": "How recent the data in a table or report is compared with the real world.",
+      "explanation_fr": "Degré d’actualité des données d’une table ou d’un rapport par rapport à la réalité.",
+      "why_it_matters_fr": "Souvent la première question d’un utilisateur métier : « ces chiffres datent de quand ? ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-freshness-1",
+          "text_en": "Our data freshness target is under one hour.",
+          "text_fr": "Notre objectif de fraîcheur des données est de moins d’une heure."
+        },
+        {
+          "id": "data-freshness-2",
+          "text_en": "The dashboard shows a data freshness warning.",
+          "text_fr": "Le tableau de bord affiche une alerte de fraîcheur des données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dbt",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 65
+        },
+        {
+          "role": "data-analyst",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "dbt",
+      "translation_fr": "dbt (outil de transformation SQL)",
+      "part_of_speech": "noun",
+      "definition_en": "Data build tool: an open-source tool that lets teams write data transformations as SQL models, with tests, documentation and version control.",
+      "explanation_fr": "Data build tool : outil open source qui permet d’écrire les transformations de données sous forme de modèles SQL, avec tests, documentation et gestion de versions.",
+      "why_it_matters_fr": "Devenu un standard de la partie « T » de l’ELT.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dbt-1",
+          "text_en": "I added a dbt test to check for null customer IDs.",
+          "text_fr": "J’ai ajouté un test dbt pour vérifier les identifiants clients nuls."
+        },
+        {
+          "id": "dbt-2",
+          "text_en": "The dbt run failed on the revenue model.",
+          "text_fr": "Le dbt run a échoué sur le modèle de chiffre d’affaires."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "apache-airflow",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "Apache Airflow",
+      "translation_fr": "Apache Airflow",
+      "part_of_speech": "noun",
+      "definition_en": "An open-source platform to schedule, orchestrate and monitor data pipelines defined as DAGs in Python.",
+      "explanation_fr": "Plateforme open source pour planifier, orchestrer et surveiller des pipelines de données définis comme des DAG en Python.",
+      "why_it_matters_fr": "Outil d’orchestration très répandu, cité dans beaucoup d’offres d’emploi.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "apache-airflow-1",
+          "text_en": "The Airflow DAG runs every night at 2 a.m.",
+          "text_fr": "Le DAG Airflow tourne chaque nuit à 2 h."
+        },
+        {
+          "id": "apache-airflow-2",
+          "text_en": "I cleared the failed task in Airflow to rerun it.",
+          "text_fr": "J’ai réinitialisé la tâche en échec dans Airflow pour la relancer."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "open-table-format",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "open table format",
+      "translation_fr": "format de table ouvert",
+      "part_of_speech": "noun",
+      "definition_en": "A specification, such as Apache Iceberg, Delta Lake or Apache Hudi, that adds database features like transactions, schema evolution and time travel to files in a data lake.",
+      "explanation_fr": "Spécification, comme Apache Iceberg, Delta Lake ou Apache Hudi, qui ajoute des fonctions de base de données (transactions, évolution de schéma, retour dans le temps) aux fichiers d’un data lake.",
+      "why_it_matters_fr": "Brique technique au cœur des architectures lakehouse.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "open-table-format-1",
+          "text_en": "We chose Iceberg as our open table format.",
+          "text_fr": "Nous avons choisi Iceberg comme format de table ouvert."
+        },
+        {
+          "id": "open-table-format-2",
+          "text_en": "Time travel lets us query the table as it was yesterday.",
+          "text_fr": "Le « time travel » permet d’interroger la table telle qu’elle était hier."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-mesh",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "architecture"
+      ],
+      "term_en": "data mesh",
+      "translation_fr": "data mesh (maillage de données)",
+      "part_of_speech": "noun",
+      "definition_en": "An organizational approach where business domains own and publish their data as products, supported by a shared self-service platform.",
+      "explanation_fr": "Approche organisationnelle où chaque domaine métier possède et publie ses données comme des produits, avec une plateforme commune en libre-service.",
+      "why_it_matters_fr": "Concept surtout organisationnel ; souvent mal compris comme un simple outil.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-mesh-1",
+          "text_en": "In our data mesh, the sales team owns the orders data product.",
+          "text_fr": "Dans notre data mesh, l’équipe ventes possède le produit de données des commandes."
+        },
+        {
+          "id": "data-mesh-2",
+          "text_en": "Data mesh only works if domains have data skills.",
+          "text_fr": "Le data mesh ne fonctionne que si les domaines ont des compétences data."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "medallion-architecture",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "architecture"
+      ],
+      "term_en": "medallion architecture",
+      "translation_fr": "architecture en médaillon (bronze, argent, or)",
+      "part_of_speech": "noun",
+      "definition_en": "A way to organize a lakehouse in layers: bronze for raw data, silver for cleaned data and gold for business-ready tables.",
+      "explanation_fr": "Organisation d’un lakehouse en couches : bronze pour les données brutes, argent pour les données nettoyées, or pour les tables prêtes pour le métier.",
+      "why_it_matters_fr": "Vocabulaire popularisé par Databricks, très courant en 2025.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "medallion-architecture-1",
+          "text_en": "Raw events land in the bronze layer.",
+          "text_fr": "Les événements bruts arrivent dans la couche bronze."
+        },
+        {
+          "id": "medallion-architecture-2",
+          "text_en": "Analysts should only use gold tables.",
+          "text_fr": "Les analystes ne devraient utiliser que les tables or."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "raw-data",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "data-analyst",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "data-analysis"
+      ],
+      "term_en": "raw data",
+      "translation_fr": "données brutes",
+      "part_of_speech": "noun",
+      "definition_en": "Data in its original form, as collected from the source, before any cleaning or transformation.",
+      "explanation_fr": "Données sous leur forme d’origine, telles que collectées à la source, avant tout nettoyage ou transformation.",
+      "why_it_matters_fr": "On garde toujours les données brutes pour pouvoir recalculer.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "raw-data-1",
+          "text_en": "Keep the raw data so we can reprocess it later.",
+          "text_fr": "Garde les données brutes pour pouvoir les retraiter plus tard."
+        },
+        {
+          "id": "raw-data-2",
+          "text_en": "The raw data has inconsistent date formats.",
+          "text_fr": "Les données brutes ont des formats de date incohérents."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "staging-table",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "databases"
+      ],
+      "term_en": "staging table",
+      "translation_fr": "table intermédiaire (de staging)",
+      "part_of_speech": "noun",
+      "definition_en": "A temporary table where data is loaded and checked before being merged into the final tables.",
+      "explanation_fr": "Table temporaire où les données sont chargées et vérifiées avant d’être fusionnées dans les tables finales.",
+      "why_it_matters_fr": "Évite de corrompre les tables de production avec un chargement raté.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "staging-table-1",
+          "text_en": "The load writes to a staging table first.",
+          "text_fr": "Le chargement écrit d’abord dans une table intermédiaire."
+        },
+        {
+          "id": "staging-table-2",
+          "text_en": "Truncate the staging table after each merge.",
+          "text_fr": "Vide la table de staging après chaque fusion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "materialized-view",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "databases",
+        "performance"
+      ],
+      "term_en": "materialized view",
+      "translation_fr": "vue matérialisée",
+      "part_of_speech": "noun",
+      "definition_en": "A database view whose query results are stored physically and refreshed periodically, making reads much faster.",
+      "explanation_fr": "Vue dont les résultats sont stockés physiquement et rafraîchis régulièrement, ce qui accélère beaucoup les lectures.",
+      "why_it_matters_fr": "Compromis classique entre rapidité de lecture et fraîcheur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "materialized-view-1",
+          "text_en": "The dashboard reads from a materialized view.",
+          "text_fr": "Le tableau de bord lit une vue matérialisée."
+        },
+        {
+          "id": "materialized-view-2",
+          "text_en": "The materialized view refreshes every 15 minutes.",
+          "text_fr": "La vue matérialisée se rafraîchit toutes les 15 minutes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "late-arriving-data",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "late-arriving data",
+      "translation_fr": "données arrivées en retard",
+      "part_of_speech": "noun",
+      "definition_en": "Records that reach the pipeline after the period they belong to has already been processed.",
+      "explanation_fr": "Enregistrements qui arrivent dans le pipeline après que la période à laquelle ils appartiennent a déjà été traitée.",
+      "why_it_matters_fr": "Cause fréquente de chiffres qui changent après coup.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "late-arriving-data-1",
+          "text_en": "Mobile events are often late-arriving data.",
+          "text_fr": "Les événements mobiles sont souvent des données arrivées en retard."
+        },
+        {
+          "id": "late-arriving-data-2",
+          "text_en": "We reprocess the last three days to catch late data.",
+          "text_fr": "Nous retraitons les trois derniers jours pour rattraper les données en retard."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "event-time",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "event time",
+      "translation_fr": "temps de l’événement",
+      "part_of_speech": "noun",
+      "definition_en": "The time when an event actually happened, as opposed to processing time, when the system handled it.",
+      "explanation_fr": "Moment où l’événement s’est réellement produit, par opposition au temps de traitement, quand le système l’a traité.",
+      "why_it_matters_fr": "Distinction centrale en streaming pour obtenir des agrégats justes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "event-time-1",
+          "text_en": "Group the sales by event time, not ingestion time.",
+          "text_fr": "Regroupe les ventes par temps de l’événement, pas par temps d’ingestion."
+        },
+        {
+          "id": "event-time-2",
+          "text_en": "Event time and processing time can differ by hours.",
+          "text_fr": "Le temps de l’événement et le temps de traitement peuvent différer de plusieurs heures."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "watermark",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "watermark",
+      "translation_fr": "watermark (seuil de progression)",
+      "part_of_speech": "noun",
+      "definition_en": "In stream processing, a marker that estimates how far event time has progressed, used to decide when a time window can be closed.",
+      "explanation_fr": "En traitement de flux, repère qui estime jusqu’où le temps des événements a progressé, pour décider quand fermer une fenêtre de temps.",
+      "why_it_matters_fr": "Notion présente dans Spark Structured Streaming, Flink et Beam.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "watermark-1",
+          "text_en": "We set a ten-minute watermark for late events.",
+          "text_fr": "Nous avons fixé un watermark de dix minutes pour les événements en retard."
+        },
+        {
+          "id": "watermark-2",
+          "text_en": "Events behind the watermark are dropped.",
+          "text_fr": "Les événements derrière le watermark sont ignorés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Traduction française non stabilisée ; le terme anglais est d’usage."
+    },
+    {
+      "id": "exactly-once",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "exactly-once",
+      "translation_fr": "exactement une fois",
+      "part_of_speech": "adjective",
+      "definition_en": "Describes processing guarantees where each message affects the result once, never lost and never duplicated.",
+      "explanation_fr": "Décrit une garantie de traitement où chaque message n’agit qu’une fois sur le résultat, sans perte ni doublon.",
+      "why_it_matters_fr": "Se compare à « at-least-once » (doublons possibles) et « at-most-once » (pertes possibles).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "exactly-once-1",
+          "text_en": "Kafka transactions give us exactly-once processing.",
+          "text_fr": "Les transactions Kafka nous donnent un traitement exactement une fois."
+        },
+        {
+          "id": "exactly-once-2",
+          "text_en": "We accept at-least-once delivery and deduplicate downstream.",
+          "text_fr": "Nous acceptons une livraison au moins une fois et dédoublonnons en aval."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "kafka-topic",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "backend"
+      ],
+      "term_en": "topic",
+      "translation_fr": "topic (sujet de messages)",
+      "part_of_speech": "noun",
+      "definition_en": "A named stream of messages in a system like Kafka, to which producers write and from which consumers read.",
+      "explanation_fr": "Flux nommé de messages dans un système comme Kafka, où les producteurs écrivent et d’où les consommateurs lisent.",
+      "why_it_matters_fr": "Unité de base pour organiser les événements dans une architecture de streaming.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "kafka-topic-1",
+          "text_en": "Publish payment events to the payments topic.",
+          "text_fr": "Publie les événements de paiement dans le topic payments."
+        },
+        {
+          "id": "kafka-topic-2",
+          "text_en": "The topic has twelve partitions.",
+          "text_fr": "Le topic a douze partitions."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "consumer-lag",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "monitoring"
+      ],
+      "term_en": "consumer lag",
+      "translation_fr": "retard du consommateur (lag)",
+      "part_of_speech": "noun",
+      "definition_en": "The number of messages a consumer still has to read behind the latest message in a topic.",
+      "explanation_fr": "Nombre de messages qu’un consommateur doit encore lire derrière le dernier message d’un topic.",
+      "why_it_matters_fr": "Indicateur clé à surveiller : un lag qui grossit signale un problème.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "consumer-lag-1",
+          "text_en": "Consumer lag jumped to 2 million messages.",
+          "text_fr": "Le lag du consommateur est monté à 2 millions de messages."
+        },
+        {
+          "id": "consumer-lag-2",
+          "text_en": "Add consumers to bring the lag down.",
+          "text_fr": "Ajoute des consommateurs pour réduire le lag."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dead-letter-queue",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "backend"
+      ],
+      "term_en": "dead letter queue (DLQ)",
+      "translation_fr": "file des messages en échec (DLQ)",
+      "part_of_speech": "noun",
+      "definition_en": "A separate queue where messages that cannot be processed are sent so they can be inspected later instead of blocking the pipeline.",
+      "explanation_fr": "File à part où sont envoyés les messages impossibles à traiter, pour les examiner plus tard sans bloquer le pipeline.",
+      "why_it_matters_fr": "Évite qu’un seul message corrompu arrête tout le traitement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dead-letter-queue-1",
+          "text_en": "Malformed events go to the dead letter queue.",
+          "text_fr": "Les événements mal formés partent dans la file des messages en échec."
+        },
+        {
+          "id": "dead-letter-queue-2",
+          "text_en": "Can someone check why the DLQ has 500 messages?",
+          "text_fr": "Quelqu’un peut-il regarder pourquoi la DLQ contient 500 messages ?"
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-observability",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "monitoring"
+      ],
+      "term_en": "data observability",
+      "translation_fr": "observabilité des données",
+      "part_of_speech": "noun",
+      "definition_en": "Monitoring data pipelines and datasets for freshness, volume, schema changes and anomalies, to catch data problems early.",
+      "explanation_fr": "Surveillance des pipelines et jeux de données (fraîcheur, volume, changements de schéma, anomalies) pour détecter tôt les problèmes de données.",
+      "why_it_matters_fr": "Équivalent pour la data de l’observabilité applicative.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-observability-1",
+          "text_en": "Data observability alerted us that row counts dropped by half.",
+          "text_fr": "L’observabilité des données nous a alertés que le nombre de lignes avait chuté de moitié."
+        },
+        {
+          "id": "data-observability-2",
+          "text_en": "We need data observability before more teams rely on these tables.",
+          "text_fr": "Il nous faut de l’observabilité des données avant que d’autres équipes dépendent de ces tables."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-skew",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "performance"
+      ],
+      "term_en": "data skew",
+      "translation_fr": "déséquilibre des données (skew)",
+      "part_of_speech": "noun",
+      "definition_en": "Uneven distribution of data across partitions, so a few tasks process much more data and slow down the whole job.",
+      "explanation_fr": "Répartition inégale des données entre partitions, si bien que quelques tâches traitent beaucoup plus de données et ralentissent tout le job.",
+      "why_it_matters_fr": "Cause fréquente des jobs Spark anormalement lents.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-skew-1",
+          "text_en": "One customer has 40% of the events, which causes data skew.",
+          "text_fr": "Un client représente 40 % des événements, ce qui crée un déséquilibre."
+        },
+        {
+          "id": "data-skew-2",
+          "text_en": "Salting the key fixed the skew in the join.",
+          "text_fr": "Saler la clé a corrigé le skew dans la jointure."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "shuffle",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "performance"
+      ],
+      "term_en": "shuffle",
+      "translation_fr": "shuffle (redistribution des données)",
+      "part_of_speech": "noun",
+      "definition_en": "In distributed processing, the costly step where data is redistributed across machines, for example for a join or group by.",
+      "explanation_fr": "En traitement distribué, étape coûteuse où les données sont redistribuées entre machines, par exemple pour une jointure ou un regroupement.",
+      "why_it_matters_fr": "Réduire les shuffles est une des premières optimisations Spark.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "shuffle-1",
+          "text_en": "Most of the job time is spent in the shuffle.",
+          "text_fr": "La plus grande partie du temps du job est passée dans le shuffle."
+        },
+        {
+          "id": "shuffle-2",
+          "text_en": "A broadcast join avoids the shuffle.",
+          "text_fr": "Une jointure broadcast évite le shuffle."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "query-plan",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases",
+        "performance"
+      ],
+      "term_en": "query plan",
+      "translation_fr": "plan d’exécution",
+      "part_of_speech": "noun",
+      "definition_en": "The steps a database chooses to run a query, such as which indexes to use and in which order to join tables.",
+      "explanation_fr": "Étapes choisies par la base pour exécuter une requête, comme les index utilisés et l’ordre des jointures.",
+      "why_it_matters_fr": "Premier réflexe face à une requête lente : lire le plan avec EXPLAIN.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "query-plan-1",
+          "text_en": "Run EXPLAIN to see the query plan.",
+          "text_fr": "Lance EXPLAIN pour voir le plan d’exécution."
+        },
+        {
+          "id": "query-plan-2",
+          "text_en": "The query plan shows a full table scan.",
+          "text_fr": "Le plan d’exécution montre un parcours complet de la table."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "full-table-scan",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases",
+        "performance"
+      ],
+      "term_en": "full table scan",
+      "translation_fr": "parcours complet de table",
+      "part_of_speech": "noun",
+      "definition_en": "When a database reads every row of a table to answer a query, usually because no suitable index exists.",
+      "explanation_fr": "Lecture de toutes les lignes d’une table pour répondre à une requête, généralement faute d’index adapté.",
+      "why_it_matters_fr": "Explication typique d’une requête lente en production.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "full-table-scan-1",
+          "text_en": "Without an index, the query does a full table scan.",
+          "text_fr": "Sans index, la requête fait un parcours complet de la table."
+        },
+        {
+          "id": "full-table-scan-2",
+          "text_en": "That full table scan takes 40 seconds on production.",
+          "text_fr": "Ce parcours complet prend 40 secondes en production."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "denormalization",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "denormalization",
+      "translation_fr": "dénormalisation",
+      "part_of_speech": "noun",
+      "definition_en": "Deliberately duplicating data across tables to make reads faster, at the cost of more storage and harder updates.",
+      "explanation_fr": "Duplication volontaire de données entre tables pour accélérer les lectures, au prix de plus de stockage et de mises à jour plus complexes.",
+      "why_it_matters_fr": "Pratique courante dans les entrepôts et les bases NoSQL.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "denormalization-1",
+          "text_en": "We denormalized the customer name into the orders table.",
+          "text_fr": "Nous avons dénormalisé le nom du client dans la table des commandes."
+        },
+        {
+          "id": "denormalization-2",
+          "text_en": "Denormalization speeds up the dashboard queries.",
+          "text_fr": "La dénormalisation accélère les requêtes du tableau de bord."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "database-normalization",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "databases"
+      ],
+      "term_en": "database normalization",
+      "translation_fr": "normalisation de base de données",
+      "part_of_speech": "noun",
+      "definition_en": "Organizing tables to reduce data duplication and avoid update errors, following rules called normal forms.",
+      "explanation_fr": "Organisation des tables pour réduire la duplication et éviter les erreurs de mise à jour, selon des règles appelées formes normales.",
+      "why_it_matters_fr": "Question classique d’entretien ; à ne pas confondre avec la normalisation en machine learning.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "database-normalization-1",
+          "text_en": "The schema follows the third normal form.",
+          "text_fr": "Le schéma respecte la troisième forme normale."
+        },
+        {
+          "id": "database-normalization-2",
+          "text_en": "Normalization avoids storing the address in five tables.",
+          "text_fr": "La normalisation évite de stocker l’adresse dans cinq tables."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "surrogate-key",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "databases",
+        "data-engineering"
+      ],
+      "term_en": "surrogate key",
+      "translation_fr": "clé de substitution",
+      "part_of_speech": "noun",
+      "definition_en": "An artificial identifier, often a number or hash, used as a primary key instead of a business value.",
+      "explanation_fr": "Identifiant artificiel, souvent un nombre ou une empreinte, utilisé comme clé primaire à la place d’une valeur métier.",
+      "why_it_matters_fr": "Indispensable pour historiser les dimensions qui changent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "surrogate-key-1",
+          "text_en": "Each customer version gets a new surrogate key.",
+          "text_fr": "Chaque version du client reçoit une nouvelle clé de substitution."
+        },
+        {
+          "id": "surrogate-key-2",
+          "text_en": "Don’t join on email, use the surrogate key.",
+          "text_fr": "Ne fais pas la jointure sur l’e-mail, utilise la clé de substitution."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "reverse-etl",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "reverse ETL",
+      "translation_fr": "ETL inversé (reverse ETL)",
+      "part_of_speech": "noun",
+      "definition_en": "Sending modeled data from the data warehouse back into operational tools such as a CRM or marketing platform.",
+      "explanation_fr": "Renvoi des données modélisées de l’entrepôt vers des outils opérationnels comme un CRM ou une plateforme marketing.",
+      "why_it_matters_fr": "Fait le pont entre l’équipe data et les équipes commerciales ou marketing.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "reverse-etl-1",
+          "text_en": "Reverse ETL pushes the churn score into Salesforce.",
+          "text_fr": "Le reverse ETL envoie le score d’attrition dans Salesforce."
+        },
+        {
+          "id": "reverse-etl-2",
+          "text_en": "Sales wants the lead score through reverse ETL.",
+          "text_fr": "Les ventes veulent le score des leads via le reverse ETL."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "single-source-of-truth",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 55
+        },
+        {
+          "role": "general-tech",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "collaboration"
+      ],
+      "term_en": "single source of truth",
+      "translation_fr": "source unique de vérité",
+      "part_of_speech": "noun",
+      "definition_en": "The one agreed place where a given piece of data or information is maintained, so everyone uses the same version.",
+      "explanation_fr": "Endroit unique et reconnu où une donnée ou information est maintenue, pour que tout le monde utilise la même version.",
+      "why_it_matters_fr": "Met fin aux réunions où chacun arrive avec un chiffre différent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "single-source-of-truth-1",
+          "text_en": "The warehouse is our single source of truth for revenue.",
+          "text_fr": "L’entrepôt est notre source unique de vérité pour le chiffre d’affaires."
+        },
+        {
+          "id": "single-source-of-truth-2",
+          "text_en": "Two spreadsheets with different numbers: we need a single source of truth.",
+          "text_fr": "Deux tableurs avec des chiffres différents : il nous faut une source unique de vérité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pii",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 60
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        },
+        {
+          "role": "data-analyst",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "data-engineering"
+      ],
+      "term_en": "PII",
+      "translation_fr": "DCP (données personnelles identifiantes)",
+      "part_of_speech": "acronym",
+      "definition_en": "Personally Identifiable Information: data that can identify a specific person, such as a name, email, phone number or ID number.",
+      "explanation_fr": "Personally Identifiable Information : données qui permettent d’identifier une personne, comme un nom, un e-mail, un téléphone ou un numéro d’identité.",
+      "why_it_matters_fr": "Terme américain ; en contexte RGPD on parle de « données à caractère personnel », notion plus large.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pii-1",
+          "text_en": "Mask the PII columns before sharing the dataset.",
+          "text_fr": "Masque les colonnes de données personnelles avant de partager le jeu de données."
+        },
+        {
+          "id": "pii-2",
+          "text_en": "Logs must never contain PII.",
+          "text_fr": "Les logs ne doivent jamais contenir de données personnelles."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "PII (US) et « données personnelles » (RGPD) ne se recouvrent pas exactement."
+    },
+    {
+      "id": "data-retention",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "cybersecurity",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering",
+        "security"
+      ],
+      "term_en": "data retention",
+      "translation_fr": "conservation des données",
+      "part_of_speech": "noun",
+      "definition_en": "The rules for how long data is kept before being deleted or archived, often driven by law or business needs.",
+      "explanation_fr": "Règles qui fixent combien de temps les données sont gardées avant suppression ou archivage, souvent selon la loi ou les besoins métier.",
+      "why_it_matters_fr": "Le RGPD impose de ne pas garder les données personnelles plus que nécessaire.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-retention-1",
+          "text_en": "Our data retention policy keeps raw logs for 30 days.",
+          "text_fr": "Notre politique de conservation garde les logs bruts 30 jours."
+        },
+        {
+          "id": "data-retention-2",
+          "text_en": "We need a retention rule for deleted accounts.",
+          "text_fr": "Il nous faut une règle de conservation pour les comptes supprimés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "metadata",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 55
+        },
+        {
+          "role": "data-analyst",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "metadata",
+      "translation_fr": "métadonnées",
+      "part_of_speech": "noun",
+      "definition_en": "Data that describes other data, such as a table’s owner, column types, creation date or source.",
+      "explanation_fr": "Données qui décrivent d’autres données, comme le propriétaire d’une table, le type des colonnes, la date de création ou la source.",
+      "why_it_matters_fr": "Sans métadonnées, personne ne sait d’où vient une table ni si on peut s’y fier.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "metadata-1",
+          "text_en": "The catalog stores metadata for every table.",
+          "text_fr": "Le catalogue stocke les métadonnées de chaque table."
+        },
+        {
+          "id": "metadata-2",
+          "text_en": "Check the file metadata for the upload date.",
+          "text_fr": "Regarde les métadonnées du fichier pour la date d’envoi."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-steward",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 40
+        },
+        {
+          "role": "data-analyst",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "data steward",
+      "translation_fr": "responsable des données (data steward)",
+      "part_of_speech": "noun",
+      "definition_en": "A person accountable for the quality, definitions and correct use of a set of data within their business area.",
+      "explanation_fr": "Personne chargée de la qualité, des définitions et du bon usage d’un ensemble de données dans son domaine métier.",
+      "why_it_matters_fr": "Rôle clé de la gouvernance des données.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-steward-1",
+          "text_en": "Ask the data steward what “active customer” means.",
+          "text_fr": "Demande au data steward ce que signifie « client actif »."
+        },
+        {
+          "id": "data-steward-2",
+          "text_en": "Each domain has a data steward for its key tables.",
+          "text_fr": "Chaque domaine a un data steward pour ses tables clés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "avro",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "Avro",
+      "translation_fr": "Avro",
+      "part_of_speech": "noun",
+      "definition_en": "A compact, row-based data serialization format from Apache, often used with Kafka, whose schema travels with the data.",
+      "explanation_fr": "Format de sérialisation compact orienté lignes, issu d’Apache, souvent utilisé avec Kafka, dont le schéma accompagne les données.",
+      "why_it_matters_fr": "Souvent utilisé avec un registre de schémas pour gérer l’évolution des messages.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "avro-1",
+          "text_en": "Kafka messages are encoded in Avro.",
+          "text_fr": "Les messages Kafka sont encodés en Avro."
+        },
+        {
+          "id": "avro-2",
+          "text_en": "Register the new Avro schema before deploying the producer.",
+          "text_fr": "Enregistre le nouveau schéma Avro avant de déployer le producteur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "pipeline-rerun",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "data-engineer",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "data-engineering"
+      ],
+      "term_en": "rerun",
+      "translation_fr": "relancer (réexécuter)",
+      "part_of_speech": "verb",
+      "definition_en": "To run a job, pipeline or test again, usually after a failure or a fix.",
+      "explanation_fr": "Exécuter à nouveau un job, un pipeline ou un test, généralement après un échec ou une correction.",
+      "why_it_matters_fr": "Verbe du quotidien en data comme en CI.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pipeline-rerun-1",
+          "text_en": "I fixed the source file, can you rerun the pipeline?",
+          "text_fr": "J’ai corrigé le fichier source, peux-tu relancer le pipeline ?"
+        },
+        {
+          "id": "pipeline-rerun-2",
+          "text_en": "The rerun succeeded and the tables are up to date.",
+          "text_fr": "La relance a réussi et les tables sont à jour."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }

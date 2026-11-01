@@ -1842,6 +1842,2256 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "security-incident",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        },
+        {
+          "role": "network-systems",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "security incident",
+      "translation_fr": "incident de sécurité",
+      "part_of_speech": "noun",
+      "definition_en": "An event that actually or potentially compromises the confidentiality, integrity or availability of a system or its data.",
+      "explanation_fr": "Événement qui compromet, ou risque de compromettre, la confidentialité, l’intégrité ou la disponibilité d’un système ou de ses données.",
+      "why_it_matters_fr": "C’est le point de départ de toute procédure de réponse : savoir le nommer et le signaler vite.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "security-incident-1",
+          "text_en": "We are treating the suspicious login as a security incident.",
+          "text_fr": "Nous traitons la connexion suspecte comme un incident de sécurité."
+        },
+        {
+          "id": "security-incident-2",
+          "text_en": "Report any security incident to the SOC within one hour.",
+          "text_fr": "Signalez tout incident de sécurité au SOC dans l’heure."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "containment",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "containment",
+      "translation_fr": "confinement (endiguement)",
+      "part_of_speech": "noun",
+      "definition_en": "The incident response phase where you limit the spread and impact of an attack, for example by isolating affected machines.",
+      "explanation_fr": "Phase de la réponse à incident où l’on limite la propagation et l’impact d’une attaque, par exemple en isolant les machines touchées.",
+      "why_it_matters_fr": "Mot clé des comptes rendus d’incident : on confine avant d’éradiquer.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "containment-1",
+          "text_en": "Containment comes first: isolate the infected laptop from the network.",
+          "text_fr": "Le confinement d’abord : isolez du réseau l’ordinateur infecté."
+        },
+        {
+          "id": "containment-2",
+          "text_en": "Short-term containment bought us time to investigate.",
+          "text_fr": "Le confinement à court terme nous a laissé le temps d’enquêter."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "eradication",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "eradication",
+      "translation_fr": "éradication",
+      "part_of_speech": "noun",
+      "definition_en": "The incident response phase where the root cause of an attack, such as malware or a compromised account, is fully removed.",
+      "explanation_fr": "Phase de la réponse à incident où la cause de l’attaque, par exemple un logiciel malveillant ou un compte compromis, est complètement supprimée.",
+      "why_it_matters_fr": "Fait partie du vocabulaire standard des cadres de réponse à incident (NIST, SANS).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "eradication-1",
+          "text_en": "Eradication included reimaging every affected server.",
+          "text_fr": "L’éradication a inclus la réinstallation complète de chaque serveur touché."
+        },
+        {
+          "id": "eradication-2",
+          "text_en": "We can’t move to recovery until eradication is confirmed.",
+          "text_fr": "Nous ne pouvons pas passer à la restauration tant que l’éradication n’est pas confirmée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "indicator-of-compromise",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 85
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "indicator of compromise (IoC)",
+      "translation_fr": "indicateur de compromission (IoC)",
+      "part_of_speech": "noun",
+      "definition_en": "A piece of forensic evidence, such as a malicious IP address, file hash or domain, that suggests a system has been breached.",
+      "explanation_fr": "Élément technique, comme une adresse IP malveillante, une empreinte de fichier ou un domaine, qui suggère qu’un système a été compromis.",
+      "why_it_matters_fr": "Les IoC circulent entre équipes et partenaires pour détecter une même attaque ailleurs.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "indicator-of-compromise-1",
+          "text_en": "I added the new IoCs to the SIEM watchlist.",
+          "text_fr": "J’ai ajouté les nouveaux IoC à la liste de surveillance du SIEM."
+        },
+        {
+          "id": "indicator-of-compromise-2",
+          "text_en": "This file hash is a known indicator of compromise.",
+          "text_fr": "Cette empreinte de fichier est un indicateur de compromission connu."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "threat-intelligence",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "threat intelligence",
+      "translation_fr": "renseignement sur les menaces",
+      "part_of_speech": "noun",
+      "definition_en": "Collected and analyzed information about attackers, their tools and their methods, used to anticipate and detect attacks.",
+      "explanation_fr": "Informations collectées et analysées sur les attaquants, leurs outils et leurs méthodes, pour anticiper et détecter les attaques.",
+      "why_it_matters_fr": "Souvent abrégé « threat intel » ou CTI dans les équipes sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "threat-intelligence-1",
+          "text_en": "Our threat intelligence feed flagged this domain yesterday.",
+          "text_fr": "Notre flux de renseignement sur les menaces a signalé ce domaine hier."
+        },
+        {
+          "id": "threat-intelligence-2",
+          "text_en": "Threat intel suggests the group targets banks in Europe.",
+          "text_fr": "Le renseignement indique que ce groupe cible des banques en Europe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "threat-hunting",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "security",
+        "monitoring"
+      ],
+      "term_en": "threat hunting",
+      "translation_fr": "chasse aux menaces",
+      "part_of_speech": "noun",
+      "definition_en": "Proactively searching through networks and logs for attackers who have evaded existing security tools.",
+      "explanation_fr": "Recherche proactive, dans les réseaux et les journaux, d’attaquants qui ont échappé aux outils de sécurité existants.",
+      "why_it_matters_fr": "Distingue une équipe qui attend les alertes d’une équipe qui cherche activement.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "threat-hunting-1",
+          "text_en": "This week’s threat hunting focuses on unusual PowerShell activity.",
+          "text_fr": "La chasse aux menaces de cette semaine porte sur une activité PowerShell inhabituelle."
+        },
+        {
+          "id": "threat-hunting-2",
+          "text_en": "Threat hunting found a dormant backdoor on a test server.",
+          "text_fr": "La chasse aux menaces a trouvé une porte dérobée dormante sur un serveur de test."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "digital-forensics",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "digital forensics",
+      "translation_fr": "investigation numérique (forensique)",
+      "part_of_speech": "noun",
+      "definition_en": "The collection, preservation and analysis of digital evidence to understand what happened during an incident, sometimes for legal use.",
+      "explanation_fr": "Collecte, préservation et analyse de preuves numériques pour comprendre ce qui s’est passé lors d’un incident, parfois à des fins judiciaires.",
+      "why_it_matters_fr": "En français, on entend souvent « le forensic » ou « l’investigation numérique ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "digital-forensics-1",
+          "text_en": "Don’t reboot the server: digital forensics needs the memory intact.",
+          "text_fr": "Ne redémarrez pas le serveur : l’investigation numérique a besoin de la mémoire intacte."
+        },
+        {
+          "id": "digital-forensics-2",
+          "text_en": "We hired a digital forensics firm after the breach.",
+          "text_fr": "Nous avons fait appel à un cabinet d’investigation numérique après la fuite."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "chain-of-custody",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "chain of custody",
+      "translation_fr": "chaîne de traçabilité des preuves",
+      "part_of_speech": "noun",
+      "definition_en": "The documented record of who collected, handled and stored a piece of evidence, so it remains reliable and admissible.",
+      "explanation_fr": "Trace documentée de qui a collecté, manipulé et stocké une preuve, pour qu’elle reste fiable et recevable.",
+      "why_it_matters_fr": "Indispensable si l’incident peut aller devant un tribunal ou un régulateur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "chain-of-custody-1",
+          "text_en": "Log every transfer of the hard drive to keep the chain of custody.",
+          "text_fr": "Consignez chaque transfert du disque pour préserver la chaîne de traçabilité."
+        },
+        {
+          "id": "chain-of-custody-2",
+          "text_en": "A broken chain of custody can make evidence unusable.",
+          "text_fr": "Une chaîne de traçabilité rompue peut rendre une preuve inutilisable."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Traduction française non figée (« chaîne de possession » existe aussi)."
+    },
+    {
+      "id": "forensic-image",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "forensic image",
+      "translation_fr": "image forensique (copie bit à bit)",
+      "part_of_speech": "noun",
+      "definition_en": "An exact bit-by-bit copy of a storage device, made so investigators can analyze it without altering the original.",
+      "explanation_fr": "Copie exacte, bit à bit, d’un support de stockage, réalisée pour l’analyser sans modifier l’original.",
+      "why_it_matters_fr": "On travaille toujours sur la copie, jamais sur la pièce originale.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "forensic-image-1",
+          "text_en": "We took a forensic image of the disk before any analysis.",
+          "text_fr": "Nous avons réalisé une image forensique du disque avant toute analyse."
+        },
+        {
+          "id": "forensic-image-2",
+          "text_en": "Verify the hash of the forensic image against the original.",
+          "text_fr": "Vérifiez l’empreinte de l’image forensique par rapport à l’original."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "lateral-movement",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "lateral movement",
+      "translation_fr": "déplacement latéral",
+      "part_of_speech": "noun",
+      "definition_en": "Techniques an attacker uses after the first breach to move from one system to others inside the network.",
+      "explanation_fr": "Techniques qu’un attaquant utilise après la première intrusion pour passer d’un système à d’autres à l’intérieur du réseau.",
+      "why_it_matters_fr": "Expliquer comment un poste compromis a mené au serveur critique passe par ce mot.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "lateral-movement-1",
+          "text_en": "The attacker used stolen credentials for lateral movement.",
+          "text_fr": "L’attaquant a utilisé des identifiants volés pour se déplacer latéralement."
+        },
+        {
+          "id": "lateral-movement-2",
+          "text_en": "Network segmentation limits lateral movement.",
+          "text_fr": "La segmentation réseau limite les déplacements latéraux."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "data-exfiltration",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "data exfiltration",
+      "translation_fr": "exfiltration de données",
+      "part_of_speech": "noun",
+      "definition_en": "The unauthorized transfer of data out of an organization by an attacker or a malicious insider.",
+      "explanation_fr": "Transfert non autorisé de données hors de l’organisation par un attaquant ou un employé malveillant.",
+      "why_it_matters_fr": "Question centrale après une intrusion : des données sont-elles sorties ?",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "data-exfiltration-1",
+          "text_en": "We see no sign of data exfiltration so far.",
+          "text_fr": "Nous ne voyons aucun signe d’exfiltration de données pour l’instant."
+        },
+        {
+          "id": "data-exfiltration-2",
+          "text_en": "Large uploads at 3 a.m. may indicate exfiltration.",
+          "text_fr": "De gros envois à 3 h du matin peuvent indiquer une exfiltration."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "command-and-control",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "command and control (C2)",
+      "translation_fr": "commande et contrôle (C2)",
+      "part_of_speech": "noun",
+      "definition_en": "The infrastructure attackers use to send instructions to compromised machines and receive data from them.",
+      "explanation_fr": "Infrastructure qu’utilisent les attaquants pour envoyer des ordres aux machines compromises et en recevoir des données.",
+      "why_it_matters_fr": "Bloquer le serveur C2 coupe souvent l’attaquant de ses machines infectées.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "command-and-control-1",
+          "text_en": "We blocked the C2 domain at the firewall.",
+          "text_fr": "Nous avons bloqué le domaine C2 au niveau du pare-feu."
+        },
+        {
+          "id": "command-and-control-2",
+          "text_en": "The malware beacons to its command and control server every hour.",
+          "text_fr": "Le logiciel malveillant contacte son serveur de commande et contrôle toutes les heures."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mitre-attack",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "MITRE ATT&CK",
+      "translation_fr": "MITRE ATT&CK (référentiel)",
+      "part_of_speech": "noun",
+      "definition_en": "A public knowledge base that catalogs attacker tactics and techniques, used to describe attacks and assess detection coverage.",
+      "explanation_fr": "Base de connaissances publique qui recense les tactiques et techniques des attaquants, utilisée pour décrire les attaques et évaluer la couverture de détection.",
+      "why_it_matters_fr": "Référence commune pour parler d’attaques avec un vocabulaire partagé.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mitre-attack-1",
+          "text_en": "Let’s map these detections to MITRE ATT&CK techniques.",
+          "text_fr": "Associons ces détections aux techniques MITRE ATT&CK."
+        },
+        {
+          "id": "mitre-attack-2",
+          "text_en": "Our coverage is weak on the persistence tactics in ATT&CK.",
+          "text_fr": "Notre couverture est faible sur les tactiques de persistance d’ATT&CK."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "edr",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 80
+        },
+        {
+          "role": "network-systems",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "EDR",
+      "translation_fr": "EDR (détection et réponse sur les postes)",
+      "part_of_speech": "acronym",
+      "definition_en": "Endpoint Detection and Response: software on laptops and servers that monitors activity, detects threats and lets analysts respond remotely.",
+      "explanation_fr": "Endpoint Detection and Response : logiciel installé sur les postes et serveurs qui surveille l’activité, détecte les menaces et permet d’intervenir à distance.",
+      "why_it_matters_fr": "Successeur moderne de l’antivirus classique en entreprise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "edr-1",
+          "text_en": "The EDR quarantined the file automatically.",
+          "text_fr": "L’EDR a mis le fichier en quarantaine automatiquement."
+        },
+        {
+          "id": "edr-2",
+          "text_en": "Can you isolate that host from the EDR console?",
+          "text_fr": "Peux-tu isoler cette machine depuis la console EDR ?"
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "soar",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "SOAR",
+      "translation_fr": "SOAR (orchestration et automatisation de la réponse)",
+      "part_of_speech": "acronym",
+      "definition_en": "Security Orchestration, Automation and Response: tools that automate repetitive security tasks and coordinate incident response workflows.",
+      "explanation_fr": "Security Orchestration, Automation and Response : outils qui automatisent les tâches de sécurité répétitives et coordonnent les processus de réponse.",
+      "why_it_matters_fr": "Permet à un SOC de traiter beaucoup d’alertes sans tout faire à la main.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "soar-1",
+          "text_en": "The SOAR playbook enriches each alert with threat intel.",
+          "text_fr": "Le playbook SOAR enrichit chaque alerte avec du renseignement sur les menaces."
+        },
+        {
+          "id": "soar-2",
+          "text_en": "We automated phishing triage with our SOAR platform.",
+          "text_fr": "Nous avons automatisé le tri du phishing avec notre plateforme SOAR."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "alert-triage",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security",
+        "monitoring"
+      ],
+      "term_en": "alert triage",
+      "translation_fr": "tri des alertes",
+      "part_of_speech": "noun",
+      "definition_en": "The process of reviewing incoming alerts to decide which are real threats, how severe they are and who must act.",
+      "explanation_fr": "Processus d’examen des alertes reçues pour décider lesquelles sont de vraies menaces, leur gravité et qui doit agir.",
+      "why_it_matters_fr": "Tâche quotidienne d’un analyste SOC de niveau 1.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "alert-triage-1",
+          "text_en": "Alert triage took most of my shift today.",
+          "text_fr": "Le tri des alertes a pris la majeure partie de mon poste aujourd’hui."
+        },
+        {
+          "id": "alert-triage-2",
+          "text_en": "Better rules would make alert triage much faster.",
+          "text_fr": "De meilleures règles rendraient le tri des alertes bien plus rapide."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "alert-fatigue",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "monitoring"
+      ],
+      "term_en": "alert fatigue",
+      "translation_fr": "lassitude face aux alertes",
+      "part_of_speech": "noun",
+      "definition_en": "The state where people receive so many alerts, often false positives, that they start ignoring or missing important ones.",
+      "explanation_fr": "Situation où l’on reçoit tant d’alertes, souvent des faux positifs, qu’on finit par ignorer ou rater les importantes.",
+      "why_it_matters_fr": "Argument courant pour justifier un nettoyage des règles de détection.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "alert-fatigue-1",
+          "text_en": "Too many low-priority alerts are causing alert fatigue.",
+          "text_fr": "Trop d’alertes de faible priorité provoquent une lassitude face aux alertes."
+        },
+        {
+          "id": "alert-fatigue-2",
+          "text_en": "We tuned the rules to fight alert fatigue.",
+          "text_fr": "Nous avons ajusté les règles pour lutter contre la lassitude face aux alertes."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mfa",
+      "status": "draft",
+      "level": "A2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "general-tech",
+          "priority": 50
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "MFA",
+      "translation_fr": "MFA (authentification multifacteur)",
+      "part_of_speech": "acronym",
+      "definition_en": "Multi-Factor Authentication: logging in with two or more independent proofs, such as a password plus a phone app code or a security key.",
+      "explanation_fr": "Multi-Factor Authentication : connexion avec au moins deux preuves indépendantes, par exemple un mot de passe et un code d’application ou une clé de sécurité.",
+      "why_it_matters_fr": "Exigence de base de presque toutes les politiques de sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mfa-1",
+          "text_en": "MFA is now mandatory for all admin accounts.",
+          "text_fr": "La MFA est désormais obligatoire pour tous les comptes administrateurs."
+        },
+        {
+          "id": "mfa-2",
+          "text_en": "The attacker had the password but MFA stopped them.",
+          "text_fr": "L’attaquant avait le mot de passe, mais la MFA l’a arrêté."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sso",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 45
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "SSO",
+      "translation_fr": "SSO (authentification unique)",
+      "part_of_speech": "acronym",
+      "definition_en": "Single Sign-On: one login that gives a user access to several applications without signing in to each one separately.",
+      "explanation_fr": "Single Sign-On : une seule connexion qui donne accès à plusieurs applications sans s’identifier dans chacune.",
+      "why_it_matters_fr": "Très demandé par les clients entreprise lors d’un achat de logiciel.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sso-1",
+          "text_en": "Enterprise customers expect SSO with their identity provider.",
+          "text_fr": "Les clients entreprise attendent un SSO avec leur fournisseur d’identité."
+        },
+        {
+          "id": "sso-2",
+          "text_en": "I can’t log in to Jira because SSO is down.",
+          "text_fr": "Je n’arrive pas à me connecter à Jira car le SSO est en panne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "identity-provider",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "identity provider (IdP)",
+      "translation_fr": "fournisseur d’identité (IdP)",
+      "part_of_speech": "noun",
+      "definition_en": "A service that stores user identities and authenticates them for other applications, such as Microsoft Entra ID or Okta.",
+      "explanation_fr": "Service qui stocke les identités et authentifie les utilisateurs pour d’autres applications, comme Microsoft Entra ID ou Okta.",
+      "why_it_matters_fr": "Pièce centrale de tout projet SSO.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "identity-provider-1",
+          "text_en": "We configured Okta as the identity provider for the app.",
+          "text_fr": "Nous avons configuré Okta comme fournisseur d’identité pour l’application."
+        },
+        {
+          "id": "identity-provider-2",
+          "text_en": "Disable the user in the IdP and access is revoked everywhere.",
+          "text_fr": "Désactivez l’utilisateur dans l’IdP et son accès est retiré partout."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "saml",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security",
+        "api"
+      ],
+      "term_en": "SAML",
+      "translation_fr": "SAML",
+      "part_of_speech": "acronym",
+      "definition_en": "Security Assertion Markup Language: an XML-based standard that lets an identity provider pass authentication information to an application for single sign-on.",
+      "explanation_fr": "Security Assertion Markup Language : standard basé sur XML qui permet à un fournisseur d’identité de transmettre une authentification à une application pour le SSO.",
+      "why_it_matters_fr": "Encore très utilisé pour le SSO en entreprise, à côté d’OpenID Connect.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "saml-1",
+          "text_en": "The client wants SAML SSO, not just Google login.",
+          "text_fr": "Le client veut un SSO SAML, pas seulement une connexion Google."
+        },
+        {
+          "id": "saml-2",
+          "text_en": "The SAML assertion expired before it reached our app.",
+          "text_fr": "L’assertion SAML a expiré avant d’atteindre notre application."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "openid-connect",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        },
+        {
+          "role": "web-developer",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security",
+        "api"
+      ],
+      "term_en": "OpenID Connect (OIDC)",
+      "translation_fr": "OpenID Connect (OIDC)",
+      "part_of_speech": "noun",
+      "definition_en": "An identity layer built on top of OAuth 2.0 that lets applications verify who a user is and get basic profile information.",
+      "explanation_fr": "Couche d’identité construite sur OAuth 2.0 qui permet aux applications de vérifier qui est l’utilisateur et d’obtenir son profil de base.",
+      "why_it_matters_fr": "OAuth sert à autoriser, OIDC ajoute l’authentification : distinction fréquente en entretien.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "openid-connect-1",
+          "text_en": "We use OpenID Connect for “Sign in with Google”.",
+          "text_fr": "Nous utilisons OpenID Connect pour « Se connecter avec Google »."
+        },
+        {
+          "id": "openid-connect-2",
+          "text_en": "The OIDC ID token contains the user’s email.",
+          "text_fr": "Le jeton d’identité OIDC contient l’e-mail de l’utilisateur."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "privileged-access-management",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "network-systems",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "privileged access management (PAM)",
+      "translation_fr": "gestion des accès à privilèges (PAM)",
+      "part_of_speech": "noun",
+      "definition_en": "Tools and practices to control, monitor and limit the use of high-level accounts such as administrators and root.",
+      "explanation_fr": "Outils et pratiques pour contrôler, surveiller et limiter l’usage des comptes à hauts privilèges comme les administrateurs et root.",
+      "why_it_matters_fr": "Les comptes administrateurs sont la cible numéro un des attaquants.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "privileged-access-management-1",
+          "text_en": "Admins must check out passwords from the PAM vault.",
+          "text_fr": "Les administrateurs doivent emprunter les mots de passe dans le coffre PAM."
+        },
+        {
+          "id": "privileged-access-management-2",
+          "text_en": "PAM records every privileged session for audit.",
+          "text_fr": "Le PAM enregistre chaque session à privilèges pour l’audit."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "access-review",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "access review",
+      "translation_fr": "revue des accès",
+      "part_of_speech": "noun",
+      "definition_en": "A periodic check in which managers confirm that each user still needs the access rights they have.",
+      "explanation_fr": "Vérification périodique où les responsables confirment que chaque utilisateur a encore besoin de ses droits d’accès.",
+      "why_it_matters_fr": "Exigée par la plupart des audits de conformité (ISO 27001, SOC 2).",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "access-review-1",
+          "text_en": "Please complete the quarterly access review by Friday.",
+          "text_fr": "Merci de terminer la revue trimestrielle des accès d’ici vendredi."
+        },
+        {
+          "id": "access-review-2",
+          "text_en": "The access review found five former contractors still active.",
+          "text_fr": "La revue des accès a trouvé cinq anciens prestataires encore actifs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "deprovisioning",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security",
+        "operating-systems"
+      ],
+      "term_en": "deprovisioning",
+      "translation_fr": "retrait des accès (déprovisionnement)",
+      "part_of_speech": "noun",
+      "definition_en": "Removing a user’s accounts and access rights when they leave the company or no longer need them.",
+      "explanation_fr": "Suppression des comptes et des droits d’un utilisateur quand il quitte l’entreprise ou n’en a plus besoin.",
+      "why_it_matters_fr": "Un départ mal géré laisse des comptes ouverts : risque classique.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "deprovisioning-1",
+          "text_en": "Deprovisioning must happen on the employee’s last day.",
+          "text_fr": "Le retrait des accès doit se faire le dernier jour du salarié."
+        },
+        {
+          "id": "deprovisioning-2",
+          "text_en": "Automated deprovisioning closes all accounts from the HR system.",
+          "text_fr": "Le déprovisionnement automatique ferme tous les comptes à partir du SIRH."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "service-account",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        },
+        {
+          "role": "network-systems",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "service account",
+      "translation_fr": "compte de service",
+      "part_of_speech": "noun",
+      "definition_en": "A non-human account used by an application or script to access systems and resources.",
+      "explanation_fr": "Compte non humain utilisé par une application ou un script pour accéder à des systèmes et ressources.",
+      "why_it_matters_fr": "Ces comptes ont souvent trop de droits et ne sont jamais revus.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "service-account-1",
+          "text_en": "The backup job runs under a dedicated service account.",
+          "text_fr": "La tâche de sauvegarde tourne sous un compte de service dédié."
+        },
+        {
+          "id": "service-account-2",
+          "text_en": "That service account has far more permissions than it needs.",
+          "text_fr": "Ce compte de service a bien plus de droits que nécessaire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "key-rotation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "key rotation",
+      "translation_fr": "rotation des clés",
+      "part_of_speech": "noun",
+      "definition_en": "Regularly replacing cryptographic keys, passwords or tokens with new ones to limit damage if one is compromised.",
+      "explanation_fr": "Remplacement régulier des clés, mots de passe ou jetons par de nouveaux pour limiter les dégâts en cas de compromission.",
+      "why_it_matters_fr": "Bonne pratique attendue par les auditeurs et les plateformes cloud.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "key-rotation-1",
+          "text_en": "Key rotation is automated every 90 days.",
+          "text_fr": "La rotation des clés est automatisée tous les 90 jours."
+        },
+        {
+          "id": "key-rotation-2",
+          "text_en": "After the leak we forced a rotation of every secret.",
+          "text_fr": "Après la fuite, nous avons imposé la rotation de tous les secrets."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "credential-stuffing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "credential stuffing",
+      "translation_fr": "bourrage d’identifiants (credential stuffing)",
+      "part_of_speech": "noun",
+      "definition_en": "An attack that tries large lists of usernames and passwords stolen from other sites, betting that people reuse them.",
+      "explanation_fr": "Attaque qui teste en masse des identifiants volés sur d’autres sites, en pariant que les gens les réutilisent.",
+      "why_it_matters_fr": "Différent de la force brute : les mots de passe sont réels, juste réutilisés.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "credential-stuffing-1",
+          "text_en": "The login spike looks like a credential stuffing attack.",
+          "text_fr": "Le pic de connexions ressemble à une attaque par bourrage d’identifiants."
+        },
+        {
+          "id": "credential-stuffing-2",
+          "text_en": "Rate limiting and MFA reduce credential stuffing risks.",
+          "text_fr": "La limitation de débit et la MFA réduisent les risques de credential stuffing."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Le terme anglais est généralement conservé en français."
+    },
+    {
+      "id": "passkey",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 50
+        },
+        {
+          "role": "mobile-developer",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "passkey",
+      "translation_fr": "clé d’accès (passkey)",
+      "part_of_speech": "noun",
+      "definition_en": "A passwordless login credential based on public key cryptography, stored on a device and unlocked with biometrics or a PIN.",
+      "explanation_fr": "Identifiant de connexion sans mot de passe, basé sur la cryptographie à clé publique, stocké sur un appareil et déverrouillé par biométrie ou code.",
+      "why_it_matters_fr": "Standard FIDO soutenu par Apple, Google et Microsoft, de plus en plus proposé.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "passkey-1",
+          "text_en": "We now support passkeys on the login page.",
+          "text_fr": "Nous prenons désormais en charge les passkeys sur la page de connexion."
+        },
+        {
+          "id": "passkey-2",
+          "text_en": "Passkeys can’t be phished like passwords.",
+          "text_fr": "Les passkeys ne peuvent pas être hameçonnées comme les mots de passe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "zero-trust",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 75
+        },
+        {
+          "role": "network-systems",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "zero trust",
+      "translation_fr": "zero trust (confiance zéro)",
+      "part_of_speech": "noun",
+      "definition_en": "A security model where no user or device is trusted by default, even inside the network; every access is verified.",
+      "explanation_fr": "Modèle de sécurité où aucun utilisateur ni appareil n’est considéré comme fiable par défaut, même dans le réseau ; chaque accès est vérifié.",
+      "why_it_matters_fr": "Remplace l’ancien modèle « château fort » centré sur le pare-feu.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "zero-trust-1",
+          "text_en": "We are moving from VPN access to a zero trust model.",
+          "text_fr": "Nous passons d’un accès VPN à un modèle zero trust."
+        },
+        {
+          "id": "zero-trust-2",
+          "text_en": "Zero trust means checking identity and device on every request.",
+          "text_fr": "Le zero trust consiste à vérifier l’identité et l’appareil à chaque requête."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "shared-responsibility-model",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "shared responsibility model",
+      "translation_fr": "modèle de responsabilité partagée",
+      "part_of_speech": "noun",
+      "definition_en": "The cloud principle that the provider secures the underlying infrastructure while the customer secures their data, configurations and access.",
+      "explanation_fr": "Principe du cloud selon lequel le fournisseur sécurise l’infrastructure tandis que le client sécurise ses données, ses configurations et ses accès.",
+      "why_it_matters_fr": "Beaucoup de fuites viennent d’un client qui pensait que le cloud s’occupait de tout.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "shared-responsibility-model-1",
+          "text_en": "Under the shared responsibility model, bucket permissions are on us.",
+          "text_fr": "Selon le modèle de responsabilité partagée, les droits des buckets sont à notre charge."
+        },
+        {
+          "id": "shared-responsibility-model-2",
+          "text_en": "AWS patches the hypervisor; we patch our VMs.",
+          "text_fr": "AWS corrige l’hyperviseur ; nous corrigeons nos VM."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cloud-misconfiguration",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "misconfiguration",
+      "translation_fr": "mauvaise configuration",
+      "part_of_speech": "noun",
+      "definition_en": "An incorrect or insecure setting, such as a public storage bucket or an open port, that exposes a system to attack.",
+      "explanation_fr": "Paramètre incorrect ou non sécurisé, comme un bucket public ou un port ouvert, qui expose un système aux attaques.",
+      "why_it_matters_fr": "Une des premières causes de fuites de données dans le cloud.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cloud-misconfiguration-1",
+          "text_en": "The leak was caused by a misconfiguration, not a hack.",
+          "text_fr": "La fuite venait d’une mauvaise configuration, pas d’un piratage."
+        },
+        {
+          "id": "cloud-misconfiguration-2",
+          "text_en": "Our scanner flags any misconfiguration in Terraform plans.",
+          "text_fr": "Notre scanner signale toute mauvaise configuration dans les plans Terraform."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cspm",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "CSPM",
+      "translation_fr": "CSPM (gestion de la posture de sécurité cloud)",
+      "part_of_speech": "acronym",
+      "definition_en": "Cloud Security Posture Management: tools that continuously scan cloud accounts for misconfigurations and compliance violations.",
+      "explanation_fr": "Cloud Security Posture Management : outils qui analysent en continu les comptes cloud pour détecter mauvaises configurations et écarts de conformité.",
+      "why_it_matters_fr": "Catégorie d’outils souvent citée dans les offres d’emploi sécurité cloud.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cspm-1",
+          "text_en": "The CSPM tool found 40 public snapshots.",
+          "text_fr": "L’outil CSPM a trouvé 40 snapshots publics."
+        },
+        {
+          "id": "cspm-2",
+          "text_en": "We review CSPM findings in the weekly security sync.",
+          "text_fr": "Nous revoyons les constats CSPM au point sécurité hebdomadaire."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dlp",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "DLP",
+      "translation_fr": "DLP (prévention des fuites de données)",
+      "part_of_speech": "acronym",
+      "definition_en": "Data Loss Prevention: tools and policies that detect and block sensitive data from leaving the organization.",
+      "explanation_fr": "Data Loss Prevention : outils et règles qui détectent et bloquent la sortie de données sensibles de l’organisation.",
+      "why_it_matters_fr": "Souvent à l’origine des messages « votre e-mail a été bloqué ».",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dlp-1",
+          "text_en": "DLP blocked an email containing credit card numbers.",
+          "text_fr": "La DLP a bloqué un e-mail contenant des numéros de carte bancaire."
+        },
+        {
+          "id": "dlp-2",
+          "text_en": "We need a DLP rule for customer passport scans.",
+          "text_fr": "Il nous faut une règle DLP pour les scans de passeports clients."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "iso-27001",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "project-management",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "ISO 27001",
+      "translation_fr": "ISO 27001",
+      "part_of_speech": "noun",
+      "definition_en": "An international standard that defines requirements for an information security management system (ISMS), against which companies can be certified.",
+      "explanation_fr": "Norme internationale qui définit les exigences d’un système de management de la sécurité de l’information (SMSI), avec certification possible.",
+      "why_it_matters_fr": "Certification souvent exigée par les grands clients en Europe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "iso-27001-1",
+          "text_en": "We passed our ISO 27001 surveillance audit.",
+          "text_fr": "Nous avons réussi notre audit de surveillance ISO 27001."
+        },
+        {
+          "id": "iso-27001-2",
+          "text_en": "The client requires ISO 27001 certification from all vendors.",
+          "text_fr": "Le client exige la certification ISO 27001 de tous ses fournisseurs."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "soc-2",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "project-management",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "SOC 2",
+      "translation_fr": "SOC 2 (rapport d’audit)",
+      "part_of_speech": "noun",
+      "definition_en": "An audit framework from the AICPA in which an independent auditor reports on a service company’s controls for security, availability and confidentiality.",
+      "explanation_fr": "Cadre d’audit de l’AICPA dans lequel un auditeur indépendant évalue les contrôles d’une entreprise de services en sécurité, disponibilité et confidentialité.",
+      "why_it_matters_fr": "Incontournable pour vendre un SaaS aux entreprises américaines. Ne pas confondre avec SOC, le centre opérationnel.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "soc-2-1",
+          "text_en": "The prospect asked for our SOC 2 Type II report.",
+          "text_fr": "Le prospect a demandé notre rapport SOC 2 Type II."
+        },
+        {
+          "id": "soc-2-2",
+          "text_en": "SOC 2 requires evidence of our access reviews.",
+          "text_fr": "Le SOC 2 exige des preuves de nos revues d’accès."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "nist-csf",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "NIST Cybersecurity Framework",
+      "translation_fr": "cadre de cybersécurité du NIST (CSF)",
+      "part_of_speech": "noun",
+      "definition_en": "A widely used framework from the US NIST that organizes security activities into functions: Govern, Identify, Protect, Detect, Respond and Recover.",
+      "explanation_fr": "Cadre très utilisé du NIST américain qui organise la sécurité en fonctions : Gouverner, Identifier, Protéger, Détecter, Répondre et Rétablir.",
+      "why_it_matters_fr": "Langage commun pour présenter une stratégie de sécurité à la direction.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "nist-csf-1",
+          "text_en": "We used the NIST CSF to structure our security roadmap.",
+          "text_fr": "Nous avons utilisé le NIST CSF pour structurer notre feuille de route sécurité."
+        },
+        {
+          "id": "nist-csf-2",
+          "text_en": "Our detection maturity is low in the NIST framework.",
+          "text_fr": "Notre maturité en détection est faible selon le cadre du NIST."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "La fonction « Govern » a été ajoutée dans la version 2.0 (2024)."
+    },
+    {
+      "id": "pci-dss",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "web-developer",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "PCI DSS",
+      "translation_fr": "PCI DSS (norme de sécurité des cartes de paiement)",
+      "part_of_speech": "acronym",
+      "definition_en": "Payment Card Industry Data Security Standard: security requirements for any organization that stores, processes or transmits card payment data.",
+      "explanation_fr": "Payment Card Industry Data Security Standard : exigences de sécurité pour toute organisation qui stocke, traite ou transmet des données de carte bancaire.",
+      "why_it_matters_fr": "Raison pour laquelle on confie souvent le paiement à un prestataire comme Stripe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "pci-dss-1",
+          "text_en": "Using Stripe reduces our PCI DSS scope.",
+          "text_fr": "Utiliser Stripe réduit notre périmètre PCI DSS."
+        },
+        {
+          "id": "pci-dss-2",
+          "text_en": "Storing card numbers would put us in full PCI DSS scope.",
+          "text_fr": "Stocker les numéros de carte nous mettrait entièrement dans le périmètre PCI DSS."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "nis2",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "NIS2",
+      "translation_fr": "NIS2 (directive européenne)",
+      "part_of_speech": "noun",
+      "definition_en": "An EU directive that sets cybersecurity and incident reporting obligations for essential and important entities in many sectors.",
+      "explanation_fr": "Directive européenne qui fixe des obligations de cybersécurité et de déclaration d’incidents aux entités essentielles et importantes de nombreux secteurs.",
+      "why_it_matters_fr": "Concerne directement beaucoup d’entreprises francophones en Europe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "nis2-1",
+          "text_en": "Under NIS2 we must report significant incidents within 24 hours.",
+          "text_fr": "Avec NIS2, nous devons signaler les incidents importants sous 24 heures."
+        },
+        {
+          "id": "nis2-2",
+          "text_en": "Legal is checking whether NIS2 applies to us.",
+          "text_fr": "Le service juridique vérifie si NIS2 s’applique à nous."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Délai : alerte précoce sous 24 h, notification sous 72 h ; transposition variable selon les pays."
+    },
+    {
+      "id": "risk-assessment",
+      "status": "draft",
+      "level": "B1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "project-management",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "risk assessment",
+      "translation_fr": "évaluation des risques",
+      "part_of_speech": "noun",
+      "definition_en": "The process of identifying risks, estimating their likelihood and impact, and deciding how to treat them.",
+      "explanation_fr": "Processus qui consiste à identifier les risques, estimer leur probabilité et leur impact, puis décider comment les traiter.",
+      "why_it_matters_fr": "Base de toute démarche de conformité ou de sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "risk-assessment-1",
+          "text_en": "We run a risk assessment before every new vendor.",
+          "text_fr": "Nous réalisons une évaluation des risques avant chaque nouveau fournisseur."
+        },
+        {
+          "id": "risk-assessment-2",
+          "text_en": "The risk assessment rated this issue as high impact, low likelihood.",
+          "text_fr": "L’évaluation des risques a classé ce problème impact élevé, probabilité faible."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "audit-trail",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security",
+        "monitoring"
+      ],
+      "term_en": "audit trail",
+      "translation_fr": "piste d’audit",
+      "part_of_speech": "noun",
+      "definition_en": "A chronological record of who did what and when in a system, used for security investigations and compliance.",
+      "explanation_fr": "Historique chronologique de qui a fait quoi et quand dans un système, utilisé pour les enquêtes et la conformité.",
+      "why_it_matters_fr": "Les auditeurs et les clients entreprise demandent souvent cette fonctionnalité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "audit-trail-1",
+          "text_en": "Every permission change must appear in the audit trail.",
+          "text_fr": "Chaque changement de droits doit apparaître dans la piste d’audit."
+        },
+        {
+          "id": "audit-trail-2",
+          "text_en": "The audit trail shows the admin exported the file at noon.",
+          "text_fr": "La piste d’audit montre que l’administrateur a exporté le fichier à midi."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cve",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 70
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "CVE",
+      "translation_fr": "CVE (identifiant de vulnérabilité)",
+      "part_of_speech": "acronym",
+      "definition_en": "Common Vulnerabilities and Exposures: a public catalog that gives each known vulnerability a unique identifier such as CVE-2021-44228.",
+      "explanation_fr": "Common Vulnerabilities and Exposures : catalogue public qui donne à chaque vulnérabilité connue un identifiant unique, comme CVE-2021-44228.",
+      "why_it_matters_fr": "On parle des failles par leur numéro CVE dans les tickets et les alertes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cve-1",
+          "text_en": "Are we affected by this CVE?",
+          "text_fr": "Sommes-nous concernés par cette CVE ?"
+        },
+        {
+          "id": "cve-2",
+          "text_en": "The scanner listed three critical CVEs in the base image.",
+          "text_fr": "Le scanner a listé trois CVE critiques dans l’image de base."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "cvss",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "CVSS",
+      "translation_fr": "CVSS (score de gravité)",
+      "part_of_speech": "acronym",
+      "definition_en": "Common Vulnerability Scoring System: a standard 0 to 10 score that rates the severity of a vulnerability.",
+      "explanation_fr": "Common Vulnerability Scoring System : score standard de 0 à 10 qui note la gravité d’une vulnérabilité.",
+      "why_it_matters_fr": "Sert à prioriser les correctifs, mais doit être complété par le contexte.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "cvss-1",
+          "text_en": "It has a CVSS score of 9.8, so we patch today.",
+          "text_fr": "Elle a un score CVSS de 9,8, donc on corrige aujourd’hui."
+        },
+        {
+          "id": "cvss-2",
+          "text_en": "A high CVSS doesn’t always mean high risk for us.",
+          "text_fr": "Un CVSS élevé ne veut pas toujours dire un risque élevé pour nous."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bug-bounty",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "bug bounty",
+      "translation_fr": "programme de bug bounty (prime aux failles)",
+      "part_of_speech": "noun",
+      "definition_en": "A program in which a company pays external researchers for responsibly reporting security vulnerabilities.",
+      "explanation_fr": "Programme dans lequel une entreprise rémunère des chercheurs externes qui signalent de façon responsable des vulnérabilités.",
+      "why_it_matters_fr": "Courant chez les éditeurs SaaS, souvent via des plateformes comme HackerOne ou YesWeHack.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bug-bounty-1",
+          "text_en": "A researcher reported an XSS through our bug bounty.",
+          "text_fr": "Un chercheur a signalé une XSS via notre bug bounty."
+        },
+        {
+          "id": "bug-bounty-2",
+          "text_en": "We paid a 2,000 euro bounty for that finding.",
+          "text_fr": "Nous avons versé une prime de 2 000 euros pour cette découverte."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "responsible-disclosure",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "responsible disclosure",
+      "translation_fr": "divulgation responsable",
+      "part_of_speech": "noun",
+      "definition_en": "Reporting a vulnerability privately to the vendor and giving them time to fix it before making it public.",
+      "explanation_fr": "Signaler une vulnérabilité en privé à l’éditeur et lui laisser le temps de la corriger avant de la rendre publique.",
+      "why_it_matters_fr": "Aussi appelé « coordinated disclosure » ; souvent décrit dans un fichier security.txt.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "responsible-disclosure-1",
+          "text_en": "Our responsible disclosure policy gives us 90 days to fix.",
+          "text_fr": "Notre politique de divulgation responsable nous laisse 90 jours pour corriger."
+        },
+        {
+          "id": "responsible-disclosure-2",
+          "text_en": "Please follow responsible disclosure and email security@.",
+          "text_fr": "Merci de suivre la divulgation responsable et d’écrire à security@."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "waf",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "web-developer",
+          "priority": 40
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "WAF",
+      "translation_fr": "WAF (pare-feu applicatif web)",
+      "part_of_speech": "acronym",
+      "definition_en": "Web Application Firewall: a filter in front of a web application that blocks malicious HTTP requests such as SQL injection or XSS attempts.",
+      "explanation_fr": "Web Application Firewall : filtre placé devant une application web qui bloque les requêtes HTTP malveillantes, comme les tentatives d’injection SQL ou de XSS.",
+      "why_it_matters_fr": "Protection rapide pendant qu’on corrige le code vulnérable.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "waf-1",
+          "text_en": "We added a WAF rule to block the exploit while we patch.",
+          "text_fr": "Nous avons ajouté une règle WAF pour bloquer l’exploit pendant le correctif."
+        },
+        {
+          "id": "waf-2",
+          "text_en": "The WAF is blocking legitimate requests from the mobile app.",
+          "text_fr": "Le WAF bloque des requêtes légitimes de l’application mobile."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "spear-phishing",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "general-tech",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "spear phishing",
+      "translation_fr": "hameçonnage ciblé",
+      "part_of_speech": "noun",
+      "definition_en": "A phishing attack tailored to a specific person or team, using personal details to look credible.",
+      "explanation_fr": "Attaque d’hameçonnage adaptée à une personne ou une équipe précise, avec des détails personnels pour paraître crédible.",
+      "why_it_matters_fr": "Beaucoup plus efficace que le phishing de masse ; cible souvent la finance et les dirigeants.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "spear-phishing-1",
+          "text_en": "The CFO received a spear phishing email about an urgent wire.",
+          "text_fr": "Le directeur financier a reçu un e-mail d’hameçonnage ciblé sur un virement urgent."
+        },
+        {
+          "id": "spear-phishing-2",
+          "text_en": "Spear phishing often uses information from LinkedIn.",
+          "text_fr": "L’hameçonnage ciblé utilise souvent des informations de LinkedIn."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "supply-chain-attack",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 40
+        },
+        {
+          "role": "web-developer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "supply chain attack",
+      "translation_fr": "attaque de la chaîne d’approvisionnement",
+      "part_of_speech": "noun",
+      "definition_en": "An attack that compromises a trusted supplier, library or tool in order to reach its customers.",
+      "explanation_fr": "Attaque qui compromet un fournisseur, une bibliothèque ou un outil de confiance pour atteindre ses clients.",
+      "why_it_matters_fr": "Les paquets npm ou PyPI piégés en sont un exemple courant.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "supply-chain-attack-1",
+          "text_en": "A malicious npm package could be a supply chain attack.",
+          "text_fr": "Un paquet npm malveillant pourrait être une attaque de la chaîne d’approvisionnement."
+        },
+        {
+          "id": "supply-chain-attack-2",
+          "text_en": "We pin dependencies to reduce supply chain risk.",
+          "text_fr": "Nous figeons les dépendances pour réduire le risque lié à la chaîne d’approvisionnement."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "man-in-the-middle",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 45
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "man-in-the-middle attack",
+      "translation_fr": "attaque de l’homme du milieu",
+      "part_of_speech": "noun",
+      "definition_en": "An attack in which someone secretly intercepts, and possibly alters, communication between two parties.",
+      "explanation_fr": "Attaque où quelqu’un intercepte secrètement, et peut modifier, la communication entre deux parties.",
+      "why_it_matters_fr": "Raison principale pour imposer HTTPS partout, surtout sur Wi-Fi public.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "man-in-the-middle-1",
+          "text_en": "Public Wi-Fi without HTTPS exposes you to man-in-the-middle attacks.",
+          "text_fr": "Un Wi-Fi public sans HTTPS vous expose aux attaques de l’homme du milieu."
+        },
+        {
+          "id": "man-in-the-middle-2",
+          "text_en": "Certificate pinning helps prevent MITM attacks in the app.",
+          "text_fr": "L’épinglage de certificat aide à éviter les attaques MITM dans l’application."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": [],
+      "review_note": "Aussi abrégé MITM ; la forme neutre « on-path attack » se répand."
+    },
+    {
+      "id": "tabletop-exercise",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        },
+        {
+          "role": "project-management",
+          "priority": 30
+        }
+      ],
+      "categories": [
+        "security",
+        "collaboration"
+      ],
+      "term_en": "tabletop exercise",
+      "translation_fr": "exercice sur table",
+      "part_of_speech": "noun",
+      "definition_en": "A discussion-based simulation where a team walks through a fictional incident to test its response plan.",
+      "explanation_fr": "Simulation sous forme de discussion où une équipe déroule un incident fictif pour tester son plan de réponse.",
+      "why_it_matters_fr": "Façon peu coûteuse de découvrir les trous d’un plan avant une vraie crise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "tabletop-exercise-1",
+          "text_en": "Our ransomware tabletop exercise is on Thursday.",
+          "text_fr": "Notre exercice sur table rançongiciel a lieu jeudi."
+        },
+        {
+          "id": "tabletop-exercise-2",
+          "text_en": "The tabletop showed nobody knew who calls the lawyers.",
+          "text_fr": "L’exercice a montré que personne ne savait qui appelle les avocats."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "blue-team",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "blue team",
+      "translation_fr": "équipe bleue (blue team)",
+      "part_of_speech": "noun",
+      "definition_en": "The defenders who protect systems, detect attacks and respond to incidents, often opposed to a red team in exercises.",
+      "explanation_fr": "Les défenseurs qui protègent les systèmes, détectent les attaques et répondent aux incidents, souvent opposés à une red team lors d’exercices.",
+      "why_it_matters_fr": "Complète le terme red team déjà connu ; on parle aussi de purple team quand les deux collaborent.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "blue-team-1",
+          "text_en": "The blue team detected the red team within two hours.",
+          "text_fr": "La blue team a détecté la red team en deux heures."
+        },
+        {
+          "id": "blue-team-2",
+          "text_en": "I want to move from IT support to a blue team role.",
+          "text_fr": "Je veux passer du support informatique à un poste en blue team."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "system-hardening",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 65
+        },
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "security",
+        "operating-systems"
+      ],
+      "term_en": "hardening",
+      "translation_fr": "durcissement",
+      "part_of_speech": "noun",
+      "definition_en": "Reducing a system’s attack surface by removing unneeded services, closing ports and applying secure settings.",
+      "explanation_fr": "Réduction de la surface d’attaque d’un système en supprimant les services inutiles, en fermant les ports et en appliquant des réglages sécurisés.",
+      "why_it_matters_fr": "Étape standard avant de mettre un serveur en production, souvent guidée par les benchmarks CIS.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "system-hardening-1",
+          "text_en": "We follow the CIS benchmark for server hardening.",
+          "text_fr": "Nous suivons le benchmark CIS pour le durcissement des serveurs."
+        },
+        {
+          "id": "system-hardening-2",
+          "text_en": "Hardening the image removed 30 unused packages.",
+          "text_fr": "Le durcissement de l’image a supprimé 30 paquets inutiles."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "network-segmentation",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "security",
+        "networking"
+      ],
+      "term_en": "network segmentation",
+      "translation_fr": "segmentation réseau",
+      "part_of_speech": "noun",
+      "definition_en": "Dividing a network into separate zones with controlled traffic between them, so a breach in one zone doesn’t spread easily.",
+      "explanation_fr": "Découpage d’un réseau en zones séparées dont les échanges sont contrôlés, pour qu’une intrusion dans une zone ne se propage pas facilement.",
+      "why_it_matters_fr": "Mesure clé contre les rançongiciels et les déplacements latéraux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "network-segmentation-1",
+          "text_en": "Network segmentation kept the ransomware away from production.",
+          "text_fr": "La segmentation réseau a tenu le rançongiciel à l’écart de la production."
+        },
+        {
+          "id": "network-segmentation-2",
+          "text_en": "Printers should sit on their own network segment.",
+          "text_fr": "Les imprimantes devraient être sur leur propre segment réseau."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "encryption-at-rest",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 60
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 50
+        },
+        {
+          "role": "data-engineer",
+          "priority": 35
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "encryption at rest",
+      "translation_fr": "chiffrement au repos",
+      "part_of_speech": "noun",
+      "definition_en": "Encrypting data while it is stored on disks, databases or backups, as opposed to while it travels over a network.",
+      "explanation_fr": "Chiffrement des données lorsqu’elles sont stockées sur disque, en base ou en sauvegarde, par opposition à leur transit sur le réseau.",
+      "why_it_matters_fr": "Toujours associé à son pendant « encryption in transit » dans les questionnaires de sécurité.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "encryption-at-rest-1",
+          "text_en": "Is the database encrypted at rest and in transit?",
+          "text_fr": "La base est-elle chiffrée au repos et en transit ?"
+        },
+        {
+          "id": "encryption-at-rest-2",
+          "text_en": "Encryption at rest is enabled by default on our buckets.",
+          "text_fr": "Le chiffrement au repos est activé par défaut sur nos buckets."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "kms",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 50
+        },
+        {
+          "role": "devops-cloud",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security",
+        "cloud"
+      ],
+      "term_en": "KMS",
+      "translation_fr": "KMS (service de gestion des clés)",
+      "part_of_speech": "acronym",
+      "definition_en": "Key Management Service: a managed service that creates, stores and controls access to encryption keys.",
+      "explanation_fr": "Key Management Service : service géré qui crée, stocke et contrôle l’accès aux clés de chiffrement.",
+      "why_it_matters_fr": "Sur AWS, GCP ou Azure, c’est lui qui garde les clés plutôt que le code.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "kms-1",
+          "text_en": "The app decrypts the secret through KMS at startup.",
+          "text_fr": "L’application déchiffre le secret via KMS au démarrage."
+        },
+        {
+          "id": "kms-2",
+          "text_en": "Only the payments service can use that KMS key.",
+          "text_fr": "Seul le service de paiement peut utiliser cette clé KMS."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "security-posture",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "security posture",
+      "translation_fr": "posture de sécurité",
+      "part_of_speech": "noun",
+      "definition_en": "The overall strength of an organization’s security, including its controls, processes and ability to detect and respond to threats.",
+      "explanation_fr": "Niveau global de sécurité d’une organisation, incluant ses contrôles, ses processus et sa capacité à détecter et répondre aux menaces.",
+      "why_it_matters_fr": "Expression fréquente dans les présentations à la direction.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "security-posture-1",
+          "text_en": "MFA rollout greatly improved our security posture.",
+          "text_fr": "Le déploiement de la MFA a nettement amélioré notre posture de sécurité."
+        },
+        {
+          "id": "security-posture-2",
+          "text_en": "The board wants a quarterly update on our security posture.",
+          "text_fr": "Le conseil d’administration veut un point trimestriel sur notre posture de sécurité."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "insider-threat",
+      "status": "draft",
+      "level": "B2",
+      "roles": [
+        {
+          "role": "cybersecurity",
+          "priority": 55
+        }
+      ],
+      "categories": [
+        "security"
+      ],
+      "term_en": "insider threat",
+      "translation_fr": "menace interne",
+      "part_of_speech": "noun",
+      "definition_en": "A risk that comes from people inside the organization, such as employees or contractors, whether malicious or careless.",
+      "explanation_fr": "Risque provenant de personnes internes à l’organisation, salariés ou prestataires, par malveillance ou par négligence.",
+      "why_it_matters_fr": "Rappelle que tous les risques ne viennent pas de l’extérieur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "insider-threat-1",
+          "text_en": "Access logging helps us detect insider threats.",
+          "text_fr": "La journalisation des accès nous aide à détecter les menaces internes."
+        },
+        {
+          "id": "insider-threat-2",
+          "text_en": "Most insider threats are mistakes, not sabotage.",
+          "text_fr": "La plupart des menaces internes sont des erreurs, pas du sabotage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
