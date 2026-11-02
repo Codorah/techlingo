@@ -1,0 +1,153 @@
+{
+  "voices": {
+    "fr": {
+      "voice": "fr-FR-DeniseNeural",
+      "rate": "+10%",
+      "pitch": "+0Hz"
+    },
+    "en": {
+      "voice": "en-US-AvaNeural",
+      "rate": "-4%",
+      "pitch": "+0Hz"
+    },
+    "en2": {
+      "voice": "en-US-AndrewNeural",
+      "rate": "+0%",
+      "pitch": "+0Hz"
+    }
+  },
+  "leadIn": 0.25,
+  "gap": 0.22,
+  "tail": 0.4,
+  "scenes": [
+    {
+      "id": "problem",
+      "minDuration": 4.6,
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Tu lis l’anglais sans souci. Mais au travail, à l’oral, les mots ne viennent pas."
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "segments": [
+        {
+          "v": "fr",
+          "text": "TechLingo t’apprend l’anglais de ton métier, cinq minutes par jour.",
+          "say": "Tek Lingo t’apprend l’anglais de ton métier, cinq minutes par jour."
+        }
+      ]
+    },
+    {
+      "id": "roles",
+      "minDuration": 4.2,
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Choisis ton domaine, informatique ou marketing, puis ton métier."
+        }
+      ]
+    },
+    {
+      "id": "path",
+      "minDuration": 4.6,
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Ton parcours suit des situations réelles : signaler un bug, présenter une campagne."
+        }
+      ]
+    },
+    {
+      "id": "word",
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Chaque leçon commence par les mots, avec leur prononciation."
+        },
+        {
+          "v": "en",
+          "text": "Stack trace."
+        }
+      ]
+    },
+    {
+      "id": "dialogue",
+      "minDuration": 3.6,
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Tu les retrouves dans un vrai échange d’équipe."
+        }
+      ]
+    },
+    {
+      "id": "quiz",
+      "minDuration": 3.6,
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Puis un quiz rapide, pour vérifier que c’est acquis."
+        }
+      ]
+    },
+    {
+      "id": "speak",
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Et surtout, tu parles. Dis-le à voix haute."
+        },
+        {
+          "v": "en",
+          "text": "Can you share the full stack trace?"
+        }
+      ]
+    },
+    {
+      "id": "habit",
+      "minDuration": 5.4,
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Tes révisions reviennent au bon moment, et tes XP te font avancer vers ton objectif de la semaine."
+        }
+      ]
+    },
+    {
+      "id": "career",
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Et tu t’entraînes jusqu’à l’entretien d’embauche."
+        },
+        {
+          "v": "en2",
+          "text": "Can you explain what DevOps is?"
+        }
+      ]
+    },
+    {
+      "id": "perks",
+      "segments": [
+        {
+          "v": "fr",
+          "text": "Gratuit, hors ligne et sans compte : tu l’installes depuis ton navigateur."
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "minDuration": 4.2,
+      "segments": [
+        {
+          "v": "fr",
+          "text": "TechLingo. L’anglais de ton métier.",
+          "say": "Tek Lingo. L’anglais de ton métier."
+        }
+      ]
+    }
+  ]
+}

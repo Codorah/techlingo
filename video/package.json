@@ -1,0 +1,31 @@
+{
+  "name": "techlingo-video",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Vidéo de présentation TechLingo (Remotion). Indépendant de l'app : ses dépendances restent ici.",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "python scripts/voice.py",
+    "sounds": "python scripts/sounds.py",
+    "render:vertical": "remotion render Vertical build/vertical-master.mp4 --codec=h264 --crf=16 --audio-codec=aac --audio-bitrate=192k",
+    "render:landscape": "remotion render Landscape build/landscape-master.mp4 --codec=h264 --crf=16 --audio-codec=aac --audio-bitrate=192k",
+    "encode": "node scripts/encode.mjs build/vertical-master.mp4 ../public/decouvrir/video/techlingo-vertical.mp4 && node scripts/encode.mjs build/landscape-master.mp4 ../public/decouvrir/video/techlingo-landscape.mp4",
+    "posters": "remotion still Vertical ../public/decouvrir/video/techlingo-vertical-poster.png --frame=250 --image-format=png && remotion still Landscape ../public/decouvrir/video/techlingo-landscape-poster.png --frame=250 --image-format=png",
+    "all": "npm run voice && npm run sounds && npm run render:vertical && npm run render:landscape && npm run encode && npm run posters",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "lucide-react": "1.66.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}
