@@ -7,7 +7,7 @@
       "id": "audience-et-marque",
       "title_fr": "Audience et marque",
       "title_en": "Audience and brand",
-      "situation_fr": "Vous démarrez un projet avec un client et devez définir à qui la marque parle, ce qui la distingue et sur quel ton elle s'exprime.",
+      "situation_fr": "Tu démarres un projet avec un client et dois définir à qui la marque parle, ce qui la distingue et sur quel ton elle s'exprime.",
       "guide": {
         "intro_fr": "Au début de chaque projet, l'équipe marketing se pose deux questions : à qui parle-t-on, et comment ? En anglais, on parle de target audience (l'audience cible) et on la décrit avec des personas, des profils fictifs mais construits à partir de données réelles. On définit ensuite ce qui rend la marque différente de ses competitors : sa value proposition et son positionnement. Enfin, le tone of voice et les brand guidelines fixent la façon de s'exprimer, pour que tous les contenus semblent venir de la même marque. Ces mots reviennent dans chaque brief, chaque atelier et chaque échange avec une agence.",
         "key_phrases": [
@@ -18,7 +18,7 @@
           { "en": "This caption feels a bit off-brand.", "fr": "Cette légende ne colle pas tout à fait à la marque." },
           { "en": "Please stick to the brand guidelines.", "fr": "Merci de respecter la charte de marque." }
         ],
-        "tip_fr": "Faux ami classique : « nos concurrents » se dit our competitors, pas our concurrents (en anglais, concurrent veut dire « simultané »). Retenez aussi on-brand et off-brand, très utilisés pour dire qu'un contenu respecte ou non l'identité de la marque."
+        "tip_fr": "Faux ami classique : « nos concurrents » se dit our competitors, pas our concurrents (en anglais, concurrent veut dire « simultané »). Retiens aussi on-brand et off-brand, très utilisés pour dire qu'un contenu respecte ou non l'identité de la marque."
       },
       "lessons": [
         {
@@ -53,7 +53,7 @@
               "explanation_fr": "L'expression consacrée est pain points : les frustrations ou difficultés d'un client. « Pain spots » ou « hurts » ne s'emploient pas dans ce sens."
             },
             {
-              "prompt_fr": "Complétez la phrase de Claire : « Demographics tell us ___ she is. »",
+              "prompt_fr": "Complète la phrase de Claire : « Demographics tell us ___ she is. »",
               "choices": ["what", "who", "how"],
               "answer_index": 1,
               "explanation_fr": "Les demographics (âge, ville, métier) décrivent qui est la personne : who. On dit « what she needs » pour les besoins, mais « who she is » pour l'identité."
@@ -61,7 +61,7 @@
           ],
           "production": {
             "channel": "brief",
-            "prompt_fr": "Vous rédigez la partie « Audience » du brief créatif pour l'équipe design. En 2 ou 3 phrases en anglais, décrivez la cible et le persona principal, avec son problème principal.",
+            "prompt_fr": "Tu rédiges la partie « Audience » du brief créatif pour l'équipe design. En 2 ou 3 phrases en anglais, décris la cible et le persona principal, avec son problème principal.",
             "context_en": "Creative brief, section 2: Audience",
             "model_answer_en": "Our target audience is young urban professionals aged 25 to 35 who have little time to cook. Our main persona, Léa, is a 29-year-old project manager whose main pain point is eating healthily after long workdays. Every message should show how we save her time.",
             "model_answer_fr": "Notre audience cible, ce sont de jeunes actifs urbains de 25 à 35 ans qui ont peu de temps pour cuisiner. Notre persona principal, Léa, est une cheffe de projet de 29 ans dont le principal problème est de manger sainement après de longues journées de travail. Chaque message doit montrer comment nous lui faisons gagner du temps.",
@@ -108,7 +108,7 @@
           ],
           "production": {
             "channel": "meeting",
-            "prompt_fr": "En réunion de lancement, le client vous demande ce que l'étude a révélé. Résumez à l'oral en anglais la méthode et l'enseignement principal, puis proposez une suite.",
+            "prompt_fr": "En réunion de lancement, le client te demande ce que l'étude a révélé. Résume à l'oral en anglais la méthode et l'enseignement principal, puis propose une suite.",
             "model_answer_en": "We ran an online survey with about 800 people and two focus groups. The key insight is that our audience cares more about time than about choice. I suggest we build the campaign around meals ready in under 20 minutes.",
             "model_answer_fr": "Nous avons mené un questionnaire en ligne auprès d'environ 800 personnes et deux groupes de discussion. L'enseignement principal, c'est que notre audience accorde plus d'importance au temps qu'au choix. Je propose de construire la campagne autour de repas prêts en moins de 20 minutes.",
             "key_phrases": ["We ran an online survey", "The key insight is that", "cares more about", "I suggest we build the campaign around"]
@@ -153,7 +153,7 @@
           ],
           "production": {
             "channel": "slack",
-            "prompt_fr": "Votre directrice de clientèle vous demande sur Slack où en est l'analyse concurrentielle. Résumez la situation et proposez un axe de différenciation.",
+            "prompt_fr": "Ta directrice de clientèle te demande sur Slack où en est l'analyse concurrentielle. Résume la situation et propose un axe de différenciation.",
             "context_en": "#client-freshbox: \"Hey, any news on the competitive analysis?\"",
             "model_answer_en": "Just wrapped up the competitive analysis: three competitors offer a similar box at the same price, so price can't be our differentiation. I suggest we build our value proposition around next-day delivery and local ingredients. Happy to walk you through it before Friday's review.",
             "model_answer_fr": "Je viens de terminer l'analyse concurrentielle : trois concurrents proposent une box similaire au même prix, donc le prix ne peut pas être notre différenciation. Je propose de construire notre proposition de valeur autour de la livraison le lendemain et des ingrédients locaux. Je peux te présenter ça avant la revue de vendredi.",
@@ -200,7 +200,7 @@
           ],
           "production": {
             "channel": "email",
-            "prompt_fr": "Vous êtes brand manager. Un rédacteur freelance vous a envoyé des légendes trop ironiques. Écrivez-lui un e-mail court et bienveillant : remerciez, expliquez le problème, renvoyez à la charte et demandez une nouvelle version pour jeudi.",
+            "prompt_fr": "Tu es brand manager. Un rédacteur freelance t'a envoyé des légendes trop ironiques. Écris-lui un e-mail court et bienveillant : remercie, explique le problème, renvoie à la charte et demande une nouvelle version pour jeudi.",
             "model_answer_en": "Hi Kevin, thanks for the captions. A few of them feel off-brand: our tone of voice is warm and simple, so please avoid irony and slang. You'll find all the details in the brand guidelines attached (page 12). Could you send me a revised version by Thursday?",
             "model_answer_fr": "Bonjour Kevin, merci pour les légendes. Quelques-unes ne collent pas à la marque : notre ton est chaleureux et simple, donc merci d'éviter l'ironie et l'argot. Tu trouveras tous les détails dans la charte de marque en pièce jointe (page 12). Pourrais-tu m'envoyer une version révisée d'ici jeudi ?",
             "key_phrases": ["A few of them feel off-brand", "our tone of voice is", "in the brand guidelines attached", "Could you send me a revised version by Thursday?"]
@@ -212,7 +212,7 @@
       "id": "contenu-et-reseaux-sociaux",
       "title_fr": "Contenu et réseaux sociaux",
       "title_en": "Content and social media",
-      "situation_fr": "Vous gérez les réseaux sociaux d'une marque : préparer les posts, lire les statistiques, répondre à la communauté et réagir quand une conversation dérape.",
+      "situation_fr": "Tu gères les réseaux sociaux d'une marque : préparer les posts, lire les statistiques, répondre à la communauté et réagir quand une conversation dérape.",
       "guide": {
         "intro_fr": "Le quotidien d'un community manager tient en quelques verbes anglais : to post, to schedule, to reply, to moderate. Chaque semaine, on prépare des posts (avec une caption, des hashtags, parfois un carousel) puis on les programme dans un outil. Ensuite, on lit les chiffres : la reach (le nombre de personnes touchées), les impressions (le nombre d'affichages) et l'engagement (likes, commentaires, partages, enregistrements). Enfin, on anime la communauté : répondre aux commentaires et aux DMs, appliquer les community guidelines, et repérer très tôt une crise grâce au social listening. Dans les agences internationales, ces échanges se font souvent en anglais, sur Slack ou en stand-up.",
         "key_phrases": [
@@ -223,7 +223,7 @@
           { "en": "We've just sent you a DM.", "fr": "Nous venons de vous envoyer un message privé." },
           { "en": "Heads-up: mentions are spiking this morning.", "fr": "Pour info : les mentions s'envolent ce matin." }
         ],
-        "tip_fr": "Ne confondez pas reach et impressions : une personne qui voit trois fois le même post compte pour 1 en reach mais pour 3 en impressions. Et « programmer un post » se dit to schedule a post, pas to program a post (program, c'est pour le code)."
+        "tip_fr": "Ne confonds pas reach et impressions : une personne qui voit trois fois le même post compte pour 1 en reach mais pour 3 en impressions. Et « programmer un post » se dit to schedule a post, pas to program a post (program, c'est pour le code)."
       },
       "lessons": [
         {
@@ -314,7 +314,7 @@
           ],
           "production": {
             "channel": "standup",
-            "prompt_fr": "C'est le stand-up social media du lundi. Donnez votre point sur la semaine dernière : le meilleur post avec ses chiffres, ce qui a moins bien marché, et ce que vous testez cette semaine.",
+            "prompt_fr": "C'est le stand-up social media du lundi. Donne ton point sur la semaine dernière : le meilleur post avec ses chiffres, ce qui a moins bien marché, et ce que tu testes cette semaine.",
             "model_answer_en": "Last week, our carousel was the top post: it reached about 12,000 people with an engagement rate of around 4%, mostly saves and shares. The video underperformed, so this week I'm testing a stronger hook in the first three seconds.",
             "model_answer_fr": "La semaine dernière, notre carrousel a été le meilleur post : il a touché environ 12 000 personnes avec un taux d'engagement d'environ 4 %, surtout des enregistrements et des partages. La vidéo a moins bien marché, donc cette semaine je teste une accroche plus forte dans les trois premières secondes.",
             "key_phrases": ["was the top post", "it reached about", "with an engagement rate of around", "The video underperformed", "this week I'm testing"]
@@ -360,7 +360,7 @@
           ],
           "production": {
             "channel": "social_post",
-            "prompt_fr": "Rédigez la réponse publique au commentaire de Sarah, dont la commande est arrivée abîmée. Excusez-vous sincèrement et indiquez que vous poursuivez en message privé.",
+            "prompt_fr": "Rédige la réponse publique au commentaire de Sarah, dont la commande est arrivée abîmée. Excuse-toi sincèrement et indique que tu poursuis en message privé.",
             "context_en": "Sarah: \"My order arrived completely damaged. Really disappointed.\"",
             "model_answer_en": "Hi Sarah, we're really sorry your order arrived damaged. That's not the experience we want for you. We've just sent you a DM so we can sort this out as quickly as possible.",
             "model_answer_fr": "Bonjour Sarah, nous sommes vraiment désolés que votre commande soit arrivée abîmée. Ce n'est pas l'expérience que nous voulons pour vous. Nous venons de vous envoyer un message privé pour régler cela au plus vite.",
@@ -408,7 +408,7 @@
           ],
           "production": {
             "channel": "email",
-            "prompt_fr": "Écrivez à Robert, votre client, pour résumer la situation, lui soumettre la déclaration d'attente pour validation et lui dire ce que vous avez déjà fait.",
+            "prompt_fr": "Écris à Robert, ton client, pour résumer la situation, lui soumettre la déclaration d'attente pour validation et lui dire ce que tu as déjà fait.",
             "model_answer_en": "Hi Robert, as discussed, a customer video about a late delivery is going viral and we're seeing a strong backlash in the comments. Please find below a short holding statement for your sign-off. In the meantime, we've paused today's scheduled posts and we're monitoring mentions every hour.",
             "model_answer_fr": "Bonjour Robert, comme convenu, la vidéo d'un client sur une livraison en retard devient virale et nous constatons une forte vague de réactions négatives dans les commentaires. Vous trouverez ci-dessous une courte déclaration d'attente à valider. En attendant, nous avons mis en pause les posts programmés aujourd'hui et nous surveillons les mentions toutes les heures.",
             "key_phrases": ["as discussed", "is going viral", "Please find below", "for your sign-off", "In the meantime"]
@@ -420,7 +420,7 @@
       "id": "seo-et-mesure",
       "title_fr": "SEO et mesure",
       "title_en": "SEO and measurement",
-      "situation_fr": "Vous travaillez sur le référencement naturel d'un site et devez choisir des mots-clés, corriger des pages, expliquer une baisse de trafic et présenter les bons indicateurs.",
+      "situation_fr": "Tu travailles sur le référencement naturel d'un site et dois choisir des mots-clés, corriger des pages, expliquer une baisse de trafic et présenter les bons indicateurs.",
       "guide": {
         "intro_fr": "En SEO, tout part des keywords : les mots que les gens tapent dans Google. On fait d'abord une keyword research pour comparer le search volume (nombre de recherches) et la difficulté, puis on vérifie le search intent : la personne veut-elle s'informer, comparer ou acheter ? On optimise ensuite les pages (title tag, meta description, alt text) pour mieux ranker, c'est-à-dire mieux se classer dans les résultats. Enfin, on mesure : organic traffic, conversion rate et quelques KPIs réunis dans un dashboard. Quand les chiffres baissent, il faut savoir l'expliquer prudemment à un client, avec des hypothèses plutôt que des certitudes.",
         "key_phrases": [
@@ -474,7 +474,7 @@
           ],
           "production": {
             "channel": "brief",
-            "prompt_fr": "Rédigez la partie « Mot-clé » du brief SEO destiné au rédacteur : le mot-clé cible, pourquoi vous l'avez choisi, et ce que l'intention de recherche implique pour l'article.",
+            "prompt_fr": "Rédige la partie « Mot-clé » du brief SEO destiné au rédacteur : le mot-clé cible, pourquoi tu l'as choisi, et ce que l'intention de recherche implique pour l'article.",
             "context_en": "SEO brief: target keyword and intent",
             "model_answer_en": "Target keyword: \"meal prep ideas for busy weeknights\". It's a long-tail keyword with a lower search volume but much less competition, so we have a real chance to rank. The search intent is informational, so the article should be a practical guide with tips, not a sales page.",
             "model_answer_fr": "Mot-clé cible : « meal prep ideas for busy weeknights ». C'est un mot-clé de longue traîne avec un volume de recherche plus faible mais beaucoup moins de concurrence, donc nous avons une vraie chance de nous positionner. L'intention de recherche est informationnelle : l'article doit être un guide pratique avec des astuces, pas une page de vente.",
@@ -522,7 +522,7 @@
           ],
           "production": {
             "channel": "pull_request",
-            "prompt_fr": "Un développeur vous demande de relire sa pull request qui publie les nouvelles pages produit. Laissez un commentaire poli qui demande les corrections SEO avant la fusion.",
+            "prompt_fr": "Un développeur te demande de relire sa pull request qui publie les nouvelles pages produit. Laisse un commentaire poli qui demande les corrections SEO avant la fusion.",
             "context_en": "PR #214: Add new product pages",
             "model_answer_en": "Thanks for this! Before we merge, could you make sure each product page has a unique title tag that includes the product name? The meta descriptions are still empty, and a few images are missing alt text. Happy to share the list of affected pages.",
             "model_answer_fr": "Merci pour ce travail ! Avant de fusionner, pourrais-tu vérifier que chaque page produit a une balise title unique qui inclut le nom du produit ? Les meta descriptions sont encore vides, et quelques images n'ont pas de texte alternatif. Je peux te partager la liste des pages concernées.",
@@ -570,7 +570,7 @@
           ],
           "production": {
             "channel": "email",
-            "prompt_fr": "Après l'appel, envoyez à Mr Grant un e-mail de récapitulatif : ce qui s'est passé (avec prudence), ce que vous allez faire, et quand il aura des nouvelles.",
+            "prompt_fr": "Après l'appel, envoie à Mr Grant un e-mail de récapitulatif : ce qui s'est passé (avec prudence), ce que tu vas faire, et quand il aura des nouvelles.",
             "model_answer_en": "Hi Mr Grant, following our call, here's a quick summary. Organic traffic fell by about 20% last month, mainly because five older blog articles lost rankings, most likely after Google's core update. We'll refresh these articles and improve internal linking over the next two weeks, and we'll share the impact in the monthly report.",
             "model_answer_fr": "Bonjour Monsieur Grant, suite à notre appel, voici un bref récapitulatif. Le trafic naturel a baissé d'environ 20 % le mois dernier, principalement parce que cinq anciens articles de blog ont perdu des positions, très probablement après la mise à jour majeure de Google. Nous allons actualiser ces articles et améliorer le maillage interne dans les deux prochaines semaines, et nous partagerons l'impact dans le rapport mensuel.",
             "key_phrases": ["following our call", "fell by about 20%", "most likely after", "over the next two weeks"]
@@ -617,7 +617,7 @@
           ],
           "production": {
             "channel": "report",
-            "prompt_fr": "Rédigez le commentaire de 2 ou 3 phrases qui accompagne les KPIs du tableau de bord mensuel pour la direction.",
+            "prompt_fr": "Rédige le commentaire de 2 ou 3 phrases qui accompagne les KPIs du tableau de bord mensuel pour la direction.",
             "context_en": "Monthly dashboard: KPI commentary",
             "model_answer_en": "This month, the conversion rate reached 2.1%, up from 1.6%, now that conversion tracking is fixed. Organic traffic remained stable and sign-ups grew by 18%. We recommend tracking these three KPIs every month rather than follower counts.",
             "model_answer_fr": "Ce mois-ci, le taux de conversion a atteint 2,1 %, contre 1,6 % auparavant, maintenant que le suivi des conversions est corrigé. Le trafic naturel est resté stable et les inscriptions ont progressé de 18 %. Nous recommandons de suivre ces trois KPIs chaque mois plutôt que le nombre d'abonnés.",
@@ -630,7 +630,7 @@
       "id": "publicite-et-campagnes",
       "title_fr": "Publicité et campagnes",
       "title_en": "Advertising and campaigns",
-      "situation_fr": "Vous pilotez une campagne payante : comprendre le brief, répartir le budget, analyser les coûts et les performances, puis tester pour améliorer les résultats.",
+      "situation_fr": "Tu pilotes une campagne payante : comprendre le brief, répartir le budget, analyser les coûts et les performances, puis tester pour améliorer les résultats.",
       "guide": {
         "intro_fr": "Une campagne commence par un campaign brief : l'objectif, la cible, le key message et le call to action (CTA), c'est-à-dire l'action qu'on demande à la personne. Vient ensuite le media plan : comment on allocate (répartit) le budget entre les canaux, avec un daily budget pour ne pas tout dépenser d'un coup, et un ciblage (targeting, retargeting). Une fois la campagne en ligne, on suit des acronymes que l'on prononce lettre par lettre : CTR (taux de clic), CPC (coût par clic), ROAS (revenu généré pour chaque euro dépensé). Enfin, on améliore avec des A/B tests : on compare deux versions en ne changeant qu'un seul élément.",
         "key_phrases": [
@@ -685,7 +685,7 @@
           ],
           "production": {
             "channel": "slack",
-            "prompt_fr": "La rédactrice n'a pas pu assister à la réunion de lancement. Envoyez-lui sur Slack un récapitulatif du brief : dates, objectif, appel à l'action, message clé et destination des clics.",
+            "prompt_fr": "La rédactrice n'a pas pu assister à la réunion de lancement. Envoie-lui sur Slack un récapitulatif du brief : dates, objectif, appel à l'action, message clé et destination des clics.",
             "context_en": "#freshbox-campaign: \"Sorry I missed the kickoff! What do I need to know?\"",
             "model_answer_en": "No worries! Quick recap: the campaign launches on March 3rd and runs for six weeks. The goal is free-trial sign-ups, so every ad needs the same call to action, \"Start your free trial\", and one key message: dinner ready in 20 minutes. All ads will point to a dedicated landing page.",
             "model_answer_fr": "Pas de souci ! Petit récap : la campagne démarre le 3 mars et dure six semaines. L'objectif, ce sont les inscriptions à l'essai gratuit, donc chaque publicité a besoin du même appel à l'action, « Commencez votre essai gratuit », et d'un seul message clé : le dîner prêt en 20 minutes. Toutes les publicités renverront vers une page d'atterrissage dédiée.",
@@ -734,7 +734,7 @@
           ],
           "production": {
             "channel": "email",
-            "prompt_fr": "Thomas vous demande par e-mail de justifier la répartition du budget avant de valider. Présentez la répartition, la raison principale, et la façon dont vous contrôlerez les dépenses.",
+            "prompt_fr": "Thomas te demande par e-mail de justifier la répartition du budget avant de valider. Présente la répartition, la raison principale, et la façon dont tu contrôleras les dépenses.",
             "model_answer_en": "Hi Thomas, here's our proposed media plan for the 30,000-euro budget. We suggest allocating 60% to paid social and 40% to Google Ads, as paid social was our most cost-effective channel last year. We'll set a daily budget on each platform and shift spend every week toward the best-performing channel.",
             "model_answer_fr": "Bonjour Thomas, voici notre plan média proposé pour le budget de 30 000 euros. Nous suggérons d'attribuer 60 % aux réseaux sociaux payants et 40 % à Google Ads, car les réseaux sociaux payants ont été notre canal le plus rentable l'an dernier. Nous fixerons un budget quotidien sur chaque plateforme et déplacerons les dépenses chaque semaine vers le canal le plus performant.",
             "key_phrases": ["here's our proposed media plan", "We suggest allocating 60% to", "our most cost-effective channel", "shift spend every week toward"]
@@ -780,7 +780,7 @@
           ],
           "production": {
             "channel": "standup",
-            "prompt_fr": "Au point hebdomadaire de l'équipe acquisition, donnez votre point sur la campagne : ce qui baisse et pourquoi, ce qui marche, et ce que vous allez faire.",
+            "prompt_fr": "Au point hebdomadaire de l'équipe acquisition, donne ton point sur la campagne : ce qui baisse et pourquoi, ce qui marche, et ce que tu vas faire.",
             "model_answer_en": "On social, the video ads are showing signs of ad fatigue: the CTR dropped from 1.8% to 0.9% and CPC went up by 40%. Search is performing well, with a ROAS of around 4. This week, we're refreshing the video creatives and moving part of the budget to search.",
             "model_answer_fr": "Sur les réseaux sociaux, les publicités vidéo montrent des signes de lassitude : le CTR est passé de 1,8 % à 0,9 % et le CPC a augmenté de 40 %. Le Search performe bien, avec un ROAS d'environ 4. Cette semaine, nous renouvelons les créations vidéo et déplaçons une partie du budget vers le Search.",
             "key_phrases": ["are showing signs of ad fatigue", "dropped from 1.8% to 0.9%", "went up by 40%", "with a ROAS of around 4", "we're refreshing the video creatives"]
@@ -827,7 +827,7 @@
           ],
           "production": {
             "channel": "meeting",
-            "prompt_fr": "En réunion growth, proposez à l'oral de lancer un test A/B sur l'appel à l'action de la page d'atterrissage avant d'augmenter le budget. Expliquez le principe et la durée.",
+            "prompt_fr": "En réunion growth, propose à l'oral de lancer un test A/B sur l'appel à l'action de la page d'atterrissage avant d'augmenter le budget. Explique le principe et la durée.",
             "model_answer_en": "Before we scale the campaign, I suggest we A/B test the call to action on the landing page. Half of the visitors will see the current version and half will see the new one. We'll keep the test running until the result is statistically significant, which should take about two weeks.",
             "model_answer_fr": "Avant d'augmenter l'ampleur de la campagne, je propose de faire un test A/B sur l'appel à l'action de la page d'atterrissage. La moitié des visiteurs verra la version actuelle et l'autre moitié la nouvelle. Nous laisserons le test tourner jusqu'à ce que le résultat soit statistiquement significatif, ce qui devrait prendre environ deux semaines.",
             "key_phrases": ["Before we scale the campaign", "I suggest we A/B test", "Half of the visitors will see", "until the result is statistically significant"]
@@ -839,7 +839,7 @@
       "id": "clients-et-reporting",
       "title_fr": "Clients et reporting",
       "title_en": "Clients and reporting",
-      "situation_fr": "Vous menez la réunion mensuelle avec un client : annoncer l'ordre du jour, présenter les résultats, recommander la suite et envoyer un compte rendu clair.",
+      "situation_fr": "Tu mènes la réunion mensuelle avec un client : annoncer l'ordre du jour, présenter les résultats, recommander la suite et envoyer un compte rendu clair.",
       "guide": {
         "intro_fr": "Chaque mois, une agence ou une équipe marketing rend des comptes : c'est le reporting. La réunion suit presque toujours le même déroulé : l'agenda (ordre du jour), les highlights et lowlights (ce qui a bien ou moins bien marché), les recommandations, puis les next steps. Pour présenter des chiffres, on compare à une période (month over month) ou à un benchmark, et on reste prudent quand un résultat n'est pas encore définitif. Pour recommander, on structure (First, Second, Third) et on assume les trade-offs. Enfin, on envoie toujours un recap écrit avec les action items : qui fait quoi, et pour quand.",
         "key_phrases": [
@@ -895,7 +895,7 @@
           ],
           "production": {
             "channel": "slack",
-            "prompt_fr": "La veille de la réunion mensuelle, postez l'ordre du jour dans le canal Slack partagé avec le client, et invitez-le à ajouter des sujets.",
+            "prompt_fr": "La veille de la réunion mensuelle, poste l'ordre du jour dans le canal Slack partagé avec le client, et invite-le à ajouter des sujets.",
             "context_en": "Shared channel #freshbox-agency",
             "model_answer_en": "Hi all, here's the agenda for tomorrow's monthly review: last month's results, key learnings, our recommendations for next quarter, and next steps. We'll keep ten minutes at the end for budget questions. Feel free to add any topic you'd like to cover.",
             "model_answer_fr": "Bonjour à tous, voici l'ordre du jour du point mensuel de demain : les résultats du mois dernier, les principaux enseignements, nos recommandations pour le prochain trimestre et les prochaines étapes. Nous garderons dix minutes à la fin pour les questions de budget. N'hésitez pas à ajouter un sujet que vous souhaitez aborder.",
@@ -943,7 +943,7 @@
           ],
           "production": {
             "channel": "report",
-            "prompt_fr": "Rédigez le résumé (executive summary) de 3 ou 4 phrases en tête du rapport mensuel : un point fort, un point faible avec sa cause, l'action déjà prise, et une phrase prudente sur le ROI.",
+            "prompt_fr": "Rédige le résumé (executive summary) de 3 ou 4 phrases en tête du rapport mensuel : un point fort, un point faible avec sa cause, l'action déjà prise, et une phrase prudente sur le ROI.",
             "context_en": "Monthly report: executive summary",
             "model_answer_en": "Sign-ups grew by 25% month over month, driven mainly by search. Social underperformed, with a CPA of around 18 euros against a benchmark of 12, mainly due to ad fatigue; the video creatives have already been refreshed. ROI is positive so far, and we'll share a final figure next month once more trial users have converted.",
             "model_answer_fr": "Les inscriptions ont progressé de 25 % par rapport au mois précédent, portées principalement par le Search. Les réseaux sociaux ont moins bien marché, avec un CPA d'environ 18 euros pour une référence de 12, surtout à cause de la lassitude publicitaire ; les créations vidéo ont déjà été renouvelées. Le ROI est positif à ce stade, et nous partagerons un chiffre définitif le mois prochain, quand davantage d'utilisateurs en essai se seront convertis.",
@@ -992,7 +992,7 @@
           ],
           "production": {
             "channel": "meeting",
-            "prompt_fr": "Le client vous demande vos recommandations pour le prochain trimestre. Présentez à l'oral deux recommandations de façon structurée, en reconnaissant le compromis de la première.",
+            "prompt_fr": "Le client te demande tes recommandations pour le prochain trimestre. Présente à l'oral deux recommandations de façon structurée, en reconnaissant le compromis de la première.",
             "model_answer_en": "We recommend two things. First, we'd move 15% of the social budget to search, where the return is stronger; it's a trade-off for brand awareness, so we'd keep a smaller social budget running. Second, we'd launch a referral program for existing customers.",
             "model_answer_fr": "Nous recommandons deux choses. D'abord, déplacer 15 % du budget social vers le Search, où le retour est meilleur ; c'est un compromis pour la notoriété, donc nous garderions un budget social plus réduit. Ensuite, lancer un programme de parrainage pour les clients existants.",
             "key_phrases": ["We recommend two things", "First, we'd move", "where the return is stronger", "it's a trade-off for", "Second, we'd launch"]
@@ -1039,7 +1039,7 @@
           ],
           "production": {
             "channel": "email",
-            "prompt_fr": "Envoyez à Mr Okafor l'e-mail de compte rendu promis : remerciement, actions de l'agence avec leurs dates, et la validation attendue de son côté.",
+            "prompt_fr": "Envoie à Mr Okafor l'e-mail de compte rendu promis : remerciement, actions de l'agence avec leurs dates, et la validation attendue de son côté.",
             "model_answer_en": "Hi Mr Okafor, thanks again for your time today. As agreed, here are the next steps. On our side, we'll shift part of the social budget to search from Monday and send you the landing page quote by Wednesday. On your side, we'll need your sign-off on the referral program by Friday so we can launch it on the 15th.",
             "model_answer_fr": "Bonjour Monsieur Okafor, merci encore pour votre temps aujourd'hui. Comme convenu, voici les prochaines étapes. De notre côté, nous déplacerons une partie du budget social vers le Search dès lundi et vous enverrons le devis de la page d'atterrissage d'ici mercredi. De votre côté, nous aurons besoin de votre validation du programme de parrainage d'ici vendredi pour pouvoir le lancer le 15.",
             "key_phrases": ["thanks again for your time today", "As agreed, here are the next steps", "On our side", "On your side, we'll need your sign-off", "by Friday"]
