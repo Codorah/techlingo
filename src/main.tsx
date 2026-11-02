@@ -9,11 +9,20 @@ import { UpdatePrompt } from '@/app/UpdatePrompt';
 import { RewardWatcher } from '@/components/ui/RewardWatcher';
 import { db, getDeviceId, requestPersistence } from '@/db/db';
 import { domainOf } from '@/lib/domains';
-import '@/lib/install';
+import { isStandalone } from '@/lib/install';
 import '@/lib/sound'; // unlocks Web Audio on the first tap (iOS)
 import { stopSpeaking } from '@/lib/speech';
 import { useManifest } from '@/lib/useContent';
 import { HomeScreen } from '@/screens/HomeScreen';
+
+// A visitor without a profile lands on the presentation page first; its buttons open the app with ?start=1.
+const ENTERED_KEY = 'techlingo.entered';
+const cameFromLanding = new URLSearchParams(location.search).has('start');
+if (cameFromLanding) {
+  try { localStorage.setItem(ENTERED_KEY, '1'); } catch { /* storage unavailable: this visit still opens the app */ }
+  history.replaceState(null, '', location.pathname + location.hash);
+}
+const hasEntered = () => { try { return localStorage.getItem(ENTERED_KEY) === '1'; } catch { return false; } };
 
 void getDeviceId();
 if (matchMedia('(display-mode: standalone)').matches) void requestPersistence();
@@ -55,12 +64,17 @@ function App() {
   if (profile === undefined) return null; // first IndexedDB read
 
   if (!profile?.onboardedAt) {
+    // Browser visit to the bare address, never started: show the presentation first. The installed app goes straight to onboarding.
+    if (location === '/' && !cameFromLanding && !hasEntered() && !isStandalone()) { window.location.replace('/decouvrir/'); return null; }
     return (
+      <>
       <Switch>
         <Route path="/settings/data"><DataScreen /></Route>
         <Route path="/settings/help"><HelpScreen /></Route>
         <Route><OnboardingScreen /></Route>
       </Switch>
+      <InstallSheet />
+      </>
     );
   }
   return (

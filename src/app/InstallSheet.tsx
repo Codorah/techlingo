@@ -44,7 +44,7 @@ export function InstallSheet() {
       // Let the result screen settle before the sheet slides in.
       window.setTimeout(() => setOpen(true), 1500);
     };
-    // First visit: this component only mounts once onboarding is over, so this is the first Home display.
+    // First visit: this component mounts as soon as the app opens (onboarding included), so the offer comes with the first screen.
     let firstTimer = 0;
     let seenFirst = true;
     try { seenFirst = localStorage.getItem(FIRST_KEY) === '1'; } catch { /* storage unavailable: never auto-open */ }
