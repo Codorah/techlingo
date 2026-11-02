@@ -267,6 +267,9 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
         </Button>
       )}
 
+      {/* Right under the field, not at the page bottom: the phone keyboard would hide it. */}
+      {!checked && <Button className="mt-4" variant="success" disabled={text.trim().length < 8} onClick={() => { abortRef.current(); setChecked(true); }}>{t('quiz.check')}</Button>}
+
       {checked && (
         <div className="mt-4 animate-[enter_.25s_var(--ease-out-quart)]">
           <p className="font-extrabold">{t('situations.phrasesFound', { count, total: p.key_phrases.length })}</p>
@@ -288,9 +291,7 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
         </div>
       )}
       <span className="flex-1" />
-      {checked
-        ? <Button className="mt-6" variant="success" disabled={sent} onClick={() => { setSent(true); onDone(count); }}>{t('quiz.finish')}</Button>
-        : <Button className="mt-6" variant="success" disabled={text.trim().length < 8} onClick={() => { abortRef.current(); setChecked(true); }}>{t('quiz.check')}</Button>}
+      {checked && <Button className="mt-6" variant="success" disabled={sent} onClick={() => { setSent(true); onDone(count); }}>{t('quiz.finish')}</Button>}
     </div>
   );
 }
