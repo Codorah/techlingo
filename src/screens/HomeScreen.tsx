@@ -10,7 +10,7 @@ import { dueTermIds, type SpinStatus, spinStatus } from '@/data/progress';
 import { db } from '@/db/db';
 import { daysAway, displayedStreak, localDay } from '@/learning/streak';
 import { domainOf, generalRoleOf } from '@/lib/domains';
-import { checkDailyReminder } from '@/lib/notifications';
+import { checkDailyReminder, syncPushSubscription } from '@/lib/notifications';
 import { courseRoles, useCourse } from '@/lib/useCourse';
 import { useManifest } from '@/lib/useContent';
 import { courseNodeHref } from '@/screens/course/CourseScreen';
@@ -36,23 +36,30 @@ export function HomeScreen() {
   const studiedToday = lessonsDone.some((l) => l.completedAt && localDay(new Date(l.completedAt)) === today);
   const spinState = !status ? null : status.freeAvailable ? 'free' : status.bonusAvailable ? 'bonus' : 'done';
 
-  // Smart daily reminders: encourage the Wheel if not yet spun, otherwise the daily lesson
+  // Web Push reminders: refresh the subscription once a day (new time zone, renewed endpoint).
+  const reminderTime = profile?.reminderTime ?? null;
+  useEffect(() => { syncPushSubscription(reminderTime); }, [reminderTime]);
+
+  // In-app fallback when Web Push is not available: when the reminder time comes while the app is
+  // open in the background, encourage the Wheel if not yet spun, otherwise the daily lesson.
   useEffect(() => {
-    if (!profile) return;
+    if (!reminderTime) return;
     const isWheelDue = spinState === 'free';
-    void checkDailyReminder({
-      reminderTime: profile.reminderTime,
+    const check = () => void checkDailyReminder({
+      reminderTime,
       studiedToday,
-      today,
+      today: localDay(),
       title: isWheelDue
         ? t('settings.notifications.wheelTitle')
         : t('settings.notifications.studyTitle'),
       body: isWheelDue
-        ? t('settings.notifications.wheelBody', 'Ton mot du jour t’attend. 2 minutes chrono pour enrichir ton vocabulaire !')
-        : t('settings.notifications.studyBody', 'Quelques minutes pour valider ta leçon du jour et garder ta série active.'),
+        ? t('settings.notifications.wheelBody')
+        : t('settings.notifications.studyBody'),
       url: isWheelDue ? '/spin' : '/',
     });
-  }, [profile, studiedToday, today, spinState, t]);
+    const timer = setInterval(check, 60_000);
+    return () => clearInterval(timer);
+  }, [reminderTime, studiedToday, spinState, t]);
 
   if (!profile) return null;
   const domain = domainOf(manifest, profile.primaryRole);

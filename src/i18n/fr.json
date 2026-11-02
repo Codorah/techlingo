@@ -213,7 +213,7 @@
     "tap": "Appuie et parle",
     "listening": "Je t’écoute…",
     "stop": "Arrêter",
-    "score": "{{score}}/10 mots reconnus",
+    "score": "Reconnaissance : {{score}}/10",
     "honesty": "On mesure ce que la machine a reconnu, pas ta prononciation exacte.",
     "retry": "Réessayer",
     "permission": "TechLingo a besoin du micro pour cet exercice. Rien n’est enregistré : seul le texte reconnu est utilisé.",
@@ -629,6 +629,7 @@
       "preview": "Ta présentation",
       "copy": "Copier",
       "copied": "Copié",
+      "copyFailed": "Copie impossible ici. Sélectionne le texte pour le copier à la main.",
       "saved": "Enregistré sur ce téléphone"
     },
     "question": {
@@ -699,12 +700,14 @@
     "listening": {
       "prompt": "Quel mot entends-tu dans la phrase ?",
       "play": "Écouter",
-      "slow": "Lentement"
+      "slow": "Lentement",
+      "noVoice": "Pas de voix anglaise sur cet appareil : lis la phrase."
     },
     "match": {
       "prompt": "Relie chaque mot à sa traduction",
       "mistakes": "{{count}} erreur",
-      "mistakes_other": "{{count}} erreurs"
+      "mistakes_other": "{{count}} erreurs",
+      "wrongPair": "Pas la bonne paire."
     },
     "result": {
       "title": "Session terminée",
@@ -720,11 +723,16 @@
     "challenge": {
       "oralKicker": "Défi du jour · Étape orale",
       "oralTitle": "Lis la phrase à voix haute",
-      "oralSubtitle": "Prononce ces 2 phrases pour évaluer ton anglais parlé et valider ton défi.",
+      "oralSubtitle": "Prononce cette phrase pour évaluer ton anglais parlé et valider ton défi.",
+      "oralSubtitle_other": "Prononce ces {{count}} phrases pour évaluer ton anglais parlé et valider ton défi.",
       "summaryTitle": "Défi du jour validé !",
       "summarySubtitle": "Tu as travaillé ta compréhension écrite, ton écoute et ta prononciation.",
-      "quizScore": "Compréhension : {{score}}/4",
-      "oralScore": "Prononciation : {{score}}/2"
+      "quizScore": "Compréhension : {{score}}/{{total}}",
+      "oralScore": "Prononciation : {{score}}/{{total}}",
+      "quizLabel": "Quiz",
+      "oralLabel": "Oral",
+      "xpWon": "+{{xp}} XP remportés",
+      "replayNoXp": "Défi déjà validé aujourd’hui : tu peux le rejouer pour t’entraîner, sans gagner d’XP. Reviens demain pour un nouveau défi."
     }
   },
   "badges": {
@@ -838,7 +846,11 @@
       "studyTitle": "C’est l’heure de ton anglais pro",
       "studyBody": "Quelques minutes pour valider ta leçon du jour et garder ta série active.",
       "reminderTitle": "Ta roue du jour t’attend",
-      "reminderBody": "Un nouveau mot de ton métier t’attend. 2 minutes chrono pour ta série !"
+      "reminderBody": "Un nouveau mot de ton métier t’attend. 2 minutes chrono pour ta série !",
+      "explain": "Chaque jour à l’heure choisie, une notification discrète te propose quelques minutes d’anglais pro, même quand l’application est fermée. Sans compte : on garde seulement de quoi t’envoyer ce rappel, et tout est effacé quand tu le désactives.",
+      "explainCta": "Autoriser les notifications",
+      "explainLater": "Plus tard",
+      "iosHint": "Sur iPhone et iPad, ajoute d’abord TechLingo à l’écran d’accueil (bouton Partager, puis Sur l’écran d’accueil) pour recevoir les rappels."
     },
     "deleteAccount": {
       "title": "Supprimer mes données",

@@ -1,0 +1,39 @@
+# Sends the daily Web Push reminders (see docs/push-setup.md).
+# Vercel Hobby crons run once a day only, so GitHub calls /api/push/send every 30 minutes;
+# the endpoint itself decides, per learner time zone, who is due.
+name: Rappels quotidiens
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: push-reminders
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Envoyer les rappels dus
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          APP_URL: ${{ secrets.APP_URL || vars.APP_URL }}
+        run: |
+          if [ -z "$CRON_SECRET" ] || [ -z "$APP_URL" ]; then
+            echo "::notice::CRON_SECRET ou APP_URL non configuré : envoi des rappels ignoré."
+            exit 0
+          fi
+          status=$(curl -sS -o response.json -w '%{http_code}' --max-time 90 -X POST \
+            -H "Authorization: Bearer $CRON_SECRET" "${APP_URL%/}/api/push/send") || status=000
+          echo "HTTP $status"
+          cat response.json 2>/dev/null || true
+          echo
+          if [ "$status" -lt 200 ] || [ "$status" -ge 300 ]; then
+            echo "::error::L'envoi des rappels a échoué (HTTP $status)."
+            exit 1
+          fi

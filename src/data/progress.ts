@@ -4,6 +4,7 @@ import type { Level } from '@/content/schema';
 import { db, getDeviceId, nowIso, type Profile, type UserTerm, uuid } from '@/db/db';
 import { DEFAULT_RETENTION, ratingFromLesson, review, stateOf } from '@/learning/srs';
 import { localDay, recordActivity } from '@/learning/streak';
+import { markPushActive } from '@/lib/notifications';
 
 export const XP = { lessonBase: 20, perCorrect: 10, speaking: 10, review: 5 } as const;
 
@@ -111,8 +112,15 @@ export async function completeLesson(sessionId: string, termId: string, quizCorr
   const retention = await getRetention();
   const rating = ratingFromLesson(quizTotal ? quizCorrect / quizTotal : 0, speakScore);
 
+  // Studied today: the server skips today's reminder (fire-and-forget, never blocks the lesson).
+  markPushActive(localDay(now));
   return db.transaction('rw', [db.userTerms, db.reviewLog, db.profile, db.lessonSessions], async () => {
     const existing = await db.userTerms.get(termId);
+    // Already finished (double tap, second call): return the recorded outcome, never count it twice.
+    const session = await db.lessonSessions.get(sessionId);
+    if (session?.completedAt) {
+      return { xp: session.xpEarned, nextDue: existing?.card?.due ?? session.completedAt, state: existing?.state ?? 'new', firstTime: false, usedFreeze: false };
+    }
     const card = review(existing?.card ?? null, rating, now, retention);
     const xp = XP.lessonBase + quizCorrect * XP.perCorrect + (speakScore != null ? XP.speaking : 0);
     await db.reviewLog.put({ id: uuid(), termId, rating, reviewedAt: iso, cardBefore: existing?.card ?? null, updatedAt: iso, deviceId });
@@ -148,6 +156,7 @@ export async function addXP(amount: number) {
   if (!profile) return;
   const s = recordActivity(profile, localDay());
   await db.profile.put({ ...profile, xp: profile.xp + amount, streak: s.streak, bestStreak: s.bestStreak, lastActiveDay: s.lastActiveDay, streakFreezes: s.streakFreezes, updatedAt: nowIso(), deviceId });
+  markPushActive();
 }
 
 /** Interview practice is kept in answerDrafts (one row per question). */
