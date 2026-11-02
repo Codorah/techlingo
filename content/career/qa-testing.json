@@ -19,7 +19,7 @@
       "model_answer_fr": "Je suis la pyramide des tests pour garder un retour rapide et une maintenance légère. Les règles métier et les cas limites vont dans les tests unitaires, car ils tournent en quelques secondes. Quand il faut vérifier comment le service dialogue avec la base ou une API externe, j’écris des tests d’intégration ou de contrat. Je réserve les tests de bout en bout sous Playwright aux parcours critiques comme l’inscription et le paiement, car les tests d’interface sont plus lents et plus fragiles.",
       "key_phrases": [
         "follow the test pyramid",
-        "business rules and edge cases",
+        "Business rules and edge cases",
         "run in seconds",
         "critical user flows",
         "slower and more fragile"
@@ -118,7 +118,7 @@
       "key_phrases": [
         "how badly a defect impacts",
         "how urgently we need to fix it",
-        "during bug triage",
+        "During bug triage",
         "high severity but low priority",
         "low severity, but high priority"
       ],
@@ -149,7 +149,7 @@
       "key_phrases": [
         "confirm the steps to reproduce",
         "assess the risk against our exit criteria",
-        "if it is a showstopper",
+        "If it is a showstopper",
         "recommend holding the release",
         "document it as a known issue"
       ],

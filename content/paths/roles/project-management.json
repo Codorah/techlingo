@@ -87,40 +87,40 @@
               "choices": [
                 "We are still into the budget.",
                 "We are still within budget.",
-                "We are still under the budget."
+                "We are still in the budget limits of."
               ],
               "answer_index": 1,
-              "explanation_fr": "« Within budget » (sans article) est la collocation standard pour dire qu’on respecte l’enveloppe prévue. « Under budget » signifie qu’on dépense moins que prévu, et « into the budget » est un calque incorrect du français « dans le budget »."
+              "explanation_fr": "« Within budget » (sans article) est l’expression consacrée pour dire qu’on respecte le budget, comme Tomasz : « we won’t stay within budget ». « Into the budget » indique un mouvement vers l’intérieur, et « in the budget limits of » se termine sur une préposition sans complément."
             },
             {
               "prompt_fr": "Pourquoi Aïcha veut-elle écrire explicitement que le multidevise est « out of scope » ?",
               "choices": [
-                "Pour interdire à l’équipe commerciale d’assister à la réunion de lancement",
-                "Pour réduire le budget déjà accordé par le sponsor",
+                "Pour abandonner définitivement le multidevise, jugé trop coûteux pour le projet",
+                "Pour demander au sponsor un budget supplémentaire dédié au multidevise",
                 "Pour éviter qu’une partie prenante suppose que la fonctionnalité sera livrée en phase 1"
               ],
               "answer_index": 2,
-              "explanation_fr": "Dans une project charter, lister ce qui est « out of scope » (hors périmètre) protège l’équipe contre les attentes implicites sans réduire le budget de la phase 1 ni exclure les commerciaux du projet."
+              "explanation_fr": "Écrire noir sur blanc ce qui est exclu (« out of scope ») évite les malentendus : sans cela, les commerciaux pourraient promettre la fonctionnalité. Elle n’est pas abandonnée (prévue pour Q4), et Aïcha ne demande pas de budget en plus : elle protège celui qui est accordé."
             },
             {
               "prompt_fr": "Complète : « We need the project sponsor to ___ on the charter before Friday. »",
               "choices": [
                 "sign off",
                 "validate",
-                "signature"
+                "sign up"
               ],
               "answer_index": 0,
-              "explanation_fr": "« To sign off on something » signifie donner sa validation formelle sur un document ou un livrable. « Validate » ne se construit jamais avec « on », et « signature » est un nom, pas un verbe."
+              "explanation_fr": "« To sign off on something » veut dire donner son accord formel. « Validate » ne se construit pas avec « on » (et sonne comme un calque de « valider »), et « sign up » veut dire s’inscrire."
             },
             {
               "prompt_fr": "Un directeur demande d’inclure une fonctionnalité non prévue sans toucher au budget. Quelle réponse est la plus professionnelle ?",
               "choices": [
-                "It’s impossible, you didn’t read the project charter.",
-                "To keep the project within budget, that feature is out of scope for phase one, but we can scope it for phase two.",
-                "We will try to do it if the developers work faster."
+                "We can add it if we take the time from testing, so the budget doesn’t change.",
+                "We’ll add it to phase one and find the extra budget later if we need it.",
+                "To stay within budget, that feature is out of scope for phase one, but we can plan it for phase two."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un bon chef de projet rappelle la contrainte (within budget), pose la limite (out of scope for phase one) et ouvre une porte constructive (phase two). La première option est agressive et la troisième crée une promesse non financée."
+              "answer_index": 2,
+              "explanation_fr": "Un bon chef de projet rappelle la contrainte (« within budget »), pose la limite (« out of scope ») et propose une suite constructive. Rogner les tests pour faire entrer une fonctionnalité crée un risque qualité, et repousser la question du budget ne fait que déplacer le problème."
             }
           ],
           "production": {
@@ -182,42 +182,42 @@
             {
               "prompt_fr": "Pourquoi est-il risqué d’avoir des livrables flous dans un contrat « fixed-price » ?",
               "choices": [
-                "Parce que le prestataire facturera au temps passé chaque heure travaillée",
-                "Parce qu’un contrat au forfait interdit légalement de livrer une application mobile",
-                "Parce que toute exigence non écrite dans le SOW donnera lieu à une négociation ou un devis supplémentaire"
+                "Parce que toute exigence non écrite dans le SOW donnera lieu à une négociation ou à un surcoût",
+                "Parce qu’un contrat au forfait oblige le prestataire à facturer chaque heure travaillée",
+                "Parce que des livrables flous rendent le contrat au forfait juridiquement nul"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Dans un contrat au forfait (fixed-price), le prestataire s’engage sur un prix fixe pour un périmètre précis : si les livrables et exigences sont flous, il considérera toute précision ultérieure comme hors contrat. La facturation à l’heure correspond à un contrat « time and materials » (en régie)."
+              "answer_index": 0,
+              "explanation_fr": "Au forfait, le prix est fixe pour ce qui est écrit : tout le reste devient un supplément, comme le dit Kenji (« they’ll charge us extra for every small adjustment »). La facturation à l’heure correspond au contrat en régie, et des livrables flous ne rendent pas le contrat nul : ils le rendent risqué."
             },
             {
               "prompt_fr": "Comment traduire « un contrat en régie » par opposition à « a fixed-price contract » ?",
               "choices": [
-                "a time and materials contract",
                 "a regie contract",
-                "a free-price contract"
+                "a time and materials contract",
+                "a time-spent contract"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais des affaires, la régie (facturation au temps passé, à la journée ou à l’heure) s’appelle « time and materials » (souvent abrégé T&M), alors que le forfait se dit « fixed-price ». « Regie » et « free-price » ne se disent pas."
+              "answer_index": 1,
+              "explanation_fr": "Le contrat en régie se dit « time and materials contract » (T&M) : on paie le temps passé et les frais. « Regie » n’existe pas en anglais, et « time-spent contract » est un calque compréhensible mais qui n’est pas le terme utilisé."
             },
             {
               "prompt_fr": "Complète : « Each payment milestone is tied ___ a concrete deliverable in the SOW. »",
               "choices": [
-                "with",
                 "to",
+                "with",
                 "at"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "On dit « tied to something » ou « linked to something » (lié à quelque chose). « Tied with » s’utilise pour une égalité de score (tied with the other team), et « tied at » est incorrect ici."
             },
             {
               "prompt_fr": "Quelle phrase demande poliment au prestataire de préciser les livrables dans le SOW ?",
               "choices": [
-                "Your SOW is too vague, please rewrite it properly.",
-                "We cannot pay for an application without specifications.",
-                "Could we list each deliverable in the SOW and reference the technical specification?"
+                "Your SOW is too vague, so please rewrite it properly before we sign.",
+                "Could we list each deliverable in the SOW and reference the technical specification?",
+                "We won’t sign until every deliverable is described in full detail by your team."
               ],
-              "answer_index": 2,
-              "explanation_fr": "« Could we list… and reference… » est collaboratif, précis et orienté solution. La première phrase est accusatrice et la deuxième sonne comme une menace plutôt qu’une demande d’amendement contractuel."
+              "answer_index": 1,
+              "explanation_fr": "La bonne phrase est collaborative et précise : elle propose une modification concrète. Dire « too vague, rewrite it properly » est accusateur, et poser un ultimatum sonne comme une menace plutôt qu’une demande de modification du contrat."
             }
           ],
           "production": {
@@ -280,42 +280,42 @@
             {
               "prompt_fr": "Dans une matrice RACI, quelle est la différence entre « Responsible » (R) et « Accountable » (A) ?",
               "choices": [
-                "Responsible est le supérieur hiérarchique ; Accountable est le service comptable",
-                "Responsible réalise le travail ; Accountable valide et porte la responsabilité finale de la décision",
-                "Responsible décide en dernier ressort ; Accountable exécute la tâche au quotidien"
+                "Responsible valide et porte la responsabilité finale ; Accountable réalise le travail",
+                "Responsible est consulté avant la décision ; Accountable est informé après",
+                "Responsible réalise le travail ; Accountable valide et porte la responsabilité finale"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Faux ami classique : en anglais de gestion de projet, « Responsible » est celui qui réalise concrètement la tâche (le réalisateur), tandis que « Accountable » est l’approbateur unique qui rend des comptes sur le résultat final. « Accountable » n’a aucun rapport avec la comptabilité (accounting)."
+              "answer_index": 2,
+              "explanation_fr": "Dans une matrice RACI, le « R » fait le travail, le « A » en répond et tranche (un seul par ligne). Le piège classique est d’inverser les deux, et « consulté » et « informé » correspondent au C et au I."
             },
             {
               "prompt_fr": "Que signifie l’expression « prevent tasks from falling through the cracks » ?",
               "choices": [
-                "Éviter que des tâches soient oubliées entre deux équipes",
-                "Empêcher les développeurs de casser la production",
-                "Interdire de découper les tâches en lots trop petits"
+                "Éviter que des tâches soient faites deux fois par deux équipes",
+                "Éviter que des tâches prennent du retard à cause d’une autre équipe",
+                "Éviter que des tâches soient oubliées entre deux équipes"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« To fall through the cracks » (passer à travers les mailles du filet / tomber dans les interstices) désigne un sujet que personne ne traite parce que chaque équipe pense qu’une autre s’en occupe."
+              "answer_index": 2,
+              "explanation_fr": "« To fall through the cracks » (tomber entre les lattes du plancher) veut dire passer à la trappe, être oublié parce que chacun pense que l’autre s’en occupe, exactement le cas du nettoyage des données. Ce n’est ni un doublon, ni un retard."
             },
             {
               "prompt_fr": "Complète : « Who ___ ownership of the training workstream? »",
               "choices": [
                 "makes",
-                "does",
-                "takes"
+                "takes",
+                "has the"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En anglais, on dit « to take ownership of something » (prendre la responsabilité d’un sujet) ou « to have ownership ». « Make » et « do » ne s’emploient jamais avec « ownership »."
+              "answer_index": 1,
+              "explanation_fr": "On dit « take ownership of something » : prendre la responsabilité d’un sujet. « Make ownership » est un calque, et « has the ownership » décrit un état (qui possède), alors que la question porte sur qui prend le sujet en main."
             },
             {
               "prompt_fr": "Deux directeurs veulent être « Accountable » sur le même livrable dans la matrice RACI. Que dois-tu répondre ?",
               "choices": [
-                "Great, having two Accountable people doubles our safety.",
                 "To avoid slow decisions, only one person can be Accountable, and the other can be Consulted.",
-                "Let’s remove the Accountable column from the RACI matrix."
+                "That’s fine, as long as both directors agree before each decision is made.",
+                "Let’s make them both Responsible instead, so they share the final decision."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La règle d’or d’une matrice RACI est « un seul A par ligne » : si deux personnes ont le dernier mot, personne n’est vraiment responsable en cas de blocage. L’autre partie prenante clé est alors « Consulted » (C)."
+              "answer_index": 0,
+              "explanation_fr": "La règle d’or d’une matrice RACI est « un seul A par ligne » : si deux personnes ont le dernier mot, personne ne tranche en cas de blocage. Exiger leur accord à chaque décision ralentit tout, et « Responsible » désigne ceux qui font le travail, pas ceux qui décident."
             }
           ],
           "production": {
@@ -378,42 +378,42 @@
             {
               "prompt_fr": "Attention au faux ami : que signifie « agenda » dans « today’s agenda » ?",
               "choices": [
+                "L’agenda personnel des participants",
                 "L’ordre du jour de la réunion",
-                "Le calendrier personnel où l’on note ses rendez-vous",
-                "Le compte rendu écrit après la réunion"
+                "Le planning général du projet"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais, « an agenda » est la liste des points à aborder pendant une réunion (l’ordre du jour). L’agenda où l’on note ses rendez-vous s’appelle « a calendar » ou « a planner », et le compte rendu s’appelle « meeting notes » ou « minutes »."
+              "answer_index": 1,
+              "explanation_fr": "Faux ami : « agenda » veut dire ordre du jour. L’agenda personnel se dit « diary » (britannique) ou « calendar », et le planning du projet, c’est la « timeline » que Sarah présente ensuite."
             },
             {
               "prompt_fr": "Qu’est-ce qu’un « milestone » sur la timeline d’un projet ?",
               "choices": [
-                "Une tâche quotidienne qui dure plusieurs semaines",
-                "Un point d’étape clé (de durée zéro) qui marque la fin d’une phase ou une validation",
-                "Un indicateur financier mesurant le coût des serveurs"
+                "Une tâche longue qui regroupe plusieurs livrables du projet",
+                "Une échéance que l’équipe peut décaler si le planning glisse",
+                "Un point d’étape clé, sans durée, qui marque la fin d’une phase ou une validation"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un « milestone » (jalon) est un repère clé dans le calendrier (fin de conception, gel du code, mise en ligne), contrairement à une tâche qui a une durée."
+              "answer_index": 2,
+              "explanation_fr": "Un « milestone » (jalon, littéralement borne kilométrique) est un instant, pas une tâche : ici, le gel de l’API le 15 mai. Une tâche longue qui regroupe des livrables est une phase ou un lot, et un jalon est justement un point qu’on cherche à tenir."
             },
             {
               "prompt_fr": "Complète : « Let’s ___ the high-level timeline before we take questions. »",
               "choices": [
-                "present to you",
+                "walk through",
                 "explain you",
-                "walk through"
+                "present you"
               ],
-              "answer_index": 2,
-              "explanation_fr": "« To walk through » (parcourir étape par étape) est très naturel en réunion. « Explain you » est une faute classique (il faut « explain to you »), et « present to you » est alourdi inutilement : « present » prend directement l’objet (« present the timeline »)."
+              "answer_index": 0,
+              "explanation_fr": "« To walk someone through something » veut dire présenter étape par étape. « Explain you » et « present you » calquent le français : on dit « explain it to you » et « present it to you »."
             },
             {
               "prompt_fr": "Comment ouvrir la réunion de lancement de façon fluide et professionnelle ?",
               "choices": [
-                "Hello, today we make the kickoff meeting of the project.",
-                "Thanks for joining the kickoff meeting; let’s start by reviewing today’s agenda.",
-                "Welcome to the kickoff, I will read my diary of the project."
+                "Hello everyone, today we make the kickoff meeting of the project.",
+                "Welcome to the kickoff; let’s start by reading my diary for the project.",
+                "Thanks for joining the kickoff meeting; let’s start by reviewing today’s agenda."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Thanks for joining the kickoff meeting; let’s start by reviewing today’s agenda » est idiomatique. En anglais, on ne dit jamais « make a meeting » (on dit « hold », « run » ou « have a meeting »), et « diary » est un journal intime ou un agenda papier."
+              "answer_index": 2,
+              "explanation_fr": "La bonne phrase remercie et annonce l’ordre du jour. « Make the kickoff meeting » est le calque classique de « faire une réunion » (on dit « hold » ou « have »), et « diary » est un agenda personnel, pas l’ordre du jour."
             }
           ],
           "production": {
@@ -514,42 +514,42 @@
             {
               "prompt_fr": "Pourquoi Mei préfère-t-elle découper l’epic par fournisseur de connexion plutôt que « une story front-end et une story back-end » ?",
               "choices": [
-                "Parce qu’une user story doit représenter une fonctionnalité testable de bout en bout pour l’utilisateur",
-                "Parce que le back-end ne fait jamais partie du backlog en Scrum",
-                "Parce que le product owner n’a pas le droit de parler aux développeurs front-end"
+                "Parce qu’une user story doit livrer une fonctionnalité testable de bout en bout par l’utilisateur",
+                "Parce qu’un découpage front-end / back-end donnerait des stories trop petites à estimer",
+                "Parce que le product owner ne doit jamais connaître la répartition technique du travail"
               ],
               "answer_index": 0,
-              "explanation_fr": "En agile, on découpe verticalement (vertical slicing) pour que chaque user story traverse les couches techniques et livre une valeur démontrable à l’utilisateur dès la fin du sprint."
+              "explanation_fr": "Une bonne user story est une tranche verticale : elle apporte de la valeur à l’utilisateur, ici se connecter avec Google. Une story « back-end » seule ne se teste pas par l’utilisateur. Ce n’est pas une question de taille, et le PO peut connaître la technique, il ne priorise simplement pas par couche."
             },
             {
               "prompt_fr": "Quel est le rôle principal d’une séance de « backlog refinement » ?",
               "choices": [
-                "Faire la démonstration des fonctionnalités terminées aux clients",
+                "Choisir les stories que l’équipe s’engage à livrer pendant le prochain sprint",
                 "Clarifier, découper et estimer les prochains éléments du backlog avant le sprint planning",
-                "Analyser pourquoi un incident de production est survenu"
+                "Montrer aux parties prenantes les fonctionnalités terminées pendant le sprint"
               ],
               "answer_index": 1,
-              "explanation_fr": "Le backlog refinement (affinage) prépare les stories des prochains sprints pour que le sprint planning soit fluide. La démo a lieu en sprint review, et l’analyse d’incident en postmortem."
+              "explanation_fr": "L’affinage prépare les éléments du backlog pour qu’ils soient prêts. Choisir et s’engager se fait au « sprint planning », et montrer le travail terminé lors de la « sprint review »."
             },
             {
               "prompt_fr": "Complète : « This epic is too large to ___ in a single two-week sprint. »",
               "choices": [
+                "fit",
                 "enter",
-                "hold",
-                "fit"
+                "hold"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Pour dire qu’une quantité de travail « tient » ou « rentre » dans un sprint ou un planning, l’anglais utilise « to fit in a sprint ». « Enter » et « hold » sont des calques du français « entrer » et « tenir »."
+              "answer_index": 0,
+              "explanation_fr": "« To fit in » veut dire tenir dans un espace ou une durée : l’epic ne tient pas dans un sprint. « Enter in » est un calque de « entrer dans », et « hold » voudrait dire que l’epic contient le sprint, l’inverse du sens voulu."
             },
             {
               "prompt_fr": "Un développeur arrive en refinement avec une user story sans description. Que lui dit le Scrum master ?",
               "choices": [
-                "Let’s estimate it anyway so we finish the meeting on time.",
+                "Let’s give it a large estimate for now, and we can lower it once it’s described.",
                 "This story isn’t ready for estimation yet; let’s clarify the user need with the product owner first.",
-                "I will write the code myself since the ticket is empty."
+                "Let’s estimate it anyway, since the developer will understand the need while coding."
               ],
               "answer_index": 1,
-              "explanation_fr": "Estimer à l’aveugle ne sert à rien : si le besoin n’est pas clair, on le clarifie avec le product owner avant de voter."
+              "explanation_fr": "Une story sans description n’est pas prête (« not ready ») : on clarifie le besoin avant d’estimer. Une estimation « large par défaut » ne repose sur rien, et découvrir le besoin en codant mène à des retouches et à des retards."
             }
           ],
           "production": {
@@ -606,42 +606,42 @@
             {
               "prompt_fr": "Quand utilise-t-on le « T-shirt sizing » plutôt que les « story points » ?",
               "choices": [
-                "En début de cadrage ou pour une roadmap, quand on veut un ordre de grandeur rapide sans spécifications détaillées",
-                "Uniquement pour estimer les bugs critiques en production",
-                "En fin de sprint pour calculer les heures supplémentaires de chaque développeur"
+                "Pour estimer les stories du prochain sprint, quand l’équipe connaît déjà tous les détails",
+                "Pour estimer le nombre d’heures que chaque développeur passera sur une tâche",
+                "En début de cadrage ou pour une roadmap, pour un ordre de grandeur rapide sans spécifications détaillées"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le T-shirt sizing (XS, S, M, L, XL) permet de donner une estimation macro (rough estimate) sur de gros sujets encore peu détaillés, avant le découpage fin en user stories estimées en story points."
+              "answer_index": 2,
+              "explanation_fr": "Fatou le dit : sans spécifications, les story points ne marchent pas encore, alors on estime en tailles (S, M, L, XL). Pour le prochain sprint, l’équipe utilise justement les story points, et aucune de ces deux méthodes ne compte des heures."
             },
             {
               "prompt_fr": "En planning poker, un développeur vote 2 points et une autre vote 8 points. Quelle est la bonne pratique de facilitation ?",
               "choices": [
-                "Faire la moyenne mathématique et noter 5 points sans discuter",
-                "Toujours retenir le chiffre le plus bas pour faire plaisir au sponsor",
-                "Demander aux deux extrêmes d’expliquer leurs hypothèses, car l’écart révèle souvent un besoin mal compris ou un risque caché"
+                "Retenir la moyenne, 5 points, pour gagner du temps et passer à la story suivante",
+                "Retenir l’estimation du développeur le plus expérimenté de l’équipe",
+                "Demander aux deux extrêmes d’expliquer leurs hypothèses, car l’écart révèle souvent un risque caché"
               ],
               "answer_index": 2,
-              "explanation_fr": "L’intérêt de l’estimation agile n’est pas le chiffre en soi mais la discussion : un écart de 2 à 8 montre que deux membres de l’équipe n’ont pas compris le même périmètre technique (ici, la migration de base de données)."
+              "explanation_fr": "L’écart entre 2 et 8 montre que les deux n’ont pas compris la même chose : ici, Youssef oubliait la migration de base. Faire la moyenne cache ce malentendu, et suivre le plus expérimenté prive l’équipe de l’information que l’autre a vue."
             },
             {
               "prompt_fr": "Complète : « We can only give a ___ estimate until the API documentation is ready. »",
               "choices": [
-                "rough",
                 "gross",
-                "heavy"
+                "rough",
+                "raw"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« A rough estimate » (ou « a ballpark estimate ») traduit « une estimation grossière / macro / à la louche ». « Gross » est un faux ami qui veut dire brut (gross salary) ou répugnant, jamais approximatif."
+              "answer_index": 1,
+              "explanation_fr": "Une estimation approximative se dit « a rough estimate » (ou « a ballpark figure »). « Gross » veut dire brut (salaire, montant) ou dégoûtant, et « raw » s’emploie pour des données brutes, pas pour une estimation."
             },
             {
               "prompt_fr": "Comment dire « Nous avons sous-estimé la complexité des tests » ?",
               "choices": [
-                "We sub-estimated the testing complexity.",
                 "We underestimated the testing complexity.",
-                "We under-evaluated the testings."
+                "We sub-estimated the testing complexity.",
+                "We under-evaluated the testings complexity."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le verbe anglais est « to underestimate » (et son contraire « to overestimate »). « Sub-estimate » est un calque du préfixe latin/français qui n’existe pas en anglais."
+              "answer_index": 0,
+              "explanation_fr": "Sous-estimer se dit « to underestimate ». « Sub-estimated » n’existe pas (calque de « sous- »), et « testings » ne prend jamais de « s »."
             }
           ],
           "production": {
@@ -703,42 +703,42 @@
             {
               "prompt_fr": "Quelle est la différence entre « velocity » et « capacity » en Scrum ?",
               "choices": [
-                "La velocity est le rythme moyen observé sur les sprints passés ; la capacity est le temps disponible de l’équipe pour le sprint à venir",
-                "La velocity mesure le budget restant ; la capacity mesure le nombre de serveurs dans le cloud",
-                "Ce sont deux synonymes exacts que l’on utilise indifféremment"
+                "La velocity est le temps disponible pour le prochain sprint ; la capacity, le rythme moyen passé",
+                "La velocity est le rythme moyen des sprints passés ; la capacity, le temps disponible pour le prochain",
+                "La velocity se mesure en heures ; la capacity se mesure en story points"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La vélocité regarde le passé (combien de points l’équipe livre en moyenne par sprint normal), tandis que la capacité regarde le futur immédiat (les congés, jours fériés et affectations à temps partiel du sprint qui commence)."
+              "answer_index": 1,
+              "explanation_fr": "La vélocité regarde en arrière (36 points en moyenne), la capacité regarde le prochain sprint (jours fériés, congés, temps partiel). Le piège est d’inverser les deux, et c’est plutôt l’inverse pour les unités : la vélocité se mesure en points, la capacité souvent en jours ou en heures."
             },
             {
               "prompt_fr": "Que signifie « Inès is 0.5 FTE on our team » ?",
               "choices": [
-                "Inès est stagiaire pendant cinq mois dans l’équipe",
-                "Inès travaille à mi-temps (0,5 équivalent temps plein) sur cette équipe",
-                "Inès a une vélocité deux fois plus lente que le reste de l’équipe"
+                "Inès travaille dans l’équipe pendant les cinq prochains mois seulement",
+                "Inès est à temps plein, mais compte pour la moitié dans les estimations",
+                "Inès travaille à mi-temps sur cette équipe, l’autre moitié sur un autre projet"
               ],
-              "answer_index": 1,
-              "explanation_fr": "FTE signifie « Full-Time Equivalent » (équivalent temps plein, ETP en français). 0.5 FTE veut dire qu’elle consacre 50 % de son temps de travail à ce projet."
+              "answer_index": 2,
+              "explanation_fr": "FTE veut dire « full-time equivalent » (équivalent temps plein) : 0.5 FTE, c’est la moitié de son temps, l’autre moitié étant pour la sécurité. Ce n’est ni une durée en mois, ni une pondération de ses estimations."
             },
             {
               "prompt_fr": "Complète : « Given the public holiday and annual leave, we should ___ the sprint at 25 points. »",
               "choices": [
+                "cap",
                 "ceiling",
-                "top",
-                "cap"
+                "top up"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Le verbe « to cap something at X » signifie plafonner à X. « Ceiling » est un nom (plafond), pas un verbe, et « top » voudrait dire dépasser."
+              "answer_index": 0,
+              "explanation_fr": "« To cap something at » veut dire plafonner. « Ceiling » est un nom (le plafond), pas un verbe, et « top up » veut dire compléter, recharger : presque le sens inverse."
             },
             {
               "prompt_fr": "Que veut dire Chloé par « carry over unfinished stories » ?",
               "choices": [
-                "Supprimer les stories non terminées du backlog",
-                "Reporter les stories non terminées sur le sprint suivant",
-                "Confier les stories non terminées à un prestataire externe"
+                "Garder les stories non terminées dans le sprint en cours, en le prolongeant",
+                "Retirer les stories non terminées du backlog pour les réécrire",
+                "Reporter les stories non terminées sur le sprint suivant"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En gestion de sprint, « to carry over a story » (ou « spillover ») désigne le fait de basculer une tâche inachevée d’un sprint vers le sprint suivant."
+              "answer_index": 2,
+              "explanation_fr": "« To carry over » veut dire reporter sur la période suivante, comme des congés non pris. En Scrum, on ne prolonge jamais un sprint, et les stories ne sont pas supprimées : elles reviennent au backlog ou au sprint suivant."
             }
           ],
           "production": {
@@ -801,42 +801,42 @@
             {
               "prompt_fr": "Pourquoi un « sprint goal » unique est-il utile en cours de sprint ?",
               "choices": [
-                "Il permet à l’équipe de savoir quoi prioriser ou protéger si un imprévu survient",
-                "Il remplace complètement les critères d’acceptation des user stories",
-                "Il oblige chaque développeur à travailler exactement le même nombre d’heures"
+                "Il dit à l’équipe quoi prioriser ou protéger si un imprévu survient",
+                "Il remplace les critères d’acceptation des stories du sprint",
+                "Il fixe le nombre de stories que l’équipe doit terminer"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le sprint goal donne une boussole commune : si une tâche prend plus de temps que prévu, l’équipe protège d’abord les stories indispensables à l’objectif du sprint et peut négocier le reste avec le product owner."
+              "explanation_fr": "Un objectif unique donne un cap : si un imprévu arrive, l’équipe sait ce qui compte (ici, la réinitialisation du mot de passe). Il ne remplace pas les critères d’acceptation de chaque story, et ce n’est pas un nombre de tickets."
             },
             {
               "prompt_fr": "Un développeur dit : « J’ai fini de coder la story, je la passe en Done, la QA testera la semaine prochaine. » Que lui réponds-tu ?",
               "choices": [
-                "Perfect, that increases our velocity today.",
-                "According to our definition of done, a story isn’t Done until it is reviewed, tested and deployed on staging.",
-                "Move it to Done, and we will create a new story for QA testing."
+                "Fine, move it to Done, and QA can reopen it next week if they find a bug.",
+                "According to our definition of done, a story isn’t Done until it’s reviewed, tested and on staging.",
+                "Fine, move it to Done, and let’s create a separate story for the QA testing."
               ],
               "answer_index": 1,
-              "explanation_fr": "La definition of done (DoD) évite le piège du « presque fini » (code écrit mais non relu ni testé) qui crée un goulot d’étranglement en fin de sprint."
+              "explanation_fr": "La « definition of done » s’applique à toutes les stories : une story non testée n’est pas terminée. La passer en Done fausse la vélocité, et créer une story séparée pour les tests revient à contourner la règle que l’équipe vient d’adopter."
             },
             {
-              "prompt_fr": "Complète : « Does this ticket meet all the acceptance ___ ? »",
+              "prompt_fr": "Complète : « Does this ticket meet all the acceptance ___? »",
               "choices": [
+                "criteria",
                 "criterias",
-                "criterion",
-                "criteria"
+                "criterion"
               ],
-              "answer_index": 2,
-              "explanation_fr": "« Criteria » est déjà le pluriel latin de « criterion » (un critère = a criterion, des critères = criteria). Ajouter un s (« criterias ») est une faute très fréquente à éviter."
+              "answer_index": 0,
+              "explanation_fr": "« Criteria » est déjà un pluriel (le singulier est « criterion ») : « all the acceptance criteria ». « Criterias » n’existe pas, et « criterion » est un singulier qui ne va pas avec « all the »."
             },
             {
               "prompt_fr": "Comment résumer l’engagement de l’équipe en fin de sprint planning ?",
               "choices": [
+                "We take all the tickets of the backlog and we will see what we can do by Friday.",
                 "We are aligned on the sprint goal, and every selected story has clear acceptance criteria.",
-                "We take all the tickets of the backlog and we will see on Friday.",
-                "The sprint goal is to close 28 tickets without definition of done."
+                "We have 28 tickets selected, so the sprint goal is to close as many as possible."
               ],
-              "answer_index": 0,
-              "explanation_fr": "La première phrase synthétise les deux piliers d’une fin de sprint planning réussie : l’alignement sur le sprint goal et la clarté des acceptance criteria."
+              "answer_index": 1,
+              "explanation_fr": "La bonne phrase résume les deux piliers d’un sprint planning réussi : un objectif partagé et des critères clairs. Prendre tout le backlog « et on verra » n’est pas un engagement, et un nombre de tickets n’est pas un objectif de sprint."
             }
           ],
           "production": {
@@ -936,42 +936,42 @@
             {
               "prompt_fr": "Que signifie le fait qu’une tâche soit « on the critical path » (sur le chemin critique) ?",
               "choices": [
-                "C’est la tâche techniquement la plus complexe à coder du projet",
-                "Elle fait partie de la plus longue séquence de tâches dépendantes : tout retard sur elle retarde la fin du projet",
-                "C’est une tâche qui a déjà dépassé son budget initial"
+                "C’est la tâche la plus complexe ou la plus risquée techniquement du projet",
+                "C’est une tâche qui a déjà pris du retard par rapport au planning initial",
+                "Elle fait partie de la plus longue suite de tâches dépendantes : tout retard retarde la fin du projet"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le chemin critique (critical path) est une notion de planification : c’est la chaîne de tâches dépendantes sans marge libre (zero float). Une tâche très simple (comme attendre une validation) peut être sur le chemin critique."
+              "answer_index": 2,
+              "explanation_fr": "Le chemin critique est la chaîne de tâches sans marge (« zero float ») : tout retard sur elles décale la fin. Une tâche peut être complexe sans être critique, et une tâche critique peut très bien être à l’heure, comme l’audit réseau pour l’instant."
             },
             {
               "prompt_fr": "À quoi sert la « project baseline » dans le suivi d’un projet ?",
               "choices": [
-                "À comparer l’avancement réel avec le planning, le périmètre et le budget initialement validés",
-                "À lister les compétences techniques minimales pour recruter un développeur",
-                "À définir la charte graphique des présentations du projet"
+                "À mettre à jour le planning chaque semaine pour refléter les derniers retards",
+                "À fixer les tâches minimales à livrer si le projet manque de temps",
+                "À comparer l’avancement réel au planning, au périmètre et au budget validés au départ"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La baseline (plan de référence) est la photo figée et approuvée du plan initial : elle permet de mesurer les écarts (variances) de délai ou de coût."
+              "answer_index": 2,
+              "explanation_fr": "La « baseline » est la photo validée au départ : on mesure les écarts par rapport à elle. La modifier chaque semaine ferait disparaître ces écarts, et le minimum à livrer relève du périmètre (MVP), pas de la baseline."
             },
             {
               "prompt_fr": "Complète : « Mobile testing has a ___ on the new staging environment. »",
               "choices": [
                 "dependence",
-                "dependent",
-                "dependency"
+                "dependency",
+                "dependent"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En gestion de projet comme en logiciel, une dépendance entre deux tâches ou composants se dit « a dependency » (pluriel « dependencies »). « Dependence » désigne l’état de dépendance (ex. : energy dependence)."
+              "answer_index": 1,
+              "explanation_fr": "En gestion de projet, un lien entre deux tâches est une « dependency ». « Dependence » désigne plutôt une dépendance au sens général ou médical (« drug dependence »), et « dependent » est un adjectif ou une personne à charge."
             },
             {
               "prompt_fr": "Une tâche qui n’est PAS sur le chemin critique prend deux jours de retard, alors qu’elle dispose de cinq jours de marge (float). Quel est l’impact sur la date de fin du projet ?",
               "choices": [
-                "La date de fin du projet recule de deux jours",
-                "La date de fin du projet ne bouge pas, car la marge absorbe les deux jours",
-                "La date de fin du projet recule de cinq jours"
+                "La date de fin ne bouge pas, car la marge de cinq jours absorbe les deux jours de retard",
+                "La date de fin recule de deux jours, comme pour toute tâche en retard",
+                "La date de fin recule de trois jours, soit la marge moins le retard"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Tant que le retard d’une tâche hors chemin critique reste inférieur à sa marge libre (float / slack), la date de fin globale du projet n’est pas touchée."
+              "answer_index": 0,
+              "explanation_fr": "Une tâche hors chemin critique a de la marge (« float ») : deux jours de retard sur cinq de marge n’ont aucun effet sur la fin. Il reste trois jours de marge, ce qui ne recule rien, et seul un retard sur le chemin critique décale la date finale."
             }
           ],
           "production": {
@@ -1032,42 +1032,42 @@
             {
               "prompt_fr": "Que signifie « We’ve already eaten into the buffer » ?",
               "choices": [
+                "Nous avons déjà consommé toute notre marge de sécurité",
                 "Nous avons déjà entamé une partie de notre marge de sécurité",
-                "Nous avons doublé notre marge de sécurité",
-                "Nous avons terminé le projet avant d’utiliser la marge"
+                "Nous avons déjà ajouté une marge de sécurité au planning"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’expression idiomatique « to eat into the buffer » (ou « eat into the reserve ») signifie grignoter ou entamer la marge prévue."
+              "answer_index": 1,
+              "explanation_fr": "« To eat into something » veut dire entamer, grignoter : une partie de la marge est utilisée, pas toute. Avoir tout consommé se dirait « we’ve used up the buffer », et ajouter une marge, « we’ve added a buffer »."
             },
             {
               "prompt_fr": "Quelle est la bonne collocation en anglais pour dire « tenir l’échéance » vs « rater l’échéance » ?",
               "choices": [
                 "hold the deadline / lose the deadline",
-                "keep the deadline / fail the deadline",
+                "respect the deadline / fail the deadline",
                 "meet the deadline / miss the deadline"
               ],
               "answer_index": 2,
-              "explanation_fr": "En anglais, on dit toujours « meet a deadline » (ou « hit a deadline ») pour tenir une échéance, et « miss a deadline » pour la dépasser. « Hold » ou « keep a deadline » sont des calques du français."
+              "explanation_fr": "La collocation est « meet a deadline » (tenir) et « miss a deadline » (rater). « Hold the deadline » est un calque de « tenir », et « respect the deadline » se comprend mais reste moins naturel, tout comme « fail the deadline »."
             },
             {
               "prompt_fr": "Qu’est-ce que le « lead time » d’un fournisseur ou d’une équipe ?",
               "choices": [
-                "Le temps de réunion hebdomadaire du tech lead",
-                "Le délai total qui s’écoule entre la commande (ou la demande) et la livraison effective",
-                "L’avance prise par l’équipe sur le planning initial"
+                "Le délai total entre la commande ou la demande et la livraison effective",
+                "Le temps que l’équipe passe réellement à travailler sur la tâche",
+                "L’avance que prend le fournisseur sur la date de livraison promise"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « lead time » est le délai de réalisation ou d’approvisionnement entre le déclenchement d’une demande et sa livraison."
+              "answer_index": 0,
+              "explanation_fr": "Le « lead time » couvre toute l’attente, de la commande à la livraison (ici, trois semaines pour les terminaux). Le temps de travail effectif est le « cycle time » ou « processing time », et « lead » ne veut pas dire « avance » dans cette expression."
             },
             {
               "prompt_fr": "Pourquoi distingue-t-on l’estimation « nue » des ingénieurs et l’engagement annoncé au client ?",
               "choices": [
-                "Parce qu’une estimation technique suppose que tout se passe sans accroc, alors qu’un engagement externe doit inclure un buffer pour les risques",
-                "Parce que les ingénieurs ne connaissent pas la durée de leurs propres tâches",
-                "Parce qu’il faut toujours multiplier toutes les estimations par quatre"
+                "Parce que les ingénieurs gonflent toujours leurs estimations pour se protéger",
+                "Parce qu’un engagement client se calcule en multipliant l’estimation par deux",
+                "Parce qu’une estimation suppose que tout va bien, alors qu’un engagement inclut une marge"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Une estimation technique mesure le temps de travail pur, tandis qu’une date d’engagement (deadline) intègre les délais externes (lead time) et une marge explicite (buffer / contingency reserve)."
+              "answer_index": 2,
+              "explanation_fr": "Les quatre semaines supposent que tout arrive à temps ; l’engagement ajoute le délai fournisseur et une marge pour les douanes. Ce n’est pas un procès d’intention envers les ingénieurs, et il n’existe pas de coefficient magique : la marge dépend des risques identifiés."
             }
           ],
           "production": {
@@ -1124,42 +1124,42 @@
             {
               "prompt_fr": "Que révèle un « burndown chart » dont la courbe reste plate au milieu du sprint ?",
               "choices": [
-                "L’équipe a terminé toutes ses tâches en avance",
-                "Beaucoup de tâches sont peut-être en cours, mais aucune n’est passée à l’état « Terminé » ces derniers jours",
-                "Le serveur de production ne consomme plus de mémoire"
+                "Des tâches avancent, mais aucune n’est passée à « Terminé » depuis des jours",
+                "L’équipe a arrêté de travailler sur le sprint depuis plusieurs jours",
+                "L’équipe a terminé toutes ses tâches et n’a plus rien à faire"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le burndown chart trace le travail restant : tant que les cartes restent en cours ou en revue sans être terminées (Done), la courbe ne descend pas."
+              "answer_index": 0,
+              "explanation_fr": "Le burndown ne baisse que quand une tâche est terminée : ici, six cartes attendent une revue. Une courbe plate ne veut pas dire que personne ne travaille (tout le monde commence de nouvelles stories), et une équipe qui a tout fini aurait une courbe à zéro."
             },
             {
               "prompt_fr": "Que signifie l’adage agile « Stop starting, start finishing » utilisé sur un tableau Kanban ?",
               "choices": [
-                "Il faut annuler le projet et recommencer à zéro",
-                "Il faut aider à terminer et relire les cartes déjà en cours avant d’en entamer de nouvelles",
-                "Il faut supprimer la colonne « À faire » du tableau"
+                "Arrêter les tâches en retard et les remettre dans le backlog",
+                "Finir et relire les cartes déjà en cours avant d’en commencer de nouvelles",
+                "Commencer le sprint suivant dès qu’une carte est terminée"
               ],
               "answer_index": 1,
-              "explanation_fr": "Principe clé du Kanban (limiter le Work In Progress, WIP) : quand une colonne déborde (ici Code Review), ouvrir de nouvelles tâches aggrave le goulot d’étranglement au lieu de livrer."
+              "explanation_fr": "L’adage invite à limiter le travail en cours : relire les PR bloquées plutôt que d’ouvrir de nouvelles stories. Il ne s’agit pas d’abandonner des tâches, ni d’accélérer le passage au sprint suivant."
             },
             {
               "prompt_fr": "Complète : « Six cards are ___ in the review column on our Kanban board. »",
               "choices": [
                 "stuck",
                 "blocked-up",
-                "jamming"
+                "jammed in"
               ],
               "answer_index": 0,
-              "explanation_fr": "Pour dire que des tickets ou des cartes sont coincés dans une colonne sans avancer, l’anglais courant utilise « stuck in the column »."
+              "explanation_fr": "« Stuck » (coincé) est le mot naturel pour des cartes qui n’avancent pas. « Blocked up » s’emploie pour un nez ou un évier bouché, et « jammed in » se dit d’un objet physique coincé, comme du papier dans une imprimante."
             },
             {
               "prompt_fr": "Comment le Scrum master annonce-t-il qu’il prend en charge un blocage externe ?",
               "choices": [
-                "You must fix the security team yourself today.",
-                "I’ll follow up on the security blocker right after the daily stand-up so you can merge.",
-                "Let’s ignore the security review and deploy anyway."
+                "Could one of you chase the security team today, so we can merge faster?",
+                "I’ll follow up on the security blocker right after the stand-up, so you can merge.",
+                "Let’s skip the security review this time, so you can merge today."
               ],
               "answer_index": 1,
-              "explanation_fr": "Le rôle du Scrum master est de lever les obstacles (remove blockers) qui dépassent l’équipe tout en respectant les règles de sécurité."
+              "explanation_fr": "Le Scrum master retire les obstacles : il prend lui-même le sujet en charge, avec un délai clair. Renvoyer la tâche à l’équipe ne la décharge pas, et contourner la revue de sécurité crée un risque bien plus grand que le retard."
             }
           ],
           "production": {
@@ -1221,42 +1221,42 @@
             {
               "prompt_fr": "À quoi sert le « parking lot » pendant une réunion de projet ?",
               "choices": [
-                "À noter un sujet pertinent mais hors ordre du jour pour le traiter plus tard sans faire dériver la réunion",
-                "À archiver les fonctionnalités définitivement abandonnées par l’entreprise",
-                "À réserver des places de stationnement pour les visiteurs externes"
+                "Noter les sujets qu’on décide d’abandonner définitivement après discussion",
+                "Noter les décisions prises pendant la réunion et leurs responsables",
+                "Noter un sujet utile mais hors ordre du jour pour le traiter plus tard, sans faire dériver la réunion"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En facilitation de réunion, « the parking lot » est une liste visible où l’on gare les sujets hors cadre (off-topic) afin que la personne se sente écoutée tout en gardant la réunion sur les rails."
+              "answer_index": 2,
+              "explanation_fr": "Le « parking lot » met un sujet de côté pour plus tard : Kenji prévoit justement un point jeudi. Il ne sert pas à abandonner les sujets, et les décisions avec leurs responsables sont les « action items »."
             },
             {
               "prompt_fr": "Une discussion technique s’éternise entre deux personnes pendant une réunion à dix. Quelle intervention est la plus diplomate ?",
               "choices": [
-                "Stop talking, nobody else cares about this detail.",
-                "Since this mainly involves the two of you, let’s put it in the parking lot and take it offline after the call.",
-                "Let’s cancel the rest of the agenda and listen to them for an hour."
+                "Could you both stop here? We’re running out of time for the rest of the agenda.",
+                "Let’s keep going, since this is important, and we’ll skip the last agenda items.",
+                "Since this mainly involves the two of you, let’s put it in the parking lot and take it offline."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Let’s put it in the parking lot and take it offline » (« prenons ce point hors séance ») est la formule standard et polie pour recadrer un débat à deux en réunion."
+              "answer_index": 2,
+              "explanation_fr": "La bonne intervention reconnaît l’importance du sujet et propose de le traiter à deux plus tard (« take it offline »). Couper sèchement les deux personnes les met mal à l’aise devant tout le monde, et sacrifier l’ordre du jour fait perdre leur temps aux huit autres."
             },
             {
               "prompt_fr": "Complète : « Every action item needs a clear owner and a ___ date. »",
               "choices": [
-                "due",
                 "limit",
-                "finish"
+                "due",
+                "deadline"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Pour une tâche ou une action item, la date d’échéance s’appelle « a due date » (ou « a deadline »). « Limit date » est un calque mot à mot du français « date limite »."
+              "answer_index": 1,
+              "explanation_fr": "On dit « a due date » (date d’échéance). « Limit date » est un calque de « date limite », et « deadline date » est redondant : « deadline » contient déjà l’idée de date."
             },
             {
               "prompt_fr": "Comment dire « Limitons ce débat à dix minutes » ?",
               "choices": [
                 "Let’s timebox this discussion to ten minutes.",
                 "Let’s box the time of this discussion at ten minutes.",
-                "Let’s make a timebox during ten minutes."
+                "Let’s do a timebox of this discussion during ten minutes."
               ],
               "answer_index": 0,
-              "explanation_fr": "« To timebox something to X minutes » s’utilise directement comme verbe avec la préposition « to »."
+              "explanation_fr": "« To timebox something to » est le verbe consacré pour limiter la durée d’une discussion. Les deux autres phrases décomposent l’expression de façon artificielle, et « during » ne s’emploie pas pour une durée (on dirait « for »)."
             }
           ],
           "production": {
@@ -1355,42 +1355,42 @@
             {
               "prompt_fr": "Quelles sont les deux dimensions utilisées pour évaluer un risque dans un « risk register » ?",
               "choices": [
-                "Likelihood (probabilité) et impact (gravité des conséquences)",
-                "Velocity (vélocité) et story points (points d’effort)",
-                "Headcount (effectif) et seniority (ancienneté)"
+                "La probabilité et l’urgence",
+                "La probabilité et l’impact",
+                "L’impact et le coût de la parade"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Dans toute matrice d’évaluation des risques (risk assessment), on croise la probabilité d’occurrence (likelihood / probability) et l’impact sur le projet (impact / severity)."
+              "answer_index": 1,
+              "explanation_fr": "Sarah note le risque « medium likelihood, high impact » : probabilité et gravité des conséquences. L’urgence et le coût de la parade aident à décider quoi faire, mais ce ne sont pas les deux axes de notation du registre."
             },
             {
               "prompt_fr": "Quel est le but d’un « mitigation plan » ?",
               "choices": [
-                "Cacher le risque au comité de pilotage pour éviter les questions",
-                "Réduire la probabilité que le risque survienne ou en limiter l’impact s’il se produit",
-                "Sanctionner le fournisseur après la fin du projet"
+                "Décrire comment réagir une fois que le risque s’est produit",
+                "Désigner la personne responsable de surveiller le risque",
+                "Réduire la probabilité du risque ou en limiter l’impact s’il se produit"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« To mitigate a risk » signifie atténuer un risque en préparant des actions préventives ou un plan de repli (fallback)."
+              "answer_index": 2,
+              "explanation_fr": "Un plan d’atténuation agit avant : ici, enregistrer des réponses simulées pour continuer à tester. La réaction après coup est un plan de contingence, et la personne qui suit le risque est le « risk owner » (Kofi)."
             },
             {
               "prompt_fr": "Complète : « We need a concrete plan to ___ the risk of vendor lock-in. »",
               "choices": [
                 "mitigate",
-                "sweeten",
-                "light"
+                "attenuate",
+                "soften"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le verbe consacré avec « risk » est « to mitigate a risk » (atténuer un risque). « Sweeten » veut dire sucrer/adoucir une offre, et « light » veut dire allumer."
+              "explanation_fr": "Le verbe du métier est « mitigate a risk » (atténuer un risque). « Attenuate » s’emploie pour un signal ou un son, et « soften » pour un ton ou un choc : ni l’un ni l’autre n’est la collocation habituelle avec « risk »."
             },
             {
               "prompt_fr": "En comité, un dirigeant demande pourquoi tu mentionnes un événement qui ne s’est pas encore produit. Quelle réponse est la plus juste ?",
               "choices": [
-                "You’re right, I’ll delete it until we actually miss the deadline.",
-                "Flagging high-impact risks early lets us put a mitigation plan in place before the timeline is affected.",
-                "I always put everything in the risk register to have a longer table."
+                "You’re right, I’ll keep it off the slides until we know whether it really happens.",
+                "It’s mostly a formality, but our process requires every risk to be listed.",
+                "Flagging high-impact risks early lets us put a mitigation plan in place before the timeline is affected."
               ],
-              "answer_index": 1,
-              "explanation_fr": "C’est la définition même de la gestion des risques : anticiper tant qu’on a encore le temps d’agir (mitigate) avant que le planning ne soit touché."
+              "answer_index": 2,
+              "explanation_fr": "Un risque se gère avant qu’il ne se produise : c’est tout l’intérêt de le signaler tôt. Attendre qu’il se réalise enlève toute marge de manœuvre, et présenter le registre comme une formalité lui retire sa valeur aux yeux du comité."
             }
           ],
           "production": {
@@ -1451,42 +1451,42 @@
             {
               "prompt_fr": "À quel moment un sujet passe-t-il du « risk register » à l’« issue log » ?",
               "choices": [
-                "Dès que l’événement incertain s’est réellement produit et impacte le projet au présent",
-                "Quand le problème est entièrement résolu et archivé",
-                "Uniquement lorsque le budget du projet dépasse un million d’euros"
+                "Dès que l’événement incertain s’est vraiment produit et touche le projet",
+                "Dès que la probabilité du risque est jugée élevée par l’équipe",
+                "Dès que le risque a été escaladé à un responsable de la direction"
               ],
               "answer_index": 0,
-              "explanation_fr": "Un « risk » est au futur conditionnel (il pourrait arriver) ; dès qu’il se réalise, il devient « an issue » (un problème avéré) que l’on suit dans l’issue log jusqu’à sa résolution."
+              "explanation_fr": "Un risque est un événement possible ; un « issue » est un problème qui se pose déjà. Ivan le dit : « It’s no longer a hypothetical risk ». Une probabilité élevée reste un risque, et l’escalade est une action, pas un critère de passage."
             },
             {
               "prompt_fr": "Que signifie « The Friday milestone is at risk » ?",
               "choices": [
-                "Le jalon de vendredi a déjà été annulé",
-                "Le jalon de vendredi risque de ne pas être tenu si aucune action rapide n’est prise",
-                "Le jalon de vendredi comporte des tests de sécurité"
+                "Le jalon de vendredi est déjà raté et doit être replanifié",
+                "Le jalon de vendredi risque de ne pas être tenu si rien n’est fait vite",
+                "Le jalon de vendredi a été ajouté au registre des risques"
               ],
               "answer_index": 1,
-              "explanation_fr": "« At risk » est le signal d’alerte intermédiaire (souvent associé à la couleur orange / amber) : l’échéance n’est pas encore manquée, mais elle est menacée."
+              "explanation_fr": "« At risk » veut dire menacé : il peut encore être tenu si le quota est approuvé sous 24 heures. Il n’est pas encore raté, et le sujet vient justement de passer du registre des risques au registre des problèmes."
             },
             {
               "prompt_fr": "Complète : « Since the team cannot unblock this alone, I need to ___ it to the project sponsor. »",
               "choices": [
-                "climb",
-                "mount",
-                "escalate"
+                "escalate",
+                "raise up",
+                "climb"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Faire remonter un blocage à un niveau hiérarchique supérieur pour obtenir un arbitrage ou un appui se dit « to escalate an issue to someone »."
+              "answer_index": 0,
+              "explanation_fr": "On « escalates an issue to » une personne plus haut placée. « Raise » s’emploie pour soulever un sujet (« raise an issue »), mais pas avec « up… to the sponsor », et « climb » veut dire grimper."
             },
             {
               "prompt_fr": "Comment escalader un problème à un dirigeant de manière constructive ?",
               "choices": [
-                "Everything is broken because of the cloud provider, do something!",
-                "The load test milestone is at risk due to a blocked cloud quota; we need your help to fast-track approval today, while the team prepares a fallback region.",
-                "I’m escalating this issue so it is no longer my responsibility."
+                "The cloud provider rejected our quota, so the load test will probably slip; just so you know.",
+                "The load test milestone is at risk due to a blocked cloud quota; we need your help to fast-track approval today.",
+                "I’m escalating this issue to you, since the team can’t do anything more about it."
               ],
               "answer_index": 1,
-              "explanation_fr": "Une bonne escalade donne en trois phrases : l’impact (milestone at risk), l’action précise attendue du dirigeant (fast-track approval) et ce que l’équipe fait en parallèle."
+              "explanation_fr": "Une bonne escalade dit l’impact, la cause et l’aide attendue, avec une échéance. Une simple information (« just so you know ») ne demande rien au dirigeant, et dire que l’équipe ne peut plus rien faire sonne comme un abandon, alors qu’un plan B est en préparation."
             }
           ],
           "production": {
@@ -1552,42 +1552,42 @@
             {
               "prompt_fr": "Comment traduire « Nous avons quatre jours de retard sur le planning » ?",
               "choices": [
-                "We have four days of late on the planning.",
-                "We are four days behind schedule.",
-                "We are late of four days on the schedule."
+                "We have four days of delay on the planning.",
+                "We are late of four days on the schedule.",
+                "We are four days behind schedule."
               ],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, comme pour l’âge, on utilise le verbe être : « We are four days behind schedule » (et à l’inverse « four days ahead of schedule »). « Have four days of late » et « late of four days » sont des calques français."
+              "answer_index": 2,
+              "explanation_fr": "Avoir du retard sur le planning se dit « be behind schedule ». « Delay on the planning » est un calque (« planning » ne veut pas dire planning en anglais), et « late of four days » reprend la structure française."
             },
             {
               "prompt_fr": "Que signifie le verbe « to slip » dans « The release date might slip by a week » ?",
               "choices": [
-                "Être avancée d’une semaine",
-                "Glisser, être décalée d’une semaine plus tard que prévu",
-                "Être définitivement annulée"
+                "Être avancée d’une semaine plus tôt que prévu",
+                "Être menacée, sans que la date ne change encore",
+                "Être décalée d’une semaine plus tard que prévu"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Pour une date ou un jalon, « to slip (by X days/weeks) » est le terme professionnel courant pour dire qu’elle dérape ou glisse dans le temps."
+              "answer_index": 2,
+              "explanation_fr": "« To slip » (glisser) veut dire être repoussé : « the go-live will slip by two weeks ». Ce n’est pas une avance, et le verbe décrit un vrai décalage, pas seulement une menace (on dirait « at risk »)."
             },
             {
-              "prompt_fr": "Complète : « Keeping the external consultants for an extra month will cause a 15% ___ . »",
+              "prompt_fr": "Complète : « Keeping the external consultants for an extra month will cause a 15% ___. »",
               "choices": [
-                "cost overrun",
                 "budget overtaking",
+                "cost overrun",
                 "price overflow"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un dépassement de budget ou de coût s’appelle « a cost overrun » (ou « budget overrun »). « Overtaking » veut dire doubler une voiture sur la route, et « overflow » est un débordement de mémoire ou d’eau."
+              "answer_index": 1,
+              "explanation_fr": "Un dépassement de budget se dit « cost overrun » (ou « budget overrun »). « Overtaking » veut dire doubler une voiture, et « overflow » un débordement (de liquide, de mémoire)."
             },
             {
               "prompt_fr": "Un client te demande « What’s the new ETA for the fix? ». Que dois-tu lui donner ?",
               "choices": [
-                "Le nom du développeur qui a introduit le bug",
                 "La date ou l’heure estimée à laquelle le correctif sera livré",
-                "Le montant de la facture mensuelle"
+                "La durée de travail estimée pour écrire le correctif",
+                "La date limite contractuelle pour livrer le correctif"
               ],
-              "answer_index": 1,
-              "explanation_fr": "ETA (Estimated Time of Arrival) désigne en gestion de projet la date ou l’heure prévue de livraison ou de résolution."
+              "answer_index": 0,
+              "explanation_fr": "ETA veut dire « estimated time of arrival » : le moment prévu de livraison. Le client ne demande pas la charge de travail (« effort »), et une ETA est une estimation, pas une échéance contractuelle."
             }
           ],
           "production": {
@@ -1649,42 +1649,42 @@
             {
               "prompt_fr": "Comment définir le « scope creep » ?",
               "choices": [
-                "La réduction volontaire du périmètre pour livrer un MVP plus vite",
-                "L’ajout progressif de demandes non prévues sans ajuster le budget ni les délais",
-                "La suppression des tickets obsolètes lors de l’affinage du backlog"
+                "L’ajout d’une demande importante validée par une demande de changement",
+                "L’ajout progressif de demandes non prévues, sans ajuster le budget ni les délais",
+                "La réduction volontaire du périmètre pour livrer un MVP plus vite"
               ],
               "answer_index": 1,
-              "explanation_fr": "Le scope creep (dérive du périmètre) survient quand on accepte une série de « petits ajouts » sans passer par une demande de changement ni revoir la date ou le budget."
+              "explanation_fr": "Le « scope creep » (glissement du périmètre) est l’accumulation de « petites additions » sans revoir la date ni le budget. Une demande validée par une « change request » est au contraire maîtrisée, et réduire le périmètre est l’inverse."
             },
             {
               "prompt_fr": "Que signifie « I’ll push back on this request » ?",
               "choices": [
-                "Je vais m’opposer poliment à cette demande / la recadrer",
-                "Je vais mettre cette demande tout en haut du backlog",
-                "Je vais déployer cette demande en production ce soir"
+                "Je vais repousser cette demande à une date plus tardive",
+                "Je vais renvoyer cette demande au client pour qu’il la précise",
+                "Je vais m’opposer poliment à cette demande, ou la recadrer"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« To push back (on something) » signifie résister ou dire non de façon argumentée face à une demande déraisonnable."
+              "answer_index": 2,
+              "explanation_fr": "« To push back on something » veut dire résister, contester poliment. Ce n’est pas un simple report (« push back the date » se dirait d’une date), ni un renvoi pour précision : Diego refuse de l’intégrer sans demande de changement."
             },
             {
-              "prompt_fr": "Complète : « We estimated the change request at twelve ___ . »",
+              "prompt_fr": "Complète : « We estimated the change request at twelve ___. »",
               "choices": [
                 "person-days",
                 "persons-days",
                 "days of person"
               ],
               "answer_index": 0,
-              "explanation_fr": "En anglais, « person-day » (jour-homme) ne prend le pluriel que sur le second mot : « twelve person-days »."
+              "explanation_fr": "Le jour-homme se dit « person-day » (ou « man-day »), au pluriel « person-days » : seul le dernier mot prend la marque du pluriel. « Persons-days » met un pluriel de trop, et « days of person » calque la structure française."
             },
             {
               "prompt_fr": "Un client dit : « It’s just a small button, why do we need a change request? » Quelle réponse est la plus professionnelle ?",
               "choices": [
-                "Because you signed a contract and you have to pay for every button.",
-                "Behind that button, there are ten person-days of PDF layout and testing; a change request lets you decide if we schedule it after launch without risking technical debt.",
-                "OK, we will code it tonight without testing so we don’t need a change request."
+                "Every change needs a change request, because that’s what our contract says.",
+                "OK, we’ll squeeze it into this sprint, but we won’t be able to test it properly.",
+                "Behind that button there are ten person-days of work; a change request lets you decide when to schedule it."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Expliquer la réalité du travail invisible (10 person-days), le risque qualité (technical debt) et laisser le choix au client via la change request désamorce le conflit tout en protégeant l’équipe."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse rend visible l’effort réel et laisse le client décider en connaissance de cause. Invoquer le contrat sans expliquer braque le client, et promettre une livraison non testée crée de la dette technique et un risque sur la version."
             }
           ],
           "production": {
@@ -1785,49 +1785,49 @@
             {
               "prompt_fr": "Que signifie la lettre « A » dans « RAG status » ?",
               "choices": [
-                "Active (en cours)",
-                "Amber (orange / ambre, signalant une vigilance ou un risque)",
-                "Approved (validé par le sponsor)"
+                "Amber (orange, qui signale un risque sous surveillance)",
+                "At risk (en danger, qui signale un échec probable)",
+                "Active (en cours, qui signale un travail démarré)"
               ],
-              "answer_index": 1,
-              "explanation_fr": "RAG signifie Red, Amber, Green (comme les feux de signalisation au Royaume-Uni). « Amber » correspond au feu orange : le projet avance mais un point d’attention menace une échéance."
+              "answer_index": 0,
+              "explanation_fr": "RAG veut dire Red, Amber, Green : le « A » est l’orange. Hiroshi le précise : « Amber doesn’t mean failure », c’est un risque géré, pas un échec probable. Et ce code ne décrit pas l’état d’avancement d’une tâche."
             },
             {
               "prompt_fr": "Qu’est-ce qu’un projet « watermelon » (pastèque) dont se méfient les directeurs de programme ?",
               "choices": [
-                "Un projet affiché Green (vert) à l’extérieur dans les rapports hebdomadaires, mais Red (rouge) à l’intérieur en réalité",
-                "Un projet saisonnier qui ne dure que pendant l’été",
-                "Un projet découpé en une multitude de petites user stories"
+                "Un projet affiché rouge dans les rapports, mais vert en réalité",
+                "Un projet affiché vert dans les rapports, mais rouge en réalité",
+                "Un projet qui alterne vert et rouge d’une semaine à l’autre"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En gestion de projet, un « watermelon project » est vert dehors et rouge dedans : le chef de projet n’ose pas passer le RAG status à Amber à temps, et la direction découvre le retard au dernier moment."
+              "answer_index": 1,
+              "explanation_fr": "Comme une pastèque, le projet est vert dehors et rouge dedans : les rapports cachent les problèmes. C’est pour l’éviter que Hiroshi passe en orange. La situation inverse n’a pas de nom particulier, et l’alternance d’une semaine à l’autre n’est pas l’image."
             },
             {
               "prompt_fr": "Complète : « Three out of four workstreams are ___ track for the May launch. »",
               "choices": [
+                "on",
                 "in",
-                "at",
-                "on"
+                "at"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "On dit toujours « on track » (dans les temps / sur la bonne voie) et son contraire « off track ». « In track » et « at track » sont incorrects."
             },
             {
               "prompt_fr": "Quelle structure rend un « weekly report » immédiatement lisible par des dirigeants pressés ?",
               "choices": [
-                "Un long texte de 800 mots racontant chaque réunion du lundi au vendredi dans l’ordre chronologique",
-                "Le statut RAG en tête, suivi de trois blocs courts : réalisé cette semaine, prévu la semaine prochaine, risques et décisions attendues",
-                "Un export brut de tous les tickets Jira fermés avec leurs identifiants techniques"
+                "Un récit de la semaine jour par jour, avec le détail de chaque réunion",
+                "Le statut RAG en tête, puis trois blocs : fait, prévu, risques et décisions",
+                "La liste complète des tickets fermés, triés par équipe et par priorité"
               ],
               "answer_index": 1,
-              "explanation_fr": "Un bon status update commence par la synthèse (RAG status + KPI), puis distingue clairement Done / Next steps / Blockers & Ask."
+              "explanation_fr": "Un dirigeant pressé lit d’abord le statut, puis ce qui demande son attention. Un récit chronologique noie l’information, et une liste de tickets ne dit ni où en est le projet ni quelle décision est attendue."
             }
           ],
           "production": {
             "channel": "report",
             "prompt_fr": "Rédige le rapport hebdomadaire (weekly report) du projet : annonce un statut RAG passé à l’orange (Amber) à cause de l’attente de validation juridique, précise que le développement est dans les temps (on track) et que le KPI d’adoption bêta est à 82 %, et indique la prochaine étape pour lever le blocage lundi.",
-            "model_answer_en": "Weekly report — Customer Portal. Overall RAG status: Amber (was Green). Development and testing are on track, and our beta adoption KPI reached 82% this week. However, sign-off on the privacy notice is still pending with legal; in this status update, we ask for legal review by Monday noon to keep the launch date safe.",
-            "model_answer_fr": "Rapport hebdomadaire — Portail Client. Statut RAG global : Orange (précédemment Vert). Le développement et les tests sont dans les temps, et notre KPI d’adoption bêta a atteint 82 % cette semaine. Cependant, la validation de la politique de confidentialité est toujours en attente côté juridique ; dans ce point d’avancement, nous demandons une relecture juridique d’ici lundi midi pour sécuriser la date de lancement.",
+            "model_answer_en": "Weekly report: Customer Portal. Overall RAG status: Amber (was Green). Development and testing are on track, and our beta adoption KPI reached 82% this week. However, sign-off on the privacy notice is still pending with legal; in this status update, we ask for legal review by Monday noon to keep the launch date safe.",
+            "model_answer_fr": "Rapport hebdomadaire : Portail Client. Statut RAG global : Orange (précédemment Vert). Le développement et les tests sont dans les temps, et notre KPI d’adoption bêta a atteint 82 % cette semaine. Cependant, la validation de la politique de confidentialité est toujours en attente côté juridique ; dans ce point d’avancement, nous demandons une relecture juridique d’ici lundi midi pour sécuriser la date de lancement.",
             "key_phrases": [
               "Weekly report",
               "RAG status",
@@ -1884,41 +1884,41 @@
               "prompt_fr": "Comment dit-on « comité de pilotage (COPIL) » en anglais ?",
               "choices": [
                 "piloting committee",
-                "driving board",
+                "driving committee",
                 "steering committee"
               ],
               "answer_index": 2,
-              "explanation_fr": "En anglais, le comité de pilotage s’appelle « the steering committee » (parfois abrégé SteerCo). « Piloting committee » est un calque du français « pilotage » qui ne s’emploie pas."
+              "explanation_fr": "Le comité de pilotage se dit « steering committee » (« to steer », tenir la barre). « Piloting » est un calque de « pilotage » (en anglais, « pilot » évoque surtout un projet pilote), et « driving committee » n’existe pas."
             },
             {
               "prompt_fr": "Pourquoi Inès relie-t-elle la priorisation de la roadmap aux OKR de l’entreprise ?",
               "choices": [
-                "Pour fonder l’arbitrage sur un critère objectif déjà validé par la direction plutôt que sur un rapport de force entre départements",
-                "Pour éviter d’avoir à estimer la durée des projets",
-                "Pour supprimer définitivement le besoin de l’équipe commerciale"
+                "Pour que chaque département obtienne au moins une fonctionnalité dans la roadmap",
+                "Pour pouvoir présenter les estimations de durée de chaque projet",
+                "Pour fonder l’arbitrage sur un critère déjà validé par la direction, et non sur un rapport de force"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En COPIL, rappeler l’OKR prioritaire du trimestre permet de justifier pourquoi le sujet A passe en juillet et le sujet B en août sans braquer l’équipe B."
+              "answer_index": 2,
+              "explanation_fr": "Inès refuse que « the loudest voice » gagne : les OKR sont un critère commun, déjà validé. Le but n’est pas de contenter chaque service, et les OKR ne remplacent pas les estimations de durée."
             },
             {
               "prompt_fr": "Complète : « We need the steering committee to ___ the Q3 roadmap sequence today. »",
               "choices": [
-                "align on",
                 "align to",
-                "be align with"
+                "align on",
+                "be aligned at"
               ],
-              "answer_index": 0,
-              "explanation_fr": "On dit « to align on a decision / a plan / a sequence » (se mettre d’accord sur une décision). « Be align » est grammaticalement faux (il faudrait « be aligned on »)."
+              "answer_index": 1,
+              "explanation_fr": "On dit « align on something » pour se mettre d’accord sur une décision. « Align to » s’emploie pour s’aligner sur une référence (« align to the strategy ») plutôt que pour un accord en réunion, et « aligned at » n’existe pas."
             },
             {
               "prompt_fr": "Comment conclure ta diapositive d’arbitrage devant le comité de pilotage ?",
               "choices": [
-                "Tell me what you want, I don’t mind.",
-                "Based on our Q3 churn OKR, we recommend prioritizing Option A in July and scheduling Option B in August; do we all align on this plan?",
-                "If you don’t agree in two minutes, the team will stop working."
+                "Based on our Q3 churn OKR, we recommend Option A in July and Option B in August; can we all align on this?",
+                "Both options are equally important, so we’d like the committee to choose the order today.",
+                "We recommend Option A in July, because Operations asked for it first."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un chef de projet formule une recommandation claire adossée aux objectifs (Based on our Q3 OKR, we recommend…) puis sollicite formellement la validation (do we all align on this plan?)."
+              "answer_index": 0,
+              "explanation_fr": "Le chef de projet formule une recommandation adossée aux objectifs puis demande une décision. Renvoyer le choix au comité sans avis n’aide pas à arbitrer, et « asked for it first » est exactement le rapport de force qu’Inès veut éviter."
             }
           ],
           "production": {
@@ -1980,42 +1980,42 @@
             {
               "prompt_fr": "Qu’est-ce que la « user acceptance testing (UAT) » (la recette utilisateur) ?",
               "choices": [
-                "Les tests unitaires automatisés lancés par les développeurs sur leur poste",
-                "La phase finale de validation où le client ou les utilisateurs métier vérifient en conditions réelles que le logiciel répond à leurs besoins",
-                "Une enquête marketing envoyée aux prospects avant d’écrire le code"
+                "Les tests que l’équipe QA exécute pour vérifier chaque critère d’acceptation",
+                "La validation finale où le client ou les utilisateurs métier vérifient que le logiciel répond à leurs besoins",
+                "Les tests automatisés qui vérifient que les anciennes fonctions marchent encore"
               ],
               "answer_index": 1,
-              "explanation_fr": "En français, on parle souvent de « la recette (métier / client) » : en anglais, le faux ami « recipe » veut dire recette de cuisine ! La recette informatique se dit toujours « user acceptance testing (UAT) »."
+              "explanation_fr": "L’UAT (la recette utilisateur) est faite par les utilisateurs métier, ici les « business key users ». Les tests de la QA et les tests de régression automatisés viennent avant : ils ne remplacent pas la validation des utilisateurs."
             },
             {
               "prompt_fr": "À quoi servent les « exit criteria » avant une décision go/no-go ?",
               "choices": [
-                "À définir à l’avance les conditions objectives à remplir (ex. : 0 bug critique, UAT signée) pour autoriser le passage en production",
-                "À calculer les indemnités de départ d’un salarié",
-                "À indiquer où se trouvent les issues de secours dans les bureaux"
+                "À lister les tâches à faire juste après la mise en production",
+                "À fixer la date limite après laquelle la sortie est annulée",
+                "À fixer à l’avance les conditions à remplir pour autoriser la mise en production"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Les « exit criteria » (critères de sortie d’une phase de test) permettent de trancher le go/no-go sur des faits objectifs plutôt qu’à l’intuition."
+              "answer_index": 2,
+              "explanation_fr": "Les « exit criteria » (zéro bug critique, UAT validée…) sont décidés avant : la réunion vérifie s’ils sont atteints. Ce n’est ni une liste de tâches post-production, ni une date butoir."
             },
             {
               "prompt_fr": "Qu’est-ce qu’une « known issue » lors d’une mise en production ?",
               "choices": [
-                "Une faille critique qui empêche totalement de déployer",
-                "Un défaut mineur identifié et accepté, avec lequel on décide de livrer tout en le documentant pour le support et les utilisateurs",
-                "Une fonctionnalité secrète réservée aux administrateurs"
+                "Un défaut mineur connu et accepté, qu’on documente pour le support et les utilisateurs",
+                "Un défaut grave connu, qui bloque la mise en production tant qu’il n’est pas corrigé",
+                "Un défaut déjà corrigé, mentionné dans les notes de version"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une « known issue » (problème connu) est un bug non bloquant qu’on choisit de ne pas laisser retarder la release : on le documente (souvent avec un workaround) et on le corrige dans un patch ultérieur."
+              "answer_index": 0,
+              "explanation_fr": "Un « known issue » est un défaut mineur qu’on accepte de livrer, comme le souci d’impression sur Firefox. Un défaut bloquant est un « showstopper », et un défaut corrigé est un « fixed issue »."
             },
             {
               "prompt_fr": "Comment traduire « La recette client commence lundi prochain » ?",
               "choices": [
                 "The client recipe starts next Monday.",
-                "User acceptance testing starts next Monday.",
-                "The user reception testing starts next Monday."
+                "The user reception testing starts next Monday.",
+                "User acceptance testing starts next Monday."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Recette client » ou « recette métier » se traduit par « user acceptance testing (UAT) ». « Recipe » (cuisine) et « reception » (accueil d’hôtel) sont des faux amis."
+              "answer_index": 2,
+              "explanation_fr": "La recette se dit « user acceptance testing » (UAT). « Recipe » est une recette de cuisine, et « reception » est un calque de « réception » (de travaux), qui ne s’emploie pas pour un logiciel."
             }
           ],
           "production": {
@@ -2071,42 +2071,42 @@
             {
               "prompt_fr": "Qu’appelle-t-on « the cutover » lors d’un projet de migration ?",
               "choices": [
-                "La réduction du budget décidée par la direction",
-                "Le passage opérationnel planifié de l’ancien système vers le nouveau système en production",
-                "La rupture du contrat avec un prestataire"
+                "Le passage planifié de l’ancien système au nouveau en production",
+                "La période où l’ancien et le nouveau système tournent en parallèle",
+                "Le retour à l’ancien système si la migration échoue"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Cutover » traduit exactement « la bascule » (le moment où l’on coupe l’ancien système pour basculer le trafic et les données sur le nouveau)."
+              "answer_index": 0,
+              "explanation_fr": "Le « cutover » est la bascule elle-même, ici samedi à 22 h. Faire tourner les deux systèmes en parallèle est un « parallel run », et le retour en arrière, un « rollback »."
             },
             {
               "prompt_fr": "Pourquoi un bon plan de « cutover » prévoit-il toujours une heure limite de « rollback » (point of no return) ?",
               "choices": [
-                "Pour savoir jusqu’à quelle heure exacte on peut revenir à l’ancien système tout en garantissant l’ouverture normale du service le lendemain matin",
-                "Pour empêcher les ingénieurs de dormir pendant le week-end",
-                "Pour facturer des heures de nuit supplémentaires au client"
-              ],
-              "answer_index": 0,
-              "explanation_fr": "Si le retour arrière (rollback) prend deux heures et que le service ouvre à 6 h, la décision de revenir en arrière doit être prise au plus tard à 4 h : c’est un repère indispensable du plan de bascule."
-            },
-            {
-              "prompt_fr": "Complète : « Just a quick ___ : the billing tool will be offline on Saturday from 10 p.m. to 2 a.m. »",
-              "choices": [
-                "head-on",
-                "heads-up",
-                "up-head"
+                "Pour savoir à quelle heure le nouveau système doit être complètement en production",
+                "Pour savoir jusqu’à quelle heure on peut revenir à l’ancien système et rouvrir normalement le lendemain",
+                "Pour savoir à quelle heure prévenir les utilisateurs que la bascule a réussi"
               ],
               "answer_index": 1,
-              "explanation_fr": "« A heads-up » (toujours avec un s à heads) est une expression très courante au travail pour prévenir quelqu’un à l’avance d’un événement ou d’un changement."
+              "explanation_fr": "Au-delà de l’heure limite (1 h du matin ici), un retour en arrière ne serait plus fini à temps pour l’ouverture : on doit décider avant. Ce n’est ni l’heure de fin prévue de la bascule, ni celle de la communication."
+            },
+            {
+              "prompt_fr": "Complète : « Just a quick ___: the billing tool will be offline on Saturday from 10 p.m. to 2 a.m. »",
+              "choices": [
+                "heads-up",
+                "head-on",
+                "warning-up"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« A heads-up » est un avertissement amical, pour prévenir à l’avance. « Head-on » veut dire de front (« a head-on collision »), et « warning-up » n’existe pas (on confond avec « warm-up », l’échauffement)."
             },
             {
               "prompt_fr": "Que recouvre le « change management » du point de vue d’un chef de projet fonctionnel ?",
               "choices": [
-                "Uniquement la relecture des pull requests sur GitHub",
-                "La communication, la formation et l’accompagnement des utilisateurs pour qu’ils adoptent réellement le nouvel outil",
-                "Le remplacement des ordinateurs portables en fin de garantie"
+                "Le processus qui valide chaque modification technique avant la mise en production",
+                "La communication, la formation et l’accompagnement des utilisateurs pour qu’ils adoptent l’outil",
+                "La gestion des demandes de changement de périmètre envoyées par le client"
               ],
               "answer_index": 1,
-              "explanation_fr": "La conduite du changement (change management) prépare et accompagne les équipes métier (formation, guides, support au démarrage) afin que le projet soit adopté après la bascule technique."
+              "explanation_fr": "Côté projet, le « change management » accompagne les personnes : formations, vidéo, support sur place. La validation des changements techniques relève du « change management » au sens ITIL, et les demandes de changement de périmètre sont des « change requests »."
             }
           ],
           "production": {
@@ -2172,7 +2172,7 @@
           "dialogue": [
             {
               "speaker": "Priya",
-              "text_en": "Welcome to our Sprint 12 review. Today we’re excited to demo the MVP of the supplier portal.",
+              "text_en": "Welcome to our sprint review for Sprint 12. Today we’re excited to demo the MVP of the supplier portal.",
               "text_fr": "Bienvenue à notre revue du Sprint 12. Aujourd’hui, nous sommes ravis de faire la démo du MVP du portail fournisseur."
             },
             {
@@ -2205,42 +2205,42 @@
             {
               "prompt_fr": "Quel est l’objectif principal d’un « MVP (Minimum Viable Product) » ?",
               "choices": [
-                "Livrer une version inachevée et pleine de bugs pour aller vite",
-                "Mettre en ligne la plus petite version fonctionnelle qui apporte de la valeur aux utilisateurs et permet d’apprendre de leurs retours réels",
-                "Remplacer définitivement toute évolution future du produit"
+                "Mettre en ligne une première version avec toutes les fonctionnalités, mais peu testée",
+                "Mettre en ligne une maquette cliquable pour valider le design avant de coder",
+                "Mettre en ligne la plus petite version qui apporte de la valeur et permet d’apprendre des vrais retours"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un MVP est viable et fonctionnel sur le besoin cœur (ici déposer et suivre ses factures), ce qui permet de livrer de la valeur tôt avant d’ajouter des options avancées comme l’OCR."
+              "answer_index": 2,
+              "explanation_fr": "Le MVP est une vraie version utilisable, réduite à l’essentiel : ici, déposer des factures et suivre les paiements. Ce n’est pas une version complète mal testée, ni une maquette : elle est en production."
             },
             {
               "prompt_fr": "Pendant la « sprint review », une partie prenante enthousiaste demande une nouvelle fonctionnalité complexe. Comment réagir ?",
               "choices": [
-                "La remercier, noter la demande de fonctionnalité (feature request) dans le backlog et expliquer comment elle sera priorisée sans bloquer la sortie actuelle",
-                "Promettre que les développeurs la coderont pendant le week-end",
-                "Lui dire qu’il est interdit de poser des questions pendant une revue de sprint"
+                "Accepter la demande pour le sprint suivant, puisqu’elle vient d’une partie prenante",
+                "Lui expliquer que la revue sert à montrer le travail, pas à faire des demandes",
+                "La remercier, noter la demande dans le backlog et expliquer comment elle sera priorisée"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La sprint review sert justement à récolter des retours et de nouvelles idées (feature requests) : on les accueille positivement et on les intègre au processus normal de priorisation du backlog."
+              "answer_index": 2,
+              "explanation_fr": "Priya remercie, consigne la demande et la planifie sans bloquer le lancement. Accepter d’office court-circuite la priorisation, et recueillir des retours est justement un but de la revue : rabrouer la partie prenante serait contre-productif."
             },
             {
               "prompt_fr": "Complète : « During the sprint review, the team ___ what was completed during the sprint. »",
               "choices": [
+                "demonstrates of",
                 "demos",
-                "demonstration",
-                "make a demo"
+                "makes a demo"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Demo » s’utilise très couramment comme verbe transitif en anglais tech (to demo a feature / the team demos the MVP). « Demonstration » est un nom, et avec « the team » au singulier il faudrait « makes a demo »."
+              "answer_index": 1,
+              "explanation_fr": "Le verbe « to demo » (montrer en démonstration) est courant à l’oral : « the team demos what was completed ». « Demonstrates of » ajoute une préposition fautive, et « makes a demo » est un calque de « faire une démo » qui ne prend pas de complément direct."
             },
             {
               "prompt_fr": "Quelle différence y a-t-il entre « sprint review » et « retrospective » ?",
               "choices": [
-                "La sprint review inspecte le produit avec les parties prenantes ; la retrospective inspecte la façon de travailler entre membres de l’équipe",
-                "La sprint review a lieu au début du sprint ; la retrospective a lieu au milieu du sprint",
-                "La sprint review est réservée aux développeurs ; la retrospective est ouverte aux clients externes"
+                "La review inspecte le produit avec les parties prenantes ; la rétrospective, la façon de travailler de l’équipe",
+                "La review inspecte la façon de travailler de l’équipe ; la rétrospective, le produit avec les parties prenantes",
+                "La review se fait en début de sprint ; la rétrospective se fait au milieu du sprint"
               ],
               "answer_index": 0,
-              "explanation_fr": "Distinction fondamentale de Scrum : Sprint Review = produit (avec les stakeholders) ; Sprint Retrospective = processus et dynamique d’équipe (entre membres de la squad)."
+              "explanation_fr": "La « sprint review » montre le produit et recueille des retours ; la rétrospective améliore le fonctionnement de l’équipe. Le piège est d’inverser les deux, et les deux ont lieu à la fin du sprint, la review avant la rétrospective."
             }
           ],
           "production": {
@@ -2306,42 +2306,42 @@
             {
               "prompt_fr": "Quelle est l’erreur fréquente de compréhension du mot « agile » que corrige Sarah ?",
               "choices": [
-                "Croire qu’être agile permet de modifier les consignes d’un ticket tous les jours pendant qu’un développeur le code",
-                "Penser qu’être agile oblige à faire des sprints de six mois",
-                "Croire que l’agilité interdit de parler aux utilisateurs"
+                "Croire qu’être agile interdit de figer les critères d’acceptation d’une story",
+                "Croire qu’être agile permet de changer les consignes d’un ticket pendant qu’il est codé",
+                "Croire qu’être agile oblige à changer de méthode de rétrospective à chaque sprint"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’agilité consiste à réévaluer les priorités à chaque cycle court (sprint), mais une fois le sprint lancé, l’équipe a besoin de stabilité sur les critères d’acceptation des stories en cours."
+              "answer_index": 1,
+              "explanation_fr": "Sarah le dit : l’agilité, c’est s’adapter entre les sprints, pas changer les exigences en plein codage. Figer les critères d’une story en cours est justement compatible avec l’agilité, et le format de rétrospective n’a rien à voir."
             },
             {
               "prompt_fr": "Que signifie le verbe à particule « to wrap up » en fin de réunion ?",
               "choices": [
-                "Emballer des cadeaux pour les clients",
-                "Conclure, boucler la réunion en résumant les décisions prises",
-                "Annuler toutes les décisions votées"
+                "Résumer le sujet pour la suite",
+                "Reporter la fin de la réunion",
+                "Conclure, terminer la réunion"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Let’s wrap up » est l’expression la plus courante en anglais professionnel pour dire « concluons / terminons la réunion »."
+              "answer_index": 2,
+              "explanation_fr": "« To wrap up » veut dire conclure, boucler (comme on emballe un paquet). Kenji propose de finir cinq minutes plus tôt. Ce n’est pas reporter, et même si on résume souvent en concluant, le sens principal est « terminer »."
             },
             {
               "prompt_fr": "Complète : « What went well this sprint, and what could we ___ next time? »",
               "choices": [
-                "progress",
+                "improve",
                 "better",
-                "improve"
+                "ameliorate"
               ],
-              "answer_index": 2,
-              "explanation_fr": "La question rituelle de toute rétrospective est : « What went well, what didn’t go well, and what can we improve? » (« Que pouvons-nous améliorer ? »). « Progress » est intransitif (we progressed, pas we progress something)."
+              "answer_index": 0,
+              "explanation_fr": "La question rituelle de la rétrospective est « what can we improve? ». « Better » est rarement un verbe en anglais courant, et « ameliorate » est un faux ami très soutenu, qu’on n’emploie pas en réunion."
             },
             {
               "prompt_fr": "Pourquoi un Scrum master limite-t-il les décisions de fin de rétrospective à une ou deux actions concrètes ?",
               "choices": [
-                "Parce qu’une liste de dix vœux pieux n’est jamais appliquée, alors qu’une ou deux actions ciblées peuvent être réellement suivies au sprint suivant",
-                "Parce que le logiciel Jira n’accepte qu’une seule action par mois",
-                "Parce qu’il est interdit d’améliorer plus d’une chose par an"
+                "Parce que le Scrum master doit réaliser lui-même toutes les actions décidées",
+                "Parce que le guide Scrum interdit de décider plus de deux actions par sprint",
+                "Parce qu’une ou deux actions ciblées peuvent vraiment être suivies au sprint suivant"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Choisir 1 ou 2 améliorations testables garantit qu’elles seront menées à bien dès le sprint suivant, ce qui crédibilise la rétrospective."
+              "answer_index": 2,
+              "explanation_fr": "Une longue liste de bonnes intentions n’est jamais appliquée ; une ou deux expériences concrètes, comme celle de Sarah, peuvent être suivies. Les actions sont portées par l’équipe, et le guide Scrum ne fixe aucune limite chiffrée."
             }
           ],
           "production": {
@@ -2402,49 +2402,49 @@
             {
               "prompt_fr": "Comment traduit-on un « retour d’expérience (RETEX) » de fin de projet en anglais ?",
               "choices": [
-                "a return of experience",
                 "a lessons learned session",
+                "a return of experience",
                 "a feedback of experience"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Faux ami très répandu chez les francophones : « retour d’expérience (RETEX) » ne se dit jamais « return of experience » ! En gestion de projet, on dit « lessons learned » (ou « a postmortem / project retrospective »)."
+              "answer_index": 0,
+              "explanation_fr": "Le RETEX se dit « lessons learned » (session ou rapport). « Return of experience » est un calque mot à mot, incompris en anglais, et « feedback of experience » mélange deux expressions."
             },
             {
               "prompt_fr": "Que signifie l’expression « four months, give or take a few days » ?",
               "choices": [
-                "Exactement quatre mois à la minute près",
-                "Quatre mois, à quelques jours près (en plus ou en moins)",
-                "Quatre mois supplémentaires à négocier"
+                "Quatre mois, auxquels s’ajoutent quelques jours de retard",
+                "Quatre mois, à quelques jours près, en plus ou en moins",
+                "Quatre mois, moins quelques jours d’avance sur le planning"
               ],
               "answer_index": 1,
-              "explanation_fr": "« Give or take (a few days / 5%) » est une expression idiomatique très naturelle pour dire « à plus ou moins quelques jours / environ »."
+              "explanation_fr": "« Give or take » veut dire « à peu près, plus ou moins » : on ne précise pas si c’est un peu plus ou un peu moins. Les deux autres propositions donnent un sens unique (retard ou avance) que l’expression n’a pas."
             },
             {
               "prompt_fr": "Complète : « I’ll send out the ___ notes right after the session. »",
               "choices": [
                 "meeting",
                 "reunion",
-                "report-back"
+                "session report"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le compte rendu d’une réunion s’appelle « the meeting notes » (ou « the minutes » pour un comité formel). Attention au faux ami : « a reunion » est une fête d’anciens élèves ou de famille, jamais une réunion de travail !"
+              "explanation_fr": "Le compte rendu se dit « meeting notes » (ou « minutes »). « Reunion » est un faux ami (des retrouvailles), et « session report notes » serait redondant."
             },
             {
               "prompt_fr": "Pour qu’un document de « lessons learned » serve vraiment aux projets suivants, que doit-il contenir ?",
               "choices": [
-                "Des recommandations actionnables (ex. : ajouter la revue juridique à la checklist de kickoff) partagées avec les autres équipes",
-                "La liste des erreurs personnelles de chaque développeur",
-                "Uniquement des félicitations générales sans aucun point d’amélioration"
+                "Un récit détaillé de chaque problème rencontré, gardé dans le dossier du projet",
+                "Des recommandations concrètes, comme ajouter la revue juridique au lancement, partagées avec les autres équipes",
+                "Le nom des personnes à l’origine de chaque problème, pour éviter qu’il se répète"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un bon RETEX transforme l’expérience vécue (réussites et difficultés) en règles concrètes réutilisables pour les futurs projets."
+              "answer_index": 1,
+              "explanation_fr": "Un retour d’expérience utile donne des actions applicables et les diffuse, comme Nadia sur le wiki du PMO. Un récit archivé dans un dossier n’est jamais relu, et chercher des coupables tue la franchise des futurs retours."
             }
           ],
           "production": {
             "channel": "report",
             "prompt_fr": "Rédige la synthèse du compte rendu (meeting notes) de la séance de retour d’expérience (lessons learned) : indique que le projet a été livré en quatre mois à quelques jours près (give or take a few days), mentionne le postmortem réalisé sur l’environnement de test, et formule la recommandation principale pour les prochains projets.",
-            "model_answer_en": "Meeting notes — Payment Migration Lessons Learned. The project was delivered in four months, give or take a few days, and within budget. Building on the postmortem from our sandbox outage, we recommend two key practices for future projects: set up mock APIs early and involve legal at kickoff rather than just before UAT.",
-            "model_answer_fr": "Compte rendu de réunion — Retour d’expérience Migration Paiement. Le projet a été livré en quatre mois, à quelques jours près, et dans le respect du budget. En nous appuyant sur le postmortem de notre panne de bac à sable, nous recommandons deux pratiques clés pour les futurs projets : mettre en place des API simulées tôt et impliquer le juridique dès le lancement plutôt que juste avant la recette.",
+            "model_answer_en": "Meeting notes: Payment Migration Lessons Learned. The project was delivered in four months, give or take a few days, and within budget. Building on the postmortem from our sandbox outage, we recommend two key practices for future projects: set up mock APIs early and involve legal at kickoff rather than just before UAT.",
+            "model_answer_fr": "Compte rendu de réunion : retour d’expérience sur la migration des paiements. Le projet a été livré en quatre mois, à quelques jours près, et dans le respect du budget. En nous appuyant sur le postmortem de notre panne de bac à sable, nous recommandons deux pratiques clés pour les futurs projets : mettre en place des API simulées tôt et impliquer le juridique dès le lancement plutôt que juste avant la recette.",
             "key_phrases": [
               "Meeting notes",
               "Lessons Learned",
@@ -2498,42 +2498,42 @@
             {
               "prompt_fr": "Pourquoi la « handover » (passation) vers l’équipe support est-elle indispensable avant la clôture du projet ?",
               "choices": [
-                "Pour que les demandes et incidents de production soient pris en charge selon le SLA sans solliciter indéfiniment l’équipe projet",
-                "Pour obliger l’équipe support à réécrire tout le code de l’application",
-                "Pour annuler le contrat de maintenance du client"
+                "Pour que l’équipe support puisse ajouter de nouvelles fonctionnalités après le projet",
+                "Pour que le client puisse signer le procès-verbal de réception finale",
+                "Pour que le support prenne en charge les incidents selon le SLA, sans solliciter sans fin l’équipe projet"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Sans passation structurée (handover documentation, routage des tickets, formation), les développeurs du projet continuent d’être interrompus pendant des mois sur leurs nouveaux projets."
+              "answer_index": 2,
+              "explanation_fr": "La passation transfère l’exploitation à l’équipe support, avec la documentation et la bonne file de tickets. Le support ne développe pas de nouvelles fonctionnalités, et la réception finale a déjà été signée hier."
             },
             {
               "prompt_fr": "Que définit un « SLA (Service-Level Agreement) » lors du passage en exploitation (run) ?",
               "choices": [
-                "Le salaire annuel des développeurs",
-                "Les engagements contractuels de disponibilité et de délai de prise en charge ou de résolution des tickets selon leur gravité",
-                "Le nombre de story points par sprint"
+                "Le nombre de tickets que l’équipe support doit traiter chaque mois",
+                "La durée de la garantie pendant laquelle les corrections sont gratuites",
+                "Les engagements de disponibilité et de délai de prise en charge des tickets selon leur gravité"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le SLA fixe les engagements de niveau de service (par exemple : disponibilité de 99,9 %, prise en charge d’un ticket critique en moins de 4 heures)."
+              "answer_index": 2,
+              "explanation_fr": "Un SLA fixe des délais selon la gravité, ici quatre heures de réponse pour un incident critique. Ce n’est pas un volume de tickets, et la période de garantie est une notion contractuelle différente."
             },
             {
               "prompt_fr": "Complète : « The client signed ___ on the final deliverable, so we can start project closure. »",
               "choices": [
                 "up",
-                "out",
-                "off"
+                "off",
+                "out"
               ],
-              "answer_index": 2,
-              "explanation_fr": "« To sign off (on something) » signifie valider officiellement la réception d’un livrable ou d’un projet. « Sign up » veut dire s’inscrire, et « sign out » se déconnecter."
+              "answer_index": 1,
+              "explanation_fr": "« To sign off on something » veut dire approuver formellement. « Sign up » veut dire s’inscrire, et « sign out » se déconnecter."
             },
             {
               "prompt_fr": "Que comprend concrètement la phase de « project closure » ?",
               "choices": [
-                "Valider la réception finale, transférer le support (handover), clôturer le budget et les contrats, archiver les documents et libérer les ressources",
-                "Éteindre définitivement les serveurs de production",
-                "Lancer le développement de nouvelles fonctionnalités sans budget"
+                "Valider la réception, faire la passation, clôturer budget et contrats, archiver et libérer l’équipe",
+                "Livrer les dernières fonctionnalités demandées par le client avant de fermer le projet",
+                "Garder l’équipe projet disponible pour corriger les incidents pendant la garantie"
               ],
               "answer_index": 0,
-              "explanation_fr": "La clôture formelle (project closure) boucle les aspects contractuels, financiers, documentaires et opérationnels afin de libérer proprement l’équipe vers de nouveaux projets."
+              "explanation_fr": "La clôture boucle tout : réception, passation, budget, contrats, archives, ressources. Les nouvelles demandes deviennent un autre projet ou une évolution, et pendant la garantie, ce sont le support et le SLA qui prennent le relais."
             }
           ],
           "production": {

@@ -35,8 +35,8 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Kenji veut observer deux entretiens sans les animer. Quelle phrase est correcte ?",
-              "choices": ["I’ll assist to a couple of sessions.", "I’ll sit in on a couple of sessions.", "I’ll attend to a couple of sessions."],
+              "prompt_fr": "Kenji veut observer l’entretien de jeudi sans l’animer. Quelle phrase est correcte ?",
+              "choices": ["I’ll assist to Thursday’s interview.", "I’ll sit in on Thursday’s interview.", "I’ll attend to Thursday’s interview."],
               "answer_index": 1,
               "explanation_fr": "« To sit in on » veut dire assister à une réunion ou un entretien en observateur, sans le diriger. « To assist » est un faux ami : il signifie aider, et « assist to » n’existe pas. « To attend » veut bien dire assister à, mais sans préposition (I’ll attend two sessions) ; « attend to » signifie s’occuper de quelque chose."
             },
@@ -50,12 +50,12 @@
               "prompt_fr": "Ton manager demande pourquoi tu ne fais que six entretiens. Quelle réponse est la plus juste ?",
               "choices": ["Interviews are qualitative: with six, we usually start to see patterns.", "Six interviews give us statistically significant results.", "Six is enough because users always say the same things."],
               "answer_index": 0,
-              "explanation_fr": "Les entretiens sont une méthode qualitative : on cherche des tendances récurrentes (patterns), pas des chiffres. Parler de « statistically significant » serait faux, cela concerne les méthodes quantitatives comme un test A/B. La troisième réponse généralise à tort : les utilisateurs ne disent pas tous la même chose, on observe ce qui revient souvent."
+              "explanation_fr": "Les entretiens sont une méthode qualitative : on cherche des tendances récurrentes (patterns), pas des chiffres. Parler de « statistically significant » serait faux, cela concerne les méthodes quantitatives comme un test A/B. Dire que « users always say the same things » généralise à tort : les utilisateurs ne disent pas tous la même chose, on observe ce qui revient souvent."
             },
             {
-              "prompt_fr": "Complète : « Our segmentation shows that freelancers and agencies have different ___ . »",
-              "choices": ["uses cases", "use cases", "cases of use"],
-              "answer_index": 1,
+              "prompt_fr": "Complète : « Our segmentation shows that freelancers and agencies have different ___. »",
+              "choices": ["uses cases", "cases of use", "use cases"],
+              "answer_index": 2,
               "explanation_fr": "Dans un nom composé anglais, le premier mot sert d’adjectif et reste au singulier : a use case, two use cases (comme test cases ou user stories). « Uses cases » met le pluriel au mauvais endroit, et « cases of use » est un calque mot à mot de « cas d’usage »."
             }
           ],
@@ -82,26 +82,26 @@
           "questions": [
             {
               "prompt_fr": "Laquelle de ces questions risque le moins d’orienter la réponse du participant ?",
-              "choices": ["Would you use a faster way to pay suppliers?", "Don’t you find our payment screen a bit slow?", "How did you pay your last supplier?"],
-              "answer_index": 2,
+              "choices": ["How did you pay your last supplier?", "Would you use a faster way to pay suppliers?", "Don’t you find our payment screen a bit slow?"],
+              "answer_index": 0,
               "explanation_fr": "Une bonne question d’entretien porte sur un comportement passé et réel : « How did you… » laisse le participant raconter. « Would you use… » est hypothétique : presque tout le monde répond oui. « Don’t you find… » est une question orientée (leading question) : la forme négative suggère déjà la réponse attendue."
             },
             {
               "prompt_fr": "Aïcha dit qu’une question fermée « creates bias ». Quelle reformulation est la plus fidèle ?",
-              "choices": ["It pushes people toward a particular answer.", "It makes people feel uncomfortable.", "It takes people too long to answer."],
-              "answer_index": 0,
+              "choices": ["It makes people feel uncomfortable.", "It pushes people toward a particular answer.", "It takes people too long to answer."],
+              "answer_index": 1,
               "explanation_fr": "Un « bias » (biais) est une erreur systématique : ici, la question pousse les gens vers une réponse, qui ne reflète donc plus ce qu’ils pensent vraiment. Le malaise ou la durée de réponse sont d’autres problèmes possibles, mais ce n’est pas ce que désigne le mot bias."
             },
             {
               "prompt_fr": "Complète : « He fixes the totals in a spreadsheet. That’s a ___ we should take seriously. »",
-              "choices": ["turnaround", "workaround", "bypass"],
-              "answer_index": 1,
+              "choices": ["workaround", "turnaround", "bypass"],
+              "answer_index": 0,
               "explanation_fr": "Un « workaround » est une solution de contournement, souvent bricolée par l’utilisateur pour compenser un manque du produit : c’est un signal précieux en recherche. « Turnaround » veut dire redressement ou délai de traitement (turnaround time). « Bypass » s’emploie pour une route de contournement ou pour contourner une sécurité, pas pour l’astuce d’un utilisateur."
             },
             {
               "prompt_fr": "Un participant dit : « I export everything to Excel and fix it there. » Quelle relance est la meilleure ?",
-              "choices": ["Why don’t you use our reports instead?", "So our reports aren’t good enough for you?", "Can you show me how you do that?"],
-              "answer_index": 2,
+              "choices": ["Why don’t you use our reports instead?", "Can you show me how you do that?", "So our reports aren’t good enough for you?"],
+              "answer_index": 1,
               "explanation_fr": "« Can you show me how you do that? » est neutre et fait découvrir le vrai processus, avec ses détails. « Why don’t you… instead? » sonne comme un reproche et met le participant sur la défensive. « So our reports aren’t good enough? » est une question orientée qui cherche la confirmation au lieu d’observer."
             }
           ],
@@ -128,27 +128,27 @@
           "questions": [
             {
               "prompt_fr": "Tu veux dire que cinq clients sur huit ne font pas confiance aux totaux. Quelle phrase est correcte ?",
-              "choices": ["Five on eight customers don’t trust the totals.", "Five out of eight customers don’t trust the totals.", "Five of the eight customers doesn’t trust the totals."],
-              "answer_index": 1,
+              "choices": ["Five on eight customers don’t trust the totals.", "Five of the eight customers doesn’t trust the totals.", "Five out of eight customers don’t trust the totals."],
+              "answer_index": 2,
               "explanation_fr": "Pour une proportion, l’anglais dit « five out of eight ». « Five on eight » est un calque de « cinq sur huit ». « Five of the eight customers » est possible, mais le verbe doit être au pluriel (don’t) : le sujet, ce sont cinq clients, pas un seul."
             },
             {
               "prompt_fr": "Ivan dit « That matches the user feedback we get ». Quelle phrase a le même sens et est correcte ?",
-              "choices": ["That’s consistent with what users tell us.", "That corresponds to the users’ feedbacks.", "That fits with what users are telling to us."],
-              "answer_index": 0,
+              "choices": ["That corresponds to the users’ feedbacks.", "That fits with what users are telling to us.", "That’s consistent with what users tell us."],
+              "answer_index": 2,
               "explanation_fr": "« To be consistent with » (concorder avec) exprime la même idée que « to match ». « Feedback » est indénombrable : jamais de s (on dit some feedback, a piece of feedback). Et « tell » prend directement la personne : users tell us, pas « tell to us »."
             },
             {
               "prompt_fr": "Complète : « Before we talk about solutions, I’d like all stakeholders to ___ the problem. »",
-              "choices": ["align with", "be align on", "align on"],
-              "answer_index": 2,
+              "choices": ["align with", "align on", "be align on"],
+              "answer_index": 1,
               "explanation_fr": "« To align on something » veut dire se mettre d’accord sur un sujet. « To align with someone » signifie s’aligner sur la position de quelqu’un : avec « the problem », le sens ne marche pas. « Be align » est incorrect : après be, il faut le participe passé (be aligned on)."
             },
             {
               "prompt_fr": "Pendant ta présentation, le directeur commercial propose déjà une solution. Quelle réponse est la plus diplomate ?",
-              "choices": ["Let’s not discuss solutions, it’s not the moment.", "Good idea, let’s note it and agree on the problem first.", "Sorry, but solutions are the designers’ job."],
-              "answer_index": 1,
-              "explanation_fr": "La bonne réponse valorise l’idée (Good idea, let’s note it) tout en gardant le cap : d’abord le problème. La première coupe la parole sèchement et la troisième met en avant la hiérarchie des rôles : deux façons de perdre une partie prenante dont tu auras besoin plus tard."
+              "choices": ["Good idea, let’s note it and agree on the problem first.", "Let’s not discuss solutions, it’s not the moment.", "Sorry, but solutions are the designers’ job."],
+              "answer_index": 0,
+              "explanation_fr": "La bonne réponse valorise l’idée (Good idea, let’s note it) tout en gardant le cap : d’abord le problème. « It’s not the moment » coupe la parole sèchement, et « solutions are the designers’ job » met en avant la hiérarchie des rôles : deux façons de perdre une partie prenante dont tu auras besoin plus tard."
             }
           ],
           "production": {
@@ -174,8 +174,8 @@
           "questions": [
             {
               "prompt_fr": "Lucía voit « a big drop-off at step three ». Que faut-il en conclure ?",
-              "choices": ["Beaucoup d’utilisateurs quittent le formulaire à cette étape", "L’étape trois met beaucoup de temps à se charger", "Peu d’utilisateurs arrivent jusqu’à l’étape trois"],
-              "answer_index": 0,
+              "choices": ["L’étape trois met beaucoup de temps à se charger", "Beaucoup d’utilisateurs quittent le formulaire à cette étape", "Peu d’utilisateurs arrivent jusqu’à l’étape trois"],
+              "answer_index": 1,
               "explanation_fr": "Un « drop-off at a step » est un abandon à cette étape précise : les gens y arrivent, puis partent. Si peu d’utilisateurs arrivaient jusqu’à l’étape trois, le décrochage serait situé avant. Le temps de chargement peut être une cause possible, mais le mot ne dit rien de la vitesse."
             },
             {
@@ -186,15 +186,15 @@
             },
             {
               "prompt_fr": "Complète : « Users who signed up in March ___ faster than the other cohorts. »",
-              "choices": ["churned out", "churned", "were churned off"],
-              "answer_index": 1,
+              "choices": ["churned", "churned out", "were churned off"],
+              "answer_index": 0,
               "explanation_fr": "« To churn » s’emploie sans complément pour des clients qui partent : users churned. « To churn out » est un autre verbe qui veut dire produire en grande quantité (to churn out reports). « Were churned off » n’existe pas : le départ est le fait des clients, pas une action qu’on leur fait subir."
             },
             {
               "prompt_fr": "Tomasz pense que les deux champs ajoutés en mars expliquent ce départ. Quelle réponse est la plus rigoureuse ?",
-              "choices": ["It’s only a correlation for now; let’s check other changes from March.", "The data proves it, so let’s remove the fields today.", "Data can’t tell us anything about why users leave."],
-              "answer_index": 0,
-              "explanation_fr": "Deux faits qui arrivent en même temps forment une corrélation, pas une preuve de causalité : d’autres changements de mars (prix, campagne marketing) peuvent expliquer le départ. « The data proves it » va trop vite, et la troisième réponse jette les données alors qu’elles aident à orienter l’enquête."
+              "choices": ["The data proves it, so let’s remove the fields today.", "Data can’t tell us anything about why users leave.", "It’s only a correlation for now; let’s check other changes from March."],
+              "answer_index": 2,
+              "explanation_fr": "Deux faits qui arrivent en même temps forment une corrélation, pas une preuve de causalité : d’autres changements de mars (prix, campagne marketing) peuvent expliquer le départ. « The data proves it » va trop vite, et dire que les données ne disent rien revient à les jeter alors qu’elles aident à orienter l’enquête."
             }
           ],
           "production": {
@@ -240,26 +240,26 @@
           "questions": [
             {
               "prompt_fr": "Le problème de Nadia, c’est « chasing late payments ». Que fait-elle concrètement ?",
-              "choices": ["Elle annule les paiements arrivés en retard", "Elle paie ses propres fournisseurs en retard", "Elle relance les clients qui paient en retard"],
-              "answer_index": 2,
+              "choices": ["Elle relance les clients qui paient en retard", "Elle annule les paiements arrivés en retard", "Elle paie ses propres fournisseurs en retard"],
+              "answer_index": 0,
               "explanation_fr": "« To chase » veut dire courir après ; au travail, « to chase someone » ou « to chase a payment » signifie relancer pour obtenir quelque chose. Nadia est donc celle qui attend l’argent. Payer en retard se dirait « paying late », et annuler un paiement « cancelling a payment »."
             },
             {
               "prompt_fr": "Un développeur doute : « Is she a real person? » Quelle réponse est la plus juste ?",
-              "choices": ["She’s a composite of real users; every detail comes from research.", "Yes, she’s our best customer, we interviewed her last week.", "No, we imagined her to represent our ideal customer."],
-              "answer_index": 0,
+              "choices": ["Yes, she’s our best customer, we interviewed her last week.", "She’s a composite of real users; every detail comes from research.", "No, we imagined her to represent our ideal customer."],
+              "answer_index": 1,
               "explanation_fr": "Une persona est une synthèse (composite) de plusieurs vrais utilisateurs, construite sur des données. Ce n’est pas un vrai client unique : on généraliserait un seul cas. Ce n’est pas non plus une invention ou un « client idéal » : ce serait un souhait marketing, pas un outil de design fiable."
             },
             {
               "prompt_fr": "Complète : « She’s not a power user: she just wants ___ on time. »",
-              "choices": ["to be payed", "to get paid", "being paid"],
-              "answer_index": 1,
+              "choices": ["to get paid", "to be payed", "being paid"],
+              "answer_index": 0,
               "explanation_fr": "« Want » est suivi de l’infinitif avec to, et « to get paid » est la tournure la plus naturelle pour être payé. Le participe de « pay » est irrégulier : paid, pas « payed » (réservé à un sens nautique rare). « Being paid » ne peut pas suivre want."
             },
             {
               "prompt_fr": "Quelle phrase décrit le mieux l’objectif de Nadia ?",
-              "choices": ["Her main goal is getting paid in time.", "Her principal objective is to be paid at time.", "Her main goal is to get paid on time."],
-              "answer_index": 2,
+              "choices": ["Her main goal is getting paid in time.", "Her main goal is to get paid on time.", "Her principal objective is to be paid at time."],
+              "answer_index": 1,
               "explanation_fr": "« On time » veut dire dans les délais, à la date prévue : c’est le sens voulu pour une facture. « In time » veut dire à temps, juste avant qu’il soit trop tard (in time for the meeting). « At time » n’existe pas, et « principal objective » sonne lourd : on dit simplement « main goal »."
             }
           ],
@@ -285,27 +285,27 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « J’ai cartographié le parcours utilisateur des nouveaux comptes » ?",
-              "choices": ["I’ve cartographied the user journey of new accounts.", "I’ve mapped the user journey for new accounts.", "I’ve mapped the user’s journey of the new accounts."],
-              "answer_index": 1,
-              "explanation_fr": "Le verbe est « to map » (cartographier, schématiser) ; « cartography » existe comme nom, mais pas le verbe « to cartography ». On dit « the user journey for new accounts » : le parcours prévu pour ce groupe. « The user’s journey of the new accounts » accumule un possessif et un « of » qui alourdissent la phrase."
+              "prompt_fr": "Comment dire « J’ai cartographié le parcours des clients existants » ?",
+              "choices": ["I’ve cartographied the user journey of existing customers.", "I’ve mapped the user’s journey of the existing customers.", "I’ve mapped the user journey for existing customers."],
+              "answer_index": 2,
+              "explanation_fr": "Le verbe est « to map » (cartographier, schématiser) ; « cartography » existe comme nom, mais pas le verbe « to cartography ». On dit « the user journey for existing customers » : le parcours de ce groupe. « The user’s journey of the existing customers » accumule un possessif et un « of » qui alourdissent la phrase."
             },
             {
               "prompt_fr": "Moussa demande la différence entre « user journey » et « user flow ». Quelle réponse est juste ?",
-              "choices": ["A journey covers the whole experience; a flow shows the screens and actions in the product.", "A flow covers the whole experience; a journey shows the screens and actions in the product.", "They mean the same thing, but flow is the word used for mobile apps."],
-              "answer_index": 0,
-              "explanation_fr": "Le user journey couvre toute l’expérience, y compris hors du produit (la pub, un e-mail, un appel au support), avec les émotions. Le user flow est l’enchaînement précis des écrans et des actions dans le produit. La deuxième réponse inverse les deux notions, et les deux termes ne dépendent pas de la plateforme."
+              "choices": ["A flow covers the whole experience; a journey shows the screens and actions in the product.", "They mean the same thing, but flow is the word used for mobile apps.", "A journey covers the whole experience; a flow shows the screens and actions in the product."],
+              "answer_index": 2,
+              "explanation_fr": "Le user journey couvre toute l’expérience, y compris hors du produit (la pub, un e-mail, un appel au support), avec les émotions. Le user flow est l’enchaînement précis des écrans et des actions dans le produit. Le piège est d’inverser les deux notions, et les deux termes ne dépendent pas de la plateforme."
             },
             {
               "prompt_fr": "Complète : « On the map, the emotion line ___ right at the bank step. »",
-              "choices": ["falls down", "is lowering", "drops"],
-              "answer_index": 2,
+              "choices": ["falls down", "drops", "is lowering"],
+              "answer_index": 1,
               "explanation_fr": "Pour une courbe ou un chiffre qui baisse brusquement, on dit « drops » (ou falls, sans down). « Falls down » décrit une chute physique, quelqu’un qui tombe par terre. « To lower » est transitif (to lower a price) : une courbe ne « se lower » pas."
             },
             {
               "prompt_fr": "Pourquoi Moussa propose-t-il de déplacer l’étape bancaire ?",
-              "choices": ["Pour réduire le nombre total d’écrans de l’onboarding", "Pour que les utilisateurs voient la valeur du produit avant l’effort", "Parce que la connexion bancaire n’est pas assez sécurisée"],
-              "answer_index": 1,
+              "choices": ["Pour que les utilisateurs voient la valeur du produit avant l’effort", "Pour réduire le nombre total d’écrans de l’onboarding", "Parce que la connexion bancaire n’est pas assez sécurisée"],
+              "answer_index": 0,
               "explanation_fr": "Le problème identifié est l’ordre : on demande un effort qui inquiète (connecter sa banque) avant que l’utilisateur ait vu le moindre bénéfice. En déplaçant l’étape, il découvre la valeur d’abord. Le nombre d’écrans reste le même, et la sécurité n’est pas évoquée dans la discussion."
             }
           ],
@@ -332,8 +332,8 @@
           "questions": [
             {
               "prompt_fr": "Ivan propose d’ajouter un onglet. Pourquoi Lucía préfère-t-elle revoir l’architecture de l’information ?",
-              "choices": ["Parce que le vrai problème est l’organisation des paramètres, pas leur visibilité", "Parce qu’une barre d’onglets ne peut jamais contenir plus de trois éléments", "Parce que les développeurs ne peuvent pas modifier la barre d’onglets"],
-              "answer_index": 0,
+              "choices": ["Parce qu’une barre d’onglets ne peut jamais contenir plus de trois éléments", "Parce que le vrai problème est l’organisation des paramètres, pas leur visibilité", "Parce que les développeurs ne peuvent pas modifier la barre d’onglets"],
+              "answer_index": 1,
               "explanation_fr": "Les paramètres sont éparpillés dans trois menus : ajouter un onglet ne ferait que masquer un problème d’organisation. Une barre d’onglets contient en général trois à cinq éléments, la limite de trois est donc fausse, et rien n’indique un blocage technique."
             },
             {
@@ -344,15 +344,15 @@
             },
             {
               "prompt_fr": "Tu lances un card sorting. Quelle consigne donnes-tu aux participants ?",
-              "choices": ["Please rank these screens from the best to the worst.", "Please group these cards in a way that makes sense to you.", "Please find the tax settings as fast as you can."],
-              "answer_index": 1,
+              "choices": ["Please group these cards in a way that makes sense to you.", "Please rank these screens from the best to the worst.", "Please find the tax settings as fast as you can."],
+              "answer_index": 0,
               "explanation_fr": "Dans un tri par cartes, chaque carte porte un libellé et le participant les regroupe selon sa logique : on découvre ainsi son modèle mental. Classer des écrans du meilleur au pire est un test de préférence. Chercher un paramètre le plus vite possible correspond à un test de navigation (tree testing ou test d’utilisabilité)."
             },
             {
-              "prompt_fr": "Sur mobile, comment dire « trois appuis maximum » ?",
-              "choices": ["three taps or fewer", "three touches maximum", "three clicks at the most"],
-              "answer_index": 0,
-              "explanation_fr": "Sur un écran tactile, un appui se dit « a tap » ; « a click » s’emploie avec une souris. « Touches » veut plutôt dire contacts ou petites touches finales (finishing touches). Avec un nom comptable comme taps, la forme soignée est « or fewer » plutôt que « or less »."
+              "prompt_fr": "Sur mobile, comment dire « trois écrans maximum » pour un parcours ?",
+              "choices": ["three screens in maximum", "three screens at maximum of", "three screens or fewer"],
+              "answer_index": 2,
+              "explanation_fr": "Avec un nom comptable comme « screens », la forme naturelle est « three screens or fewer » (on entend aussi « at most three screens »). « In maximum » et « at maximum of » calquent « au maximum » : en anglais, on dirait « a maximum of three screens »."
             }
           ],
           "production": {
@@ -398,15 +398,15 @@
           "questions": [
             {
               "prompt_fr": "Quelle phrase décrit correctement l’étape suivante prévue par Sarah ?",
-              "choices": ["She will turn the mockup into a wireframe.", "She will build the wireframe directly in code.", "She will turn the wireframe into a mockup."],
-              "answer_index": 2,
-              "explanation_fr": "L’ordre habituel va du plus simple au plus détaillé : d’abord le wireframe (la structure), puis le mockup (le rendu visuel). La première réponse inverse les étapes. Coder le wireframe directement n’est pas ce qu’elle annonce : elle veut d’abord valider la structure."
+              "choices": ["She will turn the wireframe into a mockup.", "She will turn the mockup into a wireframe.", "She will build the wireframe directly in code."],
+              "answer_index": 0,
+              "explanation_fr": "L’ordre habituel va du plus simple au plus détaillé : d’abord le wireframe (la structure), puis le mockup (le rendu visuel). Transformer le mockup en wireframe inverse les étapes. Coder le wireframe directement n’est pas ce qu’elle annonce : elle veut d’abord valider la structure."
             },
             {
-              "prompt_fr": "Comment dire « Je le transformerai en maquette graphique » ?",
-              "choices": ["I’ll transform it in a mockup.", "I’ll turn it into a mockup.", "I’ll change it to mockup."],
+              "prompt_fr": "Comment dire « Je le transformerai en prototype cliquable » ?",
+              "choices": ["I’ll transform it in a clickable prototype.", "I’ll turn it into a clickable prototype.", "I’ll change it to clickable prototype."],
               "answer_index": 1,
-              "explanation_fr": "« To turn something into something » est la tournure naturelle pour transformer. La préposition est « into » (mouvement vers un nouvel état), jamais « in » : « transform in » est un calque de « transformer en ». « Change it to mockup » oublie l’article (a mockup) et sonne comme un simple changement de réglage."
+              "explanation_fr": "« To turn something into something » est la tournure naturelle pour transformer. La préposition est « into » (passage vers un nouvel état), jamais « in » : « transform in » est un calque de « transformer en ». « Change it to clickable prototype » oublie l’article (a clickable prototype)."
             },
             {
               "prompt_fr": "Sarah dit « It’s still rough ». Que veut-elle faire comprendre ?",
@@ -416,9 +416,9 @@
             },
             {
               "prompt_fr": "Ton PM commente la couleur des boutons alors que tu présentes un wireframe. Quelle réponse est la plus professionnelle ?",
-              "choices": ["Colors don’t matter at this stage, let’s move on.", "Sorry, I’ll fix the colors before the next meeting.", "Good point for later; today I’d love feedback on the structure."],
-              "answer_index": 2,
-              "explanation_fr": "La bonne réponse accueille la remarque (for later) et recentre poliment sur l’objectif de la séance. La première est vraie sur le fond mais sonne sèche. La deuxième s’excuse à tort : un wireframe n’a pas de couleurs à corriger, et tu perds le contrôle de ta présentation."
+              "choices": ["Colors don’t matter at this stage, let’s move on.", "Good point for later; today I’d love feedback on the structure.", "Sorry, I’ll fix the colors before the next meeting."],
+              "answer_index": 1,
+              "explanation_fr": "La bonne réponse accueille la remarque (for later) et recentre poliment sur l’objectif de la séance. « Colors don’t matter at this stage » est vrai sur le fond mais sonne sec. S’excuser et promettre de corriger les couleurs est une erreur : un wireframe n’a pas de couleurs à corriger, et tu perds le contrôle de ta présentation."
             }
           ],
           "production": {
@@ -444,27 +444,27 @@
           "questions": [
             {
               "prompt_fr": "Priya trouve que « the user interface feels crowded ». Quel conseil va logiquement avec ce constat ?",
-              "choices": ["Add more white space between elements.", "Use brighter colors for the buttons.", "Make the cards smaller to fit more in."],
-              "answer_index": 0,
+              "choices": ["Use brighter colors for the buttons.", "Make the cards smaller to fit more in.", "Add more white space between elements."],
+              "answer_index": 2,
               "explanation_fr": "« Crowded » veut dire surchargé, trop d’éléments serrés : la réponse logique est de donner de l’air avec du white space. Des couleurs plus vives ajouteraient du bruit visuel, et réduire les cartes pour en mettre plus aggraverait le problème."
             },
             {
-              "prompt_fr": "Tu proposes tes retours à un collègue. Quelle phrase est correcte ?",
-              "choices": ["Can I give you some feedbacks?", "Can I give you some feedback?", "Can I make you a feedback?"],
-              "answer_index": 1,
-              "explanation_fr": "« Feedback » est indénombrable en anglais : pas de s et pas de « a ». On dit some feedback, ou a piece of feedback pour un seul point. Et on « give » du feedback, on ne le « make » pas : c’est un calque de « faire un retour »."
+              "prompt_fr": "Tu remercies Priya pour ses remarques. Quelle phrase est correcte ?",
+              "choices": ["Thanks for the feedbacks, they’re really helpful.", "Thanks for your returns, it’s really helpful.", "Thanks for the feedback, it’s really helpful."],
+              "answer_index": 2,
+              "explanation_fr": "« Feedback » est indénombrable en anglais : pas de s, et le verbe reste au singulier (it’s helpful). On dit « a piece of feedback » pour un seul point. « Returns » est un calque de « retours » : en anglais, il désigne des retours de marchandise ou des bénéfices."
             },
             {
-              "prompt_fr": "Complète : « I wanted the totals to stand ___ . »",
-              "choices": ["up", "off", "out"],
-              "answer_index": 2,
+              "prompt_fr": "Complète : « I wanted the totals to stand ___. »",
+              "choices": ["up", "out", "off"],
+              "answer_index": 1,
               "explanation_fr": "« To stand out » veut dire ressortir, se distinguer visuellement : c’est un verbe clé en design. « To stand up » veut dire se lever, et « to stand off » se tenir à distance. La particule change complètement le sens du verbe."
             },
             {
-              "prompt_fr": "Tu n’es pas d’accord avec un retour, mais tu veux d’abord comprendre. Que dis-tu ?",
-              "choices": ["Can you say more about that?", "Can you explain me that?", "Can you precise what you mean?"],
+              "prompt_fr": "Tu n’es pas d’accord avec un retour, mais tu veux d’abord comprendre. Quelle phrase est correcte ?",
+              "choices": ["Could you tell me a bit more about that?", "Could you explain me a bit more that?", "Could you precise a bit what you mean?"],
               "answer_index": 0,
-              "explanation_fr": "« Can you say more about that? » invite à développer, sans se défendre. « Explain me » est une erreur classique : explain n’a pas de complément de personne direct, on dit explain it to me. « Precise » est un adjectif en anglais ; le verbe préciser se dit clarify ou be more specific."
+              "explanation_fr": "« Could you tell me a bit more about that? » invite à développer, sans se défendre. « Explain me » est une erreur classique : explain n’a pas de complément de personne direct, on dit explain it to me. « Precise » est un adjectif en anglais ; le verbe préciser se dit clarify ou be more specific."
             }
           ],
           "production": {
@@ -496,9 +496,9 @@
             },
             {
               "prompt_fr": "La page Clients est vide. Quel état vide suit les bonnes pratiques ?",
-              "choices": ["No data available.", "You have 0 clients.", "No clients yet. Add your first client."],
+              "choices": ["No data available for this page yet.", "You have 0 clients. Please try again.", "No clients yet. Add your first client."],
               "answer_index": 2,
-              "explanation_fr": "Un bon état vide explique la situation avec les mots de l’utilisateur (yet suggère que c’est normal au début) et propose l’action suivante. « No data available » est un message technique et froid. « You have 0 clients » constate sans aider, et peut même sonner comme un reproche."
+              "explanation_fr": "Un bon état vide explique la situation avec les mots de l’utilisateur (« yet » suggère que c’est normal au début) et propose l’action suivante. « No data available » reste un message technique et froid, même avec « yet ». « You have 0 clients. Please try again » constate sans aider et laisse croire à une erreur."
             },
             {
               "prompt_fr": "Quel texte de bouton est le plus clair pour envoyer une facture ?",
@@ -508,8 +508,8 @@
             },
             {
               "prompt_fr": "Complète : « Better to ___ what the button does. »",
-              "choices": ["describe about", "describe", "explain about"],
-              "answer_index": 1,
+              "choices": ["describe about", "explain about", "describe"],
+              "answer_index": 2,
               "explanation_fr": "« Describe » est transitif direct, comme décrire en français : describe what it does. « Describe about » est une erreur fréquente. « Explain about » existe à l’oral mais reste maladroit, et ne s’emploie pas devant une proposition comme « what the button does »."
             }
           ],
@@ -536,27 +536,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi Lucía veut-elle foncer le texte gris clair ?",
-              "choices": ["Pour respecter la charte graphique de la marque", "Pour que le texte reste lisible en mode sombre", "Pour que le texte se distingue assez du fond"],
-              "answer_index": 2,
+              "choices": ["Pour que le texte se distingue assez du fond", "Pour respecter la charte graphique de la marque", "Pour que le texte reste lisible en mode sombre"],
+              "answer_index": 0,
               "explanation_fr": "Un « color contrast » trop faible veut dire que le texte se distingue mal de son fond ; les règles WCAG fixent un ratio minimum (4,5 pour 1 pour un texte courant au niveau AA). Il ne s’agit ni de la charte de la marque ni du mode sombre, qui n’est pas évoqué."
             },
             {
               "prompt_fr": "Comment dire « les personnes en situation de handicap » de façon respectueuse ?",
-              "choices": ["people with disabilities", "handicapped people", "invalid people"],
-              "answer_index": 0,
+              "choices": ["handicapped people", "people with disabilities", "invalid people"],
+              "answer_index": 1,
               "explanation_fr": "« People with disabilities » met la personne en premier : c’est la formule recommandée au travail (on entend aussi disabled people). « Handicapped » est daté et souvent mal perçu. « Invalid » est un faux ami blessant : en anglais, il veut d’abord dire non valide, comme un mot de passe invalide."
             },
             {
-              "prompt_fr": "Complète : « Every icon needs a label for screen ___ . »",
-              "choices": ["lecturers", "readers", "lectors"],
-              "answer_index": 1,
+              "prompt_fr": "Complète : « Every icon needs a label for screen ___. »",
+              "choices": ["readers", "lecturers", "lectors"],
+              "answer_index": 0,
               "explanation_fr": "Un lecteur d’écran est un « screen reader » (VoiceOver, TalkBack, NVDA). « Lecturer » est un faux ami : c’est un enseignant à l’université (maître de conférences). « Lector » est très rare et désigne une personne qui lit à voix haute, notamment à l’église."
             },
             {
               "prompt_fr": "Un collègue dit : « Accessibility only concerns a few users. » Quelle réponse est la plus convaincante ?",
-              "choices": ["You’re right, so we can safely do it after launch.", "It’s required by law, so we have no choice anyway.", "It helps everyone: good contrast also helps people outside in the sun."],
-              "answer_index": 2,
-              "explanation_fr": "La réponse la plus convaincante corrige l’idée reçue avec un exemple concret : ce qui aide les personnes handicapées aide aussi tout le monde dans certaines situations (soleil, bras occupé, écran cassé). L’argument légal existe, mais il clôt la discussion sans convaincre. La première réponse accepte une idée fausse."
+              "choices": ["You’re right, so we can safely do it after launch.", "It helps everyone: good contrast also helps people outside in the sun.", "It’s required by law, so we have no choice anyway."],
+              "answer_index": 1,
+              "explanation_fr": "La réponse la plus convaincante corrige l’idée reçue avec un exemple concret : ce qui aide les personnes handicapées aide aussi tout le monde dans certaines situations (soleil, bras occupé, écran cassé). L’argument légal existe, mais il clôt la discussion sans convaincre, et repousser après le lancement revient à accepter l’idée fausse."
             }
           ],
           "production": {
@@ -602,26 +602,26 @@
           "questions": [
             {
               "prompt_fr": "Ivan dit que le balayage « has no affordance ». Que veut-il dire ?",
-              "choices": ["Le geste coûte trop cher à développer", "Rien à l’écran ne suggère qu’on peut faire ce geste", "Le geste ne fonctionne pas sur tous les téléphones"],
-              "answer_index": 1,
+              "choices": ["Le geste coûte trop cher à développer", "Le geste ne fonctionne pas sur tous les téléphones", "Rien à l’écran ne suggère qu’on peut faire ce geste"],
+              "answer_index": 2,
               "explanation_fr": "L’« affordance » est la capacité d’un élément à suggérer comment l’utiliser : un bouton en relief invite à appuyer, une poignée invite à tirer. Rien à voir avec « affordable » (abordable, pas cher), le piège tentant. La compatibilité des téléphones n’est pas en question."
             },
             {
               "prompt_fr": "Pourquoi Ivan choisit-il un prototype haute fidélité plutôt qu’un simple wireframe cliquable ?",
-              "choices": ["Parce qu’il faut tester une interaction précise, pas seulement la structure", "Parce que les participants ne comprennent pas les wireframes", "Parce que les développeurs pourront réutiliser le prototype comme code"],
-              "answer_index": 0,
+              "choices": ["Parce que les participants ne comprennent pas les wireframes", "Parce que les développeurs pourront réutiliser le prototype comme code", "Parce qu’il faut tester une interaction précise, pas seulement la structure"],
+              "answer_index": 2,
               "explanation_fr": "On monte en fidélité quand la question à tester l’exige : ici, un geste de balayage, impossible à évaluer sur des écrans statiques. Les participants comprennent très bien les wireframes pour tester une structure, et un prototype Figma n’est pas du code réutilisable."
             },
             {
               "prompt_fr": "Comment dire « Je réalise un prototype » ?",
-              "choices": ["I’m realizing a prototype.", "I’m doing a prototype.", "I’m building a prototype."],
-              "answer_index": 2,
+              "choices": ["I’m realizing a prototype.", "I’m building a prototype.", "I’m doing a prototype."],
+              "answer_index": 1,
               "explanation_fr": "Pour fabriquer quelque chose, on dit « build » ou « make » a prototype. « Realize » est un faux ami : il veut dire se rendre compte (I realized it was wrong). « Do » s’emploie pour des activités (do research, do a test), pas pour fabriquer un objet."
             },
             {
-              "prompt_fr": "Complète : « We need to check if people discover the gesture on their ___ . »",
-              "choices": ["selves", "own", "alone"],
-              "answer_index": 1,
+              "prompt_fr": "Complète : « We need to check if people discover the gesture on their ___. »",
+              "choices": ["own", "selves", "alone"],
+              "answer_index": 0,
               "explanation_fr": "L’expression figée est « on their own » (tout seuls, sans aide) ; son équivalent est « by themselves ». « On their selves » n’existe pas, et « alone » s’emploie sans « on their » : discover it alone."
             }
           ],
@@ -648,20 +648,20 @@
           "questions": [
             {
               "prompt_fr": "Sur le « happy path », la participante a réussi en moins d’une minute. Qu’est-ce que cela ne prouve PAS ?",
-              "choices": ["Que le scénario principal fonctionne", "Que la tâche de base est rapide", "Que l’écran gère bien les cas inhabituels"],
-              "answer_index": 2,
+              "choices": ["Que le scénario principal fonctionne", "Que l’écran gère bien les cas inhabituels", "Que la tâche de base est rapide"],
+              "answer_index": 1,
               "explanation_fr": "Le « happy path » est le scénario idéal, où tout se passe comme prévu, avec des données valides. Le réussir prouve que le cas principal marche et qu’il est rapide, mais rien sur les cas limites (edge cases) : c’est justement là que la participante a bloqué."
             },
             {
               "prompt_fr": "Comment dire « Elle a bloqué sur cet écran » ?",
-              "choices": ["She got stuck on that screen.", "She blocked on that screen.", "She was blocked at that screen."],
-              "answer_index": 0,
+              "choices": ["She blocked on that screen.", "She was blocked at that screen.", "She got stuck on that screen."],
+              "answer_index": 2,
               "explanation_fr": "« To get stuck » est la tournure naturelle pour quelqu’un qui ne peut plus avancer. « To block » est transitif (to block someone, to block a road) : « she blocked » laisse attendre un complément. « She was blocked » voudrait dire que quelqu’un l’a bloquée, par exemple sur un réseau social."
             },
             {
               "prompt_fr": "Complète la consigne : « Please think ___ as you go. »",
-              "choices": ["loudly", "aloud", "at high voice"],
-              "answer_index": 1,
+              "choices": ["aloud", "loudly", "at high voice"],
+              "answer_index": 0,
               "explanation_fr": "L’expression consacrée est « think aloud » (penser à voix haute) ; on parle même de la méthode « think-aloud ». « Loudly » parle du volume (fort, bruyamment), pas du fait de verbaliser. « At high voice » est un calque de « à haute voix » qui n’existe pas."
             },
             {
@@ -699,21 +699,21 @@
               "explanation_fr": "Une évaluation heuristique, c’est un expert qui inspecte l’interface selon des principes reconnus (comme les dix heuristiques de Nielsen). Elle est rapide et économique, mais Aïcha le dit clairement : elle ne remplace pas les tests avec de vrais utilisateurs. Elle ne mesure rien de chiffré non plus."
             },
             {
-              "prompt_fr": "Comment dire « Notre iconographie n’est pas cohérente » au sens de « pas uniforme » ?",
-              "choices": ["Our iconography isn’t coherent.", "Our iconography isn’t consistent.", "Our iconography isn’t logic."],
+              "prompt_fr": "Comment dire « Nos libellés de boutons ne sont pas cohérents » au sens de « pas uniformes » ?",
+              "choices": ["Our button labels aren’t coherent.", "Our button labels aren’t consistent.", "Our button labels aren’t logic."],
               "answer_index": 1,
-              "explanation_fr": "En design, « consistent » veut dire cohérent au sens d’uniforme : les mêmes éléments ont le même sens partout. « Coherent » veut plutôt dire logique, compréhensible (a coherent argument) : c’est le piège du mot transparent. « Logic » est un nom ; l’adjectif serait logical."
+              "explanation_fr": "En design, « consistent » veut dire cohérent au sens d’uniforme : les mêmes éléments s’écrivent et se comportent de la même façon partout. « Coherent » veut plutôt dire logique, compréhensible (a coherent argument) : c’est le piège du mot transparent. « Logic » est un nom ; l’adjectif serait logical."
             },
             {
               "prompt_fr": "Complète : « It’s a cheap way to ___ obvious issues before the next round. »",
-              "choices": ["capture", "seize", "catch"],
-              "answer_index": 2,
+              "choices": ["catch", "capture", "seize"],
+              "answer_index": 0,
               "explanation_fr": "On dit « catch issues » ou « catch bugs » pour repérer des problèmes à temps. « Capture » s’emploie pour des données ou une image (capture data, a screen capture). « Seize » veut dire saisir, souvent de force (seize an opportunity, seize goods)."
             },
             {
               "prompt_fr": "Ton manager veut remplacer tous les tests utilisateurs par des évaluations heuristiques. Quelle réponse est la plus nuancée ?",
-              "choices": ["It’s a useful complement, but it can’t replace real users.", "Good idea, experts usually know better than users.", "No, heuristic evaluations are not useful at all."],
-              "answer_index": 0,
+              "choices": ["Good idea, experts usually know better than users.", "It’s a useful complement, but it can’t replace real users.", "No, heuristic evaluations are not useful at all."],
+              "answer_index": 1,
               "explanation_fr": "La réponse nuancée reconnaît la valeur de la méthode tout en posant sa limite : un expert ne voit pas les besoins, le vocabulaire ou les habitudes réels des utilisateurs. Dire que les experts savent mieux est le biais classique du designer, et rejeter la méthode en bloc est tout aussi excessif."
             }
           ],
@@ -740,8 +740,8 @@
           "questions": [
             {
               "prompt_fr": "La version B fait mieux, mais « we haven’t reached statistical significance ». Que faut-il faire ?",
-              "choices": ["Déployer la version B tout de suite, puisqu’elle gagne", "Laisser tourner le test jusqu’à avoir assez de données", "Arrêter le test et garder la version A par prudence"],
-              "answer_index": 1,
+              "choices": ["Déployer la version B tout de suite, puisqu’elle gagne", "Arrêter le test et garder la version A par prudence", "Laisser tourner le test jusqu’à avoir assez de données"],
+              "answer_index": 2,
               "explanation_fr": "Sans significativité statistique, l’écart peut être dû au hasard : on ne peut conclure ni pour B ni pour A. La bonne décision est de continuer pour atteindre la taille d’échantillon prévue. Arrêter un test dès qu’une version semble gagner est une erreur classique (peeking)."
             },
             {
@@ -751,15 +751,15 @@
               "explanation_fr": "La collocation figée est « sample size » (taille de l’échantillon) : en anglais, le nom qui précise vient en premier, sans « of ». « Size of sample » suit l’ordre français. « Sampling size » mélange avec « sampling » (l’échantillonnage, la méthode), ce qui n’est pas l’expression consacrée."
             },
             {
-              "prompt_fr": "Comment dire « On devrait le laisser tourner » (le test) ?",
-              "choices": ["We should keep it running.", "We should let it turn.", "We should make it continue running."],
-              "answer_index": 0,
-              "explanation_fr": "« To keep something running » veut dire le laisser fonctionner, sans interruption : on le dit d’un test, d’un serveur, d’une campagne. « Turn » est un calque de « tourner » : en anglais, il veut dire pivoter, faire un tour. « Make it continue running » est lourd et suggère qu’il faut le forcer."
+              "prompt_fr": "Comment dire « On devrait laisser la campagne tourner une semaine de plus » ?",
+              "choices": ["We should let the campaign turn one more week.", "We should keep the campaign running for another week.", "We should make the campaign continue to run one week more."],
+              "answer_index": 1,
+              "explanation_fr": "« To keep something running » veut dire le laisser fonctionner sans interruption : on le dit d’un test, d’un serveur, d’une campagne, et « for another week » ajoute une semaine. « Turn » est un calque de « tourner » (en anglais, pivoter), et « make it continue to run one week more » est lourd et place mal « more »."
             },
             {
               "prompt_fr": "Pourquoi Lucía surveille-t-elle les remboursements comme « guardrail metric » ?",
-              "choices": ["Pour mesurer le chiffre d’affaires total généré par le test", "Pour vérifier que le gain d’inscriptions ne crée pas un problème ailleurs", "Pour décider quelle version a le design le plus clair"],
-              "answer_index": 1,
+              "choices": ["Pour vérifier que le gain d’inscriptions ne crée pas un problème ailleurs", "Pour mesurer le chiffre d’affaires total généré par le test", "Pour décider quelle version a le design le plus clair"],
+              "answer_index": 0,
               "explanation_fr": "Un indicateur garde-fou (guardrail metric) n’est pas l’objectif du test : il sert à vérifier qu’en améliorant une métrique, on n’en dégrade pas une autre importante. Ici, des inscriptions suivies d’annulations seraient une fausse victoire. Ce n’est ni une mesure du chiffre d’affaires ni un jugement esthétique."
             }
           ],
@@ -805,28 +805,28 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment remercier une collègue qui te transmet une demande client ?",
-              "choices": ["Thanks to transmit it.", "Thanks for transmitting me this.", "Thanks for passing it on."],
-              "answer_index": 2,
-              "explanation_fr": "« To pass something on » est la façon naturelle de dire transmettre une information. « Transmit » existe mais s’emploie pour des signaux ou des maladies, et ne prend pas la personne en complément direct (transmitting me). Après « thanks », on utilise « for + -ing », jamais « to + verbe »."
+              "prompt_fr": "Comment dire à une collègue « Je transmets ta demande à l’équipe » ?",
+              "choices": ["I’ll transmit your request to the team.", "I’ll pass your request on to the team.", "I’ll forward on your request at the team."],
+              "answer_index": 1,
+              "explanation_fr": "« To pass something on to someone » est la façon naturelle de dire transmettre une information (« forward » marche aussi pour un e-mail). « Transmit » s’emploie pour des signaux ou des maladies, et « forward on… at the team » cumule une particule inutile et une mauvaise préposition."
             },
             {
               "prompt_fr": "Pourquoi Kenji demande-t-il quel problème le client veut résoudre ?",
-              "choices": ["Pour trouver le vrai besoin, qui peut avoir une autre solution", "Pour avoir une bonne raison de refuser la demande", "Pour estimer le prix à facturer au client"],
-              "answer_index": 0,
+              "choices": ["Pour avoir une bonne raison de refuser la demande", "Pour estimer le prix à facturer au client", "Pour trouver le vrai besoin, qui peut avoir une autre solution"],
+              "answer_index": 2,
               "explanation_fr": "Un client exprime souvent une solution (un mode sombre) alors que le PM cherche le problème (la fatigue visuelle la nuit). Connaître le problème permet de comparer la demande aux autres et parfois de trouver une meilleure réponse. Il ne cherche ni un prétexte pour refuser, ni un prix."
             },
             {
               "prompt_fr": "Complète la user story : « As a night worker, I want a dark theme ___ I can read without eye strain. »",
-              "choices": ["for that", "so that", "in order"],
-              "answer_index": 1,
+              "choices": ["so that", "for that", "in order"],
+              "answer_index": 0,
               "explanation_fr": "Le format d’une user story est « As a…, I want…, so that… » : « so that » introduit le but, suivi d’un sujet et d’un verbe. « For that » est un calque de « pour que ». « In order » doit être suivi de « to + verbe » (in order to read) et ne peut pas introduire « I can »."
             },
             {
               "prompt_fr": "Un commercial insiste : « This client is huge, just build it. » Quelle réponse est la plus professionnelle ?",
-              "choices": ["OK, I’ll move it to the top of the sprint.", "Sorry, sales requests are not my priority.", "I hear you. Let’s compare its impact with our other priorities."],
+              "choices": ["OK, it’s a big client, so I’ll move it to the top of the sprint.", "Sorry, sales requests aren’t part of our product priorities.", "I hear you. Let’s compare its impact with our other priorities."],
               "answer_index": 2,
-              "explanation_fr": "« I hear you » montre qu’on prend la demande au sérieux, puis on ramène la décision à des critères partagés (l’impact). Céder tout de suite casse la priorisation de l’équipe, et répondre que les ventes ne sont pas ta priorité est blessant et faux : un PM travaille avec les commerciaux."
+              "explanation_fr": "« I hear you » montre qu’on prend la demande au sérieux, puis on ramène la décision à des critères partagés (l’impact). Céder tout de suite parce que le client est gros casse la priorisation de l’équipe, et écarter les demandes des ventes est blessant et faux : un PM travaille avec les commerciaux."
             }
           ],
           "production": {
@@ -853,20 +853,20 @@
           "questions": [
             {
               "prompt_fr": "Ivan dit « Customers keep asking for it ». Quelle nuance apporte « keep + -ing » ?",
-              "choices": ["Les clients gardent cette demande en attente", "Les clients le demandent de façon répétée", "Les clients ont fini par arrêter de le demander"],
-              "answer_index": 1,
+              "choices": ["Les clients le demandent de façon répétée", "Les clients gardent cette demande en attente", "Les clients ont fini par arrêter de le demander"],
+              "answer_index": 0,
               "explanation_fr": "« Keep + verbe en -ing » exprime la répétition ou la continuité, souvent avec une pointe d’agacement : ils n’arrêtent pas de le demander. Ce n’est pas le sens de « keep » = garder. L’idée d’arrêter se dirait « stop asking »."
             },
             {
-              "prompt_fr": "Comment dire « Je préfère ne pas promettre de date » ?",
-              "choices": ["I’d rather not promise a date.", "I prefer to not promise date.", "I’d rather to not promise a date."],
-              "answer_index": 0,
-              "explanation_fr": "« I’d rather » est suivi de la base verbale sans « to », et la négation se place juste après : I’d rather not promise. « I’d rather to » est donc fautif. « I prefer to not promise date » oublie l’article (a date) et sonne moins naturel que « I’d rather not » à l’oral."
+              "prompt_fr": "Comment dire « Je préfère ne pas donner d’estimation pour l’instant » ?",
+              "choices": ["I’d rather to not give an estimate yet.", "I’d rather not give an estimate yet.", "I prefer to not give estimate for now."],
+              "answer_index": 1,
+              "explanation_fr": "« I’d rather » est suivi de la base verbale sans « to », et la négation se place juste après : I’d rather not give. « I’d rather to » est donc fautif. « I prefer to not give estimate » oublie l’article (an estimate) et sonne moins naturel que « I’d rather not » à l’oral."
             },
             {
               "prompt_fr": "Pourquoi Sarah ne met-elle pas l’appli mobile dans la colonne « now » ?",
-              "choices": ["Parce que l’équipe n’a pas de développeur mobile", "Parce que les clients ne l’ont demandée qu’une seule fois", "Parce qu’elle n’aide pas l’objectif du trimestre"],
-              "answer_index": 2,
+              "choices": ["Parce qu’elle n’aide pas l’objectif du trimestre", "Parce que l’équipe n’a pas de développeur mobile", "Parce que les clients ne l’ont demandée qu’une seule fois"],
+              "answer_index": 0,
               "explanation_fr": "Sarah relie chaque choix à l’OKR du trimestre et à la North Star metric : l’appli mobile ne réduit pas les retards de paiement, donc elle passe après. Ivan dit au contraire que les clients la demandent souvent, et la composition de l’équipe n’est pas évoquée."
             },
             {
@@ -899,8 +899,8 @@
           "questions": [
             {
               "prompt_fr": "Priya dit « That’s scope creep ». Quelle situation y correspond ?",
-              "choices": ["Des demandes s’ajoutent peu à peu sans que le délai change", "Le périmètre a été réduit pour tenir la date prévue", "L’équipe a validé le périmètre avec le client"],
-              "answer_index": 0,
+              "choices": ["Le périmètre a été réduit pour tenir la date prévue", "L’équipe a validé le périmètre avec le client", "Des demandes s’ajoutent peu à peu sans que le délai change"],
+              "answer_index": 2,
               "explanation_fr": "« To creep » veut dire avancer lentement, discrètement : le « scope creep » est la dérive du périmètre, quand de petites demandes s’ajoutent une à une sans qu’on revoie le délai ou les ressources. Réduire ou valider le périmètre, c’est justement l’inverse."
             },
             {
@@ -950,10 +950,10 @@
               "explanation_fr": "Une « vanity metric » est un chiffre flatteur qui monte facilement (un total cumulé ne baisse jamais) mais n’aide pas à décider et ne prouve pas la valeur. Le problème n’est ni le calcul ni la confidentialité : c’est ce que le chiffre ne dit pas."
             },
             {
-              "prompt_fr": "Comment dire « la part d’utilisateurs actifs » (une proportion) ?",
-              "choices": ["the part of active users", "the active users part", "the share of active users"],
+              "prompt_fr": "Comment dire « la part de clients qui renouvellent leur abonnement » (une proportion) ?",
+              "choices": ["the part of customers who renew", "the renewing customers part", "the share of customers who renew"],
               "answer_index": 2,
-              "explanation_fr": "Pour une proportion, on dit « the share of » ou « the percentage of ». « Part of » existe, mais veut dire une partie de quelque chose (part of the team), pas une proportion qu’on mesure. « The active users part » n’a pas de sens dans cet ordre."
+              "explanation_fr": "Pour une proportion, on dit « the share of » ou « the percentage of ». « Part of » existe, mais veut dire une partie de quelque chose (part of the team), pas une proportion qu’on mesure. « The renewing customers part » n’a pas de sens dans cet ordre."
             },
             {
               "prompt_fr": "Le taux de rétention dira « if the habit sticks ». Que veut dire Lucía ?",
@@ -963,8 +963,8 @@
             },
             {
               "prompt_fr": "Complète : « Gamification only ___ if people come back and actually learn. »",
-              "choices": ["counts for", "matters", "is important for"],
-              "answer_index": 1,
+              "choices": ["counts for", "is important for", "matters"],
+              "answer_index": 2,
               "explanation_fr": "« To matter » veut dire compter, avoir de l’importance, et s’emploie seul : it only matters if… « Counts for » et « is important for » attendent un complément (counts for something, is important for users) et laissent la phrase incomplète. Et attention : « actually » veut dire vraiment, en fait, pas actuellement."
             }
           ],
@@ -1016,21 +1016,21 @@
               "explanation_fr": "Ce sont des « edge cases » : des situations aux limites de l’usage normal. Si le designer ne les prévoit pas, le développeur doit improviser, et l’écran casse souvent en production. Il ne s’agit ni de données de test ni de performance."
             },
             {
-              "prompt_fr": "Comment dire « Je te fais signe si quelque chose n’est pas clair » ?",
-              "choices": ["I’ll make you a sign if something isn’t clear.", "I’ll signal you if something isn’t clear.", "I’ll ping you if anything is unclear."],
-              "answer_index": 2,
-              "explanation_fr": "« To ping someone » veut dire envoyer un message rapide (Slack, chat) : c’est le verbe courant dans les équipes tech. « Make you a sign » est un calque littéral de « faire signe » qui évoque un geste de la main. « Signal you » n’est pas idiomatique dans ce sens."
+              "prompt_fr": "Comment dire « Fais-moi signe quand c’est prêt » sur Slack ?",
+              "choices": ["Make me a sign when it’s ready.", "Ping me when it’s ready.", "Signal me when it’s ready."],
+              "answer_index": 1,
+              "explanation_fr": "« To ping someone » veut dire envoyer un message rapide (Slack, chat) : c’est le verbe courant dans les équipes tech. « Make me a sign » est un calque littéral de « faire signe », qui évoque un geste de la main, et « signal me » n’est pas idiomatique dans ce sens."
             },
             {
               "prompt_fr": "Complète : « The key ___ is that a reminder can’t be sent twice on the same day. »",
-              "choices": ["exigency", "requirement", "demand"],
-              "answer_index": 1,
+              "choices": ["requirement", "exigency", "demand"],
+              "answer_index": 0,
               "explanation_fr": "Une exigence de produit se dit « requirement ». « Exigency » existe mais est rare et veut dire urgence, nécessité pressante. « Demand » est un faux ami partiel : il désigne une revendication insistante ou la demande du marché (supply and demand), pas une règle de fonctionnement."
             },
             {
               "prompt_fr": "Le développeur demande : « What happens if the client name is very long? » Quelle réponse est la plus utile ?",
-              "choices": ["It shouldn’t happen often, so don’t worry about it.", "Just make the card bigger when it’s needed.", "It should be truncated after two lines, with an ellipsis."],
-              "answer_index": 2,
+              "choices": ["It shouldn’t happen often, so don’t worry about it.", "It should be truncated after two lines, with an ellipsis.", "Just make the card bigger when it’s needed."],
+              "answer_index": 1,
               "explanation_fr": "La réponse utile donne une règle précise et applicable : tronquer après deux lignes avec des points de suspension (an ellipsis). Minimiser le cas laisse le développeur sans solution, et agrandir la carte au cas par cas casse l’alignement de la liste."
             }
           ],
@@ -1057,26 +1057,26 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi la carte ne ressemble-t-elle pas aux autres ?",
-              "choices": ["Parce que Priya a dessiné un nouveau composant", "Parce que le code utilise des valeurs écrites en dur", "Parce que le design system n’est plus à jour"],
-              "answer_index": 1,
+              "choices": ["Parce que Priya a dessiné un nouveau composant", "Parce que le design system n’est plus à jour", "Parce que le code utilise des valeurs écrites en dur"],
+              "answer_index": 2,
               "explanation_fr": "Priya confirme qu’elle a utilisé la carte standard : l’écart vient du code, où les couleurs et la taille de police sont « hardcoded », écrites directement au lieu de passer par les tokens. Rien n’indique que le design system soit obsolète."
             },
             {
               "prompt_fr": "Quel avantage des design tokens Kenji décrit-il ?",
-              "choices": ["Un seul changement suffit pour mettre à jour toute l’interface", "Ils rendent l’application plus rapide à charger", "Ils permettent aux développeurs de se passer de Figma"],
-              "answer_index": 0,
+              "choices": ["Ils rendent l’application plus rapide à charger", "Ils permettent aux développeurs de se passer de Figma", "Un seul changement suffit pour mettre à jour toute l’interface"],
+              "answer_index": 2,
               "explanation_fr": "Un design token est une variable nommée (une couleur, un espacement, un style de texte) partagée entre le design et le code : si on change sa valeur, tout ce qui l’utilise suit. Les tokens n’ont pas d’effet sur la vitesse, et ils ne remplacent pas les maquettes."
             },
             {
-              "prompt_fr": "Comment dire « c’est tout l’intérêt » ?",
-              "choices": ["that’s all the interest", "that’s the whole interest", "that’s the whole point"],
-              "answer_index": 2,
-              "explanation_fr": "« That’s the whole point » veut dire c’est justement le but, c’est tout l’intérêt. « Interest » est un faux ami ici : il désigne l’intérêt qu’on porte à quelque chose (I have an interest in design) ou les intérêts d’un prêt, pas la raison d’être d’une chose."
+              "prompt_fr": "Comment dire « c’est justement tout l’intérêt des tokens » ?",
+              "choices": ["that’s all the interest of tokens", "that’s the whole point of tokens", "that’s the whole interest of tokens"],
+              "answer_index": 1,
+              "explanation_fr": "« That’s the whole point of… » veut dire c’est justement le but, c’est tout l’intérêt. « Interest » est un faux ami ici : il désigne l’intérêt qu’on porte à quelque chose (I have an interest in design) ou les intérêts d’un prêt, pas la raison d’être d’une chose."
             },
             {
               "prompt_fr": "Complète : « If we ___ change the brand color, we’ll only update one token. »",
-              "choices": ["eventually", "ever", "never"],
-              "answer_index": 1,
+              "choices": ["ever", "eventually", "never"],
+              "answer_index": 0,
               "explanation_fr": "Dans une hypothèse, « if we ever… » veut dire si un jour, si jamais. « Eventually » est le faux ami classique : il veut dire finalement, à terme, et non éventuellement. « Never » contredit le sens : on ne mettrait rien à jour si on ne change jamais la couleur."
             }
           ],
@@ -1103,25 +1103,25 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire « The layout breaks below 400 pixels » ?",
-              "choices": ["La page met trop de temps à se charger sur mobile", "Les images sont coupées au-delà de 400 pixels de large", "La mise en page s’affiche mal sur les écrans de moins de 400 pixels"],
-              "answer_index": 2,
+              "choices": ["La page met trop de temps à se charger sur mobile", "La mise en page s’affiche mal sur les écrans de moins de 400 pixels", "Les images sont coupées au-delà de 400 pixels de large"],
+              "answer_index": 1,
               "explanation_fr": "« The layout breaks » veut dire que la mise en page ne tient plus : éléments qui se chevauchent, texte qui déborde. « Below 400 pixels » précise le seuil : les écrans plus étroits que 400 pixels. Ce n’est pas une question de vitesse, et « below » veut dire en dessous, pas au-delà."
             },
             {
               "prompt_fr": "Complète : « On small phones, the cards should ___ in one column. »",
-              "choices": ["stack", "pile themselves", "superpose"],
-              "answer_index": 0,
+              "choices": ["pile themselves", "superpose", "stack"],
+              "answer_index": 2,
               "explanation_fr": "« To stack » veut dire s’empiler, se ranger les uns sous les autres : c’est le verbe consacré en responsive design. « Pile themselves » est un calque de la forme pronominale « s’empiler » : en anglais, on dirait pile up, sans themselves. « Superpose » veut dire placer l’un exactement sur l’autre, donc se chevaucher."
             },
             {
               "prompt_fr": "Sarah dit « Responsive design isn’t just shrinking everything ». Qu’est-ce que cela implique ?",
-              "choices": ["Qu’il faut créer une application mobile séparée", "Qu’il faut réorganiser la mise en page, pas seulement tout réduire", "Qu’il faut tout réduire, mais garder les mêmes marges"],
-              "answer_index": 1,
+              "choices": ["Qu’il faut réorganiser la mise en page, pas seulement tout réduire", "Qu’il faut créer une application mobile séparée", "Qu’il faut tout réduire, mais garder les mêmes marges"],
+              "answer_index": 0,
               "explanation_fr": "Le design adaptatif réorganise le contenu selon la largeur de l’écran (colonnes qui s’empilent, navigation qui change), au lieu de réduire la même page. « Shrinking » veut dire rétrécir. Une appli séparée n’est pas le sujet, et tout réduire est justement ce que Sarah rejette."
             },
             {
               "prompt_fr": "Un développeur te montre l’écran mobile : le texte est minuscule pour que tout tienne. Que dis-tu ?",
-              "choices": ["It’s responsive now, so it’s fine as it is.", "Make the cards smaller too, so everything fits.", "The text is too small. Can we keep the body size and stack the cards?"],
+              "choices": ["It’s responsive now, so it’s fine as it is on small phones.", "Can we make the cards smaller too, so everything fits on one row?", "The text is too small. Can we keep the body size and stack the cards?"],
               "answer_index": 2,
               "explanation_fr": "La bonne réponse nomme le problème et propose la solution responsive : garder une taille de texte lisible et réorganiser la mise en page. Les deux autres acceptent ou aggravent le rétrécissement, ce qui nuit à la lisibilité et à l’accessibilité."
             }
@@ -1155,20 +1155,20 @@
             },
             {
               "prompt_fr": "Pourquoi activer d’abord la fonctionnalité pour l’équipe interne ?",
-              "choices": ["Pour éviter d’écrire des tests automatisés", "Pour laisser au marketing le temps de préparer l’annonce", "Pour repérer des problèmes avant que les clients les voient"],
-              "answer_index": 2,
+              "choices": ["Pour éviter d’écrire des tests automatisés", "Pour repérer des problèmes avant que les clients les voient", "Pour laisser au marketing le temps de préparer l’annonce"],
+              "answer_index": 1,
               "explanation_fr": "Le « dogfooding » consiste à utiliser son propre produit en interne (de l’expression « eat your own dog food ») : l’équipe sert de premier filet de sécurité. Le feature flag permet de limiter l’accès à ce groupe sans redéployer. Cela ne remplace pas les tests automatisés, et l’annonce marketing n’est pas en jeu."
             },
             {
               "prompt_fr": "Complète : « We’ll release it ___ a feature flag. »",
-              "choices": ["under", "behind", "inside"],
-              "answer_index": 1,
+              "choices": ["behind", "under", "inside"],
+              "answer_index": 0,
               "explanation_fr": "La collocation consacrée est « behind a feature flag » : la fonctionnalité est cachée derrière un interrupteur qu’on active pour certains utilisateurs. « Under » et « inside » se comprendraient peut-être, mais ne sont pas employés par les équipes produit."
             },
             {
               "prompt_fr": "Comment dire « On est prêts à livrer jeudi ? » dans une équipe produit ?",
-              "choices": ["Are we ready to livrate on Thursday?", "Are we ready for shipping at Thursday?", "Are we ready to ship on Thursday?"],
-              "answer_index": 2,
+              "choices": ["Are we ready to livrate on Thursday?", "Are we ready to ship on Thursday?", "Are we ready for shipping at Thursday?"],
+              "answer_index": 1,
               "explanation_fr": "« To ship » est le verbe courant pour mettre une fonctionnalité entre les mains des utilisateurs. « Livrate » n’existe pas en anglais. Et devant un jour de la semaine, la préposition est « on » (on Thursday), jamais « at », qui s’emploie pour une heure (at 3 pm)."
             }
           ],

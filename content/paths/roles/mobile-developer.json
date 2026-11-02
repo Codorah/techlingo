@@ -35,27 +35,27 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « Quand l’utilisateur touche un favori » ?",
-              "choices": ["When the user clicks on a favorite", "When the user taps a favorite", "When the user touches on a favorite"],
+              "prompt_fr": "Comment dire « Quand l’utilisateur touche une notification » ?",
+              "choices": ["When the user clicks on a notification", "When the user taps a notification", "When the user touches on a notification"],
               "answer_index": 1,
-              "explanation_fr": "Sur un écran tactile, le verbe naturel est « to tap », sans préposition : tap a favorite. « Click on » évoque la souris : on l’entend, mais c’est moins précis sur mobile. « Touch on » est un calque : « touch » s’emploie sans « on » et sonne bizarre pour une interaction."
+              "explanation_fr": "Sur un écran tactile, le verbe naturel est « to tap », sans préposition : tap a notification. « Click on » évoque la souris : on l’entend, mais c’est moins précis sur mobile. « Touch on » est un calque : « touch » s’emploie sans « on » et sonne bizarre pour une interaction."
             },
             {
               "prompt_fr": "Que propose Lucía avec « show the details in a bottom sheet » ?",
-              "choices": ["Afficher les détails en bas de la page, après la liste", "Ouvrir un nouvel écran en plein écran", "Afficher les détails dans un panneau qui monte depuis le bas, par-dessus la liste"],
+              "choices": ["Afficher les détails en bas de la page, sous la liste des favoris", "Ouvrir un nouvel écran qui glisse depuis le bas de l’écran", "Afficher les détails dans un panneau qui monte du bas, par-dessus la liste"],
               "answer_index": 2,
-              "explanation_fr": "Un bottom sheet est un panneau qui glisse depuis le bas de l’écran, au-dessus du contenu : l’utilisateur garde sa liste derrière. Ce n’est pas du contenu placé en fin de page (ce serait un « footer »), ni un nouvel écran ajouté à la pile, ce que Lucía refuse justement."
+              "explanation_fr": "Un bottom sheet est un panneau qui glisse depuis le bas de l’écran, au-dessus du contenu : l’utilisateur garde sa liste derrière (« the user stays on the list »). Ce n’est pas du contenu placé en fin de page, ni un nouvel écran ajouté à la pile, ce que Lucía refuse justement."
             },
             {
-              "prompt_fr": "Complète : « When the user taps a favorite, do we ___ a new screen onto the navigation stack? »",
-              "choices": ["push", "put", "stack"],
+              "prompt_fr": "Complète : « The back button ___ the screen off the navigation stack. »",
+              "choices": ["pops", "pulls", "drops"],
               "answer_index": 0,
-              "explanation_fr": "Avec une pile de navigation, on dit « push a screen » pour ajouter un écran et « pop » pour le retirer : ce sont les mots des API (Navigator.push en Flutter, pushViewController sur iOS). « Put » est trop vague, et « stack » est le nom de la pile, pas l’action."
+              "explanation_fr": "Sur une pile de navigation, on « push » un écran pour l’ajouter et on le « pop » pour le retirer : « the back button pops the screen off the stack ». « Pull » et « drop » sont des verbes courants mais pas le vocabulaire de la pile."
             },
             {
               "prompt_fr": "La designer demande comment l’utilisateur ferme le panneau. Que réponds-tu ?",
-              "choices": ["The user can resign the sheet with a swipe.", "The user can swipe down to dismiss it, or tap outside.", "The user can slide it to the down."],
-              "answer_index": 1,
+              "choices": ["The user can resign the sheet with a swipe.", "The user can slide it to the down.", "The user can swipe down to dismiss it, or tap outside."],
+              "answer_index": 2,
               "explanation_fr": "« Swipe down to dismiss » est la formule consacrée : glisser vers le bas pour fermer. « Resign » veut dire démissionner, une confusion classique avec « dismiss ». Et « to the down » n’existe pas : on dit simplement « down »."
             }
           ],
@@ -83,27 +83,27 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « the layout looks off on tablets » ?",
-              "choices": ["La mise en page est désactivée sur tablette", "La mise en page est parfaite sur tablette", "La mise en page n’est pas bonne sur tablette"],
-              "answer_index": 2,
-              "explanation_fr": "« To look off » veut dire avoir un rendu bizarre, pas tout à fait juste. Rien à voir avec « off » au sens d’éteint (turned off) : la mise en page s’affiche, mais mal. Et c’est l’inverse de « parfaite » : Moussa explique justement que les cartes sont trop larges."
+              "choices": ["La mise en page ne rend pas bien sur tablette", "La mise en page est désactivée sur tablette", "La mise en page n’est pas encore disponible sur tablette"],
+              "answer_index": 0,
+              "explanation_fr": "« It looks off » veut dire « quelque chose cloche, ça ne rend pas bien » : ici, les cartes sont trop larges. Malgré « off » (comme « switched off »), rien n’est désactivé, et la mise en page existe bien sur tablette : elle est simplement mal adaptée."
             },
             {
               "prompt_fr": "Pourquoi Priya parle-t-elle de « hot restart » ?",
-              "choices": ["Le hot reload garde l’état de l’app, donc un changement d’état initial n’apparaît pas", "Le hot reload ne fonctionne pas avec Dart", "Le hot restart réinstalle l’application sur le téléphone"],
-              "answer_index": 0,
-              "explanation_fr": "Le hot reload injecte le nouveau code en gardant l’état en cours : c’est rapide, mais une valeur initiale modifiée n’est pas relue. Le hot restart relance l’app et remet l’état à zéro, sans la réinstaller. Et le hot reload est justement une force de Flutter avec Dart."
+              "choices": ["Le hot reload ne recharge que le code Dart, pas les nouveaux widgets ajoutés", "Le hot reload garde l’état de l’app, donc un changement d’état initial n’apparaît pas", "Le hot restart est plus rapide que le hot reload pour voir un changement visuel"],
+              "answer_index": 1,
+              "explanation_fr": "Le hot reload injecte le nouveau code en gardant l’état en cours : rapide, mais une valeur initiale modifiée n’est pas relue. Le hot restart relance l’app et remet l’état à zéro. Le hot reload prend bien en compte les nouveaux widgets, et il est plus rapide que le hot restart, pas l’inverse."
             },
             {
               "prompt_fr": "Complète : « We need an ___ layout there: two columns on wide screens. »",
-              "choices": ["adapted", "adaptive", "adaptable"],
-              "answer_index": 1,
+              "choices": ["adaptive", "adapted", "adaptable"],
+              "answer_index": 0,
               "explanation_fr": "« Adaptive layout » est le terme consacré pour une mise en page qui change selon la taille de l’écran (on dit aussi « responsive layout »). « Adapted » veut dire déjà adapté à un cas précis, et « adaptable » se comprend mais décrit plutôt une personne ou un plan capable de s’adapter : ce n’est pas le terme technique."
             },
             {
               "prompt_fr": "Moussa veut réutiliser la carte de commande sur l’écran d’accueil. Que lui conseilles-tu ?",
-              "choices": ["Copy the code of the card in the home screen.", "Make the card more widget.", "Extract the card into its own widget and reuse it."],
-              "answer_index": 2,
-              "explanation_fr": "« Extract into its own widget » est la tournure naturelle pour isoler un morceau d’interface réutilisable. Copier le code crée des doublons à maintenir (et il faudrait dire « copy into »), et « more widget » n’a pas de sens : widget est un nom, pas un adjectif."
+              "choices": ["Copy the card code into the home screen to stay flexible.", "Extract the card into its own widget and reuse it.", "Turn the card into a helper function that returns widgets."],
+              "answer_index": 1,
+              "explanation_fr": "Priya l’a dit : « make it its own widget class ». Un widget dédié se réutilise et se teste facilement. Copier le code crée deux versions à maintenir, et une fonction qui renvoie des widgets est justement l’option que Priya écarte."
             }
           ],
           "production": {
@@ -128,10 +128,10 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « La vue ne fait qu’afficher les données » ?",
-              "choices": ["The view does only display the data.", "The view only displays the data.", "The view displays the data only and nothing."],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, « ne… que » se traduit par « only », placé avant le verbe : the view only displays. « Does only display » emploie le « do » d’insistance à tort, et « only and nothing » empile deux idées : ça ne se dit pas."
+              "prompt_fr": "Comment dire « Le view model ne fait que préparer les données » ?",
+              "choices": ["The view model does only prepare the data.", "The view model prepares just only the data.", "The view model only prepares the data."],
+              "answer_index": 2,
+              "explanation_fr": "En anglais, « ne… que » se traduit par « only », placé avant le verbe : the view model only prepares. « Does only prepare » emploie à tort le « do » d’insistance, et « just only » empile deux mots qui veulent dire la même chose."
             },
             {
               "prompt_fr": "Que veut dire Sarah avec « the view model survives » ?",
@@ -141,15 +141,15 @@
             },
             {
               "prompt_fr": "Complète : « On Android, rotating the phone ___ the screen. »",
-              "choices": ["recreates", "reverses", "repeats"],
-              "answer_index": 0,
+              "choices": ["reverses", "recreates", "repeats"],
+              "answer_index": 1,
               "explanation_fr": "Sur Android, un changement de configuration comme la rotation détruit l’écran (l’Activity) puis le recrée : « recreates ». « Reverses » voudrait dire inverser, et « repeats » répéter : aucun des deux ne décrit ce qui arrive dans le cycle de vie."
             },
             {
               "prompt_fr": "Un collègue te demande pourquoi l’équipe utilise MVVM. Quelle réponse est la plus claire ?",
-              "choices": ["Because MVVM is more modern than the others.", "It keeps the logic out of the view, so we can test it without the UI.", "It makes the app run faster on all phones."],
-              "answer_index": 1,
-              "explanation_fr": "Le vrai intérêt de MVVM est de séparer la logique de l’interface : le view model se teste sans lancer d’écran. « More modern » n’est pas un argument technique, et MVVM n’accélère pas l’app : c’est une question d’organisation du code, pas de performance."
+              "choices": ["It keeps the logic out of the view, so we can test it without the UI.", "It’s the most modern pattern, so new developers already know it.", "It makes the app run faster, because the view does less work."],
+              "answer_index": 0,
+              "explanation_fr": "Le vrai intérêt de MVVM est de séparer la logique de l’interface : le view model se teste sans lancer d’écran. « Most modern » n’est pas un argument technique, et MVVM n’accélère pas l’app : c’est une question d’organisation du code, pas de performance."
             }
           ],
           "production": {
@@ -176,27 +176,27 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire Tomasz avec « I hardcoded the color » ?",
-              "choices": ["J’ai écrit la couleur directement dans le code, au lieu d’utiliser le thème", "J’ai choisi une couleur trop difficile à lire", "J’ai codé la couleur avec beaucoup d’efforts"],
-              "answer_index": 0,
+              "choices": ["J’ai choisi une couleur trop sombre, difficile à lire en mode sombre", "J’ai écrit la couleur directement dans le code, au lieu d’utiliser le thème", "J’ai eu du mal à coder la couleur, elle m’a demandé beaucoup d’efforts"],
+              "answer_index": 1,
               "explanation_fr": "« To hardcode » veut dire écrire une valeur en dur dans le code : elle ne change pas avec le thème, d’où le problème en mode sombre. « Hard » ne veut pas dire « difficile » ici, et le manque de lisibilité est la conséquence, pas le sens du mot."
             },
             {
               "prompt_fr": "Comment reconnaître une petite erreur de façon naturelle entre collègues ?",
-              "choices": ["It’s my fault of me.", "I’m guilty of it.", "My bad, I’ll fix it."],
+              "choices": ["Excuse me, I’ll fix it.", "It’s my fault, I repair it.", "My bad, I’ll fix it."],
               "answer_index": 2,
-              "explanation_fr": "« My bad » est l’expression courante et détendue pour reconnaître une petite erreur, souvent suivie de « I’ll fix it ». « My fault of me » double le possessif, et « I’m guilty » sonne comme au tribunal : beaucoup trop dramatique pour une couleur oubliée."
+              "explanation_fr": "« My bad » est la façon courante et détendue de reconnaître une petite erreur entre collègues. « Excuse me » sert à interrompre ou à demander pardon pour passer, pas à s’excuser d’une erreur (on dirait « sorry »). « I repair it » est au mauvais temps (on annonce une action : « I’ll fix it ») et « repair » s’emploie pour un objet physique."
             },
             {
               "prompt_fr": "Complète : « Could we add light haptic ___ when the user saves an article? »",
-              "choices": ["return", "feedback", "vibe"],
-              "answer_index": 1,
+              "choices": ["feedback", "return", "vibe"],
+              "answer_index": 0,
               "explanation_fr": "Le terme est « haptic feedback » (retour haptique) : une courte vibration qui confirme une action. « Return » est un calque de « retour » qui ne s’emploie pas ici, et « vibe » est de l’argot qui veut dire ambiance, pas vibration."
             },
             {
               "prompt_fr": "La testeuse dit que les titres sont illisibles en mode sombre. Quelle réponse propose une vraie solution ?",
-              "choices": ["Users should switch to light mode.", "I’ll make the titles bigger.", "I’ll use the theme colors, so the text adapts to dark mode."],
+              "choices": ["I’ll make the titles bigger and bold, so they’re easier to read.", "I’ll ask users to switch to light mode if the text is hard to read.", "I’ll use the theme colors, so the text adapts to dark mode."],
               "answer_index": 2,
-              "explanation_fr": "Utiliser les couleurs du thème règle la cause : le texte change automatiquement avec le mode sombre. Demander aux utilisateurs de changer de mode ignore le problème, et agrandir les titres ne corrige pas un contraste trop faible."
+              "explanation_fr": "Utiliser les couleurs du thème règle la cause : le texte change automatiquement avec le mode sombre. Agrandir les titres ne corrige pas un contraste trop faible, et demander aux utilisateurs de changer de mode ignore le problème."
             }
           ],
           "production": {
@@ -241,28 +241,28 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « On l’enregistre en local » ?",
-              "choices": ["We record it in local.", "We save it at local.", "We save it locally."],
-              "answer_index": 2,
-              "explanation_fr": "« Locally » est l’adverbe : save it locally, store it locally. « In local » et « at local » sont des calques de « en local » qui n’existent pas. Attention aussi à « record », qui veut surtout dire enregistrer du son ou de la vidéo."
+              "prompt_fr": "Comment dire « Les photos sont mises en cache en local » ?",
+              "choices": ["The photos are cached locally.", "The photos are cached in local.", "The photos are put in cache at local."],
+              "answer_index": 0,
+              "explanation_fr": "« Locally » est l’adverbe : cached locally, saved locally. « In local » et « at local » sont des calques de « en local » qui n’existent pas en anglais. Le verbe « to cache » suffit : pas besoin de « put in cache »."
             },
             {
               "prompt_fr": "Que veut dire Mei avec « we queue the change » ?",
-              "choices": ["On met la modification en file d’attente pour l’envoyer plus tard", "On annule la modification", "On demande à l’utilisateur de réessayer"],
-              "answer_index": 0,
-              "explanation_fr": "« To queue » veut dire mettre en file d’attente : la modification attend son tour et partira quand le réseau reviendra. Rien n’est annulé, et l’utilisateur n’a rien à refaire : c’est tout l’intérêt de l’offline-first."
+              "choices": ["On envoie la modification tout de suite, puis on vérifie la réponse", "On met la modification en file d’attente pour l’envoyer plus tard", "On garde la modification et on demande à l’utilisateur de réessayer"],
+              "answer_index": 1,
+              "explanation_fr": "« To queue » veut dire mettre en file d’attente : la modification attend son tour et partira quand le réseau reviendra. Il n’y a pas de réseau, donc rien ne part tout de suite, et l’utilisateur n’a rien à refaire : c’est tout l’intérêt de l’offline-first."
             },
             {
               "prompt_fr": "Complète : « It ___ when the connection comes back. »",
-              "choices": ["synchronizes itself", "syncs", "is syncing back"],
-              "answer_index": 1,
+              "choices": ["syncs", "synchronizes itself", "is syncing back"],
+              "answer_index": 0,
               "explanation_fr": "« To sync » s’emploie sans pronom réfléchi : the note syncs. « Synchronizes itself » calque le français « se synchroniser » ; l’anglais n’a pas besoin de « itself ». « Is syncing back » utilise un présent continu et une particule qui n’ont rien à faire ici."
             },
             {
               "prompt_fr": "Ton PM demande si l’app marchera dans l’avion. Quelle réponse est juste et claire ?",
-              "choices": ["Yes, users can read and edit their notes offline, and changes sync when they’re back online.", "Yes, the app works without internet because it doesn’t use the server.", "No, a mobile app always needs a connection."],
-              "answer_index": 0,
-              "explanation_fr": "La première réponse décrit précisément l’offline-first : lecture et écriture hors ligne, puis synchronisation au retour du réseau (« back online »). L’app utilise toujours le serveur, simplement plus tard, et dire qu’une app a toujours besoin d’une connexion est faux."
+              "choices": ["Yes, the app works without internet, because it no longer uses the server at all.", "Yes, users can read and edit their notes offline, and changes sync when they’re back online.", "Partly: users can read their notes offline, but they can’t add or edit any of them."],
+              "answer_index": 1,
+              "explanation_fr": "L’offline-first permet de lire et d’écrire hors ligne, puis de synchroniser au retour du réseau (« back online »). L’app utilise toujours le serveur, simplement plus tard, et l’écriture hors ligne est justement prévue : Mei met les nouvelles notes en file d’attente."
             }
           ],
           "production": {
@@ -288,27 +288,27 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « battery drain » ?",
-              "choices": ["Une batterie en charge", "Une app qui consomme trop de batterie", "Un téléphone qui chauffe"],
-              "answer_index": 1,
-              "explanation_fr": "« To drain » veut dire vider (comme on vide un évier) : le battery drain, c’est une app qui vide la batterie trop vite. Le téléphone peut chauffer en même temps, mais ce n’est pas le sens du mot, et une batterie en charge se dit « charging »."
+              "choices": ["Une batterie qui se recharge trop lentement", "Un téléphone qui chauffe pendant la charge", "Une app qui vide la batterie trop vite"],
+              "answer_index": 2,
+              "explanation_fr": "« To drain » veut dire vider (comme on vide un évier) : le battery drain, c’est une app qui vide la batterie trop vite. Il ne s’agit pas de recharge (« charging »), et un téléphone peut chauffer en même temps, mais ce n’est pas le sens du mot."
             },
             {
               "prompt_fr": "Que veut dire Ivan avec « when the app comes back to the foreground » ?",
-              "choices": ["Quand l’app est réinstallée", "Quand l’app passe en arrière-plan", "Quand l’utilisateur revient sur l’app et qu’elle s’affiche à nouveau"],
+              "choices": ["Quand l’app passe en arrière-plan pour économiser la batterie", "Quand l’app se relance toute seule après une mise à jour", "Quand l’utilisateur revient sur l’app et qu’elle s’affiche à nouveau"],
               "answer_index": 2,
-              "explanation_fr": "Le « foreground » est le premier plan : l’app visible à l’écran. « Comes back to the foreground » veut dire que l’utilisateur la rouvre. C’est le contraire de « background » (arrière-plan), et rien n’est réinstallé."
+              "explanation_fr": "Le « foreground » est le premier plan : l’app visible à l’écran. « Comes back to the foreground » veut dire que l’utilisateur la rouvre. C’est le contraire de passer en « background » (arrière-plan), et il n’est pas question de mise à jour."
             },
             {
               "prompt_fr": "Complète : « Remember that the system decides when background tasks ___. »",
-              "choices": ["run", "turn", "roll"],
-              "answer_index": 0,
+              "choices": ["turn", "run", "roll"],
+              "answer_index": 1,
               "explanation_fr": "Une tâche « runs » : elle s’exécute, elle tourne. « Turn » est un calque de « tourner » au sens de pivoter, et « roll » veut dire rouler : aucun des deux ne s’emploie pour du code qui s’exécute."
             },
             {
               "prompt_fr": "Ton manager propose de synchroniser toutes les minutes, même en 4G. Quelle réponse est la plus professionnelle ?",
-              "choices": ["No way, it’s a terrible idea.", "That could cause battery drain. Could we sync on Wi-Fi and when the app resumes instead?", "OK, the users will charge their phone."],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième réponse nomme le risque (battery drain) et propose une alternative concrète avec « Could we… instead? », une façon polie de dire non. « No way » est brutal face à un manager, et accepter sans réserve ignore un vrai problème pour les utilisateurs."
+              "choices": ["That could cause battery drain. Could we sync on Wi-Fi and when the app resumes instead?", "No way, that’s a terrible idea for the battery. Let’s keep the sync as it is.", "Sure, I’ll do it. Users can always turn off background sync in their settings."],
+              "answer_index": 0,
+              "explanation_fr": "La bonne réponse nomme le risque (battery drain) et propose une alternative concrète avec « Could we… instead? », une façon polie de dire non. « No way » et « terrible idea » sont brutaux face à un manager, et accepter en renvoyant le problème aux utilisateurs ignore les mauvaises notes de l’an dernier."
             }
           ],
           "production": {
@@ -333,28 +333,28 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « Ce stockage n’est pas chiffré » ?",
-              "choices": ["That storage isn’t encrypted.", "That storage isn’t ciphered.", "That storage isn’t crypted."],
-              "answer_index": 0,
-              "explanation_fr": "Chiffrer se dit « to encrypt », et chiffré « encrypted ». « Crypted » n’existe pas (calque de « crypté »), et « ciphered » est rare et vieilli : en équipe, tout le monde dit encrypted."
+              "prompt_fr": "Comment dire « Le jeton est stocké en clair » ?",
+              "choices": ["The token is stored in clear.", "The token is stored in plain text.", "The token is stored uncrypted."],
+              "answer_index": 1,
+              "explanation_fr": "En clair (non chiffré) se dit « in plain text ». « In clear » est un calque : l’anglais dit parfois « in the clear », mais plutôt pour une donnée qui circule sur le réseau. « Uncrypted » n’existe pas : le contraire de « encrypted » est « unencrypted »."
             },
             {
               "prompt_fr": "Pourquoi Moussa demande-t-il une « fallback » ?",
-              "choices": ["Pour remplacer définitivement la biométrie", "Pour accélérer la connexion", "Pour que les utilisateurs sans biométrie puissent quand même se connecter"],
+              "choices": ["Pour remplacer peu à peu la biométrie par un code plus sûr", "Pour accélérer la connexion quand la biométrie est trop lente", "Pour que les utilisateurs sans biométrie puissent quand même se connecter"],
               "answer_index": 2,
               "explanation_fr": "Une « fallback » est une solution de repli quand la méthode principale ne marche pas : capteur absent, biométrie désactivée, doigt mouillé. Elle ne remplace pas la biométrie, elle la complète, et elle n’a rien à voir avec la vitesse."
             },
             {
               "prompt_fr": "Complète : « Tokens should go in ___ storage, like the Keychain on iOS. »",
-              "choices": ["safety", "secure", "protected by"],
-              "answer_index": 1,
+              "choices": ["secure", "safety", "protected by"],
+              "answer_index": 0,
               "explanation_fr": "« Secure storage » est le terme consacré pour le Keychain (iOS) ou un stockage chiffré avec le Keystore (Android). « Safety » est un nom qui parle surtout de sécurité physique (safety shoes, chaussures de sécurité), et « protected by storage » ne veut rien dire."
             },
             {
               "prompt_fr": "En revue de code, tu vois un mot de passe enregistré en clair. Quel commentaire écris-tu ?",
-              "choices": ["This is very bad, please learn security.", "Maybe it’s OK, it’s only on the phone.", "Could we move this to secure storage? Plain text isn’t safe if the device is compromised."],
+              "choices": ["This is a critical security issue, please read the security guidelines first.", "Looks fine to me, since the password never leaves the user’s phone.", "Could we move this to secure storage? Plain text isn’t safe if the device is compromised."],
               "answer_index": 2,
-              "explanation_fr": "Le bon commentaire propose une solution (« Could we move this… ») et donne la raison : en clair (« plain text »), la donnée est lisible si l’appareil est compromis. Le premier commentaire est blessant, et le deuxième laisse passer une vraie faille."
+              "explanation_fr": "Le bon commentaire propose une solution (« Could we move this… ») et donne la raison : en clair (« plain text »), la donnée est lisible si l’appareil est compromis. Renvoyer le collègue aux règles sans proposer de solution est sec, et « never leaves the phone » est exactement l’erreur de Priya."
             }
           ],
           "production": {
@@ -400,15 +400,15 @@
           "questions": [
             {
               "prompt_fr": "Que demande Kenji à Sarah ?",
-              "choices": ["Un SDK pour envoyer les notifications", "Un endpoint pour enregistrer le jeton de chaque appareil", "Une notification de test"],
-              "answer_index": 1,
-              "explanation_fr": "Kenji a besoin d’« an endpoint to save the push token » : une route d’API où l’app envoie le jeton, pour que le backend sache à quel appareil écrire. Le SDK, c’est l’app qui l’utilise côté mobile, et il ne parle pas de test."
+              "choices": ["Un endpoint pour enregistrer le jeton de chaque appareil", "Un SDK côté backend pour envoyer les notifications", "Une notification de test envoyée après la connexion"],
+              "answer_index": 0,
+              "explanation_fr": "Kenji a besoin d’« an endpoint to save the push token » : une route d’API où l’app envoie le jeton, pour que le backend sache à quel appareil écrire. Le SDK Firebase, c’est l’app qui l’utilise côté mobile, et il ne parle pas de test."
             },
             {
-              "prompt_fr": "Comment dire « On le renvoie chaque fois qu’il est renouvelé » ?",
-              "choices": ["We resend it each time it’s renewed of.", "We send it back at each time it refreshes.", "We send it again every time it’s refreshed."],
-              "answer_index": 2,
-              "explanation_fr": "« Send it again » (le renvoyer) et « every time » (chaque fois, sans « at ») sont les tournures naturelles ; pour un jeton, on dit « refreshed ». « Send it back » veut dire le retourner à l’expéditeur, et « renewed of » ajoute une préposition qui n’a rien à faire là."
+              "prompt_fr": "Comment dire « On l’envoie au backend chaque fois que l’utilisateur se connecte » ?",
+              "choices": ["We send it to the backend at every time the user logs in.", "We send it to the backend every time the user logs in.", "We send it to the backend each time the user connects himself."],
+              "answer_index": 1,
+              "explanation_fr": "« Every time » s’emploie sans préposition (pas « at every time »), et se connecter à un compte se dit « to log in » (ou « sign in »). « Connect himself » est un calque de la forme pronominale française, qui n’existe pas en anglais."
             },
             {
               "prompt_fr": "Complète : « Don’t ___ on it for anything urgent. »",
@@ -418,9 +418,9 @@
             },
             {
               "prompt_fr": "Sarah demande si une notification push arrive toujours immédiatement. Que réponds-tu ?",
-              "choices": ["Yes, push notifications are always instant.", "Usually, but delivery isn’t guaranteed, so the app should also sync when it opens.", "No, they arrive only when the app is open."],
+              "choices": ["Yes, push notifications are always delivered instantly, even offline.", "Usually, but delivery isn’t guaranteed, so the app should also sync when it opens.", "No, they only arrive when the app is open in the foreground."],
               "answer_index": 1,
-              "explanation_fr": "La livraison d’une notification est rapide en général, mais jamais garantie (téléphone éteint, mode économie d’énergie) : d’où l’idée de synchroniser aussi à l’ouverture. « Always instant » est faux, et une push arrive justement quand l’app est fermée."
+              "explanation_fr": "La livraison d’une notification est rapide en général, mais jamais garantie (téléphone éteint, mode économie d’énergie) : d’où l’idée de synchroniser aussi à l’ouverture. « Always instantly, even offline » est faux, et une push arrive justement quand l’app est fermée."
             }
           ],
           "production": {
@@ -446,27 +446,27 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « if the user denies it twice » ?",
-              "choices": ["Si l’utilisateur refuse deux fois", "Si l’utilisateur l’ignore deux fois", "Si l’utilisateur la supprime deux fois"],
-              "answer_index": 0,
+              "choices": ["Si l’utilisateur l’ignore deux fois", "Si l’utilisateur la supprime deux fois", "Si l’utilisateur refuse deux fois"],
+              "answer_index": 2,
               "explanation_fr": "« To deny a permission » veut dire la refuser ; son contraire est « to grant » (accorder). Ignorer se dirait « dismiss » ou « ignore », et « deny » n’a rien à voir avec supprimer (« delete »)."
             },
             {
               "prompt_fr": "Comment dire « Demandons-la après leur première commande » ?",
-              "choices": ["Let’s demand it after their first order.", "Let’s ask for it after their first order.", "Let’s ask it after their first command."],
-              "answer_index": 1,
+              "choices": ["Let’s demand it after their first order.", "Let’s ask it after their first command.", "Let’s ask for it after their first order."],
+              "answer_index": 2,
               "explanation_fr": "« To ask for something » : demander quelque chose, avec « for ». « Demand » est un faux ami qui veut dire exiger, beaucoup trop fort. Et une commande client est « an order » : « command » désigne un ordre donné ou une commande de terminal."
             },
             {
               "prompt_fr": "Complète : « Since API ___ 33, notifications are a runtime permission too. »",
-              "choices": ["version", "number", "level"],
-              "answer_index": 2,
+              "choices": ["version", "level", "number"],
+              "answer_index": 1,
               "explanation_fr": "Sur Android, chaque version de la plateforme a un « API level » : 33 correspond à Android 13. On dit « Android 13 » ou « API level 33 », mais pas « API version 33 », et « API number » n’est le terme ni de la doc ni de Gradle (minSdk, targetSdk)."
             },
             {
               "prompt_fr": "Ton PM veut demander toutes les autorisations (caméra, position, notifications) au premier lancement. Que réponds-tu ?",
-              "choices": ["I’d rather ask for each permission when the user needs the feature, so they understand why.", "OK, users always say yes on the first screen.", "We don’t need permissions on mobile."],
+              "choices": ["I’d rather ask for each permission when the user needs the feature, so they understand why.", "OK, and if they say no, we can show the system prompt again on the next launch.", "OK, but let’s ask for all of them at once on a single screen to save time."],
               "answer_index": 0,
-              "explanation_fr": "Demander chaque autorisation au moment où la fonctionnalité sert (« when the user needs the feature ») est la pratique recommandée par Apple et Google : l’utilisateur comprend pourquoi. Au premier lancement, beaucoup refusent, et les autorisations sont bien obligatoires pour la caméra ou la position."
+              "explanation_fr": "Demander chaque autorisation au moment où la fonctionnalité sert est la pratique recommandée par Apple et Google : l’utilisateur comprend pourquoi. Après un refus, le système ne réaffiche pas la demande à volonté (une fois sur iOS, deux fois sur Android), et tout demander d’un coup produit surtout des refus."
             }
           ],
           "production": {
@@ -482,7 +482,7 @@
           "title_fr": "Ouvrir le bon écran depuis une notification ou un lien",
           "term_ids": ["deep-link", "universal-link", "push-notification", "navigation-stack"],
           "dialogue": [
-            { "speaker": "Tomasz", "text_en": "Lucía, when I tap the shipping notification, the app opens on the home screen, not on the order.", "text_fr": "Lucía, quand je touche la notification d’expédition, l’app s’ouvre sur l’accueil, pas sur la commande." },
+            { "speaker": "Tomasz", "text_en": "Lucía, when I tap the shipping push notification, the app opens on the home screen, not on the order.", "text_fr": "Lucía, quand je touche la notification d’expédition, l’app s’ouvre sur l’accueil, pas sur la commande." },
             { "speaker": "Lucía", "text_en": "Was the app closed? The deep link works when it’s running in the background.", "text_fr": "L’app était fermée ? Le lien profond marche quand elle tourne en arrière-plan." },
             { "speaker": "Tomasz", "text_en": "Yes, completely closed. And then the back button quits the app.", "text_fr": "Oui, complètement fermée. Et ensuite, le bouton retour quitte l’app." },
             { "speaker": "Lucía", "text_en": "I see. On a cold start, we must build the navigation stack ourselves: home first, then the order screen on top.", "text_fr": "Je vois. Au démarrage à froid, on doit construire la pile de navigation nous-mêmes : d’abord l’accueil, puis l’écran de la commande par-dessus." },
@@ -492,27 +492,27 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire « on a cold start » ?",
-              "choices": ["Quand le téléphone a froid", "Quand l’app revient de l’arrière-plan", "Quand l’app démarre alors qu’elle était complètement fermée"],
-              "answer_index": 2,
-              "explanation_fr": "Un « cold start » (démarrage à froid) se produit quand l’app n’était pas en mémoire : tout se lance de zéro. Quand elle revient simplement de l’arrière-plan, on parle plutôt de « hot start » ou de « resume ». Rien à voir avec la température du téléphone !"
+              "choices": ["Quand l’app revient de l’arrière-plan après une longue pause", "Quand l’app démarre alors qu’elle était complètement fermée", "Quand l’app démarre pour la toute première fois après l’installation"],
+              "answer_index": 1,
+              "explanation_fr": "Un « cold start » (démarrage à froid) se produit quand l’app n’était pas en mémoire : tout se lance de zéro, ce qui arrive bien plus souvent qu’au premier lancement. Quand elle revient de l’arrière-plan, même après longtemps, on parle de « warm start » ou de « resume »."
             },
             {
               "prompt_fr": "Comment dire « Les liens ouvrent Safari au lieu de l’app » ?",
-              "choices": ["The links open Safari instead of the app.", "The links open Safari instead the app.", "The links open Safari at the place of the app."],
-              "answer_index": 0,
+              "choices": ["The links open Safari instead the app.", "The links open Safari at the place of the app.", "The links open Safari instead of the app."],
+              "answer_index": 2,
               "explanation_fr": "« Instead of » (au lieu de) demande toujours « of » devant un nom. « Instead the app » oublie ce « of », et « at the place of » est un calque de « à la place de » qui ne se dit pas."
             },
             {
               "prompt_fr": "Complète : « We must build the navigation ___ ourselves: home first, then the order screen on top. »",
-              "choices": ["pile", "stack", "heap"],
-              "answer_index": 1,
+              "choices": ["stack", "pile", "heap"],
+              "answer_index": 0,
               "explanation_fr": "La pile de navigation se dit « navigation stack » : les écrans s’empilent et le retour dépile. « Pile » existe en anglais (un tas), mais ce n’est pas le terme technique, et « heap » désigne une zone de mémoire, une tout autre notion."
             },
             {
               "prompt_fr": "Le testeur signale que le bouton retour quitte l’app après l’ouverture d’une notification. Comment résumes-tu le bug dans le ticket ?",
-              "choices": ["Back button is broken.", "The notification is bad on the app.", "On a cold start from a notification, the back button quits the app instead of going home."],
+              "choices": ["The back button is broken after opening a notification, please fix it as soon as possible.", "Notifications open the app on the wrong screen when the app is running in the background.", "On a cold start from a notification, the back button quits the app instead of going home."],
               "answer_index": 2,
-              "explanation_fr": "Un bon titre de bug dit quand (« on a cold start from a notification »), quoi (« the back button quits the app ») et ce qui est attendu (« instead of going home »). « Is broken » est trop vague, et la deuxième phrase ne veut rien dire en anglais."
+              "explanation_fr": "Un bon titre de bug dit quand (« on a cold start from a notification »), quoi (« the back button quits the app ») et ce qui est attendu (« instead of going home »). « Is broken » est trop vague, et le bug se produit quand l’app était fermée, pas en arrière-plan, où le lien profond fonctionne."
             }
           ],
           "production": {
@@ -558,27 +558,27 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire « Crashes spiked after yesterday’s release » ?",
-              "choices": ["Les crashs ont disparu après la version d’hier", "Les crashs ont fortement augmenté après la version d’hier", "Les crashs ont été corrigés dans la version d’hier"],
-              "answer_index": 1,
+              "choices": ["Les crashs ont fortement augmenté après la version d’hier", "Les crashs ont disparu après la version d’hier", "Les crashs ont été corrigés dans la version d’hier"],
+              "answer_index": 0,
               "explanation_fr": "« To spike » veut dire faire un pic, augmenter brutalement, comme une pointe sur un graphique. C’est le contraire d’une disparition, et rien ne dit que les crashs ont été corrigés : c’est justement la nouvelle version qui pose problème."
             },
             {
               "prompt_fr": "Que mesure le « crash-free rate » ?",
-              "choices": ["La part des sessions ou des utilisateurs qui n’ont subi aucun crash", "Le nombre total de crashs par jour", "Le temps passé à corriger les crashs"],
-              "answer_index": 0,
-              "explanation_fr": "« Crash-free » veut dire sans crash (comme « sugar-free », sans sucre) : c’est un pourcentage de sessions ou d’utilisateurs épargnés, et plus il est haut, mieux c’est. Le nombre de crashs par jour est un autre indicateur, et le temps de correction n’a rien à voir."
+              "choices": ["Le nombre de crashs par jour, rapporté au nombre d’utilisateurs", "La part des sessions ou des utilisateurs qui n’ont subi aucun crash", "La part des crashs déjà corrigés dans la dernière version"],
+              "answer_index": 1,
+              "explanation_fr": "« Crash-free » veut dire sans crash (comme « sugar-free », sans sucre) : c’est un pourcentage de sessions ou d’utilisateurs épargnés, et plus il est haut, mieux c’est. Un nombre de crashs par jour est l’indicateur inverse, et la part de crashs corrigés n’a rien à voir."
             },
             {
               "prompt_fr": "Complète : « It only ___ on older Android devices. »",
-              "choices": ["arrives", "passes", "happens"],
-              "answer_index": 2,
+              "choices": ["happens", "arrives", "passes"],
+              "answer_index": 0,
               "explanation_fr": "Pour un bug, on dit « it happens » (ça arrive, ça se produit). « Arrives » est un faux ami : en anglais, il veut dire arriver à un endroit, pas se produire. « Passes » voudrait dire passer ou réussir un test."
             },
             {
               "prompt_fr": "Au stand-up, tu dois résumer la situation en une phrase. Laquelle choisis-tu ?",
-              "choices": ["There is a problem with the crashes, I look.", "A checkout crash is lowering our crash-free rate; it only affects older Android devices, and I’m investigating.", "The app is crashing everybody since yesterday."],
+              "choices": ["There’s a crash problem on checkout since yesterday, and I look at it today.", "A checkout crash is lowering our crash-free rate on older Android devices; I’m investigating.", "The app is crashing for everybody since yesterday, so I’m investigating it."],
               "answer_index": 1,
-              "explanation_fr": "La deuxième phrase dit quoi (un crash au paiement), l’impact (le taux de sessions sans crash baisse), qui est touché et ce que tu fais (« I’m investigating », au présent continu). « I look » est au mauvais temps, et « crashing everybody » est à la fois incorrect et exagéré."
+              "explanation_fr": "La bonne phrase dit quoi (un crash au paiement), l’impact (le taux de sessions sans crash baisse), qui est touché et ce que tu fais (« I’m investigating », au présent continu). « I look at it » est au mauvais temps, et « crashing for everybody » est faux : seuls les anciens appareils Android sont touchés."
             }
           ],
           "production": {
@@ -609,10 +609,10 @@
               "explanation_fr": "En programmation, « to hold a reference » veut dire garder un lien vers un objet. Tant que ce lien existe, le ramasse-miettes considère l’objet comme utilisé et ne le libère pas. « Reference » n’a ici rien à voir avec une citation, et rien n’est mis en pause."
             },
             {
-              "prompt_fr": "Comment dire « Ça ressemble à une fuite de mémoire » ?",
-              "choices": ["Sounds like a memory leak.", "It resembles to a memory leak.", "It seems a memory flight."],
-              "answer_index": 0,
-              "explanation_fr": "« Sounds like… » (ou « Looks like… ») est la façon naturelle de proposer un diagnostic à l’oral. « Resemble » s’emploie sans « to » et sert surtout pour une ressemblance physique ; « flight » veut dire vol en avion : la fuite, c’est « leak »."
+              "prompt_fr": "Comment proposer à l’oral le diagnostic « On dirait un problème de cache d’images » ?",
+              "choices": ["It resembles to an image caching issue.", "It looks an image caching issue.", "Sounds like an image caching issue."],
+              "answer_index": 2,
+              "explanation_fr": "« Sounds like… » (ou « Looks like… ») est la façon naturelle de proposer un diagnostic à l’oral. « Resemble » s’emploie sans « to » et sert surtout pour une ressemblance physique, et « It looks » sans « like » ne peut pas être suivi d’un nom."
             },
             {
               "prompt_fr": "Complète : « Garbage collection can’t ___ it. »",
@@ -622,9 +622,9 @@
             },
             {
               "prompt_fr": "En revue de code, tu vois un view model qui garde une référence vers l’activité. Quel commentaire écris-tu ?",
-              "choices": ["Please remove the activity, it’s useless.", "The view model is too big.", "This could leak the activity after rotation. Could we expose an event instead?"],
-              "answer_index": 2,
-              "explanation_fr": "Le bon commentaire nomme le risque précis (« leak the activity after rotation ») et propose une alternative polie. Dire que l’activité est inutile est faux (c’est la référence qui pose problème), et « too big » passe à côté du vrai sujet."
+              "choices": ["This could leak the activity after rotation. Could we expose an event instead?", "Could we make the activity reference static, so it’s shared between screens?", "This is fine: the garbage collector frees the activity when memory gets low."],
+              "answer_index": 0,
+              "explanation_fr": "Le bon commentaire nomme le risque précis (« leak the activity ») et propose l’alternative de Moussa : exposer un événement. Une référence statique aggrave la fuite, et le ramasse-miettes ne peut justement pas libérer un objet encore référencé, même quand la mémoire manque."
             }
           ],
           "production": {
@@ -650,27 +650,27 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « the frame rate drops to around 30 frames per second » ?",
-              "choices": ["L’app affiche environ deux fois moins d’images par seconde que les 60 attendues", "L’app plante 30 fois par seconde", "L’écran s’éteint au bout de 30 secondes"],
-              "answer_index": 0,
-              "explanation_fr": "Le « frame rate » est la fréquence d’images : à 60 images par seconde, le défilement est fluide ; à 30, l’œil voit des saccades. « Drops to » veut dire tomber à. Il ne s’agit ni de plantages ni d’un écran qui s’éteint."
+              "choices": ["L’app perd environ 30 images par seconde par rapport aux 90 attendues", "L’app affiche environ deux fois moins d’images par seconde que les 60 attendues", "L’app charge environ 30 photos de produits par seconde pendant le défilement"],
+              "answer_index": 1,
+              "explanation_fr": "Le « frame rate » est la fréquence d’images : à 60 images par seconde, le défilement est fluide ; à 30, l’œil voit des saccades. Attention : « drops to 30 » veut dire tomber à 30, alors que « drops by 30 » voudrait dire perdre 30. Et une « frame » est une image affichée à l’écran, pas une photo de produit."
             },
             {
               "prompt_fr": "Comment dire « La liste saccade quand on fait défiler vite » ?",
-              "choices": ["The list jumps when we scroll quick.", "The list stutters when you scroll fast.", "The list is jerking when one scrolls rapid."],
-              "answer_index": 1,
+              "choices": ["The list jumps when we scroll quick.", "The list is jerking when one scrolls rapid.", "The list stutters when you scroll fast."],
+              "answer_index": 2,
               "explanation_fr": "« To stutter » (bégayer, saccader) est le verbe naturel pour un défilement qui accroche, et l’anglais utilise « you » pour le « on » général. « Quick » et « rapid » sont des adjectifs : il faut l’adverbe « fast » (ou « quickly »)."
             },
             {
               "prompt_fr": "Complète : « We decode the images on the main ___, so each frame takes too long. »",
-              "choices": ["wire", "line", "thread"],
-              "answer_index": 2,
+              "choices": ["thread", "wire", "line"],
+              "answer_index": 0,
               "explanation_fr": "Le « main thread » (thread principal, aussi appelé UI thread) dessine l’interface : s’il est occupé, les images arrivent en retard. « Thread » veut aussi dire fil à coudre, d’où la tentation de « wire » (fil électrique) ou « line » : ce ne sont pas les termes techniques."
             },
             {
               "prompt_fr": "Ton manager demande pourquoi la liste rame. Quelle explication est claire pour quelqu’un de non technique ?",
-              "choices": ["We do heavy image work at the same time as drawing the screen. We’re moving it to the background.", "The main thread has a jank on the frames.", "The phone is too old, it’s not our problem."],
-              "answer_index": 0,
-              "explanation_fr": "La première réponse explique la cause sans jargon et dit ce que vous faites (« We’re moving it »). La deuxième aligne des mots techniques de travers (on ne dit pas « has a jank on »), et rejeter la faute sur le téléphone ignore les utilisateurs d’appareils d’entrée de gamme."
+              "choices": ["The main thread has a jank on the frames. We’re fixing the frame rate of the list.", "Low-end phones can’t handle our images. We’re asking users to update their phones.", "We do heavy image work at the same time as drawing the screen. We’re moving it to the background."],
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse explique la cause sans jargon et dit ce que vous faites (« We’re moving it »). « The main thread has a jank on the frames » aligne des mots techniques de travers (on ne dit pas « has a jank on »), et rejeter la faute sur le téléphone ignore les utilisateurs d’appareils d’entrée de gamme."
             }
           ],
           "production": {
@@ -696,14 +696,14 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire « the app takes ages to open » ?",
-              "choices": ["L’app s’ouvre selon l’âge de l’utilisateur", "L’app met très longtemps à s’ouvrir", "L’app ne s’ouvre plus depuis des années"],
-              "answer_index": 1,
-              "explanation_fr": "« It takes ages » est une expression familière pour « ça prend une éternité ». Rien à voir avec l’âge des utilisateurs, et l’app s’ouvre bien : elle est juste lente."
+              "choices": ["L’app met très longtemps à s’ouvrir", "L’app s’ouvre de plus en plus lentement", "L’app ne s’ouvre plus sur les vieux téléphones"],
+              "answer_index": 0,
+              "explanation_fr": "« It takes ages » est une expression familière pour « ça prend une éternité » : l’app met très longtemps à s’ouvrir. Elle ne parle ni d’une dégradation au fil du temps, ni de l’âge des téléphones, malgré le mot « ages »."
             },
             {
               "prompt_fr": "Pourquoi Nadia dit-elle que l’écran de démarrage « hides it » ?",
-              "choices": ["Parce que l’écran de démarrage accélère l’app", "Parce que l’écran de démarrage cache un bug d’affichage", "Parce qu’il occupe l’utilisateur pendant l’attente, mais l’attente reste réelle"],
-              "answer_index": 2,
+              "choices": ["Parce qu’il accélère le démarrage en chargeant les SDK en parallèle", "Parce qu’il occupe l’utilisateur pendant l’attente, mais l’attente reste réelle", "Parce qu’il cache un bug d’affichage du premier écran de l’app"],
+              "answer_index": 1,
               "explanation_fr": "Le splash screen s’affiche pendant le chargement : il masque l’attente sans la réduire, d’où « but people notice ». Il n’accélère rien, et ce qu’il cache n’est pas un bug d’affichage mais un temps de démarrage trop long."
             },
             {
@@ -714,9 +714,9 @@
             },
             {
               "prompt_fr": "Tu présentes ton plan pour réduire la taille de l’app. Quelle phrase est la plus précise ?",
-              "choices": ["We will make the app more little.", "We’ll switch to an app bundle and enable code shrinking, so users download less.", "The app will be lighter because we delete things."],
+              "choices": ["We will make the app more little by removing some of the unused things.", "We’ll switch to an app bundle and enable code shrinking, so users download less.", "We’ll compress the APK harder, so the app takes less space on phones."],
               "answer_index": 1,
-              "explanation_fr": "La deuxième phrase donne les deux actions concrètes et leur effet (« so users download less »). « More little » n’existe pas (on dit « smaller »), et « delete things » est trop vague pour un plan technique."
+              "explanation_fr": "La bonne phrase donne les deux actions concrètes de Nadia et leur effet (« so users download less »). « More little » n’existe pas (on dit « smaller ») et « things » est trop vague pour un plan technique ; compresser davantage l’APK n’est pas ce que propose Nadia et réduit peu la taille."
             }
           ],
           "production": {
@@ -762,14 +762,14 @@
           "questions": [
             {
               "prompt_fr": "Que sont « two build variants in Gradle » ?",
-              "choices": ["Deux applications différentes sur le store", "Deux versions de Gradle installées", "Deux façons de compiler la même app, avec des réglages différents"],
+              "choices": ["Deux applications différentes publiées sur le store", "Deux versions de l’outil Gradle installées sur la CI", "Deux façons de compiler la même app, avec des réglages différents"],
               "answer_index": 2,
-              "explanation_fr": "Une « build variant » est une configuration de compilation d’une même app (debug, staging, release, gratuite ou payante), définie dans Gradle. Ce ne sont pas deux apps différentes publiées, ni deux versions de l’outil Gradle."
+              "explanation_fr": "Une « build variant » est une configuration de compilation d’une même app (debug, staging, release), définie dans Gradle. Ce ne sont pas deux apps différentes publiées, ni deux versions de l’outil Gradle."
             },
             {
               "prompt_fr": "Comment dire « Elle pointe vers le serveur de test » ?",
-              "choices": ["It points to the test server.", "It points on the test server.", "It shows the test server."],
-              "answer_index": 0,
+              "choices": ["It points on the test server.", "It shows the test server.", "It points to the test server."],
+              "answer_index": 2,
               "explanation_fr": "« Point to » (pointer vers) est la préposition attendue pour une adresse ou une configuration. « Point on » est un calque de « pointer sur », et « shows » voudrait dire afficher, ce qui change le sens."
             },
             {
@@ -780,9 +780,9 @@
             },
             {
               "prompt_fr": "Une testeuse veut envoyer elle-même ta build de débogage sur Google Play. Que lui réponds-tu ?",
-              "choices": ["Yes, all builds are the same.", "Just rename the file to release.apk.", "The debug build can’t go to the store: the release build is signed by the CI."],
-              "answer_index": 2,
-              "explanation_fr": "Une build de débogage n’est pas faite pour le store : Google Play refuse les builds signées avec une clé de débogage, et c’est la CI qui signe la build de release. Toutes les builds ne se valent pas, et renommer le fichier ne change ni la signature ni les réglages."
+              "choices": ["The debug build can’t go to the store: the release build is signed by the CI.", "Sure, just bump the version number first, so the store accepts it.", "Sure, but upload it to the internal track first, then to production."],
+              "answer_index": 0,
+              "explanation_fr": "Une build de débogage n’est pas faite pour le store : Google Play refuse les builds signées avec une clé de débogage, et c’est la CI qui signe la build de release avec la clé d’envoi. Changer le numéro de version ou passer par la piste interne ne change rien à la signature."
             }
           ],
           "production": {
@@ -808,27 +808,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi les testeurs externes doivent-ils attendre sur TestFlight ?",
-              "choices": ["Apple doit d’abord examiner la build", "Ils doivent payer l’app", "La build n’est pas encore compilée"],
-              "answer_index": 0,
+              "choices": ["Ils doivent payer l’app", "Apple doit d’abord examiner la build", "La build n’est pas encore compilée"],
+              "answer_index": 1,
               "explanation_fr": "Sur TestFlight, les testeurs internes (l’équipe) reçoivent la build tout de suite, mais pour les testeurs externes Apple fait d’abord un examen rapide (la « Beta App Review »). La build est déjà compilée, et le test bêta est gratuit pour les testeurs."
             },
             {
-              "prompt_fr": "Comment dire « J’ai envoyé l’app bundle sur la piste de test interne » ?",
-              "choices": ["I’ve sent the app bundle on the internal test piste.", "I’ve uploaded the app bundle to the internal testing track.", "I’ve put up the app bundle in the intern testing track."],
-              "answer_index": 1,
-              "explanation_fr": "On « uploads » un fichier « to » une plateforme, et le nom officiel est « internal testing track ». « Piste » est un mot français, « on » est la mauvaise préposition, et « intern » désigne un stagiaire : l’adjectif est « internal »."
+              "prompt_fr": "Comment dire « J’ai envoyé la build sur TestFlight » ?",
+              "choices": ["I’ve uploaded the build on TestFlight.", "I’ve sent up the build in TestFlight.", "I’ve uploaded the build to TestFlight."],
+              "answer_index": 2,
+              "explanation_fr": "On « uploads » un fichier « to » une plateforme : uploaded to TestFlight. « On » est un calque de « sur », et « sent up… in » cumule un verbe à particule qui n’a pas ce sens et une mauvaise préposition."
             },
             {
               "prompt_fr": "Complète : « That’s the ___ of beta testing: real phones, real networks. »",
-              "choices": ["sense", "interest", "point"],
-              "answer_index": 2,
+              "choices": ["point", "sense", "interest"],
+              "answer_index": 0,
               "explanation_fr": "« That’s the point of… » veut dire « c’est tout l’intérêt de… ». « Interest » est un faux ami ici : il désigne la curiosité ou les intérêts financiers. « Sense » s’emploie dans « it makes sense », pas dans cette tournure."
             },
             {
               "prompt_fr": "Tu écris aux bêta-testeurs. Quelle phrase leur dit clairement quoi tester ?",
-              "choices": ["Please test everything you want.", "Please focus on the payment flow and report anything unexpected.", "Please make the payment work."],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième phrase donne une priorité (« focus on the payment flow ») et une consigne claire (« report anything unexpected »). « Test everything you want » ne guide personne, et « make the payment work » demande aux testeurs de corriger, ce qui est ton travail."
+              "choices": ["Please test everything you want and tell us about your feelings.", "Please make sure the payment works well before Friday.", "Please focus on the payment flow and report anything unexpected."],
+              "answer_index": 2,
+              "explanation_fr": "La bonne phrase donne une priorité (« focus on the payment flow ») et une consigne claire (« report anything unexpected »). « Test everything you want » ne guide personne et « feelings » ne sert à rien dans un retour de bug, et « make sure the payment works » demande aux testeurs de corriger, ce qui est ton travail."
             }
           ],
           "production": {
@@ -854,27 +854,27 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire « Apple rejected our update » ?",
-              "choices": ["Apple a retardé notre mise à jour", "Apple a refusé notre mise à jour", "Apple a supprimé notre app"],
-              "answer_index": 1,
+              "choices": ["Apple a refusé notre mise à jour", "Apple a retardé notre mise à jour", "Apple a supprimé notre app"],
+              "answer_index": 0,
               "explanation_fr": "« To reject » veut dire refuser, rejeter. Un refus retarde bien la sortie, mais « delayed » serait le mot pour un simple retard. Et l’app reste en ligne dans sa version précédente : rien n’est supprimé (« removed »)."
             },
             {
               "prompt_fr": "Comment dire « soumettre à nouveau aujourd’hui » ?",
-              "choices": ["Resubmit today.", "Submit it again of today.", "Remit today."],
-              "answer_index": 0,
+              "choices": ["Submit it again of today.", "Resubmit today.", "Remit today."],
+              "answer_index": 1,
               "explanation_fr": "« To resubmit » est le verbe exact pour renvoyer une app à l’examen (on dit aussi « submit it again today »). « Of today » ajoute une préposition fausse, et « remit » est un faux ami : il veut dire verser de l’argent ou remettre une peine."
             },
             {
               "prompt_fr": "Complète : « For digital content, we must use in-app ___. »",
-              "choices": ["buying", "shopping", "purchase"],
-              "answer_index": 2,
+              "choices": ["purchase", "buying", "shopping"],
+              "answer_index": 0,
               "explanation_fr": "Le terme officiel d’Apple et de Google est « in-app purchase » (achat intégré), souvent abrégé IAP. « In-app buying » et « in-app shopping » se comprennent, mais ce ne sont pas les termes des règles des stores ni des SDK."
             },
             {
               "prompt_fr": "Ton PM demande si la sortie est retardée. Quelle réponse est honnête et rassurante ?",
-              "choices": ["No problem, Apple is always wrong.", "Yes, a little. I’ll remove the link and resubmit today.", "I don’t know, ask Apple."],
+              "choices": ["Not really, Apple usually approves a second try within an hour.", "Yes, a little. I’ll remove the link and resubmit today.", "Yes, but it’s Apple’s decision, so there’s nothing we can do."],
               "answer_index": 1,
-              "explanation_fr": "La deuxième réponse est honnête (« Yes, a little ») et propose un plan concret. Accuser Apple ne règle rien, et « ask Apple » renvoie le problème au PM au lieu de le prendre en main."
+              "explanation_fr": "La bonne réponse est honnête (« Yes, a little ») et propose un plan concret. Promettre une validation en une heure est une supposition qui peut se révéler fausse, et « nothing we can do » renonce alors que Kenji a un plan : retirer le lien et soumettre à nouveau."
             }
           ],
           "production": {
@@ -902,14 +902,14 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire « We halt the rollout » ?",
-              "choices": ["On accélère le déploiement", "On annule la mise à jour chez tous les utilisateurs", "On met le déploiement en pause : plus aucun nouvel utilisateur ne reçoit la mise à jour"],
+              "choices": ["On annule la mise à jour : tous les utilisateurs reviennent à la 3.1", "On ralentit le déploiement : la mise à jour arrive moins vite", "On met le déploiement en pause : plus aucun nouvel utilisateur ne la reçoit"],
               "answer_index": 2,
-              "explanation_fr": "« To halt » veut dire arrêter, stopper. Interrompre un déploiement empêche de nouveaux utilisateurs de recevoir la version, mais ceux qui l’ont déjà la gardent : on ne peut pas la retirer à distance. Et c’est l’inverse d’accélérer."
+              "explanation_fr": "« To halt » veut dire arrêter, stopper. Interrompre un déploiement empêche de nouveaux utilisateurs de recevoir la version, mais ceux qui l’ont déjà la gardent (« Users who already have the update keep it ») : on ne peut pas la retirer à distance. Et arrêter n’est pas ralentir."
             },
             {
               "prompt_fr": "Comment dire « Déployons-la d’abord auprès de 10 % des utilisateurs » ?",
-              "choices": ["Let’s roll it out to 10% of users first.", "Let’s deploy it first at 10% users.", "Let’s roll it to 10% of the users in first."],
-              "answer_index": 0,
+              "choices": ["Let’s deploy it first at 10% users.", "Let’s roll it to 10% of the users in first.", "Let’s roll it out to 10% of users first."],
+              "answer_index": 2,
               "explanation_fr": "« To roll out to » est le verbe consacré pour un déploiement progressif, et « first » se place en fin de phrase. « At 10% users » oublie le « of », et « in first » est un calque de « en premier »."
             },
             {
@@ -920,9 +920,9 @@
             },
             {
               "prompt_fr": "Ton manager veut publier la mise à jour pour 100 % des utilisateurs dès le premier jour. Que proposes-tu ?",
-              "choices": ["OK, let’s ship it to everyone, we tested it.", "Could we start with a staged rollout and watch the crash-free rate before going to 100%?", "We can’t, the stores don’t allow it."],
-              "answer_index": 1,
-              "explanation_fr": "Un déploiement progressif avec un critère clair (le taux de sessions sans crash) limite les dégâts si un bug a échappé aux tests, qui ne couvrent jamais tous les appareils. Et il est faux de dire que les stores l’interdisent : publier pour tous est possible."
+              "choices": ["Could we start with a staged rollout and watch the crash-free rate before going to 100%?", "OK, let’s ship it to everyone on day one, since QA tested it on all our devices.", "We can’t, because both stores force a staged rollout for every new version."],
+              "answer_index": 0,
+              "explanation_fr": "Un déploiement progressif avec un critère clair (le taux de sessions sans crash) limite les dégâts si un bug a échappé aux tests, qui ne couvrent jamais tous les appareils. Et il est faux de dire que les stores l’imposent : publier pour tous dès le premier jour est possible."
             }
           ],
           "production": {
@@ -968,9 +968,9 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi VoiceOver dit-il seulement « button » ?",
-              "choices": ["L’icône n’a ni texte visible ni libellé d’accessibilité", "Le lecteur d’écran est mal réglé", "Le bouton est désactivé"],
-              "answer_index": 0,
-              "explanation_fr": "Un lecteur d’écran lit le texte d’un élément ; une icône seule n’en a pas, il faut donc lui donner un « accessibility label ». Ce n’est pas un problème de réglage de VoiceOver, et un bouton désactivé serait annoncé comme « dimmed »."
+              "choices": ["Le lecteur d’écran est réglé pour ne lire que le type d’élément", "L’icône n’a ni texte visible ni libellé d’accessibilité", "Le bouton est désactivé, donc VoiceOver ne lit pas son nom"],
+              "answer_index": 1,
+              "explanation_fr": "Un lecteur d’écran lit le texte d’un élément ; une icône seule n’en a pas, il faut donc lui donner un « accessibility label », comme Ivan le propose. Ce n’est pas un problème de réglage de VoiceOver, et un bouton désactivé serait annoncé avec son nom et la mention « dimmed »."
             },
             {
               "prompt_fr": "Comment dire « Les boutons sont difficiles à toucher » ?",
@@ -980,15 +980,15 @@
             },
             {
               "prompt_fr": "Complète : « I’ll switch to Dynamic Type styles so the text ___. »",
-              "choices": ["grows up", "scales", "enlarges itself"],
-              "answer_index": 1,
+              "choices": ["scales", "grows up", "enlarges itself"],
+              "answer_index": 0,
               "explanation_fr": "« To scale » veut dire changer de taille proportionnellement : the text scales. « Grows up » veut dire grandir au sens de devenir adulte, et « enlarges itself » calque un verbe pronominal français."
             },
             {
               "prompt_fr": "Ton PM demande pourquoi corriger l’accessibilité maintenant. Quel argument est juste ?",
-              "choices": ["Because screen readers are a new trend.", "Because many users rely on these settings, and it makes the app easier for everyone.", "Because Apple will remove the app tomorrow."],
-              "answer_index": 1,
-              "explanation_fr": "Beaucoup de personnes utilisent un lecteur d’écran ou un grand texte, et de grandes zones tactiles aident tout le monde (dans un bus, d’une seule main). L’accessibilité n’est pas une mode, et menacer d’un retrait immédiat du store est faux."
+              "choices": ["Because accessibility is mostly a legal checkbox, so we should tick it early.", "Because it only takes a few minutes, so it won’t delay anything else.", "Because many users rely on these settings, and it makes the app easier for everyone."],
+              "answer_index": 2,
+              "explanation_fr": "Beaucoup de personnes utilisent un lecteur d’écran ou un grand texte, et de grandes zones tactiles aident tout le monde (dans un bus, d’une seule main). Réduire l’accessibilité à une case légale passe à côté des utilisateurs, et promettre « quelques minutes » est une estimation hasardeuse."
             }
           ],
           "production": {
@@ -1014,27 +1014,27 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire Moussa avec « we can drop support for it » ?",
-              "choices": ["On peut le supporter encore longtemps", "On peut arrêter de le prendre en charge", "On peut le faire tomber en panne"],
-              "answer_index": 1,
+              "choices": ["On peut arrêter de le prendre en charge", "On peut le supporter encore longtemps", "On peut le faire tomber en panne"],
+              "answer_index": 0,
               "explanation_fr": "« To drop support for » veut dire arrêter de prendre en charge une version : l’app ne s’installera plus dessus. « Support » ne veut pas dire endurer, et « drop » n’a ici rien à voir avec faire tomber quelque chose."
             },
             {
-              "prompt_fr": "Comment dire « Regardons d’abord les données » ?",
-              "choices": ["Let’s check the data first.", "Let’s look the data first.", "Let’s regard the data before."],
-              "answer_index": 0,
-              "explanation_fr": "« Let’s check… first » est la tournure naturelle. « Look » demande « at » (look at the data), et « regard » est un faux ami : il veut dire considérer, pas regarder. Pour « d’abord », on dit « first », pas « before »."
+              "prompt_fr": "Comment dire « Regardons d’abord les chiffres d’usage » ?",
+              "choices": ["Let’s look the usage numbers first.", "Let’s look at the usage numbers first.", "Let’s regard the usage numbers before."],
+              "answer_index": 1,
+              "explanation_fr": "« Look » demande « at » quand il a un complément : look at the numbers. « Regard » est un faux ami : il veut dire considérer, pas regarder. Pour « d’abord », on dit « first », pas « before »."
             },
             {
               "prompt_fr": "Complète : « Should we raise our minimum API ___? »",
-              "choices": ["version", "grade", "level"],
-              "answer_index": 2,
+              "choices": ["level", "version", "grade"],
+              "answer_index": 0,
               "explanation_fr": "Sur Android, on parle de « minimum API level » (minSdk dans Gradle). « Grade » évoque une note scolaire, et « API version » n’est pas le terme officiel : on dit « Android 8 », mais « API level 26 »."
             },
             {
               "prompt_fr": "En réunion, on te demande comment tester sur autant d’appareils. Quelle réponse est la plus réaliste ?",
-              "choices": ["We test only on my phone, it’s the most popular.", "We use emulators for screen sizes and a few real devices, including a low-end one, for performance.", "Fragmentation doesn’t exist on Android anymore."],
+              "choices": ["We test on emulators only, since they cover every screen size and every Android version.", "We use emulators for screen sizes and a few real devices, including a low-end one, for performance.", "We test on the three most popular flagship phones, which cover most of our users."],
               "answer_index": 1,
-              "explanation_fr": "Les émulateurs couvrent bien les tailles d’écran, mais la performance se mesure sur de vrais téléphones, surtout d’entrée de gamme. Tester sur un seul appareil laisse passer beaucoup de bugs, et la fragmentation reste une réalité d’Android."
+              "explanation_fr": "Les émulateurs couvrent bien les tailles d’écran, mais la performance se mesure sur de vrais téléphones, surtout d’entrée de gamme. Les émulateurs seuls ne montrent pas les vraies performances, et trois téléphones haut de gamme laissent de côté les appareils modestes où les bugs apparaissent."
             }
           ],
           "production": {
@@ -1065,10 +1065,10 @@
               "explanation_fr": "« To drain » veut dire vider, épuiser : la batterie se décharge trop vite. Ce n’est pas une recharge, et rien ne dit que la batterie est abîmée pour toujours : une fois l’app corrigée, la consommation redevient normale."
             },
             {
-              "prompt_fr": "Comment dire « On peut l’obliger à mettre à jour ? » ?",
-              "choices": ["Can we make her update?", "Can we oblige her to update?", "Can we force her updating?"],
-              "answer_index": 0,
-              "explanation_fr": "« Make someone do something » (sans « to ») est la façon naturelle de dire obliger quelqu’un à faire quelque chose. « Oblige » est un faux ami : il veut surtout dire rendre service. « Force her updating » oublie la structure correcte, « force her to update »."
+              "prompt_fr": "Comment dire « On ne peut pas l’obliger à changer de téléphone » ?",
+              "choices": ["We can’t oblige her to change phones.", "We can’t force her changing phones.", "We can’t make her change phones."],
+              "answer_index": 2,
+              "explanation_fr": "« Make someone do something » (sans « to ») est la façon naturelle de dire obliger quelqu’un à faire quelque chose. « Oblige » est un faux ami : il veut surtout dire rendre service. « Force her changing » oublie la structure correcte, « force her to change »."
             },
             {
               "prompt_fr": "Complète : « Thanks for reporting this, and sorry for the ___. »",
@@ -1078,9 +1078,9 @@
             },
             {
               "prompt_fr": "L’utilisatrice est en colère. Quelle première phrase choisis-tu pour ta réponse ?",
-              "choices": ["You are wrong, the app is fine.", "Battery issues are normal on old phones.", "Thanks for reporting this, and sorry for the trouble. We fixed this issue in version 3.2.1."],
-              "answer_index": 2,
-              "explanation_fr": "La troisième phrase remercie, s’excuse et apporte tout de suite une solution : c’est la base d’une bonne réponse au support. Contredire l’utilisatrice l’énerve encore plus, et blâmer son téléphone est faux, puisque le bug venait de l’app."
+              "choices": ["Thanks for reporting this, and sorry for the trouble. We fixed this issue in version 3.2.1.", "We are sorry for the inconvenients. Please update the app to the version 3.2.1.", "Thank you for your feedback. Battery use depends a lot on your phone settings."],
+              "answer_index": 0,
+              "explanation_fr": "La bonne phrase remercie, s’excuse et apporte tout de suite une solution : c’est la base d’une bonne réponse au support. « Inconvenients » n’existe pas (on dit « inconvenience », au singulier), et parler des réglages du téléphone rejette la faute sur l’utilisatrice alors que le bug venait de l’app."
             }
           ],
           "production": {
@@ -1107,13 +1107,13 @@
           "questions": [
             {
               "prompt_fr": "Que propose Aïcha avec « We stay cross-platform and write a small native module » ?",
-              "choices": ["Réécrire toute l’app en natif", "Garder l’app en React Native et ajouter un peu de code natif pour le SDK", "Abandonner le SDK de paiement"],
+              "choices": ["Réécrire toute l’app en natif, en Kotlin et en Swift", "Garder l’app en React Native et ajouter un peu de code natif pour le SDK", "Attendre que le fournisseur publie une version React Native du SDK"],
               "answer_index": 1,
-              "explanation_fr": "Aïcha garde la base multiplateforme et n’écrit en natif (Kotlin, Swift) que le pont vers le SDK. C’est le contraire de tout réécrire en natif, et le SDK est justement conservé grâce à ce module."
+              "explanation_fr": "Aïcha garde la base multiplateforme (« We stay cross-platform ») et n’écrit en natif (Kotlin, Swift) que le pont vers le SDK. C’est le contraire de tout réécrire, et elle n’attend pas le fournisseur : le module règle le problème tout de suite."
             },
             {
               "prompt_fr": "Pourquoi ne peut-on pas livrer ce changement avec une « over-the-air update » ?",
-              "choices": ["Parce que les mises à jour à distance sont interdites", "Parce que le JavaScript ne peut pas appeler du code natif", "Parce qu’une mise à jour à distance remplace le code JavaScript, pas le code natif"],
+              "choices": ["Parce que les stores interdisent toute mise à jour à distance", "Parce que le JavaScript ne peut pas appeler du code natif", "Parce qu’une mise à jour à distance remplace le JavaScript, pas le code natif"],
               "answer_index": 2,
               "explanation_fr": "Une mise à jour OTA (avec EAS Update, par exemple) remplace le bundle JavaScript et les ressources, mais le code natif est compilé dans l’app : il faut une nouvelle version sur les stores. Les OTA sont autorisées dans le respect des règles des stores, et le JavaScript appelle bien le code natif grâce au module."
             },
@@ -1125,9 +1125,9 @@
             },
             {
               "prompt_fr": "Ton tech lead propose de tout réécrire en natif pour un seul SDK. Comment le contredire poliment ?",
-              "choices": ["That’s a bad idea, you don’t understand React Native.", "I see the point, but a small native module would be enough, and we’d keep one shared codebase.", "Native apps are old-fashioned."],
-              "answer_index": 1,
-              "explanation_fr": "« I see the point, but… » reconnaît l’idée avant de proposer mieux, avec un argument concret : garder un seul code partagé. La première réponse attaque la personne, et dire que le natif est démodé est faux : beaucoup d’apps restent entièrement natives."
+              "choices": ["That’s a bad idea, because React Native can already do everything native can do.", "I agree, native apps are always faster, so let’s rewrite the whole app this sprint.", "I see the point, but a small native module would be enough, and we’d keep one shared codebase."],
+              "answer_index": 2,
+              "explanation_fr": "« I see the point, but… » reconnaît l’idée avant de proposer mieux, avec un argument concret : garder un seul code partagé. Dire que React Native fait tout ce que fait le natif est faux (c’est justement le problème du SDK), et accepter une réécriture complète pour un seul SDK n’est pas raisonnable."
             }
           ],
           "production": {

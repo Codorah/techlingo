@@ -82,44 +82,44 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « Quelle décision cette analyse va-t-elle aider à prendre ? » ?",
+              "prompt_fr": "Comment demander « À quelle décision ce tableau de bord va-t-il servir ? » ?",
               "choices": [
-                "Which decision will this analysis take?",
-                "What decision will this analysis support?",
-                "What decision does this analysis make help?"
+                "Which decision will this dashboard take?",
+                "What decision will this dashboard support?",
+                "What decision does this dashboard make help?"
               ],
               "answer_index": 1,
-              "explanation_fr": "« Support a decision » est l’expression naturelle : l’analyse aide à décider, elle ne décide pas. « Will this analysis take » est un calque de « prendre une décision » qui fait de l’analyse le décideur, et la troisième phrase est agrammaticale (deux verbes à la suite)."
+              "explanation_fr": "« Support a decision » est l’expression naturelle : l’outil aide à décider, il ne décide pas. « Will this dashboard take » calque « prendre une décision » et fait du tableau de bord le décideur, et « does … make help » enchaîne deux verbes, ce qui est agrammatical."
             },
             {
               "prompt_fr": "Que veut dire Sarah avec « That’s our main KPI this quarter » ?",
               "choices": [
-                "C’est l’indicateur principal qui sert à juger l’équipe ce trimestre",
                 "C’est le chiffre le plus élevé du trimestre",
-                "C’est un rapport trimestriel envoyé à la direction"
+                "C’est un rapport trimestriel envoyé à la direction",
+                "C’est l’indicateur principal qui sert à juger l’équipe ce trimestre"
               ],
-              "answer_index": 0,
+              "answer_index": 2,
               "explanation_fr": "Un KPI (key performance indicator) est un indicateur clé, choisi pour suivre un objectif. Ce n’est pas forcément le chiffre le plus grand, et ce n’est pas un rapport : un rapport (report) peut contenir plusieurs KPI."
             },
             {
               "prompt_fr": "Complète : « Which ___ matters most to you: sign-ups or revenue? »",
               "choices": [
+                "metric",
                 "meter",
-                "measuring",
-                "metric"
+                "measuring"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "« Metric » est le mot courant pour un indicateur mesuré (sign-ups, revenue). « Meter » désigne un compteur ou le mètre, et « measuring » est une forme verbale (en train de mesurer) qui ne peut pas suivre « which » ici."
             },
             {
               "prompt_fr": "Un collègue t’écrit « Can you pull some numbers on churn? » sans autre détail. Quelle réponse est la plus utile ?",
               "choices": [
-                "Yes, I will do all the numbers.",
-                "Sure. What decision will it support, and by when do you need it?",
-                "No, your request is not precise."
+                "Sure, I’ll pull all the churn numbers we have by tonight.",
+                "Your request isn’t precise enough, so please send more details.",
+                "Sure. What decision will it support, and by when do you need it?"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une bonne réponse accepte et clarifie : la décision visée et le délai. « I will do all the numbers » ne veut rien dire en anglais (on « pulls » ou « runs » des chiffres) et promet tout sans cadrer. Répondre « your request is not precise » est sec et ne fait pas avancer : on pose plutôt une question."
+              "answer_index": 2,
+              "explanation_fr": "Une bonne réponse accepte et cadre : la décision visée et le délai. Tout sortir sans question produit un fichier que personne n’utilisera, et renvoyer la demande comme « pas assez précise » est sec : on pose plutôt la question qui manque."
             }
           ],
           "production": {
@@ -180,42 +180,42 @@
             {
               "prompt_fr": "Que veut dire Moussa avec « It’s a metric definition problem » ?",
               "choices": [
-                "Le tableau de bord est en panne",
-                "Il manque des données dans la base",
-                "Les deux équipes ne calculent pas l’indicateur de la même façon"
-              ],
-              "answer_index": 2,
-              "explanation_fr": "Une metric definition précise le calcul : numérateur, dénominateur, période, filtres. Ici, les deux chiffres sont justes mais n’ont pas le même dénominateur. Rien n’indique une panne du tableau de bord ou des données manquantes : c’est la règle de calcul qui diffère."
-            },
-            {
-              "prompt_fr": "Comment dire « On ne peut pas en avoir deux versions » ?",
-              "choices": [
-                "We can’t have two versions.",
-                "We don’t can have two versions.",
-                "We can’t to have two versions."
+                "Les deux équipes ne calculent pas l’indicateur de la même façon",
+                "Le tableau de bord affiche un chiffre qui n’est plus à jour",
+                "Une des deux équipes a fait une erreur dans ses données"
               ],
               "answer_index": 0,
-              "explanation_fr": "Après un modal comme « can », le verbe suit directement, sans « to » : we can’t have. « Don’t can » est impossible, car « can » se met lui-même à la forme négative (can’t), et « can’t to have » ajoute un « to » de trop, erreur fréquente chez les francophones."
+              "explanation_fr": "Une « metric definition » précise le calcul : numérateur, dénominateur, période, filtres. Ici, les deux chiffres sont justes mais n’ont pas le même dénominateur (« Probably both »). Ce n’est ni un problème de fraîcheur, ni une erreur de données."
+            },
+            {
+              "prompt_fr": "Comment dire « On ne peut pas publier deux chiffres différents » ?",
+              "choices": [
+                "We don’t can publish two different numbers.",
+                "We can’t publish two different numbers.",
+                "We can’t to publish two different numbers."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Après un modal comme « can », le verbe suit directement, sans « to » : we can’t publish. « Don’t can » est impossible, car « can » se met lui-même à la forme négative (can’t), et « can’t to publish » ajoute un « to » de trop, erreur fréquente chez les francophones."
             },
             {
               "prompt_fr": "Complète : « Let’s make the dashboard our source of ___. »",
               "choices": [
-                "origin",
                 "truth",
+                "origin",
                 "root"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "L’expression figée est « source of truth » (source de référence) : le seul endroit dont les chiffres font foi. « Origin » et « root » existent, mais ne forment pas cette expression ; un anglophone ne les comprendrait pas comme un terme du métier."
             },
             {
               "prompt_fr": "En réunion, deux équipes affichent deux taux de conversion différents. Que dis-tu ?",
               "choices": [
-                "Your number is false.",
+                "Your number is false, so let’s use ours in the deck.",
                 "We’re probably using different definitions. Can we agree on one?",
-                "The data is wrong, I will check everything."
+                "The data is wrong somewhere, so I’ll check everything."
               ],
               "answer_index": 1,
-              "explanation_fr": "Proposer de vérifier la définition est neutre et constructif. « Your number is false » est accusateur, et pour un chiffre on dirait « wrong », pas « false ». Dire que toute la donnée est fausse est prématuré : le plus souvent, c’est le calcul qui diffère, pas les données."
+              "explanation_fr": "Proposer de vérifier la définition est neutre et constructif. « Your number is false » est accusateur (et pour un chiffre on dirait « wrong »), et dire que la donnée est fausse est prématuré : le plus souvent, c’est le calcul qui diffère, pas les données."
             }
           ],
           "production": {
@@ -283,34 +283,34 @@
               "explanation_fr": "Une cohort regroupe des personnes qui ont vécu le même événement à la même période, ici l’arrivée comme client en janvier, février ou mars. On suit ensuite chaque cohorte dans le temps. Il ne s’agit ni des équipes commerciales ni des prix : le mot désigne un groupe d’utilisateurs ou de clients."
             },
             {
-              "prompt_fr": "Comment dire « Limitons le périmètre à la France pour l’instant » ?",
+              "prompt_fr": "Comment dire « Limitons l’analyse aux clients payants pour l’instant » ?",
               "choices": [
-                "Let’s limit the perimeter to France for now.",
-                "Let’s keep the scope to France for now.",
-                "Let’s stay in France for the moment."
+                "Let’s limit the perimeter to paying customers for now.",
+                "Let’s reduce the field to paying customers for now.",
+                "Let’s keep the scope to paying customers for now."
               ],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, le périmètre d’un projet ou d’une analyse se dit « scope ». « Perimeter » est un faux ami : il désigne une limite physique (le périmètre d’un site, d’une figure). « Let’s stay in France » voudrait dire « restons en France », comme pour un voyage."
+              "answer_index": 2,
+              "explanation_fr": "Le périmètre d’une analyse se dit « scope ». « Perimeter » est un faux ami : il désigne une limite physique (le périmètre d’un site). « Field » veut dire un champ (de formulaire, de base de données) ou un domaine, pas un périmètre d’analyse."
             },
             {
               "prompt_fr": "Complète : « Do you have a ___ I should test first? »",
               "choices": [
-                "hypothesis",
                 "hypothese",
+                "hypothesis",
                 "theory test"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "« Hypothesis » (pluriel « hypotheses ») est le mot du métier : une affirmation qu’on peut vérifier avec les données. « Hypothese » est une orthographe calquée sur le français qui n’existe pas, et « theory test » ne veut rien dire ici."
             },
             {
               "prompt_fr": "Le directeur te demande d’analyser « tout, par pays, par produit et par canal » d’ici demain. Quelle réponse est la plus professionnelle ?",
               "choices": [
-                "OK, I will do everything for tomorrow.",
-                "That’s impossible.",
-                "I can start with France and one hypothesis by tomorrow, then add the other segments next week."
+                "I can start with France and one hypothesis by tomorrow, then add the rest next week.",
+                "OK, I’ll do everything for tomorrow, even if I have to work late tonight.",
+                "That’s impossible by tomorrow, so let’s talk about it again next week."
               ],
-              "answer_index": 2,
-              "explanation_fr": "On propose un périmètre réaliste et une suite : c’est la façon polie de « push back ». « I will do everything for tomorrow » promet l’impossible, et pour une échéance on dit « by tomorrow », pas « for tomorrow ». « That’s impossible » ferme la discussion sans proposer de solution."
+              "answer_index": 0,
+              "explanation_fr": "On propose un périmètre réaliste et une suite : c’est la façon polie de « push back ». Tout promettre pour demain n’est pas tenable (et pour une échéance on dit « by tomorrow », pas « for tomorrow »). « That’s impossible » ferme la discussion sans rien proposer."
             }
           ],
           "production": {
@@ -411,39 +411,39 @@
             {
               "prompt_fr": "Que demande Ivan avec « Walk me through it » ?",
               "choices": [
-                "Envoie-moi le fichier",
+                "Montre-moi le résultat de ta requête",
                 "Explique-moi ta requête étape par étape",
-                "Va te promener et reviens plus tard"
+                "Envoie-moi le fichier de ta requête"
               ],
               "answer_index": 1,
-              "explanation_fr": "« Walk someone through something » veut dire expliquer pas à pas. L’expression revient sans cesse en revue de code et en entretien (« Walk me through your query »). Elle n’a rien à voir avec une promenade, et Ivan ne demande pas un fichier : il veut entendre le raisonnement."
+              "explanation_fr": "« Walk someone through something » veut dire expliquer pas à pas. L’expression revient sans cesse en revue de code et en entretien (« Walk me through your query »). Ivan ne demande ni le résultat ni le fichier : il veut entendre le raisonnement, ce qu’Aïcha fait ensuite."
             },
             {
               "prompt_fr": "Pourquoi certains clients disparaissent-ils avec un « inner join » ?",
               "choices": [
-                "Parce qu’il ne garde que les lignes qui ont une correspondance dans les deux tables",
-                "Parce qu’il supprime les clients de la base",
-                "Parce que la clé primaire est fausse"
+                "Parce qu’il ne garde que les clients qui ont passé plusieurs commandes",
+                "Parce qu’il retire les clients dont la clé primaire est vide",
+                "Parce qu’il ne garde que les lignes qui ont une correspondance dans les deux tables"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un INNER JOIN ne renvoie que les lignes qui ont une correspondance dans les deux tables : un client sans commande n’apparaît pas. Une requête SELECT ne supprime rien dans la base, elle lit seulement. Et la clé est correcte ici : c’est le type de jointure qui explique le résultat."
+              "answer_index": 2,
+              "explanation_fr": "Un INNER JOIN ne renvoie que les lignes présentes des deux côtés : un client sans commande disparaît, mais un client avec une seule commande reste. Une clé primaire n’est jamais vide, par définition : c’est le type de jointure qui explique le résultat."
             },
             {
               "prompt_fr": "Complète : « customer_id is a ___ key in the orders table: it points to the customers table. »",
               "choices": [
-                "primary",
                 "foreign",
+                "primary",
                 "strange"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Une foreign key (clé étrangère) est une colonne qui pointe vers la clé primaire d’une autre table. La primary key identifie chaque ligne de sa propre table (dans orders, ce serait order_id). « Strange » veut dire bizarre : c’est une mauvaise traduction de « étrangère »."
             },
             {
-              "prompt_fr": "Comment dire « Je joins la table des commandes sur customer_id » ?",
+              "prompt_fr": "Comment dire « Je joins la table des produits sur product_id » ?",
               "choices": [
-                "I join myself to the orders table with customer_id.",
-                "I attach the orders table by customer_id.",
-                "I join the orders table on customer_id."
+                "I join myself to the products table with product_id.",
+                "I attach the products table by product_id.",
+                "I join the products table on product_id."
               ],
               "answer_index": 2,
               "explanation_fr": "En SQL, on dit « join a table on a column », car la condition s’écrit avec ON. « Join myself » voudrait dire que tu rejoins quelque chose, comme une équipe. « Attach » s’emploie pour une pièce jointe, pas pour une jointure."
@@ -506,42 +506,42 @@
             {
               "prompt_fr": "Pourquoi Kenji conseille-t-il HAVING plutôt que WHERE ?",
               "choices": [
-                "WHERE est plus lent que HAVING",
                 "HAVING filtre les groupes après l’agrégation, WHERE filtre les lignes avant",
-                "HAVING est la version moderne de WHERE"
+                "WHERE filtre les groupes après l’agrégation, HAVING filtre les lignes avant",
+                "HAVING est plus rapide que WHERE sur les grandes tables"
               ],
-              "answer_index": 1,
-              "explanation_fr": "WHERE s’applique aux lignes avant le regroupement ; HAVING s’applique aux groupes, donc au résultat de SUM(amount). Un filtre sur un total doit donc passer par HAVING. Ce n’est pas une question de vitesse, et HAVING ne remplace pas WHERE : les deux coexistent dans la même requête."
+              "answer_index": 0,
+              "explanation_fr": "WHERE s’applique aux lignes avant le regroupement ; HAVING aux groupes, donc au résultat de SUM(amount). Un filtre sur un total passe donc par HAVING. Le piège est d’inverser les deux, et ce n’est pas une question de vitesse : les deux coexistent souvent dans la même requête."
             },
             {
               "prompt_fr": "Que contient une « fact table » ?",
               "choices": [
-                "Les événements mesurés, comme les ventes, avec leurs montants",
                 "Les descriptions des produits et des clients",
+                "Les événements mesurés, comme les ventes, avec leurs montants",
                 "La liste des vérifications faites par l’équipe"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "Dans un schéma en étoile, la fact table (table de faits) contient les événements mesurables : ventes, commandes, clics, avec des montants et des clés. Les descriptions (nom du produit, catégorie, pays du client) sont dans les dimension tables. « Fact » n’a ici rien à voir avec le fact-checking."
             },
             {
               "prompt_fr": "Complète : « Join the product table, then ___ month and category. »",
               "choices": [
+                "group by",
                 "regroup on",
-                "group with",
-                "group by"
+                "group with"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "La clause SQL est GROUP BY, et à l’oral on dit naturellement « group by month ». « Regroup » veut dire se regrouper, se réorganiser (une équipe qui se regroupe), et « group with » ne s’utilise pas pour cette opération."
             },
             {
-              "prompt_fr": "Comment dire « Il est dans la table de dimension produit » ?",
+              "prompt_fr": "Comment dire « C’est dans la table de dimension client » ?",
               "choices": [
-                "It’s in the product dimension table.",
-                "It’s in the dimension of product table.",
-                "It’s on the table of product dimension."
+                "It’s in the dimension of customer table.",
+                "It’s in the customer dimension table.",
+                "It’s on the table of customer dimension."
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais, les noms qui qualifient se placent devant : product dimension table (table de dimension produit). « Dimension of product table » et « table of product dimension » calquent l’ordre français. Pour des données, on dit aussi « in a table », pas « on a table »."
+              "answer_index": 1,
+              "explanation_fr": "En anglais, les noms qui qualifient se placent devant : customer dimension table. « Dimension of customer table » et « table of customer dimension » calquent l’ordre français. Pour des données, on dit aussi « in a table », pas « on a table »."
             }
           ],
           "production": {
@@ -600,41 +600,41 @@
             {
               "prompt_fr": "Que veut dire Priya avec « it’s hard to follow » ?",
               "choices": [
-                "La requête ne fonctionne pas",
-                "La requête est trop lente",
+                "La requête renvoie des résultats difficiles à vérifier",
+                "La requête est trop lente pour être utilisée",
                 "La requête est difficile à comprendre en la lisant"
               ],
               "answer_index": 2,
-              "explanation_fr": "« Hard to follow » veut dire difficile à suivre, donc à comprendre : c’est un problème de lisibilité. Priya ne dit pas que la requête échoue ou qu’elle est lente, elle dit qu’on se perd dans les sous-requêtes imbriquées (nested)."
+              "explanation_fr": "« Hard to follow » veut dire difficile à suivre, donc à comprendre : c’est un problème de lisibilité, à cause des sous-requêtes imbriquées (« nested »). Priya ne parle ni des résultats ni de la vitesse."
             },
             {
               "prompt_fr": "Quel est l’avantage d’une « window function » par rapport à GROUP BY ?",
               "choices": [
-                "Elle calcule sur un groupe de lignes sans les fusionner en une seule",
-                "Elle s’exécute toujours plus vite",
-                "Elle remplace les jointures"
+                "Elle fusionne les lignes de chaque groupe en une seule ligne",
+                "Elle s’exécute toujours plus vite qu’un GROUP BY",
+                "Elle calcule sur un groupe de lignes sans les fusionner en une seule"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Une window function (ROW_NUMBER, RANK, SUM … OVER) calcule sur une « fenêtre » de lignes tout en gardant chaque ligne, d’où le classement par utilisateur. GROUP BY, lui, réduit chaque groupe à une seule ligne. Elle n’est pas forcément plus rapide et ne remplace pas une jointure."
+              "answer_index": 2,
+              "explanation_fr": "Une window function (ROW_NUMBER, RANK, SUM … OVER) calcule sur une « fenêtre » de lignes en gardant chaque ligne, d’où le classement par utilisateur. Fusionner chaque groupe en une ligne, c’est justement ce que fait GROUP BY, et elle n’est pas forcément plus rapide."
             },
             {
-              "prompt_fr": "Comment dire « Une CTE par étape » ?",
+              "prompt_fr": "Comment dire « Une ligne par client » ?",
               "choices": [
-                "One CTE by step.",
-                "One CTE per step.",
-                "One CTE of each step."
+                "One row by customer.",
+                "One row per customer.",
+                "One row of each customer."
               ],
               "answer_index": 1,
-              "explanation_fr": "Pour une répartition, l’anglais dit « per » (one per step, one row per customer) ou « for each ». « By step » est un calque de « par étape » qui sonne faux, et « of each step » change le sens (une CTE qui appartiendrait à chaque étape)."
+              "explanation_fr": "Pour une répartition, l’anglais dit « per » (one CTE per step, one row per customer) ou « for each ». « By customer » est un calque de « par client » qui sonne faux ici, et « of each customer » change le sens (une ligne qui appartiendrait à chaque client)."
             },
             {
               "prompt_fr": "Complète : « The query has three nested ___, and it’s hard to follow. »",
               "choices": [
-                "underqueries",
                 "subqueries",
+                "underqueries",
                 "sub-requests"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Une sous-requête se dit « subquery » (pluriel subqueries) : une requête placée à l’intérieur d’une autre. « Underqueries » n’existe pas, et « sub-requests » utilise le mot « request », qui ne désigne pas une requête SQL."
             }
           ],
@@ -696,42 +696,42 @@
             {
               "prompt_fr": "Que signifie « full table scan » dans le plan d’exécution ?",
               "choices": [
-                "La table est pleine et ne peut plus recevoir de données",
+                "La table est pleine et ne peut plus grossir",
                 "La base lit toutes les lignes de la table",
-                "La requête a été vérifiée par un antivirus"
+                "La base vérifie toute la table avant d’écrire"
               ],
               "answer_index": 1,
-              "explanation_fr": "Un full table scan est un parcours complet : la base lit chaque ligne faute de pouvoir cibler les bonnes, d’où la lenteur. « Full » ne veut pas dire que la table est pleine, et « scan » n’a rien à voir ici avec un antivirus."
+              "explanation_fr": "Un full table scan est un parcours complet : faute d’index, la base lit chaque ligne pour trouver les bonnes, d’où la lenteur. « Full » ne veut pas dire que la table est pleine, et il s’agit de lecture, pas d’un contrôle avant écriture."
             },
             {
               "prompt_fr": "Comment dire « Ma requête met vingt minutes à s’exécuter » ?",
               "choices": [
                 "My query puts twenty minutes to execute.",
-                "My query takes twenty minutes to run.",
-                "My query lasts twenty minutes for running."
+                "My query lasts twenty minutes for running.",
+                "My query takes twenty minutes to run."
               ],
-              "answer_index": 1,
+              "answer_index": 2,
               "explanation_fr": "Pour une durée, l’anglais utilise « take » : it takes twenty minutes to run. « Puts » est un calque direct de « mettre », impossible ici. « Lasts … for running » est incorrect ; « run » est le verbe habituel pour une requête ou un script (« execute » existe, mais il est plus formel)."
             },
             {
               "prompt_fr": "Complète : « Your WHERE clause uses a column with no ___. »",
               "choices": [
+                "index",
                 "indice",
-                "indicator",
-                "index"
+                "indicator"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Un index permet à la base de trouver les lignes sans tout lire, comme l’index d’un livre. « Indice » est le mot français, et « indicator » veut dire indicateur, comme un KPI."
             },
             {
               "prompt_fr": "Un manager te demande pourquoi le tableau de bord met du temps à charger. Quelle réponse est claire et juste ?",
               "choices": [
-                "The query reads the whole table. I’m adding a date filter, so it should be much faster.",
-                "The computer is too old.",
-                "SQL is a slow language."
+                "Too many people open the dashboard at the same time in the morning.",
+                "The data warehouse is slow, so there isn’t much we can do about it.",
+                "The query reads the whole table. I’m adding a date filter, so it should be much faster."
               ],
-              "answer_index": 0,
-              "explanation_fr": "La bonne réponse explique la cause en mots simples et annonce la solution. Accuser l’ordinateur ou le langage SQL est faux : c’est la façon dont la requête est écrite (pas de filtre, lecture de toute la table) qui fait la différence."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse explique la cause en mots simples et annonce la solution. Accuser le nombre d’utilisateurs ou l’entrepôt de données est une supposition : Moussa a vu dans le plan que la requête lit toute la table."
             }
           ],
           "production": {
@@ -832,32 +832,32 @@
             {
               "prompt_fr": "Comment dire « Il y a des doublons dans l’export » ?",
               "choices": [
-                "There are doubles in the export.",
                 "There are duplicate records in the export.",
+                "There are doubles in the export.",
                 "There is twins in the export."
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Les doublons se disent « duplicates » ou « duplicate records ». « Doubles » s’emploie au tennis ou pour une chambre double, pas pour des lignes en double. « Twins » veut dire jumeaux, et « there is » ne s’accorde pas avec un pluriel."
             },
             {
               "prompt_fr": "Pourquoi Aïcha fait-elle le dédoublonnage sur l’e-mail en minuscules ?",
               "choices": [
-                "Parce que les majuscules sont interdites dans les e-mails",
-                "Pour rendre le fichier plus léger",
-                "Pour que « Ana@mail.com » et « ana@mail.com » soient reconnus comme le même client"
+                "Parce que les adresses e-mail en majuscules ne sont pas valides",
+                "Pour que « Ana@mail.com » et « ana@mail.com » soient reconnus comme un seul client",
+                "Pour que l’export soit trié par ordre alphabétique"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Uniformiser avant de comparer (minuscules, espaces retirés) évite de rater des doublons qui ne diffèrent que par la casse. Les majuscules ne sont pas interdites dans une adresse, et le but n’est pas d’alléger le fichier mais de bien identifier les clients."
+              "answer_index": 1,
+              "explanation_fr": "Uniformiser avant de comparer (minuscules, espaces retirés) évite de rater des doublons qui ne diffèrent que par la casse. Les majuscules ne rendent pas une adresse invalide, et le but n’est pas de trier le fichier mais de bien identifier les clients."
             },
             {
               "prompt_fr": "Que fait Aïcha avec les pays manquants ?",
               "choices": [
                 "Elle les marque « Unknown » et le signale, sans inventer de valeur",
-                "Elle les remplace par le pays le plus fréquent",
-                "Elle supprime toutes les lignes du fichier"
+                "Elle les remplace par le pays le plus fréquent du fichier",
+                "Elle supprime les lignes concernées avant l’analyse"
               ],
               "answer_index": 0,
-              "explanation_fr": "« I won’t guess it » : elle ne devine pas. Marquer la valeur manquante et le dire dans le rapport est honnête et traçable. Remplacer par le pays le plus fréquent peut fausser une analyse par pays, et supprimer toutes les lignes ferait perdre des données utiles."
+              "explanation_fr": "« I won’t guess it » : elle ne devine pas. Marquer la valeur manquante et le dire dans le rapport est honnête et traçable. Le pays le plus fréquent fausserait une analyse par pays, et supprimer les lignes ferait perdre des clients bien réels."
             },
             {
               "prompt_fr": "Complète : « It’s raw data, so it needs some data ___. »",
@@ -928,22 +928,22 @@
             {
               "prompt_fr": "Que veut dire « drop the empty rows » ?",
               "choices": [
-                "Supprimer les lignes vides",
                 "Laisser tomber le fichier",
-                "Cacher les colonnes vides"
+                "Cacher les colonnes vides",
+                "Supprimer les lignes vides"
               ],
-              "answer_index": 0,
+              "answer_index": 2,
               "explanation_fr": "« To drop » veut dire ici retirer, supprimer (pandas a d’ailleurs une méthode dropna). « Rows » sont les lignes et « columns » les colonnes : ne les confonds pas. Le sens « laisser tomber » existe, mais pas pour des lignes de données."
             },
             {
-              "prompt_fr": "Comment dire « Je le nettoie à la main » ?",
+              "prompt_fr": "Comment dire « Je l’ai saisi à la main » (des données) ?",
               "choices": [
-                "I clean it with the hand.",
-                "I clean it with my hands only.",
-                "I clean it by hand."
+                "I typed it with the hand.",
+                "I seized it by hand.",
+                "I typed it in by hand."
               ],
               "answer_index": 2,
-              "explanation_fr": "« By hand » est l’expression figée pour « à la main » (on peut aussi dire « manually »). « With the hand » est un calque, et « with my hands only » fait penser à un travail physique, pas à un fichier."
+              "explanation_fr": "« By hand » est l’expression figée pour « à la main » (on peut aussi dire « manually »), et saisir des données se dit « type in » ou « enter ». « With the hand » est un calque, et « seize » est un faux ami : il veut dire saisir au sens d’attraper ou de confisquer."
             },
             {
               "prompt_fr": "Complète : « Load it into a pandas ___, then rename the columns. »",
@@ -958,12 +958,12 @@
             {
               "prompt_fr": "Un collègue te demande pourquoi passer par un script plutôt que de nettoyer dans le tableur. Que réponds-tu ?",
               "choices": [
-                "Because Python is more beautiful.",
                 "Because the script does the same steps every time, in seconds, and anyone can rerun it.",
-                "Because spreadsheets are forbidden."
+                "Because Python is easier to learn than spreadsheet formulas for most people.",
+                "Because spreadsheets can’t open files with more than a few thousand rows."
               ],
-              "answer_index": 1,
-              "explanation_fr": "L’argument métier est la reproductibilité : les mêmes étapes à chaque fois, rapidement, et relançables par quelqu’un d’autre. « More beautiful » n’est pas un argument professionnel, et les tableurs ne sont pas interdits : ils restent utiles pour un contrôle rapide."
+              "answer_index": 0,
+              "explanation_fr": "L’argument métier est la reproductibilité : les mêmes étapes à chaque fois, rapidement, et relançables par quelqu’un d’autre. Python n’est pas forcément plus facile à apprendre, et un tableur ouvre sans problème des centaines de milliers de lignes."
             }
           ],
           "production": {
@@ -1025,12 +1025,12 @@
             {
               "prompt_fr": "Que veut dire Lucía avec « I’ll hold the report » ?",
               "choices": [
-                "J’envoie le rapport tout de suite",
+                "J’envoie le rapport tel quel, avec une note",
                 "Je garde le rapport en attente, je ne l’envoie pas encore",
-                "Je tiens le rapport à jour"
+                "Je tiens le rapport à jour chaque jour"
               ],
               "answer_index": 1,
-              "explanation_fr": "« To hold » veut dire ici retenir, mettre en attente (comme « hold the line » au téléphone). Lucía attend que les chiffres correspondent : elle n’envoie donc rien tout de suite. « Tenir à jour » se dirait « keep up to date »."
+              "explanation_fr": "« To hold » veut dire ici retenir, mettre en attente (comme « hold the line » au téléphone). Lucía attend que les chiffres correspondent : elle n’envoie rien, même avec une note. « Tenir à jour » se dirait « keep up to date »."
             },
             {
               "prompt_fr": "Complète : « Is it a data ___ issue? Sunday looks almost empty. »",
@@ -1045,22 +1045,22 @@
             {
               "prompt_fr": "À quoi sert un « sanity check » ?",
               "choices": [
-                "À vérifier rapidement que les chiffres sont plausibles avant de les partager",
-                "À tester la santé mentale de l’équipe",
-                "À corriger automatiquement les erreurs"
+                "À vérifier vite que les chiffres sont plausibles avant de les partager",
+                "À corriger automatiquement les erreurs du pipeline de données",
+                "À valider officiellement les chiffres avant un audit"
               ],
               "answer_index": 0,
-              "explanation_fr": "Un sanity check est un contrôle rapide de bon sens : le total est-il proche de la source ? Le nombre de lignes est-il normal ? Il ne corrige rien tout seul, il alerte. Le mot « sanity » (santé mentale) est imagé, mais l’expression ne parle jamais des personnes."
+              "explanation_fr": "Un sanity check est un contrôle rapide de bon sens : le total est-il proche de la source ? Il ne corrige rien tout seul, il alerte, et ce n’est pas une validation formelle : c’est justement un contrôle léger, fait avant de partager."
             },
             {
-              "prompt_fr": "Comment dire « Le job ETL de la nuit a échoué dimanche » ?",
+              "prompt_fr": "Comment dire « Le chargement de la nuit a échoué mardi » ?",
               "choices": [
-                "The ETL job of the night has failed Sunday.",
-                "The nightly ETL job failed on Sunday.",
-                "The night ETL job missed Sunday."
+                "The load of the night has failed Tuesday.",
+                "The night load missed on Tuesday.",
+                "The nightly load failed on Tuesday."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Nightly » (chaque nuit) se place devant le nom, et pour un moment passé précis on utilise le prétérit avec « on Sunday ». « Of the night » est un calque, et le present perfect ne va pas avec une date précise. « Missed Sunday » voudrait dire qu’il a raté le dimanche, ce qui reste flou."
+              "answer_index": 2,
+              "explanation_fr": "« Nightly » (chaque nuit) se place devant le nom, et pour un moment passé précis on utilise le prétérit avec « on Tuesday ». « Of the night » est un calque, et le present perfect ne va pas avec une date précise. « Missed » voudrait dire rater, pas échouer."
             }
           ],
           "production": {
@@ -1121,42 +1121,42 @@
             {
               "prompt_fr": "Pourquoi Tomasz refuse-t-il d’envoyer les e-mails ?",
               "choices": [
-                "Parce que le fichier est trop lourd",
-                "Parce que l’agence n’a pas payé",
-                "Parce que ce sont des données personnelles protégées par le RGPD"
+                "Parce que ce sont des données personnelles protégées par le RGPD",
+                "Parce que l’agence n’a pas encore signé le devis",
+                "Parce que le fichier est trop lourd pour un e-mail"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Une adresse e-mail permet d’identifier une personne : c’est une donnée personnelle, et le RGPD (GDPR en anglais) encadre son partage. La taille du fichier ou la facturation de l’agence ne sont jamais évoquées dans le dialogue."
+              "answer_index": 0,
+              "explanation_fr": "Une adresse e-mail identifie une personne : c’est une donnée personnelle, et le RGPD (GDPR en anglais) encadre son partage. Le contrat avec l’agence est évoqué plus tard comme une condition, pas comme la raison du refus, et la taille du fichier n’est jamais mentionnée."
             },
             {
               "prompt_fr": "Que veut dire « PII » ?",
               "choices": [
+                "Les informations sensibles, comme la santé ou les opinions politiques",
                 "Les informations qui permettent d’identifier une personne, comme un nom ou un e-mail",
-                "Un indicateur de performance",
-                "Un format de fichier"
+                "Les informations internes, réservées aux salariés de l’entreprise"
               ],
-              "answer_index": 0,
-              "explanation_fr": "PII signifie personally identifiable information : nom, e-mail, téléphone, adresse… En français, on parle de données identifiantes. Ce n’est ni un indicateur (comme un KPI) ni un format de fichier (comme CSV)."
+              "answer_index": 1,
+              "explanation_fr": "PII signifie « personally identifiable information » : nom, e-mail, téléphone, adresse. Les données de santé ou les opinions sont des données « sensibles », une catégorie plus restreinte, et les informations internes relèvent de la confidentialité, pas forcément des données personnelles."
             },
             {
               "prompt_fr": "Complète : « I can give them an ___ file: no names, no emails. »",
               "choices": [
-                "anonym",
                 "anonymized",
+                "anonym",
                 "anonymous-made"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "« Anonymized » (anonymisé) est le participe passé de « to anonymize » : les données ont été rendues anonymes. « Anonym » n’existe pas en anglais, et « anonymous-made » est une construction inventée. En anglais britannique, on écrit aussi « anonymised »."
             },
             {
-              "prompt_fr": "Comment dire « Demandons d’abord au DPO » ?",
+              "prompt_fr": "Comment dire « Demandons d’abord au service juridique » ?",
               "choices": [
-                "Let’s demand the DPO first.",
-                "Let’s ask to the DPO first.",
-                "Let’s ask the DPO first."
+                "Let’s demand the legal team first.",
+                "Let’s ask the legal team first.",
+                "Let’s ask to the legal team first."
               ],
-              "answer_index": 2,
-              "explanation_fr": "« To ask someone » se construit sans préposition : ask the DPO. « Demand » est un faux ami : il veut dire exiger, ce qui est agressif. Et « ask to the DPO » ajoute un « to » calqué sur « demander à »."
+              "answer_index": 1,
+              "explanation_fr": "« To ask someone » se construit sans préposition : ask the legal team. « Demand » est un faux ami : il veut dire exiger, ce qui est agressif. Et « ask to the legal team » ajoute un « to » calqué sur « demander à »."
             }
           ],
           "production": {
@@ -1253,14 +1253,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « C’est exactement à ça que sert notre outil de BI » ?",
+              "prompt_fr": "Comment dire « C’est exactement à ça que servent les filtres » ?",
               "choices": [
-                "That’s exactly the role of our BI tool for.",
-                "That’s exactly what our BI tool is for.",
-                "It’s exactly the job our BI tool."
+                "That’s exactly the role of the filters for.",
+                "It’s exactly the job the filters.",
+                "That’s exactly what the filters are for."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« What … is for » sert à dire à quoi sert un objet : that’s what it’s for. La première phrase mélange deux constructions avec un « for » en trop, la troisième oublie un verbe. « The role of our BI tool » existe, mais sonne plus formel et moins naturel à l’oral."
+              "answer_index": 2,
+              "explanation_fr": "« What … is for » sert à dire à quoi sert un objet : that’s what they’re for. « The role of the filters for » mélange deux constructions avec un « for » en trop, et « the job the filters » oublie un verbe. « The role of the filters » seul existerait, mais sonne plus formel."
             },
             {
               "prompt_fr": "Pourquoi Kenji refuse-t-il trente graphiques sur la première page ?",
@@ -1275,21 +1275,21 @@
             {
               "prompt_fr": "Que veut dire « self-serve reporting » ?",
               "choices": [
+                "Les équipes reçoivent leurs chiffres par e-mail chaque lundi matin",
                 "Les équipes trouvent elles-mêmes leurs chiffres, sans passer par un analyste",
-                "Un rapport envoyé automatiquement à la direction",
-                "Un rapport sur le self-service de la cantine"
+                "Les équipes saisissent elles-mêmes leurs chiffres dans l’outil"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Self-serve » (libre-service) signifie que les utilisateurs se servent eux-mêmes : ils filtrent et explorent le tableau de bord sans faire de demande. Un rapport envoyé automatiquement reste un rapport poussé vers les gens, ce qui est différent."
+              "answer_index": 1,
+              "explanation_fr": "« Self-serve » (libre-service) signifie que les utilisateurs se servent eux-mêmes : ils filtrent et explorent le tableau de bord sans faire de demande. Un envoi automatique reste un rapport poussé vers les gens, et ce ne sont pas eux qui saisissent les données."
             },
             {
               "prompt_fr": "Complète : « Let’s put those three ___ at the top of the page. »",
               "choices": [
-                "KPI’s",
                 "KPIs",
+                "KPI’s",
                 "KPI"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le pluriel d’un sigle anglais prend simplement un « s », sans apostrophe : KPIs, APIs, CSVs. L’apostrophe (KPI’s) est une erreur fréquente, même chez les anglophones, et « three KPI » oublie la marque du pluriel."
             }
           ],
@@ -1350,11 +1350,11 @@
             {
               "prompt_fr": "Selon Ivan, à quoi sert un « pie chart » ?",
               "choices": [
-                "À montrer les parts d’un tout",
                 "À montrer une évolution dans le temps",
+                "À montrer les parts d’un tout",
                 "À comparer deux années"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "Un pie chart (camembert) montre comment un total se répartit, par exemple les ventes par canal sur un mois. Pour une évolution dans le temps ou une comparaison entre deux années, Ivan conseille un line chart (graphique en courbes)."
             },
             {
@@ -1370,22 +1370,22 @@
             {
               "prompt_fr": "Complète : « Show the ___ growth in the title: we’re ahead of last year. »",
               "choices": [
-                "year-by-year",
                 "year-over-year",
+                "year-by-year",
                 "year-after-year"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "« Year-over-year » (YoY) compare une période à la même période de l’année précédente. « Year after year » veut dire « année après année » (une répétition), et « year-by-year » signifie « année par année », pour un détail annuel."
             },
             {
-              "prompt_fr": "Comment dire « Je veux montrer qu’on est en avance sur l’an dernier » ?",
+              "prompt_fr": "Comment dire « Je veux montrer qu’on est en retard sur l’objectif » ?",
               "choices": [
-                "I want to show we’re in advance on last year.",
-                "I want to show we’re before last year.",
-                "I want to show we’re ahead of last year."
+                "I want to show we’re in late on the target.",
+                "I want to show we’re after the target.",
+                "I want to show we’re behind target."
               ],
               "answer_index": 2,
-              "explanation_fr": "« Ahead of » veut dire en avance sur, devant (ahead of target, ahead of last year). « In advance » signifie « à l’avance » (pay in advance) : c’est un faux ami ici. « Before last year » parlerait de la période avant l’an dernier."
+              "explanation_fr": "Pour un écart à un objectif, on dit « behind target » (en retard) et « ahead of target » (en avance). « In late » est un calque de « en retard », et « after the target » parle d’un ordre dans le temps, pas d’un écart."
             }
           ],
           "production": {
@@ -1443,44 +1443,44 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « Je peux aussi ventiler par segment de clients ? » ?",
+              "prompt_fr": "Comment dire « Tu peux ventiler les ventes par pays ? » ?",
               "choices": [
-                "Can I ventilate it by customer segment?",
-                "Can I break it down by customer segment too?",
-                "Can I cut it in customer segment too?"
+                "Can you break sales down by country?",
+                "Can you ventilate sales by country?",
+                "Can you cut sales in country?"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Break down by » est l’expression du métier pour ventiler, détailler selon un critère. « Ventilate » est un faux ami qui veut dire aérer (une pièce) ou ventiler un patient. « Cut it in » ne s’emploie pas ainsi ; on dit parfois « slice by » ou « split by »."
+              "answer_index": 0,
+              "explanation_fr": "« To break something down by » veut dire ventiler, détailler selon un critère. « Ventilate » est un faux ami : il veut dire aérer. « Cut sales » voudrait dire réduire les ventes, et « in country » n’a pas de sens ici."
             },
             {
               "prompt_fr": "Que fait Lucía quand elle « drills down » sur la barre Europe ?",
               "choices": [
-                "Elle passe du total Europe au détail par pays",
                 "Elle supprime l’Europe du graphique",
+                "Elle passe du total Europe au détail par pays",
                 "Elle télécharge les données"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "To drill down, c’est descendre d’un niveau de détail : du continent au pays, du pays à la ville. Le total n’est pas supprimé, et l’export est une autre action (le bouton dont parle Tomasz)."
             },
             {
               "prompt_fr": "Complète : « My finance colleague wants to build a ___ table in Excel. »",
               "choices": [
+                "pivot",
                 "crossed",
-                "dynamic",
-                "pivot"
+                "dynamic"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Le tableau croisé dynamique se dit « pivot table » dans Excel et Google Sheets. « Crossed table » et « dynamic table » sont des traductions mot à mot que personne n’utilise : un anglophone ne trouverait pas la fonction avec ces mots."
             },
             {
               "prompt_fr": "Un manager te demande pourquoi les ventes baissent, et le tableau de bord montre seulement le total. Que réponds-tu ?",
               "choices": [
-                "Sales are down, that’s all I know.",
+                "Sales are down overall, so I’ll send you the total every week from now on.",
                 "Let’s break it down by region and segment to see where the drop comes from.",
-                "The total is wrong."
+                "The total must be wrong, so I’ll recheck the dashboard calculation first."
               ],
               "answer_index": 1,
-              "explanation_fr": "Ventiler le total (break it down) est le réflexe d’analyste pour localiser une baisse. « That’s all I know » ferme la discussion, et affirmer que le total est faux sans vérification n’a aucun fondement."
+              "explanation_fr": "La bonne réponse propose de détailler pour trouver d’où vient la baisse, comme Lucía en descendant jusqu’à l’Espagne. Envoyer le total chaque semaine ne répond pas au « pourquoi », et douter du total sans raison retarde l’analyse."
             }
           ],
           "production": {
@@ -1540,41 +1540,41 @@
             {
               "prompt_fr": "Que décrit Moussa avec « star schema » ?",
               "choices": [
-                "Un classement des meilleurs tableaux de bord",
-                "Un schéma dessiné par l’équipe design",
+                "Un tableau de bord qui note les ventes avec des étoiles, de une à cinq",
+                "Un modèle où chaque table est reliée directement à toutes les autres",
                 "Une table centrale des ventes entourée des tables clients, produits et dates"
               ],
               "answer_index": 2,
-              "explanation_fr": "Le schéma en étoile (star schema) place une table de faits au centre (les ventes) et les tables de dimension autour (clients, produits, dates), comme les branches d’une étoile. Ce n’est ni un classement (« star » au sens de vedette) ni un dessin de designer."
+              "explanation_fr": "Dans un « star schema » (schéma en étoile), une table de faits centrale (les ventes) est entourée de tables de dimensions (clients, produits, dates), comme les branches d’une étoile. Le mot « star » n’a rien à voir avec une note, et les dimensions ne sont reliées qu’à la table centrale, pas entre elles."
             },
             {
-              "prompt_fr": "Comment dire « Laisse-moi expliquer d’où viennent les chiffres » ?",
+              "prompt_fr": "Comment dire « Laisse-moi t’expliquer d’où vient cet écart » ?",
               "choices": [
-                "Let me explain from where come the numbers.",
-                "Let me explain where the numbers come from.",
-                "Leave me explain where the numbers come."
+                "Let me explain from where comes this gap.",
+                "Leave me explain where this gap comes.",
+                "Let me explain where this gap comes from."
               ],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, la préposition va à la fin : where the numbers come from. Dans une question indirecte, il n’y a pas d’inversion sujet-verbe, donc pas « from where come ». « Leave me » est un calque de « laisse-moi » : on dit « let me »."
+              "answer_index": 2,
+              "explanation_fr": "Dans une question indirecte, l’ordre reste sujet-verbe, et la préposition va à la fin : where this gap comes from. « From where comes » inverse le verbe, et « leave me » est un calque de « laisse-moi » : on dit « let me »."
             },
             {
               "prompt_fr": "Pourquoi le fichier Excel de la finance est-il différent ?",
               "choices": [
-                "Parce qu’il a été exporté en septembre et jamais mis à jour",
                 "Parce que dbt a fait une erreur",
+                "Parce qu’il a été exporté en septembre et jamais mis à jour",
                 "Parce que la finance utilise une autre devise"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "Moussa l’explique : « It was exported in September and never updated ». Un fichier exporté est une photo figée, alors que le tableau de bord se met à jour. Rien n’indique une erreur de dbt ou une autre devise."
             },
             {
               "prompt_fr": "Complète : « Let’s agree on a single source of ___. »",
               "choices": [
+                "truth",
                 "true",
-                "trust",
-                "truth"
+                "trust"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "L’expression est « single source of truth » (source unique de vérité) : un seul endroit dont les chiffres font foi. « Truth » est le nom (la vérité) ; « true » est l’adjectif (vrai). « Trust » (confiance) est proche par le sens, mais ne forme pas l’expression."
             }
           ],
@@ -1676,41 +1676,41 @@
               "prompt_fr": "Que veut dire « sign-ups were flat in July » ?",
               "choices": [
                 "Les inscriptions ont chuté en juillet",
-                "Les inscriptions ont été très bonnes en juillet",
-                "Les inscriptions sont restées stables en juillet"
+                "Les inscriptions sont restées stables en juillet",
+                "Les inscriptions ont été très bonnes en juillet"
               ],
-              "answer_index": 2,
+              "answer_index": 1,
               "explanation_fr": "« Flat » (plat) décrit une courbe qui ne monte ni ne descend : stable. Une chute se dirait « dropped » ou « fell », et une très bonne période « strong » ou « a spike ». « Flat » n’est pas négatif en soi, il signale l’absence d’évolution."
             },
             {
               "prompt_fr": "Complète : « Mobile ___ desktop for the third month in a row. »",
               "choices": [
-                "outperformed",
                 "overperformed",
-                "performed more"
+                "performed more",
+                "outperformed"
               ],
-              "answer_index": 0,
+              "answer_index": 2,
               "explanation_fr": "« To outperform » (faire mieux que) se construit directement avec ce qu’on dépasse : mobile outperformed desktop. « Overperformed » est rare et ne prend pas de complément, et « performed more » ne veut rien dire ici."
             },
             {
-              "prompt_fr": "Comment dire « Il y a un petit creux en début de mois » ?",
+              "prompt_fr": "Comment dire « Il y a eu un petit creux mi-août » ?",
               "choices": [
-                "There’s a small hole at the start of the month.",
-                "There’s a small dip at the start of the month.",
-                "There’s a little hollow in the beginning of the month."
+                "There was a small dip in mid-August.",
+                "There was a small hole in mid-August.",
+                "There was a little hollow at the middle of August."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un « dip » est une baisse légère et passagère sur une courbe. « Hole » est un trou, et « hollow » un creux physique (dans un arbre, dans le sol). Note aussi « at the start of » ou « at the beginning of » the month, pas « in the beginning of »."
+              "answer_index": 0,
+              "explanation_fr": "Une baisse brève et temporaire sur une courbe se dit « a dip », et « in mid-August » veut dire à la mi-août. « Hole » et « hollow » traduisent « creux » au sens physique (un trou, une cavité), pas pour une courbe."
             },
             {
               "prompt_fr": "Les ventes de septembre baissent, mais c’est le cas chaque année. Comment le dire en réunion ?",
               "choices": [
-                "Sales are catastrophic in September.",
-                "Sales dropped in September, it’s a disaster.",
+                "Sales are catastrophic in September, like every year at this time.",
+                "Sales dropped in September, so the new campaign clearly didn’t work.",
                 "There’s a dip in September, but we see it every year, so it’s seasonal."
               ],
               "answer_index": 2,
-              "explanation_fr": "La bonne réponse décrit le creux et lui donne son contexte (seasonal, saisonnier), ce qui évite une fausse alerte. Les deux autres dramatisent une baisse normale : un analyste rassure avec des faits, il n’alarme pas sans raison."
+              "explanation_fr": "La bonne phrase décrit la baisse avec le bon mot et donne le contexte qui rassure : elle revient chaque année. « Catastrophic » dramatise une variation normale, et accuser la campagne tire une conclusion que les données ne montrent pas."
             }
           ],
           "production": {
@@ -1771,42 +1771,42 @@
             {
               "prompt_fr": "Que veut dire « churn went up » ?",
               "choices": [
-                "Les ventes ont augmenté",
                 "Plus de clients ont arrêté leur abonnement",
+                "Les ventes ont augmenté",
                 "Le nombre de visiteurs a augmenté"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le churn (attrition) mesure les clients qui partent ou résilient. « Went up » veut dire a augmenté : c’est donc une mauvaise nouvelle. Il ne s’agit ni d’une hausse des ventes ni d’une hausse du trafic."
             },
             {
-              "prompt_fr": "Comment dire « J’aimerais vérifier les motifs de résiliation avant de conclure » ?",
+              "prompt_fr": "Comment dire « J’aimerais regarder les tickets du support avant de conclure » ?",
               "choices": [
-                "I’d like to check the cancellation reasons before we conclude.",
-                "I would like to verify the motives of resiliation before concluding us.",
-                "I want check the reasons of cancel before conclude."
+                "I would like to look the support tickets before concluding us.",
+                "I’d like to look at the support tickets before we conclude.",
+                "I want look at the support tickets before conclude."
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Cancellation » est le mot courant pour une résiliation (« resiliation » n’existe pas en anglais). « Motives » désigne plutôt les mobiles d’une personne, comme dans une enquête criminelle, alors qu’on parle ici de « reasons ». La troisième phrase oublie « to » après want et utilise « cancel » comme nom."
+              "answer_index": 1,
+              "explanation_fr": "« Look » demande « at » devant son complément, et « before we conclude » est la tournure naturelle. « Concluding us » ajoute un pronom inutile, et « want look » oublie le « to » obligatoire après « want »."
             },
             {
               "prompt_fr": "Complète : « The May ___ has a retention rate of 70% after three months. »",
               "choices": [
+                "cohort",
                 "group of month",
-                "promotion",
-                "cohort"
+                "promotion"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "En analyse, « cohort » désigne les clients arrivés au même moment (la cohorte de mai). « Promotion » est un faux ami : en anglais, c’est une offre commerciale ou un avancement, pas une promotion d’élèves. « Group of month » n’existe pas."
             },
             {
               "prompt_fr": "Pourquoi Priya refuse-t-elle de conclure tout de suite que le prix est en cause ?",
               "choices": [
+                "Parce que la cohorte de mai est trop petite pour en tirer une conclusion",
                 "Parce que deux faits simultanés ne prouvent pas que l’un cause l’autre",
-                "Parce qu’elle n’a pas accès aux données",
-                "Parce que le churn n’a pas vraiment augmenté"
+                "Parce que le churn augmente toujours en fin de printemps"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« The timing alone doesn’t prove it » : deux choses arrivées en même temps ne sont pas forcément liées par une cause. Elle veut d’autres éléments (les motifs de résiliation). Elle a bien accès aux données, et elle confirme la hausse du churn."
+              "answer_index": 1,
+              "explanation_fr": "Priya le dit : « the timing alone doesn’t prove it ». La hausse coïncide avec le changement de prix, mais d’autres causes sont possibles, d’où la vérification des motifs de résiliation. La taille de la cohorte et une saisonnalité ne sont pas évoquées."
             }
           ],
           "production": {
@@ -1867,42 +1867,42 @@
             {
               "prompt_fr": "Que veut dire « The top of the funnel is healthy » ?",
               "choices": [
-                "Le tunnel ne contient aucun bug",
-                "Le site est rapide",
+                "La fin du tunnel, le paiement, fonctionne sans erreur",
+                "Le tunnel ne présente aucun bug technique",
                 "L’entrée du tunnel, l’arrivée des visiteurs, se porte bien"
               ],
               "answer_index": 2,
-              "explanation_fr": "Le top of the funnel (haut du tunnel) est la première étape : ici, les visiteurs qui arrivent sur les pages produits. « Healthy » veut dire en bonne santé, donc le volume est bon. La phrase ne parle ni de bugs ni de vitesse du site."
+              "explanation_fr": "Le « top of the funnel » est le haut de l’entonnoir : les visiteurs qui arrivent. « Healthy » veut dire en bonne santé, donc le trafic est bon. Le problème est plus bas, entre panier et livraison, et il ne s’agit pas de bugs."
             },
             {
-              "prompt_fr": "Comment dire « Où est-ce qu’on perd les gens ? » ?",
+              "prompt_fr": "Comment dire « À quelle étape les clients abandonnent-ils ? » ?",
               "choices": [
-                "Where we lose people?",
-                "Where do we lose people?",
-                "Where is it that we lose the persons?"
+                "Where customers drop off?",
+                "Where is it that the customers abandon?",
+                "Where do customers drop off?"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une question en anglais a besoin de l’auxiliaire « do » : where do we lose people? « Where we lose people? » oublie l’auxiliaire, et « where is it that » calque « où est-ce que ». « Persons » est très formel (textes juridiques) : au bureau, on dit « people »."
+              "answer_index": 2,
+              "explanation_fr": "Une question en anglais a besoin de l’auxiliaire « do » : where do customers drop off? « Where customers drop off? » oublie l’auxiliaire, et « where is it that… abandon » calque « est-ce que » et utilise « abandon », peu naturel pour un tunnel (on dit « drop off » ou « leave »)."
             },
             {
               "prompt_fr": "Complète : « The biggest ___ is between cart and delivery. »",
               "choices": [
-                "drop",
                 "fall down",
+                "drop",
                 "lost"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "« Drop » (ou « drop-off ») désigne la baisse du nombre d’utilisateurs entre deux étapes d’un tunnel. « Fall down » veut dire tomber par terre, et « lost » est un participe passé (perdu), pas un nom ; le nom serait « loss »."
             },
             {
               "prompt_fr": "Pourquoi Tomasz dit-il « we should test it first » ?",
               "choices": [
-                "Parce que le tunnel est cassé",
                 "Parce que l’effet d’un changement doit être mesuré, pas supposé",
-                "Parce que le taux de conversion est déjà parfait"
+                "Parce que l’étape de livraison contient peut-être un bug",
+                "Parce que l’équipe doit d’abord valider le budget du changement"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Les données comportementales suggèrent une cause, mais seul un test (souvent un test A/B) dira si afficher les frais plus tôt améliore vraiment la conversion. Le tunnel fonctionne, et le taux de conversion est justement jugé trop bas."
+              "answer_index": 0,
+              "explanation_fr": "Les données de comportement suggèrent une cause, mais seul un test, souvent un test A/B, dira si afficher les frais plus tôt améliore vraiment la conversion. Rien n’indique un bug, et le budget n’est pas évoqué."
             }
           ],
           "production": {
@@ -1963,11 +1963,11 @@
             {
               "prompt_fr": "Pourquoi Moussa dit-il que le résultat est « directional » ?",
               "choices": [
-                "Parce qu’il donne une tendance, sans prouver la cause",
                 "Parce qu’il vient de la direction",
+                "Parce qu’il donne une tendance, sans prouver la cause",
                 "Parce qu’il indique une direction géographique"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "« Directional » veut dire indicatif : le résultat montre une tendance, mais il ne prouve pas que l’appli fait acheter plus, car les clients fidèles l’utilisent peut-être déjà. Rien à voir avec « la direction » de l’entreprise (management) ni avec la géographie."
             },
             {
@@ -1983,22 +1983,22 @@
             {
               "prompt_fr": "Complète : « The main ___ is that app users buy twice as often. »",
               "choices": [
-                "insighting",
                 "insight",
+                "insighting",
                 "inside"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Un « insight » est un enseignement utile tiré des données, qui aide à décider. « Inside » veut dire à l’intérieur (les deux mots se ressemblent à l’oreille), et « insighting » n’existe pas."
             },
             {
               "prompt_fr": "Ta responsable te demande en réunion : « So, what should we do? ». Quelle réponse correspond au data storytelling ?",
               "choices": [
-                "Here are the twelve charts, you can decide.",
-                "I don’t know, the data is complex.",
-                "My key takeaway is that we should push the app to new customers, with one caveat about loyal users."
+                "Here are the twelve charts, so you can decide what to do next.",
+                "It’s hard to say, because the data is quite complex to read.",
+                "My key takeaway: we should push the app to new customers, with one caveat."
               ],
               "answer_index": 2,
-              "explanation_fr": "Une bonne réponse commence par le message et la recommandation, puis donne la réserve. Montrer tous les graphiques reporte la décision sur les autres, et « I don’t know » sans proposition ne répond pas à la question."
+              "explanation_fr": "Le data storytelling donne un message clair et une recommandation, avec la réserve qui va avec. Montrer douze graphiques renvoie le travail d’analyse à la responsable, et « hard to say » n’aide pas à décider."
             }
           ],
           "production": {
@@ -2097,42 +2097,42 @@
             {
               "prompt_fr": "Pourquoi Kenji refuse-t-il d’arrêter le test dès que B gagne ?",
               "choices": [
-                "Parce que le test coûte trop cher",
                 "Parce qu’au début les résultats varient beaucoup et peuvent tromper",
-                "Parce que B perd toujours à la fin"
-              ],
-              "answer_index": 1,
-              "explanation_fr": "Arrêter dès qu’un résultat plaît (le « peeking ») augmente le risque de faux positif : au début, avec peu de données, les écarts sont souvent dus au hasard. Le coût n’est pas en jeu, et rien ne dit que B perdra : il faut simplement attendre la taille d’échantillon prévue."
-            },
-            {
-              "prompt_fr": "Comment dire « Il nous faut environ trois semaines pour atteindre la taille d’échantillon » ?",
-              "choices": [
-                "We need about three weeks to reach the sample size.",
-                "It needs us three weeks to attain the sample size.",
-                "We must around three weeks for the sample size."
+                "Parce que la version B finit souvent par perdre en fin de test",
+                "Parce qu’un test A/B doit toujours durer au moins un mois"
               ],
               "answer_index": 0,
-              "explanation_fr": "« We need … to reach » est la tournure naturelle. « It needs us » calque « il nous faut », impossible en anglais. « We must around » oublie le verbe : « must » doit être suivi d’un verbe (we must wait)."
+              "explanation_fr": "Kenji le dit : « the results jump around at the start ». Arrêter dès qu’une version semble gagner, c’est conclure sur du bruit. B ne « finit » pas forcément par perdre, et la durée dépend du trafic nécessaire, pas d’une règle fixe d’un mois."
+            },
+            {
+              "prompt_fr": "Comment dire « Il nous faut environ deux semaines de plus » ?",
+              "choices": [
+                "It needs us about two weeks more.",
+                "We need about two more weeks.",
+                "We must around two more weeks."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« We need » + durée est la tournure naturelle, et « about » veut dire environ. « It needs us » calque « il nous faut », et « must » doit être suivi d’un verbe : il ne peut pas introduire directement une durée."
             },
             {
               "prompt_fr": "Complète : « Let’s pick one main ___ now, so we don’t choose it after. »",
               "choices": [
+                "metric",
                 "metrics",
-                "meter",
-                "metric"
+                "meter"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Après « one main », il faut un singulier : one main metric. « Metrics » est le pluriel, et « meter » un compteur. Choisir l’indicateur avant le test évite de garder, après coup, celui qui arrange."
             },
             {
               "prompt_fr": "Que fait Kenji avec « let’s write the hypothesis » ?",
               "choices": [
-                "Il formule, avant le test, ce qu’il s’attend à voir et sur quel indicateur",
-                "Il écrit le compte rendu final",
-                "Il prédit le gagnant à coup sûr"
+                "Il rédige le compte rendu final qui sera envoyé après le test",
+                "Il formule avant le test ce qu’il s’attend à voir, et sur quel indicateur",
+                "Il annonce le gagnant probable pour gagner du temps à la fin"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’hypothèse s’écrit avant le test : ce qu’on change, ce qu’on attend, sur quel indicateur. Ce n’est pas le compte rendu final (le write-up), ni une certitude : le test sert justement à la confirmer ou à la rejeter."
+              "answer_index": 1,
+              "explanation_fr": "Une hypothèse s’écrit avant le test : elle dit quel effet on attend et sur quel indicateur, pour ne pas interpréter les résultats après coup. Ce n’est ni le compte rendu final, ni un pronostic sur le gagnant."
             }
           ],
           "production": {
@@ -2192,42 +2192,42 @@
             {
               "prompt_fr": "Que veut dire « the result is statistically significant » ?",
               "choices": [
-                "Le gain est très grand",
-                "Le résultat est important pour l’entreprise",
+                "Le gain est assez grand pour compter pour l’entreprise",
+                "Le gain est certain et sera exactement de 4 %",
                 "Un tel écart serait peu probable s’il n’était dû qu’au hasard"
               ],
               "answer_index": 2,
-              "explanation_fr": "Un résultat statistiquement significatif est un écart qu’on aurait peu de chances d’observer si les deux versions étaient en réalité identiques. Cela ne dit pas que le gain est grand ni qu’il compte pour l’entreprise : avec beaucoup de données, un tout petit gain peut être significatif."
+              "explanation_fr": "« Statistically significant » veut dire que l’écart a peu de chances d’être un simple effet du hasard. Cela ne dit pas que le gain est grand ou important pour l’entreprise, et le gain réel n’est pas exactement 4 % : il se situe dans l’intervalle de confiance."
             },
             {
               "prompt_fr": "Complète : « Version B shows a 4% ___ in conversion. »",
               "choices": [
                 "lifting",
-                "lift",
-                "elevator"
+                "elevator",
+                "lift"
               ],
-              "answer_index": 1,
+              "answer_index": 2,
               "explanation_fr": "« Lift » est le nom utilisé pour le gain d’une variante par rapport au groupe témoin. « Lifting » est une forme verbale (soulever), et « elevator » est l’ascenseur en anglais américain ; « lift » veut aussi dire ascenseur en anglais britannique, d’où la confusion."
             },
             {
               "prompt_fr": "Pourquoi Priya parle-t-elle de l’intervalle de confiance ?",
               "choices": [
-                "Pour montrer que le vrai gain n’est pas exactement 4 %, mais se situe dans une fourchette",
-                "Pour dire qu’elle n’a pas confiance dans le test",
-                "Pour annoncer la durée du test"
+                "Pour montrer qu’elle n’est pas sûre que la version B soit meilleure",
+                "Pour montrer que le vrai gain n’est pas exactement 4 %, mais dans une fourchette",
+                "Pour montrer combien de temps le test aurait dû durer"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le confidence interval donne une fourchette de valeurs plausibles pour le vrai gain (ici de 1 % à 7 %). Le mot « confidence » ne veut pas dire que Priya doute : au contraire, comme tout l’intervalle est positif, elle recommande la version B. Il ne s’agit pas non plus d’une durée."
+              "answer_index": 1,
+              "explanation_fr": "L’intervalle de confiance donne la fourchette plausible du vrai gain (de 1 % à 7 %). Comme il est entièrement au-dessus de zéro, Priya est au contraire confiante, et l’intervalle ne dit rien de la durée du test."
             },
             {
-              "prompt_fr": "Comment dire « Le vrai gain se situe très probablement dans cette fourchette » ?",
+              "prompt_fr": "Comment dire « Le vrai effet est sans doute plus faible que prévu » ?",
               "choices": [
-                "The real gain is probably in this fork.",
-                "The true lift sits probably in this bracket of values.",
-                "The real lift is most likely somewhere in that range."
+                "The real effect is most likely smaller than expected.",
+                "The real effect is most probably more small than expected.",
+                "The true effect is likely smaller that expected."
               ],
-              "answer_index": 2,
-              "explanation_fr": "« Range » est le mot pour une fourchette de valeurs (a price range, a range from 1 to 7%). « Fork » est une fourchette de table : calque à éviter ! « Bracket » s’emploie pour une tranche (an age bracket), et l’adverbe « probably » se place avant le verbe principal, pas après « sits »."
+              "answer_index": 0,
+              "explanation_fr": "« Most likely » veut dire très probablement, et le comparatif de « small » est « smaller ». « More small » n’existe pas pour un adjectif court, et après un comparatif on écrit « than », pas « that »."
             }
           ],
           "production": {
@@ -2289,12 +2289,12 @@
             {
               "prompt_fr": "Pourquoi la moyenne (six jours) est-elle plus élevée que la médiane (trois jours) ?",
               "choices": [
-                "Parce que la médiane est mal calculée",
+                "Parce que la plupart des commandes arrivent en six jours environ",
                 "Parce que quelques commandes très longues tirent la moyenne vers le haut",
-                "Parce que les clients exagèrent"
+                "Parce que la médiane ne compte pas les commandes en retard"
               ],
               "answer_index": 1,
-              "explanation_fr": "La moyenne (mean) est sensible aux valeurs extrêmes : quelques commandes de deux mois suffisent à la faire monter. La médiane (median), la valeur du milieu, n’est presque pas touchée. Les deux chiffres sont justes, ils ne mesurent simplement pas la même chose."
+              "explanation_fr": "Tomasz l’explique : quelques valeurs extrêmes (« outliers »), comme les colis bloqués en douane, tirent la moyenne vers le haut. La plupart des commandes arrivent plutôt en trois jours (la médiane), et la médiane compte toutes les commandes : elle est juste moins sensible aux extrêmes."
             },
             {
               "prompt_fr": "Complète : « A few ___, like orders blocked at customs, pull the mean up. »",
@@ -2317,14 +2317,14 @@
               "explanation_fr": "« Within eight days » veut dire en huit jours au maximum. C’est la définition du 90e centile (90th percentile) : 90 % des valeurs sont en dessous. Ce n’est pas un jour précis, ni un retard."
             },
             {
-              "prompt_fr": "Comment dire « La moyenne seule est trompeuse » ?",
+              "prompt_fr": "Comment dire « Ce chiffre seul est trompeur » ?",
               "choices": [
-                "The mean alone is deceiving us.",
-                "The mean alone is misleading.",
-                "The average only is lying."
+                "This number alone is deceiving us.",
+                "This number only is lying.",
+                "This number alone is misleading."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Misleading » (trompeur, qui induit en erreur) est l’adjectif courant pour un chiffre ou un graphique. « Deceiving us » suggère une intention de tromper, et « is lying » prête un mensonge au chiffre. « Alone » (à lui seul) se place après le nom : the mean alone."
+              "answer_index": 2,
+              "explanation_fr": "« Misleading » (trompeur) est le mot naturel pour un chiffre qui donne une fausse impression. « Deceiving us » prête une intention au chiffre, et « only » placé après le nom ne veut pas dire « seul » ici : on dit « alone » ou « on its own »."
             }
           ],
           "production": {
@@ -2383,44 +2383,44 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « Elle ne prouve pas la causalité » ?",
+              "prompt_fr": "Comment dire « Ça ne prouve pas que la newsletter en est la cause » ?",
               "choices": [
-                "It doesn’t prove the causality of it.",
-                "It doesn’t proof causation.",
-                "It doesn’t prove causation."
+                "It doesn’t prove the newsletter is the cause.",
+                "It doesn’t proof the newsletter is the cause.",
+                "It doesn’t prove the newsletter is the reason of it."
               ],
-              "answer_index": 2,
-              "explanation_fr": "« To prove » est le verbe (prouver) et « proof » le nom (une preuve) : « doesn’t proof » est une erreur fréquente. « Causation » est le terme courant en analyse (« causality » existe, mais il est plus philosophique), et « of it » est superflu."
+              "answer_index": 0,
+              "explanation_fr": "Le verbe est « to prove » ; « proof » est le nom (la preuve). « The reason of it » est un calque : on dirait « the reason for it », et « the cause » est plus précis pour parler de causalité."
             },
             {
               "prompt_fr": "Qu’est-ce que le « selection bias » dont parle Moussa ?",
               "choices": [
-                "Les abonnés à la newsletter sont déjà différents des autres clients au départ",
-                "Moussa préfère certains clients",
-                "La newsletter est mal écrite"
+                "Moussa a choisi lui-même les clients inclus dans l’étude",
+                "Les abonnés sont déjà différents des autres clients au départ",
+                "Les clients s’abonnent après avoir commencé à dépenser plus"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un biais de sélection apparaît quand les groupes comparés ne sont pas comparables dès le départ : ici, les clients fidèles s’abonnent plus et dépensent plus de toute façon. « Bias » n’est pas une préférence personnelle de l’analyste, et la qualité de la newsletter n’est pas en cause."
+              "answer_index": 1,
+              "explanation_fr": "Le biais de sélection vient de qui choisit de s’abonner : les clients les plus fidèles s’abonnent davantage et dépenseraient plus de toute façon. Moussa n’a choisi personne, et l’idée que la dépense vient avant l’abonnement est une causalité inversée, un autre piège."
             },
             {
               "prompt_fr": "Complète : « A ___ can control for past spending. »",
               "choices": [
-                "regress",
                 "regression",
+                "regress",
                 "regressing"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Après « a », il faut un nom : a regression, un modèle statistique qui estime l’effet d’une variable en tenant compte des autres. « Regress » est un verbe (régresser) et « regressing » sa forme en -ing. Note : « control for » veut dire tenir compte de, neutraliser, et non « contrôler »."
             },
             {
               "prompt_fr": "Un directeur te dit : « Les magasins avec plus de vendeurs vendent plus, embauchons ! ». Quelle réponse est la plus juste ?",
               "choices": [
-                "It’s a correlation. Bigger stores have more staff and more customers, so let’s test it before we hire.",
-                "You’re right, the data proves it.",
-                "Correlations are always wrong."
+                "You’re right, the data clearly shows that more staff drives more sales.",
+                "It’s a correlation: bigger stores have more staff and more customers, so let’s test before hiring.",
+                "Correlations never tell us anything useful, so let’s ignore this one."
               ],
-              "answer_index": 0,
-              "explanation_fr": "La bonne réponse reconnaît le lien, propose une autre explication (la taille du magasin joue sur les deux) et suggère un test. « The data proves it » confond corrélation et causalité, et dire qu’une corrélation est « toujours fausse » est inexact : le lien est réel, c’est son interprétation qui pose question."
+              "answer_index": 1,
+              "explanation_fr": "Un troisième facteur (la taille du magasin) peut expliquer à la fois le nombre de vendeurs et les ventes : on teste avant d’embaucher. Dire que les données le prouvent confond corrélation et causalité, et rejeter toute corrélation va trop loin : elle oriente l’enquête."
             }
           ],
           "production": {

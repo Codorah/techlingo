@@ -37,22 +37,22 @@
             {
               "prompt_fr": "Pourquoi le fichier YAML d’Aïcha bloquait-il le démarrage du pipeline ?",
               "choices": [
-                "Parce que la couverture de tests était inférieure à 80 %",
+                "Parce que la couverture de tests était passée sous le seuil de 80 %",
                 "Parce qu’une ligne utilisait une tabulation au lieu d’espaces pour l’indentation",
-                "Parce que le cache des dépendances était corrompu"
+                "Parce que le cache des dépendances n’était pas encore configuré"
               ],
               "answer_index": 1,
-              "explanation_fr": "En YAML, l’indentation définit la structure du fichier et les tabulations sont interdites par la spécification : il faut des espaces. Le seuil de 80 % bloque le pipeline pendant l’exécution des tests, pas avant même que le workflow démarre."
+              "explanation_fr": "Tomasz le trouve à la ligne 24 : « YAML only accepts spaces for indentation ». Un fichier mal indenté ne se lit même pas, donc le workflow ne démarre pas. Le seuil de couverture ferait échouer le pipeline après les tests, et l’absence de cache ralentit le build sans l’empêcher de démarrer."
             },
             {
               "prompt_fr": "Que signifie l’expression « from scratch » dans « it downloads every package from scratch » ?",
               "choices": [
-                "Depuis un dépôt temporaire",
-                "En ignorant les erreurs réseau",
+                "En passant par un dépôt de paquets temporaire",
+                "En ignorant les erreurs réseau pendant le téléchargement",
                 "En repartant de zéro, depuis le tout début"
               ],
               "answer_index": 2,
-              "explanation_fr": "« From scratch » veut dire « à partir de zéro » (sans rien réutiliser d’un build précédent). Sans cache, le runner retélécharge toutes les bibliothèques à chaque exécution."
+              "explanation_fr": "« From scratch » veut dire « à partir de rien, en repartant de zéro » : sans cache, chaque exécution retélécharge tous les paquets. L’expression ne parle ni d’un dépôt particulier ni de gestion des erreurs."
             },
             {
               "prompt_fr": "Complète : « The pipeline fails if test coverage ___ below 80%. »",
@@ -67,12 +67,12 @@
             {
               "prompt_fr": "Un développeur se plaint que le nouveau jalon de qualité (quality gate) bloque sa PR urgente. Quelle réponse professionnelle adoptes-tu ?",
               "choices": [
-                "I’ll delete the quality gate permanently so you can merge.",
-                "The quality gate caught a drop in coverage on the new payment logic; let’s add the missing unit test so we can merge safely.",
-                "It’s not my problem if your code doesn’t pass the pipeline."
+                "The quality gate is blocking it, so I’ll lower the coverage threshold to 70% just for your PR.",
+                "The quality gate is right, so you’ll have to wait for the next release to merge it.",
+                "The quality gate caught a coverage drop on the payment logic; let’s add the missing test so we can merge safely."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième réponse est factuelle et collaborative : elle explique ce que le jalon de qualité a détecté et propose d’aider à passer le contrôle en sécurité. Supprimer le contrôle détruit la sécurité du pipeline, et la troisième réponse va à l’encontre de la culture DevOps."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse explique ce que le contrôle a détecté et propose d’aider à le passer. Baisser le seuil pour une PR vide le contrôle de son sens, et repousser à la prochaine version ne règle rien alors qu’un test suffit."
             }
           ],
           "production": {
@@ -104,42 +104,42 @@
             {
               "prompt_fr": "Pourquoi le fait de recompiler l’application à chaque étape a-t-il causé un bug en production ?",
               "choices": [
-                "Parce que le serveur de production avait moins de mémoire que la préproduction",
                 "Parce qu’une dépendance a été mise à jour entre le build de préproduction et celui de production",
-                "Parce que le certificat de signature de code avait expiré"
+                "Parce que les variables d’environnement de production étaient différentes de celles de préproduction",
+                "Parce que le certificat de signature de code avait expiré entre les deux déploiements"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Kenji explique que recompiler pour chaque environnement a téléchargé une version légèrement différente d’une bibliothèque entre-temps. Construire un seul artefact (« build once, deploy everywhere ») garantit qu’on déploie en production le binaire exact qui a été testé sur staging."
+              "answer_index": 0,
+              "explanation_fr": "Kenji l’explique : « a library updated a minor version in between ». Reconstruire à chaque étape produit deux artefacts différents. Des variables d’environnement différentes sont normales (Kenji dit que seules elles doivent changer), et rien ne parle d’un certificat expiré."
             },
             {
               "prompt_fr": "Comment dire « Nous construisons l’artefact une seule fois et nous le promouvons en production » ?",
               "choices": [
                 "We build the artifact one time only and we graduate it in production.",
-                "We construct the artifact once and we promote it on production.",
-                "We build the artifact once and promote it to production."
+                "We build the artifact once and promote it to production.",
+                "We construct the artifact once and we promote it on production."
               ],
-              "answer_index": 2,
+              "answer_index": 1,
               "explanation_fr": "En anglais DevOps, on dit « build an artifact once » et « promote it to production » (avec la préposition « to » qui marque la destination). « Construct » s’utilise pour un bâtiment ou une phrase complexe, et « graduate » pour un diplômé."
             },
             {
               "prompt_fr": "Complète : « With continuous ___, every version is ready to ship, but a human still approves the production deploy. »",
               "choices": [
-                "integration",
                 "delivery",
+                "integration",
                 "deployment"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "C’est la distinction classique : « continuous delivery » garde chaque version prête à être déployée avec une validation manuelle finale, tandis que « continuous deployment » pousse automatiquement jusqu’en production sans intervention humaine. « Continuous integration » concerne la fusion et les tests du code."
             },
             {
               "prompt_fr": "À quoi sert le « code signing » sur l’artefact dans le pipeline de Kenji ?",
               "choices": [
+                "À chiffrer l’artefact pour que personne ne puisse le lire dans le registre",
                 "À prouver l’origine de l’artefact et garantir qu’il n’a pas été modifié depuis le build",
-                "À compresser l’artefact pour qu’il prenne moins de place dans le registre",
-                "À traduire automatiquement les fichiers de configuration pour la production"
+                "À donner automatiquement l’accord du responsable pour la mise en production"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La signature cryptographique (« code signing ») permet au cluster de production de vérifier que l’artefact provient bien de votre pipeline CI/CD et n’a subi aucune altération dans le registre."
+              "answer_index": 1,
+              "explanation_fr": "La signature de code prouve qui a produit l’artefact et qu’il est intact. Elle ne chiffre pas le contenu (on peut toujours le lire), et l’approbation de la mise en production reste une étape humaine distincte, faite par le responsable d’équipe."
             }
           ],
           "production": {
@@ -171,22 +171,22 @@
             {
               "prompt_fr": "Pourquoi supprimer un secret dans un second commit ne suffit-il pas quand il a été poussé sur Git ?",
               "choices": [
-                "Parce que Git refuse de supprimer les lignes contenant une clé d’API",
-                "Parce que la protection de branche interdit les nouveaux commits",
-                "Parce que le secret reste lisible dans l’historique des commits précédents : il faut le révoquer et le remplacer"
+                "Parce que le robot de sécurité bloque la PR tant que le premier commit existe",
+                "Parce que la protection de branche empêche d’ajouter un nouveau commit sur la PR",
+                "Parce que le secret reste lisible dans l’historique Git : il faut le révoquer et le remplacer"
               ],
               "answer_index": 2,
-              "explanation_fr": "Un commit qui supprime une ligne n’efface pas le commit précédent de l’historique Git : toute personne ayant accès au dépôt peut encore lire la clé exposée. La seule réaction sûre est de révoquer immédiatement le secret (« rotate/revoke the key ») et d’en générer un nouveau dans le KMS."
+              "explanation_fr": "Moussa le dit : « a secret stays in the Git history forever ». Le supprimer dans un nouveau commit le laisse lisible dans les anciens, d’où la rotation immédiate. Le blocage du robot est une conséquence, pas la raison, et la protection de branche concerne `main`, pas la branche de travail."
             },
             {
               "prompt_fr": "Que signifie « the runner will inject it at runtime » ?",
               "choices": [
-                "L’agent d’exécution fournira le secret en mémoire au moment où le programme tourne, sans l’écrire dans le dépôt",
-                "Le développeur devra copier-coller le secret à la main pendant que le test tourne",
-                "Le secret sera écrit en clair dans le fichier YAML après la compilation"
+                "L’agent d’exécution copiera le secret dans le fichier YAML juste avant chaque build",
+                "L’agent d’exécution chiffrera le secret dans le dépôt pour qu’il ne soit plus lisible",
+                "L’agent d’exécution fournira le secret au moment où le programme tourne, sans l’écrire dans le dépôt"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« At runtime » signifie « à l’exécution » (par opposition à « at build time », au moment de la compilation). Le runner CI/CD récupère le secret chiffré depuis le KMS et le passe au processus sous forme de variable d’environnement temporaire."
+              "answer_index": 2,
+              "explanation_fr": "Le « runner » récupère la valeur dans le KMS et l’injecte « at runtime », pendant l’exécution, généralement comme variable d’environnement : le secret n’existe jamais dans le dépôt. L’écrire dans le YAML, même temporairement, ou le stocker chiffré dans le dépôt, c’est justement ce qu’on évite."
             },
             {
               "prompt_fr": "Complète : « We enabled branch ___ on main so nobody can push directly or bypass security checks. »",
@@ -240,22 +240,22 @@
             {
               "prompt_fr": "Quelle est la différence technique entre un « blue-green deployment » et une « canary release » ?",
               "choices": [
-                "Le bleu-vert maintient deux environnements complets et bascule le trafic, alors que le canari expose d’abord la nouvelle version à un petit pourcentage d’utilisateurs",
-                "Le bleu-vert est réservé aux bases de données et le canari aux applications mobiles",
-                "Le canari nécessite une coupure de service (downtime) alors que le bleu-vert n’en nécessite pas"
+                "Le bleu-vert expose d’abord un petit pourcentage d’utilisateurs ; le canari bascule tout le trafic d’un coup",
+                "Le bleu-vert bascule tout le trafic d’un environnement complet à l’autre ; le canari expose d’abord un petit pourcentage d’utilisateurs",
+                "Le bleu-vert impose une courte coupure de service ; le canari permet un déploiement sans aucune coupure"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En « blue-green deployment », deux environnements de production complets tournent en parallèle et le routeur bascule de l’ancien (blue) au nouveau (green). En « canary release », on envoie progressivement une fraction du trafic (5 %, 25 %, 100 %) vers les nouvelles instances, sans coupure de service dans les deux cas."
+              "answer_index": 1,
+              "explanation_fr": "Ivan le décrit : le bleu-vert fait tourner deux environnements complets (d’où le coût doublé) et bascule d’un coup ; le canari envoie 5 % du trafic aux nouveaux pods. Le piège classique est d’inverser les deux, et les deux stratégies visent un déploiement sans coupure."
             },
             {
               "prompt_fr": "Pourquoi l’équipe combine-t-elle un « feature flag » avec son déploiement canari ?",
               "choices": [
-                "Pour éviter d’avoir à écrire des tests unitaires sur le contrôle anti-fraude",
-                "Pour pouvoir désactiver uniquement la nouvelle fonctionnalité en une seconde sans redéployer tout le service",
-                "Pour chiffrer le trafic entre les environnements bleu et vert"
+                "Pour envoyer la nouvelle fonctionnalité à 5 % des utilisateurs au lieu de 100 %",
+                "Pour pouvoir revenir à l’environnement bleu si le contrôle anti-fraude échoue",
+                "Pour désactiver seulement la nouvelle fonctionnalité, sans redéployer tout le service"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le déploiement canari valide le binaire (absence de crash, mémoire, dépendances), tandis que le « feature flag » découple la mise en ligne du code et l’activation métier : si le contrôle anti-fraude pose problème le lendemain, on le coupe (« toggle it off ») sans redéployer."
+              "answer_index": 2,
+              "explanation_fr": "Ivan le dit : « we can toggle the feature flag off without a new deployment ». Le pourcentage de trafic est géré par la release canari, pas par le flag, et revenir à l’environnement bleu relève du bleu-vert, que l’équipe n’utilise pas ici."
             },
             {
               "prompt_fr": "Complète : « We can ___ the feature flag off if latencies increase. »",
@@ -265,16 +265,16 @@
                 "close"
               ],
               "answer_index": 0,
-              "explanation_fr": "Pour un interrupteur binaire (« flag » ou « switch »), les verbes idiomatiques sont « to toggle on/off » ou « to turn on/off ». « Extinguish » veut dire éteindre un feu, et « close » est un calque du français « fermer » (pour un appareil ou une option, l’anglais utilise turn off / toggle off)."
+              "explanation_fr": "On dit « toggle a feature flag on / off » : basculer un interrupteur logiciel. « Extinguish » veut dire éteindre un feu, et « close » s’emploie pour une fenêtre ou un ticket, pas pour un flag."
             },
             {
               "prompt_fr": "Comment dire « Cette stratégie nous permet de déployer sans aucune indisponibilité » ?",
               "choices": [
-                "This strategy lets us deploy with zero downtime.",
                 "This strategy permits us to deploy without no downtime.",
-                "This strategy allows to deploy with zero stop time."
+                "This strategy allows to deploy with zero stop time.",
+                "This strategy lets us deploy with zero downtime."
               ],
-              "answer_index": 0,
+              "answer_index": 2,
               "explanation_fr": "« With zero downtime » est la collocation standard dans l’industrie. « Without no downtime » est une double négation incorrecte, « allows to deploy » oublie le complément obligatoire après « allow » (allows us to deploy), et « stop time » ne se dit pas."
             }
           ],
@@ -327,42 +327,42 @@
             {
               "prompt_fr": "Qu’apporte un « multi-stage Dockerfile » dans le dialogue ?",
               "choices": [
-                "Il permet de faire tourner plusieurs bases de données dans le même conteneur",
-                "Il sépare l’étape de compilation de l’image finale, ce qui réduit la taille de l’image et le nombre de failles (CVE)",
-                "Il transforme automatiquement un conteneur Docker en machine virtuelle"
+                "Il sépare la compilation de l’image finale, ce qui réduit la taille et le nombre de failles",
+                "Il construit plusieurs images en parallèle, ce qui accélère le téléchargement sur les nœuds",
+                "Il découpe l’image en plusieurs couches que le nœud télécharge à la demande"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Avec un build multi-étapes, les compilateurs et paquets de développement restent dans l’étape intermédiaire : l’image finale ne contient que l’exécutable et le strict minimum, ce qui accélère le téléchargement (« image pull ») et réduit la surface d’attaque (moins de CVE)."
+              "answer_index": 0,
+              "explanation_fr": "Mei le résume : la première étape compile, l’image finale ne copie que le binaire. Les outils de build et les paquets inutiles (et leurs CVE) disparaissent. Il n’y a qu’une image finale, et toute image Docker est faite de couches, multi-stage ou non."
             },
             {
               "prompt_fr": "Que signifie « It takes forever to pull when a node starts » ?",
               "choices": [
+                "Le nœud met énormément de temps à envoyer l’image vers le registre à chaque build",
                 "Le nœud met énormément de temps à télécharger l’image depuis le registre au démarrage",
-                "Le nœud envoie l’image vers GitHub à chaque redémarrage",
-                "L’image reste stockée indéfiniment sur le nœud sans jamais être supprimée"
+                "Le nœud garde l’image indéfiniment en mémoire et ne la libère jamais"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Avec Docker et Kubernetes, « to pull an image » signifie télécharger l’image depuis un registre (comme « git pull » récupère du code), tandis que « to push an image » l’envoie vers le registre. « Takes forever » est une hyperbole courante pour « prend beaucoup trop de temps »."
+              "answer_index": 1,
+              "explanation_fr": "En Docker, « to pull » veut dire télécharger une image depuis un registre ; l’inverse, l’envoyer, c’est « to push ». « Takes forever » est une exagération familière : « ça prend une éternité », pas « pour toujours »."
             },
             {
               "prompt_fr": "Complète : « Make sure the container doesn’t ___ as root in production. »",
               "choices": [
+                "run",
                 "turn",
-                "walk",
-                "run"
+                "walk"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Un programme, un conteneur ou un serveur « runs » (tourne, s’exécute), et l’expression consacrée pour le compte utilisateur est « run as root » ou « run as a non-root user ». « Turn » et « walk » sont des calques du français « tourner » et « marcher »."
             },
             {
               "prompt_fr": "Un collègue utilise la balise `:latest` pour l’image de base en production. Quel conseil lui donnes-tu en revue de code ?",
               "choices": [
-                "Using :latest is great because our builds will always get surprise updates automatically.",
-                "Could we pin a specific version tag instead of :latest so our builds stay reproducible?",
-                "You must delete Docker and use a virtual machine for everything."
+                "Could we switch to :stable instead of :latest, so we only get tested updates?",
+                "Could we pin a specific version tag instead of :latest, so our builds stay reproducible?",
+                "Could we keep :latest but rebuild the image every night, so it stays up to date?"
               ],
               "answer_index": 1,
-              "explanation_fr": "« To pin a version » (fixer une version précise, par exemple `node:20.11-alpine`) est indispensable pour avoir des builds reproductibles. Avec `:latest`, deux builds lancés à quelques jours d’intervalle peuvent récupérer une image de base différente et casser sans changement de code."
+              "explanation_fr": "Une version précise (ou un digest) rend le build reproductible : la même PR donne la même image. Une balise comme « stable » bouge elle aussi d’une version à l’autre, et reconstruire chaque nuit avec « latest » change l’image sans qu’aucune PR ne le montre."
             }
           ],
           "production": {
@@ -394,32 +394,32 @@
             {
               "prompt_fr": "Dans Kubernetes, quelle est la différence entre un « liveness check » et un « readiness check » ?",
               "choices": [
-                "Liveness indique si le pod doit être redémarré ; readiness indique si le pod est prêt à recevoir du trafic",
-                "Liveness s’utilise uniquement en préproduction ; readiness s’utilise en production",
-                "Liveness vérifie l’espace disque du cluster ; readiness vérifie la facture cloud"
+                "Liveness dit si le pod peut recevoir du trafic ; readiness dit s’il doit être redémarré",
+                "Liveness vérifie le démarrage du pod ; readiness vérifie sa consommation de mémoire",
+                "Liveness dit si le pod doit être redémarré ; readiness dit s’il peut recevoir du trafic"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Si la sonde « liveness » échoue, Kubernetes redémarre le conteneur car il est considéré comme bloqué. Si la sonde « readiness » échoue, Kubernetes laisse le pod tourner (par exemple pendant qu’il charge un index en mémoire) mais le retire temporairement de la répartition de trafic."
+              "answer_index": 2,
+              "explanation_fr": "La sonde de vie (liveness) relance un pod bloqué ; la sonde de disponibilité (readiness) le retire du trafic tant qu’il n’est pas prêt, sans le tuer. Le piège classique est d’inverser les deux, et vérifier le démarrage est le rôle d’une troisième sonde, la « startup probe »."
             },
             {
               "prompt_fr": "Pourquoi le pod d’Inès redémarrait-il en boucle ?",
               "choices": [
-                "Parce qu’il y avait trop de réplicas sur le cluster",
-                "Parce que la sonde de vie (liveness) s’exécutait au bout de 10 secondes alors que le démarrage en prenait 20",
-                "Parce que l’image Docker n’existait pas dans le registre"
+                "Parce que le pod manquait de mémoire pendant le chargement de l’index de recherche",
+                "Parce que la sonde de disponibilité échouait et que Kubernetes tuait le pod non prêt",
+                "Parce que la sonde de vie échouait au bout de 10 secondes alors que le démarrage en prenait 20"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Comme le chargement de l’index prenait 20 secondes et que le contrôle de vie échouait au bout de 10 secondes, Kubernetes tuait et relançait le pod avant la fin de son initialisation."
+              "answer_index": 2,
+              "explanation_fr": "Inès le dit : la liveness échoue à 10 secondes, alors que l’index prend 20 secondes à charger, donc Kubernetes tue le pod. Daniel évoque le manque de mémoire comme hypothèse, écartée ensuite, et une readiness qui échoue retire le pod du trafic sans le redémarrer."
             },
             {
               "prompt_fr": "Complète : « Kubernetes keeps three ___ of the API running across different nodes. »",
               "choices": [
-                "doubles",
+                "replications",
                 "replicas",
-                "exemplaries"
+                "doubles"
               ],
               "answer_index": 1,
-              "explanation_fr": "En anglais technique (Kubernetes, bases de données), les copies identiques d’un service qui tournent en parallèle s’appellent des « replicas ». « Doubles » et « exemplaries » sont des faux amis calqués sur « doubles » et « exemplaires »."
+              "explanation_fr": "Dans Kubernetes, les copies identiques d’un pod s’appellent des « replicas » (d’où « replicas: 3 » dans un Deployment). « Replications » désigne le processus de réplication, pas les copies elles-mêmes, et « doubles » veut dire sosies ou doublures."
             },
             {
               "prompt_fr": "Comment dire « Le pod a redémarré parce qu’il a manqué de mémoire » ?",
@@ -460,42 +460,42 @@
             {
               "prompt_fr": "Pourquoi Hiroshi déconseille-t-il de lancer `kubectl edit` directement sur le cluster ?",
               "choices": [
-                "Parce que la commande `kubectl edit` n’existe plus dans les versions récentes de Kubernetes",
-                "Parce qu’en GitOps, l’outil de synchronisation réapplique en continu l’état déclaré dans Git et écraserait la modification manuelle",
-                "Parce que Helm interdit de modifier la mémoire d’un conteneur"
+                "Parce qu’en GitOps, kubectl n’a pas les droits d’écriture sur les clusters de production",
+                "Parce qu’en GitOps, l’outil de synchronisation réapplique l’état décrit dans Git et écraserait le changement",
+                "Parce qu’en GitOps, un changement manuel déclenche une alerte de sécurité qui bloque le cluster"
               ],
               "answer_index": 1,
-              "explanation_fr": "Le principe du GitOps est que le dépôt Git décrit l’état souhaité (« single source of truth ») et qu’un agent dans le cluster (comme Argo CD ou Flux) réconcilie en permanence le cluster avec Git. Toute modification manuelle non commitée est soit annulée, soit source de dérive."
+              "explanation_fr": "Hiroshi le dit : « Argo CD would overwrite your manual change within minutes ». Git est la source de vérité, et le cluster y revient en continu. Les droits et les alertes dépendent de chaque équipe : ce n’est pas la raison donnée ici."
             },
             {
               "prompt_fr": "Que signifie le verbe « to bump » dans « bump the image version to v1.8.2 » ?",
               "choices": [
-                "Supprimer une version défectueuse du registre",
-                "Incrémenter ou faire passer un numéro de version à une valeur plus récente",
-                "Bloquer définitivement une version pour empêcher toute mise à jour"
+                "Faire revenir le numéro de version à une valeur plus ancienne",
+                "Figer le numéro de version pour bloquer toute mise à jour",
+                "Faire passer le numéro de version à une valeur plus récente"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Dans le jargon des développeurs et des DevOps, « bump a version » ou « version bump » signifie monter le numéro de version d’une dépendance ou d’une image dans un fichier de configuration."
+              "answer_index": 2,
+              "explanation_fr": "« To bump a version » veut dire l’augmenter, la faire monter (de v1.8.1 à v1.8.2 par exemple). Revenir en arrière, c’est « roll back » ou « downgrade », et figer une version, c’est « pin »."
             },
             {
               "prompt_fr": "Complète : « In GitOps, the Git repository is the single ___ of truth for the cluster state. »",
               "choices": [
-                "origin",
                 "source",
+                "origin",
                 "base"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "L’expression figée est « single source of truth » (SSOT) : l’unique source de vérité qui fait foi en cas d’écart."
             },
             {
               "prompt_fr": "À quoi sert un « Helm chart » avec Kubernetes ?",
               "choices": [
-                "À tracer des graphiques de consommation CPU dans le tableau de bord",
-                "À regrouper les manifestes Kubernetes dans des modèles paramétrables (templates + fichiers values) pour chaque environnement",
-                "À remplacer Docker par un hyperviseur de machines virtuelles"
+                "À appliquer directement les changements sur le cluster, sans passer par une pull request",
+                "À synchroniser automatiquement le cluster avec le dépôt Git après chaque merge",
+                "À regrouper les manifestes Kubernetes en modèles paramétrables, avec un fichier de valeurs par environnement"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Attention au faux ami : dans Helm (qui signifie « barre de navire »), un « chart » est une carte marine, c’est-à-dire un paquet de modèles Kubernetes réutilisables avec des variables (`values.yaml`), et non un graphique statistique."
+              "answer_index": 2,
+              "explanation_fr": "Un « Helm chart » est un paquet de templates Kubernetes plus des fichiers « values » (comme values-production.yaml). Appliquer à la main sur le cluster, c’est ce que Hiroshi refuse, et la synchronisation automatique avec Git est le travail d’Argo CD, l’outil GitOps."
             }
           ],
           "production": {
@@ -527,12 +527,12 @@
             {
               "prompt_fr": "Quel est le rôle du « reverse proxy » dans l’architecture décrite par Nadia et Diego ?",
               "choices": [
-                "Il reçoit les requêtes des clients depuis l’extérieur, gère le HTTPS et les transmet au bon service interne sur le bon port",
-                "Il permet aux employés de l’entreprise de naviguer anonymement sur des sites externes",
-                "Il compile le code source des développeurs avant de créer l’image Docker"
+                "Il reçoit les requêtes venues de l’extérieur et les transmet au bon service interne, sur le bon port",
+                "Il répartit les requêtes entre plusieurs régions cloud selon la position des utilisateurs",
+                "Il permet aux pods du cluster d’appeler des API externes en passant par une seule IP"
               ],
               "answer_index": 0,
-              "explanation_fr": "Un « forward proxy » est placé devant les clients pour filtrer ou anonymiser leurs sorties vers internet, tandis qu’un « reverse proxy » (Nginx, Envoy, Traefik) est placé devant vos serveurs backend pour recevoir le trafic entrant, gérer le TLS et router vers le bon service."
+              "explanation_fr": "Un « reverse proxy » se place devant les services : il reçoit le trafic entrant et le transmet à l’intérieur, ici vers le port 8080. Répartir entre régions relève d’un DNS ou d’un équilibreur global, et faire sortir le trafic des pods vers l’extérieur, c’est le rôle d’un proxy classique (« forward proxy ») ou d’une passerelle NAT."
             },
             {
               "prompt_fr": "Comment dire « Le conteneur écoute sur le port 8080 » ?",
@@ -548,21 +548,21 @@
               "prompt_fr": "Complète : « The DNS record ___ the domain name to the load balancer’s IP address. »",
               "choices": [
                 "maps",
-                "traducts",
+                "traduces",
                 "conducts"
               ],
               "answer_index": 0,
-              "explanation_fr": "Pour associer un nom de domaine à une adresse IP (ou un port externe à un port interne), l’anglais technique utilise « to map X to Y » (ou « to point to »). « Traducts » n’existe pas (traduire se dit « translate » ou « resolve »), et « conducts » signifie diriger un orchestre ou conduire de l’électricité."
+              "explanation_fr": "Un enregistrement DNS « maps a name to an IP address » : il fait correspondre un nom à une adresse. « Traduce » est un faux ami : il existe en anglais mais veut dire calomnier, et « conducts » (diriger, conduire un orchestre ou une enquête) ne s’emploie pas pour un nom de domaine."
             },
             {
               "prompt_fr": "Un collègue te dit que le site affiche `NET::ERR_CERT_DATE_INVALID` alors que les pods tournent normalement. Quelle est la piste la plus probable ?",
               "choices": [
-                "The database ran out of disk space.",
+                "The reverse proxy is forwarding traffic to port 3000 instead of port 8080, where the app listens.",
                 "The TLS certificate on the load balancer or reverse proxy has expired and needs to be renewed.",
-                "The application is listening on port 8080 instead of port 3000."
+                "The DNS record still points to the old load balancer IP, so browsers reach the wrong server."
               ],
               "answer_index": 1,
-              "explanation_fr": "Une erreur `CERT_DATE_INVALID` indique que le certificat TLS/SSL présenté par le répartiteur de charge ou le proxy inverse a expiré (ou que son renouvellement automatique a échoué). Une erreur de port provoquerait une erreur 502 Bad Gateway ou un timeout, pas une alerte de certificat."
+              "explanation_fr": "« ERR_CERT_DATE_INVALID » signale un certificat expiré ou pas encore valide : il faut le renouveler. Un mauvais port donnerait une erreur 502 ou un délai dépassé, et un mauvais DNS une erreur de connexion ou de nom, pas une erreur de date de certificat."
             }
           ],
           "production": {
@@ -614,22 +614,22 @@
             {
               "prompt_fr": "Pourquoi le plan Terraform prévoyait-il de détruire l’instance Redis ?",
               "choices": [
-                "Parce qu’Aïcha a renommé l’identifiant de la ressource dans le code Terraform sans indiquer de bloc `moved`",
-                "Parce que Terraform détruit systématiquement toutes les ressources à chaque exécution",
-                "Parce qu’Ansible est incompatible avec Redis"
+                "Parce qu’Aïcha a modifié l’étiquette « name », que Terraform ne sait pas changer sur place",
+                "Parce que le fichier d’état Terraform avait été supprimé par erreur avant le plan",
+                "Parce qu’Aïcha a renommé l’identifiant de la ressource dans le code sans bloc `moved`"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Terraform associe chaque ressource cloud à son adresse dans le fichier d’état (`terraform.tfstate`). Si on renomme l’identifiant dans le code sans bloc `moved` (ou `terraform state mv`), Terraform pense que l’ancienne ressource doit être supprimée et qu’une nouvelle doit être créée."
+              "answer_index": 2,
+              "explanation_fr": "Tomasz le dit : en renommant l’identifiant dans le code, Terraform voit une nouvelle ressource et veut détruire l’ancienne. Changer une étiquette se fait normalement sur place, et un état perdu donnerait « tout à créer », pas « 1 to destroy »."
             },
             {
               "prompt_fr": "Que signifie le terme « idempotent » pour un script de gestion de configuration ou d’IaC ?",
               "choices": [
-                "Le script s’exécute deux fois plus vite à chaque lancement",
-                "Appliquer le script une fois ou dix fois de suite aboutit exactement au même état final, sans effet de bord en doublon",
-                "Le script supprime automatiquement toutes les sauvegardes après le déploiement"
+                "Le script s’arrête tout seul au premier changement qu’il détecte",
+                "Le script annule automatiquement ses changements en cas d’erreur",
+                "L’appliquer une fois ou dix fois de suite aboutit exactement au même état final"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une opération est « idempotent » quand on peut la relancer plusieurs fois sans créer de doublons ni casser l’existant : si l’état souhaité est déjà atteint, l’outil ne modifie rien."
+              "answer_index": 2,
+              "explanation_fr": "Un script idempotent produit le même résultat qu’on le lance une ou dix fois : il ne recrée pas ce qui existe déjà. S’arrêter au premier changement ou annuler en cas d’erreur (« rollback ») sont d’autres comportements."
             },
             {
               "prompt_fr": "Complète : « With ___ infrastructure, we never SSH into production servers to edit files by hand; we deploy a new image instead. »",
@@ -645,11 +645,11 @@
               "prompt_fr": "Comment prévenir poliment un collègue en revue de PR que son changement Terraform va supprimer une base de données ?",
               "choices": [
                 "Careful: according to the Terraform plan, this change forces replacement and will destroy the database.",
-                "You are crazy, you will explode the database with this code.",
-                "The Terraform plan is making a destruction of the database, stop."
+                "Careful: the Terraform plan is making a destruction of the database, please stop it.",
+                "Careful: this change will delete the database, but Terraform will recreate it with the data."
               ],
               "answer_index": 0,
-              "explanation_fr": "« According to the Terraform plan, this change forces replacement and will destroy… » est précis, professionnel et reprend le vocabulaire exact de Terraform. La deuxième phrase est agressive, et « making a destruction » est un calque incorrect."
+              "explanation_fr": "La bonne phrase est précise et reprend le vocabulaire exact du plan (« forces replacement »). « Making a destruction » est un calque, et Terraform recrée une base vide : les données ne reviennent pas toutes seules."
             }
           ],
           "production": {
@@ -682,42 +682,42 @@
             {
               "prompt_fr": "Pourquoi place-t-on la base de données dans un « private subnet » à l’intérieur du VPC ?",
               "choices": [
-                "Pour que les requêtes SQL soient gratuites sur la facture du fournisseur cloud",
-                "Pour qu’elle ne soit pas joignable directement depuis internet et n’accepte que le trafic venant des services internes autorisés",
-                "Pour éviter d’avoir à chiffrer les mots de passe des utilisateurs"
+                "Pour qu’elle soit plus rapide, car le trafic interne ne passe pas par le répartiteur",
+                "Pour qu’elle ne soit pas joignable depuis internet et n’accepte que le trafic des services internes",
+                "Pour qu’elle soit répliquée automatiquement dans une autre région du fournisseur"
               ],
               "answer_index": 1,
-              "explanation_fr": "Dans un VPC, un « public subnet » a une route directe vers une passerelle internet (pour les répartiteurs de charge), tandis qu’un « private subnet » isole les bases de données et les services internes de tout accès direct depuis internet."
+              "explanation_fr": "Un sous-réseau privé n’a pas de route vers internet : la base n’accepte que le trafic autorisé, ici le port 5432 depuis le sous-réseau de l’API. La vitesse n’est pas l’argument de Kenji, et la réplication entre régions est un réglage séparé."
             },
             {
               "prompt_fr": "Que signifie le verbe « to provision » dans « we’re provisioning the new PostgreSQL database » ?",
               "choices": [
-                "Créer, allouer et configurer une ressource d’infrastructure pour la rendre prête à l’emploi",
-                "Acheter des provisions alimentaires pour l’équipe d’astreinte",
-                "Sauvegarder les tables d’une base avant de la supprimer"
+                "Réserver à l’avance un budget pour une ressource qu’on créera plus tard",
+                "Prévoir une ressource de secours au cas où la principale tomberait",
+                "Créer et configurer une ressource d’infrastructure pour la rendre prête à l’emploi"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En cloud et en administration système, « to provision a server / a database » signifie créer et mettre à disposition une ressource (avec Terraform ou l’API du cloud). Le nom correspondant est « provisioning »."
+              "answer_index": 2,
+              "explanation_fr": "« To provision » veut dire créer et configurer une ressource (serveur, base, réseau) pour qu’elle soit prête. Le faux ami « provision » (réserve, provision comptable) pousse vers l’idée de budget, et une ressource de secours se dit « standby » ou « failover »."
             },
             {
               "prompt_fr": "Complète : « Never ___ port 22 to 0.0.0.0/0 on the internet. »",
               "choices": [
                 "expose",
-                "discover",
+                "uncover",
                 "exhibit"
               ],
               "answer_index": 0,
-              "explanation_fr": "En sécurité réseau et cloud, le verbe consacré est « to expose a port / a service to the internet ». « Discover » veut dire découvrir (et non « découvrir » au sens d’enlever une protection), et « exhibit » s’emploie pour une exposition au musée."
+              "explanation_fr": "« To expose a port » est la tournure du métier pour dire qu’un port est joignable depuis l’extérieur. « Uncover » veut dire découvrir, révéler un secret, et « exhibit » exposer une œuvre dans un musée : deux traductions possibles d’« exposer » qui ne s’emploient pas pour un port."
             },
             {
               "prompt_fr": "Un développeur demande une adresse IP publique sur la base de production pour se connecter depuis chez lui. Quelle réponse est la plus juste ?",
               "choices": [
-                "Sure, I’ll move the production database to the public subnet right away.",
-                "We keep the database in a private subnet with no public IP address for security, but I can grant you temporary access through our secure tunnel.",
-                "Databases don’t use IP addresses in the cloud."
+                "Sure, I’ll add a public IP and allow only your home IP address in the security group.",
+                "Sure, I’ll open port 5432 to the internet, since the database already has a strong password.",
+                "We keep the database in a private subnet with no public IP, but I can give you temporary access through our secure tunnel."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième réponse applique la règle de sécurité (aucune IP publique sur une base de production) tout en débloquant le collègue grâce au canal d’accès sécurisé (tunnel IAM/SSM ou bastion)."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse applique la règle (aucune IP publique sur la base de production) tout en débloquant le collègue grâce au tunnel sécurisé et journalisé. Une IP publique filtrée reste exposée (et les IP personnelles changent), et un mot de passe fort ne remplace pas l’isolation réseau."
             }
           ],
           "production": {
@@ -749,22 +749,22 @@
             {
               "prompt_fr": "Pourquoi la règle IAM `s3:*` sur `*` posait-elle un risque de sécurité majeur ?",
               "choices": [
-                "Parce qu’elle donnait au service de facturation le droit de lire et supprimer tous les compartiments du compte, au lieu de se limiter au strict nécessaire",
-                "Parce qu’elle désactivait le chiffrement au repos sur le compartiment des factures",
-                "Parce que le stockage objet n’accepte pas les fichiers PDF"
+                "Parce qu’elle donnait au service le droit de lire et supprimer tous les compartiments du compte",
+                "Parce qu’elle rendait le compartiment des factures public pour tous les utilisateurs",
+                "Parce qu’elle désactivait le chiffrement au repos sur le compartiment des factures"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le principe du moindre privilège (« principle of least privilege ») exige qu’un service ne reçoive que les permissions exactes (`GetObject`, `PutObject`) sur la seule ressource dont il a besoin (le compartiment des factures), afin de limiter le rayon d’impact (« blast radius ») en cas de compromission."
+              "explanation_fr": "« s3:* » sur « * » autorise toutes les actions sur tous les compartiments : un pod compromis pourrait lire ou effacer les sauvegardes, comme le dit Lucía. Moussa a vérifié que l’accès public est bloqué et le chiffrement activé : le problème est uniquement le périmètre des droits."
             },
             {
               "prompt_fr": "Que veut dire Moussa avec « Scope the IAM role down to… » ?",
               "choices": [
-                "Supprimer complètement le rôle IAM du compte cloud",
-                "Restreindre le périmètre du rôle IAM uniquement aux actions et ressources nécessaires",
-                "Partager le rôle IAM avec toutes les autres équipes de l’entreprise"
+                "Supprimer le rôle IAM et donner les droits directement au pod",
+                "Restreindre le rôle IAM aux seules actions et ressources nécessaires",
+                "Créer un rôle IAM séparé pour chaque fichier PDF envoyé"
               ],
               "answer_index": 1,
-              "explanation_fr": "« To scope down » (ou « narrow the scope ») signifie réduire, restreindre le périmètre d’une permission ou d’un projet."
+              "explanation_fr": "« To scope down » veut dire réduire le périmètre : ici, seulement GetObject et PutObject sur le compartiment des factures. Il ne s’agit pas de supprimer le rôle, et un rôle par fichier n’aurait aucun sens."
             },
             {
               "prompt_fr": "Complète : « We enabled ___ at rest on the bucket using a KMS key, and TLS protects data in transit. »",
@@ -779,12 +779,12 @@
             {
               "prompt_fr": "Comment dire « Cette règle IAM accorde des droits trop larges » ?",
               "choices": [
-                "This IAM policy is too permissive.",
                 "This IAM police gives too large rights.",
-                "This IAM policy makes too much permissions."
+                "This IAM policy is too permissive.",
+                "This IAM policy is too much permissive."
               ],
-              "answer_index": 0,
-              "explanation_fr": "« This IAM policy is too permissive » (ou « overly permissive ») est la formule standard des revues de sécurité et des outils d’audit cloud. « Police » est un faux ami, et « permissions » est dénombrable (too many permissions, que l’on « grants », jamais « makes »)."
+              "answer_index": 1,
+              "explanation_fr": "« Too permissive » est la façon naturelle de dire qu’une règle accorde trop de droits. « Police » est un faux ami (la police), « large rights » est un calque, et « too much » ne se place pas devant un adjectif : on dit « too permissive »."
             }
           ],
           "production": {
@@ -817,42 +817,42 @@
             {
               "prompt_fr": "Qu’est-ce qu’un outil « CSPM » (Cloud Security Posture Management) ?",
               "choices": [
-                "Un outil qui surveille en continu les comptes cloud pour détecter les mauvaises configurations (compartiments publics, ports ouverts, clés trop anciennes)",
-                "Un éditeur de texte pour écrire du code Python dans le navigateur",
-                "Un répartiteur de charge matériel installé dans les bureaux"
+                "Un outil qui applique automatiquement le code Terraform dès qu’un réglage change",
+                "Un outil qui analyse le code des applications pour y trouver des failles",
+                "Un outil qui surveille en continu les comptes cloud pour détecter les mauvaises configurations"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un outil CSPM inspecte automatiquement la configuration de vos comptes AWS, GCP ou Azure par rapport aux bonnes pratiques de sécurité et signale toute mauvaise configuration (« cloud misconfiguration ») ou dérive avant qu’elle ne soit exploitée."
+              "answer_index": 2,
+              "explanation_fr": "Un CSPM compare en continu la configuration des comptes cloud aux bonnes pratiques (compartiment public, clé trop ancienne). Il signale, mais c’est Ivan qui lance Terraform pour corriger, et l’analyse du code applicatif relève d’outils SAST."
             },
             {
               "prompt_fr": "Pourquoi Ivan préfère-t-il des jetons OIDC éphémères à une clé statique sur le « service account » ?",
               "choices": [
-                "Parce que les jetons éphémères expirent automatiquement au bout de quelques minutes, ce qui élimine le risque de fuite d’une clé permanente",
-                "Parce que les comptes de service ne peuvent pas exécuter Terraform",
-                "Parce que la rotation des clés est interdite par les audits de sécurité"
+                "Parce qu’un jeton OIDC donne plus de droits au pipeline qu’une clé d’accès classique",
+                "Parce que la rotation des clés tous les 90 jours est refusée par les auditeurs",
+                "Parce qu’un jeton éphémère expire tout seul, alors qu’une clé permanente qui fuit reste utilisable"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Même avec une rotation tous les 90 jours (« key rotation »), une clé statique volée reste utilisable pendant des semaines. La fédération d’identité (OIDC) fournit au compte de service (« service account ») un jeton temporaire valable uniquement le temps du job CI/CD."
+              "answer_index": 2,
+              "explanation_fr": "Un jeton à courte durée de vie expire en quelques minutes : même s’il fuit, il devient vite inutile, et il n’y a plus de clé à stocker. OIDC ne donne pas plus de droits, et la rotation à 90 jours est une bonne pratique acceptée, simplement moins efficace que l’absence de clé."
             },
             {
               "prompt_fr": "Complète : « Manual changes in the cloud console cause configuration ___ between Git and production. »",
               "choices": [
+                "gap",
                 "drift",
-                "slide",
-                "derivation"
+                "shift"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le terme technique exact est « configuration drift » (ou « infrastructure drift ») : l’écart progressif entre l’état déclaré dans le code (Terraform/Git) et l’état réel dans le cloud."
+              "answer_index": 1,
+              "explanation_fr": "Le terme consacré est « configuration drift » : l’écart qui se creuse entre l’état décrit dans Git et la réalité. « Gap » et « shift » sont des mots courants qui ne forment pas cette expression du métier."
             },
             {
               "prompt_fr": "Comment annoncer clairement les corrections réalisées avant l’audit de sécurité ?",
               "choices": [
                 "We remediated both cloud misconfigurations flagged by the CSPM tool ahead of the security audit.",
-                "We repaired the two bad cloud configurations for the audit of security.",
-                "We erased the CSPM tool so the security audit sees zero alerts."
+                "We repaired the two bad configurations of the cloud for the audit of security.",
+                "We hid both cloud misconfigurations flagged by the CSPM tool before the security audit."
               ],
               "answer_index": 0,
-              "explanation_fr": "En sécurité et en conformité, « to remediate a finding / a misconfiguration » est le verbe professionnel pour « corriger un écart détecté ». Désactiver l’outil d’alerte cacherait la faille au lieu de la corriger."
+              "explanation_fr": "« To remediate » est le verbe du métier pour corriger une faille ou une non-conformité, et « ahead of » veut dire « avant ». « Repaired… for the audit of security » accumule les calques, et « hid » (cacher) dirait exactement l’inverse de ce qu’on veut."
             }
           ],
           "production": {
@@ -905,42 +905,42 @@
             {
               "prompt_fr": "Quelle est la complémentarité entre « metrics », « distributed tracing » et « logs » dans l’enquête de Mei et Kofi ?",
               "choices": [
-                "La métrique signale le symptôme (le pic de latence), la trace distribuée isole le microservice lent, et le log explique l’erreur exacte sur cette requête",
-                "Les trois outils stockent exactement la même information dans trois formats différents",
-                "Le traçage distribué remplace complètement les logs et les métriques en production"
+                "La trace signale le symptôme, la métrique isole le service lent, le log explique l’erreur exacte",
+                "La métrique signale le symptôme, la trace isole le service lent, le log explique l’erreur exacte",
+                "Le log signale le symptôme, la trace mesure le CPU, la métrique explique l’erreur exacte"
               ],
-              "answer_index": 0,
-              "explanation_fr": "C’est la logique des trois piliers de l’observabilité : les métriques agrégées détectent l’anomalie, le traçage distribué suit le parcours d’une requête à travers les services grâce au `trace ID`, et les logs associés à cet identifiant donnent le détail de l’exécution."
+              "answer_index": 1,
+              "explanation_fr": "Kofi le dit : « metrics tell us something is slow, not why ». La trace distribuée suit la requête à travers les quatre services et isole le calcul des taxes, puis le log de ce service explique les trois tentatives. Les deux autres propositions mélangent les rôles des trois outils."
             },
             {
               "prompt_fr": "Que signifie « before falling back to the cached rate » ?",
               "choices": [
-                "Avant de supprimer le taux stocké en cache",
-                "Avant d’utiliser en repli le taux conservé en cache",
-                "Avant de faire planter le cache"
+                "Avant de supprimer le taux conservé en cache",
+                "Avant de remettre à jour le taux conservé en cache",
+                "Avant d’utiliser en repli le taux conservé en cache"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le verbe à particule « to fall back to / on something » (d’où le nom « a fallback ») signifie se replier sur une solution de secours quand l’appel principal échoue."
+              "answer_index": 2,
+              "explanation_fr": "« To fall back to something » veut dire se rabattre sur une solution de secours : après trois échecs, le service utilise le taux en cache. Il ne le supprime pas et ne le met pas à jour (l’API externe ne répond pas)."
             },
             {
               "prompt_fr": "Complète : « Adding the trace ID to every JSON log line lets us ___ logs with traces. »",
               "choices": [
                 "correlate",
-                "confuse",
-                "conjugate"
+                "correspond",
+                "cohere"
               ],
               "answer_index": 0,
-              "explanation_fr": "« To correlate logs with traces » (mettre en corrélation, relier) est le verbe exact utilisé dans tous les outils d’observabilité (OpenTelemetry, Datadog, Grafana)."
+              "explanation_fr": "« To correlate » veut dire relier des données qui concernent le même événement, ici grâce au trace ID. « Correspond » et « cohere » sont intransitifs : on ne peut pas dire « correspond logs with traces », il faudrait « logs correspond to traces »."
             },
             {
               "prompt_fr": "Comment expliquer en entretien la différence entre « monitoring » et « observability » ?",
               "choices": [
-                "Monitoring checks known thresholds to alert you when something breaks, whereas observability lets you explore metrics, logs, and traces to understand unknown failure modes.",
-                "Monitoring is only for virtual machines, whereas observability is only for serverless functions.",
-                "There is no difference; observability is just a commercial word for ping."
+                "Monitoring explores metrics, logs and traces to understand unknown failures; observability checks known thresholds and alerts you.",
+                "Monitoring is for infrastructure metrics only; observability is the same thing applied to application logs.",
+                "Monitoring checks known thresholds and alerts you; observability lets you explore metrics, logs and traces to understand unknown failures."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le monitoring surveille des pannes connues à l’avance (« known unknowns ») via des seuils et des tableaux de bord, tandis que l’observabilité permet d’investiguer dans un système distribué complexe pour comprendre une panne inédite à partir de ses sorties (logs, métriques, traces)."
+              "answer_index": 2,
+              "explanation_fr": "Le monitoring surveille des seuils connus à l’avance ; l’observabilité permet d’explorer les données pour comprendre une panne qu’on n’avait pas prévue. Le piège classique est d’inverser les deux, et la différence ne tient pas au type de données surveillées."
             }
           ],
           "production": {
@@ -972,42 +972,42 @@
             {
               "prompt_fr": "Pourquoi le SLO interne (99,95 %) est-il choisi plus strict que le SLA externe (99,9 %) ?",
               "choices": [
-                "Pour disposer d’une marge de sécurité qui déclenche une réaction de l’équipe avant de violer le contrat client et de devoir payer des pénalités",
-                "Parce que la loi interdit d’avoir le même chiffre dans le SLA et le SLO",
-                "Pour obliger les développeurs à travailler le week-end"
+                "Pour avoir une marge qui alerte l’équipe avant de violer le contrat et de payer des pénalités",
+                "Pour pouvoir annoncer 99,95 % au client si l’architecture s’améliore en cours d’année",
+                "Parce qu’un SLO doit toujours être exactement 0,05 point au-dessus du SLA"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le SLA (Service Level Agreement) est un contrat juridique et commercial avec le client (souvent assorti de pénalités financières). Le SLO (Service Level Objective) est la cible technique interne : on la fixe plus haut pour agir avant de casser la promesse contractuelle."
+              "explanation_fr": "Daniel le dit : l’objectif interne plus strict sert à être prévenu « before we ever breach the contract ». Le SLO reste interne, il n’est pas promis au client, et il n’existe aucune règle fixe d’écart : c’est un choix d’équipe."
             },
             {
               "prompt_fr": "Que signifie « four nines » dans le jargon SRE ?",
               "choices": [
-                "Une disponibilité de 99,99 % (soit environ 52 minutes d’indisponibilité maximale par an, ou un peu plus de 4 minutes par mois)",
-                "Un cluster composé de quatre serveurs et neuf conteneurs",
-                "Un temps de réponse de 9999 millisecondes"
+                "Une disponibilité de 99,9999 %, soit environ 30 secondes d’indisponibilité par an",
+                "Une disponibilité de 99,99 %, soit environ 52 minutes d’indisponibilité par an",
+                "Une disponibilité de 99,9 %, soit environ 8 heures d’indisponibilité par an"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais SRE, on compte le nombre de 9 : « three nines » = 99,9 %, « four nines » = 99,99 %, « five nines » = 99,999 %. Passer de trois à quatre neufs divise par dix le temps d’indisponibilité toléré et exige souvent une architecture multi-région."
+              "answer_index": 1,
+              "explanation_fr": "« Four nines » compte les 9 : 99,99 %, soit environ 52 minutes par an ou un peu plus de 4 minutes par mois (« less than five minutes per month »). 99,9 % se dit « three nines » (environ 8 h 45 par an), et 99,9999 % « six nines »."
             },
             {
               "prompt_fr": "Complète : « If we ___ the SLA, we have to refund part of the customer’s monthly fee. »",
               "choices": [
                 "breach",
-                "betray",
-                "offend"
+                "break up",
+                "violate on"
               ],
               "answer_index": 0,
-              "explanation_fr": "Pour un contrat, un SLA ou un SLO que l’on ne respecte pas, les verbes consacrés sont « to breach an SLA » (enfreindre, violer un engagement) ou « to miss an SLA/SLO ». « Betray » et « offend » s’appliquent à des personnes."
+              "explanation_fr": "On dit « breach an SLA » (ou « breach a contract ») : ne pas respecter un engagement. « Break up » veut dire rompre une relation, et « violate » existe (« violate the SLA ») mais sans préposition."
             },
             {
               "prompt_fr": "Que signifie « the 95th percentile (p95) latency stays under 250 ms » ?",
               "choices": [
-                "Les 95 % de requêtes les plus rapides reçoivent une réponse en moins de 250 ms (seules les 5 % les plus lentes dépassent ce seuil)",
-                "95 % des serveurs sont allumés pendant 250 millisecondes",
-                "La latence a baissé de 95 % depuis le mois dernier"
+                "La latence moyenne des requêtes reste sous 250 ms pendant 95 % de la journée",
+                "95 % des requêtes reçoivent une réponse en moins de 250 ms, les 5 % les plus lentes peuvent dépasser",
+                "Toutes les requêtes reçoivent une réponse en moins de 250 ms, avec 5 % de marge d’erreur"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le 95e centile (`95th percentile` ou `p95`) indique la valeur sous laquelle se trouvent 95 % des mesures : c’est bien plus représentatif de l’expérience réelle des utilisateurs qu’une simple moyenne."
+              "answer_index": 1,
+              "explanation_fr": "Le 95e percentile (p95) est la valeur sous laquelle se trouvent 95 % des requêtes : seules les 5 % les plus lentes dépassent 250 ms. Ce n’est pas une moyenne, ni une durée dans la journée, et cela ne garantit rien pour toutes les requêtes."
             }
           ],
           "production": {
@@ -1039,42 +1039,42 @@
             {
               "prompt_fr": "Quelle est la différence entre « latency » et « throughput » ?",
               "choices": [
-                "Latency est le temps nécessaire pour traiter une requête (en ms) ; throughput est le volume de requêtes traitées par seconde (débit)",
-                "Latency mesure le coût mensuel du serveur ; throughput mesure la taille du disque dur",
-                "Ce sont deux mots synonymes pour désigner la bande passante Wi-Fi"
+                "Latency est le nombre de requêtes traitées par seconde ; throughput est le temps de réponse d’une requête",
+                "Latency est le temps de réponse du réseau ; throughput est le temps de réponse de la base de données",
+                "Latency est le temps de réponse d’une requête ; throughput est le nombre de requêtes traitées par seconde"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La « latency » (latence) est la durée d’attente pour une requête donnée, tandis que le « throughput » (débit) est le nombre d’opérations ou de requêtes traitées par unité de temps (par exemple `requests per second`, RPS)."
+              "answer_index": 2,
+              "explanation_fr": "La latence se mesure en millisecondes (« forty milliseconds of latency »), le débit en requêtes par seconde (« throughput is up 20% »). Le piège classique est d’inverser les deux, et les deux notions s’appliquent à n’importe quel composant, réseau comme base."
             },
             {
               "prompt_fr": "Que signifie l’expression « burned through 85% of our error budget » ?",
               "choices": [
-                "Avoir économisé 85 % du budget financier du cloud",
-                "Avoir consommé rapidement 85 % de la marge d’indisponibilité ou d’erreurs autorisée sur la période",
-                "Avoir supprimé 85 % des erreurs du code source"
+                "Avoir dépassé de 85 % la marge d’erreurs autorisée sur le mois",
+                "Avoir dépensé 85 % du budget cloud prévu pour le mois",
+                "Avoir consommé 85 % de la marge d’erreurs autorisée sur le mois"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En SRE, on dit qu’un incident « burns » ou « burns through » le budget d’erreur (d’où le terme « burn rate », la vitesse à laquelle le budget d’erreur se consume)."
+              "answer_index": 2,
+              "explanation_fr": "« To burn through » veut dire consommer rapidement : il reste 15 % du budget d’erreur, comme le confirme Rania. Le budget n’est pas encore dépassé, et il s’agit d’erreurs ou d’indisponibilité autorisées, pas d’argent."
             },
             {
               "prompt_fr": "Complète : « What’s your ___ for the go/no-go decision? »",
               "choices": [
+                "decision of",
                 "call",
-                "cry",
-                "shout"
+                "opinion about"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais professionnel, « What’s your call? » ou « It’s your call » signifie « Quelle est ta décision / ton arbitrage ? »."
+              "answer_index": 1,
+              "explanation_fr": "« What’s your call? » (ou « It’s your call ») veut dire « Qu’est-ce que tu décides ? ». « Decision of » et « opinion about » sont suivis de « for », ce qui donne une construction incorrecte : on dirait « your decision on the go/no-go »."
             },
             {
               "prompt_fr": "En réunion go/no-go, le directeur produit insiste pour livrer un vendredi à 17 h malgré un budget d’erreur presque vide. Quelle réponse est la plus constructive ?",
               "choices": [
-                "We only have 15% of our monthly error budget left, and load tests show higher latency; I recommend postponing the release to Tuesday morning so we can optimize the query and monitor the rollout safely.",
-                "If it breaks this weekend, I will turn off my phone.",
-                "Error budgets are just theoretical numbers, let’s deploy now."
+                "We have 15% of our error budget left and higher latency in tests; I recommend shipping Tuesday with a canary.",
+                "We have 15% of our error budget left, so we can still ship Friday as long as nobody deploys anything else.",
+                "Error budgets are only a guideline, so let’s ship Friday and review the numbers next month."
               ],
               "answer_index": 0,
-              "explanation_fr": "La première réponse s’appuie sur des données objectives (15 % de budget d’erreur restant, hausse de latence observée) et propose une alternative claire et proche (mardi matin après optimisation)."
+              "explanation_fr": "La bonne réponse s’appuie sur des données (budget restant, latence observée) et propose une alternative proche et plus sûre. Un budget de 15 % avant un week-end ne couvre pas un changement risqué, et traiter le budget comme une simple indication lui retire tout son intérêt."
             }
           ],
           "production": {
@@ -1106,42 +1106,42 @@
             {
               "prompt_fr": "Qu’est-ce que l’« alert fatigue » et pourquoi est-elle dangereuse pour une équipe d’exploitation ?",
               "choices": [
-                "L’épuisement causé par trop de fausses alertes ou d’alertes non actionnables, qui finit par faire ignorer ou rater une vraie alerte critique",
-                "Une panne de batterie sur le téléphone d’astreinte",
-                "Le ralentissement du serveur de supervision quand il stocke trop de métriques"
+                "La fatigue de l’astreinte après une nuit passée à résoudre un vrai incident",
+                "L’usure due à trop d’alertes inutiles, qui finit par faire rater une vraie alerte critique",
+                "La saturation de l’outil de supervision quand il reçoit trop de métriques"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Quand l’astreinte reçoit des dizaines d’alertes inutiles (« noisy / flapping alerts »), elle se désensibilise (« alert fatigue ») et risque de réagir trop tard le jour où un incident majeur survient."
+              "answer_index": 1,
+              "explanation_fr": "L’« alert fatigue » vient d’alertes trop nombreuses ou non actionnables, comme les pics de CPU qui se résolvent seuls : à force, on finit par les ignorer, y compris la vraie. Ce n’est pas la fatigue après un vrai incident, ni un problème de capacité de l’outil."
             },
             {
               "prompt_fr": "Dans « I got paged four times last night », que signifie le verbe « to page » ?",
               "choices": [
-                "Lire quatre pages de documentation technique",
-                "Envoyer une notification d’urgence (via PagerDuty, Opsgenie, SMS ou appel) qui réveille la personne d’astreinte",
-                "Mettre en cache une page web sur le CDN"
+                "Recevoir un message dans un canal Slack de l’équipe pendant la nuit",
+                "Recevoir un rapport quotidien des alertes de la veille par e-mail",
+                "Recevoir une notification d’urgence qui réveille la personne d’astreinte"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Hérité des bipeurs (« pagers »), le verbe « to page someone » (et le nom « a page ») désigne en SRE une alerte critique qui fait sonner le téléphone de l’ingénieur d’astreinte, par opposition à une simple notification (« a ticket » ou « a Slack message »)."
+              "answer_index": 2,
+              "explanation_fr": "« To page someone » vient du « pager » (le bipeur) : envoyer une alerte urgente (appel, SMS, PagerDuty) qui réveille l’astreinte. Diego oppose justement « page on-call » aux alertes envoyées « to a Slack channel instead »."
             },
             {
               "prompt_fr": "Complète : « If an alert isn’t ___, downgrade it to a ticket or delete it. »",
               "choices": [
                 "actionable",
                 "active",
-                "activating"
+                "actioned"
               ],
               "answer_index": 0,
-              "explanation_fr": "En SRE, une bonne alerte doit être « actionable » (actionnable) : la personne qui la reçoit peut et doit accomplir une action concrète immédiatement."
+              "explanation_fr": "Une alerte « actionable » demande une action humaine précise ; sinon, elle devient un ticket ou disparaît. « Active » veut dire en cours, et « actioned » veut dire déjà traité : ni l’un ni l’autre ne dit si quelqu’un peut agir."
             },
             {
               "prompt_fr": "Quel est le critère de Diego pour décider si une alerte mérite de réveiller l’astreinte la nuit ?",
               "choices": [
-                "Elle doit correspondre à un impact réel sur les utilisateurs (SLO ou supervision de disponibilité externe) qui dure au-delà d’un court délai, et pointer vers un runbook",
-                "Elle doit se déclencher dès que le CPU dépasse 50 % pendant une seconde",
-                "Toutes les alertes doivent réveiller toute l’équipe en même temps"
+                "Un pic de CPU au-dessus du seuil, même s’il se résout en deux minutes",
+                "Toute alerte qui n’a pas encore de runbook, pour qu’on en écrive un",
+                "Un impact réel sur les utilisateurs qui dure plus de cinq minutes, avec un lien vers un runbook"
               ],
-              "answer_index": 0,
-              "explanation_fr": "On alerte sur les symptômes ressentis par les utilisateurs (« symptom-based alerting » : taux d’erreur, latence SLO, uptime monitoring) plutôt que sur chaque micro-variation de ressource qui se résorbe toute seule."
+              "answer_index": 2,
+              "explanation_fr": "Diego ne réveille l’astreinte que si les SLO ou la supervision externe échouent plus de cinq minutes, et chaque alerte doit pointer vers un runbook. Les pics de CPU courts partent dans Slack, et une alerte sans runbook doit être complétée, pas servir à réveiller quelqu’un."
             }
           ],
           "production": {
@@ -1193,42 +1193,42 @@
             {
               "prompt_fr": "Pourquoi l’« incident commander » évite-t-il en général de plonger lui-même dans le code ou le terminal pendant un incident majeur ?",
               "choices": [
-                "Parce qu’il n’a pas les droits techniques pour lire les logs",
-                "Pour garder une vue d’ensemble, répartir les pistes sans doublon, cadencer les points de situation et gérer la communication pendant que les ingénieurs déboguent",
-                "Parce que le rôle d’incident commander est réservé aux clients externes"
+                "Pour garder la vue d’ensemble, répartir les pistes et gérer la communication pendant que les autres déboguent",
+                "Parce que l’incident commander n’a pas les accès techniques pour lire les logs de production",
+                "Parce que l’incident commander doit d’abord rédiger le postmortem pendant l’incident"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Si l’incident commander se met à taper des commandes de débogage, plus personne ne coordonne la cellule de crise (« war room »), deux personnes font la même chose en parallèle et la communication s’arrête."
+              "answer_index": 0,
+              "explanation_fr": "Aïcha prend ce rôle pour que Tomasz puisse « focus 100% on the database » : elle coordonne et répartit les pistes. Ce n’est pas une question d’accès, et le postmortem s’écrit après l’incident, pas pendant."
             },
             {
               "prompt_fr": "Que signifie la réponse courte « On it » de Tomasz ?",
               "choices": [
-                "Je suis connecté sur le serveur",
+                "Je suis déjà connecté dessus",
                 "Je m’en occupe tout de suite",
-                "Le problème est résolu"
+                "C’est réglé de mon côté"
               ],
               "answer_index": 1,
-              "explanation_fr": "« On it » (ou « I’m on it ») est l’expression idiomatique très fréquente sur Slack et en cellule de crise pour dire « Je prends la tâche / Je m’en occupe immédiatement »."
+              "explanation_fr": "« On it » est une réponse courte pour dire « je m’en occupe ». Elle ne dit pas qu’on est déjà connecté, et encore moins que c’est réglé : Tomasz annonce qu’il fera un point dans cinq minutes."
             },
             {
               "prompt_fr": "Complète : « Only European users are affected; North America works normally, so it’s a ___ outage. »",
               "choices": [
                 "partial",
-                "divided",
+                "partly",
                 "half"
               ],
               "answer_index": 0,
-              "explanation_fr": "Les termes standards des pages de statut et du suivi d’incident sont « partial outage » (panne partielle) et « major / full outage » (panne générale)."
+              "explanation_fr": "On parle de « partial outage » (panne partielle) quand une partie du service ou des utilisateurs est touchée. « Partly » est un adverbe et ne peut pas qualifier un nom, et « half outage » laisserait croire que la moitié exacte est touchée."
             },
             {
               "prompt_fr": "Trois ingénieurs veulent redémarrer trois composants différents en même temps dans la war room. Que dis-tu en tant qu’incident commander ?",
               "choices": [
-                "Go ahead and restart everything at the same time so we see what happens.",
-                "Hold on: let’s change one thing at a time so we know what actually fixes the issue. Tomasz, test the connection pool first.",
-                "I’m leaving the call, tell me when you’re done."
+                "Go ahead and restart all three now; the faster we act, the sooner users can pay again.",
+                "Hold on: let’s change one thing at a time so we know what fixes it. Tomasz, test the connection pool first.",
+                "Let’s vote: whoever gets the most support restarts their component first."
               ],
               "answer_index": 1,
-              "explanation_fr": "Modifier plusieurs variables simultanément pendant une panne empêche de savoir quelle action a amélioré ou aggravé la situation. « Hold on: let’s change one thing at a time » pose un cadre clair et calme."
+              "explanation_fr": "Changer plusieurs choses à la fois empêche de savoir ce qui a réparé ou aggravé la situation : l’incident commander fixe un ordre et désigne qui agit. Tout redémarrer d’un coup peut sembler rapide mais brouille le diagnostic, et un vote fait perdre du temps et dilue la responsabilité."
             }
           ],
           "production": {
@@ -1260,42 +1260,42 @@
             {
               "prompt_fr": "Sur une page de statut, quelle est la nuance entre « degraded performance » et « outage » ?",
               "choices": [
-                "Degraded performance signifie que la fonctionnalité marche encore mais plus lentement que la normale ; outage signifie qu’elle est indisponible",
-                "Degraded performance est plus grave qu’une full outage",
-                "Degraded performance ne concerne que le matériel physique"
+                "Degraded performance : c’est indisponible pour certains ; outage : c’est indisponible pour tous",
+                "Degraded performance : un problème interne ; outage : un problème visible par les clients",
+                "Degraded performance : ça marche encore mais plus lentement ; outage : c’est indisponible"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Sur une « status page » (comme Statuspage.io), l’échelle de gravité va de « operational » à « degraded performance » (lent ou instable), « partial outage » (indisponible pour une partie des utilisateurs) et « major outage » (totalement indisponible)."
+              "answer_index": 2,
+              "explanation_fr": "« Degraded performance » veut dire que le service fonctionne, mais lentement ou avec des erreurs ponctuelles ; « outage » qu’il est indisponible. Une indisponibilité pour une partie des utilisateurs est une « partial outage », et les deux statuts sont visibles par les clients sur la page de statut."
             },
             {
               "prompt_fr": "Pourquoi Aïcha passe-t-elle l’incident en « mitigated » plutôt qu’en « resolved » immédiatement après le rollback ?",
               "choices": [
-                "Parce que le rollback a échoué et que les erreurs sont toujours à 100 %",
-                "Parce que l’impact immédiat est stoppé, mais qu’il faut encore observer la stabilité du système pendant 30 minutes avant de confirmer la résolution définitive",
-                "Parce que le mot « resolved » n’existe pas en anglais"
+                "Parce que le rollback n’a corrigé que la recherche et pas encore le paiement",
+                "Parce que seule la direction peut passer un incident au statut résolu",
+                "Parce que l’impact est stoppé, mais qu’il faut encore surveiller la stabilité 30 minutes"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Passer par l’état « mitigated » (ou « monitoring ») permet de rassurer tout de suite les clients sur le rétablissement du service tout en vérifiant que le symptôme ne revient pas sous la charge."
+              "answer_index": 2,
+              "explanation_fr": "« Mitigated » veut dire que l’impact est maîtrisé ; on attend 30 minutes de stabilité avant « resolved ». Le rollback concerne le paiement et a fonctionné (erreurs à 0,1 %), et le choix du statut n’est pas réservé à la direction."
             },
             {
               "prompt_fr": "Complète : « Support is getting ___ with tickets from customers who can’t pay. »",
               "choices": [
-                "flooded",
                 "drowned",
-                "rained"
+                "flooded",
+                "overflown"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« To be / get flooded with tickets / requests / alerts » (être inondé, submergé de…) est l’image idiomatique courante au travail."
+              "answer_index": 1,
+              "explanation_fr": "« To be flooded with » (être submergé de) est la collocation naturelle pour des tickets, des appels ou des e-mails. « Drowned » (noyé) s’emploie plutôt au sens propre ou avec « in », et « overflown » est le participe de « overfly » (survoler)."
             },
             {
               "prompt_fr": "Quelle formulation est la plus adaptée pour une page de statut publique destinée aux clients ?",
               "choices": [
                 "We mitigated the issue by rolling back the recent release and are monitoring the system to ensure stability.",
-                "Tomasz broke the connection pool in commit 4f8a2, sorry about that.",
-                "Everything is broken, please don’t use the website today."
+                "The issue came from commit 4f8a2 in the connection pool; we reverted it and are monitoring.",
+                "The issue is fully resolved and will not happen again. We apologize for the inconvenience."
               ],
               "answer_index": 0,
-              "explanation_fr": "Sur une page de statut publique, le ton doit être calme, professionnel, centré sur l’impact et l’état de rétablissement, sans jamais pointer du doigt un individu ni exposer de détails internes inutiles."
+              "explanation_fr": "Une page de statut publique décrit l’état et la prochaine étape, sans détail interne. Citer un commit n’apporte rien aux clients et expose l’équipe, et annoncer « fully resolved » avec une promesse est prématuré : l’incident est seulement atténué."
             }
           ],
           "production": {
@@ -1327,42 +1327,42 @@
             {
               "prompt_fr": "Quelle est la différence entre un « backup » et une « standby replica » avec « failover » ?",
               "choices": [
-                "La réplique de secours tourne en direct pour prendre le relais en quelques secondes (haute disponibilité), alors que restaurer une sauvegarde prend plus de temps et sert contre la corruption ou la suppression de données",
-                "Une réplique de secours remplace totalement les sauvegardes : on n’a plus besoin de backup si on a une réplique",
-                "Le backup ne fonctionne que le jour et la réplique ne fonctionne que la nuit"
+                "La réplique protège contre la suppression de données ; la sauvegarde prend le relais en quelques secondes",
+                "La réplique prend le relais en quelques secondes ; la sauvegarde protège contre la suppression ou la corruption",
+                "La réplique remplace les sauvegardes, qui ne servent plus quand on a de la haute disponibilité"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Attention : la haute disponibilité (réplique + failover) protège contre la panne matérielle d’un serveur ou d’une zone en quelques secondes, mais si un script supprime une table par erreur (`DROP TABLE`), la suppression est aussitôt répliquée sur la réplique ! Il faut donc toujours conserver des sauvegardes (« backups ») séparées."
+              "answer_index": 1,
+              "explanation_fr": "La réplique synchrone assure la continuité (bascule en douze secondes), mais elle copie aussi une suppression par erreur : la sauvegarde sert à revenir en arrière. Le piège classique est d’inverser les rôles, et une réplique ne remplace jamais une sauvegarde."
             },
             {
               "prompt_fr": "Que signifie « synchronous replication was caught up » ?",
               "choices": [
-                "La réplique n’avait aucun retard de réplication par rapport à la base principale au moment de la panne",
-                "La réplication a été interrompue par un pare-feu",
-                "La réplique avait vingt-quatre heures de retard sur la base principale"
+                "La réplique a rattrapé son retard juste après la bascule",
+                "La réplique a été arrêtée pour ne pas recevoir de données abîmées",
+                "La réplique n’avait aucun retard sur la base principale au moment de la panne"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« To catch up » signifie rattraper son retard ; « to be caught up » signifie être totalement à jour (sans « replication lag »)."
+              "answer_index": 2,
+              "explanation_fr": "« Caught up » veut dire « à jour, sans retard » : la réplication synchrone avait tout reçu, d’où « zero data loss ». Elle n’a rien à rattraper après coup, et elle n’a pas été arrêtée : elle est devenue la nouvelle base principale."
             },
             {
               "prompt_fr": "Complète : « During the ___, the standby replica in zone B was promoted to primary in twelve seconds. »",
               "choices": [
                 "failover",
-                "fallout",
-                "turnover"
+                "fallback",
+                "switchback"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le basculement vers un système de secours s’appelle un « failover ». Attention aux faux amis proches : « fallout » désigne les retombées négatives d’une crise (ou des retombées radioactives), et « turnover » désigne le chiffre d’affaires ou le renouvellement du personnel."
+              "explanation_fr": "Le « failover » est la bascule automatique vers la réplique de secours. Le « fallback » est une solution de repli en général (comme un taux en cache), et le « switchback » ou « failback » est le retour vers le site d’origine, après la panne."
             },
             {
               "prompt_fr": "Pourquoi répète-t-on souvent en DevOps : « An untested backup is not a backup » ?",
               "choices": [
-                "Parce que beaucoup d’équipes découvrent le jour d’un sinistre que leurs fichiers de sauvegarde sont incomplets, corrompus ou trop lents à restaurer",
-                "Parce que les fournisseurs cloud suppriment les sauvegardes qui ne sont pas téléchargées chaque heure",
-                "Parce qu’une sauvegarde non testée bloque le pipeline CI/CD"
+                "Parce qu’une sauvegarde jamais restaurée finit par être supprimée par le fournisseur cloud",
+                "Parce qu’une sauvegarde non testée n’est pas prise en compte dans le calcul du SLA",
+                "Parce que beaucoup d’équipes découvrent le jour J que leur sauvegarde est incomplète ou trop lente à restaurer"
               ],
-              "answer_index": 0,
-              "explanation_fr": "C’est la restauration (« restore ») qui prouve qu’une sauvegarde est valide et que l’équipe maîtrise la procédure dans les délais prévus (RTO/RPO)."
+              "answer_index": 2,
+              "explanation_fr": "Une sauvegarde ne vaut que si on sait la restaurer, dans un délai connu : on le vérifie par des tests de restauration réguliers. Les fournisseurs ne suppriment pas les sauvegardes non restaurées, et le SLA ne dépend pas de ces tests."
             }
           ],
           "production": {
@@ -1395,42 +1395,42 @@
             {
               "prompt_fr": "À quoi sert un « circuit breaker » (disjoncteur logiciel) dans une architecture de microservices ?",
               "choices": [
-                "À couper automatiquement les appels vers un service aval lent ou en panne et renvoyer une réponse de repli, afin d’éviter une panne en cascade",
-                "À éteindre l’alimentation électrique du datacenter en cas d’orage",
-                "À chiffrer les sauvegardes dans un compartiment S3"
+                "Couper les appels vers un service lent et renvoyer une réponse de repli pour éviter une panne en cascade",
+                "Relancer automatiquement les appels vers un service lent jusqu’à ce qu’il réponde",
+                "Basculer tout le trafic vers la région secondaire dès qu’un service ralentit"
               ],
               "answer_index": 0,
-              "explanation_fr": "Comme un disjoncteur électrique qui saute (« trips ») pour protéger l’installation, un « circuit breaker » logiciel cesse d’appeler un service défaillant pendant un moment et renvoie immédiatement une erreur propre ou une valeur par défaut (« fallback »), évitant ainsi de bloquer tous les threads du service appelant."
+              "explanation_fr": "Sarah le décrit : le disjoncteur s’ouvre après deux secondes et renvoie des frais de port par défaut, ce qui évite que les threads s’empilent. Relancer en boucle aggraverait l’engorgement, et basculer de région est une décision de reprise après sinistre, bien plus lourde."
             },
             {
               "prompt_fr": "Que signifie « disaster recovery drill » ?",
               "choices": [
-                "Un exercice pratique (une répétition) pour tester en conditions réelles le plan de reprise après sinistre",
-                "Un outil matériel pour percer les baies de serveurs",
-                "Un contrat d’assurance contre les cyberattaques"
+                "Le document qui décrit les étapes du plan de reprise après sinistre",
+                "Un exercice pour tester en pratique le plan de reprise après sinistre",
+                "Une vraie panne de région, analysée ensuite dans le postmortem"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Comme « fire drill » (exercice d’incendie), un « disaster recovery drill » (ou « game day ») est un exercice planifié où l’équipe simule la perte d’une région ou d’un service critique pour vérifier que ses procédures fonctionnent réellement."
+              "answer_index": 1,
+              "explanation_fr": "Un « drill » est un exercice, une répétition (comme un « fire drill », exercice d’évacuation). Le document s’appelle le « disaster recovery plan » ou un runbook, et un exercice n’est justement pas une vraie panne."
             },
             {
               "prompt_fr": "Complète : « We ran a chaos engineering experiment by ___ 500 ms of latency into the payment dependency. »",
               "choices": [
                 "injecting",
-                "planting",
+                "infusing",
                 "throwing"
               ],
               "answer_index": 0,
-              "explanation_fr": "En ingénierie du chaos (« fault injection »), l’expression consacrée est « to inject latency / errors / failures into a service »."
+              "explanation_fr": "En chaos engineering, on « injects latency » ou « injects faults » : on introduit volontairement une panne contrôlée. « Infusing » s’emploie pour une tisane ou une idée, et « throwing » pour une exception de code (« throw an error »), pas pour de la latence."
             },
             {
               "prompt_fr": "Pourquoi pratique-t-on le « chaos engineering » en préproduction (ou de manière contrôlée) ?",
               "choices": [
-                "Pour découvrir et corriger les faiblesses de résilience (comme un mauvais délai de circuit breaker) aux heures ouvrées, avant qu’une vraie panne ne les déclenche à 3 h du matin",
-                "Pour punir les développeurs qui ont oublié d’écrire de la documentation",
-                "Pour générer du trafic artificiel afin d’augmenter la facture cloud"
+                "Pour mesurer la capacité maximale du système avant une période de forte affluence",
+                "Pour trouver les faiblesses de résilience aux heures de bureau, avant qu’une vraie panne ne les révèle",
+                "Pour vérifier que les sauvegardes peuvent être restaurées dans le délai prévu"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le but de l’ingénierie du chaos est de vérifier de façon proactive que les mécanismes de tolérance aux pannes (circuit breakers, retries, failover, alertes) se comportent comme prévu."
+              "answer_index": 1,
+              "explanation_fr": "Le chaos engineering provoque des pannes contrôlées pour découvrir les points faibles, comme le délai du disjoncteur, quand l’équipe est là pour réagir. Mesurer la capacité maximale, c’est un test de charge, et vérifier les sauvegardes, un test de restauration."
             }
           ],
           "production": {
@@ -1483,42 +1483,42 @@
             {
               "prompt_fr": "Pourquoi un service doit-il être « stateless » pour que la mise à l’échelle horizontale (« horizontal scaling ») fonctionne simplement ?",
               "choices": [
-                "Pour que n’importe quelle instance puisse traiter n’importe quelle requête d’un utilisateur, et qu’une instance puisse être ajoutée ou arrêtée sans perdre sa session",
-                "Pour que le serveur n’ait plus besoin de processeur ni de mémoire vive",
-                "Parce que les fournisseurs cloud interdisent l’autoscaling sur les services qui utilisent Redis"
+                "Pour que chaque instance garde en mémoire les paniers de ses propres utilisateurs, sans base partagée",
+                "Pour que les instances consomment moins de CPU et puissent donc tourner sur de plus petits nœuds",
+                "Pour que n’importe quelle instance traite n’importe quelle requête, et qu’on puisse en ajouter ou en retirer sans perdre de session"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Si un serveur garde la session d’un utilisateur dans sa mémoire locale (« stateful »), l’utilisateur perd son panier dès que le répartiteur de charge l’envoie sur une nouvelle instance ou que l’instance s’arrête. En déportant l’état dans un stockage partagé (Redis, base de données), toutes les instances de l’API deviennent interchangeables (« stateless »)."
+              "answer_index": 2,
+              "explanation_fr": "Un service sans état ne garde rien en mémoire locale : les sessions vont dans Redis, et toute instance peut répondre. Garder les paniers en mémoire locale, c’est justement le problème de l’API catalogue, et « stateless » ne parle pas de consommation de CPU."
             },
             {
               "prompt_fr": "Quelle est la différence entre « horizontal scaling » et « vertical scaling » ?",
               "choices": [
-                "Horizontal : ajouter davantage d’instances ou de pods en parallèle ; vertical : augmenter la taille (CPU, RAM) d’une machine existante",
-                "Horizontal : augmenter la RAM d’un serveur ; vertical : ajouter plus de serveurs",
-                "Horizontal s’utilise uniquement sur place ; vertical s’utilise uniquement dans le cloud"
+                "Horizontal : agrandir une machine existante ; vertical : ajouter des instances en parallèle",
+                "Horizontal : répartir entre plusieurs régions ; vertical : répartir entre plusieurs zones",
+                "Horizontal : ajouter des instances en parallèle ; vertical : agrandir une machine existante"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Retiens l’image : « horizontal scaling » (scale out/in) aligne plus de machines côte à côte sur une ligne horizontale, tandis que « vertical scaling » (scale up/down) fait grandir une seule machine en hauteur (plus de CPU/RAM)."
+              "answer_index": 2,
+              "explanation_fr": "La mise à l’échelle horizontale ajoute des pods ou des serveurs ; la verticale augmente le CPU et la RAM d’une machine, comme Kofi le prévoit pour la base. Le piège classique est d’inverser les deux, et le choix de régions ou de zones est une question de disponibilité."
             },
             {
               "prompt_fr": "Complète : « We ___ read queries to database replicas so the primary node can focus on writes. »",
               "choices": [
+                "unload",
                 "offload",
-                "discharge",
-                "unweight"
+                "download"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En architecture système, « to offload work / traffic / queries to X » est le verbe exact pour « délester, décharger une partie du travail vers un autre composant »."
+              "answer_index": 1,
+              "explanation_fr": "« To offload something to » veut dire décharger une partie du travail vers un autre composant : les lectures vont aux répliques. « Unload » veut dire décharger un camion ou retirer de la mémoire, et « download » télécharger."
             },
             {
               "prompt_fr": "Un collègue propose de multiplier par quatre la taille des serveurs API sans chercher d’où vient la lenteur. Que lui réponds-tu ?",
               "choices": [
-                "Let’s profile the system to find the actual bottleneck first; if the database lock is the bottleneck, bigger API servers won’t help.",
-                "Yes, vertical scaling has no hardware limit and is always free.",
-                "Autoscaling is deprecated in Kubernetes."
+                "Let’s profile the system to find the real bottleneck first; if it’s the database, bigger API servers won’t help.",
+                "Good idea, and let’s also add more pods, so we’re covered whatever the bottleneck is.",
+                "Good idea, vertical scaling is the safest option, since it doesn’t need any code change."
               ],
               "answer_index": 0,
-              "explanation_fr": "Agrandir un composant qui n’est pas le goulot d’étranglement (« bottleneck ») gaspille du budget sans améliorer les temps de réponse."
+              "explanation_fr": "Avant de payer plus, on cherche le vrai goulot d’étranglement : si c’est la base, des serveurs d’API plus gros ne changeront rien. Ajouter des pods « au cas où » coûte sans garantie de résultat, et la verticale a aussi des limites et un coût."
             }
           ],
           "production": {
@@ -1551,22 +1551,22 @@
             {
               "prompt_fr": "Comment le couple « cache + cache invalidation » sur le CDN résout-il le dilemme des pages catalogue ?",
               "choices": [
-                "Les pages sont servies rapidement depuis le cache proche des utilisateurs, et seules les pages dont le prix change sont purgées immédiatement sans attendre l’expiration",
-                "Le CDN supprime toutes les images du site toutes les cinq secondes",
-                "Les utilisateurs voient des prix faux pendant trois semaines"
+                "Les pages sont mises en cache une heure, et les prix modifiés n’apparaissent qu’après cette heure",
+                "Les pages sont servies depuis un cache proche, et seules celles dont le prix change sont purgées tout de suite",
+                "Les pages ne sont jamais mises en cache, seules les images et les scripts passent par le CDN"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’invalidation de cache (« cache invalidation » ou « cache purge ») sur événement permet de combiner un taux de succès du cache (« cache hit ratio ») élevé avec des données toujours fraîches lors d’une mise à jour métier."
+              "answer_index": 1,
+              "explanation_fr": "Daniel combine un cache d’une heure et un webhook qui purge la page dès qu’un marchand change un prix : rapide et juste. Sans invalidation, un prix modifié resterait faux jusqu’à une heure, et les pages catalogue sont bien mises en cache."
             },
             {
               "prompt_fr": "Qu’est-ce qu’un « origin server » (d’où « origin bandwidth ») quand on utilise un CDN ?",
               "choices": [
-                "Votre serveur ou cluster backend principal, que le CDN n’interroge que lorsqu’un fichier n’est pas encore présent dans son cache (cache miss)",
-                "Le premier ordinateur acheté par le fondateur de l’entreprise",
-                "Le navigateur web du téléphone de l’utilisateur"
+                "Le point de présence du CDN le plus proche de l’utilisateur, qui sert le fichier",
+                "Le serveur DNS qui indique au navigateur l’adresse du CDN",
+                "Le serveur principal, que le CDN interroge seulement quand un fichier n’est pas dans son cache"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Avec un CDN, le trafic se divise entre les requêtes servies directement par le bord du réseau (« edge / cache hit ») et celles qui remontent jusqu’à votre infrastructure (« origin server » lors d’un « cache miss »). Réduire le trafic vers l’origine diminue fortement la facture de bande passante sortante (« egress bandwidth »)."
+              "answer_index": 2,
+              "explanation_fr": "L’« origin » est ton serveur ou cluster principal (ici en Europe) : le CDN ne l’appelle qu’en cas de « cache miss », d’où la baisse de la facture de bande passante. Le point de présence proche s’appelle un « edge » ou « PoP », et le DNS ne sert pas les fichiers."
             },
             {
               "prompt_fr": "Complète : « There are only two hard things in Computer Science: cache ___ and naming things. »",
@@ -1581,12 +1581,12 @@
             {
               "prompt_fr": "Pourquoi exécuter les redirections géographiques en « edge computing » plutôt que sur le serveur principal ?",
               "choices": [
-                "Parce que la requête est traitée au point de présence le plus proche de l’utilisateur, ce qui évite un aller-retour transcontinental inutile",
-                "Parce qu’un worker edge dispose de 500 Go de mémoire vive pour entraîner des modèles d’IA",
-                "Parce que le protocole HTTP ne fonctionne pas sur les serveurs centraux"
+                "Parce que le worker edge a accès à la base de données principale plus rapidement que le serveur",
+                "Parce que les redirections faites au serveur principal ne sont pas prises en compte par le CDN",
+                "Parce que la requête est traitée au point de présence le plus proche, sans aller-retour jusqu’en Europe"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Les fonctions d’« edge computing » (Cloudflare Workers, Lambda@Edge…) sont très légères et tournent dans des centaines de villes proches des utilisateurs, ce qui supprime la latence réseau pour le routage, la vérification de jeton ou les tests A/B."
+              "answer_index": 2,
+              "explanation_fr": "Le code « edge » s’exécute au point de présence le plus proche de Dakar ou d’Abidjan, ce qui évite un aller-retour transcontinental. Il est au contraire loin de la base principale, et le CDN gère très bien les redirections de l’origine : c’est la distance qui fait la différence."
             }
           ],
           "production": {
@@ -1618,42 +1618,42 @@
             {
               "prompt_fr": "Pourquoi le « cold start » d’une fonction serverless n’est-il pas un problème pour le générateur de reçus PDF de Rania ?",
               "choices": [
-                "Parce que la génération du reçu est asynchrone (envoyée par e-mail en arrière-plan) et non bloquante pour l’écran de paiement de l’utilisateur",
-                "Parce que le langage utilisé supprime totalement la mémoire vive",
-                "Parce que les fonctions serverless n’ont jamais de démarrage à froid"
+                "Parce que le reçu est envoyé par e-mail en arrière-plan, sans bloquer l’écran de paiement",
+                "Parce que le démarrage à froid n’arrive qu’une fois, au tout premier déploiement",
+                "Parce que la file de messages garde la fonction allumée en permanence"
               ],
               "answer_index": 0,
-              "explanation_fr": "Un « cold start » (le délai de quelques centaines de millisecondes à quelques secondes quand le fournisseur initialise un nouveau conteneur après une période d’inactivité) est gênant sur une API synchrone temps réel, mais indolore pour une tâche de fond asynchrone."
+              "explanation_fr": "Rania le dit : les reçus partent « asynchronously by email », donc deux secondes de plus passent inaperçues. Un démarrage à froid se produit après chaque période d’inactivité, pas une seule fois, et la file ne garde pas la fonction allumée : elle la déclenche."
             },
             {
               "prompt_fr": "Que signifie « serverless scales to zero when idle » ?",
               "choices": [
-                "Quand il n’y a aucun trafic, aucune instance ne tourne et le coût de calcul tombe à zéro",
-                "Le service supprime son code source quand personne ne l’utilise",
-                "Le service ne peut traiter aucune requête"
+                "Sans trafic, la fonction refuse les requêtes jusqu’au prochain déploiement",
+                "Sans trafic, aucune instance ne tourne et le coût de calcul tombe à zéro",
+                "Sans trafic, la fonction garde une seule instance prête pour répondre vite"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Scale to zero » est l’un des grands avantages économiques du serverless pour les charges intermittentes (« spiky / bursty workloads »), contrairement à des machines IaaS qui restent facturées à l’heure même la nuit."
+              "answer_index": 1,
+              "explanation_fr": "« Scales to zero when idle » : quand personne ne l’appelle, rien ne tourne, d’où « we only pay per execution ». La fonction reste prête à démarrer à la prochaine requête (avec un démarrage à froid), et garder une instance chaude est justement une option payante."
             },
             {
               "prompt_fr": "Complète : « Should we ___ up a virtual machine or use a managed service? »",
               "choices": [
                 "spin",
                 "turn",
-                "roll"
+                "raise"
               ],
               "answer_index": 0,
-              "explanation_fr": "En anglais cloud, « to spin up a VM / a cluster / an environment » est l’expression idiomatique très courante pour « démarrer, créer rapidement une ressource » (et « to spin down / tear down » pour l’éteindre ou la détruire)."
+              "explanation_fr": "« To spin up » est l’expression consacrée pour lancer une machine ou un environnement (« spin up a VM »), et « spin down » pour l’arrêter. « Turn up » veut dire monter le son ou arriver quelque part, et « raise up » ne s’emploie pas pour une machine."
             },
             {
               "prompt_fr": "Comment résumer clairement la différence entre IaaS, PaaS, serverless et SaaS ?",
               "choices": [
-                "IaaS gives you virtual machines and networks to manage; PaaS and serverless run your code without server administration; SaaS is a ready-to-use software product sold by subscription.",
-                "IaaS is free, PaaS is open source, and SaaS only works offline.",
-                "They are four names for the exact same Kubernetes cluster."
+                "IaaS runs your code for you; PaaS gives you VMs to manage; SaaS is a serverless function sold by subscription.",
+                "IaaS gives you VMs and networks to manage; PaaS and serverless run your code for you; SaaS is ready-to-use software.",
+                "IaaS and SaaS both give you VMs to manage; PaaS and serverless are two names for the same service."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Plus on monte de l’IaaS vers le PaaS/serverless puis le SaaS, plus le fournisseur gère de couches techniques à votre place (matériel, OS, runtime, jusqu’à l’application complète)."
+              "answer_index": 1,
+              "explanation_fr": "Plus on monte, moins on gère : IaaS fournit des machines et du réseau, PaaS et serverless exécutent ton code sans administration de serveurs, SaaS est un logiciel prêt à l’emploi. Le piège classique est d’inverser IaaS et PaaS, ou de confondre des modèles bien distincts."
             }
           ],
           "production": {
@@ -1686,42 +1686,42 @@
             {
               "prompt_fr": "Que sont des « unattached / orphaned volumes » dans un compte cloud ?",
               "choices": [
-                "Des disques virtuels qui continuent d’être facturés au gigaoctet après la suppression des machines virtuelles auxquelles ils étaient attachés",
-                "Des conteneurs qui tournent sans fichier YAML",
-                "Des sauvegardes gratuites offertes par le fournisseur cloud"
+                "Des disques virtuels partagés entre plusieurs machines sans propriétaire défini",
+                "Des sauvegardes de disques que le fournisseur garde gratuitement pendant un an",
+                "Des disques virtuels toujours facturés alors que leur machine virtuelle a été supprimée"
               ],
-              "answer_index": 0,
-              "explanation_fr": "C’est un classique du gaspillage cloud (« cloud waste ») : lorsqu’on détruit une machine virtuelle de test, son disque bloc (EBS, Persistent Disk) reste parfois conservé par défaut et continue de facturer de l’espace disque (« disk space ») chaque mois."
+              "answer_index": 2,
+              "explanation_fr": "« Unattached » veut dire détaché : le disque n’est plus relié à aucune machine, mais il est toujours facturé au gigaoctet. Ce n’est pas un disque partagé, et rien n’est gratuit : c’est justement ce qui gonfle la facture."
             },
             {
               "prompt_fr": "Pourquoi Diego distingue-t-il l’engagement tarifaire d’un an et le « technical vendor lock-in » ?",
               "choices": [
-                "Parce que s’engager sur un volume de calcul pendant un an est une décision financière prévisible, tandis qu’utiliser des standards ouverts (Kubernetes, PostgreSQL) préserve la capacité technique de migrer",
-                "Parce que les fournisseurs cloud remboursent intégralement les factures quand on utilise Kubernetes",
-                "Parce que le vendor lock-in n’existe que pour les téléphones mobiles"
+                "Parce que l’engagement d’un an empêche toute migration technique pendant sa durée",
+                "Parce que Kubernetes et PostgreSQL sont inclus gratuitement dans l’engagement d’un an",
+                "Parce que l’engagement d’un an est financier, alors que des standards ouverts gardent la capacité de migrer"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le vrai « vendor lock-in » coûteux vient d’un code fortement couplé à des API propriétaires impossibles à reproduire ailleurs. Tant que l’architecture repose sur des briques portables, réserver la capacité de base (« baseline capacity ») sur 1 an est un levier FinOps sain."
+              "answer_index": 2,
+              "explanation_fr": "Diego distingue le verrouillage de facturation (un engagement d’un an, prévisible) du verrouillage technique, qu’il évite grâce à Kubernetes et PostgreSQL. L’engagement n’empêche pas techniquement de migrer, il coûte seulement l’engagement restant, et ces logiciels ne sont pas « inclus »."
             },
             {
               "prompt_fr": "Complète : « Deleting those orphaned disks is an easy ___ that saves $800 a month right away. »",
               "choices": [
+                "gain",
                 "win",
-                "victory",
-                "prize"
+                "success"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« An easy win » ou « a quick win » est l’expression courante en entreprise pour désigner une action simple à mettre en œuvre qui apporte un bénéfice immédiat."
+              "answer_index": 1,
+              "explanation_fr": "« A quick win » ou « an easy win » est l’expression du monde du travail pour une action simple au résultat immédiat. « Easy gain » et « easy success » se comprennent mais ne sont pas des expressions figées."
             },
             {
               "prompt_fr": "Ton manager demande comment réduire la facture cloud dès cette semaine sans risquer de panne en production. Que proposes-tu ?",
               "choices": [
-                "We can delete half of the production database replicas right now.",
-                "Let’s start by deleting unattached disk volumes, shutting down staging environments at night, and right-sizing overprovisioned test nodes based on our capacity planning metrics.",
-                "Let’s turn off all monitoring and backups to save storage space."
+                "Let’s delete unattached volumes, shut down staging at night, and right-size overprovisioned test nodes.",
+                "Let’s reduce the production node count by half tonight and watch the dashboards closely.",
+                "Let’s sign a three-year savings plan today, so the discount starts this week."
               ],
-              "answer_index": 1,
-              "explanation_fr": "On commence toujours l’optimisation des coûts (« cloud cost optimization ») par la chasse au gaspillage hors production (volumes orphelins, environnements de test allumés la nuit) et le dimensionnement au plus juste (« right-sizing ») appuyé sur les métriques, sans jamais sacrifier la résilience de la production."
+              "answer_index": 0,
+              "explanation_fr": "Les disques orphelins, la préproduction éteinte la nuit et les nœuds de test surdimensionnés font économiser sans toucher à la production. Diviser la production par deux est risqué, et un engagement de trois ans se décide après une analyse de capacité, pas dans la semaine."
             }
           ],
           "production": {

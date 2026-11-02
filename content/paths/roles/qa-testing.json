@@ -37,42 +37,42 @@
             {
               "prompt_fr": "Pourquoi Aïcha veut-elle relire les critères d’acceptation avant le début du développement ?",
               "choices": [
-                "Pour pratiquer le shift-left testing et lever les ambiguïtés avant que le code soit écrit",
-                "Pour vérifier que les tests de non-régression passent déjà en production",
-                "Pour rédiger les notes de version destinées aux clients finaux"
-              ],
-              "answer_index": 0,
-              "explanation_fr": "Le « shift-left testing » consiste à impliquer la QA dès la conception (à gauche sur la frise du projet) pour repérer les oublis avant qu’ils ne deviennent des bugs dans le code. La non-régression et les notes de version arrivent tout à la fin du cycle."
-            },
-            {
-              "prompt_fr": "Comment dire « Le ticket ne décrit que le scénario nominal » ?",
-              "choices": [
-                "The ticket only describes the nominal way.",
-                "The ticket only describes the happy path.",
-                "The ticket describes only the good road."
+                "Pour préparer à l’avance les tests de non-régression de la prochaine version",
+                "Pour lever les ambiguïtés avant que le code soit écrit, ce qu’on appelle le shift-left testing",
+                "Pour valider le ticket à la place du product owner avant le sprint"
               ],
               "answer_index": 1,
-              "explanation_fr": "« The happy path » est l’expression consacrée pour le scénario nominal où tout se déroule sans erreur ni cas particulier. « Nominal way » et « good road » sont des calques du français qui ne s’emploient pas en génie logiciel."
+              "explanation_fr": "Le « shift-left testing » consiste à impliquer la QA dès la conception, plus tôt dans le calendrier du projet, pour repérer les oublis avant qu’ils ne deviennent des bugs. Les tests de régression viennent après le développement, et la QA ne remplace pas le product owner : elle l’aide à préciser les critères."
+            },
+            {
+              "prompt_fr": "Comment dire « Les critères ne couvrent que le cas où tout se passe bien » ?",
+              "choices": [
+                "The criteria only cover the nominal way.",
+                "The criteria only covers the good path.",
+                "The criteria only cover the happy path."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le scénario nominal se dit « happy path » en anglais de produit. « Nominal way » est un calque du français, et « criteria » est un pluriel (le singulier est « criterion ») : on dit « the criteria cover », pas « covers »."
             },
             {
               "prompt_fr": "Complète la phrase Gherkin : « ___ a logged-in user with an expired code, when they click Apply, then an error banner appears. »",
               "choices": [
+                "Given",
                 "Suppose",
-                "Knowing",
-                "Given"
+                "Assuming"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En syntaxe Gherkin, les trois mots-clés officiels sont « Given » (Étant donné le contexte initial), « When » (Quand l’action a lieu) et « Then » (Alors le résultat attendu se produit). « Suppose » et « Knowing » ne sont pas reconnus par les outils BDD comme Cucumber."
+              "answer_index": 0,
+              "explanation_fr": "En Gherkin, un scénario suit toujours la structure Given / When / Then (étant donné, quand, alors). « Suppose » et « Assuming » ont un sens proche en anglais courant, mais ce ne sont pas des mots-clés Gherkin : l’outil ne les reconnaîtrait pas."
             },
             {
               "prompt_fr": "En affinage, le product owner dit : « The acceptance criteria is clear. » Que remarques-tu sur la forme, et quelle relance professionnelle fais-tu sur le fond ?",
               "choices": [
-                "The happy path is clear, but could we specify what happens when the payment gateway times out?",
-                "Your English is wrong because criteria is plural, and your ticket is incomplete.",
-                "OK, I will wait until the feature is in production to ask questions."
+                "Just a detail: we say “the criteria are clear”, since criteria is plural. Otherwise it’s fine.",
+                "Great, then I’ll write the test cases once the feature is ready on staging.",
+                "The happy path is clear, but could we specify what happens when the payment gateway times out?"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En réunion, on ne corrige pas la grammaire d’un collègue (même si « criteria » est bien pluriel : « the criteria are clear »). La première réponse valide ce qui est fait (« The happy path is clear ») et pose une question précise sur un cas d’erreur. Attendre la production est l’inverse du shift-left."
+              "answer_index": 2,
+              "explanation_fr": "En réunion, on ne corrige pas l’anglais d’un collègue devant tout le monde (même si « criteria » est bien pluriel) : on se concentre sur le fond. La bonne réponse valide ce qui est fait et pose la question qui manque. Attendre la livraison sur staging, c’est renoncer au shift-left."
             }
           ],
           "production": {
@@ -105,21 +105,21 @@
             {
               "prompt_fr": "Quelle est la différence entre un « test scenario » et un « test case » ?",
               "choices": [
-                "Le test scenario réservé aux tests automatisés, alors que le test case est uniquement manuel",
-                "Le test scenario décrit une situation générale à vérifier, qui se décline en plusieurs test cases précis avec entrées et résultats attendus",
-                "Ce sont deux mots identiques : test case s’utilise aux États-Unis et test scenario au Royaume-Uni"
+                "Le scénario décrit une situation générale à vérifier, déclinée en plusieurs cas précis avec résultats attendus",
+                "Le cas de test décrit une situation générale, déclinée en plusieurs scénarios précis avec résultats attendus",
+                "Le scénario est réservé aux tests automatisés, le cas de test aux tests manuels"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un « test scenario » est de haut niveau (ex. : vérifier les limites du champ quantité), tandis qu’un « test case » détaille les données d’entrée exactes (0, 1, 50, 51), les étapes et l’« expected result ». Les deux concepts s’appliquent aussi bien en manuel qu’en automatisation."
+              "answer_index": 0,
+              "explanation_fr": "Le « test scenario » est ce qu’on veut vérifier (le champ quantité), et chaque « test case » est une vérification précise avec ses données et son résultat attendu. Le piège classique est d’inverser les deux, et les deux s’appliquent aussi bien aux tests manuels qu’automatisés."
             },
             {
               "prompt_fr": "Un champ accepte un âge compris entre 18 et 65 ans inclus. Quelles valeurs choisis-tu avec la « boundary value analysis » ?",
               "choices": [
                 "10, 30, 50 et 80",
-                "18, 25, 40 et 65",
-                "17, 18, 65 et 66"
+                "17, 18, 65 et 66",
+                "18, 25, 40 et 65"
               ],
-              "answer_index": 2,
+              "answer_index": 1,
               "explanation_fr": "L’analyse des valeurs limites (« boundary value analysis ») teste les bornes exactes de la plage valide (18 et 65) et les valeurs juste à l’extérieur (17 et 66), là où un `<` écrit à la place d’un `<=` provoque un bug. Les valeurs 10, 30 et 80 relèvent du simple partitionnement d’équivalence, sans cibler les bornes."
             },
             {
@@ -130,17 +130,17 @@
                 "waited"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le terme consacré est « expected result » (résultat attendu). « Attended » et « waited » sont des faux amis classiques chez les francophones qui traduisent « attendu » mot à mot : « to attend » signifie assister à une réunion, et « to wait » signifie patienter."
+              "explanation_fr": "Le résultat attendu se dit « expected result ». « Attended » est un faux ami (« attend a meeting » veut dire assister à une réunion), et « waited » veut dire attendre au sens d’attendre quelqu’un."
             },
             {
               "prompt_fr": "Un développeur junior veut écrire 50 cas de test pour tester tous les nombres de 1 à 50. Que lui réponds-tu ?",
               "choices": [
-                "Good idea, testing every single number is the only way to have high quality.",
-                "With equivalence partitioning and boundary value analysis, testing 0, 1, one middle value, 50 and 51 gives us the same confidence in a fraction of the time.",
-                "Don’t write any test case for numbers, the database will handle it."
+                "Good idea, testing every number from 1 to 50 is the safest way to catch off-by-one bugs.",
+                "With partitions and boundary values, testing 0, 1, a middle value, 50 and 51 gives the same confidence.",
+                "Let’s test only 1 and 50, since the values in between can’t behave differently."
               ],
               "answer_index": 1,
-              "explanation_fr": "C’est tout l’intérêt du « equivalence partitioning » combiné à la « boundary value analysis » : comme tous les nombres de 2 à 49 suivent la même branche de code, tester les bornes (0, 1, 50, 51) et une valeur représentative suffit sans alourdir la suite de tests."
+              "explanation_fr": "Les partitions d’équivalence et les valeurs limites donnent la même confiance avec cinq tests au lieu de cinquante. Tester chaque nombre fait perdre du temps sans trouver plus de bugs, et ne garder que 1 et 50 oublie 0 et 51, là où se cachent justement les erreurs de borne."
             }
           ],
           "production": {
@@ -172,42 +172,42 @@
             {
               "prompt_fr": "En quoi consiste le « negative testing » ?",
               "choices": [
-                "À tester uniquement des nombres négatifs dans les champs mathématiques",
-                "À critiquer le code des développeurs pendant la rétrospective de sprint",
-                "À soumettre des données invalides ou des actions imprévues pour vérifier que l’application les rejette proprement sans planter"
+                "Vérifier les cas où l’utilisateur suit exactement le parcours prévu par le ticket",
+                "Tester uniquement les valeurs négatives dans les champs numériques du formulaire",
+                "Soumettre des données invalides ou des actions imprévues pour vérifier que l’application les rejette proprement"
               ],
               "answer_index": 2,
-              "explanation_fr": "Le « negative testing » vérifie que le système gère proprement ce qu’il ne devrait pas accepter (champ vide, texte trop long, format invalide) en affichant un message clair plutôt qu’une erreur 500. Tester des nombres négatifs n’en est qu’un tout petit exemple particulier."
+              "explanation_fr": "Le « negative testing » envoie volontairement des entrées invalides (300 caractères, des émojis) pour vérifier que l’application refuse proprement au lieu de planter. Suivre le parcours prévu, c’est le « happy path », et « negative » ne parle pas des nombres négatifs."
             },
             {
               "prompt_fr": "Pourquoi Lucía parle-t-elle de « black-box testing » ?",
               "choices": [
-                "Parce qu’elle teste le formulaire à travers ses entrées et ses sorties, sans regarder comment le code interne est écrit",
-                "Parce qu’elle teste l’application uniquement en mode sombre",
-                "Parce qu’elle exécute des tests de sécurité sur un serveur éteint"
+                "Parce qu’elle teste le formulaire en lisant le code source pour repérer les failles",
+                "Parce qu’elle teste le formulaire sans avoir accès aux journaux du serveur",
+                "Parce qu’elle teste le formulaire par ses entrées et ses sorties, sans regarder le code interne"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En « black-box testing » (test en boîte noire), le testeur se place du point de vue de l’utilisateur ou du client d’API : il envoie des entrées et vérifie les sorties sans s’appuyer sur la structure interne du code (qui relève du « white-box testing »)."
+              "answer_index": 2,
+              "explanation_fr": "En « black-box testing », on ne voit pas l’intérieur : on joue sur les entrées et on observe les sorties. Lire le code source, c’est le « white-box testing », et l’accès aux journaux n’est pas ce qui définit la boîte noire."
             },
             {
               "prompt_fr": "Complète : « Server-side input ___ is required, even if the front-end already checks the form. »",
               "choices": [
                 "validity",
                 "validation",
-                "validating-check"
+                "verifying"
               ],
               "answer_index": 1,
-              "explanation_fr": "« Input validation » (la validation des saisies) est le terme exact. « Validity » désigne l’état de ce qui est valide (the validity of a ticket), pas le contrôle effectué par le code."
+              "explanation_fr": "La validation des saisies se dit « input validation ». « Validity » est la qualité d’être valide (la validité), pas l’action de vérifier, et « input verifying » n’est pas une collocation anglaise."
             },
             {
               "prompt_fr": "Un collègue propose de copier la base de production avec les vrais e-mails et téléphones des clients pour avoir des « test data » réalistes. Que réponds-tu ?",
               "choices": [
-                "Great idea, real customer emails are the best test data for staging.",
-                "We should never use real personal data in our test data; let’s generate fake records that include edge cases like apostrophes and long names.",
-                "Test data is only needed for automated tests, not for manual testing."
+                "We should never use real personal data in test data; let’s generate fake records with edge cases.",
+                "That works if we copy only the customers who agreed to our terms of use.",
+                "That works if we keep the production copy on staging and delete it after the sprint."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Utiliser de vraies données personnelles en test viole le RGPD et crée un risque d’envoyer de vrais e-mails aux clients depuis staging. On génère toujours des « test data » synthétiques mais riches en « edge cases » (accents, apostrophes, noms très longs)."
+              "answer_index": 0,
+              "explanation_fr": "Des données personnelles réelles n’ont rien à faire dans un environnement de test (RGPD, risque de fuite) : on génère des données réalistes mais fausses, en y ajoutant les cas limites. L’acceptation des CGU ne couvre pas cet usage, et une copie temporaire reste une copie exposée."
             }
           ],
           "production": {
@@ -260,42 +260,42 @@
             {
               "prompt_fr": "Quelle est la différence entre un « smoke test » et du « sanity testing » dans ce dialogue ?",
               "choices": [
-                "Le smoke test vérifie rapidement les fonctions vitales de tout le build, tandis que le sanity testing vérifie de façon ciblée que le correctif de TVA fonctionne",
-                "Le smoke test teste les performances du serveur, tandis que le sanity testing vérifie la sécurité",
-                "Le smoke test est fait par les clients, tandis que le sanity testing est fait par les développeurs"
+                "Le smoke test vérifie le correctif de TVA ; le sanity testing vérifie vite les fonctions vitales du build",
+                "Le smoke test vérifie vite les fonctions vitales du build ; le sanity testing vérifie le correctif de TVA",
+                "Le smoke test est fait à la main ; le sanity testing est toujours automatisé"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le « smoke test » balaie rapidement les parcours essentiels (connexion, panier) pour voir si le build déployé sur le « test environment » est testable. Le « sanity testing » est un contrôle rapide mais focalisé sur une modification précise (ici le calcul de TVA) avant d’aller plus loin."
+              "answer_index": 1,
+              "explanation_fr": "Le « smoke test » contrôle rapidement que le build tient debout (connexion, panier) ; le « sanity testing » vérifie de façon ciblée un correctif précis. Le piège classique est d’inverser les deux, et les deux peuvent être manuels ou automatisés : ici, c’est même l’inverse."
             },
             {
               "prompt_fr": "Que signifie « exploratory testing » ?",
               "choices": [
-                "Cliquer au hasard sur l’écran sans objectif ni prise de notes",
-                "Explorer méthodiquement l’application autour d’une mission, en concevant et exécutant ses tests à la volée pour trouver des bugs imprévus",
-                "Tester un logiciel uniquement dans des pays étrangers"
+                "Exécuter les cas de test écrits à l’avance, dans l’ordre du plan de test",
+                "Cliquer au hasard dans l’application, sans objectif ni prise de notes",
+                "Explorer l’application autour d’une mission, en concevant et exécutant ses tests au fur et à mesure"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « exploratory testing » n’est pas du clic au hasard (« ad-hoc » brouillon) : le testeur se fixe une charte ou un angle d’attaque (ici : le paiement sur plusieurs onglets) en temps limité (« time-boxed ») et adapte ses pistes selon ce qu’il observe."
+              "answer_index": 2,
+              "explanation_fr": "Le test exploratoire part d’une mission (ici le paiement multi-onglet) et invente les tests en avançant, ce qui révèle des bugs que personne n’avait prévus. Suivre un plan écrit, ce sont les tests scriptés, et cliquer au hasard sans notes n’est pas une méthode."
             },
             {
               "prompt_fr": "Complète : « Please deploy the release candidate ___ the test environment first. »",
               "choices": [
+                "to",
                 "in",
-                "at",
-                "to"
+                "at"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Avec le verbe « to deploy », on utilise la préposition de destination « to » : deploy a build to the test environment, deploy to staging, deploy to production. « Deploy in » se rencontre parfois mais « deploy to » est la collocation standard."
             },
             {
               "prompt_fr": "Un manager te dit : « Since we have automated tests, we can stop all manual and exploratory testing. » Que lui réponds-tu ?",
               "choices": [
-                "Automated scripts only check what we already thought of; exploratory testing is how we uncover unexpected user flows and UX issues on new features.",
-                "You are right, manual testing is only for teams that don’t know how to code.",
-                "We should delete all automated tests and do everything by hand."
+                "You’re right for regression, so let’s keep manual testing only for the release day.",
+                "You’re right, as long as our automated test coverage stays above 80% on new code.",
+                "Automated scripts only check what we already thought of; exploratory testing finds the flows we didn’t expect."
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’automatisation vérifie rapidement des scénarios connus, mais elle est aveugle aux problèmes d’ergonomie et aux interactions imprévues (comme ouvrir deux onglets). L’« exploratory testing » et l’automatisation sont complémentaires."
+              "answer_index": 2,
+              "explanation_fr": "Un script ne vérifie que ce qu’on a prévu ; l’exploratoire trouve le reste, comme le bug multi-onglet d’Ivan. Garder le manuel pour le jour de la mise en production arrive trop tard, et une couverture élevée ne dit rien des parcours que personne n’a imaginés."
             }
           ],
           "production": {
@@ -327,12 +327,12 @@
             {
               "prompt_fr": "Pourquoi le mode responsive d’un navigateur sur ordinateur ne remplace-t-il pas une « device farm » ?",
               "choices": [
-                "Parce que le mode responsive est payant alors que la device farm est gratuite",
-                "Parce qu’une device farm permet de tester sur de vrais téléphones avec leur moteur de rendu réel et leur clavier virtuel",
-                "Parce que le mode responsive ne fonctionne qu’avec une connexion hors ligne"
+                "Parce qu’une device farm fait tester sur de vrais téléphones, avec leur rendu et leur clavier réels",
+                "Parce que le mode responsive ne permet pas de choisir une taille d’écran précise",
+                "Parce qu’une device farm teste plus vite, car elle lance tous les tests en parallèle"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Réduire une fenêtre Chrome sur ordinateur simule la largeur d’écran, mais pas le moteur WebKit d’iOS ni l’apparition du clavier virtuel natif qui recouvre les boutons. Une « device farm » donne accès à de vrais appareils physiques à distance."
+              "answer_index": 0,
+              "explanation_fr": "Le mode responsive de Chrome change la taille de la fenêtre, mais garde le moteur de Chrome et n’affiche pas de vrai clavier virtuel, d’où le bouton masqué vu seulement sur un vrai iPhone. On peut très bien y choisir une taille précise, et la vitesse n’est pas l’argument."
             },
             {
               "prompt_fr": "Comment dire « Tous les tests passent sur Chrome, mais deux échouent sur Safari » ?",
@@ -342,27 +342,27 @@
                 "All tests are passing Chrome, but two are falling on Safari."
               ],
               "answer_index": 1,
-              "explanation_fr": "En anglais du test, le couple de verbes standard est « to pass » (réussir) et « to fail » (échouer), suivi de « on + navigateur/appareil ». « Miss » (manquer une cible) et « fall » (tomber par terre) ne s’emploient pas pour le résultat d’un test."
+              "explanation_fr": "Un test « passes » ou « fails ». « Miss » veut dire rater une cible ou un train, et « falling » est un faux ami de « fail » (tomber). « Passing Chrome » oublie aussi la préposition « on »."
             },
             {
               "prompt_fr": "Que signifie « The calendar popup is cut off » ?",
               "choices": [
-                "Le calendrier est déconnecté d’internet",
-                "Le calendrier a été supprimé du code par erreur",
-                "Une partie du calendrier est rognée et sort de la zone visible"
+                "Une partie du calendrier est rognée et sort de la zone visible",
+                "Le calendrier se ferme dès qu’on clique sur une date",
+                "Le calendrier s’affiche derrière la fenêtre modale"
               ],
-              "answer_index": 2,
-              "explanation_fr": "« Cut off » pour un élément graphique signifie qu’il est coupé, tronqué par le bord de son conteneur ou de l’écran (souvent à cause d’un `overflow: hidden`)."
+              "answer_index": 0,
+              "explanation_fr": "« Cut off » veut dire coupé, rogné : le bas du calendrier dépasse de la modale et n’est plus visible. Un calendrier qui se ferme tout seul ou qui passe derrière la modale serait décrit autrement (« closes », « is hidden behind »)."
             },
             {
               "prompt_fr": "En point quotidien, on te demande où en est la « test execution ». Quelle réponse donne un état d’avancement exploitable ?",
               "choices": [
-                "Test execution is 75% complete: 30 tests pass, 2 fail on Safari, and 8 are still running on the device farm.",
-                "I am doing test execution today and maybe tomorrow.",
-                "Everything is tested except the things that don’t work."
+                "Test execution is going well: most tests pass, and only a few problems remain on Safari.",
+                "Test execution is 75% complete: 30 tests pass, 2 fail on Safari, and 8 are still running.",
+                "Test execution will be done today or tomorrow, depending on the device farm."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un bon suivi de « test execution » donne la progression globale et la répartition claire entre tests réussis (« pass »), échoués (« fail ») et restants, en précisant où se situent les échecs."
+              "answer_index": 1,
+              "explanation_fr": "Un bon point d’avancement donne des chiffres : combien passent, échouent ou restent à exécuter. « Most tests pass » et « a few problems » sont trop vagues pour décider quoi que ce soit, et une date incertaine ne dit rien de l’état actuel."
             }
           ],
           "production": {
@@ -394,42 +394,42 @@
             {
               "prompt_fr": "Qu’est-ce qui distingue un « bug bash » du « dogfooding » ?",
               "choices": [
-                "Le bug bash est une session courte et collective où toute l’équipe cherche des bugs ensemble, tandis que le dogfooding consiste à utiliser son propre produit au quotidien en interne",
-                "Le bug bash consiste à supprimer des anciens tickets Jira, tandis que le dogfooding est réservé aux applications pour animaux",
-                "Le bug bash est un outil d’automatisation sous Linux (Bash), tandis que le dogfooding est un test de charge"
+                "Le bug bash est l’usage interne quotidien du produit ; le dogfooding, une session courte où l’équipe chasse les bugs",
+                "Le bug bash est réservé aux testeurs ; le dogfooding est réservé aux designers et aux PM",
+                "Le bug bash est une session courte où l’équipe chasse les bugs ensemble ; le dogfooding, l’usage interne quotidien du produit"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Dogfooding » (de « eat your own dog food ») veut dire utiliser son propre produit en interne dans la durée. Un « bug bash » est un événement ponctuel (souvent d’une heure avant un lancement) où développeurs, PM, designers et QA testent la nouveauté ensemble. Rien à voir avec le terminal Bash !"
+              "answer_index": 2,
+              "explanation_fr": "Le « bug bash » est une chasse collective et limitée dans le temps (une heure ici) ; le « dogfooding » consiste à utiliser soi-même son produit au quotidien (« eat your own dog food »). Le piège est d’inverser les deux, et les deux impliquent toute l’équipe."
             },
             {
               "prompt_fr": "Que vérifie-t-on pendant le « localization testing » ?",
               "choices": [
-                "La précision de la puce GPS du téléphone",
-                "Les traductions, la longueur des textes traduits dans les boutons, et les formats locaux de date, d’heure et de devise",
-                "L’adresse IP du serveur de base de données"
+                "La position géographique de l’utilisateur pour lui proposer la bonne langue",
+                "La vitesse de chargement de l’application dans chaque pays",
+                "Les traductions, la longueur des textes dans les boutons et les formats locaux de date et de devise"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Faux ami classique : en informatique, « localization » (abrégé l10n) ne veut pas dire géolocalisation GPS (« geolocation »), mais l’adaptation d’un produit à une langue et une région (traductions non tronquées, format JJ/MM/AAAA, symbole €)."
+              "answer_index": 2,
+              "explanation_fr": "Le test de localisation vérifie que le produit fonctionne dans chaque langue et chaque culture : textes plus longs, date au format local, devise. Détecter la position relève de la géolocalisation, et la vitesse par pays d’un test de performance."
             },
             {
               "prompt_fr": "Complète : « In French, the text is longer, so the button label gets ___. »",
               "choices": [
-                "truncated",
                 "shorted",
-                "strangled"
+                "truncated",
+                "amputated"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un texte coupé avec « … » faute de place est dit « truncated » (tronqué), ou « cut off ». « Shorted » veut dire court-circuité en électricité, et « strangled » veut dire étranglé."
+              "answer_index": 1,
+              "explanation_fr": "Un texte coupé avec « … » faute de place est « truncated ». « Shorted » veut dire court-circuité (un circuit électrique), et « amputated » ne s’emploie que pour un membre, pas pour un texte."
             },
             {
               "prompt_fr": "Tu invites l’équipe produit et design à un « bug bash » jeudi à 14 h. Quel message Slack est le plus clair et motivant ?",
               "choices": [
-                "Please do my testing job on Thursday at 2 p.m. because I am too busy.",
-                "We’re running a one-hour bug bash on the new pricing page this Thursday at 2 p.m. Everyone is welcome: grab the staging link and help us spot UI, localization, and accessibility issues before launch!",
-                "Thursday at 2 p.m. we will bash the developers who wrote bugs."
+                "We’re running a one-hour bug bash on the new pricing page this Thursday at 2 p.m. Everyone is welcome!",
+                "Could you all test the new pricing page on Thursday at 2 p.m.? QA doesn’t have enough time this sprint.",
+                "Reminder: everyone must join the bug bash on Thursday at 2 p.m., attendance will be tracked."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un bon message de « bug bash » précise la durée, la cible (la nouvelle page de tarifs), l’environnement (staging) et les angles d’observation (UI, localisation, accessibilité), dans un esprit bienveillant : on chasse les bugs, jamais les développeurs !"
+              "answer_index": 0,
+              "explanation_fr": "Le bon message donne le format, le sujet, l’heure et invite chaleureusement. Présenter le bug bash comme un manque de temps de la QA donne l’impression de déléguer son travail, et un ton obligatoire avec contrôle de présence démotive."
             }
           ],
           "production": {
@@ -481,42 +481,42 @@
             {
               "prompt_fr": "Pourquoi un bug « intermittent » donne-t-il souvent lieu à la réponse « works on my machine » ?",
               "choices": [
-                "Parce qu’il dépend de conditions d’exécution précises (comme la lenteur du réseau ou une concurrence entre requêtes) absentes du poste local du développeur",
-                "Parce que les développeurs n’utilisent pas le même langage de programmation que les testeurs",
-                "Parce qu’un bug intermittent disparaît tout seul au bout de 24 heures"
+                "Parce que le développeur ne suit pas les mêmes étapes de reproduction que la testeuse",
+                "Parce qu’il dépend de conditions précises, comme un réseau lent, absentes du poste du développeur",
+                "Parce qu’un bug intermittent ne se produit que sur l’environnement de production"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Sur le poste du développeur (« local machine »), le serveur répond instantanément : les conditions de course (« race conditions ») ou les doubles clics pendant un chargement lent n’apparaissent que si l’on simule un réseau réel."
+              "answer_index": 1,
+              "explanation_fr": "Lucía l’explique : en local, l’API répond en 10 ms, donc le double clic ne déclenche rien. Kenji a bien suivi les étapes (dix fois), et le bug apparaît aussi sur staging dès qu’on ralentit le réseau."
             },
             {
               "prompt_fr": "Que signifie « Do you have a minimal repro? » sur Slack ?",
               "choices": [
-                "As-tu le droit de reprocher ce bug à l’équipe ?",
-                "As-tu un cas de reproduction simple et isolé qui permet de faire apparaître le bug à coup sûr ?",
-                "As-tu une copie de sauvegarde de la base de production ?"
+                "As-tu une capture d’écran qui montre le bug au moment où il se produit ?",
+                "As-tu le minimum d’informations pour ouvrir un ticket sur ce bug ?",
+                "As-tu un cas de reproduction simple et isolé qui fait apparaître le bug à coup sûr ?"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Repro » est l’abréviation courante de « reproduction ». Une « minimal repro » est le scénario ou l’exemple le plus court possible qui déclenche le bug sans étapes superflues."
+              "answer_index": 2,
+              "explanation_fr": "Une « repro » (reproduction) est une suite d’étapes qui déclenche le bug à chaque fois ; « minimal » veut dire réduite à l’essentiel. Une capture d’écran montre le bug sans permettre de le reproduire, et il ne s’agit pas du minimum pour ouvrir un ticket."
             },
             {
               "prompt_fr": "Complète : « In my bug report, the ___ result is that two invoices are created instead of one. »",
               "choices": [
+                "actual",
                 "current",
-                "present",
-                "actual"
+                "present"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Dans un rapport de bug, « actual result » signifie « résultat effectif / obtenu » (face à « expected result »). « Current » et « present » veulent dire « actuel » dans le temps, ce qui est un autre sens."
+              "answer_index": 0,
+              "explanation_fr": "Dans un rapport de bug, on oppose « expected result » et « actual result » (résultat obtenu). « Actual » est un faux ami : il ne veut pas dire « actuel » (« current »). « Current » et « present » ne sont donc pas les termes d’un rapport de bug."
             },
             {
               "prompt_fr": "Un développeur commente « Cannot reproduce locally, closing » sur ton ticket. Quelle réponse est la plus constructive et précise ?",
               "choices": [
-                "You never read my tickets properly, it is definitely broken!",
-                "It’s intermittent on fast connections. If you throttle the network to Fast 3G in DevTools before clicking Save twice, you’ll get the repro every time.",
-                "OK, if it works on your machine, then customers will not have the problem."
+                "It’s intermittent, so please leave it open: I’ll check again on the next build and let you know.",
+                "It’s intermittent, but customers reported it, so it must be a real bug in your code.",
+                "It’s intermittent on fast connections. If you throttle the network to Fast 3G before clicking Save twice, you’ll get it every time."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième réponse reste factuelle et donne exactement la variable environnementale manquante (brider le réseau dans les DevTools) qui transforme un bug intermittent en reproduction systématique."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse donne au développeur la condition qui manquait et une reproduction fiable. Laisser le ticket ouvert sans élément nouveau ne fait pas avancer, et dire « it must be in your code » sonne comme un reproche sans aider à trouver la cause."
             }
           ],
           "production": {
@@ -549,42 +549,42 @@
             {
               "prompt_fr": "Pourquoi Ivan refuse-t-il de baisser la « severity » du bug d’export CSV ?",
               "choices": [
-                "Parce que la severity mesure l’impact intrinsèque du défaut (ici des données comptables faussées en silence), indépendamment de la date à laquelle on le corrige",
-                "Parce qu’il veut obliger les développeurs à travailler le week-end",
-                "Parce que severity et priority doivent toujours avoir exactement la même valeur dans Jira"
+                "Parce que la gravité mesure l’impact du défaut, ici des données comptables faussées sans alerte",
+                "Parce que la gravité dépend du nombre d’utilisateurs qui utilisent l’export CSV",
+                "Parce que la gravité et la priorité doivent toujours rester au même niveau"
               ],
               "answer_index": 0,
-              "explanation_fr": "La « severity » (gravité) qualifie le dégât causé par le « defect » (crash, perte ou corruption de données). Si peu d’utilisateurs sont touchés cette semaine, on peut ajuster la « priority » (l’ordre de traitement), mais tricher sur la « severity » masque le vrai risque technique."
+              "explanation_fr": "La gravité (« severity ») mesure l’impact intrinsèque : des montants faux sans avertissement, c’est grave, même pour quelques comptables. Le nombre d’utilisateurs et la date jouent sur la priorité, et les deux valeurs peuvent différer, comme le propose Sarah."
             },
             {
               "prompt_fr": "Que signifie « the cents are silently dropped » ?",
               "choices": [
-                "Les centimes diminuent légèrement à cause de l’inflation",
-                "Les centimes sont ignorés ou perdus sans qu’aucun message d’erreur ne prévienne l’utilisateur",
-                "Les centimes s’affichent en bas de l’écran avec une animation douce"
+                "Les centimes sont arrondis à l’euro supérieur sans prévenir l’utilisateur",
+                "Les centimes sont perdus sans qu’aucun message ne prévienne l’utilisateur",
+                "Les centimes sont supprimés après un message d’avertissement discret"
               ],
               "answer_index": 1,
-              "explanation_fr": "En informatique, « silently dropped » ou « silent failure » désigne une perte de données ou un échec qui se produit sans lever d’erreur ni prévenir l’utilisateur, ce qui est souvent plus dangereux qu’un crash franc car personne ne s’en aperçoit tout de suite."
+              "explanation_fr": "« Silently » veut dire « sans bruit, sans prévenir », et « dropped » veut dire perdus, abandonnés. Il ne s’agit pas d’un arrondi, et justement aucun avertissement ne s’affiche (« without any warning »)."
             },
             {
               "prompt_fr": "Complète : « We hold ___ every Tuesday morning to review and assign new defects. »",
               "choices": [
-                "bug sorting",
                 "bug triage",
-                "defect ranking"
+                "bug sorting",
+                "bug ranking"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le terme consacré est « bug triage » (emprunté au français médical « triage ») : la réunion où produit, tech lead et QA passent en revue les nouveaux bugs pour valider leur gravité et fixer leur priorité."
+              "answer_index": 0,
+              "explanation_fr": "La réunion où l’on qualifie et répartit les nouveaux défauts s’appelle « bug triage ». « Sorting » et « ranking » décrivent une partie du travail (trier, classer), mais ce ne sont pas les noms de la réunion."
             },
             {
               "prompt_fr": "En « bug triage », un développeur dit : « This typo on the checkout button is a critical severity bug! » Quelle nuance apportes-tu ?",
               "choices": [
-                "Actually, it’s low severity because payment still works fine, but high priority because every customer sees it on the checkout page.",
-                "Yes, a typo is a system crash, so it is high severity and low priority.",
-                "We should never fix typos in software."
+                "You’re right, it’s critical severity, because the whole checkout page looks broken.",
+                "It’s low severity since payment still works, but high priority since every customer sees it.",
+                "It’s low severity and low priority, since a typo never blocks anyone from paying."
               ],
-              "answer_index": 0,
-              "explanation_fr": "C’est l’exemple inverse parfait : une faute de frappe sur le bouton de paiement ne bloque aucune fonction (« low severity »), mais comme elle nuit à la crédibilité sur une page stratégique, on la corrige tout de suite (« high priority »)."
+              "answer_index": 1,
+              "explanation_fr": "Une faute de frappe n’empêche pas de payer : gravité faible. Mais tous les clients la voient sur la page de paiement : priorité haute. La qualifier de critique confond gravité et visibilité, et la priorité basse ignore l’effet sur la confiance des clients."
             }
           ],
           "production": {
@@ -616,42 +616,42 @@
             {
               "prompt_fr": "Dans le « bug lifecycle », quand choisit-on de « reopen » un ticket plutôt que d’en créer un nouveau ?",
               "choices": [
-                "Quand le correctif livré ne résout que partiellement le problème signalé ou échoue lors du retest",
-                "Quand on découvre un bug sur une tout autre fonctionnalité six mois plus tard",
-                "Chaque fois qu’on change de sprint, même si le bug est déjà corrigé"
+                "Quand on trouve un nouveau bug sur la même page, même s’il est sans rapport",
+                "Quand le bug a été corrigé, mais que le développeur n’a pas mis à jour le ticket",
+                "Quand le correctif ne résout qu’une partie du problème signalé, ou échoue au retest"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Lors du « retest », si le problème initial persiste (en totalité ou sur une variante directe prévue par le ticket), la QA « reopens » le ticket en expliquant ce qui échoue encore. En revanche, un effet de bord sur une autre fonction fait souvent l’objet d’un ticket de « software regression » lié."
+              "answer_index": 2,
+              "explanation_fr": "On rouvre le ticket quand le défaut d’origine n’est pas entièrement corrigé, comme ici avec le signe plus. Un bug différent, même sur la même page, mérite son propre ticket, et un bug corrigé se ferme après le retest."
             },
             {
               "prompt_fr": "Que craint Tomasz lorsqu’il demande si sa modification « introduced a software regression » ?",
               "choices": [
-                "Que le code s’exécute plus lentement sur les anciens serveurs",
-                "Que son correctif sur la réinitialisation ait cassé la connexion classique qui fonctionnait très bien avant",
-                "Que son code utilise une syntaxe dépréciée"
+                "Que son correctif ne règle pas le cas des adresses avec un signe plus",
+                "Que le bug d’origine réapparaisse dans une version plus ancienne",
+                "Que son correctif ait cassé la connexion classique, qui fonctionnait bien avant"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une « software regression » (régression logicielle) survient quand une modification, souvent un correctif ou un refactoring, casse un comportement existant qui fonctionnait jusque-là."
+              "answer_index": 2,
+              "explanation_fr": "Une « regression » est une fonction qui marchait et qui ne marche plus à cause d’un changement : ici, la page de connexion. Le cas du signe plus est le défaut d’origine, pas une régression, et une ancienne version n’est pas concernée par le nouveau code."
             },
             {
               "prompt_fr": "Complète : « I ___ the fix on staging, and the bug still happens with plus-sign emails. »",
               "choices": [
-                "retested",
                 "tested back",
-                "made a retest of"
+                "retested",
+                "tested again of"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« To retest » s’utilise directement comme un verbe transitif : I retested the fix, please retest ticket #402. « Tested back » ne se dit pas, et « made a retest of » est inutilement lourd."
+              "answer_index": 1,
+              "explanation_fr": "« To retest » est le verbe du métier : « I retested the fix ». « Tested back » est un calque, et « tested again of » ajoute une préposition qui n’a rien à faire là ; « tested it again » serait correct."
             },
             {
               "prompt_fr": "Tu rouvres un ticket Jira après un retest infructueux. Quel commentaire évite les frictions avec le développeur ?",
               "choices": [
-                "Reopened. Not fixed at all.",
-                "I retested on staging build #184: standard emails work now, thanks! However, I’m reopening the ticket because emails with a plus sign still return a 400 error (see attached HAR log).",
-                "I am reopening this ticket because I don’t like how you wrote the regex."
+                "I retested on build #184: standard emails work now, thanks! I’m reopening it because plus-sign emails still fail.",
+                "Reopened: still not working. Please test your fixes before moving tickets to Ready for QA.",
+                "I’m reopening this ticket because your regex is wrong; please rewrite it with a better pattern."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un bon commentaire de réouverture précise le numéro de build testé, confirme ce qui marche désormais, puis explique factuellement pourquoi on rouvre (« I’m reopening the ticket because… ») avec la preuve technique."
+              "answer_index": 0,
+              "explanation_fr": "Le bon commentaire précise le build, reconnaît ce qui marche et décrit exactement ce qui échoue. Reprocher au développeur de ne pas tester crée des frictions, et dicter la solution (« your regex is wrong ») sort du rôle de la QA sans donner le cas qui échoue."
             }
           ],
           "production": {
@@ -703,42 +703,42 @@
             {
               "prompt_fr": "Quel est l’intérêt principal du « page object model » en automatisation ?",
               "choices": [
-                "Il centralise les sélecteurs et les actions d’un écran dans une classe dédiée : si l’interface change, on ne corrige le sélecteur qu’à un seul endroit",
-                "Il génère automatiquement le design HTML des pages web",
-                "Il supprime le besoin d’écrire des assertions dans les tests"
+                "Il génère automatiquement un test pour chaque page de l’application à partir du HTML",
+                "Il regroupe les sélecteurs et actions d’un écran dans une classe : si l’interface change, on corrige un seul endroit",
+                "Il remplace les assertions par une comparaison automatique avec la maquette"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Avec le « page object model » (POM), vingt tests qui cliquent sur le bouton de connexion appellent tous `loginPage.submit()`. Si le « selector » du bouton change demain, on modifie une seule ligne dans `LoginPage` au lieu de réparer vingt fichiers de test. Les assertions restent indispensables !"
+              "answer_index": 1,
+              "explanation_fr": "Le « page object model » isole les sélecteurs et les actions de chaque écran (ici `CheckoutPage`) : le test ne garde que le parcours métier. Il ne génère pas de tests, et les assertions restent indispensables."
             },
             {
               "prompt_fr": "Pourquoi Moussa déconseille-t-il un « selector » basé sur une classe CSS de style comme `.btn-primary-blue` ?",
               "choices": [
-                "Parce que Playwright ne supporte pas le CSS",
-                "Parce qu’un changement purement visuel cassera le test alors que la fonctionnalité marche toujours",
-                "Parce que les classes CSS ralentissent la base de données"
+                "Parce que Playwright ne sait pas trouver un élément à partir d’une classe CSS",
+                "Parce qu’une classe CSS rend le test plus lent qu’un sélecteur par rôle",
+                "Parce qu’un simple changement visuel casserait le test alors que la fonctionnalité marche"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un bon « selector » cible le rôle accessible ou un attribut de test dédié (`data-testid`). Les classes de style ou la hiérarchie DOM profonde (`div > div > span`) rendent les tests ultra-fragiles."
+              "answer_index": 2,
+              "explanation_fr": "Moussa le dit : si un designer change la couleur, le test casse. Un bon sélecteur dépend du sens de l’élément (son rôle, un `data-testid`), pas de son style. Playwright gère très bien les sélecteurs CSS, et la vitesse n’est pas en cause."
             },
             {
               "prompt_fr": "Complète : « A test without a clear ___ will pass even if the page is completely broken. »",
               "choices": [
-                "affirmation",
                 "assertion",
-                "declaration"
+                "affirmation",
+                "statement"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une « assertion » (comme `await expect(banner).toBeVisible()`) est la vérification qui fait passer ou échouer le test. Un script qui clique partout sans « assertion » vérifie seulement qu’aucune exception n’a explosé en chemin."
+              "answer_index": 0,
+              "explanation_fr": "Une « assertion » est la vérification qui fait échouer le test si le résultat n’est pas le bon. « Affirmation » est un faux ami (une déclaration positive), et « statement » désigne une instruction de code en général."
             },
             {
               "prompt_fr": "En revue de code d’automatisation, tu vois un test avec dix sélecteurs XPath copiés depuis l’inspecteur Chrome. Quel commentaire laisses-tu ?",
               "choices": [
-                "XPath is forbidden by law.",
-                "Could we replace these raw XPaths with `data-testid` selectors and move them into the page object? That will make the test much easier to maintain when the UI changes.",
-                "Delete the assertion so the test never fails."
+                "Could we keep the XPaths but add a comment above each one explaining what it targets?",
+                "Could we shorten these XPaths to the last two levels, so they’re easier to read?",
+                "Could we replace these raw XPaths with data-testid selectors in the page object? It’ll be easier to maintain."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le commentaire propose une amélioration concrète (attributs stables + Page Object) et en explique le bénéfice direct pour l’équipe (maintenabilité quand l’UI évolue)."
+              "answer_index": 2,
+              "explanation_fr": "Des sélecteurs stables (`data-testid`) rangés dans le page object résistent aux changements d’interface. Un commentaire n’empêche pas un XPath de casser, et raccourcir le chemin le rend plus lisible mais tout aussi dépendant de la structure de la page."
             }
           ],
           "production": {
@@ -771,42 +771,42 @@
             {
               "prompt_fr": "Qu’est-ce qu’un « flaky test » ?",
               "choices": [
-                "Un test qui échoue systématiquement parce qu’un vrai bug bloque la fonctionnalité",
-                "Un test qui passe parfois et échoue parfois sur exactement le même code, sans aucune modification",
-                "Un test unitaire qui s’exécute en moins d’une milliseconde"
+                "Un test qui passe parfois et échoue parfois, sur exactement le même code",
+                "Un test qui échoue à chaque fois à cause d’un vrai bug dans le code",
+                "Un test qui échoue seulement quand le code a été modifié récemment"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un « flaky test » (test instable) produit un résultat aléatoire à code constant : il mine la confiance dans la CI car les développeurs finissent par ignorer les alertes rouges en pensant « c’est juste la CI qui déconne »."
+              "answer_index": 0,
+              "explanation_fr": "Un « flaky test » est instable : même code, résultat différent d’une exécution à l’autre, comme le test du panier qui passe au second essai. Un échec systématique signale un vrai bug, et un échec lié à un changement de code, c’est le rôle normal d’un test."
             },
             {
               "prompt_fr": "Pourquoi le fait qu’un test réussisse seul mais échoue quand toute la « test suite » tourne en parallèle indique-t-il un problème de « test isolation » ?",
               "choices": [
-                "Parce que le test dépend d’un état partagé (même compte en base, même panier) qu’un autre test modifie en même temps",
-                "Parce qu’un navigateur sans interface (headless browser) ne peut ouvrir qu’un seul onglet par jour",
-                "Parce que les tests parallèles n’exécutent pas les assertions"
+                "Parce qu’un navigateur headless ne peut pas lancer plusieurs tests à la fois",
+                "Parce que le test dépend d’un état partagé, le même compte, qu’un autre test modifie en même temps",
+                "Parce que les tests en parallèle n’exécutent pas les étapes dans le même ordre"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La « test isolation » exige que chaque test soit totalement indépendant des autres, quel que soit l’ordre ou le parallélisme d’exécution. Utiliser une « test fixture » qui génère un utilisateur dédié par test élimine ces collisions."
+              "answer_index": 1,
+              "explanation_fr": "Lucía le trouve : deux tests partagent `test@example.com`, et l’un vide le panier de l’autre. Les navigateurs headless tournent très bien en parallèle, et chaque test exécute ses propres étapes dans l’ordre : c’est la donnée partagée qui pose problème."
             },
             {
               "prompt_fr": "Complète : « In the CI pipeline, our end-to-end tests run in a ___ browser without a visible window. »",
               "choices": [
+                "headless",
                 "blind",
-                "windowless-screen",
-                "headless"
+                "invisible"
               ],
-              "answer_index": 2,
-              "explanation_fr": "« Headless browser » (navigateur sans interface graphique, comme Headless Chrome) est le terme technique standard pour exécuter des tests de navigateur sur des serveurs d’intégration continue dépourvus d’écran."
+              "answer_index": 0,
+              "explanation_fr": "Un navigateur sans interface graphique se dit « headless browser ». « Blind » et « invisible » se comprennent, mais ne sont pas les termes du métier."
             },
             {
               "prompt_fr": "Un collègue veut ajouter `await page.waitForTimeout(5000)` pour corriger un « flaky test ». Que lui conseilles-tu ?",
               "choices": [
-                "Add 30 seconds instead so we are really sure.",
-                "Hardcoded sleeps slow down the test suite and still fail when CI is under load; let’s wait for the specific API response or element state instead.",
-                "Just delete the test, we don’t need it."
+                "Good idea, and let’s set it to 10 seconds on CI, which is slower than our laptops.",
+                "Fixed sleeps slow the suite and still fail under load; let’s wait for the API response or the element state.",
+                "Good idea, as long as we also enable automatic retries on this test in CI."
               ],
               "answer_index": 1,
-              "explanation_fr": "Les pauses fixes (`sleep` / `waitForTimeout`) sont un anti-pattern majeur : 5 secondes ralentissent toute la suite quand le serveur répond en 200 ms, et échouent quand même si le serveur de CI met 5,2 secondes. On attend toujours un événement précis (réponse réseau, élément visible)."
+              "explanation_fr": "Une attente fixe rallonge la suite et reste fragile si la CI est chargée : mieux vaut attendre un événement précis (réponse d’API, élément visible). Allonger le délai ou relancer automatiquement masque le vrai problème, ici le compte partagé."
             }
           ],
           "production": {
@@ -829,7 +829,7 @@
           "dialogue": [
             { "speaker": "Sarah", "text_en": "Ivan, the test runner failed on your branch: three snapshot testing files don’t match anymore.", "text_fr": "Ivan, le lanceur de tests a échoué sur ta branche : trois fichiers de test par instantané ne correspondent plus." },
             { "speaker": "Ivan", "text_en": "Oh, did someone run `vitest -u` without checking the diff again?", "text_fr": "Oh, quelqu’un a encore lancé `vitest -u` sans vérifier le diff ?" },
-            { "speaker": "Sarah", "text_en": "No, this time the badge component really lost its `aria-label` class in the refactoring, so the snapshot caught a real bug!", "text_fr": "Non, cette fois le composant badge a vraiment perdu son attribut `aria-label` dans le refactoring, donc le snapshot a attrapé un vrai bug !" },
+            { "speaker": "Sarah", "text_en": "No, this time the badge component really lost its `aria-label` attribute in the refactoring, so the snapshot caught a real bug!", "text_fr": "Non, cette fois le composant badge a vraiment perdu son attribut `aria-label` dans le refactoring, donc le snapshot a attrapé un vrai bug !" },
             { "speaker": "Ivan", "text_en": "Nice! Keep snapshots small and focused, otherwise nobody reads them. By the way, how is the migration from Selenium going?", "text_fr": "Bien joué ! Gardons des snapshots petits et ciblés, sinon personne ne les relit. Au fait, comment avance la migration depuis Selenium ?" },
             { "speaker": "Sarah", "text_en": "We moved half of the legacy Java Selenium tests, and our front-end repo still has twenty Cypress specs that run fast enough for now.", "text_fr": "On a migré la moitié des anciens tests Selenium en Java, et notre dépôt front-end a encore vingt specs Cypress qui tournent assez vite pour l’instant." },
             { "speaker": "Ivan", "text_en": "Smart approach: migrate the slow, brittle Selenium tests first instead of rewriting working Cypress tests just for fun.", "text_fr": "Approche intelligente : migrer d’abord les tests Selenium lents et fragiles au lieu de réécrire des tests Cypress qui marchent juste pour le plaisir." }
@@ -838,42 +838,42 @@
             {
               "prompt_fr": "Quel est le piège classique du « snapshot testing » mentionné par Ivan ?",
               "choices": [
-                "Les snapshots prennent trop de place sur l’écran des utilisateurs finaux",
-                "Quand les snapshots sont trop volumineux, les développeurs les mettent à jour automatiquement (`-u`) sans relire le diff, validant ainsi des régressions par inadvertance",
-                "Le snapshot testing ne fonctionne qu’avec Selenium en Java"
+                "Quand les snapshots sont trop petits, ils ne détectent jamais les changements de l’interface",
+                "Quand les snapshots sont mis à jour, le test runner supprime les anciens résultats du dépôt",
+                "Quand les snapshots sont trop gros, on les met à jour avec `-u` sans relire le diff et on valide une régression"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « snapshot testing » (avec un « test runner » comme Jest ou Vitest) compare le rendu actuel d’un composant à un instantané enregistré. Si on enregistre des pages entières de 500 lignes, tout le monde lance `--updateSnapshot` à l’aveugle au lieu de vérifier si le changement est voulu."
+              "answer_index": 2,
+              "explanation_fr": "Ivan le dit : « Keep snapshots small and focused, otherwise nobody reads them ». Un gros snapshot qu’on met à jour sans lire peut figer un bug comme résultat attendu. De petits snapshots détectent très bien les changements, et l’historique reste dans Git."
             },
             {
               "prompt_fr": "Quel est le rôle d’un « test runner » comme Jest ou Vitest ?",
               "choices": [
-                "Détecter les fichiers de test, les exécuter (en série, en parallèle ou en watch mode) et afficher le rapport des succès et des échecs",
-                "Déployer l’application sur l’App Store d’Apple",
-                "Générer automatiquement le cahier des charges du produit"
+                "Écrire automatiquement les tests à partir du code de l’application",
+                "Déployer l’application une fois que tous les tests sont passés",
+                "Trouver les fichiers de test, les exécuter et afficher le rapport des succès et des échecs"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un « test runner » (lanceur de tests) orchestre l’exécution des tests automatisés, gère le mode surveillance (« watch mode ») pendant le développement et remonte les erreurs à la CI."
+              "answer_index": 2,
+              "explanation_fr": "Un « test runner » (Jest, Vitest) découvre les tests, les lance (en série, en parallèle, en mode watch) et affiche les résultats. Il n’écrit pas de tests, et le déploiement relève du pipeline CI/CD."
             },
             {
               "prompt_fr": "Complète : « Don’t update the ___ without reviewing the diff in the pull request. »",
               "choices": [
-                "screenshots-code",
+                "snapshoots",
                 "snapshots",
                 "photographs"
               ],
               "answer_index": 1,
-              "explanation_fr": "En test de composants ou d’interface, on parle de « snapshots » (instantanés sérialisés ou visuels) et de « snapshot testing »."
+              "explanation_fr": "Ici, on parle des fichiers de « snapshot testing », mis à jour avec `-u`. « Snapshoots » n’existe pas, et « photographs » désigne des photos : un snapshot de test est un fichier texte qui enregistre le rendu attendu."
             },
             {
               "prompt_fr": "En entretien ou en réunion d’architecture, on te demande s’il faut réécrire immédiatement les 200 tests « Cypress » qui fonctionnent bien pour passer à Playwright. Que réponds-tu ?",
               "choices": [
-                "Yes, stop all feature work for two months to rewrite every working test.",
-                "If our Cypress suite is stable and fast enough, I’d rather prioritize migrating the brittle legacy Selenium tests first and write new suites in Playwright incrementally.",
-                "We should go back to manual testing only."
+                "If the Cypress suite is stable and fast enough, I’d migrate the brittle Selenium tests first and write new ones in Playwright.",
+                "Yes, let’s rewrite all of them this quarter, so we only maintain one framework as soon as possible.",
+                "No, let’s keep Cypress for everything and stop writing new tests in Playwright."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une réponse pragmatique montre de la maturité d’ingénieur : on ne réécrit pas une suite « Cypress » stable par effet de mode, on concentre l’effort là où la douleur est réelle (ici d’anciens tests « Selenium » lents ou instables)."
+              "answer_index": 0,
+              "explanation_fr": "La réponse nuancée part de la valeur : migrer d’abord ce qui coûte (les tests Selenium fragiles) et écrire le neuf en Playwright, sans réécrire ce qui marche. Tout réécrire bloque l’équipe pour un gain faible, et tout figer sur Cypress ignore la décision de l’équipe."
             }
           ],
           "production": {
@@ -926,42 +926,42 @@
             {
               "prompt_fr": "Comment traduit-on « Nous lançons les tests de non-régression avant chaque version » ?",
               "choices": [
-                "We run non-regression tests before every release.",
+                "We run non-regression testings before every release.",
                 "We run regression tests before every release.",
-                "We launch anti-regression testings before each version."
+                "We launch regression testings before each version."
               ],
               "answer_index": 1,
-              "explanation_fr": "Piège très fréquent : le français dit « test de non-régression », mais l’anglais dit toujours « regression test » (ou « regression testing », indénombrable). « Non-regression test » trahit immédiatement un locuteur francophone."
+              "explanation_fr": "En anglais, on dit « regression tests » : des tests qui vérifient qu’il n’y a pas de régression. « Non-regression » est un calque du français, peu naturel en anglais, et « testings » ne prend jamais de « s » ; on « runs » des tests plutôt qu’on les « launches »."
             },
             {
               "prompt_fr": "À quoi sert la « requirements traceability matrix » avant une sortie ?",
               "choices": [
-                "À vérifier que chaque exigence métier ou réglementaire est bien reliée à au moins un cas de test qui la vérifie",
-                "À mesurer la consommation de mémoire vive des serveurs de test",
-                "À suivre les horaires de connexion des membres de l’équipe QA"
+                "À suivre l’historique des modifications de chaque exigence depuis le début du projet",
+                "À vérifier que chaque cas de test a été exécuté par une personne différente",
+                "À vérifier que chaque exigence est reliée à au moins un cas de test qui la vérifie"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La « requirements traceability matrix » (matrice de traçabilité des exigences) croise les exigences avec les cas de test : elle prouve qu’aucune règle métier n’a été oubliée, ce qui est indispensable lors d’un audit."
+              "answer_index": 2,
+              "explanation_fr": "La matrice de traçabilité relie chaque exigence (ici, les douze stories) à ses tests : on voit tout de suite ce qui n’est pas couvert. L’historique des modifications relève de l’outil de tickets, et elle ne dit rien de qui a exécuté les tests."
             },
             {
               "prompt_fr": "Qui réalise en général le « user acceptance testing » (UAT) ?",
               "choices": [
-                "Uniquement le lanceur de tests automatisés pendant la nuit",
-                "Des représentants métiers, le client ou des utilisateurs finaux qui vérifient que le produit répond à leurs besoins réels avant la mise en ligne",
-                "Les développeurs back-end avant d’ouvrir leur pull request"
+                "Des représentants métier ou des utilisateurs, qui vérifient que le produit répond à leurs vrais besoins",
+                "L’équipe QA, qui vérifie que chaque critère d’acceptation est couvert par un test",
+                "Les développeurs, qui vérifient leur code sur staging avant le gel de la version"
               ],
-              "answer_index": 1,
-              "explanation_fr": "L’UAT (appelée « la recette » en français) est la dernière étape de validation : ce sont les experts métiers (ici l’équipe finance) ou le client qui valident que le logiciel livré correspond bien à leur usage."
+              "answer_index": 0,
+              "explanation_fr": "L’UAT est faite par les futurs utilisateurs ou leurs représentants, ici l’équipe finance, sur leurs cas réels. La QA vérifie la couverture et exécute ses propres tests, et les développeurs testent avant, mais ce n’est pas de l’acceptation."
             },
             {
               "prompt_fr": "Le product owner te demande : « Did the finance team validate the UAT? » Quelle réponse utilise le verbe idiomatique exact ?",
               "choices": [
-                "Yes, they finished user acceptance testing and signed off on the new VAT rules an hour ago.",
-                "Yes, they receipted the software this morning.",
-                "Yes, they made the recipe of the application."
+                "Yes, they finished user acceptance testing and receipted the new VAT rules an hour ago.",
+                "Yes, they finished user acceptance testing and made the recipe of the VAT rules.",
+                "Yes, they finished user acceptance testing and signed off on the new VAT rules an hour ago."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Pour dire « recetter / donner son feu vert formel », on dit « to sign off (on something) ». « Receipted » et « made the recipe » sont des faux amis comiques du mot français « recette » !"
+              "answer_index": 2,
+              "explanation_fr": "« To sign off on something » veut dire donner son accord formel. « Receipted » et « made the recipe » sont des calques de « recette » (la recette informatique), qui se dit justement « acceptance testing » en anglais."
             }
           ],
           "production": {
@@ -993,42 +993,42 @@
             {
               "prompt_fr": "Qu’est-ce qu’un « showstopper » lors d’une réunion de go/no-go ?",
               "choices": [
-                "Une fonctionnalité très impressionnante qu’on montre en démo",
-                "Un bug si grave (ex. : double débit bancaire, crash au démarrage) qu’il interdit la mise en production tant qu’il n’est pas corrigé",
-                "Un test automatisé qui prend plus de cinq minutes à tourner"
+                "Un bug si grave qu’il interdit la mise en production tant qu’il n’est pas corrigé",
+                "Un bug gênant qu’on accepte de livrer en le signalant dans les notes de version",
+                "Une fonctionnalité si impressionnante qu’elle vole la vedette pendant la démo"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Au théâtre, un « showstopper » interrompt le spectacle ; en logiciel, c’est un bug bloquant (on dit aussi « release blocker ») qui viole les « exit criteria » et oblige à reporter ou suspendre la mise en ligne."
+              "answer_index": 0,
+              "explanation_fr": "Un « showstopper » bloque la sortie, comme le double débit SEPA. Le bug qu’on livre en le documentant est un « known issue », et le sens de « show-stopper » dans le spectacle (un numéro qui arrête le show sous les applaudissements) n’est pas celui du logiciel."
             },
             {
               "prompt_fr": "Dans quel cas accepte-t-on de livrer un bug en tant que « known issue » ?",
               "choices": [
-                "Quand son impact est mineur ou qu’une solution de contournement simple existe, et qu’on le documente dans les release notes pour le support et les utilisateurs",
-                "Quand personne n’a eu le temps de lire le bug report",
-                "Quand le bug détruit la base de données mais que les développeurs sont en vacances"
+                "Quand il est grave, mais que la date de sortie a déjà été annoncée aux clients",
+                "Quand son impact est mineur ou contournable, et qu’on le documente dans les notes de version",
+                "Quand il a été trouvé trop tard pour être enregistré dans l’outil de tickets"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Aucune version n’a zéro bug. Si les « exit criteria » (ex. : zéro bug critique ou majeur) sont respectés, un bug mineur identifié tardivement peut passer en « known issue » dans le « test report » et les « release notes », et être corrigé au sprint suivant."
+              "answer_index": 1,
+              "explanation_fr": "Un « known issue » est un défaut mineur qu’on accepte en connaissance de cause, et qu’on documente pour le support et les utilisateurs, comme le mode sombre. Une date annoncée ne justifie pas de livrer un bug grave, et tout défaut connu doit être tracé."
             },
             {
               "prompt_fr": "Complète : « According to our ___ criteria, we cannot release while a critical defect is still open. »",
               "choices": [
-                "output",
                 "exit",
-                "going-out"
+                "output",
+                "outgoing"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Exit criteria » (critères de sortie d’une phase de test) s’oppose à « entry criteria » (critères d’entrée). « Output » désigne les données produites par un programme."
+              "answer_index": 0,
+              "explanation_fr": "Les « exit criteria » sont les conditions à remplir pour sortir d’une phase de test. « Output criteria » et « outgoing criteria » sont des calques de « critères de sortie » qui ne s’emploient pas en anglais."
             },
             {
               "prompt_fr": "Le directeur commercial pousse pour livrer tout de suite malgré un « showstopper » sur le paiement. Comment exprimes-tu le refus de la QA de façon calme et professionnelle ?",
               "choices": [
-                "Do whatever you want, I don’t care if it breaks.",
-                "You don’t understand anything about quality!",
-                "Based on our test report, this defect is a showstopper that violates our exit criteria. If we release now, SEPA customers will be charged twice; I recommend holding the release until we retest the fix this afternoon."
+                "I understand the pressure, so let’s release now and ship the fix as a hotfix tomorrow morning.",
+                "This defect is a showstopper under our exit criteria: SEPA customers would be charged twice. I recommend we hold the release.",
+                "QA refuses to sign this release: you’ll have to take full responsibility if it goes out."
               ],
-              "answer_index": 2,
-              "explanation_fr": "Un ingénieur QA ne dit pas juste « non » avec émotion : il s’appuie sur des faits (« test report », « exit criteria »), chiffre le risque métier concret (clients débités deux fois) et propose un plan de sortie clair."
+              "answer_index": 1,
+              "explanation_fr": "La bonne réponse reste factuelle : elle cite les critères de sortie, l’impact client concret et une recommandation claire. Livrer en promettant un correctif le lendemain laisse des clients débités deux fois, et menacer de rejeter la responsabilité braque la discussion."
             }
           ],
           "production": {
@@ -1060,42 +1060,42 @@
             {
               "prompt_fr": "Qu’est-ce qu’un « hotfix » ?",
               "choices": [
-                "Une mise à jour esthétique prévue trois mois à l’avance",
-                "Un correctif urgent déployé rapidement en production, en dehors du cycle habituel de release, pour réparer un bug critique",
-                "Un outil qui chauffe le processeur pour tester les ventilateurs"
+                "Une petite correction regroupée avec les autres dans la prochaine version planifiée",
+                "Un retour à la version précédente de l’application pour annuler le bug",
+                "Un correctif urgent déployé en production hors du cycle habituel, pour réparer un bug critique"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un « hotfix » part directement de la version en production (souvent la branche `main`) pour corriger au plus vite un incident bloquant sans embarquer tout le code instable du prochain sprint."
+              "answer_index": 2,
+              "explanation_fr": "Un « hotfix » part en urgence, en dehors du calendrier des versions, comme ici pour les codes postaux britanniques. Une correction planifiée attend la prochaine version, et revenir à l’ancienne version, c’est un « rollback »."
             },
             {
               "prompt_fr": "Pourquoi Lucía combine-t-elle « retest », « sanity testing » et « smoke test » sur le hotfix ?",
               "choices": [
-                "Pour sécuriser le correctif en dix minutes : vérifier que le bug est résolu (retest), que le formulaire voisin tient la route (sanity) et que les parcours vitaux tournent (smoke)",
-                "Pour retarder la mise en production jusqu’au lendemain matin",
-                "Parce qu’elle ne sait pas quelle est la différence entre les trois termes"
+                "Pour remplacer en dix minutes la campagne complète de tests de régression de la version",
+                "Pour vérifier en dix minutes le correctif sur chaque navigateur et chaque appareil",
+                "Pour sécuriser le correctif en dix minutes : le bug est réglé, le formulaire tient, les parcours vitaux marchent"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En situation d’urgence (« hotfix »), la QA adapte sa stratégie au risque : on ne saute pas les tests, mais on cible exactement le correctif, son périmètre immédiat et les fonctions vitales."
+              "answer_index": 2,
+              "explanation_fr": "Chaque test a son rôle : le retest vérifie le bug, le sanity testing le formulaire voisin, le smoke test les parcours essentiels. Cela ne remplace pas une campagne de régression complète, et ce n’est pas un test multi-navigateur."
             },
             {
               "prompt_fr": "Complète : « We shipped a ___ last night to fix the UK postcode issue in production. »",
               "choices": [
-                "warm-patch",
+                "hot repair",
                 "hotfix",
-                "fast-repair"
+                "warm patch"
               ],
               "answer_index": 1,
-              "explanation_fr": "« Ship a hotfix » ou « deploy a hotfix » est l’expression standard dans toutes les équipes tech."
+              "explanation_fr": "Le terme pour un correctif urgent livré en production est « hotfix ». « Hot repair » est un calque qui n’existe pas dans le métier, et « warm patch » mélange deux mots sans former d’expression."
             },
             {
               "prompt_fr": "Pendant un incident en production, un développeur veut déployer le « hotfix » directement en prod sans le passer par staging. Que réponds-tu ?",
               "choices": [
-                "Go ahead, testing a hotfix is a waste of time.",
-                "Give me ten minutes on staging to retest the fix and run a quick sanity check: shipping a broken hotfix would make the outage even worse.",
-                "I need three days to run the full manual test plan first."
+                "Give me ten minutes on staging to retest it: a broken hotfix would make the outage even worse.",
+                "Go ahead, but let’s run the full manual test plan in production right after.",
+                "Let’s wait for tomorrow’s release instead, so the fix goes through the usual process."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Trois jours de tests manuels sont irréalistes pendant une panne, mais pousser un « hotfix » non testé risque d’aggraver l’incident. Demander dix minutes pour un « retest » et un « sanity check » sur staging est la posture professionnelle."
+              "answer_index": 0,
+              "explanation_fr": "Dix minutes de vérification ciblée valent mieux qu’un correctif cassé qui aggraverait la panne. Tester en production après coup expose les clients, et attendre demain laisse les clients britanniques bloqués toute la journée."
             }
           ],
           "production": {
@@ -1147,42 +1147,42 @@
             {
               "prompt_fr": "Que signifie « Our test pyramid is upside down » ?",
               "choices": [
-                "Nous avons beaucoup trop de tests de bout en bout lents et fragiles, et pas assez de tests unitaires et d’intégration rapides à la base",
-                "Nos tests unitaires s’exécutent après la mise en production",
-                "Notre équipe QA travaille la nuit et dort le jour"
+                "Nous avons trop de tests unitaires, et pas assez de tests de bout en bout dans le navigateur",
+                "Nous avons trop de tests de bout en bout lents, et pas assez de tests unitaires rapides à la base",
+                "Nous lançons les tests de bout en bout avant les tests unitaires dans le pipeline"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La « test pyramid » (pyramide des tests) place une base large de « unit tests » rapides, un étage intermédiaire d’« integration tests », et une pointe fine d’E2E. Quand on fait tout par l’interface graphique, la pyramide est à l’envers (« upside down » ou « ice-cream cone ») et la CI devient très lente."
+              "answer_index": 1,
+              "explanation_fr": "Une pyramide saine a beaucoup de tests unitaires rapides en bas et peu de tests de bout en bout en haut. « Upside down » veut dire à l’envers : ici, toutes les règles sont testées via le navigateur. Le piège est d’inverser la cause, et l’ordre d’exécution n’est pas le sujet."
             },
             {
               "prompt_fr": "Quel est le principe du « test-driven development » (TDD) ?",
               "choices": [
-                "Attendre que toute l’application soit codée avant d’embaucher un testeur",
-                "Écrire d’abord un test automatisé qui échoue, écrire le code minimal qui le fait passer, puis remanier le code proprement (Red, Green, Refactor)",
-                "Générer le code de l’application automatiquement à partir des rapports de crash"
+                "Écrire le code, puis un test pour chaque fonction avant d’ouvrir la pull request",
+                "Écrire les tests à partir des critères d’acceptation, avec la QA et le product owner",
+                "Écrire d’abord un test qui échoue, puis le code minimal qui le fait passer, puis remanier"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En « test-driven development » (TDD), le test guide la conception du code avant même son implémentation : Red (le test échoue), Green (le code passe le test), Refactor (on nettoie)."
+              "answer_index": 2,
+              "explanation_fr": "Le TDD suit le cycle Red, Green, Refactor : le test vient avant le code. Écrire les tests après le code n’est pas du TDD, et rédiger des scénarios avec le product owner relève plutôt du BDD."
             },
             {
               "prompt_fr": "Complète : « We should ___ those discount checks down into unit tests to speed up the CI. »",
               "choices": [
                 "push",
-                "fall",
-                "descend"
+                "descend",
+                "fall"
               ],
               "answer_index": 0,
-              "explanation_fr": "Lorsqu’on parle des couches de la pyramide des tests, l’expression idiomatique est « push tests down the pyramid » (descendre les tests vers les couches basses, unitaires ou API). « Fall » et « descend » ne s’emploient pas ainsi."
+              "explanation_fr": "« To push something down » veut dire faire descendre un contrôle vers un niveau plus bas de la pyramide. « Descend » et « fall » sont intransitifs : ils ne peuvent pas avoir « those checks » comme complément."
             },
             {
               "prompt_fr": "Un développeur te dit : « All my unit tests pass, so we don’t need any integration test for the database query. » Que lui réponds-tu ?",
               "choices": [
-                "You’re right, unit tests check the SQL syntax in PostgreSQL automatically.",
-                "Unit tests check your function in isolation, but we still need an integration test against a real test database to catch SQL or schema mismatches.",
-                "Let’s delete your unit tests and only do manual testing."
+                "You’re right, as long as your unit tests mock the database with realistic data.",
+                "You’re right, our end-to-end tests will catch any database problem anyway.",
+                "Unit tests check your function in isolation; we still need an integration test against a real database."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un « unit test » isole la fonction (souvent sans vraie base de données). Seul un « integration test » vérifie que la requête SQL, les colonnes et les contraintes de la base réelle fonctionnent ensemble."
+              "answer_index": 2,
+              "explanation_fr": "Un test unitaire isole la fonction ; seul un test d’intégration contre une vraie base détecte une erreur de SQL ou de schéma. Un mock, même réaliste, ne parle pas à PostgreSQL, et compter sur les deux tests de bout en bout donnerait des erreurs tardives et difficiles à diagnostiquer."
             }
           ],
           "production": {
@@ -1214,42 +1214,42 @@
             {
               "prompt_fr": "Quelle est la nuance entre un « stub » et un « mock » (tous deux des « test doubles ») ?",
               "choices": [
-                "Un stub renvoie des réponses préprogrammées pour faire tourner le test, tandis qu’un mock permet en plus de vérifier comment il a été appelé (quels paramètres, combien de fois)",
-                "Un stub est réservé au langage Python, tandis qu’un mock n’existe qu’en JavaScript",
-                "Un stub appelle le vrai serveur en production, tandis qu’un mock coupe internet"
+                "Un stub renvoie des réponses prévues ; un mock permet en plus de vérifier comment il a été appelé",
+                "Un mock renvoie des réponses prévues ; un stub permet en plus de vérifier comment il a été appelé",
+                "Un stub remplace un service interne ; un mock remplace uniquement un service externe"
               ],
               "answer_index": 0,
-              "explanation_fr": "« Test double » est le terme générique (comme « doublure » au cinéma). Le « stub » (bouchon) remplace passivement une dépendance en renvoyant une donnée fixe, alors que le « mock » (simulacre) enregistre les appels pour faire des assertions dessus (`expect(mock).toHaveBeenCalledWith(...)`)."
+              "explanation_fr": "Tomasz le résume : un stub suffit pour renvoyer un tarif fixe, un mock sert à vérifier l’appel (le bon poids). Le piège est d’inverser les deux, et les deux peuvent remplacer n’importe quelle dépendance, interne ou externe."
             },
             {
               "prompt_fr": "Quel risque des « mocks » et des « stubs » le « contract testing » vient-il corriger ?",
               "choices": [
-                "Le risque que les développeurs oublient de signer leur contrat de travail",
-                "Le risque que la vraie API change le nom ou le type d’un champ pendant que nos tests continuent de passer sur un faux objet obsolète",
-                "Le risque que les tests unitaires tournent trop vite"
+                "Le risque que les tests appellent la vraie API par erreur pendant la CI",
+                "Le risque que la vraie API change un champ pendant que nos tests passent sur une fausse réponse",
+                "Le risque que la vraie API soit trop lente pour les tests unitaires"
               ],
               "answer_index": 1,
-              "explanation_fr": "Si une équipe back-end renomme `totalPrice` en `amount`, un test qui utilise un « stub » codé à la main avec `totalPrice` continuera de passer au vert ! Le « contract testing » vérifie que fournisseur et consommateur respectent toujours le même contrat de données."
+              "explanation_fr": "Un faux objet ne change pas quand la vraie API change : les tests restent verts alors que la production casse. Le « contract testing » (avec Pact) vérifie que les deux côtés partagent le même format. Les deux autres risques sont réglés par les doubles eux-mêmes."
             },
             {
               "prompt_fr": "Complète : « Use a ___ double instead of calling the real payment gateway in unit tests. »",
               "choices": [
+                "test",
                 "stunt",
-                "fake-twin",
-                "test"
+                "body"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Le terme consacré par Gerard Meszaros et toute la littérature logicielle est « a test double » (inspiré de « stunt double », doublure de cascade au cinéma, mais on dit bien « test double » en code)."
+              "answer_index": 0,
+              "explanation_fr": "Le terme générique est « test double », par analogie avec la doublure au cinéma (« stunt double », « body double »). Mais en test, on dit seulement « test double »."
             },
             {
               "prompt_fr": "Un collègue configure les tests unitaires pour envoyer de vrais SMS via une API payante à chaque commit. Que lui proposes-tu ?",
               "choices": [
-                "Let’s replace the real SMS service with a mock in our unit tests to verify the payload, and run contract testing to ensure the API format stays in sync.",
-                "Keep sending real SMS messages on every commit, it’s the only way to test.",
-                "Disable all tests on the SMS module."
+                "Let’s keep the real SMS service, but send all the messages to one test phone number.",
+                "Let’s replace the real SMS service with a mock to verify the payload, and add contract testing.",
+                "Let’s keep the real SMS service, but only run those tests once a day at night."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Appeler une API externe payante à chaque commit coûte cher, ralentit la CI et échoue au moindre souci réseau. Utiliser un « mock » pour vérifier l’appel et du « contract testing » pour valider le schéma offre le meilleur des deux mondes."
+              "answer_index": 1,
+              "explanation_fr": "Un mock vérifie le contenu envoyé sans frais, et le test de contrat garantit que le format reste à jour. Envoyer les SMS à un seul numéro coûte toujours et dépend du réseau, et ne lancer les tests qu’une fois par jour retarde la détection des erreurs."
             }
           ],
           "production": {
@@ -1282,42 +1282,42 @@
             {
               "prompt_fr": "Pourquoi 95 % de « test coverage » ne garantit-il pas que le code est bien testé ?",
               "choices": [
-                "Parce que la couverture mesure seulement quelles lignes ont été exécutées pendant les tests, pas si les assertions vérifient réellement le bon résultat",
-                "Parce qu’il faut obligatoirement 120 % de couverture pour qu’un programme fonctionne",
-                "Parce que la test coverage ne compte que les commentaires du code"
+                "Parce que la couverture ne compte que les fichiers modifiés dans la dernière pull request",
+                "Parce que la couverture ne mesure que les tests de bout en bout, pas les tests unitaires",
+                "Parce que la couverture dit quelles lignes ont été exécutées, pas si les assertions vérifient le bon résultat"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La « test coverage » (couverture de code) vérifie qu’une ligne a été traversée lors de l’exécution. Si un test exécute 100 lignes sans aucune « assertion » pertinente, la couverture est de 100 % mais le test ne détecte aucun bug !"
+              "answer_index": 2,
+              "explanation_fr": "Un test sans assertion fait monter la couverture sans rien vérifier : c’est exactement l’astuce de Moussa. La couverture peut porter sur tout le dépôt ou sur le nouveau code, et elle compte tous les types de tests."
             },
             {
               "prompt_fr": "Comment le « mutation testing » vérifie-t-il la solidité réelle de tes tests ?",
               "choices": [
-                "Il modifie légèrement le code (ex. : remplace `+` par `-` ou `>` par `<`) et vérifie qu’au moins un test échoue pour « tuer » ce mutant",
-                "Il change aléatoirement le nom des développeurs dans Git",
-                "Il traduit les tests de JavaScript vers Python"
+                "Il modifie un peu les tests, puis vérifie que le code de production reste correct",
+                "Il relance les tests plusieurs fois pour repérer ceux qui changent de résultat",
+                "Il modifie un peu le code, par exemple `+` en `-`, et vérifie qu’au moins un test échoue"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le « mutation testing » (ex. : Stryker, PIT) injecte de petits bugs artificiels (« mutants ») dans le code. Si tous tes tests restent verts malgré un `+` changé en `-`, le mutant « survit », ce qui prouve qu’il manque un test ou une assertion."
+              "answer_index": 2,
+              "explanation_fr": "Le « mutation testing » crée des « mutants » du code : si aucun test n’échoue, le mutant survit et révèle un test trop faible. On modifie le code, pas les tests, et relancer les tests pour repérer l’instabilité concerne les tests « flaky »."
             },
             {
               "prompt_fr": "Complète : « SonarQube blocks the pull request when the build fails the ___ gate. »",
               "choices": [
                 "qualitative",
                 "quality",
-                "barrier"
+                "quality-check"
               ],
               "answer_index": 1,
-              "explanation_fr": "Une « quality gate » (barrière qualité) est un point de contrôle automatisé dans le pipeline CI/CD qui bloque la fusion ou le déploiement si les critères (couverture, zéro faille critique au « security testing », tests verts) ne sont pas remplis."
+              "explanation_fr": "On dit « quality gate » : le nom « quality » sert d’adjectif devant « gate ». « Qualitative » veut dire qualitatif (par opposition à quantitatif), et « quality-check gate » n’est pas l’expression utilisée."
             },
             {
               "prompt_fr": "Ton CTO veut imposer une « quality gate » à 100 % de « test coverage » sur tout le dépôt dès demain. Quel conseil nuancé lui donnes-tu ?",
               "choices": [
-                "Chasing 100% coverage everywhere encourages useless tests without real assertions; let’s enforce 80% on new code and use mutation testing on critical business modules instead.",
-                "Test coverage is completely useless, we should set the gate to 0%.",
-                "Yes, 100% coverage means we will never have any bug in production."
+                "100% everywhere breeds useless tests; let’s require 80% on new code, plus mutation testing on key modules.",
+                "Let’s go for 100% coverage, but only on the front-end, where most bugs come from.",
+                "Let’s go for 100% coverage, but allow developers to bypass the gate for urgent fixes."
               ],
               "answer_index": 0,
-              "explanation_fr": "Viser 100 % partout pousse l’équipe à tester des accesseurs triviaux ou à écrire des tests sans assertion juste pour passer la barrière. Exiger un seuil raisonnable sur le nouveau code et utiliser le « mutation testing » sur le cœur métier est beaucoup plus efficace."
+              "explanation_fr": "Viser 100 % partout pousse à écrire des tests sans assertion pour atteindre le chiffre. Un seuil sur le nouveau code, plus du mutation testing sur les modules critiques, mesure la vraie qualité. Limiter au front-end repose sur une idée reçue, et contourner la règle pour l’urgence la vide de son sens."
             }
           ],
           "production": {
@@ -1349,42 +1349,42 @@
             {
               "prompt_fr": "Quelle est la différence entre « load testing » et « stress testing » ?",
               "choices": [
-                "Le load testing vérifie le comportement sous une charge normale ou de pic attendue, tandis que le stress testing pousse le système au-delà de ses limites pour voir quand il casse et comment il se rétablit",
-                "Le load testing teste le téléchargement de fichiers, tandis que le stress testing mesure le stress psychologique de l’équipe",
-                "Le load testing dure 24 heures, tandis que le stress testing ne teste qu’un seul utilisateur"
+                "Le load testing pousse au-delà des limites ; le stress testing teste la charge attendue au pic",
+                "Le load testing teste la charge attendue ; le stress testing pousse au-delà des limites pour voir quand ça casse",
+                "Le load testing dure quelques minutes ; le stress testing dure plusieurs heures"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En « performance testing », le « load testing » valide que les objectifs de temps de réponse sont tenus au trafic prévu (ex. : 1 000 req/s), alors que le « stress testing » cherche volontairement le point de rupture (« breaking point ») et vérifie que le système récupère (« recovers ») quand la charge redescend."
+              "answer_index": 1,
+              "explanation_fr": "Lucía teste d’abord le pic attendu (1 000 requêtes par seconde), puis pousse à 3 500 pour trouver le point de rupture. Le piège est d’inverser les deux, et le test qui dure des heures est le « soak test », pas le stress test."
             },
             {
               "prompt_fr": "Pourquoi lance-t-on un « soak test » (aussi appelé endurance test) alors que le « load testing » d’une demi-heure est déjà passé ?",
               "choices": [
-                "Pour vérifier que les serveurs résistent à l’humidité",
-                "Pour détecter les problèmes qui n’apparaissent qu’au bout de plusieurs heures de trafic continu, comme une fuite de mémoire ou l’épuisement des connexions",
-                "Pour tester l’interface graphique sur de vieux écrans"
+                "Pour vérifier que le système supporte une charge bien plus forte que le pic attendu",
+                "Pour vérifier que le système revient à la normale après un pic de trafic",
+                "Pour trouver les problèmes qui n’apparaissent qu’après des heures, comme une fuite de mémoire"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Une petite fuite de mémoire de 5 Mo par minute passe inaperçue dans un test de charge de 15 minutes, mais fait planter le serveur au bout de 6 heures : c’est exactement ce que révèle un « soak test »."
+              "answer_index": 2,
+              "explanation_fr": "Un « soak test » (« to soak », tremper longtemps) maintient une charge normale pendant des heures pour révéler les dégradations lentes. Supporter une charge plus forte et revenir à la normale, c’est ce que vérifie le stress test."
             },
             {
               "prompt_fr": "Complète : « During ___ testing, we pushed the API beyond its capacity until the database crashed at 3,500 users. »",
               "choices": [
+                "stress",
                 "soak",
-                "sanity",
-                "stress"
+                "sanity"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Pousser le système au-delà de sa capacité nominale jusqu’au crash correspond par définition au « stress testing »."
             },
             {
               "prompt_fr": "En réunion de préparation d’un grand événement, le tech lead dit : « Our API handled 1,000 users for 5 minutes, so we don’t need any more performance testing. » Que proposes-tu ?",
               "choices": [
-                "Five minutes proves our peak load works, but we should still run a soak test over several hours to rule out memory leaks, and a stress test to check that the system recovers if traffic spikes higher.",
-                "You are right, 5 minutes is the same as 24 hours.",
-                "Let’s run load testing directly on the production database during peak hours without telling anyone."
+                "Five minutes proves the peak works, so let’s just double the servers on the day to be safe.",
+                "Five minutes is enough, but let’s rerun the same test every day until the event.",
+                "Five minutes proves the peak works, but we still need a soak test for leaks and a stress test for recovery."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Ta réponse reconnaît le succès du premier test de charge court, tout en expliquant clairement pourquoi un « soak test » (tenue dans la durée) et un « stress test » (comportement en cas de dépassement) restent nécessaires."
+              "answer_index": 2,
+              "explanation_fr": "Cinq minutes au pic ne disent rien des fuites de mémoire après des heures, ni de la réaction à un pic plus fort. Doubler les serveurs ne corrige pas une fuite, et répéter le même test court ne couvre pas ces risques."
             }
           ],
           "production": {

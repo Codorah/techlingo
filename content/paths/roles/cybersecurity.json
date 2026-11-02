@@ -83,44 +83,44 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « Une alerte de gravité élevée vient de se déclencher dans le SIEM » ?",
+              "prompt_fr": "Comment dire « La règle s’est déclenchée trois fois cette nuit » ?",
               "choices": [
-                "A high-severity alert just rang in the SIEM.",
-                "A high-severity alert just fired in the SIEM.",
-                "An alert of high severity just made fire in the SIEM."
+                "The rule triggered itself three times overnight.",
+                "The rule fired three times overnight.",
+                "The rule rang three times this night."
               ],
               "answer_index": 1,
-              "explanation_fr": "En sécurité et en supervision, une alerte « fires » ou « triggers » quand elle se déclenche. « Rang » s’emploie pour une sonnerie de téléphone ou de réveil, et « made fire » veut dire allumer un feu au sens propre."
+              "explanation_fr": "En supervision, une règle ou une alerte « fires » (ou « triggers », sans pronom) quand elle se déclenche, et « overnight » veut dire pendant la nuit. « Triggered itself » calque la forme pronominale française, et « rang » s’emploie pour une sonnerie de téléphone ; « this night » ne se dit pas pour la nuit passée."
             },
             {
               "prompt_fr": "Pourquoi Tomasz consulte-t-il la console EDR après avoir vu l’alerte dans le SIEM ?",
               "choices": [
-                "Pour voir quel processus parent a lancé la commande sur le poste concerné",
-                "Pour mettre à jour le système d’exploitation du poste à distance",
-                "Pour chiffrer le disque dur de l’équipe finance"
+                "Pour vérifier si un autre analyste a déjà traité cette alerte",
+                "Pour bloquer tout de suite PowerShell sur les postes de la finance",
+                "Pour voir quel processus parent a lancé la commande sur le poste"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’EDR (Endpoint Detection and Response) enregistre l’activité détaillée du poste, dont l’arborescence des processus (« process tree »), ce qui révèle ici l’outil de déploiement IT. Il ne sert ni à faire les mises à jour Windows ni à gérer le chiffrement de disque."
+              "answer_index": 2,
+              "explanation_fr": "L’EDR enregistre l’activité détaillée du poste, dont l’arborescence des processus (« process tree »), ce qui révèle ici l’outil de déploiement IT. Le suivi des alertes déjà traitées se fait dans le SIEM ou l’outil de tickets, et on ne bloque pas un outil avant d’avoir qualifié l’alerte."
             },
             {
               "prompt_fr": "Complète : « I’ll close the alert ___ a false positive and document the ticket number. »",
               "choices": [
+                "as",
                 "like",
-                "for",
-                "as"
+                "for"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "On dit « close an alert as a false positive » : « as » indique le statut ou la qualification choisie. « Like » exprime une ressemblance (« il ressemble à »), et « for » n’est pas la préposition attendue avec « close »."
             },
             {
               "prompt_fr": "Un analyste junior veut clore une alerte PowerShell en faux positif sans vérifier auprès de l’équipe IT. Que lui conseilles-tu ?",
               "choices": [
-                "Go ahead, PowerShell alerts are always false positives.",
-                "Verify with the IT team and link their change ticket before closing it as a false positive.",
-                "Delete the alert from the SIEM so it doesn’t lower our metrics."
+                "Close it as a false positive, since the script came from our own deployment tool.",
+                "Escalate it to incident response right away, since PowerShell is always suspicious.",
+                "Verify with the IT team and link their change ticket before closing it as a false positive."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un faux positif doit toujours être vérifié et documenté avec une preuve (ici le ticket de changement). Ignorer toutes les alertes PowerShell est dangereux car les attaquants en abusent, et on ne supprime jamais une alerte du SIEM."
+              "answer_index": 2,
+              "explanation_fr": "Un faux positif doit être vérifié et documenté avec une preuve, ici le ticket de changement. Un outil de déploiement légitime peut être détourné par un attaquant, donc son nom ne suffit pas, et escalader chaque alerte PowerShell sans analyse noie l’équipe de réponse."
             }
           ],
           "production": {
@@ -181,42 +181,42 @@
             {
               "prompt_fr": "Que signifie « Let’s tune the rule » dans ce contexte ?",
               "choices": [
-                "Supprimer définitivement la règle de détection",
                 "Ajuster les paramètres de la règle pour la rendre plus précise",
-                "Traduire la règle dans un autre langage"
+                "Désactiver la règle pendant le créneau du scanner",
+                "Remplacer la règle par une version plus récente"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« To tune a rule » (comme accorder un instrument) veut dire affiner ses seuils ou ses exceptions pour réduire les faux positifs sans perdre la détection. C’est l’inverse de la supprimer (« delete » ou « disable »)."
+              "answer_index": 0,
+              "explanation_fr": "« To tune a rule » (comme accorder un instrument) veut dire affiner ses seuils ou ses exceptions pour réduire les faux positifs sans perdre la détection. Couper la règle pendant le créneau rendrait l’équipe aveugle à tout vrai scan à ce moment-là, et il ne s’agit pas de changer de règle."
             },
             {
               "prompt_fr": "Pourquoi Kenji refuse-t-il de désactiver complètement la règle de l’IDS ?",
               "choices": [
-                "Parce qu’exclure l’IP du scanner pendant son créneau suffit à couper le bruit tout en détectant un vrai scan",
-                "Parce qu’un système de détection d’intrusion ne permet pas de modifier ses règles",
-                "Parce que le SOAR nécessite au moins deux cents alertes par nuit pour fonctionner"
+                "Parce que l’IDS ne permet pas de désactiver une règle sans l’accord de l’éditeur",
+                "Parce qu’exclure l’IP du scanner suffit à couper le bruit tout en détectant un vrai scan",
+                "Parce que le SOAR a besoin de toutes ces alertes pour interroger l’inventaire"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Désactiver la règle créerait un angle mort face à un vrai attaquant. Exclure uniquement l’IP du scanner interne pendant sa fenêtre planifiée (« scheduled window ») supprime le bruit tout en gardant la protection."
+              "answer_index": 1,
+              "explanation_fr": "Désactiver la règle créerait un angle mort face à un vrai attaquant. Exclure uniquement l’IP du scanner pendant sa fenêtre planifiée (« scheduled window ») supprime le bruit tout en gardant la protection. L’IDS se configure librement, et le SOAR n’a pas besoin du bruit pour enrichir les alertes restantes."
             },
             {
               "prompt_fr": "Complète : « Too many noisy alerts are ___ serious alert fatigue across the blue team. »",
               "choices": [
+                "causing",
                 "making",
-                "provoking at",
-                "causing"
+                "provoking at"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "La collocation naturelle est « cause alert fatigue ». « Make » ne s’emploie pas avec « fatigue », et « provoke » s’utilise sans « at » et plutôt pour une réaction émotionnelle ou un conflit."
             },
             {
               "prompt_fr": "En réunion hebdomadaire, tu proposes d’automatiser une tâche répétitive du SOC. Quelle phrase est la plus naturelle ?",
               "choices": [
+                "We should make the SOAR to do the enrichment before the analysts open the alerts.",
                 "We could update the SOAR playbook to enrich each alert automatically before an analyst opens it.",
-                "We should make the SOAR to do all the work of the analysts.",
-                "Let’s stop looking the alerts because we have alert fatigue."
+                "We could let the SOAR close every low-severity alert, so analysts never see them."
               ],
-              "answer_index": 0,
-              "explanation_fr": "La première phrase est précise et professionnelle : « update the SOAR playbook to enrich each alert ». La deuxième contient une faute de grammaire (« make the SOAR to do » au lieu de « make it do ») et exagère, et la troisième (« looking the alerts » sans « at ») propose d’abandonner la surveillance."
+              "answer_index": 1,
+              "explanation_fr": "La bonne phrase est précise et professionnelle : « update the SOAR playbook to enrich each alert ». « Make the SOAR to do » est fautif (on dit « make it do », sans « to »), et fermer automatiquement toutes les alertes faibles masquerait aussi les vraies attaques discrètes."
             }
           ],
           "production": {
@@ -277,22 +277,22 @@
             {
               "prompt_fr": "Que décrit Moussa quand il parle d’un « beacon » vers un serveur C2 ?",
               "choices": [
-                "Un message envoyé à intervalles réguliers par une machine infectée vers le serveur de l’attaquant",
-                "Une balise physique installée dans la salle des serveurs",
-                "Une notification envoyée par le pare-feu à l’administrateur réseau"
+                "Une alerte envoyée régulièrement par le pare-feu à l’équipe du SOC",
+                "Un faux domaine installé par l’équipe sécurité pour attirer l’attaquant",
+                "Une connexion envoyée à intervalles réguliers par une machine infectée vers l’attaquant"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En cybersécurité, « beaconing » désigne les connexions périodiques d’un malware vers son serveur de commande et contrôle (« command and control ») pour signaler qu’il est actif et recevoir des ordres."
+              "answer_index": 2,
+              "explanation_fr": "En cybersécurité, le « beaconing » désigne les connexions périodiques d’un malware vers son serveur de commande et contrôle, pour signaler qu’il est actif et recevoir des ordres : d’où « every ten minutes ». Ce n’est pas une alerte du pare-feu, ni un leurre de défense (on parlerait de « honeypot »)."
             },
             {
               "prompt_fr": "Pourquoi Lucía interroge-t-elle les journaux DNS (« DNS logs ») après avoir identifié le domaine C2 ?",
               "choices": [
-                "Pour renouveler le nom de domaine de l’entreprise",
-                "Pour vérifier si d’autres machines du réseau ont cherché à contacter le même serveur malveillant",
-                "Pour mesurer la vitesse de la connexion internet du service marketing"
+                "Pour savoir qui a enregistré le domaine et où il est hébergé",
+                "Pour bloquer le domaine directement dans les journaux DNS",
+                "Pour vérifier si d’autres machines du réseau ont contacté le même serveur"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Quand on découvre un indicateur de compromission (ici un domaine C2), on cherche dans les logs DNS ou proxy quelles autres machines l’ont résolu afin de mesurer l’étendue de l’intrusion (« scoping »)."
+              "answer_index": 2,
+              "explanation_fr": "Quand on découvre un indicateur de compromission, on cherche dans les logs DNS ou proxy quelles autres machines l’ont résolu, pour mesurer l’étendue de l’intrusion (« scoping ») : « Is any other machine resolving that domain? ». Le propriétaire d’un domaine se cherche avec WHOIS, et des journaux ne bloquent rien : ils enregistrent."
             },
             {
               "prompt_fr": "Complète : « This domain matches a known ___ of compromise in our threat intelligence feed. »",
@@ -308,11 +308,11 @@
               "prompt_fr": "Comment annoncer clairement à l’équipe réseau qu’il faut bloquer ce domaine ?",
               "choices": [
                 "Please block this domain at the firewall: our threat intelligence feed flagged it as a C2 server.",
-                "Can you close the internet of the marketing because there is a threat intelligence?",
-                "This domain is making a command and control, please delete it from the web."
+                "Please block this domain at the firewall: a threat intelligence flagged it as a C2 server.",
+                "Please delete this domain at the firewall: our threat intel feed listed it as a C2 server."
               ],
               "answer_index": 0,
-              "explanation_fr": "La première phrase donne une consigne précise (« block this domain at the firewall ») et la justification (« flagged it as a C2 server »). « A threat intelligence » est incorrect (le nom est indénombrable), et on ne peut pas « supprimer d’internet » un domaine externe : on le bloque sur son pare-feu ou son DNS."
+              "explanation_fr": "La bonne phrase donne une consigne précise (« block this domain at the firewall ») et sa justification. « A threat intelligence » est incorrect, car le nom est indénombrable (on dit « our threat intelligence feed »), et on ne « supprime » pas un domaine externe : on le bloque."
             }
           ],
           "production": {
@@ -373,42 +373,42 @@
             {
               "prompt_fr": "Quelle est la différence entre le « threat hunting » et le tri d’alertes classique ?",
               "choices": [
-                "Le threat hunting cherche proactivement des signes d’intrusion sans attendre qu’une alerte se déclenche",
-                "Le threat hunting consiste à attaquer les serveurs de ses concurrents",
-                "Le threat hunting ne s’intéresse qu’aux pannes matérielles des serveurs"
+                "Le threat hunting traite en priorité les alertes de gravité critique du SIEM",
+                "Le threat hunting cherche des signes d’intrusion sans attendre qu’une alerte se déclenche",
+                "Le threat hunting simule une attaque pour tester les défenses de l’équipe"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Comme le souligne Ivan (« No alert fired, that’s the whole point »), la chasse aux menaces est proactive : on formule une hypothèse (souvent basée sur MITRE ATT&CK) et on fouille les logs pour trouver ce qui a échappé aux règles automatiques."
+              "answer_index": 1,
+              "explanation_fr": "Comme le dit Ivan (« No alert fired, that’s the whole point »), la chasse aux menaces est proactive : on formule une hypothèse et on fouille les logs. Traiter les alertes critiques, c’est le tri classique, et simuler une attaque, c’est le travail d’une red team."
             },
             {
               "prompt_fr": "Que signifie « persistence techniques » dans le référentiel MITRE ATT&CK ?",
               "choices": [
-                "Les méthodes qui permettent à un attaquant de garder son accès même après un redémarrage ou un changement de mot de passe",
-                "La capacité d’un analyste SOC à travailler longtemps sans pause",
-                "La sauvegarde à long terme des journaux de conformité"
+                "Les méthodes qui permettent à un attaquant de passer d’une machine à une autre",
+                "Les méthodes qui permettent à un attaquant d’obtenir des droits administrateur",
+                "Les méthodes qui permettent à un attaquant de garder son accès dans la durée"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Dans MITRE ATT&CK, la tactique « Persistence » regroupe tout ce qu’un attaquant met en place (tâche planifiée, service, backdoor, clé SSH) pour conserver son accès au système dans la durée."
+              "answer_index": 2,
+              "explanation_fr": "Dans MITRE ATT&CK, la tactique « Persistence » regroupe ce qu’un attaquant met en place (tâche planifiée, service, backdoor, clé SSH) pour garder son accès, même après un redémarrage. Passer d’une machine à l’autre, c’est le « lateral movement », et obtenir des droits admin, la « privilege escalation » : deux autres tactiques."
             },
             {
               "prompt_fr": "Complète : « We’ll ___ this hunting query into a new automated detection rule. »",
               "choices": [
+                "turn",
                 "transform to",
-                "become",
-                "turn"
+                "become"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "« Turn something into something » est la tournure idiomatique pour « transformer quelque chose en autre chose ». « Transform » demanderait « into » (et non « to »), et « become » est intransitif (on ne dit pas « become this query into »)."
             },
             {
               "prompt_fr": "Tu présentes le résultat de ta chasse aux menaces en réunion. Quelle formulation est la plus claire et professionnelle ?",
               "choices": [
-                "During our threat hunting session, the audit trail showed an unauthorized cron job on staging, so we’re turning the query into a SIEM rule.",
-                "We hunted a big threat in the MITRE and we found a backdoor of the test account.",
-                "There was no alert, so we did nothing during the threat hunting."
+                "During our hunt, we hunted a backdoor in the MITRE and found it on the test account of staging.",
+                "During our hunt, no alert fired on staging, so we closed the hypothesis and moved on.",
+                "During our hunt, the audit trail showed an unauthorized cron job on staging, so we’re turning the query into a SIEM rule."
               ],
-              "answer_index": 0,
-              "explanation_fr": "La première phrase expose clairement la démarche (threat hunting), la preuve (dans l’audit trail) et l’amélioration continue (créer une règle SIEM). La deuxième est approximative (« in the MITRE »), et la troisième contredit le principe même du threat hunting."
+              "answer_index": 2,
+              "explanation_fr": "La bonne phrase expose la démarche, la preuve (dans l’audit trail) et l’amélioration continue (créer une règle SIEM). « In the MITRE » est approximatif (on dit « using MITRE ATT&CK »), et l’absence d’alerte ne prouve rien : c’est justement le point de départ d’une chasse."
             }
           ],
           "production": {
@@ -508,41 +508,41 @@
               "prompt_fr": "Pourquoi Mei parle-t-elle de « spear phishing » plutôt que de phishing classique ?",
               "choices": [
                 "Parce que le message cible précisément Daniel en citant le PDG et un vrai fournisseur",
-                "Parce que l’e-mail a été envoyé à des millions d’adresses au hasard",
-                "Parce que la pièce jointe est au format PDF"
+                "Parce que l’e-mail a été envoyé à des milliers d’adresses de l’entreprise",
+                "Parce que l’attaquant a falsifié le nom affiché du PDG dans l’e-mail"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le « spear phishing » (hameçonnage au harpon) est personnalisé pour une cible ou une équipe précise, souvent la finance, avec des détails réels pour tromper la vigilance."
+              "explanation_fr": "Le « spear phishing » (hameçonnage au harpon) est personnalisé pour une cible précise, avec des détails réels. Un envoi de masse, c’est le phishing classique, et l’usurpation du nom affiché est une technique présente ici, mais elle existe aussi dans le phishing de masse : ce n’est pas ce qui définit le spear phishing."
             },
             {
               "prompt_fr": "Que signifie « the display name is spoofed » ?",
               "choices": [
-                "Le nom de l’expéditeur est chiffré de bout en bout",
+                "L’attaquant a piraté la vraie boîte mail du PDG pour envoyer le message",
                 "L’attaquant a falsifié le nom affiché pour se faire passer pour le PDG",
-                "L’adresse e-mail du PDG a été supprimée de l’annuaire"
+                "Le nom de l’expéditeur a été masqué par le filtre anti-spam"
               ],
               "answer_index": 1,
-              "explanation_fr": "« To spoof » veut dire usurper ou falsifier une identité technique (nom d’affichage, adresse e-mail, domaine, adresse IP ou numéro de téléphone)."
+              "explanation_fr": "« To spoof » veut dire usurper ou falsifier une identité technique (nom affiché, adresse, domaine). Ici, rien ne dit que la boîte du PDG est piratée : ce serait une compromission de compte, bien plus grave. Et un filtre anti-spam ne masque pas l’expéditeur."
             },
             {
               "prompt_fr": "Complète : « They used urgency and authority: classic social ___. »",
               "choices": [
+                "engineering",
                 "ingeniousness",
-                "enginery",
-                "engineering"
+                "enginery"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "L’ingénierie sociale se dit « social engineering ». « Ingeniousness » veut dire ingéniosité, et « enginery » est un mot archaïque qui ne s’emploie pas."
             },
             {
               "prompt_fr": "Une collègue t’écrit qu’elle vient de cliquer sur un lien de phishing et d’entrer son mot de passe. Que lui réponds-tu en premier ?",
               "choices": [
-                "Why did you click? You failed the security training again.",
-                "Thanks for telling me right away. I’m resetting your password and revoking your sessions now; please stay on the line.",
-                "Don’t worry, phishing links only work on personal computers."
+                "Why did you click on it? Please take the phishing training again this week.",
+                "Thanks for telling me right away. I’m resetting your password and revoking your sessions now.",
+                "No worries, just change your password tomorrow morning when you get in."
               ],
               "answer_index": 1,
-              "explanation_fr": "La bonne réaction est immédiate et bienveillante : remercier pour la rapidité du signalement (ce qui encourage toute l’équipe à signaler vite) et contenir tout de suite le compte. Culpabiliser fait perdre un temps précieux, et minimiser le risque est faux."
+              "explanation_fr": "La bonne réaction est immédiate et bienveillante : remercier pour le signalement rapide (ce qui encourage tout le monde à signaler vite) et contenir le compte tout de suite. Culpabiliser fait perdre du temps et décourage les signalements, et attendre le lendemain laisse l’attaquant utiliser le mot de passe toute la nuit."
             }
           ],
           "production": {
@@ -604,22 +604,22 @@
             {
               "prompt_fr": "Quelle est la différence entre une « brute-force attack » et du « credential stuffing » ?",
               "choices": [
-                "La force brute devine de nombreux mots de passe ; le credential stuffing teste des couples identifiant/mot de passe déjà fuités ailleurs",
-                "Le credential stuffing ne vise que les serveurs Linux, alors que la force brute vise les sites web",
-                "Ce sont deux mots identiques pour décrire un virus envoyé par e-mail"
+                "La force brute vise un serveur ; le credential stuffing vise les comptes des clients",
+                "La force brute utilise des identifiants fuités ; le credential stuffing essaie toutes les combinaisons",
+                "La force brute essaie de nombreux mots de passe ; le credential stuffing réutilise des identifiants fuités"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En force brute, l’attaquant essaie des combinaisons jusqu’à trouver la bonne. En credential stuffing, il utilise des listes d’identifiants volés sur d’autres services, en misant sur la réutilisation des mots de passe."
+              "answer_index": 2,
+              "explanation_fr": "En force brute, l’attaquant essaie des combinaisons jusqu’à trouver la bonne. En credential stuffing, il utilise des listes d’identifiants volés ailleurs, en misant sur la réutilisation des mots de passe. Les deux visent des comptes, et attribuer les identifiants fuités à la force brute inverse les définitions."
             },
             {
               "prompt_fr": "Pourquoi une « password policy » exigeant 12 caractères ne suffit-elle pas contre le credential stuffing ?",
               "choices": [
-                "Parce qu’un mot de passe de 12 caractères ne peut pas être chiffré",
-                "Parce qu’un utilisateur peut utiliser le même mot de passe fort de 12 caractères sur un site qui a subi une fuite",
-                "Parce que les attaquants cassent 12 caractères sans faire de requête réseau"
+                "Parce qu’un mot de passe de 12 caractères se casse en quelques minutes par force brute",
+                "Parce que la politique ne s’applique pas aux comptes créés avant son entrée en vigueur",
+                "Parce qu’un mot de passe fort de 12 caractères peut avoir été réutilisé sur un site piraté"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Même un mot de passe long et complexe devient vulnérable au credential stuffing si l’utilisateur le réutilise sur plusieurs sites et que l’un de ces sites est compromis."
+              "answer_index": 2,
+              "explanation_fr": "Kofi le dit : la politique « can’t stop password reuse ». Même un mot de passe long devient vulnérable s’il a fuité sur un autre site. Douze caractères résistent bien à la force brute en ligne, et rien dans le dialogue ne parle d’anciens comptes."
             },
             {
               "prompt_fr": "Complète : « Our password policy ___ at least twelve characters. »",
@@ -634,12 +634,12 @@
             {
               "prompt_fr": "Ton chef de produit demande pourquoi proposer les passkeys alors que les mots de passe existent déjà. Que réponds-tu ?",
               "choices": [
-                "Passkeys are faster for users, and unlike passwords they can’t be reused across sites or stolen through phishing.",
-                "Passkeys are just a longer password that users must write on a paper.",
-                "Because passkeys allow us to remove HTTPS from the login page."
+                "Passkeys are faster for users, and unlike passwords they can’t be reused or phished.",
+                "Passkeys are longer passwords that the browser types for users automatically.",
+                "Passkeys replace 2FA, so users only need to type their password once a year."
               ],
               "answer_index": 0,
-              "explanation_fr": "Les passkeys reposent sur la cryptographie à clé publique liée au domaine du site : elles éliminent à la fois la réutilisation de mot de passe (credential stuffing) et le phishing, tout en étant plus simples pour l’utilisateur."
+              "explanation_fr": "Les passkeys reposent sur une paire de clés liée au domaine du site : elles éliminent la réutilisation et le phishing, tout en étant plus simples. Ce ne sont pas des mots de passe remplis automatiquement (c’est le rôle d’un gestionnaire de mots de passe), et elles remplacent le mot de passe lui-même."
             }
           ],
           "production": {
@@ -700,42 +700,42 @@
             {
               "prompt_fr": "Qu’englobe le terme « insider threat » en cybersécurité ?",
               "choices": [
-                "Uniquement les espions industriels recrutés par un concurrent",
-                "Tout risque venant d’une personne interne (salarié, prestataire), par malveillance ou par simple négligence",
-                "Les virus qui s’installent dans le processeur d’un serveur"
+                "Uniquement les salariés malveillants qui volent des données volontairement",
+                "Tout risque venant d’une personne interne, par malveillance ou par simple négligence",
+                "Les attaques lancées par un pirate extérieur depuis le réseau interne"
               ],
               "answer_index": 1,
-              "explanation_fr": "« Insider threat » (menace interne) couvre aussi bien l’employé malveillant que le collègue pressé qui contourne une règle sans mauvaise intention (comme envoyer un fichier client sur un compte personnel)."
+              "explanation_fr": "L’« insider threat » couvre aussi bien l’employé malveillant que le collègue pressé qui contourne une règle sans mauvaise intention, comme le commercial ici (« Most insider threats are careless workarounds »). Un pirate extérieur reste une menace externe, même une fois dans le réseau."
             },
             {
               "prompt_fr": "Quel est le rôle d’un outil de « DLP » (Data Loss Prevention) ?",
               "choices": [
-                "Sauvegarder les serveurs en cas d’incendie dans le datacenter",
-                "Détecter et bloquer l’envoi non autorisé de données sensibles hors de l’entreprise",
-                "Réparer les disques durs endommagés sur les ordinateurs portables"
+                "Sauvegarder les données pour ne pas les perdre en cas de panne de disque",
+                "Chiffrer automatiquement tous les fichiers stockés sur les postes de travail",
+                "Détecter et bloquer l’envoi non autorisé de données sensibles hors de l’entreprise"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Malgré le mot « Loss », la DLP ne traite pas des pannes de disque (c’est le rôle des sauvegardes), mais de la fuite de données confidentielles par e-mail, clé USB ou téléversement web."
+              "answer_index": 2,
+              "explanation_fr": "Malgré le mot « Loss », la DLP ne traite pas des pannes (c’est le rôle des sauvegardes) : elle surveille et bloque la fuite de données confidentielles par e-mail, clé USB ou envoi sur le web, comme ici. Le chiffrement des disques est une autre mesure, citée par Fatou à part."
             },
             {
               "prompt_fr": "Complète : « Our DLP tool prevented the file ___ leaving the organization. »",
               "choices": [
+                "from",
                 "to",
-                "of",
-                "from"
+                "of"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "En anglais, « prevent » et « stop » se construisent avec « from + verbe en -ing » : prevent the file from leaving. « Prevent to leave » est un calque très fréquent du français « empêcher de partir »."
             },
             {
               "prompt_fr": "Tu dois contacter le commercial dont l’envoi a été bloqué par la DLP. Quel message choisis-tu ?",
               "choices": [
-                "Hi Marc, our DLP policy blocked your upload because the file contains customer data. Let’s set up your corporate OneDrive on your tablet so you can work securely.",
-                "Hi Marc, you are an insider threat and we blocked your computer.",
-                "Hi Marc, I disabled the DLP rule so you can put all customer files on your personal account."
+                "Hi Marc, our DLP flagged you as an insider threat, so your access is suspended until we review it.",
+                "Hi Marc, our DLP blocked your upload. Please send the file to your personal email address instead.",
+                "Hi Marc, our DLP blocked your upload because it contains customer data. Let’s set up the company OneDrive on your tablet."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un bon spécialiste sécurité explique la règle sans accuser la personne et propose une solution sécurisée adaptée à son besoin métier. Accuser le collègue braque les équipes, et désactiver la DLP pour un cloud personnel crée une fuite de données."
+              "answer_index": 2,
+              "explanation_fr": "Un bon spécialiste explique la règle sans accuser la personne et propose une solution sécurisée adaptée à son besoin. Le traiter d’« insider threat » et suspendre son accès braque les équipes pour une simple négligence, et passer par une adresse personnelle recrée exactement la même fuite."
             }
           ],
           "production": {
@@ -795,12 +795,12 @@
             {
               "prompt_fr": "Qu’est-ce qu’un « tabletop exercise » ?",
               "choices": [
-                "Une simulation sur table où les équipes déroulent un scénario d’incident fictif pour tester leur coordination",
-                "Un test d’intrusion technique qui coupe réellement les serveurs de production",
-                "Un inventaire matériel des bureaux et des ordinateurs de l’entreprise"
+                "Une simulation où les équipes déroulent un scénario d’incident fictif autour d’une table",
+                "Un test d’intrusion réel lancé sur la production pour tester les équipes",
+                "Une courte formation en ligne que chaque salarié suit à son poste"
               ],
               "answer_index": 0,
-              "explanation_fr": "Un « tabletop exercise » est un exercice de crise par la discussion, autour d’une table : on ne touche pas à la production, on vérifie que chacun connaît son rôle et les procédures d’escalade."
+              "explanation_fr": "Un « tabletop exercise » est un exercice de crise par la discussion : on ne touche pas à la production, on vérifie que chacun connaît son rôle et les procédures d’escalade. Le test réel est un pentest ou une red team, et la formation courte correspond aux sessions de sensibilisation mensuelles de Diego."
             },
             {
               "prompt_fr": "Comment dire « suivre une formation de sensibilisation à la sécurité » sans faire de calque ?",
@@ -815,22 +815,22 @@
             {
               "prompt_fr": "Complète : « We ran a risk ___ before launching the new payment workflow. »",
               "choices": [
-                "evaluation of",
                 "assessment",
+                "evaluation of",
                 "appreciation"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le terme standard en gestion des risques et dans les normes (ISO 27001, NIST) est « risk assessment » (évaluation des risques)."
             },
             {
               "prompt_fr": "La directrice juridique hésite à venir à l’exercice sur table car elle n’est pas technicienne. Quel argument lui donnes-tu ?",
               "choices": [
-                "You’re right, tabletop exercises are only about reading firewall logs.",
-                "A tabletop exercise isn’t just technical: we need legal to practice when and how we notify regulators and customers.",
-                "If you don’t come, we will shut down your email account."
+                "You’re right, tabletop exercises are mostly about reading firewall logs together.",
+                "A tabletop exercise isn’t just technical: we need legal to practice when and how we notify regulators.",
+                "You can skip it: we’ll send you a summary of the technical decisions afterwards."
               ],
               "answer_index": 1,
-              "explanation_fr": "En crise cyber, les décisions juridiques et de communication (délais de notification, message aux clients) sont aussi critiques que la technique : c’est tout l’intérêt d’un exercice sur table inter-équipes."
+              "explanation_fr": "En crise cyber, les décisions juridiques (délais de notification, message aux clients) sont aussi critiques que la technique : c’est l’intérêt d’un exercice inter-équipes. Il ne s’agit pas de lire des logs, et un résumé après coup prive justement la juriste de l’entraînement à décider sous pression."
             }
           ],
           "production": {
@@ -930,21 +930,21 @@
             {
               "prompt_fr": "Pourquoi Inès fait-elle passer la CVE notée 8,1 avant celle notée 9,8 ?",
               "choices": [
-                "Parce qu’un score CVSS plus bas indique toujours une faille plus grave",
-                "Parce qu’elle touche un serveur exposé sur internet et qu’un exploit actif existe déjà",
-                "Parce que le serveur de build interne ne peut jamais être mis à jour"
+                "Parce qu’une faille notée 8,1 se corrige plus vite qu’une faille notée 9,8",
+                "Parce que les serveurs de build internes ne sont pas couverts par le scan",
+                "Parce qu’elle touche un serveur exposé sur internet et qu’un exploit actif existe"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le score CVSS mesure la gravité théorique d’une faille, mais la priorité réelle dépend de l’exposition (« internet-facing ») et de l’existence d’un code d’attaque actif (« active exploit »)."
+              "answer_index": 2,
+              "explanation_fr": "Le score CVSS mesure la gravité théorique, mais la priorité réelle dépend de l’exposition (« internet-facing ») et d’un exploit actif. La note ne dit rien du temps de correction, et le serveur de build est bien dans le rapport : il est simplement moins exposé."
             },
             {
               "prompt_fr": "Que signifie l’adjectif « internet-facing » pour un serveur ?",
               "choices": [
-                "Accessible directement depuis internet",
                 "Qui télécharge des mises à jour depuis internet",
-                "Installé dans les locaux d’un fournisseur d’accès à internet"
+                "Installé dans les locaux d’un fournisseur d’accès à internet",
+                "Accessible directement depuis internet"
               ],
-              "answer_index": 0,
+              "answer_index": 2,
               "explanation_fr": "Un serveur « internet-facing » (ou « publicly exposed ») présente une interface joignable depuis l’extérieur, par opposition à un serveur purement interne."
             },
             {
@@ -960,12 +960,12 @@
             {
               "prompt_fr": "Un développeur te dit qu’une vulnérabilité avec un score CVSS de 7,5 est forcément moins urgente qu’une 9,0. Que lui réponds-tu ?",
               "choices": [
-                "You’re right, we always sort tickets strictly by CVSS score.",
-                "A high CVSS score doesn’t always mean the highest risk for us: we also check exposure and whether a public exploit exists.",
-                "CVSS scores are random numbers generated by the scanner."
+                "A high CVSS score doesn’t always mean the highest risk for us: we also check exposure and exploits.",
+                "You’re right: we always sort the tickets strictly by CVSS score, highest first.",
+                "A CVSS score is only the vendor’s opinion, so we mostly ignore it when we plan."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième réponse explique avec pédagogie la différence entre gravité intrinsèque (CVSS) et risque réel dans le contexte de l’entreprise."
+              "answer_index": 0,
+              "explanation_fr": "La bonne réponse distingue gravité intrinsèque (CVSS) et risque réel dans le contexte de l’entreprise, comme Inès le fait. Trier uniquement par score est l’erreur du développeur, et ignorer le CVSS va trop loin : c’est une base utile, à compléter par le contexte."
             }
           ],
           "production": {
@@ -1026,22 +1026,22 @@
             {
               "prompt_fr": "Qu’est-ce qu’un « compensating control » (mesure compensatoire) ?",
               "choices": [
-                "Une prime financière versée aux développeurs d’astreinte",
-                "Une protection alternative (comme une règle WAF) mise en place quand le correctif principal n’est pas encore applicable",
-                "La suppression complète de l’application web en production"
+                "Une compensation financière prévue au contrat si l’éditeur tarde à corriger",
+                "Une protection alternative mise en place quand le correctif n’est pas encore disponible",
+                "Un contrôle supplémentaire réalisé après l’installation du correctif"
               ],
               "answer_index": 1,
-              "explanation_fr": "En sécurité et en conformité, un « compensating control » réduit le risque d’une vulnérabilité (par exemple via le WAF ou une restriction réseau) en attendant le correctif définitif (« patch »)."
+              "explanation_fr": "Un « compensating control » réduit le risque d’une vulnérabilité (règle WAF, restriction réseau) en attendant le vrai correctif (« patch »). Malgré le mot « compensating », il n’y a rien de financier, et il intervient avant le correctif, pas après."
             },
             {
               "prompt_fr": "Pourquoi Chloé teste-t-elle d’abord la règle WAF sur staging pendant quelques minutes ?",
               "choices": [
-                "Pour vérifier que la règle ne bloque pas par erreur des requêtes légitimes des utilisateurs",
-                "Parce qu’un WAF ne peut pas fonctionner en production",
-                "Pour laisser le temps aux attaquants de terminer leur scan"
+                "Pour vérifier que la règle bloque bien les scans automatisés reçus par le CDN",
+                "Parce qu’une règle WAF doit être validée par l’éditeur avant la production",
+                "Pour vérifier que la règle ne bloque pas par erreur des requêtes légitimes"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Une règle WAF trop large en « block mode » peut bloquer du trafic client normal (faux positifs) et provoquer une panne : on vérifie donc son impact avant de l’appliquer en production."
+              "answer_index": 2,
+              "explanation_fr": "Chloé veut « check for false positives » : une règle trop large en mode blocage peut bloquer des clients légitimes et provoquer une panne. Les scans sont déjà filtrés par la protection DDoS du CDN, et aucune validation de l’éditeur n’est nécessaire pour activer une règle WAF."
             },
             {
               "prompt_fr": "Complète : « The vendor hasn’t ___ a security patch for this zero-day yet. »",
@@ -1056,12 +1056,12 @@
             {
               "prompt_fr": "La direction te demande si l’entreprise est protégée contre la faille zero-day annoncée ce matin. Que réponds-tu ?",
               "choices": [
-                "There is no patch yet, so we cannot do anything until tomorrow.",
-                "There is no vendor patch yet, but we deployed a WAF rule to block the exploit pattern, and we’ll apply the patch as soon as it’s released.",
-                "We already patched the zero-day last month before the vendor knew about it."
+                "There’s no patch yet, so we can’t do anything until the vendor releases one tomorrow.",
+                "Yes, we’re fully protected: our CDN’s DDoS protection already blocks this kind of attack.",
+                "There’s no vendor patch yet, but a WAF rule now blocks the exploit, and we’ll patch as soon as it’s out."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième réponse rassure avec précision : elle distingue l’absence temporaire de correctif éditeur, la mesure d’atténuation immédiate (WAF) et la prochaine étape."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse distingue l’absence de correctif, la mesure d’atténuation immédiate (WAF) et la prochaine étape. Dire qu’on ne peut rien faire est faux, et la protection DDoS filtre le trafic de masse, pas la requête piégée : promettre une protection totale serait trompeur."
             }
           ],
           "production": {
@@ -1122,42 +1122,42 @@
             {
               "prompt_fr": "Que veut dire Tomasz avec « we pin exact versions » ?",
               "choices": [
-                "On verrouille le numéro exact de chaque dépendance pour éviter d’installer automatiquement une version récente compromise",
-                "On affiche les versions sur un tableau dans le bureau",
-                "On traduit le code source de chaque bibliothèque en interne"
+                "On fixe la version exacte de chaque dépendance pour ne pas installer une nouvelle version piégée",
+                "On épingle les dépendances les plus utilisées en haut du fichier de configuration",
+                "On installe toujours la dernière version, qui contient les correctifs les plus récents"
               ],
               "answer_index": 0,
-              "explanation_fr": "« Dependency pinning » consiste à fixer une version précise (et son condensat dans le lockfile) au lieu d’accepter automatiquement toute mise à jour mineure, ce qui protège contre une version nouvellement piégée lors d’une « supply chain attack »."
+              "explanation_fr": "« To pin a version » veut dire la figer (avec son empreinte dans le lockfile) au lieu d’accepter toute mise à jour : c’est ce qui a protégé l’équipe de la version piégée. « Pin » ne veut pas dire épingler en haut d’une liste ici, et installer la dernière version est exactement ce qui expose à une attaque de la chaîne d’approvisionnement."
             },
             {
               "prompt_fr": "En cryptographie asymétrique, que fait-on avec la « public key » d’un mainteneur ?",
               "choices": [
-                "On vérifie la signature numérique d’un paquet pour s’assurer de son authenticité",
                 "On la garde secrète dans un coffre-fort matériel sans jamais la partager",
+                "On vérifie la signature numérique d’un paquet pour s’assurer de son authenticité",
                 "On s’en sert pour signer de nouveaux paquets à la place du mainteneur"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "Le mainteneur signe avec sa clé privée (« private key », gardée secrète), et tout le monde peut vérifier cette signature grâce à la clé publique (« public key ») correspondante."
             },
             {
               "prompt_fr": "Complète : « The SSL/TLS ___ for our staging API expires in five days. »",
               "choices": [
-                "certification",
                 "certificate",
+                "certification",
                 "certified"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le fichier numérique installé sur un serveur pour HTTPS s’appelle « a certificate » (un certificat). « Certification » désigne une démarche d’audit ou un diplôme (comme la certification ISO 27001)."
             },
             {
               "prompt_fr": "Un collègue te demande pourquoi il ne faut jamais partager une clé privée sur Slack, même dans un canal privé. Que réponds-tu ?",
               "choices": [
-                "Only the public key can be shared; if the private key leaks in chat history, anyone who gets it can impersonate the server or decrypt traffic.",
-                "Because a private key is too long to fit in a Slack message.",
-                "You can share the private key if you delete the message after ten minutes."
+                "A private key is safe on Slack as long as the channel is private and nobody outside is invited.",
+                "Only the public key can be shared; if the private key leaks in chat history, anyone can impersonate the server.",
+                "You can share it on Slack if you delete the message right after your colleague copies it."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Une clé privée compromise (même envoyée dans un canal privé puis supprimée) doit être considérée comme grillée, révoquée et remplacée : seule la clé publique est faite pour être partagée."
+              "answer_index": 1,
+              "explanation_fr": "Une clé privée envoyée dans une messagerie peut finir dans les sauvegardes, les exports ou un compte compromis : elle doit alors être considérée comme grillée, révoquée et remplacée. Un canal privé n’est pas un coffre-fort, et supprimer le message n’efface pas les copies : seule la clé publique est faite pour être partagée."
             }
           ],
           "production": {
@@ -1219,22 +1219,22 @@
             {
               "prompt_fr": "En quoi consiste le « hardening » (durcissement) d’un serveur ?",
               "choices": [
-                "Ajouter un boîtier métallique renforcé autour du serveur physique",
-                "Réduire sa surface d’attaque en désactivant les services, paquets et ports inutiles et en appliquant des réglages sûrs",
-                "Augmenter la fréquence du processeur pour résister aux pics de charge"
+                "Installer un antivirus et un pare-feu sur chaque serveur de production",
+                "Renforcer le serveur pour qu’il tienne la charge pendant les pics de trafic",
+                "Réduire sa surface d’attaque en retirant les services, paquets et ports inutiles"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « system hardening » consiste à configurer un système de façon minimale et sécurisée (souvent selon un guide CIS Benchmark) afin de laisser le moins de portes d’entrée possible (« attack surface »)."
+              "answer_index": 2,
+              "explanation_fr": "Le « system hardening » consiste à configurer un système de façon minimale et sécurisée (souvent selon un guide CIS Benchmark), comme Kenji le fait en retirant vingt paquets et en fermant les ports. Ajouter des outils de sécurité est utile, mais ce n’est pas le durcissement, et la tenue en charge relève de la performance."
             },
             {
               "prompt_fr": "À quoi sert un « salt » (sel) ajouté avant le hachage d’un mot de passe ?",
               "choices": [
-                "À faire en sorte que deux utilisateurs ayant le même mot de passe obtiennent deux empreintes différentes, bloquant les tables précalculées",
-                "À pouvoir déchiffrer le mot de passe en clair si l’utilisateur l’oublie",
-                "À raccourcir la taille du mot de passe dans la base de données"
+                "À pouvoir retrouver le mot de passe en clair si l’utilisateur l’oublie",
+                "À chiffrer le mot de passe avec une clé propre à chaque utilisateur",
+                "À ce que deux mots de passe identiques donnent deux empreintes différentes"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le sel est une valeur aléatoire unique par mot de passe : il empêche les attaques par « rainbow tables » et masque le fait que deux comptes partagent le même mot de passe. Un hachage reste à sens unique : on ne le déchiffre jamais."
+              "answer_index": 2,
+              "explanation_fr": "Le sel est une valeur aléatoire unique ajoutée avant le hachage : il bloque les tables précalculées (« rainbow tables ») et masque les mots de passe identiques. Un hachage est à sens unique : on ne retrouve jamais le mot de passe, et le sel n’est pas une clé de chiffrement."
             },
             {
               "prompt_fr": "Complète : « Closing unused ports and removing old services reduced our ___ surface. »",
@@ -1249,12 +1249,12 @@
             {
               "prompt_fr": "Un ingénieur réseau te dit : « Puisque le serveur est sur le réseau interne derrière le VPN, pas besoin de vérifier l’identité entre les services. » Que réponds-tu ?",
               "choices": [
-                "In a zero trust model, we don’t trust traffic just because it’s on the internal network: network segmentation and mutual authentication limit lateral movement if a host is breached.",
-                "You’re right, an attacker can never enter an internal network.",
-                "Zero trust means nobody in the company is allowed to use the network."
+                "In a zero trust model, being on the internal network isn’t enough: every call must be authenticated.",
+                "You’re right: the VPN already authenticates users, so internal calls can be trusted.",
+                "You’re right, as long as the internal network is properly split into VLANs."
               ],
               "answer_index": 0,
-              "explanation_fr": "C’est la définition même du modèle « zero trust » : ne pas accorder de confiance implicite au réseau interne et vérifier chaque requête pour contenir une éventuelle intrusion."
+              "explanation_fr": "C’est la définition du « zero trust » : aucune confiance implicite accordée au réseau interne, chaque appel est vérifié, pour limiter les déplacements d’un attaquant (« lateral movement »). Le VPN authentifie l’entrée, pas chaque service, et la segmentation complète l’authentification sans la remplacer."
             }
           ],
           "production": {
@@ -1354,42 +1354,42 @@
             {
               "prompt_fr": "Pourquoi le numéro de facture séquentiel dans l’URL pose-t-il un problème de sécurité ?",
               "choices": [
-                "Parce qu’un utilisateur pourrait incrémenter le numéro dans l’URL pour télécharger les factures d’autres clients (IDOR / contrôle d’accès défaillant)",
-                "Parce que les bases de données refusent les numéros séquentiels",
-                "Parce que le chiffrement TLS ne fonctionne pas avec des chiffres dans l’URL"
+                "Parce qu’un numéro séquentiel crée des doublons de fichiers quand deux exports partent en même temps",
+                "Parce qu’un utilisateur pourrait changer le numéro dans l’URL et télécharger la facture d’un autre client",
+                "Parce qu’un numéro dans l’URL empêche le chiffrement TLS de protéger la requête"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Si l’URL contient un identifiant prévisible (1001, 1002…) sans vérification des droits côté serveur, n’importe qui peut énumérer et récupérer les documents des autres : c’est un cas classique de « Broken Access Control » en tête de l’OWASP Top 10."
+              "answer_index": 1,
+              "explanation_fr": "Avec un identifiant prévisible (1001, 1002…) et sans contrôle des droits côté serveur, n’importe qui peut énumérer les documents des autres : c’est le « broken access control » de l’OWASP Top 10, que cite Moussa. Les numéros ne créent pas de doublons, et TLS chiffre toute l’URL, chiffres compris."
             },
             {
               "prompt_fr": "Quel est l’objectif principal d’un atelier de « threat modeling » ?",
               "choices": [
-                "Identifier sur l’architecture ce qui pourrait mal tourner et prévoir les parades avant d’écrire le code",
-                "Lancer un scan automatisé sur le code déjà en production",
-                "Sanctionner les développeurs après un incident"
+                "Lancer un scan automatisé du code juste avant la mise en production",
+                "Tester l’application comme un attaquant une fois qu’elle est en ligne",
+                "Identifier sur l’architecture ce qui pourrait mal tourner, avant d’écrire le code"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La modélisation des menaces se fait dès la conception (« security by design ») autour du schéma de flux de données : qu’est-ce qu’on construit, qu’est-ce qui peut mal tourner, et comment on s’en protège."
+              "answer_index": 2,
+              "explanation_fr": "La modélisation des menaces se fait dès la conception (« security by design »), à partir du schéma de flux de données : ce qu’on construit, ce qui peut mal tourner et comment s’en protéger. Un scan juste avant la mise en production ou un pentest après le lancement arrivent trop tard pour changer l’architecture."
             },
             {
               "prompt_fr": "Complète : « In French we say chiffrement; in English, the right word is ___. »",
               "choices": [
-                "cryptage",
                 "encryption",
+                "cryptage",
                 "ciphering of"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le chiffrement se dit « encryption » (et le verbe « to encrypt »). « Cryptage » est un mot français (d’ailleurs impropre même en français technique), et « ciphering of » ne s’emploie pas ainsi."
             },
             {
               "prompt_fr": "Un chef de projet te propose de faire la revue de sécurité la veille de la mise en production pour gagner du temps. Que lui réponds-tu ?",
               "choices": [
-                "Doing threat modeling during design takes an hour and prevents costly architecture changes the day before release.",
-                "OK, security is just a checkbox at the end anyway.",
-                "Then I refuse to review the project at all."
+                "That works if the review only covers the OWASP Top 10, which is quick to check.",
+                "Let’s skip it this time and plan a pentest a few months after the launch.",
+                "Threat modeling during design takes an hour and avoids costly changes the day before release."
               ],
-              "answer_index": 0,
-              "explanation_fr": "C’est l’argument clé du « security by design » : une heure de modélisation des menaces au début évite de devoir réécrire toute une fonctionnalité la veille du lancement."
+              "answer_index": 2,
+              "explanation_fr": "C’est l’argument du « security by design » : une heure de modélisation au début évite de réécrire une fonctionnalité la veille du lancement. Limiter la revue à une liste ne règle pas le problème du calendrier, et un pentest des mois plus tard laisse la faille en production entre-temps."
             }
           ],
           "production": {
@@ -1450,42 +1450,42 @@
             {
               "prompt_fr": "Que signifie « out of scope » dans le cadrage d’un test d’intrusion ?",
               "choices": [
-                "Ce que les testeurs n’ont pas le droit d’attaquer ou de tester pendant la mission",
-                "Les failles les plus critiques trouvées pendant le test",
-                "Les serveurs qui n’ont plus de mémoire disponible"
+                "Ce que les testeurs n’ont pas le droit d’attaquer pendant la mission",
+                "Les failles trouvées qui dépassent la gravité prévue au contrat",
+                "Les tests que l’équipe réalisera plus tard, dans une seconde phase"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le cadrage (« scoping ») définit les règles d’engagement : « in scope » (inclus dans le périmètre autorisé) et « out of scope » (exclu et interdit, comme un test de déni de service sur la production)."
+              "explanation_fr": "Le cadrage (« scoping ») définit les règles d’engagement : « in scope » (inclus et autorisé) et « out of scope » (exclu et interdit, comme un déni de service sur la production). Ce n’est ni un niveau de gravité ni un report à plus tard."
             },
             {
               "prompt_fr": "Quelle est la différence entre un « penetration test » applicatif et un exercice « red team » ?",
               "choices": [
-                "Le pentest recense un maximum de failles sur un périmètre précis ; la red team simule un adversaire discret pour éprouver la détection de la blue team",
-                "La red team répare les serveurs pendant que le pentest écrit la documentation",
-                "Un pentest est illégal alors qu’une red team est autorisée"
+                "Le pentest se fait depuis internet ; la red team travaille uniquement depuis le réseau interne",
+                "Le pentest cherche un maximum de failles sur un périmètre ; la red team simule un adversaire discret",
+                "Le pentest est entièrement automatisé ; la red team est réalisée à la main par des experts"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Les deux sont autorisés, mais leur but diffère : le pentest vise l’exhaustivité technique sur une cible, tandis que l’exercice red team évalue les capacités réelles de détection et de réaction des défenseurs (la « blue team »)."
+              "answer_index": 1,
+              "explanation_fr": "Ivan le résume : le pentest vise l’exhaustivité sur une cible en deux semaines, la red team teste la vitesse de détection et de réaction de la blue team. Les deux peuvent partir de l’extérieur ou de l’intérieur, et un pentest sérieux est largement manuel."
             },
             {
               "prompt_fr": "Complète : « Using a standard account, the tester achieved ___ escalation to administrator. »",
               "choices": [
+                "privilege",
                 "privileges",
-                "privileged",
-                "privilege"
+                "privileged"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Le terme est « privilege escalation » (élévation de privilèges), avec « privilege » au singulier car il modifie le nom « escalation »."
             },
             {
               "prompt_fr": "Le prestataire de pentest demande par écrit qui prévenir s’il découvre une faille critique exposant immédiatement la production. Que réponds-tu ?",
               "choices": [
-                "Wait until the final report in three weeks before telling anyone.",
-                "If you find a critical vulnerability or achieve privilege escalation on an exposed asset, notify our security lead immediately via our encrypted channel.",
-                "Post the screenshot in the public engineering Slack channel."
+                "If you find a critical vulnerability, keep it for the final report, so we get the full picture at once.",
+                "If you find a critical vulnerability on an exposed asset, notify our security lead right away through our encrypted channel.",
+                "If you find a critical vulnerability, post it in our engineering Slack channel so developers can fix it."
               ],
               "answer_index": 1,
-              "explanation_fr": "Dans tout cadrage de pentest, on prévoit un canal d’escalade immédiat et chiffré pour les failles critiques, sans attendre la remise du rapport final plusieurs semaines plus tard."
+              "explanation_fr": "Une faille critique exposée se signale tout de suite, par un canal sûr, à un contact désigné : c’est une clause classique des règles d’engagement. Attendre le rapport final laisse la production exposée des semaines, et un canal Slack large diffuse les détails d’une faille non corrigée à trop de monde."
             }
           ],
           "production": {
@@ -1551,22 +1551,22 @@
             {
               "prompt_fr": "Pourquoi une application qui utilise un ORM peut-elle quand même contenir une « SQL injection » ?",
               "choices": [
-                "Parce qu’un ORM désactive automatiquement le pare-feu de la base de données",
-                "Parce qu’un développeur peut encore écrire une requête brute en concaténant une chaîne entrée par l’utilisateur",
-                "Parce que toutes les bases SQL exécutent du JavaScript dans le navigateur"
+                "Parce qu’un ORM transmet les requêtes à la base sans aucun contrôle de type",
+                "Parce qu’un ORM met en cache les requêtes, y compris celles d’un attaquant",
+                "Parce qu’un développeur peut encore écrire une requête brute en concaténant une saisie"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un ORM protège par défaut via des requêtes paramétrées, mais si une requête particulière concatène directement une variable (par exemple dans un `ORDER BY` ou une requête brute), l’injection SQL redevient possible."
+              "answer_index": 2,
+              "explanation_fr": "Mei l’explique : la requête de tri était construite en concaténant le nom de colonne brut. Un ORM paramètre normalement les valeurs, mais une requête écrite à la main contourne cette protection. Le cache des requêtes n’a rien à voir avec l’injection."
             },
             {
               "prompt_fr": "Quelle est la différence entre une faille « XSS » et une faille « CSRF » ?",
               "choices": [
-                "La XSS exécute du script malveillant dans le navigateur de la victime ; la CSRF pousse le navigateur d’un utilisateur connecté à envoyer une requête non voulue",
-                "La XSS touche uniquement les câbles réseau, alors que la CSRF touche les disques durs",
-                "La CSRF sert à chiffrer les mots de passe et la XSS à les hacher"
+                "La XSS vise le serveur de base de données ; la CSRF vise le navigateur de l’utilisateur",
+                "La XSS vole uniquement le cookie de session ; la CSRF vole le mot de passe de l’utilisateur",
+                "La XSS exécute un script dans le navigateur de la victime ; la CSRF lui fait envoyer une requête non voulue"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En XSS (Cross-Site Scripting), l’attaquant injecte du code JavaScript exécuté chez d’autres utilisateurs. En CSRF (Cross-Site Request Forgery), l’attaquant profite d’une session ouverte pour déclencher une action à l’insu de l’utilisateur."
+              "answer_index": 2,
+              "explanation_fr": "La XSS injecte du script qui s’exécute dans le navigateur de la victime ; la CSRF profite d’une session ouverte pour faire envoyer une requête que l’utilisateur n’a pas voulue (ici, changer l’e-mail). La XSS ne vise pas la base (ce serait l’injection SQL), et la CSRF ne vole pas de mot de passe : elle agit à la place de l’utilisateur."
             },
             {
               "prompt_fr": "Complète : « Parameterized queries and an allowlist protect ___ SQL injection. »",
@@ -1581,12 +1581,12 @@
             {
               "prompt_fr": "En revue de code, tu vois du HTML utilisateur injecté sans échappement. Quel commentaire écris-tu ?",
               "choices": [
-                "Rendering raw HTML here opens a stored XSS vulnerability. Could we escape the input or sanitize it with DOMPurify?",
-                "You wrote an XSS attack on purpose, I’m closing your PR.",
-                "This HTML is ugly, please change the font."
+                "Rendering raw HTML here opens a stored XSS. Could we escape the input or sanitize it with DOMPurify?",
+                "Rendering raw HTML here opens a SQL injection. Could we use a parameterized query instead?",
+                "Rendering raw HTML here is fine, since the ticket comments are only visible to our staff."
               ],
               "answer_index": 0,
-              "explanation_fr": "Le premier commentaire explique précisément le risque (stored XSS) et propose deux solutions techniques concrètes (échapper ou nettoyer avec une bibliothèque dédiée) sur un ton respectueux."
+              "explanation_fr": "Afficher du HTML utilisateur sans échappement ouvre une XSS stockée : on échappe ou on assainit l’entrée. Une requête paramétrée protège de l’injection SQL, pas de la XSS, et un contenu visible seulement par le personnel reste dangereux : le script s’exécuterait dans un navigateur interne, souvent avec plus de droits."
             }
           ],
           "production": {
@@ -1647,42 +1647,42 @@
             {
               "prompt_fr": "Qu’est-ce que la « responsible disclosure » (ou « coordinated disclosure ») ?",
               "choices": [
-                "Signaler une faille en privé à l’organisation concernée et lui laisser le temps de la corriger avant d’en parler publiquement",
-                "Publier immédiatement un exploit sur les réseaux sociaux pour forcer l’entreprise à réagir",
-                "Cacher une fuite de données aux autorités de régulation"
+                "Publier la faille tout de suite pour que les utilisateurs puissent se protéger eux-mêmes",
+                "Signaler une faille en privé à l’organisation et lui laisser le temps de la corriger avant d’en parler",
+                "Signaler la faille directement à l’autorité de régulation plutôt qu’à l’entreprise"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La divulgation responsable (ou coordonnée) repose sur un accord : le chercheur signale la faille en privé et attend que le correctif soit déployé avant toute publication technique."
+              "answer_index": 1,
+              "explanation_fr": "La « responsible disclosure » consiste à prévenir l’organisation en privé et à attendre le correctif avant toute publication, comme la chercheuse qui demande quand elle pourra publier. Publier immédiatement (« full disclosure ») expose les utilisateurs, et le régulateur n’est pas le premier interlocuteur."
             },
             {
               "prompt_fr": "Pourquoi Kofi ajuste-t-il le score CVSS de 9,1 à 5,3 ?",
               "choices": [
-                "Pour ne jamais payer les chercheurs du programme de bug bounty",
-                "Parce que la faille n’expose que des métadonnées non sensibles et ne permet aucune modification ni prise de contrôle",
-                "Parce que le score CVSS maximum autorisé en Europe est de 6,0"
+                "Parce que la faille a été reproduite sur staging, et pas sur la production",
+                "Parce que la chercheuse n’a pas fourni de preuve de concept assez détaillée",
+                "Parce que la faille n’expose que des métadonnées non sensibles, sans modification ni prise de contrôle"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En bug bounty, les chercheurs surestiment parfois l’impact. Si la confidentialité n’est touchée que de façon limitée et que l’intégrité et la disponibilité sont intactes, le score CVSS (qui va jusqu’à 10) est moyen : l’important est de justifier le calcul clairement."
+              "answer_index": 2,
+              "explanation_fr": "Kofi le justifie : « no sensitive data or account takeover is involved ». Le score dépend de l’impact réel, ici limité. L’environnement de reproduction ne change pas la note, et la preuve de concept a justement permis de reproduire la faille."
             },
             {
               "prompt_fr": "Complète : « Were you able to reproduce the finding with her ___ of concept? »",
               "choices": [
-                "prove",
                 "proof",
+                "prove",
                 "proving"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Une preuve de concept se dit « proof of concept » (abrégé PoC). « Prove » est le verbe (« to prove »), et « proof » est le nom."
             },
             {
               "prompt_fr": "Tu dois répondre à un chercheur de bug bounty dont le score de gravité a été revu à la baisse. Quelle réponse est la plus professionnelle ?",
               "choices": [
-                "Thanks for your report! We reproduced the issue and are deploying a patch on Friday. Because only non-sensitive metadata is exposed, we adjusted the CVSS score to 5.3 (Medium) and awarded the corresponding bounty.",
-                "Your CVSS score is wrong and exaggerated, so we reject your report.",
-                "We fixed the bug you sent, but someone else maybe knew about it, so no bounty."
+                "Thanks for your report! Your CVSS score was exaggerated, so we can only offer a lower bounty than usual.",
+                "Thanks for your report! We’ve fixed the issue already, so feel free to publish your blog post today.",
+                "Thanks for your report! We’re deploying a patch on Friday. Since only non-sensitive metadata is exposed, we rated it 5.3 (Medium)."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Une réponse professionnelle remercie le chercheur, confirme la reproduction et la date du correctif, et explique factuellement le calcul CVSS ainsi que la prime associée."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse remercie, donne la date du correctif et explique le nouveau score avec transparence. Dire « exaggerated » sonne comme un reproche, et autoriser la publication aujourd’hui est faux : le correctif n’arrive que vendredi."
             }
           ],
           "production": {
@@ -1783,21 +1783,21 @@
               "prompt_fr": "Quel est l’objectif immédiat de la phase de « containment » (confinement) ?",
               "choices": [
                 "Empêcher l’attaque de se propager à d’autres machines et limiter son impact",
-                "Rédiger le rapport annuel de conformité pour les auditeurs",
-                "Restaurer immédiatement les sauvegardes sur un réseau encore compromis"
+                "Supprimer le rançongiciel du poste et effacer toutes ses traces",
+                "Restaurer tout de suite les sauvegardes pour reprendre l’activité"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le confinement (« containment ») vise à stopper l’hémorragie : isoler les postes touchés et couper les accès compromis pour bloquer le déplacement latéral avant toute restauration."
+              "explanation_fr": "Le confinement (« containment ») isole ce qui est touché pour stopper la propagation. Supprimer le malware relève de l’éradication, et restaurer les sauvegardes de la reprise (« recovery ») : deux phases qui viennent après, une fois la menace maîtrisée."
             },
             {
               "prompt_fr": "Que signifie « pivot elsewhere » (ou « lateral movement ») lors d’une intrusion ?",
               "choices": [
-                "Se servir d’une première machine ou d’un compte compromis comme tremplin pour atteindre d’autres serveurs du réseau",
-                "Changer d’écran d’ordinateur dans le bureau du SOC",
-                "Faire pivoter les clés de chiffrement dans le cloud"
+                "Changer de technique d’attaque quand la première est bloquée par l’EDR",
+                "Utiliser une machine ou un compte compromis comme tremplin pour atteindre d’autres serveurs",
+                "Obtenir des droits administrateur sur la machine déjà compromise"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Une fois entré sur un poste, l’attaquant cherche à « pivoter » (se déplacer latéralement, « lateral movement ») vers les serveurs de fichiers ou le contrôleur de domaine grâce aux identifiants volés."
+              "answer_index": 1,
+              "explanation_fr": "« To pivot » veut dire rebondir d’une machine compromise vers une autre, ce qu’on appelle aussi « lateral movement » : ici, les tentatives SMB vers le serveur de fichiers. Changer de technique n’est pas pivoter, et obtenir des droits admin sur la même machine, c’est la « privilege escalation »."
             },
             {
               "prompt_fr": "Complète : « I ___ the workstation from the network through the EDR console. »",
@@ -1812,12 +1812,12 @@
             {
               "prompt_fr": "Un technicien sur place veut débrancher et éteindre le poste infecté pour arrêter le rançongiciel. Quelle consigne lui donnes-tu ?",
               "choices": [
-                "The host is already isolated via EDR: unplug the network cable if needed, but keep the machine powered on so we don’t lose memory evidence.",
-                "Format the hard drive right now so the virus disappears.",
-                "Reconnect it to the main Wi-Fi to see what happens."
+                "Shut the machine down right away: powering it off is the fastest way to stop the encryption.",
+                "The host is isolated via EDR: unplug the cable if needed, but keep it powered on to preserve memory evidence.",
+                "Unplug it and reinstall Windows now, so the user can get back to work this afternoon."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Couper le réseau (via EDR ou en débranchant le câble Ethernet) suffit au confinement ; laisser la machine allumée permet de capturer la mémoire vive (processus, clés, connexions) pour l’analyse forensique."
+              "answer_index": 1,
+              "explanation_fr": "Le poste est déjà isolé par l’EDR : on garde la machine allumée pour ne pas perdre la mémoire vive, où se trouvent souvent les clés et les traces de l’attaque. L’éteindre efface ces preuves, et réinstaller tout de suite détruit l’ensemble des éléments d’enquête."
             }
           ],
           "production": {
@@ -1878,42 +1878,42 @@
             {
               "prompt_fr": "Pourquoi travaille-t-on toujours sur une « forensic image » plutôt que directement sur le disque d’origine ?",
               "choices": [
-                "Pour analyser les traces sans risquer d’altérer la pièce à conviction originale",
-                "Parce que le disque d’origine ne fonctionne que la nuit",
-                "Pour réduire la taille des fichiers de moitié en supprimant les logs"
+                "Pour travailler plus vite, car une image se lit plus rapidement qu’un disque",
+                "Pour pouvoir rendre tout de suite le disque d’origine à l’utilisateur",
+                "Pour analyser les traces sans risquer d’altérer la pièce à conviction originale"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En investigation numérique (« digital forensics »), la règle d’or est de ne jamais modifier la preuve originale : on crée une copie bit à bit (« forensic image ») et on mène toutes les analyses sur une copie."
+              "answer_index": 2,
+              "explanation_fr": "On analyse une copie bit à bit pour ne jamais modifier l’original, qui reste la preuve de référence. La vitesse n’est pas l’enjeu, et le disque d’origine est conservé sous scellés, pas rendu à l’utilisateur."
             },
             {
               "prompt_fr": "À quoi sert le « hashing » (SHA-256) lors de la création d’une image forensique ?",
               "choices": [
-                "À chiffrer le disque avec un mot de passe administrateur",
-                "À prouver que la copie est strictement identique à l’original au bit près",
-                "À compresser l’image pour l’envoyer par e-mail"
+                "À chiffrer l’image pour qu’on ne puisse pas la lire en cas de vol",
+                "À compresser l’image pour la stocker plus facilement sur le serveur",
+                "À prouver que la copie est strictement identique à l’original, au bit près"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Si l’empreinte SHA-256 (« hash ») de l’image forensique est identique à celle du disque original, cela démontre mathématiquement que la copie est exacte et n’a subi aucune altération."
+              "answer_index": 2,
+              "explanation_fr": "Une empreinte SHA-256 identique sur l’original et sur la copie prouve qu’aucun bit n’a changé (« prove later that the forensic image wasn’t modified »). Un hachage ne chiffre rien et ne compresse rien : c’est une empreinte à sens unique."
             },
             {
               "prompt_fr": "Complète : « Log every transfer of the evidence drive to maintain the ___ of custody. »",
               "choices": [
                 "string",
-                "channel",
-                "chain"
+                "chain",
+                "channel"
               ],
-              "answer_index": 2,
+              "answer_index": 1,
               "explanation_fr": "Le terme juridique et forensique est « chain of custody » (chaîne de traçabilité ou de possession des preuves)."
             },
             {
               "prompt_fr": "Le responsable IT insiste pour récupérer l’ordinateur infecté tout de suite car le comptable en a besoin. Que lui proposes-tu ?",
               "choices": [
-                "Give the user a clean spare laptop now, and keep the infected machine in the forensics lab until we finish taking the forensic image.",
-                "OK, just delete the virus folder and give him the same laptop in five minutes.",
-                "The user must stop working for a month."
+                "Give the user a clean spare laptop now, and keep the infected one in the lab until the forensic image is done.",
+                "Let’s give it back after a full antivirus scan, as long as the user avoids sensitive files.",
+                "Let’s copy the user’s documents to a USB key so he can keep working on that laptop."
               ],
               "answer_index": 0,
-              "explanation_fr": "Donner un poste de remplacement (« spare laptop ») permet à l’utilisateur de reprendre son travail immédiatement sans détruire les preuves ni remettre en service une machine potentiellement compromise."
+              "explanation_fr": "Un poste de prêt règle le besoin métier tout en préservant la preuve. Un scan antivirus modifie le disque et ne garantit pas que la menace est partie, et copier des documents sur une clé risque de propager le malware."
             }
           ],
           "production": {
@@ -1974,42 +1974,42 @@
             {
               "prompt_fr": "Comment Inès démontre-t-elle qu’il n’y a pas eu d’exfiltration massive de fichiers ?",
               "choices": [
-                "En constatant dans les logs réseau que le volume total envoyé vers l’IP externe était inférieur à quatre kilo-octets",
-                "En demandant par e-mail à l’attaquant s’il a copié des fichiers",
-                "En vérifiant que l’écran de l’ordinateur était éteint"
+                "En constatant que l’antivirus n’a trouvé aucun fichier copié sur le poste",
+                "En constatant dans les logs réseau que moins de quatre kilo-octets sont partis vers l’IP externe",
+                "En constatant que les fichiers locaux du poste n’ont jamais été ouverts"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Pour vérifier s’il y a eu « data exfiltration », les analystes examinent le volume et la destination des flux sortants (proxy, pare-feu, NetFlow, DNS) depuis la machine compromise."
+              "answer_index": 1,
+              "explanation_fr": "Inès s’appuie sur les logs proxy et netflow : « under four kilobytes », trop peu pour des fichiers clients. Un antivirus ne trace pas ce qui sort du réseau, et les fichiers locaux ont bien été ouverts (« local files on the laptop were accessed »), d’où l’analyse du service juridique."
             },
             {
               "prompt_fr": "Que signifie « reimaging the workstation from scratch » pendant la phase d’éradication ?",
               "choices": [
-                "Changer le fond d’écran de l’ordinateur",
-                "Effacer complètement le disque et réinstaller le système d’exploitation à partir d’une image propre de référence",
-                "Prendre une photo de l’ordinateur avec un appareil numérique"
+                "Reprendre une image forensique du disque avant de le rendre à l’utilisateur",
+                "Restaurer le poste à partir de la dernière sauvegarde de l’utilisateur",
+                "Effacer complètement le disque et réinstaller le système à partir d’une image propre"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En réponse à incident, on ne se contente pas de supprimer le fichier malveillant (car une porte dérobée pourrait subsister) : « to reimage a host » veut dire le réinstaller intégralement à partir d’un master sain."
+              "answer_index": 2,
+              "explanation_fr": "« To reimage from scratch » veut dire tout effacer et repartir d’une image système de référence. L’image forensique a déjà été faite (c’est de la collecte, pas de l’éradication), et une sauvegarde de l’utilisateur pourrait contenir le logiciel piégé."
             },
             {
               "prompt_fr": "Complète : « We can’t move to recovery until ___ of the malware is confirmed. »",
               "choices": [
                 "eradication",
-                "eradicating of",
-                "erratic"
+                "eradicating",
+                "eradicated"
               ],
               "answer_index": 0,
-              "explanation_fr": "Les phases classiques (NIST / SANS) sont Preparation, Detection & Analysis, Containment, Eradication, Recovery, et Post-Incident Activity : le nom est « eradication »."
+              "explanation_fr": "Après « until » et avant « of the malware », il faut un nom : « eradication » (l’éradication). « Eradicating of » et « eradicated of » mélangent une forme verbale et la préposition « of », ce qui est incorrect."
             },
             {
               "prompt_fr": "La direction demande une mise à jour factuelle sur le risque de fuite de données. Quelle phrase est la plus rigoureuse ?",
               "choices": [
-                "Network logs confirm that the firewall blocked the command and control connection, and we see no evidence of data exfiltration outside the network.",
-                "Everything is fine, hackers never take data.",
-                "All our databases were stolen even though the malware stayed on one laptop."
+                "Network logs show the firewall blocked the C2 connection, so we can confirm that no data was accessed.",
+                "The malware stayed on a single laptop, so there is nothing to report to the legal team.",
+                "Network logs show the firewall blocked the C2 connection, and we see no evidence of data exfiltration."
               ],
-              "answer_index": 0,
-              "explanation_fr": "En communication de crise, on s’appuie sur les preuves techniques (« Network logs confirm… we see no evidence of data exfiltration ») sans spéculer ni minimiser à la légère."
+              "answer_index": 2,
+              "explanation_fr": "La bonne phrase s’en tient aux faits établis : « no evidence of data exfiltration ». Affirmer qu’aucune donnée n’a été consultée est faux, puisque des fichiers locaux ont été ouverts, et c’est justement au service juridique de décider s’il s’agit d’une violation de données."
             }
           ],
           "production": {
@@ -2071,41 +2071,41 @@
               "prompt_fr": "Quel est le délai de notification à l’autorité de contrôle (comme la CNIL) prévu par le RGPD (« GDPR ») en cas de violation de données à risque ?",
               "choices": [
                 "Dans les 72 heures après en avoir pris connaissance",
-                "Dans les 6 mois suivant la clôture de l’exercice comptable",
-                "Uniquement si la presse publie un article sur l’incident"
+                "Dans les 72 heures après le début de l’incident",
+                "Dans les 24 heures après en avoir pris connaissance"
               ],
               "answer_index": 0,
-              "explanation_fr": "L’article 33 du RGPD (« GDPR ») fixe un délai maximal de 72 heures après avoir pris connaissance (« after becoming aware ») d’une violation de données personnelles présentant un risque pour les droits et libertés des personnes."
+              "explanation_fr": "Le RGPD compte 72 heures à partir du moment où l’on prend connaissance de la violation (« within 72 hours of becoming aware of it »), pas depuis le début de l’incident, parfois découvert des semaines plus tard. Le délai de 24 heures est celui de l’alerte précoce de NIS2."
             },
             {
               "prompt_fr": "Quelle nouveauté majeure la directive européenne « NIS2 » introduit-elle sur les délais d’alerte en cas d’incident significatif ?",
               "choices": [
-                "Une alerte précoce (« early warning ») dans les 24 heures, puis une notification sous 72 heures",
-                "L’interdiction d’utiliser le chiffrement dans l’Union européenne",
-                "La suppression de toute obligation de signalement pour les entreprises"
+                "Une notification unique sous 72 heures, comme pour le RGPD",
+                "Une alerte précoce dans les 24 heures, puis une notification sous 72 heures",
+                "Une alerte précoce sous 72 heures, puis une notification sous 24 heures"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Pour les entités concernées, NIS2 prévoit un mécanisme par étapes : une alerte précoce (« early warning ») sous 24 h, une notification plus complète sous 72 h, et un rapport final sous un mois."
+              "answer_index": 1,
+              "explanation_fr": "NIS2 ajoute une étape : un « early warning » sous 24 heures, puis une notification détaillée sous 72 heures (et un rapport final sous un mois). Ce n’est donc pas une notification unique, et l’alerte précoce vient avant la notification, pas après."
             },
             {
               "prompt_fr": "Complète : « We must notify the authority within 72 hours of becoming ___ of the data breach. »",
               "choices": [
+                "aware",
                 "knowing",
-                "informed to",
-                "aware"
+                "informed to"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "L’expression consacrée dans le texte anglais du RGPD est « within 72 hours after having become aware of it » (après en avoir pris connaissance)."
             },
             {
               "prompt_fr": "En pleine analyse d’une fuite potentielle, la juriste te demande les éléments techniques alors que l’enquête n’est pas finie. Que lui réponds-tu ?",
               "choices": [
-                "Come back next week when I know everything.",
-                "Here are the confirmed facts so far for our 24-hour early warning under NIS2; we’ll send updated findings before the 72-hour GDPR and NIS2 deadline.",
-                "You can invent the numbers for the authority."
+                "I’d rather wait until the investigation is finished, so we don’t send the authority any wrong facts.",
+                "Here are the confirmed facts so far for the 24-hour early warning; we’ll send updated findings before the 72-hour deadline.",
+                "Here’s my best guess of the impact; we can correct the numbers later if they turn out wrong."
               ],
               "answer_index": 1,
-              "explanation_fr": "Les réglementations (RGPD comme NIS2) prévoient justement des notifications par étapes : on transmet les faits confirmés à H+24 sans spéculer, puis on complète à H+72 au fil de l’investigation."
+              "explanation_fr": "Les délais courent même si l’enquête n’est pas finie : on transmet les faits confirmés, puis on complète. Attendre la fin de l’enquête ferait manquer l’échéance, et une estimation présentée comme un fait risque d’induire l’autorité en erreur."
             }
           ],
           "production": {
@@ -2205,22 +2205,22 @@
             {
               "prompt_fr": "Pourquoi le client demande-t-il de désactiver la connexion par mot de passe local une fois le SSO activé ?",
               "choices": [
-                "Pour empêcher qu’un attaquant contourne le fournisseur d’identité (et sa MFA) en utilisant un ancien mot de passe local",
-                "Parce que SAML interdit d’utiliser le protocole HTTPS",
-                "Pour que les employés n’aient plus besoin de s’authentifier du tout"
+                "Parce que SAML ne fonctionne pas tant qu’un mot de passe local existe encore",
+                "Pour que les employés n’aient plus besoin de MFA sur leurs comptes",
+                "Pour empêcher un attaquant de contourner le fournisseur d’identité et sa MFA avec un mot de passe local"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Si le SSO est actif mais que le formulaire de mot de passe local reste ouvert, un compte peut encore être compromis sans passer par les contrôles (MFA, appareil conforme) de l’« identity provider »."
+              "answer_index": 2,
+              "explanation_fr": "Tomasz le dit : désactiver les mots de passe locaux « prevents attackers from bypassing the identity provider ». SAML fonctionne même si un mot de passe local existe (c’est justement le risque), et la MFA reste exigée, mais par Okta."
             },
             {
               "prompt_fr": "Quel est le rôle d’OpenID Connect (OIDC) par rapport à OAuth 2.0 ?",
               "choices": [
-                "C’est une couche d’identité au-dessus d’OAuth 2.0 qui permet de vérifier qui est l’utilisateur (authentification)",
-                "C’est un antivirus installé sur les téléphones mobiles",
-                "C’est un câble réseau utilisé dans les salles serveurs"
+                "La nouvelle version d’OAuth 2.0, qui la remplace complètement",
+                "Un protocole d’autorisation qui remplace SAML dans les applications web",
+                "Une couche d’identité au-dessus d’OAuth 2.0, qui permet de savoir qui est l’utilisateur"
               ],
-              "answer_index": 0,
-              "explanation_fr": "OAuth 2.0 gère l’autorisation déléguée, tandis qu’OpenID Connect (OIDC) ajoute un « ID token » normalisé en JSON pour authentifier l’utilisateur (moderne et très courant sur web et mobile à côté de SAML)."
+              "answer_index": 2,
+              "explanation_fr": "OAuth 2.0 sert à déléguer des autorisations ; OpenID Connect ajoute par-dessus une couche d’authentification (le jeton d’identité). Ce n’est pas une nouvelle version d’OAuth, et SAML reste utilisé : le client le demande d’ailleurs pour le portail web."
             },
             {
               "prompt_fr": "Complète : « Disable the user in the identity ___ and their access is revoked everywhere. »",
@@ -2235,12 +2235,12 @@
             {
               "prompt_fr": "Un client te demande en réunion si votre plateforme gère la fédération d’identité. Quelle réponse est la plus précise ?",
               "choices": [
-                "Yes, we support enterprise SSO via both SAML 2.0 and OpenID Connect with any major identity provider, and we can enforce MFA.",
-                "Yes, you can send us all your employees’ passwords in an Excel file.",
-                "We don’t need SSO because our login page has a nice color."
+                "Yes, we support enterprise SSO via SAML 2.0 and OpenID Connect with major identity providers, and we can enforce MFA.",
+                "Yes, we support SSO: your employees just create a local password the first time they log in.",
+                "Yes, we support OAuth, which is the same thing as SSO, so any login provider will work."
               ],
               "answer_index": 0,
-              "explanation_fr": "La première réponse cite exactement les standards attendus par une équipe IT d’entreprise (SSO, SAML 2.0, OIDC, IdP, MFA)."
+              "explanation_fr": "La bonne réponse cite les standards attendus par une équipe IT (SAML 2.0, OIDC, IdP, MFA). Un mot de passe local à la première connexion, c’est le contraire de la fédération d’identité, et OAuth n’est pas synonyme de SSO : c’est un protocole d’autorisation."
             }
           ],
           "production": {
@@ -2303,22 +2303,22 @@
             {
               "prompt_fr": "Pourquoi les « service accounts » (comptes de service) représentent-ils souvent un risque élevé ?",
               "choices": [
-                "Parce qu’on leur donne souvent trop de droits au départ et que personne ne pense à les revoir régulièrement",
-                "Parce qu’ils ne peuvent fonctionner que sur des ordinateurs Windows XP",
-                "Parce qu’ils envoient automatiquement des spams aux clients"
+                "Parce qu’ils sont liés à une personne qui peut quitter l’entreprise à tout moment",
+                "Parce qu’on leur donne souvent trop de droits au départ et que personne ne les revoit",
+                "Parce qu’ils ne peuvent pas être protégés par un secret long et complexe"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un « service account » est utilisé par un script ou une application (comme la CI/CD) : par facilité, on lui accorde parfois des droits d’administrateur permanents qui violent le principe du moindre privilège (« principle of least privilege »)."
+              "answer_index": 1,
+              "explanation_fr": "Un compte de service n’appartient à personne : on lui donne souvent des droits larges « pour que ça marche », puis on l’oublie, comme le compte CI avec écriture complète sur la production. Il n’est pas lié à un salarié (c’est même le problème), et il peut avoir un secret très robuste."
             },
             {
               "prompt_fr": "Comment le « privileged access management » (PAM) réduit-il le risque lié aux comptes administrateurs ?",
               "choices": [
-                "En supprimant toute trace des actions réalisées par les administrateurs",
-                "En supprimant les droits permanents : l’administrateur demande une élévation temporaire tracée uniquement quand il en a besoin",
-                "En partageant un seul mot de passe administrateur entre tous les développeurs"
+                "En partageant un seul mot de passe administrateur, rangé dans un coffre-fort commun",
+                "En laissant les droits administrateur à tous, mais en enregistrant leurs actions",
+                "En supprimant les droits permanents : l’administrateur demande une élévation temporaire et tracée"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Avec un outil PAM (et l’approche « just-in-time access »), personne n’a de droits d’administration au quotidien : on emprunte le privilège pour une durée limitée et la session est enregistrée."
+              "answer_index": 2,
+              "explanation_fr": "Le PAM remplace les droits permanents par une élévation à la demande, limitée dans le temps et tracée (« temporary elevation »). Un mot de passe partagé empêche de savoir qui a fait quoi, et enregistrer des actions sans retirer les droits ne respecte pas le moindre privilège."
             },
             {
               "prompt_fr": "Complète : « Automated ___ revokes all access as soon as an employee leaves the company. »",
@@ -2333,12 +2333,12 @@
             {
               "prompt_fr": "Un développeur se plaint qu’on lui retire ses droits d’administrateur permanent en production. Comment lui expliques-tu la décision ?",
               "choices": [
-                "To follow the principle of least privilege, daily accounts use role-based access control, and you can request temporary admin access in one click through PAM whenever you need it.",
-                "We don’t trust you anymore, so you can never touch production again.",
-                "Least privilege is only for interns, not for senior engineers."
+                "It’s a compliance requirement from the auditors, so there’s nothing I can change about it.",
+                "Senior engineers can keep their admin rights; we’re only removing them from junior profiles.",
+                "To follow least privilege, daily accounts use standard roles, and you can request temporary admin access through PAM."
               ],
-              "answer_index": 0,
-              "explanation_fr": "La première réponse explique la règle (moindre privilège, qui protège d’ailleurs le développeur lui-même si son poste est compromis) et montre que son travail reste fluide grâce à l’élévation à la demande via le PAM."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse explique la règle (moindre privilège, qui protège aussi le développeur si son poste est compromis) et montre que son travail reste fluide grâce à l’élévation à la demande. Se cacher derrière les auditeurs n’explique rien, et l’ancienneté ne justifie pas des droits permanents."
             }
           ],
           "production": {
@@ -2403,42 +2403,42 @@
             {
               "prompt_fr": "Que prévoit le « shared responsibility model » (modèle de responsabilité partagée) dans le cloud ?",
               "choices": [
-                "Le fournisseur cloud sécurise l’infrastructure sous-jacente, mais le client reste responsable de ses données, de ses accès et de la configuration de ses ressources",
-                "Le fournisseur cloud paie la moitié des amendes si le client laisse un bucket public",
-                "Le client doit envoyer ses propres techniciens réparer les serveurs physiques du datacenter"
+                "Le fournisseur sécurise l’infrastructure, mais le client reste responsable de ses données, accès et réglages",
+                "Le fournisseur sécurise l’infrastructure et applique lui-même les bons réglages chez le client",
+                "Le fournisseur et le client se partagent à parts égales toutes les tâches de sécurité"
               ],
               "answer_index": 0,
-              "explanation_fr": "Dans le cloud (« Security OF the cloud » vs « Security IN the cloud »), l’hébergeur protège le matériel et l’hyperviseur, mais la configuration des buckets, du chiffrement et des droits IAM incombe toujours au client."
+              "explanation_fr": "Lucía le rappelle : « the provider secures the infrastructure, but we are responsible for any cloud misconfiguration ». Le fournisseur n’applique pas les réglages du client à sa place (c’était l’erreur de l’équipe data), et le partage n’est pas « moitié-moitié » : il dépend du type de service."
             },
             {
               "prompt_fr": "Quelle est la différence entre « encryption at rest » et « encryption in transit » ?",
               "choices": [
-                "At rest chiffre les données stockées sur disque ou en sauvegarde ; in transit chiffre les données pendant qu’elles circulent sur le réseau",
-                "At rest chiffre les données le week-end ; in transit les chiffre pendant la semaine",
-                "Ce sont deux synonymes pour le protocole HTTP non chiffré"
+                "At rest protège les données archivées ; in transit protège les données en cours de traitement",
+                "At rest protège les données stockées ; in transit protège les données qui circulent sur le réseau",
+                "At rest est géré par le client ; in transit est toujours géré par le fournisseur cloud"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Encryption at rest » (chiffrement au repos, sur les disques, bases et buckets, avec des clés gérées dans un KMS) complète « encryption in transit » (chiffrement en transit sur le réseau, par exemple avec TLS)."
+              "answer_index": 1,
+              "explanation_fr": "« At rest » désigne les données stockées (disque, snapshot, sauvegarde), « in transit » celles qui circulent sur le réseau (TLS). Les données en cours de traitement forment un troisième état (« in use »), et la responsabilité ne se partage pas selon ces deux termes."
             },
             {
               "prompt_fr": "Complète : « The data leak was caused by a cloud ___, not an advanced zero-day attack. »",
               "choices": [
-                "bad configuration",
                 "misconfiguration",
+                "bad configuration",
                 "unconfiguration"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le terme consacré est « misconfiguration » (mauvaise configuration), avec le préfixe « mis- » (comme dans « mistake » ou « misunderstand »)."
             },
             {
               "prompt_fr": "Un ingénieur data te demande comment éviter que ces erreurs de configuration cloud ne reviennent au prochain déploiement. Que proposes-tu ?",
               "choices": [
+                "Let’s fix them by hand in the console today and ask the CSPM tool for a weekly report.",
                 "Let’s fix them in Terraform and scan our infrastructure-as-code plans alongside our CSPM checks.",
-                "Click manually in the web console every morning to change the settings.",
-                "Turn off the CSPM tool so we don’t see any more alerts."
+                "Let’s ask the cloud provider to lock these settings for us, since it’s their responsibility."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Corriger directement dans le code d’infrastructure (Terraform) et scanner les plans avant déploiement évite que la mauvaise configuration soit recréée au déploiement suivant, tout en gardant le CSPM en surveillance continue."
+              "answer_index": 1,
+              "explanation_fr": "Corriger dans Terraform et vérifier le code d’infrastructure avant le déploiement empêche les erreurs de revenir. Une correction à la main sera écrasée au prochain déploiement, et ces réglages relèvent du client selon le modèle de responsabilité partagée."
             }
           ],
           "production": {
@@ -2502,42 +2502,42 @@
             {
               "prompt_fr": "Pourquoi l’entreprise délègue-t-elle le traitement des numéros de carte bancaire à un prestataire spécialisé ?",
               "choices": [
-                "Pour que les numéros de carte ne transitent pas par ses serveurs, ce qui réduit fortement son périmètre d’audit PCI DSS",
-                "Parce que la norme ISO 27001 interdit de vendre des logiciels en ligne",
-                "Pour éviter d’avoir à utiliser HTTPS sur son site web"
+                "Pour ne plus avoir du tout à respecter PCI DSS, puisque le prestataire est certifié",
+                "Pour obtenir automatiquement la certification ISO 27001 grâce au prestataire",
+                "Pour que les numéros de carte ne passent pas par ses serveurs, ce qui réduit son périmètre PCI DSS"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La norme « PCI DSS » impose des contrôles très lourds à tout système qui stocke, traite ou transmet des numéros de carte bancaire : déléguer cette étape à un prestataire certifié réduit drastiquement le périmètre (« scope ») soumis à l’audit."
+              "answer_index": 2,
+              "explanation_fr": "Ivan parle d’un périmètre « minimal », pas nul : l’entreprise reste concernée par PCI DSS, mais avec beaucoup moins de contrôles. La certification du prestataire ne s’étend pas à l’entreprise, et ISO 27001 est une démarche totalement séparée."
             },
             {
               "prompt_fr": "Quelle est la différence entre « ISO 27001 » et « SOC 2 » ?",
               "choices": [
-                "ISO 27001 est une norme internationale certifiant un SMSI ; SOC 2 est un rapport d’attestation d’un auditeur indépendant (très demandé aux États-Unis)",
-                "ISO 27001 concerne uniquement les câbles électriques, et SOC 2 désigne l’équipe de nuit du SOC",
-                "SOC 2 est une loi européenne qui remplace le RGPD"
+                "ISO 27001 est un rapport d’auditeur américain ; SOC 2 est une norme internationale certifiable",
+                "ISO 27001 couvre la sécurité ; SOC 2 couvre uniquement la protection des données personnelles",
+                "ISO 27001 est une norme internationale qui certifie un SMSI ; SOC 2 est un rapport d’attestation d’auditeur"
               ],
-              "answer_index": 0,
-              "explanation_fr": "ISO 27001 aboutit à une certification internationale du système de management de la sécurité (ISMS/SMSI), tandis que SOC 2 (Type I ou Type II) est un rapport d’audit issu du cadre américain AICPA. Les deux partagent la majorité de leurs preuves de contrôle."
+              "answer_index": 2,
+              "explanation_fr": "ISO 27001 certifie un système de management de la sécurité de l’information ; SOC 2 est un rapport d’attestation rédigé par un cabinet d’audit, très demandé aux États-Unis (d’où le prospect américain). Présenter ISO 27001 comme un rapport américain inverse les deux, et SOC 2 couvre la sécurité, pas seulement la vie privée."
             },
             {
               "prompt_fr": "Complète : « Rolling out MFA and automated patching greatly improved our overall security ___. »",
               "choices": [
                 "position",
-                "attitude",
-                "posture"
+                "posture",
+                "attitude"
               ],
-              "answer_index": 2,
+              "answer_index": 1,
               "explanation_fr": "L’expression consacrée pour désigner le niveau global de maturité et de défense d’une organisation est « security posture » (posture de sécurité)."
             },
             {
               "prompt_fr": "Un dirigeant non technique te demande où en est la sécurité de l’entreprise cette année. Quelle présentation est la plus adaptée ?",
               "choices": [
-                "Read him five hundred lines of raw firewall rules.",
-                "Present our security posture using the NIST Cybersecurity Framework functions, highlighting our ISO 27001 and SOC 2 audit readiness and our top risk reductions.",
-                "Tell him that we are 100% unhackable forever."
+                "Present our security posture with the NIST CSF functions, our audit readiness and our top risk reductions.",
+                "Walk him through every open vulnerability and firewall change made this year, in detail.",
+                "Tell him we passed all our audits, so the company is now fully secure."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un conseil d’administration attend une vue structurée de la posture de sécurité (par exemple selon le NIST CSF : Gouverner, Identifier, Protéger, Détecter, Répondre, Rétablir) et de la conformité client, sans jargon bas niveau ni promesse irréaliste d’invulnérabilité."
+              "answer_index": 0,
+              "explanation_fr": "Un dirigeant veut une vue d’ensemble structurée : les fonctions du NIST CSF, l’état des audits et les principaux risques réduits. Le détail technique le noie, et réussir un audit ne veut pas dire être totalement protégé : promettre cela serait trompeur."
             }
           ],
           "production": {

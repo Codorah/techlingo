@@ -36,27 +36,27 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire Lucía avec « gives us keyboard focus for free » ?",
-              "choices": ["La fonctionnalité est incluse dans l’abonnement gratuit", "Le navigateur gère le focus clavier nativement, sans écrire de code en plus", "Le clavier visuel s’affiche sans payer de licence"],
+              "choices": ["Le focus clavier est inclus sans frais de licence supplémentaire", "Le navigateur gère le focus clavier nativement, sans code en plus", "Le focus clavier est disponible en option, à activer dans le CSS"],
               "answer_index": 1,
-              "explanation_fr": "En anglais de développeur, « for free » veut souvent dire « sans effort ni code supplémentaire », parce que le navigateur ou le framework s’en charge déjà. Rien à voir avec le prix d’un abonnement ou d’une licence."
+              "explanation_fr": "En anglais de développeur, « for free » veut dire « sans effort ni code supplémentaire » : le navigateur le fait déjà pour un vrai élément « button ». Il n’est question ni de prix ou de licence (le sens littéral de « gratuit »), ni d’une option à activer : c’est automatique."
             },
             {
-              "prompt_fr": "Comment dire « Une grille CSS convient mieux ici » ?",
-              "choices": ["CSS grid is a better fit here.", "CSS grid is more convenient here.", "CSS grid suits better to here."],
-              "answer_index": 0,
-              "explanation_fr": "« A better fit » (ou « a good fit ») est la tournure idiomatique pour dire qu’un outil est adapté à un besoin. « Convenient » est un faux ami qui veut dire pratique ou commode (a convenient time), et « suits better to » est grammaticalement fautif."
+              "prompt_fr": "Comment dire « Flexbox convient mieux pour cette barre d’outils » ?",
+              "choices": ["Flexbox is more convenient to this toolbar.", "Flexbox suits better for this toolbar.", "Flexbox is a better fit for this toolbar."],
+              "answer_index": 2,
+              "explanation_fr": "« A better fit for » (ou « a good fit for ») est la tournure idiomatique pour dire qu’un outil est adapté à un besoin. « Convenient » est un faux ami : il veut dire pratique, commode (a convenient time), et ne se construit pas avec « to » ici. « Suits better for » mélange deux constructions : on dirait « suits this toolbar better »."
             },
             {
               "prompt_fr": "Complète : « I’ll use flexbox to ___ the icon and the label inside the button. »",
-              "choices": ["line", "range", "align"],
-              "answer_index": 2,
+              "choices": ["align", "line", "range"],
+              "answer_index": 0,
               "explanation_fr": "Aligner des éléments se dit « to align » (d’où les propriétés align-items et text-align). « Range » est un faux ami qui ne veut pas dire ranger mais varier ou s’étendre, et « line » s’emploie avec « up » (line up), pas seul ici."
             },
             {
               "prompt_fr": "Un collègue hésite entre flexbox et CSS grid pour une galerie de photos en trois colonnes et quatre lignes. Que lui réponds-tu ?",
-              "choices": ["Use flexbox, because CSS grid only works on tables.", "Use CSS grid, since you’re laying out items in both rows and columns.", "Use semantic HTML instead of CSS for the columns."],
-              "answer_index": 1,
-              "explanation_fr": "CSS grid est fait pour placer des éléments en deux dimensions (lignes et colonnes à la fois), alors que flexbox gère un seul axe à la fois. CSS grid ne dépend pas des balises table, et le HTML sémantique décrit le sens du contenu, pas le nombre de colonnes."
+              "choices": ["Use flexbox with wrap, since grid is meant for page-level layout only.", "Use flexbox, since CSS grid doesn’t support gaps between the items.", "Use CSS grid, since you’re laying out items in both rows and columns."],
+              "answer_index": 2,
+              "explanation_fr": "CSS grid est fait pour une mise en page en deux dimensions (lignes et colonnes à la fois), exactement le cas d’une galerie de trois colonnes sur quatre lignes. L’idée que grid serait réservé à la mise en page globale est une idée reçue, et grid gère très bien les espacements avec la propriété « gap »."
             }
           ],
           "production": {
@@ -83,15 +83,15 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « the table overflows horizontally » ?",
-              "choices": ["Le tableau se remplit automatiquement de données", "Le tableau dépasse de l’écran sur la largeur et crée un défilement horizontal", "Le tableau flotte au-dessus du reste de la page"],
-              "answer_index": 1,
-              "explanation_fr": "En CSS, un « overflow » se produit quand un contenu est trop grand pour son conteneur : ici, il déborde en largeur. Flotter par-dessus le reste de la page correspondrait à un « overlay » ou un « z-index », et rien ne parle de remplir des données."
+              "choices": ["Le tableau dépasse en largeur et crée un défilement horizontal", "Le tableau déborde en hauteur et pousse le pied de page vers le bas", "Le tableau se rétrécit en largeur et devient illisible sur téléphone"],
+              "answer_index": 0,
+              "explanation_fr": "En CSS, « to overflow » veut dire déborder de son conteneur, et « horizontally » précise le sens : en largeur, d’où une barre de défilement horizontale. Un débordement en hauteur serait « vertically », et un tableau qui se rétrécit fait l’inverse d’un débordement (« it shrinks »)."
             },
             {
               "prompt_fr": "Pourquoi Aïcha déconseille-t-elle d’avoir le tableau et les cartes en même temps dans la page ?",
-              "choices": ["Parce que les media queries ne peuvent pas cacher un tableau", "Parce que dupliquer les éléments alourdit inutilement le DOM", "Parce que les outils de développement bloquent les éléments cachés"],
+              "choices": ["Parce qu’une media query ne peut pas masquer un tableau entier", "Parce que dupliquer les éléments alourdit inutilement le DOM", "Parce que Google pénalise tout contenu masqué sur mobile"],
               "answer_index": 1,
-              "explanation_fr": "Masquer un bloc en CSS (display: none) le laisse quand même dans le DOM : doubler toute une liste double le nombre de nœuds que le navigateur doit créer et mettre à jour. Une media query peut très bien cacher ou réorganiser un élément, et les DevTools ne bloquent rien."
+              "explanation_fr": "Aïcha dit « rendering everything twice makes the DOM twice as heavy » : le problème est le poids du DOM. Une media query peut parfaitement masquer un tableau (display: none), et la pénalité Google pour contenu masqué est une idée reçue qui n’est pas l’argument donné ici."
             },
             {
               "prompt_fr": "Complète : « Below 640 pixels, the layout ___ on small phones. »",
@@ -101,9 +101,9 @@
             },
             {
               "prompt_fr": "En réunion, tu expliques comment tu as corrigé l’affichage mobile sans alourdir la page. Que dis-tu ?",
-              "choices": ["I duplicated the table in the DOM so mobile users have their own page.", "I used a media query to stack the rows as cards below 640 pixels, keeping a single DOM tree.", "I removed the orders list on phones because tables are not responsive."],
+              "choices": ["I duplicated the table as cards and hid one version with CSS on mobile.", "I used a media query to stack the rows as cards below 640 pixels.", "I set a fixed width of 640 pixels on the table so it fits on phones."],
               "answer_index": 1,
-              "explanation_fr": "La deuxième réponse montre la bonne pratique : une media query qui empile les lignes en cartes (« stack the rows as cards ») sans dupliquer le DOM. Dupliquer le DOM est justement ce qu’on évite, et supprimer la liste priverait les utilisateurs mobiles de leurs commandes."
+              "explanation_fr": "Empiler les lignes en cartes avec une media query (« stack the rows as cards ») garde un seul arbre DOM : c’est la bonne pratique. Dupliquer le tableau et en cacher une version est justement ce qu’Aïcha refuse, et une largeur fixe de 640 pixels déborderait encore sur les téléphones plus étroits."
             }
           ],
           "production": {
@@ -128,28 +128,28 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment dire « Découpons-la en composants plus petits » ?",
-              "choices": ["Let’s cut it in more small components.", "Let’s split it into smaller components.", "Let’s divide it at smaller components."],
-              "answer_index": 1,
-              "explanation_fr": "En code, découper un fichier ou un composant se dit « split it into… », et le comparatif de « small » est « smaller » (jamais « more small »). « Cut » évoque couper avec un outil physique, et « divide at » utilise la mauvaise préposition."
+              "prompt_fr": "Comment dire « Extrayons la galerie dans son propre composant » ?",
+              "choices": ["Let’s extract the gallery in its proper component.", "Let’s take out the gallery on its own component.", "Let’s extract the gallery into its own component."],
+              "answer_index": 2,
+              "explanation_fr": "On dit « extract something into a component » (« into » pour le mouvement vers un nouvel endroit) et « its own » pour « son propre ». « Proper » est un faux ami : il veut dire correct, approprié, pas « propre à soi ». « On » est la mauvaise préposition après « take out »."
             },
             {
               "prompt_fr": "Quel avantage concret Moussa donne-t-il pour la « type safety » ?",
-              "choices": ["Le composant s’affiche deux fois plus vite dans le navigateur", "TypeScript signale avant l’exécution si on passe du texte au lieu d’un nombre", "Les props sont chiffrées avant d’être envoyées à l’enfant"],
-              "answer_index": 1,
-              "explanation_fr": "La sûreté du typage (type safety) permet à TypeScript de détecter les erreurs de type dès l’écriture du code. Cela ne change ni la vitesse d’affichage dans le navigateur ni la sécurité cryptographique (« safety » ici veut dire sûreté vis-à-vis des bugs de type)."
+              "choices": ["TypeScript convertit automatiquement le texte en nombre pendant l’exécution", "TypeScript empêche les autres équipes de modifier le composant partagé", "TypeScript signale avant l’exécution si on passe du texte au lieu d’un nombre"],
+              "answer_index": 2,
+              "explanation_fr": "Moussa dit « TypeScript will warn us if someone passes a string instead of a number » : la vérification se fait dans l’éditeur et à la compilation. TypeScript ne convertit rien à l’exécution (les types disparaissent dans le JavaScript final), et « safety » ici veut dire sûreté du typage, pas contrôle d’accès au code."
             },
             {
               "prompt_fr": "Complète : « The parent component passes the currency ___ props. »",
-              "choices": ["through", "since", "across of"],
-              "answer_index": 0,
-              "explanation_fr": "On dit « pass data through props » (ou « via props ») pour indiquer le canal de transmission entre le parent et l’enfant. « Since » exprime le temps ou la cause, et « across of » n’existe pas."
+              "choices": ["by", "through", "on"],
+              "answer_index": 1,
+              "explanation_fr": "On transmet une donnée « through props » (ou « via props », ou « as a prop »). « By props » est un calque de « par les props », et « on props » n’a pas de sens ici."
             },
             {
               "prompt_fr": "En revue de code, tu vois un composant enfant qui modifie directement `props.price = 0`. Quel commentaire laisses-tu ?",
-              "choices": ["Props are read-only in React. Could we pass a callback or compute the discounted price in a variable instead?", "You should use JavaScript instead of TypeScript to change props.", "Please make the prop bigger so it can change."],
+              "choices": ["Props are read-only in React. Could we compute the discounted price in a local variable?", "Props should be updated with setState in the child. Could we switch to that here?", "Please mark the price prop as optional, so the child is allowed to overwrite it."],
               "answer_index": 0,
-              "explanation_fr": "En React, les props sont en lecture seule (« read-only ») : un enfant ne doit jamais les modifier directement. Proposer une variable locale ou un callback est constructif et exact, alors que passer en JavaScript ne changerait rien à la règle de React."
+              "explanation_fr": "En React, les props sont en lecture seule (« read-only ») : un enfant calcule une valeur dérivée dans une variable locale, ou demande au parent de changer la donnée via un callback. « setState » ne sert qu’à l’état propre du composant, pas aux props, et rendre une prop optionnelle ne donne aucun droit de la modifier."
             }
           ],
           "production": {
@@ -175,27 +175,27 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « lift the state up to the parent page » ?",
-              "choices": ["Supprimer l’état pour alléger la page", "Remonter l’état dans le composant parent pour qu’il survive et soit partagé entre les enfants", "Envoyer l’état sur le serveur à chaque clic"],
+              "choices": ["Déplacer l’état dans un store global accessible à toute l’application", "Remonter l’état dans le composant parent pour qu’il survive et soit partagé", "Initialiser l’état plus tôt, dès le premier chargement de la page"],
               "answer_index": 1,
-              "explanation_fr": "« Lifting state up » est l’expression consacrée en React : on déplace l’état d’un composant enfant vers son parent commun pour qu’il ne soit pas perdu quand un enfant est démonté, ou pour le partager entre deux composants frères."
+              "explanation_fr": "« Lifting state up » est l’expression consacrée en React : on déplace l’état d’un enfant vers le parent commun, qui n’est pas démonté. Ce n’est pas un store global (justement ce qu’Ivan juge inutile), et « up » parle de la hiérarchie des composants, pas du moment de l’initialisation."
             },
             {
               "prompt_fr": "Pourquoi Sarah préfère-t-elle garder les filtres dans l’URL ?",
-              "choices": ["Parce que les hooks React ne fonctionnent pas avec des listes", "Parce que l’utilisateur peut partager le lien filtré et revenir en arrière avec le navigateur", "Parce que cela remplace complètement l’API REST"],
-              "answer_index": 1,
-              "explanation_fr": "Dans une SPA, synchroniser les filtres avec le routage (l’URL) permet de copier-coller l’adresse exacte d’une recherche et d’utiliser le bouton Précédent du navigateur. Les hooks marchent très bien avec les listes, et l’URL ne remplace pas l’API."
+              "choices": ["Parce que l’URL évite de rappeler l’API à chaque changement de filtre", "Parce que l’URL applique les filtres plus vite que le state de React", "Parce que l’utilisateur peut partager le lien filtré et revenir en arrière"],
+              "answer_index": 2,
+              "explanation_fr": "Sarah le dit : « users can share a filtered link and use the browser back button ». Mettre les filtres dans l’URL n’évite pas les appels à l’API (il faut toujours charger les résultats) et n’est pas plus rapide que le state : l’intérêt est le partage et l’historique."
             },
             {
               "prompt_fr": "Complète : « When the tab ___, its local state is lost. »",
-              "choices": ["unmounts", "unmakes", "disappears of"],
+              "choices": ["unmounts", "dismounts", "unloads"],
               "answer_index": 0,
-              "explanation_fr": "Dans le cycle de vie d’un composant (React, Vue), un composant « mounts » quand il est inséré dans le DOM et « unmounts » quand il en est retiré. « Unmakes » et « disappears of » ne se disent pas."
+              "explanation_fr": "En React, un composant retiré de l’écran « unmounts » (il est démonté), et son état local disparaît. « Dismount » existe en anglais mais veut dire descendre de cheval ou de vélo, et « unload » s’emploie pour une page entière ou un module, pas pour un composant."
             },
             {
               "prompt_fr": "Un collègue veut mettre l’ouverture d’un petit menu déroulant dans le store global Redux. Que lui conseilles-tu ?",
-              "choices": ["Good idea, every state must go in the global store.", "Local state with a hook is enough here, since no other route cares whether this dropdown is open.", "Put it in the database so the server knows the menu is open."],
-              "answer_index": 1,
-              "explanation_fr": "Un état purement visuel et local (savoir si un menu déroulant est ouvert) n’a rien à faire dans un store global ni en base de données : un simple hook useState dans le composant garde le code beaucoup plus simple."
+              "choices": ["Sure, keeping all UI state in Redux makes the whole app easier to debug.", "Let’s store it in the URL, so the dropdown stays open after a refresh.", "Local state with a hook is enough, since no other route needs this value."],
+              "answer_index": 2,
+              "explanation_fr": "Un état purement visuel et local (un menu ouvert ou fermé) reste dans le composant avec un simple useState : c’est la règle « keep state as close as possible ». Tout mettre dans Redux alourdit le code sans bénéfice, et personne n’a besoin qu’un menu déroulant reste ouvert après un rechargement."
             }
           ],
           "production": {
@@ -241,27 +241,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi Kofi dit-il « Anyone can bypass JavaScript » ?",
-              "choices": ["Parce que JavaScript est trop lent sur les vieux ordinateurs", "Parce qu’un attaquant peut envoyer une requête HTTP directement au serveur sans passer par le formulaire du navigateur", "Parce que le framework front-end supprime automatiquement les règles de validation"],
-              "answer_index": 1,
-              "explanation_fr": "La validation côté client sert à l’expérience utilisateur, mais la sécurité repose sur le back-end : une requête envoyée avec curl ou Postman ignore totalement le code JavaScript du navigateur."
+              "choices": ["Parce qu’un attaquant peut appeler l’API directement, sans passer par le formulaire", "Parce que certains navigateurs désactivent JavaScript par défaut pour la sécurité", "Parce que le JavaScript du client s’exécute après l’envoi des données au serveur"],
+              "answer_index": 0,
+              "explanation_fr": "Kofi précise « call the API directly with curl or Postman » : une requête HTTP envoyée à la main ignore tout le code du navigateur. Les navigateurs n’ont pas JavaScript désactivé par défaut, et la validation côté client s’exécute bien avant l’envoi : le vrai risque est le contournement volontaire."
             },
             {
               "prompt_fr": "Comment dire « vérifie l’e-mail avant d’envoyer le formulaire » ?",
-              "choices": ["Validate the email before submitting the form.", "Control the email before sending of the form.", "Verify at the email before to submit the form."],
-              "answer_index": 0,
+              "choices": ["Control the email before sending of the form.", "Validate the email before submitting the form.", "Verify at the email before to submit the form."],
+              "answer_index": 1,
               "explanation_fr": "« Validate the email before submitting the form » utilise les bons verbes (« validate », « submit ») et la forme en -ing obligatoire après la préposition « before ». « Control » est un faux ami (diriger), et « before to submit » est une faute classique de francophone."
             },
             {
               "prompt_fr": "Complète : « Add input ___ to strip out any script tags before saving. »",
-              "choices": ["cleaning", "sanitization", "purification"],
-              "answer_index": 1,
+              "choices": ["sanitization", "cleaning", "purification"],
+              "answer_index": 0,
               "explanation_fr": "Le terme de sécurité consacré est « input sanitization » (et le verbe « to sanitize input »). « Cleaning » et « purification » se comprennent dans la vie courante, mais ne sont pas les termes techniques utilisés en sécurité web."
             },
             {
               "prompt_fr": "Un PM te demande pourquoi vous faites le travail en double en validant le formulaire sur le front-end ET sur le back-end. Que réponds-tu ?",
-              "choices": ["Front-end validation gives instant feedback to users, while back-end validation protects our data if someone calls the API directly.", "Because our front-end framework doesn’t work without the back-end.", "We only do it to write more unit tests."],
-              "answer_index": 0,
-              "explanation_fr": "Cette réponse distingue clairement les deux rôles : confort et rapidité côté client (« instant feedback »), sécurité et intégrité des données côté serveur. Les deux autres réponses ne donnent aucune justification métier ou sécurité."
+              "choices": ["Front-end checks are enough for users; the back-end ones are only there for automated tests.", "Front-end checks give instant feedback; back-end checks protect the data from direct API calls.", "We validate twice so that the error messages look exactly the same on both sides."],
+              "answer_index": 1,
+              "explanation_fr": "Cette réponse distingue les deux rôles : confort et rapidité côté client (« instant feedback »), sécurité et intégrité des données côté serveur. La validation serveur n’existe pas pour les tests, et l’uniformité des messages n’est pas une raison de faire le travail deux fois."
             }
           ],
           "production": {
@@ -287,15 +287,15 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi la page reste-t-elle bloquée sur l’indicateur de chargement ?",
-              "choices": ["Parce que JSON ne supporte pas les booléens", "Parce que la promesse rejetée interrompt la fonction avant que l’état de chargement soit remis à false", "Parce que l’appel réseau est synchrone et gèle le navigateur"],
-              "answer_index": 1,
-              "explanation_fr": "Avec `async/await`, une promesse rejetée lève une erreur : sans `try/catch/finally`, les lignes suivantes ne s’exécutent pas et `loading` reste à `true`. L’appel `fetch` est bien asynchrone, et JSON gère parfaitement les booléens."
+              "choices": ["Parce que fetch renvoie une erreur 404 que React ne sait pas afficher à l’écran", "Parce que await bloque le navigateur tant que le serveur n’a pas répondu", "Parce que la promesse rejetée interrompt la fonction avant de remettre loading à false"],
+              "answer_index": 2,
+              "explanation_fr": "Avec async/await, une promesse rejetée lève une erreur : sans try/catch/finally, la ligne qui remet loading à false ne s’exécute jamais. fetch ne rejette d’ailleurs pas sur une 404 (il résout avec response.ok à false), et await ne bloque pas le navigateur : il met seulement la fonction en pause."
             },
             {
               "prompt_fr": "Que se passe-t-il pendant la « JSON serialization » d’un objet Date ?",
-              "choices": ["L’objet Date est converti en chaîne de texte au format ISO pour pouvoir voyager sur le réseau", "L’objet Date est supprimé de la réponse", "L’objet Date est chiffré par le navigateur"],
-              "answer_index": 0,
-              "explanation_fr": "JSON ne connaît que les chaînes, nombres, booléens, tableaux, objets et null : lors de la sérialisation, une Date devient donc une chaîne (comme `\"2026-05-12T10:00:00Z\"`). Elle n’est ni supprimée ni chiffrée."
+              "choices": ["L’objet Date devient un nombre de millisecondes (timestamp)", "L’objet Date est conservé et reste un objet Date à l’arrivée", "L’objet Date devient une chaîne de texte au format ISO"],
+              "answer_index": 2,
+              "explanation_fr": "JSON ne connaît que les chaînes, nombres, booléens, tableaux, objets et null : JSON.stringify transforme une Date en chaîne ISO (comme `2026-05-12T10:00:00.000Z`). Ce n’est pas un timestamp numérique, et à l’arrivée on reçoit une simple chaîne qu’il faut reconvertir avec new Date()."
             },
             {
               "prompt_fr": "Complète : « Always handle the case where the promise is ___. »",
@@ -305,9 +305,9 @@
             },
             {
               "prompt_fr": "Tu veux alléger la réponse d’un endpoint lent sur réseau mobile. Quelle proposition fais-tu à ton collègue back-end ?",
-              "choices": ["Could we keep the JSON payload smaller by sending only the fields the screen needs?", "Could we make the call synchronous so it arrives faster?", "Could we stop using promises on mobile?"],
+              "choices": ["Could we keep the JSON payload smaller by sending only the fields the screen needs?", "Could we compress the payload by converting the JSON into XML before sending it?", "Could we split the call into one request per field, so each response is lighter?"],
               "answer_index": 0,
-              "explanation_fr": "Réduire la charge utile JSON (« keep the JSON payload smaller ») en n’envoyant que les champs utiles diminue directement le temps de transfert. Un appel synchrone bloquerait l’interface sans accélérer le réseau, et les promesses ne ralentissent rien."
+              "explanation_fr": "Réduire la charge utile (« keep the payload smaller ») en n’envoyant que les champs utiles diminue directement le temps de transfert. Le XML est plus verbeux que le JSON, et une requête par champ multiplierait les allers-retours réseau, ce qui est pire sur mobile."
             }
           ],
           "production": {
@@ -333,27 +333,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi la requête d’Inès fonctionne-t-elle dans Postman mais pas dans le navigateur ?",
-              "choices": ["Parce que Postman ajoute automatiquement le mot de passe", "Parce que CORS est une sécurité appliquée par le navigateur quand le front et l’API n’ont pas la même origine", "Parce que le navigateur ne sait pas envoyer de requêtes POST"],
+              "choices": ["Parce que Postman envoie la requête depuis le même port que l’API, donc la même origine", "Parce que CORS est appliqué par le navigateur quand le front et l’API n’ont pas la même origine", "Parce que le navigateur bloque toutes les requêtes POST vers localhost par sécurité"],
               "answer_index": 1,
-              "explanation_fr": "CORS (Cross-Origin Resource Sharing) est appliqué par les navigateurs pour empêcher un site d’appeler une autre origine sans l’accord du serveur. Un outil comme Postman ou curl n’applique pas cette restriction."
+              "explanation_fr": "Olu le dit : « Postman ignores CORS, only browsers enforce it ». Postman n’a pas d’origine au sens du navigateur, ce n’est pas une question de port. Et le navigateur ne bloque pas les POST vers localhost en général : il bloque la lecture de la réponse quand l’origine n’est pas autorisée."
             },
             {
               "prompt_fr": "Où se corrige une vraie erreur CORS ?",
-              "choices": ["Côté serveur, en déclarant les origines et les en-têtes autorisés", "Dans le CSS de la page front-end", "En désactivant définitivement la sécurité sur l’ordinateur des clients"],
-              "answer_index": 0,
-              "explanation_fr": "C’est le serveur (ou l’API gateway) qui doit renvoyer l’en-tête `Access-Control-Allow-Origin` pour autoriser le domaine du front-end. Le front-end seul ne peut pas s’auto-autoriser."
+              "choices": ["Côté front, en ajoutant l’en-tête Access-Control-Allow-Origin à la requête", "Côté front, en passant l’option no-cors à l’appel fetch", "Côté serveur, en déclarant les origines et les en-têtes autorisés"],
+              "answer_index": 2,
+              "explanation_fr": "Access-Control-Allow-Origin est un en-tête de réponse : c’est le serveur qui l’envoie, l’ajouter à la requête ne sert à rien. L’option no-cors fait disparaître l’erreur mais rend la réponse « opaque », donc illisible par ton code : piège classique."
             },
             {
               "prompt_fr": "Complète : « Pass the filter as a ___ parameter in the URL, like `?archived=true`. »",
-              "choices": ["request", "body", "query"],
-              "answer_index": 2,
+              "choices": ["query", "request", "body"],
+              "answer_index": 0,
               "explanation_fr": "Un paramètre placé dans l’URL après `?` s’appelle un « query parameter » (ou « query param »). Le « request body » est le corps envoyé avec une requête POST ou PUT."
             },
             {
               "prompt_fr": "Un développeur junior te dit : « I have a CORS bug in my React code, how do I fix it in React? » Que lui réponds-tu ?",
-              "choices": ["CORS is enforced by the browser, but configured on the server: we need the API to allow our front-end origin, or use a local proxy in development.", "Just delete the HTTP headers in React and CORS will disappear.", "Replace POST with GET and the browser will never check CORS."],
-              "answer_index": 0,
-              "explanation_fr": "La première réponse dissipe la confusion classique : l’erreur s’affiche dans la console du navigateur, mais la règle se configure côté serveur (ou via un proxy de dev). Les requêtes GET subissent aussi CORS, et supprimer les en-têtes ne résout pas une origine non autorisée."
+              "choices": ["CORS is a React issue: add the Access-Control-Allow-Origin header to the fetch call.", "Switch the request to GET: simple GET requests are never checked by CORS at all.", "CORS is enforced by the browser but configured on the server: the API must allow our origin."],
+              "answer_index": 2,
+              "explanation_fr": "L’erreur s’affiche dans la console du navigateur, mais la règle se configure côté serveur (ou via un proxy de développement). React n’y est pour rien et l’en-tête Allow-Origin doit venir de la réponse. Les requêtes GET sont aussi soumises à CORS : elles évitent seulement la requête préalable (preflight)."
             }
           ],
           "production": {
@@ -379,15 +379,15 @@
           "questions": [
             {
               "prompt_fr": "À quoi sert de « debounce » un champ de recherche ?",
-              "choices": ["À vider le champ dès que l’utilisateur fait une faute de frappe", "À attendre que l’utilisateur marque une courte pause dans sa saisie avant d’envoyer la requête", "À envoyer les lettres une par une sur une connexion WebSocket"],
-              "answer_index": 1,
-              "explanation_fr": "Le « debounce » retarde l’appel tant que l’utilisateur continue de taper : si la pause atteint par exemple 300 ms, une seule requête part avec le mot complet."
+              "choices": ["À attendre une courte pause dans la saisie avant d’envoyer la requête", "À envoyer au plus une requête par seconde pendant que l’utilisateur tape", "À annuler la requête précédente dès qu’une nouvelle lettre est tapée"],
+              "answer_index": 0,
+              "explanation_fr": "Le « debounce » attend que l’utilisateur arrête de taper (ici 300 ms) puis envoie une seule requête. Limiter à une requête par seconde pendant la saisie, c’est le « throttle », une technique voisine souvent confondue. Annuler la requête précédente (« abort ») est encore autre chose."
             },
             {
               "prompt_fr": "Que signifie « instead of polling every second » ?",
-              "choices": ["Au lieu de demander l’avis des utilisateurs par sondage", "Au lieu d’envoyer une requête au serveur toutes les secondes pour demander s’il y a du nouveau", "Au lieu de redémarrer le serveur à chaque seconde"],
+              "choices": ["Au lieu de sonder les utilisateurs toutes les secondes pour connaître leur avis", "Au lieu d’interroger le serveur toutes les secondes pour savoir s’il y a du nouveau", "Au lieu de pousser une notification au navigateur toutes les secondes"],
               "answer_index": 1,
-              "explanation_fr": "En réseau, le « polling » consiste à interroger le serveur à intervalle régulier (« Y a-t-il du nouveau ? »). Un WebSocket garde la connexion ouverte pour que le serveur pousse lui-même les nouveautés en temps réel."
+              "explanation_fr": "En réseau, le « polling » consiste à interroger le serveur à intervalle régulier. Malgré le sens courant de « poll » (sondage d’opinion), on ne parle pas d’utilisateurs ici. Et c’est le client qui tire l’information : pousser les nouveautés au navigateur, c’est justement ce que fait le WebSocket."
             },
             {
               "prompt_fr": "Complète : « With GraphQL, we fetch the project and its owner ___ a single request. »",
@@ -397,9 +397,9 @@
             },
             {
               "prompt_fr": "Un collègue veut installer une grosse bibliothèque npm juste pour temporiser un champ de recherche. Que lui dis-tu ?",
-              "choices": ["A ten-line debounce helper is enough here, so we don’t add an extra library to the bundle.", "Yes, we should always install a library for every function.", "Let’s remove the search bar instead."],
-              "answer_index": 0,
-              "explanation_fr": "Éviter d’ajouter une dépendance externe pour dix lignes de code garde le projet léger et facile à maintenir. Rappel : « library » = bibliothèque de code (faux ami de « librairie », qui se dit bookshop)."
+              "choices": ["Sure, a well-known library is always safer than a helper we write ourselves.", "A ten-line debounce helper is enough, so we don’t add a new library to the bundle.", "Let’s use a WebSocket instead, so we don’t need a debounce at all."],
+              "answer_index": 1,
+              "explanation_fr": "Éviter une dépendance lourde pour dix lignes de code garde le bundle léger et le projet facile à maintenir. Une bibliothèque n’est pas « toujours » plus sûre, et un WebSocket ne remplace pas le debounce : chaque frappe enverrait quand même un message. Rappel : « library » = bibliothèque de code, pas librairie (bookshop)."
             }
           ],
           "production": {
@@ -445,15 +445,15 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi Hiroshi refuse-t-il l’URL `/api/createInvoice` ?",
-              "choices": ["Parce qu’une URL ne peut pas contenir de majuscule", "Parce qu’en REST, le chemin désigne la ressource (`/invoices`) et le verbe HTTP (`POST`) indique l’action", "Parce que la création d’une facture doit se faire en GET"],
-              "answer_index": 1,
-              "explanation_fr": "La convention d’une API REST est d’utiliser des noms au pluriel pour les ressources (`/invoices`) et les méthodes HTTP (`GET`, `POST`, `PATCH`, `DELETE`) pour exprimer les opérations CRUD."
+              "choices": ["Parce qu’en REST, les routes doivent être écrites en minuscules avec des tirets", "Parce qu’en REST, chaque action doit avoir sa propre version d’API dans l’URL", "Parce qu’en REST, le chemin désigne la ressource et la méthode HTTP indique l’action"],
+              "answer_index": 2,
+              "explanation_fr": "Hiroshi le dit : « the URL names the resource, not the action ». On écrit `/invoices` et on laisse GET, POST, PATCH ou DELETE exprimer l’opération CRUD. La casse est une convention de style, pas la raison du refus, et le versionnage concerne toute l’API, pas chaque action."
             },
             {
               "prompt_fr": "Que signifie « cap the limit at 100 » ?",
-              "choices": ["Forcer chaque page à contenir exactement 100 résultats", "Plafonner la taille maximale d’une page à 100 résultats", "Supprimer les 100 premières factures"],
-              "answer_index": 1,
-              "explanation_fr": "« To cap something at X » veut dire fixer un plafond, un maximum à X : même si un client demande `?limit=10000`, l’API n’en renverra au maximum que 100."
+              "choices": ["Forcer chaque page à contenir exactement 100 résultats", "Afficher 100 résultats par défaut sur chaque page", "Plafonner la taille maximale d’une page à 100 résultats"],
+              "answer_index": 2,
+              "explanation_fr": "« To cap » veut dire plafonner : le client peut demander moins, mais jamais plus de 100 éléments. Ce n’est ni un nombre exact imposé, ni la valeur par défaut, qui est de 25 dans le dialogue (« default to 25 items per page »)."
             },
             {
               "prompt_fr": "Complète : « Should I add pagination ___ day one? »",
@@ -463,9 +463,9 @@
             },
             {
               "prompt_fr": "Tu veux renommer un champ dans la réponse JSON d’une API déjà utilisée par des clients externes. Que proposes-tu ?",
-              "choices": ["Rename it directly on `/v1/invoices`, external clients will adapt automatically.", "Keep the old field on `/v1` or introduce `/v2` with API versioning so existing integrations don’t break.", "Remove the endpoint until all clients update their code."],
-              "answer_index": 1,
-              "explanation_fr": "Renommer un champ existant casse les clients qui lisent l’ancien nom : on garde la compatibilité sur `/v1` (en ajoutant le nouveau champ sans retirer l’ancien) ou on publie une `/v2` grâce au versionnage d’API."
+              "choices": ["Keep the old field on `/v1`, or ship the new name in `/v2`, so integrations don’t break.", "Rename it on `/v1` and announce the change in the changelog on the same day.", "Rename it on `/v1` now, since JSON clients usually ignore unknown fields."],
+              "answer_index": 0,
+              "explanation_fr": "Une API publique est un contrat : on garde l’ancien champ sur `/v1` ou on introduit `/v2` (« API versioning »). Annoncer le changement le jour même ne laisse pas le temps aux clients de s’adapter, et ignorer les champs inconnus n’aide pas : c’est l’ancien champ qui disparaîtrait."
             }
           ],
           "production": {
@@ -491,27 +491,27 @@
           "questions": [
             {
               "prompt_fr": "Quel est le piège classique du « soft delete » que Mamadou rappelle à Ana ?",
-              "choices": ["La base relationnelle refuse les colonnes qui contiennent des dates", "Oublier de filtrer `deleted_at IS NULL` dans certaines requêtes et compter par erreur des éléments supprimés", "Les migrations ne fonctionnent plus quand on utilise un ORM"],
+              "choices": ["Perdre définitivement les projets si la migration est relancée deux fois", "Oublier de filtrer `deleted_at IS NULL` et compter des projets supprimés", "Ne plus pouvoir créer un projet du même nom qu’un projet supprimé"],
               "answer_index": 1,
-              "explanation_fr": "Avec une suppression logique, la ligne reste dans la table : si une requête de rapport ou de recherche oublie la condition `deleted_at IS NULL`, les enregistrements « supprimés » réapparaissent."
+              "explanation_fr": "Avec une suppression logique, la ligne reste dans la table : si une requête oublie la condition `deleted_at IS NULL`, les projets « supprimés » réapparaissent, comme le dit Ana (« deleted projects would still show up in the dashboard counts »). Les deux autres risques ne sont pas ceux dont parle Mamadou."
             },
             {
               "prompt_fr": "Comment dire « ajouter une colonne qui peut être nulle à la table » ?",
-              "choices": ["Add a nullable column to the table.", "Add a nullish column on the table.", "Add a column without nothing in the table."],
-              "answer_index": 0,
+              "choices": ["Add a nullish column on the table.", "Add a column without nothing in the table.", "Add a nullable column to the table."],
+              "answer_index": 2,
               "explanation_fr": "En SQL et dans les ORM, une colonne qui accepte la valeur `NULL` est dite « nullable », et on ajoute une colonne « to a table »."
             },
             {
               "prompt_fr": "Complète : « Normal queries should ___ out rows where `deleted_at` is set. »",
-              "choices": ["suppress", "filter", "remove of"],
-              "answer_index": 1,
-              "explanation_fr": "« To filter out » veut dire exclure par un filtre (écarter de la liste). Attention : « filter » seul est parfois ambigu (« garder » ou « écarter »), alors que « filter out » signifie clairement exclure."
+              "choices": ["filter", "suppress", "sort"],
+              "answer_index": 0,
+              "explanation_fr": "« To filter out » veut dire exclure des résultats selon une condition. « Suppress » est un faux ami (étouffer, masquer un avertissement), et « to sort out » existe mais veut dire régler un problème ou trier au sens de ranger, pas exclure des lignes."
             },
             {
               "prompt_fr": "Un collègue a modifié une table directement en SQL dans sa base locale sans créer de fichier de migration. Que lui expliques-tu ?",
-              "choices": ["Please put that change in a database migration so the rest of the team and production get the exact same schema.", "That’s fine, the ORM will guess the new column in production.", "Just send screenshots of your table on Slack."],
-              "answer_index": 0,
-              "explanation_fr": "Le rôle d’une migration versionnée est que chaque développeur, l’environnement de staging et la production appliquent exactement le même changement de schéma de façon reproductible."
+              "choices": ["Please export your local database and share the dump so everyone can import it.", "Please paste the SQL command in the PR description so we can run it in production.", "Please put that change in a migration so the team and production get the same schema."],
+              "answer_index": 2,
+              "explanation_fr": "Une migration versionnée applique le même changement de schéma, de façon reproductible, chez chaque développeur, en staging et en production. Partager un dump écraserait les données des autres, et une commande collée dans une PR dépend de quelqu’un qui pense à la lancer à la main."
             }
           ],
           "production": {
@@ -537,27 +537,27 @@
           "questions": [
             {
               "prompt_fr": "Que garantit une transaction « ACID » ici ?",
-              "choices": ["Que les requêtes s’exécutent sans authentification", "Que la création de la commande et la baisse du stock réussissent toutes les deux ou sont toutes les deux annulées", "Que les données sont automatiquement copiées dans une base NoSQL"],
-              "answer_index": 1,
-              "explanation_fr": "Le A de ACID (Atomicity) garantit le « tout ou rien » : si la deuxième requête échoue, la première est annulée (rolled back) pour ne jamais laisser la base dans un état incohérent."
+              "choices": ["Que la commande et la baisse du stock réussissent ensemble ou soient annulées ensemble", "Que les deux requêtes s’exécutent en parallèle pour finir plus vite", "Que la baisse du stock soit relancée automatiquement en cas d’échec"],
+              "answer_index": 0,
+              "explanation_fr": "Le A de ACID (Atomicity) garantit le « tout ou rien » : si la mise à jour du stock échoue, l’insertion de la commande est annulée (rolled back). Une transaction ne parallélise rien et ne relance rien toute seule : elle protège la cohérence des données."
             },
             {
               "prompt_fr": "Pourquoi une requête `POST /payments` a-t-elle besoin d’une « idempotency key » ?",
-              "choices": ["Parce que POST n’est pas idempotent par nature : sans clé unique, une nouvelle tentative réseau pourrait créer un second paiement", "Parce que les requêtes POST ne peuvent pas avoir d’en-tête HTTP", "Parce que PostgreSQL interdit les requêtes POST"],
-              "answer_index": 0,
-              "explanation_fr": "Contrairement à `GET` ou `PUT`, appeler `POST` deux fois crée normalement deux ressources. Grâce à la clé d’idempotence générée par le client, le serveur reconnaît qu’il s’agit d’un nouvel essai du même paiement et renvoie le premier résultat sans redébiter."
+              "choices": ["Parce que le serveur doit chiffrer chaque requête POST avec une clé unique", "Parce qu’un nouvel essai réseau du même POST pourrait créer un second paiement", "Parce qu’un POST ne peut pas être annulé par un rollback dans la base"],
+              "answer_index": 1,
+              "explanation_fr": "Appeler POST deux fois crée normalement deux ressources. Avec la clé d’idempotence générée par le client, le serveur reconnaît un nouvel essai du même paiement et renvoie le premier résultat. Cette clé ne chiffre rien, et le rollback n’a rien à voir avec la méthode HTTP utilisée."
             },
             {
               "prompt_fr": "Complète : « Both steps must succeed together or ___ back together. »",
-              "choices": ["turn", "roll", "go"],
-              "answer_index": 1,
+              "choices": ["roll", "turn", "go"],
+              "answer_index": 0,
               "explanation_fr": "En base de données comme en déploiement, annuler une transaction se dit « to roll back » (d’où la commande SQL `ROLLBACK`)."
             },
             {
               "prompt_fr": "En réunion d’architecture, quelqu’un propose de stocker les soldes bancaires et les commandes dans une base NoSQL sans transactions pour « aller plus vite ». Que réponds-tu ?",
-              "choices": ["For orders and payments, we need ACID transactions in a relational database so we never lose or duplicate money; NoSQL is fine for activity logs.", "Yes, financial data doesn’t need consistency.", "Let’s store the balances in browser cookies instead."],
-              "answer_index": 0,
-              "explanation_fr": "Cette réponse argumente calmement avec le bon cas d’usage : une base relationnelle avec transactions ACID pour les données financières critiques, et éventuellement du NoSQL pour des journaux d’événements volumineux."
+              "choices": ["Speed matters more here, and a nightly script can fix any wrong balances later.", "For payments we need ACID transactions in a relational database; NoSQL is fine for logs.", "NoSQL works for payments too, as long as we add a retry whenever a write fails."],
+              "answer_index": 1,
+              "explanation_fr": "Pour des données financières critiques, on veut des transactions ACID dans une base relationnelle, et le NoSQL reste adapté aux journaux d’activité volumineux. Corriger les soldes la nuit laisse des clients mal débités pendant des heures, et une nouvelle tentative sans transaction peut justement créer des doublons."
             }
           ],
           "production": {
@@ -583,27 +583,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi un endpoint de « webhook » doit-il répondre très vite ?",
-              "choices": ["Parce que l’utilisateur attend devant un écran blanc pendant le webhook", "Parce que le service émetteur a un délai d’attente court : si on tarde trop, il croit à un échec et renvoie l’événement", "Parce qu’un webhook ne peut transporter que dix octets"],
-              "answer_index": 1,
-              "explanation_fr": "Un prestataire externe (Stripe, GitHub…) coupe vite l’attente sur un webhook et relance l’envoi (retry) s’il n’a pas reçu de `2xx` rapidement. Il faut donc accuser réception tout de suite et traiter le travail lourd en tâche de fond."
+              "choices": ["Parce que l’utilisateur attend la réponse du webhook devant son écran de paiement", "Parce qu’un webhook trop lent bloque le paiement du client chez le prestataire", "Parce que l’émetteur attend peu : s’il n’a pas de réponse vite, il croit à un échec et renvoie"],
+              "answer_index": 2,
+              "explanation_fr": "Sofia l’explique : sans réponse 200 en quelques secondes, le prestataire « assumes the delivery failed and does a retry ». L’utilisateur n’attend pas le webhook (c’est un appel de serveur à serveur, après le paiement), et le paiement est déjà validé quand le webhook part."
             },
             {
               "prompt_fr": "Quelle est la différence entre un « background job » sur une file de messages et un « cron job » ?",
-              "choices": ["Le background job est déclenché par un événement (ex. un paiement), tandis que le cron job tourne selon un horaire fixe (ex. chaque nuit à minuit)", "Le cron job tourne dans le navigateur de l’utilisateur", "Ce sont deux mots identiques"],
-              "answer_index": 0,
-              "explanation_fr": "Une tâche poussée dans une « message queue » réagit à une action dès qu’elle arrive ; un « cron job » est planifié sur une horloge (toutes les heures, tous les lundis…)."
+              "choices": ["Le background job tourne la nuit, le cron job dès qu’un événement arrive", "Le background job tourne sur le serveur, le cron job dans la file de messages", "Le background job est déclenché par un événement, le cron job par un horaire fixe"],
+              "answer_index": 2,
+              "explanation_fr": "Une tâche poussée dans une « message queue » démarre dès qu’un événement arrive (ici un paiement) ; un « cron job » est planifié sur une horloge (le premier de chaque mois). Dire que le background job tourne la nuit inverse les deux notions, et un cron job ne vit pas dans une file de messages."
             },
             {
               "prompt_fr": "Complète : « Verify the webhook signature, push a job to the message queue, and return 200 ___. »",
-              "choices": ["right away", "at the suite", "in the immediate"],
-              "answer_index": 0,
+              "choices": ["at the suite", "right away", "in the immediate"],
+              "answer_index": 1,
               "explanation_fr": "« Right away » (ou « immediately ») veut dire tout de suite, immédiatement. « At the suite » et « in the immediate » sont des calques mot à mot du français « tout de suite » et « dans l’immédiat »."
             },
             {
               "prompt_fr": "Comme le prestataire peut envoyer deux fois le même webhook en cas de retry, quelle précaution dois-tu prendre dans ton worker ?",
-              "choices": ["Store the processed event ID so receiving the same webhook twice doesn’t send two emails.", "Turn off retries in the message queue.", "Never verify the webhook signature."],
+              "choices": ["Store the processed event ID so the same webhook received twice doesn’t send two emails.", "Turn off retries on our side so the provider sends each webhook only once.", "Return a 500 error for duplicates so the provider stops sending them to us."],
               "answer_index": 0,
-              "explanation_fr": "Les webhooks sont livrés « at least once » (au moins une fois) : enregistrer l’identifiant de l’événement déjà traité garantit l’idempotence et évite d’envoyer deux factures au client."
+              "explanation_fr": "Les webhooks sont livrés « at least once » : enregistrer l’identifiant de l’événement déjà traité rend le worker idempotent. Les nouvelles tentatives sont décidées par le prestataire, pas par toi, et une erreur 500 provoque au contraire encore plus de renvois."
             }
           ],
           "production": {
@@ -649,27 +649,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi Lucía choisit-elle le « server-side rendering » pour les pages produits plutôt que la « static site generation » ?",
-              "choices": ["Parce que la génération statique est mauvaise pour le SEO", "Parce que le stock change chaque minute : compiler des fichiers statiques une seule fois au build afficherait des stocks obsolètes", "Parce que le rendu côté serveur supprime complètement le besoin de HTML"],
+              "choices": ["Parce que la génération statique empêche Google d’indexer les pages produits", "Parce que le stock change chaque minute : un HTML généré au build serait vite obsolète", "Parce que le rendu côté serveur envoie moins de JavaScript que la génération statique"],
               "answer_index": 1,
-              "explanation_fr": "La génération statique (SSG) crée le HTML au moment du build : c’est idéal pour un blog, mais si la donnée change toutes les minutes (stock, prix en direct), le rendu côté serveur (SSR) à la requête ou une revalidation régulière est plus adapté."
+              "explanation_fr": "La génération statique (SSG) crée le HTML au moment du build : parfait pour un blog, mais pas pour un stock qui bouge chaque minute. La SSG est au contraire excellente pour le SEO, et les deux approches envoient à peu près le même JavaScript : la différence est le moment où le HTML est produit."
             },
             {
               "prompt_fr": "Qu’est-ce qu’une erreur d’« hydration » ?",
-              "choices": ["Le serveur manque de mémoire vive", "Le HTML envoyé par le serveur diffère de celui que le JavaScript calcule au premier affichage côté client", "Le fichier CSS n’a pas pu être téléchargé"],
-              "answer_index": 1,
-              "explanation_fr": "Pendant l’hydratation, le framework attache les écouteurs d’événements au HTML déjà présent. Si le serveur a affiché `14:00 UTC` et que le navigateur calcule `16:00` en heure locale au premier rendu, les deux arbres diffèrent et React signale un « hydration mismatch »."
+              "choices": ["Le JavaScript met trop de temps à se télécharger et la page reste vide un moment", "Le serveur envoie la page avant d’avoir fini de lire les données de la base", "Le HTML du serveur diffère de ce que React calcule au premier rendu dans le navigateur"],
+              "answer_index": 2,
+              "explanation_fr": "Pendant l’hydratation, React attache les événements au HTML déjà présent. Si le serveur affiche « 14:00 UTC » et le navigateur « 16:00 » en heure locale, les deux rendus diffèrent : c’est un « hydration mismatch ». Un JavaScript lent retarde l’interactivité sans provoquer cet avertissement."
             },
             {
               "prompt_fr": "Complète : « The browser receives an empty HTML ___ and fetches the data in JavaScript. »",
-              "choices": ["shell", "bark", "crust"],
+              "choices": ["shell", "case", "envelope"],
               "answer_index": 0,
-              "explanation_fr": "On parle d’un « empty HTML shell » (coquille vide, juste `<div id=\"root\"></div>`) dans une SPA classique avant que le JavaScript ne charge le contenu."
+              "explanation_fr": "On parle d’« app shell » ou d’« empty HTML shell » : la coquille vide (juste `<div id=\"root\"></div>`) qu’une SPA envoie avant que le JavaScript ne charge le contenu. « Case » et « envelope » sont des traductions possibles de « boîtier » ou « enveloppe », mais pas le terme du métier."
             },
             {
               "prompt_fr": "En réunion, on te demande comment améliorer à la fois le SEO et la vitesse du premier affichage du catalogue. Que proposes-tu ?",
-              "choices": ["Let’s use server-side rendering for the catalog so the browser and search engines get ready-to-display HTML on the first request.", "Let’s add more JavaScript libraries to the client bundle.", "Let’s block search engines in robots.txt so the server has less traffic."],
-              "answer_index": 0,
-              "explanation_fr": "Envoyer du HTML déjà généré par le serveur accélère le premier affichage visuel (First Contentful Paint) et garantit que tous les robots d’indexation lisent immédiatement le contenu."
+              "choices": ["Let’s add a loading spinner so users see something while the JavaScript loads.", "Let’s prefetch the catalog data in the browser as soon as the app starts.", "Let’s use server-side rendering so browsers and crawlers get ready-to-display HTML."],
+              "answer_index": 2,
+              "explanation_fr": "Envoyer du HTML déjà généré accélère le premier affichage et permet aux robots d’indexation de lire le contenu tout de suite. Un spinner améliore la perception mais ne donne rien à Google, et précharger les données côté navigateur laisse toujours un HTML vide au départ."
             }
           ],
           "production": {
@@ -685,7 +685,7 @@
           "title_fr": "Alléger le bundle JavaScript et les images",
           "term_ids": ["bundle", "code-splitting", "lazy-loading", "tree-shaking", "minification"],
           "dialogue": [
-            { "speaker": "Kenji", "text_en": "Priya, our main JavaScript bundle is over two megabytes,even after minification!", "text_fr": "Priya, notre bundle JavaScript principal dépasse deux mégaoctets, même après minification !" },
+            { "speaker": "Kenji", "text_en": "Priya, our main JavaScript bundle is over two megabytes, even after minification!", "text_fr": "Priya, notre bundle JavaScript principal dépasse deux mégaoctets, même après minification !" },
             { "speaker": "Priya", "text_en": "Two megabytes?! No wonder the home page takes four seconds on a mobile network. Did you run the bundle analyzer?", "text_fr": "Deux mégaoctets ?! Pas étonnant que la page d’accueil prenne quatre secondes sur un réseau mobile. Tu as lancé l’analyseur de bundle ?" },
             { "speaker": "Kenji", "text_en": "Yes. First, the admin chart library is included in the home page bundle, even for normal users.", "text_fr": "Oui. D’abord, la bibliothèque de graphiques de l’espace admin est incluse dans le bundle de l’accueil, même pour les utilisateurs normaux." },
             { "speaker": "Priya", "text_en": "Add code splitting on the admin route so that chunk is only downloaded when an admin opens it.", "text_fr": "Ajoute du découpage de code sur la route admin pour que ce morceau ne soit téléchargé que lorsqu’un administrateur l’ouvre." },
@@ -695,27 +695,27 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « below the fold » pour des images sur une page web ?",
-              "choices": ["Dans un dossier caché du serveur", "En bas de la page, dans la partie qu’on ne voit qu’après avoir fait défiler l’écran", "Dans un menu déroulant replié"],
-              "answer_index": 1,
-              "explanation_fr": "L’expression vient de la presse écrite (la pliure d’un journal) : « above the fold » est ce qui est visible tout de suite sans défiler ; « below the fold » est ce qui n’apparaît qu’au défilement, parfait pour le « lazy loading »."
+              "choices": ["En bas de la page, dans la partie visible seulement après avoir fait défiler", "Dans un accordéon replié qu’il faut ouvrir pour voir les images", "Dans un onglet secondaire que l’utilisateur n’a pas encore ouvert"],
+              "answer_index": 0,
+              "explanation_fr": "L’expression vient de la presse (la pliure du journal) : « above the fold » est visible sans défiler, « below the fold » n’apparaît qu’au défilement, d’où le « lazy loading ». Le « fold » n’est ni un accordéon replié ni un onglet, malgré le sens de « to fold » (plier)."
             },
             {
               "prompt_fr": "Quelle est la différence entre « minification » et « tree shaking » ?",
-              "choices": ["La minification raccourcit les noms et retire les espaces, tandis que le tree shaking élimine le code importé mais jamais utilisé", "Le tree shaking compresse les images JPEG, tandis que la minification traduit le TypeScript", "Il n’y a aucune différence"],
-              "answer_index": 0,
-              "explanation_fr": "La minification garde tout le code mais le rend compact ; le tree shaking (« secouer l’arbre pour faire tomber les feuilles mortes ») supprime du bundle final les fonctions ou icônes que personne n’appelle."
+              "choices": ["La minification retire le code inutilisé, le tree shaking compacte les noms et les espaces", "La minification compacte le code, le tree shaking retire le code importé mais inutilisé", "La minification agit sur le CSS, le tree shaking agit seulement sur le JavaScript"],
+              "answer_index": 1,
+              "explanation_fr": "La minification garde tout le code mais le rend compact (noms courts, espaces supprimés) ; le tree shaking supprime du bundle les fonctions ou icônes jamais appelées. Attribuer au tree shaking le compactage des noms inverse les deux notions, et la minification s’applique au JavaScript comme au CSS."
             },
             {
               "prompt_fr": "Complète : « ___ wonder the home page takes four seconds on mobile! »",
-              "choices": ["Not", "No", "Without"],
-              "answer_index": 1,
+              "choices": ["No", "Not", "Without"],
+              "answer_index": 0,
               "explanation_fr": "L’expression idiomatique pour « Pas étonnant que… ! » est « No wonder…! » (sans « that » obligatoire)."
             },
             {
               "prompt_fr": "Un collègue ajoute un éditeur PDF très lourd utilisé sur un seul écran secondaire. Comment éviter de ralentir tout le site ?",
-              "choices": ["Use code splitting and dynamic import so the PDF library is only loaded when the user opens that screen.", "Disable minification in production.", "Load the PDF library in the HTML head on every page."],
-              "answer_index": 0,
-              "explanation_fr": "Avec un import dynamique (`import()`) et le découpage du code (code splitting), l’outil de build crée un fichier séparé (chunk) qui n’est téléchargé que si l’utilisateur visite réellement cet écran."
+              "choices": ["Move the PDF library into the shared vendor bundle that every page already loads.", "Use code splitting with a dynamic import so the PDF library loads only on that screen.", "Load the PDF library with a defer script tag in the HTML head of every page."],
+              "answer_index": 1,
+              "explanation_fr": "Avec un import dynamique (`import()`), l’outil de build crée un fichier séparé (chunk) téléchargé seulement si l’utilisateur ouvre cet écran. Le bundle « vendor » partagé est chargé partout, et « defer » retarde l’exécution mais télécharge quand même la bibliothèque sur chaque page."
             }
           ],
           "production": {
@@ -741,15 +741,15 @@
           "questions": [
             {
               "prompt_fr": "Qu’est-ce qu’un « textbook N+1 query problem » ?",
-              "choices": ["Un problème de maths trouvé dans un manuel scolaire", "Un cas d’école du problème N+1 : 1 requête pour la liste, puis N requêtes dans une boucle pour chaque élément lié", "Une erreur de syntaxe à la ligne N+1 du fichier SQL"],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, « a textbook example / a textbook problem » veut dire « un cas d’école, un exemple typique ». Le problème N+1 survient quand on charge les relations une par une dans une boucle au lieu de les récupérer en une seule requête groupée (eager loading / JOIN)."
+              "choices": ["Un problème théorique, rare en production, surtout décrit dans les manuels", "Un problème où la requête renvoie toujours une ligne de trop (N+1 résultats)", "Un cas d’école : 1 requête pour la liste, puis 1 requête par élément dans une boucle"],
+              "answer_index": 2,
+              "explanation_fr": "« A textbook example » veut dire « un cas d’école, un exemple typique », pas un cas théorique : le problème N+1 est au contraire très fréquent avec les ORM. Le « +1 » ne parle pas d’une ligne en trop mais de la requête initiale qui s’ajoute aux N requêtes de la boucle."
             },
             {
               "prompt_fr": "Pourquoi l’épuisement du « connection pool » ralentit-il aussi les autres routes de l’API ?",
-              "choices": ["Parce que toutes les routes partagent le même nombre limité de connexions ouvertes vers la base : quand elles sont toutes occupées, les nouvelles requêtes font la queue", "Parce que le pool de connexions vide le cache du navigateur", "Parce que la base de données supprime les tables quand le pool est plein"],
-              "answer_index": 0,
-              "explanation_fr": "Le pool maintient un nombre fixe de connexions (par exemple 10 ou 20). Si une route lente les monopolise, même une requête très simple sur une autre route doit attendre qu’une connexion se libère."
+              "choices": ["Parce que le pool ferme toutes les connexions quand il est plein et redémarre la base", "Parce que les autres routes ouvrent alors une connexion directe, plus lente, hors du pool", "Parce que toutes les routes partagent un nombre limité de connexions : les autres font la queue"],
+              "answer_index": 2,
+              "explanation_fr": "Le pool garde un nombre fixe de connexions partagées par toute l’API. Si une route lente les monopolise, même une requête simple sur une autre route attend qu’une connexion se libère (« waiting for a free connection »). Le pool ne redémarre pas la base et n’ouvre pas de connexions hors pool."
             },
             {
               "prompt_fr": "Complète : « With eager loading, latency dropped ___ 2 seconds to 40 milliseconds. »",
@@ -759,9 +759,9 @@
             },
             {
               "prompt_fr": "Un collègue propose de monter la taille du pool de connexions de 20 à 5 000 au lieu de corriger la requête N+1. Que lui réponds-tu ?",
-              "choices": ["5,000 connections would overwhelm the database server; fixing the N+1 query with eager loading solves the root cause.", "Great idea, PostgreSQL is faster with 5,000 open connections per node.", "Let’s remove the connection pool and open a new TCP connection on every SQL query."],
+              "choices": ["5,000 connections would overwhelm the database; fixing the N+1 query solves the root cause.", "Good idea for now, and we can fix the N+1 query after the next release.", "Let’s put a cache in front of the endpoint instead, so the N+1 query runs less often."],
               "answer_index": 0,
-              "explanation_fr": "Trop de connexions simultanées saturent la mémoire et le CPU de la base de données. Corriger la requête N+1 réduit le temps d’occupation de chaque connexion et règle la vraie cause."
+              "explanation_fr": "Trop de connexions simultanées saturent la mémoire et le CPU de la base : le remède aggraverait la panne. Repousser la correction ou ajouter un cache masque le symptôme ; corriger la requête N+1 avec l’« eager loading » règle la vraie cause (« the root cause »)."
             }
           ],
           "production": {
@@ -787,14 +787,14 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi le « cache busting » sur `styles.8f3a.css` n’a-t-il pas suffi si `index.html` est resté en cache ?",
-              "choices": ["Parce que c’est `index.html` qui contient la balise `<link>` pointant vers le nom du fichier CSS : un ancien `index.html` pointe toujours vers l’ancien hash", "Parce que les navigateurs ignorent les noms de fichiers CSS", "Parce que Redis bloque les fichiers CSS"],
-              "answer_index": 0,
-              "explanation_fr": "Le cache busting fonctionne en changeant l’URL du fichier statique (`styles.9b1c.css`) dans le nouveau `index.html`. Mais si le service worker sert encore l’ancien `index.html`, le navigateur continue de demander l’ancien fichier CSS !"
+              "choices": ["Parce que le hash du fichier CSS ne change que si le HTML change aussi", "Parce que l’ancien `index.html` pointe toujours vers l’ancien nom du fichier CSS", "Parce que le navigateur garde le CSS en cache même quand son nom change"],
+              "answer_index": 1,
+              "explanation_fr": "Le cache busting fonctionne en changeant l’URL du fichier (`styles.9b1c.css`) dans le nouveau `index.html`. Si le service worker sert encore l’ancien `index.html`, le navigateur demande l’ancien CSS. Le hash dépend du contenu du CSS, et un nouveau nom est toujours téléchargé à neuf."
             },
             {
               "prompt_fr": "Comment prononce-t-on le mot « cache » en anglais ?",
-              "choices": ["Comme « cash » (l’argent liquide)", "Comme « catch » (attraper)", "En deux syllabes, comme « caché » en français"],
-              "answer_index": 0,
+              "choices": ["Comme « catch » (attraper)", "En deux syllabes, comme « caché » en français", "Comme « cash » (l’argent liquide)"],
+              "answer_index": 2,
               "explanation_fr": "En anglais, « cache » se prononce exactement comme « cash » (/kæʃ/), en une seule syllabe. C’est l’une des erreurs de prononciation les plus fréquentes chez les développeurs francophones."
             },
             {
@@ -805,9 +805,9 @@
             },
             {
               "prompt_fr": "Un client te dit qu’il voit encore l’ancienne interface de votre PWA après une mise en ligne. Que lui expliques-tu et que corriges-tu ?",
-              "choices": ["The service worker kept a cached copy of the HTML; we’re switching it to network-first so updates appear right after a refresh.", "Progressive web apps can never be updated once installed.", "He needs to buy a new computer because his browser cache is full."],
-              "answer_index": 0,
-              "explanation_fr": "Dans une PWA, un service worker mal configuré sur `index.html` est la cause numéro un des versions « fantômes » après un déploiement."
+              "choices": ["Your browser cache is full; please clear your cookies and reload the page.", "The CDN still serves the old version; it will expire on its own within a day.", "The service worker kept a cached copy of the HTML; we’re switching it to network-first."],
+              "answer_index": 2,
+              "explanation_fr": "Dans une PWA, un service worker en « cache-first » sur `index.html` est la cause la plus fréquente des anciennes versions après un déploiement. Effacer les cookies ne touche pas au cache du service worker, et rejeter la faute sur le CDN sans rien corriger laisse le problème pour le prochain déploiement."
             }
           ],
           "production": {
@@ -848,38 +848,38 @@
             { "speaker": "Sarah", "text_en": "Because any JavaScript running on the page can read `localStorage`. If there’s an XSS bug, an attacker steals the token.", "text_fr": "Parce que n’importe quel JavaScript qui tourne sur la page peut lire `localStorage`. S’il y a une faille XSS, un attaquant vole le jeton." },
             { "speaker": "Ivan", "text_en": "So we should store the session or the JWT in an `HttpOnly` cookie with `Secure` and `SameSite` flags?", "text_fr": "Donc on devrait stocker la session ou le JWT dans un cookie `HttpOnly` avec les attributs `Secure` et `SameSite` ?" },
             { "speaker": "Sarah", "text_en": "Exactly: JavaScript can’t read an `HttpOnly` cookie, and the browser sends it automatically. Also, keep the JWT short-lived.", "text_fr": "Exactement : JavaScript ne peut pas lire un cookie `HttpOnly`, et le navigateur l’envoie automatiquement. Aussi, garde une durée de vie courte pour le JWT." },
-            { "speaker": "Ivan", "text_en": "Got it. I’ll use the same cookie setup for our ”Sign in with Google” OAuth callback.", "text_fr": "Compris. J’utiliserai la même configuration de cookie pour le retour OAuth de notre bouton « Se connecter avec Google »." }
+            { "speaker": "Ivan", "text_en": "Got it. I’ll use the same cookie setup for our “Sign in with Google” OAuth callback.", "text_fr": "Compris. J’utiliserai la même configuration de cookie pour le retour OAuth de notre bouton « Se connecter avec Google »." }
           ],
           "questions": [
             {
               "prompt_fr": "Pourquoi un cookie `HttpOnly` protège-t-il mieux un jeton de session que `localStorage` ?",
-              "choices": ["Parce qu’il compresse le jeton pour accélérer le réseau", "Parce qu’il est inaccessible à `document.cookie` en JavaScript, ce qui empêche un script malveillant de voler le jeton", "Parce qu’il fonctionne même quand le serveur est éteint"],
-              "answer_index": 1,
-              "explanation_fr": "Un cookie marqué `HttpOnly` est envoyé par le navigateur dans les requêtes HTTP, mais aucun script JavaScript de la page ne peut le lire : en cas d’injection XSS, le jeton ne peut pas être exfiltré directement."
+              "choices": ["Parce qu’aucun script de la page ne peut le lire, donc une faille XSS ne peut pas le voler", "Parce qu’il est chiffré par le navigateur avant d’être enregistré sur le disque", "Parce qu’il n’est envoyé qu’en HTTPS, donc personne ne peut l’intercepter"],
+              "answer_index": 0,
+              "explanation_fr": "Un cookie `HttpOnly` est envoyé avec les requêtes, mais `document.cookie` ne le voit pas : un script injecté ne peut pas l’exfiltrer. Le navigateur ne le chiffre pas, et l’envoi uniquement en HTTPS, c’est le rôle d’un autre attribut, `Secure`."
             },
             {
               "prompt_fr": "Que signifie « keep the JWT short-lived » ?",
-              "choices": ["Donner au JWT une durée de validité courte (par exemple 15 minutes)", "Écrire le JWT avec moins de caractères", "Supprimer l’utilisateur à la fin de sa session"],
-              "answer_index": 0,
-              "explanation_fr": "« Short-lived » veut dire à courte durée de vie : comme un JWT signé est difficile à révoquer avant son expiration sans liste noire serveur, on lui donne une validité courte."
+              "choices": ["Supprimer le JWT du navigateur dès que l’utilisateur ferme l’onglet", "Donner au JWT une durée de validité courte, par exemple quinze minutes", "Mettre le moins de données possible dans le JWT pour qu’il reste léger"],
+              "answer_index": 1,
+              "explanation_fr": "« Short-lived » veut dire « à courte durée de vie » : un JWT signé se révoque difficilement avant son expiration, on lui donne donc une validité courte. Ce n’est pas la fermeture de l’onglet (cookie de session) ni la taille du contenu."
             },
             {
               "prompt_fr": "Complète : « Users can sign in ___ Google thanks to OAuth. »",
-              "choices": ["by", "on", "with"],
-              "answer_index": 2,
+              "choices": ["with", "by", "on"],
+              "answer_index": 0,
               "explanation_fr": "Sur tous les boutons de connexion OAuth, la formule standard est « Sign in with Google / GitHub / Apple »."
             },
             {
               "prompt_fr": "Un collègue veut mettre le numéro de téléphone et l’adresse postale du client à l’intérieur du payload d’un JWT pour « éviter une requête SQL ». Que lui réponds-tu ?",
-              "choices": ["A JWT is signed, not encrypted: anyone can decode its payload in base64, so never put sensitive personal data inside it.", "Good idea, a JWT can hold megabytes of encrypted data.", "OAuth forbids using databases."],
-              "answer_index": 0,
-              "explanation_fr": "Un JWT standard (JWS) est signé pour empêcher qu’on le modifie, mais son contenu est simplement encodé en Base64URL : n’importe qui peut le lire. On n’y met que le strict minimum (comme l’identifiant utilisateur et l’expiration)."
+              "choices": ["That’s fine, as long as the JWT is signed with a strong secret key.", "A JWT is signed, not encrypted: anyone can decode its payload, so keep personal data out.", "That’s fine, because a short-lived token expires before anyone can read it."],
+              "answer_index": 1,
+              "explanation_fr": "Un JWT standard est signé pour empêcher qu’on le modifie, mais son contenu est seulement encodé en Base64URL : n’importe qui peut le lire. Une signature forte ne cache rien, et une courte durée de vie ne protège pas les données : elles sont lisibles dès que le jeton est intercepté."
             }
           ],
           "production": {
             "channel": "pull_request",
             "prompt_fr": "Décris ta pull request : après l’authentification (mot de passe ou OAuth), le serveur dépose maintenant un JWT à courte durée de vie dans un cookie `HttpOnly` au lieu de `localStorage`.",
-            "model_answer_en": "This PR updates our authentication flow for both password login and OAuth. Instead of saving the JWT in `localStorage`, the server now sets a short-lived JWT in an `HttpOnly` cookie, so JavaScript cannot read the session token.",
+            "model_answer_en": "This PR updates our authentication flow for both password login and OAuth. Instead of saving the JWT in `localStorage`, the server now sets a short-lived JWT in an HttpOnly cookie, so JavaScript cannot read the session token.",
             "model_answer_fr": "Cette PR met à jour notre parcours d’authentification pour la connexion par mot de passe et pour OAuth. Au lieu d’enregistrer le JWT dans `localStorage`, le serveur dépose maintenant un JWT à courte durée de vie dans un cookie `HttpOnly`, pour que JavaScript ne puisse pas lire le jeton de session.",
             "key_phrases": ["authentication flow", "Instead of saving the JWT", "short-lived JWT", "HttpOnly cookie"]
           }
@@ -889,7 +889,7 @@
           "title_fr": "Contrôler l’autorisation et limiter le débit de l’API",
           "term_ids": ["authorization", "middleware", "rate-limiting", "token", "api-key"],
           "dialogue": [
-            { "speaker": "Diego", "text_en": "Fatou, I hid the ”Delete organization” button in React for non-admin users. Are we good to ship?", "text_fr": "Fatou, j’ai caché le bouton « Supprimer l’organisation » dans React pour les utilisateurs non-admins. C’est bon, on peut livrer ?" },
+            { "speaker": "Diego", "text_en": "Fatou, I hid the “Delete organization” button in React for non-admin users. Are we good to ship?", "text_fr": "Fatou, j’ai caché le bouton « Supprimer l’organisation » dans React pour les utilisateurs non-admins. C’est bon, on peut livrer ?" },
             { "speaker": "Fatou", "text_en": "Wait: did you also check authorization on the `DELETE /organizations/:id` endpoint?", "text_fr": "Attends : tu as aussi vérifié l’autorisation sur l’endpoint `DELETE /organizations/:id` ?" },
             { "speaker": "Diego", "text_en": "Well, the middleware checks that the user has a valid token…", "text_fr": "Eh bien, le middleware vérifie que l’utilisateur a un jeton valide…" },
             { "speaker": "Fatou", "text_en": "That only proves they’re logged in! Without a role check on the server, any member can call the endpoint and delete the organization.", "text_fr": "Ça prouve seulement qu’il est connecté ! Sans vérification du rôle sur le serveur, n’importe quel membre peut appeler l’endpoint et supprimer l’organisation." },
@@ -899,9 +899,9 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi cacher un bouton dans React ne suffit-il jamais à sécuriser une action réservée aux administrateurs ?",
-              "choices": ["Parce que le CSS réaffiche les boutons sur mobile", "Parce qu’un utilisateur connecté peut appeler l’endpoint directement avec son jeton si le serveur ne vérifie pas son autorisation", "Parce que les administrateurs n’utilisent pas de navigateur"],
-              "answer_index": 1,
-              "explanation_fr": "Masquer un bouton dans l’interface est du confort visuel, pas de la sécurité : seul un contrôle d’autorisation (authorization) côté serveur dans un middleware empêche un utilisateur normal d’appeler la route."
+              "choices": ["Parce qu’un bouton masqué en React reste quand même accessible avec la touche Tab", "Parce que React ne masque pas les composants de la même façon sur tous les navigateurs", "Parce qu’un utilisateur connecté peut appeler l’endpoint directement si le serveur ne vérifie pas son rôle"],
+              "answer_index": 2,
+              "explanation_fr": "Masquer un bouton est du confort visuel, pas de la sécurité : seul un contrôle d’autorisation côté serveur empêche un membre d’appeler `DELETE /organizations/:id`. Un composant non affiché n’est pas atteignable au clavier, et React se comporte de la même façon partout : le vrai trou est sur le serveur."
             },
             {
               "prompt_fr": "Quel code HTTP le middleware doit-il renvoyer à un utilisateur bien connecté, mais qui n’a pas le rôle administrateur ?",
@@ -917,9 +917,9 @@
             },
             {
               "prompt_fr": "En revue de code, tu vois qu’un endpoint `GET /invoices/:id` vérifie que l’utilisateur est connecté, mais ne vérifie pas que la facture lui appartient. Quel commentaire écris-tu ?",
-              "choices": ["Looks good, since the invoice ID is hard to guess.", "We’re missing an authorization check here: we should verify that the invoice belongs to the logged-in user’s organization before returning it.", "Let’s remove authentication so the query runs faster."],
-              "answer_index": 1,
-              "explanation_fr": "C’est la faille IDOR (Insecure Direct Object Reference), très courante sur le web : être authentifié ne donne pas le droit de lire la facture d’un autre client."
+              "choices": ["We’re missing an authorization check: verify the invoice belongs to the user’s organization.", "Looks good to me, since invoice IDs are UUIDs and nobody can guess them.", "Let’s add rate limiting on this endpoint so nobody can try other IDs."],
+              "answer_index": 0,
+              "explanation_fr": "C’est la faille IDOR (Insecure Direct Object Reference) : être authentifié ne donne pas le droit de lire la facture d’un autre client. Un identifiant difficile à deviner peut fuiter (lien partagé, logs), et la limitation de débit ralentit une attaque sans corriger l’absence de contrôle."
             }
           ],
           "production": {
@@ -945,27 +945,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi la « Content Security Policy » (CSP) a-t-elle bloqué le widget de chat sur staging ?",
-              "choices": ["Parce que la CSP interdit tout fichier CSS sur une page web", "Parce que la CSP bloque par défaut tout script externe dont le domaine n’est pas explicitement autorisé dans l’en-tête", "Parce que le serveur de staging a renvoyé une erreur 500"],
+              "choices": ["Parce que la CSP bloque tous les scripts tiers, même ceux d’un domaine autorisé", "Parce que la CSP bloque tout script externe dont le domaine n’est pas autorisé", "Parce que la CSP bloque les widgets qui déposent des cookies tiers"],
               "answer_index": 1,
-              "explanation_fr": "La Content Security Policy indique au navigateur la liste blanche des sources autorisées (`script-src`, `style-src`, `connect-src`). Si on ajoute un script tiers légitime, il faut déclarer son domaine dans la CSP."
+              "explanation_fr": "La Content Security Policy donne au navigateur la liste des sources autorisées (`script-src`, `connect-src`…). Un script tiers légitime fonctionne dès qu’on déclare son domaine, comme Olu le propose. La CSP ne gère pas les cookies : ce sont d’autres règles du navigateur."
             },
             {
               "prompt_fr": "Si un développeur commite par erreur une clé d’API secrète dans le dépôt Git et la pousse sur GitHub, quelle est la seule vraie réaction sécurisée ?",
-              "choices": ["Faire un deuxième commit qui supprime la ligne et garder la même clé", "Ajouter `.env` au `.gitignore` sans changer la clé", "Révoquer immédiatement la clé compromise chez le fournisseur, en générer une nouvelle et la stocker dans une variable d’environnement"],
+              "choices": ["Supprimer la ligne dans un nouveau commit, puis ajouter le fichier `.env` au `.gitignore`", "Réécrire l’historique Git avec un force push pour effacer complètement la clé du dépôt", "Révoquer la clé chez le fournisseur, en créer une nouvelle et la mettre dans une variable d’environnement"],
               "answer_index": 2,
-              "explanation_fr": "Même si un commit suivant supprime la ligne, la clé reste visible dans l’historique Git et a déjà pu être aspirée par des robots : toute clé poussée sur un dépôt doit être considérée comme compromise et révoquée tout de suite."
+              "explanation_fr": "Une clé poussée sur un dépôt a pu être copiée par des robots en quelques minutes : elle est compromise et doit être révoquée. Un commit de suppression la laisse dans l’historique, et même un historique réécrit ne rattrape pas les copies déjà faites (forks, clones, caches)."
             },
             {
               "prompt_fr": "Complète : « That means the CSP is ___ its job! »",
-              "choices": ["making", "doing", "working"],
-              "answer_index": 1,
+              "choices": ["doing", "making", "working"],
+              "answer_index": 0,
               "explanation_fr": "En anglais, on dit « do a job » (jamais « make a job ») : it’s doing its job."
             },
             {
               "prompt_fr": "Une variable d’environnement contenant une clé privée de paiement doit-elle être préfixée par `VITE_` ou `NEXT_PUBLIC_` ?",
-              "choices": ["Non : ces préfixes injectent la variable dans le bundle JavaScript public envoyé au navigateur ; une clé secrète doit rester uniquement côté serveur", "Oui, sinon Node.js ne peut pas la lire sur le serveur", "Oui, mais seulement le vendredi"],
-              "answer_index": 0,
-              "explanation_fr": "Piège classique des frameworks modernes : toute variable préfixée `NEXT_PUBLIC_` ou `VITE_` est copiée en clair dans le bundle client ! Les secrets ne doivent être lus que côté serveur."
+              "choices": ["Oui : sans ce préfixe, le serveur ne peut pas lire la variable au moment du build", "Oui : le préfixe chiffre la valeur avant de l’injecter dans le bundle client", "Non : ces préfixes exposent la variable dans le bundle envoyé au navigateur"],
+              "answer_index": 2,
+              "explanation_fr": "Piège classique : toute variable préfixée `VITE_` ou `NEXT_PUBLIC_` est copiée en clair dans le JavaScript public. Sans préfixe, le code serveur la lit très bien, et ces préfixes ne chiffrent rien : un secret doit rester côté serveur."
             }
           ],
           "production": {
@@ -985,33 +985,33 @@
             { "speaker": "Samuel", "text_en": "What did it find?", "text_fr": "Qu’est-ce qu’il a trouvé ?" },
             { "speaker": "Nadia", "text_en": "First, in CSS we set `outline: none` on buttons, so keyboard users can’t see where the focus is when they press Tab.", "text_fr": "D’abord, en CSS on a mis `outline: none` sur les boutons : les utilisateurs au clavier ne voient plus où est le focus quand ils appuient sur Tab." },
             { "speaker": "Samuel", "text_en": "Let’s replace `outline: none` with a clean `:focus-visible` ring that matches our brand colors.", "text_fr": "Remplaçons `outline: none` par un contour `:focus-visible` propre aux couleurs de notre marque." },
-            { "speaker": "Nadia", "text_en": "Second, the close button is just an ”X” icon with no text, and the coupon input has no `<label>` in HTML.", "text_fr": "Deuxièmement, le bouton de fermeture est juste une icône « X » sans texte, et le champ code promo n’a pas de `<label>` en HTML." },
+            { "speaker": "Nadia", "text_en": "Second, the close button is just an “X” icon with no text, and the coupon input has no `<label>` in HTML.", "text_fr": "Deuxièmement, le bouton de fermeture est juste une icône « X » sans texte, et le champ code promo n’a pas de `<label>` en HTML." },
             { "speaker": "Samuel", "text_en": "Add `aria-label=\"Close dialog\"` to the button, link a real `<label>` to the input in semantic HTML, and trap focus inside the modal while it’s open.", "text_fr": "Ajoute `aria-label=\"Close dialog\"` sur le bouton, relie un vrai `<label>` au champ en HTML sémantique, et garde le focus piégé dans la modale tant qu’elle est ouverte." }
           ],
           "questions": [
             {
               "prompt_fr": "Pourquoi la règle CSS `outline: none` sans style de remplacement est-elle un problème grave d’accessibilité ?",
-              "choices": ["Parce qu’elle empêche la souris de cliquer sur les boutons", "Parce qu’une personne qui navigue au clavier (touche Tab) ne voit plus quel élément est sélectionné à l’écran", "Parce qu’elle supprime le texte des boutons"],
-              "answer_index": 1,
-              "explanation_fr": "L’indicateur de focus est l’équivalent du curseur de la souris pour la navigation au clavier. Avec `:focus-visible`, on affiche un contour net uniquement lors de la navigation au clavier."
+              "choices": ["Parce qu’une personne qui navigue au clavier ne voit plus quel élément a le focus", "Parce qu’elle retire les boutons de l’ordre de tabulation du clavier", "Parce que les lecteurs d’écran ne peuvent plus annoncer le nom du bouton"],
+              "answer_index": 0,
+              "explanation_fr": "`outline: none` ne change que l’apparence : le bouton reste dans l’ordre de tabulation et le lecteur d’écran l’annonce toujours. Le problème est visuel : l’indicateur de focus est l’équivalent du curseur pour la navigation au clavier, et il disparaît."
             },
             {
               "prompt_fr": "Que signifie « trap focus inside the modal while it’s open » ?",
-              "choices": ["Empêcher l’utilisateur de fermer la modale", "Faire en sorte que la touche Tab circule uniquement entre les éléments de la modale ouverte, sans partir dans la page grise derrière", "Désactiver le clavier quand la modale s’ouvre"],
+              "choices": ["Empêcher l’utilisateur de fermer la modale tant qu’il n’a pas validé le formulaire", "Faire circuler la touche Tab uniquement entre les éléments de la modale ouverte", "Placer le focus sur le bouton de fermeture dès que la modale s’ouvre"],
               "answer_index": 1,
-              "explanation_fr": "Un « focus trap » sur une boîte de dialogue modale garde le cycle de la touche Tab à l’intérieur de la modale tant qu’elle est ouverte (et la touche Échap permet de la fermer)."
+              "explanation_fr": "Un « focus trap » garde le cycle de la touche Tab à l’intérieur de la modale tant qu’elle est ouverte, et la touche Échap doit toujours permettre de la fermer. Placer le focus initial est une bonne pratique voisine, mais ce n’est pas ce que veut dire « trap »."
             },
             {
               "prompt_fr": "Complète : « Link a `<label>` to the input in semantic HTML instead ___ relying only on a placeholder. »",
-              "choices": ["for", "to", "of"],
-              "answer_index": 2,
+              "choices": ["of", "for", "to"],
+              "answer_index": 0,
               "explanation_fr": "« Instead of » est toujours suivi de « of » et d’un nom ou d’un verbe en `-ing` (`instead of relying`). Et un `placeholder` disparaît dès qu’on écrit : il ne remplace jamais un vrai `<label>`."
             },
             {
               "prompt_fr": "Un designer demande de supprimer tous les contours de focus parce qu’il les trouve « moches quand on clique à la souris ». Quelle solution proposes-tu ?",
-              "choices": ["We can use `:focus-visible` in CSS: it hides the ring on mouse clicks, but shows a clean focus ring when someone navigates with the keyboard.", "Let’s remove all buttons so there is no focus.", "Accessibility is only for government websites, so let’s keep `outline: none`."],
-              "answer_index": 0,
-              "explanation_fr": "Le sélecteur CSS `:focus-visible` réconcilie design et accessibilité : pas de contour parasite au clic souris, mais un indicateur bien visible dès qu’on utilise la touche Tab."
+              "choices": ["Let’s keep `outline: none` and add a hover effect, which works for everyone.", "Let’s use `:focus-visible`: no ring on mouse clicks, a clear ring for keyboard users.", "Let’s make the focus ring transparent, so it stays there for screen readers."],
+              "answer_index": 1,
+              "explanation_fr": "`:focus-visible` réconcilie design et accessibilité : pas de contour au clic souris, un indicateur net à la touche Tab. Un effet de survol ne sert à rien au clavier, et un contour transparent revient à le supprimer : les lecteurs d’écran n’en ont pas besoin, ce sont les utilisateurs voyants au clavier qui en ont besoin."
             }
           ],
           "production": {
@@ -1057,15 +1057,15 @@
           "questions": [
             {
               "prompt_fr": "Quel problème concret l’« injection de dépendances » résout-elle pour Chloé ?",
-              "choices": ["Elle télécharge automatiquement les paquets npm manquants", "Au lieu que le service instancie lui-même le vrai client Stripe en dur, il le reçoit de l’extérieur, ce qui permet de lui passer un faux client en test", "Elle chiffre la base de données"],
-              "answer_index": 1,
-              "explanation_fr": "Avec la « dependency injection », une fonction ou une classe reçoit les services dont elle dépend en paramètre : en production on lui passe le vrai client Stripe, et en test unitaire un objet simulé (mock/fake) rapide et gratuit."
+              "choices": ["Le service télécharge automatiquement la bonne version du client Stripe au démarrage", "Le service crée un nouveau client Stripe à chaque appel, ce qui évite les effets de bord", "Le service reçoit le client Stripe de l’extérieur, donc on peut lui passer un faux client en test"],
+              "answer_index": 2,
+              "explanation_fr": "Avec la « dependency injection », une fonction reçoit ses dépendances en paramètre : le vrai client Stripe en production, un faux en test. Ce n’est pas un gestionnaire de paquets, et créer le client à chaque appel dans la fonction, c’est justement le problème décrit par Chloé."
             },
             {
               "prompt_fr": "Pourquoi Hiroshi déconseille-t-il d’ajouter tout de suite un « design pattern » complexe ?",
-              "choices": ["Parce que les design patterns sont interdits en TypeScript", "Parce qu’une simple fonction pure répond déjà au besoin sans sur-ingénierie", "Parce qu’un design pattern ralentit la connexion internet"],
-              "answer_index": 1,
-              "explanation_fr": "Un patron de conception (design pattern) est utile quand il résout un vrai problème de structure, mais une simple fonction pure (même entrée -> même sortie, sans effet de bord) est souvent plus lisible et plus facile à tester."
+              "choices": ["Parce qu’une factory rendrait les règles de remise impossibles à tester", "Parce que les design patterns ne s’appliquent pas au code front-end", "Parce qu’une simple fonction pure répond déjà au besoin sans sur-ingénierie"],
+              "answer_index": 2,
+              "explanation_fr": "Hiroshi dit « keep it simple first » : ajouter un pattern avant d’en avoir besoin, c’est de la sur-ingénierie (« over-engineering »). Une factory se teste très bien, et les design patterns s’appliquent aussi côté front : la raison est la simplicité, pas une impossibilité."
             },
             {
               "prompt_fr": "Complète : « Putting SQL queries inside a button component breaks ___ of concerns. »",
@@ -1075,9 +1075,9 @@
             },
             {
               "prompt_fr": "En revue de code, un collègue calcule les taxes et les paliers de remise directement dans le JSX d’un composant. Quel commentaire lui laisses-tu ?",
-              "choices": ["Could we extract this business logic into a pure function? It will be much easier to unit test without rendering the component.", "Please write the tax rules in CSS instead.", "Never test pricing rules, they change too often."],
+              "choices": ["Could we extract this business logic into a pure function, so we can unit test it?", "Could we move this calculation into a useEffect, so it runs after rendering?", "Could we cover this with end-to-end tests only, since it’s rendered in the UI?"],
               "answer_index": 0,
-              "explanation_fr": "Extraire la logique métier dans une fonction pure respecte la séparation des responsabilités et permet de tester tous les cas limites en quelques millisecondes."
+              "explanation_fr": "Extraire la logique métier dans une fonction pure respecte la séparation des responsabilités et permet de tester tous les cas limites en quelques millisecondes. Un useEffect laisse la logique dans le composant (et ajoute un rendu), et des tests de bout en bout seuls seraient lents et peu précis pour des paliers de remise."
             }
           ],
           "production": {
@@ -1103,27 +1103,27 @@
           "questions": [
             {
               "prompt_fr": "Quel est le rôle d’un « circuit breaker » autour d’un appel à une API externe ?",
-              "choices": ["Éteindre électriquement le serveur en cas de surchauffe", "Arrêter temporairement d’appeler un service externe en panne et répondre immédiatement avec une solution de repli, pour éviter que la panne ne contamine toute l’application", "Crypter les requêtes qui passent par l’API gateway"],
+              "choices": ["Relancer l’appel au service externe en boucle jusqu’à ce qu’il réponde enfin", "Arrêter d’appeler un service en panne et répondre tout de suite avec une solution de repli", "Couper le serveur pour éviter qu’une panne externe n’abîme nos données"],
               "answer_index": 1,
-              "explanation_fr": "Comme un disjoncteur électrique, un « circuit breaker » logiciel s’ouvre après une série d’échecs : au lieu d’empiler des centaines de requêtes qui attendent un timeout de 30 secondes, il échoue tout de suite (« fail fast ») et protège le reste du système."
+              "explanation_fr": "Comme un disjoncteur, un « circuit breaker » s’ouvre après une série d’échecs : il échoue tout de suite (« fail fast ») au lieu d’empiler des requêtes qui attendent. Relancer en boucle aggrave la panne, et il ne s’agit pas de couper le serveur, malgré le sens électrique du mot."
             },
             {
               "prompt_fr": "Pourquoi Mamadou retire-t-il l’appel au transporteur externe du endpoint de « health check » `/healthz` ?",
-              "choices": ["Parce qu’un health check ne doit pas utiliser HTTP", "Parce que si le transporteur externe tombe en panne, le health check échouerait et l’orchestrateur redémarrerait nos propres serveurs en boucle alors qu’ils vont très bien", "Parce que le health check est réservé au front-end"],
-              "answer_index": 1,
-              "explanation_fr": "Un health check de vivacité (liveness) doit vérifier que *ton* processus tourne, pas qu’un prestataire externe est en ligne : redémarrer ton serveur ne réparera jamais la panne chez le transporteur !"
+              "choices": ["Parce que le ping vers le transporteur coûte trop cher à chaque vérification", "Parce que Kubernetes interdit les appels externes dans un health check", "Parce que si le transporteur tombe, l’orchestrateur redémarrerait nos serveurs en boucle"],
+              "answer_index": 2,
+              "explanation_fr": "Un health check de vivacité (liveness) doit vérifier que ton processus tourne, pas qu’un prestataire est en ligne : redémarrer tes serveurs ne réparera jamais la panne du transporteur. Le coût du ping n’est pas l’argument, et Kubernetes n’interdit rien : c’est une question de conception."
             },
             {
               "prompt_fr": "Complète : « If the service fails five times ___ a row, the circuit breaker opens. »",
-              "choices": ["on", "at", "in"],
-              "answer_index": 2,
+              "choices": ["in", "on", "at"],
+              "answer_index": 0,
               "explanation_fr": "« Cinq fois de suite » se dit « five times in a row »."
             },
             {
               "prompt_fr": "En entretien, on te demande s’il faut toujours préférer les microservices au monolithe. Quelle réponse montre le plus de recul ?",
-              "choices": ["Microservices are always better because big tech companies use them.", "A modular monolith is often simpler and faster for a small team; I’d only extract a microservice when a specific part needs independent scaling or deployment.", "Monoliths cannot use a relational database."],
-              "answer_index": 1,
-              "explanation_fr": "Cette réponse montre de la maturité technique : les microservices ont un coût opérationnel élevé (réseau, déploiements, observabilité), et un monolithe bien structuré est souvent le meilleur départ."
+              "choices": ["Microservices are the industry standard, so I’d start with them from day one.", "I’d split by person: each developer owns one microservice, so nobody blocks anyone.", "A modular monolith is often simpler for a small team; I’d extract services only when needed."],
+              "answer_index": 2,
+              "explanation_fr": "Cette réponse montre du recul : les microservices ont un coût élevé (réseau, déploiements, observabilité), et un monolithe bien structuré est souvent le meilleur départ. « Industry standard » n’est pas un argument technique, et un service par développeur crée des silos fragiles."
             }
           ],
           "production": {
@@ -1149,27 +1149,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi le pattern « lire la valeur en JS, vérifier `> 0`, puis faire un `UPDATE` » crée-t-il une « race condition » ?",
-              "choices": ["Parce que JavaScript ne sait pas soustraire 1", "Parce qu’entre la lecture et l’écriture de la première requête, une deuxième requête concurrente peut lire la même ancienne valeur `1`", "Parce que la base de données inverse l’ordre des colonnes"],
-              "answer_index": 1,
-              "explanation_fr": "C’est le bug « check-then-act » (TOCTOU) : si la vérification et la décrémentation ne sont pas atomiques ou protégées par un verrou en base, deux requêtes simultanées voient toutes les deux qu’il reste 1 place."
+              "choices": ["Parce qu’entre la lecture et l’écriture, une autre requête peut lire la même valeur `1`", "Parce que la base renvoie une valeur en cache au lieu de la vraie valeur", "Parce que l’`UPDATE` peut s’exécuter avant la lecture quand le serveur est chargé"],
+              "answer_index": 0,
+              "explanation_fr": "C’est le bug « check-then-act » : si la vérification et la décrémentation ne sont pas atomiques, deux requêtes simultanées voient toutes les deux qu’il reste une place. Ce n’est pas un problème de cache, et l’ordre lecture puis écriture est respecté dans chaque requête : c’est leur entrelacement qui pose problème."
             },
             {
               "prompt_fr": "Comment évite-t-on un « deadlock » quand une transaction doit verrouiller plusieurs lignes dans une table ?",
-              "choices": ["En verrouillant les lignes dans un ordre aléatoire", "En verrouillant toujours les lignes dans le même ordre déterministe (par exemple par `id` croissant) dans toutes les transactions", "En supprimant les clés primaires"],
+              "choices": ["En verrouillant les lignes dans un ordre aléatoire pour répartir la charge", "En verrouillant toujours les lignes dans le même ordre, par exemple par `id` croissant", "En relançant la transaction tant que le verrou n’est pas obtenu"],
               "answer_index": 1,
-              "explanation_fr": "Un interblocage (deadlock) survient quand la transaction A verrouille la ligne 1 puis attend la ligne 2, pendant que la transaction B a verrouillé la ligne 2 et attend la ligne 1. En triant toujours les IDs dans le même ordre avant de verrouiller, ce cycle devient impossible."
+              "explanation_fr": "Un interblocage survient quand A verrouille la ligne 1 et attend la 2, pendant que B tient la 2 et attend la 1. Un ordre fixe rend ce cycle impossible ; un ordre aléatoire le rend plus probable. Relancer la transaction est une façon de gérer un deadlock après coup, pas de l’éviter."
             },
             {
               "prompt_fr": "Complète : « Search is eventually ___, so a new workshop appears in search results after a few seconds. »",
-              "choices": ["coherent", "consistent", "concurrent"],
-              "answer_index": 1,
+              "choices": ["consistent", "coherent", "concurrent"],
+              "answer_index": 0,
               "explanation_fr": "« Cohérent » pour des données se dit « consistent » (d’où « eventual consistency », cohérence à terme, et le C de ACID). « Coherent » s’emploie plutôt pour un discours ou un raisonnement clair."
             },
             {
               "prompt_fr": "Attention au faux ami : comment dit-on « Nos concurrents ont lancé la même fonctionnalité » ?",
-              "choices": ["Our concurrencies launched the same feature.", "Our competitors launched the same feature.", "Our race conditions launched the same feature."],
+              "choices": ["Our concurrents launched the same feature.", "Our competitors launched the same feature.", "Our concurrencies launched the same feature."],
               "answer_index": 1,
-              "explanation_fr": "« Concurrency » désigne uniquement l’exécution simultanée en informatique. Une entreprise concurrente se dit « a competitor » (et la concurrence commerciale, « competition »)."
+              "explanation_fr": "Les entreprises concurrentes sont des « competitors » (et la concurrence commerciale, « competition »). « Concurrent » en anglais est un adjectif qui veut dire simultané (concurrent requests), et « concurrency » désigne l’exécution simultanée en informatique."
             }
           ],
           "production": {
@@ -1195,27 +1195,27 @@
           "questions": [
             {
               "prompt_fr": "Pourquoi faut-il toujours commiter le « lockfile » (`package-lock.json`, `pnpm-lock.yaml` ou `yarn.lock`) ?",
-              "choices": ["Pour bloquer l’accès au dépôt Git par mot de passe", "Pour garantir que chaque développeur et la CI installent exactement les mêmes versions de toutes les dépendances", "Pour remplacer le linter et le formateur de code"],
-              "answer_index": 1,
-              "explanation_fr": "Dans `package.json`, une version comme `^1.4.0` autorise `1.5.0`. Le lockfile fige l’arbre exact des versions installées, évitant qu’une sous-dépendance mise à jour la nuit ne casse la CI."
+              "choices": ["Pour empêcher les autres développeurs de mettre à jour une dépendance", "Pour que npm installe toujours la dernière version compatible de chaque paquet", "Pour que chaque développeur et la CI installent exactement les mêmes versions"],
+              "answer_index": 2,
+              "explanation_fr": "Dans `package.json`, `^1.4.0` autorise `1.5.0` ; le lockfile fige l’arbre exact des versions installées. Il n’empêche personne de mettre à jour (il est simplement modifié et commité), et il fait l’inverse d’installer « la plus récente version compatible »."
             },
             {
               "prompt_fr": "Pourquoi Ibrahim veut-il envoyer les « source maps » à Sentry mais les retirer du serveur web public ?",
-              "choices": ["Pour lire de vraies traces d’erreurs en interne dans Sentry sans exposer tout le code source TypeScript d’origine aux visiteurs du site", "Parce que les navigateurs plantent s’ils voient un fichier `.map`", "Parce qu’une source map bloque la transpilation"],
-              "answer_index": 0,
-              "explanation_fr": "Une source map contient souvent l’intégralité du code source original avant transpilation et minification : l’envoyer à l’outil de suivi d’erreurs (Sentry, Datadog) sans la servir publiquement donne des stack traces lisibles tout en gardant le code privé."
+              "choices": ["Parce que les fichiers `.map` ralentissent fortement le chargement de chaque page", "Parce que Sentry refuse de lire une source map servie par un serveur public", "Pour lire des traces claires dans Sentry sans exposer le code TypeScript aux visiteurs"],
+              "answer_index": 2,
+              "explanation_fr": "Une source map contient souvent tout le code source d’origine : l’envoyer à Sentry sans la servir publiquement donne des stack traces lisibles tout en gardant le code privé. Le navigateur ne télécharge les `.map` que si les outils de développement sont ouverts, donc la performance n’est pas l’enjeu."
             },
             {
               "prompt_fr": "Complète : « It works ___ my machine, but the CI build fails. »",
-              "choices": ["in", "at", "on"],
-              "answer_index": 2,
+              "choices": ["in", "on", "at"],
+              "answer_index": 1,
               "explanation_fr": "La phrase culte des développeurs est toujours « It works on my machine » (avec la préposition « on » pour un appareil ou une machine)."
             },
             {
               "prompt_fr": "Les pull requests de ton équipe sont polluées par des dizaines de commentaires sur les points-virgules et l’indentation. Que proposes-tu ?",
-              "choices": ["Let’s run a code formatter like Prettier automatically on save and in CI, and a linter like ESLint for code rules, so reviews focus on logic.", "Let’s stop doing code reviews in the monorepo.", "Let’s write all our code on a single line like minification."],
+              "choices": ["Let’s run Prettier on save and in CI, plus a linter, so reviews focus on logic.", "Let’s add a style guide to the wiki and ask reviewers to link it in comments.", "Let’s let each developer keep their own style, as long as the tests pass."],
               "answer_index": 0,
-              "explanation_fr": "Automatiser le formateur de code (Prettier) et le linter (ESLint) en pré-commit et dans la CI supprime tous les débats de style et laisse les relecteurs se concentrer sur l’architecture et les bugs."
+              "explanation_fr": "Automatiser le formateur (Prettier) et le linter (ESLint) supprime les débats de style dans les revues. Un guide sur le wiki ne réduit pas le nombre de commentaires, et laisser chacun coder à sa façon rend les diffs illisibles."
             }
           ],
           "production": {

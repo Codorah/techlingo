@@ -85,21 +85,21 @@
             {
               "prompt_fr": "Selon ITIL, quelle demande doit être classée comme une « service request » plutôt qu’un « incident » ?",
               "choices": [
-                "Un serveur de fichiers qui ne répond plus depuis dix minutes",
-                "L’attribution d’un casque audio et d’un accès au dossier marketing pour une nouvelle recrue",
-                "Une coupure du Wi-Fi dans la salle du conseil avant une présentation"
+                "Un écran qui clignote depuis ce matin sur le poste d’une seule personne",
+                "L’attribution d’un casque et d’un accès au dossier marketing pour une nouvelle recrue",
+                "Une imprimante partagée hors ligne pour toute l’équipe comptable"
               ],
               "answer_index": 1,
-              "explanation_fr": "Une « service request » est une demande standard prévue au catalogue (matériel, logiciel, droit d’accès), alors qu’un « incident » est une interruption ou une dégradation imprévue d’un service existant, comme un serveur muet ou un Wi-Fi coupé."
+              "explanation_fr": "Une « service request » est une demande standard et prévue (matériel, logiciel, accès) : rien n’est cassé. Un écran qui clignote est un incident, même s’il ne touche qu’une personne, et l’imprimante hors ligne est l’incident que Tomasz veut traiter en premier."
             },
             {
               "prompt_fr": "Comment dire « Je prends le prochain ticket de la file d’attente » ?",
               "choices": [
                 "I take the next ticket of the waiting line.",
-                "I’ll pick up the next ticket from the queue.",
-                "I’ll catch the next ticket in the file."
+                "I’ll catch the next ticket in the file.",
+                "I’ll pick up the next ticket from the queue."
               ],
-              "answer_index": 1,
+              "answer_index": 2,
               "explanation_fr": "Au support, l’expression consacrée est « pick up a ticket from the queue ». « Waiting line » s’emploie pour une file de personnes au supermarché, et « file » en anglais veut dire fichier ou dossier, jamais file d’attente (faux ami classique)."
             },
             {
@@ -110,17 +110,17 @@
                 "treats"
               ],
               "answer_index": 0,
-              "explanation_fr": "Pour dire « traiter » un problème ou un ticket, on utilise « to handle » (ou « to deal with »). « Treats » est un calque du français « traiter » qui s’emploie en médecine (treat a patient), et « supports » ne se construit pas avec « issues »."
+              "explanation_fr": "« To handle » veut dire prendre en charge, traiter un ticket ou un problème. « Treat » est un faux ami : on traite un patient (« treat a patient »), pas un ticket. « Supports » ne prend pas un problème comme complément : on supporte des utilisateurs ou un produit."
             },
             {
               "prompt_fr": "Cinq utilisateurs du même service ouvrent chacun un ticket pour la même panne d’imprimante. Que réponds-tu à ton collègue du niveau 1 ?",
               "choices": [
-                "Delete four tickets so our queue looks smaller.",
-                "Link them to one parent incident so we update everyone at once when it’s fixed.",
-                "Close them all because printing is a service request."
+                "Keep the first ticket and close the four others as duplicates without telling the users.",
+                "Handle each ticket separately, so every user gets a personal answer from us.",
+                "Link them to one parent incident, so we update everyone at once when it’s fixed."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La bonne pratique consiste à regrouper les signalements sous un ticket parent (« link them to a parent incident ») pour garder la trace de l’impact et prévenir tous les utilisateurs d’un coup. Supprimer des tickets fausse le suivi, et une panne d’imprimante est bien un incident."
+              "answer_index": 2,
+              "explanation_fr": "Relier les tickets à un incident parent évite le travail en double tout en informant chaque utilisateur à la résolution. Fermer les doublons sans prévenir laisse quatre personnes sans nouvelles, et traiter cinq fois la même panne fait perdre du temps à l’équipe."
             }
           ],
           "production": {
@@ -182,42 +182,42 @@
             {
               "prompt_fr": "Que signifie « the window becomes completely unresponsive » ?",
               "choices": [
-                "La fenêtre se ferme toute seule sans afficher d’erreur",
                 "La fenêtre est figée et ne réagit plus aux clics ni au clavier",
-                "La fenêtre refuse l’accès parce que l’utilisateur n’a pas les droits"
+                "La fenêtre se ferme toute seule sans afficher de message",
+                "La fenêtre affiche une erreur et demande de redémarrer"
               ],
-              "answer_index": 1,
-              "explanation_fr": "« Unresponsive » décrit un programme ou un serveur figé qui ne répond plus aux sollicitations. Une fermeture brutale se dit « it crashes » ou « it closes unexpectedly », et un refus de droits afficherait « access denied »."
+              "answer_index": 0,
+              "explanation_fr": "« Unresponsive » veut dire qui ne répond plus : l’application est figée (« Not Responding »), sans se fermer. Une fenêtre qui se ferme toute seule « crashes », et un message d’erreur est un autre symptôme."
             },
             {
               "prompt_fr": "Comment demander poliment à un utilisateur final de prendre la main sur son poste ?",
               "choices": [
-                "Give me your computer with remote desktop now.",
+                "Can I take the hand on your computer to disable the add-in?",
                 "May I take control of your screen to disable the add-in?",
-                "Can I take the hand on your computer by distance?"
+                "Let me take your control to disable the add-in, please."
               ],
               "answer_index": 1,
-              "explanation_fr": "En anglais, « prendre la main » se dit « take control (of your screen / computer) » ou « connect over remote desktop ». « Take the hand » et « by distance » sont des calques mot à mot du français (« prendre la main à distance ») qui sont incompréhensibles."
+              "explanation_fr": "« May I take control of your screen? » est la demande polie et naturelle. « Take the hand » est un calque de « prendre la main », et « take your control » ne veut rien dire : on prend le contrôle de l’écran, pas de la personne."
             },
             {
               "prompt_fr": "Complète : « Keep your explanation simple so any ___ can follow the steps without jargon. »",
               "choices": [
-                "final user",
                 "end user",
+                "final user",
                 "last user"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le terme consacré est « end user » (utilisateur final). « Final user » et « last user » sont des calques du français qui ne s’emploient pas dans le métier."
             },
             {
               "prompt_fr": "Dans quel cas passes-tu du simple « screen sharing » à une vraie session « remote desktop » ?",
               "choices": [
-                "Quand tu dois exécuter une action avec des identifiants administrateur que l’utilisateur ne doit pas voir ni taper",
-                "Uniquement quand l’utilisateur travaille dans le même bâtiment que toi",
-                "Quand tu veux simplement voir le message d’erreur affiché à l’écran"
+                "Quand l’utilisateur ne sait pas décrire le message d’erreur affiché à son écran",
+                "Quand tu dois agir avec des identifiants administrateur que l’utilisateur ne doit ni voir ni taper",
+                "Quand l’utilisateur travaille dans un autre bâtiment que le service informatique"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le simple partage d’écran (« screen sharing ») suffit pour observer une erreur, mais un outil de prise en main à distance (« remote desktop » ou outil de support dédié) permet d’agir sur le poste et d’élever ses privilèges sans confier le mot de passe admin à l’utilisateur."
+              "answer_index": 1,
+              "explanation_fr": "Le partage d’écran suffit pour voir le problème ou guider l’utilisateur ; la prise de main sert quand tu dois agir toi-même, par exemple avec des droits admin. Pour voir une erreur, le partage d’écran suffit, et les deux outils fonctionnent à distance, quel que soit le bâtiment."
             }
           ],
           "production": {
@@ -280,42 +280,42 @@
             {
               "prompt_fr": "Pourquoi le poste ne plante-t-il plus lorsque Lucía le démarre en « safe mode » ?",
               "choices": [
-                "Parce que le mode sans échec répare automatiquement tous les fichiers endommagés du disque",
-                "Parce que Windows démarre avec le strict minimum de services et un pilote d’affichage générique",
-                "Parce que le mode sans échec bloque l’accès au disque dur local"
+                "Parce que le mode sans échec désinstalle automatiquement le dernier pilote installé",
+                "Parce que le mode sans échec répare automatiquement les fichiers système endommagés",
+                "Parce que Windows démarre avec le strict minimum de services et un pilote d’affichage générique"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « safe mode » (mode sans échec) ne charge que les composants et pilotes génériques indispensables au démarrage, ce qui permet d’intervenir sans que le pilote graphique tiers ne provoque l’écran bleu. Il ne répare pas les fichiers tout seul et laisse bien accès au disque."
+              "answer_index": 2,
+              "explanation_fr": "Moussa le dit : le mode sans échec « only loads essential components », donc le pilote fautif n’est pas chargé. Il ne désinstalle rien et ne répare rien tout seul : c’est à Lucía de revenir à l’ancien pilote."
             },
             {
               "prompt_fr": "Comment dire « Reviens à la version précédente du pilote » ?",
               "choices": [
-                "Roll back the driver to the previous version.",
-                "Go behind the pilot to the old version.",
-                "Return the driver back in the last version."
+                "Return the driver back to the last version.",
+                "Downgrade back the pilot to the previous version.",
+                "Roll back the driver to the previous version."
               ],
-              "answer_index": 0,
-              "explanation_fr": "En informatique, un pilote matériel se dit « driver » (jamais « pilot », qui pilote un avion), et revenir à la version précédente se dit « to roll back a driver » (c’est d’ailleurs le nom du bouton « Roll Back Driver » dans Windows)."
+              "answer_index": 2,
+              "explanation_fr": "« To roll back a driver » est l’expression consacrée (c’est même le nom du bouton dans Windows). « Return back » est redondant et « the last version » veut dire la plus récente, l’inverse de ce qu’on veut, et « pilot » est un faux ami : un pilote de périphérique se dit « driver »."
             },
             {
               "prompt_fr": "Complète : « Check ___ to see the critical system errors recorded right before the crash. »",
               "choices": [
+                "Task Manager",
                 "Event Viewer",
-                "Task Observer",
-                "Screen Watcher"
+                "Device Manager"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’outil intégré à Windows qui regroupe les journaux système, sécurité et applications s’appelle « Event Viewer » (l’Observateur d’événements). Les deux autres noms sont inventés."
+              "answer_index": 1,
+              "explanation_fr": "L’« Event Viewer » (Observateur d’événements) enregistre les erreurs système, dont celle juste avant le plantage. Le « Task Manager » montre les processus en cours, et le « Device Manager » liste les périphériques et pilotes, sans l’historique des erreurs."
             },
             {
               "prompt_fr": "Un utilisateur t’appelle : son PC portable vient de faire un écran bleu pour la première fois, mais a redémarré normalement. Que lui réponds-tu ?",
               "choices": [
-                "Throw the workstation away, the motherboard is dead.",
-                "Keep working for now, and I’ll check Event Viewer remotely to see which driver caused the blue screen.",
-                "Unplug your keyboard, blue screens always come from peripherals."
+                "Keep working for now, and I’ll check Event Viewer remotely to see which driver caused it.",
+                "Let’s reimage your laptop today, since one blue screen means the system is corrupted.",
+                "Don’t worry, a single blue screen is normal, so there’s no need to look into it."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un écran bleu isolé laisse une trace précise dans l’Observateur d’événements (et un fichier minidump) que l’on peut analyser à distance sans immobiliser l’utilisateur. Jeter la machine ou accuser d’emblée le clavier n’a aucun sens technique."
+              "answer_index": 0,
+              "explanation_fr": "Un premier écran bleu suivi d’un redémarrage normal ne justifie pas une réinstallation, mais mérite un coup d’œil aux journaux pour repérer le pilote en cause. Réinstaller tout de suite est excessif, et ignorer le signal laisse revenir le problème."
             }
           ],
           "production": {
@@ -377,42 +377,42 @@
             {
               "prompt_fr": "Que fait un technicien lorsqu’il décide de « reimage a laptop » ?",
               "choices": [
-                "Il remplace l’écran cassé de l’ordinateur portable",
-                "Il change uniquement le fond d’écran par celui de l’entreprise",
-                "Il écrase le disque et réinstalle un système propre préconfiguré par l’équipe IT"
+                "Il fait une copie exacte du disque pour l’analyser plus tard",
+                "Il écrase le disque et réinstalle un système propre préconfiguré par l’équipe IT",
+                "Il restaure le poste à partir de la dernière sauvegarde de l’utilisateur"
               ],
-              "answer_index": 2,
-              "explanation_fr": "« To reimage » (remasteriser ou réinstaller à partir d’une image) consiste à déployer une image système standard contenant l’OS, les pilotes et les logiciels de base de l’entreprise. Cela n’a rien à voir avec l’écran physique ni le fond d’écran (« wallpaper »)."
+              "answer_index": 1,
+              "explanation_fr": "« To reimage » veut dire réinstaller la machine à partir de l’image maître de l’entreprise : le disque est écrasé, d’où la sauvegarde préalable des fichiers. Une copie exacte pour analyse est une image forensique, et restaurer une sauvegarde personnelle n’est pas réinstaller le système."
             },
             {
               "prompt_fr": "Pourquoi Ivan insiste-t-il pour mettre à jour l’« IT asset inventory » lors d’un prêt de machine ?",
               "choices": [
-                "Pour savoir à tout moment quel salarié détient quel matériel en cas d’audit ou de perte",
-                "Pour augmenter automatiquement la mémoire vive de l’ordinateur à distance",
-                "Pour vider le cache du navigateur de l’ancien propriétaire"
+                "Pour que le portable de prêt reçoive automatiquement les logiciels de l’utilisateur",
+                "Pour que la garantie du fabricant soit transférée au nouveau propriétaire",
+                "Pour savoir à tout moment quel salarié détient quel matériel, en cas d’audit ou de perte"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’inventaire du parc (« IT asset inventory ») trace chaque équipement (numéro de série, détenteur, lieu, état). Sans mise à jour lors d’un échange, on perd la trace du matériel en cas d’audit de sécurité ou de départ du salarié."
+              "answer_index": 2,
+              "explanation_fr": "L’inventaire des actifs relie chaque numéro de série à son détenteur : indispensable en cas de perte, de vol ou d’audit. Il ne déploie pas de logiciels, et la garantie dépend du fabricant, pas de la personne qui utilise l’appareil."
             },
             {
               "prompt_fr": "Complète : « Unplug all external ___ like the dock and headset before running the hardware test. »",
               "choices": [
-                "peripherics",
                 "peripherals",
+                "peripherics",
                 "materials"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, un périphérique se dit « a peripheral » (au pluriel « peripherals »). « Peripherics » est un calque fréquent du français, et « materials » désigne des matériaux de construction ou des supports de cours, jamais du matériel informatique (« hardware »)."
+              "answer_index": 0,
+              "explanation_fr": "Les périphériques se disent « peripherals ». « Peripherics » n’existe pas (calque de « périphériques »), et « materials » veut dire matériaux ou supports de cours : le matériel informatique se dit « hardware » ou « equipment »."
             },
             {
               "prompt_fr": "Tu trouves une manipulation simple qui règle un bug récurrent sur les stations d’accueil. Quelle initiative prends-tu ?",
               "choices": [
-                "I keep the trick to myself so I remain the fastest technician.",
-                "I document the steps in the knowledge base so both users and Level 1 can solve it faster.",
-                "I reimage every laptop in the company just in case."
+                "I send the steps by email to my own team, so we remember it next time.",
+                "I apply the fix myself on every dock, so users never have to deal with it.",
+                "I document the steps in the knowledge base, so users and Level 1 can solve it faster."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Enrichir la base de connaissances (« knowledge base ») fait gagner du temps à toute l’équipe et évite les tickets répétitifs. Garder l’astuce pour soi nuit au service, et réinstaller tous les postes pour un souci de station d’accueil est disproportionné."
+              "answer_index": 2,
+              "explanation_fr": "Un article dans la base de connaissances rend la solution trouvable par tous, y compris les utilisateurs et le niveau 1, comme Ivan le demande. Un e-mail se perd vite, et passer sur chaque poste soi-même prend du temps sans aider la prochaine personne qui aura le problème."
             }
           ],
           "production": {
@@ -512,42 +512,42 @@
             {
               "prompt_fr": "Pourquoi le compte de Diego se reverrouille-t-il quelques minutes après sa réinitialisation de mot de passe ?",
               "choices": [
-                "Parce que le contrôleur de domaine est en panne",
-                "Parce qu’un second appareil tente toujours de s’authentifier automatiquement avec l’ancien mot de passe",
-                "Parce qu’Active Directory impose de changer de mot de passe toutes les dix minutes"
+                "Parce qu’un second appareil tente toujours de se connecter avec l’ancien mot de passe",
+                "Parce que le nouveau mot de passe ne respecte pas la politique de complexité du domaine",
+                "Parce que la réinitialisation n’a pas encore été répliquée sur tous les contrôleurs"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Quand un utilisateur change son mot de passe, un téléphone, une tablette ou un lecteur réseau qui a gardé l’ancien mot de passe en cache continue d’envoyer des requêtes en arrière-plan, ce qui déclenche un nouveau verrouillage (« account lockout »)."
+              "answer_index": 0,
+              "explanation_fr": "Kofi le dit : la tablette « is still trying to connect with his old credentials in the background ». Un mot de passe non conforme serait refusé au moment de la réinitialisation, et un retard de réplication ne provoque pas de verrouillages répétés depuis un seul appareil."
             },
             {
               "prompt_fr": "Comment dire « J’ai déverrouillé ton compte dans Active Directory » ?",
               "choices": [
-                "I unlocked your account in Active Directory.",
                 "I deblocked your account on Active Directory.",
-                "I opened your locked account at Active Directory."
+                "I unlocked your account in Active Directory.",
+                "I unblocked your account at Active Directory."
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais, déverrouiller un compte se dit « to unlock an account » (à l’inverse de « to lock »). « Deblocked » est un calque du français « débloquer » qui n’existe pas dans ce contexte."
+              "answer_index": 1,
+              "explanation_fr": "On « unlocks » un compte verrouillé (« locked out »). « Deblocked » n’existe pas (calque de « débloqué »), et « unblocked » s’emploie pour un contact ou un site bloqué, pas pour un verrouillage ; « at Active Directory » est aussi la mauvaise préposition."
             },
             {
               "prompt_fr": "Complète : « Check the security logs on the ___ to see where the failed logins come from. »",
               "choices": [
                 "domain controller",
-                "domain master",
+                "domain server",
                 "directory router"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le serveur qui exécute Active Directory et traite l’authentification du domaine s’appelle un « domain controller » (contrôleur de domaine, souvent abrégé DC)."
+              "explanation_fr": "Le serveur qui authentifie les comptes Active Directory s’appelle un « domain controller » (DC). « Domain server » n’est pas le terme consacré, et un routeur ne gère pas les connexions des utilisateurs."
             },
             {
               "prompt_fr": "Dans quel ordre dois-tu agir quand un téléphone verrouille en boucle le compte AD d’un salarié ?",
               "choices": [
-                "Unlock the account ten times until the phone stops trying.",
-                "Update or clear the cached credentials on the phone first, then unlock the account in Active Directory.",
-                "Delete the user’s account in Active Directory and recreate it from scratch."
+                "Unlock the account in Active Directory first, then clear the cached credentials on the phone.",
+                "Clear the cached credentials on the phone first, then unlock the account in Active Directory.",
+                "Reset the password again, so the phone gets the new one automatically."
               ],
               "answer_index": 1,
-              "explanation_fr": "Si tu déverrouilles le compte avant d’avoir coupé ou mis à jour l’appareil qui envoie le mauvais mot de passe, le compte sera verrouillé à nouveau en quelques secondes. Supprimer le compte ferait perdre tous ses identifiants uniques (SID) et accès."
+              "explanation_fr": "Si on déverrouille d’abord, le téléphone renvoie l’ancien mot de passe et reverrouille le compte aussitôt (« so it doesn’t lock right back up »). Une nouvelle réinitialisation ne change rien : le téléphone garde l’ancien mot de passe en mémoire."
             }
           ],
           "production": {
@@ -609,42 +609,42 @@
             {
               "prompt_fr": "Quelle est la différence entre une « distribution list » et une « shared mailbox » ?",
               "choices": [
-                "Une liste de diffusion envoie une copie dans la boîte de chaque membre, tandis qu’une boîte partagée est un espace commun où l’équipe lit et répond avec la même adresse",
-                "Une liste de diffusion ne fonctionne qu’en interne, alors qu’une boîte partagée nécessite un mot de passe partagé écrit sur un post-it",
-                "Il n’y a aucune différence : ce sont deux synonymes pour un dossier partagé sur un serveur"
+                "La liste est un espace commun avec une seule adresse ; la boîte partagée envoie une copie à chaque membre",
+                "La liste ne sert qu’aux échanges internes ; la boîte partagée ne sert qu’aux échanges externes",
+                "La liste envoie une copie à chaque membre ; la boîte partagée est un espace commun avec une seule adresse"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Une « distribution list » redistribue l’e-mail à chaque destinataire individuel, sans vision de qui a déjà répondu. Une « shared mailbox » (comme `invoices@` ou `support@`) est une boîte commune à laquelle on donne des droits aux membres sans partager de mot de passe."
+              "answer_index": 2,
+              "explanation_fr": "Une liste de diffusion redistribue chaque message dans la boîte de ses membres ; une boîte partagée est une boîte unique que l’équipe consulte et depuis laquelle elle répond. Le piège classique est d’inverser les deux, et les deux peuvent recevoir des messages internes et externes."
             },
             {
               "prompt_fr": "Pourquoi l’analyste doit-elle fermer et rouvrir sa session Windows après avoir été ajoutée au groupe de sécurité ?",
               "choices": [
-                "Parce que le serveur de fichiers redémarre à chaque nouvel utilisateur",
-                "Parce que le jeton d’appartenance aux groupes AD et le montage du lecteur par GPO sont évalués à l’ouverture de session",
-                "Parce qu’Outlook bloque les lecteurs réseau tant qu’il est ouvert"
+                "Parce que le partage réseau n’accepte qu’un nouvel utilisateur par session ouverte",
+                "Parce que la stratégie de groupe ne s’applique qu’une fois par jour, le matin",
+                "Parce que l’appartenance aux groupes et le lecteur réseau sont évalués à l’ouverture de session"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Sous Windows / Active Directory, le jeton de sécurité de l’utilisateur (qui contient ses groupes) est généré lors de l’ouverture de session (« logon »), moment où la stratégie de groupe (« Group Policy ») monte le lecteur réseau (« mapped drive »)."
+              "answer_index": 2,
+              "explanation_fr": "Daniel l’explique : elle a été ajoutée au groupe cinq minutes après sa connexion. Son jeton de session ne contient pas encore ce groupe, et la GPO qui monte le lecteur s’applique à l’ouverture de session. Il n’y a ni limite d’utilisateurs ni horaire fixe."
             },
             {
               "prompt_fr": "Complète : « A ___ mounts the finance network share as the S: drive for everyone in the department. »",
               "choices": [
                 "Group Strategy",
                 "Group Policy",
-                "Team Rule"
+                "Group Rule"
               ],
               "answer_index": 1,
-              "explanation_fr": "En français on parle de « stratégie de groupe », mais le terme officiel de Microsoft en anglais est « Group Policy » (ou « Group Policy Object », GPO). « Group Strategy » est un calque direct du français."
+              "explanation_fr": "Le nom du mécanisme Windows est « Group Policy » (GPO). « Group Strategy » est un calque de « stratégie de groupe », le nom de l’outil en français, et « Group Rule » n’existe pas."
             },
             {
               "prompt_fr": "Un utilisateur te demande de lui créer le lecteur Z: manuellement sur son poste pour aller plus vite. Que lui réponds-tu ?",
               "choices": [
-                "I’ll add you to the right security group instead, so Group Policy maps the drive automatically even if you change laptops.",
-                "No, mapped drives only work on Linux servers.",
-                "Sure, give me your password and I’ll type it in every morning."
+                "I’ll add you to the right security group instead, so the drive is mapped automatically on any laptop.",
+                "Sure, I’ll map it manually now, and we can move it to Group Policy later if needed.",
+                "Sure, I’ll map it with my admin account, so you don’t need any extra permissions."
               ],
               "answer_index": 0,
-              "explanation_fr": "Passer par le groupe de sécurité et la GPO garantit que le droit est tracé et que le lecteur suivra l’utilisateur sur n’importe quel poste, contrairement à un bricolage manuel local."
+              "explanation_fr": "Passer par le bon groupe garantit que le lecteur suit l’utilisateur sur n’importe quel poste, avec les bons droits. Un montage manuel est oublié au prochain changement de portable, et le monter avec un compte admin donnerait à l’utilisateur des droits qu’il ne devrait pas avoir."
             }
           ],
           "production": {
@@ -706,42 +706,42 @@
             {
               "prompt_fr": "En quoi consiste le « principle of least privilege » ?",
               "choices": [
-                "Donner uniquement les droits strictement nécessaires à chaque utilisateur ou service pour accomplir sa tâche",
-                "Réserver les ordinateurs les plus performants aux administrateurs systèmes",
-                "Interdire toute installation de nouveau logiciel dans l’entreprise"
+                "Donner les mêmes droits à tous les salariés d’un même service",
+                "Donner seulement les droits strictement nécessaires à chacun pour accomplir sa tâche",
+                "Retirer tous les droits et les rendre au cas par cas pendant une journée"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le principe du moindre privilège (« principle of least privilege ») limite la surface d’attaque : si un poste sans droits admin locaux est piégé par une pièce jointe malveillante, le programme ne peut pas modifier le système."
+              "answer_index": 1,
+              "explanation_fr": "Le moindre privilège consiste à n’accorder que le nécessaire, et seulement le temps nécessaire. Des droits identiques pour tout un service dépassent souvent les besoins de chacun, et tout retirer sans analyse bloquerait les équipes."
             },
             {
               "prompt_fr": "Comment dire « Récupère les licences logicielles inutilisées » ?",
               "choices": [
-                "Reclaim the unused software licenses.",
-                "Recuperate the software permits not used.",
-                "Take again the unused software licenses."
+                "Recuperate the unused software licenses.",
+                "Take back the not used software licences.",
+                "Reclaim the unused software licenses."
               ],
-              "answer_index": 0,
-              "explanation_fr": "En gestion de parc, récupérer une licence ou de l’espace disque se dit « to reclaim » (ou « to reassign »). « Recuperate » est un faux ami qui veut dire se remettre d’une maladie, et « permit » s’utilise pour un permis de construire ou de conduire."
+              "answer_index": 2,
+              "explanation_fr": "« To reclaim a license » est la tournure du métier pour récupérer une licence non utilisée. « Recuperate » veut dire récupérer après une maladie, et « not used » se place avant le nom sous la forme « unused »."
             },
             {
               "prompt_fr": "Complète : « We need to tighten the ___ on the HR folder so only the HR group can read it. »",
               "choices": [
                 "file permissions",
                 "file authorizations",
-                "folder warranties"
+                "folder rights of access"
               ],
               "answer_index": 0,
-              "explanation_fr": "Les droits de lecture, d’écriture et d’exécution sur des fichiers ou dossiers s’appellent « file permissions » (ou « NTFS permissions » sous Windows)."
+              "explanation_fr": "On parle de « file permissions » (ou « access rights ») pour les droits sur un dossier. « Authorizations » se dit plutôt pour une autorisation ponctuelle, et « rights of access » est un calque lourd de « droits d’accès »."
             },
             {
               "prompt_fr": "Un développeur se plaint qu’on lui retire ses droits administrateur permanents sur son poste. Quelle réponse professionnelle lui donnes-tu ?",
               "choices": [
-                "We don’t trust developers with computers anymore.",
-                "To follow least privilege and block malware, we’re removing permanent admin rights, but you can request temporary elevation whenever you need to install a tool.",
-                "You don’t need any tools to write code."
+                "I understand, so I’ll keep your admin rights, since developers need to install tools often.",
+                "It’s a security decision, so you’ll need to ask the IT team to install every tool for you.",
+                "To follow least privilege, we’re removing permanent admin rights, but you can request temporary elevation."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Expliquer la raison de sécurité (moindre privilège, protection contre les malwares) tout en proposant une solution pratique (élévation temporaire à la demande) désamorce le conflit sans céder sur la sécurité."
+              "answer_index": 2,
+              "explanation_fr": "La bonne réponse explique la règle et propose une solution qui garde le développeur efficace : l’élévation temporaire. Garder ses droits permanents contredit la décision de Sofia, et tout faire installer par l’IT ralentirait inutilement son travail."
             }
           ],
           "production": {
@@ -804,22 +804,22 @@
             {
               "prompt_fr": "À quelle condition un « remote wipe » lancé depuis la console MDM prend-il effet sur un téléphone volé ?",
               "choices": [
-                "Dès que le téléphone dispose d’une connexion Wi-Fi ou mobile pour recevoir l’ordre de la console",
-                "Même si le téléphone est éteint et sans batterie, grâce aux ondes radio",
-                "Uniquement si le voleur saisit le bon code PIN d’abord"
+                "Dès que le téléphone a une connexion Wi-Fi ou mobile pour recevoir l’ordre",
+                "Au prochain redémarrage du téléphone, même sans aucune connexion réseau",
+                "Seulement si le téléphone se connecte au Wi-Fi de l’entreprise"
               ],
               "answer_index": 0,
-              "explanation_fr": "La commande d’effacement à distance (« remote wipe ») est mise en file d’attente par le MDM et s’exécute dès que l’appareil est allumé et connecté au réseau (cellulaire ou Wi-Fi), sans avoir besoin de déverrouiller l’écran."
+              "explanation_fr": "L’ordre d’effacement est envoyé par la console MDM : le téléphone doit être en ligne pour le recevoir, ici il l’est (« it’s online right now »). Sans réseau, rien ne se passe, même au redémarrage, et n’importe quelle connexion internet suffit."
             },
             {
               "prompt_fr": "Pourquoi Jean-Baptiste révoque-t-il aussi les sessions SSO et réinitialise-t-il le MFA de Samuel ?",
               "choices": [
-                "Pour supprimer définitivement le contrat de travail de Samuel",
-                "Pour couper les accès déjà ouverts sur le téléphone perdu et permettre à Samuel de valider ses connexions sur un nouvel appareil",
-                "Pour accélérer la vitesse du Wi-Fi à l’aéroport"
+                "Pour que le téléphone perdu ne puisse plus recevoir l’ordre d’effacement à distance",
+                "Pour couper les accès déjà ouverts sur le téléphone perdu et valider ses connexions sur un nouvel appareil",
+                "Pour supprimer définitivement le compte de Samuel en attendant son retour"
               ],
               "answer_index": 1,
-              "explanation_fr": "Même verrouillé, le téléphone contenait des jetons de session SSO actifs et l’application d’authentification MFA : révoquer les sessions protège les applications métier et réinitialiser le MFA évite que Samuel ne soit bloqué hors de son poste."
+              "explanation_fr": "Une session déjà ouverte reste valable même après le verrouillage : la révoquer coupe l’accès aux applications. Le nouveau téléphone permet à Samuel de continuer à valider sa MFA. Cela n’empêche pas l’effacement, et le compte de Samuel n’est pas supprimé."
             },
             {
               "prompt_fr": "Complète : « When an employee leaves the company, HR opens a ticket for account ___. »",
@@ -829,17 +829,17 @@
                 "disconnection"
               ],
               "answer_index": 0,
-              "explanation_fr": "En gestion des identités (IAM), la création et l’attribution des accès à l’arrivée s’appellent « provisioning », et le retrait méthodique des accès au départ s’appelle « deprovisioning » (ou « offboarding »)."
+              "explanation_fr": "Le « deprovisioning » est le retrait organisé de tous les comptes et accès d’une personne qui part. « Uninstallation » s’emploie pour un logiciel, et « disconnection » pour une coupure de connexion, pas pour la fermeture de comptes."
             },
             {
               "prompt_fr": "Comment dire « Tous les téléphones de l’entreprise sont gérés dans le MDM » ?",
               "choices": [
+                "All company phones are subscribed to MDM.",
                 "All company phones are enrolled in MDM.",
-                "All enterprise phones are subscribed at the MDM.",
-                "Every society phones are registered on MDM."
+                "All society phones are registered on MDM."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le verbe consacré pour inscrire un appareil dans une solution de gestion de flotte est « to enroll a device in MDM ». Attention aussi au faux ami « society » (la société au sens de vie en société), alors que l’entreprise se dit « company »."
+              "answer_index": 1,
+              "explanation_fr": "Un appareil est « enrolled in MDM » (inscrit dans la gestion des appareils). « Subscribed » s’emploie pour un abonnement, et « society » est un faux ami : l’entreprise se dit « company »."
             }
           ],
           "production": {
@@ -939,42 +939,42 @@
             {
               "prompt_fr": "Comment Omar déduit-il immédiatement que le routeur principal et la passerelle par défaut ne sont pas en cause ?",
               "choices": [
-                "Parce que le deuxième étage n’utilise pas de passerelle pour aller sur internet",
-                "Parce que les autres étages accèdent toujours au réseau local et à internet par ce même routeur",
-                "Parce qu’un routeur ne peut jamais tomber en panne en journée"
+                "Parce que la console d’administration répond encore depuis le deuxième étage",
+                "Parce que le commutateur du deuxième étage répond toujours aux tests de ping",
+                "Parce que les autres étages accèdent toujours au réseau et à internet par ce même routeur"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En dépannage réseau, comparer le périmètre touché permet d’isoler la panne : si les autres étages sortent sur internet, le routeur (« router ») et la passerelle (« default gateway ») fonctionnent, ce qui pointe vers le switch de distribution de l’étage touché."
+              "answer_index": 2,
+              "explanation_fr": "Si les étages 1 et 3 passent par le même routeur et la même passerelle sans problème, ces équipements fonctionnent. Au contraire, le commutateur du deuxième étage ne répond plus dans la console : c’est lui le suspect."
             },
             {
               "prompt_fr": "Quelle est la différence de rôle entre un « switch » et un « router » dans un bureau ?",
               "choices": [
-                "Le switch ne fonctionne qu’en Wi-Fi, alors que le routeur utilise uniquement des câbles",
-                "Le routeur alimente les écrans en électricité, tandis que le switch filtre les virus",
-                "Le switch relie les appareils au sein du même réseau local (LAN), tandis que le routeur achemine le trafic entre des réseaux différents"
+                "Le switch fait passer le trafic entre réseaux ; le routeur relie les appareils d’un même réseau local",
+                "Le switch relie les appareils en Wi-Fi ; le routeur relie les appareils branchés en câble",
+                "Le switch relie les appareils d’un même réseau local ; le routeur fait passer le trafic entre réseaux"
               ],
               "answer_index": 2,
-              "explanation_fr": "Le commutateur (« switch », couche 2) relie les postes, imprimantes et bornes d’un même réseau local (« LAN »), tandis que le routeur (« router », couche 3) interconnecte différents sous-réseaux et sert de passerelle vers internet."
+              "explanation_fr": "Le switch connecte les postes d’un même LAN ; le routeur achemine le trafic entre réseaux, par exemple vers internet. Le piège classique est d’inverser les rôles, et le Wi-Fi passe par des points d’accès, pas par une distinction switch / routeur."
             },
             {
               "prompt_fr": "Complète : « Users on the second floor cannot reach the default ___ at 10.0.2.1. »",
               "choices": [
-                "passway",
-                "portal",
-                "gateway"
+                "gate",
+                "gateway",
+                "passage"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En réseau, la passerelle par défaut se dit « default gateway ». « Passway » et « portal » ne s’emploient pas pour désigner l’adresse IP du routeur de sortie d’un sous-réseau."
+              "answer_index": 1,
+              "explanation_fr": "La passerelle par défaut se dit « default gateway ». « Gate » est une porte ou une barrière, et « passage » un couloir : deux traductions possibles de « passerelle » qui ne s’emploient pas en réseau."
             },
             {
               "prompt_fr": "Comment annoncer sobrement à l’équipe qu’il y a un souci réseau en cours d’analyse au bureau de Lyon ?",
               "choices": [
-                "The network in Lyon is completely broken and dead.",
                 "We’re investigating a connectivity issue at the Lyon office.",
-                "There is a connection problem of network in the Lyon desk."
+                "The network in Lyon is completely down, we don’t know why.",
+                "There is a problem of network connection in the Lyon desk."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« We’re investigating a connectivity issue at the Lyon office » est la tournure professionnelle standard. « Desk » désigne un bureau-meuble (pas des locaux, qui se disent « office »), et « broken and dead » est familier et alarmiste."
+              "answer_index": 0,
+              "explanation_fr": "Le message sobre dit ce qui se passe sans dramatiser. « Completely down, we don’t know why » inquiète sans rien apporter, et « problem of network connection » ou « the Lyon desk » sont des calques (on dit « network issue » et « office »)."
             }
           ],
           "production": {
@@ -1037,42 +1037,42 @@
             {
               "prompt_fr": "Pourquoi est-ce une erreur d’attribuer manuellement sur une imprimante une adresse IP située au milieu de la plage DHCP active ?",
               "choices": [
-                "Parce que le protocole DHCP bloque automatiquement toutes les impressions couleur",
-                "Parce qu’une imprimante ne peut fonctionner qu’avec une adresse IPv6",
-                "Parce que le serveur DHCP risque d’attribuer cette même adresse à un autre appareil, créant un conflit d’adresses IP"
+                "Parce qu’une adresse fixe empêche l’imprimante de se mettre en veille la nuit",
+                "Parce que le serveur DHCP risque de donner la même adresse à un autre appareil",
+                "Parce que le serveur DHCP efface les adresses saisies à la main chaque matin"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Si une adresse IP fixe (« static IP address ») est configurée manuellement sur l’appareil au sein de la plage dynamique sans réservation sur le serveur DHCP, le serveur ne le sait pas et peut louer cette adresse à un portable, provoquant un conflit."
+              "answer_index": 1,
+              "explanation_fr": "Marcus le dit : l’adresse saisie est « right inside our DHCP range », et le serveur la donne à un portable avant que l’imprimante se réveille, d’où un conflit. Une adresse fixe n’empêche pas la veille, et le DHCP ne peut pas effacer un réglage fait sur l’appareil."
             },
             {
               "prompt_fr": "À quoi sert l’adresse MAC (« MAC address ») lors de la création d’une réservation sur le serveur DHCP ?",
               "choices": [
-                "À identifier de manière unique la carte réseau de l’imprimante pour lui redonner toujours la même adresse IP",
-                "À permettre uniquement aux ordinateurs de la marque Apple d’imprimer",
-                "À chiffrer les documents envoyés vers l’imprimante"
+                "À donner à l’imprimante un nom facile à retenir sur le réseau interne",
+                "À empêcher les autres appareils de se connecter à l’imprimante",
+                "À identifier la carte réseau de l’imprimante pour lui redonner toujours la même adresse"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’adresse MAC (« Media Access Control address ») est l’identifiant matériel unique de l’interface réseau. Le serveur DHCP la reconnaît et lui attribue systématiquement l’adresse IP réservée (sans aucun rapport avec les ordinateurs Mac d’Apple)."
+              "answer_index": 2,
+              "explanation_fr": "L’adresse MAC identifie la carte réseau : la réservation DHCP associe cette MAC à une IP fixe. Le nom facile à retenir vient de l’enregistrement DNS (`mkt-printer.corp`), et une réservation ne filtre pas les accès."
             },
             {
               "prompt_fr": "Complète : « Update the ___ record so the hostname points to the new IP address. »",
               "choices": [
+                "DNS",
                 "DHCP",
-                "MAC",
-                "DNS"
+                "MAC"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "C’est le DNS (« Domain Name System ») qui associe un nom d’hôte (`mkt-printer.corp`) à une adresse IP via un enregistrement (« DNS record »)."
             },
             {
               "prompt_fr": "Comment dire « Le serveur DHCP attribue une adresse IP à chaque portable » ?",
               "choices": [
-                "The DHCP server gives each laptop an IP address.",
-                "The DHCP server attributes an IP address at every laptop.",
-                "The server DHCP gives to each laptop an address IP."
+                "The DHCP server attributes an IP address to every laptop.",
+                "The DHCP server gives to each laptop an IP address.",
+                "The DHCP server gives each laptop an IP address."
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais, on dit « gives each laptop an IP address » ou « assigns an IP address to each laptop ». « Attributes … at » est un calque du français « attribuer à », et l’ordre des mots « server DHCP » / « address IP » calque la syntaxe française."
+              "answer_index": 2,
+              "explanation_fr": "Le verbe naturel est « give » (ou « assign ») : « gives each laptop an IP address ». « Attributes » est un faux ami (« attribute X to Y » veut dire attribuer une cause), et « gives to each laptop an IP address » place le complément dans le mauvais ordre."
             }
           ],
           "production": {
@@ -1134,42 +1134,42 @@
             {
               "prompt_fr": "Qu’est-ce que le « jitter » (la gigue) et pourquoi gêne-t-il particulièrement les appels vocaux et vidéo ?",
               "choices": [
-                "C’est l’épuisement des adresses IP disponibles sur le réseau sans fil",
-                "C’est l’usure matérielle des antennes de la borne Wi-Fi",
-                "C’est la variation irrégulière du délai d’arrivée des paquets, qui rend le son haché ou robotique en temps réel"
+                "La variation irrégulière du délai d’arrivée des paquets, qui hache le son en temps réel",
+                "Le délai moyen que mettent les paquets pour arriver, qui retarde la voix",
+                "La part des paquets perdus en route, qui fait disparaître des morceaux de son"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Le « jitter » (la gigue) mesure l’écart de temps d’arrivée entre les paquets successifs. Si les paquets arrivent à intervalles très irréguliers, un appel en direct ne peut pas reconstituer un flux audio ou vidéo fluide."
+              "answer_index": 0,
+              "explanation_fr": "Le « jitter » est la variation du délai entre les paquets : le son devient haché ou robotique. Le délai moyen s’appelle la latence, et les paquets perdus, la perte de paquets (« packet loss »), un autre indicateur que Ravi cite à part."
             },
             {
               "prompt_fr": "Comment dire « Le point d’accès de la salle de réunion est en panne » ?",
               "choices": [
-                "The Wi-Fi terminal of the reunion room is broken.",
+                "The access point of the reunion room is broken.",
                 "The access point in the meeting room is down.",
-                "The entry point of the meeting room is out of order."
+                "The entry point in the meeting room is out of order."
               ],
               "answer_index": 1,
-              "explanation_fr": "Une borne Wi-Fi se dit « an access point » (abrégé AP), une salle de réunion « a meeting room » (faux ami : « reunion » désigne des retrouvailles d’anciens élèves ou de famille), et être hors ligne / en panne se dit « is down »."
+              "explanation_fr": "On dit « access point » (borne Wi-Fi) et « down » pour un équipement en panne. « Reunion » est un faux ami (des retrouvailles), et « entry point » n’est pas le terme réseau."
             },
             {
               "prompt_fr": "Complète : « Employees should connect to the Corp ___, while visitors use the Guest network. »",
               "choices": [
                 "SSID",
-                "RAID",
-                "ICMP"
+                "VLAN",
+                "DHCP"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le « SSID » (« Service Set Identifier ») est le nom du réseau Wi-Fi diffusé par les bornes et visible dans la liste des réseaux sans fil."
+              "explanation_fr": "Le SSID est le nom du réseau Wi-Fi que l’on choisit pour se connecter (« Corp » ou « Guest »). Un VLAN peut se cacher derrière chaque SSID, mais l’utilisateur ne s’y connecte pas directement, et le DHCP distribue les adresses."
             },
             {
               "prompt_fr": "Un utilisateur te dit : « J’ai un bon débit en téléchargement, mais ma voix coupe sur Teams. » Quelle explication technique est la plus pertinente ?",
               "choices": [
-                "Teams requires at least 10 Gbps of bandwidth for a voice call.",
-                "Voice calls need very little bandwidth, but they are very sensitive to packet loss and high jitter on weak Wi-Fi.",
-                "Your screen resolution is too high for the microphone."
+                "Voice calls need more bandwidth than downloads, so your connection is too slow for Teams.",
+                "Voice calls need little bandwidth, but they’re very sensitive to packet loss and jitter on weak Wi-Fi.",
+                "Your download speed is fine, so the issue must come from Teams itself, not from the network."
               ],
               "answer_index": 1,
-              "explanation_fr": "Un appel audio consomme très peu de bande passante (« bandwidth »), mais la moindre perte de paquets (« packet loss ») ou une gigue (« jitter ») élevée sur un Wi-Fi instable hache immédiatement la conversation."
+              "explanation_fr": "Un appel vocal consomme peu de débit, mais supporte mal la perte de paquets et la gigue, typiques d’un Wi-Fi faible. La voix demande moins de débit qu’un téléchargement, et un bon débit ne prouve pas que le réseau est sain pour le temps réel."
             }
           ],
           "production": {
@@ -1223,7 +1223,7 @@
             },
             {
               "speaker": "Tomasz",
-              "text_en": "So it’s a Layer 3 routing issue on our ISP’s side, not our server. Open a ticket with them and attach the traceroute output.",
+              "text_en": "In OSI model terms, it’s a Layer 3 routing issue on our ISP’s side, not our server. Open a ticket with them and attach the traceroute output.",
               "text_fr": "C’est donc un problème de routage de couche 3 au sens du modèle OSI chez notre opérateur, pas sur notre serveur. Ouvre un ticket chez eux en joignant le résultat du traceroute."
             }
           ],
@@ -1231,42 +1231,42 @@
             {
               "prompt_fr": "Quel renseignement supplémentaire « traceroute » apporte-t-il par rapport à un simple « ping » ?",
               "choices": [
-                "Il affiche le mot de passe administrateur de chaque serveur traversé",
-                "Il détaille chaque routeur intermédiaire (saut) traversé par les paquets et le temps de réponse à chaque étape",
-                "Il double automatiquement la bande passante disponible sur le lien"
+                "Il mesure la bande passante disponible entre les deux extrémités du lien",
+                "Il indique si le port du service est ouvert sur le serveur de destination",
+                "Il montre chaque routeur traversé par les paquets et le temps de réponse à chaque étape"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Alors que « ping » mesure uniquement l’aller-retour de bout en bout avec la cible finale, « traceroute » révèle chaque saut (« hop ») intermédiaire sur la route IP et permet de voir exactement à quel routeur le délai apparaît."
+              "answer_index": 2,
+              "explanation_fr": "Le « ping » donne un temps de réponse global ; le « traceroute » détaille chaque saut (« hop »), d’où la découverte du saut 6. Il ne mesure pas la bande passante (c’est le rôle d’un test de débit), et il ne teste pas les ports."
             },
             {
               "prompt_fr": "Pourquoi Tomasz parle-t-il de « Layer 3 » du « OSI model » à propos de cet incident ?",
               "choices": [
-                "Parce que le routage des paquets IP entre différents réseaux relève de la couche 3 (couche Réseau) du modèle OSI",
-                "Parce que la panne se trouve au troisième étage de l’immeuble",
-                "Parce qu’il y a trois câbles branchés sur le serveur"
+                "Parce que la lenteur vient de la couche 3, celle des câbles et du signal physique",
+                "Parce que la lenteur vient de la couche 3, celle de l’application qui transfère les fichiers",
+                "Parce que le routage des paquets IP entre réseaux relève de la couche 3 (Réseau) du modèle OSI"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Dans le modèle OSI en 7 couches (« OSI model »), la couche 1 est physique (câbles), la couche 2 est la liaison de données (switch, MAC, VLAN) et la couche 3 est la couche réseau (adressage IP et routage des paquets)."
+              "answer_index": 2,
+              "explanation_fr": "Dans le modèle OSI, la couche 3 est la couche Réseau (IP et routage) : le problème est chez le routeur du fournisseur. Les câbles et le signal sont la couche 1 (physique), et l’application est la couche 7."
             },
             {
               "prompt_fr": "Complète : « Only a quarter of our ___ is in use, so the slow transfer is caused by high latency, not congestion. »",
               "choices": [
-                "passband",
+                "band",
                 "bandwidth",
-                "broadway"
+                "flow rate"
               ],
               "answer_index": 1,
-              "explanation_fr": "En réseau informatique, la bande passante (la capacité maximale de transfert d’un lien) se traduit par « bandwidth ». « Passband » est un terme de traitement du signal radio/électronique."
+              "explanation_fr": "La bande passante se dit « bandwidth ». « Band » seul désigne une bande de fréquences (la bande 5 GHz) ou un groupe de musique, et « flow rate » est un débit de liquide, pas de données."
             },
             {
               "prompt_fr": "Comment dire « Lance un traceroute pour voir quel chemin prennent les paquets » ?",
               "choices": [
-                "Make a traceroute for seeing which road take the packets.",
                 "Run a traceroute to see what path the packets take.",
-                "Launch a route trace to watch the packets way."
+                "Make a traceroute to see which way the packets take.",
+                "Launch a traceroute for seeing what path take the packets."
               ],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, on exécute un outil ou une commande avec « run » (« run a traceroute »), le chemin réseau se dit « the path », et une subordonnée interrogative indirecte garde l’ordre sujet + verbe (« what path the packets take »)."
+              "answer_index": 0,
+              "explanation_fr": "On « runs » une commande, et la question indirecte garde l’ordre sujet-verbe : « what path the packets take ». « Make a traceroute » est un calque de « faire », et « for seeing… take the packets » cumule une mauvaise structure et une inversion."
             }
           ],
           "production": {
@@ -1366,42 +1366,42 @@
             {
               "prompt_fr": "Que signifie « All four CPU cores are pinned at 100% » ?",
               "choices": [
-                "Les quatre cœurs du processeur sont plafonnés à 100 % d’utilisation en continu",
-                "Le serveur possède cent processeurs physiques différents",
-                "Les quatre cœurs du processeur sont éteints pour économiser de l’énergie"
+                "Les quatre cœurs du processeur sont réservés à un seul processus par l’admin",
+                "Les quatre cœurs du processeur sont bloqués à 100 % d’utilisation en continu",
+                "Les quatre cœurs du processeur ont atteint 100 % une fois, pendant un pic bref"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Pinned at 100% » (ou « pegged at 100% ») est l’image d’une aiguille de compteur bloquée au maximum : les quatre cœurs (« cores ») du processeur (« CPU ») travaillent à pleine capacité sans relâche."
+              "answer_index": 1,
+              "explanation_fr": "« Pinned at 100% » veut dire bloqué au maximum, de façon continue, ici à cause d’un export qui tourne depuis six heures. « To pin a process to a core » existe aussi (l’attacher à un cœur), mais ce n’est pas ce que dit la phrase, et il ne s’agit pas d’un pic bref."
             },
             {
               "prompt_fr": "Comment dire « Je me suis connecté au serveur en SSH » ?",
               "choices": [
-                "I connected myself at the server with SSH.",
-                "I connected to the server over SSH.",
-                "I logged on the server by the SSH."
+                "I connected myself to the server with SSH.",
+                "I logged on the server by SSH.",
+                "I connected to the server over SSH."
               ],
-              "answer_index": 1,
-              "explanation_fr": "« To connect » ne prend pas de pronom réfléchi (« myself » est un calque de « je me suis connecté »), se construit avec « to » (« to the server ») et le protocole s’introduit par « over SSH » (ou « via SSH »)."
+              "answer_index": 2,
+              "explanation_fr": "On dit « connect to a server over SSH » (ou « via SSH »). « Connected myself » calque la forme pronominale française, et « logged on the server by SSH » cumule une préposition manquante (« logged on to ») et « by », calque de « par »."
             },
             {
               "prompt_fr": "Complète : « A runaway background ___ was consuming all available CPU resources. »",
               "choices": [
-                "proceeding",
                 "process",
-                "procedure"
+                "procedure",
+                "proceeding"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un programme en cours d’exécution sur un système d’exploitation s’appelle « a process » (avec un PID, Process ID). « Procedure » désigne une consigne écrite et « proceeding » une démarche juridique."
+              "answer_index": 0,
+              "explanation_fr": "Un programme en cours d’exécution est un « process ». « Procedure » est une marche à suivre (ou une procédure stockée en SQL), et « proceeding » s’emploie surtout au pluriel pour une procédure judiciaire."
             },
             {
               "prompt_fr": "Pourquoi Kenji envoie-t-il d’abord un signal d’arrêt normal (`SIGTERM`) au processus plutôt que de redémarrer toute la machine ?",
               "choices": [
-                "Parce que Linux interdit de redémarrer un serveur en semaine",
-                "Parce que cibler uniquement le processus fautif libère le CPU sans couper les autres utilisateurs connectés au serveur",
-                "Parce que la commande SSH se désinstalle si on redémarre le serveur"
+                "Parce que SIGTERM est plus rapide qu’un redémarrage, mais donne le même résultat pour tous",
+                "Parce qu’un redémarrage du serveur relancerait automatiquement l’export bloqué",
+                "Parce que cibler seulement le processus fautif libère le CPU sans couper les autres utilisateurs"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Arrêter proprement le seul processus (« worker process ») coincé rétablit aussitôt les performances sans interrompre les sessions des autres utilisateurs actifs sur le serveur."
+              "answer_index": 2,
+              "explanation_fr": "Arrêter seulement le processus fautif libère le CPU sans couper le service web ni les autres utilisateurs. Un redémarrage coupe tout le monde, ce n’est donc pas « le même résultat », et rien n’indique que l’export repartirait tout seul."
             }
           ],
           "production": {
@@ -1463,42 +1463,42 @@
             {
               "prompt_fr": "Pourquoi Moussa déconseille-t-il de faire tourner le script de nettoyage en tant que « root user » ?",
               "choices": [
-                "Parce que le compte root n’a pas le droit de compresser des fichiers sous Linux",
-                "Parce qu’une erreur de chemin ou de variable dans un script exécuté en root pourrait supprimer des fichiers système critiques",
-                "Parce que le compte root consomme deux fois plus de RAM qu’un compte standard"
+                "Parce qu’une erreur de chemin dans un script lancé en root pourrait effacer des fichiers système",
+                "Parce que les fichiers créés par root ne peuvent plus être compressés ensuite",
+                "Parce qu’une tâche cron lancée en root ne s’exécute pas pendant la nuit"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « root user » ayant tous les pouvoirs sur le système Linux, un bug dans un script shell (par exemple `rm -rf` avec une variable vide) peut détruire le système entier, alors qu’un compte de service dédié est limité à son propre dossier."
+              "answer_index": 0,
+              "explanation_fr": "Root peut tout supprimer : une variable vide dans un `rm` peut effacer bien plus que les logs. Root compresse sans problème n’importe quel fichier, et cron exécute ses tâches la nuit quel que soit le compte : c’est le principe du moindre privilège qui joue ici."
             },
             {
               "prompt_fr": "Qu’est-ce qu’un « cron job » sur un serveur Linux ?",
               "choices": [
-                "Une tâche planifiée pour s’exécuter automatiquement à heures ou intervalles fixes",
-                "Une barrette de mémoire vive supplémentaire installée dans le serveur",
-                "Un pare-feu matériel placé devant la salle informatique"
+                "Un script qui se lance automatiquement dès que le disque est presque plein",
+                "Une tâche planifiée qui s’exécute automatiquement à heures ou intervalles fixes",
+                "Un service qui tourne en permanence pour surveiller l’espace disque"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un « cron job » est une tâche programmée dans le démon `cron` de Linux (par exemple toutes les nuits à 2 h du matin) pour automatiser des sauvegardes, des nettoyages ou des rapports."
+              "answer_index": 1,
+              "explanation_fr": "Un « cron job » s’exécute selon un horaire (ici, chaque nuit), pas en réaction à un événement comme un disque plein. Un service qui tourne en permanence est un « daemon », pas une tâche cron."
             },
             {
               "prompt_fr": "Complète : « The database crashed because the server ran out of ___ on the main partition. »",
               "choices": [
+                "disk space",
                 "disk place",
-                "disk room",
-                "disk space"
+                "disk room"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En anglais, l’espace disque se dit toujours « disk space » (et manquer d’espace disque se dit « to run out of disk space »). « Disk place » est un calque du français « de la place sur le disque »."
+              "answer_index": 0,
+              "explanation_fr": "L’espace disque se dit « disk space » : « ran out of disk space ». « Place » veut dire un lieu, et « room » s’emploie pour l’espace physique (« there’s no room in the car »), pas pour un disque."
             },
             {
               "prompt_fr": "Comment distinguer le rôle de la « RAM » de celui du « disk space » quand tu l’expliques à un collègue junior ?",
               "choices": [
-                "RAM holds the data of currently running programs in fast volatile memory, while disk space stores files persistently on the drive.",
-                "RAM stores backups for several years, while disk space is erased every time you reboot.",
-                "They are two names for the exact same component."
+                "RAM keeps files persistently on the drive, while disk space holds the data of running programs.",
+                "RAM holds the data of running programs and is wiped at reboot, while disk space keeps files persistently.",
+                "RAM is the part of the disk that the system reserves for running programs and their files."
               ],
-              "answer_index": 0,
-              "explanation_fr": "La « RAM » (mémoire vive) est rapide et temporaire pour les processus actifs, tandis que l’espace disque (« disk space ») conserve les fichiers et bases de données de manière permanente sur le support de stockage."
+              "answer_index": 1,
+              "explanation_fr": "La RAM est une mémoire rapide et volatile pour les programmes en cours ; l’espace disque stocke les fichiers de façon durable. Le piège classique est d’inverser les deux, et la RAM n’est pas une partie du disque (même si le « swap » utilise le disque en renfort)."
             }
           ],
           "production": {
@@ -1561,42 +1561,42 @@
             {
               "prompt_fr": "Quel est le rôle de l’« hypervisor » dans une infrastructure de virtualisation ?",
               "choices": [
-                "C’est un écran géant accroché au mur de la salle de supervision",
-                "C’est la couche logicielle qui crée, isole et fait tourner les machines virtuelles en partageant le matériel physique",
-                "C’est le câble réseau qui relie le routeur au fournisseur d’accès"
+                "Le système d’exploitation installé à l’intérieur de chaque machine virtuelle",
+                "Le répartiteur de charge qui envoie le trafic vers les machines virtuelles",
+                "La couche logicielle qui crée, isole et fait tourner les machines virtuelles sur le matériel"
               ],
-              "answer_index": 1,
-              "explanation_fr": "L’hyperviseur (« hypervisor », comme VMware ESXi, Proxmox ou Hyper-V) gère le matériel du serveur physique (CPU, RAM, stockage) et le répartit entre plusieurs machines virtuelles (« virtual machines ») indépendantes."
+              "answer_index": 2,
+              "explanation_fr": "L’hyperviseur partage le matériel physique entre plusieurs VM isolées. Le système installé dans chaque VM est le système « invité » (« guest OS »), et c’est le « load balancer » qui répartit le trafic."
             },
             {
               "prompt_fr": "Que signifie « drain `web-vm-01` from the load balancer » ?",
               "choices": [
-                "Supprimer définitivement le disque dur de la machine virtuelle",
-                "Vider le refroidissement liquide du serveur dans la baie",
-                "Demander au répartiteur de charge de ne plus envoyer de nouvelles connexions à cette VM et d’attendre la fin des sessions en cours"
+                "Couper tout de suite toutes les connexions de cette VM pour pouvoir la mettre à jour",
+                "Retirer définitivement cette VM du répartiteur de charge",
+                "Ne plus envoyer de nouvelles connexions à cette VM et laisser finir les sessions en cours"
               ],
               "answer_index": 2,
-              "explanation_fr": "En administration systèmes, « connection draining » consiste à retirer progressivement un nœud du répartiteur de charge (« load balancer ») : les sessions actives se terminent proprement et les nouvelles vont vers les autres serveurs."
+              "explanation_fr": "« To drain » (vider progressivement) veut dire ne plus envoyer de nouvelles requêtes et laisser les sessions en cours se terminer, sans coupure pour les utilisateurs. Couper tout d’un coup ferait justement perdre du trafic, et la VM revient dans le pool après la mise à jour."
             },
             {
               "prompt_fr": "Complète : « Each virtual machine runs its own guest ___ independently of the others. »",
               "choices": [
-                "operating system",
                 "exploitation system",
-                "system operator"
+                "operating system",
+                "operation system"
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Système d’exploitation » se dit toujours « operating system » (OS). « Exploitation system » est un calque français très courant en entretien qu’il faut absolument éviter."
+              "answer_index": 1,
+              "explanation_fr": "Le système d’exploitation se dit « operating system » (OS). « Exploitation » est un faux ami (l’exploitation au sens d’abus), et « operation system » oublie la forme en -ing."
             },
             {
               "prompt_fr": "Pourquoi Ivan rappelle-t-il de supprimer le snapshot de la VM sur l’hyperviseur une fois la mise à jour validée ?",
               "choices": [
-                "Parce qu’un snapshot conservé longtemps grossit sur le disque et dégrade les performances de stockage de l’hyperviseur",
-                "Parce qu’un hyperviseur s’éteint automatiquement au bout de 24 heures s’il y a un snapshot",
-                "Parce que supprimer le snapshot efface aussi la machine virtuelle de production"
+                "Parce qu’un snapshot gardé longtemps grossit et dégrade les performances de stockage",
+                "Parce qu’un snapshot empêche la VM de redémarrer tant qu’il n’est pas supprimé",
+                "Parce qu’un snapshot garde une copie complète de la VM qui occupe le double d’espace"
               ],
               "answer_index": 0,
-              "explanation_fr": "Un snapshot de VM fige le disque de base et écrit toutes les modifications dans un fichier delta qui grossit avec le temps. Le garder des semaines consomme de l’espace disque et alourdit les lectures/écritures sur l’hyperviseur."
+              "explanation_fr": "Un snapshot enregistre toutes les modifications depuis sa création : plus on le garde, plus il grossit et ralentit le stockage, comme Ivan le dit. Il n’empêche pas de redémarrer, et ce n’est pas une copie complète : c’est justement un fichier de différences qui gonfle."
             }
           ],
           "production": {
@@ -1657,42 +1657,42 @@
             {
               "prompt_fr": "Quelle est la différence entre mettre à jour le « kernel » d’un serveur Linux et mettre à jour le « firmware » d’un switch ?",
               "choices": [
-                "Le noyau (kernel) est le cœur du système d’exploitation du serveur, tandis que le micrologiciel (firmware) est le logiciel bas niveau intégré au matériel du switch",
-                "Le kernel ne concerne que les écrans d’ordinateur, alors que le firmware est un câble électrique",
-                "Il n’y a aucune différence : tous deux désignent une application bureautique"
+                "Le kernel est le logiciel intégré au matériel du switch ; le firmware est le cœur du système du serveur",
+                "Le kernel est le cœur du système du serveur ; le firmware est le logiciel intégré au matériel du switch",
+                "Le kernel est une application installée sur le serveur ; le firmware est un pilote installé sur le poste"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le « kernel » est le cœur de l’OS (Linux, Windows) qui gère processus et mémoire, tandis que le « firmware » est le logiciel embarqué directement dans la mémoire flash d’un équipement matériel (switch, routeur, carte contrôleur, BIOS/UEFI)."
+              "answer_index": 1,
+              "explanation_fr": "Le noyau (kernel) est le cœur du système d’exploitation ; le micrologiciel (firmware) est le logiciel bas niveau embarqué dans un équipement. Le piège classique est d’inverser les deux, et le kernel n’est pas une application."
             },
             {
               "prompt_fr": "Pourquoi une mise à jour du « kernel » nécessite-t-elle généralement un redémarrage du serveur ?",
               "choices": [
-                "Pour vider la corbeille du bureau Windows",
-                "Pour charger la nouvelle version du noyau en mémoire au démarrage du système",
-                "Parce que le câble réseau doit être débranché à chaque correctif"
+                "Pour vider le cache disque avant d’appliquer le correctif",
+                "Pour vérifier que le correctif a bien été téléchargé en entier",
+                "Pour charger en mémoire la nouvelle version du noyau au démarrage"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Sauf utilisation d’outils spécifiques de live-patching, un serveur continue d’exécuter en mémoire l’ancien noyau (« kernel ») tant qu’il n’a pas redémarré sur le nouveau."
+              "answer_index": 2,
+              "explanation_fr": "Le noyau tourne en mémoire dès le démarrage : le nouveau n’est utilisé qu’après un redémarrage. Le cache disque et la vérification du téléchargement n’ont rien à voir avec ce redémarrage."
             },
             {
               "prompt_fr": "Complète : « We scheduled the maintenance on Saturday night to keep ___ under fifteen minutes for users. »",
               "choices": [
-                "breakdown time",
-                "off-time",
-                "downtime"
+                "downtime",
+                "breakdown",
+                "off-time"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En exploitation informatique, une période d’indisponibilité (planifiée ou subie) se dit « downtime » (par opposition à « uptime », le temps de disponibilité)."
+              "answer_index": 0,
+              "explanation_fr": "« Downtime » désigne la durée d’indisponibilité d’un service. « Breakdown » est une panne (souvent imprévue), pas une durée planifiée, et « off-time » se dit du temps libre, pas d’une coupure de service."
             },
             {
               "prompt_fr": "Comment dire « Nous allons installer un correctif de sécurité ce soir » ?",
               "choices": [
-                "We will install a security corrective tonight.",
-                "We’re going to install a security patch tonight.",
-                "We go to put a safety correction this evening."
+                "We’re going to install a security corrective tonight.",
+                "We go to install a security patch this night.",
+                "We’re going to install a security patch tonight."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un correctif logiciel ou de sécurité se dit « a patch » (« a security patch »), jamais « a corrective ». Attention aussi à « security » (sécurité informatique contre les malveillances) par opposition à « safety » (sécurité physique contre les accidents)."
+              "answer_index": 2,
+              "explanation_fr": "Un correctif se dit « patch » (ou « fix »). « Corrective » est un adjectif, pas un nom, et « We go to » ne sert pas à annoncer un projet (on dit « We’re going to »), tout comme « this night » pour ce soir (« tonight »)."
             }
           ],
           "production": {
@@ -1793,42 +1793,42 @@
             {
               "prompt_fr": "Que signifie le fait qu’une grappe RAID soit en « degraded mode » (mode dégradé) ?",
               "choices": [
-                "Toutes les données ont été effacées et le serveur est éteint",
-                "Un disque est tombé en panne : le serveur fonctionne toujours grâce à la redondance, mais n’est plus protégé si le disque miroir lâche à son tour",
-                "Le câble réseau du serveur a été débranché"
+                "Un disque est en panne : tout marche encore, mais la grappe n’est plus protégée contre une seconde panne",
+                "Un disque est en panne : la grappe fonctionne plus lentement, mais reste protégée contre une seconde panne",
+                "Un disque est en panne : la grappe est passée en lecture seule jusqu’au remplacement"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En mode dégradé (« degraded mode »), la grappe RAID continue de servir les données grâce aux disques restants, mais la tolérance de panne est entamée et la reconstruction (« rebuild ») sur un disque neuf est urgente."
+              "answer_index": 0,
+              "explanation_fr": "En mode dégradé, la redondance a absorbé la panne, mais la marge de sécurité a disparu : une seconde panne dans le même miroir ferait perdre des données. La grappe n’est donc plus protégée, et elle reste accessible en lecture et en écriture."
             },
             {
               "prompt_fr": "Quelle est la différence entre « infrastructure monitoring » et « uptime monitoring » ?",
               "choices": [
-                "La supervision d’infrastructure suit la santé interne des équipements (disques, CPU, RAM), tandis que l’uptime monitoring teste de l’extérieur si le service répond",
-                "L’uptime monitoring remplace automatiquement les disques durs cassés",
-                "Ce sont deux noms pour désigner l’antivirus installé sur les postes"
+                "L’infrastructure vérifie de l’extérieur si le service répond ; l’uptime suit la santé interne des équipements",
+                "L’infrastructure suit la santé interne des équipements ; l’uptime vérifie de l’extérieur si le service répond",
+                "L’infrastructure surveille les serveurs ; l’uptime surveille uniquement les postes des utilisateurs"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Ici, l’« uptime monitoring » reste au vert car le serveur répond toujours aux utilisateurs, tandis que le « monitoring » interne détecte la panne matérielle (« hardware failure ») d’un disque du RAID."
+              "answer_index": 1,
+              "explanation_fr": "Ici, la supervision d’infrastructure voit le disque en panne, tandis que l’uptime monitoring, testé depuis les agences, reste au vert. Le piège classique est d’inverser les deux, et l’uptime monitoring teste un service, pas les postes de travail."
             },
             {
               "prompt_fr": "Complète : « Because the server bays support hot-swapping, we can replace the failed ___ without turning the server off. »",
               "choices": [
-                "material",
-                "software",
-                "hardware"
+                "drive",
+                "hardware",
+                "material"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Le matériel informatique physique (disques, barrettes, cartes, châssis) se dit « hardware » (nom indénombrable : on ne dit jamais « a hardware »). « Material » est un faux ami qui désigne un matériau ou du tissu."
+              "answer_index": 0,
+              "explanation_fr": "Dans cette phrase, on remplace un objet précis : « the failed drive » (le disque en panne). « Hardware » est indénombrable et désigne le matériel en général, et « material » est un faux ami : il veut dire matériau ou support, pas matériel informatique."
             },
             {
               "prompt_fr": "Un manager te dit : « Pas besoin de remplacer le disque tout de suite puisque le RAID fonctionne encore. » Que lui réponds-tu ?",
               "choices": [
-                "You’re right, RAID can run forever with half its disks broken.",
-                "We should replace it right away: while the RAID array is degraded, a second drive failure in the same mirror would cause data loss and downtime.",
-                "Let’s format the server immediately."
+                "You’re right, we can wait for the next maintenance window, since users aren’t affected yet.",
+                "We should replace it now: while the array is degraded, a second failure in that mirror would cause data loss.",
+                "You’re right, RAID 10 can lose any two drives without losing data, so there’s no rush."
               ],
               "answer_index": 1,
-              "explanation_fr": "Tant que la grappe RAID n’est pas reconstruite (« rebuilt ») sur un disque sain, la redondance est réduite et les disques restants subissent davantage de lecture/écriture, augmentant le risque d’une seconde panne fatale."
+              "explanation_fr": "Tant que la grappe est dégradée, une seconde panne dans le même miroir suffit à perdre des données : on remplace tout de suite, d’autant que les baies acceptent le remplacement à chaud. Attendre prolonge ce risque, et un RAID 10 ne tolère deux pannes que si elles touchent deux miroirs différents."
             }
           ],
           "production": {
@@ -1890,42 +1890,42 @@
             {
               "prompt_fr": "Pourquoi Inès choisit-elle de tester la restauration à partir de la copie hors site immuable plutôt que du NAS local ?",
               "choices": [
-                "Parce qu’un rançongiciel présent sur le réseau local tente souvent de chiffrer ou supprimer aussi les sauvegardes accessibles sur le LAN",
-                "Parce qu’un NAS local ne peut stocker que des fichiers texte",
-                "Parce que le téléchargement depuis internet est toujours dix fois plus rapide que le réseau local"
+                "Parce qu’une copie hors site se restaure toujours plus vite qu’une copie locale",
+                "Parce que le NAS local ne garde les sauvegardes que pendant une seule semaine",
+                "Parce qu’un rançongiciel sur le réseau local tente souvent de chiffrer aussi les sauvegardes du NAS"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Lors d’une attaque par rançongiciel (« ransomware »), les attaquants ciblent en priorité les partages et serveurs de sauvegarde joignables sur le réseau local. Une copie hors site et immuable (« immutable / offline backup ») garantit de pouvoir repartir même si le LAN est compromis."
+              "answer_index": 2,
+              "explanation_fr": "Inès simule le pire : un réseau local compromis, où le rançongiciel s’attaque aussi aux sauvegardes accessibles. Une copie hors site est en général plus lente à restaurer, pas plus rapide, et la durée de conservation du NAS n’est pas l’argument."
             },
             {
               "prompt_fr": "Comment écrire correctement : « Nous sauvegardons la base toutes les nuits et nous vérifions la sauvegarde chaque matin » ?",
               "choices": [
                 "We backup the database every night and check the back up each morning.",
-                "We back up the database every night and check the backup each morning.",
-                "We make a back-upping of the database every night."
+                "We back up the database every night and check the back-up of each morning.",
+                "We back up the database every night and check the backup each morning."
               ],
-              "answer_index": 1,
-              "explanation_fr": "En anglais, le verbe s’écrit en deux mots (« to back up a database ») tandis que le nom ou l’adjectif s’écrit en un seul mot (« a backup », « a backup copy »)."
+              "answer_index": 2,
+              "explanation_fr": "Le verbe s’écrit en deux mots (« to back up ») et le nom en un seul (« a backup »). Le piège classique est d’inverser les deux formes, et « the back-up of each morning » ajoute un « of » qui change le sens."
             },
             {
-              "prompt_fr": "Complète : « All offsite archives are protected with AES-256 ___ so nadie can read them without the key. »",
+              "prompt_fr": "Complète : « All offsite archives are protected with AES-256 ___ so nobody can read them without the key. »",
               "choices": [
                 "crypting",
                 "encryption",
-                "codification"
+                "cyphering"
               ],
               "answer_index": 1,
-              "explanation_fr": "Le chiffrement se dit « encryption » en anglais (et le verbe est « to encrypt »). « Crypting » est un calque du français familier « cryptage » et ne s’emploie pas en anglais professionnel."
+              "explanation_fr": "Le chiffrement se dit « encryption ». « Crypting » n’existe pas (calque de « cryptage »), et « cyphering » est une graphie rare de « ciphering », qu’on n’emploie pas pour parler d’AES."
             },
             {
               "prompt_fr": "Que valide concrètement cet exercice de « disaster recovery » par rapport au « SLA » ?",
               "choices": [
-                "Que le prix de l’abonnement internet a baissé ce trimestre",
-                "Que l’équipe est réellement capable de déchiffrer et remonter une base intègre dans le délai maximal promis (moins de deux heures)",
-                "Que les utilisateurs n’oublieront plus jamais leur mot de passe"
+                "Que l’équipe sait vraiment déchiffrer et remonter une base intègre en moins de deux heures",
+                "Que les sauvegardes hors site sont bien prises chaque nuit sans erreur",
+                "Que le fournisseur de stockage respecte son propre SLA de disponibilité"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Avoir des tâches de sauvegarde au vert ne suffit pas : seul un test de restauration (« restore drill ») prouve que l’archive est lisible, que les clés de déchiffrement sont accessibles et que la durée de remise en service respecte le SLA (et le RTO)."
+              "answer_index": 0,
+              "explanation_fr": "L’exercice vérifie le délai promis en interne (« restore it in under two hours ») et l’intégrité des données. Une sauvegarde réussie chaque nuit ne prouve pas qu’on sait la restaurer, et le SLA en jeu est celui de l’équipe, pas celui du fournisseur."
             }
           ],
           "production": {
@@ -1988,42 +1988,42 @@
             {
               "prompt_fr": "Que s’est-il passé lors du « automatic failover » décrit par Sofia ?",
               "choices": [
-                "Les utilisateurs ont dû ressaisir toutes leurs commandes de la journée",
-                "Le serveur de secours situé dans une autre baie a automatiquement pris le relais du serveur principal tombé en panne",
-                "Le pare-feu a bloqué l’accès au site web pendant deux heures"
+                "L’équipe a redémarré le serveur principal sur une alimentation de secours",
+                "Le serveur de secours de l’autre baie a pris automatiquement le relais du serveur principal",
+                "Le cluster a restauré la dernière sauvegarde sur un nouveau serveur"
               ],
               "answer_index": 1,
-              "explanation_fr": "Dans une architecture à haute disponibilité (« high availability »), le « failover » est le basculement automatique ou manuel du service vers un nœud de secours (« standby / secondary node ») lorsque le nœud principal (« primary node ») défaille."
+              "explanation_fr": "Le « failover » est la bascule vers le nœud de secours, promu principal en vingt secondes. Personne n’a redémarré le nœud A (il est toujours hors service), et aucune sauvegarde n’a été restaurée : la réplique était déjà prête."
             },
             {
               "prompt_fr": "Pourquoi les deux nœuds du cluster étaient-ils installés dans deux baies (Rack A et Rack B) avec des alimentations séparées ?",
               "choices": [
-                "Pour éviter qu’une simple panne électrique sur une baie ne fasse tomber à la fois le serveur principal et son secours",
-                "Parce que les câbles réseau ne peuvent pas mesurer moins de dix mètres",
-                "Pour doubler la facture d’électricité du datacenter"
+                "Pour que les deux nœuds puissent traiter des écritures en même temps",
+                "Pour répartir le trafic des utilisateurs entre les deux baies",
+                "Pour qu’une panne électrique sur une baie ne fasse pas tomber le principal et son secours"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La haute disponibilité (« high availability ») consiste à éliminer les points de défaillance uniques (« single points of failure ») : si les deux serveurs sont branchés sur le même bandeau électrique (PDU), une panne de ce bandeau provoque une panne totale (« outage »)."
+              "answer_index": 2,
+              "explanation_fr": "C’est exactement ce qui est arrivé : la PDU de la baie A a lâché, mais le secours, alimenté ailleurs, a pris le relais. Deux nœuds qui écrivent en même temps provoqueraient un « split-brain », et un nœud de secours ne reçoit pas de trafic en temps normal."
             },
             {
               "prompt_fr": "Complète : « Follow the ___ carefully before rejoining the old primary node to the cluster. »",
               "choices": [
-                "roadbook",
-                "copybook",
-                "runbook"
+                "runbook",
+                "handbook",
+                "logbook"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En exploitation informatique, la fiche de procédure opérationnelle qui détaille les commandes exactes à suivre lors d’une intervention ou d’un incident s’appelle un « runbook » (ou « playbook »)."
+              "answer_index": 0,
+              "explanation_fr": "Le « runbook » décrit pas à pas les opérations à mener sur un système. Un « handbook » est un manuel général (souvent pour les salariés), et un « logbook » est un journal où l’on note ce qui s’est passé."
             },
             {
               "prompt_fr": "Comment dire « La bascule automatique a évité une panne complète » ?",
               "choices": [
-                "The automatic failover prevented a full outage.",
-                "The automatic rockering avoided a total breakdown of current.",
-                "The failover automatic has empêched a complete panne."
+                "The automatic failover prevented a total power cut.",
+                "The automatic failover prevented from a full outage.",
+                "The automatic failover prevented a full outage."
               ],
-              "answer_index": 0,
-              "explanation_fr": "« Automatic failover » (bascule automatique) et « full outage » (panne complète / interruption totale de service) sont les termes exacts. « Prevented » est le verbe naturel pour dire qu’un mécanisme a empêché un incident de se produire."
+              "answer_index": 2,
+              "explanation_fr": "« Prevent » veut dire empêcher qu’une chose arrive, et « full outage » est le terme pour une panne complète de service. « Power cut » est une coupure de courant (le piège du mot « panne »), et « prevent from » ne s’emploie qu’avec un complément : « prevent something from happening »."
             }
           ],
           "production": {
@@ -2091,42 +2091,42 @@
             {
               "prompt_fr": "Que signifie « You’re on-call tonight » ?",
               "choices": [
-                "Tu es en conversation téléphonique en ce moment",
-                "Tu es d’astreinte ce soir : joignable en dehors des heures de bureau en cas d’incident critique",
-                "Tu dois appeler tous les clients de l’entreprise ce soir"
+                "Tu es d’astreinte ce soir : joignable en dehors des heures de bureau en cas d’incident",
+                "Tu es de garde ce soir au bureau pour surveiller les écrans jusqu’à minuit",
+                "Tu dois rappeler ce soir les utilisateurs qui ont ouvert un ticket"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Être d’astreinte se dit « to be on-call » (ou « to take the on-call shift »). Pour dire que quelqu’un est actuellement au téléphone, on dit « he’s on a call » (avec l’article « a »)."
+              "answer_index": 0,
+              "explanation_fr": "« On call » veut dire d’astreinte : joignable à distance si un incident survient. Ce n’est pas une présence au bureau, et cela n’a rien à voir avec le fait de passer des appels aux utilisateurs."
             },
             {
               "prompt_fr": "Que doit contenir un bon « shift handover » entre deux administrateurs ?",
               "choices": [
-                "La liste des opérations en cours, les tickets ouverts à surveiller, ce qui a déjà été testé et la consigne d’escalade en cas d’alerte",
-                "Uniquement la météo prévue pour le lendemain",
-                "La liste complète de tous les tickets résolus depuis la création de l’entreprise"
+                "Le résumé de tous les tickets résolus pendant la journée par l’équipe",
+                "Les opérations en cours, les tickets à surveiller, ce qui a été testé et la consigne d’escalade",
+                "Les identifiants administrateur des serveurs concernés par les incidents"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un passage de consigne (« handover » ou « handoff ») donne à la personne qui prend le relais tout le contexte utile pour ne pas repartir de zéro si une alerte se déclenche la nuit."
+              "answer_index": 1,
+              "explanation_fr": "Une bonne passation donne ce qui reste à surveiller et quoi faire si ça dérape, comme Yasmine avec la reconstruction RAID et le contrat du fournisseur. Les tickets résolus n’aident pas la nuit, et les identifiants se trouvent dans le coffre-fort, jamais dans une passation."
             },
             {
               "prompt_fr": "Complète : « If you cannot resolve the storage fault within thirty minutes, ___ it to the vendor’s Level 3 team. »",
               "choices": [
-                "climb",
-                "mount",
-                "escalate"
+                "escalate",
+                "raise",
+                "transfer up"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Transmettre un ticket ou un incident à un niveau de support supérieur ou plus spécialisé se dit toujours « to escalate (an issue / a ticket) to… »."
+              "answer_index": 0,
+              "explanation_fr": "On « escalates an issue to » une équipe de niveau supérieur. « Raise » s’emploie pour ouvrir un ticket ou soulever une question (« raise a ticket »), pas pour le transmettre, et « transfer up » n’est pas une tournure anglaise."
             },
             {
               "prompt_fr": "Comment dire « J’ai diagnostiqué le problème réseau pendant une heure » ?",
               "choices": [
+                "I troubleshooted the network issue during one hour.",
                 "I troubleshot the network issue for an hour.",
-                "I troubleshooted on the network problem during one hour.",
-                "I made troubleshooting of the network during an hour."
+                "I made troubleshooting on the network issue for an hour."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le prétérit de « troubleshoot » est irrégulier (« troubleshot », comme « shoot -> shot »), le verbe est transitif direct (sans « on »), et une durée s’introduit par « for » (« for an hour »), pas par « during »."
+              "answer_index": 1,
+              "explanation_fr": "Le passé de « troubleshoot » est « troubleshot », et une durée s’exprime avec « for ». « During » indique quand, pas combien de temps, et « made troubleshooting » est un calque de « faire du dépannage »."
             }
           ],
           "production": {
@@ -2226,42 +2226,42 @@
             {
               "prompt_fr": "Pourquoi Omar refuse-t-il d’ouvrir à la fois TCP et UDP depuis « any source » pour PostgreSQL ?",
               "choices": [
-                "Parce qu’une règle pare-feu propre ne doit ouvrir que le protocole réellement utilisé (TCP 5432) et uniquement depuis l’adresse IP du serveur autorisé",
-                "Parce qu’un pare-feu ne peut filtrer qu’un seul port à la fois",
-                "Parce que le protocole TCP est obsolète depuis dix ans"
+                "Parce que PostgreSQL utilise UDP, et qu’ouvrir TCP en plus exposerait la base pour rien",
+                "Parce qu’une règle « any source » ne fonctionne pas avec le protocole UDP",
+                "Parce qu’une règle propre n’ouvre que le protocole utilisé (TCP 5432), depuis le seul serveur autorisé"
               ],
-              "answer_index": 0,
-              "explanation_fr": "En sécurité réseau, on évite toujours les règles trop larges (« any/any » ou « TCP+UDP » par paresse) : on limite la règle au protocole exact (« TCP »), au port précis (`5432`) et aux seules adresses IP sources légitimes."
+              "answer_index": 2,
+              "explanation_fr": "Omar le dit : PostgreSQL n’utilise que TCP, et la source doit être limitée au serveur back-end. Le piège est d’inverser TCP et UDP, et une règle « any source » fonctionne très bien en UDP : c’est justement le problème."
             },
             {
               "prompt_fr": "À quoi sert le processus de « change management » avant de modifier un pare-feu de production ?",
               "choices": [
-                "À ralentir volontairement les développeurs pour qu’ils codent moins",
-                "À évaluer le risque de sécurité ou de coupure, faire valider la règle et garder une trace précise de qui a modifié quoi et pourquoi",
-                "À changer de marque de pare-feu tous les mois"
+                "À appliquer la règle tout de suite, puis à la documenter dans un ticket après coup",
+                "À tester la nouvelle règle automatiquement sur le pare-feu de production",
+                "À évaluer le risque, faire valider la règle et garder une trace de qui a changé quoi et pourquoi"
               ],
-              "answer_index": 1,
-              "explanation_fr": "La gestion des changements (« change management ») protège la production contre les ouvertures de flux dangereuses ou les erreurs de frappe qui couperaient un service critique, tout en assurant la traçabilité pour les audits."
+              "answer_index": 2,
+              "explanation_fr": "Le « change management » fait passer chaque modification par une analyse de risque, une validation et une trace écrite. Documenter après coup, c’est ce qu’a fait le développeur et ce qu’Omar refuse, et le processus ne teste rien sur la production."
             },
             {
               "prompt_fr": "Complète : « The ___ blocks all incoming traffic by default unless a rule explicitly allows it. »",
               "choices": [
-                "fireguard",
+                "fire barrier",
                 "firewall",
-                "firegate"
+                "gateway"
               ],
               "answer_index": 1,
-              "explanation_fr": "Le pare-feu se dit « firewall » en anglais. Une politique qui bloque tout par défaut sauf ce qui est explicitement autorisé s’appelle « default deny » (ou « implicit deny »)."
+              "explanation_fr": "Le pare-feu se dit « firewall ». « Fire barrier » est un vrai coupe-feu dans un bâtiment, et la passerelle (« gateway ») achemine le trafic sans forcément le bloquer par défaut."
             },
             {
               "prompt_fr": "Comment demander poliment au développeur de préciser sa demande d’ouverture de flux ?",
               "choices": [
-                "Your firewall request is terrible, learn networking first.",
-                "Could you specify the exact source IP address? For security, we only open TCP port 5432 from the backend server, not from any source.",
-                "I opened all ports on the firewall so you won’t bother me again."
+                "Could you specify the exact source IP? For security, we only open TCP 5432 from the backend server.",
+                "Your request opens the database to everyone, so I’m rejecting the ticket.",
+                "I’ll open TCP and UDP from any source for now, and we can restrict it later."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La deuxième réponse est courtoise, explique la règle de sécurité et pose la question précise qui permet de faire avancer le ticket dans le cadre du « change management »."
+              "answer_index": 0,
+              "explanation_fr": "La bonne réponse est courtoise, explique la règle et pose la question qui fait avancer le ticket. Rejeter sans proposer de solution bloque le développeur, et ouvrir largement « pour l’instant » finit souvent en règle oubliée et dangereuse."
             }
           ],
           "production": {
@@ -2324,42 +2324,42 @@
             {
               "prompt_fr": "Quel est l’objectif principal de la « network segmentation » à l’aide de VLAN et de sous-réseaux ?",
               "choices": [
-                "Cloisonner les groupes d’équipements pour qu’un appareil compromis (comme une caméra IoT) ne puisse pas atteindre directement les serveurs ou les postes de travail",
-                "Permettre d’utiliser des câbles réseau deux fois plus fins",
-                "Supprimer le besoin d’avoir un pare-feu dans l’entreprise"
+                "Donner plus de bande passante aux caméras en les séparant du reste du trafic",
+                "Cloisonner les appareils pour qu’un équipement compromis n’atteigne pas directement les postes et serveurs",
+                "Permettre aux caméras d’être vues depuis internet sans passer par le pare-feu"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La segmentation réseau (« network segmentation ») découpe le réseau physique en plusieurs réseaux logiques isolés (« VLANs » et « subnets »), empêchant tout déplacement latéral (« lateral movement ») d’un attaquant."
+              "answer_index": 1,
+              "explanation_fr": "La segmentation isole les équipements fragiles, comme les caméras IoT au firmware faible, du reste du réseau. Il ne s’agit pas de débit, et c’est l’inverse d’une exposition sur internet, qu’Elena refuse justement."
             },
             {
               "prompt_fr": "Pourquoi Elena refuse-t-elle catégoriquement de configurer du « port forwarding » vers les caméras ?",
               "choices": [
-                "Parce que le port forwarding ralentit la vitesse des disques durs",
-                "Parce que rediriger un port depuis l’adresse IP publique vers les caméras les rendrait directement attaquables depuis tout internet",
-                "Parce que le NAT ne fonctionne qu’avec les imprimantes"
+                "Parce que la redirection de port couperait l’accès des caméras depuis le LAN",
+                "Parce que la redirection de port ne fonctionne pas avec une adresse NAT",
+                "Parce que rediriger un port public vers les caméras les rendrait attaquables depuis tout internet"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « port forwarding » (redirection de port entrants à travers le NAT) expose directement un équipement interne sur l’IP publique de l’entreprise : les scanners automatisés sur internet le trouveraient en quelques minutes. On passe toujours par un VPN authentifié."
+              "answer_index": 2,
+              "explanation_fr": "Le « port forwarding » ouvre un accès depuis l’adresse IP publique jusqu’à l’interface des caméras : n’importe qui sur internet pourrait l’attaquer. L’accès interne reste possible, et la redirection de port est justement faite pour fonctionner derrière du NAT."
             },
             {
               "prompt_fr": "Complète : « The router uses ___ so all internal devices on private subnets can share a single public IP address. »",
               "choices": [
-                "SSH",
-                "RAID",
-                "NAT"
+                "NAT",
+                "DNS",
+                "VLAN"
               ],
-              "answer_index": 2,
-              "explanation_fr": "Le « NAT » (« Network Address Translation ») réécrit les adresses IP privées (comme `10.x.x.x` ou `192.168.x.x`) des paquets sortants avec l’adresse IP publique du routeur ou du pare-feu."
+              "answer_index": 0,
+              "explanation_fr": "La traduction d’adresses (NAT) permet à tous les appareils privés de sortir avec une seule IP publique. Le DNS traduit des noms en adresses, et un VLAN sépare des réseaux, sans partager d’IP publique."
             },
             {
               "prompt_fr": "Comment dire « Nous avons placé les caméras dans un VLAN et un sous-réseau séparés » ?",
               "choices": [
-                "We placed the cameras in a separate VLAN and subnet.",
-                "We putted the cameras on a separated VLAN and under-network.",
-                "We ranged the cameras in a apart VLAN and sub-net."
+                "We placed the cameras in a separated VLAN and subnetwork.",
+                "We put the cameras on a separate VLAN and under-network.",
+                "We placed the cameras in a separate VLAN and subnet."
               ],
-              "answer_index": 0,
-              "explanation_fr": "En anglais, « sous-réseau » se dit « subnet » (jamais « under-network »), l’adjectif « séparé / distinct » avant un nom se dit « separate » (sans `-d`), et le prétérit de « put » est invariable (« put », jamais « putted »)."
+              "answer_index": 2,
+              "explanation_fr": "« Separate » (adjectif) veut dire distinct ; « separated » veut dire qui a été séparé, et ne s’emploie pas ici. « Under-network » est un calque de « sous-réseau » : le terme est « subnet »."
             }
           ],
           "production": {
@@ -2421,42 +2421,42 @@
             {
               "prompt_fr": "Quelle est la différence entre un « proxy server » (forward proxy) et un « reverse proxy » ?",
               "choices": [
-                "Un proxy sortant relaie et filtre les requêtes des utilisateurs internes vers internet, tandis qu’un reverse proxy est placé devant des serveurs pour recevoir les requêtes des clients et gérer notamment le SSL/TLS",
-                "Le proxy fonctionne uniquement le matin et le reverse proxy uniquement l’après-midi",
-                "Le reverse proxy sert à inverser le sens des câbles Ethernet dans la baie"
+                "Le proxy sortant relaie les requêtes des salariés vers internet ; le reverse proxy reçoit celles des clients devant des serveurs",
+                "Le proxy sortant reçoit les requêtes des clients devant des serveurs ; le reverse proxy relaie celles des salariés vers internet",
+                "Le proxy sortant chiffre le trafic du VPN ; le reverse proxy déchiffre le trafic du VPN"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le « forward proxy » (souvent appelé simplement « proxy server » en entreprise) se place côté clients pour contrôler leur sortie vers internet, alors que le « reverse proxy » (comme Nginx, HAProxy ou Traefik) se place devant les serveurs d’application."
+              "explanation_fr": "Ici, le reverse proxy est placé devant le portail RH et présente le certificat ; le proxy sortant filtre ce qui part vers internet, y compris la demande de certificat. Le piège classique est d’inverser les deux, et le chiffrement du VPN est géré par le tunnel, pas par ces proxys."
             },
             {
               "prompt_fr": "Pourquoi les télétravailleurs voient-ils une alerte de sécurité dans leur navigateur en ouvrant le portail RH ?",
               "choices": [
-                "Parce que leur tunnel VPN n’est pas connecté",
-                "Parce que le certificat SSL/TLS présenté par le reverse proxy a dépassé sa date de validité",
-                "Parce que le portail RH n’accepte que les connexions en Wi-Fi"
+                "Parce que leur tunnel VPN n’est pas connecté au réseau de l’entreprise",
+                "Parce que le certificat présenté par le reverse proxy a dépassé sa date de validité",
+                "Parce que le proxy sortant bloque l’accès au portail RH depuis l’extérieur"
               ],
               "answer_index": 1,
-              "explanation_fr": "Dès qu’un certificat « SSL/TLS » expire, les navigateurs affichent un avertissement bloquant (« Your connection is not private ») pour prévenir que l’identité du serveur n’est plus garantie à jour."
+              "explanation_fr": "Ravi le voit : le certificat a expiré à minuit. Les utilisateurs sont bien connectés au VPN (« they are connected »), et le proxy sortant n’a bloqué que le renouvellement automatique, pas l’accès au portail."
             },
             {
               "prompt_fr": "Complète : « Connect to the corporate ___ before trying to open internal applications from home. »",
               "choices": [
                 "VPN",
-                "CPU",
-                "RAID"
+                "proxy",
+                "firewall"
               ],
               "answer_index": 0,
-              "explanation_fr": "Le « VPN » (« Virtual Private Network ») établit un tunnel chiffré entre l’ordinateur distant et le réseau de l’entreprise à travers internet."
+              "explanation_fr": "On se connecte au « corporate VPN » pour accéder aux applications internes depuis chez soi. Un proxy et un pare-feu font partie de l’infrastructure, mais l’utilisateur ne s’y « connecte » pas pour entrer dans le réseau."
             },
             {
               "prompt_fr": "Quel problème peut survenir si un tunnel VPN d’entreprise ne gère qu’IPv4 alors que la box internet de l’employé utilise « IPv6 » ?",
               "choices": [
-                "L’écran de l’ordinateur portable passe en noir et blanc",
-                "Une partie du trafic ou des requêtes DNS peut sortir directement en IPv6 hors du tunnel VPN si IPv6 n’est pas pris en charge ou bloqué dans le profil VPN",
-                "Les adresses IPv6 sont plus courtes que les adresses IPv4"
+                "Le tunnel VPN refuse de se connecter tant que la box utilise IPv6",
+                "Une partie du trafic ou des requêtes DNS peut sortir en IPv6, en dehors du tunnel VPN",
+                "Tout le trafic IPv6 est converti en IPv4 et ralentit fortement la connexion"
               ],
               "answer_index": 1,
-              "explanation_fr": "C’est ce qu’on appelle une fuite IPv6 (« IPv6 leak ») : si le client VPN ne route que l’IPv4 sans acheminer ni bloquer l’IPv6 local, le système d’exploitation peut envoyer directement des flux en IPv6 via la box domestique."
+              "explanation_fr": "Si le profil VPN ne gère ni ne bloque IPv6, ce trafic passe directement par la box, hors du tunnel : c’est le cas de l’utilisateur cité par Ravi. Le tunnel se connecte quand même (c’est pour cela que la fuite passe inaperçue), et aucune conversion automatique n’a lieu."
             }
           ],
           "production": {
@@ -2519,42 +2519,42 @@
             {
               "prompt_fr": "Que fait concrètement l’agent « EDR » lorsqu’il « isolates the laptop from the network » ?",
               "choices": [
-                "Il coupe toutes les communications réseau du poste (vers le LAN et internet) à l’exception du canal chiffré vers la console d’administration EDR",
-                "Il éteint le chauffage dans le bureau de l’employé",
-                "Il supprime le compte Active Directory de toute l’entreprise"
+                "Il coupe seulement l’accès à internet, mais garde le poste sur le réseau local",
+                "Il éteint le poste à distance pour arrêter le logiciel malveillant",
+                "Il coupe toutes les communications du poste, sauf le canal vers la console EDR"
               ],
-              "answer_index": 0,
-              "explanation_fr": "L’isolation réseau (« network containment / isolation ») par l’agent EDR (« Endpoint Detection and Response ») empêche tout logiciel malveillant de se propager sur le réseau ou d’exfiltrer des données, tout en laissant la main à distance aux administrateurs."
+              "answer_index": 2,
+              "explanation_fr": "Aïcha le dit : le portable « can only talk to the EDR console ». Garder l’accès au LAN laisserait un attaquant se déplacer vers d’autres machines, et l’EDR n’éteint pas le poste : il faut pouvoir l’analyser."
             },
             {
               "prompt_fr": "En quoi consiste le « system hardening » (durcissement système) sur les postes et serveurs ?",
               "choices": [
-                "À renforcer la coque en plastique des ordinateurs portables",
-                "À réduire la surface d’attaque en désactivant les services, ports et scripts inutiles et en appliquant des configurations de sécurité strictes",
-                "À rendre les mots de passe impossibles à taper au clavier"
+                "Installer un antivirus plus puissant sur chaque poste et chaque serveur",
+                "Renforcer les mots de passe en imposant une longueur minimale plus grande",
+                "Réduire la surface d’attaque en désactivant services, ports et scripts inutiles"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le « hardening » consiste à sécuriser la configuration d’un OS ou d’un serveur (guides CIS, GPO de restriction PowerShell/macros, fermeture des ports et services superflus) pour bloquer l’exploitation d’une attaque."
+              "answer_index": 2,
+              "explanation_fr": "Le durcissement configure un système de façon minimale et stricte, comme les restrictions PowerShell citées par Tomasz. Un antivirus et une politique de mots de passe sont des mesures utiles, mais ce ne sont pas le « hardening »."
             },
             {
               "prompt_fr": "Complète : « The attack started with a ___ email pretending to come from the parcel delivery service. »",
               "choices": [
                 "fishing",
                 "phishing",
-                "flashing"
+                "spamming"
               ],
               "answer_index": 1,
-              "explanation_fr": "L’hameçonnage par e-mail ou SMS s’écrit toujours « phishing » (avec `ph`). « Fishing » désigne la pêche à la ligne au bord de l’eau."
+              "explanation_fr": "L’hameçonnage s’écrit « phishing » (avec « ph »). « Fishing » est la pêche, et « spamming » désigne l’envoi massif de messages indésirables, pas une tentative de piège qui imite un vrai expéditeur."
             },
             {
               "prompt_fr": "Même si l’EDR indique avoir bloqué le « malware », pourquoi Tomasz demande-t-il de révoquer les jetons de session et de réinstaller le poste ?",
               "choices": [
-                "Parce qu’après un clic sur un lien de phishing et une tentative d’exécution, on applique le principe de précaution : s’assurer qu’aucun jeton n’a fuité et repartir sur une image saine",
-                "Parce qu’un agent EDR ne fonctionne qu’une seule fois dans sa vie",
-                "Pour punir l’employé d’avoir signalé l’alerte"
+                "Par précaution : s’assurer qu’aucun jeton n’a fuité et repartir sur une image saine",
+                "Parce que l’EDR ne peut plus protéger un poste après avoir bloqué une attaque",
+                "Parce que l’employé doit être sanctionné pour avoir cliqué sur le lien"
               ],
               "answer_index": 0,
-              "explanation_fr": "Un lien de « phishing » a pu dérober un cookie de session ou un mot de passe avant même le téléchargement du « malware » : révoquer les sessions et réinstaller (« reimage ») la machine garantit qu’aucune trace ni persistance ne subsiste."
+              "explanation_fr": "Un script a tourné, même brièvement : on ne peut pas exclure qu’il ait volé un jeton ou laissé une trace, d’où la révocation et la réinstallation (« to be safe »). L’EDR continue de protéger le poste, et il ne s’agit jamais de sanctionner : cela découragerait les signalements."
             }
           ],
           "production": {
