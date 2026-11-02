@@ -93,14 +93,14 @@
               "explanation_fr": "Event tracking est l'expression consacrée pour le suivi des actions des visiteurs. Follow the events fait penser à suivre l'actualité, et a follow-up est une relance ou un suivi de dossier, pas une mesure technique."
             },
             {
-              "prompt_fr": "Pourquoi Aïcha dit-elle qu'une pageview ne suffit pas ?",
+              "prompt_fr": "Pourquoi Aïcha dit-elle qu'une pageview ne suffit pas pour ce parcours d'inscription ?",
               "choices": [
-                "Because the steps don't load new pages, so only events can measure them",
-                "Because pageviews are not allowed without consent",
-                "Because pageviews are only counted once a day"
+                "The steps don't load new pages, so only events can measure them.",
+                "Pageviews are only sent after the visitor accepts cookies.",
+                "Pageviews can't be marked as key events in GA4."
               ],
               "answer_index": 0,
-              "explanation_fr": "Une pageview n'est enregistrée que lorsqu'une page s'affiche. Si les étapes changent sans charger de page, il faut suivre des events (actions). Le consentement concerne toutes les mesures, pas seulement les pages vues, et une page vue est comptée à chaque affichage."
+              "explanation_fr": "Les étapes du nouveau parcours s'affichent sans charger de nouvelle page : aucune pageview ne part entre deux étapes, d'où un événement par étape. La question du consentement vaut pour toutes les balises, pas seulement les pages vues, et ce n'est pas l'argument d'Aïcha. Quant aux key events, ils peuvent reposer sur n'importe quel événement."
             },
             {
               "prompt_fr": "Complète : « The last one, sign_up, will be a ___ event. »",
@@ -113,14 +113,14 @@
               "explanation_fr": "Dans GA4, les événements les plus importants pour l'entreprise s'appellent des key events (événements clés). Main event serait compris mais ce n'est pas le terme de l'outil, et keyed ne veut rien dire ici."
             },
             {
-              "prompt_fr": "Tomasz propose de mettre le type d'abonnement dans l'URL. Que lui réponds-tu ?",
+              "prompt_fr": "Tomasz propose de mettre le type d'abonnement dans l'URL. Comment refuses-tu en proposant la bonne solution ?",
               "choices": [
-                "Sure, any place works for me.",
-                "Please push it to the data layer with the event.",
-                "Please write it in the page title."
+                "Could you put it in the URL and the page title, to be safe?",
+                "Could you push it to the data layer with the event instead?",
+                "Could you send it to me by email after each sign-up?"
               ],
               "answer_index": 1,
-              "explanation_fr": "La data layer est prévue pour transmettre proprement des informations au tag manager. L'URL et le titre de page sont fragiles et peuvent exposer des données, et « any place works » laisse le tracking au hasard. Retiens le verbe : on push une donnée dans la data layer."
+              "explanation_fr": "La bonne pratique est de pousser l'information dans le data layer avec l'événement : le tag manager la récupère proprement, sans dépendre de l'URL. Ajouter le titre de page multiplie les sources sans rien régler, et un e-mail par inscription n'est pas du tracking."
             }
           ],
           "production": {
@@ -180,14 +180,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que veut dire « Let's not hardcode it » ?",
+              "prompt_fr": "Priya dit « Let's not hardcode it » à propos du pixel. Que veut-elle éviter ?",
               "choices": [
-                "Let's not make it too complicated",
-                "Let's not pay for it",
-                "Let's not write it directly into the website's code"
+                "Testing the tag directly on the live website.",
+                "Running the tag before the visitor gives consent.",
+                "Writing the code directly into the website's source."
               ],
               "answer_index": 2,
-              "explanation_fr": "To hardcode, c'est écrire en dur dans le code source : chaque modification demande alors un développeur et une mise en production. Hard ne veut pas dire « difficile » ici, et il n'est pas question de prix."
+              "explanation_fr": "To hardcode, c'est écrire le code en dur dans le site : pour le modifier ou le retirer, il faudrait une nouvelle mise en production. Le consentement et le mode aperçu (preview mode) comptent aussi pour Priya, mais ce n'est pas le sens du verbe hardcode."
             },
             {
               "prompt_fr": "Comment dit-on qu'une balise « se déclenche » ?",
@@ -278,14 +278,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi les visites de la newsletter apparaissent-elles en direct traffic ?",
+              "prompt_fr": "Pourquoi beaucoup de visites venues de la newsletter apparaissent-elles en direct traffic ?",
               "choices": [
-                "Because people typed the URL themselves",
-                "Because the links had no UTM parameters, so the tool couldn't tell where the visits came from",
-                "Because the newsletter was sent to the wrong list"
+                "The links had no UTM tags, so the source was unknown.",
+                "The readers typed the address of the site themselves.",
+                "The newsletter tool blocks the analytics tags."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le direct traffic regroupe les visites dont l'outil ne connaît pas l'origine. Sans UTM, beaucoup de clics venus d'une application de messagerie arrivent sans référent et tombent dans ce fourre-tout. Les gens n'ont pas tapé l'adresse eux-mêmes, et la liste d'envoi n'y est pour rien."
+              "answer_index": 0,
+              "explanation_fr": "Sans paramètres UTM, un clic depuis certaines messageries arrive sans information de provenance : GA4 le range alors en direct. Personne n'a tapé l'adresse, les gens ont bien cliqué, et l'outil d'e-mailing ne bloque pas les balises du site."
             },
             {
               "prompt_fr": "Dans « source / medium », que désigne le medium ?",
@@ -308,14 +308,14 @@
               "explanation_fr": "To be split across, c'est être éclaté ou réparti sur plusieurs éléments. Cut (couper) ne s'emploie pas pour des données réparties, et shared voudrait dire partagé entre plusieurs personnes."
             },
             {
-              "prompt_fr": "Un collègue demande pourquoi il faut tout écrire en minuscules. Que réponds-tu ?",
+              "prompt_fr": "Un collègue demande pourquoi il faut tout écrire en minuscules dans les UTM. Que réponds-tu ?",
               "choices": [
-                "Because capital letters break the link",
-                "Because UTM values are case-sensitive, so Instagram and instagram are counted as two sources",
-                "Because GA4 deletes values with capital letters"
+                "Capital letters make the link longer and break it in some apps.",
+                "Values are case-sensitive, so Instagram and instagram count as two.",
+                "GA4 converts capital letters, so they show up as errors."
               ],
               "answer_index": 1,
-              "explanation_fr": "Case-sensitive veut dire sensible à la casse : Instagram et instagram deviennent deux lignes différentes dans les rapports. Les majuscules ne cassent pas le lien et ne sont pas supprimées, elles éparpillent simplement les chiffres."
+              "explanation_fr": "Les valeurs UTM sont sensibles à la casse : « Instagram » et « instagram » apparaissent sur deux lignes différentes du rapport source / medium. Les majuscules ne cassent pas le lien, et GA4 ne les convertit pas : c'est justement pour cela que le trafic se retrouve éclaté."
             }
           ],
           "production": {
@@ -405,14 +405,14 @@
               "explanation_fr": "Le tracking côté serveur change le chemin technique des données, pas les obligations légales : sans consentement, on n'envoie pas ces données à des fins publicitaires. Croire le contraire est une erreur fréquente, et risquée."
             },
             {
-              "prompt_fr": "Que veut dire « it won't fix cross-device tracking on its own » ?",
+              "prompt_fr": "Que veut dire Ivan par « it won't fix cross-device tracking on its own » ?",
               "choices": [
-                "It won't work on mobile devices",
-                "It won't be ready before next month",
-                "By itself, it won't solve the problem of following one person across their phone and laptop"
+                "Alone, it won't be enough to replace consent on our site.",
+                "Alone, it won't work for visitors who use a mobile device.",
+                "Alone, it won't link one person's phone and laptop visits."
               ],
               "answer_index": 2,
-              "explanation_fr": "Cross-device tracking : reconnaître une même personne sur plusieurs appareils, ce qui demande en général une connexion à un compte. On its own veut dire « à lui seul ». Ivan ne parle ni d'un problème sur mobile ni d'un délai."
+              "explanation_fr": "Le cross-device tracking consiste à reconnaître une même personne sur plusieurs appareils. Le suivi côté serveur fiabilise l'envoi des conversions, mais ne relie pas à lui seul le téléphone et l'ordinateur. Il fonctionne aussi sur mobile, et rien ne remplace le consentement : Ivan l'a rappelé juste avant."
             }
           ],
           "production": {
@@ -530,24 +530,24 @@
               "explanation_fr": "Consent rate est le terme du métier. Agreement désigne un accord ou un contrat ; consentment n'existe pas en anglais, et fell down veut dire « tomber par terre » : pour un chiffre, on dit dropped ou fell."
             },
             {
-              "prompt_fr": "Que fait le Consent Mode de Google ?",
+              "prompt_fr": "Que fait le Consent Mode de Google, selon Kenji ?",
               "choices": [
-                "It hides the cookie banner for returning visitors",
-                "It forces visitors to accept cookies",
-                "It adjusts how Google tags behave based on each visitor's choice, and can model missing data"
-              ],
-              "answer_index": 2,
-              "explanation_fr": "Le Consent Mode adapte le comportement des balises Google au choix de chaque visiteur et peut modéliser une partie des données manquantes. Il n'oblige personne à accepter et ne remplace pas le bandeau, qui reste géré par la CMP."
-            },
-            {
-              "prompt_fr": "Ta responsable veut retirer le bouton « Tout refuser » pour faire remonter le taux. Que réponds-tu ?",
-              "choices": [
-                "I'd rather not: refusing must be as easy as accepting. Let's check with legal first.",
-                "Good idea, let's hide it on mobile first.",
-                "Sure, consent is optional for analytics."
+                "It adjusts Google tags to each visitor's choice and models missing data.",
+                "It shows the cookie banner again to visitors who refused.",
+                "It lets Google tags set cookies even when visitors refuse."
               ],
               "answer_index": 0,
-              "explanation_fr": "En France, la CNIL demande que refuser soit aussi simple qu'accepter : cacher le bouton expose l'entreprise à une sanction. Et le consentement n'est pas facultatif pour la plupart des outils d'analytics. I'd rather not est une façon polie de dire non."
+              "explanation_fr": "Le Consent Mode adapte le comportement des balises Google au choix du visiteur, puis modélise une partie des données manquantes. Il ne redemande pas le consentement, et surtout il ne dépose pas de cookies sans accord : ce serait illégal."
+            },
+            {
+              "prompt_fr": "Ta responsable veut retirer le bouton « Tout refuser » pour faire remonter le taux de consentement. Que réponds-tu ?",
+              "choices": [
+                "Good idea, but let's keep it on desktop and hide it on mobile.",
+                "I'd rather not: refusing must be as easy as accepting. Let's ask legal.",
+                "Sure, consent isn't really needed for analytics cookies anyway."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En France, la CNIL exige que refuser soit aussi simple qu'accepter : retirer le bouton exposerait l'entreprise à une sanction. Le cacher sur mobile pose le même problème, et les cookies d'analytics demandent en principe un consentement (sauf rares outils exemptés). On propose donc d'en parler au juridique."
             }
           ],
           "production": {
@@ -609,32 +609,32 @@
             {
               "prompt_fr": "Quelle est la différence entre first-party data et third-party data ?",
               "choices": [
-                "First-party data comes from the first visit only",
-                "First-party data is collected directly from your own customers; third-party data comes from other companies",
-                "First-party data is free; third-party data is always illegal"
-              ],
-              "answer_index": 1,
-              "explanation_fr": "Party veut dire « partie », au sens d'acteur : first party, c'est toi (l'entreprise qui collecte auprès de ses clients), third party, un tiers. Rien à voir avec la première visite, et les données tierces ne sont pas illégales en soi, elles sont surtout moins fiables et plus encadrées."
-            },
-            {
-              "prompt_fr": "Qu'est-ce que la zero-party data ?",
-              "choices": [
-                "Data with no value for marketing",
-                "Data deleted after 30 days",
-                "Information that customers share with you on purpose, like their preferences in a quiz"
+                "First-party is collected on the first visit; third-party after the third visit.",
+                "First-party comes from other companies; third-party comes from our own customers.",
+                "First-party comes from our own customers; third-party comes from other companies."
               ],
               "answer_index": 2,
-              "explanation_fr": "Les zero-party data sont les informations que le client donne volontairement : préférences, centres d'intérêt, réponses à un quiz. Zero ne veut pas dire « sans valeur », et la durée de conservation n'a rien à voir avec le nom."
+              "explanation_fr": "Les données first-party sont collectées directement par l'entreprise auprès de ses clients (comptes, achats, inscriptions). Les données third-party viennent d'acteurs extérieurs, souvent via des cookies tiers. Inverser les deux est courant, et first n'a rien à voir avec la première visite."
+            },
+            {
+              "prompt_fr": "Les réponses au quiz de style sont de la zero-party data. Qu'est-ce que cela veut dire ?",
+              "choices": [
+                "Information customers share on purpose, like their preferences.",
+                "Information we infer from what customers browse on the site.",
+                "Information with no personal data in it, so no rules apply."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La zero-party data est déclarée volontairement par la personne : ses goûts, ses tailles, ses préférences. Ce que l'on déduit du comportement de navigation est de la first-party data observée. Et ce sont bien des données personnelles : il faut les utiliser comme on l'a annoncé."
             },
             {
               "prompt_fr": "Que veut dire Moussa par « Cookieless is more of a direction than a switch » ?",
               "choices": [
-                "It's a gradual change, not something you turn on in one day",
-                "It's a new setting in GA4",
-                "It's a decision for the legal team"
+                "It's a setting we can switch on in GA4 when we're ready.",
+                "It's a gradual shift, not something you turn on in one day.",
+                "It's a direction that only the legal team can decide."
               ],
-              "answer_index": 0,
-              "explanation_fr": "A switch est un interrupteur : Moussa veut dire qu'on ne devient pas « sans cookies » d'un coup, c'est une évolution progressive. Ce n'est pas un réglage de GA4, ni une décision purement juridique."
+              "answer_index": 1,
+              "explanation_fr": "A switch est un interrupteur : Moussa dit qu'on ne bascule pas d'un coup vers un marketing sans cookies, on s'y prépare progressivement en développant ses propres données. Ce n'est pas un réglage de GA4, et ce n'est pas une décision juridique."
             },
             {
               "prompt_fr": "Complète : « Our audiences are ___ because browsers block third-party cookies. »",
@@ -717,12 +717,12 @@
             {
               "prompt_fr": "Dans cette situation, qui est le data controller ?",
               "choices": [
-                "The heatmap vendor",
-                "Priya's company, because it decides why and how the data is used",
-                "The DPO personally"
+                "The DPO, because he checks the legal basis of the tool",
+                "The heatmap vendor, because it stores the data on its servers",
+                "Priya's company, because it decides why and how data is used"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le data controller (responsable de traitement) est l'entreprise qui décide des finalités et des moyens : ici, l'employeur de Priya. Le fournisseur est le data processor (sous-traitant), et le DPO conseille et contrôle, mais n'est pas responsable de traitement à titre personnel."
+              "answer_index": 2,
+              "explanation_fr": "Le responsable de traitement (data controller) est celui qui décide des finalités et des moyens : l'entreprise de Priya. Le fournisseur qui héberge les données est un sous-traitant (data processor), d'où le DPA. Le DPO conseille et contrôle, il n'est pas responsable du traitement."
             },
             {
               "prompt_fr": "Comment demander poliment l'avis du DPO ?",
@@ -735,14 +735,14 @@
               "explanation_fr": "I'd like your view on that est poli et professionnel. Give me your opinion sonne comme un ordre, et What do you think of it, you? calque la tournure orale française « et toi, t'en penses quoi ? »."
             },
             {
-              "prompt_fr": "Pourquoi faut-il un DPA avant la mise en ligne ?",
+              "prompt_fr": "Pourquoi faut-il un DPA avec le fournisseur avant la mise en ligne ?",
               "choices": [
-                "Because the tool costs more than the budget",
-                "Because the vendor will process personal data on the company's behalf",
-                "Because the DPA replaces the cookie banner"
+                "The vendor will process personal data on our behalf.",
+                "The vendor needs it to set up our cookie banner.",
+                "The DPA replaces the visitors' consent for this tool."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le DPA (data processing agreement) est le contrat qui encadre un sous-traitant qui traite des données pour le compte du responsable de traitement : le RGPD l'exige. Il n'a rien à voir avec le prix et ne remplace pas le recueil du consentement."
+              "answer_index": 0,
+              "explanation_fr": "Le data processing agreement encadre la sous-traitance : le fournisseur traite des données personnelles pour le compte de l'entreprise, et le RGPD impose un contrat. Il n'a rien à voir avec la bannière cookies, et il ne remplace pas la base légale choisie, ici le consentement."
             }
           ],
           "production": {
@@ -802,14 +802,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que contient une privacy policy ?",
+              "prompt_fr": "Ivan cite la privacy policy pour le délai de réponse. Que contient ce document ?",
               "choices": [
-                "How the company collects and uses personal data, and the rights people have",
-                "The internal rules for employees' passwords",
-                "A private document that only the legal team can read"
+                "The internal security rules our staff must follow",
+                "How we collect and use personal data, and people's rights",
+                "The list of cookies and the consent banner settings"
               ],
-              "answer_index": 0,
-              "explanation_fr": "La privacy policy (politique de confidentialité) est publique : elle explique quelles données sont collectées, pourquoi, combien de temps, et comment exercer ses droits. Privacy renvoie ici à la vie privée, pas à un document « privé » ou secret."
+              "answer_index": 1,
+              "explanation_fr": "La privacy policy (politique de confidentialité) explique au public quelles données sont collectées, pourquoi, combien de temps, et quels droits les personnes peuvent exercer. Les règles internes de sécurité relèvent d'une autre politique, et la liste des cookies figure souvent dans une cookie policy distincte."
             },
             {
               "prompt_fr": "Des données pseudonymisées sont-elles encore des données personnelles ?",
@@ -832,14 +832,14 @@
               "explanation_fr": "To log a request, c'est l'enregistrer dans un outil, par exemple sous forme de ticket. Booked se dit d'une réservation, et noted down évoque une note prise à la main, pas un suivi officiel."
             },
             {
-              "prompt_fr": "Une collègue propose de simplement désinscrire la cliente. Que réponds-tu ?",
+              "prompt_fr": "Une collègue propose de simplement désinscrire la cliente de la newsletter. Que réponds-tu ?",
               "choices": [
-                "Perfect, that's enough.",
-                "An opt-out isn't enough here: she asked for erasure, so we need to delete her data everywhere.",
-                "Let's wait until she asks again."
+                "Let's pseudonymize her data instead, so it's no longer personal.",
+                "That's enough for now: erasure only applies to marketing emails.",
+                "An opt-out isn't enough: she asked for erasure, so we delete her data."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un opt-out arrête les messages marketing, mais la personne reste dans les bases. Une demande d'effacement oblige à supprimer ses données partout où c'est nécessaire, dans le délai prévu : attendre une relance n'est pas une option."
+              "answer_index": 2,
+              "explanation_fr": "Un opt-out arrête seulement les e-mails marketing. La cliente a demandé l'effacement : il faut supprimer ses données du CRM, de l'outil d'e-mailing et des exports. Le droit à l'effacement ne se limite pas au marketing, et des données pseudonymisées restent des données personnelles."
             }
           ],
           "production": {
@@ -940,12 +940,12 @@
             {
               "prompt_fr": "Avec la last-click attribution, à qui revient la vente ?",
               "choices": [
-                "To the first ad the customer saw",
-                "To the last channel the customer clicked before buying",
-                "To every channel equally"
+                "To the last channel clicked before the purchase",
+                "To the first ad the customer saw or clicked",
+                "To every channel the customer clicked, equally"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Last click : tout le mérite va au dernier canal cliqué avant l'achat, souvent le search ou le direct. La première pub vue correspond au first-click, et le partage égal est un modèle multi-touch (linéaire)."
+              "answer_index": 0,
+              "explanation_fr": "Le modèle last-click donne tout le mérite au dernier canal cliqué avant l'achat, souvent le search ou le direct. La première pub vue correspond au first-click, et le partage à parts égales est un modèle multi-touch linéaire."
             },
             {
               "prompt_fr": "Que veut dire « search gets all the credit » ?",
@@ -960,12 +960,12 @@
             {
               "prompt_fr": "Pourquoi Kenji n'est-il pas convaincu par le first-click ?",
               "choices": [
-                "Because it would just move all the credit to another channel",
-                "Because first-click only works for mobile apps",
-                "Because first-click is forbidden by the GDPR"
+                "It would ignore the people who saw the ads without clicking.",
+                "It would just move all the credit to another channel.",
+                "It only works when visitors accept all the cookies."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le first-click a le défaut inverse du last-click : il donne tout au premier contact au lieu du dernier. Il n'est réservé ni aux applications, ni interdit par le RGPD, qui ne concerne pas le choix d'un modèle d'attribution."
+              "answer_index": 1,
+              "explanation_fr": "Passer au first-click donnerait tout le mérite au premier contact au lieu du dernier : on déplace le problème sans le résoudre. Ignorer les vues sans clic est vrai pour la plupart des modèles au clic, mais ce n'est pas son argument, et le consentement concerne tous les modèles de la même façon."
             },
             {
               "prompt_fr": "Comment dire « je vais montrer les deux vues côte à côte » ?",
@@ -1068,12 +1068,12 @@
             {
               "prompt_fr": "Grace veut additionner les conversions de Meta et de Google Ads dans le rapport. Que réponds-tu ?",
               "choices": [
-                "Let's not add them up: the same order can be counted by both platforms.",
-                "Sure, and let's add GA4 too, to be complete.",
-                "Yes, but only for last month."
+                "Let's add them up and compare the total with GA4 next month.",
+                "Let's add them up, but remove the view-through conversions first.",
+                "Let's not add them up: one order can be counted by both platforms."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Additionner les plateformes compte plusieurs fois les mêmes commandes, puisque chacune revendique les ventes qu'elle a touchées. Ajouter GA4 aggraverait le double comptage, et limiter la période ne règle rien."
+              "answer_index": 2,
+              "explanation_fr": "Chaque plateforme revendique toutes les ventes qu'elle a touchées : la même commande peut être comptée par Meta et par Google, d'où 1 600 conversions pour 1 000 commandes. Retirer les vues sans clic ne suffit pas, les fenêtres d'attribution restent différentes. La source de vérité, ce sont les commandes de la boutique."
             }
           ],
           "production": {
@@ -1133,14 +1133,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que mesure l'incrementality ?",
+              "prompt_fr": "Rafael parle d'incrementality. Que mesure-t-elle ?",
               "choices": [
-                "How much the budget increases each month",
-                "The extra sales a campaign really caused, compared with no campaign",
-                "How many times an ad was shown"
+                "The extra sales a campaign really caused",
+                "The total sales linked to a campaign",
+                "The sales a campaign brought last month"
               ],
-              "answer_index": 1,
-              "explanation_fr": "L'incrémentalité, ce sont les ventes en plus réellement causées par la campagne, par rapport à ce qui se serait passé sans elle. Increment ne parle pas ici de hausse de budget, et le nombre d'affichages, ce sont les impressions."
+              "answer_index": 0,
+              "explanation_fr": "L'incrémentalité mesure les ventes supplémentaires réellement provoquées par la campagne, par rapport à ce qui se serait passé sans elle. Les ventes « liées » à une campagne incluent les gens qui auraient acheté de toute façon, et c'est justement ce qui gonfle le ROAS de 12."
             },
             {
               "prompt_fr": "Comment dire « auraient-elles acheté de toute façon ? »",
@@ -1153,24 +1153,24 @@
               "explanation_fr": "De toute façon se dit anyway, avec would have + participe passé (bought) pour le conditionnel passé. In any way signifie « de quelque manière que ce soit », et had they buy est grammaticalement faux."
             },
             {
-              "prompt_fr": "À quoi sert un holdout group ?",
+              "prompt_fr": "Rafael garde un holdout group de 10 %. À quoi sert-il ?",
               "choices": [
-                "It's a group that doesn't see the campaign, used as a comparison",
-                "It's the group of the best customers",
-                "It's a group of people waiting for approval"
-              ],
-              "answer_index": 0,
-              "explanation_fr": "Le holdout group est volontairement exclu de la campagne : on compare ses ventes à celles du groupe exposé pour mesurer le vrai effet. Ce n'est ni un segment de meilleurs clients, ni une liste d'attente (to hold on veut dire « patienter », mais to hold out ici, c'est « mettre de côté »)."
-            },
-            {
-              "prompt_fr": "Pourquoi Rafael veut-il donner un intervalle de confiance ?",
-              "choices": [
-                "Because the director doesn't trust him",
-                "To show the range where the real effect probably lies, instead of a falsely precise number",
-                "To make the result harder to read"
+                "It sees the ads twice, so we can measure frequency.",
+                "It doesn't see the ads, so we can compare its sales.",
+                "It holds the best customers, so we can protect them."
               ],
               "answer_index": 1,
-              "explanation_fr": "Un intervalle de confiance donne la fourchette dans laquelle se situe probablement le vrai effet : c'est plus honnête qu'un chiffre unique trop précis. Confidence n'a rien à voir avec la confiance qu'on accorde à une personne, et le but est d'être clair, pas de compliquer."
+              "explanation_fr": "Le holdout group (groupe témoin) est exclu de la campagne : la différence de ventes entre lui et le groupe exposé donne le lift. Il ne sert ni à tester la fréquence ni à protéger un segment de clients : il doit au contraire ressembler au reste de l'audience."
+            },
+            {
+              "prompt_fr": "Pourquoi Rafael veut-il donner le lift avec un intervalle de confiance ?",
+              "choices": [
+                "It shows how much the lift will grow if we double the budget.",
+                "It shows the director how confident the team feels about the campaign.",
+                "It shows the likely range of the real effect, not a falsely precise figure."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Un intervalle de confiance donne la fourchette dans laquelle se situe probablement l'effet réel (par exemple +6 % à +14 %), au lieu d'un chiffre unique trompeur. Malgré son nom, il ne mesure pas le ressenti de l'équipe, et il ne prédit rien sur un budget doublé."
             }
           ],
           "production": {
@@ -1232,24 +1232,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que veut dire diminishing returns ?",
+              "prompt_fr": "Le modèle montre des diminishing returns sur le search payant. Qu'est-ce que cela veut dire ?",
               "choices": [
-                "Each extra euro spent brings less result than the previous one",
-                "The channel is losing money",
-                "Customers are returning fewer products"
+                "Each extra euro brings fewer sales than the one before.",
+                "The channel now costs more than it brings in.",
+                "Customers from this channel return more products."
               ],
               "answer_index": 0,
-              "explanation_fr": "Rendements décroissants : chaque euro supplémentaire rapporte moins que le précédent, sans forcément perdre de l'argent. Returns veut dire ici « retours sur investissement », pas retours de produits."
+              "explanation_fr": "Les rendements décroissants signifient que chaque euro supplémentaire rapporte moins que le précédent : le canal reste rentable, mais la dernière tranche de budget l'est moins. Ce n'est pas encore une perte. Returns ici veut dire rendements, pas retours produits : c'est le faux ami à éviter."
             },
             {
-              "prompt_fr": "Qu'est-ce que l'adstock ?",
+              "prompt_fr": "Priya dit que la télévision a « a strong adstock ». Que veut-elle dire ?",
               "choices": [
-                "A stock of ads that were never used",
-                "The idea that an ad's effect lasts for some time after it was shown",
-                "The price of ad space on TV"
+                "Its ad space is more expensive than online.",
+                "Its effect lasts for weeks after the ads stop.",
+                "Its ads reach more people than any other channel."
               ],
               "answer_index": 1,
-              "explanation_fr": "L'adstock modélise l'effet de rémanence : une publicité continue d'agir quelque temps après sa diffusion, surtout à la télé. Stock ne désigne pas un stock de publicités, et le prix de l'espace publicitaire est le coût média."
+              "explanation_fr": "L'adstock décrit l'effet rémanent d'une publicité : son impact sur les ventes continue un certain temps après la diffusion. Ce n'est pas une question de prix de l'espace ni de portée."
             },
             {
               "prompt_fr": "Complète : « I'd check it ___ our tests first. »",
@@ -1369,32 +1369,32 @@
             {
               "prompt_fr": "Quelle est la différence entre transactional data et behavioral data ?",
               "choices": [
-                "Transactional data is bought from banks; behavioral data is free",
-                "Transactional data is always older than behavioral data",
-                "Transactional data is about purchases; behavioral data is about actions like visits and clicks"
+                "Transactional comes from partners; behavioral comes from our own site.",
+                "Transactional is about visits and clicks; behavioral is about purchases.",
+                "Transactional is about purchases; behavioral is about visits and clicks."
               ],
               "answer_index": 2,
-              "explanation_fr": "Les données transactionnelles décrivent les achats (date, montant, produits) ; les données comportementales, ce que la personne fait : pages vues, clics, recherches. Elles ne viennent pas des banques, et leur ancienneté n'a rien à voir avec leur nom."
+              "explanation_fr": "Les données transactionnelles décrivent les achats (commandes, montants, produits). Les données comportementales décrivent les actions sur le site ou l'appli (pages vues, clics, recherches). Les deux sont des données first-party que la CDP rassemble."
             },
             {
-              "prompt_fr": "Que fait l'identity resolution ?",
+              "prompt_fr": "Que fait l'identity resolution dans la CDP ?",
               "choices": [
-                "It checks people's ID cards",
-                "It links several identifiers of the same person to one profile",
-                "It deletes anonymous visitors"
-              ],
-              "answer_index": 1,
-              "explanation_fr": "La résolution d'identité rapproche e-mail, identifiant client, appareils et cookies d'une même personne pour en faire un seul profil. Il ne s'agit pas de vérifier une carte d'identité, ni de supprimer les visiteurs anonymes."
-            },
-            {
-              "prompt_fr": "Que veut dire « that's where identity resolution comes in » ?",
-              "choices": [
-                "That's the moment when identity resolution becomes useful",
-                "That's when the identity team enters the room",
-                "That's when identity resolution gets installed"
+                "It links several identifiers of one person to a single profile.",
+                "It checks that each customer's identity is real and verified.",
+                "It removes anonymous visitors from the customer database."
               ],
               "answer_index": 0,
-              "explanation_fr": "That's where X comes in veut dire « c'est là que X intervient, devient utile ». Come in n'a pas ici son sens littéral d'entrer dans une pièce, et il n'est pas question d'installation."
+              "explanation_fr": "L'identity resolution rattache l'e-mail, l'identifiant client et les appareils d'une même personne à un profil unique. Elle ne vérifie pas une identité au sens d'une pièce d'identité, et elle ne supprime pas les visiteurs anonymes : leurs profils restent simplement partiels."
+            },
+            {
+              "prompt_fr": "Que veut dire Kenji par « that's where identity resolution comes in » ?",
+              "choices": [
+                "That's the step where we install identity resolution.",
+                "That's exactly the problem identity resolution solves.",
+                "That's where identity resolution stops working."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "That's where X comes in signifie « c'est là que X intervient, devient utile » : ici, pour relier les profils en double. L'expression ne parle ni d'installation ni de limite."
             },
             {
               "prompt_fr": "Comment dire « ne t'attends pas à une couverture à 100 % » ?",
@@ -1498,12 +1498,12 @@
             {
               "prompt_fr": "Pourquoi Tomasz propose-t-il un accès en avant-première plutôt qu'une remise aux high-value customers ?",
               "choices": [
-                "Because discounts are not allowed in emails",
-                "Because they are the least loyal customers",
-                "Because they already buy often, so a discount would cut margin on sales they'd make anyway"
+                "They prefer discounts, but early access is cheaper for us to offer.",
+                "They rarely buy, so early access gives them a reason to come back.",
+                "They buy often anyway, so a discount would just cut our margin."
               ],
               "answer_index": 2,
-              "explanation_fr": "Ces clients achètent déjà souvent et beaucoup : une remise réduirait la marge sur des ventes qui auraient eu lieu de toute façon. Un avantage exclusif les valorise sans coûter de marge. Les remises sont autorisées par e-mail, et ce sont au contraire les clients les plus fidèles."
+              "explanation_fr": "Ces clients achètent déjà souvent : une remise réduirait la marge sur des ventes qu'ils auraient faites de toute façon. L'avant-première les valorise sans coûter de marge. Ce ne sont pas des clients qui achètent rarement, et rien n'indique qu'ils préfèrent les remises."
             }
           ],
           "production": {
@@ -1566,32 +1566,32 @@
             {
               "prompt_fr": "Quelle est la différence entre un at-risk customer et un lapsed customer ?",
               "choices": [
-                "An at-risk customer may leave soon; a lapsed customer has already stopped buying",
-                "They mean exactly the same thing",
-                "A lapsed customer is someone with a late payment"
+                "At-risk may leave soon; lapsed has already stopped buying.",
+                "At-risk has already stopped buying; lapsed may leave soon.",
+                "At-risk owes us money; lapsed has asked to be deleted."
               ],
               "answer_index": 0,
-              "explanation_fr": "At risk : le client achète encore mais risque de partir. Lapsed : il a déjà cessé d'acheter depuis longtemps. Ce ne sont donc pas des synonymes, et lapsed n'a rien à voir avec un retard de paiement."
+              "explanation_fr": "Un at-risk customer montre des signes de départ (selon le modèle de churn) mais achète encore. Un lapsed customer a déjà cessé d'acheter, ici depuis plus d'un an. Inverser les deux est fréquent, et aucun de ces termes ne parle de paiement ou d'effacement."
             },
             {
-              "prompt_fr": "Que veut dire « flagged as at-risk customers » ?",
+              "prompt_fr": "Que veut dire « about 8,000 are flagged as at-risk customers » ?",
               "choices": [
-                "Blocked from receiving emails",
-                "Moved to another country's list",
-                "Marked as likely to stop buying"
+                "The team has removed them from the email list.",
+                "The model has marked them as likely to stop buying.",
+                "The customers have reported a problem to support."
               ],
-              "answer_index": 2,
-              "explanation_fr": "To flag, c'est signaler, marquer d'un drapeau dans un outil. Le modèle ne bloque personne, et le drapeau n'a ici aucun lien avec un pays."
+              "answer_index": 1,
+              "explanation_fr": "To flag, c'est signaler, marquer d'un drapeau : le modèle de churn a repéré ces clients comme susceptibles de partir. Ils ne sont pas exclus des envois (au contraire, on veut les cibler), et ce ne sont pas eux qui ont signalé quelque chose."
             },
             {
               "prompt_fr": "Pourquoi Moussa se méfie-t-il du propensity model pour cette campagne ?",
               "choices": [
-                "Because it's too expensive to run",
-                "Because people likely to buy might buy anyway, without the email",
-                "Because it only works on new customers"
+                "The model costs more to run than the campaign would earn.",
+                "The model only scores customers who bought in the last month.",
+                "The people most likely to buy might buy without the email."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un modèle de propension prédit qui va acheter, pas qui va acheter grâce à l'e-mail. Cibler ces personnes peut gaspiller le budget sur des ventes acquises. Le coût et le type de clients ne sont pas le problème soulevé."
+              "answer_index": 2,
+              "explanation_fr": "Un modèle de propension repère les clients les plus susceptibles d'acheter, mais beaucoup achèteraient même sans e-mail : on dépense du budget pour rien. L'uplift modeling cible ceux sur qui l'e-mail change vraiment le comportement. Moussa ne parle ni de période ni de coût du modèle."
             },
             {
               "prompt_fr": "Comment dire « s'attendre à des taux de réponse plus faibles » ?",
@@ -1667,24 +1667,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que veut dire CRM hygiene ?",
+              "prompt_fr": "Ivan veut parler de CRM hygiene. Qu'est-ce que cela recouvre ?",
               "choices": [
-                "Cleaning the computers that run the CRM",
-                "Keeping the CRM data clean, complete and without duplicates",
-                "Changing CRM passwords regularly"
-              ],
-              "answer_index": 1,
-              "explanation_fr": "La CRM hygiene, c'est la qualité des données : pas de doublons, des champs remplis, des contacts à jour. Il ne s'agit ni de nettoyer le matériel, ni de sécurité des mots de passe."
-            },
-            {
-              "prompt_fr": "Pourquoi Ivan exclut-il les contacts sans aucun clic depuis douze mois ?",
-              "choices": [
-                "To protect the sender reputation, so emails keep reaching the inbox",
-                "Because the law forbids emailing them",
-                "Because sending to them costs nothing"
+                "Keeping CRM data clean, complete and free of duplicates",
+                "Restricting who can access the CRM and export contacts",
+                "Deleting every contact who hasn't bought in a year"
               ],
               "answer_index": 0,
-              "explanation_fr": "Écrire à des contacts qui ne réagissent jamais abîme la réputation d'expéditeur, et les e-mails finissent plus souvent en spam. Il choisit le clic plutôt que l'ouverture, car les ouvertures sont devenues peu fiables. La loi n'interdit pas d'écrire à un abonné inactif, et chaque envoi a un coût."
+              "explanation_fr": "La CRM hygiene, c'est la qualité des données : doublons fusionnés, champs remplis, étapes du cycle de vie à jour. La gestion des accès relève de la sécurité, et l'hygiène ne consiste pas à supprimer tous les non-acheteurs : Ivan exclut seulement les inactifs des envois."
+            },
+            {
+              "prompt_fr": "Pourquoi Ivan exclut-il des envois les contacts sans aucun clic depuis douze mois ?",
+              "choices": [
+                "The GDPR forbids emailing contacts who haven't clicked in a year.",
+                "It protects our sender reputation, so emails keep reaching inboxes.",
+                "They are duplicates created by the webinar sign-up form."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Écrire à des contacts qui n'ouvrent ni ne cliquent jamais abîme la réputation d'expéditeur : les messageries finissent par classer les e-mails en spam. Le RGPD ne fixe pas cette règle des douze mois, et les doublons sont un autre problème, réglé par la fusion des fiches."
             },
             {
               "prompt_fr": "Complète : « I found about 4,000 duplicate contact ___. »",
@@ -1909,14 +1909,14 @@
               "explanation_fr": "Month-to-date (MTD) : du 1er du mois jusqu'à aujourd'hui. Le mois précédent complet, c'est last month, et la projection jusqu'à la fin du mois, c'est le run rate."
             },
             {
-              "prompt_fr": "Que calcule le run rate ici ?",
+              "prompt_fr": "Rafael parle de run rate. Que calcule-t-il ici ?",
               "choices": [
-                "The speed of the website",
-                "Where we'll end the month if we keep the current pace",
-                "The number of sign-ups per hour"
+                "How fast sign-ups grew compared with last year",
+                "How many sign-ups we still need to hit the target",
+                "Where we'll end the month if we keep the current pace"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le run rate projette le résultat final au rythme actuel : 6 200 inscriptions en 20 jours, soit 310 par jour, donnent environ 9 300 sur 30 jours. Run n'a rien à voir avec la vitesse du site, et on ne raisonne pas à l'heure."
+              "answer_index": 2,
+              "explanation_fr": "Le run rate projette le résultat de fin de période au rythme actuel : 6 200 inscriptions au 20 du mois donnent environ 9 300 à la fin. Ce qu'il reste à faire (3 800) est un écart à l'objectif, et la croissance sur un an se dit year over year."
             },
             {
               "prompt_fr": "Complète : « We're up 15% year ___ year. »",
@@ -2006,14 +2006,14 @@
               "explanation_fr": "Le MER (marketing efficiency ratio) divise le chiffre d'affaires total par l'ensemble des dépenses marketing, tous canaux confondus. Diviser par les clics ou par les visiteurs donnerait d'autres indicateurs, comme le taux de conversion."
             },
             {
-              "prompt_fr": "Que veut dire « Revenue isn't profit, though » ?",
+              "prompt_fr": "Grace répond « Revenue isn't profit, though ». Que veut-elle dire ?",
               "choices": [
-                "Sales are not the same as what we earn after costs",
-                "Revenue is going down",
-                "We don't make any profit at all"
+                "Sales aren't the same as what we earn after costs.",
+                "Revenue has been falling, even if the MER is stable.",
+                "The company isn't making any profit at the moment."
               ],
               "answer_index": 0,
-              "explanation_fr": "Revenue, c'est le chiffre d'affaires ; profit, le bénéfice après les coûts. Though en fin de phrase veut dire « pourtant, quand même ». Grace ne dit pas que le chiffre baisse ni que l'entreprise perd de l'argent."
+              "explanation_fr": "Revenue est le chiffre d'affaires, profit ce qui reste après les coûts : un MER stable ne dit pas si chaque campagne est rentable, d'où le break-even ROAS. Grace ne dit pas que le chiffre d'affaires baisse ni que l'entreprise perd de l'argent. Though, en fin de phrase, signifie « pourtant »."
             },
             {
               "prompt_fr": "Avec une marge de 50 %, quel est le break-even ROAS ?",
@@ -2028,12 +2028,12 @@
             {
               "prompt_fr": "Grace veut couper 20 % partout. Que proposes-tu ?",
               "choices": [
-                "Let's cut everything by 20%, it's fairer.",
-                "Let's cut the campaigns below break-even first, and keep what works.",
-                "Let's stop all marketing for a month."
+                "Let's cut 20% everywhere, but keep the brand campaigns untouched.",
+                "Let's cut the campaigns below break-even first and keep what works.",
+                "Let's cut the channels with the lowest number of conversions first."
               ],
               "answer_index": 1,
-              "explanation_fr": "Une coupe uniforme pénalise aussi les campagnes rentables. Mieux vaut couper d'abord ce qui est sous le seuil de rentabilité. Tout arrêter un mois casserait les campagnes qui fonctionnent, sans rien apprendre."
+              "explanation_fr": "Couper d'abord les campagnes sous le break-even ROAS supprime des dépenses non rentables sans toucher à ce qui marche. Une coupe uniforme, même avec une exception, réduit aussi les campagnes rentables. Le nombre de conversions seul ne dit rien de la rentabilité : un petit canal peut avoir un excellent coût par commande."
             }
           ],
           "production": {
@@ -2093,14 +2093,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que veut dire « another quick one » ?",
+              "prompt_fr": "Sarah commence par « sorry, another quick one ». Que veut-elle dire ?",
               "choices": [
-                "Another short, simple request",
-                "Another fast employee",
-                "Another quick meeting"
+                "Here's one more quick meeting.",
+                "Here's one more urgent request.",
+                "Here's one more short request."
               ],
-              "answer_index": 0,
-              "explanation_fr": "A quick one désigne à l'oral une petite demande rapide, sous-entendu a quick question ou a quick request. Il ne s'agit ni d'une personne, ni d'une réunion."
+              "answer_index": 2,
+              "explanation_fr": "A quick one désigne une petite demande simple, ici une ventilation des ventes. Quick parle de la taille de la demande, pas de son urgence (urgent ou ASAP), et Sarah ne propose pas de réunion."
             },
             {
               "prompt_fr": "Comment dire « ventiler les ventes par pays » ?",
@@ -2113,14 +2113,14 @@
               "explanation_fr": "Ventiler des chiffres se dit to break down by. To ventilate est un faux ami : il veut dire « aérer » une pièce. Break sales on countries n'a pas de sens : il faut down et by."
             },
             {
-              "prompt_fr": "Qu'est-ce que le self-serve reporting ?",
+              "prompt_fr": "Ivan propose du self-serve reporting. De quoi s'agit-il ?",
               "choices": [
-                "Reports sent by email once a year",
-                "Dashboards people can explore and filter themselves, without asking an analyst",
-                "Reports that only the analyst can open"
+                "Dashboards people filter themselves, without asking an analyst",
+                "Reports the analyst sends automatically every Monday",
+                "A training course where marketers learn SQL"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Self-serve, c'est le libre-service : chaque équipe filtre et explore les chiffres seule, sans passer par l'analyste. C'est l'inverse d'un rapport réservé à l'analyste, et la fréquence d'envoi n'a rien à voir."
+              "answer_index": 0,
+              "explanation_fr": "Le self-serve reporting met à disposition des tableaux de bord que chacun explore et filtre seul, ce qui évite les demandes ponctuelles. Un rapport envoyé automatiquement reste figé, et la formation d'Ivan sert à utiliser le tableau de bord, pas à apprendre à coder."
             },
             {
               "prompt_fr": "Que veut dire « Would that free up your time? » ?",
@@ -2260,12 +2260,12 @@
             {
               "prompt_fr": "Ta responsable veut alerter toute l'équipe tout de suite. Que réponds-tu ?",
               "choices": [
-                "Yes, let's pause all campaigns right now.",
+                "Not yet, let me make a sanity control before.",
                 "Not yet, let me run a sanity check first.",
-                "Let's wait until next month and see."
+                "Not yet, let me do a coherence check before."
               ],
               "answer_index": 1,
-              "explanation_fr": "Le bon réflexe est de vérifier la cohérence des chiffres avant d'alerter : couper les campagnes sur une fausse alerte coûterait cher. Attendre un mois serait l'excès inverse, si le problème est réel."
+              "explanation_fr": "A sanity check est la vérification rapide de bon sens avant de tirer une conclusion. « Sanity control » et « coherence check » sont des calques (contrôle de cohérence) qu'on n'emploie pas en analytics, et before seul en fin de phrase ne veut pas dire « d'abord » : on dit first."
             }
           ],
           "production": {
@@ -2327,22 +2327,22 @@
             {
               "prompt_fr": "Que veut dire « The purchase key event stopped firing » ?",
               "choices": [
-                "The purchase event is no longer sent when people buy",
-                "People stopped buying",
-                "The purchase page was deleted"
-              ],
-              "answer_index": 0,
-              "explanation_fr": "Stopped firing : l'événement ne se déclenche plus, donc GA4 ne voit plus ces achats, alors qu'ils ont bien lieu (le back-office les compte). Les clients achètent toujours, et la page existe encore."
-            },
-            {
-              "prompt_fr": "Qu'est-ce qu'une pre/post analysis ?",
-              "choices": [
-                "Analysing social media posts before publishing them",
-                "Sending the report by post",
-                "Comparing results before and after a change"
+                "The purchase event fires twice for each order now.",
+                "People stopped buying after the release on Thursday.",
+                "The purchase event is no longer sent when people buy."
               ],
               "answer_index": 2,
-              "explanation_fr": "Pre/post vient du latin : avant / après. On compare les résultats avant et après un changement, ici la mise en production. Post n'a rien à voir avec une publication sur les réseaux ni avec La Poste."
+              "explanation_fr": "To fire, pour une balise ou un événement, c'est se déclencher. L'événement d'achat n'est plus envoyé pour les commandes Apple Pay : c'est un problème de tracking, pas une vraie baisse des ventes (le back-office ne montre que 5 %). Un double envoi gonflerait les chiffres au lieu de les faire chuter."
+            },
+            {
+              "prompt_fr": "Rafael fait une pre/post analysis autour de la mise en production. De quoi s'agit-il ?",
+              "choices": [
+                "Comparing results before and after a change",
+                "Comparing two versions shown at the same time",
+                "Comparing our results with the market average"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une analyse pre/post compare les indicateurs avant et après un changement, ici la mise en production de jeudi. Comparer deux versions en même temps, c'est un A/B test, plus fiable mais pas toujours possible. Se comparer au marché, c'est un benchmark."
             },
             {
               "prompt_fr": "Que mesure l'exit rate d'une page ?",
@@ -2421,14 +2421,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi le taux d'ouverture est-il gonflé ?",
+              "prompt_fr": "Pourquoi le taux d'ouverture de 60 % est-il gonflé ?",
               "choices": [
-                "Because the subject line was excellent",
-                "Because Apple Mail preloads emails, so opens are counted even when nobody reads them",
-                "Because the newsletter was sent twice"
+                "The subject line was much better than usual this month.",
+                "Apple Mail preloads emails, so opens count even unread.",
+                "Some readers opened the email several times this month."
               ],
               "answer_index": 1,
-              "explanation_fr": "Avec la Mail Privacy Protection, Apple Mail télécharge le contenu des e-mails à l'avance : le pixel d'ouverture se déclenche sans lecture réelle. Un bon objet ou un double envoi n'expliqueraient pas que le taux de réactivité s'effondre en même temps."
+              "explanation_fr": "Avec Mail Privacy Protection, Apple Mail précharge les e-mails et leur pixel de suivi : une ouverture est comptée même si personne ne lit. Un meilleur objet augmenterait aussi les clics, or ils sont stables, et les ouvertures multiples sont en général dédoublonnées."
             },
             {
               "prompt_fr": "Comment se calcule le click-to-open rate ?",
@@ -2540,12 +2540,12 @@
             {
               "prompt_fr": "Que signifie « it's directional, not proof » ?",
               "choices": [
-                "It tells us which direction the company should take",
-                "It shows a trend, but it isn't strong enough to be sure",
-                "It comes from the directors"
+                "It's a rough estimate that the directors asked us to make.",
+                "It tells the board which direction the company should take.",
+                "It points to a trend, but it isn't strong enough to be sure."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Directional se dit de données qui indiquent une tendance sans permettre de conclusion ferme. Le mot n'a rien à voir avec la stratégie de l'entreprise ni avec la direction (les dirigeants)."
+              "answer_index": 2,
+              "explanation_fr": "Directional qualifie un résultat qui indique une tendance sans la prouver, ici avec seulement dix jours de données. Le mot n'a rien à voir avec la stratégie ou la direction de l'entreprise : c'est le faux ami à éviter."
             },
             {
               "prompt_fr": "Comment dire « j'ajouterais une réserve » ?",

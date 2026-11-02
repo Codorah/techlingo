@@ -93,14 +93,14 @@
               "explanation_fr": "Thin content est péjoratif : ce sont des pages superficielles ou trop courtes pour répondre vraiment à la question du lecteur. Un texte court mais dense et utile est qualifié de concise ou de short-form content, jamais de thin content."
             },
             {
-              "prompt_fr": "Pourquoi un guide pratique est-il qualifié d'evergreen content ?",
+              "prompt_fr": "Tomasz propose de mettre à jour « the evergreen guides ». Pourquoi ces guides méritent-ils ce nom ?",
               "choices": [
-                "Because it covers environmental and sustainability topics.",
-                "Because it was written by a junior member of the team.",
-                "Because it stays relevant and useful long after publication."
+                "They stay useful long after they're published.",
+                "They cover green and sustainability topics.",
+                "They were written recently and still look new."
               ],
-              "answer_index": 2,
-              "explanation_fr": "Evergreen fait référence aux arbres à feuilles persistantes : un evergreen content ne se périme pas après quelques jours comme une actualité. Le piège est de traduire green au sens écologique, ou de confondre avec green (novice)."
+              "answer_index": 0,
+              "explanation_fr": "Evergreen (à feuilles persistantes) qualifie un contenu qui reste pertinent des mois ou des années après sa publication, comme un guide pratique ou un modèle. Le mot n'a rien à voir avec l'écologie, malgré green. Et un contenu evergreen n'est pas forcément récent : c'est l'inverse d'une actualité qui vieillit vite."
             },
             {
               "prompt_fr": "Complète la phrase de Tomasz : « Let's ___ that content gap this quarter. »",
@@ -115,12 +115,12 @@
             {
               "prompt_fr": "Ton directeur veut publier un article par jour pour « faire du volume ». Quelle réponse défend le mieux une vraie démarche d'audit ?",
               "choices": [
-                "Good idea, publishing more thin content will quickly double our traffic.",
-                "Let's delete the whole blog and start again with daily company news.",
-                "We should first update our evergreen posts and fill the main content gaps."
+                "Good idea, but let's write shorter posts so we can keep up the pace.",
+                "I'd start by updating our evergreen guides and filling the main content gaps.",
+                "Sure, and we can delete the old posts once the new ones rank."
               ],
-              "answer_index": 2,
-              "explanation_fr": "L'audit montre que quelques contenus intemporels et approfondis génèrent l'essentiel des résultats, tandis que multiplier les articles courts sans valeur crée du thin content. Tout supprimer ferait perdre les 20 articles qui apportent 70 % du lectorat."
+              "answer_index": 1,
+              "explanation_fr": "L'audit a montré que vingt contenus evergreen font 70 % du trafic et que la moitié du blog est du thin content : publier plus de textes courts aggraverait le problème. La bonne réponse propose de renforcer ce qui marche et de combler les manques (content gaps). Supprimer en masse « une fois que les nouveaux se positionnent » ne règle rien et fait perdre des pages qui pourraient être mises à jour."
             }
           ],
           "production": {
@@ -179,32 +179,32 @@
             {
               "prompt_fr": "Quelle est la différence entre ideal customer profile (ICP) et persona en B2B ?",
               "choices": [
-                "The ICP is only used for social media, while personas are only used for email newsletters.",
-                "The ICP is a fictional character with a first name, while a persona is a financial budget.",
-                "The ICP describes the type of company you target, while a persona describes the individual person you speak to."
+                "The ICP and the persona are the same thing, but the ICP includes the budget.",
+                "The ICP describes the person you write for; a persona describes the type of company you target.",
+                "The ICP describes the type of company you target; a persona describes the person you write for."
               ],
               "answer_index": 2,
-              "explanation_fr": "En B2B, l'ideal customer profile définit le type d'entreprise visé (secteur, taille, enjeux), tandis que le persona représente l'interlocuteur précis au sein de cette entreprise (par exemple la directrice financière)."
+              "explanation_fr": "En B2B, l'ICP décrit l'entreprise idéale (secteur, taille, maturité) : ici, des enseignes de distribution de taille moyenne. Le persona décrit la personne à qui l'on parle dans cette entreprise : le directeur financier. Inverser les deux est l'erreur la plus courante, et ce ne sont pas des synonymes."
             },
             {
               "prompt_fr": "Que veut dire Priya par « we need to tighten our content strategy » ?",
               "choices": [
-                "We need to make our content strategy more focused and strict.",
-                "We need to cancel our content strategy immediately.",
-                "We need to translate our content strategy into several languages."
+                "We need to make it more focused instead of writing about everything.",
+                "We need to cut the content budget for next quarter.",
+                "We need to publish more often to cover every topic."
               ],
               "answer_index": 0,
-              "explanation_fr": "To tighten (resserrer) signifie ici rendre la stratégie plus rigoureuse et mieux cadrée, au lieu de se disperser sur tous les sujets. Ce n'est ni supprimer ni traduire."
+              "explanation_fr": "To tighten, c'est resserrer : une stratégie plus ciblée, avec moins de sujets. Priya le précise : « Right now, we write about everything ». Il ne s'agit pas du budget (on dirait cut the budget ou tighten the budget, qui est une autre collocation), et publier plus souvent sur tout est exactement l'inverse."
             },
             {
-              "prompt_fr": "Un collègue te propose un article sur « Les tendances déco des bureaux en start-up » alors que vous vendez un logiciel comptable. Comment refuses-tu avec tact ?",
+              "prompt_fr": "Un collègue propose un article sur « les tendances déco des bureaux de start-up » alors que vous vendez un logiciel comptable. Comment refuses-tu avec tact ?",
               "choices": [
-                "Your subject is bad and we don't make decoration.",
-                "It's an interesting angle, but it doesn't fit any of our content pillars.",
-                "We can't publish it because inbound marketing is forbidden this quarter."
+                "Your subject is not pertinent for our pillars, sorry.",
+                "It's a fun angle, but it doesn't fit any of our content pillars.",
+                "I'm afraid we can't, this subject is out of our scope of pillars."
               ],
               "answer_index": 1,
-              "explanation_fr": "S'appuyer sur les content pillars permet de refuser une idée sans brusquer son auteur : ce n'est pas un jugement personnel, c'est une règle de cohérence éditoriale. Dire « Your subject is bad » est brutal et fautif (« make decoration »)."
+              "explanation_fr": "On reconnaît l'idée (it's a fun angle), puis on donne la règle : le sujet ne correspond à aucun pilier. « Not pertinent » est un faux ami : pertinent existe en anglais mais sonne très formel, on dit relevant. « Out of our scope of pillars » est un mélange maladroit : on dirait out of scope ou it doesn't fit our pillars."
             },
             {
               "prompt_fr": "Comment traduire « Je m'en tiendrais à trois piliers de contenu » ?",
@@ -270,24 +270,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Qu'est-ce qui distingue un contenu de thought leadership d'un article de blog classique ?",
+              "prompt_fr": "Lucía veut un texte de thought leadership pour la PDG, « not a product pitch ». Quel sujet convient ?",
               "choices": [
-                "It shares an expert, original perspective on an industry issue rather than generic tips.",
-                "It is always written anonymously by an external agency.",
-                "It lists all the technical features and prices of the company's product."
+                "A list of ten generic tips to get paid faster by your customers.",
+                "A presentation of our product's new features and pricing plans.",
+                "Our CEO's take on what the new payment directive means for merchants."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le thought leadership (leadership d'opinion) prend position sur un enjeu du secteur avec un point de vue d'expert, souvent signé par un dirigeant ou un spécialiste. Un texte purement promotionnel ou un simple tutoriel générique n'en est pas."
+              "answer_index": 2,
+              "explanation_fr": "Le thought leadership partage un point de vue d'expert, original et assumé, sur un enjeu du secteur : la réaction de la PDG à la nouvelle directive européenne. Une présentation des fonctionnalités est justement le product pitch que Lucía refuse, et une liste de conseils génériques n'exprime aucun point de vue."
             },
             {
-              "prompt_fr": "Dans « I'll slot it in for the 18th », que veut dire to slot something in ?",
+              "prompt_fr": "Complète la phrase de Lucía : « I'll assign the merchant piece to Clara and slot it ___ for the 18th. »",
               "choices": [
-                "To cancel a publication at the last minute.",
-                "To fit an item into an available space in a schedule.",
-                "To translate an article before sending it to the printer."
+                "in",
+                "on",
+                "up"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un slot est un créneau dans un planning ou un calendrier éditorial. To slot something in signifie caser ou glisser un sujet dans un créneau disponible."
+              "answer_index": 0,
+              "explanation_fr": "To slot something in, c'est caser un élément dans un créneau libre du calendrier. « Slot on » n'existe pas dans ce sens, et « slot up » non plus. On retrouve la même idée dans a time slot, un créneau."
             },
             {
               "prompt_fr": "Comment dire en anglais « conférence de rédaction » ?",
@@ -300,14 +300,14 @@
               "explanation_fr": "On dit editorial meeting (ou pitch meeting quand on propose des sujets). « Redaction » est un faux ami qui ne désigne pas l'équipe de rédaction mais le caviardage de passages confidentiels dans un document officiel."
             },
             {
-              "prompt_fr": "En quoi consiste le brand journalism dont parle Kenji ?",
+              "prompt_fr": "Kenji propose d'interviewer deux commerçants « in a brand journalism style ». Que veut-il faire ?",
               "choices": [
-                "Buying advertising pages in national newspapers.",
-                "Using journalistic methods like field interviews and reporting to tell stories for a brand.",
-                "Sending daily press releases to television journalists."
+                "Buy a sponsored page in a business newspaper.",
+                "Tell real stories with reporting methods, for our own channels.",
+                "Send the interviews as a press release to journalists."
               ],
               "answer_index": 1,
-              "explanation_fr": "Le brand journalism applique les techniques du journalisme (enquêtes, interviews de terrain, reportages) aux médias d'une marque, sans faire de la publicité déguisée ni des relations presse classiques."
+              "explanation_fr": "Le brand journalism applique les méthodes du journalisme (interviews, reportage, faits) pour raconter des histoires publiées sur les canaux de la marque. Acheter un espace dans un journal relève de la publicité ou du sponsored content, et envoyer un communiqué aux médias relève des relations presse."
             }
           ],
           "production": {
@@ -362,14 +362,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Quel est l'arbitrage principal quand on décide de passer un rapport en gated content ?",
+              "prompt_fr": "Quel est l'arbitrage principal quand on passe un rapport en gated content ?",
               "choices": [
-                "You get much more organic traffic from Google, but you can no longer share the link by email.",
-                "You collect leads with a form, but fewer people will read the report and search engines won't index the PDF.",
-                "You save design budget because gated content never requires any layout or charts."
+                "You get more organic traffic, but the PDF is harder to design.",
+                "You get more readers, but sales can't contact them afterwards.",
+                "You get more leads, but fewer people read it and search engines see less of it."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Mettre un contenu derrière un formulaire (gated content) permet de récolter des adresses e-mail (leads), mais réduit fortement le nombre de lecteurs et la visibilité SEO. C'est pourquoi on ne réserve le formulaire qu'aux contenus à très forte valeur ajoutée."
+              "answer_index": 2,
+              "explanation_fr": "Le formulaire (gate) fournit des contacts à l'équipe commerciale, mais il freine la lecture et les moteurs de recherche n'indexent pas le contenu caché derrière. C'est pourquoi on publie en parallèle du short-form content avec les chiffres clés. Un contenu gated n'apporte pas plus de lecteurs ni plus de trafic organique, et la mise en page n'a rien à voir."
             },
             {
               "prompt_fr": "Comment dire « rendre un rapport libre d'accès (sans formulaire) » en anglais du marketing ?",
@@ -392,14 +392,14 @@
               "explanation_fr": "On dit each stage of the customer journey (chaque étape du parcours client), et at each stage of the customer journey si une préposition précède stage."
             },
             {
-              "prompt_fr": "Parmi ces formats, lequel relève clairement du long-form content en B2B ?",
+              "prompt_fr": "Comment dire « Il nous faut des contenus pour chaque étape du parcours client » ?",
               "choices": [
-                "A 15-second vertical video for social media.",
-                "A three-line LinkedIn poll asking a quick question.",
-                "An in-depth 2,500-word industry guide or white paper."
+                "We need content for every stage of the customer journey.",
+                "We need contents for each step of the client path.",
+                "We need content for every level of the customer travel."
               ],
-              "answer_index": 2,
-              "explanation_fr": "Le long-form content désigne les formats approfondis (guides complets, études, livres blancs, longs articles de fond), par opposition au short-form content qui se consomme en quelques secondes."
+              "answer_index": 0,
+              "explanation_fr": "Le parcours client se dit customer journey, et ses étapes stages. Content est indénombrable dans ce sens : on dit content ou pieces of content, pas « contents » (qui veut dire le sommaire, la table des matières). « Client path » et « customer travel » sont des calques qui n'existent pas en marketing."
             }
           ],
           "production": {
@@ -509,14 +509,14 @@
               "explanation_fr": "Do you have capacity (ou bandwidth) for...? est la formule professionnelle standard pour demander à un collègue ou à un prestataire s'il a de la disponibilité dans sa charge de travail."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un listicle ?",
+              "prompt_fr": "Ivan trouve qu'un listicle serait « too shallow » pour ce sujet. Que reproche-t-il à ce format ici ?",
               "choices": [
-                "An article structured around a numbered list of tips or examples.",
-                "A short newsletter sent only to VIP subscribers.",
-                "A technical glossary placed at the end of a white paper."
+                "A numbered list is too long to read on mobile for busy readers.",
+                "A numbered list skims the topic, while readers need step-by-step depth.",
+                "A numbered list ranks badly on Google compared with a guide."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Mot-valise formé de list et article, un listicle est un article construit sous forme de liste numérotée (par exemple « 7 erreurs à éviter… »)."
+              "answer_index": 1,
+              "explanation_fr": "Shallow veut dire superficiel : un listicle (article en liste numérotée) survole souvent un sujet, alors que paramétrer des relances automatiques demande un pas-à-pas détaillé, d'où le how-to guide. Le problème n'est ni la longueur ni le référencement : un listicle peut très bien se positionner."
             },
             {
               "prompt_fr": "Que désigne turnaround time lorsqu'on travaille avec un rédacteur ou une agence ?",
@@ -595,42 +595,42 @@
             {
               "prompt_fr": "Quelle est la différence entre les editorial guidelines et le style guide ?",
               "choices": [
-                "Editorial guidelines cover topics, angles and tone, while the style guide sets rules for spelling, punctuation and formatting.",
-                "Editorial guidelines are only for videos, while the style guide is only for the company logo and colors.",
-                "They are both legal contracts signed by the human resources department."
+                "Guidelines are for freelance writers; the style guide is for the in-house team only.",
+                "Guidelines cover spelling and formatting; the style guide covers topics, angles and tone.",
+                "Guidelines cover topics, angles and tone; the style guide covers spelling and formatting."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Les editorial guidelines définissent le fond et l'esprit (sujets, angle, promesse au lecteur), tandis que le style guide fixe les conventions d'écriture précises (majuscules, chiffres, ponctuation, mots bannis)."
+              "answer_index": 2,
+              "explanation_fr": "Les editorial guidelines fixent la ligne : sujets, angles, ton, public. Le style guide fixe les règles de forme : orthographe, ponctuation, majuscules, mise en forme, mots interdits (comme la liste noire de la page quatre). Inverser les deux est courant, et les deux documents s'adressent à tous ceux qui écrivent pour la marque."
             },
             {
-              "prompt_fr": "Pourquoi Clara demande-t-elle d'écrire en plain language ?",
+              "prompt_fr": "Clara demande d'écrire en plain language. Quelle phrase respecte cette consigne ?",
               "choices": [
-                "Because the text will be printed in black and white without illustrations.",
-                "So that readers who aren't specialists can understand the text on the first read.",
-                "To make the article sound more academic and impressive to investors."
+                "Late payments hurt your cash flow, so send reminders early.",
+                "Payment delays negatively impact your treasury position.",
+                "Delayed receivables can deteriorate your liquidity ratios."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le plain language (ou plain English) consiste à écrire de façon simple, directe et immédiatement compréhensible par le lecteur, à l'opposé du jargon inutile."
+              "answer_index": 0,
+              "explanation_fr": "Le plain language utilise des mots courants et des phrases directes, ici pour des commerçants qui ne sont pas comptables. « Negatively impact your treasury position » est du jargon (et treasury pour « trésorerie » sonne très finance d'entreprise : on dit cash flow). « Receivables » et « liquidity ratios » sont des termes d'expert que Clara demande d'éviter."
             },
             {
               "prompt_fr": "Lequel de ces passages respecte la consigne « Cut the buzzwords and jargon » ?",
               "choices": [
-                "Our next-gen paradigm leverages holistic synergies to disrupt B2B workflows.",
-                "We deploy a game-changing ecosystem of seamless financial orchestration.",
-                "Our software sends automatic reminders so your customers pay their invoices on time."
-              ],
-              "answer_index": 2,
-              "explanation_fr": "« Our software sends automatic reminders... » dit concrètement ce que fait le produit en langage clair. Les deux autres phrases accumulent les buzzwords (next-gen, leverage, holistic, synergies, disrupt, game-changing, seamless) sans rien expliquer."
-            },
-            {
-              "prompt_fr": "Dans « Anything specific I should watch out for? », que signifie to watch out for ?",
-              "choices": [
-                "To watch a video tutorial before starting.",
-                "To pay special attention to a potential pitfall or rule.",
-                "To look outside the office window."
+                "Our game-changing tool lets you get paid faster, seamlessly.",
+                "Our tool sends automatic reminders so customers pay on time.",
+                "Our solution leverages automation to optimize your payments."
               ],
               "answer_index": 1,
-              "explanation_fr": "To watch out for something veut dire faire attention à quelque chose, surveiller un piège ou un point de vigilance particulier."
+              "explanation_fr": "La bonne phrase dit concrètement ce que fait l'outil et pour quel résultat. Game-changing et seamlessly sont des buzzwords vides, comme ceux de la liste noire de Clara. Leverage et optimize sonnent sérieux mais ne disent rien : qu'est-ce qui est optimisé, et comment ?"
+            },
+            {
+              "prompt_fr": "Dans « Anything specific I should watch out for? », que demande Liam ?",
+              "choices": [
+                "Whether someone will check his work while he writes.",
+                "Whether he should keep an eye on the article after it's published.",
+                "Whether there are pitfalls or rules he should be careful about."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "To watch out for something, c'est faire attention à un piège ou à une règle : Liam demande les points de vigilance avant d'écrire. Surveiller un article après publication se dirait keep an eye on ou monitor, et être supervisé se dirait be supervised ou have someone check my work."
             }
           ],
           "production": {
@@ -687,44 +687,44 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Quel est le rôle d'un ghostwriter dans une équipe de marketing de contenu ?",
+              "prompt_fr": "Fatou dit à Kofi « I'll act as your ghostwriter ». Que lui propose-t-elle ?",
               "choices": [
-                "An anonymous moderator who deletes spam comments at night.",
-                "A writer who drafts articles or posts that are published under someone else's name.",
-                "A designer who creates illustrations for Halloween campaigns."
+                "To write the article that will be published under his name.",
+                "To correct the article that he writes himself this week.",
+                "To publish the article anonymously on the company blog."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un ghostwriter (prête-plume) rédige des textes (tribunes, posts LinkedIn, livres blancs) qui sont signés par une autre personne, souvent un dirigeant ou un expert métier qui manque de temps pour écrire."
+              "answer_index": 0,
+              "explanation_fr": "Un ghostwriter (prête-plume) rédige un texte qui sera signé par quelqu'un d'autre : Kofi parle vingt minutes, Fatou écrit, l'article paraît sous le nom de Kofi. Corriger le texte de quelqu'un, c'est edit ou copyedit. Et le texte n'est pas anonyme : c'est justement le nom de l'expert qui lui donne sa crédibilité."
             },
             {
               "prompt_fr": "Quelle est la différence entre un testimonial et une case study ?",
               "choices": [
-                "A testimonial is only for B2B companies, while a case study is only for B2C fashion brands.",
-                "A testimonial is written by the legal team, while a case study is an invoice.",
-                "A testimonial is a short quote praising the product, while a case study is a detailed story of the problem, solution and results."
+                "A testimonial tells the problem, solution and results; a case study is a short customer quote.",
+                "A testimonial is a short customer quote; a case study tells the problem, solution and results.",
+                "A testimonial is always on video; a case study is always a downloadable PDF."
               ],
-              "answer_index": 2,
-              "explanation_fr": "Le testimonial est une citation ou recommandation courte d'un client satisfait, tandis que la case study (étude de cas) détaille tout le contexte, la mise en œuvre et les résultats obtenus."
+              "answer_index": 1,
+              "explanation_fr": "Un testimonial est une courte citation d'un client satisfait. Une case study raconte en détail le problème, la solution et les résultats chiffrés. Inverser les deux est une confusion fréquente, et aucun des deux n'impose un format : un témoignage peut être écrit, une étude de cas peut être une page web."
             },
             {
               "prompt_fr": "Ton expert métier te dit « I don't have time to write a 1,000-word article ». Quelle réponse débloque la situation ?",
               "choices": [
-                "No problem: let's hop on a 15-minute call, I'll record your answers and ghostwrite the draft for you.",
-                "You have to write it anyway because the managing editor ordered it.",
-                "Then we'll just invent some technical facts without asking you."
-              ],
-              "answer_index": 0,
-              "explanation_fr": "Les experts métier (SMEs) n'ont presque jamais le temps de rédiger : proposer une courte interview enregistrée et écrire le brouillon à leur place (ghostwriting) est la méthode professionnelle pour obtenir leur savoir sans les bloquer."
-            },
-            {
-              "prompt_fr": "Dans « Thanks for making time », pourquoi Fatou n'utilise-t-elle pas « taking the time » ?",
-              "choices": [
-                "Because taking time is grammatically incorrect in English.",
-                "Because making time only applies to morning meetings.",
-                "To make time means freeing up a slot in a busy schedule, which acknowledges how busy Kofi is."
+                "No worry: you can write it slowly when you will have time.",
+                "No problem: just send me your notes and I'll put them in a draft.",
+                "No problem: give me 20 minutes on a call and I'll write the draft."
               ],
               "answer_index": 2,
-              "explanation_fr": "Take the time existe, mais make time (dégager du temps dans un emploi du temps chargé) est particulièrement valorisant quand on remercie un collègue très sollicité."
+              "explanation_fr": "Un appel court enregistré ne demande presque rien à l'expert et donne à la rédactrice la matière vivante dont elle a besoin. Lui demander ses notes, c'est encore lui demander d'écrire. « No worry » (on dit no worries) et « when you will have time » sont deux erreurs classiques : après when, l'anglais met le présent (when you have time)."
+            },
+            {
+              "prompt_fr": "Fatou commence par « Thanks for making time, Kofi ». Pourquoi cette formule est-elle bien choisie ?",
+              "choices": [
+                "It thanks him for finding a slot in a busy week.",
+                "It thanks him for arriving on time to the call.",
+                "It thanks him for taking his time to explain things."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "To make time for something, c'est se libérer du temps malgré un agenda chargé : la formule reconnaît que Kofi est débordé. Être ponctuel se dit be on time. « Take your time » veut dire « prends ton temps », sans se presser, ce qui n'est pas le sens ici."
             }
           ],
           "production": {
@@ -781,14 +781,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que signifie l'expression in-house dans « Can we handle all of that in-house? » ?",
+              "prompt_fr": "Que signifie in-house dans « Can we handle all of that in-house? » ?",
               "choices": [
-                "While working from home rather than at the office.",
-                "Inside the main warehouse of the company.",
-                "Internally, using our own employees rather than external freelancers or an agency."
+                "Remotely, with the team working from home this month.",
+                "Internally, with our own team rather than freelancers.",
+                "On site, in the office instead of in a coworking space."
               ],
-              "answer_index": 2,
-              "explanation_fr": "In-house signifie « en interne » (par l'équipe salariée de l'entreprise), par opposition à l'externalisation auprès de freelances ou d'une agence. Le télétravail se dit remote work ou working from home."
+              "answer_index": 1,
+              "explanation_fr": "In-house veut dire en interne, par les salariés de l'entreprise, par opposition à un freelance ou une agence (outsourced). Le mot n'a rien à voir avec le lieu de travail : le télétravail se dit working from home ou remote, et sur place se dit on site."
             },
             {
               "prompt_fr": "Que veut dire l'abréviation EOD dans un message professionnel ?",
@@ -914,22 +914,22 @@
             {
               "prompt_fr": "À quoi sert le keyword mapping dans une stratégie de contenu SEO ?",
               "choices": [
-                "To assign specific target keywords to specific pages so two pages don't compete for the same query.",
-                "To display a geographic map of where readers live on the website.",
-                "To translate keywords into ten languages automatically."
+                "To group keywords by search volume from highest to lowest.",
+                "To list every keyword our competitors rank for each month.",
+                "To assign each target keyword to one page so pages don't compete."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Le keyword mapping associe chaque mot-clé cible à une URL précise du site. Cela évite la cannibalisation SEO (quand plusieurs pages de ton propre site se disputent la même requête)."
+              "answer_index": 2,
+              "explanation_fr": "Le keyword mapping attribue chaque mot-clé cible à une seule page : ici, « expense management » est déjà réservé à la page produit, donc l'article vise une longue traîne. Lister les mots-clés des concurrents relève de l'analyse concurrentielle, et trier par volume fait partie de la keyword research, pas du mapping."
             },
             {
-              "prompt_fr": "Pourquoi Mei choisit-elle d'inclure une checklist gratuite dans son article ?",
+              "prompt_fr": "Pourquoi Mei ajoute-t-elle une checklist gratuite à son article ?",
               "choices": [
-                "Because Google forbids publishing blog posts without a PDF attachment.",
-                "Because the search intent is informational and readers want a practical tool they can use right away.",
-                "Because she wants to reach the minimum word count faster."
+                "Because the search intent is informational and readers want a practical tool.",
+                "Because the search intent is transactional and readers are ready to buy.",
+                "Because a downloadable file helps the article rank for the broad keyword."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Répondre au search intent ne consiste pas seulement à placer le mot-clé : il faut fournir exactement le format et l'aide concrète que l'internaute espère trouver en tapant sa requête."
+              "answer_index": 0,
+              "explanation_fr": "Une intention informationnelle signifie que le lecteur cherche à apprendre ou à faire quelque chose : un modèle prêt à l'emploi y répond directement. Une intention transactionnelle correspondrait à quelqu'un prêt à acheter, ce qui n'est pas le cas ici. Et le mot-clé large est réservé à la page produit : l'article ne doit justement pas le viser."
             },
             {
               "prompt_fr": "Comment dire « je ne veux pas que nos pages se fassent concurrence » ?",
@@ -944,12 +944,12 @@
             {
               "prompt_fr": "Quel est l'avantage d'un long-tail keyword pour un article de blog ?",
               "choices": [
-                "It always contains more than fifteen words and a question mark.",
-                "It has a lower search volume, but less competition and a much clearer search intent.",
-                "It guarantees first place on Google within twenty-four hours."
+                "Higher volume, and the competition is usually weaker on it.",
+                "Lower volume, but less competition and a clearer search intent.",
+                "Lower volume, but it always ranks first within a few days."
               ],
               "answer_index": 1,
-              "explanation_fr": "Une requête de longue traîne est plus spécifique : moins de personnes la tapent, mais l'intention est très précise et il est beaucoup plus réaliste de s'y positionner."
+              "explanation_fr": "Une requête de longue traîne (ici « how to set up an expense policy for small teams ») est moins cherchée, mais moins disputée et beaucoup plus précise sur ce que veut l'internaute. Son volume est plus faible, pas plus fort, et aucune requête ne garantit une première place."
             }
           ],
           "production": {
@@ -1006,34 +1006,34 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi Ananya recommande-t-elle d'ajouter un subheading tous les trois cents mots ?",
+              "prompt_fr": "Pourquoi Ananya demande-t-elle un subheading tous les trois cents mots ?",
               "choices": [
-                "To artificially double the word count of the article.",
-                "To break up the body copy and help readers scan the page easily on screen.",
-                "Because a web browser cannot display more than three hundred words at once."
-              ],
-              "answer_index": 1,
-              "explanation_fr": "Sur écran, un « mur de texte » décourage la lecture. Des intertitres (subheadings) réguliers et explicites découpent le body copy et permettent aux lecteurs de repérer immédiatement la section qui les intéresse."
-            },
-            {
-              "prompt_fr": "Quelle est la bonne pratique concernant les heading tags (H1, H2, H3) d'un article ?",
-              "choices": [
-                "Put the entire body copy in H1 so search engines think every word is important.",
-                "Choose heading tags based only on which font size looks prettiest on the page.",
-                "Use only one H1 for the main title, then structure sections logically with H2s and H3s."
+                "To make the article longer so it looks more complete.",
+                "To repeat the main keyword as often as possible.",
+                "To break up the body copy so readers can scan the page."
               ],
               "answer_index": 2,
-              "explanation_fr": "Les heading tags donnent la hiérarchie sémantique du document (un seul H1 pour le titre principal, des H2 pour les grandes parties, des H3 pour les sous-parties). On ne les utilise jamais simplement pour changer la taille du texte."
+              "explanation_fr": "Les intertitres découpent le corps du texte en blocs lisibles : sur écran, la plupart des lecteurs survolent avant de lire. Répéter le mot-clé partout relève du keyword stuffing, pénalisé par Google, et un intertitre n'allonge pas un article utilement."
             },
             {
-              "prompt_fr": "Dans « Does it flow well? », que demande Lucas à propos de son texte ?",
+              "prompt_fr": "Quelle est la bonne pratique pour les heading tags (H1, H2, H3) d'un article ?",
               "choices": [
-                "Whether the transitions between sentences and ideas feel natural and smooth.",
-                "Whether the page loads quickly on a mobile connection.",
-                "Whether the article has already been shared on social media."
+                "One H1 for the title, then H2s for sections and H3s inside them.",
+                "Several H1s, one for each section, so each one ranks well.",
+                "H2s and H3s chosen by font size, as long as they look good."
               ],
               "answer_index": 0,
-              "explanation_fr": "Pour un texte, to flow well signifie être fluide, agréable à lire, avec des enchaînements naturels d'une idée à l'autre."
+              "explanation_fr": "On garde un seul H1 (le titre, qui contient le mot-clé principal), puis des H2 pour les sections et des H3 pour les sous-parties : c'est le plan que suivent lecteurs et moteurs. Multiplier les H1 brouille la hiérarchie, et la taille de police se règle en CSS, pas en choisissant une balise."
+            },
+            {
+              "prompt_fr": "Lucas demande « Does it flow well? ». Que veut-il savoir ?",
+              "choices": [
+                "Whether the text has enough keywords in the right places.",
+                "Whether the ideas follow on naturally from one another.",
+                "Whether the article will bring a steady flow of traffic."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Quand un texte flows well, on passe d'une phrase et d'une idée à l'autre sans accroc : c'est une question de transitions et de rythme. Les mots-clés relèvent du SEO, et le flux de trafic (traffic flow) n'a rien à voir avec ce verbe."
             },
             {
               "prompt_fr": "Comment traduire « un article optimisé pour le référencement » de façon idiomatique ?",
@@ -1102,32 +1102,32 @@
             {
               "prompt_fr": "Comment s'organise un topic cluster sur un site web ?",
               "choices": [
-                "Every article on the blog links randomly to ten external websites in different industries.",
-                "All articles on a topic are merged into a single 50,000-word page with no links.",
-                "One comprehensive pillar page covers a broad topic and links to several detailed cluster articles, which all link back to it."
+                "Several pillar pages cover the same topic so at least one of them ranks.",
+                "Detailed articles cover the topic and link to a pillar page that doesn't link back.",
+                "A pillar page covers the topic and links to detailed articles, which link back to it."
               ],
               "answer_index": 2,
-              "explanation_fr": "Un topic cluster (grappe ou cocon thématique) relie une page pilier centrale (pillar page) et plusieurs articles satellites approfondis grâce à un maillage interne (internal linking) cohérent."
+              "explanation_fr": "Un topic cluster relie une page pilier, qui traite le sujet dans sa globalité, à des articles détaillés, et chaque article renvoie vers la page pilier : ce maillage dans les deux sens montre la profondeur du site. Sans lien retour, la structure ne fonctionne pas, et plusieurs pages piliers sur le même sujet se cannibaliseraient."
             },
             {
-              "prompt_fr": "Pourquoi faut-il éviter « click here » ou « read more » comme anchor text ?",
+              "prompt_fr": "Comment réécrire « To learn more about payroll taxes, click here » pour soigner l'anchor text ?",
               "choices": [
-                "Because descriptive anchor text tells both readers and search engines what the linked page is about.",
-                "Because hyperlinks stop working when they contain the word 'here'.",
-                "Because 'click here' is protected by copyright in the United States."
+                "Read our complete guide to payroll taxes to learn more.",
+                "To learn more about payroll taxes, read more here.",
+                "To learn more about payroll taxes, follow this link."
               ],
               "answer_index": 0,
-              "explanation_fr": "Le texte d'ancre (anchor text) doit décrire le sujet de la page vers laquelle on pointe : c'est plus clair pour l'utilisateur (et les lecteurs d'écran) et cela aide les moteurs de recherche à comprendre la structure du site."
+              "explanation_fr": "L'anchor text, le texte cliquable, doit décrire la page de destination : « complete guide to payroll taxes » dit aux lecteurs et aux moteurs de quoi parle le lien. « Read more here » et « follow this link » ne sont que des variantes de click here : le sujet est dans la phrase, mais pas dans le lien."
             },
             {
-              "prompt_fr": "Que recouvre l'acronyme E-E-A-T utilisé en SEO et en contenu ?",
+              "prompt_fr": "Google a ajouté en 2022 un E à E-A-T. Que désigne ce E ajouté ?",
               "choices": [
-                "Email Engagement and Automated Tracking.",
-                "Experience, Expertise, Authoritativeness, and Trustworthiness.",
-                "Editorial Efficiency and Audience Targeting."
+                "Engagement",
+                "Experience",
+                "Evidence"
               ],
               "answer_index": 1,
-              "explanation_fr": "E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) désigne les critères de qualité de Google pour évaluer si un contenu est fiable, écrit par quelqu'un de compétent et fondé sur une expérience réelle."
+              "explanation_fr": "E-E-A-T signifie Experience, Expertise, Authoritativeness, Trustworthiness. Le E ajouté est Experience : l'auteur a-t-il une expérience directe du sujet ? D'où le cas de calcul réel et la bio de la responsable juridique. Engagement et Evidence ne font pas partie de ces critères, même si citer des sources officielles renforce la confiance."
             },
             {
               "prompt_fr": "Comment traduire « le maillage interne » en anglais ?",
@@ -1194,24 +1194,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi Maya retire-t-elle l'année (ex. 2026) et les mots superflus de l'URL slug ?",
+              "prompt_fr": "Pourquoi Maya retire-t-elle la date de l'URL slug ?",
               "choices": [
-                "Because a short, timeless URL slug is easier to read and won't require a redirect when the article is updated next year.",
-                "Because web browsers refuse to open URLs that contain numbers.",
-                "Because the URL slug is the only thing Google uses to rank a website."
+                "So the article looks newer in the search results.",
+                "So the address loads faster on mobile connections.",
+                "So the address stays valid when the post is updated next year."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un bon url-slug est court, lisible, contient les mots-clés essentiels et évite les dates ou les chiffres (comme « 7-conseils-2026 ») pour qu'on puisse actualiser l'article les années suivantes sans devoir changer d'URL."
+              "answer_index": 2,
+              "explanation_fr": "Une URL courte et sans date reste juste quand on met l'article à jour : pas besoin de changer d'adresse ni de créer une redirection. La longueur de l'URL ne change rien à la vitesse de chargement, et c'est la date affichée dans la page, pas le slug, qui montre la fraîcheur d'un contenu."
             },
             {
               "prompt_fr": "Quel est le rôle réel de la meta description d'un article ?",
               "choices": [
-                "It is a direct ranking factor that automatically puts the page in first position.",
-                "It summarizes the page in search results and convinces users to click on your link.",
-                "It hides confidential notes intended only for the web developer."
+                "It summarizes the page in search results and makes people click.",
+                "It's a direct ranking factor that helps the page rank higher.",
+                "It tells search engines which keywords to rank the page for."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La meta description n'influence pas directement la position SEO dans l'algorithme de Google, mais elle agit comme une mini-annonce dans la SERP pour donner envie à l'internaute de cliquer (elle améliore le CTR)."
+              "answer_index": 0,
+              "explanation_fr": "La meta description est l'extrait affiché sous le titre dans les résultats : elle sert à donner envie de cliquer, ce qui joue sur le CTR. Google a confirmé qu'elle n'est pas un critère direct de classement, et elle ne déclare pas de mots-clés (l'ancienne balise meta keywords est ignorée depuis longtemps). Google peut aussi la réécrire."
             },
             {
               "prompt_fr": "Quelle est la meilleure façon de rédiger l'alt text d'un graphique intégré dans un article ?",
@@ -1326,24 +1326,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Quelle est la différence précise entre to copyedit et to proofread ?",
+              "prompt_fr": "Quelle est la différence entre to copyedit et to proofread ?",
               "choices": [
-                "To copyedit is to translate a text, while to proofread is to print it.",
-                "To copyedit is to improve style, clarity and consistency, while to proofread is the final check for typos and spelling mistakes.",
-                "To copyedit is to delete a file, while to proofread is to write the first draft."
+                "Copyediting is the final check for typos; proofreading improves clarity and style.",
+                "Copyediting improves clarity and style; proofreading is the final check for typos.",
+                "Copyediting is done by the author; proofreading is done by the client."
               ],
               "answer_index": 1,
-              "explanation_fr": "Le copyediting intervient en amont pour améliorer la clarté, le rythme, la syntaxe et le respect du guide de style. Le proofreading est l'ultime vérification orthographique et typographique avant publication."
+              "explanation_fr": "To copyedit, c'est retravailler le texte : clarté, style, cohérence, phrases trop longues. To proofread, c'est la dernière relecture avant publication pour traquer coquilles et fautes. Inverser les deux est fréquent, et les deux tâches sont souvent faites par un relecteur, pas par l'auteur ni par le client."
             },
             {
-              "prompt_fr": "Un collègue te demande comment améliorer la readability d'un texte B2B complexe. Quel conseil est le plus pertinent ?",
+              "prompt_fr": "Un collègue te demande comment améliorer la readability d'une introduction B2B. Quel conseil est le plus pertinent ?",
               "choices": [
-                "Use passive verbs and sixty-word sentences to sound more serious.",
-                "Replace all subheadings with footnotes in small print.",
-                "Shorten the sentences, use active verbs and cut wordy expressions."
+                "Merge the short paragraphs into one long block.",
+                "Add more technical terms to show expertise.",
+                "Split the long sentences and use active verbs."
               ],
               "answer_index": 2,
-              "explanation_fr": "La lisibilité (readability) repose sur des phrases courtes, la voix active et l'élimination des tournures verbeuses (wordy), même lorsque le sujet technique est pointu."
+              "explanation_fr": "La lisibilité s'améliore avec des phrases courtes, des verbes actifs et moins de mots inutiles : c'est ce que fait Aïcha avec ses phrases de quarante mots. Ajouter du vocabulaire technique alourdit le texte, et un bloc unique est plus difficile à lire à l'écran que des paragraphes courts."
             },
             {
               "prompt_fr": "Quel adjectif est l'exact contraire de wordy ?",
@@ -1356,14 +1356,14 @@
               "explanation_fr": "Wordy (verbeux, qui utilise trop de mots pour dire peu de chose) s'oppose directement à concise (concis, qui va à l'essentiel en peu de mots)."
             },
             {
-              "prompt_fr": "Dans « Where does it need work? », que demande Aïcha ?",
+              "prompt_fr": "Aïcha demande « Where does it need work? ». Comment le dirais-tu autrement ?",
               "choices": [
-                "In which office building she should work tomorrow.",
-                "Whether the website is currently down.",
-                "Which parts of the text still need to be improved."
+                "Which parts could be better?",
+                "Where do I have to work on it?",
+                "What work do you need from me?"
               ],
-              "answer_index": 2,
-              "explanation_fr": "It needs work (ou Where does it need work?) est une façon naturelle et ouverte de demander quels passages d'un brouillon méritent d'être retravaillés."
+              "answer_index": 0,
+              "explanation_fr": "« Where does it need work? » demande quelles parties du texte sont encore à améliorer. « Where do I have to work on it? » ressemble à une question sur le lieu de travail, et « What work do you need from me? » demande une tâche à faire, pas un retour sur le brouillon."
             }
           ],
           "production": {
@@ -1420,34 +1420,34 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi la phrase « Send me a copy of the page » ne parle-t-elle PAS du texte marketing ?",
+              "prompt_fr": "Dans un e-mail, quelle phrase demande bien le texte marketing de la page (et non un double du document) ?",
               "choices": [
-                "Because 'copy' can only be used as a verb in British and American English.",
-                "Because web pages never contain any copy.",
-                "Because in the sense of marketing text, 'copy' is uncountable ('the copy', 'some copy'), whereas 'a copy' means a duplicate."
+                "Could you send me a copy of the page?",
+                "Could you send me the copy for the page?",
+                "Could you send me the copies of the page?"
               ],
-              "answer_index": 2,
-              "explanation_fr": "En marketing, copy (le texte rédigé) est toujours indénombrable : on dit the copy is too long ou great copy, jamais a copy. Dès qu'on met l'article a ou le pluriel copies, le mot reprend son sens courant d'exemplaire ou de copie."
+              "answer_index": 1,
+              "explanation_fr": "Au sens de « texte marketing », copy est indénombrable : the copy, some copy, the copy for the page. « A copy » ou « copies » désignent un exemplaire ou un double d'un document. Les deux autres phrases demandent donc une copie de la page, pas son texte."
             },
             {
               "prompt_fr": "Quelle nuance sépare un titre catchy d'un argument compelling ?",
               "choices": [
-                "Catchy means it grabs attention and sticks in your head, while compelling means it is convincing enough to make you act.",
-                "Catchy means long and academic, while compelling means short and funny.",
-                "Catchy means forbidden by the style guide, while compelling means mandatory."
+                "Catchy is for B2C; compelling is only used in B2B copy.",
+                "Catchy convinces you to act; compelling grabs attention and sticks.",
+                "Catchy grabs attention and sticks; compelling convinces you to act."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un slogan catchy accroche l'oreille et se retient facilement ; un argument compelling est si fort et pertinent qu'il emporte la conviction et pousse à agir."
+              "answer_index": 2,
+              "explanation_fr": "Catchy, c'est ce qui accroche et reste en tête, comme un refrain. Compelling, c'est ce qui convainc au point de faire agir : une raison forte de s'inscrire. Ces deux adjectifs ne dépendent pas du secteur, B2B ou B2C."
             },
             {
               "prompt_fr": "Que veut dire Kenji par « What if we lead with the concrete benefit? » ?",
               "choices": [
-                "What if we ask the team leader to choose the benefit?",
-                "What if we start the text with the concrete benefit?",
-                "What if we hide the benefit at the very bottom of the page?"
+                "What if we open the page with the concrete benefit?",
+                "What if the team lead chooses the concrete benefit?",
+                "What if we end the page with the concrete benefit?"
               ],
-              "answer_index": 1,
-              "explanation_fr": "En rédaction et en journalisme, to lead with something signifie commencer par cet élément, le mettre en tête d'article ou de page (d'où le nom the lead / lede pour l'attaque d'un article)."
+              "answer_index": 0,
+              "explanation_fr": "To lead with something, c'est commencer par cet élément, le mettre en tête : ici, le bénéfice « Cut your month-end closing time in half ». Le verbe n'a rien à voir avec le team lead, et finir par le bénéfice est l'inverse de ce que propose Kenji."
             },
             {
               "prompt_fr": "Comment traduire « Rends l'accroche plus percutante » ?",
@@ -1514,34 +1514,34 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que signifie l'acronyme WIP lorsqu'on partage un document avec son équipe ?",
+              "prompt_fr": "Lucía précise que la brochure est « still a WIP ». Qu'attend-elle des relecteurs ?",
               "choices": [
-                "Work In Progress (an unfinished document that is still being worked on).",
-                "Website Indexing Protocol (a technical SEO rule).",
-                "Weekly Internal Publication (the company newsletter)."
+                "A full proofread, since this is the final version.",
+                "Feedback on the messaging, not on the typos yet.",
+                "Their sign-off, so the text can go to design."
               ],
-              "answer_index": 0,
-              "explanation_fr": "WIP signifie work in progress : une version de travail en cours d'élaboration, partagée tôt pour valider l'orientation avant de peaufiner les détails."
+              "answer_index": 1,
+              "explanation_fr": "WIP (work in progress) signale un document encore en cours : Lucía demande donc de se concentrer sur le message, pas sur les coquilles. Une relecture finale (proofread) et la validation (sign-off) viendront plus tard, après le tour de corrections consolidé."
             },
             {
               "prompt_fr": "Pourquoi Lucía impose-t-elle « one consolidated round of revisions » ?",
               "choices": [
-                "Because the word processor deletes the document after two saves.",
-                "So that all stakeholders give their feedback at the same time instead of contradicting each other in separate rounds.",
-                "So that nobody is allowed to read the brochure before it is printed."
-              ],
-              "answer_index": 1,
-              "explanation_fr": "Regrouper tous les retours en un seul tour de révision consolidé (consolidated round of revisions) évite de modifier une phrase le mardi pour un collègue puis de devoir faire l'inverse le jeudi pour un autre."
-            },
-            {
-              "prompt_fr": "Dans « Both product marketing and legal want to chime in », que signifie to chime in ?",
-              "choices": [
-                "To cancel a project without warning.",
-                "To sign a confidential legal contract.",
-                "To join a conversation or add one's opinion and feedback."
+                "So the brochure is revised only once it has been printed.",
+                "So that only one person is allowed to give feedback on the brochure.",
+                "So everyone comments once in the same doc instead of in separate rounds."
               ],
               "answer_index": 2,
-              "explanation_fr": "To chime in signifie intervenir dans une discussion, ajouter son grain de sel ou donner son avis."
+              "explanation_fr": "Un seul tour consolidé rassemble tous les commentaires au même endroit et à la même date : on évite les allers-retours sans fin où chaque service contredit le précédent. Tout le monde peut commenter, et c'est le responsable du marketing produit qui tranche. On révise évidemment avant l'impression, pas après."
+            },
+            {
+              "prompt_fr": "« Both product marketing and legal want to chime in. » Comment dirais-tu cela autrement ?",
+              "choices": [
+                "Both teams want to give their input.",
+                "Both teams want to give a call.",
+                "Both teams want to sign the text."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "To chime in, c'est intervenir dans une discussion pour donner son avis : give their input. Le verbe évoque une cloche (chime), mais il n'a rien à voir avec un appel téléphonique (give someone a call), et donner son avis n'est pas valider : la validation se dit sign-off."
             },
             {
               "prompt_fr": "Comment demander poliment la validation finale d'ici vendredi ?",
@@ -1610,32 +1610,32 @@
             {
               "prompt_fr": "Quelle est la différence entre un guest post et du sponsored content ?",
               "choices": [
-                "A guest post is only published in print magazines, while sponsored content is only on radio.",
-                "A guest post is an unpaid expert contribution to another blog, while sponsored content is paid for by a brand and must be labelled as a partnership.",
-                "They both mean an anonymous comment left at the bottom of a forum."
+                "A guest post is paid and labelled; sponsored content is written by an outside expert.",
+                "A guest post is written by an outside expert; sponsored content is paid and labelled.",
+                "A guest post appears only in print; sponsored content appears only online."
               ],
               "answer_index": 1,
-              "explanation_fr": "Un guest post (article invité) est un échange éditorial gratuit où un expert écrit pour le blog d'un partenaire afin de partager son savoir et gagner en visibilité. Le sponsored content (contenu sponsorisé) est un espace acheté dans un média et doit légalement afficher une mention de partenariat."
+              "explanation_fr": "Un guest post est un article signé par un expert extérieur et publié sur un autre blog, en général sans paiement. Le sponsored content est payé par une marque et doit être signalé comme partenariat (le label « Partner content »). Les deux existent en ligne comme en print."
             },
             {
-              "prompt_fr": "Pourquoi le mot anglais editorial (employé comme nom) est-il un faux ami ?",
+              "prompt_fr": "Sarah a appelé « an editorial » l'article payé dans le magazine. Pourquoi est-ce une erreur ?",
               "choices": [
-                "Because it means a printing machine in a factory.",
-                "Because it can only be used in the plural in American English.",
-                "Because it specifically means an opinion piece written by a newspaper's senior editors, not brand content or a company's editorial guidelines."
+                "An editorial is a long article, and theirs is too short.",
+                "An editorial means the magazine's whole editorial team.",
+                "An editorial is a newspaper's own opinion piece, not paid content."
               ],
               "answer_index": 2,
-              "explanation_fr": "Comme adjectif, editorial correspond bien à « éditorial » (editorial calendar, editorial content). Mais comme nom (an editorial), il désigne uniquement l'article d'opinion de la rédaction d'un journal."
+              "explanation_fr": "En anglais, an editorial est l'article d'opinion écrit par la rédaction du journal elle-même. Le contenu payé par une marque est du sponsored content. Le mot ne désigne ni l'équipe de rédaction (the editorial team, the editors) ni une question de longueur."
             },
             {
-              "prompt_fr": "Pourquoi demande-t-on toujours à une autre personne de proofread un texte important ?",
+              "prompt_fr": "Pourquoi demande-t-on à une autre personne de proofread un texte important ?",
               "choices": [
-                "Because the author's brain knows what the sentence is supposed to say and easily skips over typos.",
-                "Because the author is not allowed to open the CMS.",
-                "Because proofreading requires rewriting the entire strategy from scratch."
+                "The author reads what they meant to write and skips over typos.",
+                "The author isn't allowed to publish their own work in the CMS.",
+                "The author has to rewrite the text after each proofread."
               ],
               "answer_index": 0,
-              "explanation_fr": "Quand on a écrit et relu dix fois son propre texte, on lit ce qu'on croit avoir écrit et non ce qui est réellement à l'écran : un regard neuf (fresh eyes) repère immédiatement les coquilles."
+              "explanation_fr": "Quand on relit son propre texte, le cerveau lit ce qu'il voulait écrire et saute les coquilles : un regard neuf les voit tout de suite. Ce n'est pas une question de droits dans le CMS, et une relecture finale corrige des détails, elle ne fait pas réécrire le texte."
             },
             {
               "prompt_fr": "Complète la phrase : « Both articles are scheduled to ___ tomorrow at 9 a.m. » (être mis en ligne)",
@@ -1750,34 +1750,34 @@
               "explanation_fr": "Pour une publication périodique (magazine, journal, newsletter), an issue désigne une édition ou un numéro (this week's issue, the April issue)."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un digest en marketing de contenu ?",
+              "prompt_fr": "Liam propose « a short monthly digest of our three best blog posts ». De quoi s'agit-il ?",
               "choices": [
-                "A curated summary or selection of the best articles and news over a period.",
-                "A forty-page legal contract attached to an invoice.",
-                "An automatic error message when an inbox is full."
-              ],
-              "answer_index": 0,
-              "explanation_fr": "Un digest (weekly digest, monthly digest) est un récapitulatif ou une sélection éditoriale qui rassemble l'essentiel des contenus publiés sur une période."
-            },
-            {
-              "prompt_fr": "Comment distingue-t-on en anglais un abonné à une newsletter gratuite d'un abonné sur les réseaux sociaux ?",
-              "choices": [
-                "Both are always called followers.",
-                "A newsletter or YouTube reader is a subscriber, whereas on most social networks people are followers.",
-                "Both are always called spectators."
+                "The full text of three articles pasted into the email.",
+                "A short roundup of selected articles with a link to each.",
+                "A list of every article published on the blog this month."
               ],
               "answer_index": 1,
-              "explanation_fr": "En français, on traduit les deux par « abonné ». En anglais, on s'inscrit à une newsletter ou une chaîne (to subscribe → a subscriber), tandis qu'on suit un compte social (to follow → a follower)."
+              "explanation_fr": "Un digest est une sélection résumée : quelques lignes et un lien par article. Coller les articles en entier rendrait l'e-mail interminable, et un digest choisit les meilleurs contenus au lieu de tout lister."
             },
             {
-              "prompt_fr": "Dans « the email template renders cleanly », que veut dire to render ?",
+              "prompt_fr": "Comment désigne-t-on les personnes inscrites à une newsletter, par opposition à celles qui suivent un compte Instagram ?",
               "choices": [
-                "To display visually on screen once interpreted by the email client or browser.",
-                "To give money back to a customer.",
-                "To surrender and cancel the campaign."
+                "abonnees for the newsletter, followers on Instagram",
+                "followers for the newsletter, subscribers on Instagram",
+                "subscribers for the newsletter, followers on Instagram"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "On s'abonne (subscribe) à une newsletter, un podcast ou une chaîne YouTube : on est subscriber. Sur la plupart des réseaux sociaux, on suit (follow) un compte : on est follower. Inverser les deux est fréquent, et « abonnees » n'existe pas en anglais."
+            },
+            {
+              "prompt_fr": "Dans « the email template renders cleanly in dark mode », que veut dire to render ?",
+              "choices": [
+                "To display correctly once the email app has processed it.",
+                "To give back to the reader, like a refund or a reply.",
+                "To be delivered to the inbox without going to spam."
               ],
               "answer_index": 0,
-              "explanation_fr": "En web et en e-mailing, to render signifie s'afficher à l'écran (le rendu visuel dans Gmail, Outlook ou Apple Mail). Attention au faux ami : « se rendre » se dit to surrender ou to go to."
+              "explanation_fr": "To render, c'est le rendu : la façon dont l'e-mail s'affiche une fois interprété par la messagerie ou le navigateur. Le sens « rendre, restituer » est un piège pour les francophones, et arriver en boîte de réception relève de la délivrabilité (deliverability), pas du rendu."
             }
           ],
           "production": {
@@ -1844,14 +1844,14 @@
               "explanation_fr": "Dans la liste de la boîte de réception (inbox), le destinataire voit trois textes : qui écrit (sender name), le titre de l'e-mail (subject line) et l'extrait d'aperçu juste à côté ou en dessous (preheader)."
             },
             {
-              "prompt_fr": "Pourquoi Kofi dit-il « don't waste the preheader » ?",
+              "prompt_fr": "Kofi dit « don't waste the preheader ». Pourquoi ?",
               "choices": [
-                "Because email providers charge an extra fee if the preheader is empty.",
-                "Because when you leave the preheader empty, email clients pull the first technical line of the template ('View in browser'), losing a chance to convince the reader to open.",
-                "Because the preheader is where the legal company address must be written."
+                "Left empty, the email goes to the spam folder more often.",
+                "Left empty, it shows 'View this email in your browser' instead of a hook.",
+                "Left empty, the subject line gets cut off on mobile."
               ],
               "answer_index": 1,
-              "explanation_fr": "Si le preheader n'est pas renseigné, la messagerie affiche les premiers mots trouvés en haut du code HTML (« View in browser »). Rédiger un vrai preheader permet de prolonger l'objet et d'augmenter le taux d'ouverture."
+              "explanation_fr": "Le preheader est la ligne grise affichée après l'objet dans la boîte de réception. S'il n'est pas renseigné, la messagerie affiche le début du code, souvent « View this email in your browser » : on gaspille un espace qui devrait compléter l'accroche. Un preheader vide n'envoie pas en spam et ne coupe pas l'objet."
             },
             {
               "prompt_fr": "Comment traduire « l'objet de l'e-mail » sans tomber dans un calque du français ?",
@@ -1866,12 +1866,12 @@
             {
               "prompt_fr": "Pourquoi faut-il interpréter l'open rate avec prudence aujourd'hui ?",
               "choices": [
-                "Because open rates only count people who forward the email to ten friends.",
-                "Because some email apps (like Apple Mail Privacy Protection) preload images automatically, which artificially inflates open rates.",
-                "Because open rates are calculated only once a year in December."
+                "Most readers now open emails twice, so the rate is counted double.",
+                "Some email apps hide images, so opens are no longer counted at all.",
+                "Some email apps preload images, which counts opens that never happened."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Depuis les protections de la vie privée (comme celle d'Apple Mail), le pixel de suivi est souvent préchargé automatiquement par le serveur de messagerie : le taux d'ouverture reste utile pour comparer deux objets en A/B test, mais il doit toujours être croisé avec les clics."
+              "answer_index": 2,
+              "explanation_fr": "Certaines messageries (comme Apple Mail avec Mail Privacy Protection) préchargent les images, dont le pixel de suivi : l'ouverture est comptée même si la personne n'a rien lu. Le taux est donc gonflé, pas nul. Et les ouvertures multiples sont en général dédoublonnées dans l'open rate."
             }
           ],
           "production": {
@@ -1928,14 +1928,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi un plain-text email (ou un e-mail au style épuré sans bannières) fonctionne-t-il souvent très bien dans une séquence B2B ?",
+              "prompt_fr": "Pourquoi un plain-text email marche-t-il souvent bien en fin de séquence B2B ?",
               "choices": [
-                "Because plain-text emails allow you to embed autoplay videos inside the inbox.",
-                "Because it looks like a personal message written by a real colleague rather than a mass marketing blast.",
-                "Because the law forbids images in B2B emails."
+                "It looks like a personal note from a colleague, so people reply.",
+                "It loads faster, so more people open it on their phone.",
+                "It avoids spam filters, which block all HTML emails in B2B."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un plain-text email (sans bannières ni mise en page publicitaire lourde) ressemble à un e-mail envoyé de personne à personne : il passe mieux les filtres promotionnels et génère souvent davantage de réponses directes."
+              "answer_index": 0,
+              "explanation_fr": "Un e-mail en texte simple ressemble à un message écrit par une vraie personne, ce qui donne envie de répondre : c'est l'objectif du dernier e-mail de la séquence. Le temps de chargement n'est pas le sujet, et les filtres anti-spam ne bloquent pas les e-mails HTML."
             },
             {
               "prompt_fr": "Dans la réplique de Mei, que signifie « Actually, a simple plain-text email might get more replies » ?",
@@ -2024,22 +2024,22 @@
             {
               "prompt_fr": "Quelle est la différence entre un hard bounce et un soft bounce ?",
               "choices": [
-                "A hard bounce happens on desktop computers, while a soft bounce happens on mobile phones.",
-                "A hard bounce means the reader hated the article, while a soft bounce means they liked it.",
-                "A hard bounce is a permanent delivery failure (like a non-existent address), while a soft bounce is a temporary issue (like a full inbox)."
+                "A hard bounce is temporary, like a full inbox; a soft bounce is permanent, like a fake address.",
+                "A hard bounce is permanent, like a fake address; a soft bounce is temporary, like a full inbox.",
+                "A hard bounce is a spam complaint; a soft bounce is an unsubscribe request."
               ],
-              "answer_index": 2,
-              "explanation_fr": "Un hard bounce est une erreur permanente (adresse inexistante, nom de domaine erroné) : il faut supprimer l'adresse immédiatement. Un soft bounce est temporaire (boîte pleine, serveur momentanément indisponible)."
+              "answer_index": 1,
+              "explanation_fr": "Un hard bounce est un échec définitif (adresse inexistante, domaine invalide) : on retire l'adresse tout de suite. Un soft bounce est temporaire (boîte pleine, serveur indisponible) : on peut réessayer. Les plaintes pour spam et les désinscriptions sont d'autres indicateurs."
             },
             {
-              "prompt_fr": "Pourquoi un lien unsubscribe bien visible protège-t-il en réalité ta deliverability ?",
+              "prompt_fr": "Pourquoi un lien de désinscription bien visible protège-t-il la deliverability ?",
               "choices": [
-                "Because if someone wants to stop receiving your emails and can't find the unsubscribe link, they mark your email as spam, which hurts your sender reputation.",
-                "Because email providers reward long footers with free advertising credits.",
-                "Because clicking unsubscribe automatically subscribes the person to your podcast."
+                "People who unsubscribe are counted as hard bounces, which cleans the list.",
+                "Email providers only deliver newsletters that show the link at the top.",
+                "People who can't find it click 'Report spam' instead, which hurts our reputation."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Cacher le lien de désinscription (unsubscribe) est un très mauvais calcul : un abonné qui ne le trouve pas clique sur « Signaler comme spam », ce qui dégrade fortement la réputation d'expéditeur et la délivrabilité auprès de tous les autres abonnés."
+              "answer_index": 2,
+              "explanation_fr": "Quelqu'un qui ne trouve pas le lien de désinscription clique sur « Report spam », et ces plaintes abîment la réputation d'expéditeur, donc la délivrabilité. Le lien est obligatoire, mais sa position n'est pas imposée, et une désinscription n'est pas un hard bounce."
             },
             {
               "prompt_fr": "En quoi consiste le double opt-in ?",
@@ -2054,12 +2054,12 @@
             {
               "prompt_fr": "Dans « spam filters will tank our deliverability », que signifie le verbe familier to tank ?",
               "choices": [
-                "To cause something to drop sharply or fail.",
-                "To protect something inside a strong metal container.",
-                "To thank someone warmly."
+                "to make it drop sharply",
+                "to keep it under control",
+                "to slowly improve it"
               ],
               "answer_index": 0,
-              "explanation_fr": "En anglais professionnel courant, to tank veut dire chuter brutalement ou faire plonger un indicateur (sales tanked, it will tank our deliverability). Attention à ne pas confondre à l'oral avec to thank (remercier)."
+              "explanation_fr": "To tank, en langage familier, c'est s'effondrer ou faire s'effondrer : the stock tanked, sales tanked. Ici, les filtres anti-spam feraient chuter la délivrabilité. Le mot n'a pas le sens de contenir (contain) ni d'améliorer."
             }
           ],
           "production": {
@@ -2174,24 +2174,24 @@
               "explanation_fr": "To gather dust (prendre la poussière) s'emploie au figuré pour un fichier, un rapport ou un enregistrement qu'on stocke quelque part sans jamais l'exploiter."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'une explainer video sur la page d'accueil ou les pages produit d'un site ?",
+              "prompt_fr": "Tariq veut transformer la démo de deux minutes en « standalone explainer video ». Que veut dire standalone ?",
               "choices": [
-                "A three-hour recording of an internal board meeting.",
-                "A live television commercial broadcast during a football match.",
-                "A short, clear video (usually 60 to 120 seconds) that shows how a product or concept works."
-              ],
-              "answer_index": 2,
-              "explanation_fr": "Une explainer video (vidéo explicative) présente de façon concise et visuelle un produit ou un mécanisme en une à deux minutes."
-            },
-            {
-              "prompt_fr": "Pourquoi une infographic est-elle particulièrement adaptée pour recycler les résultats d'une étude ou d'un webinaire ?",
-              "choices": [
-                "Because search engines ban all text articles that contain percentages.",
-                "Because it turns complex numbers or steps into a single visual that is easy to understand and share on social media.",
-                "Because an infographic requires no verification of the data."
+                "It's shown alone on the page, with no other content.",
+                "It makes sense on its own, without watching the webinar.",
+                "It's posted once, then removed after the campaign."
               ],
               "answer_index": 1,
-              "explanation_fr": "L'infographie (infographic) synthétise visuellement des chiffres ou un processus étape par étape, ce qui génère beaucoup d'enregistrements et de partages sur des réseaux comme LinkedIn."
+              "explanation_fr": "Standalone veut dire autonome : la vidéo se comprend sans le reste du webinaire, ce qui permet de la placer sur une page produit. Cela ne dit rien de la mise en page, ni de la durée de diffusion."
+            },
+            {
+              "prompt_fr": "Pourquoi la diapositive de comparaison des frais ferait-elle une bonne infographic pour LinkedIn ?",
+              "choices": [
+                "It is the only format that LinkedIn shows to non-followers.",
+                "It lets readers download the full webinar recording in one click.",
+                "It turns figures into one visual that is quick to read and share."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une infographic transforme des chiffres ou des étapes en un visuel unique, lisible en quelques secondes et facile à partager. Elle ne donne pas accès au replay, et LinkedIn ne réserve aucun format aux non-abonnés."
             }
           ],
           "production": {
@@ -2268,24 +2268,24 @@
               "explanation_fr": "Attention au faux ami : si collateral damage veut bien dire « dégâts collatéraux », marketing collateral (ou sales collateral, toujours indénombrable) désigne l'ensemble des supports et documents mis à disposition des commerciaux."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un one-pager ?",
+              "prompt_fr": "Maya dit que les commerciaux n'ont pas besoin du PDF de quarante pages. Que leur propose-t-elle ?",
               "choices": [
-                "A concise one-page document summarizing a product, project or study for quick reading.",
-                "A website that has only one visitor per month.",
-                "An old electronic device used in hospitals in the 1990s."
+                "A one-page summary with the key charts.",
+                "A shorter version of the PDF, about ten pages long.",
+                "A slide for each chapter of the full report."
               ],
               "answer_index": 0,
-              "explanation_fr": "Un one-pager est une fiche synthétique d'une seule page (recto ou recto-verso) que les commerciaux ou les dirigeants peuvent parcourir en deux minutes."
+              "explanation_fr": "Un one-pager tient sur une seule page et résume l'essentiel (ici, les graphiques clés) pour une lecture rapide en rendez-vous. Une version de dix pages ou une diapositive par chapitre resteraient trop longues pour un appel de prospection."
             },
             {
-              "prompt_fr": "Pourquoi Maya publie-t-elle les chiffres clés en HTML sur la page plutôt que uniquement dans un PDF, dans une logique de GEO optimization ?",
+              "prompt_fr": "Pourquoi Maya publie-t-elle les chiffres clés en HTML sur la page, et pas seulement dans le PDF ?",
               "choices": [
-                "Because PDF files are illegal in the European Union.",
-                "Because HTML tables automatically translate into voice calls.",
-                "Because AI answer engines and search crawlers extract structured HTML text, definitions and tables much more easily than locked PDF files."
+                "HTML tables load faster than PDFs for visitors on mobile.",
+                "AI answer engines and crawlers read HTML text more easily than PDFs.",
+                "Search engines can't open PDF files at all."
               ],
-              "answer_index": 2,
-              "explanation_fr": "La GEO (Generative Engine Optimization) vise à rendre les contenus faciles à comprendre et à citer par les moteurs de recherche et les assistants IA : des réponses structurées, des chiffres sourcés et du texte HTML accessible sont beaucoup mieux repris qu'un PDF fermé."
+              "answer_index": 1,
+              "explanation_fr": "La GEO optimization (Generative Engine Optimization) vise à être repris par les moteurs de réponse IA : des chiffres et des définitions en HTML structuré sont bien plus faciles à extraire qu'un PDF. La vitesse n'est pas l'argument de Maya, et les moteurs savent lire un PDF, simplement moins bien qu'une page HTML."
             }
           ],
           "production": {
@@ -2342,24 +2342,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Un article est classé 2e sur Google (high ranking), mais son CTR est très bas (1,4 %). Quel est le diagnostic le plus logique ?",
+              "prompt_fr": "Un article est classé 2e sur Google, mais son CTR n'est que de 1,4 %. Quel diagnostic est le plus logique ?",
               "choices": [
-                "The article body copy is too long, so people don't click on Google.",
-                "The website server is turned off every afternoon.",
-                "People see the link in the search results, but the title tag or meta description doesn't convince them to click."
+                "The page loads too slowly, so people bounce right away.",
+                "The article is too long, so readers leave before the end.",
+                "The title or meta description doesn't make people want to click."
               ],
               "answer_index": 2,
-              "explanation_fr": "Tant que l'internaute est sur Google, il ne voit pas encore le corps de l'article : si la page est très bien positionnée (high ranking) mais peu cliquée (low CTR), c'est l'aperçu dans la SERP (title tag, meta description, année, promesse) qu'il faut retravailler."
+              "explanation_fr": "Le CTR mesure les clics par rapport aux affichages dans les résultats : à ce stade, l'internaute n'a vu que le titre et la description, d'où le test d'un nouveau titre. La longueur de l'article et la vitesse de chargement jouent après le clic, sur le taux de rebond, pas sur le CTR."
             },
             {
-              "prompt_fr": "Pourquoi le court survey « How did you hear about us? » après l'inscription est-il précieux pour une équipe contenu ?",
+              "prompt_fr": "Pourquoi le court questionnaire « How did you hear about us? » après l'inscription est-il précieux pour l'équipe contenu ?",
               "choices": [
-                "Because analytics cookies don't capture everything, especially when someone reads your blog or listens to your podcast weeks before typing your brand name directly.",
-                "Because a survey automatically improves your Google ranking the next day.",
-                "Because it replaces the need to write articles."
+                "Tracking misses people who read the blog weeks before signing up.",
+                "It replaces web analytics, which are no longer reliable.",
+                "It improves the blog's rankings on the brand's keywords."
               ],
               "answer_index": 0,
-              "explanation_fr": "En contenu B2B (podcasts, newsletters, articles lus sur un téléphone puis inscription plus tard sur ordinateur), les outils de tracking ne voient souvent que le dernier clic : un court questionnaire déclaratif (self-reported attribution survey) révèle l'influence réelle du contenu."
+              "explanation_fr": "Les outils de tracking ne voient souvent que le dernier clic : quelqu'un qui a lu un guide il y a trois semaines puis tape le nom de la marque apparaît en trafic direct. Le questionnaire déclaratif révèle ce rôle du contenu. Il complète les analytics sans les remplacer, et il ne joue pas sur le référencement."
             },
             {
               "prompt_fr": "Comment dire correctement « quatre guides sont entrés dans les trois premières positions » ?",
@@ -2372,14 +2372,14 @@
               "explanation_fr": "On dit move into the top three (ou reach the top three). Attention à l'ordre des mots en anglais : on dit the first three (et jamais « the three firsts », car first reste invariable et se place avant le chiffre)."
             },
             {
-              "prompt_fr": "À quoi sert un benchmark quand on analyse les performances d'un blog ou d'une newsletter ?",
+              "prompt_fr": "Le trafic organique a progressé de 35 %, « above our industry benchmark ». À quoi sert ce benchmark ?",
               "choices": [
-                "To have a reference point (past performance or industry standard) so you know whether a number is actually good or bad.",
-                "To sit down in a park during the lunch break.",
-                "To block competitors from reading your articles."
+                "It sets the minimum traffic required by the industry.",
+                "It gives a reference point to judge whether the figure is good.",
+                "It shows how much traffic each competitor gets."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un chiffre isolé ne veut rien dire : un benchmark (interne ou sectoriel) fournit le point de comparaison indispensable pour évaluer une performance."
+              "answer_index": 1,
+              "explanation_fr": "Un benchmark est un point de comparaison (moyenne du secteur ou résultats passés) : sans lui, +35 % ne veut rien dire. Ce n'est pas un seuil imposé, et un benchmark sectoriel donne une moyenne, pas le trafic détaillé de chaque concurrent."
             }
           ],
           "production": {
@@ -2438,32 +2438,32 @@
             {
               "prompt_fr": "Que veut dire Youssef par « our evergreen articles keep compounding month after month » ?",
               "choices": [
-                "Their traffic and business value build up over time, like compound interest, without paying for each click.",
-                "They become more expensive to host every month.",
-                "They automatically delete themselves after thirty days."
+                "Their cost goes up each month because we have to update them.",
+                "Their traffic stays exactly the same from one month to the next.",
+                "Their value keeps building up over time, without paying per click."
               ],
-              "answer_index": 0,
-              "explanation_fr": "To compound (comme les intérêts composés en finance, compound interest) est le mot clé pour défendre le marketing de contenu face à la direction : un bon article continue d'attirer des lecteurs et des prospects pendant des années, accumulant les résultats."
+              "answer_index": 2,
+              "explanation_fr": "To compound renvoie aux intérêts composés : un article evergreen continue d'attirer des lecteurs et des leads, et ces gains s'additionnent mois après mois, contrairement à une pub qui s'arrête avec le budget. Le trafic ne reste pas figé, il s'accumule, et le verbe ne parle pas de coût."
             },
             {
               "prompt_fr": "Lequel de ces objectifs éditoriaux est un véritable SMART objective ?",
               "choices": [
-                "Write better articles and make our brand famous on the internet.",
-                "Increase organic demo requests from blog guides by 20% by the end of Q2.",
-                "Publish whenever we have inspiration."
+                "Increase demo requests from blog guides by 20% by the end of Q2.",
+                "Get many more demo requests from the blog by the end of the year.",
+                "Increase demo requests from blog guides by 20% as soon as possible."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un objectif SMART est Spécifique, Mesurable (+20 % de demandes de démo issues du blog), Atteignable, Réaliste et Temporellement défini (d'ici la fin du deuxième trimestre)."
+              "answer_index": 0,
+              "explanation_fr": "Un objectif SMART est Spécifique, Mesurable, Atteignable, Réaliste et Temporellement défini : +20 % de demandes de démo issues des guides d'ici la fin du deuxième trimestre. « Many more » n'est pas mesurable, et « as soon as possible » n'a pas d'échéance."
             },
             {
               "prompt_fr": "Que signifie adopter une approche test-and-learn pour un nouveau format éditorial ?",
               "choices": [
-                "Requiring every writer to pass a grammar exam before joining the company.",
-                "Spending the entire annual budget on a single video without tracking conversions.",
-                "Launching a small-scale pilot, measuring the results against clear metrics, and scaling only if it works."
+                "Train the team on the new format before launching it.",
+                "Run a small pilot, measure it, and scale it only if it works.",
+                "Launch the format everywhere, then fix it based on feedback."
               ],
-              "answer_index": 2,
-              "explanation_fr": "L'état d'esprit test-and-learn consiste à tester un format ou un canal sur un périmètre réduit (par exemple trois vidéos), analyser les données, et n'investir massivement que si l'essai est concluant."
+              "answer_index": 1,
+              "explanation_fr": "Test-and-learn, c'est tester à petite échelle (ici trois vidéos d'études de cas), mesurer avec des indicateurs clairs, puis généraliser seulement si les résultats sont bons. Former l'équipe n'est pas tester, et tout lancer d'un coup est l'inverse de l'approche."
             },
             {
               "prompt_fr": "Comment dire en anglais « nous avons atteint 168 prospects qualifiés (sur un objectif de 150) » de façon idiomatique ?",

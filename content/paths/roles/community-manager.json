@@ -212,14 +212,14 @@
               "explanation_fr": "And yet (ou simplement yet en début de proposition) traduit « et pourtant » pour souligner un résultat paradoxal malgré un effort. « Whereas » oppose deux faits différents (« tandis que »), pas un effort et son résultat décevant. « And still now » est un calque maladroit."
             },
             {
-              "prompt_fr": "Ton manager te demande de programmer les posts selon un article de blog qui dit « mardi 10 h est le meilleur créneau universel ». Que lui réponds-tu ?",
+              "prompt_fr": "Ton manager veut programmer tous les posts le mardi à 10 h, d'après un article de blog. Tu préfères t'appuyer sur vos propres statistiques. Quelle réponse est à la fois polie et claire ?",
               "choices": [
-                "Sure, universal benchmarks are always more reliable than our own account data.",
-                "I'd rather check our own analytics: the best time to post depends on when our followers are online.",
-                "Timing makes no difference at all once a post is in the scheduling tool."
+                "I prefer that we check our own analytics before: our followers are maybe online at other hours.",
+                "You're wrong about Tuesday: we must absolutely follow our own analytics instead.",
+                "I'd rather check our own analytics first: our followers may be online at different times."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le best time to post dépend des habitudes propres à ton audience (par exemple 8 h 30 en B2B sur LinkedIn contre 19 h en B2C sur Instagram). Un créneau « universel » lu dans un article généraliste vaut moins que les statistiques du compte. La formule I'd rather check... permet de corriger poliment son manager."
+              "answer_index": 2,
+              "explanation_fr": "« I'd rather + verbe » est la façon naturelle de proposer une autre option sans contredire frontalement. « I prefer that we check... before » calque « je préfère qu'on vérifie avant » : la tournure sonne raide, before seul en fin de phrase ne veut pas dire « d'abord » (on dit first), et « are maybe » place mal l'adverbe (on dit may be ou might be). « You're wrong » et « we must absolutely » sont bien trop brutaux face à un manager."
             }
           ],
           "production": {
@@ -279,14 +279,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi Lucía demande-t-elle de supprimer l'animation du logo au début du reel ?",
+              "prompt_fr": "Pourquoi Lucía veut-elle couper l'animation du logo au début du reel ?",
               "choices": [
-                "Because the logo file is in horizontal format and looks blurry.",
-                "Because non-followers scroll past within seconds if nothing grabs their attention.",
-                "Because Instagram bans brand logos in the first five seconds of a reel."
+                "A logo at the start makes the reel look like an ad, so the platform hides it.",
+                "The animation lasts three seconds, which is too short for a vertical video.",
+                "Viewers decide in a second or two, and a logo gives them no reason to stay."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un reel est surtout montré à des personnes qui ne connaissent pas encore le compte : un logo pendant trois secondes ne leur apporte rien et les pousse à faire défiler (swipe away / scroll past). Commencer par le résultat final crée un vrai hook."
+              "answer_index": 2,
+              "explanation_fr": "Lucía le dit : sur une vidéo verticale, trois secondes de logo font partir la moitié des spectateurs. L'accroche (hook) doit montrer tout de suite le résultat, ici le vélo réparé. Aucune plateforme ne masque un reel parce qu'il commence par un logo, et le problème n'est pas que l'animation soit trop courte, mais qu'elle n'apporte rien au spectateur."
             },
             {
               "prompt_fr": "Comment traduire « des vidéos des coulisses » ?",
@@ -378,14 +378,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi un compte d'entreprise ne peut-il pas utiliser n'importe quel tube commercial en trending audio sur Instagram ou TikTok ?",
+              "prompt_fr": "Tu veux savoir si un son tendance peut être utilisé par un compte de marque. Quelle question poses-tu à ta collègue ?",
               "choices": [
-                "Because commercial music isn't licensed for promotional brand use without rights.",
-                "Because trending audio only works on personal accounts with fewer than 1,000 followers.",
-                "Because adding music automatically disables the geotag on a business post."
+                "Is this trending audio authorized to business accounts?",
+                "Is this trending audio free of rights for business accounts?",
+                "Is this trending audio cleared for business accounts?"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Les accords des plateformes avec les maisons de disques couvrent l'usage personnel des créateurs, mais pas l'usage publicitaire ou promotionnel par une marque. Une entreprise doit utiliser sa propre musique, acheter une licence, ou piocher dans la bibliothèque de sons libres de droits commerciaux."
+              "answer_index": 2,
+              "explanation_fr": "Pour les droits d'un son ou d'une image, l'anglais des médias dit cleared : cleared for commercial use, cleared for business accounts. « Authorized to » se construit avec un verbe (authorized to use it), pas avec un destinataire. « Free of rights » calque « libre de droits » : on dit royalty-free ou copyright-free, et même un son royalty-free n'est pas forcément autorisé pour un usage publicitaire."
             },
             {
               "prompt_fr": "Pourquoi Sarah demande-t-elle d'enlever le filtre sur la vidéo du produit ?",
@@ -398,14 +398,14 @@
               "explanation_fr": "Un filtre qui modifie les teintes donne une fausse idée de la couleur réelle du produit, ce qui déçoit les acheteurs et génère des retours ou des réclamations. Le poids du fichier et l'épinglage n'ont aucun rapport avec le filtre."
             },
             {
-              "prompt_fr": "Comment dire « épingler la publication en haut du profil » ?",
+              "prompt_fr": "Comment dire « Je l'épinglerai mardi » à propos du post de lancement ?",
               "choices": [
-                "scratch the post to the top of the profile",
-                "staple the post at the top of the profile",
-                "pin the post to the top of the profile"
+                "I'll pin it the Tuesday.",
+                "I'll pin it at Tuesday.",
+                "I'll pin it on Tuesday."
               ],
               "answer_index": 2,
-              "explanation_fr": "Le verbe consacré sur toutes les plateformes est to pin (a pinned post, a pinned comment). « Staple » veut dire agrafer des feuilles de papier, et « scratch » veut dire gratter ou rayer."
+              "explanation_fr": "Devant un jour de la semaine, l'anglais utilise on : on Tuesday, on Friday morning. « The Tuesday » calque « le mardi » et désignerait un mardi précis déjà évoqué. At s'emploie pour une heure (at 9 a.m.), pas pour un jour. Le verbe pin (épingler) est bien celui des plateformes : pin a post to the top of your profile."
             },
             {
               "prompt_fr": "Un client local cherche les commerces autour de lui sur Instagram. Quel élément du post aide ta boutique à remonter ?",
@@ -525,34 +525,34 @@
               "explanation_fr": "Au début, my caption désigne le texte du post (la légende). À la fin, captions on the demo video désigne les sous-titres intégrés pour les personnes qui regardent sans le son (watching on mute). Une capture d'écran se dit a screenshot."
             },
             {
-              "prompt_fr": "Pourquoi Tomasz critique-t-il la phrase « You won't believe what we just changed! » ?",
+              "prompt_fr": "Tomasz trouve que « You won't believe what we just changed! » sonne comme du clickbait. Quel reproche précis fait-il à cette accroche ?",
               "choices": [
-                "Because it is too long to fit on a mobile screen.",
-                "Because it hides the information behind an exaggerated clickbait promise.",
-                "Because grammar rules forbid starting a caption with 'You'."
+                "It teases the update but hides the benefit users care about.",
+                "It gives away the whole benefit, so nobody needs to tap 'more'.",
+                "It's too formal for a cycling app that usually sounds friendly."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le clickbait promet beaucoup pour pousser au clic sans dire ce qu'il y a derrière : Tomasz rappelle que les utilisateurs veulent connaître le bénéfice avant de toucher « more ». Dévoiler le bénéfice dès la première ligne est justement ce qu'il recommande, ce n'est donc pas le reproche. Quant au registre, « You won't believe... » est familier, pas trop formel."
+            },
+            {
+              "prompt_fr": "Complète : « Add captions for people watching ___ mute. » (qui regardent sans le son)",
+              "choices": [
+                "in",
+                "on",
+                "with"
               ],
               "answer_index": 1,
-              "explanation_fr": "Une phrase qui cache le sujet derrière une promesse exagérée (« Vous n'allez pas croire… ») est du clickbait : elle oblige à cliquer pour savoir de quoi on parle, ce qui lasse vite une audience fidèle. Dire tout de suite « Offline maps now load twice as fast » respecte le lecteur."
+              "explanation_fr": "On dit watch on mute, be on mute, put your phone on mute : la préposition est on, comme dans on silent. « In mute » calque « en mode muet », et « with mute » n'est pas idiomatique. Ici, captions désigne les sous-titres de la vidéo, à ne pas confondre avec la caption, le texte du post."
             },
             {
-              "prompt_fr": "Comment dire « pour les personnes qui regardent sans le son » ?",
+              "prompt_fr": "Tu termines un post sur la mise à jour de l'appli par un appel à l'action. Lequel donnera le plus de commentaires utiles ?",
               "choices": [
-                "for people watching on mute",
-                "for people watching in cut sound",
-                "for people looking at the silent"
+                "Any thoughts? Let us know in the comments!",
+                "Don't hesitate to comment if you have questions.",
+                "Which route are you testing this weekend? Tell us!"
               ],
-              "answer_index": 0,
-              "explanation_fr": "Watch on mute (ou watch without sound) est l'expression naturelle pour dire qu'on regarde une vidéo avec le son coupé sur son téléphone. « Cut sound » et « looking at the silent » sont des calques incorrects."
-            },
-            {
-              "prompt_fr": "Pourquoi l'appel à l'action d'Aïcha (« tell us which route you're testing this weekend ») est-il plus efficace qu'un simple « Any thoughts? » ?",
-              "choices": [
-                "Because it gives followers a concrete, easy-to-answer personal question.",
-                "Because the algorithm automatically boosts posts that contain the word 'weekend'.",
-                "Because followers cannot reply to a post unless there is a question mark."
-              ],
-              "answer_index": 0,
-              "explanation_fr": "Une question vague comme « Any thoughts? » demande un effort de réflexion abstrait, alors qu'une question concrète sur leur sortie du week-end appelle une réponse immédiate et personnelle. L'algorithme ne favorise pas le mot weekend."
+              "answer_index": 2,
+              "explanation_fr": "Un bon call to action pose une question concrète, personnelle et facile à répondre : chacun sait quel parcours il prévoit. « Any thoughts? » est trop vague et appelle peu de réponses. « Don't hesitate to... » calque « n'hésitez pas à » : la tournure existe en anglais, mais elle sonne formelle et ne donne aucune raison de commenter."
             }
           ],
           "production": {
@@ -645,12 +645,12 @@
             {
               "prompt_fr": "Quelle est la bonne pratique quand tu publies un thread de plusieurs posts sur X ou Threads ?",
               "choices": [
-                "Put the whole conclusion in the last post and leave the first post blank.",
-                "Make the first post strong enough to stand on its own and make people want to read on.",
-                "Publish one post per day over six days so the thread lasts all week."
+                "Keep the key tip for the last post so people read the whole thread.",
+                "Make the first post strong enough to work on its own and make people read on.",
+                "Post one part a day so the thread stays in the feed all week."
               ],
               "answer_index": 1,
-              "explanation_fr": "Dans un thread, la majorité des utilisateurs ne voient d'abord que le premier post dans leur fil : il doit donc accrocher l'attention et résumer la promesse pour donner envie de dérouler la suite, qui est publiée d'un seul bloc."
+              "explanation_fr": "La plupart des gens ne voient que le premier post dans leur fil : il doit accrocher et tenir seul, ici avec un court clip. Garder le meilleur conseil pour la fin fait perdre tous ceux qui s'arrêtent avant. Un thread se publie d'un bloc : étaler les parties sur une semaine casse la lecture."
             }
           ],
           "production": {
@@ -714,12 +714,12 @@
             {
               "prompt_fr": "Que signifie l'expression « textbook engagement bait » employée par Lucía ?",
               "choices": [
-                "An engagement technique only used by school textbook publishers",
-                "A classic, obvious example of artificial engagement bait",
-                "A new engagement rule written in the platform's official manual"
+                "a typical, obvious case of engagement bait",
+                "engagement bait that the platform rules explain",
+                "a mild form of engagement bait, almost acceptable"
               ],
-              "answer_index": 1,
-              "explanation_fr": "Placé devant un nom, textbook signifie « d'école, typique, caricatural » (a textbook example, textbook engagement bait). Demander de commenter « OUI » et de taguer trois amis sans raison éditoriale est l'exemple type de pratique pénalisée par l'algorithme."
+              "answer_index": 0,
+              "explanation_fr": "Employé comme adjectif, textbook veut dire « typique, d'école » : a textbook example, a textbook case. Lucía dit donc que « Comment YES and tag three friends » est l'exemple même de l'engagement bait. Le mot ne renvoie à aucun règlement, et Lucía ne le minimise pas : elle rappelle que les plateformes le pénalisent."
             },
             {
               "prompt_fr": "Pourquoi un sondage en story est-il particulièrement adapté aux lurkers ?",
@@ -744,12 +744,12 @@
             {
               "prompt_fr": "Laquelle de ces publications LinkedIn lance une vraie conversation sans tomber dans l'engagement bait ?",
               "choices": [
-                "Like for remote work, clap for office work, heart for hybrid!",
-                "Comment 'GUIDE' below so the algorithm shows this post to everyone!",
-                "We switched to four-day sprints last quarter. Has anyone tried this with a small team?"
+                "Comment 'SPRINT' and we'll send you our full guide in DM.",
+                "Agree? Like this post and share it with your network!",
+                "We tried four-day sprints. How did it go for your team?"
               ],
               "answer_index": 2,
-              "explanation_fr": "La troisième proposition partage un retour d'expérience concret et pose une vraie question professionnelle qui appelle des réponses argumentées. Détourner les icônes de reaction pour voter ou réclamer des mots-clés pour « tromper l'algorithme » relève de l'engagement bait."
+              "explanation_fr": "Le post sur les sprints partage une expérience concrète et pose une vraie question professionnelle, qui appelle des réponses argumentées. « Agree? Like this post and share it » réclame des interactions sans rien apporter, et « Comment 'SPRINT' and we'll send you our guide » est un classique de l'engagement bait : les plateformes réduisent la portée de ce type de post."
             }
           ],
           "production": {
@@ -810,14 +810,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi Ivan recommande-t-il de répondre par une question de relance plutôt que par un simple like dans la première heure ?",
+              "prompt_fr": "Quinze commentaires arrivent dans la première heure. Quelle réponse à « Can't wait for the next one! » relance le mieux la conversation ?",
               "choices": [
-                "Because the like button is disabled for the account owner during the first hour.",
-                "Because back-and-forth replies build a real discussion and signal strong interest to the platform.",
-                "Because platforms delete comments that don't receive a written reply within sixty minutes."
+                "Thanks! Which talk did you enjoy most?",
+                "Thanks a lot for your nice comment!",
+                "Thank you for your participation."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un simple like clôt l'échange, alors qu'une réponse qui pose une question de relance (a follow-up question) incite l'abonné à répondre à nouveau : cela nourrit la discussion et envoie un signal d'interaction fort dès la première heure."
+              "answer_index": 0,
+              "explanation_fr": "Ivan conseille de répondre par une vraie phrase ou une question de relance : la question ouvre un échange, et ces allers-retours signalent à la plateforme que le post suscite de l'intérêt. Un simple merci ferme la discussion, comme un like. « Thank you for your participation » calque « merci pour votre participation » : c'est correct mais administratif, on dirait plutôt Thanks for joining us."
             },
             {
               "prompt_fr": "Quelle est la nuance pratique entre tag someone in a photo et mention someone in a caption ?",
@@ -840,14 +840,14 @@
               "explanation_fr": "Remember to do something = penser à faire quelque chose (une tâche à accomplir). Attention au piège : remember doing something (avec -ing) veut dire « se souvenir d'avoir fait quelque chose dans le passé »."
             },
             {
-              "prompt_fr": "Un membre actif de la communauté a aidé trois débutants sur le forum. Comment proposer de le remercier publiquement ?",
+              "prompt_fr": "Un membre a aidé trois débutants sur le forum. Comment proposer de le remercier publiquement ?",
               "choices": [
-                "Let's make him a public cry in our stories.",
-                "Let's give him a shoutout in our Friday post.",
-                "Let's do a scream-out to him on the page."
+                "Let's make him a shoutout in our Friday post.",
+                "Let's pay him a shoutout in our Friday post.",
+                "Let's give him a shoutout in our Friday post."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Give someone a shoutout (ou Big shoutout to...) est l'expression idiomatique pour remercier ou mettre en avant quelqu'un publiquement sur les réseaux ou en réunion."
+              "answer_index": 2,
+              "explanation_fr": "Shoutout (remerciement ou mention publique) se construit avec give : give someone a shoutout, ou au nom seul : a big shoutout to... « Make him a shoutout » calque « lui faire un shoutout ». Pay s'emploie avec tribute (pay tribute to), pas avec shoutout."
             }
           ],
           "production": {
@@ -946,14 +946,14 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi les clients sont-ils agacés par le chatbot dans le dialogue ?",
+              "prompt_fr": "Le chatbot « keeps repeating the same menu instead of handing over to a human ». Que lui reproche Tomasz ?",
               "choices": [
-                "Because the chatbot replies in English to French customers.",
-                "Because the chatbot charges a fee to track a parcel.",
-                "Because it loops on the same menu without offering a human agent."
+                "It never hands the parcel over to the courier.",
+                "It hands customers over to agents too quickly.",
+                "It never passes the conversation to a real agent."
               ],
               "answer_index": 2,
-              "explanation_fr": "Tomasz explique que lorsqu'un colis est bloqué, le chatbot répète le même menu au lieu de passer la main à un humain (handing over to a human). En social customer care, un chatbot doit toujours permettre une sortie rapide vers un conseiller."
+              "explanation_fr": "To hand over to someone, c'est passer le relais : ici, transférer la conversation à un conseiller humain. Le colis n'a rien à voir avec ce hand over, même si le verbe s'emploie aussi pour remettre un objet. Et le reproche est l'inverse d'un transfert trop rapide : le bot tourne en boucle sans jamais passer la main."
             },
             {
               "prompt_fr": "Que signifie « No wonder people are frustrated » ?",
@@ -1045,24 +1045,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi Priya refuse-t-elle de demander l'adresse e-mail du client en commentaire public ?",
+              "prompt_fr": "Un client facturé deux fois se plaint sous un post public. Quelle première réponse publique est la plus juste ?",
               "choices": [
-                "Because platforms block comments that contain the '@' symbol.",
-                "Because personal and account details must stay private in DMs for security and privacy.",
-                "Because email addresses can only be read by the billing department."
-              ],
-              "answer_index": 1,
-              "explanation_fr": "Demander un e-mail, un numéro de téléphone ou un numéro de facture dans un commentaire public expose le client au spam et aux tentatives d'usurpation. On répond en public pour rassurer, mais toute donnée personnelle passe en DM."
-            },
-            {
-              "prompt_fr": "Pourquoi Priya ajoute-t-elle un court message public sous le post une fois le remboursement fait en DM ?",
-              "choices": [
-                "So anyone reading the thread later sees that the brand actually solved the problem.",
-                "Because the DM window closes automatically after five minutes.",
-                "To force the customer to delete their original complaint."
+                "We're sorry about the double charge. Could you DM us your account email?",
+                "Sorry for this! Can you write your email address here so we can check?",
+                "We are sorry for the inconvenience. Please contact the customer service."
               ],
               "answer_index": 0,
-              "explanation_fr": "Un visiteur qui tombe sur une réclamation publique voit le commentaire initial, mais pas l'échange privé en DM. Un court suivi public (« Glad we could sort this out for you in DM, Marc! ») prouve à tous les lecteurs que l'affaire a été réglée."
+              "explanation_fr": "On reconnaît le problème précis en public, puis on passe en message privé pour les données personnelles : Priya ne demande jamais d'e-mail en commentaire. Demander l'adresse « here » l'expose à tout le monde. La réponse « sorry for the inconvenience… contact the customer service » est un copier-coller impersonnel qui renvoie le client ailleurs, et on dit contact customer service, sans the."
+            },
+            {
+              "prompt_fr": "Dans le court suivi public publié après le remboursement, comment dire « Le problème a été réglé » ?",
+              "choices": [
+                "The issue has been regulated.",
+                "The issue has been arranged.",
+                "The issue has been resolved."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Pour un problème client, on dit resolved (sorted, plus familier, ou fixed pour une panne). « Regulated » calque « réglé » mais veut dire « encadré par une réglementation ». « Arranged » signifie « organisé » (arrange a meeting), pas « réparé ». Priya publie ce suivi pour que les lecteurs du fil voient que la marque a vraiment traité la plainte."
             },
             {
               "prompt_fr": "Attention à la grammaire de social media : quelle phrase est correcte ?",
@@ -1146,42 +1146,42 @@
             {
               "prompt_fr": "Dans ce dialogue, Lucía applique trois niveaux de modération différents. Quel est le bon découpage ?",
               "choices": [
-                "Remind debating members of the rules; hide the troll; delete and ban hate speech.",
-                "Delete debating members; reply to the troll; hide hate speech.",
-                "Ban everyone who disagrees; turn off comments on the whole page."
+                "Delete the troll, hide the debaters' comments, warn the user who posted the slur.",
+                "Hide the troll, remind the debaters of the rules, delete the slur and ban the user.",
+                "Reply to the troll, delete the debaters' comments, hide the slur for now."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Lucía gradue : le troll est masqué pour ne pas le nourrir, le débat tendu mais sans insultes reste visible avec un rappel des community guidelines, et l'insulte raciste est supprimée avec bannissement. Masquer ou supprimer un débat légitime ressemble à de la censure, un simple avertissement ne suffit pas face à des propos haineux, et répondre au troll, c'est exactement ce qu'il cherche."
+            },
+            {
+              "prompt_fr": "Lucía dit « hide his comments so he talks to himself ». Que se passe-t-il quand on masque un commentaire ?",
+              "choices": [
+                "His comment is deleted and he gets a warning from the platform.",
+                "His comment stays public, but he can no longer reply to anyone.",
+                "He still sees his comment, but most other users don't."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Masquer (hide) un commentaire le rend invisible pour la plupart des autres utilisateurs, mais son auteur continue de le voir : le troll ne sait pas que presque personne ne le lit, donc il ne crie pas à la censure. Supprimer (delete) efface le commentaire, et masquer n'empêche pas l'auteur d'écrire : c'est le bannissement (ban) qui le bloque."
+            },
+            {
+              "prompt_fr": "Complète le conseil de Lucía : « Leave their comments up, but ___ with a polite reminder. » (interviens)",
+              "choices": [
+                "step in",
+                "step up",
+                "step out"
               ],
               "answer_index": 0,
-              "explanation_fr": "Une modération professionnelle distingue trois cas : 1) le débat vif mais sans insulte (on laisse visible et on rappelle la netiquette), 2) le troll qui cherche la provocation (on masque sans lui répondre pour ne pas lui offrir de tribune), 3) le discours haineux (suppression immédiate et bannissement)."
+              "explanation_fr": "To step in, c'est intervenir dans une situation pour la calmer ou la régler. « Step up » veut dire prendre ses responsabilités ou intensifier un effort (step up our moderation), et « step out » signifie sortir un instant (step out of the meeting). Leave their comments up veut dire laisser leurs commentaires visibles."
             },
             {
-              "prompt_fr": "Pourquoi Lucía dit-elle « so he talks to himself » à propos du commentaire masqué ?",
+              "prompt_fr": "Deux membres débattent vivement des lois sur le casque, sans s'insulter. Quel message public est le plus juste ?",
               "choices": [
-                "Because hiding a comment moves it to a private voice chat.",
-                "Because the troll still sees his own hidden comment and doesn't realize nobody else can see it.",
-                "Because the platform sends an automated audio message to the troll."
+                "Calm down, both of you, or we'll have to close this thread.",
+                "We kindly ask you to moderate your words in respect of the netiquette.",
+                "We love a lively debate, but please keep it respectful and debate the ideas."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Quand tu masques un commentaire (hide), l'auteur le voit toujours affiché depuis son propre compte. S'il est supprimé ou banni d'emblée pour une simple provocation, le troll crée souvent un second compte ou crie à la censure ; masqué, il s'épuise dans le vide."
-            },
-            {
-              "prompt_fr": "Que signifie « step in » dans « step in with a polite reminder » ?",
-              "choices": [
-                "leave the conversation",
-                "intervene to guide or calm the discussion",
-                "walk into the office"
-              ],
-              "answer_index": 1,
-              "explanation_fr": "To step in signifie intervenir dans une situation ou une discussion pour calmer le jeu ou aider. Son contraire est to step back (prendre du recul)."
-            },
-            {
-              "prompt_fr": "Quel message public est le plus juste pour calmer deux membres qui se disputent sans insulter ?",
-              "choices": [
-                "Stop talking right now or we will ban everyone in this thread.",
-                "We love passionate debates here, but please keep it respectful and stick to our community guidelines.",
-                "Your comments are forbidden by law and have been sent to our legal team."
-              ],
-              "answer_index": 1,
-              "explanation_fr": "Un bon rappel de modération valorise l'échange d'idées (We love passionate debates here) tout en posant une limite claire et calme (keep it respectful and stick to our community guidelines). Menacer tout le fil de bannissement braque la communauté."
+              "answer_index": 2,
+              "explanation_fr": "Les deux membres débattent sans insulter : on laisse le débat ouvert et on rappelle le cadre sur un ton positif (keep it respectful, debate the ideas, not the people). « Calm down, both of you » sonne condescendant, et menacer de fermer le fil punit une discussion légitime. « Moderate your words in respect of the netiquette » calque « modérer vos propos dans le respect de la nétiquette » : en anglais, on écrit please keep it civil, in line with our community guidelines."
             }
           ],
           "production": {
@@ -1273,14 +1273,14 @@
               "explanation_fr": "Demander quelque chose à quelqu'un se dit ask someone for something (ask you for your bank details, ask for money). Sans for, « ask you bank details » est incorrect."
             },
             {
-              "prompt_fr": "En plus du signalement à la plateforme, quelle action protège le plus vite les abonnés qui participent au jeu-concours ?",
+              "prompt_fr": "Un faux compte contacte vos abonnés pendant le jeu-concours. Quelle mise en garde publies-tu en story ?",
               "choices": [
-                "Deleting the real giveaway post and closing the brand's account for a week.",
-                "Posting a story and a pinned comment warning followers about the fake account's handle.",
-                "Sending a private message to the scammers asking them politely to stop."
+                "Heads-up: a fake account is pretending to be us and asking for payment.",
+                "Beware: a fake account usurps our identity and asks you money for gifts.",
+                "Warning: a false account takes our identity to demand you shipping fees."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Les plateformes mettent parfois plusieurs heures à supprimer un fake account. Entre-temps, épingler un commentaire sous le jeu-concours et publier une story d'alerte (en montrant l'orthographe exacte du vrai compte et en rappelant qu'on ne demande jamais de carte bancaire) évite que des abonnés ne se fassent piéger."
+              "answer_index": 0,
+              "explanation_fr": "Heads-up est l'alerte naturelle sur les réseaux, et pretend to be us dit simplement « se fait passer pour nous ». « Usurps our identity » calque « usurpe notre identité » (on dit impersonate), et ask you money oublie for (ask you for money). « False account » n'est pas le terme consacré (fake account), et demand you shipping fees est mal construit (demand shipping fees from you)."
             }
           ],
           "production": {
@@ -1381,22 +1381,22 @@
             {
               "prompt_fr": "Pourquoi une forte hausse de la share of voice n'est-elle pas forcément une bonne nouvelle ?",
               "choices": [
-                "Because a higher share of voice always increases advertising costs.",
-                "Because it measures how much people talk about the brand, whether positively or negatively.",
-                "Because share of voice only counts bots and fake accounts."
+                "It counts all mentions, so a spike can come from complaints.",
+                "It only counts mentions under our own posts, not elsewhere.",
+                "It only rises when we spend more on ads than competitors."
               ],
-              "answer_index": 1,
-              "explanation_fr": "La share of voice mesure la part des conversations du secteur qui citent ta marque par rapport aux concurrents. Lors d'une polémique ou d'une panne, tout le monde parle de toi : ta part de voix grimpe en flèche, mais pour de mauvaises raisons. Il faut donc toujours la croiser avec la sentiment analysis."
+              "answer_index": 0,
+              "explanation_fr": "La share of voice mesure la part des conversations du marché qui parlent de la marque, en bien comme en mal : ici, le pic vient de plaintes sur les nouveaux tarifs, d'où l'importance de la sentiment analysis. Elle compte les mentions partout (Reddit, X, forums), pas seulement sous nos posts, et elle ne dépend pas que de la publicité : un bad buzz suffit à la faire grimper."
             },
             {
               "prompt_fr": "Quelle est la différence entre suivre ses notifications (@mentions) et faire du social listening ?",
               "choices": [
-                "Notifications only work on mobile; social listening only works on desktop.",
-                "Social listening also captures conversations that name the brand or product without tagging the @handle.",
-                "Social listening automatically replies to every comment with AI."
+                "Social listening only tracks the mentions that tag our @handle.",
+                "Notifications show every post about us; listening shows only negative ones.",
+                "Social listening also catches posts that name us without tagging our @handle."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Beaucoup d'internautes parlent d'une marque sur Reddit, X ou des forums en écrivant son nom sans mettre le @handle : la boîte de notifications ne voit rien, alors que le social listening capte ces discussions et dégage les tendances."
+              "answer_index": 2,
+              "explanation_fr": "Les notifications ne montrent que les mentions qui taguent le compte. Le social listening suit aussi les conversations qui citent la marque ou le produit sans @, comme ici sur Reddit et X. Il ne se limite pas au négatif : il mesure aussi le volume et le sentiment positif."
             },
             {
               "prompt_fr": "Comment un anglophone dit-il « Attends une seconde » avant de nuancer l'enthousiasme d'un collègue ?",
@@ -1487,14 +1487,14 @@
               "explanation_fr": "« Bad buzz » est un faux anglicisme purement français. En anglais, une vague de réactions négatives contre une marque ou une annonce se dit a backlash (ou a social media storm / a PR crisis)."
             },
             {
-              "prompt_fr": "Pourquoi Kenji rappelle-t-il la social media policy aux salariés en pleine crise ?",
+              "prompt_fr": "Deux ingénieurs répondent aux critiques depuis leur compte perso. Quel rappel envoies-tu sur Slack ?",
               "choices": [
-                "To force every employee to like and share the company's official post.",
-                "To stop employees from arguing defensively with critics from their personal accounts.",
-                "To forbid employees from reading the news during office hours."
+                "Reminder: as our social media charter says, you must not answer the haters with your accounts.",
+                "Reminder: per our social media policy, please don't reply to critics from your personal accounts.",
+                "Reminder: please reply to critics politely from your personal accounts to support the brand."
               ],
               "answer_index": 1,
-              "explanation_fr": "Quand leur travail est critiqué en ligne, des salariés bien intentionnés répondent parfois à chaud depuis leur compte personnel, ce qui jette de l'huile sur le feu et engage la responsabilité de l'entreprise. La social media policy fixe qui est habilité à répondre au nom de la marque."
+              "explanation_fr": "La social media policy demande justement aux salariés de ne pas répondre aux critiques depuis leurs comptes personnels pendant une crise : même polie, leur réponse est lue comme une prise de parole de l'entreprise et relance la polémique. En entreprise, on parle de social media policy plutôt que de charter, « answer the haters with your accounts » est maladroit (from your accounts), et « you must not » sonne sec dans un message d'équipe."
             },
             {
               "prompt_fr": "Que signifie l'adjectif « full-blown » dans « a full-blown backlash » ?",
@@ -1507,14 +1507,14 @@
               "explanation_fr": "Full-blown (ou full-scale) devant crisis, backlash ou emergency signifie « généralisé, de grande ampleur, déclaré » (on n'en est plus aux signaux faibles)."
             },
             {
-              "prompt_fr": "Pourquoi Kenji déconseille-t-il de fermer les commentaires sous le post pendant la crise ?",
+              "prompt_fr": "Ton manager propose de fermer les commentaires sous le post en pleine crise. Comment exprimer ton désaccord ?",
               "choices": [
-                "Because platforms charge a fee to disable comments on business posts.",
-                "Because shutting down comments makes the brand look evasive and pushes angry users to other posts.",
-                "Because pinned comments disappear when comments are closed."
+                "I'm not agree: if we close them, it will look like we hide something.",
+                "Let's close them: fewer comments means less negative sentiment.",
+                "I'd keep them open: closing them would look like we're hiding."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Couper les commentaires lors d'un backlash donne l'impression que la marque refuse d'écouter, et les internautes mécontents vont alors commenter sous tous les anciens posts ou sur les comptes de partenaires. Mieux vaut laisser la soupape ouverte, retirer les insultes/menaces et épingler une réponse claire."
+              "answer_index": 2,
+              "explanation_fr": "Kenji refuse de fermer les commentaires : cela donne l'impression que la marque se cache et déplace la colère vers d'autres posts. « I'm not agree » est l'erreur classique des francophones (on dit I don't agree ou I disagree), et après look like on attend we're hiding something. Fermer les commentaires ne fait pas baisser le sentiment négatif : les critiques continuent ailleurs, hors de notre contrôle."
             }
           ],
           "production": {
@@ -1586,14 +1586,14 @@
               "explanation_fr": "On invoque très souvent le shadowban dès que les vues baissent, alors que la cause réelle est éditoriale : six posts purement promotionnels d'affilée suscitent peu d'enregistrements, de partages ou de temps de lecture, donc l'algorithme cesse de les diffuser largement."
             },
             {
-              "prompt_fr": "En dehors de l'aspect artificiel, pourquoi un engagement pod nuit-il au ciblage algorithmique d'un compte ?",
+              "prompt_fr": "Comment écrire « Je déconseille de rejoindre un engagement pod » dans ton e-mail au directeur commercial ?",
               "choices": [
-                "Because the algorithm learns from who interacts with your posts and starts showing your content to pod members instead of real buyers.",
-                "Because engagement pods are only allowed on personal accounts.",
-                "Because pod members can edit your captions without permission."
+                "I'd unadvise joining an engagement pod.",
+                "I'd advise against joining an engagement pod.",
+                "I'd advise you not joining an engagement pod."
               ],
-              "answer_index": 0,
-              "explanation_fr": "L'algorithme recommande un post à des profils similaires à ceux qui viennent d'interagir. Si les 30 premiers commentaires viennent toujours des mêmes marketeurs d'un engagement pod, la plateforme montre tes posts à d'autres marketeurs plutôt qu'à tes vrais clients."
+              "answer_index": 1,
+              "explanation_fr": "Déconseiller se dit advise against + -ing (I'd advise against joining) ou advise someone not to + verbe (I'd advise you not to join). « Unadvise » n'existe pas, et « advise you not joining » mélange les deux constructions. Moussa en donne la raison : les commentaires de gens qui n'achètent jamais brouillent le ciblage de l'algorithme."
             },
             {
               "prompt_fr": "Complète : « Our organic reach fell ___ 35% this month. » (a baissé de 35 %)",
@@ -1608,12 +1608,12 @@
             {
               "prompt_fr": "Comment répondre avec diplomatie au directeur commercial qui veut rejoindre un engagement pod ?",
               "choices": [
-                "That's cheating and it's a terrible idea that nobody uses anymore.",
-                "I see why it looks tempting, but pods actually confuse the algorithm and hurt reach among real customers.",
-                "Sure, let's join three pods today and see if our account gets banned."
+                "I see why it's tempting, but pods mostly bring likes from people who'll never buy.",
+                "I understand your point, but pods are a false good idea for our reach.",
+                "I hear you, but honestly, pods are cheating and everybody knows it."
               ],
-              "answer_index": 1,
-              "explanation_fr": "En anglais professionnel, on valide d'abord l'intention (I see why it looks tempting) avant d'expliquer l'effet pervers concret sur le business (hurt reach among real customers). Traiter l'idée d'un collègue de « terrible » braque inutilement l'interlocuteur."
+              "answer_index": 0,
+              "explanation_fr": "Pour contredire un directeur, on reconnaît son intention (I see why it's tempting) puis on donne une raison concrète liée à son objectif : des likes de non-clients. « A false good idea » calque « une fausse bonne idée » ; en anglais, on dit it sounds good on paper ou it could backfire. « Pods are cheating and everybody knows it » est moralisateur et vexant pour un supérieur."
             }
           ],
           "production": {
@@ -1722,14 +1722,14 @@
               "explanation_fr": "Une audience écoute la marque ; une vraie communauté échange entre pairs. Quand les membres répondent eux-mêmes à 70 % des questions des nouveaux venus, cela prouve que le community building fonctionne."
             },
             {
-              "prompt_fr": "Pourquoi Ivan conseille-t-il de collecter cinq questions avant le début du live stream ?",
+              "prompt_fr": "Ivan veut collecter cinq questions à l'avance « so the live stream doesn't start with awkward silence ». Que craint-il ?",
               "choices": [
-                "Because viewers cannot type comments during an Instagram live stream.",
-                "To kick off the session right away while live viewers are still joining and typing.",
-                "Because the head of product refuses to speak for more than five minutes."
+                "Viewers asking awkward or rude questions right at the start.",
+                "Long, uncomfortable pauses while viewers are still joining.",
+                "Sound problems that keep the speaker silent at the start."
               ],
               "answer_index": 1,
-              "explanation_fr": "Au lancement d'un live stream, il faut une ou deux minutes pour que les abonnés rejoignent la diffusion et osent poser leurs premières questions. Avoir 4 ou 5 questions préparées évite le flottement initial (awkward silence) et donne le ton."
+              "explanation_fr": "Awkward silence, c'est un blanc gênant : au début d'un live, les spectateurs arrivent au compte-gouttes et personne n'écrit encore, d'où l'intérêt d'avoir des questions prêtes. Awkward qualifie ici le silence, pas les questions. Et le problème n'est pas technique : c'est la conversation qui manque, pas le son."
             },
             {
               "prompt_fr": "Complète : « We're ___ an AMA with our head of product on Thursday. » (nous organisons / animons)",
@@ -1742,14 +1742,14 @@
               "explanation_fr": "Pour un live, un webinaire, un podcast ou un AMA, « animer / organiser » se dit to host (we're hosting an AMA, she hosts the live stream). « Animate » est un faux ami : en anglais, il signifie faire du dessin animé (animate a cartoon) ou donner vie."
             },
             {
-              "prompt_fr": "Que signifie l'acronyme AMA dans le métier ?",
+              "prompt_fr": "Pendant l'AMA, un abonné demande si l'appli fonctionnera un jour hors ligne. Ta responsable produit ne peut pas encore donner de date. Quelle réponse est la plus naturelle ?",
               "choices": [
-                "Audience Marketing Analytics",
-                "Automated Message Assistant",
-                "Ask Me Anything (an open Q&A session with the community)"
+                "Good question! It's in our roadmap, but I can't say you a date for now.",
+                "Nice question! It's planned on our roadmap, but no date is fixed actually.",
+                "Great question! It's on our roadmap, but I can't share a date just yet."
               ],
               "answer_index": 2,
-              "explanation_fr": "AMA veut dire Ask Me Anything : une session ouverte où un dirigeant, un expert ou un créateur répond sans filtre aux questions de la communauté, en direct ou dans un fil dédié."
+              "explanation_fr": "On dit on the roadmap (comme on the agenda), et just yet adoucit le « pas encore ». « Say you a date » est fautif : say ne prend pas de complément de personne direct (tell you a date, share a date). « Actually » est un faux ami : il veut dire « en réalité », pas « actuellement » (currently, at the moment). Un AMA (Ask Me Anything) est une séance de questions ouvertes : on répond franchement, même quand la réponse est « pas encore »."
             }
           ],
           "production": {
@@ -1810,24 +1810,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi l'UGC fonctionne-t-il souvent mieux qu'une photo prise en studio par la marque ?",
+              "prompt_fr": "Aïcha dit que voir de vrais cyclistes avec les sacoches est « the best social proof ». Que veut-elle dire ?",
               "choices": [
-                "Because user photos have a higher image resolution than studio cameras.",
-                "Because potential buyers trust real customers using the product in real life (social proof).",
-                "Because platforms forbid brands from posting their own studio photos."
+                "Customer photos prove that the bags meet safety standards.",
+                "Customer videos cost less to boost than our studio content.",
+                "Real customers using our bags convince buyers more than our own photos."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Le contenu créé par les utilisateurs (UGC) agit comme une preuve sociale (social proof) : voir un client ordinaire utiliser le produit sous la pluie ou en randonnée rassure bien plus qu'une publicité lisse."
+              "answer_index": 2,
+              "explanation_fr": "La social proof (preuve sociale), c'est l'effet rassurant de voir d'autres personnes utiliser et apprécier un produit : un client réel convainc plus qu'une photo de studio. Ce n'est pas une preuve de conformité, et le coût d'une publicité ne dépend pas de qui a tourné la vidéo."
             },
             {
               "prompt_fr": "Un client publie une superbe photo avec le hashtag de ta marque. Que dois-tu faire avant de la republier sur le fil officiel ?",
               "choices": [
-                "Crop out the customer's face and post it without mentioning their account.",
-                "Repost it immediately: using a brand hashtag transfers all copyright to the brand.",
-                "Send them a DM to ask for explicit permission and credit their @handle in the caption."
+                "Repost it right away: crediting their @handle counts as permission.",
+                "Repost it right away: using our hashtag gives us the rights to it.",
+                "Ask for their permission in a DM first, then credit their @handle."
               ],
               "answer_index": 2,
-              "explanation_fr": "Même si un client vous identifie ou utilise votre hashtag, il reste propriétaire de son image : la règle professionnelle et juridique est de lui demander l'autorisation par écrit (en DM ou en commentaire) et de créditer son @handle lors du repost."
+              "explanation_fr": "Ni le hashtag de la marque ni la mention de l'auteur ne valent autorisation : la photo appartient à celui qui l'a prise. Aïcha le rappelle (« a hashtag isn't enough ») : on demande une autorisation écrite en DM, puis on crédite le compte dans la légende. Créditer est une obligation de politesse, pas un accord."
             },
             {
               "prompt_fr": "Comment traduire « pour participer au jeu-concours » ?",
@@ -1840,14 +1840,14 @@
               "explanation_fr": "En anglais, participer à un concours se dit to enter a giveaway / a contest (How to enter: follow us and...). Si tu utilises participate, la préposition est in (participate in), jamais « at ». « Candidate » n'est pas un verbe en anglais."
             },
             {
-              "prompt_fr": "Que désigne l'acronyme FOMO utilisé par Aïcha ?",
+              "prompt_fr": "Complète : « A 48-hour deadline will create some ___. » (la peur de rater l'occasion)",
               "choices": [
-                "Follower Monthly Overview",
-                "First Organic Media Objective",
-                "Fear Of Missing Out (la peur de rater une opportunité limitée)"
+                "hype",
+                "FOMO",
+                "fear of loss"
               ],
-              "answer_index": 2,
-              "explanation_fr": "FOMO signifie Fear Of Missing Out : la peur de passer à côté d'un événement, d'une édition limitée ou d'un concours court, ce qui pousse l'audience à participer sans remettre au lendemain."
+              "answer_index": 1,
+              "explanation_fr": "FOMO (fear of missing out) désigne la peur de rater une occasion limitée dans le temps : une échéance de 48 heures la déclenche. Hype désigne l'engouement ou le battage autour d'un lancement, pas la peur de rater. « Fear of loss » n'est pas l'expression du métier : on parle de loss aversion en économie comportementale, et de FOMO en marketing."
             }
           ],
           "production": {
@@ -1909,34 +1909,34 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Quel est l'avantage concret d'un collab post sur Instagram par rapport à deux publications séparées ?",
+              "prompt_fr": "Quel est l'avantage concret d'un collab post sur Instagram par rapport à deux posts séparés ?",
               "choices": [
-                "It combines the reach, likes and comments of both the brand's and the creator's audiences on a single post.",
-                "It hides the sponsored label so users think it is organic.",
-                "It allows the video to be longer than three hours."
+                "One post shows on both feeds and gathers all likes and comments in one place.",
+                "Each account publishes its own copy, so the likes are counted twice.",
+                "The post shows on both feeds and doesn't need a sponsored label."
               ],
               "answer_index": 0,
-              "explanation_fr": "Un collab post a deux co-auteurs en haut de la publication : il s'affiche dans le fil des abonnés du créateur ET dans celui de la marque, et toutes les interactions (vues, likes, commentaires) s'additionnent sur un seul et même post."
+              "explanation_fr": "Avec un collab post, un seul post s'affiche sur les deux profils et cumule les vues, likes et commentaires des deux audiences. Il n'y a pas deux copies dont on additionnerait les likes. Et un partenariat rémunéré doit toujours afficher la mention sponsorisée (paid partnership), collab post ou pas."
             },
             {
-              "prompt_fr": "Comment organise-t-on un takeover en story en toute sécurité, sans risquer l'accès au compte de l'entreprise ?",
+              "prompt_fr": "Le créateur demande : « Can I have the login for the takeover? ». Quelle réponse est à la fois ferme et cordiale ?",
               "choices": [
-                "By sharing the main password in a public Slack channel for 24 hours",
-                "By having the creator send their clips to the community manager, who reviews and uploads them",
-                "By creating a brand-new Instagram account for each takeover"
+                "It's impossible: giving the password is forbidden. Send the clips.",
+                "Sorry, we can't share it: we've had problems with creators before.",
+                "Sorry, we never share logins, but send us your clips and we'll post them."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "On refuse avec une règle générale (we never share logins), puis on propose tout de suite la solution : le créateur envoie ses clips et l'équipe les publie, comme dans le dialogue. « It's impossible… forbidden » est sec et calqué sur « c'est impossible, c'est interdit ». Évoquer de mauvaises expériences avec d'autres créateurs sous-entend qu'on se méfie de lui."
+            },
+            {
+              "prompt_fr": "Kenji a passé en revue « the last twelve months of his content » au titre de la brand safety. Que cherchait-il ?",
+              "choices": [
+                "Proof that his followers live in the countries where we sell.",
+                "Controversial or risky posts that could hurt us if we partner with him.",
+                "Old sponsored posts for rivals that we could ask him to delete."
               ],
               "answer_index": 1,
-              "explanation_fr": "Donner le mot de passe du compte officiel à un intervenant externe est un risque majeur de sécurité et d'erreur de manipulation. En pratique, l'invité envoie ses séquences au fil de la journée au community manager, qui vérifie le son, ajoute les stickers et la mention partenariat, puis publie."
-            },
-            {
-              "prompt_fr": "Pourquoi Kenji a-t-il vérifié les douze derniers mois du créateur au titre de la brand safety ?",
-              "choices": [
-                "To make sure the creator hasn't posted offensive or risky content that could harm the brand's reputation.",
-                "To copy the creator's past videos without paying for them.",
-                "To check that the creator wears a helmet in every childhood photo."
-              ],
-              "answer_index": 0,
-              "explanation_fr": "En partenariat créateur comme en publicité, la brand safety consiste à vérifier que la marque ne sera pas associée à des propos haineux, des polémiques graves ou de faux abonnés achetés."
+              "explanation_fr": "La brand safety consiste à éviter que la marque soit associée à des contenus controversés ou choquants : on remonte l'historique du créateur avant de signer. La localisation des abonnés relève de l'adéquation d'audience (audience fit), un autre critère. Et on ne demande pas à un créateur d'effacer ses anciens partenariats."
             },
             {
               "prompt_fr": "Complète : « Make sure every post is clearly marked ___ sponsored. » (comme sponsorisé)",
@@ -2018,24 +2018,24 @@
               "explanation_fr": "La force de l'employee advocacy repose sur l'authenticité des profils humains. Si vingt collègues publient mot pour mot le même texte corporate à la même heure, leurs contacts voient immédiatement qu'il s'agit d'une consigne et l'algorithme réduit la portée des doublons."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un shoppable post en social commerce ?",
+              "prompt_fr": "Le badge vérifié et le catalogue sont validés. Comment dire « On peut identifier les produits dans nos posts » ?",
               "choices": [
-                "A post where users can tap product tags to see prices and buy without leaving the social app",
-                "A post that offers a job in a physical retail shop",
-                "A paid ad that only appears on supermarket screens"
+                "We can identify products in our posts.",
+                "We can label products on our posts.",
+                "We can tag products in our posts."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Un shoppable post (publication d'achat) intègre des étiquettes produit directement sur la photo ou la vidéo : l'abonné touche l'article pour voir sa fiche et son prix, ce qui réduit les étapes entre la découverte sur les réseaux et l'achat."
+              "answer_index": 2,
+              "explanation_fr": "Sur Instagram, on tag products : le tag affiche le prix et renvoie vers la fiche, c'est ce qui rend un post shoppable. « Identify » calque « identifier » mais signifie reconnaître ou déterminer, pas ajouter une étiquette cliquable. « Label » sert pour une mention (the sponsored label), pas pour un lien produit, et on dit in our posts."
             },
             {
-              "prompt_fr": "Que signifie « three talking points » dans le conseil de Lucía ?",
+              "prompt_fr": "Lucía propose « three talking points » aux salariés. Que leur donne-t-elle concrètement ?",
               "choices": [
-                "Three voice messages recorded on a phone",
-                "Three key ideas or arguments to build a post around",
-                "Three punctuation marks at the end of a sentence"
+                "Three ready-made posts they can copy and paste.",
+                "Three questions they must answer in the comments.",
+                "Three key ideas they can build their own post around."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Talking points désigne les points clés ou arguments principaux qu'on partage à un porte-parole ou à des salariés pour les aider à s'exprimer librement sans leur imposer un script mot à mot. (« Points de suspension » se dit ellipsis ou three dots.)"
+              "answer_index": 2,
+              "explanation_fr": "Des talking points sont des idées clés, des points à aborder, que chacun reformule avec ses mots. C'est l'inverse d'un texte à copier-coller, que Lucía refuse justement parce que dix posts identiques ont l'air faux. Il ne s'agit pas non plus de questions à traiter en commentaire."
             },
             {
               "prompt_fr": "Complète : « Employee advocacy works best when sharing ___ optional. » (reste facultatif)",
@@ -2158,22 +2158,22 @@
             {
               "prompt_fr": "Quel est l'avantage concret d'Ads Manager par rapport au bouton « Boost post » selon Tomasz ?",
               "choices": [
-                "It automatically translates the video into ten languages.",
-                "It lets you exclude current customers and optimize for real conversions like sign-ups.",
-                "It guarantees that the video will go viral overnight."
-              ],
-              "answer_index": 1,
-              "explanation_fr": "Le bouton Boost est conçu pour être simple mais offre peu de réglages, et pousse souvent vers des interactions de surface. Ads Manager permet un ad targeting fin (exclure les clients déjà inscrits, cibler des audiences similaires, choisir les placements) et d'optimiser sur une vraie action sur le site."
-            },
-            {
-              "prompt_fr": "À quoi faut-il faire attention quand on compare le cost per result de deux campagnes dans Ads Manager ?",
-              "choices": [
-                "Check what 'result' each campaign is counting (e.g. a video view vs a website purchase).",
-                "Check whether the campaign was created on a Monday or a Friday.",
-                "Nothing: cost per result always measures the exact same thing."
+                "It offers sharper targeting and can optimize for sign-ups, not just likes.",
+                "It's the only way to spend more than 200 euros on a single post.",
+                "It lets the same video run as an ad at no extra cost."
               ],
               "answer_index": 0,
-              "explanation_fr": "Le cost per result dépend entièrement de l'objectif de campagne choisi : 0,05 € par « vue de vidéo de 3 secondes » ne peut évidemment pas se comparer à 4 € par « inscription confirmée ». Il faut toujours nommer le résultat compté."
+              "explanation_fr": "Tomasz cite trois avantages : un ciblage plus fin, l'exclusion des clients existants et l'optimisation pour des inscriptions sur le site plutôt que pour des likes bon marché. Le bouton Boost permet lui aussi de dépenser 200 euros ou plus, et une publicité est toujours payante, quel que soit l'outil."
+            },
+            {
+              "prompt_fr": "Deux campagnes affichent un cost per result de 0,40 € et de 6 €. Avant de conclure, que vérifies-tu ?",
+              "choices": [
+                "Whether both campaigns ran on the same days of the week.",
+                "Whether the cheaper one used the Boost button or Ads Manager.",
+                "What each campaign counts as a result: a video view or a sign-up."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le « result » dépend de l'objectif choisi : une vue de vidéo coûte quelques centimes, une inscription bien plus. Comparer 0,40 € et 6 € n'a de sens que si les deux campagnes comptent le même résultat. Les jours de diffusion ou l'outil peuvent jouer à la marge, mais ce n'est pas la première chose à vérifier."
             },
             {
               "prompt_fr": "À quoi sert la Meta Ad Library (Bibliothèque publicitaire) dans le travail de veille ?",
@@ -2243,24 +2243,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi un reel à 90 000 vues avec 3 secondes de watch time moyenne est-il un faux succès pour la marque ?",
+              "prompt_fr": "Pourquoi un reel à 90 000 vues avec 3 secondes de watch time moyen est-il un faux succès pour la marque ?",
               "choices": [
-                "Because platforms only pay creators when watch time exceeds ten minutes.",
-                "Because viewers dropped off before seeing the message or brand, so the views brought no real interest.",
-                "Because 90,000 views is below the minimum threshold to appear in analytics."
+                "Most views came from bots, so the platform will remove them soon.",
+                "Most viewers left before seeing the product, so the views prove little.",
+                "A short watch time means the reel was only shown to our followers."
               ],
               "answer_index": 1,
-              "explanation_fr": "Le nombre de views seul peut être trompeur : chaque plateforme compte une vue dès les premières secondes. Si la watch time moyenne est de 3 secondes sur une vidéo de 30 secondes, les spectateurs ont décroché (dropped off) avant même de voir le produit ou la marque."
+              "explanation_fr": "Trois secondes de watch time en moyenne signifient que la plupart des gens ont fait défiler la vidéo avant de voir le produit : 90 000 vues ne prouvent donc aucun intérêt réel. Rien n'indique des bots dans le dialogue, et la durée de visionnage ne dit pas à qui la vidéo a été montrée : elle dit seulement que presque personne n'est resté."
             },
             {
-              "prompt_fr": "Pourquoi les partages sur WhatsApp, Slack ou par e-mail sont-ils appelés dark social ?",
+              "prompt_fr": "Pourquoi les partages sur WhatsApp ou Discord sont-ils appelés dark social ?",
               "choices": [
-                "Because they happen in private channels that web analytics tools often can't track, showing up as 'direct' traffic.",
-                "Because they are illegal shares made on the dark web.",
-                "Because they only happen when users enable dark mode on their phone."
+                "They come from anonymous accounts that hide their real identity.",
+                "They happen in private channels, so analytics often show them as direct traffic.",
+                "The brand can see these shares but isn't allowed to reply to them."
               ],
-              "answer_index": 0,
-              "explanation_fr": "Dark social n'a rien à voir avec le dark web ni le mode sombre ! Il désigne le bouche-à-oreille qui circule dans les messageries privées (WhatsApp, DM, Slack, SMS) : quand un ami clique sur un lien copié dans WhatsApp, Google Analytics ne voit souvent pas la source et le classe en « trafic direct »."
+              "answer_index": 1,
+              "explanation_fr": "Dark social désigne les partages faits dans des canaux privés (messageries, e-mails, groupes fermés) : les outils d'analytics ne voient pas d'où vient le lien, et la visite apparaît en trafic direct. Ce n'est pas une question d'anonymat, et la marque ne voit justement pas ces partages : elle constate seulement le pic de trafic direct."
             },
             {
               "prompt_fr": "Sur le carrousel, la reach est de 14 000 et les impressions de 26 000. Quelle explication de Kenji est exacte ?",
@@ -2341,24 +2341,24 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Pourquoi Moussa demande-t-il de préciser si l'engagement rate est calculé « by reach » ou « by followers » ?",
+              "prompt_fr": "Moussa demande si l'engagement rate est calculé « by reach or by followers ». Pourquoi est-ce important ?",
               "choices": [
-                "Because the two formulas give very different percentages and changing the formula skews month-over-month comparisons.",
-                "Because engagement rate by reach is only used in the United States.",
-                "Because calculating by followers is illegal under European data rules."
+                "The two formulas give different figures, so the method must stay the same.",
+                "Engagement by followers is always higher, so it flatters the report.",
+                "Leadership teams only accept rates calculated by followers."
               ],
               "answer_index": 0,
-              "explanation_fr": "Un post vu par 2 000 personnes sur un compte de 20 000 abonnés qui reçoit 100 interactions a un taux d'engagement de 5 % sur la portée (by reach), mais de 0,5 % sur les abonnés (by followers). Sans préciser la base de calcul, le chiffre ne veut rien dire."
+              "explanation_fr": "Le taux d'engagement par portée divise les interactions par le nombre de personnes touchées, celui par abonnés par le nombre d'abonnés : les chiffres diffèrent, donc on garde la même formule d'un mois à l'autre. Aucune des deux n'est toujours plus élevée, tout dépend du rapport entre portée et abonnés. Et aucune règle n'impose une formule : l'important est de l'indiquer sous le graphique."
             },
             {
-              "prompt_fr": "Que signifie l'expression idiomatique « comparing apples to apples » ?",
+              "prompt_fr": "Lucía garde la même formule que le mois dernier « so we're comparing apples to apples ». Comment le dirais-tu autrement ?",
               "choices": [
-                "comparing two fruit brands on Instagram",
-                "comparing things on the exact same basis so the comparison is fair",
-                "hiding bad numbers behind a colourful chart"
+                "so we're comparing apples with oranges",
+                "so the comparison is like-for-like",
+                "so we compare the same with the same"
               ],
               "answer_index": 1,
-              "explanation_fr": "Compare apples to apples (ou apples with apples) correspond au français « comparer ce qui est comparable » (et son inverse est compare apples and oranges, mélanger des choux et des carottes)."
+              "explanation_fr": "Comparing apples to apples, c'est comparer des choses comparables, sur la même base : like-for-like dit la même chose. Comparing apples with oranges est l'expression contraire : comparer deux choses qui ne se comparent pas. « The same with the same » est un calque sans valeur idiomatique."
             },
             {
               "prompt_fr": "Complète : « Our engagement rate rose ___ 3.1% to 4.4% this month. »",
@@ -2373,12 +2373,12 @@
             {
               "prompt_fr": "Laquelle de ces conclusions de rapport social media apporte le plus de valeur à un comité de direction ?",
               "choices": [
-                "We published 18 posts and got 4,200 likes across all platforms.",
-                "Engagement rate by reach rose from 3.1% to 4.4% thanks to how-to carousels, so next month we'll double down on that format.",
-                "The algorithm changed three times this month, so it is impossible to draw any conclusions."
+                "Likes rose to 4,200 across all platforms, so the month was a success.",
+                "Our engagement rate exploded this month: a big win for the whole team.",
+                "Engagement by reach rose to 4.4% thanks to carousels, so we'll post more."
               ],
-              "answer_index": 1,
-              "explanation_fr": "Un bon social media report ne se contente pas d'empiler des volumes bruts (vanity metrics) ni de blâmer l'algorithme : il donne un indicateur comparable, explique la cause (thanks to how-to carousels) et en tire une décision pour le mois suivant (double down on that format)."
+              "answer_index": 2,
+              "explanation_fr": "La direction attend un chiffre fiable (avec sa formule), la cause et la décision qui en découle. Un total de likes est une vanity metric qui ne dit rien de la valeur créée. « Exploded » et « a big win » ne donnent ni chiffre, ni explication, ni prochaine étape."
             }
           ],
           "production": {

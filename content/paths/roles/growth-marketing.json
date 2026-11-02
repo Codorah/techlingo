@@ -35,16 +35,16 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que mesure la stickiness dans le dialogue ?",
-              "choices": ["How many people downloaded the app", "How often active users come back, measured with the DAU/MAU ratio", "How long a page takes to load"],
-              "answer_index": 1,
-              "explanation_fr": "La stickiness mesure à quel point le produit devient une habitude : on la calcule souvent avec le ratio DAU/MAU (ici 4 200 / 21 000 = 20 %). Le nombre de téléchargements est justement l'indicateur de vanité du dialogue, et le temps de chargement n'a rien à voir."
+              "prompt_fr": "Avec 4 200 DAU pour 21 000 MAU, Priya parle d'une stickiness de 20 %. Que mesure cet indicateur ?",
+              "choices": ["How often monthly users come back each day", "How many new users signed up this month", "How long users stay in the app per session"],
+              "answer_index": 0,
+              "explanation_fr": "La stickiness mesure à quel point le produit devient une habitude : le ratio DAU/MAU indique quelle part des utilisateurs du mois revient chaque jour (ici, un sur cinq). Les nouvelles inscriptions relèvent de l'acquisition, et la durée d'une session est un autre indicateur (session length)."
             },
             {
               "prompt_fr": "Pourquoi Priya dit-elle que le total des téléchargements est une vanity metric ?",
-              "choices": ["Because it only goes up and doesn't show if people get value", "Because the number is wrong", "Because marketing is not allowed to share it"],
-              "answer_index": 0,
-              "explanation_fr": "Une vanity metric flatte l'équipe mais n'aide pas à décider : un cumul ne fait que monter, même si plus personne n'utilise l'appli. Le chiffre n'est pas faux, et rien n'interdit de le partager : il est simplement peu utile pour piloter."
+              "choices": ["It's hard to measure, so the figure isn't reliable.", "It only goes up and says nothing about real usage.", "It's a private figure that marketing shouldn't share."],
+              "answer_index": 1,
+              "explanation_fr": "Une vanity metric flatte l'équipe mais n'aide pas à décider : un cumul ne fait que monter, même si plus personne n'utilise l'appli. Le chiffre n'est ni faux ni difficile à obtenir, et rien n'interdit de le partager : il est simplement inutile pour piloter."
             },
             {
               "prompt_fr": "Complète la phrase de Kenji : « I'll ___ with the DAU/MAU ratio instead. »",
@@ -146,9 +146,9 @@
             },
             {
               "prompt_fr": "Pourquoi Tomasz veut-il arrêter d'acheter du trafic ?",
-              "choices": ["Because acquisition is the weakest step", "Because the ad budget is finished", "Because users leave after sign-up, so more traffic would be wasted"],
+              "choices": ["Paid traffic brings users who never sign up in the first place.", "Acquisition is the weakest step of the funnel this quarter.", "Users leave right after sign-up, so more traffic would be wasted."],
               "answer_index": 2,
-              "explanation_fr": "Aïcha montre que l'acquisition va bien et que les gens partent juste après l'inscription. Envoyer plus de monde dans un tunnel qui fuit, c'est gaspiller du budget. Le dialogue ne parle ni de budget épuisé, ni d'une acquisition faible : c'est l'inverse."
+              "explanation_fr": "Le tunnel fuit entre l'inscription et l'activation : acheter plus de visiteurs remplirait un seau percé. Aïcha précise que l'acquisition va bien (« Acquisition is fine »), et le problème n'est pas l'inscription mais ce qui se passe juste après."
             }
           ],
           "production": {
@@ -246,10 +246,10 @@
               "explanation_fr": "ICE veut dire Impact (l'effet attendu), Confidence (à quel point on y croit) et Ease (la facilité de mise en œuvre). On note chaque critère, souvent de 1 à 10, pour classer les idées. Les deux autres développements sont inventés."
             },
             {
-              "prompt_fr": "Pourquoi le pop-up de parrainage n'est-il pas prioritaire ?",
-              "choices": ["Because it needs a lot of development work, so its ease score is low", "Because its impact is too small", "Because Lucía doesn't like referral programs"],
+              "prompt_fr": "Le pop-up de parrainage obtient 8 en impact mais 3 en facilité. Pourquoi n'est-il pas prioritaire ?",
+              "choices": ["It needs a lot of dev work, which drags its ICE score down.", "Its impact is too uncertain, so its confidence score is low.", "Referral features are hard to measure in an A/B test."],
               "answer_index": 0,
-              "explanation_fr": "Son impact est bon (8), mais sa facilité est faible (3) : il demande beaucoup de développement, ce qui fait baisser son score. Le dialogue ne dit pas que l'impact est faible ni que Lucía est contre le parrainage."
+              "explanation_fr": "Le score ICE combine impact, confidence et ease : un 3 en facilité (beaucoup de développement) fait baisser le total malgré un bon impact. Lucía ne parle pas de confiance, et la difficulté à mesurer n'est pas l'argument du dialogue."
             },
             {
               "prompt_fr": "Comment dire « c'est rapide à mettre en ligne » en équipe produit ?",
@@ -286,16 +286,16 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Quelle est la structure de l'hypothèse de Priya ?",
-              "choices": ["If we change X, Y will happen, because Z", "We will change X on Monday", "X is better than Y"],
-              "answer_index": 0,
-              "explanation_fr": "Une bonne hypothesis suit le schéma « if we [change], [result], because [reason] ». Le because est essentiel : il dit ce qu'on apprend, même si le test perd. « On change X lundi » est un planning, et « X est mieux que Y » est une opinion, pas une hypothèse testable."
+              "prompt_fr": "Quelle formulation d'hypothèse respecte la structure utilisée par Priya ?",
+              "choices": ["We will shorten the form next week and then see what happens to sign-ups.", "If we shorten the form, sign-ups will rise, because it feels less intrusive.", "Shorter forms are better than long forms for sign-ups, as everyone knows."],
+              "answer_index": 1,
+              "explanation_fr": "Une hypothèse de test suit le modèle « If we change X, Y will happen, because Z » : un changement, un résultat mesurable et une raison. Annoncer un changement sans résultat attendu n'est pas une hypothèse, et une affirmation générale ne se teste pas et ne dit rien de pourquoi cela marcherait."
             },
             {
-              "prompt_fr": "Pourquoi Moussa refuse-t-il d'ajouter un titre et une couleur de bouton ?",
-              "choices": ["Because the designer is on holiday", "Because a headline can't be tested", "Because a multivariate test needs much more traffic than they have"],
+              "prompt_fr": "Pourquoi Moussa refuse-t-il de tester aussi un nouveau titre et une nouvelle couleur de bouton ?",
+              "choices": ["Button colors never have a real impact on sign-ups.", "Changing the headline would break the control group.", "A multivariate test needs far more traffic than they have."],
               "answer_index": 2,
-              "explanation_fr": "Un multivariate test compare plusieurs combinaisons de changements en même temps. Chaque combinaison a besoin de son propre trafic, donc il en faut beaucoup plus. Avec peu de visiteurs, on garde un seul changement pour savoir ce qui a fait la différence."
+              "explanation_fr": "Tester plusieurs éléments à la fois, c'est un multivariate test : chaque combinaison a besoin de son propre échantillon, donc de beaucoup plus de trafic. Le groupe témoin garderait simplement l'ancienne page, et Moussa ne dit pas que la couleur est inutile : il veut une seule modification à la fois."
             },
             {
               "prompt_fr": "Complète : « We need about two weeks to ___ the sample size. »",
@@ -339,16 +339,16 @@
               "explanation_fr": "To call a test (ou to call it), c'est déclarer un résultat et arrêter le test, comme un arbitre qui siffle. Ce n'est pas téléphoner, et pour « donner un nom », on dirait to name."
             },
             {
-              "prompt_fr": "Pourquoi Aïcha refuse-t-elle d'arrêter le test au cinquième jour ?",
-              "choices": ["Because the result isn't statistically significant yet and the test hasn't run two full weeks", "Because the variant is losing", "Because the testing tool is broken"],
+              "prompt_fr": "Pourquoi Aïcha refuse-t-elle d'arrêter le test au cinquième jour, alors que la variante gagne ?",
+              "choices": ["The result isn't significant yet and a full week hasn't run.", "The variant is ahead, but activation has started to drop.", "The tool shows 95% confidence, but only on weekdays."],
               "answer_index": 0,
-              "explanation_fr": "Avec 80 % de confiance, le +12 % peut encore être dû au hasard. On attend en général 95 % et des semaines complètes. S'arrêter dès qu'un chiffre plaît s'appelle le peeking, une erreur classique. La variante ne perd pas, et l'outil fonctionne."
+              "explanation_fr": "À 80 % de confiance, le résultat n'est pas statistiquement significatif : l'équipe attend 95 % et deux semaines complètes pour couvrir semaine et week-end. L'activation, l'indicateur garde-fou, est stable (flat), pas en baisse, et l'outil affiche 80 %, pas 95 %."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'une guardrail metric ?",
-              "choices": ["The main metric the test tries to improve", "The number of visitors in the test", "A metric you watch to make sure the test doesn't harm something important"],
-              "answer_index": 2,
-              "explanation_fr": "Une guardrail metric (indicateur garde-fou) ne doit pas se dégrader pendant le test. Ici, gagner des inscriptions ne sert à rien si l'activation chute. L'indicateur que le test cherche à améliorer s'appelle la primary metric, et le nombre de visiteurs relève de la taille d'échantillon."
+              "prompt_fr": "L'activation sert ici de guardrail metric. Que fait-on avec ce type d'indicateur ?",
+              "choices": ["We try to improve it directly with the test variant.", "We check it doesn't get worse while we test something else.", "We use it to decide how many visitors join the test."],
+              "answer_index": 1,
+              "explanation_fr": "Une guardrail metric (garde-fou) n'est pas l'objectif du test : on la surveille pour vérifier que l'amélioration visée (ici les inscriptions) n'abîme rien d'important. L'indicateur qu'on cherche à améliorer est la primary metric, et la taille d'échantillon se calcule à part."
             },
             {
               "prompt_fr": "Complète : « So far it's ___. » (pour dire que l'indicateur ne bouge pas)",
@@ -406,9 +406,9 @@
             },
             {
               "prompt_fr": "Quelle est la différence entre une heatmap et une session recording ?",
-              "choices": ["They are the same tool with two names", "A heatmap sums up many visitors; a session recording replays one visitor's visit", "A session recording only works on mobile"],
-              "answer_index": 1,
-              "explanation_fr": "La heatmap agrège le comportement de nombreux visiteurs sur une seule image. La session recording rejoue la visite d'une personne anonyme, clic après clic, ce qui aide à comprendre le pourquoi. Les deux existent sur ordinateur et sur mobile, dans des outils comme Hotjar ou Microsoft Clarity."
+              "choices": ["A heatmap shows clicks only; a recording shows scrolling only.", "A heatmap replays one visit; a recording sums up many visits.", "A heatmap sums up many visits; a recording replays one visit."],
+              "answer_index": 2,
+              "explanation_fr": "Une heatmap agrège le comportement de nombreux visiteurs (clics, défilement) en une carte de couleurs. Une session recording rejoue la visite d'une seule personne, ce qui montre le détail, comme les clics sur la capture d'écran non cliquable. Inverser les deux est courant, et une heatmap peut aussi montrer le défilement (scroll map)."
             },
             {
               "prompt_fr": "Comment dire « La plupart des visiteurs ne dépassent jamais le premier écran » ?",
@@ -417,10 +417,10 @@
               "explanation_fr": "On dit most visitors (sans the ni of) ou most of the visitors. To scroll past veut dire « faire défiler au-delà de ». « The most of » et « most of visitors » sont des fautes fréquentes chez les francophones."
             },
             {
-              "prompt_fr": "Que veut dire Sarah par « That's a quick CRO win » ?",
-              "choices": ["The CRO team won a prize", "It's an easy change that should improve conversion fast", "The test is finished"],
-              "answer_index": 1,
-              "explanation_fr": "A quick win est une amélioration rapide et peu coûteuse. Ici, rendre la capture cliquable est simple et devrait aider la conversion. Rien n'indique un prix gagné ou un test terminé."
+              "prompt_fr": "Sarah dit « That's a quick CRO win ». Comment le dirais-tu autrement ?",
+              "choices": ["That's an easy fix that should lift conversions fast.", "That's a quick test we should run before deciding.", "That's a big redesign, but it will pay off quickly."],
+              "answer_index": 0,
+              "explanation_fr": "A quick win est une amélioration rapide et facile qui donne vite un résultat : rendre la capture cliquable et remonter le bouton. Sarah ne propose pas un test préalable, et a quick win est par définition l'inverse d'une refonte lourde."
             }
           ],
           "production": {
@@ -451,10 +451,10 @@
               "explanation_fr": "La friction, c'est tout ce qui ralentit ou fait hésiter l'utilisateur : un champ en trop, un écran inutile, un message flou. Le mot peut aussi désigner une tension entre personnes, mais pas dans ce contexte, et ce n'est pas un effet visuel."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'une micro-conversion ?",
-              "choices": ["A very small purchase", "A conversion that happens on mobile only", "A small step toward the main goal, like finishing one screen of the form"],
-              "answer_index": 2,
-              "explanation_fr": "Une micro-conversion est une petite action qui rapproche de l'objectif principal : passer un écran, s'abonner à la newsletter, regarder une démo. La macro-conversion est l'objectif final (l'inscription, l'achat). Le mot ne parle ni du montant ni de l'appareil."
+              "prompt_fr": "Kenji veut suivre chaque écran comme une micro-conversion. De quoi s'agit-il ?",
+              "choices": ["A conversion worth very little money, like a free plan.", "A small step toward the main goal, like finishing a screen.", "A conversion that happens only on mobile devices."],
+              "answer_index": 1,
+              "explanation_fr": "Une micro-conversion est une petite étape vers l'objectif principal (ici, l'inscription) : finir un écran, cliquer sur un bouton, regarder une démo. Les suivre montre exactement où les gens abandonnent. Le mot ne parle ni de montant ni d'appareil."
             },
             {
               "prompt_fr": "Comment dire « une fois qu'ils sont dans l'appli » ?",
@@ -463,10 +463,10 @@
               "explanation_fr": "Once, en début de proposition, veut dire « une fois que ». « One time » signifie « une seule fois » (une fréquence), et since n'a pas ce sens ici. Inside the app ou in the app sont tous deux corrects."
             },
             {
-              "prompt_fr": "Pourquoi Aïcha veut-elle changer le texte du bouton ?",
-              "choices": ["Because 'Submit' is too long", "Because the button is the wrong color", "Because 'Start my free trial' tells users what they will get"],
+              "prompt_fr": "Pourquoi Aïcha veut-elle remplacer « Submit » par « Start my free trial » ?",
+              "choices": ["It sounds more formal for business users.", "It's shorter and fits better on a phone screen.", "It tells users what they get when they click."],
               "answer_index": 2,
-              "explanation_fr": "Un bon call to action décrit ce que l'utilisateur obtient (start, get, try), alors que Submit ne parle que de l'action d'envoyer un formulaire. Le dialogue ne parle ni de longueur ni de couleur."
+              "explanation_fr": "Un bon call to action dit ce que l'utilisateur obtient : « Start my free trial » annonce un bénéfice, alors que « Submit » parle seulement d'envoyer un formulaire. La nouvelle version est plus longue, pas plus courte, et elle est plus personnelle, pas plus formelle (le my à la première personne)."
             }
           ],
           "production": {
@@ -498,16 +498,16 @@
               "explanation_fr": "La social proof (preuve sociale), ce sont tous les signes que d'autres utilisent et apprécient déjà le produit : avis, notes, logos clients, témoignages. On fait plus facilement confiance quand d'autres l'ont fait avant nous. Le mot social ne renvoie pas ici aux réseaux sociaux."
             },
             {
-              "prompt_fr": "Que signifie FOMO ?",
-              "choices": ["Free offer, money off", "First order, more options", "Fear of missing out"],
-              "answer_index": 2,
-              "explanation_fr": "FOMO veut dire fear of missing out : la peur de rater une occasion. Les comptes à rebours ou les « plus que 2 places » jouent sur ce levier. Les deux autres développements sont inventés."
+              "prompt_fr": "Tomasz propose un compte à rebours parce qu'« a bit of FOMO usually works ». Sur quoi joue-t-il ?",
+              "choices": ["The fear of missing a deal that ends soon", "The trust created by other customers' reviews", "The pleasure of finding a hidden discount"],
+              "answer_index": 0,
+              "explanation_fr": "FOMO (fear of missing out) est la peur de rater une occasion limitée : un compte à rebours crée cette urgence. La confiance créée par les avis des autres clients, c'est la social proof, que Priya préfère ici. Une remise cachée n'a pas de lien avec la FOMO."
             },
             {
               "prompt_fr": "Pourquoi Priya refuse-t-elle un faux compte à rebours ?",
-              "choices": ["Because a fake deadline damages trust and can be misleading", "Because timers are too hard to build", "Because FOMO never works"],
-              "answer_index": 0,
-              "explanation_fr": "Priya accepte l'urgence si elle est réelle, mais une fausse échéance trompe le client : elle abîme la confiance et peut être jugée comme une pratique commerciale trompeuse. Elle ne dit pas que c'est difficile à construire, ni que le FOMO ne marche jamais."
+              "choices": ["A countdown slows down the pricing page on mobile.", "A fake deadline damages trust and can be misleading.", "A countdown only works on e-commerce sites, not SaaS."],
+              "answer_index": 1,
+              "explanation_fr": "Un compte à rebours qui repart à zéro trompe le visiteur : une fois découvert, il détruit la confiance, et il peut être considéré comme une pratique commerciale trompeuse. Priya accepte un compte à rebours si l'offre se termine vraiment : le problème n'est ni technique ni lié au type de site."
             },
             {
               "prompt_fr": "Comment dire « deux courts témoignages » sur une page de vente ?",
@@ -605,10 +605,10 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Qu'est-ce que l'aha moment ?",
-              "choices": ["The day the product is launched", "The first time a user pays", "The moment a user first understands the value of the product"],
+              "prompt_fr": "Kenji et Aïcha définissent l'aha moment comme « the first booking link sent ». Qu'est-ce qu'un aha moment ?",
+              "choices": ["The moment a user finishes the onboarding checklist", "The moment a user pays for the product for the first time", "The moment a user first sees the value of the product"],
               "answer_index": 2,
-              "explanation_fr": "L'aha moment est le déclic où l'utilisateur comprend ce que le produit lui apporte, ici le premier lien de réservation envoyé. Il précède souvent le paiement mais ne se confond pas avec lui, et il n'a rien à voir avec la date de lancement."
+              "explanation_fr": "L'aha moment est l'instant où l'utilisateur comprend concrètement ce que le produit lui apporte : ici, envoyer son premier lien de réservation. Le premier paiement vient souvent après, et finir une checklist n'est qu'un moyen d'y arriver plus vite."
             },
             {
               "prompt_fr": "Que veut dire time to value ?",
@@ -669,10 +669,10 @@
               "explanation_fr": "Pour une relecture avant validation, on dit to review. To reread veut dire « lire une deuxième fois », sans idée de vérification. « Correct me the emails » est un calque du français, incorrect en anglais."
             },
             {
-              "prompt_fr": "Pourquoi Moussa propose-t-il d'utiliser le type d'activité ?",
-              "choices": ["Because first names are often wrong", "Because it allows more relevant examples for each user", "Because the law requires it"],
-              "answer_index": 1,
-              "explanation_fr": "La vraie personalization ne s'arrête pas au prénom : adapter les exemples à l'activité (coiffure, yoga) rend le message plus utile. Le dialogue ne dit pas que les prénoms sont faux, et aucune loi n'impose ce type de personnalisation."
+              "prompt_fr": "Moussa propose de personnaliser avec le type d'activité plutôt qu'avec le prénom. Pourquoi ?",
+              "choices": ["It allows examples that fit each user's business.", "First names are often missing or misspelled.", "It makes the emails shorter and easier to read."],
+              "answer_index": 0,
+              "explanation_fr": "La vraie personnalisation adapte le contenu, pas seulement la formule d'appel : un salon de coiffure et une prof de yoga n'ont pas besoin des mêmes exemples. Moussa ne dit pas que les prénoms sont faux, et ce choix ne raccourcit pas les e-mails."
             }
           ],
           "production": {
@@ -698,22 +698,22 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Qu'est-ce qu'un triggered email ?",
-              "choices": ["An email sent automatically after a specific user action or inaction", "A newsletter sent to the whole list", "An email that warns about a problem"],
-              "answer_index": 0,
-              "explanation_fr": "Un triggered email part automatiquement quand un événement précis se produit, ou ne se produit pas : ici, pas d'agenda connecté après 24 heures. Une newsletter envoyée à tout le monde au même moment est un envoi de masse (a broadcast). To trigger veut dire « déclencher », pas « alerter »."
+              "prompt_fr": "Quel e-mail est un triggered email au sens de Tomasz ?",
+              "choices": ["A monthly newsletter sent to every user on the same day", "An email sent when a user hasn't connected their calendar after 24 hours", "An email the support team writes by hand to answer a question"],
+              "answer_index": 1,
+              "explanation_fr": "Un triggered email part automatiquement après une action ou une inaction précise de l'utilisateur, ici le calendrier non connecté 24 heures après l'inscription. Une newsletter est envoyée à tout le monde au même moment, et une réponse écrite à la main n'est pas automatisée."
             },
             {
-              "prompt_fr": "Que veut dire « Add an exit rule once they connect it » ?",
-              "choices": ["Close the app for the user", "Delete the user's account", "Stop the workflow for a user as soon as they complete the step"],
+              "prompt_fr": "Que veut dire Priya par « Add an exit rule once they connect it » ?",
+              "choices": ["Stop the workflow for everyone after 24 hours.", "Send users a final email once they complete the step.", "Take users out of the workflow once they complete the step."],
               "answer_index": 2,
-              "explanation_fr": "Une exit rule (règle de sortie) fait sortir l'utilisateur du scénario dès que l'objectif est atteint. Sans elle, il continuerait à recevoir des relances alors qu'il a déjà connecté son agenda, ce qui agace. Personne ne ferme l'appli ni ne supprime de compte."
+              "explanation_fr": "Une exit rule sort l'utilisateur du scénario dès qu'il a fait l'action visée : inutile de lui rappeler de connecter un calendrier déjà connecté. Ce n'est pas un e-mail de plus, et la règle s'applique à chaque utilisateur, pas à tout le monde à une heure fixe."
             },
             {
               "prompt_fr": "Pourquoi Tomasz envoie-t-il un in-app message plutôt qu'un deuxième e-mail ?",
-              "choices": ["Because emails cost too much to send", "Because the user is already in the app, and it avoids extra emails", "Because in-app messages are always read"],
-              "answer_index": 1,
-              "explanation_fr": "L'utilisateur est déjà dans l'appli : c'est le meilleur endroit pour le guider, et cela évite de saturer sa boîte mail. Le coût n'est pas évoqué, et aucun message n'est lu à coup sûr."
+              "choices": ["The user is already in the app, and it avoids sending too many emails.", "In-app messages are cheaper to send than emails.", "In-app messages are always read, unlike emails."],
+              "answer_index": 0,
+              "explanation_fr": "L'utilisateur ouvre l'appli : autant lui parler là où il se trouve, au bon moment, sans surcharger sa boîte mail (« so we don't send too many emails »). Le coût n'est pas l'argument, et aucun canal n'est lu à coup sûr."
             },
             {
               "prompt_fr": "Comment dire « le bon message, au bon moment » ?",
@@ -744,16 +744,16 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Quelle est la différence entre free trial et freemium ?",
-              "choices": ["They mean the same thing", "Freemium is only used for mobile apps", "A free trial ends after a set time; a freemium plan is free with no time limit"],
-              "answer_index": 2,
-              "explanation_fr": "Un free trial donne accès au produit pendant une durée limitée (14 ou 30 jours), puis il faut payer. Le freemium propose une offre gratuite sans limite de temps, et on paie pour les fonctions avancées. Ce modèle existe autant sur le web que sur mobile."
+              "prompt_fr": "Lucía évoque le passage au freemium. Quelle est la différence avec un free trial ?",
+              "choices": ["Freemium ends after a set time; a trial is free with no time limit.", "A trial ends after a set time; freemium is free with no time limit.", "A trial gives all features; freemium gives none of them."],
+              "answer_index": 1,
+              "explanation_fr": "Un free trial donne accès au produit pendant une durée limitée (14 ou 30 jours). Le freemium propose une offre gratuite sans limite de temps, avec un paywall sur les fonctionnalités avancées. Inverser les deux est fréquent, et une offre freemium donne bien accès à une partie des fonctionnalités."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un paywall dans ce contexte ?",
-              "choices": ["A limit that requires paying to access certain features", "A wall in the office with sales figures", "A security system for online payments"],
-              "answer_index": 0,
-              "explanation_fr": "Un paywall (mur payant) bloque l'accès à certaines fonctions ou à certains contenus tant qu'on ne paie pas. Le mot vient de la presse en ligne. Ce n'est ni un tableau de chiffres ni un système de sécurité des paiements."
+              "prompt_fr": "Complète : « Advanced features sit behind a ___. » (il faut payer pour y accéder)",
+              "choices": ["payment wall", "pay barrier", "paywall"],
+              "answer_index": 2,
+              "explanation_fr": "Le mot consacré est paywall : la limite au-delà de laquelle il faut payer. On dit put a feature behind a paywall. « Pay barrier » et « payment wall » sont des calques compréhensibles mais qu'on n'utilise pas en produit."
             },
             {
               "prompt_fr": "Que veut dire self-serve ?",
@@ -816,10 +816,10 @@
               "explanation_fr": "Une cohort regroupe les utilisateurs qui ont commencé à la même période, par exemple tous les inscrits de mars. On compare ensuite les cohortes entre elles pour voir si le produit s'améliore. Ce n'est ni une équipe, ni l'ensemble des utilisateurs."
             },
             {
-              "prompt_fr": "Que veut dire « the retention curve flattens » ?",
-              "choices": ["The curve stops falling and becomes roughly stable", "The curve drops to zero", "The curve goes up quickly"],
+              "prompt_fr": "Aïcha dit que la courbe de rétention « flattens after month three ». Qu'est-ce que cela signifie ?",
+              "choices": ["It stops falling and stays roughly stable.", "It falls sharply until it reaches zero.", "It goes back up as users return."],
               "answer_index": 0,
-              "explanation_fr": "To flatten, c'est « s'aplatir » : la courbe arrête de baisser et se stabilise. C'est bon signe, car un noyau d'utilisateurs fidèles reste. Une courbe qui tombe à zéro signifierait que tout le monde finit par partir."
+              "explanation_fr": "To flatten, c'est s'aplatir : la courbe cesse de baisser et se stabilise, car ceux qui restent trois mois partent rarement ensuite. Une courbe qui tombe à zéro signifierait que tout le monde finit par partir, et une remontée (smile curve) est un autre cas, plus rare."
             },
             {
               "prompt_fr": "Comment dire « celle de janvier en gardait 30 % » ?",
@@ -828,10 +828,10 @@
               "explanation_fr": "En anglais, le mois s'utilise directement devant le nom : the January cohort. « The January's one » et « the one of January » sont des calques maladroits du français. Le prétérit simple (kept) suffit pour un résultat passé."
             },
             {
-              "prompt_fr": "Quelle conclusion tire Ivan ?",
-              "choices": ["They should stop acquiring new users", "Most churn happens early, so they should focus on the first months", "The churn rate is impossible to measure"],
+              "prompt_fr": "Quelle conclusion Ivan tire-t-il de l'analyse de cohortes ?",
+              "choices": ["Churn is spread evenly over time, so they should improve every stage.", "Most churn happens early, so they should focus on the first months.", "Older cohorts churn more, so they should focus on long-term users."],
               "answer_index": 1,
-              "explanation_fr": "Puisque la courbe se stabilise après trois mois, les départs ont surtout lieu au début : c'est là qu'il faut agir (onboarding, activation). Ivan ne propose pas d'arrêter l'acquisition, et le churn rate se mesure très bien."
+              "explanation_fr": "La courbe se stabilise après le troisième mois : l'essentiel de l'attrition a lieu au début, donc c'est là, sur l'onboarding, qu'il faut agir. Une attrition répartie dans le temps donnerait une courbe qui baisse régulièrement, et rien n'indique que les cohortes anciennes partent davantage : la cohorte de mars retient même mieux que celle de janvier."
             }
           ],
           "production": {
@@ -868,10 +868,10 @@
               "explanation_fr": "On dit a win-back campaign (to win someone back : regagner quelqu'un), ou plus largement a reactivation campaign. « Reconquest » est un calque qui évoque l'histoire militaire, et « come-back campaign » ne s'emploie pas dans ce sens."
             },
             {
-              "prompt_fr": "Pourquoi Lucía veut-elle faciliter la désinscription ?",
-              "choices": ["Because it reduces the cost of sending", "Because respecting people who don't want emails protects trust", "Because the email tool requires it"],
-              "answer_index": 1,
-              "explanation_fr": "Un lien de désinscription clair est de toute façon obligatoire, mais Lucía va plus loin : respecter ceux qui ne veulent plus d'e-mails protège la confiance et la réputation de l'expéditeur. Son argument n'est ni le coût d'envoi, ni une contrainte de l'outil."
+              "prompt_fr": "Pourquoi Lucía veut-elle faciliter la désinscription dans la campagne de reconquête ?",
+              "choices": ["It reduces the number of emails the tool has to send.", "Unsubscribed users are easier to target with ads later.", "Respecting people who don't want emails protects trust."],
+              "answer_index": 2,
+              "explanation_fr": "Lucía le dit : « If they don't want to hear from us, we respect that ». Un ancien client agacé qui ne trouve pas le lien signale l'e-mail en spam, et une mauvaise expérience peut fermer la porte pour de bon. L'argument n'est ni publicitaire ni technique."
             },
             {
               "prompt_fr": "Complète : « One bad email can close the door ___. »",
@@ -903,16 +903,16 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Comment calcule-t-on le NPS ?",
-              "choices": ["The average of all ratings from 1 to 5", "The percentage of promoters minus the percentage of detractors", "The number of reviews on app stores"],
-              "answer_index": 1,
-              "explanation_fr": "On demande « Quelle est la probabilité que vous nous recommandiez ? » sur une échelle de 0 à 10. Les promoteurs répondent 9 ou 10, les détracteurs de 0 à 6, et le NPS est le pourcentage de promoteurs moins celui des détracteurs. Il va donc de -100 à +100 : ce n'est ni une moyenne ni un nombre d'avis."
+              "prompt_fr": "Le NPS est passé à 42. Comment ce score se calcule-t-il ?",
+              "choices": ["The % of promoters minus the % of detractors", "The % of promoters plus the % of passives", "The average score given by all respondents"],
+              "answer_index": 0,
+              "explanation_fr": "Le Net Promoter Score demande « recommanderiez-vous… ? » sur une échelle de 0 à 10 : on soustrait le pourcentage de détracteurs (0 à 6) du pourcentage de promoteurs (9 et 10). Les passifs (7 et 8) ne comptent pas dans le calcul, et ce n'est pas une moyenne : le score va de -100 à +100."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un power user ?",
-              "choices": ["A user with admin rights", "A user who pays the most", "A user who uses the product a lot and knows it deeply"],
-              "answer_index": 2,
-              "explanation_fr": "Un power user utilise le produit intensivement et en connaît les fonctions avancées : ses retours sont précieux. Ce n'est pas forcément un administrateur, ni le client qui paie le plus cher."
+              "prompt_fr": "Moussa parle de power users. De qui s'agit-il ?",
+              "choices": ["Users with admin rights on their company account", "Users who use the product a lot and know it deeply", "Users who pay for the most expensive plan"],
+              "answer_index": 1,
+              "explanation_fr": "Un power user utilise le produit intensément et en connaît les fonctions avancées : ses retours sont précieux, d'où les appels prévus. Ce n'est pas une question de droits d'administration ni de prix payé, même si les deux vont parfois ensemble."
             },
             {
               "prompt_fr": "Complète : « ___ testing. » (pour dire « ça vaut le coup de tester »)",
@@ -949,10 +949,10 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Quelle est la différence entre upsell et cross-sell ?",
-              "choices": ["They mean exactly the same thing", "Upsell happens online, cross-sell in a shop", "Upsell moves a customer to a higher plan; cross-sell adds a related product"],
+              "prompt_fr": "Les salons passent au plan Team, et Tomasz veut vendre aussi le pack SMS. Comment s'appellent ces deux leviers ?",
+              "choices": ["Both are cross-sells, because the customer buys more from us.", "Moving to the Team plan is a cross-sell; adding the SMS pack is an upsell.", "Moving to the Team plan is an upsell; adding the SMS pack is a cross-sell."],
               "answer_index": 2,
-              "explanation_fr": "L'upsell fait passer le client à une offre supérieure (de l'offre Solo à l'offre Équipe). Le cross-sell lui propose un produit complémentaire (le pack SMS). Les deux augmentent le revenu par client, en ligne comme en boutique."
+              "explanation_fr": "L'upsell fait monter le client en gamme (un plan supérieur), le cross-sell lui vend un produit complémentaire (un module SMS en plus). Inverser les deux est l'erreur la plus fréquente, et ce sont bien deux leviers distincts de l'expansion revenue."
             },
             {
               "prompt_fr": "Que signifie MRR ?",
@@ -962,9 +962,9 @@
             },
             {
               "prompt_fr": "Une net revenue retention au-dessus de 100 % signifie que :",
-              "choices": ["the company has no churn at all", "expansion from existing customers more than makes up for churn and downgrades", "the company gained more than 100 new customers"],
-              "answer_index": 1,
-              "explanation_fr": "Une NRR supérieure à 100 % veut dire que, même sans nouveaux clients, le revenu des clients existants augmente : l'expansion compense les départs et les baisses d'offre. Il peut donc y avoir du churn. Ce n'est pas non plus un nombre de nouveaux clients."
+              "choices": ["expansion from existing customers more than makes up for churn.", "the company kept 100% of its customers this year.", "the company gained more revenue from new customers than it lost."],
+              "answer_index": 0,
+              "explanation_fr": "La NRR ne regarde que les clients existants : montées en gamme et ventes additionnelles moins attrition et déclassements. Au-dessus de 100 %, la base clients rapporte plus qu'avant, même avec quelques départs. Elle n'implique pas zéro départ, et elle exclut justement les nouveaux clients."
             },
             {
               "prompt_fr": "Comment dire « Le MRR a augmenté de 6 % » ?",
@@ -1022,9 +1022,9 @@
             },
             {
               "prompt_fr": "Qu'indique un ratio LTV:CAC de 4 pour 1 ?",
-              "choices": ["The company has four times more customers than last year", "Each customer costs four times what they bring in", "Each customer brings in about four times what it cost to acquire them"],
-              "answer_index": 2,
-              "explanation_fr": "Le ratio compare ce que rapporte un client (LTV) à ce qu'il a coûté (CAC). À 4 pour 1, chaque euro investi en rapporte environ quatre. On cite souvent 3 pour 1 comme repère sain, mais ce n'est qu'une règle empirique. La deuxième réponse inverse le calcul."
+              "choices": ["Each customer costs about four times what they bring in over time.", "Each customer brings in about four times what it cost to acquire them.", "The company acquires four customers for the price of one."],
+              "answer_index": 1,
+              "explanation_fr": "La LTV (valeur vie client, ici 480 €) divisée par le CAC (coût d'acquisition, 120 €) donne 4 : un client rapporte environ quatre fois ce qu'il a coûté. On cite souvent 3 pour 1 comme repère sain, mais ce n'est qu'une règle empirique. Inverser le calcul donnerait un canal très déficitaire, et le ratio ne parle pas de nombre de clients."
             },
             {
               "prompt_fr": "Que veut dire payback period ?",
@@ -1073,16 +1073,16 @@
               "explanation_fr": "Le lead scoring attribue des points à chaque lead selon son profil (poste, taille d'entreprise) et ses actions (visite de la page des tarifs, invitation d'un collègue). Au-delà d'un seuil, le lead passe aux commerciaux. Il ne note pas l'équipe commerciale et ne se contente pas de compter."
             },
             {
-              "prompt_fr": "Que veut dire Moussa par cold outreach ?",
-              "choices": ["Sending emails in winter", "Following up with unhappy customers", "Contacting prospects who have never heard from you"],
+              "prompt_fr": "Moussa veut garder du temps pour le cold outreach. De quoi parle-t-il ?",
+              "choices": ["Calling back customers who canceled their plan", "Following up with leads who stopped answering", "Contacting prospects who have never heard from us"],
               "answer_index": 2,
-              "explanation_fr": "Le cold outreach (prospection à froid) consiste à contacter des prospects qui ne nous connaissent pas encore, par e-mail, téléphone ou LinkedIn. Cold n'a ici rien à voir avec la saison, et relancer des clients mécontents relève du service client."
+              "explanation_fr": "Le cold outreach (prospection à froid) consiste à contacter des prospects qui ne nous connaissent pas encore. Relancer des leads silencieux, c'est un follow-up, et recontacter d'anciens clients relève de la reconquête (win-back)."
             },
             {
-              "prompt_fr": "Un collègue critique ton travail, et il a raison. Quelle réponse est la plus professionnelle ?",
-              "choices": ["You are wrong, our leads are good.", "Fair feedback. Let's fix it together.", "It's not my fault, it's the tool."],
-              "answer_index": 1,
-              "explanation_fr": "Fair feedback (remarque juste) reconnaît la critique sans se justifier, et let's fix it together propose une solution commune. Les deux autres réponses sont défensives : elles ferment la discussion au lieu de résoudre le problème."
+              "prompt_fr": "Un commercial critique la qualité de tes leads, et il a raison. Quelle réponse est la plus professionnelle ?",
+              "choices": ["Fair feedback. Let's fix the scoring together.", "You're right, it's totally my fault, sorry.", "I understand, but the tool decides, not me."],
+              "answer_index": 0,
+              "explanation_fr": "« Fair feedback » reconnaît la critique sans se justifier, et « let's fix it together » propose tout de suite une action commune. S'excuser à outrance ne règle rien et affaiblit ta position, et rejeter la faute sur l'outil est défensif : c'est toi qui as réglé les règles de scoring."
             }
           ],
           "production": {
@@ -1107,22 +1107,22 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Qu'est-ce qu'une growth loop ?",
-              "choices": ["A weekly meeting about growth", "A longer funnel with more steps", "A system where each new user's activity brings in more new users"],
-              "answer_index": 2,
-              "explanation_fr": "Une growth loop est un cercle : l'action d'un utilisateur (ici, partager sa page de réservation) amène de nouveaux utilisateurs, qui recommencent. Un funnel, lui, est linéaire : il faut le remplir sans cesse par le haut. Ce n'est pas une réunion."
+              "prompt_fr": "Tomasz veut penser en growth loops plutôt qu'en funnels. Qu'est-ce qu'une growth loop ?",
+              "choices": ["A funnel with more steps between sign-up and payment", "A cycle where each new user's activity brings in more users", "A weekly review where the team checks growth metrics"],
+              "answer_index": 1,
+              "explanation_fr": "Dans une growth loop, l'activité des utilisateurs alimente directement l'acquisition : chaque page de réservation avec « Powered by » fait découvrir l'appli à de nouveaux salons. Un funnel est linéaire (on entre en haut, on sort en bas), et une réunion hebdomadaire n'est pas une boucle de croissance."
             },
             {
               "prompt_fr": "Avec un viral coefficient de 0,3, que se passe-t-il ?",
-              "choices": ["Each user brings in about 0.3 new users, so virality helps but can't sustain growth alone", "30% of users are unhappy", "The product grows exponentially"],
-              "answer_index": 0,
-              "explanation_fr": "Le viral coefficient (K-factor) est le nombre moyen de nouveaux utilisateurs amenés par chaque utilisateur. Au-dessus de 1, la croissance s'auto-entretient ; à 0,3, elle amplifie l'acquisition sans la remplacer. Il ne mesure pas la satisfaction, et 0,3 est loin d'une croissance exponentielle."
+              "choices": ["Each user brings about three new users, so paid ads are no longer needed.", "30% of users invite at least three friends, so growth becomes exponential.", "Each user brings about 0.3 new users, so it helps but can't drive growth alone."],
+              "answer_index": 2,
+              "explanation_fr": "Le coefficient viral est le nombre moyen de nouveaux utilisateurs amenés par chaque utilisateur : à 0,3, dix utilisateurs en amènent trois. Il faudrait dépasser 1 pour une croissance autoalimentée, d'où « it can't drive growth alone ». Ce n'est ni un pourcentage d'inviteurs ni un multiplicateur par trois."
             },
             {
-              "prompt_fr": "Pourquoi Sarah dit-elle que ce n'est pas un network effect ?",
-              "choices": ["Because the app has no users yet", "Because the app doesn't become more useful to a salon when other salons use it", "Because network effects only exist in telecoms"],
-              "answer_index": 1,
-              "explanation_fr": "Il y a network effect quand le produit gagne en valeur pour chacun à mesure que d'autres l'utilisent, comme une messagerie. Ici, l'appli se diffuse bien grâce aux pages de réservation, mais elle n'est pas plus utile à un salon si d'autres salons l'adoptent. Et les network effects existent bien au-delà des télécoms."
+              "prompt_fr": "Pourquoi Sarah précise-t-elle que ce n'est pas un network effect ?",
+              "choices": ["The app isn't more useful to a salon when other salons use it.", "The app has too few users so far to create a network effect.", "Network effects only exist for social networks and messaging apps."],
+              "answer_index": 0,
+              "explanation_fr": "Il y a effet de réseau quand le produit devient plus utile pour chacun à mesure que d'autres l'utilisent (une messagerie, une place de marché). Ici, un salon ne gagne rien à ce que d'autres salons utilisent l'appli. La taille de la base n'est pas l'argument, et les effets de réseau existent bien au-delà des réseaux sociaux."
             },
             {
               "prompt_fr": "Comment dire « le bouche-à-oreille » ?",

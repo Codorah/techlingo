@@ -737,14 +737,14 @@
               "explanation_fr": "Good catch! = bien vu, bien repéré : on le dit quand quelqu'un trouve une erreur ou un problème caché. Pour un projet réussi, on dirait Great job! ou Well done!, et pour un café, simplement Thanks, that's kind of you. Le calque « Well seen! » n'existe pas en anglais."
             },
             {
-              "prompt_fr": "Le vert imprimé ne correspond pas au vert de la marque. Que demandes-tu à l'imprimeur de plus précis ?",
+              "prompt_fr": "Le vert imprimé est plus foncé que le vert de la marque. Quelle demande à l'imprimeur est la plus précise ?",
               "choices": [
-                "Could you make the green more beautiful?",
+                "Could you make the green a bit lighter, please?",
                 "Could you check that the green matches our brand color?",
-                "Could you change the green to another green?"
+                "Could you make the green more like on the screen?"
               ],
               "answer_index": 1,
-              "explanation_fr": "La bonne demande donne une référence objective : la couleur officielle de la marque (en pratique, sa valeur Pantone ou CMJN dans la charte). « More beautiful » est subjectif et l'imprimeur ne sait pas quoi faire. « Another green » est flou : lequel ? Avec un fournisseur, plus la demande est mesurable, plus la correction est juste."
+              "explanation_fr": "La demande utile renvoie à une référence objective : la couleur de la marque, définie dans la charte (souvent une référence Pantone ou CMJN). « A bit lighter » laisse l'imprimeur deviner de combien, et l'écran n'est pas une référence fiable, car une couleur affichée en RVB ne rend jamais pareil à l'impression."
             }
           ],
           "production": {
@@ -1166,14 +1166,14 @@
               "explanation_fr": "La campagne est finie et tu présentes un résultat sur une période terminée : le prétérit went s'impose (awareness went up during the campaign). Le present perfect has gone up conviendrait pour un changement encore en cours jusqu'à aujourd'hui, sans période close. « Was going up » décrit une action en cours dans le passé, pas un résultat."
             },
             {
-              "prompt_fr": "Le directeur te demande ce que vous feriez différemment. Laquelle de ces réponses est la plus utile dans un bilan ?",
+              "prompt_fr": "Le directeur te demande ce que vous feriez différemment. Quelle réponse est la plus utile dans un bilan ?",
               "choices": [
-                "Nothing, the campaign was a total success.",
-                "We'd keep the mascot, but start the social media phase two weeks earlier.",
-                "We would do everything differently, honestly."
+                "Nothing really, the campaign hit both of its goals.",
+                "We'd keep the mascot, but start social two weeks earlier.",
+                "We'd change the mascot, because people only saw it."
               ],
               "answer_index": 1,
-              "explanation_fr": "Un bilan utile garde ce qui a marché (la mascotte) et propose une amélioration précise et réaliste. « Nothing » paraît naïf, même après un succès : tout bilan cherche des leçons. « Everything differently » est trop vague et dévalorise sans aider. Note la structure We'd keep..., but... pour nuancer."
+              "explanation_fr": "Un bon bilan garde ce qui a marché (la mascotte, qui fait reconnaître la marque sans logo) et propose une amélioration précise. Dire « nothing » ne sert à rien même quand les objectifs sont atteints, et changer la mascotte irait contre le résultat de l'étude : c'est justement grâce à elle que la reconnaissance a progressé."
             }
           ],
           "production": {
@@ -1293,12 +1293,12 @@
             {
               "prompt_fr": "Pourquoi Aïcha refuse-t-elle d'attendre que tout soit décidé ?",
               "choices": [
-                "Because the CEO is leaving the company on Thursday.",
+                "Because the memo must be on the intranet by Thursday.",
                 "Because silence would let rumors fill the gap.",
-                "Because the intranet needs the content by Thursday."
+                "Because employees have already read about it in the press."
               ],
               "answer_index": 1,
-              "explanation_fr": "« People already feel something is happening » : si l'entreprise se tait, les salariés combleront le vide avec des rumeurs, souvent pires que la réalité. C'est le cœur de la transparency. Les autres réponses inventent des contraintes (départ du PDG, délai technique) absentes du dialogue."
+              "explanation_fr": "Aïcha le dit : « People already feel something is happening », et la transparence vaut mieux que le silence, qui laisse la place aux rumeurs. La date de jeudi est celle de l'annonce, pas une contrainte technique, et rien n'indique que la presse en a parlé."
             },
             {
               "prompt_fr": "Ton directeur RH propose : « Let's wait. » Tu n'es pas d'accord. Quelle réponse est ferme mais respectueuse envers un supérieur ?",
@@ -1399,12 +1399,12 @@
             {
               "prompt_fr": "Pourquoi Kenji insiste-t-il pour que le récit interne soit le même que la communication externe ?",
               "choices": [
-                "Because employees would notice a different story in the press and stop trusting it.",
-                "Because the company can save money by writing only one speech.",
-                "Because journalists are always invited to all-hands meetings."
+                "Employees would notice a different story outside and stop trusting it.",
+                "One single story is easier for the CEO to learn by heart.",
+                "Journalists often attend all-hands meetings in large companies."
               ],
               "answer_index": 0,
-              "explanation_fr": "Les salariés lisent aussi la presse et LinkedIn : si l'histoire racontée dehors diffère de celle racontée dedans, ils croient qu'on leur cache quelque chose. L'économie de temps n'est pas l'enjeu, et les journalistes ne sont normalement pas invités à une réunion interne."
+              "explanation_fr": "Les salariés lisent aussi la presse et les réseaux : s'ils entendent une version en interne et une autre dehors, ils ne croient plus ni l'une ni l'autre. La cohérence (consistency) protège la confiance, ce n'est pas une question de mémoire. Et un all-hands est une réunion interne, sans journalistes."
             }
           ],
           "production": {
@@ -1493,14 +1493,14 @@
               "explanation_fr": "Face à une rumeur fausse, on la nomme, on la dément clairement et on renvoie vers une source fiable. « I can't say anything » laisse croire que la rumeur est vraie. « Maybe » est le pire : tu confirmes un doute alors que tu sais que c'est faux."
             },
             {
-              "prompt_fr": "Pourquoi l'équipe de communication interne envoie-t-elle un kit aux managers plutôt que de les laisser expliquer avec leurs mots ?",
+              "prompt_fr": "Pourquoi l'équipe de communication interne envoie-t-elle un kit aux managers ?",
               "choices": [
-                "Because managers are not allowed to talk to their teams.",
-                "Because the kit replaces the team meetings completely.",
-                "Because the same messages everywhere stop rumors from growing."
+                "So every team hears the same messages and rumors can't grow.",
+                "So managers can read it out word for word in their meetings.",
+                "So managers don't have to answer questions from their teams."
               ],
-              "answer_index": 2,
-              "explanation_fr": "Si chaque manager improvise, dix versions circulent, et les écarts deviennent des rumeurs. Le kit garantit le même messaging partout, tout en laissant les managers parler à leur équipe. Il ne remplace pas les réunions, il les prépare."
+              "answer_index": 0,
+              "explanation_fr": "Le kit (messages clés, FAQ, contacts) garantit que chaque équipe entend la même chose : c'est ce qui coupe court à la rumeur sur la fermeture d'un bureau. Il ne s'agit pas de lire un texte mot pour mot, et les managers répondent bien aux questions, avec la FAQ et un contact pour les cas difficiles."
             }
           ],
           "production": {
@@ -1577,17 +1577,17 @@
                 "Employees like the company, but customers don't know the products."
               ],
               "answer_index": 0,
-              "explanation_fr": "L'employer brand est l'image de l'entreprise en tant qu'employeur, auprès des candidats et des salariés. Une marque peut être aimée de ses clients et inconnue des candidats. Le logo sur les offres d'emploi n'est qu'un détail, et la troisième réponse inverse la situation décrite."
+              "explanation_fr": "L'employer brand est l'image de l'entreprise en tant qu'employeur, auprès des candidats et des salariés. Une marque peut être aimée de ses clients et inconnue des candidats. Le logo sur les offres d'emploi n'est qu'un détail, et l'idée de salariés satisfaits face à des clients qui ignorent les produits inverse la situation décrite."
             },
             {
               "prompt_fr": "Pourquoi Lucía refuse-t-elle de « cacher » un faible engagement des salariés ?",
               "choices": [
-                "Because unhappy employees would contradict the campaign online.",
-                "Because hiding problems is against the law in most countries.",
-                "Because the CEO asked for full transparency in the memo."
+                "Unhappy employees would contradict the campaign online.",
+                "Employer branding campaigns must include engagement scores.",
+                "Candidates always ask for the engagement scores in interviews."
               ],
               "answer_index": 0,
-              "explanation_fr": "Une campagne de marque employeur que les salariés ne reconnaissent pas se retourne contre l'entreprise : avis négatifs, commentaires, témoignages contraires. C'est un risque de crédibilité, pas d'abord un problème légal, et le dialogue ne parle d'aucune consigne du PDG."
+              "explanation_fr": "Une campagne de marque employeur repose sur des témoignages de salariés : s'ils sont mécontents, ils la contrediront sur les réseaux ou les sites d'avis, et la campagne se retournera contre l'entreprise. Aucune règle n'impose de publier les scores, et les candidats ne les demandent pas : ils lisent plutôt les avis en ligne."
             },
             {
               "prompt_fr": "Tu proposes l'idée à ton directeur RH. Quelle phrase est la plus naturelle pour faire une suggestion ?",
@@ -1702,7 +1702,7 @@
                 "We promise that every product will clean as well as the leading brands."
               ],
               "answer_index": 1,
-              "explanation_fr": "Le purpose répond à « pourquoi existons-nous ? » (We exist to...) : une ambition qui dépasse le produit. Le mission statement dit comment on agit concrètement (produits, prix, recharges). La troisième phrase est une brand promise : ce que le client peut toujours attendre."
+              "explanation_fr": "Le purpose répond à « pourquoi existons-nous ? » (We exist to...) : une ambition qui dépasse le produit. Le mission statement dit comment on agit concrètement (produits, prix, recharges). « We promise that every product will clean as well as the leading brands » est une brand promise : ce que le client peut toujours attendre."
             },
             {
               "prompt_fr": "Comment dire « au-delà de gagner de l'argent » ?",
@@ -1830,7 +1830,7 @@
                 "It's our brand voice, written in one sentence."
               ],
               "answer_index": 1,
-              "explanation_fr": "La « baseline » des agences françaises se dit tagline en anglais ; pour un anglophone, a baseline est un point de référence (baseline data, baseline survey). La première réponse entretient la confusion. La brand voice est une manière de parler, pas une phrase sous le logo."
+              "explanation_fr": "La « baseline » des agences françaises se dit tagline en anglais ; pour un anglophone, a baseline est un point de référence (baseline data, baseline survey). Répondre « It's our baseline » entretient donc la confusion. La brand voice est une manière de parler, pas une phrase sous le logo."
             }
           ],
           "production": {
@@ -2010,12 +2010,12 @@
             {
               "prompt_fr": "Pourquoi Tomasz préfère-t-il une sous-marque plutôt qu'une marque totalement nouvelle ?",
               "choices": [
-                "Because a new brand cannot legally be registered by the group.",
-                "Because it fits the group's structure and benefits from the master brand.",
-                "Because the naming agency only works on sub-brands."
+                "It's cheaper, because it doesn't need its own trademark.",
+                "It fits the brand architecture and benefits from the master brand.",
+                "It lets the group keep the new range separate from its name."
               ],
               "answer_index": 1,
-              "explanation_fr": "Dans une architecture à marque mère (on parle souvent de branded house), une sous-marque profite de la notoriété existante et garde le portefeuille lisible. Rien n'empêche juridiquement de créer une marque, et une agence de naming travaille sur tout type de nom."
+              "explanation_fr": "Toute l'offre du groupe est rangée sous une marque mère (master brand) : une sous-marque garde cette architecture simple et profite de sa notoriété. Une sous-marque doit quand même être déposée, d'où la vérification par le juridique, et la séparer du nom du groupe serait le rôle d'une marque totalement nouvelle."
             },
             {
               "prompt_fr": "Que veut dire « before anyone falls in love with one » dans ce contexte ?",
@@ -2252,12 +2252,12 @@
             {
               "prompt_fr": "Ivan s'inquiète : « Isn't that admitting too much? ». Quelle réponse est la plus convaincante pour un dirigeant ?",
               "choices": [
-                "Maybe, but legal is never right about communication anyway.",
-                "No, people never read recall statements, so it doesn't matter.",
-                "Customers will find out anyway; it's better if they hear it from us."
+                "Legal is right, so let's keep it short and say nothing more.",
+                "People rarely read recall statements, so it won't matter.",
+                "Customers will find out anyway; better they hear it from us."
               ],
               "answer_index": 2,
-              "explanation_fr": "L'argument clé : la vérité sortira de toute façon, et il vaut mieux qu'elle vienne de la marque. C'est le principe de « tell it first ». Attaquer le juridique est contre-productif, et « people never read it » est faux en pleine crise : chaque mot sera lu et commenté."
+              "explanation_fr": "L'argument qui porte auprès d'un dirigeant est le risque : les faits sortiront de toute façon, et une marque qui les annonce elle-même garde la main sur le récit. S'aligner sur un message vague contredit le conseil de Lucía (vague words make people suspicious), et parier sur le fait que personne ne lira est risqué : un rappel produit est très relayé."
             }
           ],
           "production": {
@@ -2330,12 +2330,12 @@
             {
               "prompt_fr": "Quelle est la nuance entre misinformation et disinformation ?",
               "choices": [
-                "Misinformation is false information, spread with or without intent; disinformation is spread on purpose.",
-                "Misinformation is spread on purpose; disinformation is an honest mistake.",
-                "Misinformation is only online; disinformation is only in newspapers."
+                "Misinformation is false and often shared in good faith; disinformation is spread on purpose.",
+                "Misinformation is spread on purpose; disinformation is false but shared in good faith.",
+                "Misinformation spreads online; disinformation spreads in newspapers and on TV."
               ],
               "answer_index": 0,
-              "explanation_fr": "Misinformation désigne une information fausse qui circule, souvent partagée de bonne foi. Disinformation est une fausse information diffusée volontairement pour tromper. La deuxième réponse inverse les deux, et la distinction n'a rien à voir avec le support. Ici, la vidéo mélange deux sujets : c'est de la misinformation."
+              "explanation_fr": "Misinformation désigne une information fausse qui circule, souvent partagée de bonne foi. Disinformation est une fausse information diffusée volontairement pour tromper. Inverser les deux est l'erreur classique, et la distinction n'a rien à voir avec le support. Ici, la vidéo mélange deux sujets : c'est de la misinformation."
             },
             {
               "prompt_fr": "Quelle première réponse publique suit la consigne de Priya (« No jokes, no attacks ») ?",
@@ -2350,12 +2350,12 @@
             {
               "prompt_fr": "Que veut dire Priya par « damage control starts now » ?",
               "choices": [
-                "We start counting the products damaged by the leak.",
+                "We start counting the packs damaged by the leak.",
                 "We act now to limit the harm to our brand.",
-                "We check the damage to the video's reputation."
+                "We start legal action against the video's author."
               ],
               "answer_index": 1,
-              "explanation_fr": "Damage control = la limitation des dégâts, l'ensemble des actions pour réduire les conséquences négatives d'un événement. Le piège est le sens littéral de damage (produits abîmés). La troisième réponse inverse la logique : c'est la réputation de la marque qu'on protège, pas celle de la vidéo."
+              "explanation_fr": "Damage control, c'est la limitation des dégâts : l'ensemble des actions pour réduire les conséquences négatives d'un événement, ici sur la réputation. Le piège est le sens littéral de damage (produits abîmés). Priya parle de corriger vite avec des faits, pas d'attaquer : une action en justice n'est pas ce qu'elle annonce."
             }
           ],
           "production": {
@@ -2442,12 +2442,12 @@
             {
               "prompt_fr": "Pourquoi Moussa veut-il parler de RSE ailleurs que dans le rapport annuel ?",
               "choices": [
-                "Because the annual report is no longer required by law.",
-                "Because the actions only build trust if customers actually see them.",
-                "Because the NGO asked to read the annual report first."
+                "The annual report comes out too late to answer the NGO.",
+                "Actions only build trust if customers actually see them.",
+                "CSR content performs better on social media than in print."
               ],
               "answer_index": 1,
-              "explanation_fr": "Le rapport annuel s'adresse surtout aux investisseurs et aux analystes ; les clients ne le lisent pas. Pour la gestion de la réputation, les progrès réels doivent être visibles là où sont les clients : emballage, site, réseaux. Les deux autres réponses inventent des faits absents du dialogue."
+              "explanation_fr": "Moussa le dit : les clients ne lisent jamais le rapport annuel. Des actions RSE que personne ne voit ne construisent pas la confiance, d'où l'idée de montrer de vrais progrès, chiffres à l'appui. Le calendrier du rapport n'est pas l'argument, et il ne s'agit pas de performance sur les réseaux mais de crédibilité."
             }
           ],
           "production": {

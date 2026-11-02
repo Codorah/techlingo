@@ -35,16 +35,16 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que signifie target audience ?",
-              "choices": ["The people who work at the agency", "The group of people a brand wants to reach", "The brand's main competitors", "The budget set aside for ads"],
-              "answer_index": 1,
-              "explanation_fr": "La target audience, c'est le groupe de personnes que la marque veut toucher. Ce n'est ni l'équipe, ni les concurrents, ni le budget : c'est « à qui on parle »."
+              "prompt_fr": "Claire demande « who exactly is your target audience? ». Quelle réponse est la plus utile ?",
+              "choices": ["Young professionals in big cities, 25 to 35, with no time to cook.", "Everybody who likes good food and wants to eat better.", "Our target is young people, but also families and seniors."],
+              "answer_index": 0,
+              "explanation_fr": "Une target audience utile est précise : un âge, un lieu, un problème commun. « Everybody who likes good food » ne cible personne, et viser à la fois les jeunes, les familles et les seniors revient à n'avoir aucune cible : impossible d'adapter le message."
             },
             {
-              "prompt_fr": "Dans le dialogue, qu'est-ce qu'un persona ?",
-              "choices": ["A real customer who signed a contract", "A celebrity who promotes the brand", "A fictional profile, based on real data, of a typical customer"],
-              "answer_index": 2,
-              "explanation_fr": "Un persona est un profil fictif (Léa n'existe pas) mais fondé sur des données réelles. Ce n'est pas une célébrité qui fait la promotion de la marque : ça, c'est un ambassadeur ou un influenceur."
+              "prompt_fr": "Claire propose « Let's turn that into a persona ». Qu'est-ce qu'un persona ?",
+              "choices": ["A real customer we interview to test the product", "A fictional profile of a typical customer, based on real data", "A famous person who will promote the brand"],
+              "answer_index": 1,
+              "explanation_fr": "Un persona est un portrait fictif mais réaliste (Léa, 29 ans, cheffe de projet à Lyon), construit à partir de données réelles pour guider le message. Interroger un vrai client relève de l'étude qualitative, et une personnalité qui promeut la marque est un ambassadeur ou un influenceur."
             },
             {
               "prompt_fr": "Comment dire « Quels sont ses principaux problèmes ? » dans le vocabulaire marketing ?",
@@ -83,15 +83,15 @@
           "questions": [
             {
               "prompt_fr": "Que veut dire Paul par « What's the key insight? » ?",
-              "choices": ["What is the final price of the study?", "Who is the main competitor?", "What is the most useful thing we learned about customers?"],
+              "choices": ["What is the main message of the future campaign?", "What is the main figure in the survey results?", "What is the most useful thing we learned about customers?"],
               "answer_index": 2,
-              "explanation_fr": "Un insight est un enseignement utile sur les clients, souvent une vérité qu'on ne voyait pas. Ce n'est pas un chiffre de budget ni un concurrent."
+              "explanation_fr": "Un insight est une vérité sur les clients qui éclaire une décision : ici, les gens veulent passer moins de 20 minutes en cuisine. Ce n'est pas un simple chiffre de l'étude, et le message de campagne viendra ensuite, construit à partir de cet insight."
             },
             {
               "prompt_fr": "Quelle est la différence entre un survey et un focus group ?",
-              "choices": ["A survey is a questionnaire for many people; a focus group is a guided discussion with a small group", "A survey is always done face to face; a focus group is always online", "They mean exactly the same thing"],
+              "choices": ["A survey asks many people set questions; a focus group is a guided talk with a few people.", "A survey is a guided talk with a few people; a focus group asks many people set questions.", "A survey is done online; a focus group is a survey done by phone."],
               "answer_index": 0,
-              "explanation_fr": "Un survey (questionnaire) touche beaucoup de personnes avec des questions fixes. Un focus group réunit quelques personnes pour une discussion animée. Les deux peuvent se faire en ligne ou en présentiel."
+              "explanation_fr": "Un survey est un questionnaire envoyé à beaucoup de personnes (ici 800 répondants), qui donne des chiffres. Un focus group réunit quelques personnes pour une discussion animée, qui donne des explications. Inverser les deux est fréquent, et le support (en ligne, téléphone) ne fait pas la différence."
             },
             {
               "prompt_fr": "Comment traduire « Nous avons mené un questionnaire » ?",
@@ -192,10 +192,10 @@
               "explanation_fr": "La charte de marque se dit brand guidelines (toujours au pluriel). On entend aussi brand book ou style guide. Les deux autres formulations ne sont pas naturelles."
             },
             {
-              "prompt_fr": "Comment Sofia pourrait-elle dire poliment « respecte la charte » ?",
-              "choices": ["You must obey the guidelines.", "Could you please stick to the brand guidelines?", "Stick the guidelines, please."],
+              "prompt_fr": "Comment Sofia pourrait-elle dire poliment au rédacteur « respectez la charte » ?",
+              "choices": ["Could you please respect the graphic charter?", "Could you please stick to the brand guidelines?", "Could you please follow the brand rules book?"],
               "answer_index": 1,
-              "explanation_fr": "To stick to something veut dire « s'en tenir à, respecter ». « Could you please » rend la demande polie. « You must obey » est trop autoritaire, et « stick the guidelines » sans to n'a pas le bon sens (coller)."
+              "explanation_fr": "To stick to the guidelines, c'est s'en tenir aux règles, et la charte de marque se dit brand guidelines. « Graphic charter » est un calque de « charte graphique » qu'un anglophone ne comprend pas. « Rules book » n'est pas le terme du métier (et rulebook s'écrit en un mot)."
             }
           ],
           "production": {
@@ -240,10 +240,10 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Que désigne caption sur les réseaux sociaux ?",
-              "choices": ["A screenshot of the post", "The name of the account", "The text that goes with a photo or video"],
+              "prompt_fr": "Inès demande de garder « the captions » courtes. De quoi parle-t-elle ?",
+              "choices": ["The title written on the first slide", "The subtitles burned into the video", "The text that goes with each post"],
               "answer_index": 2,
-              "explanation_fr": "La caption est le texte qui accompagne l'image ou la vidéo (la légende). Attention, une capture d'écran se dit screenshot, pas capture."
+              "explanation_fr": "Sur les réseaux sociaux, la caption est le texte qui accompagne la photo ou la vidéo, suivi du call to action. Le mot désigne aussi les sous-titres d'une vidéo (closed captions), d'où le piège, mais ici Inès parle de deux lignes avant l'appel à l'action. Le titre d'une slide n'est pas une caption."
             },
             {
               "prompt_fr": "Comment dire « Je les programme pour mardi » ?",
@@ -252,16 +252,16 @@
               "explanation_fr": "Pour une publication, on dit to schedule. To program s'utilise pour écrire du code ou régler une machine : c'est le faux ami tentant."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un carousel ?",
-              "choices": ["A video that plays in a loop", "A single post with several images or slides people can swipe through", "A list of the most popular accounts"],
-              "answer_index": 1,
-              "explanation_fr": "Un carousel est un seul post qui contient plusieurs visuels qu'on fait défiler. Une vidéo qui tourne en boucle est un autre format."
+              "prompt_fr": "Hugo prépare « a carousel with recipe tips ». De quel format s'agit-il ?",
+              "choices": ["One post with several slides people swipe through", "Several posts published one after the other", "A short video that plays again in a loop"],
+              "answer_index": 0,
+              "explanation_fr": "Un carousel est un seul post qui contient plusieurs images ou slides que l'on fait défiler. Plusieurs posts à la suite forment une série, et une vidéo qui tourne en boucle n'est pas un carrousel."
             },
             {
               "prompt_fr": "Que veut dire Inès par « Too many looks spammy » ?",
-              "choices": ["The post has too many photos", "There are too many comments under the post", "Using too many hashtags makes the post look like spam"],
-              "answer_index": 2,
-              "explanation_fr": "Inès parle des hashtags : en mettre trop donne une impression de spam. « Spammy » est un adjectif familier mais très courant dans le métier."
+              "choices": ["Too many posts in a week make the account look like spam.", "Too many hashtags make the post look like spam.", "Too many emojis make the caption look like spam."],
+              "answer_index": 1,
+              "explanation_fr": "Inès répond à la question sur les hashtags : une dizaine de hashtags donne l'air d'un spam, trois ou quatre pertinents suffisent. Elle ne parle ni du rythme de publication ni des emojis. Spammy est un adjectif familier : « qui fait spam »."
             }
           ],
           "production": {
@@ -346,16 +346,16 @@
               "explanation_fr": "Worse est le comparatif de bad (pire, plus mauvais). Worst est le superlatif (le pire) et ne va pas ici. « More bad » ne se dit pas."
             },
             {
-              "prompt_fr": "Pourquoi Omar conseille-t-il de masquer et non de supprimer le commentaire insultant ?",
-              "choices": ["Hiding removes it from public view without deleting it, which avoids escalating the situation", "Hiding sends the comment to the police", "Hiding automatically bans the user forever"],
-              "answer_index": 0,
-              "explanation_fr": "Hide a comment le rend invisible pour le public, alors que l'auteur le voit souvent encore, ce qui limite les réactions en chaîne. Masquer ne bannit pas l'utilisateur : ce serait to ban a user."
+              "prompt_fr": "Pourquoi Omar conseille-t-il de masquer le commentaire insultant plutôt que de le supprimer ?",
+              "choices": ["It stays visible, but people can no longer reply to it.", "It is kept as evidence and sent to the platform for review.", "It disappears from public view without the author noticing."],
+              "answer_index": 2,
+              "explanation_fr": "Un commentaire masqué n'est plus visible du public, mais son auteur continue de le voir : il ne se sent pas censuré et ne relance pas la polémique. Masquer n'est pas signaler à la plateforme (report), et un commentaire masqué n'est justement plus visible."
             },
             {
-              "prompt_fr": "Que désigne community guidelines ?",
-              "choices": ["The list of the community's members", "The rules people must follow when they post on the brand's page", "The legal terms of sale"],
-              "answer_index": 1,
-              "explanation_fr": "Les community guidelines (règles de communauté) disent ce qui est accepté ou non dans les commentaires : pas d'insulte, pas de spam. Les conditions de vente sont les terms and conditions."
+              "prompt_fr": "Omar dit que le commentaire « breaks our community guidelines ». De quoi s'agit-il ?",
+              "choices": ["The rules people must follow when they post on our page", "The legal terms customers accept when they order", "The internal guide our team follows to write posts"],
+              "answer_index": 0,
+              "explanation_fr": "Les community guidelines sont les règles publiées pour ceux qui commentent sur la page : pas d'insultes, pas de spam. Les conditions de vente sont les terms of sale, et le guide interne de rédaction est la charte (brand guidelines ou style guide)."
             }
           ],
           "production": {
@@ -395,9 +395,9 @@
             },
             {
               "prompt_fr": "Pourquoi Jade met-elle en pause les posts programmés ?",
-              "choices": ["Because the scheduling tool is broken", "So the brand doesn't seem to ignore the crisis by posting cheerful content", "To save advertising budget"],
+              "choices": ["So the scheduling tool doesn't publish the crisis statement.", "So the brand doesn't look out of touch with cheerful posts.", "So the team can use the ad budget for the statement."],
               "answer_index": 1,
-              "explanation_fr": "« So we don't look out of touch » : publier un post joyeux en pleine crise donnerait l'impression que la marque est déconnectée de ce qui se passe. Il ne s'agit ni d'une panne ni d'une économie de budget."
+              "explanation_fr": "Publier un post joyeux en plein bad buzz donne l'impression que la marque ignore la crise : out of touch, « déconnectée ». La déclaration d'attente n'est pas programmée dans l'outil, et le budget publicitaire n'a rien à voir ici."
             },
             {
               "prompt_fr": "« The comments are turning into a backlash » signifie :",
@@ -448,10 +448,10 @@
           ],
           "questions": [
             {
-              "prompt_fr": "Qu'est-ce qu'un long-tail keyword ?",
-              "choices": ["A longer, more specific search phrase with fewer searches and less competition", "A keyword that stays popular for a long time", "A keyword placed at the end of an article"],
-              "answer_index": 0,
-              "explanation_fr": "Un mot-clé de longue traîne est une expression plus longue et précise : moins de volume, mais moins de concurrence et une intention plus claire. « Long » ne parle ni de durée ni de position dans le texte."
+              "prompt_fr": "Chloé propose « a long-tail keyword ». Qu'est-ce que c'est ?",
+              "choices": ["A keyword we repeat at the end of each article", "A keyword that has stayed popular for a long time", "A more specific phrase with fewer searches and less competition"],
+              "answer_index": 2,
+              "explanation_fr": "Un mot-clé de longue traîne est une requête plus longue et plus précise (« meal prep ideas for busy weeknights ») : moins recherchée, mais beaucoup moins disputée. Long-tail ne parle pas de durée, et répéter un mot-clé en fin d'article n'aide pas le référencement."
             },
             {
               "prompt_fr": "Que signifie un search intent « informational » ?",
@@ -460,16 +460,16 @@
               "explanation_fr": "Informational : on cherche une information ou des conseils. Si la personne veut acheter, l'intention est transactional ; si elle cherche un site précis, on parle d'intention navigational."
             },
             {
-              "prompt_fr": "« So we won't rank for it? » veut dire :",
-              "choices": ["So we won't write about it?", "So we won't pay for this keyword?", "So we won't appear high in the search results for this keyword?"],
-              "answer_index": 2,
-              "explanation_fr": "To rank for a keyword, c'est être bien classé dans les résultats pour ce mot-clé. Il ne s'agit pas de payer : ça, c'est le SEA, pas le SEO."
+              "prompt_fr": "Ben demande « So we won't rank for it? ». Que veut-il dire ?",
+              "choices": ["So we won't appear high in the results for it?", "So we won't be able to buy ads on it?", "So we won't write an article about it?"],
+              "answer_index": 0,
+              "explanation_fr": "To rank for a keyword, c'est se positionner dans les résultats de recherche sur ce mot-clé. Ben comprend que la difficulté est trop forte pour arriver en haut des résultats. Il ne parle pas de publicité payante, et il va bien écrire l'article, sur une autre requête."
             },
             {
-              "prompt_fr": "Que mesure le search volume ?",
-              "choices": ["How many times a keyword is searched, usually per month", "How loud a voice search is", "How many pages a website has"],
-              "answer_index": 0,
-              "explanation_fr": "Le search volume est le nombre moyen de recherches d'un mot-clé, en général par mois. Volume ne désigne pas le son ici."
+              "prompt_fr": "Que mesure le search volume d'un mot-clé ?",
+              "choices": ["How many pages already rank for it on Google", "How many times it is searched, usually per month", "How hard it is to reach the first page with it"],
+              "answer_index": 1,
+              "explanation_fr": "Le search volume est le nombre moyen de recherches d'un mot-clé, en général par mois. Le nombre de pages concurrentes et la difficulté à se positionner relèvent de la keyword difficulty, l'autre indicateur cité par Chloé."
             }
           ],
           "production": {
@@ -497,9 +497,9 @@
           "questions": [
             {
               "prompt_fr": "Où apparaît généralement le title tag d'une page ?",
-              "choices": ["Only in the footer of the page", "As the clickable headline in search results and in the browser tab", "In the URL of every image"],
-              "answer_index": 1,
-              "explanation_fr": "Le title tag (balise title) s'affiche le plus souvent comme titre cliquable dans les résultats de recherche et dans l'onglet du navigateur. Il ne se trouve ni dans le pied de page ni dans les images."
+              "choices": ["In the URL, just after the domain name", "In the H1 heading at the top of the page", "In the search results and in the browser tab"],
+              "answer_index": 2,
+              "explanation_fr": "Le title tag est la balise de titre lue par les moteurs : il s'affiche comme titre cliquable dans les résultats et dans l'onglet du navigateur. Il est distinct du H1 visible sur la page (même s'ils se ressemblent souvent), et l'adresse de la page est l'URL, pas le title."
             },
             {
               "prompt_fr": "Que signifie SERP ?",
@@ -551,15 +551,15 @@
             },
             {
               "prompt_fr": "Pourquoi Samir dit-il « Our main hypothesis is... » plutôt que « The cause is... » ?",
-              "choices": ["Because he can't be 100% sure, so he stays cautious with the client", "Because he doesn't know the client well", "Because hypothesis is more informal"],
+              "choices": ["He can't be 100% sure, so he stays cautious with the client.", "He wants the client to suggest other causes first.", "He thinks the core update isn't the real cause."],
               "answer_index": 0,
-              "explanation_fr": "Google ne dit jamais exactement pourquoi un site perd des positions. Parler d'hypothèse est plus honnête et plus professionnel. Ce n'est pas une question de familiarité : c'est même plutôt soutenu."
+              "explanation_fr": "Une baisse de trafic a souvent plusieurs causes possibles : parler d'hypothèse est honnête et protège l'agence si la cause est différente. Samir ne demande pas d'autres pistes au client, et il pense bien que la mise à jour de Google est la cause la plus probable."
             },
             {
-              "prompt_fr": "Que signifie thin content ?",
-              "choices": ["Pages that load very fast", "Pages with little useful or original content", "Pages with small fonts"],
+              "prompt_fr": "Samir dit que les articles sont « a bit thin ». Que signifie thin content ?",
+              "choices": ["Pages that are short but very well written", "Pages with little useful or original content", "Pages that load quickly on mobile phones"],
               "answer_index": 1,
-              "explanation_fr": "Thin content désigne des pages pauvres : peu de texte utile, peu de valeur ajoutée. Ça n'a rien à voir avec la vitesse ou la taille de la police."
+              "explanation_fr": "Le thin content désigne des pages pauvres : peu d'informations utiles ou originales par rapport aux concurrents. Un texte court mais utile n'est pas du thin content, et la vitesse de chargement n'a rien à voir."
             },
             {
               "prompt_fr": "« Keep me posted » veut dire :",
@@ -592,9 +592,9 @@
           "questions": [
             {
               "prompt_fr": "Quelle est la différence entre une metric et un KPI ?",
-              "choices": ["A KPI is a metric chosen because it measures progress toward a key goal", "A metric is always financial, a KPI never is", "There is no difference at all"],
-              "answer_index": 0,
-              "explanation_fr": "Tout KPI est une metric, mais toutes les metrics ne sont pas des KPIs : un KPI est un indicateur choisi parce qu'il suit un objectif important. Une metric n'est pas forcément financière."
+              "choices": ["A KPI is a financial metric, like revenue or profit.", "A metric is chosen to track a key goal; a KPI is any number.", "A KPI is a metric chosen to track a key goal."],
+              "answer_index": 2,
+              "explanation_fr": "Toute mesure est une metric ; un KPI est une métrique choisie parce qu'elle suit un objectif clé, comme les inscriptions pour le conseil d'administration. Inverser les deux est fréquent, et un KPI n'est pas forcément financier : un taux de conversion peut en être un."
             },
             {
               "prompt_fr": "Que veut dire « It's 2.1% this month, up from 1.6% » ?",
@@ -603,16 +603,16 @@
               "explanation_fr": "Up from indique une hausse par rapport à la valeur précédente : de 1,6 % à 2,1 %. Pour une baisse, on dirait down from."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'une vanity metric ?",
-              "choices": ["A metric that measures brand beauty", "A secret internal metric", "A number that looks good but doesn't show real business results"],
-              "answer_index": 2,
-              "explanation_fr": "Une vanity metric flatte l'ego (beaucoup de likes, d'abonnés) sans prouver un impact réel sur les ventes ou les inscriptions. Elle peut rester utile en interne, comme le dit Rania."
+              "prompt_fr": "Rania qualifie followers et likes de vanity metrics pour le board. Pourquoi ?",
+              "choices": ["They look good but don't show business impact.", "They are hard to measure in a reliable way.", "They only matter for the social media team."],
+              "answer_index": 0,
+              "explanation_fr": "Une vanity metric flatte mais ne montre pas l'impact sur le business : avoir plus d'abonnés ne veut pas dire plus d'inscriptions. Ces chiffres sont faciles à mesurer, et Rania précise qu'ils restent utiles à l'équipe social : c'est pour le board qu'ils ne servent pas."
             },
             {
               "prompt_fr": "Pourquoi le taux de conversion n'était-il pas fiable avant ?",
-              "choices": ["Because conversion tracking wasn't working properly", "Because the website was offline", "Because there were no visitors"],
-              "answer_index": 0,
-              "explanation_fr": "Rania dit « since we fixed conversion tracking » : le suivi des conversions était cassé, donc les chiffres étaient faux. Le site n'était pas hors ligne pour autant."
+              "choices": ["The website didn't have enough visitors yet.", "Conversion tracking wasn't working properly.", "The team was counting likes as conversions."],
+              "answer_index": 1,
+              "explanation_fr": "Rania le dit : le taux est fiable « since we fixed conversion tracking ». Si le suivi des conversions est cassé, le taux est faux, quel que soit le trafic. Rien n'indique que l'équipe confondait likes et conversions."
             }
           ],
           "production": {
@@ -678,9 +678,9 @@
             },
             {
               "prompt_fr": "Pourquoi Elena insiste-t-elle sur « One message, no more » ?",
-              "choices": ["Because the client can only pay for one ad", "Because several messages in one ad confuse people and weaken the impact", "Because the law limits the number of messages"],
-              "answer_index": 1,
-              "explanation_fr": "Une publicité est vue quelques secondes : un seul message clé est plus facile à retenir. Ce n'est ni une question de budget ni une obligation légale."
+              "choices": ["The client wants to keep the other messages for later.", "The brief only allows one message per platform.", "Several messages in one ad confuse people and weaken it."],
+              "answer_index": 2,
+              "explanation_fr": "Une publicité est vue en quelques secondes : avec plusieurs messages, aucun ne reste. D'où un seul message clé, « Dinner ready in 20 minutes ». Le brief ne parle pas de règle par plateforme, et Elena ne dit pas que d'autres messages sont gardés pour plus tard."
             }
           ],
           "production": {
@@ -714,10 +714,10 @@
               "explanation_fr": "To allocate, c'est attribuer ou répartir une part d'un budget. Le piège « allocation » en français (une aide versée) n'a rien à voir ici."
             },
             {
-              "prompt_fr": "Qu'est-ce que le retargeting ?",
-              "choices": ["Showing ads to people who have already visited the site or interacted with the brand", "Changing the target audience every week", "Targeting the competitors' employees"],
+              "prompt_fr": "Aïcha prévoit du retargeting. Qu'est-ce que c'est ?",
+              "choices": ["Showing ads to people who already visited the site", "Changing the target audience every week", "Showing ads to people who look like our customers"],
               "answer_index": 0,
-              "explanation_fr": "Le retargeting (reciblage) consiste à montrer des publicités aux personnes qui connaissent déjà la marque, par exemple des visiteurs qui ne se sont pas inscrits. Ce n'est pas changer de cible."
+              "explanation_fr": "Le retargeting (reciblage) montre des publicités aux personnes qui ont déjà visité le site ou interagi avec la marque sans s'inscrire. Viser des personnes qui ressemblent aux clients, ce sont les lookalike audiences. Changer de cible chaque semaine n'est pas une technique."
             },
             {
               "prompt_fr": "Que veut dire cost-effective ?",
@@ -766,16 +766,16 @@
               "explanation_fr": "L'ad fatigue apparaît quand une audience voit trop souvent la même publicité : le CTR baisse et les coûts montent. Le remède habituel est de renouveler les créations. Une publicité refusée se dit a disapproved ad."
             },
             {
-              "prompt_fr": "Que mesure le CTR ?",
-              "choices": ["The cost of each click", "The total number of sales", "The percentage of people who clicked after seeing the ad"],
-              "answer_index": 2,
-              "explanation_fr": "CTR veut dire click-through rate : clics divisés par impressions. Le coût de chaque clic, c'est le CPC. Les deux sont souvent confondus."
+              "prompt_fr": "Le CTR des vidéos est passé de 1,8 % à 0,9 %. Que mesure le CTR ?",
+              "choices": ["The cost the brand pays for each click on the ad", "The share of people who clicked after seeing the ad", "The share of clicks that ended in a sign-up"],
+              "answer_index": 1,
+              "explanation_fr": "Le CTR (click-through rate) est le pourcentage de clics par rapport aux affichages. Le coût d'un clic est le CPC, et la part des clics qui aboutissent à une inscription est un taux de conversion."
             },
             {
               "prompt_fr": "Que veut dire Max par « Let's refresh the video creatives » ?",
-              "choices": ["Let's make new versions of the video ads", "Let's reload the ads manager page", "Let's ask the creative director to rest"],
-              "answer_index": 0,
-              "explanation_fr": "Creatives (au pluriel) désigne les éléments visuels des publicités. To refresh, c'est les renouveler avec de nouvelles versions. Rien à voir avec actualiser une page web."
+              "choices": ["Let's update the numbers in the ads report.", "Let's show the same videos to new people.", "Let's make new versions of the video ads."],
+              "answer_index": 2,
+              "explanation_fr": "Les creatives sont les visuels et vidéos publicitaires ; les refresh, c'est en produire de nouvelles versions pour lutter contre l'ad fatigue. Montrer les mêmes vidéos à d'autres personnes serait un changement de ciblage, et refresh ne parle pas ici d'actualiser un rapport."
             }
           ],
           "production": {
@@ -820,9 +820,9 @@
             },
             {
               "prompt_fr": "« Before we scale the campaign » veut dire :",
-              "choices": ["Before we measure the campaign", "Before we increase the campaign's budget and reach", "Before we stop the campaign"],
-              "answer_index": 1,
-              "explanation_fr": "To scale (ou scale up), c'est passer à plus grande échelle : plus de budget, plus de portée. Rien à voir avec une échelle de mesure."
+              "choices": ["Before we increase its budget and reach", "Before we measure its results", "Before we change its target audience"],
+              "answer_index": 0,
+              "explanation_fr": "To scale, c'est faire grandir : plus de budget, plus de portée. Nora veut tester la page avant de dépenser davantage. Le verbe n'a pas le sens de mesurer (scale = échelle est le piège), ni de changer de cible."
             }
           ],
           "production": {
@@ -882,15 +882,15 @@
             },
             {
               "prompt_fr": "« I'll walk you through the results » veut dire :",
-              "choices": ["I'll send you the results by post", "I'll present the results to you step by step", "I'll go for a walk while you read the results"],
+              "choices": ["I'll send you the results so you can read them.", "I'll present the results to you step by step.", "I'll go through the results quickly, in a minute."],
               "answer_index": 1,
-              "explanation_fr": "To walk someone through something, c'est expliquer ou présenter quelque chose étape par étape. Expression très courante en réunion client."
+              "explanation_fr": "To walk someone through something, c'est le présenter pas à pas, en accompagnant la personne. Envoyer les résultats à lire se dirait send you the results, et « in a minute » dans le dialogue veut dire « dans un instant », pas « rapidement »."
             },
             {
               "prompt_fr": "Pourquoi Camille dit-elle « As discussed last time » ?",
-              "choices": ["To change the topic", "To apologize for a mistake", "To remind the client of something already agreed"],
+              "choices": ["To apologize for a delay since the last meeting", "To bring up a topic that wasn't on the agenda", "To remind the client of something already agreed"],
               "answer_index": 2,
-              "explanation_fr": "As discussed (comme convenu, comme nous l'avions évoqué) rappelle une décision ou un échange précédent. Ce n'est ni un changement de sujet ni une excuse."
+              "explanation_fr": "« As discussed last time » rappelle qu'un point a déjà été vu et validé : ici, la date de lancement. Ce n'est ni un ajout hors ordre du jour ni une excuse. En e-mail, on écrit de même as discussed ou as agreed."
             }
           ],
           "production": {
@@ -935,10 +935,10 @@
               "explanation_fr": "Le CPA (coût par acquisition) est un coût : être au-dessus du benchmark (valeur de référence), c'est payer plus cher que prévu, donc une mauvaise nouvelle. Le piège est de lire « above » comme « meilleur »."
             },
             {
-              "prompt_fr": "Pourquoi Camille dit-elle « it's too early for a final number » ?",
-              "choices": ["Because many trial users haven't decided to pay yet, so the ROI may still change", "Because she forgot to prepare the figures", "Because the client doesn't need to know the ROI"],
+              "prompt_fr": "Pourquoi Camille dit-elle « it's too early for a final number » pour le ROI ?",
+              "choices": ["Many trial users haven't decided to pay yet.", "The campaign budget hasn't been fully spent yet.", "The search results haven't been counted yet."],
               "answer_index": 0,
-              "explanation_fr": "Le ROI dépend des essais qui deviendront des abonnements payants. Tant qu'ils ne sont pas convertis, donner un chiffre définitif serait trompeur. C'est de la prudence professionnelle, pas un oubli."
+              "explanation_fr": "Le ROI dépend des abonnements payants : tant que les utilisateurs en essai gratuit n'ont pas décidé, le chiffre peut encore changer. Le budget et les résultats du search sont déjà connus : ce n'est pas ce qui manque."
             }
           ],
           "production": {
@@ -979,15 +979,15 @@
             },
             {
               "prompt_fr": "Pourquoi le client dit-il « wasn't in the original scope of work, though » ?",
-              "choices": ["He points out that this work is extra and wasn't planned in the contract", "He thinks the landing page is a bad idea", "He wants the agency to do it for free"],
-              "answer_index": 0,
-              "explanation_fr": "Le scope of work est le périmètre prévu au contrat. Le client signale que la page est un travail en plus, et though (pourtant) marque la réserve. Camille répond bien : un devis séparé, au lieu de l'ajouter sans rien dire (ce qui serait du scope creep)."
+              "choices": ["The landing page doesn't fit the campaign's goals.", "The work is extra and wasn't planned in the contract.", "The agency already promised it last quarter."],
+              "answer_index": 1,
+              "explanation_fr": "Le scope of work est le périmètre prévu au contrat : le client signale que la landing page est un travail en plus, donc à chiffrer à part. Il ne critique pas l'idée, et rien n'indique une promesse passée. Though, en fin de phrase, nuance : « pourtant »."
             },
             {
-              "prompt_fr": "Quelle est la meilleure réponse à une objection fondée du client ?",
-              "choices": ["No, you're wrong about that.", "Fair point. We'll send you a separate quote.", "We'll see later, it doesn't matter."],
-              "answer_index": 1,
-              "explanation_fr": "« Fair point » reconnaît que l'objection est légitime, puis on propose une solution concrète. Contredire sèchement ou balayer la remarque abîme la relation client."
+              "prompt_fr": "Le client signale que la landing page n'était pas prévue au contrat. Quelle réponse est la plus professionnelle ?",
+              "choices": ["You're right, we'll make you a devis.", "Fair point, but it's included, don't worry.", "Fair point. We'll send you a separate quote."],
+              "answer_index": 2,
+              "explanation_fr": "On reconnaît l'objection (fair point) et on propose un devis séparé, pour que le client décide. L'inclure gratuitement crée un précédent et réduit la marge de l'agence. « Devis » se dit quote ou estimate en anglais, et on dit send you a quote, pas make you."
             }
           ],
           "production": {
@@ -1014,21 +1014,21 @@
           "questions": [
             {
               "prompt_fr": "Que signifie « Before we wrap up » ?",
-              "choices": ["Before we wrap the gifts", "Before we start the meeting", "Before we finish the meeting"],
-              "answer_index": 2,
-              "explanation_fr": "To wrap up, c'est conclure ou terminer une réunion. Le sens premier (emballer) existe, mais en réunion il signifie toujours « clore »."
+              "choices": ["Before we finish the meeting", "Before we sum up the figures", "Before we take a short break"],
+              "answer_index": 0,
+              "explanation_fr": "To wrap up, c'est conclure, terminer une réunion ou un projet. Résumer se dirait sum up ou recap (ce que Camille fait juste après), et une pause se dit a break."
             },
             {
-              "prompt_fr": "Qu'est-ce qu'un action item ?",
-              "choices": ["A specific task with an owner and a deadline, decided in a meeting", "A product sold during a promotion", "A button in the ad platform"],
-              "answer_index": 0,
-              "explanation_fr": "Un action item est une tâche concrète issue d'une réunion : qui fait quoi, et pour quand. C'est le cœur d'un bon compte rendu."
+              "prompt_fr": "Camille enverra « a recap email with the action items ». Qu'est-ce qu'un action item ?",
+              "choices": ["A topic to discuss at the next meeting", "A task with an owner and a deadline", "A key result shown in the report"],
+              "answer_index": 1,
+              "explanation_fr": "Une action item est une tâche décidée en réunion, avec un responsable et une échéance : envoyer le devis d'ici mercredi, valider le parrainage d'ici vendredi. Un sujet à rediscuter est un point d'ordre du jour, et un résultat du rapport n'est pas une tâche."
             },
             {
               "prompt_fr": "« We need your sign-off by Friday » veut dire :",
-              "choices": ["We need your signature on a birthday card", "We need your approval by Friday", "We need you to log off by Friday"],
-              "answer_index": 1,
-              "explanation_fr": "Sign-off désigne la validation officielle d'un livrable ou d'une décision. Le piège est log off (se déconnecter), qui n'a aucun rapport."
+              "choices": ["We need you to log off by Friday.", "We need your signature on the contract by Friday.", "We need your approval by Friday."],
+              "answer_index": 2,
+              "explanation_fr": "Sign-off est la validation formelle d'un livrable ou d'une décision, ici le programme de parrainage. Ce n'est pas forcément une signature sur un contrat, et le piège to sign off au sens de « se déconnecter » se dit plutôt log off ou sign out."
             },
             {
               "prompt_fr": "Comment dire « d'ici mercredi » (au plus tard mercredi) ?",
