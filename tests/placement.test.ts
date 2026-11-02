@@ -21,6 +21,7 @@ describe('placement questions', () => {
   it('removes the bracketed English term from French choices', () => {
     expect(cleanFr('consigne (prompt)')).toBe('consigne');
     expect(baseTerm('token (LLM)')).toBe('token');
+    expect(cleanFr('message météo régulier METAR')).toBe('message météo régulier');
   });
 
   it('never leaks the answer in a meaning question', () => {

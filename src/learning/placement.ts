@@ -43,7 +43,11 @@ export type PlacementQuestion =
   | { kind: 'gap'; term: Term; sentence: string; choices: string[]; answer: number };
 
 /** Removes bracketed glosses, which usually repeat the English term. */
-export const cleanFr = (s: string) => s.replace(/\s*\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
+export const cleanFr = (s: string) => {
+  // Also drops all-caps acronyms ("message météo régulier METAR"), which repeat the English term.
+  const cleaned = s.replace(/\s*\([^)]*\)/g, '').replace(/(^|\s)[A-Z]{2,}(?=\s|$)/g, '$1').replace(/\s+/g, ' ').trim();
+  return cleaned.length >= 3 ? cleaned : s.replace(/\s*\([^)]*\)/g, '').trim();
+};
 /** "token (LLM)" -> "token". */
 export const baseTerm = (s: string) => s.replace(/\s*\([^)]*\)/g, '').trim();
 
