@@ -1,63 +1,75 @@
-# TechLingo — Speak Tech. Think Global.
+# TechLingo
 
-Application mobile pour apprendre l'**anglais technique** : expliquer ton code, DevOps, web, mobile, langages, réseaux, systèmes, et préparer tes **entretiens de développeur**.
+Apprendre l'**anglais du travail** : expliquer un bug, relire une pull request, présenter une campagne, répondre en entretien. Pour les francophones qui lisent déjà un peu d'anglais mais ne savent pas encore le **parler** dans leur métier.
 
-- Application **Android et iOS** (Capacitor) + **PWA** installable depuis le navigateur
-- Fonctionne **hors ligne**, **sans compte**, **sans publicité**, **sans collecte de données** : la progression reste sur l'appareil
-- 30 mots, 8 questions d'entretien, 10 verbes d'action pour le CV
+- Application web installable (**PWA**), sans app store : https://techlinngo.vercel.app
+- Fonctionne **hors ligne** après le premier chargement, **sans compte**, **sans publicité** : la progression reste sur l'appareil (IndexedDB), avec export et import de sauvegarde
+- 2 domaines, 21 métiers : Informatique (web, mobile, data, IA, cloud/DevOps, cybersécurité, réseaux, QA, produit/design, gestion de projet) et Marketing (community management, SEO/SEA, contenu, growth, e-commerce, etc.)
+- 2 096 mots, tous encore en **brouillon** (`status: draft`) en attente de relecture par des professionnels
+
+Détails produit (public, ton, principes de design) : [PRODUCT.md](PRODUCT.md). Façon de travailler dans le dépôt : [CLAUDE.md](CLAUDE.md).
 
 ## Démarrer
 
 ```bash
 npm install
-npm run dev          # http://localhost:8080
+npm run dev          # http://localhost:8080 (génère le contenu puis lance Vite)
 ```
+
+## Pile technique
+
+React 19, Vite, TypeScript, Tailwind v4, wouter, Dexie, Zod (schéma du contenu, à la compilation), i18next (`src/i18n/fr.json`), ts-fsrs (répétition espacée), MiniSearch, vite-plugin-pwa.
 
 ## Structure
 
 ```
-www/                    l'application web (HTML/CSS/JS, sans build)
-  index.html            écran de chargement animé + coquille
-  app.js                écrans, roue, quiz, révision espacée, onboarding, profil, sauvegarde
-  data.js, data-extra.js  vocabulaire, questions d'entretien, verbes, FAQ
-  style.css, fonts.css  design (clair/sombre), polices hébergées localement
-  sw.js, manifest.webmanifest  PWA hors ligne
-  privacy.html, terms.html     pages légales exigées par les stores
-assets/                 logo (SVG/PNG) et sources des icônes/écrans de démarrage
-store/                  visuels prêts pour Google Play et l'App Store
-android/, ios/          projets natifs générés par Capacitor
-capacitor.config.json   configuration de l'app (id : com.techlingo.app)
-vercel.json             déploiement web sur Vercel (dossier www)
-STORE.md                guide de publication Play Store / App Store
+src/                 l'application (écrans, composants, parcours, base locale, i18n)
+content/             le contenu source : domaines, métiers, thèmes, parcours, carrière
+  import/NN-*.txt    les mots, une ligne par mot (format dans CLAUDE.md)
+public/              contenu généré, page de présentation (decouvrir/), pages légales, SEO
+scripts/content/     import, validation et compilation du contenu
+scripts/push/        rappels push (génération des clés VAPID, envoi planifié)
+api/                 petite API Vercel pour les rappels
+tests/, src/**/*.test.ts   tests vitest
+docs/                push-setup.md (rappels), seo.md (référencement)
+video/               projet Remotion de la vidéo de présentation (en pause)
+www/                 ancienne application : non déployée, ne pas modifier
 ```
 
-## Parcours dans l'app
-
-Chargement animé → 4 écrans d'accueil animés → création du profil (avatar, prénom, objectif) → Accueil, Dictionnaire, Pratique, Carrière, Profil.
-
-Sauvegarde sans serveur : *Profil → Paramètres → Sauvegarde* génère un code à copier pour retrouver sa progression sur un autre téléphone.
-
-## Commandes utiles
+## Commandes
 
 | Commande | Rôle |
 |---|---|
-| `npm run dev` | Serveur local de la version web |
-| `npm run sync` | Copie `www/` dans les projets Android et iOS |
-| `npm run android` | Ouvre le projet dans Android Studio |
-| `npm run ios` | Ouvre le projet dans Xcode (Mac uniquement) |
-| `npm run assets` | Régénère icônes et écrans de démarrage depuis `assets/` |
+| `npm run dev` | Application en local sur le port 8080 |
+| `npm run app:build:drafts` | Build de production (ce que lance Vercel) |
+| `npm run app:preview` | Prévisualise le build |
+| `npm test` | Tests vitest |
+| `npm run typecheck` | Vérification TypeScript |
+| `npm run content:import` | Écrit `content/roles/<métier>.json` depuis `content/import/` |
+| `npm run content:validate` | Valide tout le contenu |
+| `npm run content:build -- --drafts` | Génère `public/content/` (manifeste, packs par métier, recherche) |
+| `npm run legacy` | Sert l'ancienne app sur le port 8081 |
 
-## Déploiement web (Vercel)
+## Déploiement
 
-Importe ce dépôt dans Vercel : `vercel.json` indique déjà le dossier `www` et aucune commande de build. Aucun réglage supplémentaire.
+Vercel, projet `techlingo`, déploiement automatique à chaque push sur `main`. Commande de build : `npm run app:build:drafts`.
 
-## Publier sur les stores
+## Rappels push
 
-Voir [STORE.md](STORE.md) : comptes, signature, fiche du store, réponses « sécurité des données », captures à prendre. Avant publication, remplace l'email de contact dans `www/privacy.html` et `www/terms.html`.
+Optionnels. Sans configuration, les rappels fonctionnent seulement app ouverte. Pour les recevoir app fermée : base Neon, variables Vercel, secrets GitHub, clés VAPID. Procédure complète dans [docs/push-setup.md](docs/push-setup.md).
+
+## Référencement
+
+Balises, sitemap et Search Console : [docs/seo.md](docs/seo.md).
+
+## Contact
+
+services@codorah.com
 
 ## Limites actuelles
 
-- Pas de compte ni de synchronisation automatique entre appareils (sauvegarde par code).
-- L'entraînement oral avec reconnaissance vocale fonctionne dans Chrome/Edge ; dans l'app native, il est masqué tant qu'un plugin de reconnaissance vocale n'est pas ajouté.
-- Pas de notifications de rappel (il faudrait un serveur).
-- La compilation iOS demande un Mac.
+- Contenu en brouillon : les mots n'ont pas encore été relus par des professionnels.
+- Pas de compte ni de synchronisation automatique entre appareils (sauvegarde par fichier).
+- La reconnaissance vocale dépend du navigateur (Chrome et Edge la gèrent, d'autres non).
+- Rappels app fermée : jamais testés avec de vraies clés.
+- Pas d'APK : l'application se distribue uniquement en PWA.

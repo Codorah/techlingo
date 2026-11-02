@@ -14,7 +14,7 @@ They use the app on their phone (often a modest Android phone, sometimes a slow 
 ## Product Purpose
 TechLingo teaches the English people actually use at work, with the mechanics that make Duolingo a daily habit. The home screen is a **path of units built around work situations** (understand an error message, review a pull request, run a stand-up, present a campaign…), each with a guidebook, short lessons that end with a real production (a Slack message, a PR comment, a stand-up update), and a cumulative test. The last unit of every path is a **mock interview**.
 
-Around the path: the **daily wheel** (one word of the day drawn from units already unlocked), **spaced repetition** (FSRS) so words stick, a **dictionary** of 750+ job words with French explanations, **practice games**, and **interview drills** with model answers.
+Around the path: the **daily wheel** (one word of the day drawn from units already unlocked), **spaced repetition** (FSRS) so words stick, a **dictionary** of 2,000+ job words with French explanations, **practice games**, and **interview drills** with model answers.
 
 Success means a user can say, out loud and in English, what their job requires: "Can you explain what DevOps is?", "Let me walk you through this campaign's results."
 
@@ -36,7 +36,7 @@ Pro, clear, efficient, encouraging. The game feel of Duolingo (path, XP, celebra
 
 **Accent per domain** on the same soft sky universe: ocean blue for Informatique, soft coral for Marketing.
 
-**Name:** "TechLingo" fits Informatique; whether it still fits once Marketing ships is an open decision for the owner.
+**Name:** "TechLingo" is the final name, for both domains. Public address: techlinngo.vercel.app. Public contact: services@codorah.com.
 
 ## Anti-references
 - Emojis used as UI icons: every icon is a consistent stroke icon from one set.
