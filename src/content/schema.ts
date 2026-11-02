@@ -206,7 +206,7 @@ export const RolePathFile = z.object({ role: Slug, status: Status, title_fr: tex
 export type RolePathFile = z.infer<typeof RolePathFile>;
 
 // What the build ships for a path: the file plus the cards of the words it uses.
-export interface PathTerm { id: string; term_en: string; translation_fr: string; ipa?: string; explanation_fr: string; sentence_en?: string; sentence_fr?: string }
+export interface PathTerm { id: string; level?: Level; term_en: string; translation_fr: string; ipa?: string; explanation_fr: string; sentence_en?: string; sentence_fr?: string }
 export type ShippedPath = Omit<PathFile, 'domain'> & { domain?: string; role?: string; contentVersion: string; terms: Record<string, PathTerm> };
 
 // Light dictionary index of a domain (public/content/dict/<domain>.json).

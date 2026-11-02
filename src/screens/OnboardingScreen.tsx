@@ -9,7 +9,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import { LEVELS, type Level } from '@/content/levels';
 import type { Term } from '@/content/schema';
 import { saveProfile } from '@/data/progress';
-import { nextPlacementLevel, pickPlacementTerm, PLACEMENT_QUESTIONS, PLACEMENT_START, type PlacementAnswer, placementResult } from '@/learning/placement';
+import { buildPlacementQuestion, nextPlacementLevel, PLACEMENT_QUESTIONS, PLACEMENT_START, type PlacementAnswer, placementResult } from '@/learning/placement';
 import { useContent } from '@/lib/useContent';
 
 type Step = 'welcome' | 'domain' | 'role' | 'level' | 'placement' | 'placementDone';
@@ -123,14 +123,11 @@ function Placement({ terms, header, onDone }: { terms: Term[]; header: ReactNode
   const [asked, setAsked] = useState<Set<string>>(new Set());
   const [picked, setPicked] = useState<number | null>(null);
 
-  const question = useMemo(() => {
-    const term = pickPlacementTerm(terms, current, asked);
-    if (!term) return null;
-    const others = terms.filter((x) => x.id !== term.id && x.translation_fr !== term.translation_fr).sort(() => Math.random() - 0.5).slice(0, 3);
-    const choices = [term.translation_fr, ...others.map((o) => o.translation_fr)].sort(() => Math.random() - 0.5);
-    return { term, choices, answer: choices.indexOf(term.translation_fr) };
+  const question = useMemo(
+    () => buildPlacementQuestion(terms, current, asked, answers.length),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [terms, current, answers.length]);
+    [terms, current, answers.length]
+  );
 
   const finished = terms.length > 0 && (!question || answers.length >= PLACEMENT_QUESTIONS);
   useEffect(() => { if (finished) onDone(placementResult(answers)); }, [finished]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -150,7 +147,10 @@ function Placement({ terms, header, onDone }: { terms: Term[]; header: ReactNode
     <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-[calc(env(safe-area-inset-top)+12px)]">
       {header}
       <p className="text-sm font-bold text-ink-2">{t('onboarding.placement.progress', { n: answers.length + 1, total: PLACEMENT_QUESTIONS })}</p>
-      <h1 className="mt-2 text-2xl font-black">{t('onboarding.placement.prompt', { term: question.term.term_en })}</h1>
+      <h1 className="mt-2 text-2xl font-black" lang={question.kind === 'gap' ? 'en' : undefined}>
+        {question.kind === 'gap' ? question.sentence : t('onboarding.placement.prompt', { term: question.term.term_en })}
+      </h1>
+      {question.kind === 'gap' && <p className="mt-1 text-sm text-ink-2">{t('onboarding.placement.promptGap')}</p>}
       <div className="mt-6 grid flex-1 content-start gap-2.5">
         {question.choices.map((c, i) => (
           <Choice key={c} disabled={done} onClick={() => setPicked(i)}

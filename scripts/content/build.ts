@@ -72,7 +72,7 @@ const cardsOf = (units: { lessons: { term_ids: string[] }[] }[]) => {
   const terms: Record<string, PathTerm> = {};
   for (const id of new Set(units.flatMap((u) => u.lessons.flatMap((l) => l.term_ids)))) {
     const t = byId.get(id);
-    if (t) terms[id] = { id, term_en: t.term_en, translation_fr: t.translation_fr, ipa: t.ipa, explanation_fr: t.explanation_fr, sentence_en: t.sentences[0]?.text_en, sentence_fr: t.sentences[0]?.text_fr };
+    if (t) terms[id] = { id, level: t.level, term_en: t.term_en, translation_fr: t.translation_fr, ipa: t.ipa, explanation_fr: t.explanation_fr, sentence_en: t.sentences[0]?.text_en, sentence_fr: t.sentences[0]?.text_fr };
   }
   return terms;
 };

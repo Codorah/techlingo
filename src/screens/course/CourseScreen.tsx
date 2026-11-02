@@ -39,7 +39,7 @@ export function CourseScreen() {
                 return (
                   <li key={u.id} className={`flex items-start gap-2 text-sm ${stats.unit === u ? 'font-black text-ink' : 'text-ink-2'}`}>
                     {done ? <Check size={18} className="mt-0.5 flex-none text-mint-strong" aria-hidden /> : <Circle size={18} className="mt-0.5 flex-none" aria-hidden />}
-                    <span>{u.number}. {u.title}</span>
+                    <span>{u.number}. {u.title}{u.level && <span className="ml-1.5 rounded-md bg-mist px-1.5 py-0.5 text-xs font-bold text-ink-2">{u.level}</span>}</span>
                   </li>
                 );
               })}

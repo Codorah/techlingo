@@ -1,7 +1,9 @@
+import { useLiveQuery } from 'dexie-react-hooks';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { CareerPack, Manifest, ShippedPath } from '@/content/schema';
 import { usePathProgress } from '@/data/path';
+import { db } from '@/db/db';
 import { buildCourse, type Course, courseProgress } from '@/learning/course';
 import { loadCareer, loadCoursePath, loadManifest } from './content';
 import { domainOf, generalRoleOf } from './domains';
@@ -27,6 +29,7 @@ export function useCourse(role: string | undefined) {
   const manifest = useManifest();
   const labels = useCourseLabels();
   const progress = usePathProgress();
+  const level = useLiveQuery(() => db.profile.get('me').then((p) => p?.level ?? null), [], null);
   const [path, setPath] = useState<ShippedPath | null>(null);
   const [career, setCareer] = useState<CareerPack | null>(careerCache.value);
   const [missing, setMissing] = useState(false);
@@ -42,7 +45,7 @@ export function useCourse(role: string | undefined) {
     return () => { alive = false; };
   }, [manifest, role]);
 
-  const course = useMemo<Course | null>(() => (path && role ? buildCourse(role, path, career?.questions ?? [], labels) : null), [path, role, career, labels]);
+  const course = useMemo<Course | null>(() => (path && role ? buildCourse(role, path, career?.questions ?? [], labels, level) : null), [path, role, career, labels, level]);
   const meta = manifest?.roles.find((r) => r.id === role);
   const domain = domainOf(manifest, role);
   return { manifest, meta, domain, path, course, career, progress, missing: missing || (!!manifest && !meta), stats: course ? courseProgress(course, progress) : null };

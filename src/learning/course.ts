@@ -2,6 +2,7 @@
 // two situation units (listen, say it out loud, quick quiz on the words just met), and a final
 // mock interview built from the role's own interview questions. Everything unlocks in order.
 // Node ids of situation units are the historical `sit:` ids, so existing progress stays valid.
+import { LEVELS, type Level } from '@/content/levels';
 import type { InterviewQuestion, ShippedPath } from '@/content/schema';
 import type { NodeState, PathProgress } from './path';
 import { guideId, lessonNodeId } from './situations';
@@ -20,10 +21,34 @@ export interface CourseNode {
   questionId?: string;
 }
 export type CourseUnitKind = 'situation' | 'recall' | 'interview';
-export interface CourseUnit { id: string; kind: CourseUnitKind; number: number; title: string; subtitle?: string; nodes: CourseNode[] }
+export interface CourseUnit { id: string; kind: CourseUnitKind; number: number; title: string; subtitle?: string; level?: Level; nodes: CourseNode[] }
 export interface Course { role: string; title: string; units: CourseUnit[]; nodes: CourseNode[] }
 
-export const COURSE = { recallEvery: 2, recallNodes: 2, wordsPerRecall: 5, interviewQuestions: 4 } as const;
+export const COURSE = { recallEvery: 2, recallNodes: 2, wordsPerRecall: 5, interviewQuestions: 4, minUnits: 3, tooEasyGap: 2 } as const;
+
+/** A unit's level = the rounded mean level of the words its lessons teach (B1 when unknown). */
+export function unitLevel(unit: Pick<ShippedPath['units'][number], 'lessons'>, terms: ShippedPath['terms']): Level {
+  const levels = unit.lessons.flatMap((l) => l.term_ids).map((id) => terms[id]?.level).filter((l): l is Level => !!l).map((l) => LEVELS.indexOf(l));
+  return levels.length ? LEVELS[Math.round(levels.reduce((a, b) => a + b, 0) / levels.length)]! : 'B1';
+}
+
+/**
+ * The units worth doing at `level`: a unit two or more levels below the learner is skipped (they
+ * already master it), but at least `minUnits` stay, keeping the hardest ones. Order is preserved.
+ */
+export function unitsForLevel(units: ShippedPath['units'], terms: ShippedPath['terms'], level?: Level | null) {
+  const tagged = units.map((u, i) => ({ u, i, level: unitLevel(u, terms) }));
+  if (!level) return tagged;
+  const me = LEVELS.indexOf(level);
+  const keep = new Set(tagged.filter((x) => LEVELS.indexOf(x.level) > me - COURSE.tooEasyGap).map((x) => x.i));
+  if (keep.size < Math.min(COURSE.minUnits, tagged.length)) {
+    for (const x of [...tagged].sort((a, b) => LEVELS.indexOf(b.level) - LEVELS.indexOf(a.level) || b.i - a.i)) {
+      if (keep.size >= Math.min(COURSE.minUnits, tagged.length)) break;
+      keep.add(x.i);
+    }
+  }
+  return tagged.filter((x) => keep.has(x.i));
+}
 
 export const recallId = (role: string, n: number, k: number) => `rap:${role}:${n}:${k}`;
 export const interviewNodeId = (role: string, questionId: string) => `itw:${role}:${questionId}`;
@@ -49,23 +74,24 @@ export interface CourseLabels {
   interviewSubtitle: string;
 }
 
-export function buildCourse(role: string, path: Pick<ShippedPath, 'title_fr' | 'units'>, questions: InterviewQuestion[], labels: CourseLabels): Course {
+export function buildCourse(role: string, path: Pick<ShippedPath, 'title_fr' | 'units'> & { terms?: ShippedPath['terms'] }, questions: InterviewQuestion[], labels: CourseLabels, level?: Level | null): Course {
   const units: CourseUnit[] = [];
   let number = 0;
   let recallCount = 0;
   let pending: string[] = [];
 
-  path.units.forEach((u, unitIndex) => {
+  const chosen = unitsForLevel(path.units, path.terms ?? {}, level);
+  chosen.forEach(({ u, i: unitIndex, level: lvl }, pos) => {
     units.push({
-      id: u.id, kind: 'situation', number: ++number, title: u.title_fr, subtitle: u.situation_fr,
+      id: u.id, kind: 'situation', number: ++number, title: u.title_fr, subtitle: u.situation_fr, level: lvl,
       nodes: [
         { id: guideId(u.id), kind: 'guide', title: labels.guide, unitIndex },
         ...u.lessons.map((l, lessonIndex): CourseNode => ({ id: lessonNodeId(l.id), kind: 'lesson', title: l.title_fr, unitIndex, lessonIndex }))
       ]
     });
     pending.push(...u.lessons.flatMap((l) => l.term_ids));
-    const last = unitIndex === path.units.length - 1;
-    if ((unitIndex + 1) % COURSE.recallEvery === 0 || (last && pending.length)) {
+    const last = pos === chosen.length - 1;
+    if ((pos + 1) % COURSE.recallEvery === 0 || (last && pending.length)) {
       const words = [...new Set(pending)];
       const groups = spread(words, Math.min(COURSE.recallNodes, Math.ceil(words.length / 3))).map((g) => g.slice(0, COURSE.wordsPerRecall));
       recallCount++;
