@@ -1,6 +1,7 @@
 // Hand-written path (work situations). Each unit = a guide then 3-4 lessons; everything
 // unlocks in order across the whole path. Progress shares the path progress row.
 import type { PathFile } from '@/content/schema';
+import { matchWords } from './compare';
 import type { NodeState, PathProgress } from './path';
 
 export type SituationNode =
@@ -28,10 +29,11 @@ export function situationStates(nodes: SituationNode[], progress: PathProgress):
   return states;
 }
 
-const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, "'").replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim();
-
-/** Which key phrases a written or spoken answer contains (case, accents and punctuation ignored). */
+/** Which key phrases a written or spoken answer contains (case, accents, punctuation and contractions ignored). */
 export function phraseHits(answer: string, phrases: string[]): boolean[] {
-  const a = ` ${norm(answer)} `;
-  return phrases.map((p) => a.includes(` ${norm(p)} `));
+  const a = ` ${matchWords(answer).join(' ')} `;
+  return phrases.map((p) => {
+    const words = matchWords(p);
+    return words.length > 0 && a.includes(` ${words.join(' ')} `);
+  });
 }

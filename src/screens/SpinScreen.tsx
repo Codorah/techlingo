@@ -58,11 +58,13 @@ export function SpinScreen() {
   const canSpin = !!status && (status.freeAvailable || status.bonusAvailable);
   const todaysTerm = status?.todaysTermId ? content.byId.get(status.todaysTermId) : undefined;
 
+  const spinLock = useRef(false);
   async function spin() {
-    if (!input || spinning || !status) return;
+    if (!input || spinning || !status || spinLock.current) return;
+    spinLock.current = true; // the state flag arrives one render late: a double tap would draw twice
     setEmpty(false);
     const term = pickSpinTerm({ ...input, ...(mode === 'category' && category ? { category } : {}) });
-    if (!term) { setEmpty(true); return; }
+    if (!term) { setEmpty(true); spinLock.current = false; return; }
     let segs = segments.length ? [...segments] : [{ id: term.categories[0]!, label: term.term_en }];
     let index = mode === 'category' && category
       ? segs.findIndex((s) => s.id === term.id)
@@ -76,13 +78,20 @@ export function SpinScreen() {
       setSegments(segs);
     }
     setSpinning(true);
-    await new Promise((r) => requestAnimationFrame(r));
-    await wheel.current?.spinTo(index);
-    await recordSpin(term.id, mode, mode === 'category' ? category ?? undefined : undefined, !status.freeAvailable);
-    navigator.vibrate?.(15);
-    setResult(term);
-    setSpinning(false);
-    setStatus(await spinStatus());
+    try {
+      // Recorded before the 3.8 s animation: leaving the screen meanwhile keeps the draw.
+      await recordSpin(term.id, mode, mode === 'category' ? category ?? undefined : undefined, !status.freeAvailable);
+      try {
+        await new Promise((r) => requestAnimationFrame(r));
+        await wheel.current?.spinTo(index);
+      } catch { /* animation interrupted: the draw is already saved */ }
+      navigator.vibrate?.(15);
+      setResult(term);
+    } finally {
+      setSpinning(false);
+      spinLock.current = false;
+      setStatus(await spinStatus());
+    }
   }
 
   return (

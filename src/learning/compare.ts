@@ -23,6 +23,14 @@ export function normalizeWords(text: string): string[] {
     .flatMap((w) => w.split(' '));
 }
 
+/**
+ * Words for loose matching of free answers (key phrases, spoken recall): contractions
+ * expanded ("we'll" = "we will"), accents dropped, hyphens and slashes split like spaces.
+ */
+export function matchWords(text: string): string[] {
+  return normalizeWords(text.normalize('NFD').replace(/\p{M}/gu, '').replace(/[\p{Pd}/_.,;:!?()[\]"«»…]/gu, ' '));
+}
+
 function editDistance(a: string, b: string): number {
   const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array<number>(b.length).fill(0)]);
   for (let j = 1; j <= b.length; j++) dp[0]![j] = j;

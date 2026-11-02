@@ -25,15 +25,41 @@ function tone(freq: number, start: number, duration: number, type: OscillatorTyp
   osc.stop(t0 + duration + 0.02);
 }
 
+function audioContext(): AudioContext | null {
+  if (typeof window === 'undefined') return null;
+  const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!Ctor) return null;
+  if (!ctx || ctx.state === 'closed') ctx = new Ctor();
+  // iOS also reports 'interrupted' (after a call or the app going to the background).
+  if (ctx.state !== 'running') void ctx.resume().catch(() => {});
+  return ctx;
+}
+
 function play(notes: [number, number, number, OscillatorType?][]) {
-  if (!soundEnabled() || typeof window === 'undefined') return;
+  if (!soundEnabled()) return;
   try {
-    const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-    if (!Ctor) return;
-    ctx ??= new Ctor();
-    if (ctx.state === 'suspended') void ctx.resume();
+    if (!audioContext()) return;
     for (const [f, s, d, type] of notes) tone(f, s, d, type);
   } catch { /* audio unavailable: silent */ }
+}
+
+// iOS only lets an AudioContext start inside a user gesture. The celebration sound plays
+// after an await (database write), outside the tap: unlock the context on the first touches.
+// Listeners stay on: iOS can interrupt the context again later (call, background).
+function unlock() {
+  if (!soundEnabled() || ctx?.state === 'running') return;
+  try {
+    const c = audioContext();
+    if (!c) return;
+    const buffer = c.createBuffer(1, 1, 22050);
+    const src = c.createBufferSource();
+    src.buffer = buffer;
+    src.connect(c.destination);
+    src.start(0);
+  } catch { /* audio unavailable */ }
+}
+if (typeof window !== 'undefined') {
+  for (const e of ['pointerdown', 'touchend', 'keydown']) window.addEventListener(e, unlock, { capture: true, passive: true });
 }
 
 export const sounds = {

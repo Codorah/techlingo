@@ -12,11 +12,9 @@ import { addXP, saveAnswerDraft } from '@/data/progress';
 import { db } from '@/db/db';
 import { loadCareer } from '@/lib/content';
 import { generalRoleOf, profileRoles } from '@/lib/domains';
+import { phraseHits } from '@/learning/situations';
 import { useManifest } from '@/lib/useContent';
-import { canRecognize, listen, speak, stopSpeaking } from '@/lib/speech';
-
-const squash = (s: string) => s.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9']/g, '');
-const contains = (text: string, phrase: string) => squash(text).includes(squash(phrase));
+import { canRecognize, listen, type ListenError, speak, stopSpeaking } from '@/lib/speech';
 
 export function QuestionScreen() {
   const { t } = useTranslation();
@@ -34,18 +32,23 @@ export function QuestionScreen() {
   const [listening, setListening] = useState(false);
   const [spoken, setSpoken] = useState('');
   const [text, setText] = useState<string | null>(null);
+  const [micError, setMicError] = useState<string | null>(null);
   const stopRef = useRef<() => void>(() => {});
+  const abortRef = useRef<() => void>(() => {});
+  const saving = useRef(false);
 
   useEffect(() => { void loadCareer().then(setCareer); }, []);
-  useEffect(() => () => { stopRef.current(); stopSpeaking(); }, []);
-  useEffect(() => { setSpoken(''); setText(null); setShowFr(false); }, [id]);
+  useEffect(() => () => { abortRef.current(); stopSpeaking(); }, []);
+  // Next question: close the microphone and silence the previous one.
+  useEffect(() => { abortRef.current(); stopSpeaking(); setListening(false); setSpoken(''); setText(null); setShowFr(false); setMicError(null); }, [id]);
 
   const q = career?.questions.find((x) => x.id === id);
   if (!q) return <Screen back={backTo}><p className="text-ink-2">{t('common.loading')}</p></Screen>;
 
   const written = text ?? draft?.text ?? '';
   const attempt = `${spoken} ${written}`;
-  const hits = q.key_phrases.filter((k) => contains(attempt, k));
+  const found = phraseHits(attempt, q.key_phrases); // "we'll" = "we will"
+  const hits = q.key_phrases.filter((_, i) => found[i]);
   const practiced = !!draft?.checklist.practiced;
 
   const general = generalRoleOf(manifest, profile?.primaryRole);
@@ -56,20 +59,33 @@ export function QuestionScreen() {
   async function speakAnswer() {
     if (listening) { stopRef.current(); return; }
     stopSpeaking();
-    setListening(true);
-    const { done, stop } = listen(setSpoken, { continuous: true });
+    setListening(true); setMicError(null);
+    const { done, stop, abort } = listen(setSpoken, { continuous: true });
     stopRef.current = stop;
-    try { setSpoken(await done); } catch { /* errors leave the written path available */ } finally { setListening(false); }
+    abortRef.current = abort;
+    try {
+      const heard = await done;
+      setSpoken(heard);
+      if (!heard) setMicError(t('recall.say.nothing'));
+    } catch (e) {
+      // The written path stays available.
+      const code = e as ListenError;
+      if (code !== 'aborted') setMicError(code === 'not-allowed' || code === 'unsupported' ? t('recall.say.denied') : t('recall.say.nothing'));
+    } finally { setListening(false); }
   }
 
   async function markDone() {
-    await saveAnswerDraft(q!.id, { text: written, checklist: { practiced: true } });
-    if (courseNode) {
-      await completeNode(courseNode, 'lesson', [], { correct: hits.length, total: q!.key_phrases.length });
-      navigate(backTo, { replace: true });
-      return;
-    }
-    if (!practiced) await addXP(15);
+    if (saving.current) return; // double tap: one XP, one node
+    saving.current = true;
+    try {
+      await saveAnswerDraft(q!.id, { text: written, checklist: { practiced: true } });
+      if (courseNode) {
+        await completeNode(courseNode, 'lesson', [], { correct: hits.length, total: q!.key_phrases.length });
+        navigate(backTo, { replace: true });
+        return;
+      }
+      if (!practiced) await addXP(15);
+    } finally { saving.current = false; }
   }
 
   return (
@@ -116,6 +132,7 @@ export function QuestionScreen() {
             <Button variant={listening ? 'danger' : 'primary'} icon={listening ? <Square size={20} aria-hidden /> : <Mic size={20} aria-hidden />} onClick={() => void speakAnswer()}>
               {listening ? t('career.question.stop') : t('career.question.speak')}
             </Button>
+            {micError && <p role="alert" className="mt-3 text-sm font-semibold text-danger">{micError}</p>}
             {spoken && <p className="mt-3 rounded-2xl bg-mist p-3 text-sm" aria-live="polite"><span className="font-bold">{t('career.question.spoken')} : </span>{spoken}</p>}
           </>
         ) : <p className="text-sm text-ink-2">{t('career.question.noSpeech')}</p>}

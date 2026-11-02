@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLocation, useParams } from 'wouter';
 import { NotFound } from '@/components/NotFound';
 import type { PathTerm } from '@/content/schema';
@@ -19,6 +19,7 @@ export function CourseNodeScreen() {
   const nodeId = decodeURIComponent(params.nodeId);
   const { course, path, domain, missing } = useCourse(params.role);
   const [recallDone, setRecallDone] = useState<{ xp: number; accuracy: number; firstTime: boolean } | null>(null);
+  const recording = useRef(false);
   const back = () => navigate(`/parcours/${params.role}`, { replace: true });
 
   if (missing) return <NotFound />;
@@ -36,6 +37,8 @@ export function CourseNodeScreen() {
     view = recallDone
       ? <Done xp={recallDone.xp} title={t('recall.done')} accuracy={recallDone.accuracy} confetti={recallDone.firstTime} replay={!recallDone.firstTime} onContinue={back} />
       : <RecallSession terms={terms} onClose={back} onDone={async ({ results, correct, total }) => {
+          if (recording.current) return; // recorded once, even on a double tap
+          recording.current = true;
           const r = await completeNode(node.id, 'recap', results, { correct, total });
           navigator.vibrate?.([12, 40, 12]);
           sounds.celebrate();

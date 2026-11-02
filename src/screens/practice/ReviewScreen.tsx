@@ -1,6 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { CircleCheck, Volume2, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/Button';
@@ -21,6 +21,7 @@ export function ReviewScreen() {
   const [queue, setQueue] = useState<string[] | null>(null);
   const [i, setI] = useState(0);
   const [shown, setShown] = useState(false);
+  const rating = useRef(false); // one FSRS review and one XP per card, even on a double tap
 
   useEffect(() => {
     if (content.loading) return;
@@ -45,9 +46,13 @@ export function ReviewScreen() {
   }
 
   async function rate(r: 1 | 2 | 3 | 4) {
-    await reviewTerm(term!.id, r);
-    setShown(false);
-    setI(i + 1);
+    if (rating.current) return;
+    rating.current = true;
+    try {
+      await reviewTerm(term!.id, r);
+      setShown(false);
+      setI(i + 1);
+    } finally { rating.current = false; }
   }
 
   const ratings = [

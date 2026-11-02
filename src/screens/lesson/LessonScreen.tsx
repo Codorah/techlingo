@@ -68,7 +68,13 @@ export function LessonScreen() {
     .filter((q): q is NonNullable<typeof q> => !!q)
     .slice(0, 3), [term, t]);
 
+  // A double tap on the sticky "Continuer" must not skip the next step.
+  const lastNext = useRef(0);
+  const finishing = useRef(false);
   const goNext = () => {
+    const now = Date.now();
+    if (now - lastNext.current < 450) return;
+    lastNext.current = now;
     const n = stepIndex + 1;
     setStepIndex(n);
     if (session) void saveLessonStep(session, n);
@@ -76,7 +82,8 @@ export function LessonScreen() {
   };
 
   async function finish(quizCorrect: number) {
-    if (!term || !session) return;
+    if (!term || !session || finishing.current) return;
+    finishing.current = true;
     const result = await completeLesson(session, term.id, quizCorrect, questions.length, speakScore);
     const status = await spinStatus();
     setOutcome({ ...result, quizCorrect, quizTotal: questions.length, bonus: status.bonusAvailable });

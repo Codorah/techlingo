@@ -1,4 +1,5 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const COLORS = ['#BFE3FB', '#D9F5E5', '#FFF0C7', '#E3DCFB', '#FCE1E4', '#CFEFF7', '#E8F5D9', '#FDE8CF'];
 
@@ -10,7 +11,9 @@ interface WheelProps { labels: string[]; size?: number; onSpin?: () => void; dis
  * SVG wheel animated with the Web Animations API (no animation library: keeps the bundle
  * light for low-end phones). The pointer is at the top; spinTo() lands a segment under it.
  */
-export const Wheel = forwardRef<WheelHandle, WheelProps>(function Wheel({ labels, size = 300, onSpin, disabled, spinLabel = 'SPIN' }, ref) {
+export const Wheel = forwardRef<WheelHandle, WheelProps>(function Wheel({ labels, size = 300, onSpin, disabled, spinLabel }, ref) {
+  const { t } = useTranslation();
+  const hub = spinLabel ?? t('spin.cta');
   const disc = useRef<SVGGElement>(null);
   const angle = useRef(0);
   const n = Math.max(labels.length, 1);
@@ -73,9 +76,9 @@ export const Wheel = forwardRef<WheelHandle, WheelProps>(function Wheel({ labels
         </g>
       </svg>
       {/* The hub is a real button: tapping the centre spins the wheel, like the main button. */}
-      <button type="button" onClick={onSpin} disabled={disabled || !onSpin} aria-label={spinLabel}
-        className="absolute left-1/2 top-1/2 grid h-[24%] w-[24%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-4 border-line bg-surface font-title text-base font-black tracking-wide text-ocean shadow-[0_4px_0_var(--color-line)] transition-transform active:translate-y-[calc(-50%+3px)] active:shadow-none disabled:cursor-default">
-        SPIN
+      <button type="button" onClick={onSpin} disabled={disabled || !onSpin} aria-label={hub}
+        className="absolute left-1/2 top-1/2 grid h-[24%] w-[24%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-4 border-line bg-surface font-title text-[13px] font-black leading-none text-ocean shadow-[0_4px_0_var(--color-line)] transition-transform active:translate-y-[calc(-50%+3px)] active:shadow-none disabled:cursor-default">
+        {hub}
       </button>
     </div>
   );

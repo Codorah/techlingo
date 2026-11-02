@@ -18,13 +18,33 @@ export const PATH_XP = { course: 5, recap: 10, lessonBase: 10, perCorrect: 5, ch
 
 export interface WordResult { termId: string; correct: number; total: number }
 
+type NodeKind = 'course' | 'recap' | 'lesson' | 'challenge';
+type NodeOutcome = { xp: number; firstTime: boolean };
+
+// A double tap must not record (and reward) the same node twice: concurrent calls share one write.
+const inFlight = new Map<string, Promise<NodeOutcome>>();
+
 /** Records a finished node and returns the XP earned. `score` overrides the word results when a step is not about single words (situations). */
-export async function completeNode(nodeId: string, kind: 'course' | 'recap' | 'lesson' | 'challenge', results: WordResult[] = [], score?: { correct: number; total: number }): Promise<{ xp: number; firstTime: boolean }> {
-  const progress = await getSetting<PathProgress>(KEY, {});
-  const firstTime = !progress[nodeId];
+export function completeNode(nodeId: string, kind: NodeKind, results: WordResult[] = [], score?: { correct: number; total: number }): Promise<NodeOutcome> {
+  const pending = inFlight.get(nodeId);
+  if (pending) return pending;
+  const run = recordNode(nodeId, kind, results, score).finally(() => inFlight.delete(nodeId));
+  inFlight.set(nodeId, run);
+  return run;
+}
+
+async function recordNode(nodeId: string, kind: NodeKind, results: WordResult[], score?: { correct: number; total: number }): Promise<NodeOutcome> {
   const correct = score?.correct ?? results.reduce((s, r) => s + r.correct, 0);
   const total = score?.total ?? results.reduce((s, r) => s + r.total, 0);
   const ratio = total ? correct / total : 1;
+
+  // Read and write the progress row in one transaction so two nodes finished together both stay recorded.
+  const firstTime = await db.transaction('rw', db.settings, async () => {
+    const progress = await getSetting<PathProgress>(KEY, {});
+    if (progress[nodeId]) return false;
+    await setSetting(KEY, { ...progress, [nodeId]: { at: nowIso(), score: ratio } });
+    return true;
+  });
 
   const xp = !firstTime ? correct * PATH_XP.replayPerCorrect
     : kind === 'course' ? PATH_XP.course
@@ -33,7 +53,6 @@ export async function completeNode(nodeId: string, kind: 'course' | 'recap' | 'l
     : PATH_XP.lessonBase + correct * PATH_XP.perCorrect;
 
   if (results.length) await scheduleWords(results);
-  if (firstTime) await setSetting(KEY, { ...progress, [nodeId]: { at: nowIso(), score: ratio } });
   await logSession(results[0]?.termId ?? nodeId, ratio, xp);
   await addXP(xp);
   return { xp, firstTime };

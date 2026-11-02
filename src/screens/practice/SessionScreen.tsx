@@ -1,6 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { Mic, Sparkles, Star, Trophy, Volume2, X } from 'lucide-react';
-import { type ReactNode, useEffect, useMemo, useState } from 'react';
+import { Info, Mic, Sparkles, Star, Trophy, Volume2, X } from 'lucide-react';
+import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useParams } from 'wouter';
 import { Button } from '@/components/ui/Button';
@@ -8,16 +8,19 @@ import { Choice } from '@/components/ui/Choice';
 import { Confetti } from '@/components/ui/Confetti';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import type { Term } from '@/content/schema';
-import { addXP, logQuizAttempt, logSpeakingAttempt } from '@/data/progress';
+import { addXP, getSetting, logQuizAttempt, logSpeakingAttempt, setSetting } from '@/data/progress';
 import { db } from '@/db/db';
 import { buildChallenge, buildListening, practicePool, shuffle } from '@/learning/practice';
+import { localDay } from '@/learning/streak';
 import { useContent } from '@/lib/useContent';
 import { type Playable, QuizStep } from '@/screens/lesson/QuizStep';
-import { RepeatStep } from '@/screens/lesson/RepeatStep';
+import { REPEAT_PASS_SCORE, RepeatStep } from '@/screens/lesson/RepeatStep';
 
 type Mode = 'challenge' | 'listening' | 'speaking' | 'match';
 const XP_PER_CORRECT = 5;
 const ORAL_XP_PER_CORRECT = 10;
+// The daily challenge rewards XP once per local day; replays are practice only.
+const CHALLENGE_DAY_KEY = 'challengeDoneDay';
 
 export function SessionScreen() {
   const { t } = useTranslation();
@@ -37,7 +40,11 @@ export function SessionScreen() {
   const [challengeQuizScore, setChallengeQuizScore] = useState<number>(0);
   const [challengeSpeakingIndex, setChallengeSpeakingIndex] = useState<number>(0);
   const [challengeSpeakingGood, setChallengeSpeakingGood] = useState<number>(0);
-  const [challengeResult, setChallengeResult] = useState<{ quizScore: number; speakingScore: number; xp: number } | null>(null);
+  const [challengeQuizIndex, setChallengeQuizIndex] = useState(0);
+  const [challengeResult, setChallengeResult] = useState<{ quizScore: number; quizTotal: number; speakingScore: number; speakingTotal: number; xp: number; replay: boolean } | null>(null);
+  const challengeDoneToday = useLiveQuery(async () => (await db.settings.get(CHALLENGE_DAY_KEY))?.value === localDay(), [], false);
+  // XP is awarded once per finished session, even on a double tap.
+  const awarded = useRef(false);
 
   const pool = useMemo(() => practicePool(content.terms, learned), [content.terms, learned]);
   const items = useMemo<Playable[]>(() => {
@@ -52,11 +59,26 @@ export function SessionScreen() {
   }, [mode, pool, round]);
 
   async function finish(correct: number, total: number) {
+    if (awarded.current) return;
+    awarded.current = true;
     if (correct) await addXP(correct * XP_PER_CORRECT);
     setResult({ correct, total });
   }
 
+  async function finishChallenge(quizScore: number, speakingScore: number, speakingTotal: number) {
+    if (awarded.current) return;
+    awarded.current = true;
+    const today = localDay();
+    const replay = (await getSetting<string | null>(CHALLENGE_DAY_KEY, null)) === today;
+    const xp = replay ? 0 : quizScore * XP_PER_CORRECT + speakingScore * ORAL_XP_PER_CORRECT;
+    if (!replay) await setSetting(CHALLENGE_DAY_KEY, today);
+    if (xp > 0) await addXP(xp);
+    setChallengeResult({ quizScore, quizTotal: items.length, speakingScore, speakingTotal, xp, replay });
+  }
+
   function resetSession() {
+    awarded.current = false;
+    setChallengeQuizIndex(0);
     setResult(null);
     setChallengeResult(null);
     setChallengePhase('quiz');
@@ -112,16 +134,16 @@ export function SessionScreen() {
           <div className="rounded-2xl border border-line bg-surface p-3.5 text-center shadow-xs">
             <span className="inline-flex items-center gap-1 text-xs font-black uppercase text-ocean">
               <Volume2 size={13} aria-hidden />
-              Quiz
+              {t('practice.challenge.quizLabel')}
             </span>
-            <p className="mt-1 text-lg font-black text-ink">{challengeResult.quizScore} / 4</p>
+            <p className="mt-1 text-lg font-black text-ink">{challengeResult.quizScore} / {challengeResult.quizTotal}</p>
           </div>
           <div className="rounded-2xl border border-line bg-surface p-3.5 text-center shadow-xs">
             <span className="inline-flex items-center gap-1 text-xs font-black uppercase text-violet">
               <Mic size={13} aria-hidden />
-              Oral
+              {t('practice.challenge.oralLabel')}
             </span>
-            <p className="mt-1 text-lg font-black text-ink">{challengeResult.speakingScore} / 2</p>
+            <p className="mt-1 text-lg font-black text-ink">{challengeResult.speakingScore} / {challengeResult.speakingTotal}</p>
           </div>
         </div>
 
@@ -129,9 +151,10 @@ export function SessionScreen() {
         {challengeResult.xp > 0 && (
           <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-4 py-1.5 font-black text-gold-ink text-sm ring-1 ring-gold/30">
             <Sparkles size={16} aria-hidden />
-            +{challengeResult.xp} XP remportés
+            {t('practice.challenge.xpWon', { xp: challengeResult.xp })}
           </div>
         )}
+        {challengeResult.replay && <p className="mt-4 max-w-sm text-sm font-semibold text-ink-2">{t('practice.challenge.replayNoXp')}</p>}
 
         <div className="mt-8 grid w-full max-w-sm gap-2.5">
           <Button onClick={resetSession}>{t('practice.result.again')}</Button>
@@ -162,56 +185,56 @@ export function SessionScreen() {
   if (mode === 'match') return shell(<MatchGame key={round} pool={pool} onDone={(c, total) => void finish(c, total)} />);
   if (mode === 'speaking') return shell(<SpeakingDrill key={round} pool={pool} onDone={(c, total) => void finish(c, total)} />);
 
-  // Challenge Mode: 4 quiz questions followed by 2 oral sentences
+  // Challenge Mode: the quiz questions (up to 6) followed by up to 2 oral sentences
   if (mode === 'challenge') {
+    const steps = items.length + speakingPool.length;
     if (!items.length) return shell(<p className="mt-10 text-center text-ink-2">{t('practice.needWords')}</p>);
 
-    // Phase 1: 4 Quiz questions
+    // Phase 1: the quiz questions
     if (challengePhase === 'quiz') {
       return shell(
         <div className="flex flex-1 flex-col">
+          {challengeDoneToday && (
+            <p className="mb-4 flex items-start gap-2 rounded-2xl bg-surface p-3 text-sm font-semibold text-ink-2">
+              <Info size={18} className="mt-0.5 flex-none" aria-hidden />{t('practice.challenge.replayNoXp')}
+            </p>
+          )}
           <QuizStep
             key={`quiz-${round}`}
             questions={items}
+            onProgress={setChallengeQuizIndex}
             onAnswer={(q, choice, correct) => {
               if (q.termId) void logQuizAttempt(q.termId, q.id, correct, { choice });
             }}
             onDone={(score) => {
               setChallengeQuizScore(score);
-              if (speakingPool.length >= 1) {
-                setChallengePhase('speaking');
-              } else {
-                // If not enough sentences with speech, finish directly
-                const xp = score * XP_PER_CORRECT;
-                if (xp > 0) void addXP(xp);
-                setChallengeResult({ quizScore: score, speakingScore: 0, xp });
-              }
+              if (speakingPool.length >= 1) setChallengePhase('speaking');
+              else void finishChallenge(score, 0, 0); // no sentence to say: finish directly
             }}
           />
         </div>,
-        // Quiz progress is 0 to 4 out of 6
-        items.length > 0 ? (4 / 6) * 0.7 : 0
+        steps ? challengeQuizIndex / steps : 0
       );
     }
 
-    // Phase 2: 2 Oral Sentences
+    // Phase 2: the oral sentences
     const currentOralTerm = speakingPool[challengeSpeakingIndex];
     if (currentOralTerm && currentOralTerm.sentences?.[0]) {
       const sentence = currentOralTerm.sentences[0];
-      const oralProgress = (4 + challengeSpeakingIndex) / (4 + speakingPool.length);
+      const oralProgress = (items.length + challengeSpeakingIndex) / steps;
 
       return shell(
         <div className="flex flex-1 flex-col">
           {/* Oral Challenge Header Banner */}
           <div className="mb-4 rounded-2xl border border-violet/30 bg-violet-soft/60 p-3.5">
             <span className="text-xs font-black uppercase tracking-wider text-violet">
-              {t('practice.challenge.oralKicker', 'Défi du jour · Étape orale')} ({challengeSpeakingIndex + 1}/{speakingPool.length})
+              {t('practice.challenge.oralKicker')} ({challengeSpeakingIndex + 1}/{speakingPool.length})
             </span>
             <h2 className="mt-0.5 text-base font-black text-ink">
               {t('practice.challenge.oralTitle')}
             </h2>
             <p className="text-xs text-ink-2">
-              {t('practice.challenge.oralSubtitle', 'Prononce ces phrases pour évaluer ton anglais parlé et valider ton défi.')}
+              {t('practice.challenge.oralSubtitle', { count: speakingPool.length })}
             </p>
           </div>
 
@@ -231,18 +254,12 @@ export function SessionScreen() {
                 });
               }
 
-              const isGood = score >= 6 ? 1 : 0;
+              const isGood = score >= REPEAT_PASS_SCORE ? 1 : 0;
               const nextGood = challengeSpeakingGood + isGood;
 
               if (challengeSpeakingIndex + 1 >= speakingPool.length) {
                 // Done with all oral sentences!
-                const totalXP = challengeQuizScore * XP_PER_CORRECT + nextGood * ORAL_XP_PER_CORRECT;
-                if (totalXP > 0) await addXP(totalXP);
-                setChallengeResult({
-                  quizScore: challengeQuizScore,
-                  speakingScore: nextGood,
-                  xp: totalXP,
-                });
+                await finishChallenge(challengeQuizScore, nextGood, speakingPool.length);
               } else {
                 setChallengeSpeakingGood(nextGood);
                 setChallengeSpeakingIndex((i) => i + 1);
@@ -278,6 +295,8 @@ function MatchGame({ pool, onDone }: { pool: Term[]; onDone: (correct: number, t
   const [rightSel, setRightSel] = useState<string | null>(null);
   const [wrong, setWrong] = useState<string[]>([]);
   const [mistakes, setMistakes] = useState(0);
+  const wrongTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(wrongTimer.current), []);
 
   useEffect(() => {
     if (!left || !rightSel) return;
@@ -288,7 +307,8 @@ function MatchGame({ pool, onDone }: { pool: Term[]; onDone: (correct: number, t
       setMistakes((n) => n + 1);
       setWrong([`l-${left}`, `r-${rightSel}`]);
       navigator.vibrate?.([30, 40, 30]);
-      setTimeout(() => setWrong([]), 500);
+      clearTimeout(wrongTimer.current);
+      wrongTimer.current = setTimeout(() => setWrong([]), 900);
     }
     setLeft(null);
     setRightSel(null);
@@ -301,11 +321,16 @@ function MatchGame({ pool, onDone }: { pool: Term[]; onDone: (correct: number, t
   }, [matched]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const state = (key: string, selected: boolean) => (wrong.includes(key) ? 'wrong' : selected ? 'selected' : 'idle');
+  // A wrong pair is shown with an icon and a message too, never by colour alone.
+  const mark = (key: string) => (wrong.includes(key) ? <X size={20} aria-hidden /> : null);
 
   return (
     <div>
       <h1 className="text-2xl font-black">{t('practice.match.prompt')}</h1>
-      <p className="mt-1 text-sm text-ink-2">{t('practice.match.mistakes', { count: mistakes })}</p>
+      <p className="mt-1 text-sm text-ink-2" aria-live="polite">
+        {wrong.length > 0 && <span className="font-bold text-danger">{t('practice.match.wrongPair')} </span>}
+        {t('practice.match.mistakes', { count: mistakes })}
+      </p>
       <div className="mt-5 grid grid-cols-2 gap-2.5">
         <div className="grid content-start gap-2.5">
           {words.map((w) =>
@@ -317,7 +342,7 @@ function MatchGame({ pool, onDone }: { pool: Term[]; onDone: (correct: number, t
                 state={state(`l-${w.id}`, left === w.id)}
                 onClick={() => setLeft(left === w.id ? null : w.id)}
                 className="min-h-[64px] justify-center text-center"
-                trailing={null}
+                trailing={mark(`l-${w.id}`)}
               >
                 <span lang="en">{w.term_en}</span>
               </Choice>
@@ -335,7 +360,7 @@ function MatchGame({ pool, onDone }: { pool: Term[]; onDone: (correct: number, t
                 state={state(`r-${id}`, rightSel === id)}
                 onClick={() => setRightSel(rightSel === id ? null : id)}
                 className="min-h-[64px] justify-center text-center text-sm"
-                trailing={null}
+                trailing={mark(`r-${id}`)}
               >
                 {w.translation_fr}
               </Choice>
@@ -373,7 +398,7 @@ function SpeakingDrill({ pool, onDone }: { pool: Term[]; onDone: (correct: numbe
               ...(o.selfRated ? { selfRated: o.selfRated } : {}),
             });
           }
-          const ok = score >= 7 ? 1 : 0;
+          const ok = score >= REPEAT_PASS_SCORE ? 1 : 0;
           if (i + 1 >= items.length) onDone(good + ok, items.length);
           else {
             setGood(good + ok);

@@ -14,7 +14,7 @@ import { computeLevel } from '@/learning/badges';
 import { phraseHits } from '@/learning/situations';
 import { displayedStreak, localDay } from '@/learning/streak';
 import { sounds } from '@/lib/sound';
-import { canRecognize, listen, speak, stopSpeaking } from '@/lib/speech';
+import { canRecognize, listen, type ListenError, speak, stopSpeaking } from '@/lib/speech';
 import { QuizStep, type Playable } from '@/screens/lesson/QuizStep';
 import { accentStyle } from '@/screens/path/ThemeScreen';
 import { useSituations } from './useSituations';
@@ -66,6 +66,12 @@ const Shell = ({ children, onClose, progress, label }: { children: React.ReactNo
 export function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: string; onClose: () => void }) {
   const { t } = useTranslation();
   const [xp, setXp] = useState<number | null>(null);
+  const busy = useRef(false);
+  async function start() {
+    if (busy.current) return; // double tap
+    busy.current = true;
+    setXp((await completeNode(nodeId, 'course')).xp);
+  }
   if (xp != null) return <Done xp={xp} title={t('path.courseDone')} onContinue={onClose} />;
   return (
     <Shell onClose={onClose}>
@@ -85,7 +91,7 @@ export function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: st
       <p className="mt-4 flex gap-3 rounded-2xl bg-sun p-4 text-sun-ink"><Lightbulb size={22} className="flex-none" aria-hidden /><span className="font-semibold">{unit.guide.tip_fr}</span></p>
       <span className="flex-1" />
       <Button className="mt-6" icon={<ArrowRight size={20} aria-hidden />}
-        onClick={async () => setXp((await completeNode(nodeId, 'course')).xp)}>{t('path.start')}</Button>
+        onClick={() => void start()}>{t('path.start')}</Button>
     </Shell>
   );
 }
@@ -98,6 +104,7 @@ export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; l
   const [step, setStep] = useState<Step>('words');
   const [quizCorrect, setQuizCorrect] = useState(0);
   const [done, setDone] = useState<{ xp: number; firstTime: boolean; accuracy: number } | null>(null);
+  const finishing = useRef(false);
   // Choices are shuffled on display so the right answer's position in the file never leaks.
   const questions = useMemo<Playable[]>(() => lesson.questions.map((q, i) => {
     const order = q.choices.map((_, k) => k).sort(() => Math.random() - 0.5);
@@ -106,6 +113,8 @@ export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; l
   const index = STEPS.indexOf(step);
 
   async function finish(hits: number) {
+    if (finishing.current) return; // double tap on "Voir mon résultat"
+    finishing.current = true;
     const total = questions.length + lesson.production.key_phrases.length;
     const correct = quizCorrect + hits;
     const r = await completeNode(nodeId, 'lesson', [], { correct, total });
@@ -206,17 +215,30 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
   const [text, setText] = useState('');
   const [checked, setChecked] = useState(false);
   const [listening, setListening] = useState(false);
+  const [micError, setMicError] = useState<string | null>(null);
+  const [sent, setSent] = useState(false);
   const stopRef = useRef<() => void>(() => {});
+  const abortRef = useRef<() => void>(() => {});
   const hits = phraseHits(text, p.key_phrases);
   const count = hits.filter(Boolean).length;
+  // Leaving the step closes the microphone.
+  useEffect(() => () => abortRef.current(), []);
 
   async function dictate() {
     if (listening) { stopRef.current(); return; }
-    setListening(true);
+    setListening(true); setMicError(null);
     const base = text ? `${text} ` : '';
-    const { done, stop } = listen((partial) => setText(base + partial), { continuous: true });
+    const { done, stop, abort } = listen((partial) => setText(base + partial), { continuous: true });
     stopRef.current = stop;
-    try { setText(base + (await done)); } catch { /* typing stays available */ } finally { setListening(false); }
+    abortRef.current = abort;
+    try {
+      const heard = await done;
+      if (heard) setText(base + heard); else setMicError(t('recall.say.nothing'));
+    } catch (e) {
+      // Typing stays available; an aborted dictation keeps what was already written.
+      const code = e as ListenError;
+      if (code !== 'aborted') setMicError(code === 'not-allowed' || code === 'unsupported' ? t('recall.say.denied') : t('recall.say.nothing'));
+    } finally { setListening(false); }
   }
 
   return (
@@ -228,9 +250,10 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
       )}
       <label className="mt-4 block">
         <span className="sr-only">{t('situations.yourAnswer')}</span>
-        <textarea value={text} onChange={(e) => setText(e.target.value)} readOnly={checked} rows={4} lang="en" placeholder={t('situations.placeholder')}
+        <textarea value={text} onChange={(e) => setText(e.target.value)} readOnly={checked || listening} rows={4} lang="en" placeholder={t('situations.placeholder')}
           className="w-full rounded-2xl border-2 border-line bg-surface p-4 text-base leading-relaxed outline-none placeholder:text-ink-2 focus:border-[var(--accent)]" />
       </label>
+      {micError && !checked && <p role="alert" className="mt-2 text-sm font-semibold text-danger">{micError}</p>}
       {!checked && canRecognize() && (
         <Button variant="secondary" className="mt-2" icon={listening ? <Square size={18} aria-hidden /> : <Mic size={20} aria-hidden />} onClick={() => void dictate()}>
           {listening ? t('situations.stop') : t('situations.speak')}
@@ -259,8 +282,8 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
       )}
       <span className="flex-1" />
       {checked
-        ? <Button className="mt-6" variant="success" onClick={() => onDone(count)}>{t('quiz.finish')}</Button>
-        : <Button className="mt-6" variant="success" disabled={text.trim().length < 8} onClick={() => { stopRef.current(); setChecked(true); }}>{t('quiz.check')}</Button>}
+        ? <Button className="mt-6" variant="success" disabled={sent} onClick={() => { setSent(true); onDone(count); }}>{t('quiz.finish')}</Button>
+        : <Button className="mt-6" variant="success" disabled={text.trim().length < 8} onClick={() => { abortRef.current(); setChecked(true); }}>{t('quiz.check')}</Button>}
     </div>
   );
 }

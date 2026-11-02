@@ -1,7 +1,7 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { type ComponentType, lazy, StrictMode, Suspense, useEffect } from 'react';
+import { type ComponentType, lazy, StrictMode, Suspense, useEffect, useLayoutEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Route, Switch } from 'wouter';
+import { Route, Switch, useLocation } from 'wouter';
 import '@/i18n';
 import '@/styles/index.css';
 import { InstallSheet } from '@/app/InstallSheet';
@@ -9,6 +9,8 @@ import { UpdatePrompt } from '@/app/UpdatePrompt';
 import { db, getDeviceId, requestPersistence } from '@/db/db';
 import { domainOf } from '@/lib/domains';
 import '@/lib/install';
+import '@/lib/sound'; // unlocks Web Audio on the first tap (iOS)
+import { stopSpeaking } from '@/lib/speech';
 import { useManifest } from '@/lib/useContent';
 import { HomeScreen } from '@/screens/HomeScreen';
 
@@ -45,7 +47,10 @@ function App() {
   const profile = useLiveQuery(async () => (await db.profile.get('me')) ?? null);
   const manifest = useManifest();
   const domain = domainOf(manifest, profile?.primaryRole);
+  const [location] = useLocation();
   useEffect(() => { document.documentElement.dataset.domain = domain; }, [domain]);
+  // Leaving a screen silences whatever it was reading aloud (layout effect: runs before the new screen's autoplay).
+  useLayoutEffect(() => { stopSpeaking(); }, [location]);
   if (profile === undefined) return null; // first IndexedDB read
 
   if (!profile?.onboardedAt) {

@@ -23,7 +23,7 @@ export function listeningItem(term: Term, pool: Term[], prompt: string, random =
   const others = shuffle(pool.filter((t) => t.id !== term.id && !sentence.text_en.toLowerCase().includes(t.term_en.toLowerCase())), random).slice(0, 3);
   if (others.length < 2) return null;
   const choices = shuffle([term.term_en, ...others.map((o) => o.term_en)], random);
-  return { id: `listen-${term.id}`, termId: term.id, prompt, audio: sentence.text_en, choices, answer: choices.indexOf(term.term_en), explanation: `${sentence.text_en} — ${sentence.text_fr}` };
+  return { id: `listen-${term.id}`, termId: term.id, prompt, audio: sentence.text_en, choices, answer: choices.indexOf(term.term_en), explanation: `${sentence.text_en} (${sentence.text_fr})` };
 }
 
 export function quizItem(term: Term, fillGapLabel: string, random = Math.random): Playable | null {

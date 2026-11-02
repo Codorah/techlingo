@@ -1,11 +1,11 @@
 import { Check, Flame, Turtle, Volume2, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
 import { Choice } from '@/components/ui/Choice';
 import type { QuizQuestion } from '@/content/schema';
 import { sounds } from '@/lib/sound';
-import { speak } from '@/lib/speech';
+import { speak, stopSpeaking, useHasVoice } from '@/lib/speech';
 
 export type Playable = { id: string; termId?: string; prompt: string; sentence?: string; audio?: string; choices: string[]; answer: number; explanation: string };
 
@@ -26,10 +26,12 @@ export function toPlayable(q: QuizQuestion, fillGapLabel: string): Playable | nu
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
-export function QuizStep({ questions, onAnswer, onDone }: {
+export function QuizStep({ questions, onAnswer, onDone, onProgress }: {
   questions: Playable[];
   onAnswer: (q: Playable, choice: number, correct: boolean) => void;
   onDone: (correct: number) => void;
+  /** Index of the question on screen (session progress bars). */
+  onProgress?: (index: number) => void;
 }) {
   const { t } = useTranslation();
   const [i, setI] = useState(0);
@@ -39,10 +41,14 @@ export function QuizStep({ questions, onAnswer, onDone }: {
   const [combo, setCombo] = useState(0);
   const q = questions[i]!;
   const correct = selected === q.answer;
-  useEffect(() => { if (q.audio) speak(q.audio); }, [q]);
+  const voice = useHasVoice();
+  // First question only: later ones are read from the tap that opens them (iOS blocks speech outside a gesture).
+  useEffect(() => { const first = questions[0]; if (first?.audio) speak(first.audio); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => () => stopSpeaking(), []);
+  useEffect(() => { onProgress?.(i); }, [i]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function check() {
-    if (selected === null) return;
+    if (selected === null || checked) return;
     setChecked(true);
     if (correct) setScore((s) => s + 1);
     setCombo((c) => (correct ? c + 1 : 0));
@@ -50,8 +56,16 @@ export function QuizStep({ questions, onAnswer, onDone }: {
     if (correct) sounds.correct(); else sounds.wrong();
     onAnswer(q, selected, correct);
   }
+  const finished = useRef(false);
   function next() {
-    if (i + 1 >= questions.length) { onDone(score); return; }
+    if (i + 1 >= questions.length) {
+      if (finished.current) return; // double tap on "Voir mon résultat"
+      finished.current = true;
+      onDone(score);
+      return;
+    }
+    const upcoming = questions[i + 1]!;
+    if (upcoming.audio) speak(upcoming.audio); else stopSpeaking();
     setI(i + 1); setSelected(null); setChecked(false);
   }
 
@@ -59,7 +73,13 @@ export function QuizStep({ questions, onAnswer, onDone }: {
     <div className="flex flex-1 flex-col">
       <p className="text-sm font-bold text-ink-2">{t('quiz.progress', { n: i + 1, total: questions.length })}</p>
       <h2 className="mt-2 text-[1.35rem] font-black leading-snug">{q.prompt}</h2>
-      {q.audio && (
+      {q.audio && !voice && (
+        <p className="mt-3 rounded-2xl bg-surface p-4 text-[15px] leading-relaxed">
+          <span className="block text-sm font-bold text-ink-2">{t('practice.listening.noVoice')}</span>
+          <span lang="en" className="mt-1 block font-semibold">{q.audio}</span>
+        </p>
+      )}
+      {q.audio && voice && (
         <div className="mt-4 flex gap-2">
           <Button block={false} className="flex-1" icon={<Volume2 size={20} aria-hidden />} onClick={() => speak(q.audio!)}>{t('practice.listening.play')}</Button>
           <Button variant="secondary" block={false} className="flex-1" icon={<Turtle size={20} aria-hidden />} onClick={() => speak(q.audio!, { slow: true })}>{t('practice.listening.slow')}</Button>
@@ -87,7 +107,7 @@ export function QuizStep({ questions, onAnswer, onDone }: {
             </p>
             {!correct && <p className="mt-1 font-bold">{t('quiz.answer', { answer: q.choices[q.answer] })}</p>}
             <p className="mt-1 text-sm">{q.explanation}</p>
-            <Button variant={correct ? 'success' : 'danger'} className="mt-4" onClick={next}>{i + 1 >= questions.length ? t('quiz.finish') : t('quiz.next')}</Button>
+            <Button variant={correct ? 'success' : 'danger'} className="mt-4" autoFocus onClick={next}>{i + 1 >= questions.length ? t('quiz.finish') : t('quiz.next')}</Button>
           </div>
         </div>
       ) : (

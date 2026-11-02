@@ -8,6 +8,9 @@ import { canRecognize, listen, type ListenError, speak, stopSpeaking } from '@/l
 
 export interface RepeatOutcome { score: number | null; transcript: string; recognizedRatio: number; selfRated?: 'easy' | 'hard' }
 
+/** A repeated sentence counts as "good" from this score (out of 10; self-rated "easy" = 8, "hard" = 4). */
+export const REPEAT_PASS_SCORE = 7;
+
 /** "Repeat it" step: Web Speech recognition when available, honest self-rating otherwise. */
 export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (o: RepeatOutcome) => void }) {
   const { t } = useTranslation();
@@ -17,20 +20,32 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
   const [result, setResult] = useState<CompareResult | null>(null);
   const [error, setError] = useState<ListenError | null>(null);
   const stopRef = useRef<() => void>(() => {});
+  const abortRef = useRef<() => void>(() => {});
+  const finished = useRef(false);
 
-  useEffect(() => () => { stopRef.current(); stopSpeaking(); }, []);
+  useEffect(() => () => { abortRef.current(); stopSpeaking(); }, []);
+
+  function finish(o: RepeatOutcome) {
+    if (finished.current) return; // double tap
+    finished.current = true;
+    abortRef.current();
+    onDone(o);
+  }
 
   async function start() {
     stopSpeaking();
     setError(null); setResult(null); setPartial(''); setListening(true);
-    const { done, stop } = listen(setPartial);
+    const { done, stop, abort } = listen(setPartial);
     stopRef.current = stop;
+    abortRef.current = abort;
     try {
       const text = await done;
+      // Nothing recognised is "I heard nothing", not a 0 score.
+      if (!text.trim()) { setError('no-speech'); setPartial(''); return; }
       setResult(compareSentence(sentence.text_en, text));
       setPartial(text);
     } catch (e) {
-      setError((e as ListenError) ?? 'other');
+      if (e !== 'aborted') setError((e as ListenError) ?? 'other');
     } finally { setListening(false); }
   }
 
@@ -41,7 +56,7 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
     </div>
   );
 
-  const fallback = !supported || error === 'not-allowed' || error === 'other' || error === 'network';
+  const fallback = !supported || error === 'not-allowed' || error === 'unsupported' || error === 'other' || error === 'network';
 
   return (
     <div className="flex flex-1 flex-col">
@@ -58,13 +73,13 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
 
       {error === 'not-allowed' && <p role="alert" className="mt-4 rounded-2xl bg-sun p-3 text-sm font-semibold text-sun-ink">{t('repeat.denied')}</p>}
       {error === 'no-speech' && <p role="alert" className="mt-4 rounded-2xl bg-sun p-3 text-sm font-semibold text-sun-ink">{t('repeat.noSpeech')}</p>}
-      {(error === 'other' || error === 'network') && <p role="alert" className="mt-4 rounded-2xl bg-sun p-3 text-sm font-semibold text-sun-ink">{t('repeat.error')}</p>}
+      {(error === 'other' || error === 'network' || error === 'unsupported') && <p role="alert" className="mt-4 rounded-2xl bg-sun p-3 text-sm font-semibold text-sun-ink">{t('repeat.error')}</p>}
 
       <div className="mt-auto pt-6">
         {fallback ? (
           <div className="grid grid-cols-2 gap-2.5">
-            <Button variant="secondary" onClick={() => onDone({ score: null, transcript: '', recognizedRatio: 0, selfRated: 'hard' })}>{t('repeat.hard')}</Button>
-            <Button variant="success" onClick={() => onDone({ score: null, transcript: '', recognizedRatio: 0, selfRated: 'easy' })}>{t('repeat.easy')}</Button>
+            <Button variant="secondary" onClick={() => finish({ score: null, transcript: '', recognizedRatio: 0, selfRated: 'hard' })}>{t('repeat.hard')}</Button>
+            <Button variant="success" onClick={() => finish({ score: null, transcript: '', recognizedRatio: 0, selfRated: 'easy' })}>{t('repeat.easy')}</Button>
           </div>
         ) : result ? (
           <>
@@ -72,7 +87,7 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
             <p className="mb-3 text-center text-xs text-ink-2">{t('repeat.honesty')}</p>
             <div className="grid grid-cols-2 gap-2.5">
               <Button variant="secondary" icon={<RotateCcw size={20} aria-hidden />} onClick={() => void start()}>{t('repeat.retry')}</Button>
-              <Button onClick={() => onDone({ score: result.score, transcript: partial, recognizedRatio: result.recognizedRatio })}>{t('common.continue')}</Button>
+              <Button onClick={() => finish({ score: result.score, transcript: partial, recognizedRatio: result.recognizedRatio })}>{t('common.continue')}</Button>
             </div>
           </>
         ) : (
@@ -84,8 +99,8 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
               aria-label={listening ? t('repeat.stop') : t('repeat.tap')}>
               {listening ? <Square size={28} aria-hidden /> : <Mic size={32} aria-hidden />}
             </button>
-            <p className="mt-3 text-center font-bold">{listening ? t('repeat.listening') : t('repeat.tap')}</p>
-            <button type="button" className="mx-auto mt-2 block min-h-11 px-4 text-sm font-bold text-ink-2" onClick={() => onDone({ score: null, transcript: '', recognizedRatio: 0 })}>{t('common.skip')}</button>
+            <p className="mt-3 text-center font-bold" aria-live="polite">{listening ? t('repeat.listening') : t('repeat.tap')}</p>
+            <button type="button" className="mx-auto mt-2 block min-h-11 px-4 text-sm font-bold text-ink-2" onClick={() => finish({ score: null, transcript: '', recognizedRatio: 0 })}>{t('common.skip')}</button>
           </>
         )}
       </div>
