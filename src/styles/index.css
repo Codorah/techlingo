@@ -36,6 +36,8 @@
   --color-flame-soft: #ffedd5;
   --color-gold-ink: #9a6a00;
 
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.25rem;
   --font-title: "Nunito", "DM Sans", system-ui, sans-serif;
   --font-sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
@@ -96,7 +98,8 @@
   html { font-size: clamp(16px, 4.2vw, 17px); -webkit-tap-highlight-color: transparent; touch-action: manipulation; overscroll-behavior: none; }
   body { @apply bg-mist font-sans text-ink antialiased; }
   body { overflow-wrap: break-word; }
-  p, li, h1, h2, h3 { hyphens: auto; }
+  /* Hyphenation only where long running text opts in ([hyphens:auto]); short UI copy breaks on spaces. */
+  p, li, h1, h2, h3 { hyphens: manual; }
   h1, h2, h3 { @apply font-title; text-wrap: balance; }
   :focus-visible { outline: 3px solid var(--color-sky); outline-offset: 2px; }
 }

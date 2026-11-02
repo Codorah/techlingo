@@ -195,7 +195,7 @@ function DialogueCard({ lines, upTo, channel }: { lines: PathLesson['dialogue'];
       <div className="flex items-center gap-2 border-b-2 border-line bg-mist/60 px-4 py-2 text-sm font-black text-ink-2">
         <Icon size={18} className="text-[var(--accent)]" aria-hidden />{t(`situations.channel.${channel}`)}<span className="ml-auto font-bold">{t('deck.line', { n: upTo + 1, total: lines.length })}</span>
       </div>
-      <ul className="grid gap-1.5 p-3">
+      <ul className="grid grid-cols-[minmax(0,1fr)] gap-1.5 p-3">
         {lines.slice(0, upTo).map((l, i) => (
           <li key={i} className="flex gap-2 text-sm text-ink-2"><span className="font-black" style={{ color: colorOf(l.speaker) }}>{l.speaker}</span><span lang="en" className="min-w-0 flex-1 truncate">{l.text_en}</span></li>
         ))}

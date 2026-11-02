@@ -197,7 +197,7 @@ function Order({ ex, seed, locked, onAnswer }: StepProps & { seed: number }) {
       <div className="mt-5 flex min-h-[112px] flex-wrap content-start gap-2 border-y-2 border-line py-3" aria-label={t('recall.order.answer')}>
         {picked.map((i, k) => (
           <button key={`${i}-${k}`} type="button" disabled={locked} onClick={() => setPicked(picked.filter((_, x) => x !== k))} lang="en"
-            className="min-h-11 animate-[pop_.15s_var(--ease-out-quart)] rounded-xl border-2 border-line bg-surface px-3 font-semibold shadow-[0_3px_0_var(--color-line)]">{words[i]}</button>
+            className="min-h-11 min-w-11 animate-[pop_.15s_var(--ease-out-quart)] rounded-xl border-2 border-line bg-surface px-3 font-semibold shadow-[0_3px_0_var(--color-line)]">{words[i]}</button>
         ))}
       </div>
       <div className="mt-5 flex flex-wrap justify-center gap-2">
@@ -205,7 +205,7 @@ function Order({ ex, seed, locked, onAnswer }: StepProps & { seed: number }) {
           const used = picked.includes(i);
           return (
             <button key={i} type="button" disabled={used || locked} onClick={() => setPicked([...picked, i])} lang="en"
-              className={`min-h-11 rounded-xl border-2 px-3 font-semibold ${used ? 'border-line bg-line text-transparent' : 'border-line bg-surface shadow-[0_3px_0_var(--color-line)] active:translate-y-0.5 active:shadow-none'}`}>{w}</button>
+              className={`min-h-11 min-w-11 rounded-xl border-2 px-3 font-semibold ${used ? 'border-line bg-line text-transparent' : 'border-line bg-surface shadow-[0_3px_0_var(--color-line)] active:translate-y-0.5 active:shadow-none'}`}>{w}</button>
           );
         })}
       </div>

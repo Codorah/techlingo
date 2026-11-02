@@ -22,7 +22,7 @@ export function SituationsCard() {
         <p className="text-sm font-bold opacity-90">{t('situations.title')} · {done}/{nodes.length}</p>
         <p className="mt-1 text-lg font-black leading-snug">{path.title_fr}</p>
         <p className="mt-1 text-sm opacity-90">{nextTitle ? t('situations.next', { title: nextTitle }) : t('situations.finished')}</p>
-        {done === 0 && <p className="mt-2 text-sm opacity-90">{domain === 'marketing' ? t('situations.cardTextMarketing') : t('situations.cardText')}</p>}
+        {done === 0 && <p className="mt-2 hidden text-sm opacity-90 sm:block">{domain === 'marketing' ? t('situations.cardTextMarketing') : t('situations.cardText')}</p>}
       </div>
       <ChevronRight size={24} className="relative flex-none" aria-hidden />
     </Link>

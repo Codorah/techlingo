@@ -90,7 +90,7 @@ export function SettingsScreen() {
   return (
     <div style={accentStyle(domain)}>
       <Screen title={t('settings.title')} back="/profile">
-        <div className="grid gap-3">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-3">
           <Group icon={<UserRound size={20} aria-hidden />} title={t('settings.identity')} summary={profile.displayName || undefined} defaultOpen>
             <label className="block">
               <span className="text-sm font-bold text-ink-2">{t('settings.displayName')}</span>
@@ -118,7 +118,7 @@ export function SettingsScreen() {
             </div>
             <Link href="/settings/roles" className="mt-4 flex min-h-12 items-center gap-3 rounded-xl border-2 border-line px-3 active:bg-mist">
               <Briefcase size={20} className="flex-none text-[var(--accent)]" aria-hidden />
-              <span className="min-w-0 flex-1"><span className="block text-sm font-bold">{t('roles.title')}</span><span className="block truncate text-xs text-ink-2">{domainName} · {roleNames.join(', ')}</span></span>
+              <span className="min-w-0 flex-1"><span className="block text-sm font-bold">{t('roles.title')}</span><span className="block line-clamp-2 text-sm text-ink-2">{domainName} · {roleNames.join(', ')}</span></span>
               <ChevronRight size={18} className="flex-none text-ink-2" aria-hidden />
             </Link>
           </Group>
@@ -203,7 +203,7 @@ export function SettingsScreen() {
           </Group>
         </div>
 
-        <p className="mt-6 text-center text-xs font-bold text-ink-2">TechLingo v1.0 · {t('settings.ageRating')}</p>
+        <p className="mt-6 text-center text-sm font-bold text-ink-2">TechLingo v1.0 · {t('settings.ageRating')}</p>
       </Screen>
     </div>
   );
@@ -212,7 +212,7 @@ export function SettingsScreen() {
 function Switch({ on, label, onClick }: { on: boolean; label: string; onClick: () => void }) {
   return (
     <button type="button" role="switch" aria-checked={on} aria-label={label} onClick={onClick}
-      className={`relative h-8 w-14 flex-none rounded-full transition-colors ${on ? 'bg-[var(--accent)]' : 'bg-line'}`}>
+      className={`relative h-8 w-14 flex-none rounded-full before:absolute before:-inset-y-2 before:inset-x-0 before:content-[''] transition-colors ${on ? 'bg-[var(--accent)]' : 'bg-line'}`}>
       <span className={`absolute left-0 top-1 h-6 w-6 rounded-full bg-white shadow transition-transform duration-200 ${on ? 'translate-x-7' : 'translate-x-1'}`} />
     </button>
   );
@@ -237,7 +237,7 @@ function Row({ href, external, onClick, icon, title, text }: { href?: string; ex
   const body = (
     <>
       <span className="flex-none text-[var(--accent)]">{icon}</span>
-      <span className="min-w-0 flex-1"><span className="block font-bold">{title}</span>{text && <span className="block truncate text-xs text-ink-2">{text}</span>}</span>
+      <span className="min-w-0 flex-1"><span className="block font-bold">{title}</span>{text && <span className="block line-clamp-2 text-sm text-ink-2">{text}</span>}</span>
       <ChevronRight size={18} className="flex-none text-ink-2" aria-hidden />
     </>
   );

@@ -91,7 +91,7 @@ export function HomeScreen() {
             <p className="truncate font-title text-lg font-black leading-tight">
               {profile.displayName ? t('home.hello', { name: profile.displayName }) : t('home.helloAnon')}
             </p>
-            <p className="truncate text-xs font-semibold text-ink-2">
+            <p className="line-clamp-2 text-sm font-semibold text-ink-2">
               {manifest?.roles.find((r) => r.id === profile.primaryRole)?.name_fr}
             </p>
           </div>
@@ -129,7 +129,7 @@ export function HomeScreen() {
               <p className="mt-0.5 truncate font-title text-base font-black text-ink">
                 {spinState === 'free' ? 'Tire ton mot du jour !' : 'Un mot supplémentaire t’attend'}
               </p>
-              <p className="truncate text-xs font-semibold text-ink-2">
+              <p className="line-clamp-2 text-sm font-semibold text-ink-2">
                 {spinState === 'free' ? '1 mot par jour suffit pour prolonger ta série' : 'Bravo pour ta leçon !'}
               </p>
             </div>
@@ -167,7 +167,7 @@ export function HomeScreen() {
                   </span>
                   <div className="min-w-0 flex-1">
                     <span className="block font-extrabold text-sm">{t('home.spin.done.title')}</span>
-                    <span className="block text-xs text-ink-2">Mot du jour appris · Revoir la leçon</span>
+                    <span className="block text-sm text-ink-2">Mot du jour appris · Revoir la leçon</span>
                   </div>
                   <ChevronRight size={18} className="text-ink-2" aria-hidden />
                 </Link>
@@ -185,7 +185,7 @@ export function HomeScreen() {
                   <span className="block font-extrabold text-sm">
                     {due ? t('home.reviews.title', { count: due }) : t('home.reviews.none')}
                   </span>
-                  <span className="block text-xs text-ink-2">
+                  <span className="block text-sm text-ink-2">
                     {due ? t('home.reviews.text') : t('home.reviews.noneText')}
                   </span>
                 </div>
@@ -206,7 +206,7 @@ export function HomeScreen() {
                     />
                   ))}
                 </div>
-                <p className="mt-1.5 text-xs text-ink-2">
+                <p className="mt-1.5 text-sm text-ink-2">
                   {activeDays >= WEEKLY_GOAL
                     ? t('home.week.reached')
                     : t('home.week.goal', { count: activeDays, goal: WEEKLY_GOAL })}
@@ -237,12 +237,12 @@ export function HomeScreen() {
                       <Compass size={20} className="text-[var(--accent)]" />
                       {t('course.discover')} ({roles.discover.length})
                     </span>
-                    <span className="text-xs font-bold text-ink-2 group-open:hidden">
+                    <span className="text-sm font-bold text-ink-2 group-open:hidden">
                       Voir les spécialités
                     </span>
                     <ChevronDown size={20} className="text-ink-2 transition-transform duration-200 group-open:rotate-180" />
                   </summary>
-                  <p className="mt-2 text-xs text-ink-2">
+                  <p className="mt-2 text-sm text-ink-2">
                     Curieux ? Découvre le vocabulaire et les situations des autres métiers Tech & Marketing.
                   </p>
                   <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
@@ -257,10 +257,10 @@ export function HomeScreen() {
                             <span className="grid h-10 w-10 place-items-center rounded-xl bg-surface text-[var(--accent)] shadow-xs">
                               <DynamicIcon name={meta.icon} size={20} />
                             </span>
-                            <span className="mt-2.5 font-extrabold text-xs leading-snug text-ink">
+                            <span className="mt-2.5 font-extrabold text-sm leading-snug text-ink">
                               {meta.name_fr}
                             </span>
-                            <span className="mt-1 line-clamp-2 text-xs text-ink-2">
+                            <span className="mt-1 line-clamp-2 text-sm text-ink-2">
                               {meta.description_fr}
                             </span>
                           </Link>
@@ -336,7 +336,7 @@ export function HomeScreen() {
         </div>
 
         {roles.otherDomain.length > 0 && (
-          <p className="mt-8 text-center text-xs text-ink-2">
+          <p className="mt-8 text-center text-sm text-ink-2">
             {t('course.otherDomain')} :{' '}
             <Link href="/settings/roles" className="font-bold text-[var(--accent)] underline-offset-2 hover:underline">
               {t('roles.title')}
@@ -360,7 +360,7 @@ function HeroCourse({ role }: { role: string }) {
   return (
     <section
       aria-labelledby="hero-course"
-      className="relative overflow-hidden rounded-3xl bg-[var(--accent)] p-5 text-on-ocean shadow-[0_6px_0_var(--accent-press)] sm:p-6"
+      className="relative overflow-hidden rounded-3xl bg-[var(--accent)] p-4 text-on-ocean shadow-[0_6px_0_var(--accent-press)] sm:p-6"
     >
       <DynamicIcon name={meta.icon} size={170} className="pointer-events-none absolute -right-8 -top-8 opacity-[0.13]" />
       <svg aria-hidden className="pointer-events-none absolute -bottom-10 -left-6 h-40 w-40 opacity-20" viewBox="0 0 100 100">
@@ -370,12 +370,12 @@ function HeroCourse({ role }: { role: string }) {
         <p className="text-xs font-extrabold uppercase tracking-wider opacity-90">
           {stats.unit ? t(`course.unitKind.${stats.unit.kind}`, { n: stats.unit.number }) : t('course.finished')}
         </p>
-        <h1 id="hero-course" className="mt-1 text-2xl font-black leading-tight sm:text-3xl">
+        <h1 id="hero-course" className="mt-1 text-xl font-black leading-tight sm:text-3xl">
           {stats.unit?.title ?? meta.name_fr}
         </h1>
-        <p className="mt-1 text-xs opacity-90">{meta.name_fr}</p>
+        <p className="mt-1 hidden text-sm opacity-90 sm:block">{meta.name_fr}</p>
 
-        <div className="mt-4 flex items-center gap-3">
+        <div className="mt-3 flex items-center gap-3">
           <div
             className="h-3 flex-1 overflow-hidden rounded-full bg-white/25"
             role="progressbar"
@@ -389,11 +389,11 @@ function HeroCourse({ role }: { role: string }) {
               style={{ width: `${Math.max(4, stats.ratio * 100)}%` }}
             />
           </div>
-          <span className="text-xs font-black">{Math.round(stats.ratio * 100)} %</span>
+          <span className="text-sm font-black">{Math.round(stats.ratio * 100)} %</span>
         </div>
 
         {stats.next && (
-          <p className="mt-4 rounded-xl bg-white/15 px-3 py-2.5 text-xs">
+          <p className="mt-3 rounded-xl bg-white/15 px-3 py-2 text-sm">
             <span className="font-bold opacity-90">{t('course.next')} : </span>
             <span className="font-black">{stats.next.title}</span>
           </p>
@@ -402,7 +402,7 @@ function HeroCourse({ role }: { role: string }) {
         <button
           type="button"
           onClick={() => navigate(stats.next ? courseNodeHref(role, stats.next) : `/parcours/${role}`)}
-          className="mt-5 inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl bg-white text-base font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.25)] transition-transform active:translate-y-1 active:shadow-none"
+          className="mt-4 inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl bg-white text-base font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.25)] transition-transform active:translate-y-1 active:shadow-none"
         >
           {finished ? t('course.redo') : stats.done ? t('course.continue') : t('course.begin')}
           <ArrowRight size={20} aria-hidden />
@@ -410,7 +410,7 @@ function HeroCourse({ role }: { role: string }) {
 
         <Link
           href={`/parcours/${role}`}
-          className="mt-3 flex min-h-11 items-center justify-center text-xs font-bold underline-offset-2 opacity-95 hover:underline"
+          className="mt-3 flex min-h-11 items-center justify-center text-sm font-bold underline-offset-2 opacity-95 hover:underline"
         >
           {t('course.seeMap')}
         </Link>
@@ -448,7 +448,7 @@ function CourseRow({ role, general }: { role: string; general: boolean }) {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block font-extrabold leading-snug text-sm">{general ? t('course.general') : meta.name_fr}</span>
-        <span className="block text-xs text-ink-2">
+        <span className="block text-sm text-ink-2">
           {course ? `${t('course.units', { count: course.units.length })} · ${pct} %` : meta.description_fr}
         </span>
       </span>

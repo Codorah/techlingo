@@ -172,7 +172,7 @@ export function ProfileScreen() {
                   const isToday = d.dayStr === today;
                   return (
                     <div key={d.dayStr} className="flex flex-col items-center gap-1">
-                      <span className="h-3.5 text-[10px] font-bold text-ink-2">{d.xp ? `+${d.xp}` : ''}</span>
+                      <span className="h-4 text-xs font-bold text-ink-2">{d.xp ? `+${d.xp}` : ''}</span>
                       <div className="flex h-11 w-full items-end justify-center">
                         <span className={`w-full max-w-[26px] rounded-lg ${d.active ? 'bg-[var(--accent)]' : 'bg-line'} ${isToday ? 'ring-2 ring-[var(--accent)]/40' : ''}`} style={{ height: h }} />
                       </div>
@@ -231,7 +231,7 @@ export function ProfileScreen() {
                   <button type="button" onClick={() => setSelected(b)} className="flex h-full w-full flex-col items-center gap-1.5 rounded-2xl border-2 border-line bg-surface px-1.5 py-3 text-center transition-transform active:scale-95">
                     <BadgeMedal icon={b.icon} tier={b.tier} ratio={b.ratio} size={60} />
                     <span className="line-clamp-2 min-h-[2lh] text-xs font-extrabold leading-tight">{t(`badges.list.${b.id}.title`)}</span>
-                    <span className="text-[11px] font-bold tabular-nums text-ink-2">{b.current}/{b.nextTarget}</span>
+                    <span className="text-xs font-bold tabular-nums text-ink-2">{b.current}/{b.nextTarget}</span>
                   </button>
                 </li>
               ))}

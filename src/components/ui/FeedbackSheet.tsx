@@ -16,10 +16,12 @@ export function FeedbackSheet({ tone, title, children, onContinue, label }: { to
   const look = LOOK[tone];
   return (
     <div role="status" aria-live="assertive"
-      className={`fixed inset-x-0 bottom-0 z-40 max-h-[75dvh] animate-[sheet_.22s_var(--ease-out-quart)] overflow-y-auto border-t-2 px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-4 ${look.box}`}>
-      <div className="mx-auto max-w-[640px]">
+      className={`fixed inset-x-0 bottom-0 z-40 flex max-h-[75dvh] animate-[sheet_.22s_var(--ease-out-quart)] flex-col border-t-2 px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-4 ${look.box}`}>
+      <div className="mx-auto flex min-h-0 w-full max-w-[640px] flex-col">
+        <div className="min-h-0 flex-1 overflow-y-auto">
         <p className={`flex items-center gap-2 text-xl font-black ${look.title}`}><look.Icon size={28} aria-hidden />{title}</p>
         {children && <div className="mt-1.5 text-ink">{children}</div>}
+        </div>
         <button type="button" autoFocus onClick={onContinue}
           className={`mt-4 inline-flex min-h-[52px] w-full items-center justify-center rounded-2xl font-black uppercase tracking-wide text-white active:translate-y-1 active:shadow-none ${look.button}`}>
           {label ?? t('common.continue')}

@@ -98,15 +98,17 @@ export function QuizStep({ questions, onAnswer, onDone, onProgress }: {
       </div>
       <div className="h-56" aria-hidden />
       {checked ? (
-        <div role="alert" className={`fixed inset-x-0 bottom-0 z-30 max-h-[75dvh] animate-[sheet_.28s_var(--ease-out-quart)] overflow-y-auto px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-5 ${correct ? 'bg-mint text-mint-ink' : 'bg-danger-soft text-danger'}`}>
-          <div className="mx-auto max-w-[640px]">
+        <div role="alert" className={`fixed inset-x-0 bottom-0 z-30 flex max-h-[75dvh] animate-[sheet_.28s_var(--ease-out-quart)] flex-col px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-5 ${correct ? 'bg-mint text-mint-ink' : 'bg-danger-soft text-danger'} shadow-[0_-6px_20px_rgba(15,34,56,0.12)]`}>
+          <div className="mx-auto flex min-h-0 w-full max-w-[640px] flex-col">
+            <div className="min-h-0 flex-1 overflow-y-auto">
             <p className="flex items-center gap-2 text-lg font-black">
               <span className="grid h-9 w-9 animate-[bounce-in_.4s_var(--ease-out-quart)] place-items-center rounded-full bg-surface">{correct ? <Check size={22} aria-hidden /> : <X size={22} aria-hidden />}</span>
               {correct ? t('quiz.correct') : t('quiz.wrong')}
               {correct && combo >= 3 && <span className="ml-auto inline-flex animate-[pop_.3s_ease-out] items-center gap-1 rounded-full bg-surface px-3 py-1 text-sm text-[#C2410C]"><Flame size={16} aria-hidden />{t('quiz.combo', { count: combo })}</span>}
             </p>
             {!correct && <p className="mt-1 font-bold">{t('quiz.answer', { answer: q.choices[q.answer] })}</p>}
-            <p className="mt-1 text-sm">{q.explanation}</p>
+            <p className="mt-1 text-base leading-snug">{q.explanation}</p>
+            </div>
             <Button variant={correct ? 'success' : 'danger'} className="mt-4" autoFocus onClick={next}>{i + 1 >= questions.length ? t('quiz.finish') : t('quiz.next')}</Button>
           </div>
         </div>

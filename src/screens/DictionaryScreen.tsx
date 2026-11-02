@@ -148,7 +148,7 @@ export function DictionaryScreen() {
                       <span className="block truncate text-sm text-ink-2">{e.fr}</span>
                     </span>
                     {progress.learned.has(e.id) && <CircleCheck size={20} className="flex-none text-mint-strong" aria-label={t('dictionary.learned')} />}
-                    <span className="flex-none rounded-md bg-mist px-1.5 py-0.5 text-xs font-bold text-ink-2">{e.level}</span>
+                    <span className="flex-none rounded-md bg-mist px-1.5 py-0.5 text-sm font-bold text-ink-2">{e.level}</span>
                     <ChevronRight size={18} className="flex-none text-ink-2" aria-hidden />
                   </Link>
                 </li>

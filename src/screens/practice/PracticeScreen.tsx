@@ -45,18 +45,7 @@ export function PracticeScreen() {
           <ChevronRight size={20} className="text-ink-2" aria-hidden />
         </Link>
 
-        <h2 className="mt-7 text-lg font-extrabold">{t('path.title')}</h2>
-        <p className="text-sm text-ink-2">{t('path.subtitle')}</p>
-        <ul className="mt-3 grid gap-3">
-          {themes.map((theme) => (
-            <li key={theme.category}>
-              <ThemeRow theme={theme} category={content.categories.get(theme.category)} progress={progress}
-                mastered={theme.termIds.filter((id) => mastered.has(id)).length} />
-            </li>
-          ))}
-        </ul>
-
-        <h2 className="mt-8 text-lg font-extrabold">{t('practice.train')}</h2>
+        <h2 className="mt-7 text-lg font-extrabold">{t('practice.train')}</h2>
 
         <section className="mt-3 flex items-center gap-4 rounded-[var(--radius-card)] border-2 border-line bg-surface p-5 shadow-[0_4px_0_var(--color-line)]">
           <span className="grid h-14 w-14 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Layers size={26} aria-hidden /></span>
@@ -75,6 +64,17 @@ export function PracticeScreen() {
                 <span className="flex-1"><span className="block font-extrabold">{t(`practice.modes.${id}.title`)}</span><span className="block text-sm text-ink-2">{t(`practice.modes.${id}.text`)}</span></span>
                 <ChevronRight size={20} className="text-ink-2" aria-hidden />
               </Link>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-8 text-lg font-extrabold">{t('path.title')}</h2>
+        <p className="text-sm text-ink-2">{t('path.subtitle')}</p>
+        <ul className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-3">
+          {themes.map((theme) => (
+            <li key={theme.category}>
+              <ThemeRow theme={theme} category={content.categories.get(theme.category)} progress={progress}
+                mastered={theme.termIds.filter((id) => mastered.has(id)).length} />
             </li>
           ))}
         </ul>

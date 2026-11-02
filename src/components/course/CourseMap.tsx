@@ -141,6 +141,20 @@ function Node({ node, state, x, y, open, buttonRef, onToggle, onStart }: {
   buttonRef?: React.Ref<HTMLButtonElement>; onToggle: () => void; onStart: () => void;
 }) {
   const { t } = useTranslation();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  // Opening a card near the bottom of the screen must never leave it cut off: scroll it fully into view.
+  useEffect(() => {
+    if (!open) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const id = setTimeout(() => {
+      // Vertical only: scrollIntoView would also move overflow-hidden ancestors sideways.
+      const r = dialogRef.current?.getBoundingClientRect();
+      if (!r) return;
+      const bottomLimit = window.innerHeight - 24;
+      if (r.bottom > bottomLimit) window.scrollBy({ top: r.bottom - bottomLimit, behavior: reduce ? 'auto' : 'smooth' });
+    }, 30);
+    return () => clearTimeout(id);
+  }, [open]);
   const Icon = state === 'done' ? Check : KIND_ICON[node.kind];
   const look = state === 'locked'
     ? 'bg-line text-ink-2 shadow-[0_6px_0_color-mix(in_srgb,var(--color-ink-2)_30%,transparent)]'
@@ -172,11 +186,13 @@ function Node({ node, state, x, y, open, buttonRef, onToggle, onStart }: {
       {open && (
         <div
           role="dialog"
+          ref={dialogRef}
           aria-label={node.title}
           className="absolute left-1/2 top-[calc(100%+14px)] z-50 w-[min(300px,calc(100vw-36px))] animate-[pop_.18s_var(--ease-out-quart)] rounded-2xl p-4 text-left shadow-[0_12px_32px_rgba(15,34,56,0.28)]"
           style={{
             background: state === 'locked' ? 'var(--color-surface)' : 'var(--accent)',
-            transform: `translateX(calc(-50% - ${cardShift}px))`
+            // `translate` (not `transform`): the pop animation owns `transform` and would cancel the shift, making the card overflow the screen while it opens
+            translate: `calc(-50% - ${cardShift}px) 0`
           }}
         >
           <span

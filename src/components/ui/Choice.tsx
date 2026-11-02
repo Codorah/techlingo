@@ -20,7 +20,7 @@ export function Choice({ state = 'idle', leading, trailing, children, className 
       className={`mb-1 flex min-h-[58px] w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left font-semibold transition-[transform,box-shadow] duration-100 active:translate-y-1 active:shadow-none disabled:pointer-events-none ${look[state]} ${className}`}
       {...rest}>
       {leading}
-      <span className="min-w-0 flex-1 [hyphens:auto] [overflow-wrap:anywhere]">{children}</span>
+      <span className="min-w-0 flex-1 [overflow-wrap:anywhere]">{children}</span>
       {trailing ?? (state === 'selected' ? <Check size={22} aria-hidden /> : null)}
     </button>
   );
