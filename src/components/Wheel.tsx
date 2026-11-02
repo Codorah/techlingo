@@ -1,6 +1,18 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
+/** Wraps a label into at most three short lines so a segment never needs an ellipsis. */
+function wrap(label: string, max = 11): string[] {
+  const lines: string[] = [];
+  let cur = '';
+  for (const word of label.split(' ')) {
+    if (cur && (cur + ' ' + word).length > max) { lines.push(cur); cur = word; } else cur = cur ? `${cur} ${word}` : word;
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > 3) { const last = lines.slice(2).join(' '); return [...lines.slice(0, 2), last.length > max + 1 ? `${last.slice(0, max)}…` : last]; }
+  return lines;
+}
+
 const COLORS = ['#BFE3FB', '#D9F5E5', '#FFF0C7', '#E3DCFB', '#FCE1E4', '#CFEFF7', '#E8F5D9', '#FDE8CF'];
 
 export interface WheelHandle { spinTo(index: number): Promise<void> }
@@ -60,15 +72,15 @@ export const Wheel = forwardRef<WheelHandle, WheelProps>(function Wheel({ labels
         <g ref={disc} style={{ transformOrigin: '0 0', transformBox: 'view-box' }}>
           {labels.map((label, i) => {
             const mid = i * seg;
-            const short = label.length > 18 ? `${label.slice(0, 17)}…` : label;
+            const lines = wrap(label);
             // Radial labels (centre → rim), flipped on the left half so they never read upside down.
             const flip = mid > 180;
             return (
               <g key={`${label}-${i}`}>
                 <path d={arc(i)} fill={COLORS[i % COLORS.length]} stroke="#fff" strokeWidth="2" />
-                <text transform={`rotate(${mid - 90}) translate(${r * 0.6} 0)${flip ? ' rotate(180)' : ''}`}
-                  textAnchor="middle" dominantBaseline="middle" fill="#17324D" fontSize={short.length > 13 ? 10.5 : 12.5} fontWeight="700" fontFamily="DM Sans, system-ui, sans-serif">
-                  {short}
+                <text transform={`rotate(${mid - 90}) translate(${r * 0.61} 0)${flip ? ' rotate(180)' : ''}`}
+                  textAnchor="middle" fill="#17324D" fontSize="13.5" fontWeight="700" fontFamily="DM Sans, system-ui, sans-serif">
+                  {lines.map((line, k) => <tspan key={k} x="0" y={(k - (lines.length - 1) / 2) * 15 + 5}>{line}</tspan>)}
                 </text>
               </g>
             );

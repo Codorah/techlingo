@@ -86,7 +86,7 @@ export function KnowledgeScreen() {
               <Link href={`/path/${theme.category}`} className="block rounded-2xl border-2 border-line bg-surface p-3.5 shadow-[0_3px_0_var(--color-line)] active:translate-y-0.5 active:shadow-none">
                 <span className="flex items-center gap-2.5">
                   <span className="grid h-9 w-9 flex-none place-items-center rounded-xl bg-[var(--accent-soft)] text-[var(--accent)]"><DynamicIcon name={cat?.icon ?? 'Sparkles'} size={18} /></span>
-                  <span className="flex-1 truncate font-bold">{cat?.name_fr ?? theme.category}</span>
+                  <span className="min-w-0 flex-1 font-bold leading-snug">{cat?.name_fr ?? theme.category}</span>
                   <span className="text-sm font-black text-ink-2">{Math.round(((m + s * 0.5) / total) * 100)} %</span>
                 </span>
                 <span className="mt-2.5 flex h-2.5 overflow-hidden rounded-full bg-line" aria-hidden>

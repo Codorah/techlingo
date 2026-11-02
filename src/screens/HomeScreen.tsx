@@ -402,7 +402,7 @@ function HeroCourse({ role }: { role: string }) {
         <button
           type="button"
           onClick={() => navigate(stats.next ? courseNodeHref(role, stats.next) : `/parcours/${role}`)}
-          className="mt-4 inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl bg-white text-base font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.25)] transition-transform active:translate-y-1 active:shadow-none"
+          className="mt-4 inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl bg-on-ocean text-base font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.25)] transition-transform active:translate-y-1 active:shadow-none"
         >
           {finished ? t('course.redo') : stats.done ? t('course.continue') : t('course.begin')}
           <ArrowRight size={20} aria-hidden />

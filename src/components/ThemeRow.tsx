@@ -18,7 +18,7 @@ export function ThemeRow({ theme, category, progress, mastered }: { theme: PathT
       </span>
       <span className="min-w-0 flex-1">
         <span className="flex items-baseline justify-between gap-2">
-          <span className="truncate font-extrabold">{category?.name_fr ?? theme.category}</span>
+          <span className="line-clamp-2 font-extrabold leading-snug">{category?.name_fr ?? theme.category}</span>
           <span className="flex-none text-xs font-bold text-ink-2">{t('path.units', { count: theme.units.length })}</span>
         </span>
         <span className="mt-1.5 block h-2 overflow-hidden rounded-full bg-line" aria-hidden>

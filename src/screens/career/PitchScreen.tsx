@@ -5,6 +5,10 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
 import { getSetting, setSetting } from '@/data/progress';
+import { db } from '@/db/db';
+import { domainOf } from '@/lib/domains';
+import { useManifest } from '@/lib/useContent';
+import { useLiveQuery } from 'dexie-react-hooks';
 import { speak } from '@/lib/speech';
 
 const FIELDS = ['title', 'years', 'skills', 'project', 'result', 'strength', 'goal'] as const;
@@ -40,7 +44,10 @@ export function PitchScreen() {
   const { t } = useTranslation();
   const [pitch, setPitch] = useState<Pitch>(EMPTY);
   const [copied, setCopied] = useState<'ok' | 'failed' | null>(null);
-  const placeholders = t('career.pitch.placeholders', { returnObjects: true }) as Pitch;
+  const profile = useLiveQuery(() => db.profile.get('me'));
+  const manifest = useManifest();
+  const marketing = domainOf(manifest, profile?.primaryRole) === 'marketing';
+  const placeholders = t(marketing ? 'career.pitch.placeholders_marketing' : 'career.pitch.placeholders', { returnObjects: true }) as Pitch;
   const touched = useRef(false);
   const copyTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 

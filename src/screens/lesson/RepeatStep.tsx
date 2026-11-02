@@ -63,7 +63,7 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
       <h2 className="text-2xl font-black">{fallback ? t('repeat.fallbackTitle') : t('repeat.title')}</h2>
       <p className="mt-1 text-ink-2">{fallback ? t('repeat.fallbackText') : t('repeat.text')}</p>
 
-      <blockquote className="mt-5 rounded-[var(--radius-card)] border-2 border-line bg-surface p-5 text-xl font-semibold leading-relaxed">
+      <blockquote className="mt-3 rounded-[var(--radius-card)] border-2 border-line bg-surface p-4 text-xl font-semibold leading-relaxed">
         {result
           ? result.words.map((w, i) => <span key={i} className={w.recognized ? 'text-mint-ink' : 'text-danger underline decoration-2 underline-offset-4'}>{w.word} </span>)
           : sentence.text_en}
@@ -75,7 +75,7 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
       {error === 'no-speech' && <p role="alert" className="mt-4 rounded-2xl bg-sun p-3 text-sm font-semibold text-sun-ink">{t('repeat.noSpeech')}</p>}
       {(error === 'other' || error === 'network' || error === 'unsupported') && <p role="alert" className="mt-4 rounded-2xl bg-sun p-3 text-sm font-semibold text-sun-ink">{t('repeat.error')}</p>}
 
-      <div className="mt-auto pt-6">
+      <div className="mt-auto pt-3">
         {fallback ? (
           <div className="grid grid-cols-2 gap-2.5">
             <Button variant="secondary" onClick={() => finish({ score: null, transcript: '', recognizedRatio: 0, selfRated: 'hard' })}>{t('repeat.hard')}</Button>
@@ -84,7 +84,7 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
         ) : result ? (
           <>
             <p className="mb-1 text-center text-lg font-black" role="status">{t('repeat.score', { score: result.score })}</p>
-            <p className="mb-3 text-center text-xs text-ink-2">{t('repeat.honesty')}</p>
+            <p className="mb-3 text-center text-[13px] text-ink-2">{t('repeat.honesty')}</p>
             <div className="grid grid-cols-2 gap-2.5">
               <Button variant="secondary" icon={<RotateCcw size={20} aria-hidden />} onClick={() => void start()}>{t('repeat.retry')}</Button>
               <Button onClick={() => finish({ score: result.score, transcript: partial, recognizedRatio: result.recognizedRatio })}>{t('common.continue')}</Button>
@@ -92,15 +92,15 @@ export function RepeatStep({ sentence, onDone }: { sentence: Sentence; onDone: (
           </>
         ) : (
           <>
-            {!listening && <p className="mb-3 text-center text-xs text-ink-2">{t('repeat.permission')}</p>}
+            {!listening && <p className="mb-2 text-center text-[13px] text-ink-2">{t('repeat.permission')}</p>}
             {listening && partial && <p className="mb-3 text-center text-ink-2" aria-live="polite">{t('repeat.said')} « {partial} »</p>}
             <button type="button" onClick={() => (listening ? stopRef.current() : void start())}
               className={`mx-auto grid h-20 w-20 place-items-center rounded-full text-white shadow-[0_5px_0_var(--accent-press)] transition-transform active:translate-y-1 active:shadow-none ${listening ? 'animate-pulse bg-danger shadow-[0_5px_0_#8f2a2a]' : 'bg-[var(--accent)]'}`}
               aria-label={listening ? t('repeat.stop') : t('repeat.tap')}>
               {listening ? <Square size={28} aria-hidden /> : <Mic size={32} aria-hidden />}
             </button>
-            <p className="mt-3 text-center font-bold" aria-live="polite">{listening ? t('repeat.listening') : t('repeat.tap')}</p>
-            <button type="button" className="mx-auto mt-2 block min-h-11 px-4 text-sm font-bold text-ink-2" onClick={() => finish({ score: null, transcript: '', recognizedRatio: 0 })}>{t('common.skip')}</button>
+            <p className="mt-2 text-center font-bold" aria-live="polite">{listening ? t('repeat.listening') : t('repeat.tap')}</p>
+            <button type="button" className="mx-auto mt-1 block min-h-11 px-4 text-sm font-bold text-ink-2" onClick={() => finish({ score: null, transcript: '', recognizedRatio: 0 })}>{t('common.skip')}</button>
           </>
         )}
       </div>

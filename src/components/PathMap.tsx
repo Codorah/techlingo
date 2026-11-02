@@ -28,7 +28,7 @@ export function PathMap({ title, icon, back, done, total, units, footer }: {
             <ChevronLeft size={26} aria-hidden />
           </button>
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--accent-soft)] text-[var(--accent)]">{icon}</span>
-          <h1 className="flex-1 truncate text-lg font-extrabold">{title}</h1>
+          <h1 className="min-w-0 flex-1 line-clamp-2 text-lg font-extrabold leading-tight">{title}</h1>
           <span className="rounded-full bg-mist px-3 py-1 text-sm font-black text-[var(--accent)]">{done}/{total}</span>
         </div>
         <div className="mx-auto h-1.5 max-w-[640px] bg-line"><div className="h-full bg-[var(--accent)] transition-[width] duration-500" style={{ width: `${total ? (done / total) * 100 : 0}%` }} /></div>

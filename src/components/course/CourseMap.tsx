@@ -64,7 +64,7 @@ export function CourseMap({ title, icon, back, done, total, units, onOpen, aside
             <ChevronLeft size={26} aria-hidden />
           </button>
           <span className="grid h-10 w-10 flex-none place-items-center rounded-xl bg-[var(--accent-soft)] text-[var(--accent)]">{icon}</span>
-          <h1 className="min-w-0 flex-1 truncate text-lg font-extrabold">{title}</h1>
+          <h1 className="min-w-0 flex-1 line-clamp-2 text-lg font-extrabold leading-tight">{title}</h1>
           <span className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-black text-[var(--accent)]">{done}/{total}</span>
         </div>
         <div className="h-1.5 bg-line" role="progressbar" aria-label={t('course.progress')} aria-valuemin={0} aria-valuemax={total} aria-valuenow={done}>
@@ -219,7 +219,7 @@ function Node({ node, state, x, y, open, buttonRef, onToggle, onStart }: {
                 e.stopPropagation();
                 onStart();
               }}
-              className="mt-3.5 inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.22)] transition-transform active:translate-y-1 active:shadow-none"
+              className="mt-3.5 inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-on-ocean font-black uppercase tracking-wide text-[var(--accent)] shadow-[0_4px_0_rgba(0,20,50,0.22)] transition-transform active:translate-y-1 active:shadow-none"
             >
               <Play size={18} aria-hidden />
               {state === 'done' ? t('course.redo') : t('course.go')}
