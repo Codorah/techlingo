@@ -92,7 +92,17 @@
   </script>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root"><div id="boot" role="status" aria-label="Chargement"><span class="boot-ring"></span><span class="boot-name">TechLingo</span><span class="boot-bar"></span><span class="boot-bar short"></span></div></div>
+  <style>
+    #boot{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-family:system-ui,sans-serif;color:#1f3a5a}
+    html[data-theme="dark"] #boot{color:#e6edf6}
+    .boot-ring{width:44px;height:44px;border-radius:50%;border:5px solid rgba(101,189,245,.3);border-top-color:#2b6cb0;animation:boot-spin .8s linear infinite}
+    .boot-name{font-weight:900;font-size:20px;letter-spacing:.2px}
+    .boot-bar{width:min(220px,60vw);height:12px;border-radius:8px;background:rgba(101,189,245,.22)}
+    .boot-bar.short{width:min(140px,40vw)}
+    @keyframes boot-spin{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){.boot-ring{animation:none}}
+  </style>
   <noscript>TechLingo a besoin de JavaScript pour fonctionner. <a href="/decouvrir/">Découvrir TechLingo, l’application pour apprendre l’anglais de l’informatique et du marketing digital</a>.</noscript>
   <script type="module" src="/src/main.tsx"></script>
 </body>

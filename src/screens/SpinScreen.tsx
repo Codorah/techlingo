@@ -116,7 +116,7 @@ export function SpinScreen() {
           <div className="flex gap-2">
             {categories.map((c) => (
               <button key={c.id} type="button" disabled={spinning} onClick={() => setCategory(c.id)} aria-pressed={category === c.id}
-                className={`min-h-10 flex-none rounded-full border-2 px-4 text-sm font-bold ${category === c.id ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
+                className={`min-h-11 flex-none rounded-full border-2 px-4 text-sm font-bold ${category === c.id ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`}>
                 {content.categories.get(c.id)?.name_fr ?? c.id}
               </button>
             ))}

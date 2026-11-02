@@ -22,7 +22,7 @@ export function TabBar() {
           return (
             <li key={key} className="flex-1">
               <Link href={href} aria-current={active ? 'page' : undefined}
-                className={`flex min-h-[52px] flex-col items-center justify-center gap-0.5 rounded-2xl text-xs font-bold ${active ? 'text-[var(--accent)]' : 'text-ink-2'}`}>
+                className={`flex min-h-[52px] min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl text-center text-xs font-bold leading-tight ${active ? 'text-[var(--accent)]' : 'text-ink-2'}`}>
                 <span className={`grid h-8 w-12 place-items-center rounded-full transition-colors ${active ? 'bg-[var(--accent-soft)]' : ''}`}><Icon size={22} aria-hidden /></span>
                 {t(`tabs.${key}`)}
               </Link>

@@ -4,7 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { NotFound } from '@/components/NotFound';
 import { useLocation, useParams } from 'wouter';
 import { Button } from '@/components/ui/Button';
+import { CardDeck, DeckCard } from '@/components/ui/CardDeck';
+import { chunkSentences } from '@/lib/chunk';
 import { Confetti } from '@/components/ui/Confetti';
+import { RewardSummary } from '@/components/ui/RewardSummary';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import type { Term } from '@/content/schema';
 import { completeNode, type WordResult } from '@/data/path';
@@ -79,29 +82,27 @@ function Course({ categoryId, terms, onClose, onDone }: { categoryId: string; te
   const { t } = useTranslation();
   const { content } = usePath();
   const cat = content.categories.get(categoryId);
-  return (
-    <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-[calc(env(safe-area-inset-top)+12px)]">
-      <header className="mb-4 flex items-center">
-        <button type="button" onClick={onClose} aria-label={t('common.close')} className="grid h-11 w-11 place-items-center rounded-xl text-ink-2 active:bg-surface"><X size={26} aria-hidden /></button>
-      </header>
-      <p className="text-sm font-bold text-[var(--accent)]">{t('path.kind.course')}</p>
-      <h1 className="mt-1 text-[1.75rem] font-black leading-tight">{cat?.name_fr}</h1>
-      {cat?.course_fr && <p className="mt-3 text-lg leading-relaxed [text-wrap:pretty]">{cat.course_fr}</p>}
-      {cat?.tip_fr && (
-        <p className="mt-4 flex gap-3 rounded-2xl bg-sun p-4 text-sun-ink"><Lightbulb size={22} className="flex-none" aria-hidden /><span className="font-semibold">{cat.tip_fr}</span></p>
-      )}
-      <h2 className="mt-6 text-lg font-extrabold">{t('path.wordsOfUnit', { count: terms.length })}</h2>
-      <ul className="mt-3 flex-1 divide-y-2 divide-line rounded-2xl border-2 border-line bg-surface">
-        {terms.map((term) => (
-          <li key={term.id} className="flex min-h-14 items-center gap-3 px-4 py-2">
-            <span className="flex-1"><span lang="en" className="block font-bold">{term.term_en}</span><span className="block text-sm text-ink-2">{term.translation_fr}</span></span>
-            <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="grid h-11 w-11 place-items-center rounded-xl text-[var(--accent)] active:bg-mist"><Volume2 size={22} aria-hidden /></button>
-          </li>
-        ))}
-      </ul>
-      <Button className="mt-5" onClick={onDone} icon={<ArrowRight size={20} aria-hidden />}>{t('path.start')}</Button>
-    </main>
-  );
+  const cards = [
+    <DeckCard key="cover" kicker={t('path.kind.course')}>
+      <h1 className="text-[clamp(1.5rem,7vw,1.9rem)] font-black leading-tight">{cat?.name_fr}</h1>
+    </DeckCard>,
+    ...chunkSentences(cat?.course_fr ?? '').map((c, i) => (
+      <DeckCard key={`c${i}`}><p className="text-[1.0625rem] leading-relaxed [text-wrap:pretty]">{c}</p></DeckCard>
+    )),
+    ...(cat?.tip_fr ? [<p key="tip" className="flex gap-3 rounded-2xl bg-sun p-5 text-sun-ink"><Lightbulb size={24} className="flex-none" aria-hidden /><span><span className="mb-1 block text-sm font-black">{t('deck.tip')}</span><span className="font-semibold leading-relaxed">{cat.tip_fr}</span></span></p>] : []),
+    ...terms.map((term, i) => (
+      <DeckCard key={term.id} kicker={t('deck.word', { n: i + 1, total: terms.length })}>
+        <div className="flex items-start gap-3">
+          <div className="min-w-0 flex-1">
+            <p lang="en" className="text-[clamp(1.5rem,7vw,1.9rem)] font-black leading-tight">{term.term_en}</p>
+            <p className="mt-1 text-xl font-extrabold text-[var(--accent)]">{term.translation_fr}</p>
+          </div>
+          <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button>
+        </div>
+      </DeckCard>
+    ))
+  ];
+  return <CardDeck cards={cards} onClose={onClose} onFinish={onDone} finishLabel={t('path.start')} label={cat?.name_fr} />;
 }
 
 function Practice({ node, terms, onClose, onDone }: { node: PathNode; terms: Term[]; onClose: () => void; onDone: (o: Outcome) => void }) {
@@ -212,12 +213,7 @@ function Result({ outcome, kind, unitDone, onContinue, onRetry }: { outcome: Out
         </span>
         <h1 className="mt-6 text-3xl font-black">{unitDone ? t('path.unitDone') : kind === 'course' ? t('path.courseDone') : accuracy === 100 ? t('result.title') : t('path.lessonDone')}</h1>
         {!outcome.firstTime && <p className="mt-2 text-ink-2">{t('path.replay')}</p>}
-        {outcome.total > 0 && (
-          <div className="mt-7 grid w-full max-w-sm grid-cols-2 gap-2.5">
-            <div className="rounded-2xl border-2 border-gold bg-surface p-3"><p className="text-xs font-black text-sun-ink">{t('result.xp')}</p><p className="mt-1 flex items-center justify-center gap-1 text-2xl font-black text-[#C28A00]"><Zap size={20} aria-hidden />{outcome.xp}</p></div>
-            <div className="rounded-2xl border-2 border-mint-strong bg-surface p-3"><p className="text-xs font-black text-mint-ink">{t('path.accuracy')}</p><p className="mt-1 text-2xl font-black text-mint-ink">{accuracy} %</p></div>
-          </div>
-        )}
+        {outcome.total > 0 && <RewardSummary xp={outcome.xp} accuracy={accuracy} />}
       </div>
       <Button onClick={onContinue} icon={<ArrowRight size={20} aria-hidden />}>{t('common.continue')}</Button>
     </main>

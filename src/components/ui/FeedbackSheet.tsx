@@ -16,7 +16,7 @@ export function FeedbackSheet({ tone, title, children, onContinue, label }: { to
   const look = LOOK[tone];
   return (
     <div role="status" aria-live="assertive"
-      className={`fixed inset-x-0 bottom-0 z-40 animate-[sheet_.22s_var(--ease-out-quart)] border-t-2 px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-4 ${look.box}`}>
+      className={`fixed inset-x-0 bottom-0 z-40 max-h-[75dvh] animate-[sheet_.22s_var(--ease-out-quart)] overflow-y-auto border-t-2 px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-4 ${look.box}`}>
       <div className="mx-auto max-w-[640px]">
         <p className={`flex items-center gap-2 text-xl font-black ${look.title}`}><look.Icon size={28} aria-hidden />{title}</p>
         {children && <div className="mt-1.5 text-ink">{children}</div>}

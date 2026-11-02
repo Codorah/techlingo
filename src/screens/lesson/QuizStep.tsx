@@ -74,7 +74,7 @@ export function QuizStep({ questions, onAnswer, onDone, onProgress }: {
       <p className="text-sm font-bold text-ink-2">{t('quiz.progress', { n: i + 1, total: questions.length })}</p>
       <h2 className="mt-2 text-[1.35rem] font-black leading-snug">{q.prompt}</h2>
       {q.audio && !voice && (
-        <p className="mt-3 rounded-2xl bg-surface p-4 text-[15px] leading-relaxed">
+        <p className="mt-3 rounded-2xl bg-surface p-4 text-base leading-relaxed">
           <span className="block text-sm font-bold text-ink-2">{t('practice.listening.noVoice')}</span>
           <span lang="en" className="mt-1 block font-semibold">{q.audio}</span>
         </p>
@@ -85,7 +85,7 @@ export function QuizStep({ questions, onAnswer, onDone, onProgress }: {
           <Button variant="secondary" block={false} className="flex-1" icon={<Turtle size={20} aria-hidden />} onClick={() => speak(q.audio!, { slow: true })}>{t('practice.listening.slow')}</Button>
         </div>
       )}
-      {q.sentence && <p className="mt-3 rounded-2xl bg-surface p-4 font-mono text-[15px] leading-relaxed">{q.sentence.replace('___', '_____')}</p>}
+      {q.sentence && <p className="mt-3 rounded-2xl bg-surface p-4 font-mono text-base leading-relaxed">{q.sentence.replace('___', '_____')}</p>}
       <div className="mt-5 grid gap-2.5">
         {q.choices.map((c, k) => (
           <Choice key={`${q.id}-${k}`} disabled={checked} onClick={() => setSelected(k)}
@@ -96,9 +96,9 @@ export function QuizStep({ questions, onAnswer, onDone, onProgress }: {
           </Choice>
         ))}
       </div>
-      <div className="h-48" aria-hidden />
+      <div className="h-56" aria-hidden />
       {checked ? (
-        <div role="alert" className={`fixed inset-x-0 bottom-0 z-30 animate-[sheet_.28s_var(--ease-out-quart)] px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-5 ${correct ? 'bg-mint text-mint-ink' : 'bg-danger-soft text-danger'}`}>
+        <div role="alert" className={`fixed inset-x-0 bottom-0 z-30 max-h-[75dvh] animate-[sheet_.28s_var(--ease-out-quart)] overflow-y-auto px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-5 ${correct ? 'bg-mint text-mint-ink' : 'bg-danger-soft text-danger'}`}>
           <div className="mx-auto max-w-[640px]">
             <p className="flex items-center gap-2 text-lg font-black">
               <span className="grid h-9 w-9 animate-[bounce-in_.4s_var(--ease-out-quart)] place-items-center rounded-full bg-surface">{correct ? <Check size={22} aria-hidden /> : <X size={22} aria-hidden />}</span>

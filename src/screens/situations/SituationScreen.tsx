@@ -1,18 +1,19 @@
-import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, ChartColumn, Check, Circle, FileText, Flame, GitPullRequest, Hash, Languages, Lightbulb, Mail, Megaphone, Mic, Sparkles, Square, Trophy, Users, Video, Volume2, X, Zap } from 'lucide-react';
+import { ArrowRight, ChartColumn, Check, Circle, FileText, GitPullRequest, Hash, Languages, Lightbulb, Mail, Megaphone, Mic, Sparkles, Square, Trophy, Users, Video, Volume2, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NotFound } from '@/components/NotFound';
 import { useLocation, useParams } from 'wouter';
 import { Button } from '@/components/ui/Button';
+import { CardDeck, DeckCard } from '@/components/ui/CardDeck';
+import { chunkSentences } from '@/lib/chunk';
 import { Confetti } from '@/components/ui/Confetti';
+import { RewardSummary } from '@/components/ui/RewardSummary';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import type { PathLesson, PathUnitDef, ShippedPath } from '@/content/schema';
 import { completeNode } from '@/data/path';
 import { db } from '@/db/db';
-import { computeLevel } from '@/learning/badges';
 import { phraseHits } from '@/learning/situations';
-import { displayedStreak, localDay } from '@/learning/streak';
+import { useCountUp } from '@/lib/motion';
 import { sounds } from '@/lib/sound';
 import { canRecognize, listen, type ListenError, speak, stopSpeaking } from '@/lib/speech';
 import { QuizStep, type Playable } from '@/screens/lesson/QuizStep';
@@ -73,26 +74,36 @@ export function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: st
     setXp((await completeNode(nodeId, 'course')).xp);
   }
   if (xp != null) return <Done xp={xp} title={t('path.courseDone')} onContinue={onClose} />;
+  const cards = [
+    <DeckCard key="cover" kicker={t('situations.guide')}>
+      <h1 className="text-[clamp(1.5rem,7vw,1.9rem)] font-black leading-tight">{unit.title_fr}</h1>
+      <p className="mt-2 font-semibold text-ink-2" lang="en">{unit.title_en}</p>
+    </DeckCard>,
+    ...chunkSentences(unit.guide.intro_fr).map((c, i) => (
+      <DeckCard key={`intro${i}`} kicker={i === 0 ? t('deck.situation') : undefined}><p className="text-[1.0625rem] leading-relaxed [text-wrap:pretty]">{c}</p></DeckCard>
+    )),
+    ...unit.guide.key_phrases.map((k, i) => (
+      <PhraseCard key={k.en} phrase={k} kicker={t('deck.phrase', { n: i + 1, total: unit.guide.key_phrases.length })} />
+    )),
+    <p key="tip" className="flex gap-3 rounded-2xl bg-sun p-5 text-sun-ink"><Lightbulb size={24} className="flex-none" aria-hidden /><span><span className="mb-1 block text-sm font-black">{t('deck.tip')}</span><span className="font-semibold leading-relaxed">{unit.guide.tip_fr}</span></span></p>
+  ];
+  return <CardDeck cards={cards} onClose={onClose} onFinish={() => void start()} finishLabel={t('path.start')} label={unit.title_fr} />;
+}
+
+export function PhraseCard({ phrase, kicker }: { phrase: { en: string; fr: string }; kicker: string }) {
+  const { t } = useTranslation();
+  const [said, setSaid] = useState(false);
   return (
-    <Shell onClose={onClose}>
-      <p className="text-sm font-bold text-[var(--accent)]">{t('situations.guide')}</p>
-      <h1 className="mt-1 text-[1.75rem] font-black leading-tight">{unit.title_fr}</h1>
-      <p className="mt-1 font-semibold text-ink-2" lang="en">{unit.title_en}</p>
-      <p className="mt-4 text-lg leading-relaxed [text-wrap:pretty]">{unit.guide.intro_fr}</p>
-      <h2 className="mt-6 text-lg font-extrabold">{t('situations.keyPhrases')}</h2>
-      <ul className="mt-3 divide-y-2 divide-line rounded-2xl border-2 border-line bg-surface">
-        {unit.guide.key_phrases.map((k) => (
-          <li key={k.en} className="flex min-h-14 items-center gap-3 px-4 py-2.5">
-            <span className="flex-1"><span lang="en" className="block font-bold">{k.en}</span><span className="block text-sm text-ink-2">{k.fr}</span></span>
-            <button type="button" onClick={() => speak(k.en)} aria-label={t('common.listen')} className="grid h-11 w-11 flex-none place-items-center rounded-xl text-[var(--accent)] active:bg-mist"><Volume2 size={22} aria-hidden /></button>
-          </li>
-        ))}
-      </ul>
-      <p className="mt-4 flex gap-3 rounded-2xl bg-sun p-4 text-sun-ink"><Lightbulb size={22} className="flex-none" aria-hidden /><span className="font-semibold">{unit.guide.tip_fr}</span></p>
-      <span className="flex-1" />
-      <Button className="mt-6" icon={<ArrowRight size={20} aria-hidden />}
-        onClick={() => void start()}>{t('path.start')}</Button>
-    </Shell>
+    <DeckCard kicker={kicker}>
+      <p lang="en" className="text-[clamp(1.35rem,6vw,1.65rem)] font-black leading-snug">{phrase.en}</p>
+      <p className="mt-2 text-[1.0625rem] text-ink-2">{phrase.fr}</p>
+      <div className="mt-4 flex items-center gap-2">
+        <button type="button" onClick={() => speak(phrase.en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button>
+        <button type="button" onClick={() => setSaid(true)} aria-pressed={said} className={`inline-flex min-h-11 items-center gap-2 rounded-2xl border-2 px-4 font-bold ${said ? 'border-mint-strong bg-mint text-mint-ink' : 'border-line text-[var(--accent)]'}`}>
+          {said ? <Check size={18} aria-hidden /> : <Mic size={18} aria-hidden />}{t('deck.said')}
+        </button>
+      </div>
+    </DeckCard>
   );
 }
 
@@ -125,44 +136,33 @@ export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; l
 
   if (done) return <Done xp={done.xp} title={t('path.lessonDone')} accuracy={done.accuracy} confetti={done.firstTime} replay={!done.firstTime} onContinue={onClose} />;
 
+  if (step === 'words') {
+    const words = lesson.term_ids.map((id) => path.terms[id]).filter((x): x is NonNullable<typeof x> => !!x);
+    const cards = words.map((term, i) => (
+      <DeckCard key={term.id} kicker={t('deck.word', { n: i + 1, total: words.length })}>
+        <div className="flex items-start gap-3">
+          <div className="min-w-0 flex-1">
+            <h1 lang="en" className="text-[clamp(1.6rem,8vw,2rem)] font-black leading-tight">{term.term_en}</h1>
+            {term.ipa && <p className="mt-1 font-mono text-ink-2">{term.ipa}</p>}
+          </div>
+          <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button>
+        </div>
+        <p className="mt-3 text-xl font-extrabold text-[var(--accent)]">{term.translation_fr}</p>
+        <p className="mt-2 leading-relaxed">{term.explanation_fr}</p>
+      </DeckCard>
+    ));
+    return <CardDeck cards={cards} onClose={onClose} onFinish={() => setStep('dialogue')} finishLabel={t('situations.toDialogue')} label={lesson.title_fr} />;
+  }
+
+  if (step === 'dialogue') {
+    const cards = lesson.dialogue.map((_, i) => (
+      <DialogueCard key={i} lines={lesson.dialogue} upTo={i} channel={lesson.production.channel} />
+    ));
+    return <CardDeck cards={cards} onClose={() => { stopSpeaking(); onClose(); }} onFinish={() => { stopSpeaking(); setStep('quiz'); }} finishLabel={t('path.toQuiz')} label={t('situations.dialogueTitle')} />;
+  }
+
   return (
     <Shell onClose={onClose} progress={index / STEPS.length} label={lesson.title_fr}>
-      {step === 'words' && (
-        <div className="flex flex-1 animate-[enter_.25s_var(--ease-out-quart)] flex-col">
-          <p className="text-sm font-bold text-[var(--accent)]">{t('situations.steps.words')}</p>
-          <h1 className="mt-1 text-2xl font-black leading-tight">{lesson.title_fr}</h1>
-          <ul className="mt-4 grid gap-2.5">
-            {lesson.term_ids.map((id) => path.terms[id]).filter(Boolean).map((term) => (
-              <li key={term!.id} className="rounded-2xl border-2 border-line bg-surface p-4 shadow-[0_3px_0_var(--color-line)]">
-                <div className="flex items-center gap-3">
-                  <span className="min-w-0 flex-1">
-                    <span lang="en" className="block text-lg font-black">{term!.term_en}</span>
-                    <span className="block font-bold text-[var(--accent)]">{term!.translation_fr}</span>
-                  </span>
-                  <button type="button" onClick={() => speak(term!.term_en)} aria-label={t('common.listen')} className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist text-[var(--accent)]"><Volume2 size={22} aria-hidden /></button>
-                </div>
-                <p className="mt-1.5 text-sm text-ink-2">{term!.explanation_fr}</p>
-              </li>
-            ))}
-          </ul>
-          <span className="flex-1" />
-          <Button className="mt-6" onClick={() => setStep('dialogue')} icon={<ArrowRight size={20} aria-hidden />}>{t('situations.toDialogue')}</Button>
-        </div>
-      )}
-
-      {step === 'dialogue' && (
-        <div className="flex flex-1 animate-[enter_.25s_var(--ease-out-quart)] flex-col">
-          <p className="text-sm font-bold text-[var(--accent)]">{t('situations.steps.dialogue')}</p>
-          <h1 className="mt-1 text-2xl font-black leading-tight">{t('situations.dialogueTitle')}</h1>
-          <p className="text-sm text-ink-2">{t('situations.dialogueHint')}</p>
-          <Workspace channel={lesson.production.channel}>
-            <Dialogue lines={lesson.dialogue} />
-          </Workspace>
-          <span className="flex-1" />
-          <Button className="mt-6" onClick={() => { stopSpeaking(); setStep('quiz'); }} icon={<ArrowRight size={20} aria-hidden />}>{t('path.toQuiz')}</Button>
-        </div>
-      )}
-
       {step === 'quiz' && (
         <QuizStep questions={questions} onAnswer={() => {}} onDone={(c) => { setQuizCorrect(c); setStep('production'); }} />
       )}
@@ -185,27 +185,34 @@ function Workspace({ channel, children }: { channel: Channel; children: React.Re
   );
 }
 
-function Dialogue({ lines }: { lines: PathLesson['dialogue'] }) {
+function DialogueCard({ lines, upTo, channel }: { lines: PathLesson['dialogue']; upTo: number; channel: Channel }) {
   const { t } = useTranslation();
-  const [shown, setShown] = useState<Set<number>>(new Set());
+  const [fr, setFr] = useState(false);
+  const Icon = CHANNEL_ICON[channel];
+  const line = lines[upTo]!;
   return (
-    <ul className="grid gap-1">
-      {lines.map((line, i) => (
-        <li key={i} className="flex animate-[enter_.3s_var(--ease-out-quart)_both] gap-3 rounded-xl p-2" style={{ animationDelay: `${i * 70}ms` }}>
+    <section className="rounded-2xl border-2 border-line bg-surface [hyphens:auto] [overflow-wrap:anywhere]">
+      <div className="flex items-center gap-2 border-b-2 border-line bg-mist/60 px-4 py-2 text-sm font-black text-ink-2">
+        <Icon size={18} className="text-[var(--accent)]" aria-hidden />{t(`situations.channel.${channel}`)}<span className="ml-auto font-bold">{t('deck.line', { n: upTo + 1, total: lines.length })}</span>
+      </div>
+      <ul className="grid gap-1.5 p-3">
+        {lines.slice(0, upTo).map((l, i) => (
+          <li key={i} className="flex gap-2 text-sm text-ink-2"><span className="font-black" style={{ color: colorOf(l.speaker) }}>{l.speaker}</span><span lang="en" className="min-w-0 flex-1 truncate">{l.text_en}</span></li>
+        ))}
+        <li className="mt-1 flex gap-3 rounded-xl bg-mist/60 p-3">
           <span className="grid h-9 w-9 flex-none place-items-center rounded-lg font-black text-white" style={{ background: colorOf(line.speaker) }} aria-hidden>{line.speaker[0]}</span>
           <div className="min-w-0 flex-1">
             <p className="text-sm font-black">{line.speaker}</p>
-            <p lang="en" className="leading-relaxed">{line.text_en}</p>
-            {shown.has(i) && <p className="mt-1 text-sm text-ink-2">{line.text_fr}</p>}
+            <p lang="en" className="text-[1.0625rem] leading-relaxed">{line.text_en}</p>
+            {fr && <p className="mt-1 text-ink-2">{line.text_fr}</p>}
             <div className="mt-1 flex gap-1">
-              <button type="button" onClick={() => speak(line.text_en)} aria-label={t('common.listen')} className="grid h-9 w-9 place-items-center rounded-lg text-[var(--accent)] active:bg-mist"><Volume2 size={18} aria-hidden /></button>
-              <button type="button" onClick={() => setShown(new Set(shown).add(i))} aria-label={t('situations.translate')} disabled={shown.has(i)}
-                className="grid h-9 w-9 place-items-center rounded-lg text-[var(--accent)] active:bg-mist disabled:opacity-40"><Languages size={18} aria-hidden /></button>
+              <button type="button" onClick={() => speak(line.text_en)} aria-label={t('common.listen')} className="grid h-11 w-11 place-items-center rounded-lg text-[var(--accent)] active:bg-mist"><Volume2 size={20} aria-hidden /></button>
+              <button type="button" onClick={() => setFr(true)} aria-label={t('situations.translate')} disabled={fr} className="grid h-11 w-11 place-items-center rounded-lg text-[var(--accent)] active:bg-mist disabled:opacity-40"><Languages size={20} aria-hidden /></button>
             </div>
           </div>
         </li>
-      ))}
-    </ul>
+      </ul>
+    </section>
   );
 }
 
@@ -251,7 +258,7 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
       <label className="mt-4 block">
         <span className="sr-only">{t('situations.yourAnswer')}</span>
         <textarea value={text} onChange={(e) => setText(e.target.value)} readOnly={checked || listening} rows={4} lang="en" placeholder={t('situations.placeholder')}
-          className="w-full rounded-2xl border-2 border-line bg-surface p-4 text-base leading-relaxed outline-none placeholder:text-ink-2 focus:border-[var(--accent)]" />
+          onFocus={(e) => e.currentTarget.scrollIntoView({ block: 'center', behavior: 'smooth' })} className="w-full rounded-2xl border-2 border-line bg-surface p-4 text-base leading-relaxed outline-none placeholder:text-ink-2 focus:border-[var(--accent)]" />
       </label>
       {micError && !checked && <p role="alert" className="mt-2 text-sm font-semibold text-danger">{micError}</p>}
       {!checked && canRecognize() && (
@@ -273,7 +280,7 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
           <div className="mt-4 rounded-2xl border-2 border-mint-strong bg-mint p-4 text-mint-ink">
             <div className="flex items-center justify-between gap-2">
               <p className="font-black">{t('situations.model')}</p>
-              <button type="button" onClick={() => speak(p.model_answer_en)} aria-label={t('common.listen')} className="grid h-10 w-10 place-items-center rounded-xl bg-surface"><Volume2 size={20} aria-hidden /></button>
+              <button type="button" onClick={() => speak(p.model_answer_en)} aria-label={t('common.listen')} className="grid h-11 w-11 place-items-center rounded-xl bg-surface"><Volume2 size={20} aria-hidden /></button>
             </div>
             <p lang="en" className="mt-1 font-semibold leading-relaxed text-ink">{p.model_answer_en}</p>
             <p className="mt-1 text-sm">{p.model_answer_fr}</p>
@@ -290,23 +297,8 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
 
 export function Done({ xp, title, accuracy, confetti = true, replay, onContinue }: { xp: number; title: string; accuracy?: number; confetti?: boolean; replay?: boolean; onContinue: () => void }) {
   const { t } = useTranslation();
-  const profile = useLiveQuery(() => db.profile.get('me'));
-  const [countXp, setCountXp] = useState(0);
+  const countXp = useCountUp(xp, 800);
 
-  useEffect(() => {
-    if (xp <= 0) { setCountXp(0); return; }
-    let frame = 0;
-    const steps = 18;
-    const timer = window.setInterval(() => {
-      frame++;
-      setCountXp(Math.round((xp * frame) / steps));
-      if (frame >= steps) window.clearInterval(timer);
-    }, 28);
-    return () => window.clearInterval(timer);
-  }, [xp]);
-
-  const streak = profile ? displayedStreak(profile, localDay()) : 0;
-  const lvl = profile ? computeLevel(profile.xp) : null;
   const perfect = accuracy != null && accuracy >= 100;
 
   return (
@@ -325,34 +317,7 @@ export function Done({ xp, title, accuracy, confetti = true, replay, onContinue 
         <h1 className="mt-4 text-3xl font-black">{title}</h1>
         {replay && <p className="mt-2 text-ink-2">{t('path.replay')}</p>}
 
-        <div className="mt-6 grid w-full max-w-sm grid-cols-3 gap-2.5">
-          <div className="rounded-2xl border-2 border-gold bg-surface p-3">
-            <p className="text-xs font-black text-sun-ink">{t('result.xp')}</p>
-            <p className="mt-1 flex items-center justify-center gap-1 text-xl font-black text-gold-ink"><Zap size={18} aria-hidden />+{countXp}</p>
-          </div>
-          {accuracy != null && (
-            <div className="rounded-2xl border-2 border-mint-strong bg-surface p-3">
-              <p className="text-xs font-black text-mint-ink">{t('path.accuracy')}</p>
-              <p className="mt-1 text-xl font-black text-mint-ink">{accuracy} %</p>
-            </div>
-          )}
-          <div className="rounded-2xl border-2 border-line bg-surface p-3">
-            <p className="text-xs font-black text-flame-ink">{t('profile.stats.streak')}</p>
-            <p className="mt-1 flex items-center justify-center gap-1 text-xl font-black text-flame-ink"><Flame size={18} aria-hidden fill="currentColor" />{streak}</p>
-          </div>
-        </div>
-
-        {lvl && (
-          <div className="mt-5 w-full max-w-sm rounded-2xl border-2 border-line bg-surface p-3.5 text-left">
-            <div className="flex items-center justify-between text-xs font-extrabold">
-              <span className="text-[var(--accent)]">{t('profile.levelTitle', { level: lvl.level })} · {t(`badges.ranks.${lvl.titleKey}`)}</span>
-              <span className="text-ink-2">{lvl.currentXp}/{lvl.nextLevelXp} XP</span>
-            </div>
-            <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-line">
-              <div className="h-full rounded-full bg-[var(--accent)] transition-[width] duration-700" style={{ width: `${Math.max(6, Math.round(lvl.progressRatio * 100))}%` }} />
-            </div>
-          </div>
-        )}
+        <RewardSummary xp={xp} accuracy={accuracy} />
       </div>
       <Button onClick={onContinue} icon={<ArrowRight size={20} aria-hidden />}>{t('common.continue')}</Button>
     </main>

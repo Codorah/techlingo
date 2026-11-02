@@ -6,6 +6,7 @@ import '@/i18n';
 import '@/styles/index.css';
 import { InstallSheet } from '@/app/InstallSheet';
 import { UpdatePrompt } from '@/app/UpdatePrompt';
+import { RewardWatcher } from '@/components/ui/RewardWatcher';
 import { db, getDeviceId, requestPersistence } from '@/db/db';
 import { domainOf } from '@/lib/domains';
 import '@/lib/install';
@@ -91,6 +92,7 @@ function App() {
     </Switch>
     {/* Offered once the learner is in the app, never on top of the onboarding. */}
     <InstallSheet />
+    <RewardWatcher />
     </>
   );
 }

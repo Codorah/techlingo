@@ -4,6 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db, getDeviceId, nowIso, uuid } from '@/db/db';
 import type { PathProgress } from '@/learning/path';
 import { review, stateOf } from '@/learning/srs';
+import { notifyStepCompleted } from '@/app/InstallSheet';
 import { addXP, getRetention, getSetting, setSetting } from './progress';
 
 const KEY = 'pathProgress';
@@ -28,7 +29,7 @@ const inFlight = new Map<string, Promise<NodeOutcome>>();
 export function completeNode(nodeId: string, kind: NodeKind, results: WordResult[] = [], score?: { correct: number; total: number }): Promise<NodeOutcome> {
   const pending = inFlight.get(nodeId);
   if (pending) return pending;
-  const run = recordNode(nodeId, kind, results, score).finally(() => inFlight.delete(nodeId));
+  const run = recordNode(nodeId, kind, results, score).then((r) => { notifyStepCompleted(); return r; }).finally(() => inFlight.delete(nodeId));
   inFlight.set(nodeId, run);
   return run;
 }

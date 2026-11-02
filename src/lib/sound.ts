@@ -65,5 +65,7 @@ if (typeof window !== 'undefined') {
 export const sounds = {
   correct: () => play([[660, 0, 0.12, 'triangle'], [880, 0.09, 0.2, 'triangle']]),
   wrong: () => play([[220, 0, 0.16, 'sine'], [185, 0.12, 0.24, 'sine']]),
-  celebrate: () => play([[523, 0, 0.14, 'triangle'], [659, 0.1, 0.14, 'triangle'], [784, 0.2, 0.14, 'triangle'], [1047, 0.3, 0.36, 'triangle']])
+  celebrate: () => play([[523, 0, 0.14, 'triangle'], [659, 0.1, 0.14, 'triangle'], [784, 0.2, 0.14, 'triangle'], [1047, 0.3, 0.36, 'triangle']]),
+  badge: () => play([[784, 0, 0.12, 'triangle'], [988, 0.09, 0.12, 'triangle'], [1319, 0.18, 0.2, 'triangle'], [1568, 0.3, 0.45, 'sine']]),
+  levelUp: () => play([[392, 0, 0.12, 'triangle'], [523, 0.1, 0.12, 'triangle'], [659, 0.2, 0.12, 'triangle'], [784, 0.3, 0.14, 'triangle'], [1047, 0.42, 0.5, 'triangle']])
 };

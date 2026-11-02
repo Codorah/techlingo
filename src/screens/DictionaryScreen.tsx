@@ -17,7 +17,7 @@ import { accentStyle } from '@/screens/path/ThemeScreen';
 const PAGE = 60;
 type Scope = 'mine' | 'domain' | 'learned' | 'favorites';
 
-const chip = (on: boolean) => `inline-flex min-h-10 flex-none items-center gap-1.5 rounded-full border-2 px-3.5 text-sm font-bold transition-colors ${on ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`;
+const chip = (on: boolean) => `inline-flex min-h-11 flex-none items-center gap-1.5 rounded-full border-2 px-3.5 text-sm font-bold transition-colors ${on ? 'border-[var(--accent)] bg-[var(--accent)] text-on-ocean' : 'border-line bg-surface text-ink-2'}`;
 
 export function DictionaryScreen() {
   const { t } = useTranslation();
@@ -119,11 +119,11 @@ export function DictionaryScreen() {
           })}
         </div>
 
-        <div className="mt-3 flex min-h-10 items-center justify-between gap-2">
+        <div className="mt-3 flex min-h-11 items-center justify-between gap-2">
           <p className="text-sm font-bold text-ink-2" aria-live="polite">{all ? t('dictionary.count', { count: results.length }) : t('common.loading')}</p>
           {filtered && (
             <button type="button" onClick={() => { setQuery(''); setScope('domain'); setCategory(null); setLevel(null); }}
-              className="inline-flex min-h-10 items-center gap-1 rounded-full px-3 text-sm font-bold text-[var(--accent)] active:bg-surface">
+              className="inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-sm font-bold text-[var(--accent)] active:bg-surface">
               <X size={16} aria-hidden />{t('dictionary.reset')}
             </button>
           )}

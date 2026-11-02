@@ -96,14 +96,14 @@ export function HomeScreen() {
             </p>
           </div>
           <span
-            className={`inline-flex min-h-10 items-center gap-1 rounded-xl px-2.5 font-black ${streak ? 'text-flame-ink bg-flame-soft/60' : 'text-ink-2'}`}
+            className={`inline-flex min-h-11 items-center gap-1 rounded-xl px-2.5 font-black ${streak ? 'text-flame-ink bg-flame-soft/60' : 'text-ink-2'}`}
             title={t('home.streak', { count: streak })}
           >
             <Flame size={20} aria-hidden fill={streak ? 'currentColor' : 'none'} />
             {streak}
             <span className="sr-only">{t('home.streak', { count: streak })}</span>
           </span>
-          <span className="inline-flex min-h-10 items-center gap-1 rounded-xl bg-sun/60 px-2.5 font-black text-gold-ink">
+          <span className="inline-flex min-h-11 items-center gap-1 rounded-xl bg-sun/60 px-2.5 font-black text-gold-ink">
             <Zap size={20} aria-hidden fill="currentColor" />
             {profile.xp}
             <span className="sr-only">XP</span>
@@ -121,7 +121,7 @@ export function HomeScreen() {
             </span>
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">
-                <span className="rounded-full bg-gold/20 px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-gold-ink">
+                <span className="rounded-full bg-gold/20 px-2 py-0.5 text-xs font-black uppercase tracking-wider text-gold-ink">
                   {spinState === 'free' ? 'Roue du jour · 2 min' : 'Tour bonus'}
                 </span>
                 <span className="flex h-2 w-2 rounded-full bg-gold animate-ping" />
@@ -260,7 +260,7 @@ export function HomeScreen() {
                             <span className="mt-2.5 font-extrabold text-xs leading-snug text-ink">
                               {meta.name_fr}
                             </span>
-                            <span className="mt-1 line-clamp-2 text-[11px] text-ink-2">
+                            <span className="mt-1 line-clamp-2 text-xs text-ink-2">
                               {meta.description_fr}
                             </span>
                           </Link>
@@ -410,7 +410,7 @@ function HeroCourse({ role }: { role: string }) {
 
         <Link
           href={`/parcours/${role}`}
-          className="mt-3 flex min-h-10 items-center justify-center text-xs font-bold underline-offset-2 opacity-95 hover:underline"
+          className="mt-3 flex min-h-11 items-center justify-center text-xs font-bold underline-offset-2 opacity-95 hover:underline"
         >
           {t('course.seeMap')}
         </Link>
