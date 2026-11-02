@@ -29,6 +29,7 @@ export function QuestionScreen() {
   const profile = useLiveQuery(() => db.profile.get('me'));
   const manifest = useManifest();
   const [showFr, setShowFr] = useState(false);
+  const [revealed, setRevealed] = useState(false);
   const [listening, setListening] = useState(false);
   const [spoken, setSpoken] = useState('');
   const [text, setText] = useState<string | null>(null);
@@ -40,7 +41,7 @@ export function QuestionScreen() {
   useEffect(() => { void loadCareer().then(setCareer); }, []);
   useEffect(() => () => { abortRef.current(); stopSpeaking(); }, []);
   // Next question: close the microphone and silence the previous one.
-  useEffect(() => { abortRef.current(); stopSpeaking(); setListening(false); setSpoken(''); setText(null); setShowFr(false); setMicError(null); }, [id]);
+  useEffect(() => { abortRef.current(); stopSpeaking(); setListening(false); setSpoken(''); setText(null); setShowFr(false); setRevealed(false); setMicError(null); }, [id]);
 
   const q = career?.questions.find((x) => x.id === id);
   if (!q) return <Screen back={backTo}><p className="text-ink-2">{t('common.loading')}</p></Screen>;
@@ -50,6 +51,8 @@ export function QuestionScreen() {
   const found = phraseHits(attempt, q.key_phrases); // "we'll" = "we will"
   const hits = q.key_phrases.filter((_, i) => found[i]);
   const practiced = !!draft?.checklist.practiced;
+  // The model answer comes after an attempt (or on request), so it cannot be copied before thinking.
+  const showModel = revealed || practiced || attempt.trim().length >= 8;
 
   const general = generalRoleOf(manifest, profile?.primaryRole);
   const roles = new Set([general, ...profileRoles(profile)]);
@@ -115,16 +118,6 @@ export function QuestionScreen() {
         })}
       </div>
 
-      <h2 className="mt-6 text-lg font-extrabold">{t('career.question.model')}</h2>
-      <Card className="mt-3">
-        <p className="leading-relaxed" lang="en">{q.model_answer_en}</p>
-        {showFr && <p className="mt-3 border-t-2 border-line pt-3 text-ink-2">{q.model_answer_fr}</p>}
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Button variant="secondary" block={false} icon={<Volume2 size={18} aria-hidden />} onClick={() => speak(q.model_answer_en)}>{t('career.question.listenAnswer')}</Button>
-          <Button variant="ghost" block={false} icon={<Languages size={18} aria-hidden />} onClick={() => setShowFr(!showFr)}>{showFr ? t('career.question.hideTranslation') : t('career.question.translation')}</Button>
-        </div>
-      </Card>
-
       <h2 className="mt-6 text-lg font-extrabold">{t('career.question.practice')}</h2>
       <Card className="mt-3">
         {canRecognize() ? (
@@ -144,6 +137,23 @@ export function QuestionScreen() {
         </label>
         <p className="mt-2 text-sm font-bold" aria-live="polite">{t('career.question.keysHit', { count: hits.length })} / {q.key_phrases.length}</p>
       </Card>
+
+      <h2 className="mt-6 text-lg font-extrabold">{t('career.question.model')}</h2>
+      {showModel ? (
+        <Card className="mt-3">
+          <p className="leading-relaxed" lang="en">{q.model_answer_en}</p>
+          {showFr && <p className="mt-3 border-t-2 border-line pt-3 text-ink-2">{q.model_answer_fr}</p>}
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Button variant="secondary" block={false} icon={<Volume2 size={18} aria-hidden />} onClick={() => speak(q.model_answer_en)}>{t('career.question.listenAnswer')}</Button>
+            <Button variant="ghost" block={false} icon={<Languages size={18} aria-hidden />} onClick={() => setShowFr(!showFr)}>{showFr ? t('career.question.hideTranslation') : t('career.question.translation')}</Button>
+          </div>
+        </Card>
+      ) : (
+        <Card className="mt-3">
+          <p className="text-ink-2">{t('career.question.modelLocked')}</p>
+          <Button className="mt-3" variant="secondary" block={false} onClick={() => setRevealed(true)}>{t('career.question.revealModel')}</Button>
+        </Card>
+      )}
 
       <div className="mt-5 grid gap-2.5 pb-[env(safe-area-inset-bottom)]">
         {practiced && !courseNode
