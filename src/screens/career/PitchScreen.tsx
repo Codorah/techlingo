@@ -46,8 +46,9 @@ export function PitchScreen() {
   const [copied, setCopied] = useState<'ok' | 'failed' | null>(null);
   const profile = useLiveQuery(() => db.profile.get('me'));
   const manifest = useManifest();
-  const marketing = domainOf(manifest, profile?.primaryRole) === 'marketing';
-  const placeholders = t(marketing ? 'career.pitch.placeholders_marketing' : 'career.pitch.placeholders', { returnObjects: true }) as Pitch;
+  const domainId = domainOf(manifest, profile?.primaryRole);
+  const placeholderKey = domainId === 'marketing' ? 'career.pitch.placeholders_marketing' : domainId === 'air-events' ? 'career.pitch.placeholders_air' : 'career.pitch.placeholders';
+  const placeholders = t(placeholderKey, { returnObjects: true }) as Pitch;
   const touched = useRef(false);
   const copyTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 

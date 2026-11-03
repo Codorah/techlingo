@@ -331,7 +331,8 @@
     "stop": "Arrêter la dictée",
     "phrasesFound": "{{count}} expression clé sur {{total}}",
     "phrasesFound_other": "{{count}} expressions clés sur {{total}}",
-    "model": "Une bonne réponse possible"
+    "model": "Une bonne réponse possible",
+    "cardTextAir": "Des situations réelles : une annonce, un passager difficile, un échange avec la tour ou un client à accueillir."
   },
   "result": {
     "toPath": "Continuer le parcours « {{theme}} »",
@@ -533,7 +534,11 @@
     "nextLevel": "Niveau {{level}} dans {{xp}} XP",
     "bestStreak": "Record : {{count}} j",
     "weekActivity": "Activité de la semaine",
-    "tabs": { "progres": "Progrès", "succes": "Succès", "reglages": "Réglages" },
+    "tabs": {
+      "progres": "Progrès",
+      "succes": "Succès",
+      "reglages": "Réglages"
+    },
     "weekShort": "{{count}} / 4 jours",
     "backedUp": "Sauvegarde faite",
     "favorites": "{{count}} favoris",
@@ -545,8 +550,14 @@
     "fewer": "Réduire"
   },
   "rewards": {
-    "badge": { "kicker": "Succès obtenu", "text": "Niveau {{tier}}" },
-    "levelUp": { "kicker": "Niveau supérieur", "title": "Niveau {{level}} atteint" },
+    "badge": {
+      "kicker": "Succès obtenu",
+      "text": "Niveau {{tier}}"
+    },
+    "levelUp": {
+      "kicker": "Niveau supérieur",
+      "title": "Niveau {{level}} atteint"
+    },
     "streakExtended": "Série prolongée"
   },
   "data": {
@@ -668,7 +679,16 @@
       "copy": "Copier",
       "copied": "Copié",
       "copyFailed": "Copie impossible ici. Sélectionne le texte pour le copier à la main.",
-      "saved": "Enregistré sur ce téléphone"
+      "saved": "Enregistré sur ce téléphone",
+      "placeholders_air": {
+        "title": "cabin crew member",
+        "years": "3",
+        "skills": "safety procedures and customer service",
+        "project": "led the onboard service on long-haul flights",
+        "result": "cut boarding time by ten minutes",
+        "strength": "staying calm and clear with passengers under pressure",
+        "goal": "a team where I can grow into a senior cabin crew role"
+      }
     },
     "question": {
       "listen": "Écouter la question",
@@ -777,7 +797,10 @@
   },
   "badges": {
     "perfect": "Sans faute",
-    "sheet": { "next": "Prochain niveau : {{tier}}", "complete": "Niveau maximal atteint" },
+    "sheet": {
+      "next": "Prochain niveau : {{tier}}",
+      "complete": "Niveau maximal atteint"
+    },
     "title": "Succès & Badges",
     "subtitle": "Progresse du bronze à l’or en pratiquant régulièrement.",
     "tier": {

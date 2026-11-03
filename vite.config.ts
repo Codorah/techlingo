@@ -19,7 +19,7 @@ export default defineConfig({
         id: '/',
         name: 'TechLingo : l’anglais de ton métier',
         short_name: 'TechLingo',
-        description: "L'anglais de ton métier, informatique ou marketing : des parcours en situation, l'oral, des rappels et la préparation aux entretiens.",
+        description: "L'anglais de ton métier, informatique, marketing, aéronautique ou événementiel : des parcours en situation, l'oral, des rappels et la préparation aux entretiens.",
         lang: 'fr',
         start_url: '/?source=pwa',
         scope: '/',

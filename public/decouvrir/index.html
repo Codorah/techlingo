@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>TechLingo · L’anglais de ton métier, 5 minutes par jour</title>
-  <meta name="description" content="Apprends l’anglais que tu utilises vraiment au travail, en informatique ou en marketing digital : un parcours en unités, un mot du jour, des défis réels et la préparation aux entretiens. Gratuit, hors ligne, sans compte.">
+  <meta name="description" content="Apprends l’anglais que tu utilises vraiment au travail, en informatique, en marketing digital, en aéronautique ou dans l’événementiel : un parcours en unités, un mot du jour, des défis réels et la préparation aux entretiens. Gratuit, hors ligne, sans compte.">
   <meta name="theme-color" content="#EAF6FF">
   <meta property="og:title" content="TechLingo · L’anglais de ton métier">
-  <meta property="og:description" content="Un parcours façon jeu pour parler l’anglais de l’informatique et du marketing digital. Gratuit, hors ligne, sans compte.">
+  <meta property="og:description" content="Un parcours façon jeu pour parler l’anglais de l’informatique, du marketing digital, de l’aéronautique et de l’événementiel. Gratuit, hors ligne, sans compte.">
   <link rel="canonical" href="https://techlinngo.vercel.app/decouvrir/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
   <meta property="og:type" content="website">
@@ -21,7 +21,7 @@
   <meta property="og:image:alt" content="Logo TechLingo et le slogan : l’anglais de ton métier, à l’oral comme à l’écrit">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TechLingo · L’anglais de ton métier, 5 minutes par jour">
-  <meta name="twitter:description" content="Un parcours façon jeu pour parler l’anglais de l’informatique et du marketing digital. Gratuit, hors ligne, sans compte.">
+  <meta name="twitter:description" content="Un parcours façon jeu pour parler l’anglais de l’informatique, du marketing digital, de l’aéronautique et de l’événementiel. Gratuit, hors ligne, sans compte.">
   <meta name="twitter:image" content="https://techlinngo.vercel.app/og-image.png">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
@@ -88,10 +88,10 @@
     .step p { margin-top: 10px; color: var(--ink-2); font-size: 1.08rem; max-width: 46ch; }
     .step .phone { width: min(280px, 70vw); }
 
-    .domains { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    .domains { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px; }
     .domain { border-radius: 16px; padding: 24px; border: 2px solid var(--line); background: var(--surface); box-shadow: 0 4px 0 var(--line); }
     .domain h3 { font-size: 1.4rem; }
-    .domain.tech h3 { color: var(--ocean); }
+    .domain.tech h3, .domain.air h3 { color: var(--ocean); }
     .domain.mkt { background: var(--coral-soft); border-color: #f6c7ba; box-shadow: 0 4px 0 #f6c7ba; }
     .domain.mkt h3 { color: var(--coral); }
     .domain ul { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; padding: 0; list-style: none; }
@@ -141,7 +141,7 @@
     <div class="wrap hero">
       <div>
         <h1>L’anglais de <em>ton métier</em>, 5 minutes par jour.</h1>
-        <p class="lead">Un parcours façon jeu pour parler l’anglais de l’informatique et du marketing digital, comme au travail.</p>
+        <p class="lead">Un parcours façon jeu pour parler l’anglais de l’informatique, du marketing digital, de l’aéronautique et de l’événementiel, comme au travail.</p>
         <div class="cta">
           <a class="btn btn-primary" href="/?start=1">Commencer gratuitement</a>
           <a class="btn btn-ghost" href="#video">Voir la présentation</a>
@@ -207,7 +207,7 @@
 
     <section>
       <div class="wrap">
-        <h2 class="section-title">Deux domaines, des dizaines de métiers</h2>
+        <h2 class="section-title">Trois domaines, des dizaines de métiers</h2>
         <div class="domains">
           <div class="domain tech">
             <h3>Informatique</h3>
@@ -216,6 +216,10 @@
           <div class="domain mkt">
             <h3>Marketing et communication digitale</h3>
             <ul><li>Community management</li><li>SEO et SEA</li><li>Contenu</li><li>Growth</li><li>Marque et communication</li><li>E-commerce</li><li>Data marketing</li><li>Relations presse</li></ul>
+          </div>
+          <div class="domain air">
+            <h3>Aéronautique et événementiel</h3>
+            <ul><li>Personnel navigant</li><li>Pilote</li><li>Accueil événementiel</li><li>Organisation d’événements</li><li>Service client</li></ul>
           </div>
         </div>
       </div>
