@@ -11,6 +11,7 @@ import { loadCareer } from '@/lib/content';
 import { generalRoleOf, profileRoles } from '@/lib/domains';
 import { useManifest } from '@/lib/useContent';
 import { speak } from '@/lib/speech';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 export function CareerScreen() {
   const { t } = useTranslation();
@@ -78,7 +79,7 @@ export function CareerScreen() {
               <div className="flex items-center justify-between gap-3">
                 <p className="text-lg font-black text-[var(--accent)]" lang="en">{v.verb}</p>
                 <button type="button" onClick={() => speak(`${v.verb}. ${v.example_en}`)} aria-label={`${t('common.listen')} ${v.verb}`}
-                  className="grid h-11 w-11 place-items-center rounded-xl bg-mist text-[var(--accent)]"><Volume2 size={18} aria-hidden /></button>
+                  className="grid h-11 w-11 place-items-center rounded-xl bg-mist text-[var(--accent)]"><Volume2 size={18} aria-hidden /></button><SlowButton text={`${v.verb}. ${v.example_en}`} variant="sm" />
               </div>
               <p className="text-sm font-semibold">{v.meaning_fr}</p>
               <p className="mt-2 text-sm" lang="en">{v.example_en}</p>

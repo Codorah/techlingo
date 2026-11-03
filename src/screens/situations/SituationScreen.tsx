@@ -19,6 +19,7 @@ import { canRecognize, listen, type ListenError, speak, stopSpeaking } from '@/l
 import { QuizStep, type Playable } from '@/screens/lesson/QuizStep';
 import { accentStyle } from '@/screens/path/ThemeScreen';
 import { useSituations } from './useSituations';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 type Channel = PathLesson['production']['channel'];
 const CHANNEL_ICON: Record<Channel, typeof Hash> = {
@@ -98,7 +99,7 @@ export function PhraseCard({ phrase, kicker }: { phrase: { en: string; fr: strin
       <p lang="en" className="text-[clamp(1.35rem,6vw,1.65rem)] font-black leading-snug">{phrase.en}</p>
       <p className="mt-2 text-[1.0625rem] text-ink-2">{phrase.fr}</p>
       <div className="mt-4 flex items-center gap-2">
-        <button type="button" onClick={() => speak(phrase.en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button>
+        <button type="button" onClick={() => speak(phrase.en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button><SlowButton text={phrase.en} variant="md" />
         <button type="button" onClick={() => setSaid(true)} aria-pressed={said} className={`inline-flex min-h-11 items-center gap-2 rounded-2xl border-2 px-4 font-bold ${said ? 'border-mint-strong bg-mint text-mint-ink' : 'border-line text-[var(--accent)]'}`}>
           {said ? <Check size={18} aria-hidden /> : <Mic size={18} aria-hidden />}{t('deck.said')}
         </button>
@@ -145,7 +146,7 @@ export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; l
             <h1 lang="en" className="text-[clamp(1.6rem,8vw,2rem)] font-black leading-tight">{term.term_en}</h1>
             {term.ipa && <p className="mt-1 font-mono text-ink-2">{term.ipa}</p>}
           </div>
-          <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button>
+          <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button><SlowButton text={term.term_en} variant="md" />
         </div>
         <p className="mt-3 text-xl font-extrabold text-[var(--accent)]">{term.translation_fr}</p>
         <p className="mt-2 leading-relaxed">{term.explanation_fr}</p>
@@ -206,7 +207,7 @@ function DialogueCard({ lines, upTo, channel }: { lines: PathLesson['dialogue'];
             <p lang="en" className="text-[1.0625rem] leading-relaxed">{line.text_en}</p>
             {fr && <p className="mt-1 text-ink-2">{line.text_fr}</p>}
             <div className="mt-1 flex gap-1">
-              <button type="button" onClick={() => speak(line.text_en)} aria-label={t('common.listen')} className="grid h-11 w-11 place-items-center rounded-lg text-[var(--accent)] active:bg-mist"><Volume2 size={20} aria-hidden /></button>
+              <button type="button" onClick={() => speak(line.text_en)} aria-label={t('common.listen')} className="grid h-11 w-11 place-items-center rounded-lg text-[var(--accent)] active:bg-mist"><Volume2 size={20} aria-hidden /></button><SlowButton text={line.text_en} variant="sm" />
               <button type="button" onClick={() => setFr(true)} aria-label={t('situations.translate')} disabled={fr} className="grid h-11 w-11 place-items-center rounded-lg text-[var(--accent)] active:bg-mist disabled:opacity-40"><Languages size={20} aria-hidden /></button>
             </div>
           </div>
@@ -283,7 +284,7 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
           <div className="mt-4 rounded-2xl border-2 border-mint-strong bg-mint p-4 text-mint-ink">
             <div className="flex items-center justify-between gap-2">
               <p className="font-black">{t('situations.model')}</p>
-              <button type="button" onClick={() => speak(p.model_answer_en)} aria-label={t('common.listen')} className="grid h-11 w-11 place-items-center rounded-xl bg-surface"><Volume2 size={20} aria-hidden /></button>
+              <button type="button" onClick={() => speak(p.model_answer_en)} aria-label={t('common.listen')} className="grid h-11 w-11 place-items-center rounded-xl bg-surface"><Volume2 size={20} aria-hidden /></button><SlowButton text={p.model_answer_en} variant="sm" />
             </div>
             <p lang="en" className="mt-1 font-semibold leading-relaxed text-ink">{p.model_answer_en}</p>
             <p className="mt-1 text-sm">{p.model_answer_fr}</p>

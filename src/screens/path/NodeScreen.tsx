@@ -18,6 +18,7 @@ import { speak } from '@/lib/speech';
 import { usePath } from '@/lib/usePath';
 import { QuizStep, type Playable, toPlayable } from '../lesson/QuizStep';
 import { accentStyle } from './ThemeScreen';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 // Seeded shuffle so a node always asks its questions in the same order within a session.
 function shuffled<T>(items: T[], seed: string): T[] {
@@ -97,7 +98,7 @@ function Course({ categoryId, terms, onClose, onDone }: { categoryId: string; te
             <p lang="en" className="text-[clamp(1.5rem,7vw,1.9rem)] font-black leading-tight">{term.term_en}</p>
             <p className="mt-1 text-xl font-extrabold text-[var(--accent)]">{term.translation_fr}</p>
           </div>
-          <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button>
+          <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean"><Volume2 size={24} aria-hidden /></button><SlowButton text={term.term_en} variant="md" />
         </div>
       </DeckCard>
     ))
@@ -150,17 +151,17 @@ function Practice({ node, terms, onClose, onDone }: { node: PathNode; terms: Ter
                 {term.ipa && <p className="mt-1 font-mono text-ink-2">{term.ipa}</p>}
               </div>
               <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')}
-                className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={24} aria-hidden /></button>
+                className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={24} aria-hidden /></button><SlowButton text={term.term_en} variant="md" />
             </div>
             <p className="mt-4 text-xl font-extrabold text-[var(--accent)]">{term.translation_fr}</p>
             <p className="mt-2 leading-relaxed">{term.explanation_fr}</p>
           </div>
-          {term.sentences[0] && (
+          {term.sentences[0] && (<>
             <button type="button" onClick={() => speak(term.sentences[0]!.text_en)} className="mt-4 flex gap-3 rounded-2xl bg-surface p-4 text-left active:bg-mist">
               <Volume2 size={20} className="mt-0.5 flex-none text-[var(--accent)]" aria-hidden />
               <span><span lang="en" className="block font-semibold">{term.sentences[0].text_en}</span><span className="mt-1 block text-sm text-ink-2">{term.sentences[0].text_fr}</span></span>
-            </button>
-          )}
+            </button><SlowButton text={term.sentences[0]!.text_en} variant="md" className="mt-2" />
+          </>)}
           <span className="flex-1" />
           <Button className="mt-6" onClick={() => setLearnIndex(learnIndex + 1)} icon={<ArrowRight size={20} aria-hidden />}>
             {learnIndex + 1 < terms.length ? t('common.continue') : t('path.toQuiz')}

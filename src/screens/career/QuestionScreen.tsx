@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, Check, CircleCheck, Languages, Lightbulb, Mic, Square, Volume2 } from 'lucide-react';
+import { ArrowRight, Check, CircleCheck, Languages, Lightbulb, Mic, Square, Turtle, Volume2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useParams, useSearch } from 'wouter';
@@ -15,6 +15,7 @@ import { generalRoleOf, profileRoles } from '@/lib/domains';
 import { phraseHits } from '@/learning/situations';
 import { useManifest } from '@/lib/useContent';
 import { canRecognize, listen, type ListenError, speak, stopSpeaking } from '@/lib/speech';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 export function QuestionScreen() {
   const { t } = useTranslation();
@@ -97,7 +98,7 @@ export function QuestionScreen() {
       <div className="mt-2 flex items-start gap-3">
         <h1 className="flex-1 text-2xl font-black leading-snug" lang="en">{q.question_en}</h1>
         <button type="button" onClick={() => speak(q.question_en)} aria-label={t('career.question.listen')}
-          className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[#5B4FC4] text-white shadow-[0_4px_0_#43399A] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button>
+          className="grid h-12 w-12 flex-none place-items-center rounded-2xl bg-[#5B4FC4] text-white shadow-[0_4px_0_#43399A] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button><SlowButton text={q.question_en} variant="md" />
       </div>
       <p className="mt-1 text-ink-2">{q.question_fr}</p>
 
@@ -145,6 +146,7 @@ export function QuestionScreen() {
           {showFr && <p className="mt-3 border-t-2 border-line pt-3 text-ink-2">{q.model_answer_fr}</p>}
           <div className="mt-3 flex flex-wrap gap-2">
             <Button variant="secondary" block={false} icon={<Volume2 size={18} aria-hidden />} onClick={() => speak(q.model_answer_en)}>{t('career.question.listenAnswer')}</Button>
+            <Button variant="secondary" block={false} icon={<Turtle size={18} aria-hidden />} onClick={() => speak(q.model_answer_en, { slow: true })}>{t('common.listenSlow')}</Button>
             <Button variant="ghost" block={false} icon={<Languages size={18} aria-hidden />} onClick={() => setShowFr(!showFr)}>{showFr ? t('career.question.hideTranslation') : t('career.question.translation')}</Button>
           </div>
         </Card>

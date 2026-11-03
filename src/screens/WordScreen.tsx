@@ -9,6 +9,7 @@ import { toggleFavorite } from '@/data/progress';
 import { db } from '@/db/db';
 import { speak } from '@/lib/speech';
 import { useContent } from '@/lib/useContent';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 export function WordScreen() {
   const { t } = useTranslation();
@@ -42,7 +43,7 @@ export function WordScreen() {
             <Bookmark size={22} fill={fav ? 'currentColor' : 'none'} aria-hidden />
           </button>
           <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')}
-            className="grid h-12 w-12 place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button>
+            className="grid h-12 w-12 place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={22} aria-hidden /></button><SlowButton text={term.term_en} variant="md" />
         </div>
       </div>
 
@@ -55,7 +56,7 @@ export function WordScreen() {
         {term.sentences.map((s) => (
           <li key={s.id}><Card className="p-4">
             <p className="font-semibold leading-relaxed" lang="en">{s.text_en}</p><p className="mt-1 text-sm text-ink-2">{s.text_fr}</p>
-            <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-[var(--accent)]" onClick={() => speak(s.text_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button>
+            <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-[var(--accent)]" onClick={() => speak(s.text_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button><SlowButton text={s.text_en} variant="link" />
           </Card></li>
         ))}
       </ul>

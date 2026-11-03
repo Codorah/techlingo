@@ -10,6 +10,7 @@ import { dueTermIds, getSetting, reviewTerm } from '@/data/progress';
 import { db } from '@/db/db';
 import { speak } from '@/lib/speech';
 import { useContent } from '@/lib/useContent';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 /** Revision Room: due words one card at a time, rated Again / Hard / Good / Easy (FSRS). */
 export function ReviewScreen() {
@@ -72,7 +73,7 @@ export function ReviewScreen() {
       <Card className="flex flex-1 flex-col items-center justify-center text-center">
         <p className="text-sm font-bold text-ink-2">{t('practice.review.recall')}</p>
         <h1 className="mt-3 text-4xl font-black" lang="en">{term.term_en}</h1>
-        <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="mt-4 grid h-12 w-12 place-items-center rounded-2xl bg-mist text-[var(--accent)]"><Volume2 size={22} aria-hidden /></button>
+        <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')} className="mt-4 grid h-12 w-12 place-items-center rounded-2xl bg-mist text-[var(--accent)]"><Volume2 size={22} aria-hidden /></button><SlowButton text={term.term_en} variant="md" />
         {shown && (
           <div className="mt-6 w-full animate-[enter_.25s_ease-out] border-t-2 border-line pt-5 text-left">
             <p className="text-xl font-extrabold text-mint-ink">{term.translation_fr}</p>

@@ -9,6 +9,7 @@ import type { WordResult } from '@/data/path';
 import { gradeTerm, type Grade, maskTerm, normalize, SPOKEN_PASS, spokenForm, spokenScore, tiles } from '@/learning/answer';
 import { sounds } from '@/lib/sound';
 import { canRecognize, hasVoice, listen, type ListenError, speak, stopSpeaking } from '@/lib/speech';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 // Recall = production, not recognition: the learner types, rebuilds or SAYS the English.
 type Kind = 'type' | 'dictation' | 'order' | 'say';
@@ -265,7 +266,7 @@ function Say({ ex, locked, onAnswer, onSkip }: StepProps & { onSkip: () => void 
       <button type="button" onClick={() => speak(ex.target)} className="mt-4 flex gap-3 rounded-2xl border-2 border-line bg-surface p-4 text-left shadow-[0_4px_0_var(--color-line)] active:translate-y-1 active:shadow-none">
         <Volume2 size={24} className="mt-0.5 flex-none text-[var(--accent)]" aria-hidden />
         <span><span lang="en" className="block text-lg font-bold leading-snug">{ex.target}</span>{ex.term.sentence_fr && <span className="mt-1 block text-sm text-ink-2">{ex.term.sentence_fr}</span>}</span>
-      </button>
+      </button><SlowButton text={ex.target} variant="md" className="mt-2" />
       <div className="flex flex-1 flex-col items-center justify-center py-6">
         {!selfAssess ? (
           <>

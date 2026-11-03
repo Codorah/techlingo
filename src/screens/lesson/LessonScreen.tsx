@@ -15,6 +15,7 @@ import { speak } from '@/lib/speech';
 import { useContent } from '@/lib/useContent';
 import { QuizStep, toPlayable } from './QuizStep';
 import { RepeatStep, type RepeatOutcome } from './RepeatStep';
+import { SlowButton } from '@/components/ui/SlowButton';
 
 type StepId = 'discover' | 'understand' | 'context' | 'examples' | 'related' | 'repeat' | 'quiz';
 
@@ -151,7 +152,7 @@ export function LessonScreen() {
                 </div>
               </div>
               <button type="button" onClick={() => speak(term.term_en)} aria-label={t('common.listen')}
-                className="grid h-16 w-16 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={28} aria-hidden /></button>
+                className="grid h-16 w-16 flex-none place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_4px_0_var(--accent-press)] active:translate-y-1 active:shadow-none"><Volume2 size={28} aria-hidden /></button><SlowButton text={term.term_en} variant="lg" />
             </div>
             <Card className="mt-6"><p className="text-sm font-bold text-ink-2">{t('lesson.translation')}</p><p className="mt-1 text-2xl font-extrabold">{term.translation_fr}</p></Card>
           </>
@@ -162,7 +163,7 @@ export function LessonScreen() {
             <p className="text-sm font-bold uppercase tracking-wide text-ink-2">{t('lesson.steps.understand')}</p>
             <h1 className="mt-2 text-2xl font-black">{term.term_en}</h1>
             <section className="mt-5"><h2 className="text-sm font-bold text-ink-2">{t('lesson.definition')}</h2><p className="mt-1 text-lg leading-relaxed" lang="en">{term.definition_en}</p>
-              <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-[var(--accent)]" onClick={() => speak(term.definition_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button></section>
+              <button type="button" className="mt-1 inline-flex min-h-11 items-center gap-2 font-bold text-[var(--accent)]" onClick={() => speak(term.definition_en)}><Volume2 size={18} aria-hidden />{t('common.listen')}</button><SlowButton text={term.definition_en} variant="link" /></section>
             <section className="mt-3"><h2 className="text-sm font-bold text-ink-2">{t('lesson.explanation')}</h2><p className="mt-1 leading-relaxed text-ink-2">{term.explanation_fr}</p></section>
             <Card className="mt-5 bg-sun/60"><p className="flex items-center gap-2 font-extrabold text-sun-ink"><Lightbulb size={20} aria-hidden />{t('lesson.why')}</p><p className="mt-1 font-semibold">{term.why_it_matters_fr}</p></Card>
           </>

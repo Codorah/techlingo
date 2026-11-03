@@ -1,4 +1,4 @@
-import { Copy, Volume2 } from 'lucide-react';
+import { Copy, Volume2, Turtle } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
@@ -91,7 +91,8 @@ export function PitchScreen() {
       <p className="mt-2 text-sm text-ink-2">{t('career.pitch.saved')}</p>
       <div className="mt-4 grid grid-cols-2 gap-2.5 pb-[env(safe-area-inset-bottom)]">
         <Button variant="secondary" icon={<Volume2 size={20} aria-hidden />} onClick={() => speak(text)}>{t('common.listen')}</Button>
-        <Button icon={<Copy size={20} aria-hidden />} onClick={() => void copy()}>
+        <Button variant="secondary" icon={<Turtle size={20} aria-hidden />} onClick={() => speak(text, { slow: true })}>{t('common.listenSlow')}</Button>
+        <Button className="col-span-2" icon={<Copy size={20} aria-hidden />} onClick={() => void copy()}>
           {copied === 'ok' ? t('career.pitch.copied') : t('career.pitch.copy')}
         </Button>
       </div>
