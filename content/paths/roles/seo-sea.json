@@ -2579,6 +2579,302 @@
           }
         }
       ]
+    },
+    {
+      "id": "seo-sea-defend-technical-seo-and-paid-search",
+      "title_fr": "Défendre un plan SEO technique et piloter le SEA avancé",
+      "title_en": "Defend a technical SEO plan and run advanced paid search",
+      "situation_fr": "Le trafic organique stagne et les campagnes payantes dépensent mal leur budget. Tu dois expliquer les causes techniques au développement, justifier tes priorités de performance et rendre compte à la direction du pilotage des enchères.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu relies SEO technique et pilotage payant. Le « crawl budget » est le nombre de pages que Google explore sur ton site, la « log file analysis » montre ce que les robots visitent vraiment, et la « faceted navigation » (filtres) peut créer des milliers d'URL inutiles. La « keyword cannibalization » met plusieurs pages en concurrence pour la même requête. Les Core Web Vitals : « LCP », « INP » et « CLS ». « Hreflang » indique la langue des pages. En SEA : « impression share », « budget pacing » (rythme de dépense), « conversions API » et « manual action » (sanction manuelle). Verbes clés : to crawl, to index, to canonicalize, to pace.",
+        "key_phrases": [
+          {
+            "en": "Googlebot wastes our crawl budget on filter pages.",
+            "fr": "Googlebot gaspille notre budget d'exploration sur les pages de filtres."
+          },
+          {
+            "en": "The log file analysis shows that bots ignore our new category.",
+            "fr": "L'analyse des logs montre que les robots ignorent notre nouvelle catégorie."
+          },
+          {
+            "en": "Two pages are cannibalizing each other for the same keyword.",
+            "fr": "Deux pages se cannibalisent pour le même mot-clé."
+          },
+          {
+            "en": "The LCP is 4.2 seconds, which is too slow.",
+            "fr": "Le LCP est de 4,2 secondes, ce qui est trop lent."
+          },
+          {
+            "en": "Our impression share is limited by budget.",
+            "fr": "Notre part d'impressions est limitée par le budget."
+          },
+          {
+            "en": "We should send conversions back through the conversions API.",
+            "fr": "Nous devrions renvoyer les conversions via l'API de conversions."
+          }
+        ],
+        "tip_fr": "Faux ami : « to index » veut dire ajouter une page à l'index du moteur, pas « indexer » une valeur sur un taux. « Indexed » veut dire visible dans les résultats."
+      },
+      "lessons": [
+        {
+          "id": "seo-sea-crawl-and-cannibalization",
+          "title_fr": "Expliquer l'exploration, les logs et la cannibalisation",
+          "term_ids": [
+            "crawl-budget",
+            "log-file-analysis",
+            "faceted-navigation",
+            "keyword-cannibalization"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Marta",
+              "text_en": "Our new category pages are not getting indexed. Why?",
+              "text_fr": "Nos nouvelles pages de catégorie ne sont pas indexées. Pourquoi ?"
+            },
+            {
+              "speaker": "Eliott",
+              "text_en": "The log file analysis shows that Googlebot spends most of its crawl budget on filter URLs from the faceted navigation.",
+              "text_fr": "L'analyse des logs montre que Googlebot dépense l'essentiel de son budget d'exploration sur les URL de filtres de la navigation à facettes."
+            },
+            {
+              "speaker": "Marta",
+              "text_en": "And two blog posts compete for the same keyword.",
+              "text_fr": "Et deux articles de blog se concurrencent sur le même mot-clé."
+            },
+            {
+              "speaker": "Eliott",
+              "text_en": "That is keyword cannibalization. We should merge them and block the useless filter URLs.",
+              "text_fr": "C'est de la cannibalisation de mots-clés. Nous devrions les fusionner et bloquer les URL de filtres inutiles."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les nouvelles catégories ne sont-elles pas indexées ?",
+              "choices": [
+                "Les robots épuisent leur budget d'exploration sur des URL de filtres inutiles",
+                "Google refuse volontairement d'indexer les pages de catégorie du site",
+                "Les nouvelles pages ont été supprimées du plan du site par erreur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'analyse des logs montre que le budget d'exploration est consommé par les URL de filtres. Les deux autres explications ne sont pas dans le dialogue."
+            },
+            {
+              "prompt_fr": "Qu'est-ce que la « keyword cannibalization » ?",
+              "choices": [
+                "Un concurrent copie les mots-clés de ton site pour ses pages",
+                "Un mot-clé est utilisé trop souvent dans un seul texte",
+                "Deux pages du même site se concurrencent pour la même requête"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La cannibalisation oppose plusieurs pages d'un même site sur une requête. Copier un concurrent ou répéter un mot-clé sont d'autres phénomènes."
+            },
+            {
+              "prompt_fr": "Comment dire « La plupart du budget est dépensé sur les filtres » ?",
+              "choices": [
+                "The most of the budget is spent on filters.",
+                "Most of the budget is spent on filters.",
+                "Most budget is spent for the filters."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Most of the + nom » est correct. « The most of » est incorrect, et « spent for » est un calque (on dit « spent on »)."
+            },
+            {
+              "prompt_fr": "À quoi sert la « log file analysis » ici ?",
+              "choices": [
+                "Lire les messages d'erreur affichés aux visiteurs du site",
+                "Compter les visiteurs humains arrivés depuis un moteur de recherche",
+                "Voir quelles pages les robots visitent réellement et à quelle fréquence"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Les logs serveur enregistrent les visites des robots, donc on voit où va l'exploration. Ils ne servent pas à lire des messages d'erreur côté visiteur ni à mesurer l'audience humaine."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Explique aux développeurs en 3 ou 4 phrases pourquoi les nouvelles pages ne sont pas indexées et ce que tu demandes.",
+            "context_en": "New category pages are not getting indexed.",
+            "model_answer_en": "The log file analysis shows that Googlebot wastes most of our crawl budget on filter URLs from the faceted navigation. Two blog posts are also cannibalizing each other for the same keyword. Could you block the useless filter URLs this sprint? I will merge the two articles.",
+            "model_answer_fr": "L'analyse des logs montre que Googlebot gaspille l'essentiel de notre budget d'exploration sur les URL de filtres de la navigation à facettes. Deux articles de blog se cannibalisent aussi pour le même mot-clé. Pourriez-vous bloquer les URL de filtres inutiles pendant ce sprint ? Je fusionnerai les deux articles.",
+            "key_phrases": [
+              "log file analysis",
+              "crawl budget",
+              "faceted navigation"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-core-web-vitals-and-hreflang",
+          "title_fr": "Justifier les priorités de performance et de ciblage par langue",
+          "term_ids": [
+            "lcp",
+            "inp",
+            "cls",
+            "hreflang"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Yuki",
+              "text_en": "Our LCP is 4.2 seconds. What causes it?",
+              "text_fr": "Notre LCP est de 4,2 secondes. Qu'est-ce qui le cause ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "The hero image loads late. Also, our INP is poor because the filters freeze the page.",
+              "text_fr": "L'image principale se charge tard. De plus, notre INP est mauvais car les filtres figent la page."
+            },
+            {
+              "speaker": "Yuki",
+              "text_en": "And the CLS?",
+              "text_fr": "Et le CLS ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Banners push the content down after load. Separately, we need hreflang tags so French and Belgian users see the right version.",
+              "text_fr": "Des bannières décalent le contenu après le chargement. Par ailleurs, il nous faut des balises hreflang pour que les utilisateurs français et belges voient la bonne version."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que mesure le LCP ?",
+              "choices": [
+                "Le temps d'affichage du plus grand élément visible de la page",
+                "La stabilité visuelle de la page pendant son chargement",
+                "Le temps de réponse de la page à un clic de l'utilisateur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le LCP (Largest Contentful Paint) mesure l'affichage du plus grand élément. Le temps de réponse aux interactions est l'INP, et la stabilité visuelle est le CLS."
+            },
+            {
+              "prompt_fr": "Pourquoi les bannières posent-elles problème pour le CLS ?",
+              "choices": [
+                "Elles ralentissent l'envoi des données au serveur de la page",
+                "Elles empêchent Google d'explorer les liens de la page",
+                "Elles décalent le contenu déjà affiché pendant le chargement"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le CLS mesure les décalages visuels : une bannière qui pousse le contenu les provoque. Elle n'a pas d'effet direct sur l'envoi serveur ni sur l'exploration des liens."
+            },
+            {
+              "prompt_fr": "Comment dire « parce que les filtres figent la page » ?",
+              "choices": [
+                "because the filters make freeze the page",
+                "because the filters are freezing to the page",
+                "because the filters freeze the page"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To freeze » est transitif ici : « freeze the page ». Les autres tournures sont incorrectes."
+            },
+            {
+              "prompt_fr": "À quoi servent les balises « hreflang » ?",
+              "choices": [
+                "Traduire automatiquement le contenu de la page pour le visiteur",
+                "Indiquer à Google la version de langue ou de pays d'une page",
+                "Empêcher les robots d'explorer les pages en double"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Hreflang signale les versions linguistiques ou régionales d'une page. Il ne traduit pas le contenu et ne bloque pas l'exploration."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail de 3 ou 4 phrases à l'équipe de développement : les trois problèmes de performance et ta demande sur les langues.",
+            "context_en": "LCP 4.2 seconds, poor INP, layout shifts.",
+            "model_answer_en": "Our LCP is 4.2 seconds because the hero image loads late, and our INP is poor because the filters freeze the page. The CLS is also high, since banners push the content down after load. Could you fix these three points first? We also need hreflang tags for the French and Belgian versions.",
+            "model_answer_fr": "Notre LCP est de 4,2 secondes parce que l'image principale se charge tard, et notre INP est mauvais parce que les filtres figent la page. Le CLS est aussi élevé, puisque des bannières décalent le contenu après le chargement. Pourriez-vous corriger ces trois points en priorité ? Il nous faut aussi des balises hreflang pour les versions française et belge.",
+            "key_phrases": [
+              "Our LCP is 4.2 seconds",
+              "The CLS is also high",
+              "hreflang tags"
+            ]
+          }
+        },
+        {
+          "id": "seo-sea-paid-search-control",
+          "title_fr": "Piloter la dépense payante et fiabiliser la mesure",
+          "term_ids": [
+            "impression-share",
+            "budget-pacing",
+            "conversions-api",
+            "manual-action"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Clara",
+              "text_en": "Our impression share is only 40%. Are we missing demand?",
+              "text_fr": "Notre part d'impressions n'est que de 40 %. Perdons-nous de la demande ?"
+            },
+            {
+              "speaker": "Rohan",
+              "text_en": "Yes, mainly because of budget. And our budget pacing is off: we spend half the money before noon.",
+              "text_fr": "Oui, surtout à cause du budget. Et notre rythme de dépense est mauvais : nous dépensons la moitié de l'argent avant midi."
+            },
+            {
+              "speaker": "Clara",
+              "text_en": "Conversions are also under-reported.",
+              "text_fr": "Les conversions sont aussi sous-déclarées."
+            },
+            {
+              "speaker": "Rohan",
+              "text_en": "We will use the conversions API to send server-side data. Also check that we have no manual action in Search Console.",
+              "text_fr": "Nous utiliserons l'API de conversions pour envoyer des données côté serveur. Vérifie aussi qu'il n'y a pas de sanction manuelle dans la Search Console."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie une « impression share » de 40 % ?",
+              "choices": [
+                "Les annonces représentent 40 % du budget total de marketing",
+                "Quarante pour cent des utilisateurs cliquent sur les annonces",
+                "Les annonces sont affichées pour 40 % des recherches éligibles"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La part d'impressions est le rapport entre les impressions obtenues et celles qu'on aurait pu obtenir. Ce n'est ni un taux de clic ni une part de budget."
+            },
+            {
+              "prompt_fr": "Quel problème de « budget pacing » Rohan décrit-il ?",
+              "choices": [
+                "La dépense est trop concentrée en début de journée",
+                "La dépense reste trop faible tout au long de la journée",
+                "La dépense dépasse le budget mensuel dès le premier jour"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Dépenser la moitié du budget avant midi est un rythme déséquilibré. Il n'est pas question d'une dépense trop faible ni d'un dépassement mensuel."
+            },
+            {
+              "prompt_fr": "Comment dire « Les conversions sont sous-déclarées » ?",
+              "choices": [
+                "Conversions are less reported.",
+                "Conversions are under-reported.",
+                "Conversions are reported under."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Under-reported » est l'adjectif correct. Les deux autres tournures ne sont pas naturelles."
+            },
+            {
+              "prompt_fr": "Pourquoi vérifier une « manual action » dans la Search Console ?",
+              "choices": [
+                "Une action manuelle indique que les conversions sont mal enregistrées",
+                "Une action manuelle permet de payer pour augmenter sa part d'impressions",
+                "Une sanction manuelle de Google pourrait expliquer une baisse de visibilité"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une action manuelle est une sanction appliquée par un humain de Google, qui peut faire chuter la visibilité. Elle n'a aucun lien avec les enchères ou le suivi des conversions."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige 3 ou 4 phrases de bilan : la part d'impressions, le rythme de dépense et la mesure des conversions.",
+            "context_en": "Impression share is 40%. Half the budget is spent before noon.",
+            "model_answer_en": "Our impression share is only 40%, mainly because of budget. The budget pacing is off, since we spend half the money before noon. Conversions are under-reported, so we will use the conversions API to send server-side data. I will also check Search Console for any manual action.",
+            "model_answer_fr": "Notre part d'impressions n'est que de 40 %, surtout à cause du budget. Le rythme de dépense est mauvais, puisque nous dépensons la moitié de l'argent avant midi. Les conversions sont sous-déclarées, nous utiliserons donc l'API de conversions pour envoyer des données côté serveur. Je vérifierai aussi la Search Console pour toute sanction manuelle.",
+            "key_phrases": [
+              "impression share",
+              "budget pacing",
+              "the conversions API"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
