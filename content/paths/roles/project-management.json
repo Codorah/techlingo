@@ -2550,6 +2550,332 @@
           }
         }
       ]
+    },
+    {
+      "id": "project-management-govern-complex-project",
+      "title_fr": "Piloter la performance et la gouvernance d'un projet complexe",
+      "title_en": "Steer the performance and governance of a complex project",
+      "situation_fr": "Un grand programme prend du retard et dépasse son budget. Tu dois présenter la situation chiffrée au comité de pilotage, proposer comment rattraper le planning et défendre la gouvernance jusqu'à la livraison de la valeur attendue.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu défends des chiffres et des décisions. L'« earned value management » compare le travail réalisé, le travail prévu et le coût, et débouche sur l'« estimate at completion », le coût final attendu. Une « Monte Carlo simulation » donne la probabilité de tenir une date, et la « management reserve » couvre l'imprévu décidé par la direction. Pour rattraper un retard, on fait du « fast tracking » (tâches en parallèle) ou du « crashing » (ajouter des ressources), et la « critical chain method » protège la date finale par des marges. Toute modification passe par le « change control board ». Enfin, le « RAID log » et la « stakeholder engagement matrix » suivent risques et parties prenantes, et la « benefits realization » vérifie la valeur après livraison. Verbes clés : to forecast, to slip, to escalate, to baseline.",
+        "key_phrases": [
+          {
+            "en": "Earned value management shows we are behind schedule and over budget.",
+            "fr": "La gestion de la valeur acquise montre que nous avons du retard et un dépassement de budget."
+          },
+          {
+            "en": "The estimate at completion is 10% above the baseline.",
+            "fr": "L'estimation à l'achèvement dépasse de 10 % la référence."
+          },
+          {
+            "en": "Fast tracking saves time but increases the risk of rework.",
+            "fr": "Le recouvrement fait gagner du temps mais augmente le risque de reprise."
+          },
+          {
+            "en": "Any scope change must go through the change control board.",
+            "fr": "Toute modification de périmètre doit passer par le comité de contrôle des changements."
+          },
+          {
+            "en": "I will add the supplier delay to the RAID log.",
+            "fr": "J'ajouterai le retard du fournisseur au registre RAID."
+          },
+          {
+            "en": "On time and on budget is not enough: we also need benefits realization.",
+            "fr": "Dans les délais et le budget ne suffit pas : il faut aussi la réalisation des bénéfices."
+          }
+        ],
+        "tip_fr": "Faux ami : « to slip » ne veut pas dire « glisser » dans le sens de se déplacer doucement, mais « prendre du retard » : « the schedule slipped by two weeks »."
+      },
+      "lessons": [
+        {
+          "id": "project-management-report-evm-and-forecast",
+          "title_fr": "Présenter les indicateurs de performance et la prévision de coût",
+          "term_ids": [
+            "earned-value-management",
+            "estimate-at-completion",
+            "monte-carlo-simulation",
+            "management-reserve"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Beatriz",
+              "text_en": "What does earned value management say about the program this month?",
+              "text_fr": "Que dit la gestion de la valeur acquise sur le programme ce mois-ci ?"
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "We are 8% behind schedule and 5% over budget.",
+              "text_fr": "Nous avons 8 % de retard et 5 % de dépassement de budget."
+            },
+            {
+              "speaker": "Beatriz",
+              "text_en": "So what is the estimate at completion?",
+              "text_fr": "Quelle est donc l'estimation à l'achèvement ?"
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "About 10% above the baseline, and a Monte Carlo simulation gives us an 80% chance of finishing by September.",
+              "text_fr": "Environ 10 % au-dessus de la référence, et une simulation de Monte-Carlo nous donne 80 % de chances de finir en septembre."
+            },
+            {
+              "speaker": "Beatriz",
+              "text_en": "Can we cover the overrun with the management reserve?",
+              "text_fr": "Peut-on couvrir le dépassement avec la réserve de gestion ?"
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "Only the sponsor can release it, so I need to escalate the request.",
+              "text_fr": "Seul le sponsor peut la débloquer, je dois donc escalader la demande."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « an 80% chance of finishing by September » ?",
+              "choices": [
+                "Le projet a 80 % de chances de rester sous le budget prévu",
+                "Le projet sera terminé à 80 % d'ici septembre quoi qu'il arrive",
+                "Dans 80 % des scénarios simulés, le projet finit avant septembre"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La simulation de Monte-Carlo donne une probabilité de respecter une date : ici, 80 % des scénarios finissent avant septembre. Ce n'est ni un avancement de 80 %, ni une probabilité sur le budget."
+            },
+            {
+              "prompt_fr": "Que représente l'« estimate at completion » ?",
+              "choices": [
+                "Le budget initial approuvé avant le démarrage du projet",
+                "Le coût total attendu à la fin du projet selon la performance actuelle",
+                "Le montant déjà dépensé depuis le lancement du projet"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'estimation à l'achèvement est une prévision du coût final. Le budget initial est la référence (baseline), et le déjà dépensé est le coût réel à date."
+            },
+            {
+              "prompt_fr": "Pourquoi Jonas doit-il « escalate the request » ?",
+              "choices": [
+                "Le chef de projet ne peut pas lire les chiffres du programme",
+                "Seul le sponsor peut débloquer la réserve de gestion",
+                "La réserve de gestion doit être votée en réunion hebdomadaire"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La réserve de gestion est contrôlée par la direction ou le sponsor, pas par le chef de projet. Les deux autres raisons ne sont pas mentionnées."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous avons 8 % de retard » ?",
+              "choices": [
+                "We have 8% of delay on schedule.",
+                "We are late of 8% on the planning.",
+                "We are 8% behind schedule."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Behind schedule » est l'expression standard pour être en retard sur le planning. Les autres sont des calques de « avoir du retard » et « en retard de 8 % »."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige 3 ou 4 phrases de synthèse pour le comité de pilotage : écart de planning et de budget, prévision de coût final et demande de décision.",
+            "context_en": "8% behind schedule, 5% over budget, estimate at completion 10% above baseline.",
+            "model_answer_en": "Earned value management shows we are 8% behind schedule and 5% over budget. The estimate at completion is about 10% above the baseline. A Monte Carlo simulation gives us an 80% chance of finishing by September. I request the release of the management reserve to cover the overrun.",
+            "model_answer_fr": "La gestion de la valeur acquise montre que nous avons 8 % de retard et 5 % de dépassement de budget. L'estimation à l'achèvement est environ 10 % au-dessus de la référence. Une simulation de Monte-Carlo nous donne 80 % de chances de finir en septembre. Je demande le déblocage de la réserve de gestion pour couvrir le dépassement.",
+            "key_phrases": [
+              "behind schedule",
+              "estimate at completion",
+              "management reserve"
+            ]
+          }
+        },
+        {
+          "id": "project-management-recover-schedule-and-control-change",
+          "title_fr": "Rattraper un retard et contrôler les changements",
+          "term_ids": [
+            "fast-tracking",
+            "crashing",
+            "critical-chain-method",
+            "change-control-board"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Olivia",
+              "text_en": "We need to recover three weeks. What are the options?",
+              "text_fr": "Nous devons rattraper trois semaines. Quelles sont les options ?"
+            },
+            {
+              "speaker": "Rahul",
+              "text_en": "Fast tracking: we start development while design is still being finished.",
+              "text_fr": "Le recouvrement : nous commençons le développement pendant que la conception se termine."
+            },
+            {
+              "speaker": "Olivia",
+              "text_en": "That raises the risk of rework, doesn't it?",
+              "text_fr": "Cela augmente le risque de reprise, non ?"
+            },
+            {
+              "speaker": "Rahul",
+              "text_en": "Yes. Crashing would add two engineers to the critical path, but it costs more.",
+              "text_fr": "Oui. Ajouter des ressources mettrait deux ingénieurs sur le chemin critique, mais cela coûte plus cher."
+            },
+            {
+              "speaker": "Olivia",
+              "text_en": "Either option changes the plan, so it has to go to the change control board.",
+              "text_fr": "Les deux options modifient le plan, donc elles doivent passer par le comité de contrôle des changements."
+            },
+            {
+              "speaker": "Rahul",
+              "text_en": "Agreed. Longer term, the critical chain method would protect the end date with a shared buffer.",
+              "text_fr": "D'accord. À plus long terme, la méthode de la chaîne critique protégerait la date de fin avec une marge commune."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre « fast tracking » et « crashing » ?",
+              "choices": [
+                "Le premier supprime des tâches, le second repousse la date de fin",
+                "Le premier ajoute des ressources, le second fait des tâches en parallèle",
+                "Le premier fait des tâches en parallèle, le second ajoute des ressources"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Fast tracking : on chevauche des tâches prévues l'une après l'autre. Crashing : on ajoute des personnes ou du budget sur les tâches critiques. Les deux ne suppriment pas de tâches et ne repoussent pas la date."
+            },
+            {
+              "prompt_fr": "Pourquoi les deux options doivent-elles passer par le change control board ?",
+              "choices": [
+                "Elles remplacent l'ancien planning par un planning entièrement nouveau",
+                "Elles nécessitent l'accord de l'équipe qui a rédigé la conception",
+                "Elles modifient le plan, avec un impact sur le risque ou le coût"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le comité examine l'impact de toute modification (délai, coût, risque). Il n'y a pas d'accord de conception requis dans le dialogue, et le planning n'est pas intégralement remplacé."
+            },
+            {
+              "prompt_fr": "Comment dire « Cela augmente le risque de reprise » ?",
+              "choices": [
+                "That increases the risk of rework.",
+                "That increases the risk to rework.",
+                "That raises up the risk of rework."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« The risk of + nom » est la structure correcte. « Risk to rework » est incorrect, et « raises up » est redondant : on dit « raises » ou « increases »."
+            },
+            {
+              "prompt_fr": "Que fait la « critical chain method » ?",
+              "choices": [
+                "Elle protège la date de fin avec une marge commune en fin de projet",
+                "Elle supprime toutes les marges pour accélérer chaque tâche",
+                "Elle répartit les ressources de façon égale entre toutes les tâches"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La méthode de la chaîne critique tient compte des contraintes de ressources et déplace les marges vers une réserve commune en fin de projet. Elle ne supprime pas les marges et ne répartit pas les ressources de façon égale."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail de 3 ou 4 phrases au sponsor : propose une option pour rattraper trois semaines, son risque, son coût, et la décision demandée.",
+            "context_en": "We need to recover three weeks on the schedule.",
+            "model_answer_en": "To recover three weeks, I recommend fast tracking: we start development while the design is being finished. It saves time but increases the risk of rework. The alternative is crashing, which adds two engineers but costs more. Either option has to go through the change control board, so I request a decision by Friday.",
+            "model_answer_fr": "Pour rattraper trois semaines, je recommande le recouvrement : nous commençons le développement pendant que la conception se termine. Cela fait gagner du temps mais augmente le risque de reprise. L'alternative est l'ajout de ressources, qui met deux ingénieurs de plus mais coûte davantage. Les deux options doivent passer par le comité de contrôle des changements, donc je demande une décision d'ici vendredi.",
+            "key_phrases": [
+              "fast tracking",
+              "the risk of rework",
+              "the change control board"
+            ]
+          }
+        },
+        {
+          "id": "project-management-governance-and-benefits",
+          "title_fr": "Tenir la gouvernance jusqu'à la valeur attendue",
+          "term_ids": [
+            "raid-log",
+            "stakeholder-engagement-matrix",
+            "benefits-realization",
+            "program-increment-planning"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Laura",
+              "text_en": "A key supplier is late. Where should we record it?",
+              "text_fr": "Un fournisseur clé est en retard. Où devons-nous l'enregistrer ?"
+            },
+            {
+              "speaker": "Pavel",
+              "text_en": "In the RAID log, as an issue with an owner and a due date.",
+              "text_fr": "Dans le registre RAID, comme un problème avec un responsable et une échéance."
+            },
+            {
+              "speaker": "Laura",
+              "text_en": "The finance director seems unaware of the delay.",
+              "text_fr": "Le directeur financier semble ne pas être au courant du retard."
+            },
+            {
+              "speaker": "Pavel",
+              "text_en": "Let's update the stakeholder engagement matrix and move him from unaware to supportive.",
+              "text_fr": "Mettons à jour la matrice d'engagement des parties prenantes et faisons-le passer de non informé à soutien."
+            },
+            {
+              "speaker": "Laura",
+              "text_en": "And the sponsor keeps asking about value, not only delivery.",
+              "text_fr": "Et le sponsor demande toujours la valeur, pas seulement la livraison."
+            },
+            {
+              "speaker": "Pavel",
+              "text_en": "That is benefits realization. We will review it after go-live, and plan the next increment during program increment planning.",
+              "text_fr": "C'est la réalisation des bénéfices. Nous la reverrons après la mise en production, et planifierons le prochain incrément lors de la planification d'incrément de programme."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Pavel classe-t-il le retard du fournisseur comme « issue » et non comme « risk » ?",
+              "choices": [
+                "Le retard s'est déjà produit, ce n'est plus une possibilité",
+                "Le retard n'a pas encore eu lieu mais il est très probable",
+                "Un fournisseur ne peut jamais être la source d'un risque"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un risque est un événement possible dans le futur ; un problème (issue) est un événement qui s'est déjà produit. Le fournisseur est bien en retard, donc c'est un problème. Un fournisseur peut évidemment être source de risque."
+            },
+            {
+              "prompt_fr": "À quoi sert la « stakeholder engagement matrix » ?",
+              "choices": [
+                "Comparer l'implication actuelle de chacun avec celle qu'on attend",
+                "Mesurer la satisfaction des utilisateurs après la mise en production",
+                "Lister les tâches confiées à chaque membre de l'équipe projet"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La matrice compare le niveau d'engagement actuel et souhaité de chaque partie prenante (par exemple de « unaware » à « supportive »). Elle ne liste pas des tâches et ne mesure pas la satisfaction des utilisateurs."
+            },
+            {
+              "prompt_fr": "Que veut dire « benefits realization » dans la réponse de Pavel ?",
+              "choices": [
+                "Rédiger le bilan financier à la clôture du dernier lot de travaux",
+                "Annoncer officiellement la mise en production aux équipes concernées",
+                "Vérifier après la livraison que le projet apporte la valeur promise"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La réalisation des bénéfices suit, après la mise en service, la valeur réellement obtenue. Ce n'est ni un bilan financier de clôture ni une annonce de mise en production."
+            },
+            {
+              "prompt_fr": "Comment dire « Il semble ne pas être au courant du retard » ?",
+              "choices": [
+                "He seems unknowing about the delay.",
+                "He seems unaware of the delay.",
+                "He seems to not know of the delay."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Unaware of » est l'adjectif naturel pour « pas au courant de ». Les autres tournures sont lourdes ou incorrectes : « unknowing » n'a pas ce sens ici."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour la note de gouvernance : comment tu consignes le retard fournisseur, comment tu traites la partie prenante peu informée, et comment tu suivras la valeur après livraison.",
+            "context_en": "A key supplier is late. The finance director is unaware. The sponsor asks about value.",
+            "model_answer_en": "I added the supplier delay to the RAID log as an issue, with an owner and a due date. The finance director seems unaware of it, so I updated the stakeholder engagement matrix and scheduled a briefing. We will also run a benefits realization review three months after go-live, to check that the project delivers the expected value.",
+            "model_answer_fr": "J'ai ajouté le retard du fournisseur au registre RAID comme un problème, avec un responsable et une échéance. Le directeur financier semble ne pas être au courant, j'ai donc mis à jour la matrice d'engagement des parties prenantes et programmé un point d'information. Nous réaliserons aussi une revue de réalisation des bénéfices trois mois après la mise en production, pour vérifier que le projet apporte la valeur attendue.",
+            "key_phrases": [
+              "the RAID log",
+              "stakeholder engagement matrix",
+              "benefits realization review"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
