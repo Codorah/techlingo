@@ -2572,6 +2572,332 @@
           }
         }
       ]
+    },
+    {
+      "id": "network-systems-design-resilient-network",
+      "title_fr": "Concevoir et défendre une architecture réseau résiliente",
+      "title_en": "Design and defend a resilient network architecture",
+      "situation_fr": "L'entreprise ouvre trois nouveaux sites et veut remplacer une liaison coûteuse. Tu dois présenter ton choix d'architecture à la direction et à l'équipe sécurité, en expliquant routage, redondance, priorité du trafic et supervision.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu justifies des choix d'architecture. Pour le routage, « OSPF » fonctionne à l'intérieur d'un réseau, « BGP » échange les routes avec les autres réseaux de l'Internet, et « MPLS » relie des sites par des étiquettes. Le « SD-WAN » pilote plusieurs liens par logiciel. Côté redondance, le « spanning tree protocol » évite les boucles, la « link aggregation » regroupe des liens et l'« anycast » envoie chaque utilisateur vers le serveur le plus proche. La « quality of service » protège la voix, un « SNMP trap » alerte la supervision, et le « ZTNA » remplace un VPN trop large. Verbes clés : to route, to fail over, to prioritize, to segment.",
+        "key_phrases": [
+          {
+            "en": "We exchange routes with our providers over BGP.",
+            "fr": "Nous échangeons des routes avec nos fournisseurs via BGP."
+          },
+          {
+            "en": "SD-WAN sends each application over the best link.",
+            "fr": "Le SD-WAN envoie chaque application sur le meilleur lien."
+          },
+          {
+            "en": "The traffic will fail over to the second link automatically.",
+            "fr": "Le trafic basculera automatiquement sur le second lien."
+          },
+          {
+            "en": "We use link aggregation for redundancy and bandwidth.",
+            "fr": "Nous utilisons l'agrégation de liens pour la redondance et la bande passante."
+          },
+          {
+            "en": "Quality of service gives voice calls priority.",
+            "fr": "La qualité de service donne la priorité aux appels vocaux."
+          },
+          {
+            "en": "ZTNA grants access to one application at a time.",
+            "fr": "Le ZTNA donne accès à une application à la fois."
+          }
+        ],
+        "tip_fr": "Faux ami : « resilient » veut dire capable de rebondir après une panne, pas « résilient » au sens juridique de résilier. Pour résilier un contrat, dis « to terminate »."
+      },
+      "lessons": [
+        {
+          "id": "network-systems-routing-between-sites",
+          "title_fr": "Justifier le routage entre les sites et vers Internet",
+          "term_ids": [
+            "bgp",
+            "ospf",
+            "mpls",
+            "sd-wan"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Karim",
+              "text_en": "Our MPLS contract costs a fortune. Can SD-WAN replace it?",
+              "text_fr": "Notre contrat MPLS coûte une fortune. Le SD-WAN peut-il le remplacer ?"
+            },
+            {
+              "speaker": "Anna",
+              "text_en": "For most sites, yes. SD-WAN sends each application over the best internet link.",
+              "text_fr": "Pour la plupart des sites, oui. Le SD-WAN envoie chaque application sur le meilleur lien Internet."
+            },
+            {
+              "speaker": "Karim",
+              "text_en": "What about routing inside the head office?",
+              "text_fr": "Et le routage à l'intérieur du siège ?"
+            },
+            {
+              "speaker": "Anna",
+              "text_en": "We keep OSPF between the core routers. It recalculates paths when a link fails.",
+              "text_fr": "Nous gardons OSPF entre les routeurs de cœur. Il recalcule les chemins quand un lien tombe."
+            },
+            {
+              "speaker": "Karim",
+              "text_en": "And towards the internet?",
+              "text_fr": "Et vers Internet ?"
+            },
+            {
+              "speaker": "Anna",
+              "text_en": "We exchange routes with our two providers over BGP, so one outage will not cut us off.",
+              "text_fr": "Nous échangeons des routes avec nos deux fournisseurs via BGP, donc une panne ne nous coupera pas."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la différence entre OSPF et BGP dans le discours d'Anna ?",
+              "choices": [
+                "OSPF sert à l'intérieur du réseau, BGP échange des routes avec des fournisseurs",
+                "OSPF sert vers Internet, BGP sert uniquement entre les routeurs du siège",
+                "OSPF et BGP sont deux noms du même protocole de routage"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "OSPF est un protocole de routage interne, tandis que BGP gère les échanges entre réseaux distincts, comme avec des fournisseurs d'accès. L'inverse est faux, et ce sont deux protocoles différents."
+            },
+            {
+              "prompt_fr": "Pourquoi Anna dit-elle qu'une panne ne coupera pas l'entreprise ?",
+              "choices": [
+                "Le SD-WAN remplace automatiquement les routeurs en panne",
+                "Le contrat MPLS garantit un fonctionnement sans aucune panne",
+                "Les routes passent par deux fournisseurs échangées via BGP"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La redondance vient de deux fournisseurs avec des routes échangées par BGP. Le MPLS ne garantit pas l'absence de panne, et le SD-WAN ne remplace pas des équipements défaillants, il redirige le trafic."
+            },
+            {
+              "prompt_fr": "Comment dire « Il recalcule les chemins quand un lien tombe » ?",
+              "choices": [
+                "It recalculates the paths when a link goes down.",
+                "It recalculates the paths when a link falls.",
+                "It recalculates the paths when a link breaks off."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To go down » est l'expression normale pour un service ou un lien en panne. « Fall » et « break off » sont des traductions littérales de « tomber » et de « rompre » qui ne s'emploient pas pour un lien réseau."
+            },
+            {
+              "prompt_fr": "Que veut dire « costs a fortune » ?",
+              "choices": [
+                "Rapporte beaucoup",
+                "Coûte moins que prévu",
+                "Coûte très cher"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To cost a fortune » est une expression courante qui signifie coûter extrêmement cher. Ce n'est pas un gain (« fortune » n'est pas ici un bénéfice) et ce n'est pas une économie."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail de 3 ou 4 phrases à ta direction pour proposer de remplacer le MPLS par du SD-WAN, en précisant le routage conservé et la résilience.",
+            "context_en": "Our MPLS contract is too expensive. Can we change?",
+            "model_answer_en": "I recommend replacing MPLS with SD-WAN for most sites. It sends each application over the best internet link and reduces our costs. We keep OSPF between the core routers and exchange routes with our two providers over BGP, so a single outage will not cut us off. I can present a migration plan next week.",
+            "model_answer_fr": "Je recommande de remplacer le MPLS par du SD-WAN pour la plupart des sites. Il envoie chaque application sur le meilleur lien Internet et réduit nos coûts. Nous gardons OSPF entre les routeurs de cœur et échangeons des routes avec nos deux fournisseurs via BGP, donc une seule panne ne nous coupera pas. Je peux présenter un plan de migration la semaine prochaine.",
+            "key_phrases": [
+              "replacing MPLS with SD-WAN",
+              "over BGP",
+              "a single outage"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-redundancy-and-loops",
+          "title_fr": "Expliquer la redondance, les boucles et la répartition",
+          "term_ids": [
+            "spanning-tree-protocol",
+            "link-aggregation",
+            "anycast",
+            "multicast"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Rosa",
+              "text_en": "Last night the whole site went down for ten minutes. Was it a loop?",
+              "text_fr": "Cette nuit, tout le site est tombé pendant dix minutes. Était-ce une boucle ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Yes. Someone connected a cable between two switches and the spanning tree protocol was disabled.",
+              "text_fr": "Oui. Quelqu'un a branché un câble entre deux commutateurs alors que le protocole Spanning Tree était désactivé."
+            },
+            {
+              "speaker": "Rosa",
+              "text_en": "How do we prevent that and keep redundancy?",
+              "text_fr": "Comment l'éviter tout en gardant la redondance ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "We enable spanning tree and use link aggregation between the core switches.",
+              "text_fr": "Nous activons Spanning Tree et utilisons l'agrégation de liens entre les commutateurs de cœur."
+            },
+            {
+              "speaker": "Rosa",
+              "text_en": "And for the DNS service in several cities?",
+              "text_fr": "Et pour le service DNS dans plusieurs villes ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Anycast, so each user reaches the closest server. For the live video, we use multicast.",
+              "text_fr": "L'anycast, pour que chaque utilisateur atteigne le serveur le plus proche. Pour la vidéo en direct, nous utilisons la multidiffusion."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que s'est-il passé cette nuit selon Ivan ?",
+              "choices": [
+                "Un serveur DNS a été saturé par trop de requêtes simultanées",
+                "Un câble entre deux commutateurs a créé une boucle réseau",
+                "Un des fournisseurs d'accès a coupé la connexion pendant dix minutes"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Ivan explique qu'un câble branché entre deux commutateurs, sans Spanning Tree, a créé une boucle. La panne ne vient ni d'un fournisseur ni d'un serveur DNS."
+            },
+            {
+              "prompt_fr": "À quoi sert la « link aggregation » dans l'architecture proposée ?",
+              "choices": [
+                "Répartir le trafic entre plusieurs serveurs situés dans des villes différentes",
+                "Bloquer les liens redondants pour supprimer les risques de boucle",
+                "Regrouper plusieurs liens en un seul pour plus de débit et de redondance"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'agrégation de liens combine plusieurs liens physiques en un seul lien logique. Bloquer les liens redondants est le rôle de Spanning Tree, et répartir entre villes est celui de l'anycast."
+            },
+            {
+              "prompt_fr": "Comment dire « chaque utilisateur atteint le serveur le plus proche » ?",
+              "choices": [
+                "each user reaches the closest server",
+                "each user attains the nearest server of him",
+                "each user arrives to the closest server"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To reach » est le verbe naturel pour atteindre un serveur. « Arrive to » est un calque (on dit « arrive at »), et « attain » se dit d'un objectif abstrait ; « of him » est incorrect."
+            },
+            {
+              "prompt_fr": "Pourquoi utiliser le « multicast » pour la vidéo en direct ?",
+              "choices": [
+                "Une seule diffusion atteint un groupe de destinataires sans copies multiples",
+                "Chaque spectateur reçoit une copie distincte pour une qualité maximale",
+                "La vidéo est chiffrée séparément pour chaque spectateur du direct"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le multicast envoie un seul flux à un groupe de destinataires, ce qui économise de la bande passante. Envoyer des copies distinctes est le contraire (unicast), et le chiffrement n'est pas son principe."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour le compte rendu de l'incident : cause, correction et mesure pour éviter qu'il se reproduise.",
+            "context_en": "A network loop took down the site for ten minutes last night.",
+            "model_answer_en": "A cable connected between two switches created a network loop, and the spanning tree protocol was disabled. We re-enabled it and the site recovered after ten minutes. To avoid a repeat, we will use link aggregation between the core switches and lock the unused ports. I will report any change to the network team.",
+            "model_answer_fr": "Un câble branché entre deux commutateurs a créé une boucle réseau, alors que le protocole Spanning Tree était désactivé. Nous l'avons réactivé et le site est revenu au bout de dix minutes. Pour éviter une récidive, nous utiliserons l'agrégation de liens entre les commutateurs de cœur et verrouillerons les ports inutilisés. Je signalerai tout changement à l'équipe réseau.",
+            "key_phrases": [
+              "a network loop",
+              "the spanning tree protocol",
+              "link aggregation"
+            ]
+          }
+        },
+        {
+          "id": "network-systems-priority-monitoring-access",
+          "title_fr": "Prioriser le trafic, superviser et sécuriser l'accès",
+          "term_ids": [
+            "quality-of-service",
+            "snmp-trap",
+            "ztna",
+            "bare-metal-provisioning"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Hana",
+              "text_en": "Video calls keep freezing when backups run. What can we do?",
+              "text_fr": "Les visioconférences se figent quand les sauvegardes tournent. Que pouvons-nous faire ?"
+            },
+            {
+              "speaker": "Pedro",
+              "text_en": "Set up quality of service so voice and video get priority over backups.",
+              "text_fr": "Configurer la qualité de service pour que la voix et la vidéo passent avant les sauvegardes."
+            },
+            {
+              "speaker": "Hana",
+              "text_en": "I also want an alert when a link goes down, without waiting for the next check.",
+              "text_fr": "Je veux aussi une alerte quand un lien tombe, sans attendre le prochain contrôle."
+            },
+            {
+              "speaker": "Pedro",
+              "text_en": "The switches will send an SNMP trap to the monitoring server immediately.",
+              "text_fr": "Les commutateurs enverront immédiatement une alerte SNMP au serveur de supervision."
+            },
+            {
+              "speaker": "Hana",
+              "text_en": "And the security team wants to replace the VPN.",
+              "text_fr": "Et l'équipe sécurité veut remplacer le VPN."
+            },
+            {
+              "speaker": "Pedro",
+              "text_en": "ZTNA is a good fit: access to one application at a time. For the new servers, we will use bare-metal provisioning.",
+              "text_fr": "Le ZTNA convient bien : un accès à une application à la fois. Pour les nouveaux serveurs, nous utiliserons le provisionnement de serveurs physiques."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que fait la qualité de service dans cette situation ?",
+              "choices": [
+                "Elle augmente la bande passante totale disponible entre les sites",
+                "Elle bloque les sauvegardes pendant toute la durée de la journée",
+                "Elle donne la priorité à la voix et à la vidéo sur les sauvegardes"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La qualité de service classe les flux : la voix et la vidéo passent en premier. Elle ne crée pas de bande passante supplémentaire et ne bloque pas les sauvegardes, elle les ralentit seulement si besoin."
+            },
+            {
+              "prompt_fr": "Quelle différence y a-t-il entre un « SNMP trap » et un contrôle périodique ?",
+              "choices": [
+                "Le trap enregistre les événements sans jamais prévenir la supervision",
+                "Le trap est une demande envoyée par le serveur à chaque équipement",
+                "Le trap est envoyé immédiatement par l'équipement quand un événement survient"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Un SNMP trap est une alerte spontanée de l'équipement. Une demande envoyée par le serveur correspond au contrôle périodique, et le trap sert justement à prévenir la supervision."
+            },
+            {
+              "prompt_fr": "Pourquoi le ZTNA est-il présenté comme un bon remplaçant du VPN ?",
+              "choices": [
+                "Il ouvre l'accès à une application à la fois, pas à tout le réseau",
+                "Il permet de ne plus vérifier l'identité des utilisateurs distants",
+                "Il rend le réseau plus rapide en supprimant tout contrôle d'accès"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le ZTNA accorde un accès granulaire, application par application, après vérification. Il ne supprime pas les contrôles, et il ne dispense pas de vérifier l'identité : c'est l'inverse de son principe."
+            },
+            {
+              "prompt_fr": "Comment dire « sans attendre le prochain contrôle » ?",
+              "choices": [
+                "without to wait the next check",
+                "without waiting for the next check",
+                "without wait for the next check"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Après « without », on emploie la forme en -ing : « without waiting ». « Without wait » et « without to wait » sont incorrects, et « wait » demande « for » devant le complément."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Présente à voix haute en 3 ou 4 phrases ton plan : priorité du trafic, supervision et accès sécurisé.",
+            "context_en": "Video calls freeze during backups, and we want to replace the VPN.",
+            "model_answer_en": "First, we will set up quality of service so voice and video get priority over backups. Second, each switch will send an SNMP trap to the monitoring server as soon as a link goes down. Third, we will replace the VPN with ZTNA, which grants access to one application at a time. The new servers will use bare-metal provisioning.",
+            "model_answer_fr": "D'abord, nous configurerons la qualité de service pour que la voix et la vidéo passent avant les sauvegardes. Ensuite, chaque commutateur enverra une alerte SNMP au serveur de supervision dès qu'un lien tombera. Enfin, nous remplacerons le VPN par du ZTNA, qui donne accès à une application à la fois. Les nouveaux serveurs utiliseront le provisionnement de serveurs physiques.",
+            "key_phrases": [
+              "quality of service",
+              "an SNMP trap",
+              "one application at a time"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
