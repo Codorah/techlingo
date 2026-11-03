@@ -2397,6 +2397,332 @@
           }
         }
       ]
+    },
+    {
+      "id": "community-manager-handle-coordinated-attacks",
+      "title_fr": "Protéger la communauté face à une attaque coordonnée",
+      "title_en": "Protect the community from a coordinated attack",
+      "situation_fr": "Après une publication de la marque, des centaines de commentaires hostiles arrivent en quelques heures, certains depuis de faux comptes. Tu dois qualifier l'attaque, modérer, escalader et expliquer la situation à la direction.",
+      "guide": {
+        "intro_fr": "Une vague de commentaires n'est pas toujours spontanée. Le « brigading » est une attaque coordonnée de notes ou de commentaires, souvent menée par des « sockpuppets » (faux comptes). Quand un réseau entier cache qui agit, les plateformes parlent de « coordinated inauthentic behavior ». À l'inverse, l'« astroturfing » simule un soutien populaire. Quand beaucoup d'utilisateurs s'en prennent à une personne, on parle de « dogpiling », et publier ses données privées s'appelle « doxxing ». Tu gères la « moderation queue », tu suis l'« escalation matrix » et tu alertes « trust and safety » si nécessaire. Les verbes clés : to flag, to escalate, to take down, to mute.",
+        "key_phrases": [
+          {
+            "en": "This looks like coordinated brigading, not organic criticism.",
+            "fr": "Cela ressemble à une attaque coordonnée, pas à une critique spontanée."
+          },
+          {
+            "en": "Several accounts look like sockpuppets.",
+            "fr": "Plusieurs comptes ressemblent à de faux comptes."
+          },
+          {
+            "en": "We are seeing dogpiling on our creator's account.",
+            "fr": "Nous voyons un harcèlement en meute sur le compte de notre créateur."
+          },
+          {
+            "en": "That comment contains doxxing, so I took it down.",
+            "fr": "Ce commentaire contient une divulgation de données personnelles, donc je l'ai supprimé."
+          },
+          {
+            "en": "I escalated it to trust and safety, following the escalation matrix.",
+            "fr": "Je l'ai remonté à l'équipe confiance et sécurité, selon la matrice d'escalade."
+          },
+          {
+            "en": "Let's not feed the controversy with a long reply.",
+            "fr": "N'alimentons pas la polémique avec une longue réponse."
+          }
+        ],
+        "tip_fr": "Faux ami : « to moderate » veut dire contrôler des contenus, pas « modérer » au sens de tempérer. Pour calmer une discussion, dis « to de-escalate » ou « to calm things down »."
+      },
+      "lessons": [
+        {
+          "id": "community-manager-identify-coordinated-attack",
+          "title_fr": "Reconnaître une attaque coordonnée",
+          "term_ids": [
+            "brigading",
+            "sockpuppet",
+            "coordinated-inauthentic-behavior",
+            "astroturfing"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Léa",
+              "text_en": "We got 400 one-star reviews in two hours. That is not normal.",
+              "text_fr": "Nous avons reçu 400 avis à une étoile en deux heures. Ce n'est pas normal."
+            },
+            {
+              "speaker": "Samir",
+              "text_en": "Look at the profiles. Most were created last week and have no photo.",
+              "text_fr": "Regarde les profils. La plupart ont été créés la semaine dernière et n'ont pas de photo."
+            },
+            {
+              "speaker": "Léa",
+              "text_en": "Right, they look like sockpuppets. This feels like brigading from a forum.",
+              "text_fr": "Exact, ils ressemblent à de faux comptes. On dirait une attaque coordonnée venue d'un forum."
+            },
+            {
+              "speaker": "Samir",
+              "text_en": "Some reviews even use the same sentence word for word.",
+              "text_fr": "Certains avis utilisent même la même phrase mot pour mot."
+            },
+            {
+              "speaker": "Léa",
+              "text_en": "Then we can describe it as coordinated inauthentic behavior when we report it.",
+              "text_fr": "Alors nous pouvons le décrire comme un comportement inauthentique coordonné dans notre signalement."
+            },
+            {
+              "speaker": "Samir",
+              "text_en": "Agreed. And let's not answer with fake positive reviews: that would be astroturfing.",
+              "text_fr": "D'accord. Et ne répondons pas avec de faux avis positifs : ce serait de l'astroturfing."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel indice pousse Léa à parler de « sockpuppets » ?",
+              "choices": [
+                "Des comptes anciens qui commentent chaque jour la marque",
+                "Des clients connus qui expriment un vrai mécontentement",
+                "Des profils récents, sans photo, qui publient en même temps"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Des profils créés récemment, vides et actifs au même moment sont les signes classiques de faux comptes. Des comptes anciens et réguliers, ou des clients identifiés, sont au contraire des signes d'avis spontanés."
+            },
+            {
+              "prompt_fr": "Pourquoi Samir refuse-t-il de répondre par de faux avis positifs ?",
+              "choices": [
+                "Les plateformes ne comptent pas les avis positifs publiés en journée",
+                "C'est de l'astroturfing, donc trompeur et risqué pour la marque",
+                "Les faux avis positifs coûtent plus cher que les avis réels"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'astroturfing consiste à simuler un soutien spontané. Si la manœuvre est découverte, la marque perd sa crédibilité. Le refus n'est pas lié à l'heure de publication ni à un coût."
+            },
+            {
+              "prompt_fr": "Comment dire « Ces avis semblent coordonnés » ?",
+              "choices": [
+                "These reviews seem to coordinate.",
+                "These reviews seem coordinated.",
+                "These reviews seem being coordinated."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Seem + adjectif » est correct : « coordinated » est ici un adjectif participial. « Seem to coordinate » donnerait l'idée que les avis se coordonnent eux-mêmes, et « seem being » n'est pas grammatical."
+            },
+            {
+              "prompt_fr": "Quel terme utiliser dans le signalement à la plateforme ?",
+              "choices": [
+                "coordinated inauthentic behavior",
+                "unplanned audience feedback",
+                "organic negative engagement"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Coordinated inauthentic behavior » est l'expression utilisée par les plateformes pour les réseaux de faux comptes. Les deux autres sont plausibles mais décrivent des retours spontanés de vrais utilisateurs, donc l'inverse du problème."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Alerte ton responsable dans Slack. En 3 ou 4 phrases : décris ce que tu observes, explique pourquoi cela ressemble à une attaque coordonnée et propose une action.",
+            "context_en": "400 one-star reviews in two hours. Most profiles are new and empty.",
+            "model_answer_en": "We received 400 one-star reviews in two hours, which is far from normal. Most profiles were created last week and look like sockpuppets, and several reviews repeat the same sentence. This looks like coordinated brigading, not organic criticism. I suggest we report it to the platform and avoid any public reply for now.",
+            "model_answer_fr": "Nous avons reçu 400 avis à une étoile en deux heures, ce qui est loin d'être normal. La plupart des profils ont été créés la semaine dernière et ressemblent à de faux comptes, et plusieurs avis répètent la même phrase. Cela ressemble à une attaque coordonnée, pas à une critique spontanée. Je propose de le signaler à la plateforme et de ne pas répondre publiquement pour l'instant.",
+            "key_phrases": [
+              "look like sockpuppets",
+              "coordinated brigading",
+              "report it to the platform"
+            ]
+          }
+        },
+        {
+          "id": "community-manager-handle-dogpiling-and-doxxing",
+          "title_fr": "Réagir à un harcèlement en meute et à une divulgation de données",
+          "term_ids": [
+            "dogpiling",
+            "doxxing",
+            "moderation-queue",
+            "ban-evasion"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Nora",
+              "text_en": "Our creator is facing dogpiling under her latest video. It is getting ugly.",
+              "text_fr": "Notre créatrice subit un harcèlement en meute sous sa dernière vidéo. Ça devient moche."
+            },
+            {
+              "speaker": "Ibrahim",
+              "text_en": "One comment even gives her home address. That is doxxing.",
+              "text_fr": "Un commentaire donne même son adresse personnelle. C'est de la divulgation de données."
+            },
+            {
+              "speaker": "Nora",
+              "text_en": "I will take it down now and block the user. The moderation queue has 80 more comments.",
+              "text_fr": "Je le supprime tout de suite et je bloque l'utilisateur. La file de modération contient encore 80 commentaires."
+            },
+            {
+              "speaker": "Ibrahim",
+              "text_en": "The same person is back with a new account. That is ban evasion.",
+              "text_fr": "La même personne est revenue avec un nouveau compte. C'est du contournement de bannissement."
+            },
+            {
+              "speaker": "Nora",
+              "text_en": "Let's mute the keywords, but not delete honest criticism.",
+              "text_fr": "Masquons les mots-clés, mais ne supprimons pas les critiques honnêtes."
+            },
+            {
+              "speaker": "Ibrahim",
+              "text_en": "Agreed. We moderate behavior, not opinions.",
+              "text_fr": "D'accord. Nous modérons les comportements, pas les opinions."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que doit faire Nora en priorité face au commentaire qui donne l'adresse ?",
+              "choices": [
+                "Le laisser visible pour garder une trace publique de l'incident",
+                "Le supprimer immédiatement et signaler l'utilisateur",
+                "Répondre publiquement pour corriger l'information donnée"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une divulgation de données personnelles met la personne en danger : on supprime tout de suite et on signale. Laisser le commentaire expose davantage la créatrice, et y répondre publiquement donne de la visibilité à l'adresse."
+            },
+            {
+              "prompt_fr": "Que signifie « We moderate behavior, not opinions » ?",
+              "choices": [
+                "On supprime les attaques et le harcèlement, pas les critiques honnêtes",
+                "On supprime tout commentaire négatif pour protéger l'image de la marque",
+                "On laisse passer tout comportement tant qu'il exprime une opinion"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une modération saine vise les comportements (harcèlement, insultes, données privées), pas le désaccord. Supprimer toute critique est de la censure, et tolérer tout comportement parce que c'est une opinion laisse le harcèlement prospérer."
+            },
+            {
+              "prompt_fr": "Comment dire « L'utilisateur est revenu avec un nouveau compte » ?",
+              "choices": [
+                "The user came back with a new account.",
+                "The user returned back to a new account.",
+                "The user came back by a new account."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Come back with » est la construction naturelle pour revenir avec quelque chose. « By » indiquerait un moyen de transport, et « returned back to » est redondant et change le sens (revenir vers le compte)."
+            },
+            {
+              "prompt_fr": "Quel est le problème du « ban evasion » ?",
+              "choices": [
+                "Un modérateur supprime un compte qui respectait les règles",
+                "Un utilisateur quitte volontairement la communauté sans prévenir",
+                "Une personne bannie contourne la sanction avec un autre compte"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le contournement de bannissement consiste à recréer un compte pour revenir malgré une sanction. Ce n'est ni un départ volontaire ni une erreur de modération."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un court e-mail à ta directrice pour résumer l'incident. En 3 ou 4 phrases : dis ce qui s'est passé, ce que tu as supprimé, et ce que tu fais ensuite.",
+            "context_en": "Dogpiling on the creator's video, one comment with her home address, a banned user back with a new account.",
+            "model_answer_en": "Our creator is facing dogpiling under her latest video. One comment contained doxxing, so I took it down and blocked the user, who had come back with a new account. I am clearing the moderation queue and keeping honest criticism visible. I will update you this evening.",
+            "model_answer_fr": "Notre créatrice subit un harcèlement en meute sous sa dernière vidéo. Un commentaire contenait une divulgation de données personnelles, je l'ai donc supprimé et j'ai bloqué l'utilisateur, revenu avec un nouveau compte. Je vide la file de modération en gardant visibles les critiques honnêtes. Je te tiens au courant ce soir.",
+            "key_phrases": [
+              "is facing dogpiling",
+              "contained doxxing",
+              "the moderation queue"
+            ]
+          }
+        },
+        {
+          "id": "community-manager-escalate-and-brief-management",
+          "title_fr": "Escalader et expliquer la situation à la direction",
+          "term_ids": [
+            "trust-and-safety",
+            "escalation-matrix",
+            "algorithmic-amplification",
+            "rage-bait"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Camille",
+              "text_en": "The video has been pushed to millions of people. That is algorithmic amplification.",
+              "text_fr": "La vidéo a été poussée vers des millions de personnes. C'est de l'amplification algorithmique."
+            },
+            {
+              "speaker": "Yusuf",
+              "text_en": "Part of the buzz is rage bait: accounts posting provocative takes to get replies.",
+              "text_fr": "Une partie du buzz est du contenu qui provoque la colère : des comptes publient des avis provocateurs pour obtenir des réponses."
+            },
+            {
+              "speaker": "Camille",
+              "text_en": "According to the escalation matrix, a threat to a creator goes straight to legal.",
+              "text_fr": "Selon la matrice d'escalade, une menace contre une créatrice va directement au service juridique."
+            },
+            {
+              "speaker": "Yusuf",
+              "text_en": "I will also contact trust and safety at the platform with the evidence.",
+              "text_fr": "Je contacte aussi l'équipe confiance et sécurité de la plateforme avec les preuves."
+            },
+            {
+              "speaker": "Camille",
+              "text_en": "Good. Let's not feed the controversy with a long reply.",
+              "text_fr": "Bien. N'alimentons pas la polémique avec une longue réponse."
+            },
+            {
+              "speaker": "Yusuf",
+              "text_en": "I will prepare a short holding message in case the press calls.",
+              "text_fr": "Je prépare un court message d'attente au cas où la presse appellerait."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Camille par « algorithmic amplification » ?",
+              "choices": [
+                "La plateforme pousse la vidéo vers un public bien plus large",
+                "Les abonnés ont partagé la vidéo avec leurs propres contacts",
+                "La marque a payé pour mettre la vidéo en avant sur la plateforme"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'amplification algorithmique vient du système de recommandation de la plateforme, pas des partages manuels ni d'une publicité achetée. C'est ce qui peut faire exploser une polémique."
+            },
+            {
+              "prompt_fr": "Pourquoi suivre l'« escalation matrix » ici ?",
+              "choices": [
+                "Elle liste les mots interdits que l'on doit retirer des commentaires",
+                "Elle fixe le nombre de réponses publiques autorisées par heure",
+                "Elle indique qui prévenir selon la gravité, ce qui évite de perdre du temps"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une matrice d'escalade associe chaque niveau de gravité à des contacts et à des délais. Elle ne contient ni une liste de mots interdits ni une limite de réponses publiques."
+            },
+            {
+              "prompt_fr": "Comment dire « Ne répondons pas longuement pour ne pas envenimer la situation » ?",
+              "choices": [
+                "Let's not nourish the controversy with a long reply.",
+                "Let's not feed the controversy with a long reply.",
+                "Let's not give food to the controversy with a long reply."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To feed a controversy » est l'expression idiomatique pour entretenir une polémique. « Nourish » est trop littéral et positif, et « give food to » est un calque de l'image sans être idiomatique."
+            },
+            {
+              "prompt_fr": "Que désigne « rage bait » ?",
+              "choices": [
+                "Un contenu fait exprès pour provoquer la colère et susciter des réactions",
+                "Une alerte automatique envoyée quand le nombre de plaintes augmente",
+                "Un message de la marque qui s'excuse après une erreur de communication"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le « rage bait » cherche à énerver pour générer des commentaires et des partages. Ce n'est ni une excuse de la marque ni une alerte automatique."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige un point de situation de 4 phrases pour la direction : ce qui se passe, ce qui l'amplifie, qui tu as alerté et la recommandation de communication.",
+            "context_en": "The video reached millions. Rage bait accounts joined in. A threat was posted against the creator.",
+            "model_answer_en": "The video has reached millions of people through algorithmic amplification, and some accounts are posting rage bait to fuel the debate. Following the escalation matrix, I sent the threat against our creator to legal and I contacted trust and safety at the platform. My recommendation is not to feed the controversy: a short holding message is ready if the press calls.",
+            "model_answer_fr": "La vidéo a touché des millions de personnes grâce à l'amplification algorithmique, et certains comptes publient du contenu qui provoque la colère pour alimenter le débat. Selon la matrice d'escalade, j'ai transmis la menace contre notre créatrice au juridique et contacté l'équipe confiance et sécurité de la plateforme. Ma recommandation est de ne pas alimenter la polémique : un court message d'attente est prêt si la presse appelle.",
+            "key_phrases": [
+              "algorithmic amplification",
+              "the escalation matrix",
+              "not to feed the controversy"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
