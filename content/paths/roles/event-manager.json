@@ -1,0 +1,2076 @@
+{
+  "role": "event-manager",
+  "status": "draft",
+  "title_fr": "L'anglais de l'organisation et de la production d'événements",
+  "units": [
+    {
+      "id": "event-manager-client-brief-and-venue-scouting",
+      "title_fr": "Réceptionner le brief client et mener le repérage de lieu",
+      "title_en": "Receive client brief and conduct venue scouting",
+      "situation_fr": "Tu reçois les exigences d'une entreprise internationale pour sa convention annuelle. Tu dois analyser le cahier des charges, cadrer le calendrier et visiter le centre de congrès pour valider la faisabilité.",
+      "guide": {
+        "intro_fr": "Lors du lancement d'un projet, tu analyses le cahier des charges (« scope of work document ») et la fiche technique (« technical specifications sheet ») pour cadrer les livrables. Tu bâtis un rétroplanning (« production timeline ») et fais signer un accord de confidentialité (« non-disclosure agreement »). Ensuite, tu mènes le repérage technique (« venue scouting » ou « site visit ») muni du plan d'implantation (« floor plan »). Tu vérifies le plan d'évacuation (« evacuation plan ») et les accès pour la commission de sécurité (« safety commission »). Enfin, tu valides la fiche technique (« technical rider ») et les repas (« catering rider ») tout en préservant un budget d'imprévus (« contingency fund »).",
+        "key_phrases": [
+          {
+            "en": "Let's review the scope of work document to align on deliverables.",
+            "fr": "Passons en revue le cahier des clauses techniques pour nous accorder sur les livrables."
+          },
+          {
+            "en": "We need an updated floor plan before meeting the safety commission.",
+            "fr": "Nous avons besoin d'un plan d'implantation à jour avant de rencontrer la commission de sécurité."
+          },
+          {
+            "en": "The production timeline must include three days for staging setup.",
+            "fr": "Le rétroplanning de production doit prévoir trois jours pour le montage scénique."
+          },
+          {
+            "en": "Please confirm that the venue scouting covers all emergency egress routes.",
+            "fr": "Merci de confirmer que le repérage du lieu couvre toutes les voies d'évacuation d'urgence."
+          },
+          {
+            "en": "We should allocate ten percent of the overall budget to a contingency fund.",
+            "fr": "Nous devrions allouer dix pour cent du budget global à un budget d'imprévus."
+          },
+          {
+            "en": "The client requested a postponement clause in case of travel restrictions.",
+            "fr": "Le client a demandé une clause de report en cas de restrictions de déplacement."
+          }
+        ],
+        "tip_fr": "Attention au faux ami : en anglais événementiel, « rider » ne signifie pas un cavalier, mais une annexe technique ou fiche d'exigences contractuelles (« technical rider », « catering rider »). De même, un « floor plan » n'est pas un plan d'étage ordinaire, mais le schéma d'implantation scénique et des stands."
+      },
+      "lessons": [
+        {
+          "id": "event-manager-analyze-client-brief-and-scope",
+          "title_fr": "Analyser le cahier des charges client et définir le périmètre",
+          "term_ids": [
+            "scope-of-work-document",
+            "technical-specifications-sheet",
+            "production-timeline",
+            "non-disclosure-agreement",
+            "service-level-agreement"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Marcus, the client just emailed their scope of work document for the November summit.",
+              "text_fr": "Marcus, le client vient d'envoyer son cahier des charges par e-mail pour le sommet de novembre."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Great. Did they attach the technical specifications sheet for the main auditorium?",
+              "text_fr": "Super. Ont-ils joint le cahier des charges technique pour l'auditorium principal ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Yes, and both legal teams have signed the mutual non-disclosure agreement.",
+              "text_fr": "Oui, et les deux équipes juridiques ont signé l'accord de confidentialité réciproque."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Perfect. Let's draft the production timeline and check our service level agreement commitments.",
+              "text_fr": "Parfait. Rédigeons le rétroplanning de production et vérifions nos engagements de niveau de service."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel document contractuel formalise l'ensemble des livrables, responsabilités et jalons convenus avec le client ?",
+              "choices": [
+                "The full commercial preliminary event marketing flyer",
+                "The commercial scope of work document",
+                "The preliminary venue invoice receipt"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Scope of work document » (SOW / cahier des charges opérationnel) définit contractuellement le périmètre exact des prestations et livrables. Le prospectus commercial ou le reçu de facture d'acompte ne fixent pas le périmètre technique."
+            },
+            {
+              "prompt_fr": "Quel document technique regroupe les exigences audio, vidéo, dimensions de scène et besoins électriques de la production ?",
+              "choices": [
+                "A comprehensive financial shareholder dividend report",
+                "A general attendee satisfaction survey",
+                "A detailed technical specifications sheet"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Technical specifications sheet » (fiche des spécifications techniques) détaille les besoins en puissance électrique, structure et audiovisuel. Les rapports financiers ou enquêtes de satisfaction n'ont pas de dimension technique d'implantation."
+            },
+            {
+              "prompt_fr": "Que détaille précisément une « production timeline » dans le pilotage d'un grand événement ?",
+              "choices": [
+                "The chronological schedule of all milestones from planning to post-event breakdown",
+                "The full commercial complete biography and travel itineraries of international keynote speakers",
+                "The itemized catering menu with dietary preferences and wine pairings"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Production timeline » est le rétro-planning global ordonnançant les livraisons, le montage, les répétitions et le démontage. Les biographies d'orateurs ou menus traiteur ne constituent pas un planning de production."
+            },
+            {
+              "prompt_fr": "Quel accord juridique protège les secrets de fabrication, données stratégiques et concepts créatifs partagés avec les prestataires ?",
+              "choices": [
+                "A unilateral event ticket refund policy",
+                "A mutual non-disclosure agreement",
+                "A stage lighting equipment purchase order"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Non-disclosure agreement » (NDA / accord de confidentialité) engage les parties au secret sur les éléments stratégiques du projet. Les conditions de remboursement de billets ou bons de commande d'éclairage n'offrent aucune protection de propriété intellectuelle."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Envoie un e-mail au directeur de projet client pour confirmer la bonne réception du cahier des charges. Précise que le rétroplanning de production est en cours de finalisation et rappelle le respect du contrat de niveau de service sous accord de confidentialité.",
+            "context_en": "Hi team, we just submitted our project brief for the global conference. Can you confirm receipt and the next planning steps?",
+            "model_answer_en": "Thank you for sending the detailed scope of work document. We are finalizing the production timeline in strict compliance with our mutual service level agreement. All shared assets remain fully protected under our signed non-disclosure agreement.",
+            "model_answer_fr": "Merci pour l'envoi du cahier des charges détaillé. Nous finalisons le rétroplanning de production en stricte conformité avec notre engagement de niveau de service mutuel. L'ensemble des éléments partagés demeure pleinement protégé par notre accord de confidentialité signé.",
+            "key_phrases": [
+              "scope of work document",
+              "production timeline",
+              "service level agreement",
+              "non-disclosure agreement"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-venue-scouting-and-capacity",
+          "title_fr": "Mener le repérage technique et vérifier les plans de sécurité",
+          "term_ids": [
+            "venue-scouting",
+            "site-visit",
+            "floor-plan",
+            "safety-commission",
+            "evacuation-plan"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Tomasz, we are conducting the venue scouting at the convention center this afternoon.",
+              "text_fr": "Tomasz, nous effectuons le repérage du lieu au centre des congrès cet après-midi."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "I have the latest CAD floor plan with the exhibitor booth layout.",
+              "text_fr": "J'ai le dernier plan d'implantation CAO avec la disposition des stands d'exposition."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Make sure you double-check all emergency exit doors and the evacuation plan.",
+              "text_fr": "Assure-toi de bien revérifier toutes les portes d'issue de secours et le plan d'évacuation."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Understood. The safety commission will inspect the premises next Tuesday morning.",
+              "text_fr": "C'est noté. La commission de sécurité inspectera les lieux mardi matin prochain."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle étape fondamentale consiste à visiter physiquement un site pour évaluer ses accès et contraintes techniques ?",
+              "choices": [
+                "Remote online brochure download review",
+                "Post-show financial accounting audit",
+                "Venue scouting and site inspection visit"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Venue scouting » (repérage de lieu) et la visite technique sur site permettent de mesurer les accès camions, hauteurs sous plafond et puissances réelles. Un audit comptable ou le téléchargement d'une plaquette ne remplacent pas la réalité du terrain."
+            },
+            {
+              "prompt_fr": "Quel plan d'architecte coté représente fidèlement la disposition des cloisons, issues de secours et allées de circulation ?",
+              "choices": [
+                "A scaled architectural floor plan",
+                "An artist impression promotional rendering",
+                "A catering beverage order spreadsheet"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Floor plan » est le plan d'implantation à l'échelle indispensable pour implanter la scène, les stands et les allées de sécurité. Les rendus 3D d'ambiance ou bons de commande traiteur n'ont aucune précision métrique."
+            },
+            {
+              "prompt_fr": "Quel organisme réglementaire examine la conformité du bâtiment aux normes de sécurité incendie et autorise l'ouverture au public ?",
+              "choices": [
+                "The local commercial advertising council",
+                "The official municipal safety commission",
+                "The freelance graphic design collective"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Safety commission » (commission de sécurité ERP) valide la conformité des dégagements, de la résistance au feu des matériaux et des issues de secours avant d'autoriser l'accueil du public."
+            },
+            {
+              "prompt_fr": "Quel schéma obligatoire affiché au mur indique les cheminements vers les sorties de secours et l'emplacement des extincteurs ?",
+              "choices": [
+                "A comprehensive stage lighting color spectrum chart",
+                "A social media engagement leaderboard",
+                "An official certified evacuation plan"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Evacuation plan » (plan d'évacuation conforme aux normes de sécurité) guide les occupants vers les issues et localise les moyens d'extinction. Les nuanciers lumière ou tableaux d'engagement social n'ont aucune utilité de sécurité."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige une note de synthèse à la suite de la visite technique du centre de congrès : indique que le repérage a validé le plan d'implantation, mentionne la mise à jour du plan d'évacuation et confirme le passage de la commission de sécurité.",
+            "context_en": "Please provide a quick summary of the venue assessment before our leadership meeting.",
+            "model_answer_en": "Our technical venue scouting and site visit confirmed the viability of the main hall. We updated the floor plan and evacuation plan to guarantee four-meter clearance around all fire exits. The municipal safety commission will carry out their official inspection next Tuesday.",
+            "model_answer_fr": "Notre repérage technique et visite de site ont confirmé la faisabilité dans le hall principal. Nous avons mis à jour le plan d'implantation et le plan d'évacuation afin de garantir quatre mètres de dégagement autour des issues de secours. La commission de sécurité municipale effectuera son contrôle officiel mardi prochain.",
+            "key_phrases": [
+              "venue scouting",
+              "site visit",
+              "floor plan",
+              "evacuation plan",
+              "safety commission"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-technical-rider-and-catering-needs",
+          "title_fr": "Valider la fiche technique et les prestations annexes",
+          "term_ids": [
+            "technical-rider",
+            "catering-rider",
+            "contingency-fund",
+            "postponement-clause"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Kenji, did the keynote speaker's agency send over their technical rider?",
+              "text_fr": "Kenji, l'agence de l'orateur principal a-t-elle envoyé sa fiche technique ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, they also included a catering rider requiring vegan meals backstage.",
+              "text_fr": "Oui, ils ont aussi inclus une fiche technique de restauration demandant des repas végétaliens en coulisses."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Let's check if the client contract includes a flexible postponement clause.",
+              "text_fr": "Vérifions si le contrat client contient une clause de report flexible."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "It does, and we preserved a contingency fund to absorb any unexpected surcharges.",
+              "text_fr": "C'est le cas, et nous avons conservé un budget d'imprévus pour absorber les surcoûts éventuels."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle annexe contractuelle détaille les besoins matériels spécifiques exigés par un artiste ou intervenant (micro, retour, scène) ?",
+              "choices": [
+                "A production technical rider",
+                "A venue lease termination letter",
+                "A delegate printed badge receipt"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Technical rider » (fiche technique contractuelle) liste les exigences indispensables en sonorisation, lumières et plateau d'un intervenant ou d'une production. Les lettres de résiliation de bail ou reçus de badges n'ont aucun rapport technique."
+            },
+            {
+              "prompt_fr": "Pourquoi est-il indispensable d'intégrer une ligne « contingency fund » (budget d'imprévus) dans le prévisionnel financier ?",
+              "choices": [
+                "To systematically provide automatic end-of-year cash bonuses to all corporate client executives",
+                "To cover unexpected site modifications and emergency equipment rentals without exceeding budget",
+                "To systematically purchase unneeded technical gear for future speculative projects"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Contingency fund » (provision pour imprévus, généralement 10 à 15 %) absorbe les surcoûts inhérents aux aléas de chantier ou de production sans faire déborder le budget global."
+            },
+            {
+              "prompt_fr": "Quel document détaille les régimes alimentaires, horaires de service et besoins d'accueil en loges des équipes techniques et VIP ?",
+              "choices": [
+                "A stage heavy rigging certificate",
+                "A three-phase electrical permit",
+                "A specialized catering rider"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Catering rider » (fiche de catering / restauration) spécifie les repas, horaires et régimes alimentaires pour l'équipe technique et les artistes. Les certificats de levage ou permis électriques concernent la sécurité des installations."
+            },
+            {
+              "prompt_fr": "Quelle clause contractuelle permet de reporter l'événement à une date ultérieure en cas de force majeure sans perte totale des acomptes ?",
+              "choices": [
+                "A contractual postponement clause",
+                "A venue immediate eviction clause",
+                "An irrevocable deposit forfeiture term"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Postponement clause » (clause de report) encadre les conditions de report d'un événement sans rupture définitive du contrat ni pénalités d'annulation intégrales."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Briefe ton assistant de production avant la réunion de cadrage : demande-lui de comparer les exigences du technical rider avec le matériel disponible, de vérifier le catering rider pour les loges et de sanctuariser le budget d'imprévus.",
+            "context_en": "What should I focus on before our production briefing with the client?",
+            "model_answer_en": "Please review the technical rider against our venue equipment inventory before the meeting. Verify all dietary restrictions listed in the catering rider for the speaker lounge. Finally, ensure our contingency fund remains untouched for emergency setup expenses.",
+            "model_answer_fr": "Merci de comparer la fiche technique avec notre inventaire matériel sur le site avant la réunion. Vérifie toutes les restrictions alimentaires listées dans la fiche de restauration pour l'espace orateurs. Enfin, veille à ce que notre budget d'imprévus reste intact pour les dépenses de montage urgentes.",
+            "key_phrases": [
+              "technical rider",
+              "catering rider",
+              "contingency fund"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-manager-freight-logistics-and-stage-setup",
+      "title_fr": "Coordonner la logistique lourde et le montage scénique",
+      "title_en": "Coordinate freight logistics and stage setup",
+      "situation_fr": "Les semi-remorques transportant la scène, les structures et le matériel audiovisuel arrivent sur le site. Tu dois gérer les créneaux au quai de déchargement, sécuriser l'armoire électrique et superviser le levage des ponts lumière.",
+      "guide": {
+        "intro_fr": "La phase de déchargement (« load-in ») exige une coordination minutieuse au quai (« loading dock »). Tu régules les camions selon leur créneau (« delivery window ») et réceptionnes les malles de matériel (« flight cases »). L'électricien déploie l'armoire provisoire (« temporary power distribution ») et tire chaque arrivée dédiée (« power drop »). Pour la sécurité du public, les câbles sont protégés par un passe-câbles (« cable ramp ») ou scotchés au sol (« gaffer tape »). Sous l'autorité du régisseur général (« production manager ») et du régisseur de scène (« stage manager »), l'équipe accroche les ponts (« truss ») aux points d'ancrage (« rigging point ») et monte les rideaux de masquage (« pipe and drape ») avant le démontage (« load-out »).",
+        "key_phrases": [
+          {
+            "en": "Load-in starts at six a.m. sharp at the south loading dock.",
+            "fr": "Le montage commence à six heures tapantes au quai de déchargement sud."
+          },
+          {
+            "en": "Each carrier must respect their assigned delivery window to avoid dock congestion.",
+            "fr": "Chaque transporteur doit respecter son créneau de livraison pour éviter l'engorgement du quai."
+          },
+          {
+            "en": "Please secure all electrical lines under a heavy-duty cable ramp.",
+            "fr": "Merci de sécuriser toutes les lignes électriques sous un passe-câbles renforcé."
+          },
+          {
+            "en": "Tape down loose cables with gaffer tape along the public perimeter.",
+            "fr": "Scotchez les câbles volants avec de l'adhésif de régie le long du périmètre public."
+          },
+          {
+            "en": "Check every rigging point before we fly the main lighting truss.",
+            "fr": "Vérifiez chaque point d'ancrage avant que nous ne levions le pont lumière principal."
+          },
+          {
+            "en": "Coordinate with the stage manager to schedule the final load-out.",
+            "fr": "Coordonnez-vous avec le régisseur de scène pour planifier le démontage final."
+          }
+        ],
+        "tip_fr": "Attention à la distinction essentielle : « load-in » désigne le déchargement et l'installation du matériel avant l'événement, alors que « load-out » désigne le démontage, le rangement et le rechargement dans les camions après la clôture. Ne dis pas « tape the cables » mais « tape down cables » ou « secure cables under cable ramps »."
+      },
+      "lessons": [
+        {
+          "id": "event-manager-freight-delivery-and-loading-dock",
+          "title_fr": "Gérer les créneaux de livraison et le déchargement à quai",
+          "term_ids": [
+            "delivery-window",
+            "loading-dock",
+            "load-in",
+            "flight-case",
+            "load-in-starts-at-six-a-m-sharp"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Marcus",
+              "text_en": "Priya, the first two articulated lorries have arrived at the perimeter security gate.",
+              "text_fr": "Priya, les deux premiers semi-remorques sont arrivés à la grille de sécurité du périmètre."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Send them directly to loading dock bay two. Their scheduled delivery window opened ten minutes ago.",
+              "text_fr": "Envoie-les directement au quai de déchargement porte deux. Leur créneau de livraison prévu a commencé il y a dix minutes."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Remind the ground crew that load-in starts at six a.m. sharp tomorrow.",
+              "text_fr": "Rappelle à l'équipe au sol que le déchargement et montage commence à six heures tapantes demain."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "I will make sure every heavy flight case is wheeled straight to the main hall.",
+              "text_fr": "Je m'assurerai que chaque malle de transport capitonnée soit roulée directement jusqu'au hall principal."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le créneau horaire strict attribué à chaque camion semi-remorque pour accéder au quai de déchargement ?",
+              "choices": [
+                "A commercial marketing window",
+                "A scheduled delivery window",
+                "A soundcheck rehearsal slot"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Delivery window » est le créneau horaire réservé au quai pour éviter les embouteillages de poids lourds sur les voies publiques. « Soundcheck slot » est le créneau de balance son sur scène."
+            },
+            {
+              "prompt_fr": "Quelle zone logistique du palais des congrès permet aux camions de décharger directement les caisses de matériel ?",
+              "choices": [
+                "The main public entrance foyer",
+                "The VIP hospitality cocktail suite",
+                "The freight loading dock and ramp"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Loading dock » (quai de déchargement / quai fret) est la zone industrielle conçue pour charger et décharger les remorques au niveau du sol ou à hauteur de hayon. Les foyers publics et salons VIP ne sont pas conçus pour la manutention de fret."
+            },
+            {
+              "prompt_fr": "Quel terme technique anglo-saxon désigne le début des opérations d'emménagement et de montage sur le site ?",
+              "choices": [
+                "Load-in",
+                "Strike",
+                "Load-out"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Load-in » (montage / emménagement) désigne l'arrivée et le déchargement du matériel technique. « Strike » ou « load-out » désigne le démontage et le réembarquement à l'issue de l'événement."
+            },
+            {
+              "prompt_fr": "Dans quelles malles capitonnées à roulettes et cornières métalliques transporte-t-on les projecteurs et consoles fragiles ?",
+              "choices": [
+                "Cardboard mailing envelopes",
+                "Reinforced wheeled flight cases",
+                "Disposable paper shopping bags"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Flight case » (malle de transport technique renforcée) protège le matériel électronique et audiovisuel contre les chocs de manutention. Les cartons ou sacs papier ne résisteraient pas au transport de tournée."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Transmets les consignes logistiques à l'équipe quai : rappelle que le montage démarre à six heures tapantes, demande de diriger les camions vers le quai de déchargement selon leur créneau et d'acheminer les flight cases vers la scène.",
+            "context_en": "Morning team, can you brief the ground handlers before the first trucks arrive?",
+            "model_answer_en": "Load-in starts at six a.m. sharp at the north entrance. Direct every incoming truck to the designated loading dock according to its delivery window. Make sure the stage crew unloads every flight case and moves it to the staging area.",
+            "model_answer_fr": "Le montage commence à six heures tapantes à l'entrée nord. Dirigez chaque camion arrivant vers le quai de déchargement désigné selon son créneau de livraison. Assurez-vous que l'équipe scénique décharge chaque malle capitonnée et la transfère vers l'espace scénique.",
+            "key_phrases": [
+              "Load-in starts at six a.m. sharp",
+              "loading dock",
+              "delivery window",
+              "flight case"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-temporary-power-and-cable-management",
+          "title_fr": "Déployer l'alimentation provisoire et sécuriser les câbles au sol",
+          "term_ids": [
+            "power-drop",
+            "temporary-power-distribution",
+            "cable-ramp",
+            "to-tape-down-cables",
+            "gaffer-tape"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "Aïcha, the catering booths and the audio booth both need a dedicated power drop.",
+              "text_fr": "Aïcha, les stands traiteur et la régie audio ont tous deux besoin d'une arrivée électrique dédiée."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "The certified electrician is connecting the temporary power distribution unit right now.",
+              "text_fr": "L'électricien certifié raccorde l'armoire électrique provisoire en ce moment même."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "We have dozens of heavy three-phase cables crossing the primary pedestrian corridor.",
+              "text_fr": "Nous avons des dizaines de gros câbles triphasés qui traversent le couloir piéton principal."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Lay down a heavy-duty cable ramp over the crossing, and use gaffer tape to tape down cables backstage.",
+              "text_fr": "Pose un passe-câbles renforcé sur la traversée, et utilise du ruban adhésif de régie pour scotcher les câbles en coulisses."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que désigne un « power drop » dans l'alimentation électrique temporaire d'un hall d'exposition ?",
+              "choices": [
+                "An itemized accidental blackout caused by a short circuit tripping the main grid transformer",
+                "A low-voltage consumer battery charger provided at public phone recharge kiosks",
+                "A dedicated electrical power line drop brought to a specific booth or stage location"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Power drop » (point de livraison électrique dédié) est une alimentation tirée depuis les gaines du plafond ou les trappes au sol pour alimenter un stand ou une régie. Les autres choix sont des pannes de réseau ou des chargeurs de poche."
+            },
+            {
+              "prompt_fr": "Quel équipement robuste protège les passages de câbles au sol contre le piétinement du public et le passage des chariots élévateurs ?",
+              "choices": [
+                "A heavy-duty cable ramp or cable protector",
+                "A strip of decorative holiday wrapping ribbon",
+                "A line of stage velvet cocktail table runners"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Cable ramp » (passage de câbles en caoutchouc renforcé / passe-câbles jaune et noir) protège les liaisons électriques et évite les chutes du public. Les rubans décoratifs ou chemins de table n'offrent aucune résistance mécanique."
+            },
+            {
+              "prompt_fr": "Quel ruban adhésif toilé haute résistance sans résidu collant est le standard universel de l'industrie du spectacle ?",
+              "choices": [
+                "Standard office transparent tape",
+                "High-strength professional gaffer tape",
+                "Double-sided medical bandage tape"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Gaffer tape » (ou gaff) est l'adhésif professionnel toilé incontournable pour fixer les câbles au sol sans laisser de colle tenace. Le scotch de bureau ou l'adhésif médical ne résistent pas au piétinement en salle."
+            },
+            {
+              "prompt_fr": "Quel verbe en anglais décrit l'action de plaquer et scotcher solidement les câbles au sol pour respecter les normes de sécurité ?",
+              "choices": [
+                "To leave cables dangling freely across aisles",
+                "To submerge live electrical lines in water",
+                "To tape down all floor cables securely"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To tape down cables » signifie scotcher méthodiquement les câbles au sol pour supprimer tout risque de trébuchement. Laisser des câbles en travers des allées est une infraction de sécurité majeure."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige une note de conformité électrique : confirme que l'armoire électrique provisoire est installée, que chaque arrivée dédiée est active et que tous les câbles sont protégés par des passe-câbles ou scotchés avec du gaffer tape.",
+            "context_en": "Has the electrical walkthrough been completed for the exhibition floor?",
+            "model_answer_en": "The temporary power distribution system is fully commissioned and operational across all zones. Each audio booth and vendor stall received its requested power drop today. Safety teams installed a cable ramp over the main corridor and used gaffer tape to tape down cables backstage.",
+            "model_answer_fr": "Le système de distribution électrique provisoire est entièrement mis en service et opérationnel sur toutes les zones. Chaque régie audio et stand prestataire a reçu son arrivée électrique dédiée aujourd'hui. Les équipes de sécurité ont installé un passe-câbles sur le couloir principal et utilisé de l'adhésif de régie pour scotcher les câbles en coulisses.",
+            "key_phrases": [
+              "temporary power distribution",
+              "power drop",
+              "cable ramp",
+              "gaffer tape",
+              "tape down cables"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-overhead-rigging-and-truss-hoisting",
+          "title_fr": "Accrocher les ponts de levage et sécuriser les points d'ancrage",
+          "term_ids": [
+            "truss",
+            "rigging-point",
+            "rigging-hardware",
+            "to-fly-a-truss",
+            "fly-bar"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Kenji",
+              "text_en": "Sarah, the head rigger has inspected all ceiling anchors in the main auditorium.",
+              "text_fr": "Sarah, le chef rigger a inspecté tous les ancrages sous plafond dans l'auditorium principal."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Did the venue engineer certify every single rigging point for three tons?",
+              "text_fr": "L'ingénieur du site a-t-il certifié chaque point d'ancrage sous plafond pour trois tonnes ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes, all shackles and rigging hardware match the required industrial safety standards.",
+              "text_fr": "Oui, toutes les manilles et accessoires de haubanage respectent les normes de sécurité industrielle requises."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Clear the floor beneath the stage. We are ready to fly a truss with the motorized fly bar.",
+              "text_fr": "Dégagez le sol sous la scène. Nous sommes prêts à lever un pont lumière avec la perche de levage motorisée."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on la poutre modulaire en aluminium triangulée servant à suspendre projecteurs, enceintes et toiles ?",
+              "choices": [
+                "An aluminum stage lighting truss",
+                "A wooden decorative picture frame",
+                "A plastic microphone boom arm"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Truss » (pont ou structure en aluminium) est l'élément d'armature modulaire supportant les charges scéniques suspendues. Les cadres en bois ou pieds de micro ne peuvent soutenir des tonnes de matériel en hauteur."
+            },
+            {
+              "prompt_fr": "Quelle est la première mesure de sécurité obligatoire avant de « fly a truss » (lever une structure lumière motorisée) ?",
+              "choices": [
+                "Turn on the background walk-in music at full volume",
+                "Evacuate and secure the ground drop zone directly below the load",
+                "Serve coffee to all booth sales representatives in the foyer"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Avant toute manœuvre de levage motorisé (« fly a truss »), le régisseur doit faire évacuer la zone au sol (« ground drop zone ») située sous la trajectoire de la charge afin d'éliminer tout risque d'accident mortel."
+            },
+            {
+              "prompt_fr": "Comment désigne-t-on le point d'ancrage structurel certifié sur la charpente du bâtiment sur lequel sont fixées les élingues de levage ?",
+              "choices": [
+                "A temporary adhesive wall poster hook",
+                "A decorative ceiling air vent grille",
+                "A certified overhead rigging point"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Rigging point » est le point d'accroche calculé et certifié en toiture supportant la charge des palans. Les crochets adhésifs ou grilles de ventilation ne supportent aucune charge structurelle."
+            },
+            {
+              "prompt_fr": "Quel matériel certifié regroupe les manilles, élingues en acier, élingues rondes et serre-câbles utilisés par les riggers ?",
+              "choices": [
+                "Certified overhead rigging hardware",
+                "Standard office paper stationery clips",
+                "Disposable plastic catering cutlery"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Rigging hardware » désigne l'ensemble des accessoires de levage homologués (shackles, steel slings, spansets) garantissant la retenue mécanique des structures en hauteur."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Donne le top départ du levage des ponts lumière à l'équipe technique : demande de vérifier le point d'ancrage sous plafond, d'inspecter les accessoires de levage, d'évacuer la zone au sol et d'activer la perche motorisée pour lever la structure en toute sécurité.",
+            "context_en": "Are we cleared to lift the main lighting grid?",
+            "model_answer_en": "Clear the staging floor immediately while the riggers inspect every overhead rigging point. Verify that all rigging hardware and safety cables are secured to fly a truss safely. Once the perimeter is confirmed clear, engage the motor on the fly bar.",
+            "model_answer_fr": "Dégagez immédiatement le plateau scénique pendant que les riggers inspectent chaque point d'ancrage sous plafond. Vérifiez que tous les accessoires de levage et câbles de sécurité sont fixés pour lever le pont de structure en toute sécurité. Une fois le périmètre sécurisé, actionnez le moteur de la perche de levage.",
+            "key_phrases": [
+              "rigging point",
+              "rigging hardware",
+              "to fly a truss",
+              "fly bar"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-stage-structure-and-load-out",
+          "title_fr": "Coordonner le plateau scénique et anticiper le démontage",
+          "term_ids": [
+            "stage-manager",
+            "production-manager",
+            "pipe-and-drape",
+            "backstage-drape",
+            "load-out"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Moussa, the production manager wants the stage ready for technical rehearsals by four p.m.",
+              "text_fr": "Moussa, le régisseur général souhaite que la scène soit prête pour les répétitions techniques à seize heures."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "The stage manager is currently setting up the pipe and drape system around the backstage holding area.",
+              "text_fr": "Le régisseur de scène installe actuellement le système modulaire de rideaux autour de la zone d'attente en coulisses."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Ensure the black backstage drape completely masks the flight cases and storage racks.",
+              "text_fr": "Veille à ce que le pendrillon d'occultation noir masque totalement les malles de transport et les racks de stockage."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Understood. We also scheduled the night crew for the midnight load-out once the closing reception ends.",
+              "text_fr": "C'est noté. Nous avons aussi programmé l'équipe de nuit pour le démontage à minuit dès que la réception de clôture se termine."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qui est le responsable opérationnel qui dirige le déroulement du plateau et donne les départs aux intervenants depuis les coulisses ?",
+              "choices": [
+                "The venue parking toll collector",
+                "The backstage stage manager",
+                "The exterior billboard poster hanger"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Stage manager » (régisseur général de plateau) orchestre la scène, gère les entrées et sorties des orateurs et veille au respect strict du timing en direct. Les placiers de parking ou colleurs d'affiches travaillent à l'extérieur."
+            },
+            {
+              "prompt_fr": "Que désigne l'expression « pipe and drape » dans l'aménagement d'un espace scénique ou de coulisses ?",
+              "choices": [
+                "An itemized underground water drainage pipe network",
+                "A mechanical pyrotechnic stage fog emission conduit",
+                "A modular system of telescopic metal uprights and black draping fabrics"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Pipe and drape » est le système universel de montants verticaux et tringles métalliques supportant des rideaux en velours pour masquer les coulisses ou délimiter des salons. Ce n'est pas un système de plomberie d'eaux usées."
+            },
+            {
+              "prompt_fr": "Quel terme technique anglo-saxon désigne le démontage complet du décor, de l'audiovisuel et le rechargement des camions ?",
+              "choices": [
+                "Load-out and strike",
+                "Load-in",
+                "Soundcheck"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Load-out » (ou « strike ») désigne l'étape de démontage, d'emballage en flight-cases et de chargement des camions à la fin de la manifestation."
+            },
+            {
+              "prompt_fr": "Comment qualifie-t-on les grands rideaux de tissu noir ignifugés qui occultent la vue des coulisses depuis la salle ?",
+              "choices": [
+                "Transparent clear glass observation windows",
+                "Flame-retardant backstage masking drapes",
+                "Bright neon commercial sponsor advertising banners"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Backstage drape » (pendrillons ou rideaux de masquage traités non-feu M1 / flame-retardant) dissimulent les techniciens et matériels aux yeux du public."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Présente l'organisation scénique en réunion d'exploitation : confirme la coordination entre le régisseur général et le régisseur de scène, l'installation des rideaux de masquage modulaires et les horaires du démontage final.",
+            "context_en": "How are we coordinating stage management and post-event tear-down?",
+            "model_answer_en": "Our production manager is coordinating directly with the stage manager to ensure all rehearsals stay on schedule. We are deploying a modular pipe and drape partition with an opaque backstage drape to shield equipment areas. The dismantling team will commence the full load-out as soon as attendees exit the hall.",
+            "model_answer_fr": "Notre régisseur général coordonne directement avec le régisseur de scène pour s'assurer que toutes les répétitions respectent le planning. Nous déployons une cloison modulaire en rideaux avec un pendrillon d'occultation opaque pour masquer les zones techniques. L'équipe de démontage commencera le chargement complet dès que les participants auront quitté la salle.",
+            "key_phrases": [
+              "production manager",
+              "stage manager",
+              "pipe and drape",
+              "backstage drape",
+              "load-out"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-manager-av-production-and-technical-crew",
+      "title_fr": "Piloter la régie technique son, lumière et mur LED",
+      "title_en": "Manage AV production and technical crew",
+      "situation_fr": "Tu es en régie technique avant l'ouverture des portes. Tu cales la console lumière, vérifies la balance audio des micros sans fil et synchronises la diffusion vidéo sur les grands écrans.",
+      "guide": {
+        "intro_fr": "En régie technique, tu pilotes les équipes audiovisuelles. Pour le son, tu équipes les orateurs de micros-cravates (« wireless lapel microphone »), calibres les gains (« to calibrate audio levels ») et déploies une tour de retard (« audio delay tower ») avec traitement acoustique (« acoustic baffling »). Côté lumière, tu programmes la console DMX (« DMX lighting controller ») pour caler les mémoires (« to cue lighting presets ») selon les lignes de vue (« sightline analysis »). En vidéo, tu gères le mélangeur SDI (« SDI video switcher »), le projecteur laser (« high-brightness laser projector ») et le prompteur (« prompter operator »). Enfin, tu équilibres les phases (« to balance phase loads ») de l'alimentation triphasée (« three-phase power supply ») et vérifies les charges du palan motorisé (« motorized chain hoist »).",
+        "key_phrases": [
+          {
+            "en": "Please calibrate audio levels on the wireless lapel microphone before sound check.",
+            "fr": "Merci de calibrer les gains audio sur le micro-cravate sans fil avant la balance."
+          },
+          {
+            "en": "We need an audio delay tower to provide clear speech intelligibility in the rear rows.",
+            "fr": "Nous avons besoin d'une tour de rappel avec retard pour garantir l'intelligibilité de la voix au fond de la salle."
+          },
+          {
+            "en": "Cue lighting presets two and four for the keynote speaker walk-up.",
+            "fr": "Calez les mémoires lumière deux et quatre pour la montée sur scène de l'intervenant."
+          },
+          {
+            "en": "Switch the live camera feed on the SDI video switcher to program output.",
+            "fr": "Basculez le flux caméra en direct sur le mélangeur vidéo SDI vers la sortie antenne."
+          },
+          {
+            "en": "Balance phase loads across the three-phase power supply to prevent breaker trips.",
+            "fr": "Équilibrez les charges des phases sur l'alimentation triphasée pour éviter tout déclenchement de disjoncteur."
+          },
+          {
+            "en": "Check the dead-weight calculation before engaging the motorized chain hoist.",
+            "fr": "Vérifiez le calcul de charge statique avant d'activer le palan électrique à chaîne."
+          }
+        ],
+        "tip_fr": "Attention au terme « cue » : en régie de spectacle, « to cue » signifie envoyer un top ou enregistrer/rappeler une mémoire technique (« to cue lighting presets », « cue sound »). Ne confonds pas « audio delay tower » (tour d'enceintes avec temporisation numérique en millisecondes pour synchroniser le front d'onde) avec un simple retard de planning."
+      },
+      "lessons": [
+        {
+          "id": "event-manager-sound-engineering-and-acoustics",
+          "title_fr": "Calibrer les fréquences audio et optimiser la diffusion en salle",
+          "term_ids": [
+            "wireless-lapel-microphone",
+            "to-calibrate-audio-levels",
+            "audio-delay-tower",
+            "acoustic-baffling"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Priya",
+              "text_en": "Liam, the keynote presenter is wearing a wireless lapel microphone on his jacket.",
+              "text_fr": "Liam, l'orateur principal porte un micro-cravate sans fil sur sa veste."
+            },
+            {
+              "speaker": "Liam",
+              "text_en": "I need him to speak into it for two minutes so I can calibrate audio levels properly.",
+              "text_fr": "J'ai besoin qu'il parle dedans pendant deux minutes pour que je calibre correctement les gains audio."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "The concrete walls are causing flutter echoes across the plenary seating.",
+              "text_fr": "Les murs en béton provoquent des échos flottants dans toute la salle plénière."
+            },
+            {
+              "speaker": "Liam",
+              "text_en": "We installed extra acoustic baffling on the back wall and aligned the audio delay tower.",
+              "text_fr": "Nous avons installé un traitement d'isolation acoustique supplémentaire sur le mur du fond et calé la tour de rappel avec retard."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel microphone discret fixé sur le col de veste ou la chemise offre une totale liberté de mouvement aux orateurs en plénière ?",
+              "choices": [
+                "A heavy vintage studio ribbon microphone",
+                "A handheld dynamic vocal rock microphone",
+                "A wireless lapel or lavalier microphone"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Wireless lapel microphone » (ou micro-cravate / lavalier) est le microphone de référence pour les conférences et discours sur scène. Le micro de studio vintage ou le micro de chant rock ne sont pas adaptés aux présentations d'entreprise."
+            },
+            {
+              "prompt_fr": "Quelle opération acoustique cruciale réalise l'ingénieur du son lors des balances pour adapter le volume et éviter l'effet larsen ?",
+              "choices": [
+                "To calibrate and equalize audio levels",
+                "To clean stage floor tiles with bleach",
+                "To paint projector lenses in flat black"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To calibrate audio levels » (calibrer et égaliser la façade et les retours) garantit l'intelligibilité de la parole et supprime les fréquences parasites responsables du larsen (feedback)."
+            },
+            {
+              "prompt_fr": "Quel équipement d'enceintes secondaires alignées temporellement permet au fond d'un très grand hall d'entendre distinctement ?",
+              "choices": [
+                "A direct stage floor pyrotechnic fountain",
+                "An audio delay tower speaker cluster",
+                "A kitchen microwave oven heating station"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Audio delay tower » (tour ou ligne de rappel temporisée) diffuse le son vers le fond de salle avec un retard en millisecondes précisément calculé pour s'aligner sur la vitesse de l'onde sonore de façade."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on les panneaux suspendus absorbants destinés à briser les réverbérations et échos dans une salle résonnante ?",
+              "choices": [
+                "Hard reflective polished ceramic tiles",
+                "Polished stainless steel display mirrors",
+                "Acoustic baffling and absorption panels"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Acoustic baffling » (baffles et pièges à son absorbants) atténue la réverbération des parois dures pour rendre le discours audible et net. Les miroirs ou carreaux de céramique augmenteraient désastreusement l'écho."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Donne tes instructions à l'équipe son avant le filage : demande d'équiper l'orateur d'un micro-cravate sans fil, de calibrer les gains audio, de vérifier l'isolation acoustique et de synchroniser la tour de rappel avec retard.",
+            "context_en": "Audio crew is ready for stage checks in the main plenary.",
+            "model_answer_en": "Please equip the guest speaker with a wireless lapel microphone to calibrate audio levels during the microphone check. Ensure that the acoustic baffling along the side walls dampens room reverberation effectively. Finally, check that the audio delay tower is perfectly synchronized with the front-of-house speakers.",
+            "model_answer_fr": "Veuillez équiper l'intervenant invité d'un micro-cravate sans fil pour calibrer les gains audio pendant la balance micro. Assurez-vous que le traitement d'isolation acoustique le long des murs latéraux atténue efficacement la réverbération de la pièce. Enfin, vérifiez que la tour de rappel avec retard est parfaitement synchronisée avec la façade.",
+            "key_phrases": [
+              "wireless lapel microphone",
+              "to calibrate audio levels",
+              "acoustic baffling",
+              "audio delay tower"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-lighting-design-and-dmx-control",
+          "title_fr": "Programmer la console lumière DMX et contrôler les lignes de vue",
+          "term_ids": [
+            "dmx-lighting-controller",
+            "to-cue-lighting-presets",
+            "stage-backdrop-rigging",
+            "sightline-analysis"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Marcus",
+              "text_en": "Chloe, have you finished patching the robotic fixtures into the DMX lighting controller?",
+              "text_fr": "Chloe, as-tu fini d'assigner les projecteurs asservis sur le contrôleur lumière DMX ?"
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "Yes, I am programming the show file to cue lighting presets for every walk-up sting.",
+              "text_fr": "Oui, je programme la conduite du spectacle pour caler les mémoires lumière à chaque jingle d'entrée."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "The client asked if the corporate logo banner on the stage backdrop rigging is fully illuminated.",
+              "text_fr": "Le client a demandé si la bâche aux logos de l'entreprise sur l'accroche de fond de scène est parfaitement éclairée."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "It is, and our sightline analysis confirms that no spotlight blinds audience members in the front rows.",
+              "text_fr": "Elle l'est, et notre étude des lignes de vision confirme qu'aucun projecteur n'éblouit les spectateurs aux premiers rangs."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Qu'est-ce qu'un « DMX lighting controller » dans une régie événementielle professionnelle ?",
+              "choices": [
+                "A programmable console controlling the intensity, color, and movement of digital lighting fixtures",
+                "An itemized analogue emergency manual circuit breaker cutting electrical power across an entire city block",
+                "A high-speed optical barcode scanner checking delegate tickets at entrance turnstiles"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« DMX lighting controller » (console ou pupitre DMX) transmet les signaux numériques (protocole DMX512) pilotant projecteurs asservis, gradateurs et changeurs de couleur. Les disjoncteurs généraux ou lecteurs de code-barres n'ont aucun lien avec le contrôle lumière."
+            },
+            {
+              "prompt_fr": "Quelle action réalise l'éclairagiste lorsqu'il enregistre et déclenche les ambiances lumineuses synchronisées avec le déroulé du spectacle ?",
+              "choices": [
+                "To repaint stage floorboards between speakers",
+                "To cue lighting presets and transitions",
+                "To solder electronic components during the keynote"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To cue lighting presets » consiste à déclencher sur top de conduite les mémoires et transitions lumineuses programmées (ex. entrée orateur, projection vidéo, applaudissements)."
+            },
+            {
+              "prompt_fr": "Quelle étude préalable garantit qu'aucun projecteur suspendu ou élément de décor ne masque l'écran géant pour les spectateurs assis sur les côtés ?",
+              "choices": [
+                "An external building wind tunnel simulation",
+                "A cocktail catering calorie calculation",
+                "A detailed sightline analysis study"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Sightline analysis » (analyse des lignes de vue / cônes de visibilité) vérifie que chaque place assise dispose d'une vue dégagée sur les écrans et l'orateur sans obstacle visuel."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on la toile de fond scénique imprimée ou l'écran tendu constituant l'arrière-plan de la scène ?",
+              "choices": [
+                "Stage backdrop rigging structure",
+                "Floor cable protector ramp channel",
+                "Electrical circuit breaker fuse box"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Stage backdrop » désigne le fond de scène décoratif ou institutionnel mettant en valeur les intervenants face aux caméras et au public."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Briefe l'éclairagiste avant le filage général : demande-lui de programmer la console DMX pour caler les mémoires lumière, de vérifier l'accroche de fond de scène et de confirmer les résultats de l'étude des lignes de vision.",
+            "context_en": "Lighting designer is standing by at front of house.",
+            "model_answer_en": "Please verify that your DMX lighting controller has recorded all color palettes for the speakers. Run through the cues to cue lighting presets smoothly for the keynote introduction. Check the stage backdrop rigging tension and review the sightline analysis so no spotlight impairs audience visibility.",
+            "model_answer_fr": "Veuillez vérifier que votre contrôleur lumière DMX a bien enregistré toutes les palettes de couleurs pour les intervenants. Parcourez la conduite pour caler les mémoires lumière en douceur lors de l'introduction plénière. Vérifiez la tension de l'accroche de fond de scène et examinez l'étude des lignes de vision pour qu'aucun projecteur ne gêne la visibilité du public.",
+            "key_phrases": [
+              "DMX lighting controller",
+              "to cue lighting presets",
+              "stage backdrop rigging",
+              "sightline analysis"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-video-switching-and-projection",
+          "title_fr": "Piloter le mélangeur broadcast et coordonner le prompteur",
+          "term_ids": [
+            "sdi-video-switcher",
+            "multi-camera-switcher",
+            "high-brightness-laser-projector",
+            "prompter-operator"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Mei, is the video control room linked to the SDI video switcher via 12G cables?",
+              "text_fr": "Mei, la régie vidéo est-elle reliée au mélangeur vidéo SDI via des câbles 12G ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Yes, all four robotic cameras and two presenter laptops are patched into the multi-camera switcher.",
+              "text_fr": "Oui, les quatre caméras robotisées et les deux ordinateurs des présentateurs sont raccordés au pupitre mélangeur multicaméra."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "How does the main plenary image look on the thirty-meter wide screen?",
+              "text_fr": "Quel est le rendu de l'image de la plénière sur l'écran large de trente mètres ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "The high-brightness laser projector delivers crisp 4K contrast, and the prompter operator is ready for the CEO's rehearsal.",
+              "text_fr": "Le vidéoprojecteur laser forte puissance offre un contraste 4K impeccable, et l'opérateur prompteur est prêt pour la répétition du PDG."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est le rôle d'un « SDI video switcher » dans une régie vidéo plénière multi-caméras ?",
+              "choices": [
+                "To systematically print plastic delegate badges at the registration desk during morning arrivals",
+                "To select, mix, and broadcast professional video feeds and presentation slides in real time",
+                "To regulate water temperature in backstage private restrooms for executive VIPs"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« SDI video switcher » (mélangeur vidéo broadcast professionnel) sélectionne et commute instantanément les flux caméras, présentations PowerPoint et magnétos vidéo vers les écrans de scène et le direct web."
+            },
+            {
+              "prompt_fr": "Pourquoi choisit-on un « high-brightness laser projector » pour diffuser des présentations dans un grand auditorium éclairé ?",
+              "choices": [
+                "To cut metal plates and aluminum framing tubes during stage construction work",
+                "To significantly reduce power consumption by plunging the auditorium into pitch-black darkness",
+                "To display sharp, high-contrast graphics and video even under strong stage illumination"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« High-brightness laser projector » (vidéoprojecteur laser de 20 000 à 30 000 lumens) garantit une image nette et lisible malgré la lumière ambiante des projecteurs de scène. Ce n'est pas un outil de découpe industrielle."
+            },
+            {
+              "prompt_fr": "Quel rôle remplit le « prompter operator » durant le discours d'un dirigeant d'entreprise ?",
+              "choices": [
+                "He controls the scroll speed of the speech text on glass reflectors to match the speaker natural cadence",
+                "He provides simultaneous spoken translation into foreign languages over wireless headphones",
+                "He quietly whispers suggested answers when difficult questions are asked by journalists"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Prompter operator » (opérateur téléprompteur) régule le défilement du discours sur les miroirs sans tain pour s'adapter en direct au rythme d'élocution de l'orateur, sans que le public ne voie le texte."
+            },
+            {
+              "prompt_fr": "Quel type de console permet de gérer simultanément plusieurs caméras de plateau en direct avec incrustations et titrage ?",
+              "choices": [
+                "A comprehensive manual kitchen food vegetable slicer",
+                "A professional multi-camera video switcher",
+                "A desktop office color document scanner"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Multi-camera switcher » (régie de captation multi-caméras) permet au réalisateur de basculer entre plan large, plans serrés des intervenants et incrustations (picture-in-picture / synthés de noms)."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Transmets les consignes à la régie vidéo avant l'entrée des congressistes : demande de calibrer le projecteur laser forte puissance, de vérifier le mélangeur SDI multicaméra et de caler le défilement du prompteur avec l'opérateur.",
+            "context_en": "Rehearsals are starting in fifteen minutes for the opening keynote.",
+            "model_answer_en": "Please check all camera inputs on the SDI video switcher and ensure the multi-camera switcher responds without frame delay. Calibrate the output on the high-brightness laser projector to prevent color wash on stage. Coordinate with the prompter operator to run the complete keynote speech at conversational speed.",
+            "model_answer_fr": "Veuillez vérifier toutes les entrées caméras sur le mélangeur vidéo SDI et vous assurer que le pupitre mélangeur multicaméra répond sans perte d'image. Calibrez la sortie sur le vidéoprojecteur laser forte puissance pour éviter toute décoloration sur scène. Coordonnez-vous avec l'opérateur prompteur pour répéter l'intégralité du discours d'ouverture au rythme d'une conversation.",
+            "key_phrases": [
+              "SDI video switcher",
+              "multi-camera switcher",
+              "high-brightness laser projector",
+              "prompter operator"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-stage-power-and-heavy-rigging",
+          "title_fr": "Équilibrer les charges électriques et contrôler le levage motorisé",
+          "term_ids": [
+            "three-phase-power-supply",
+            "to-balance-phase-loads",
+            "motorized-chain-hoist",
+            "dead-weight-calculation",
+            "to-inspect-rigging-slings"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "Lucía, the master electrical board is drawing forty amps on phase one and only ten on phase three.",
+              "text_fr": "Lucía, le tableau électrique principal tire quarante ampères sur la phase un et seulement dix sur la phase trois."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "We must rebalance the dimmers immediately to balance phase loads across the three-phase power supply.",
+              "text_fr": "Nous devons rééquilibrer les gradateurs immédiatement pour équilibrer les charges des phases sur l'alimentation triphasée."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Understood. The riggers are also preparing to hoist the main LED screen array.",
+              "text_fr": "C'est noté. Les riggers se préparent également à lever l'ensemble du mur LED principal."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Verify the structural dead-weight calculation, inspect rigging slings, and test each motorized chain hoist before lifting.",
+              "text_fr": "Vérifie le calcul de charge statique de la structure, inspecte les élingues de levage et teste chaque palan électrique à chaîne avant de lever."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel type d'alimentation électrique triphasée de forte intensité est indispensable pour alimenter les gradateurs et murs d'écrans LED ?",
+              "choices": [
+                "A comprehensive single AA alkaline consumer battery cell",
+                "A domestic low-power two-prong wall outlet",
+                "A heavy three-phase industrial power supply"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Three-phase power supply » (alimentation électrique triphasée 380V/400V, souvent 63A ou 125A) fournit la puissance requise pour les installations lourdes d'éclairage, de son et d'écrans géants."
+            },
+            {
+              "prompt_fr": "Quelle précaution électrique vitale consiste à « balance phase loads » lors du raccordement des armoires de distribution ?",
+              "choices": [
+                "Distribute electrical amperage equally across all three live phases to prevent transformer overload and breaker trips",
+                "Concentrate one hundred percent of power draw on a single wire to test emergency fire resistance",
+                "Paint power cables in different decorative colors to match the corporate sponsor brand guidelines"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To balance phase loads » (équilibrer les phases) consiste à répartir équitablement les appareils sur les trois phases pour éviter tout déséquilibre du neutre et disjonction du transformateur principal."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'un « motorized chain hoist » dans le levage scénique événementiel ?",
+              "choices": [
+                "A comprehensive manual garden bicycle chain used to tie light conference signs to exit doorways",
+                "An electrically powered motor driving heavy-duty steel chains to lift overhead rigging trusses and equipment",
+                "An emergency mechanical winch designed solely to pull broken delivery trucks into parking bays"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Motorized chain hoist » (moteur électrique à chaîne / palan de levage certifié BGV-C1) soulève et maintient en suspension les ponts de lumière et grappes d'enceintes en toute sécurité."
+            },
+            {
+              "prompt_fr": "Que vérifie scrupuleusement un rigger professionnel lorsqu'il calcule la « dead-weight calculation » d'une structure suspendue ?",
+              "choices": [
+                "The commercial retail price of empty cardboard flight case boxes delivered by freight couriers",
+                "The average body weight of attendees sitting in the front-row VIP auditorium seats",
+                "The total cumulative physical weight of trusses, motors, cables, and lighting fixtures hung from ceiling beams"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Dead-weight calculation » (calcul de charge statique et ponctuelle) additionne le poids réel de chaque projecteur, câble, moteur et structure pour s'assurer de ne jamais dépasser la résistance admissible de la toiture."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige une fiche de conformité technique avant levage : atteste que l'alimentation électrique triphasée a ses phases équilibrées, que le calcul de charge statique a été approuvé, que les élingues ont été inspectées et que chaque palan électrique a été testé.",
+            "context_en": "Safety officer requires written confirmation before screen hoisting.",
+            "model_answer_en": "Our electrical contractor confirmed balanced currents across the three-phase power supply to balance phase loads safely. The structural engineer approved the dead-weight calculation for the central LED cluster. Riggers took time to inspect rigging slings and perform functional load tests on every motorized chain hoist.",
+            "model_answer_fr": "Notre entrepreneur électricien a confirmé des intensités équilibrées sur l'alimentation électrique triphasée afin d'équilibrer les charges des phases en toute sécurité. L'ingénieur structure a approuvé le calcul de charge statique pour le mur LED central. Les riggers ont pris le temps d'inspecter les élingues de levage et d'effectuer des tests de charge fonctionnels sur chaque palan électrique à chaîne.",
+            "key_phrases": [
+              "three-phase power supply",
+              "to balance phase loads",
+              "dead-weight calculation",
+              "to inspect rigging slings",
+              "motorized chain hoist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-manager-budgeting-and-vendor-negotiations",
+      "title_fr": "Bâtir le devis détaillé et négocier les coûts prestataires",
+      "title_en": "Build itemized budgets and negotiate vendor costs",
+      "situation_fr": "Tu finalises les accords commerciaux avec les loueurs et le lieu d'accueil. Tu négocies les dépassements d'horaires, vérifies les jalons de facturation et contrôles les pénalités.",
+      "guide": {
+        "intro_fr": "Piloter le budget exige de surveiller les écarts prévisionnel-réalisé (« event budget variance »). Tu t'appuies sur un contrat-cadre prestataire (« master vendor agreement ») pour faire respecter les jalons (« to enforce contractual milestones ») et exiges que la fiche technique soit validée avant l'installation (« the technical rider must be signed before setup »). En cas de manquement, tu appliques les indemnités forfaitaires (« liquidated damages clause ») ou la résiliation (« contract termination clause »). Tout changement fait l'objet d'un avenant (« technical rider amendment »). Tu veilles aussi à l'exclusivité du lieu (« venue exclusivity clause ») et aux horaires, car tout dépassement (« venue curfew violation ») entraîne des pénalités immédiates (« any breach of curfew incurs immediate penalty charges ») lors des contrôles inopinés (« unannounced venue inspection »).",
+        "key_phrases": [
+          {
+            "en": "We must analyze our event budget variance to prevent cost overruns.",
+            "fr": "Nous devons analyser notre écart budgétaire pour éviter les dépassements de coûts."
+          },
+          {
+            "en": "All terms fall under our master vendor agreement signed earlier this year.",
+            "fr": "Toutes les conditions relèvent de notre contrat-cadre prestataire signé plus tôt cette année."
+          },
+          {
+            "en": "The contract includes a liquidated damages clause for late delivery.",
+            "fr": "Le contrat inclut une clause d'indemnités forfaitaires en cas de retard de livraison."
+          },
+          {
+            "en": "The technical rider must be signed before setup begins on site.",
+            "fr": "La fiche technique doit être validée avant le début de l'installation sur le site."
+          },
+          {
+            "en": "Any breach of curfew incurs immediate penalty charges from city authorities.",
+            "fr": "Tout dépassement d'horaire entraîne des pénalités financières immédiates des autorités municipales."
+          },
+          {
+            "en": "We will review the vendor performance scorecard during our post-event debriefing.",
+            "fr": "Nous examinerons la grille d'évaluation des prestataires pendant notre debriefing post-événement."
+          }
+        ],
+        "tip_fr": "Attention au faux ami juridique : « liquidated damages » ne signifie pas des « dégâts liquidés », mais des « indemnités forfaitaires contractuelles » préfixées en cas de retard ou de manquement. Ne confonds pas non plus « curfew » (heure limite légale de fermeture ou d'extinction du son) avec un simple retard de programme."
+      },
+      "lessons": [
+        {
+          "id": "event-manager-itemized-budget-and-variance-tracking",
+          "title_fr": "Contrôler les écarts budgétaires et verrouiller les accords-cadres",
+          "term_ids": [
+            "event-budget-variance",
+            "master-vendor-agreement",
+            "to-enforce-contractual-milestones",
+            "the-technical-rider-must-be-signed-before-setup"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Kenji, our latest financial review indicates a five percent event budget variance on the staging line.",
+              "text_fr": "Kenji, notre dernier examen financier indique un écart budgétaire de cinq pour cent sur la ligne scénique."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Can we invoke our negotiated discounts under the master vendor agreement with the staging company?",
+              "text_fr": "Pouvons-nous faire jouer nos remises négociées au titre du contrat-cadre prestataire avec la société de scène ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Yes, our job is to enforce contractual milestones before releasing the second progress payment.",
+              "text_fr": "Oui, notre travail est de faire respecter les jalons contractuels avant de débloquer le deuxième paiement d'étape."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Agreed, and we must remind their production lead that the technical rider must be signed before setup.",
+              "text_fr": "D'accord, et nous devons rappeler à leur responsable de production que la fiche technique doit être validée avant l'installation."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que mesure précisément l'indicateur d'« event budget variance » dans le pilotage comptable d'un projet ?",
+              "choices": [
+                "The financial difference between forecasted cost line items and actual expenditures incurred",
+                "The full commercial physical distance in meters between the loading dock and the main keynote stage",
+                "The total number of hours worked by external temporary catering waitstaff"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Budget variance » (écart budgétaire) calcule la différence entre les dépenses réelles et les coûts prévisionnels de chaque poste (audio, traiteur, lieu) pour anticiper les dérives."
+            },
+            {
+              "prompt_fr": "Quel est le principal avantage de négocier un « master vendor agreement » avec un grand prestataire technique ?",
+              "choices": [
+                "It allows the vendor to cancel services at the last minute without any legal consequence or refund",
+                "It secures pre-negotiated volume discount rates and standardized service terms across multiple recurring events",
+                "It forces the event agency to pay double the standard market price on all emergency equipment rentals"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Master vendor agreement » (accord-cadre fournisseur) fige des tarifs remisés, des conditions de paiement avantageuses et des niveaux de service contractuels sur l'ensemble des projets de l'année."
+            },
+            {
+              "prompt_fr": "Quelle expression juridique anglaise désigne l'obligation de faire respecter les étapes de validation et livrables contractuels ?",
+              "choices": [
+                "To waive all vendor accountability",
+                "To ignore project delivery deadlines",
+                "To enforce contractual milestones"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To enforce contractual milestones » signifie veiller à ce que chaque étape convenue (ex. validation des plans, acompte, livraison) soit rigoureusement exécutée dans les délais impartis."
+            },
+            {
+              "prompt_fr": "Complète la règle de gestion de production : « The ___ must be signed by the technical director before equipment setup commences. »",
+              "choices": [
+                "technical rider and work order",
+                "catering dessert order menu",
+                "guest attendee souvenir postcard"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Technical rider and work order » (fiche technique et ordre de mission) doit être formellement paraphée avant de débuter l'installation afin de verrouiller matériellement les engagements des équipes."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige un e-mail au prestataire audiovisuel : signale l'écart budgétaire constaté, rappelle les conditions du contrat-cadre prestataire, exige la validation des jalons contractuels et rappelle que la fiche technique doit être signée avant l'installation.",
+            "context_en": "Vendor submitted an extra billing request for unexpected truss brackets.",
+            "model_answer_en": "We reviewed your revised quotation and identified an unexpected event budget variance that exceeds our cap. Please remember that all pricing is strictly governed by our master vendor agreement. We intend to enforce contractual milestones before releasing further payments, and the technical rider must be signed before setup.",
+            "model_answer_fr": "Nous avons examiné votre devis révisé et constaté un écart budgétaire imprévu qui dépasse notre plafond. Veuillez noter que tous les tarifs sont strictement encadrés par notre contrat-cadre prestataire. Nous comptons faire respecter les jalons contractuels avant de libérer d'autres paiements, et la fiche technique doit être validée avant l'installation.",
+            "key_phrases": [
+              "event budget variance",
+              "master vendor agreement",
+              "to enforce contractual milestones",
+              "the technical rider must be signed before setup"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-vendor-contracts-and-penalty-clauses",
+          "title_fr": "Négocier les clauses de résiliation et les indemnités forfaitaires",
+          "term_ids": [
+            "liquidated-damages-clause",
+            "contract-termination-clause",
+            "indemnification-agreement",
+            "technical-rider-amendment"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Marcus",
+              "text_en": "Sarah, the LED screen supplier delivered three hours late, disrupting our rehearsal schedule.",
+              "text_fr": "Sarah, le fournisseur du mur LED a livré avec trois heures de retard, perturbant notre planning de répétitions."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Our procurement contract includes an enforceable liquidated damages clause for unexcused delays.",
+              "text_fr": "Notre contrat d'achat comporte une clause d'indemnités forfaitaires applicable pour retards non justifiés."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "They also want to change two sound consoles that were specified in the original agreement.",
+              "text_fr": "Ils souhaitent aussi remplacer deux consoles son qui étaient spécifiées dans l'accord initial."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "They must submit an official technical rider amendment, or we will activate the contract termination clause under our mutual indemnification agreement.",
+              "text_fr": "Ils doivent soumettre un avenant officiel à la fiche technique, sinon nous activerons la clause de résiliation contractuelle au titre de notre engagement d'indemnisation mutuelle."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle clause contractuelle stipule une somme forfaitaire préétablie due par le prestataire en cas de retard de livraison injustifié ?",
+              "choices": [
+                "A complimentary hospitality voucher",
+                "A liquidated damages clause",
+                "A discretionary vendor bonus gift"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Liquidated damages clause » (clause de dommages et intérêts forfaitaires / pénalités de retard) fixe à l'avance le montant de l'indemnisation financière par heure ou jour de retard imputable au prestataire."
+            },
+            {
+              "prompt_fr": "Que stipule formellement un « indemnification agreement » entre un producteur d'événement et ses sous-traitants ?",
+              "choices": [
+                "The full commercial producer agrees to cover all personal living expenses and holidays of the subcontractor staff",
+                "The client promises never to inspect the quality or safety of installed stage structures",
+                "The vendor agrees to hold harmless and defend the producer against third-party claims arising from their work"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Indemnification agreement » (garantie d'indemnisation et clause de non-recours) oblige le prestataire à couvrir financièrement le producteur contre toute plainte ou dommage causé par ses employés ou son matériel."
+            },
+            {
+              "prompt_fr": "Quelle clause juridique formalise les motifs précis (défaut grave, inexécution) permettant de rompre immédiatement un contrat de prestation ?",
+              "choices": [
+                "A contract termination clause",
+                "A voluntary frequent flyer agreement",
+                "A printed banquet menu amendment"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Contract termination clause » (clause résolutoire / clause de résiliation) définit les conditions de rupture anticipée du contrat avec ou sans préavis en cas de manquement grave aux obligations."
+            },
+            {
+              "prompt_fr": "Quel document officiel modifie par écrit les spécifications techniques initiales convenues sans avoir à réécrire l'intégralité du contrat ?",
+              "choices": [
+                "An itemized unsigned oral corridor conversation",
+                "A technical rider amendment or addendum",
+                "A promotional social media public post"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Technical rider amendment » (avenant à la fiche technique) constate formellement les ajouts ou suppressions de matériel avec réajustement correspondant du devis."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige une mise en demeure formelle à un prestataire défaillant : rappelle l'application de la clause d'indemnités forfaitaires pour le retard, exige un avenant à la fiche technique pour tout changement matériel et menace d'activer la clause de résiliation sous l'accord d'indemnisation mutuelle.",
+            "context_en": "Audio contractor arrived late with unapproved microphone models.",
+            "model_answer_en": "Due to your unexcused load-in delay, we are applying the liquidated damages clause specified in section four of our agreement. Furthermore, any hardware substitution requires an executed technical rider amendment by noon. Failure to comply will compel us to trigger the contract termination clause in accordance with our indemnification agreement.",
+            "model_answer_fr": "En raison de votre retard de déchargement non justifié, nous appliquons la clause d'indemnités forfaitaires précisée à l'article quatre de notre contrat. En outre, toute substitution de matériel nécessite un avenant à la fiche technique validé avant midi. À défaut, nous serons contraints d'activer la clause de résiliation contractuelle conformément à notre engagement d'indemnisation mutuelle.",
+            "key_phrases": [
+              "liquidated damages clause",
+              "technical rider amendment",
+              "contract termination clause",
+              "indemnification agreement"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-venue-exclusivity-and-curfew-rules",
+          "title_fr": "Faire respecter les horaires de couvre-feu et l'exclusivité du site",
+          "term_ids": [
+            "venue-exclusivity-clause",
+            "venue-curfew-violation",
+            "any-breach-of-curfew-incurs-immediate-penalty-charges",
+            "unannounced-venue-inspection"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Tomasz, the client wants to bring an external bar catering team into the exhibition hall.",
+              "text_fr": "Tomasz, le client souhaite faire entrer une équipe de bar extérieur dans le hall d'exposition."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "We cannot allow that because the venue contract includes a strict venue exclusivity clause for food and beverage.",
+              "text_fr": "Nous ne pouvons pas l'autoriser car le contrat du lieu comporte une clause stricte d'exclusivité sur la restauration."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "What about the after-party sound levels? The DJ wants to play until two in the morning.",
+              "text_fr": "Qu'en est-il du niveau sonore de la soirée ? Le DJ veut jouer jusqu'à deux heures du matin."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "The municipal permit ends at midnight; any venue curfew violation carries heavy fines, and any breach of curfew incurs immediate penalty charges during an unannounced venue inspection.",
+              "text_fr": "L'arrêté municipal prend fin à minuit ; tout dépassement des horaires autorisés entraîne de lourdes amendes, et tout dépassement d'horaire entraîne des pénalités financières immédiates lors d'un contrôle inopiné de sécurité."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que stipule une « venue exclusivity clause » imposée par certains centres de congrès historiques ?",
+              "choices": [
+                "The full commercial organizer is prohibited from inviting foreign international attendees or press reporters",
+                "The venue owner retains the right to shut off power supplies without notice during keynote speeches",
+                "The organizer is contractually required to use the venue preferred in-house catering and audiovisual partners"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Venue exclusivity clause » (clause de référencement exclusif) oblige le client à contracter avec les prestataires agréés du lieu (restauration, sécurité, audiovisuel) sous peine de pénalités ou de droits de bouchon."
+            },
+            {
+              "prompt_fr": "Quel est le risque immédiat et coûteux lié à une « venue curfew violation » lors d'un démontage nocturne qui déborde des heures convenues ?",
+              "choices": [
+                "Severe contractual financial penalties and mandatory overtime billing for municipal building staff",
+                "An itemized immediate award of complimentary future rental days free of charge from the venue management",
+                "The complete cancellation of all recorded video footage captured during the day sessions"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Venue curfew violation » (dépassement du couvre-feu / heure limite de libération des lieux) engendre des pénalités financières contractuelles très lourdes et la facturation d'heures supplémentaires des gardiens et pompiers."
+            },
+            {
+              "prompt_fr": "Complète l'avertissement réglementaire : « Any breach of curfew incurs immediate ___ charged per thirty-minute block. »",
+              "choices": [
+                "gourmet banquet tasting vouchers",
+                "penalty charges and overtime fees",
+                "complimentary gift basket items"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Penalty charges and overtime fees » (frais de pénalité et majorations d'heures supplémentaires) sanctionnent tout dépassement horaire d'occupation des espaces."
+            },
+            {
+              "prompt_fr": "Que risque le producteur si une « unannounced venue inspection » de la police municipale constate des issues de secours obstruées ?",
+              "choices": [
+                "A comprehensive cash rebate voucher offered by municipal authorities on the upcoming annual tax bill",
+                "An official invitation to display promotional advertising posters across municipal buses",
+                "Immediate formal notice and potential administrative closure of the event for public safety non-compliance"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une inspection inopinée (« unannounced venue inspection ») constatant des issues de secours bloquées peut entraîner l'interruption immédiate de l'événement et un arrêté préfectoral de fermeture pour mise en danger d'autrui."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Transmets une consigne formelle au DJ et au responsable de salle : rappelle la clause d'exclusivité du traiteur, informe qu'un contrôle inopiné peut avoir lieu et rappelle fermement que tout dépassement d'horaire entraîne des pénalités financières immédiates.",
+            "context_en": "DJ is asking to extend music until one a.m.",
+            "model_answer_en": "Please remember that all operations must respect the venue exclusivity clause agreed with local providers. Police and fire officers may conduct an unannounced venue inspection at any point tonight. All sound must shut down at midnight sharp, as any breach of curfew incurs immediate penalty charges.",
+            "model_answer_fr": "Veuillez vous rappeler que toutes les opérations doivent respecter la clause d'exclusivité convenue avec les prestataires locaux. La police et les pompiers peuvent effectuer un contrôle inopiné du site à tout moment ce soir. Tout son doit s'arrêter à minuit tapante, car tout dépassement d'horaire entraîne des pénalités financières immédiates.",
+            "key_phrases": [
+              "venue exclusivity clause",
+              "unannounced venue inspection",
+              "any breach of curfew incurs immediate penalty charges"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-vendor-scorecard-and-final-audit",
+          "title_fr": "Évaluer les performances prestataires et dresser le bilan financier",
+          "term_ids": [
+            "vendor-performance-scorecard",
+            "post-event-audit-report",
+            "comprehensive-event-debriefing",
+            "structural-safety-sign-off"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucía",
+              "text_en": "Marcus, the tear-down is complete and the venue handover inspection went smoothly.",
+              "text_fr": "Marcus, le démontage est terminé et l'état des lieux de sortie s'est déroulé sans accroc."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Excellent. I am compiling our vendor performance scorecard for every technical supplier.",
+              "text_fr": "Excellent. Je compile notre grille d'évaluation des prestataires pour chaque fournisseur technique."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Did the rigging company file their signed structural safety sign-off with our safety coordinator?",
+              "text_fr": "La société de levage a-t-elle déposé son visa de conformité de sécurité structurelle auprès de notre coordinateur de sécurité ?"
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Yes, it is archived. We will present the full post-event audit report during tomorrow's comprehensive event debriefing.",
+              "text_fr": "Oui, il est archivé. Nous présenterons le rapport d'audit post-événement complet lors du debriefing exhaustif de demain."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est l'utilité d'une « vendor performance scorecard » après la clôture d'une manifestation ?",
+              "choices": [
+                "To objectively evaluate supplier punctuality, technical quality, safety compliance, and team responsiveness",
+                "To systematically display personal private ratings of corporate executives on publicly accessible billboards",
+                "To calculate individual tax deductions for freelance stage riggers working on night shifts"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Vendor performance scorecard » (grille d'évaluation des prestataires) mesure objectivement le respect des délais, la qualité du matériel et le professionnalisme des équipes pour décider de futures reconductions."
+            },
+            {
+              "prompt_fr": "Quel document final récapitule l'ensemble des dépenses réelles, des économies réalisées et analyse les écarts budgétaires ?",
+              "choices": [
+                "A comprehensive preliminary unpriced draft brochure",
+                "A comprehensive post-event audit report",
+                "A printed banquet place card table plan"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Post-event audit report » (bilan financier et d'exploitation post-événement) compile les factures définitives, compare le réalisé au prévisionnel et formalise le bilan financier pour le client."
+            },
+            {
+              "prompt_fr": "Quelle réunion collégiale réunit les chefs de projet, la régie et le client pour analyser ce qui a fonctionné et identifier les axes d'amélioration ?",
+              "choices": [
+                "A formal press product launch announcement",
+                "A first-round preliminary client briefing",
+                "A comprehensive event debriefing meeting"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Event debriefing » (réunion de bilan / RETEX) permet à toutes les parties prenantes de faire un retour d'expérience constructif à froid sur les points forts et les dysfonctionnements observés."
+            },
+            {
+              "prompt_fr": "Quel document officiel signé par un bureau d'études atteste qu'une structure scénique lourde respecte les normes de résistance mécanique ?",
+              "choices": [
+                "A certified structural safety sign-off",
+                "An itemized informal oral phone agreement",
+                "A hotel breakfast catering voucher"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Structural safety sign-off » (attestation de conformité et solidité à froid) certifie que les scènes, tours d'échafaudage et ponts suspendus ont été vérifiés et autorisés à accueillir des charges."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige la conclusion du rapport de clôture pour le comité de direction : confirme l'archivage du visa de sécurité structurelle, mentionne la notation des prestataires sur la grille de performance et annonce la tenue du débriefing exhaustif.",
+            "context_en": "Leadership meeting is scheduled for tomorrow at two p.m.",
+            "model_answer_en": "Our operations team obtained and archived the official structural safety sign-off from the inspection authority. We finalized the vendor performance scorecard to evaluate contractor responsiveness and delivery reliability. These metrics and the complete post-event audit report will be reviewed during tomorrow's comprehensive event debriefing.",
+            "model_answer_fr": "Notre équipe des opérations a obtenu et archivé le visa officiel de conformité de sécurité structurelle délivré par l'organisme de contrôle. Nous avons finalisé la grille d'évaluation des prestataires pour mesurer la réactivité et la fiabilité de livraison de nos sous-traitants. Ces indicateurs et le rapport d'audit post-événement complet seront examinés lors du debriefing exhaustif de demain.",
+            "key_phrases": [
+              "structural safety sign-off",
+              "vendor performance scorecard",
+              "post-event audit report",
+              "comprehensive event debriefing"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-manager-contracts-and-liability-coverage",
+      "title_fr": "Rédiger les clauses contractuelles et vérifier les assurances",
+      "title_en": "Draft contractual clauses and verify liability coverage",
+      "situation_fr": "Face aux aléas majeurs d'annulation, de catastrophe naturelle ou d'injonction administrative, tu audits les polices d'assurance tous risques, blindes les clauses de force majeure et fais homologuer les installations suspendues.",
+      "guide": {
+        "intro_fr": "La gestion des risques juridiques impose une rigueur contractuelle absolue. Face aux sinistres majeurs, tu sais invoquer les garanties de force majeure (« to invoke force majeure protections ») fondées sur une exonération pour cas fortuit (« act-of-God contractual exemption »). Tu vérifies que les clauses de force majeure s'activent sur notification officielle (« force majeure provisions take effect upon official government notice »), prévois des clauses de non-recours (« cross-indemnity hold-harmless provision ») et mandater l'expertise des pertes (« event cancellation loss adjustment »). Tu audits la police tous risques (« comprehensive all-risk event policy ») et obtiens l'arrêté d'homologation (« safety commission homologation clearance »). Enfin, tu exiges le visa de l'ingénieur structure (« structural engineer sign-off ») et fais certifier les charges suspendues (« to certify structural hanging loads ») avant tout levage.",
+        "key_phrases": [
+          {
+            "en": "We are entitled to invoke force majeure protections following the government decree.",
+            "fr": "Nous sommes fondés à invoquer les garanties de force majeure à la suite du décret gouvernemental."
+          },
+          {
+            "en": "The contract includes an act-of-God contractual exemption covering extreme weather events.",
+            "fr": "Le contrat inclut une exonération contractuelle pour cas fortuit couvrant les intempéries extrêmes."
+          },
+          {
+            "en": "Force majeure provisions take effect upon official government notice.",
+            "fr": "Les clauses de force majeure prennent effet dès notification administrative."
+          },
+          {
+            "en": "Our comprehensive all-risk event policy covers full indemnification for speaker abandonment.",
+            "fr": "Notre police d'assurance événementielle tous risques couvre l'indemnisation intégrale en cas d'abandon de l'orateur."
+          },
+          {
+            "en": "We obtained the safety commission homologation clearance for maximum venue occupancy.",
+            "fr": "Nous avons obtenu l'arrêté d'homologation de sécurité pour la jauge maximale du site."
+          },
+          {
+            "en": "Rigging inspection must be certified prior to hoisting the overhead video screens.",
+            "fr": "L'inspection du levage doit être certifiée avant tout levage des écrans vidéo suspendus."
+          }
+        ],
+        "tip_fr": "Attention aux subtilités juridiques anglo-saxonnes : « act of God » est le terme juridique standard pour désigner une catastrophe naturelle imprévisible et irrésistible (ouragan, séisme, inondation). Une clause « hold harmless » (clause de non-recours) engage une partie à exonérer l'autre de toute responsabilité civile en cas d'accident survenu dans son périmètre."
+      },
+      "lessons": [
+        {
+          "id": "event-manager-force-majeure-and-act-of-god-clauses",
+          "title_fr": "Invoquer les clauses de force majeure et d'exonération pour cas fortuit",
+          "term_ids": [
+            "act-of-god-contractual-exemption",
+            "to-invoke-force-majeure-protections",
+            "force-majeure-provisions-take-effect-upon-official-government-notice",
+            "cross-indemnity-hold-harmless-provision",
+            "event-cancellation-loss-adjustment"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Marcus, the regional prefecture issued an emergency curfew order halting all public gatherings due to severe flooding.",
+              "text_fr": "Marcus, la préfecture régionale a émis un arrêté de couvre-feu d'urgence suspendant tous les rassemblements publics en raison de graves inondations."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Under section nine of our venue contract, this severe storm qualifies as an act-of-God contractual exemption.",
+              "text_fr": "Selon l'article neuf de notre contrat de salle, cette violente tempête constitue une exonération contractuelle pour cas fortuit."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Our legal counsel instructed us to invoke force majeure protections immediately to limit financial exposure.",
+              "text_fr": "Notre conseiller juridique nous a donné instruction d'invoquer les garanties de force majeure immédiatement pour limiter l'exposition financière."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Remember that force majeure provisions take effect upon official government notice, and our cross-indemnity hold-harmless provision protects us during the event cancellation loss adjustment.",
+              "text_fr": "Rappelle-toi que les clauses de force majeure prennent effet dès notification administrative, et notre clause croisée de garantie et de non-recours nous protège pendant l'expertise des pertes d'exploitation d'annulation."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Dans quel cas précis une juridiction reconnaît-elle l'application d'une clause d'« act of god contractual exemption » ?",
+              "choices": [
+                "A minor technical delay caused by a missing audio cable during morning rehearsals",
+                "An unforeseeable natural catastrophe such as an earthquake, severe hurricane, or volcanic eruption",
+                "A corporate client decision to cancel a conference because ticket sales were slower than anticipated"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Act of God » (cas fortuit / catastrophe naturelle irrésistible) désigne des événements naturels violents et imprévisibles échappant totalement au contrôle des parties (séisme, inondation majeure, tempête historique)."
+            },
+            {
+              "prompt_fr": "Que déclenche formellement la décision de « to invoke force majeure protections » pour un organisateur d'événement ?",
+              "choices": [
+                "It automatically forces the municipal police to pay all vendor invoices on behalf of the client",
+                "It requires all attendees to purchase new full-price tickets for a rescheduled date",
+                "It suspends or discharges contractual obligations without liability for damages when an unavoidable external event prevents execution"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Invoquer la force majeure (« to invoke force majeure protections ») dégage les parties de leur responsabilité pour inexécution lorsque des circonstances exceptionnelles et insurmontables rendent la tenue de l'événement légalement ou physiquement impossible."
+            },
+            {
+              "prompt_fr": "Quel est le rôle d'une « cross-indemnity hold-harmless provision » dans un contrat liant plusieurs partenaires événementiels ?",
+              "choices": [
+                "Each party agrees not to sue the other and to indemnify against third-party claims arising from their own respective fault",
+                "All parties agree to combine their annual financial profits into a shared single bank account",
+                "Subcontractors agree to work for free in exchange for promotional mention on social media"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Cross-indemnity hold-harmless provision » (clause réciproque de garantie et de non-recours) protège chaque cocontractant contre les réclamations de tiers découlant de la négligence de l'autre partie."
+            },
+            {
+              "prompt_fr": "Que détermine l'expert d'assurance lors de la procédure d'« event cancellation loss adjustment » ?",
+              "choices": [
+                "He assesses the artistic performance quality of keynote speakers during their presentations",
+                "He calculates the exact financial indemnity payable based on proven sunk costs and non-recoverable expenses incurred",
+                "He decides which delegates receive complimentary airline frequent flyer mileage points"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Loss adjustment » (expertise et règlement des sinistres / évaluation des pertes) détermine le montant de l'indemnité d'assurance versée après examen des factures de dépenses engagées non récupérables."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Rédige une notification juridique formelle au propriétaire de la salle d'exposition : notifie l'annulation pour cas fortuit, invoque formellement les garanties de force majeure en citant la notification administrative officielle, rappelle la clause croisée de non-recours et annonce l'expertise des pertes d'exploitation.",
+            "context_en": "Prefecture shut down all exhibition centers due to hurricane alert.",
+            "model_answer_en": "Following the municipal decree shutting down public assemblies, we officially write to invoke force majeure protections under our agreement. This catastrophic flooding constitutes a recognized act-of-God contractual exemption, and force majeure provisions take effect upon official government notice. We will rely on our cross-indemnity hold-harmless provision throughout the upcoming event cancellation loss adjustment.",
+            "model_answer_fr": "À la suite de l'arrêté municipal suspendant les rassemblements publics, nous vous écrivons officiellement pour invoquer les garanties de force majeure aux termes de notre contrat. Cette inondation catastrophique constitue une exonération contractuelle pour cas fortuit reconnue, et les clauses de force majeure prennent effet dès notification administrative. Nous nous prévaudrons de notre clause croisée de garantie et de non-recours tout au long de la prochaine expertise des pertes d'exploitation d'annulation.",
+            "key_phrases": [
+              "to invoke force majeure protections",
+              "act-of-God contractual exemption",
+              "force majeure provisions take effect upon official government notice",
+              "cross-indemnity hold-harmless provision",
+              "event cancellation loss adjustment"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-all-risk-insurance-and-homologation",
+          "title_fr": "Souscrire l'assurance tous risques et obtenir les arrêtés d'homologation",
+          "term_ids": [
+            "comprehensive-all-risk-event-policy",
+            "safety-commission-homologation-clearance",
+            "venue-occupancy-limit-injunction",
+            "critical-path-schedule-slippage"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "Priya, our insurance underwriter delivered the final comprehensive all-risk event policy document.",
+              "text_fr": "Priya, notre souscripteur d'assurance a délivré le document final de la police d'assurance événementielle tous risques."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Does it cover losses resulting from critical path schedule slippage during our complicated stage build?",
+              "text_fr": "Couvre-t-elle les pertes résultant d'une dérive du calendrier sur le chemin critique pendant notre montage scénique complexe ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Yes, provided we secure our safety commission homologation clearance seventy-two hours prior to opening.",
+              "text_fr": "Oui, à condition que nous obtenions notre arrêté préfectoral d'homologation de sécurité soixante-douze heures avant l'ouverture."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "That will also shield our production against any catastrophic venue occupancy limit injunction from the fire marshal.",
+              "text_fr": "Cela protégera également notre production contre toute mise en demeure catastrophique pour dépassement de jauge légale de la part des pompiers."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle couverture d'assurance protège l'organisateur contre les dommages matériels au site, la perte d'équipements et la responsabilité civile ?",
+              "choices": [
+                "A standard one-day vehicle parking ticket",
+                "A non-certified office equipment brochure",
+                "A comprehensive all-risk event policy"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Comprehensive all-risk event policy » (police d'assurance tous risques manifestation) couvre la responsabilité civile exploitation, les dommages aux biens loués et les pertes financières."
+            },
+            {
+              "prompt_fr": "Pourquoi l'obtention de la « safety commission homologation clearance » est-elle indispensable avant toute ouverture des portes ?",
+              "choices": [
+                "Because opening a public event without official municipal safety sign-off constitutes an illegal criminal offense",
+                "Because it automatically reduces technical audiovisual equipment rental fees by fifty percent",
+                "Because it guarantees sunny and pleasant weather conditions during outdoor evening cocktail hours"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'avis favorable de la commission de sécurité ERP (« safety commission homologation clearance ») est légalement obligatoire. Ouvrir au public sans arrêté municipal constitue un délit pénal entraînant l'évacuation immédiate."
+            },
+            {
+              "prompt_fr": "Que signifie une « venue occupancy limit injunction » signifiée par les services de l'ordre ?",
+              "choices": [
+                "A promotional invitation to recruit additional exhibition sales staff from local universities",
+                "A legally binding order prohibiting any additional persons from entering once certified room density is reached",
+                "An administrative recommendation to reduce audio loudness levels during dinner service hours"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Occupancy limit injunction » (injonction de jauge maximale de sécurité) interdit formellement d'admettre la moindre personne supplémentaire sous peine de sanctions administratives et judiciaires immédiates."
+            },
+            {
+              "prompt_fr": "Quel terme de gestion de projet qualifie un retard sur les tâches charnières provoquant le décalage de la date finale d'ouverture ?",
+              "choices": [
+                "Standard office coffee break extension",
+                "Audio microphone battery replacement",
+                "Critical-path schedule slippage"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Critical-path schedule slippage » (dérive du chemin critique) signifie qu'un retard sur une tâche non compressible (ex. raccordement électrique, levage structurel) retarde inéluctablement l'ouverture générale du salon."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige une note de synthèse pour le comité de pilotage des risques : confirme la souscription de la police d'assurance tous risques, analyse le contrôle de la dérive sur le chemin critique et confirme la réception de l'arrêté d'homologation protégeant contre toute injonction de jauge.",
+            "context_en": "Risk committee requires an update on legal compliance and insurance binder.",
+            "model_answer_en": "We verified full endorsement of our comprehensive all-risk event policy covering both asset damage and adverse weather. Close supervision of our timeline avoided any critical path schedule slippage during stage construction. Furthermore, we received the official safety commission homologation clearance, which prevents any venue occupancy limit injunction.",
+            "model_answer_fr": "Nous avons vérifié la souscription intégrale de notre police d'assurance événementielle tous risques couvrant à la fois les dommages aux actifs et les intempéries. Une supervision étroite de notre calendrier a permis d'éviter toute dérive sur le chemin critique lors du montage scénique. De plus, nous avons obtenu l'arrêté officiel d'homologation de sécurité, ce qui prévient toute mise en demeure pour dépassement de jauge légale.",
+            "key_phrases": [
+              "comprehensive all-risk event policy",
+              "critical path schedule slippage",
+              "safety commission homologation clearance",
+              "venue occupancy limit injunction"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-structural-certifications-and-laser-permits",
+          "title_fr": "Faire certifier les charges suspendues et les périmètres laser",
+          "term_ids": [
+            "structural-engineer-sign-off",
+            "to-certify-structural-hanging-loads",
+            "rigging-inspection-must-be-certified-prior-to-hoisting",
+            "point-load-structural-capacity",
+            "all-laser-projections-require-safety-boundary-certification"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Lucía, the municipal building control officer is inspecting our overhead truss grids today.",
+              "text_fr": "Lucía, l'inspecteur municipal du contrôle des bâtiments inspecte nos ponts de structures suspendus aujourd'hui."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Has the independent civil engineering firm delivered their signed structural engineer sign-off?",
+              "text_fr": "Le cabinet indépendant d'ingénierie civile a-t-il remis son certificat de conformité signé de l'ingénieur structure ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Yes, they came on site to certify structural hanging loads and verified that each bridle respects the point-load structural capacity.",
+              "text_fr": "Oui, ils sont venus sur site pour certifier les charges suspendues admissibles et ont vérifié que chaque élingue en V respecte la résistance structurelle de charge ponctuelle."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Remember our core safety mandate: rigging inspection must be certified prior to hoisting, and all laser projections require safety boundary certification.",
+              "text_fr": "Rappelle-toi notre consigne absolue de sécurité : l'inspection du levage doit être certifiée avant tout levage, et toute projection laser requiert une attestation de périmètre de sécurité."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que garantit formellement le « structural engineer sign-off » avant la montée des charges suspendues en toiture ?",
+              "choices": [
+                "It certifies that ceiling structural calculations, rigging loads, and safety margins fully meet building structural standards",
+                "It promises that all delegate attendee badges will be printed without spelling errors or missing logos",
+                "It certifies that catering buffet food courses will be served at exactly sixty-five degrees Celsius"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Structural engineer sign-off » (visa ou note de calcul d'un bureau de contrôle certifié) garantit que les charges suspendues respectent les limites d'élasticité et de rupture de la charpente du bâtiment."
+            },
+            {
+              "prompt_fr": "Que vérifie un expert en structures lorsqu'il analyse la « point-load structural capacity » d'une poutre de charpente ?",
+              "choices": [
+                "The chemical composition and brand name of detergent used to clean conference center carpets",
+                "The maximum concentrated weight in kilograms that a single specific ceiling node can safely sustain without deformation",
+                "The total optical brightness of video projection monitors measured in foot-candles"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Point-load structural capacity » (charge ponctuelle admissible) est le poids maximal concentré qu'un nœud de charpente peut supporter ponctuellement, distinct de la charge uniformément répartie."
+            },
+            {
+              "prompt_fr": "Complète la consigne de sécurité : « Rigging inspection must be certified ___ to hoisting any motorized lighting truss. »",
+              "choices": [
+                "years after",
+                "unrelated",
+                "prior"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'inspection de conformité des accroches et du matériel de levage doit impérativement être visée avant (« prior to ») tout levage mécanique de structure au-dessus du sol."
+            },
+            {
+              "prompt_fr": "Quelle autorisation stricte est requise dès lors qu'un spectacle intègre des effets laser de haute puissance (Classe 4) ?",
+              "choices": [
+                "Safety boundary certification and laser beam trajectory clearance permits",
+                "A simple verbal confirmation from the hotel banquet headwaiter",
+                "A general printed conference promotional marketing flyer"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Les lasers de spectacle de forte puissance (classe 3B et 4) exigent des certificats de tir, des zones de sécurité définies et le respect scrupuleux des hauteurs minimales d'exposition du public (normes de sécurité optique)."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige une note de conformité technique scénique pour la commission de sécurité : confirme la réception du certificat de l'ingénieur structure, atteste la certification des charges suspendues respectant la capacité ponctuelle, rappelle que l'inspection du levage est certifiée et confirme l'attestation de périmètre laser.",
+            "context_en": "Civil protection inspector is arriving in thirty minutes.",
+            "model_answer_en": "We formally received the official structural engineer sign-off approving all calculations. Independent inspectors came to certify structural hanging loads and verified that each beam node respects point-load structural capacity. Furthermore, our rigging inspection must be certified prior to hoisting, and all laser projections require safety boundary certification.",
+            "model_answer_fr": "Nous avons officiellement reçu le certificat de conformité de l'ingénieur structure approuvant l'ensemble des calculs. Des inspecteurs indépendants sont venus certifier les charges suspendues admissibles et ont vérifié que chaque nœud de poutre respecte la résistance de charge ponctuelle. De plus, l'inspection de notre levage doit être certifiée avant tout levage, et toute projection laser requiert une attestation de périmètre de sécurité.",
+            "key_phrases": [
+              "structural engineer sign-off",
+              "to certify structural hanging loads",
+              "point-load structural capacity",
+              "rigging inspection must be certified prior to hoisting",
+              "all laser projections require safety boundary certification"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-manager-live-failsafe-and-crisis-remediation",
+      "title_fr": "Résoudre les pannes majeures du direct et piloter la cellule de crise",
+      "title_en": "Remediate live system failures and lead crisis response",
+      "situation_fr": "En plein plénière devant deux mille personnes, un incident critique survient. Tu coordonnes le basculement électrique d'urgence, sécurises le flux vidéo et diriges la cellule de crise.",
+      "guide": {
+        "intro_fr": "Face aux pannes critiques du direct, le sang-froid technique est capital. En cas de coupure, tu surmontes la défaillance de l'inverseur (« emergency power transfer switch failure ») via le coupleur de générateur (« emergency generator synchronizer ») pour stopper toute panne en cascade (« cascading system outage remediation »). Grâce à l'automate maître (« master show controller »), tu synchronises les tops de conduite (« to synchronize master show cues ») sur la rocade fibre redondante (« redundant optical fiber backbone ») à latence nulle (« zero-latency video processing »). En cas d'urgence vitale, tu appliques l'ordre d'évacuation des autorités (« immediate site evacuation is ordered by public safety authorities »), actives le plan de crise (« crisis communications contingency playbook ») et remplaces les prestataires défaillants (« to execute rapid vendor substitutions »).",
+        "key_phrases": [
+          {
+            "en": "An emergency power transfer switch failure prevented automatic generator failover.",
+            "fr": "Une défaillance de l'inverseur de source d'urgence a empêché le basculement automatique sur le groupe."
+          },
+          {
+            "en": "The emergency generator synchronizer brought auxiliary power online within ninety seconds.",
+            "fr": "Le coupleur de synchronisation de groupe électrogène a rétabli l'alimentation auxiliaire en quatre-vingt-dix secondes."
+          },
+          {
+            "en": "Our master show controller synchronized all audio and video cues across the network.",
+            "fr": "Notre automate maître de régie spectacle a synchronisé tous les tops audio et vidéo sur le réseau."
+          },
+          {
+            "en": "We routed signals through a redundant optical fiber backbone to maintain zero latency.",
+            "fr": "Nous avons acheminé les signaux via une rocade fibre optique redondante pour maintenir une latence nulle."
+          },
+          {
+            "en": "Activate the crisis communications contingency playbook immediately.",
+            "fr": "Activez le plan de conduite de crise communicationnelle immédiatement."
+          },
+          {
+            "en": "Immediate site evacuation is ordered by public safety authorities.",
+            "fr": "L'évacuation immédiate du site est ordonnée par les autorités de sécurité."
+          }
+        ],
+        "tip_fr": "Attention au vocabulaire technique des systèmes critiques : un « transfer switch » (ou inverseur de source) est le dispositif électromécanique qui commute automatiquement les circuits d'une source normale défaillante vers une source de secours (groupe électrogène). En cas de « transfer switch failure », la bascule doit être effectuée manuellement au disjoncteur général de secours."
+      },
+      "lessons": [
+        {
+          "id": "event-manager-power-failure-and-transfer-switch-failover",
+          "title_fr": "Gérer la défaillance de l'inverseur de source et enrayer la panne en cascade",
+          "term_ids": [
+            "emergency-power-transfer-switch-failure",
+            "emergency-generator-synchronizer",
+            "temporary-electrical-commissioning",
+            "cascading-system-outage-remediation"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Marcus",
+              "text_en": "Elena, mains electricity just crashed across the entire convention district!",
+              "text_fr": "Elena, le réseau électrique général vient de s'effondrer dans tout le quartier des congrès !"
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "The backup diesel generators started, but we have an emergency power transfer switch failure on the main distribution panel.",
+              "text_fr": "Les générateurs diesel de secours ont démarré, mais nous avons une défaillance de l'inverseur de source d'urgence sur le tableau principal."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Engage the manual bypass on the emergency generator synchronizer immediately.",
+              "text_fr": "Enclenche le contournement manuel sur le coupleur de synchronisation de groupe électrogène immédiatement."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Manual tie-in successful! Our temporary electrical commissioning protocols prevented a cascading system outage remediation on stage.",
+              "text_fr": "Raccordement manuel réussi ! Nos protocoles de mise en service électrique provisoire ont permis d'enrayer une panne en cascade sur la scène."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que se produit-il lors d'une « emergency power transfer switch failure » lors d'une coupure électrique du réseau principal ?",
+              "choices": [
+                "The sound system increases acoustic volume by twenty percent across all conference rooms",
+                "The automatic mechanical switch fails to connect the backup diesel generator, resulting in total blackout",
+                "The catering kitchen runs out of mineral water bottles during lunch service"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Transfer switch failure » (panne de l'inverseur de source de secours) empêche le basculement automatique sur le groupe électrogène de secours en cas de coupure réseau, plongeant le site dans le noir complet."
+            },
+            {
+              "prompt_fr": "À quoi sert un « emergency generator synchronizer » dans une centrale d'énergie provisoire de forte puissance ?",
+              "choices": [
+                "It plays background jazz music to entertain guests while electrical technicians diagnose equipment",
+                "It prints delegate identification name badges at the reception registration counter",
+                "It matches voltage, frequency, and phase angle of multiple generators before paralleling them to prevent power spikes"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Generator synchronizer » (synchroniseur / coupleur de groupes électrogènes) égalise la tension, la fréquence (50 Hz / 60 Hz) et la phase de deux générateurs avant leur couplage sans court-circuit destructeur."
+            },
+            {
+              "prompt_fr": "Comment les protocoles de « temporary electrical commissioning » préviennent-ils les pannes lors d'un grand événement ?",
+              "choices": [
+                "By testing every distribution board, breaker, and cable run under full simulated load before public admission",
+                "By applying decorative chrome spray paint on distribution transformer boxes",
+                "By requesting that attendees turn off their personal cellular telephones in the lobby"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Electrical commissioning » (mise en service et essais sous charge réelle) teste les disjoncteurs différentiels, les impédances de boucle et la stabilité thermique des lignes avant l'accueil du public."
+            },
+            {
+              "prompt_fr": "Que désigne l'expression « cascading system outage remediation » dans la conduite d'une crise technique en direct ?",
+              "choices": [
+                "A routine maintenance procedure for cleaning outdoor garden decorative water fountains",
+                "An emergency intervention plan designed to isolate an initial equipment failure before it crashes video, audio, and lighting in sequence",
+                "A last-minute bulk order of refreshments for corporate sponsor hospitality suites"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Cascading system outage remediation » (circonscription d'une panne en cascade) consiste à isoler immédiatement l'organe défaillant pour éviter qu'une surtension ou un bogue réseau n'entraîne la coupure en chaîne de tous les systèmes de diffusion."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige un rapport d'incident électrique immédiat pour la direction : signale la défaillance de l'inverseur de source d'urgence, décris l'intervention manuelle sur le coupleur de synchronisation, souligne l'efficacité de la mise en service provisoire et confirme la reprise d'activité sans panne en cascade.",
+            "context_en": "Mains power blackout occurred during opening keynote session.",
+            "model_answer_en": "A sudden grid blackout exposed an emergency power transfer switch failure on the secondary panel. Chief electricians intervened immediately at the emergency generator synchronizer to establish parallel generation manually. Because our rigorous temporary electrical commissioning had verified phase balancing, we avoided a prolonged cascading system outage remediation.",
+            "model_answer_fr": "Une coupure brutale du réseau a révélé une défaillance de l'inverseur de source d'urgence sur le tableau secondaire. Les chefs électriciens sont intervenus immédiatement sur le coupleur de synchronisation de groupe électrogène pour établir la génération en parallèle manuellement. Grâce à notre rigoureuse mise en service électrique provisoire ayant vérifié l'équilibrage des phases, nous avons évité une panne en cascade prolongée.",
+            "key_phrases": [
+              "emergency power transfer switch failure",
+              "emergency generator synchronizer",
+              "temporary electrical commissioning",
+              "cascading system outage remediation"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-master-show-control-and-optical-backbone",
+          "title_fr": "Synchroniser les tops de conduite et compenser la latence broadcast",
+          "term_ids": [
+            "master-show-controller",
+            "to-synchronize-master-show-cues",
+            "redundant-optical-fiber-backbone",
+            "zero-latency-video-processing",
+            "live-broadcast-latency-contingency"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Tomasz",
+              "text_en": "Chloe, we have sixty robotic cues, four video playbacks, and pyrotechnics opening the international ceremony.",
+              "text_fr": "Chloe, nous avons soixante tops asservis, quatre lancements vidéo et de la pyrotechnie pour ouvrir la cérémonie internationale."
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "I programmed the master show controller to synchronize master show cues across lighting, sound, and automation.",
+              "text_fr": "J'ai programmé l'automate maître de régie spectacle pour synchroniser les tops de conduite générale sur l'éclairage, le son et l'automatisation."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "What if the primary network switch fails during the live presidential entrance?",
+              "text_fr": "Que se passe-t-il si le commutateur réseau principal lâche pendant l'entrée présidentielle en direct ?"
+            },
+            {
+              "speaker": "Chloe",
+              "text_en": "Traffic seamlessly shifts to our redundant optical fiber backbone with zero-latency video processing, backed by our live broadcast latency contingency.",
+              "text_fr": "Le trafic bascule en toute transparence sur notre rocade fibre optique redondante avec traitement vidéo à latence nulle, appuyé par notre parade technique face à la latence de retransmission."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel système centralisé interconnecte et déclenche les tops vidéo, les mémoires lumières et les effets scéniques sur un timing unique ?",
+              "choices": [
+                "A manual portable megaphone horn",
+                "A standard paper desk diary notebook",
+                "An integrated master show controller"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Master show controller » (système de show-control unifié) synchronise par Timecode (SMPTE / MIDI) les projecteurs, serveurs médias vidéo et effets spéciaux sur une horloge commune ultra-précise."
+            },
+            {
+              "prompt_fr": "Pourquoi déploie-t-on une « redundant optical fiber backbone » entre la régie centrale et le plateau scénique ?",
+              "choices": [
+                "To provide a parallel dual-path optical link so an accidental cable sever immediately fails over with zero packet loss",
+                "To hang lightweight festive holiday banners and corporate sponsor logos across stage trussing",
+                "Because optical glass fiber consumes less paper stationery than standard copper network cables"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Redundant optical fiber backbone » (dorsale fibre optique redondée en anneau) garantit que si une pelleteuse ou un chariot sectionne un câble, le flux de données bascule instantanément sur la route secondaire sans coupure de transmission."
+            },
+            {
+              "prompt_fr": "Dans une captation live retransmise sur les écrans géants de la scène, pourquoi le « zero-latency video processing » est-il indispensable ?",
+              "choices": [
+                "To artificially convert all full-color presentation slides into vintage black-and-white graphics",
+                "To prevent any visible delay between the speaker live physical lip movements and their projected image on screen",
+                "To deliberately slow down rapid keynote speeches so international delegates can take notes"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Zero-latency video processing » (traitement d'image à ultra-faible latence / sous 1 frame) élimine le décalage visuel insupportable entre le visage de l'orateur en chair et en os et son image géante sur l'écran (effet d'écho visuel)."
+            },
+            {
+              "prompt_fr": "Complète la consigne technique : « The broadcast director activated the ___ to compensate for transmission delay on the intercontinental satellite feed. »",
+              "choices": [
+                "commercial ticket discount promotion code",
+                "janitorial floor cleaning broom schedule",
+                "live broadcast latency contingency protocol"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Live broadcast latency contingency protocol » compense et synchronise le décalage temporel inhérent aux liaisons satellites ou liaisons internet distantes."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Briefe la régie générale avant la cérémonie d'ouverture : confirme que l'automate maître est prêt pour synchroniser les tops de conduite, souligne la sécurité offerte par la rocade fibre redondante, rappelle l'exigence de traitement vidéo à latence nulle et valide la parade contre la latence broadcast.",
+            "context_en": "Ten minutes to showtime; live broadcast satellites are locked.",
+            "model_answer_en": "Our master show controller is primed to synchronize master show cues across all departments on timecode. Signal paths are fully secured via our redundant optical fiber backbone with active failover. We verified zero-latency video processing for all stage IMAG screens alongside our live broadcast latency contingency.",
+            "model_answer_fr": "Notre automate maître de régie spectacle est paré pour synchroniser les tops de conduite générale sur tous les départements au timecode. Les chemins de signaux sont pleinement sécurisés via notre rocade fibre optique redondante avec basculement actif. Nous avons vérifié le traitement vidéo à latence nulle pour tous les écrans géants de scène ainsi que notre parade face à la latence de retransmission.",
+            "key_phrases": [
+              "master show controller",
+              "to synchronize master show cues",
+              "redundant optical fiber backbone",
+              "zero-latency video processing",
+              "live broadcast latency contingency"
+            ]
+          }
+        },
+        {
+          "id": "event-manager-crisis-playbook-and-emergency-evacuation",
+          "title_fr": "Activer le plan de gestion de crise et exécuter l'ordre d'évacuation",
+          "term_ids": [
+            "crisis-communications-contingency-playbook",
+            "immediate-site-evacuation-is-ordered-by-public-safety-authorities",
+            "to-execute-rapid-vendor-substitutions",
+            "real-time-acoustic-threshold-monitoring"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Kenji, the police commander and the fire chief just entered our production command center.",
+              "text_fr": "Kenji, le commandant de police et le chef des pompiers viennent d'entrer dans notre poste de commandement de production."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "What is the situation? Are we exceeding noise curfews on our real-time acoustic threshold monitoring?",
+              "text_fr": "Quelle est la situation ? Dépassons-nous les limites de bruit sur notre surveillance sonométrique en continu ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "No, a severe gas leak has been detected in the adjacent underground station; immediate site evacuation is ordered by public safety authorities!",
+              "text_fr": "Non, une grave fuite de gaz a été détectée dans la station souterraine adjacente ; l'évacuation immédiate du site est ordonnée par les autorités de sécurité !"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Open all exit gates immediately! I am opening the crisis communications contingency playbook to coordinate public messages and brief our management to execute rapid vendor substitutions for tomorrow's rescheduled venue.",
+              "text_fr": "Ouvrez toutes les issues immédiatement ! J'ouvre le plan de conduite de crise communicationnelle pour coordonner les messages au public et briefer notre direction afin de procéder à la substitution d'urgence de sous-traitants pour le site de repli de demain."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle est la première action à entreprendre dès lors que « immediate site evacuation is ordered by public safety authorities » ?",
+              "choices": [
+                "Cut show audio, switch house lights to full white, and broadcast the pre-recorded emergency evacuation announcement calmly",
+                "Ignore police instructions and demand that keynote speakers finish their presentations first",
+                "Padlock all emergency fire exit doors to keep reporters and television cameras inside the building"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Dès que l'évacuation est ordonnée par les autorités (« site evacuation ordered »), le régisseur coupe immédiatement le spectacle, allume la salle à 100 % en blanc et diffuse le message vocal d'évacuation préenregistré pour guider la foule sans panique."
+            },
+            {
+              "prompt_fr": "À quoi sert le « crisis communications contingency playbook » dans une situation d'urgence ou d'incident majeur ?",
+              "choices": [
+                "It provides speculative promotional gossip statements to attract maximum traffic on social media networks",
+                "It establishes pre-approved holding statements, designated media spokespersons, and notification channels to prevent misinformation",
+                "It lists commercial coupon codes offering attendees discounts on future ticket purchases"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Crisis communications contingency playbook » (plan de communication de crise) structure la diffusion d'informations vérifiées, nomme les porte-paroles officiels et évite les rumeurs anxiogènes ou contradictoires."
+            },
+            {
+              "prompt_fr": "Quelle démarche rapide permet de pallier la défection de dernière minute d'un prestataire clé (ex. traiteur ou régisseur défaillant) ?",
+              "choices": [
+                "To publicly blame and defame the failing contractor across international trade press headlines",
+                "To permanently cancel the three-day convention and immediately file for commercial bankruptcy",
+                "To execute rapid pre-vetted vendor substitutions from the emergency supplier contingency roster"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To execute rapid vendor substitutions » fait appel aux prestataires de secours pré-qualifiés figurant dans le plan de continuité d'activité pour remplacer au pied levé un maillon défaillant."
+            },
+            {
+              "prompt_fr": "Quel suivi acoustique en temps réel est légalement imposé pour respecter les limites sonores en décibels et préserver la santé auditive du public ?",
+              "choices": [
+                "Real-time acoustic decibel threshold monitoring and logging",
+                "Visual observation of attendee facial expressions during concerts",
+                "Annual accounting review of electricity bills paid to utility providers"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Real-time acoustic threshold monitoring » (sonomètre enregistreur homologué avec archivage des niveaux LAeq et LCpc) garantit le respect des seuils réglementaires de décibels imposés par le code de la santé publique."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Donne l'ordre d'évacuation d'urgence à l'ensemble des régisseurs et chefs d'équipes : annonce que l'évacuation immédiate du site est ordonnée par les autorités de sécurité, active le plan de conduite de crise communicationnelle, suspends la surveillance sonométrique et prépare la cellule logistique à la substitution d'urgence des prestataires.",
+            "context_en": "Public authorities ordered emergency evacuation due to an off-site hazard.",
+            "model_answer_en": "Immediate site evacuation is ordered by public safety authorities following a hazard alert outside our perimeter. Cease all entertainment programming and activate the crisis communications contingency playbook across public address systems. Team leads must guide attendees toward assembly points while operations prepares to execute rapid vendor substitutions for tomorrow.",
+            "model_answer_fr": "L'évacuation immédiate du site est ordonnée par les autorités de sécurité à la suite d'une alerte de danger à l'extérieur de notre périmètre. Cessez toute programmation artistique et activez le plan de conduite de crise communicationnelle sur les systèmes de sonorisation publique. Les chefs d'équipe doivent guider les participants vers les points de rassemblement pendant que les opérations se préparent à procéder à la substitution d'urgence de sous-traitants pour demain.",
+            "key_phrases": [
+              "Immediate site evacuation is ordered by public safety authorities",
+              "crisis communications contingency playbook",
+              "to execute rapid vendor substitutions"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

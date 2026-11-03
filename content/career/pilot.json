@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "id": "pilot-rto-decision-at-v1",
+      "status": "draft",
+      "roles": [
+        "pilot"
+      ],
+      "level": "B1",
+      "topic_fr": "Décision d'interruption du décollage à V1",
+      "question_en": "How do you evaluate whether to perform a rejected takeoff when nearing decision speed V1?",
+      "question_fr": "Comment évaluez-vous l'opportunité d'interrompre un décollage à l'approche de la vitesse de décision V1 ?",
+      "hint_fr": "Distinguez les régimes basse vitesse et haute vitesse, et insistez sur l'engagement irrévocable au décollage une fois V1 atteinte.",
+      "answer_outline_fr": [
+        "Critères stricts d'arrêt à basse vitesse (< 80 kt) versus haute vitesse",
+        "Règle d'or de V1 : impossibilité garantie d'arrêter l'avion avant le bout de piste",
+        "Retrait de la main des manettes à V1 et rotation en douceur à Vr"
+      ],
+      "model_answer_en": "Before V1, I reject the takeoff for major safety triggers such as engine failure, onboard fire, predictive windshear, or sudden directional control loss. Above eighty knots, high-speed reject criteria become very restrictive to avoid high-speed runway excursions. Once V1 is reached, we are committed to flying: stopping before the runway end is no longer guaranteed. I immediately remove my hand from the thrust levers at V1, continue the takeoff roll, rotate smoothly at Vr, and handle the abnormal condition once safely airborne.",
+      "model_answer_fr": "Avant V1, j'interromps le décollage pour des alertes majeures de sécurité comme une panne moteur, un feu à bord, un cisaillement prédictif ou une perte brutale de contrôle directionnel. Au-dessus de quatre-vingts nœuds, les critères d'arrêt à haute vitesse deviennent très restrictifs afin d'éviter toute sortie de piste à grande vitesse. Dès que V1 est atteinte, nous sommes engagés à voler : l'arrêt avant l'extrémité de piste n'est plus garanti. Je retire immédiatement ma main des manettes des gaz à V1, poursuis le roulement au décollage, effectue la rotation en souplesse à Vr et traite l'avarie une fois en vol en sécurité.",
+      "key_phrases": [
+        "engine failure",
+        "runway excursions",
+        "committed to flying",
+        "remove my hand from the thrust levers",
+        "safely airborne"
+      ],
+      "vocabulary_term_ids": [
+        "rejected-takeoff",
+        "takeoff-decision-speed",
+        "rotation-speed-vr",
+        "engine-failure",
+        "runway-excursion"
+      ]
+    },
+    {
+      "id": "pilot-windshear-on-approach",
+      "status": "draft",
+      "roles": [
+        "pilot"
+      ],
+      "level": "B1",
+      "topic_fr": "Gestion d'un cisaillement de vent en approche",
+      "question_en": "How do you react if you encounter severe windshear on final approach?",
+      "question_fr": "Quelle est votre réaction immédiate si vous rencontrez un fort cisaillement de vent en finale ?",
+      "hint_fr": "Mentionnez la manœuvre d'échappement réflexe, l'affichage de la pleine poussée sans changer la configuration de l'avion et le rôle du PM.",
+      "answer_outline_fr": [
+        "Déclenchement immédiat de la manœuvre d'échappement",
+        "Affichage de la poussée maximale et pilotage vers l'assiette optimale",
+        "Maintien de la configuration train et volets pour éviter la traînée et l'inattention"
+      ],
+      "model_answer_en": "If reactive or predictive windshear is triggered on final approach, I immediately initiate the windshear escape maneuver. As pilot flying, I call for maximum takeoff thrust, advance the thrust levers to the mechanical stops, and disengage the autopilot while pitching up smoothly towards the flight director guidance without stalling. I keep the aircraft configuration intact: landing gear and wing flaps remain extended until out of the downdraft because changing configuration increases drag and distraction. The pilot monitoring monitors radio altimeter readings and calls out climb trends.",
+      "model_answer_fr": "Si une alerte de cisaillement réactif ou prédictif se déclenche en finale, j'amorce immédiatement la manœuvre d'échappement au cisaillement. En tant que pilote aux commandes, j'annonce la poussée maximale de décollage, avance les manettes jusqu'aux butées mécaniques et déconnecte le pilote automatique tout en cabrant en souplesse vers les ordres du directeur de vol sans décrocher. Je conserve la configuration de l'appareil intacte : le train d'atterrissage et les volets restent sortis jusqu'à la sortie du courant rabattant, car changer de configuration augmente la traînée et la distraction. Le pilote surveillant scrute le radioaltimètre et annonce les tendances de montée.",
+      "key_phrases": [
+        "windshear escape maneuver",
+        "maximum takeoff thrust",
+        "disengage the autopilot",
+        "keep the aircraft configuration intact",
+        "pilot monitoring"
+      ],
+      "vocabulary_term_ids": [
+        "aviation-windshear",
+        "windshear-escape-maneuver",
+        "pilot-flying",
+        "pilot-monitoring",
+        "landing-gear",
+        "wing-flap"
+      ]
+    },
+    {
+      "id": "pilot-engine-failure-after-takeoff",
+      "status": "draft",
+      "roles": [
+        "pilot"
+      ],
+      "level": "B2",
+      "topic_fr": "Panne moteur après décollage",
+      "question_en": "Walk me through your sequence of actions if an engine fails right after takeoff.",
+      "question_fr": "Décrivez la chronologie de vos actions si un moteur tombe en panne juste après le décollage.",
+      "hint_fr": "Structurez avec la règle d'or Aviate - Navigate - Communicate, le maintien de V2, l'altitude d'accélération et le traitement du QRH.",
+      "answer_outline_fr": [
+        "Contrôle de trajectoire prioritaire : palonnier, compensation et vitesse V2",
+        "Rentrée du train et silence d'alerte sous l'altitude d'accélération",
+        "Accélération, rentrée des volets et traitement méthodique du QRH"
+      ],
+      "model_answer_en": "My absolute priority is to aviate: I maintain directional control by applying rudder into the operating engine and countering roll. Positive climb confirmed, we retract the landing gear and fly assigned heading at takeoff safety speed V2. Below acceleration altitude, no actions are taken other than canceling warnings. At acceleration altitude, we level off slightly, accelerate, retract flaps on schedule, and set continuous maximum thrust. Only when stabilized do we call for the quick reference handbook to complete the engine failure checklist and inform air traffic control.",
+      "model_answer_fr": "Ma priorité absolue est de piloter : je maintiens le contrôle directionnel en appliquant du pied du côté du moteur en fonctionnement et en contrant le roulis. Le vario positif confirmé, nous rentrons le train d'atterrissage et suivons le cap assigné à la vitesse de sécurité au décollage V2. Sous l'altitude d'accélération, aucune action n'est entreprise hormis l'acquittement des alarmes. À l'altitude d'accélération, nous effectuons un léger palier, accélérons, rentrons les volets selon l'échéancier et affichons la poussée continue maximale. C'est seulement une fois stabilisés que nous demandons le QRH pour dérouler la check-list de panne moteur et informer le contrôle aérien.",
+      "key_phrases": [
+        "maintain directional control",
+        "retract the landing gear",
+        "takeoff safety speed V2",
+        "acceleration altitude",
+        "quick reference handbook"
+      ],
+      "vocabulary_term_ids": [
+        "engine-failure",
+        "takeoff-safety-speed-v2",
+        "landing-gear",
+        "acceleration-altitude",
+        "quick-reference-handbook"
+      ]
+    },
+    {
+      "id": "pilot-crm-captain-first-officer-disagreement",
+      "status": "draft",
+      "roles": [
+        "pilot"
+      ],
+      "level": "B2",
+      "topic_fr": "Gestion d'une divergence d'avis en équipage (CRM)",
+      "question_en": "How would you handle a situation where you and the other pilot disagree on a safety-critical decision?",
+      "question_fr": "Comment gérez-vous une situation où vous et l'autre pilote êtes en désaccord sur une décision critique pour la sécurité ?",
+      "hint_fr": "Expliquez l'assertivité graduée (modèle PACE), l'appui sur les manuels SOPs et la primauté absolue de la sécurité des passagers.",
+      "answer_outline_fr": [
+        "Identification objective de la menace et communication factuelle",
+        "Application de l'assertivité graduée (Probe, Alert, Challenge, Emergency)",
+        "Recherche d'un modèle mental partagé sans conflit d'ego"
+      ],
+      "model_answer_en": "In a safety-critical situation, I apply structured crew resource management principles using graded assertiveness. I start by stating the operational threat clearly and objectively, for example by pointing out weather minimums or fuel reserves. If my concern is overlooked, I use the PACE escalation model, moving from probe to alert, challenge, and emergency intervention if flight safety is directly compromised. My focus is never on winning an argument but on trapping errors and reaching a shared mental model based on standard operating procedures and aircraft limitations.",
+      "model_answer_fr": "Dans une situation critique pour la sécurité, j'applique les principes structurés de gestion des ressources de l'équipage avec assertivité graduée. Je commence par exposer la menace opérationnelle de façon claire et factuelle, par exemple en rappelant les minima météo ou la réserve de carburant. Si mon alerte n'est pas prise en compte, j'utilise l'escalade du modèle PACE, passant du questionnement à l'alerte, à la contestation formelle et à la reprise de commandes si la sécurité du vol est directement compromise. Mon objectif n'est jamais d'avoir raison, mais de piéger les erreurs et d'établir un modèle mental partagé fondé sur les procédures d'exploitation et les limites de l'avion.",
+      "key_phrases": [
+        "crew resource management",
+        "operational threat",
+        "graded assertiveness",
+        "flight safety",
+        "shared mental model"
+      ],
+      "vocabulary_term_ids": [
+        "operational-threat-identification",
+        "in-flight-error-trapping",
+        "flight-crew-coordination",
+        "crew-briefing-standard",
+        "stabilized-approach-criteria"
+      ]
+    },
+    {
+      "id": "pilot-weather-diversion-minimum-fuel",
+      "status": "draft",
+      "roles": [
+        "pilot"
+      ],
+      "level": "C1",
+      "topic_fr": "Déroutement météo et déclaration de carburant critique",
+      "question_en": "How do you manage a weather diversion when your remaining fuel is approaching final reserve limits?",
+      "question_fr": "Comment gérez-vous un déroutement météo lorsque votre carburant restant s'approche de la réserve finale ?",
+      "hint_fr": "Distinguez les statuts MINIMUM FUEL (information) et MAYDAY FUEL (détresse réglementaire dès que la réserve finale est menacée).",
+      "answer_outline_fr": [
+        "Calcul continu du pétrole restant par rapport au dégagement et à la réserve finale",
+        "Déclaration préventive MINIMUM FUEL dès que tout délai additionnel entame la réserve",
+        "Déclaration immédiate de MAYDAY FUEL pour obtenir une priorité radar absolue"
+      ],
+      "model_answer_en": "When weather closes our destination, I constantly evaluate remaining fuel against the fuel required to reach our designated destination alternate aerodrome plus final reserve fuel. The moment any anticipated ATC delay or routing change would result in landing with less than final reserve fuel, I declare MINIMUM FUEL to air traffic control. If calculations show that landing with less than thirty minutes of holding fuel is inevitable, I immediately declare MAYDAY FUEL. This conveys a distress emergency, securing immediate radar priority and direct routing without negotiations or circuitous delays.",
+      "model_answer_fr": "Quand la météo ferme notre destination, j'évalue continuellement le carburant restant face au carburant nécessaire pour rejoindre l'aérodrome de dégagement à destination plus la réserve finale de carburant. Dès qu'un retard prévu par le contrôle ou un réacheminement conduirait à atterrir avec moins que la réserve finale, je déclare MINIMUM FUEL au contrôle aérien. Si les calculs indiquent qu'atterrir avec moins de trente minutes de réserve d'attente est inévitable, je déclare sans attendre MAYDAY FUEL. Cela caractérise une urgence de détresse garantissant une priorité radar immédiate et un guidage direct sans négociation ni détours.",
+      "key_phrases": [
+        "destination alternate aerodrome",
+        "final reserve fuel",
+        "declare MINIMUM FUEL",
+        "declare MAYDAY FUEL",
+        "immediate radar priority"
+      ],
+      "vocabulary_term_ids": [
+        "to-divert-to-an-alternate",
+        "destination-alternate-aerodrome",
+        "final-reserve-fuel",
+        "minimum-fuel-declaration",
+        "emergency-fuel-declaration"
+      ]
+    },
+    {
+      "id": "pilot-tcas-resolution-advisory-response",
+      "status": "draft",
+      "roles": [
+        "pilot"
+      ],
+      "level": "C1",
+      "topic_fr": "Réaction immédiate à une alerte d'évitement TCAS",
+      "question_en": "How do you respond when the aircraft generates a TCAS resolution advisory in controlled airspace?",
+      "question_fr": "Comment réagissez-vous lorsque l'appareil déclenche une consigne d'évitement TCAS dans un espace aérien contrôlé ?",
+      "hint_fr": "Soulignez la déconnexion immédiate du PA, le respect strict de la bande verte du PFD en primauté sur les ordres ATC, et le callout radio.",
+      "answer_outline_fr": [
+        "Déconnexion manuelle du pilote automatique et pilotage de la vitesse verticale requise",
+        "Primauté absolue de la consigne TCAS sur toute instruction contradictoire du contrôle",
+        "Annonce radio normalisée par le PM et retour à la clairance après résolution"
+      ],
+      "model_answer_en": "When a TCAS resolution advisory sounds, I immediately disconnect the autopilot and autothrottle to manually fly the required vertical speed into the green fly-to arc on the primary flight display. A TCAS resolution advisory overrides all conflicting air traffic control instructions because the airborne collision avoidance algorithms possess real-time spatial positioning of the conflicting traffic. While flying the escape profile, the pilot monitoring notifies the controller on frequency stating 'TCAS climb' or 'TCAS descent'. Once the system announces 'clear of conflict', we promptly return to the assigned clearance.",
+      "model_answer_fr": "Lorsqu'une alerte d'évitement TCAS retentit, je déconnecte immédiatement le pilote automatique et l'automanette pour amener manuellement le variomètre dans l'arc vert cible sur l'écran des paramètres de vol primaires. Une alerte de résolution TCAS prévaut sur toute consigne contraire du contrôle aérien, car les algorithmes anticollision embarqués disposent du positionnement spatial en temps réel du trafic conflictuel. Pendant que je pilote la manœuvre d'évitement, le pilote surveillant prévient le contrôleur sur la fréquence en annonçant « TCAS climb » ou « TCAS descent ». Une fois que le système confirme la fin du conflit, nous revenons rapidement à la clairance assignée.",
+      "key_phrases": [
+        "TCAS resolution advisory",
+        "disconnect the autopilot",
+        "overrides all conflicting",
+        "primary flight display",
+        "clear of conflict"
+      ],
+      "vocabulary_term_ids": [
+        "tcas-resolution-advisory",
+        "traffic-collision-avoidance-system",
+        "autopilot-system",
+        "primary-flight-display",
+        "pilot-monitoring"
+      ]
+    }
+  ],
+  "verbs": []
+}
