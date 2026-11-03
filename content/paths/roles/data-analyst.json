@@ -2437,6 +2437,332 @@
           }
         }
       ]
+    },
+    {
+      "id": "data-analyst-defend-statistical-claims",
+      "title_fr": "Défendre une conclusion statistique devant un décideur",
+      "title_en": "Defend a statistical claim in front of a decision maker",
+      "situation_fr": "Un directeur veut lancer la nouvelle page d'après ton analyse. Tu dois expliquer ce que tes chiffres prouvent vraiment, quels biais tu as écartés et pourquoi une moyenne peut tromper.",
+      "guide": {
+        "intro_fr": "À ce niveau, on ne présente plus un résultat, on le défend. Le « p-value » ne dit pas que l'hypothèse est vraie : il mesure à quel point les données surprennent si rien ne se passe. Il se lit avec l'« effect size », qui dit si la différence compte vraiment. Face aux objections, tu cherches les biais : le « selection bias » (échantillon non représentatif), le « survivorship bias » (on n'étudie que ceux qui restent) et la « confounding variable » (un facteur caché qui explique les deux). Enfin, une moyenne globale peut s'inverser : c'est le « Simpson's paradox ». Les verbes clés : to rule out, to control for, to hold up, to overstate.",
+        "key_phrases": [
+          {
+            "en": "The p-value tells us how surprising the data would be if nothing changed.",
+            "fr": "La valeur p dit à quel point les données seraient surprenantes si rien ne changeait."
+          },
+          {
+            "en": "The difference is significant, but the effect size is small.",
+            "fr": "La différence est significative, mais la taille d'effet est faible."
+          },
+          {
+            "en": "We controlled for the season to rule out a confounding variable.",
+            "fr": "Nous avons contrôlé la saison pour écarter une variable de confusion."
+          },
+          {
+            "en": "Our sample may suffer from selection bias.",
+            "fr": "Notre échantillon souffre peut-être d'un biais de sélection."
+          },
+          {
+            "en": "The overall trend hides Simpson's paradox.",
+            "fr": "La tendance globale cache un paradoxe de Simpson."
+          },
+          {
+            "en": "I would not overstate what this result proves.",
+            "fr": "Je ne surestimerais pas ce que ce résultat prouve."
+          }
+        ],
+        "tip_fr": "Faux ami : « significant » ne veut pas dire « important ». En statistiques, il signifie « peu probablement dû au hasard ». Pour dire important, utilise « meaningful » ou « substantial »."
+      },
+      "lessons": [
+        {
+          "id": "data-analyst-explain-p-value-and-effect",
+          "title_fr": "Expliquer ce que dit une valeur p, et ce qu'elle ne dit pas",
+          "term_ids": [
+            "p-value",
+            "effect-size",
+            "statistical-significance",
+            "type-i-error"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ingrid",
+              "text_en": "The new checkout page won. The p-value is 0.03, so we should launch it, right?",
+              "text_fr": "La nouvelle page de paiement a gagné. La valeur p est de 0,03, donc on devrait la lancer, non ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Careful. The p-value only tells us the result is unlikely if nothing really changed.",
+              "text_fr": "Attention. La valeur p dit seulement que le résultat est peu probable si rien n'avait vraiment changé."
+            },
+            {
+              "speaker": "Ingrid",
+              "text_en": "But the result is statistically significant. Isn't that enough?",
+              "text_fr": "Mais le résultat est statistiquement significatif. Ça ne suffit pas ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Significant is not the same as large. The effect size is only 0.2 percentage points.",
+              "text_fr": "Significatif ne veut pas dire grand. La taille d'effet est de seulement 0,2 point de pourcentage."
+            },
+            {
+              "speaker": "Ingrid",
+              "text_en": "Could it still be a false positive?",
+              "text_fr": "Cela pourrait-il quand même être un faux positif ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Yes, that is a type I error. We ran six tests this month, so the risk is higher.",
+              "text_fr": "Oui, c'est une erreur de type I. Nous avons fait six tests ce mois-ci, donc le risque est plus élevé."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que veut dire Kofi par « the result is unlikely if nothing really changed » ?",
+              "choices": [
+                "Les données seraient peu probables s'il n'existait aucun effet réel",
+                "La nouvelle page a très peu de chances d'améliorer les ventes",
+                "Le résultat est peu fiable parce que le test a été trop court"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La valeur p répond à : « si rien ne change, à quel point ces données sont-elles surprenantes ? ». Elle ne mesure pas la probabilité que la page soit meilleure (deuxième choix), et elle ne parle ni de la durée du test ni de sa fiabilité (troisième choix)."
+            },
+            {
+              "prompt_fr": "Quelle phrase défend le mieux le fait de ne pas lancer tout de suite ?",
+              "choices": [
+                "The result is significative, but the effect size is too short to matter.",
+                "The result is important, but the effect size is too small to matter.",
+                "The result is significant, but the effect size is too small to matter."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Significant » est le mot juste en statistiques, et « small » qualifie une taille d'effet. « Important » change le sens (il contredit la suite), « significative » est un calque du français, et une taille d'effet n'est pas « short »."
+            },
+            {
+              "prompt_fr": "Pourquoi Kofi parle-t-il des six tests du mois ?",
+              "choices": [
+                "Parce que chaque test réduit la taille d'effet des tests suivants",
+                "Parce que plus on teste, plus le risque d'un faux positif augmente",
+                "Parce que les six tests doivent donner le même résultat pour être valides"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "En multipliant les tests, on augmente les chances qu'un résultat paraisse significatif par hasard : c'est le risque d'erreur de type I. Les tests n'ont pas à être identiques, et ils n'influencent pas la taille d'effet les uns des autres."
+            },
+            {
+              "prompt_fr": "Complète : « Before we launch, let's report the effect size ___ the p-value. »",
+              "choices": [
+                "next to",
+                "beside",
+                "near of"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Next to » veut dire à côté de, et il s'emploie avec un complément. « Beside » existe aussi mais s'utilise surtout pour une position physique, et « near of » n'existe pas en anglais : c'est un calque de « près de »."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Réponds à la directrice qui veut lancer la page parce que « le test est significatif ». En 3 ou 4 phrases : explique ce que la valeur p dit, signale que la taille d'effet est faible, et propose une prochaine étape.",
+            "context_en": "The test is significant (p = 0.03). Shall we launch the new page today?",
+            "model_answer_en": "The result is significant, but I would not overstate it. The p-value only tells us the data would be unlikely if nothing changed, and the effect size is just 0.2 percentage points. Since we ran six tests this month, a type I error is possible. I suggest we rerun the test on fresh traffic before launching.",
+            "model_answer_fr": "Le résultat est significatif, mais je ne le surestimerais pas. La valeur p dit seulement que les données seraient peu probables si rien n'avait changé, et la taille d'effet n'est que de 0,2 point. Comme nous avons fait six tests ce mois-ci, une erreur de type I est possible. Je propose de refaire le test sur un nouveau trafic avant de lancer.",
+            "key_phrases": [
+              "The result is significant",
+              "the effect size",
+              "a type I error"
+            ]
+          }
+        },
+        {
+          "id": "data-analyst-spot-biases-in-a-sample",
+          "title_fr": "Repérer les biais qui faussent une analyse",
+          "term_ids": [
+            "selection-bias",
+            "survivorship-bias",
+            "confounding-variable",
+            "sampling-error"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Priya",
+              "text_en": "Our satisfaction survey says 92% of customers are happy. Great news!",
+              "text_fr": "Notre enquête de satisfaction indique que 92 % des clients sont contents. Super nouvelle !"
+            },
+            {
+              "speaker": "Mateo",
+              "text_en": "Who answered it? I suspect selection bias, because only active users received the email.",
+              "text_fr": "Qui y a répondu ? Je soupçonne un biais de sélection, car seuls les utilisateurs actifs ont reçu l'e-mail."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Right. The customers who left never saw it, which is survivorship bias too.",
+              "text_fr": "Exact. Les clients partis ne l'ont jamais vue, c'est aussi un biais du survivant."
+            },
+            {
+              "speaker": "Mateo",
+              "text_en": "And the new feature launched in December, so the holiday season could be a confounding variable.",
+              "text_fr": "Et la nouvelle fonctionnalité a été lancée en décembre, donc la saison des fêtes pourrait être une variable de confusion."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "We only have 200 answers, so the sampling error is also large.",
+              "text_fr": "Nous n'avons que 200 réponses, donc l'erreur d'échantillonnage est aussi importante."
+            },
+            {
+              "speaker": "Mateo",
+              "text_en": "Let's say that in the report: the score is encouraging, but it may not hold up.",
+              "text_fr": "Disons-le dans le rapport : le score est encourageant, mais il pourrait ne pas tenir."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les clients partis posent-ils un problème pour l'enquête ?",
+              "choices": [
+                "Leur avis est toujours plus fiable que celui des clients actifs",
+                "Leurs réponses arrivent trop tard pour être comptées dans le score",
+                "Leur absence donne une image plus positive que la réalité"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "C'est le biais du survivant : on n'interroge que ceux qui sont restés, donc les mécontents manquent et le score paraît meilleur. Leur avis n'est pas plus fiable, et le problème n'est pas un retard de réponse mais l'absence totale de ces clients."
+            },
+            {
+              "prompt_fr": "Quel est le rôle de « holiday season » dans la phrase de Mateo ?",
+              "choices": [
+                "Un facteur extérieur qui peut expliquer le score sans la fonctionnalité",
+                "Une cause confirmée de l'augmentation des réponses à l'enquête",
+                "Une période où il faut éviter de lancer de nouvelles fonctionnalités"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une « confounding variable » est un facteur qui peut expliquer le résultat à la place de la cause supposée. Mateo dit « could be » : c'est une hypothèse à écarter, pas une cause confirmée, et il ne parle pas de calendrier de lancement."
+            },
+            {
+              "prompt_fr": "Comment dire « Ce résultat pourrait ne pas se confirmer » ?",
+              "choices": [
+                "This result may not keep up.",
+                "This result may not hold up.",
+                "This result may not hold on."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To hold up » veut dire « résister à l'examen, se confirmer ». « Hold on » signifie attendre ou s'accrocher, et « keep up » suivre le rythme : les deux changent complètement le sens."
+            },
+            {
+              "prompt_fr": "Que veut dire Priya par « the sampling error is also large » ?",
+              "choices": [
+                "Les réponses ont été saisies avec des erreurs de format",
+                "L'échantillon contient trop de clients de la même région",
+                "Le petit nombre de réponses rend le score peu précis"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'erreur d'échantillonnage est l'écart possible entre le résultat d'un petit échantillon et la réalité de toute la population. Elle ne concerne ni la saisie des données ni la répartition géographique, et Priya l'associe aux 200 réponses seulement."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Écris le paragraphe « limites » d'un rapport sur une enquête de satisfaction. En 3 ou 4 phrases : cite deux biais, explique leur effet sur le score et dis ce que tu recommandes.",
+            "context_en": "Survey result: 92% satisfaction, 200 answers, active users only.",
+            "model_answer_en": "The 92% score is encouraging, but it may not hold up. Only active users received the survey, so we face selection bias and survivorship bias: customers who left are missing. With 200 answers, the sampling error is also large. I recommend surveying churned customers before presenting this score as representative.",
+            "model_answer_fr": "Le score de 92 % est encourageant, mais il pourrait ne pas se confirmer. Seuls les utilisateurs actifs ont reçu l'enquête, donc il y a un biais de sélection et un biais du survivant : les clients partis manquent. Avec 200 réponses, l'erreur d'échantillonnage est aussi importante. Je recommande d'interroger les clients perdus avant de présenter ce score comme représentatif.",
+            "key_phrases": [
+              "may not hold up",
+              "selection bias",
+              "the sampling error"
+            ]
+          }
+        },
+        {
+          "id": "data-analyst-explain-misleading-averages",
+          "title_fr": "Expliquer pourquoi un chiffre global est trompeur",
+          "term_ids": [
+            "simpsons-paradox",
+            "regression-to-the-mean",
+            "statistical-power",
+            "multicollinearity"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïsha",
+              "text_en": "Overall, the new design lowered conversion. But it won in both mobile and desktop.",
+              "text_fr": "Globalement, la nouvelle conception a fait baisser la conversion. Mais elle a gagné sur mobile comme sur ordinateur."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "That sounds like Simpson's paradox. Did the mix of devices change?",
+              "text_fr": "Cela ressemble au paradoxe de Simpson. La répartition des appareils a-t-elle changé ?"
+            },
+            {
+              "speaker": "Aïsha",
+              "text_en": "Yes, mobile traffic doubled, and mobile converts less on average.",
+              "text_fr": "Oui, le trafic mobile a doublé, et le mobile convertit moins en moyenne."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "So we should report each segment before the average. What about last month's record?",
+              "text_fr": "Donc nous devrions présenter chaque segment avant la moyenne. Et le record du mois dernier ?"
+            },
+            {
+              "speaker": "Aïsha",
+              "text_en": "The drop after it is probably regression to the mean, not a failure of the design.",
+              "text_fr": "La baisse qui a suivi est probablement une régression vers la moyenne, pas un échec de la conception."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Agreed. And the test has low statistical power, so a small effect could stay invisible.",
+              "text_fr": "D'accord. Et le test a une faible puissance statistique, donc un petit effet pourrait rester invisible."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi la conversion globale baisse-t-elle alors que chaque segment progresse ?",
+              "choices": [
+                "La part du segment qui convertit le moins a augmenté",
+                "La moyenne globale ne tient pas compte du nombre de visiteurs",
+                "Les deux segments se sont mesurés avec des outils différents"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "C'est le paradoxe de Simpson : la composition du trafic a changé (plus de mobile, qui convertit moins), donc la moyenne baisse même si chaque groupe s'améliore. Les outils de mesure ne sont pas en cause, et une moyenne pondérée tient bien compte des volumes."
+            },
+            {
+              "prompt_fr": "Que signifie « regression to the mean » dans la phrase d'Aïsha ?",
+              "choices": [
+                "Les résultats baissent à cause d'un défaut de la conception",
+                "La moyenne est recalculée en supprimant les valeurs extrêmes",
+                "Après une valeur extrême, on revient souvent vers la normale"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Après un mois record, un mois plus proche de la moyenne est attendu même sans changement : c'est la régression vers la moyenne. Ce n'est donc pas une preuve d'échec, et il ne s'agit pas d'un calcul qui retire les extrêmes."
+            },
+            {
+              "prompt_fr": "Que veut dire « the test has low statistical power » ?",
+              "choices": [
+                "Il donne souvent des résultats faux et trop optimistes",
+                "Il risque de ne pas voir un effet qui existe vraiment",
+                "Il utilise trop peu de variables pour expliquer les ventes"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La puissance statistique est la capacité d'un test à détecter un effet réel. Avec une faible puissance, on conclut trop vite « pas de différence ». Il ne s'agit ni d'optimisme excessif, ni du nombre de variables du modèle."
+            },
+            {
+              "prompt_fr": "Quelle formulation est la plus naturelle pour présenter ce résultat à un directeur ?",
+              "choices": [
+                "I would report each segment first, because the average can mislead.",
+                "I would report every segment at first, because the average can deceive.",
+                "I would report each segment before, because the average can lie."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« First » indique l'ordre, et « mislead » est le verbe naturel pour une moyenne qui induit en erreur. « At first » veut dire « au début », « before » sans complément est incomplet, et « deceive » ou « lie » prêtent une intention à un chiffre."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Explique à voix haute à ton directeur pourquoi la conversion globale baisse alors que chaque appareil progresse. En 3 ou 4 phrases : nomme le paradoxe, donne la cause et propose comment présenter le chiffre.",
+            "context_en": "Overall conversion fell from 3.1% to 2.9%, yet mobile and desktop both improved. Why?",
+            "model_answer_en": "This is Simpson's paradox. Both mobile and desktop improved, but mobile traffic doubled and mobile converts less on average, so the overall rate fell. I would report each segment before the average. We should also keep in mind that the test has low statistical power.",
+            "model_answer_fr": "C'est le paradoxe de Simpson. Le mobile et l'ordinateur ont progressé, mais le trafic mobile a doublé et le mobile convertit moins en moyenne, donc le taux global a baissé. Je présenterais chaque segment avant la moyenne. Il faut aussi garder en tête que le test a une faible puissance statistique.",
+            "key_phrases": [
+              "Simpson's paradox",
+              "report each segment before the average",
+              "low statistical power"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
