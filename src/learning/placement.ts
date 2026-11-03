@@ -85,7 +85,7 @@ export function blankSentence(sentence: string | undefined, term: string): strin
 }
 
 /** `index` alternates the question types; from B2 up, filling a gap in a sentence is asked more. */
-export function buildPlacementQuestion(terms: Term[], level: Level, asked: Set<string>, index: number, random = Math.random): PlacementQuestion | null {
+function tryPlacementQuestion(terms: Term[], level: Level, asked: Set<string>, index: number, random: () => number): PlacementQuestion | null {
   const term = pickPlacementTerm(terms, level, asked, random);
   if (!term) return null;
   const preferGap = index % 2 === 1 || LEVELS.indexOf(level) >= LEVELS.indexOf('B2');
@@ -102,4 +102,22 @@ export function buildPlacementQuestion(terms: Term[], level: Level, asked: Set<s
   if (others.length < 3) return null;
   const choices = shuffle([right, ...others.map((o) => cleanFr(o.translation_fr))], random);
   return { kind: 'meaning', term, choices, answer: choices.indexOf(right) };
+}
+
+/** A meaning question leaks when a choice already contains the English term (cognates, borrowed words). */
+const leaksTerm = (q: PlacementQuestion) => {
+  const t = baseTerm(q.term.term_en).toLowerCase();
+  return q.kind === 'meaning' && t.length > 3 && q.choices.some((c) => c.toLowerCase().includes(t));
+};
+
+/** Builds the next question, skipping terms whose French choices would give the answer away. */
+export function buildPlacementQuestion(terms: Term[], level: Level, asked: Set<string>, index: number, random = Math.random): PlacementQuestion | null {
+  const skipped = new Set(asked);
+  for (let attempt = 0; attempt < 8; attempt++) {
+    const q = tryPlacementQuestion(terms, level, skipped, index, random);
+    if (!q) return null;
+    if (!leaksTerm(q)) return q;
+    skipped.add(q.term.id);
+  }
+  return null;
 }
