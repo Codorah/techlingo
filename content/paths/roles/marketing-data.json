@@ -2573,6 +2573,302 @@
           }
         }
       ]
+    },
+    {
+      "id": "marketing-data-prove-real-marketing-impact",
+      "title_fr": "Prouver l'impact réel du marketing devant la direction financière",
+      "title_en": "Prove real marketing impact to the finance director",
+      "situation_fr": "La direction financière doute que le marketing génère vraiment des ventes supplémentaires. Tu dois expliquer les limites de l'attribution, démontrer l'incrémentalité par une expérience et présenter une modélisation fiable.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu prouves la causalité. L'« attribution » répartit le crédit d'une vente entre les points de contact : « multi-touch attribution », « data-driven attribution », avec une « attribution window » (fenêtre de crédit) et la « view-through conversion » (conversion après simple vue d'une publicité). Mais attribuer n'est pas prouver : l'« incrementality » mesure les ventes qui n'auraient pas eu lieu sans la publicité, avec un « holdout group » (groupe témoin) ou une « geo experiment ». Le « marketing mix modeling » et l'« adstock » (effet retardé de la publicité) complètent la vue d'ensemble. Verbes clés : to attribute, to isolate, to hold out, to model.",
+        "key_phrases": [
+          {
+            "en": "Multi-touch attribution spreads the credit across several touchpoints.",
+            "fr": "L'attribution multitouch répartit le crédit entre plusieurs points de contact."
+          },
+          {
+            "en": "A view-through conversion is not proof that the ad worked.",
+            "fr": "Une conversion après simple vue n'est pas la preuve que la publicité a fonctionné."
+          },
+          {
+            "en": "Incrementality tells us what would not have happened without the ads.",
+            "fr": "L'incrémentalité nous dit ce qui n'aurait pas eu lieu sans les publicités."
+          },
+          {
+            "en": "We kept a holdout group that saw no ads.",
+            "fr": "Nous avons gardé un groupe témoin qui n'a vu aucune publicité."
+          },
+          {
+            "en": "The geo experiment compares matched regions.",
+            "fr": "L'expérience géographique compare des régions comparables."
+          },
+          {
+            "en": "Adstock captures the delayed effect of advertising.",
+            "fr": "L'adstock capture l'effet retardé de la publicité."
+          }
+        ],
+        "tip_fr": "Faux ami : « attribution » ici n'est pas « attribution d'un prix » mais la répartition du crédit d'une conversion. Pour l'effet réel, parle d'« incrementality »."
+      },
+      "lessons": [
+        {
+          "id": "marketing-data-attribution-limits",
+          "title_fr": "Expliquer ce que l'attribution montre, et ce qu'elle ne prouve pas",
+          "term_ids": [
+            "multi-touch-attribution",
+            "data-driven-attribution",
+            "attribution-window",
+            "view-through-conversion"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucie",
+              "text_en": "Our dashboard says social ads drove 30% of sales. The finance director does not believe it.",
+              "text_fr": "Notre tableau de bord dit que les publicités sociales ont généré 30 % des ventes. Le directeur financier n'y croit pas."
+            },
+            {
+              "speaker": "Karl",
+              "text_en": "He is right to doubt. Most of that is view-through conversion: people saw an ad, then bought on their own.",
+              "text_fr": "Il a raison de douter. L'essentiel vient de conversions après simple vue : des gens ont vu une publicité, puis ont acheté de leur côté."
+            },
+            {
+              "speaker": "Lucie",
+              "text_en": "And the attribution window?",
+              "text_fr": "Et la fenêtre d'attribution ?"
+            },
+            {
+              "speaker": "Karl",
+              "text_en": "It is set to thirty days, which inflates the credit. Multi-touch or data-driven attribution is better, but still not proof.",
+              "text_fr": "Elle est réglée à trente jours, ce qui gonfle le crédit. L'attribution multitouch ou pilotée par les données vaut mieux, mais ce n'est toujours pas une preuve."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Karl doute-t-il des 30 % de ventes attribuées ?",
+              "choices": [
+                "Beaucoup de conversions viennent de personnes qui auraient acheté de toute façon",
+                "Les publicités sociales n'ont touché aucun utilisateur du site",
+                "Le tableau de bord ne compte que les ventes de la dernière semaine"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une conversion après simple vue ne prouve pas que la publicité a provoqué l'achat. Les autres explications ne sont pas dans le dialogue."
+            },
+            {
+              "prompt_fr": "Quel effet une « attribution window » de trente jours peut-elle avoir ?",
+              "choices": [
+                "Supprimer les doublons entre plusieurs canaux publicitaires",
+                "Réduire le crédit attribué en ignorant les achats récents",
+                "Gonfler le crédit attribué en comptant des achats lointains"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une fenêtre longue attribue à la publicité des achats éloignés dans le temps, donc elle gonfle le résultat. Elle n'élimine pas les doublons."
+            },
+            {
+              "prompt_fr": "Comment dire « Il a raison de douter » ?",
+              "choices": [
+                "He is right of doubting.",
+                "He is right to doubt.",
+                "He has reason to doubt."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To be right to + verbe » est naturel. « Has reason to » est un calque de « avoir raison », et « of doubting » est incorrect après « right »."
+            },
+            {
+              "prompt_fr": "Que fait une attribution « data-driven » ?",
+              "choices": [
+                "Attribuer tout le crédit au dernier clic avant l'achat",
+                "Répartir le crédit selon l'effet observé de chaque point de contact",
+                "Attribuer le même crédit à chaque point de contact du parcours"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'attribution pilotée par les données utilise un modèle statistique pour pondérer les points de contact. Les deux autres propositions décrivent le dernier clic et l'attribution linéaire."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris à la direction financière en 3 ou 4 phrases : pourquoi le chiffre de 30 % est discutable et ce que tu proposes.",
+            "context_en": "The dashboard says social ads drove 30% of sales.",
+            "model_answer_en": "The 30% figure comes mostly from view-through conversion: people saw an ad, then bought on their own. A thirty-day attribution window also inflates the credit. Multi-touch attribution is more balanced, but it is still not proof of impact. I propose a controlled test to measure the real effect.",
+            "model_answer_fr": "Le chiffre de 30 % vient surtout de conversions après simple vue : des gens ont vu une publicité, puis ont acheté de leur côté. Une fenêtre d'attribution de trente jours gonfle aussi le crédit. L'attribution multitouch est plus équilibrée, mais ce n'est toujours pas la preuve d'un impact. Je propose un test contrôlé pour mesurer l'effet réel.",
+            "key_phrases": [
+              "view-through conversion",
+              "attribution window",
+              "Multi-touch attribution"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-measure-incrementality",
+          "title_fr": "Mesurer l'incrémentalité avec un groupe témoin",
+          "term_ids": [
+            "incrementality",
+            "holdout-group",
+            "geo-experiment",
+            "uplift-modeling"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elodie",
+              "text_en": "How do we prove that the ads create extra sales?",
+              "text_fr": "Comment prouver que les publicités créent des ventes supplémentaires ?"
+            },
+            {
+              "speaker": "Marco",
+              "text_en": "We measure incrementality. A holdout group sees no ads, and we compare their sales with the exposed group.",
+              "text_fr": "Nous mesurons l'incrémentalité. Un groupe témoin ne voit aucune publicité, et nous comparons ses ventes à celles du groupe exposé."
+            },
+            {
+              "speaker": "Elodie",
+              "text_en": "And for TV, where we cannot choose individuals?",
+              "text_fr": "Et pour la télévision, où nous ne pouvons pas choisir des individus ?"
+            },
+            {
+              "speaker": "Marco",
+              "text_en": "A geo experiment: we turn off ads in matched regions. Later, uplift modeling can show who responds most.",
+              "text_fr": "Une expérience géographique : nous coupons les publicités dans des régions comparables. Ensuite, la modélisation de l'effet incrémental peut montrer qui réagit le plus."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que mesure l'« incrementality » ?",
+              "choices": [
+                "Le total des ventes enregistrées pendant la campagne",
+                "Les ventes supplémentaires causées par la publicité",
+                "La part des ventes attribuée au dernier clic avant l'achat"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'incrémentalité isole l'effet causal : ce qui n'aurait pas eu lieu sans la publicité. Les autres mesures incluent des ventes qui auraient eu lieu de toute façon."
+            },
+            {
+              "prompt_fr": "Pourquoi une « geo experiment » pour la télévision ?",
+              "choices": [
+                "On ne peut pas choisir d'individus, mais on peut comparer des régions",
+                "La télévision n'est diffusée que dans une seule région du pays",
+                "Les régions permettent de mesurer des ventes sans groupe témoin"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Quand on ne peut pas cibler des individus, on compare des zones géographiques comparables. La télévision n'est pas limitée à une région, et un groupe témoin reste nécessaire."
+            },
+            {
+              "prompt_fr": "Comment dire « Un groupe témoin ne voit aucune publicité » ?",
+              "choices": [
+                "A holdout group sees not any ad.",
+                "A holdout group does not see no ads.",
+                "A holdout group sees no ads."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Sees no ads » est correct et naturel. Une double négation (« does not see no ») change le sens, et « sees not any ad » est incorrect à l'affirmatif."
+            },
+            {
+              "prompt_fr": "À quoi sert l'« uplift modeling » ?",
+              "choices": [
+                "Mesurer la fréquence à laquelle chaque personne voit la publicité",
+                "Prévoir le chiffre d'affaires total des douze prochains mois",
+                "Identifier les personnes sur qui la publicité a le plus d'effet"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La modélisation de l'effet incrémental estime l'impact individuel de la publicité pour mieux cibler. Ce n'est ni une prévision globale ni une mesure de fréquence."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour décrire le plan de mesure : le groupe témoin, l'expérience géographique et ce que tu compares.",
+            "context_en": "How do we prove that the ads create extra sales?",
+            "model_answer_en": "To prove the real impact, we will measure incrementality. For digital ads, a holdout group will see no ads, and we will compare its sales with the exposed group. For TV, we will run a geo experiment by turning off ads in matched regions. We will report the extra sales, not the attributed sales.",
+            "model_answer_fr": "Pour prouver l'impact réel, nous mesurerons l'incrémentalité. Pour la publicité digitale, un groupe témoin ne verra aucune publicité et nous comparerons ses ventes à celles du groupe exposé. Pour la télévision, nous ferons une expérience géographique en coupant les publicités dans des régions comparables. Nous présenterons les ventes supplémentaires, pas les ventes attribuées.",
+            "key_phrases": [
+              "measure incrementality",
+              "a holdout group",
+              "a geo experiment"
+            ]
+          }
+        },
+        {
+          "id": "marketing-data-modeling-and-first-party-data",
+          "title_fr": "Modéliser l'impact global et fiabiliser les données",
+          "term_ids": [
+            "marketing-mix-modeling",
+            "adstock",
+            "server-side-tracking",
+            "identity-resolution"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Pia",
+              "text_en": "With cookies disappearing, how do we still measure all channels?",
+              "text_fr": "Avec la disparition des cookies, comment mesurer encore tous les canaux ?"
+            },
+            {
+              "speaker": "Yann",
+              "text_en": "Marketing mix modeling uses aggregate data, so it does not need individual tracking.",
+              "text_fr": "La modélisation du mix marketing utilise des données agrégées, donc elle n'a pas besoin de suivi individuel."
+            },
+            {
+              "speaker": "Pia",
+              "text_en": "Does it handle the delayed effect of TV?",
+              "text_fr": "Gère-t-elle l'effet retardé de la télévision ?"
+            },
+            {
+              "speaker": "Yann",
+              "text_en": "Yes, with adstock. In parallel, we move to server-side tracking and improve identity resolution to link a customer across devices.",
+              "text_fr": "Oui, avec l'adstock. En parallèle, nous passons au suivi côté serveur et améliorons la résolution d'identité pour relier un client entre appareils."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi le « marketing mix modeling » résiste-t-il à la fin des cookies ?",
+              "choices": [
+                "Il s'appuie sur des données agrégées, sans suivi individuel",
+                "Il remplace les cookies par des identifiants cachés dans les e-mails",
+                "Il ne mesure que les ventes en magasin physique"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le MMM utilise des séries de données globales (dépenses, ventes), donc il n'a pas besoin de suivre chaque personne. Les deux autres affirmations sont fausses."
+            },
+            {
+              "prompt_fr": "Que représente l'« adstock » ?",
+              "choices": [
+                "Le stock de publicités disponibles chez les régies",
+                "La quantité de produits restant après une campagne",
+                "L'effet publicitaire qui se prolonge après l'exposition"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'adstock modélise la persistance de l'effet d'une publicité dans le temps. Ce n'est pas un stock d'espaces publicitaires ni de produits."
+            },
+            {
+              "prompt_fr": "Comment dire « pour relier un client entre appareils » ?",
+              "choices": [
+                "to link a customer through devices",
+                "to link a customer across devices",
+                "to link a customer between devices"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Across devices » est la formule usuelle pour plusieurs appareils. « Between » suggère deux éléments précis, et « through » n'a pas ce sens."
+            },
+            {
+              "prompt_fr": "Quel avantage du « server-side tracking » est visé ici ?",
+              "choices": [
+                "Remplacer toute mesure d'audience par des sondages",
+                "Cacher la collecte aux utilisateurs pour éviter leur consentement",
+                "Collecter les données depuis le serveur, de façon plus fiable et contrôlée"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le suivi côté serveur envoie les données depuis le serveur, ce qui est plus robuste face aux bloqueurs et mieux contrôlé. Il ne dispense pas du consentement et ne remplace pas la mesure."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Présente à voix haute en 3 ou 4 phrases ton plan de mesure pour l'après-cookies.",
+            "context_en": "With cookies disappearing, how do we measure all channels?",
+            "model_answer_en": "We will use marketing mix modeling, which relies on aggregate data and handles the delayed effect of advertising with adstock. In parallel, we are moving to server-side tracking to make our data more reliable. We will also improve identity resolution to link a customer across devices.",
+            "model_answer_fr": "Nous utiliserons la modélisation du mix marketing, qui s'appuie sur des données agrégées et gère l'effet retardé de la publicité avec l'adstock. En parallèle, nous passons au suivi côté serveur pour fiabiliser nos données. Nous améliorerons aussi la résolution d'identité pour relier un client entre appareils.",
+            "key_phrases": [
+              "marketing mix modeling",
+              "adstock",
+              "server-side tracking"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
