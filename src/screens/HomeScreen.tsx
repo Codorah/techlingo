@@ -1,16 +1,18 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowRight, CalendarCheck, ChevronDown, ChevronRight, Compass, Flame, Hand, Layers, RotateCw, Sparkles, Zap } from 'lucide-react';
+import { ArrowLeftRight, ArrowRight, CalendarCheck, ChevronDown, ChevronRight, Compass, Flame, Hand, Layers, RotateCw, Sparkles, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
 import { Avatar } from '@/components/ui/Avatar';
 import { DynamicIcon } from '@/components/ui/DynamicIcon';
+import { CourseSwitchSheet } from '@/components/CourseSwitchSheet';
 import { TabBar } from '@/components/ui/TabBar';
 import { dueTermIds, type SpinStatus, spinStatus } from '@/data/progress';
 import { db } from '@/db/db';
 import { daysAway, displayedStreak, localDay } from '@/learning/streak';
 import { domainOf, generalRoleOf } from '@/lib/domains';
 import { checkDailyReminder, syncPushSubscription } from '@/lib/notifications';
+import { setActiveCourse, useActiveCourse } from '@/lib/activeCourse';
 import { courseRoles, useCourse } from '@/lib/useCourse';
 import { useManifest } from '@/lib/useContent';
 import { courseNodeHref } from '@/screens/course/CourseScreen';
@@ -25,6 +27,8 @@ export function HomeScreen() {
   const manifest = useManifest();
   const [status, setStatus] = useState<SpinStatus | null>(null);
   const [due, setDue] = useState<number>(0);
+  const activeCourse = useActiveCourse();
+  const [switching, setSwitching] = useState(false);
   const lessonsDone = useLiveQuery(() => db.lessonSessions.filter((l) => !!l.completedAt).toArray(), [], []);
 
   useEffect(() => {
@@ -74,7 +78,9 @@ export function HomeScreen() {
   const roles = manifest
     ? courseRoles(manifest, profile.primaryRole, profile.secondaryRoles)
     : { mine: [], discover: [], otherDomain: [] };
-  const [main, ...others] = roles.mine;
+  // The course shown here can differ from the learner's own job without changing the profile.
+  const main = activeCourse && manifest?.rolePaths?.includes(activeCourse) ? activeCourse : roles.mine[0];
+  const others = roles.mine.filter((r) => r !== main);
   const general = generalRoleOf(manifest, profile.primaryRole);
 
   const todaysTerm = status?.todaysTermId && manifest ? manifest.roles.flatMap(r => []).length : null;
@@ -152,7 +158,7 @@ export function HomeScreen() {
         <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_340px] lg:items-start">
           <div className="min-w-0 space-y-6">
             {/* Primary Career Hero */}
-            {main ? <HeroCourse role={main} /> : <div className="skeleton h-64" />}
+            {main ? <HeroCourse role={main} onSwitch={() => setSwitching(true)} /> : <div className="skeleton h-64" />}
 
             {/* Mobile Daily Widgets directly under course */}
             <div className="grid gap-3 lg:hidden">
@@ -344,13 +350,17 @@ export function HomeScreen() {
           </p>
         )}
       </main>
+      {switching && manifest && main && (
+        <CourseSwitchSheet manifest={manifest} ownDomain={domain} current={main} ownRole={profile.primaryRole}
+          onPick={(r) => { void setActiveCourse(r === profile.primaryRole ? null : r); setSwitching(false); }} onClose={() => setSwitching(false)} />
+      )}
       <TabBar />
     </>
   );
 }
 
 /** The main call to action of the app: the next step of the learner's own job course. */
-function HeroCourse({ role }: { role: string }) {
+function HeroCourse({ role, onSwitch }: { role: string; onSwitch: () => void }) {
   const { t } = useTranslation();
   const [, navigate] = useLocation();
   const { course, meta, stats } = useCourse(role);
@@ -373,7 +383,7 @@ function HeroCourse({ role }: { role: string }) {
         <h1 id="hero-course" className="mt-1 text-xl font-black leading-tight sm:text-3xl">
           {stats.unit?.title ?? meta.name_fr}
         </h1>
-        <p className="mt-1 hidden text-sm opacity-90 sm:block">{meta.name_fr}</p>
+        <p className="mt-1 text-sm font-bold opacity-90">{meta.name_fr}</p>
 
         <div className="mt-3 flex items-center gap-3">
           <div
@@ -408,6 +418,9 @@ function HeroCourse({ role }: { role: string }) {
           <ArrowRight size={20} aria-hidden />
         </button>
 
+        <button type="button" onClick={onSwitch} className="mt-3 flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl border-2 border-white/40 bg-white/10 text-sm font-extrabold active:bg-white/20">
+          <ArrowLeftRight size={18} aria-hidden />{t('course.switch.button')}
+        </button>
         <Link
           href={`/parcours/${role}`}
           className="mt-3 flex min-h-11 items-center justify-center text-sm font-bold underline-offset-2 opacity-95 hover:underline"
