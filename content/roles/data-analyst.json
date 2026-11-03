@@ -2158,6 +2158,438 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "confounding-variable",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "confounding variable",
+      "translation_fr": "variable de confusion",
+      "part_of_speech": "noun",
+      "definition_en": "A hidden factor that influences both the cause and the effect you are studying, and so distorts the link between them.",
+      "explanation_fr": "Un facteur caché qui agit à la fois sur la cause et sur l’effet étudiés, et fausse le lien entre les deux.",
+      "why_it_matters_fr": "C’est le premier réflexe quand on te dit « X provoque Y » : cherche ce qui pourrait expliquer les deux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "confounding-variable-1",
+          "text_en": "Ice cream sales and sunburns rise together because of a confounding variable: the weather.",
+          "text_fr": "Les ventes de glaces et les coups de soleil augmentent ensemble à cause d’une variable de confusion : la météo."
+        },
+        {
+          "id": "confounding-variable-2",
+          "text_en": "We could not prove the effect until we controlled for the confounding variable.",
+          "text_fr": "Nous n’avons pas pu prouver l’effet avant de contrôler la variable de confusion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "p-value",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 85
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "p-value",
+      "translation_fr": "valeur p",
+      "part_of_speech": "noun",
+      "definition_en": "The probability of seeing a result at least as extreme as yours if there were really no effect.",
+      "explanation_fr": "La probabilité d’observer un résultat au moins aussi extrême que le tien s’il n’y avait en réalité aucun effet.",
+      "why_it_matters_fr": "Elle ne dit pas que l’hypothèse est vraie : elle mesure à quel point les données surprennent si rien ne se passe.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "p-value-1",
+          "text_en": "The p-value is 0.03, so the difference is unlikely to be pure chance.",
+          "text_fr": "La valeur p est de 0,03, donc la différence a peu de chances d’être due au hasard seul."
+        },
+        {
+          "id": "p-value-2",
+          "text_en": "A small p-value does not mean the effect is large.",
+          "text_fr": "Une petite valeur p ne veut pas dire que l’effet est grand."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "selection-bias",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "selection bias",
+      "translation_fr": "biais de sélection",
+      "part_of_speech": "noun",
+      "definition_en": "A distortion that appears when the people or data you analyse are not representative of the group you want to understand.",
+      "explanation_fr": "Une distorsion qui apparaît quand les personnes ou les données analysées ne représentent pas le groupe que tu veux comprendre.",
+      "why_it_matters_fr": "Une enquête ne touche que ceux qui répondent : ses conclusions peuvent être fausses sans que le calcul soit faux.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "selection-bias-1",
+          "text_en": "Our survey suffers from selection bias because only happy customers replied.",
+          "text_fr": "Notre enquête souffre d’un biais de sélection car seuls les clients satisfaits ont répondu."
+        },
+        {
+          "id": "selection-bias-2",
+          "text_en": "Random sampling reduces selection bias.",
+          "text_fr": "L’échantillonnage aléatoire réduit le biais de sélection."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "survivorship-bias",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "survivorship bias",
+      "translation_fr": "biais du survivant",
+      "part_of_speech": "noun",
+      "definition_en": "The mistake of studying only the cases that succeeded or remained, and ignoring those that disappeared.",
+      "explanation_fr": "L’erreur qui consiste à n’étudier que les cas qui ont réussi ou subsisté, en ignorant ceux qui ont disparu.",
+      "why_it_matters_fr": "Analyser seulement les clients actuels te cache pourquoi les autres sont partis.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "survivorship-bias-1",
+          "text_en": "Looking only at active users creates survivorship bias in the churn analysis.",
+          "text_fr": "Regarder seulement les utilisateurs actifs crée un biais du survivant dans l’analyse du churn."
+        },
+        {
+          "id": "survivorship-bias-2",
+          "text_en": "We added the churned accounts to avoid survivorship bias.",
+          "text_fr": "Nous avons ajouté les comptes perdus pour éviter le biais du survivant."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "simpsons-paradox",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "Simpson’s paradox",
+      "translation_fr": "paradoxe de Simpson",
+      "part_of_speech": "noun",
+      "definition_en": "A situation where a trend seen in several groups reverses when the groups are combined.",
+      "explanation_fr": "Une situation où une tendance observée dans plusieurs groupes s’inverse quand on les regroupe.",
+      "why_it_matters_fr": "Elle te rappelle de segmenter avant de conclure sur un chiffre global.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "simpsons-paradox-1",
+          "text_en": "Simpson’s paradox explains why the new page won in every segment but lost overall.",
+          "text_fr": "Le paradoxe de Simpson explique pourquoi la nouvelle page a gagné dans chaque segment mais perdu au global."
+        },
+        {
+          "id": "simpsons-paradox-2",
+          "text_en": "Always check for Simpson’s paradox before you report an average.",
+          "text_fr": "Vérifie toujours le paradoxe de Simpson avant de présenter une moyenne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "multicollinearity",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "multicollinearity",
+      "translation_fr": "multicolinéarité",
+      "part_of_speech": "noun",
+      "definition_en": "A situation where two or more predictors in a model are strongly correlated with each other.",
+      "explanation_fr": "Une situation où plusieurs variables explicatives d’un modèle sont fortement corrélées entre elles.",
+      "why_it_matters_fr": "Le modèle ne sait plus à laquelle attribuer l’effet, et les coefficients deviennent instables.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "multicollinearity-1",
+          "text_en": "We removed one variable because of multicollinearity.",
+          "text_fr": "Nous avons retiré une variable à cause de la multicolinéarité."
+        },
+        {
+          "id": "multicollinearity-2",
+          "text_en": "Multicollinearity makes the coefficients hard to interpret.",
+          "text_fr": "La multicolinéarité rend les coefficients difficiles à interpréter."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "statistical-power",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "statistical power",
+      "translation_fr": "puissance statistique",
+      "part_of_speech": "noun",
+      "definition_en": "The chance that a test detects a real effect when one exists.",
+      "explanation_fr": "La probabilité qu’un test détecte un effet réel quand il existe.",
+      "why_it_matters_fr": "Un test sans assez de puissance conclut « pas de différence » alors qu’il en existe une.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "statistical-power-1",
+          "text_en": "The test had low statistical power because the sample was too small.",
+          "text_fr": "Le test avait une faible puissance statistique car l’échantillon était trop petit."
+        },
+        {
+          "id": "statistical-power-2",
+          "text_en": "We calculated the sample size to reach enough statistical power.",
+          "text_fr": "Nous avons calculé la taille d’échantillon pour atteindre une puissance statistique suffisante."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "regression-to-the-mean",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "regression to the mean",
+      "translation_fr": "régression vers la moyenne",
+      "part_of_speech": "phrase",
+      "definition_en": "The tendency of extreme values to be followed by values closer to the average.",
+      "explanation_fr": "La tendance des valeurs extrêmes à être suivies de valeurs plus proches de la moyenne.",
+      "why_it_matters_fr": "Après un record, un retour à la normale n’est pas forcément l’effet de ta décision.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "regression-to-the-mean-1",
+          "text_en": "The drop after the record month was just regression to the mean.",
+          "text_fr": "La baisse après le mois record n’était qu’une régression vers la moyenne."
+        },
+        {
+          "id": "regression-to-the-mean-2",
+          "text_en": "Beware of regression to the mean when you judge a campaign.",
+          "text_fr": "Méfie-toi de la régression vers la moyenne quand tu juges une campagne."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "dimensionality-reduction",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "dimensionality reduction",
+      "translation_fr": "réduction de dimension",
+      "part_of_speech": "noun",
+      "definition_en": "The process of reducing the number of variables in a dataset while keeping most of its information.",
+      "explanation_fr": "Le fait de réduire le nombre de variables d’un jeu de données en gardant l’essentiel de l’information.",
+      "why_it_matters_fr": "Utile pour visualiser, accélérer un modèle et limiter le bruit.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "dimensionality-reduction-1",
+          "text_en": "We used dimensionality reduction to plot the customers in two dimensions.",
+          "text_fr": "Nous avons utilisé la réduction de dimension pour représenter les clients en deux dimensions."
+        },
+        {
+          "id": "dimensionality-reduction-2",
+          "text_en": "PCA is a common dimensionality reduction technique.",
+          "text_fr": "L’ACP est une technique courante de réduction de dimension."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "type-i-error",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "type I error",
+      "translation_fr": "erreur de type I",
+      "part_of_speech": "noun",
+      "definition_en": "Concluding that there is an effect when there is none, a false positive.",
+      "explanation_fr": "Conclure qu’il y a un effet alors qu’il n’y en a pas, un faux positif.",
+      "why_it_matters_fr": "Dans un test A/B, c’est annoncer un gagnant qui n’en est pas un.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "type-i-error-1",
+          "text_en": "Running too many tests raises the risk of a type I error.",
+          "text_fr": "Multiplier les tests augmente le risque d’erreur de type I."
+        },
+        {
+          "id": "type-i-error-2",
+          "text_en": "A type I error cost us a useless redesign.",
+          "text_fr": "Une erreur de type I nous a coûté une refonte inutile."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "effect-size",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "effect size",
+      "translation_fr": "taille d’effet",
+      "part_of_speech": "noun",
+      "definition_en": "A measure of how large a difference or relationship is, not only whether it exists.",
+      "explanation_fr": "Une mesure de l’ampleur d’une différence ou d’un lien, et pas seulement de son existence.",
+      "why_it_matters_fr": "Un résultat significatif peut être minuscule : la taille d’effet dit s’il vaut la peine d’agir.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "effect-size-1",
+          "text_en": "The result is significant, but the effect size is tiny.",
+          "text_fr": "Le résultat est significatif, mais la taille d’effet est minuscule."
+        },
+        {
+          "id": "effect-size-2",
+          "text_en": "Report the effect size next to the p-value.",
+          "text_fr": "Présente la taille d’effet à côté de la valeur p."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sampling-error",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "data-analyst",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "data-analysis"
+      ],
+      "term_en": "sampling error",
+      "translation_fr": "erreur d’échantillonnage",
+      "part_of_speech": "noun",
+      "definition_en": "The gap between a result from a sample and the true value for the whole population.",
+      "explanation_fr": "L’écart entre le résultat d’un échantillon et la vraie valeur pour toute la population.",
+      "why_it_matters_fr": "Même un échantillon bien choisi ne donne jamais exactement la vraie valeur.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sampling-error-1",
+          "text_en": "A larger sample reduces the sampling error.",
+          "text_fr": "Un échantillon plus grand réduit l’erreur d’échantillonnage."
+        },
+        {
+          "id": "sampling-error-2",
+          "text_en": "The margin of error reflects the sampling error.",
+          "text_fr": "La marge d’erreur reflète l’erreur d’échantillonnage."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
