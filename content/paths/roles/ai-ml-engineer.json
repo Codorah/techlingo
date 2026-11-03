@@ -2559,6 +2559,317 @@
           }
         }
       ]
+    },
+    {
+      "id": "ai-ml-engineer-evaluate-explain-secure-model",
+      "title_fr": "Évaluer, expliquer et sécuriser un modèle devant l'équipe",
+      "title_en": "Evaluate, explain and secure a model in front of the team",
+      "situation_fr": "Avant la mise en production d'un assistant, la direction te demande si le modèle est assez fiable, assez sûr et assez léger. Tu dois défendre tes métriques, expliquer ses limites et justifier tes choix techniques.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu justifies un modèle au lieu de le décrire. Pour l'évaluer, tu parles de « precision and recall » et de « F1 score », et tu surveilles le « data drift » : les données réelles qui s'écartent de celles de l'entraînement. Avec un modèle de langage, tu te protèges contre la « prompt injection », tu peux utiliser un « LLM-as-a-judge » pour noter des réponses, et tu améliores la recherche avec le « hybrid search » et le « reranking ». Pour le rendre léger : « quantization », « knowledge distillation » et « LoRA ». Verbes clés : to fine-tune, to monitor, to trade off, to ground.",
+        "key_phrases": [
+          {
+            "en": "Precision is high, but recall is too low for this use case.",
+            "fr": "La précision est élevée, mais le rappel est trop faible pour ce cas d'usage."
+          },
+          {
+            "en": "We are seeing data drift on the new customers.",
+            "fr": "Nous observons une dérive des données sur les nouveaux clients."
+          },
+          {
+            "en": "The assistant is exposed to prompt injection.",
+            "fr": "L'assistant est exposé à l'injection de prompt."
+          },
+          {
+            "en": "We use hybrid search, then reranking, to ground the answers.",
+            "fr": "Nous utilisons la recherche hybride, puis le reranking, pour ancrer les réponses."
+          },
+          {
+            "en": "Quantization reduces the model size with a small loss in accuracy.",
+            "fr": "La quantification réduit la taille du modèle avec une petite perte de précision."
+          },
+          {
+            "en": "There is a trade-off between speed and quality.",
+            "fr": "Il y a un compromis entre vitesse et qualité."
+          }
+        ],
+        "tip_fr": "Faux ami : « precision » en machine learning n'est pas « exactitude » (accuracy). La précision mesure la part de bonnes prédictions parmi les positifs annoncés."
+      },
+      "lessons": [
+        {
+          "id": "ai-ml-engineer-defend-metrics-and-drift",
+          "title_fr": "Défendre ses métriques et surveiller la dérive",
+          "term_ids": [
+            "precision-recall",
+            "f1-score",
+            "data-drift",
+            "explainability"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Mira",
+              "text_en": "The fraud model has 97% precision. Can we ship it?",
+              "text_fr": "Le modèle de fraude a 97 % de précision. Peut-on le livrer ?"
+            },
+            {
+              "speaker": "Noah",
+              "text_en": "Not yet. Recall is only 40%, so it misses most of the fraud. The F1 score reflects that.",
+              "text_fr": "Pas encore. Le rappel n'est que de 40 %, donc il rate la plupart des fraudes. Le score F1 le reflète."
+            },
+            {
+              "speaker": "Mira",
+              "text_en": "And in production? The customers are changing.",
+              "text_fr": "Et en production ? Les clients changent."
+            },
+            {
+              "speaker": "Noah",
+              "text_en": "That is data drift. We must monitor it, and explain each decision to the risk team.",
+              "text_fr": "C'est de la dérive des données. Nous devons la surveiller et expliquer chaque décision à l'équipe risques."
+            },
+            {
+              "speaker": "Mira",
+              "text_en": "So explainability is a requirement, not a bonus.",
+              "text_fr": "Donc l'explicabilité est une exigence, pas un bonus."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi une précision de 97 % ne suffit-elle pas ici ?",
+              "choices": [
+                "Le modèle a été évalué sur des données d'entraînement uniquement",
+                "Le modèle rate la plupart des fraudes, car son rappel est faible",
+                "Le modèle détecte trop de fraudes qui n'en sont pas réellement"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une précision élevée avec un rappel de 40 % signifie que le modèle laisse passer la majorité des fraudes. Trop de fausses alertes serait un problème de précision, et l'évaluation sur l'entraînement n'est pas évoquée."
+            },
+            {
+              "prompt_fr": "Que désigne « data drift » ?",
+              "choices": [
+                "Le modèle oublie progressivement ce qu'il a appris pendant l'entraînement",
+                "Les données réelles s'éloignent de celles utilisées pour entraîner le modèle",
+                "Les données d'entraînement contiennent des erreurs de saisie répétées"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La dérive des données est un changement dans la distribution des données en production. Ce n'est pas un oubli du modèle, ni une erreur de qualité des données d'entraînement."
+            },
+            {
+              "prompt_fr": "Comment dire « Il rate la plupart des fraudes » ?",
+              "choices": [
+                "It misses most of the fraud.",
+                "It misses the most of fraud.",
+                "It fails most of the frauds."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Most of the + nom » ou « most + nom » est correct, et « fraud » reste au singulier. « The most of » et « fails the frauds » sont des calques incorrects de « la plupart de » et « rater »."
+            },
+            {
+              "prompt_fr": "Que veut dire Mira par « a requirement, not a bonus » ?",
+              "choices": [
+                "L'explicabilité est temporaire, elle disparaîtra plus tard",
+                "L'explicabilité est gratuite, elle n'a aucun coût",
+                "L'explicabilité est obligatoire, pas un simple plus"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« A requirement » est une exigence ; « a bonus » un supplément facultatif. Il n'est question ni de coût ni de durée."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Explique à voix haute en 3 ou 4 phrases pourquoi tu ne livres pas encore le modèle et ce que tu proposes.",
+            "context_en": "Precision 97%, recall 40%, customers are changing.",
+            "model_answer_en": "Precision is high, but recall is only 40%, so the model misses most of the fraud. We are also seeing data drift on the new customers. I propose to improve recall first, monitor the drift every week, and document how the model explains each decision.",
+            "model_answer_fr": "La précision est élevée, mais le rappel n'est que de 40 %, donc le modèle rate la plupart des fraudes. Nous observons aussi une dérive des données sur les nouveaux clients. Je propose d'améliorer d'abord le rappel, de surveiller la dérive chaque semaine et de documenter comment le modèle explique chaque décision.",
+            "key_phrases": [
+              "recall is only 40%",
+              "data drift",
+              "explains each decision"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-secure-and-ground-an-assistant",
+          "title_fr": "Sécuriser un assistant et ancrer ses réponses",
+          "term_ids": [
+            "prompt-injection",
+            "llm-as-a-judge",
+            "hybrid-search",
+            "reranking"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lena",
+              "text_en": "A user told our assistant to ignore its rules and reveal the system prompt.",
+              "text_fr": "Un utilisateur a demandé à notre assistant d'ignorer ses règles et de révéler le prompt système."
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "That is prompt injection. We need input filtering and strict permissions on the tools.",
+              "text_fr": "C'est de l'injection de prompt. Il faut filtrer les entrées et limiter strictement les droits des outils."
+            },
+            {
+              "speaker": "Lena",
+              "text_en": "Our answers also miss exact product codes.",
+              "text_fr": "Nos réponses ratent aussi les codes produit exacts."
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "Use hybrid search: keywords plus vectors. Then reranking puts the best passages first.",
+              "text_fr": "Utilise la recherche hybride : mots-clés plus vecteurs. Puis le reranking place les meilleurs passages en premier."
+            },
+            {
+              "speaker": "Lena",
+              "text_en": "How do we score 500 answers quickly? An LLM-as-a-judge, with a human check on a sample.",
+              "text_fr": "Comment noter 500 réponses rapidement ? Un LLM comme juge, avec une vérification humaine sur un échantillon."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "En quoi consiste la « prompt injection » décrite par Lena ?",
+              "choices": [
+                "Le modèle recopie mot pour mot ses données d'entraînement",
+                "Un utilisateur glisse des instructions qui contournent les règles du modèle",
+                "Le développeur ajoute trop d'exemples dans le prompt du modèle"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'injection de prompt est une attaque où le texte de l'utilisateur détourne les consignes du modèle. Ajouter des exemples est une pratique normale, et recopier des données d'entraînement est un autre problème (mémorisation)."
+            },
+            {
+              "prompt_fr": "Pourquoi la recherche hybride aide-t-elle pour les codes produit ?",
+              "choices": [
+                "La recherche hybride supprime le besoin de classer les résultats",
+                "Les mots-clés retrouvent les codes exacts que les vecteurs ratent",
+                "Les vecteurs retrouvent les codes exacts que les mots-clés ratent"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les vecteurs captent le sens mais manquent souvent des identifiants exacts, que la recherche par mots-clés retrouve. Le reranking reste utile ensuite pour classer."
+            },
+            {
+              "prompt_fr": "Comment dire « avec une vérification humaine sur un échantillon » ?",
+              "choices": [
+                "with a human check on a sample",
+                "with a human verification of an example",
+                "with a human control on a sampling"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« A check on a sample » est la formule naturelle. « Control » est un faux ami (contrôle de pouvoir) et « sampling » désigne l'action d'échantillonner, pas l'échantillon lui-même."
+            },
+            {
+              "prompt_fr": "Quelle limite d'un « LLM-as-a-judge » justifie le contrôle humain ?",
+              "choices": [
+                "Le juge automatique peut se tromper ou avoir des biais",
+                "Le juge automatique ne peut noter que trois réponses par jour",
+                "Le juge automatique ne sait pas lire les réponses longues"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Un modèle juge peut être biaisé ou se tromper : on contrôle donc un échantillon. Les deux autres limites sont inventées."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris un message à l'équipe produit en 3 ou 4 phrases : l'attaque observée, ta protection et ton amélioration de la recherche.",
+            "context_en": "A user asked the assistant to reveal its system prompt. Product codes are often missed.",
+            "model_answer_en": "A user tried a prompt injection to reveal the system prompt. I am adding input filtering and restricting the tool permissions. I will also switch to hybrid search with reranking, so exact product codes are found. Quality will be scored by an LLM-as-a-judge, with a human check on a sample.",
+            "model_answer_fr": "Un utilisateur a tenté une injection de prompt pour révéler le prompt système. J'ajoute un filtrage des entrées et je limite les droits des outils. Je passe aussi à une recherche hybride avec reranking, pour que les codes produit exacts soient trouvés. La qualité sera notée par un LLM comme juge, avec une vérification humaine sur un échantillon.",
+            "key_phrases": [
+              "a prompt injection",
+              "hybrid search with reranking",
+              "an LLM-as-a-judge"
+            ]
+          }
+        },
+        {
+          "id": "ai-ml-engineer-make-the-model-lighter",
+          "title_fr": "Alléger et adapter un modèle sans perdre en qualité",
+          "term_ids": [
+            "quantization",
+            "knowledge-distillation",
+            "lora",
+            "rlhf"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ravi",
+              "text_en": "The model is too heavy for our servers. What are the options?",
+              "text_fr": "Le modèle est trop lourd pour nos serveurs. Quelles sont les options ?"
+            },
+            {
+              "speaker": "Elsa",
+              "text_en": "Quantization stores the weights with fewer bits. We lose a little accuracy but save a lot of memory.",
+              "text_fr": "La quantification stocke les poids avec moins de bits. Nous perdons un peu de précision mais gagnons beaucoup de mémoire."
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "And knowledge distillation?",
+              "text_fr": "Et la distillation de connaissances ?"
+            },
+            {
+              "speaker": "Elsa",
+              "text_en": "A small model learns from a large one. For our tone of voice, LoRA adapts the model cheaply.",
+              "text_fr": "Un petit modèle apprend à partir d'un grand. Pour notre ton, LoRA adapte le modèle à faible coût."
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "Do we need RLHF? Only if human preferences really matter for the final behavior.",
+              "text_fr": "Avons-nous besoin du RLHF ? Seulement si les préférences humaines comptent vraiment pour le comportement final."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est l'effet de la quantification ?",
+              "choices": [
+                "Moins de mémoire utilisée, avec une petite perte de précision",
+                "Un entraînement plus rapide, sans aucune perte de précision",
+                "Plus de précision, avec une consommation de mémoire plus élevée"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La quantification réduit la précision numérique des poids, ce qui économise de la mémoire au prix d'une légère perte. Elle n'augmente pas la précision et ne supprime jamais tout compromis."
+            },
+            {
+              "prompt_fr": "Que signifie « knowledge distillation » ?",
+              "choices": [
+                "Un grand modèle apprend à partir de plusieurs petits modèles",
+                "Un petit modèle apprend à imiter un modèle plus grand",
+                "Un modèle supprime les données d'entraînement devenues inutiles"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La distillation transfère le comportement d'un grand modèle vers un petit. Le sens inverse est faux, et supprimer des données est une autre opération."
+            },
+            {
+              "prompt_fr": "Comment dire « Cela adapte le modèle à faible coût » ?",
+              "choices": [
+                "It adapts the model at low cost.",
+                "It adapts the model with low cost.",
+                "It adapts the model for a cost low."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "On dit « at low cost » ou « at a low cost ». « With low cost » et « for a cost low » sont des tournures qui calquent le français."
+            },
+            {
+              "prompt_fr": "Dans quel cas Elsa recommande-t-elle le RLHF ?",
+              "choices": [
+                "Quand le modèle est trop lourd pour tourner sur les serveurs",
+                "Quand les préférences humaines comptent pour le comportement final",
+                "Quand les données d'entraînement manquent pour une langue précise"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le RLHF utilise des retours humains pour orienter le comportement. Il ne réduit pas la taille du modèle et ne résout pas un manque de données dans une langue."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour justifier ton choix technique : réduire la taille, adapter le ton et garder la qualité.",
+            "context_en": "The model is too heavy for our servers and must keep our brand tone.",
+            "model_answer_en": "The model is too heavy, so I recommend quantization: it saves a lot of memory with a small loss in accuracy. To keep our tone of voice, LoRA adapts the model at low cost. There is a trade-off between speed and quality, so we will measure both before release.",
+            "model_answer_fr": "Le modèle est trop lourd, je recommande donc la quantification : elle économise beaucoup de mémoire avec une petite perte de précision. Pour garder notre ton, LoRA adapte le modèle à faible coût. Il y a un compromis entre vitesse et qualité, nous mesurerons donc les deux avant la mise en production.",
+            "key_phrases": [
+              "quantization",
+              "at low cost",
+              "a trade-off between speed and quality"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
