@@ -11,12 +11,30 @@
       "guide": {
         "intro_fr": "Avant chaque lancement, le responsable e-commerce prépare le catalogue. En anglais, la fiche produit se dit product page (ou PDP, product detail page). Elle contient un product title, une product description et des product attributes : matière, dimensions, couleur. Chaque déclinaison (taille, couleur) est une product variant avec sa propre référence, le SKU. Les données sont saisies dans le back office ou dans un PIM, l'outil qui centralise l'information produit et l'envoie vers tous les canaux. Il faut ensuite des visuels : le packshot sur fond blanc et la lifestyle image qui montre le produit en situation. Enfin, on décide quels produits mettre en avant sur la category page et sur la vitrine du site : c'est le merchandising.",
         "key_phrases": [
-          { "en": "The product pages need to be live by Monday.", "fr": "Les fiches produits doivent être en ligne d'ici lundi." },
-          { "en": "Each color is a separate variant with its own SKU.", "fr": "Chaque couleur est une variante distincte avec son propre SKU." },
-          { "en": "Can you fill in the product attributes in the PIM?", "fr": "Tu peux renseigner les caractéristiques produit dans le PIM ?" },
-          { "en": "We still need packshots for the new arrivals.", "fr": "Il nous manque encore les packshots des nouveautés." },
-          { "en": "Let's pin the best-sellers to the first row.", "fr": "Épinglons les meilleures ventes sur la première ligne." },
-          { "en": "This shirt runs large, so we recommend sizing down.", "fr": "Cette chemise taille grand, donc on conseille de prendre la taille en dessous." }
+          {
+            "en": "The product pages need to be live by Monday.",
+            "fr": "Les fiches produits doivent être en ligne d'ici lundi."
+          },
+          {
+            "en": "Each color is a separate variant with its own SKU.",
+            "fr": "Chaque couleur est une variante distincte avec son propre SKU."
+          },
+          {
+            "en": "Can you fill in the product attributes in the PIM?",
+            "fr": "Tu peux renseigner les caractéristiques produit dans le PIM ?"
+          },
+          {
+            "en": "We still need packshots for the new arrivals.",
+            "fr": "Il nous manque encore les packshots des nouveautés."
+          },
+          {
+            "en": "Let's pin the best-sellers to the first row.",
+            "fr": "Épinglons les meilleures ventes sur la première ligne."
+          },
+          {
+            "en": "This shirt runs large, so we recommend sizing down.",
+            "fr": "Cette chemise taille grand, donc on conseille de prendre la taille en dessous."
+          }
         ],
         "tip_fr": "Pour dire qu'une page est publiée, on dit qu'elle est live : « The new product pages go live on Monday. » Et attention à l'ordre des mots dans un titre produit : en anglais, tout ce qui précise le produit se place devant lui. « Chemise en lin bleue pour homme » devient Men's Blue Linen Shirt, pas « Shirt in linen blue for men »."
       },
@@ -24,14 +42,44 @@
         {
           "id": "ecommerce-rediger-fiche-produit",
           "title_fr": "Rédiger une fiche produit",
-          "term_ids": ["product-page", "product-title", "product-description", "product-attributes", "size-guide"],
+          "term_ids": [
+            "product-page",
+            "product-title",
+            "product-description",
+            "product-attributes",
+            "size-guide"
+          ],
           "dialogue": [
-            { "speaker": "Lucía", "text_en": "I've drafted the product page for the linen shirt. Can you have a look?", "text_fr": "J'ai préparé la fiche produit de la chemise en lin. Tu peux jeter un œil ?" },
-            { "speaker": "Kenji", "text_en": "Sure. The product title is too long. On mobile, customers only see the first few words.", "text_fr": "Bien sûr. Le titre produit est trop long. Sur mobile, les clients ne voient que les premiers mots." },
-            { "speaker": "Lucía", "text_en": "OK, I'll shorten it. What about the product description?", "text_fr": "D'accord, je vais le raccourcir. Et la description produit ?" },
-            { "speaker": "Kenji", "text_en": "It reads well, but it doesn't answer the basic questions. What's the fabric? How do I wash it? Put that in the product attributes.", "text_fr": "Elle se lit bien, mais elle ne répond pas aux questions de base. Quelle est la matière ? Comment je la lave ? Mets ça dans les caractéristiques produit." },
-            { "speaker": "Lucía", "text_en": "Good point. I'll also link the size guide. We get a lot of returns on shirts because of the size.", "text_fr": "Bien vu. J'ajoute aussi un lien vers le guide des tailles. On a beaucoup de retours sur les chemises à cause de la taille." },
-            { "speaker": "Kenji", "text_en": "Perfect. Then it can go live tomorrow.", "text_fr": "Parfait. Alors elle peut être mise en ligne demain." }
+            {
+              "speaker": "Lucía",
+              "text_en": "I've drafted the product page for the linen shirt. Can you have a look?",
+              "text_fr": "J'ai préparé la fiche produit de la chemise en lin. Tu peux jeter un œil ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Sure. The product title is too long. On mobile, customers only see the first few words.",
+              "text_fr": "Bien sûr. Le titre produit est trop long. Sur mobile, les clients ne voient que les premiers mots."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "OK, I'll shorten it. What about the product description?",
+              "text_fr": "D'accord, je vais le raccourcir. Et la description produit ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "It reads well, but it doesn't answer the basic questions. What's the fabric? How do I wash it? Put that in the product attributes.",
+              "text_fr": "Elle se lit bien, mais elle ne répond pas aux questions de base. Quelle est la matière ? Comment je la lave ? Mets ça dans les caractéristiques produit."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Good point. I'll also link the size guide. We get a lot of returns on shirts because of the size.",
+              "text_fr": "Bien vu. J'ajoute aussi un lien vers le guide des tailles. On a beaucoup de retours sur les chemises à cause de la taille."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Perfect. Then it can go live tomorrow.",
+              "text_fr": "Parfait. Alors elle peut être mise en ligne demain."
+            }
           ],
           "questions": [
             {
@@ -56,7 +104,11 @@
             },
             {
               "prompt_fr": "Complète la consigne d'entretien dans les caractéristiques produit : « Machine wash ___ 30 °C. »",
-              "choices": ["at", "in", "on"],
+              "choices": [
+                "at",
+                "in",
+                "on"
+              ],
               "answer_index": 0,
               "explanation_fr": "On utilise at devant une température précise : wash at 30 °C, at 20 degrees. « In 30 °C » et « on 30 °C » sont des calques de « à » ou « en ». Sur les étiquettes, on voit aussi la forme courte machine wash cold."
             },
@@ -77,20 +129,55 @@
             "context_en": "Lucía: Here's the draft for the linen shirt product page. Ready to go live?",
             "model_answer_en": "Almost, and the description reads really well! Could you shorten the product title so the key words show on mobile? Please also add the fabric and care instructions to the product attributes, because that's what customers ask about most. Once that's done, it can go live tomorrow.",
             "model_answer_fr": "Presque, et la description se lit vraiment bien ! Tu peux raccourcir le titre produit pour que les mots importants s'affichent sur mobile ? Ajoute aussi la matière et les consignes d'entretien dans les caractéristiques produit, parce que c'est ce que les clients demandent le plus. Une fois que c'est fait, elle peut être mise en ligne demain.",
-            "key_phrases": ["reads really well", "shorten the product title", "add the fabric and care instructions", "it can go live tomorrow"]
+            "key_phrases": [
+              "reads really well",
+              "shorten the product title",
+              "add the fabric and care instructions",
+              "it can go live tomorrow"
+            ]
           }
         },
         {
           "id": "ecommerce-creer-variantes-sku",
           "title_fr": "Créer les variantes et les références",
-          "term_ids": ["sku", "product-variant", "product-catalog", "pim", "back-office"],
+          "term_ids": [
+            "sku",
+            "product-variant",
+            "product-catalog",
+            "pim",
+            "back-office"
+          ],
           "dialogue": [
-            { "speaker": "Moussa", "text_en": "The supplier sent the file for the new sneakers. Five colors, eight sizes.", "text_fr": "Le fournisseur a envoyé le fichier pour les nouvelles baskets. Cinq couleurs, huit tailles." },
-            { "speaker": "Ingrid", "text_en": "So that's forty product variants. Each one needs its own SKU, or the warehouse can't track stock.", "text_fr": "Donc ça fait quarante variantes. Chacune a besoin de son propre SKU, sinon l'entrepôt ne peut pas suivre le stock." },
-            { "speaker": "Moussa", "text_en": "Should I create them one by one in the back office?", "text_fr": "Je les crée une par une dans le back-office ?" },
-            { "speaker": "Ingrid", "text_en": "You could, but a bulk import into the PIM is faster. It pushes the data to the website and the marketplaces at the same time.", "text_fr": "Tu pourrais, mais un import en masse dans le PIM est plus rapide. Il envoie les données au site et aux marketplaces en même temps." },
-            { "speaker": "Moussa", "text_en": "Great. I'll check that the SKUs follow our naming rules before they reach the product catalog.", "text_fr": "Super. Je vérifie que les SKU respectent nos règles de nommage avant qu'ils arrivent dans le catalogue produits." },
-            { "speaker": "Ingrid", "text_en": "Yes, please. A single typo and we end up with duplicates.", "text_fr": "Oui, s'il te plaît. Une seule faute de frappe et on se retrouve avec des doublons." }
+            {
+              "speaker": "Moussa",
+              "text_en": "The supplier sent the file for the new sneakers. Five colors, eight sizes.",
+              "text_fr": "Le fournisseur a envoyé le fichier pour les nouvelles baskets. Cinq couleurs, huit tailles."
+            },
+            {
+              "speaker": "Ingrid",
+              "text_en": "So that's forty product variants. Each one needs its own SKU, or the warehouse can't track stock.",
+              "text_fr": "Donc ça fait quarante variantes. Chacune a besoin de son propre SKU, sinon l'entrepôt ne peut pas suivre le stock."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Should I create them one by one in the back office?",
+              "text_fr": "Je les crée une par une dans le back-office ?"
+            },
+            {
+              "speaker": "Ingrid",
+              "text_en": "You could, but a bulk import into the PIM is faster. It pushes the data to the website and the marketplaces at the same time.",
+              "text_fr": "Tu pourrais, mais un import en masse dans le PIM est plus rapide. Il envoie les données au site et aux marketplaces en même temps."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Great. I'll check that the SKUs follow our naming rules before they reach the product catalog.",
+              "text_fr": "Super. Je vérifie que les SKU respectent nos règles de nommage avant qu'ils arrivent dans le catalogue produits."
+            },
+            {
+              "speaker": "Ingrid",
+              "text_en": "Yes, please. A single typo and we end up with duplicates.",
+              "text_fr": "Oui, s'il te plaît. Une seule faute de frappe et on se retrouve avec des doublons."
+            }
           ],
           "questions": [
             {
@@ -105,13 +192,21 @@
             },
             {
               "prompt_fr": "Comment dire « une déclinaison » (une taille ou une couleur d'un même produit) ?",
-              "choices": ["a product declination", "a product variant", "a product version"],
+              "choices": [
+                "a product declination",
+                "a product variant",
+                "a product version"
+              ],
               "answer_index": 1,
               "explanation_fr": "On dit a product variant. « Declination » est un faux ami : en anglais, le mot n'existe qu'en astronomie ou en navigation. « Product version » s'emploie pour un logiciel ou un modèle mis à jour (version 2), pas pour une taille ou une couleur."
             },
             {
               "prompt_fr": "Complète : « A single typo and we end up ___ duplicates in the catalog. »",
-              "choices": ["by", "with", "to"],
+              "choices": [
+                "by",
+                "with",
+                "to"
+              ],
               "answer_index": 1,
               "explanation_fr": "End up with + nom = se retrouver avec quelque chose. On peut aussi dire end up + verbe en -ing (we end up creating duplicates). « End up by » et « end up to » ne s'emploient pas devant un nom."
             },
@@ -132,20 +227,55 @@
             "context_en": "Hi, attached is the product file for the new sneakers. Best regards, Daniel",
             "model_answer_en": "Hi Daniel, thanks for the file. Could you send it again with one line per product variant and a SKU for each one? We need this format to import the products into our PIM and track stock by size and color. Could we have it by Thursday?",
             "model_answer_fr": "Bonjour Daniel, merci pour le fichier. Pourriez-vous le renvoyer avec une ligne par variante et un SKU pour chacune ? Nous avons besoin de ce format pour importer les produits dans notre PIM et suivre le stock par taille et par couleur. Pourrions-nous l'avoir d'ici jeudi ?",
-            "key_phrases": ["one line per product variant", "a SKU for each one", "import the products into our PIM", "track stock by size and color"]
+            "key_phrases": [
+              "one line per product variant",
+              "a SKU for each one",
+              "import the products into our PIM",
+              "track stock by size and color"
+            ]
           }
         },
         {
           "id": "ecommerce-commander-visuels",
           "title_fr": "Commander les visuels produits",
-          "term_ids": ["packshot", "lifestyle-image", "new-arrivals", "storefront", "limited-edition"],
+          "term_ids": [
+            "packshot",
+            "lifestyle-image",
+            "new-arrivals",
+            "storefront",
+            "limited-edition"
+          ],
           "dialogue": [
-            { "speaker": "Priya", "text_en": "The shoot is on Wednesday. Which pictures do you need for the new arrivals?", "text_fr": "Le shooting est mercredi. De quelles photos as-tu besoin pour les nouveautés ?" },
-            { "speaker": "Tomasz", "text_en": "A packshot for every product, on a white background, front and back.", "text_fr": "Un packshot pour chaque produit, sur fond blanc, de face et de dos." },
-            { "speaker": "Priya", "text_en": "And lifestyle images?", "text_fr": "Et des photos d'ambiance ?" },
-            { "speaker": "Tomasz", "text_en": "Yes, three or four lifestyle images for the homepage banner. Next week, the whole storefront will be about the new collection.", "text_fr": "Oui, trois ou quatre photos en situation pour la bannière de la page d'accueil. La semaine prochaine, toute la vitrine du site sera consacrée à la nouvelle collection." },
-            { "speaker": "Priya", "text_en": "What about the limited edition bag?", "text_fr": "Et le sac en édition limitée ?" },
-            { "speaker": "Tomasz", "text_en": "That one deserves a short video. There are only 300 pieces, so we want people to feel it's special.", "text_fr": "Celui-là mérite une courte vidéo. Il n'y en a que 300, donc on veut que les gens sentent que c'est spécial." }
+            {
+              "speaker": "Priya",
+              "text_en": "The shoot is on Wednesday. Which pictures do you need for the new arrivals?",
+              "text_fr": "Le shooting est mercredi. De quelles photos as-tu besoin pour les nouveautés ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "A packshot for every product, on a white background, front and back.",
+              "text_fr": "Un packshot pour chaque produit, sur fond blanc, de face et de dos."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "And lifestyle images?",
+              "text_fr": "Et des photos d'ambiance ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Yes, three or four lifestyle images for the homepage banner. Next week, the whole storefront will be about the new collection.",
+              "text_fr": "Oui, trois ou quatre photos en situation pour la bannière de la page d'accueil. La semaine prochaine, toute la vitrine du site sera consacrée à la nouvelle collection."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "What about the limited edition bag?",
+              "text_fr": "Et le sac en édition limitée ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "That one deserves a short video. There are only 300 pieces, so we want people to feel it's special.",
+              "text_fr": "Celui-là mérite une courte vidéo. Il n'y en a que 300, donc on veut que les gens sentent que c'est spécial."
+            }
           ],
           "questions": [
             {
@@ -160,13 +290,21 @@
             },
             {
               "prompt_fr": "Comment s'appelle la rubrique « Nouveautés » sur un site de mode anglophone ?",
-              "choices": ["Novelties", "New Arrivals", "News"],
+              "choices": [
+                "Novelties",
+                "New Arrivals",
+                "News"
+              ],
               "answer_index": 1,
               "explanation_fr": "La rubrique s'appelle New Arrivals (on voit aussi New In ou Just In). Faux ami : novelties désigne des gadgets ou des articles fantaisie. News, ce sont les actualités : sur un site, c'est le blog ou la page presse."
             },
             {
               "prompt_fr": "Complète la phrase de Tomasz : « That one ___ a short video. » (Celui-là mérite une courte vidéo.)",
-              "choices": ["merits to have", "is worth of", "deserves"],
+              "choices": [
+                "merits to have",
+                "is worth of",
+                "deserves"
+              ],
               "answer_index": 2,
               "explanation_fr": "To deserve something = mériter quelque chose, sans préposition. Merit existe mais il est formel et ne prend pas to have. On peut dire it's worth a video, mais jamais « worth of » : worth se construit directement avec un nom."
             },
@@ -179,26 +317,58 @@
               ],
               "answer_index": 0,
               "explanation_fr": "« Once they're gone, they're gone » est la formule consacrée pour créer l'urgence. « When it's finished » est un calque de « quand c'est fini, c'est fini ». Copies s'emploie pour des livres ou des disques, pas pour des sacs, et « there is no more » est incorrect avec un pluriel (there are no more)."
-          }
+            }
           ],
           "production": {
             "channel": "brief",
             "prompt_fr": "Rédige la demande de visuels pour la photographe, en 3 ou 4 phrases : précise les packshots et les photos d'ambiance (combien, pour quel emplacement), ajoute une demande spéciale pour l'édition limitée avec sa raison, et une date de livraison des fichiers.",
             "model_answer_en": "For the new arrivals, we need one packshot per product on a white background, front and back. We also need four lifestyle images for the homepage banner, since the storefront will feature the new collection next week. Please plan a short video for the limited edition bag, because we want it to feel special. We'd need the final files by Friday.",
             "model_answer_fr": "Pour les nouveautés, nous avons besoin d'un packshot par produit sur fond blanc, de face et de dos. Il nous faut aussi quatre photos d'ambiance pour la bannière de la page d'accueil, puisque la vitrine du site mettra en avant la nouvelle collection la semaine prochaine. Merci de prévoir une courte vidéo pour le sac en édition limitée, car nous voulons qu'il paraisse spécial. Il nous faudrait les fichiers définitifs d'ici vendredi.",
-            "key_phrases": ["one packshot per product", "on a white background", "four lifestyle images", "the limited edition bag", "the final files by Friday"]
+            "key_phrases": [
+              "one packshot per product",
+              "on a white background",
+              "four lifestyle images",
+              "the limited edition bag",
+              "the final files by Friday"
+            ]
           }
         },
         {
           "id": "ecommerce-organiser-page-categorie",
           "title_fr": "Organiser la page catégorie",
-          "term_ids": ["category-page", "merchandising", "best-seller", "site-search", "faceted-navigation"],
+          "term_ids": [
+            "category-page",
+            "merchandising",
+            "best-seller",
+            "site-search",
+            "faceted-navigation"
+          ],
           "dialogue": [
-            { "speaker": "Aïcha", "text_en": "Sales from the dresses category page dropped last week. Any idea why?", "text_fr": "Les ventes depuis la page catégorie des robes ont baissé la semaine dernière. Une idée de la raison ?" },
-            { "speaker": "Jonas", "text_en": "I think it's the merchandising. The new products are at the top, but nobody knows them yet.", "text_fr": "Je pense que c'est le merchandising. Les nouveaux produits sont en haut, mais personne ne les connaît encore." },
-            { "speaker": "Aïcha", "text_en": "So let's pin two or three best-sellers in the first row and mix the new ones in below.", "text_fr": "Alors épinglons deux ou trois meilleures ventes sur la première ligne et intercalons les nouveautés en dessous." },
-            { "speaker": "Jonas", "text_en": "Good idea. Also, many people type 'dress' and a size in the site search. Our faceted navigation has no size filter.", "text_fr": "Bonne idée. Aussi, beaucoup de gens tapent « robe » et une taille dans le moteur de recherche interne. Notre navigation à facettes n'a pas de filtre de taille." },
-            { "speaker": "Aïcha", "text_en": "That's a quick fix. Let's add size and color filters today.", "text_fr": "Ça se corrige vite. Ajoutons des filtres de taille et de couleur dès aujourd'hui." }
+            {
+              "speaker": "Aïcha",
+              "text_en": "Sales from the dresses category page dropped last week. Any idea why?",
+              "text_fr": "Les ventes depuis la page catégorie des robes ont baissé la semaine dernière. Une idée de la raison ?"
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "I think it's the merchandising. The new products are at the top, but nobody knows them yet.",
+              "text_fr": "Je pense que c'est le merchandising. Les nouveaux produits sont en haut, mais personne ne les connaît encore."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "So let's pin two or three best-sellers in the first row and mix the new ones in below.",
+              "text_fr": "Alors épinglons deux ou trois meilleures ventes sur la première ligne et intercalons les nouveautés en dessous."
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "Good idea. Also, many people type 'dress' and a size in the site search. Our faceted navigation has no size filter.",
+              "text_fr": "Bonne idée. Aussi, beaucoup de gens tapent « robe » et une taille dans le moteur de recherche interne. Notre navigation à facettes n'a pas de filtre de taille."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "That's a quick fix. Let's add size and color filters today.",
+              "text_fr": "Ça se corrige vite. Ajoutons des filtres de taille et de couleur dès aujourd'hui."
+            }
           ],
           "questions": [
             {
@@ -213,7 +383,11 @@
             },
             {
               "prompt_fr": "Comment dire « le moteur de recherche interne » du site ?",
-              "choices": ["the internal search motor", "the site research", "the site search"],
+              "choices": [
+                "the internal search motor",
+                "the site research",
+                "the site search"
+              ],
               "answer_index": 2,
               "explanation_fr": "On dit site search (ou on-site search). Un moteur de recherche se dit search engine, jamais « search motor ». Et research désigne une recherche scientifique ou une étude, pas une recherche tapée dans un champ."
             },
@@ -243,7 +417,12 @@
             "prompt_fr": "Sur le canal de l'équipe, signale la baisse de la page catégorie des robes et propose deux changements en donnant la raison de chacun. Termine par la façon dont vous mesurerez le résultat. 3 ou 4 phrases.",
             "model_answer_en": "Heads-up: the dresses category page is underperforming since we launched the new collection. I suggest we pin three best-sellers in the first row, because new products alone don't convert yet. We should also add size and color filters, since many people search for a size in the site search. Let's compare sales from the page next Monday.",
             "model_answer_fr": "Pour info : la page catégorie des robes est en sous-performance depuis le lancement de la nouvelle collection. Je propose d'épingler trois meilleures ventes sur la première ligne, parce que les nouveautés seules ne convertissent pas encore. Il faudrait aussi ajouter des filtres de taille et de couleur, puisque beaucoup de gens cherchent une taille dans le moteur de recherche interne. Comparons les ventes de la page lundi prochain.",
-            "key_phrases": ["the dresses category page is underperforming", "pin three best-sellers in the first row", "add size and color filters", "compare sales from the page"]
+            "key_phrases": [
+              "the dresses category page is underperforming",
+              "pin three best-sellers in the first row",
+              "add size and color filters",
+              "compare sales from the page"
+            ]
           }
         }
       ]
@@ -256,12 +435,30 @@
       "guide": {
         "intro_fr": "Le parcours d'achat se lit comme un entonnoir. Le client clique sur add to cart, ouvre son shopping cart (le panier), puis passe par les checkout steps : adresse, livraison, paiement. Chaque étape où il décroche fait monter le cart abandonment. Pour le réduire, on simplifie : guest checkout (commander sans créer de compte), express checkout (payer en un geste avec un portefeuille comme PayPal ou Apple Pay) et plus de payment methods. Le paiement passe par une payment gateway, fournie par un PSP (payment service provider) : si elle tombe en panne, plus aucune commande n'arrive. Enfin, l'équipe CRM relance les clients avec un abandoned cart email.",
         "key_phrases": [
-          { "en": "Where exactly do people drop off?", "fr": "Où exactement les gens décrochent-ils ?" },
-          { "en": "We lose most people at the shipping step.", "fr": "On perd la plupart des gens à l'étape livraison." },
-          { "en": "Forcing account creation hurts conversion.", "fr": "Obliger à créer un compte fait baisser la conversion." },
-          { "en": "Payments have been failing since 10 a.m.", "fr": "Les paiements échouent depuis 10 h." },
-          { "en": "Let's send the first reminder after one hour.", "fr": "Envoyons la première relance au bout d'une heure." },
-          { "en": "Conversion is up one percentage point.", "fr": "La conversion a gagné un point." }
+          {
+            "en": "Where exactly do people drop off?",
+            "fr": "Où exactement les gens décrochent-ils ?"
+          },
+          {
+            "en": "We lose most people at the shipping step.",
+            "fr": "On perd la plupart des gens à l'étape livraison."
+          },
+          {
+            "en": "Forcing account creation hurts conversion.",
+            "fr": "Obliger à créer un compte fait baisser la conversion."
+          },
+          {
+            "en": "Payments have been failing since 10 a.m.",
+            "fr": "Les paiements échouent depuis 10 h."
+          },
+          {
+            "en": "Let's send the first reminder after one hour.",
+            "fr": "Envoyons la première relance au bout d'une heure."
+          },
+          {
+            "en": "Conversion is up one percentage point.",
+            "fr": "La conversion a gagné un point."
+          }
         ],
         "tip_fr": "« Le tunnel de commande » ne se traduit pas par tunnel : on dit the checkout ou the checkout funnel. Le nom s'écrit en un mot (the checkout), le verbe en deux (to check out = passer commande, payer). Et une relance client se dit a reminder ou a follow-up, jamais « a relaunch », qui s'emploie pour relancer un produit ou une marque."
       },
@@ -269,14 +466,45 @@
         {
           "id": "ecommerce-lire-tunnel-commande",
           "title_fr": "Montrer où les clients abandonnent",
-          "term_ids": ["shopping-cart", "add-to-cart", "checkout", "checkout-step", "cart-abandonment", "conversion-rate"],
+          "term_ids": [
+            "shopping-cart",
+            "add-to-cart",
+            "checkout",
+            "checkout-step",
+            "cart-abandonment",
+            "conversion-rate"
+          ],
           "dialogue": [
-            { "speaker": "Sarah", "text_en": "Our cart abandonment is still around seventy percent. Where exactly do people drop off?", "text_fr": "Notre abandon de panier tourne toujours autour de 70 %. Où exactement les gens décrochent-ils ?" },
-            { "speaker": "Arjun", "text_en": "Lots of people click add to cart, so the product pages do their job. The problem starts after the shopping cart.", "text_fr": "Beaucoup de gens cliquent sur « ajouter au panier », donc les fiches produits font leur travail. Le problème commence après le panier." },
-            { "speaker": "Sarah", "text_en": "Which checkout step is the worst?", "text_fr": "Quelle étape du tunnel est la pire ?" },
-            { "speaker": "Arjun", "text_en": "The shipping step. That's when people discover the delivery costs.", "text_fr": "L'étape livraison. C'est là que les gens découvrent les frais de livraison." },
-            { "speaker": "Sarah", "text_en": "So if we show the costs earlier, the conversion rate of the checkout should go up.", "text_fr": "Donc si on affiche les frais plus tôt, le taux de conversion du tunnel devrait augmenter." },
-            { "speaker": "Arjun", "text_en": "Exactly. Let's test it on the product page first.", "text_fr": "Exactement. Testons-le d'abord sur la fiche produit." }
+            {
+              "speaker": "Sarah",
+              "text_en": "Our cart abandonment is still around seventy percent. Where exactly do people drop off?",
+              "text_fr": "Notre abandon de panier tourne toujours autour de 70 %. Où exactement les gens décrochent-ils ?"
+            },
+            {
+              "speaker": "Arjun",
+              "text_en": "Lots of people click add to cart, so the product pages do their job. The problem starts after the shopping cart.",
+              "text_fr": "Beaucoup de gens cliquent sur « ajouter au panier », donc les fiches produits font leur travail. Le problème commence après le panier."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Which checkout step is the worst?",
+              "text_fr": "Quelle étape du tunnel est la pire ?"
+            },
+            {
+              "speaker": "Arjun",
+              "text_en": "The shipping step. That's when people discover the delivery costs.",
+              "text_fr": "L'étape livraison. C'est là que les gens découvrent les frais de livraison."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "So if we show the costs earlier, the conversion rate of the checkout should go up.",
+              "text_fr": "Donc si on affiche les frais plus tôt, le taux de conversion du tunnel devrait augmenter."
+            },
+            {
+              "speaker": "Arjun",
+              "text_en": "Exactly. Let's test it on the product page first.",
+              "text_fr": "Exactement. Testons-le d'abord sur la fiche produit."
+            }
           ],
           "questions": [
             {
@@ -325,19 +553,51 @@
             "prompt_fr": "Rédige le paragraphe « Checkout » du rapport hebdomadaire, en 3 ou 4 phrases : ce qui fonctionne, où et pourquoi on perd les clients, et le test que tu proposes avec la date de résultat.",
             "model_answer_en": "Most visitors add products to the cart, so the product pages do their job. The biggest drop is at the shipping step, when customers discover the delivery costs. Next week, we will test showing shipping costs on the product page. We expect first results by the end of the month.",
             "model_answer_fr": "La plupart des visiteurs ajoutent des produits au panier, donc les fiches produits font leur travail. La plus forte perte se situe à l'étape livraison, quand les clients découvrent les frais de livraison. La semaine prochaine, nous testerons l'affichage des frais de port sur la fiche produit. Nous attendons les premiers résultats d'ici la fin du mois.",
-            "key_phrases": ["do their job", "The biggest drop is at the shipping step", "discover the delivery costs", "we will test"]
+            "key_phrases": [
+              "do their job",
+              "The biggest drop is at the shipping step",
+              "discover the delivery costs",
+              "we will test"
+            ]
           }
         },
         {
           "id": "ecommerce-simplifier-paiement",
           "title_fr": "Proposer un paiement plus simple",
-          "term_ids": ["guest-checkout", "express-checkout", "payment-method", "bnpl", "trust-badge", "customer-account"],
+          "term_ids": [
+            "guest-checkout",
+            "express-checkout",
+            "payment-method",
+            "bnpl",
+            "trust-badge",
+            "customer-account"
+          ],
           "dialogue": [
-            { "speaker": "Kwame", "text_en": "Right now, customers have to create a customer account before they can pay.", "text_fr": "Pour l'instant, les clients doivent créer un compte client avant de pouvoir payer." },
-            { "speaker": "Elena", "text_en": "That's a big blocker. Forcing account creation hurts conversion. Can we offer guest checkout?", "text_fr": "C'est un gros frein. Obliger à créer un compte fait baisser la conversion. On peut proposer la commande sans compte ?" },
-            { "speaker": "Kwame", "text_en": "Yes, it's a setting in the platform. What about payment methods?", "text_fr": "Oui, c'est un réglage de la plateforme. Et pour les moyens de paiement ?" },
-            { "speaker": "Elena", "text_en": "Cards only is not enough. I'd add express checkout with PayPal and Apple Pay, and maybe a BNPL option for orders over 100 euros.", "text_fr": "La carte seule ne suffit pas. J'ajouterais le paiement express avec PayPal et Apple Pay, et peut-être une option de paiement fractionné pour les commandes de plus de 100 euros." },
-            { "speaker": "Kwame", "text_en": "OK. And let's move the trust badges next to the pay button. People want to know the payment is secure.", "text_fr": "D'accord. Et déplaçons les logos de réassurance à côté du bouton de paiement. Les gens veulent savoir que le paiement est sécurisé." }
+            {
+              "speaker": "Kwame",
+              "text_en": "Right now, customers have to create a customer account before they can pay.",
+              "text_fr": "Pour l'instant, les clients doivent créer un compte client avant de pouvoir payer."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "That's a big blocker. Forcing account creation hurts conversion. Can we offer guest checkout?",
+              "text_fr": "C'est un gros frein. Obliger à créer un compte fait baisser la conversion. On peut proposer la commande sans compte ?"
+            },
+            {
+              "speaker": "Kwame",
+              "text_en": "Yes, it's a setting in the platform. What about payment methods?",
+              "text_fr": "Oui, c'est un réglage de la plateforme. Et pour les moyens de paiement ?"
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Cards only is not enough. I'd add express checkout with PayPal and Apple Pay, and maybe a BNPL option for orders over 100 euros.",
+              "text_fr": "La carte seule ne suffit pas. J'ajouterais le paiement express avec PayPal et Apple Pay, et peut-être une option de paiement fractionné pour les commandes de plus de 100 euros."
+            },
+            {
+              "speaker": "Kwame",
+              "text_en": "OK. And let's move the trust badges next to the pay button. People want to know the payment is secure.",
+              "text_fr": "D'accord. Et déplaçons les logos de réassurance à côté du bouton de paiement. Les gens veulent savoir que le paiement est sécurisé."
+            }
           ],
           "questions": [
             {
@@ -362,7 +622,11 @@
             },
             {
               "prompt_fr": "Complète : « People want to know the payment is ___. »",
-              "choices": ["securised", "secure", "secured"],
+              "choices": [
+                "securised",
+                "secure",
+                "secured"
+              ],
               "answer_index": 1,
               "explanation_fr": "Sécurisé se dit secure (adjectif). « Securised » n'existe pas. Secured est le participe de to secure (obtenir, garantir) : a secured loan est un prêt garanti. Pour un paiement protégé, on dit a secure payment."
             },
@@ -382,20 +646,55 @@
             "prompt_fr": "Écris à Kwame (product owner) pour demander trois changements dans le tunnel, classés par priorité. Justifie le premier et propose une façon de mesurer l'effet. 3 ou 4 phrases.",
             "model_answer_en": "Here are my three priorities for the checkout. First, let's enable guest checkout, because forcing account creation hurts conversion. Second, let's add express checkout with PayPal and Apple Pay, and third, move the trust badges next to the pay button. Could we release them one by one, so we can measure the effect of each change?",
             "model_answer_fr": "Voici mes trois priorités pour le tunnel. D'abord, activons la commande sans compte, parce qu'obliger à créer un compte fait baisser la conversion. Ensuite, ajoutons le paiement express avec PayPal et Apple Pay, et enfin, déplaçons les logos de réassurance à côté du bouton de paiement. Est-ce qu'on pourrait les mettre en ligne un par un, pour mesurer l'effet de chaque changement ?",
-            "key_phrases": ["my three priorities for the checkout", "enable guest checkout", "forcing account creation hurts conversion", "measure the effect of each change"]
+            "key_phrases": [
+              "my three priorities for the checkout",
+              "enable guest checkout",
+              "forcing account creation hurts conversion",
+              "measure the effect of each change"
+            ]
           }
         },
         {
           "id": "ecommerce-signaler-panne-paiement",
           "title_fr": "Signaler une panne de paiement",
-          "term_ids": ["payment-gateway", "payment-service-provider", "order-confirmation", "payment-fraud", "chargeback"],
+          "term_ids": [
+            "payment-gateway",
+            "payment-service-provider",
+            "order-confirmation",
+            "payment-fraud",
+            "chargeback"
+          ],
           "dialogue": [
-            { "speaker": "Nikos", "text_en": "We haven't had a single order since 10 a.m. Is the site down?", "text_fr": "On n'a pas eu une seule commande depuis 10 h. Le site est en panne ?" },
-            { "speaker": "Mei", "text_en": "No, the site works, but payments are failing. The payment gateway returns an error after customers enter their card details.", "text_fr": "Non, le site marche, mais les paiements échouent. La passerelle de paiement renvoie une erreur après la saisie de la carte." },
-            { "speaker": "Nikos", "text_en": "Could it be our payment fraud filter? Last month it blocked good orders by mistake.", "text_fr": "Ça pourrait venir de notre filtre anti-fraude ? Le mois dernier, il a bloqué de bonnes commandes par erreur." },
-            { "speaker": "Mei", "text_en": "I checked, the rules haven't changed. Our payment service provider confirmed an incident on their side.", "text_fr": "J'ai vérifié, les règles n'ont pas changé. Notre prestataire de paiement a confirmé un incident de son côté." },
-            { "speaker": "Nikos", "text_en": "OK. Some customers say they were charged but never got an order confirmation.", "text_fr": "D'accord. Certains clients disent qu'ils ont été débités mais n'ont jamais reçu de confirmation de commande." },
-            { "speaker": "Mei", "text_en": "Let's email them today. If they hear nothing, some will dispute the payment with their bank, and every chargeback costs us a fee.", "text_fr": "Écrivons-leur aujourd'hui. S'ils n'ont pas de nouvelles, certains contesteront le paiement auprès de leur banque, et chaque rétrofacturation nous coûte des frais." }
+            {
+              "speaker": "Nikos",
+              "text_en": "We haven't had a single order since 10 a.m. Is the site down?",
+              "text_fr": "On n'a pas eu une seule commande depuis 10 h. Le site est en panne ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "No, the site works, but payments are failing. The payment gateway returns an error after customers enter their card details.",
+              "text_fr": "Non, le site marche, mais les paiements échouent. La passerelle de paiement renvoie une erreur après la saisie de la carte."
+            },
+            {
+              "speaker": "Nikos",
+              "text_en": "Could it be our payment fraud filter? Last month it blocked good orders by mistake.",
+              "text_fr": "Ça pourrait venir de notre filtre anti-fraude ? Le mois dernier, il a bloqué de bonnes commandes par erreur."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "I checked, the rules haven't changed. Our payment service provider confirmed an incident on their side.",
+              "text_fr": "J'ai vérifié, les règles n'ont pas changé. Notre prestataire de paiement a confirmé un incident de son côté."
+            },
+            {
+              "speaker": "Nikos",
+              "text_en": "OK. Some customers say they were charged but never got an order confirmation.",
+              "text_fr": "D'accord. Certains clients disent qu'ils ont été débités mais n'ont jamais reçu de confirmation de commande."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Let's email them today. If they hear nothing, some will dispute the payment with their bank, and every chargeback costs us a fee.",
+              "text_fr": "Écrivons-leur aujourd'hui. S'ils n'ont pas de nouvelles, certains contesteront le paiement auprès de leur banque, et chaque rétrofacturation nous coûte des frais."
+            }
           ],
           "questions": [
             {
@@ -420,7 +719,11 @@
             },
             {
               "prompt_fr": "Complète : « Some customers say they were ___ but never got an order confirmation. »",
-              "choices": ["charged", "loaded", "debited of"],
+              "choices": [
+                "charged",
+                "loaded",
+                "debited of"
+              ],
               "answer_index": 0,
               "explanation_fr": "Être débité se dit be charged (on charge un client ou une carte). « Loaded » est un faux ami de « charger » au sens de remplir (charger un camion, une page). On peut dire their account was debited, mais jamais « debited of »."
             },
@@ -440,20 +743,54 @@
             "prompt_fr": "Annonce l'incident sur le canal Slack de l'équipe e-commerce, en 3 ou 4 phrases : ce qui se passe depuis quand, la cause confirmée, ce qui est exclu, et la prochaine étape pour les clients débités.",
             "model_answer_en": "Heads-up: payments have been failing since 10 a.m. Our payment service provider confirmed an incident on their side, and our fraud rules are not involved. We'll email every customer who was charged without an order confirmation today. I'll post an update here as soon as payments are back.",
             "model_answer_fr": "Pour info : les paiements échouent depuis 10 h. Notre prestataire de paiement a confirmé un incident de son côté, et nos règles anti-fraude ne sont pas en cause. Nous écrirons aujourd'hui à chaque client débité sans confirmation de commande. Je posterai une mise à jour ici dès que les paiements seront rétablis.",
-            "key_phrases": ["payments have been failing since 10 a.m.", "confirmed an incident on their side", "charged without an order confirmation", "I'll post an update here"]
+            "key_phrases": [
+              "payments have been failing since 10 a.m.",
+              "confirmed an incident on their side",
+              "charged without an order confirmation",
+              "I'll post an update here"
+            ]
           }
         },
         {
           "id": "ecommerce-relancer-paniers-abandonnes",
           "title_fr": "Relancer les paniers abandonnés",
-          "term_ids": ["abandoned-cart-email", "transactional-email", "sms-marketing", "promo-code"],
+          "term_ids": [
+            "abandoned-cart-email",
+            "transactional-email",
+            "sms-marketing",
+            "promo-code"
+          ],
           "dialogue": [
-            { "speaker": "Hannah", "text_en": "Our abandoned cart email goes out 24 hours after the visit. Isn't that too late?", "text_fr": "Notre e-mail de relance de panier abandonné part 24 heures après la visite. Ce n'est pas trop tard ?" },
-            { "speaker": "Diego", "text_en": "I think so. Let's send the first reminder after one hour, then a second one the next day.", "text_fr": "Je pense que si. Envoyons la première relance au bout d'une heure, puis une deuxième le lendemain." },
-            { "speaker": "Hannah", "text_en": "Should we put a promo code in the first one?", "text_fr": "On met un code promo dans la première ?" },
-            { "speaker": "Diego", "text_en": "No, only in the second one. Otherwise people learn to leave their cart just to get a discount.", "text_fr": "Non, seulement dans la deuxième. Sinon, les gens apprennent à abandonner leur panier juste pour obtenir une réduction." },
-            { "speaker": "Hannah", "text_en": "Makes sense. What about SMS marketing? We have a lot of phone numbers.", "text_fr": "Logique. Et le marketing par SMS ? On a beaucoup de numéros de téléphone." },
-            { "speaker": "Diego", "text_en": "Only for people who agreed to receive texts. A reminder is a marketing message, not a transactional email like a shipping notification.", "text_fr": "Seulement pour ceux qui ont accepté de recevoir des SMS. Une relance est un message marketing, pas un e-mail transactionnel comme un avis d'expédition." }
+            {
+              "speaker": "Hannah",
+              "text_en": "Our abandoned cart email goes out 24 hours after the visit. Isn't that too late?",
+              "text_fr": "Notre e-mail de relance de panier abandonné part 24 heures après la visite. Ce n'est pas trop tard ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "I think so. Let's send the first reminder after one hour, then a second one the next day.",
+              "text_fr": "Je pense que si. Envoyons la première relance au bout d'une heure, puis une deuxième le lendemain."
+            },
+            {
+              "speaker": "Hannah",
+              "text_en": "Should we put a promo code in the first one?",
+              "text_fr": "On met un code promo dans la première ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "No, only in the second one. Otherwise people learn to leave their cart just to get a discount.",
+              "text_fr": "Non, seulement dans la deuxième. Sinon, les gens apprennent à abandonner leur panier juste pour obtenir une réduction."
+            },
+            {
+              "speaker": "Hannah",
+              "text_en": "Makes sense. What about SMS marketing? We have a lot of phone numbers.",
+              "text_fr": "Logique. Et le marketing par SMS ? On a beaucoup de numéros de téléphone."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Only for people who agreed to receive texts. A reminder is a marketing message, not a transactional email like a shipping notification.",
+              "text_fr": "Seulement pour ceux qui ont accepté de recevoir des SMS. Une relance est un message marketing, pas un e-mail transactionnel comme un avis d'expédition."
+            }
           ],
           "questions": [
             {
@@ -488,7 +825,11 @@
             },
             {
               "prompt_fr": "Complète : « Only for people who ___ to receive texts. »",
-              "choices": ["accepted", "agreed", "allowed"],
+              "choices": [
+                "accepted",
+                "agreed",
+                "allowed"
+              ],
               "answer_index": 1,
               "explanation_fr": "Agree to do something = accepter de faire. « Accept to » est un calque : accept s'emploie avec un nom (accept the terms). « Allowed to receive » voudrait dire qu'on les a autorisés à recevoir, pas qu'ils ont donné leur accord. On dit aussi people who opted in."
             }
@@ -498,7 +839,12 @@
             "prompt_fr": "Rédige le brief de la nouvelle séquence de relance pour l'équipe CRM, en 3 ou 4 phrases : le timing des deux e-mails, où placer le code promo et pourquoi, et la règle pour les SMS.",
             "model_answer_en": "We want to change the abandoned cart sequence. The first reminder should go out one hour after the visit, with no discount. The second one goes out the next day and includes a promo code, so customers don't learn to wait for a discount. SMS reminders are only for customers who agreed to receive texts.",
             "model_answer_fr": "Nous voulons modifier la séquence de relance des paniers abandonnés. La première relance doit partir une heure après la visite, sans réduction. La deuxième part le lendemain avec un code promo, pour que les clients n'apprennent pas à attendre une réduction. Les relances par SMS sont réservées aux clients qui ont accepté de recevoir des SMS.",
-            "key_phrases": ["abandoned cart sequence", "The first reminder should go out", "with no discount", "agreed to receive texts"]
+            "key_phrases": [
+              "abandoned cart sequence",
+              "The first reminder should go out",
+              "with no discount",
+              "agreed to receive texts"
+            ]
           }
         }
       ]
@@ -511,12 +857,30 @@
       "guide": {
         "intro_fr": "Le Black Friday et le Cyber Monday ouvrent la peak season, la période où le site réalise une grande partie de son chiffre de l'année. Il faut d'abord choisir la mécanique : un discount en pourcentage, un promo code à saisir au paiement, ou un strikethrough price (prix barré) visible sur la fiche. Chaque remise réduit la gross margin (marge brute) : l'équipe finance vérifie donc que l'offre reste rentable. Pour créer l'urgence, on organise une flash sale de quelques heures avec un countdown timer, ou une private sale réservée aux membres du programme de fidélité. On cherche aussi à faire monter l'average order value, le panier moyen. Après les fêtes, on écoule le surstock avec une clearance sale.",
         "key_phrases": [
-          { "en": "What's our discount strategy this year?", "fr": "Quelle est notre stratégie de remise cette année ?" },
-          { "en": "A sitewide discount would kill our margin.", "fr": "Une remise sur tout le site tuerait notre marge." },
-          { "en": "The flash sale starts at 8 p.m. sharp.", "fr": "La vente flash commence à 20 h précises." },
-          { "en": "Let's give loyalty members early access.", "fr": "Donnons un accès anticipé aux membres du programme de fidélité." },
-          { "en": "We want to push the average order value up.", "fr": "On veut faire monter le panier moyen." },
-          { "en": "We're overstocked on winter coats.", "fr": "On est en surstock sur les manteaux d'hiver." }
+          {
+            "en": "What's our discount strategy this year?",
+            "fr": "Quelle est notre stratégie de remise cette année ?"
+          },
+          {
+            "en": "A sitewide discount would kill our margin.",
+            "fr": "Une remise sur tout le site tuerait notre marge."
+          },
+          {
+            "en": "The flash sale starts at 8 p.m. sharp.",
+            "fr": "La vente flash commence à 20 h précises."
+          },
+          {
+            "en": "Let's give loyalty members early access.",
+            "fr": "Donnons un accès anticipé aux membres du programme de fidélité."
+          },
+          {
+            "en": "We want to push the average order value up.",
+            "fr": "On veut faire monter le panier moyen."
+          },
+          {
+            "en": "We're overstocked on winter coats.",
+            "fr": "On est en surstock sur les manteaux d'hiver."
+          }
         ],
         "tip_fr": "Attention au mot sale. A sale (ou the sales), ce sont les soldes ou une opération promotionnelle, et on sale veut dire « en promotion ». Mais sales au pluriel désigne aussi les ventes, le chiffre réalisé : « Sales are up 10% » ne parle pas de soldes, ça veut dire que les ventes ont augmenté de 10 %."
       },
@@ -524,14 +888,44 @@
         {
           "id": "ecommerce-choisir-mecanique-promo",
           "title_fr": "Choisir la mécanique de promotion",
-          "term_ids": ["discount", "promo-code", "strikethrough-price", "gross-margin", "coupon"],
+          "term_ids": [
+            "discount",
+            "promo-code",
+            "strikethrough-price",
+            "gross-margin",
+            "coupon"
+          ],
           "dialogue": [
-            { "speaker": "Rafael", "text_en": "What's our discount strategy for Black Friday? Last year we did 30% off everything.", "text_fr": "Quelle est notre stratégie de remise pour le Black Friday ? L'an dernier, on a fait -30 % sur tout." },
-            { "speaker": "Fatou", "text_en": "And it killed our gross margin. This year I'd rather discount a selection of products.", "text_fr": "Et ça a tué notre marge brute. Cette année, je préfère remiser une sélection de produits." },
-            { "speaker": "Rafael", "text_en": "With a promo code or a strikethrough price?", "text_fr": "Avec un code promo ou un prix barré ?" },
-            { "speaker": "Fatou", "text_en": "Strikethrough prices. Customers see the saving right on the product page, with no code to type.", "text_fr": "Des prix barrés. Les clients voient l'économie directement sur la fiche produit, sans code à saisir." },
-            { "speaker": "Rafael", "text_en": "And the coupon sites? They always ask us for an exclusive code.", "text_fr": "Et les sites de bons de réduction ? Ils nous demandent toujours un code exclusif." },
-            { "speaker": "Fatou", "text_en": "We can give them one, but with a minimum spend, so it doesn't eat into the margin.", "text_fr": "On peut leur en donner un, mais avec un minimum d'achat, pour qu'il ne grignote pas la marge." }
+            {
+              "speaker": "Rafael",
+              "text_en": "What's our discount strategy for Black Friday? Last year we did 30% off everything.",
+              "text_fr": "Quelle est notre stratégie de remise pour le Black Friday ? L'an dernier, on a fait -30 % sur tout."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "And it killed our gross margin. This year I'd rather discount a selection of products.",
+              "text_fr": "Et ça a tué notre marge brute. Cette année, je préfère remiser une sélection de produits."
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "With a promo code or a strikethrough price?",
+              "text_fr": "Avec un code promo ou un prix barré ?"
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "Strikethrough prices. Customers see the saving right on the product page, with no code to type.",
+              "text_fr": "Des prix barrés. Les clients voient l'économie directement sur la fiche produit, sans code à saisir."
+            },
+            {
+              "speaker": "Rafael",
+              "text_en": "And the coupon sites? They always ask us for an exclusive code.",
+              "text_fr": "Et les sites de bons de réduction ? Ils nous demandent toujours un code exclusif."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "We can give them one, but with a minimum spend, so it doesn't eat into the margin.",
+              "text_fr": "On peut leur en donner un, mais avec un minimum d'achat, pour qu'il ne grignote pas la marge."
+            }
           ],
           "questions": [
             {
@@ -556,7 +950,11 @@
             },
             {
               "prompt_fr": "Complète : « We can give them a code, but with a minimum ___. » (un minimum d'achat)",
-              "choices": ["expense", "spending of", "spend"],
+              "choices": [
+                "expense",
+                "spending of",
+                "spend"
+              ],
               "answer_index": 2,
               "explanation_fr": "A minimum spend = un minimum d'achat ; spend est ici un nom. Expense désigne une dépense de l'entreprise, des frais (travel expenses). « Spending of » ne s'emploie pas : on dirait a minimum order value ou a minimum spend of 80 euros."
             },
@@ -576,25 +974,64 @@
             "prompt_fr": "Écris à Rafael, ton directeur, pour proposer la mécanique du Black Friday en 3 ou 4 phrases : ce que tu proposes à la place d'une remise sur tout le site, pourquoi, et la condition pour les sites de bons de réduction. Reste diplomate.",
             "model_answer_en": "Hi Rafael, I see the appeal of a sitewide discount, but last year it hurt our margin a lot. For Black Friday, I suggest strikethrough prices on a selection of 200 products instead. This keeps our gross margin under control while customers still see the saving on the product page. For coupon sites, we can offer an exclusive promo code with a minimum spend of 80 euros.",
             "model_answer_fr": "Bonjour Rafael, je comprends l'intérêt d'une remise sur tout le site, mais l'an dernier elle a beaucoup pesé sur notre marge. Pour le Black Friday, je propose plutôt des prix barrés sur une sélection de 200 produits. Cela garde notre marge brute sous contrôle, tout en montrant l'économie aux clients sur la fiche produit. Pour les sites de bons de réduction, nous pouvons proposer un code promo exclusif avec un minimum d'achat de 80 euros.",
-            "key_phrases": ["I see the appeal of a sitewide discount", "I suggest strikethrough prices", "keeps our gross margin under control", "with a minimum spend"]
+            "key_phrases": [
+              "I see the appeal of a sitewide discount",
+              "I suggest strikethrough prices",
+              "keeps our gross margin under control",
+              "with a minimum spend"
+            ]
           }
         },
         {
           "id": "ecommerce-planifier-vente-flash",
           "title_fr": "Planifier une vente flash",
-          "term_ids": ["flash-sale", "countdown-timer", "private-sale", "peak-season", "loyalty-program"],
+          "term_ids": [
+            "flash-sale",
+            "countdown-timer",
+            "private-sale",
+            "peak-season",
+            "loyalty-program"
+          ],
           "dialogue": [
-            { "speaker": "Yuki", "text_en": "For the flash sale, how long should it last?", "text_fr": "Pour la vente flash, elle doit durer combien de temps ?" },
-            { "speaker": "Omar", "text_en": "Six hours. It starts at 8 p.m. sharp on Thursday, and we show a countdown timer on the homepage.", "text_fr": "Six heures. Elle commence jeudi à 20 h précises, et on affiche un compte à rebours sur la page d'accueil." },
-            { "speaker": "Yuki", "text_en": "What about our loyalty program members?", "text_fr": "Et les membres de notre programme de fidélité ?" },
-            { "speaker": "Omar", "text_en": "They get a private sale the day before, with early access. It makes them feel valued.", "text_fr": "Ils ont droit à une vente privée la veille, avec un accès anticipé. Ça leur montre qu'on tient à eux." },
-            { "speaker": "Yuki", "text_en": "Good. Just one thing: it's peak season, so the warehouse needs the plan by Monday.", "text_fr": "Bien. Juste une chose : c'est la haute saison, donc l'entrepôt a besoin du planning d'ici lundi." },
-            { "speaker": "Omar", "text_en": "I'll send a draft today. Better safe than sorry.", "text_fr": "J'envoie une première version aujourd'hui. Mieux vaut prévenir que guérir." }
+            {
+              "speaker": "Yuki",
+              "text_en": "For the flash sale, how long should it last?",
+              "text_fr": "Pour la vente flash, elle doit durer combien de temps ?"
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "Six hours. It starts at 8 p.m. sharp on Thursday, and we show a countdown timer on the homepage.",
+              "text_fr": "Six heures. Elle commence jeudi à 20 h précises, et on affiche un compte à rebours sur la page d'accueil."
+            },
+            {
+              "speaker": "Yuki",
+              "text_en": "What about our loyalty program members?",
+              "text_fr": "Et les membres de notre programme de fidélité ?"
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "They get a private sale the day before, with early access. It makes them feel valued.",
+              "text_fr": "Ils ont droit à une vente privée la veille, avec un accès anticipé. Ça leur montre qu'on tient à eux."
+            },
+            {
+              "speaker": "Yuki",
+              "text_en": "Good. Just one thing: it's peak season, so the warehouse needs the plan by Monday.",
+              "text_fr": "Bien. Juste une chose : c'est la haute saison, donc l'entrepôt a besoin du planning d'ici lundi."
+            },
+            {
+              "speaker": "Omar",
+              "text_en": "I'll send a draft today. Better safe than sorry.",
+              "text_fr": "J'envoie une première version aujourd'hui. Mieux vaut prévenir que guérir."
+            }
           ],
           "questions": [
             {
               "prompt_fr": "Comment dire « à 20 h précises » à l'oral ?",
-              "choices": ["at 20 o'clock sharp", "at 8 p.m. sharp", "at 8 p.m. precise"],
+              "choices": [
+                "at 20 o'clock sharp",
+                "at 8 p.m. sharp",
+                "at 8 p.m. precise"
+              ],
               "answer_index": 1,
               "explanation_fr": "Sharp après une heure = pile, précises (on dit aussi on the dot). À l'oral, l'anglais utilise l'heure sur 12 h avec a.m. et p.m. : « 20 o'clock » ne se dit jamais. Precise ne se place pas après une heure : on dirait at precisely 8 p.m."
             },
@@ -610,7 +1047,11 @@
             },
             {
               "prompt_fr": "Complète : « We show a ___ on the homepage. » (un compte à rebours)",
-              "choices": ["decount timer", "reverse counter", "countdown timer"],
+              "choices": [
+                "decount timer",
+                "reverse counter",
+                "countdown timer"
+              ],
               "answer_index": 2,
               "explanation_fr": "Le compte à rebours se dit countdown timer, ou simplement countdown. « Decount » est un calque de « décompte » qui n'existe pas, et « reverse counter » est une traduction mot à mot que personne n'emploie."
             },
@@ -630,20 +1071,56 @@
             "prompt_fr": "Envoie à l'entrepôt le planning des ventes du Black Friday, en 3 ou 4 phrases : les deux temps forts avec jour et heure, le volume attendu, et une demande concrète pour l'équipe.",
             "model_answer_en": "Hi team, here is our Black Friday plan. The private sale for loyalty program members opens on Wednesday at 8 p.m., and the public flash sale starts on Thursday at 8 p.m. sharp. We expect about twice the usual number of orders on Thursday night and Friday. Could you plan extra staff for both days and confirm by Monday?",
             "model_answer_fr": "Bonjour à tous, voici notre planning du Black Friday. La vente privée pour les membres du programme de fidélité ouvre mercredi à 20 h, et la vente flash publique commence jeudi à 20 h précises. Nous attendons environ deux fois plus de commandes que d'habitude jeudi soir et vendredi. Pourriez-vous prévoir du personnel supplémentaire pour ces deux jours et nous confirmer d'ici lundi ?",
-            "key_phrases": ["here is our Black Friday plan", "The private sale for loyalty program members", "starts on Thursday at 8 p.m. sharp", "plan extra staff"]
+            "key_phrases": [
+              "here is our Black Friday plan",
+              "The private sale for loyalty program members",
+              "starts on Thursday at 8 p.m. sharp",
+              "plan extra staff"
+            ]
           }
         },
         {
           "id": "ecommerce-augmenter-panier-moyen",
           "title_fr": "Augmenter le panier moyen",
-          "term_ids": ["average-order-value", "free-shipping-threshold", "product-bundle", "frequently-bought-together", "cross-sell", "upsell"],
+          "term_ids": [
+            "average-order-value",
+            "free-shipping-threshold",
+            "product-bundle",
+            "frequently-bought-together",
+            "cross-sell",
+            "upsell"
+          ],
           "dialogue": [
-            { "speaker": "Leila", "text_en": "Our average order value is 52 euros. During Black Friday, I want to push it above 60.", "text_fr": "Notre panier moyen est de 52 euros. Pendant le Black Friday, je veux le faire passer au-dessus de 60." },
-            { "speaker": "Samir", "text_en": "The easiest lever is the free shipping threshold. It's 50 euros now. Let's move it to 65.", "text_fr": "Le levier le plus simple, c'est le seuil de livraison gratuite. Il est à 50 euros aujourd'hui. Passons-le à 65." },
-            { "speaker": "Leila", "text_en": "OK. And on the product page?", "text_fr": "D'accord. Et sur la fiche produit ?" },
-            { "speaker": "Samir", "text_en": "A 'frequently bought together' block to cross-sell accessories, and a product bundle: the camera, a case and a memory card at a lower price.", "text_fr": "Un bloc « souvent achetés ensemble » pour faire de la vente croisée sur les accessoires, et un lot : l'appareil photo, un étui et une carte mémoire à prix réduit." },
-            { "speaker": "Leila", "text_en": "And in the cart, we can upsell the premium model.", "text_fr": "Et dans le panier, on peut proposer le modèle premium en montée en gamme." },
-            { "speaker": "Samir", "text_en": "Yes, but only if the price difference is small. Otherwise it feels pushy.", "text_fr": "Oui, mais seulement si l'écart de prix est faible. Sinon, ça fait insistant." }
+            {
+              "speaker": "Leila",
+              "text_en": "Our average order value is 52 euros. During Black Friday, I want to push it above 60.",
+              "text_fr": "Notre panier moyen est de 52 euros. Pendant le Black Friday, je veux le faire passer au-dessus de 60."
+            },
+            {
+              "speaker": "Samir",
+              "text_en": "The easiest lever is the free shipping threshold. It's 50 euros now. Let's move it to 65.",
+              "text_fr": "Le levier le plus simple, c'est le seuil de livraison gratuite. Il est à 50 euros aujourd'hui. Passons-le à 65."
+            },
+            {
+              "speaker": "Leila",
+              "text_en": "OK. And on the product page?",
+              "text_fr": "D'accord. Et sur la fiche produit ?"
+            },
+            {
+              "speaker": "Samir",
+              "text_en": "A 'frequently bought together' block to cross-sell accessories, and a product bundle: the camera, a case and a memory card at a lower price.",
+              "text_fr": "Un bloc « souvent achetés ensemble » pour faire de la vente croisée sur les accessoires, et un lot : l'appareil photo, un étui et une carte mémoire à prix réduit."
+            },
+            {
+              "speaker": "Leila",
+              "text_en": "And in the cart, we can upsell the premium model.",
+              "text_fr": "Et dans le panier, on peut proposer le modèle premium en montée en gamme."
+            },
+            {
+              "speaker": "Samir",
+              "text_en": "Yes, but only if the price difference is small. Otherwise it feels pushy.",
+              "text_fr": "Oui, mais seulement si l'écart de prix est faible. Sinon, ça fait insistant."
+            }
           ],
           "questions": [
             {
@@ -668,7 +1145,11 @@
             },
             {
               "prompt_fr": "Complète la phrase de Samir : « Otherwise it feels ___. » (Sinon, ça fait insistant.)",
-              "choices": ["insistent", "heavy", "pushy"],
+              "choices": [
+                "insistent",
+                "heavy",
+                "pushy"
+              ],
               "answer_index": 2,
               "explanation_fr": "Pushy = insistant, trop vendeur : c'est le mot pour une vente trop appuyée (a pushy salesperson). Insistent existe, mais décrit quelqu'un qui insiste sur un point précis (she was insistent that...), pas une technique de vente. Heavy (lourd) se comprend, mais ce n'est pas l'expression consacrée."
             },
@@ -688,20 +1169,55 @@
             "prompt_fr": "En réunion de préparation, présente ton plan pour faire monter le panier moyen, en 3 ou 4 phrases : l'objectif chiffré, trois leviers dans l'ordre, et une précaution pour ne pas paraître insistant.",
             "model_answer_en": "Our goal is to push the average order value above 60 euros during Black Friday. First, we'll raise the free shipping threshold to 65 euros. Then we'll add product bundles and a frequently bought together block on the product pages. We'll only upsell the premium model when the price difference is small, so it doesn't feel pushy.",
             "model_answer_fr": "Notre objectif est de faire passer le panier moyen au-dessus de 60 euros pendant le Black Friday. D'abord, nous allons relever le seuil de livraison gratuite à 65 euros. Ensuite, nous ajouterons des lots et un bloc « souvent achetés ensemble » sur les fiches produits. Nous ne proposerons le modèle premium que si l'écart de prix est faible, pour ne pas paraître insistants.",
-            "key_phrases": ["push the average order value above 60 euros", "raise the free shipping threshold", "add product bundles", "so it doesn't feel pushy"]
+            "key_phrases": [
+              "push the average order value above 60 euros",
+              "raise the free shipping threshold",
+              "add product bundles",
+              "so it doesn't feel pushy"
+            ]
           }
         },
         {
           "id": "ecommerce-ecouler-surstock",
           "title_fr": "Écouler le surstock après les fêtes",
-          "term_ids": ["overstock", "clearance-sale", "markdown", "sell-through-rate", "price-elasticity"],
+          "term_ids": [
+            "overstock",
+            "clearance-sale",
+            "markdown",
+            "sell-through-rate",
+            "price-elasticity"
+          ],
           "dialogue": [
-            { "speaker": "Ivan", "text_en": "January is here and we're overstocked on winter coats. We still have about 1,200 units.", "text_fr": "Janvier est là et on est en surstock sur les manteaux d'hiver. Il nous reste environ 1 200 pièces." },
-            { "speaker": "Chloé", "text_en": "What's the sell-through rate so far?", "text_fr": "Quel est le taux d'écoulement pour l'instant ?" },
-            { "speaker": "Ivan", "text_en": "Only 45%. We expected 70% by the end of December.", "text_fr": "Seulement 45 %. On visait 70 % fin décembre." },
-            { "speaker": "Chloé", "text_en": "Then we need a markdown. Let's start at 20% and see how sales react.", "text_fr": "Alors il faut une démarque. Commençons à 20 % et voyons comment les ventes réagissent." },
-            { "speaker": "Ivan", "text_en": "And if they don't?", "text_fr": "Et si elles ne réagissent pas ?" },
-            { "speaker": "Chloé", "text_en": "After one week, we'll know more about price elasticity. If a 20% cut barely moves sales, we go to a clearance sale at 40% in February.", "text_fr": "Au bout d'une semaine, on en saura plus sur l'élasticité-prix. Si une baisse de 20 % fait à peine bouger les ventes, on passe à un déstockage à -40 % en février." }
+            {
+              "speaker": "Ivan",
+              "text_en": "January is here and we're overstocked on winter coats. We still have about 1,200 units.",
+              "text_fr": "Janvier est là et on est en surstock sur les manteaux d'hiver. Il nous reste environ 1 200 pièces."
+            },
+            {
+              "speaker": "Chloé",
+              "text_en": "What's the sell-through rate so far?",
+              "text_fr": "Quel est le taux d'écoulement pour l'instant ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Only 45%. We expected 70% by the end of December.",
+              "text_fr": "Seulement 45 %. On visait 70 % fin décembre."
+            },
+            {
+              "speaker": "Chloé",
+              "text_en": "Then we need a markdown. Let's start at 20% and see how sales react.",
+              "text_fr": "Alors il faut une démarque. Commençons à 20 % et voyons comment les ventes réagissent."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "And if they don't?",
+              "text_fr": "Et si elles ne réagissent pas ?"
+            },
+            {
+              "speaker": "Chloé",
+              "text_en": "After one week, we'll know more about price elasticity. If a 20% cut barely moves sales, we go to a clearance sale at 40% in February.",
+              "text_fr": "Au bout d'une semaine, on en saura plus sur l'élasticité-prix. Si une baisse de 20 % fait à peine bouger les ventes, on passe à un déstockage à -40 % en février."
+            }
           ],
           "questions": [
             {
@@ -750,7 +1266,12 @@
             "prompt_fr": "Dans le point hebdomadaire, résume la situation du stock de manteaux et ta proposition en 3 ou 4 phrases : le chiffre clé comparé à l'objectif, la première action, et le plan B avec sa condition.",
             "model_answer_en": "We are overstocked on winter coats, with a sell-through rate of only 45% against a target of 70%. I suggest a 20% markdown starting Monday. If sales barely move after one week, we will run a clearance sale at 40% in February. This should free up warehouse space before the spring collection arrives.",
             "model_answer_fr": "Nous sommes en surstock sur les manteaux d'hiver, avec un taux d'écoulement de seulement 45 % pour un objectif de 70 %. Je propose une démarque de 20 % à partir de lundi. Si les ventes bougent à peine au bout d'une semaine, nous lancerons un déstockage à -40 % en février. Cela devrait libérer de la place à l'entrepôt avant l'arrivée de la collection de printemps.",
-            "key_phrases": ["We are overstocked on winter coats", "against a target of 70%", "a 20% markdown", "run a clearance sale"]
+            "key_phrases": [
+              "We are overstocked on winter coats",
+              "against a target of 70%",
+              "a 20% markdown",
+              "run a clearance sale"
+            ]
           }
         }
       ]
@@ -763,12 +1284,30 @@
       "guide": {
         "intro_fr": "Le site ne vend que ce qui est en stock. L'équipe suit le stock level de chaque référence et envoie un purchase order (bon de commande) au supplier en tenant compte du lead time, le délai d'approvisionnement. Le safety stock évite le stockout, la rupture. Une fois la commande passée par le client, c'est l'order fulfillment : le pick and pack (préparation) dans le fulfillment center, souvent confié à un 3PL, un prestataire logistique. Le colis part ensuite avec un carrier (transporteur) ; le tracking number permet de le suivre jusqu'à la last-mile delivery, la livraison chez le client. Enfin, il y a les retours : la return policy fixe les règles, et la reverse logistics organise le chemin retour jusqu'à l'entrepôt.",
         "key_phrases": [
-          { "en": "We're running low on the black sneakers.", "fr": "On commence à manquer de baskets noires." },
-          { "en": "What's the supplier's lead time?", "fr": "Quel est le délai d'approvisionnement du fournisseur ?" },
-          { "en": "How many orders are still waiting to be shipped?", "fr": "Combien de commandes attendent encore d'être expédiées ?" },
-          { "en": "The carrier says the parcel was delivered.", "fr": "Le transporteur dit que le colis a été livré." },
-          { "en": "Our return rate on shoes is too high.", "fr": "Notre taux de retour sur les chaussures est trop élevé." },
-          { "en": "We'll sort it out with the carrier.", "fr": "On va régler ça avec le transporteur." }
+          {
+            "en": "We're running low on the black sneakers.",
+            "fr": "On commence à manquer de baskets noires."
+          },
+          {
+            "en": "What's the supplier's lead time?",
+            "fr": "Quel est le délai d'approvisionnement du fournisseur ?"
+          },
+          {
+            "en": "How many orders are still waiting to be shipped?",
+            "fr": "Combien de commandes attendent encore d'être expédiées ?"
+          },
+          {
+            "en": "The carrier says the parcel was delivered.",
+            "fr": "Le transporteur dit que le colis a été livré."
+          },
+          {
+            "en": "Our return rate on shoes is too high.",
+            "fr": "Notre taux de retour sur les chaussures est trop élevé."
+          },
+          {
+            "en": "We'll sort it out with the carrier.",
+            "fr": "On va régler ça avec le transporteur."
+          }
         ],
         "tip_fr": "Faux ami redoutable : to expedite ne veut pas dire « expédier » mais accélérer, traiter en urgence (expedite an order). Expédier se dit to ship ou to send. De même, « une commande » au sens d'achat se dit an order ; a command est un ordre militaire ou une commande informatique."
       },
@@ -776,13 +1315,40 @@
         {
           "id": "ecommerce-anticiper-rupture",
           "title_fr": "Anticiper une rupture de stock",
-          "term_ids": ["stock-level", "stockout", "safety-stock", "lead-time", "supplier", "purchase-order"],
+          "term_ids": [
+            "stock-level",
+            "stockout",
+            "safety-stock",
+            "lead-time",
+            "supplier",
+            "purchase-order"
+          ],
           "dialogue": [
-            { "speaker": "Amara", "text_en": "We're running low on the black sneakers. The stock level is down to 80 pairs.", "text_fr": "On commence à manquer de baskets noires. Le niveau de stock est tombé à 80 paires." },
-            { "speaker": "Tomasz", "text_en": "At the current pace, that's about ten days of sales. What's the supplier's lead time?", "text_fr": "Au rythme actuel, ça fait environ dix jours de ventes. Quel est le délai d'approvisionnement du fournisseur ?" },
-            { "speaker": "Amara", "text_en": "Three weeks, minimum. So we'll have a stockout before the new pairs arrive.", "text_fr": "Trois semaines minimum. Donc on va être en rupture avant l'arrivée des nouvelles paires." },
-            { "speaker": "Tomasz", "text_en": "Then let's send a purchase order today and ask if they can ship part of it by air.", "text_fr": "Alors envoyons un bon de commande aujourd'hui et demandons s'ils peuvent en expédier une partie par avion." },
-            { "speaker": "Amara", "text_en": "OK. And for the future, we should raise the safety stock on our best-sellers.", "text_fr": "D'accord. Et pour la suite, il faudrait augmenter le stock de sécurité sur nos meilleures ventes." }
+            {
+              "speaker": "Amara",
+              "text_en": "We're running low on the black sneakers. The stock level is down to 80 pairs.",
+              "text_fr": "On commence à manquer de baskets noires. Le niveau de stock est tombé à 80 paires."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "At the current pace, that's about ten days of sales. What's the supplier's lead time?",
+              "text_fr": "Au rythme actuel, ça fait environ dix jours de ventes. Quel est le délai d'approvisionnement du fournisseur ?"
+            },
+            {
+              "speaker": "Amara",
+              "text_en": "Three weeks, minimum. So we'll have a stockout before the new pairs arrive.",
+              "text_fr": "Trois semaines minimum. Donc on va être en rupture avant l'arrivée des nouvelles paires."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Then let's send a purchase order today and ask if they can ship part of it by air.",
+              "text_fr": "Alors envoyons un bon de commande aujourd'hui et demandons s'ils peuvent en expédier une partie par avion."
+            },
+            {
+              "speaker": "Amara",
+              "text_en": "OK. And for the future, we should raise the safety stock on our best-sellers.",
+              "text_fr": "D'accord. Et pour la suite, il faudrait augmenter le stock de sécurité sur nos meilleures ventes."
+            }
           ],
           "questions": [
             {
@@ -807,7 +1373,11 @@
             },
             {
               "prompt_fr": "Complète : « Let's send a ___ order today. » (un bon de commande)",
-              "choices": ["command", "purchase", "buying"],
+              "choices": [
+                "command",
+                "purchase",
+                "buying"
+              ],
               "answer_index": 1,
               "explanation_fr": "Un bon de commande se dit a purchase order (PO). « Command » est un faux ami : c'est un ordre ou une commande informatique, jamais un achat. « Buying order » ne s'emploie pas ; en finance, on parle de buy order pour un ordre d'achat d'actions."
             },
@@ -827,20 +1397,55 @@
             "prompt_fr": "Écris au fournisseur pour passer une commande urgente, en 3 ou 4 phrases : ce que tu commandes, pourquoi c'est urgent, ta demande d'expédition partielle, et une question sur le délai.",
             "model_answer_en": "Hi Wei, please find attached our purchase order for 600 pairs of black sneakers. Our stock level is low and we expect a stockout in about ten days. Would it be possible to ship part of the order by air? Please let me know the lead time for both parts.",
             "model_answer_fr": "Bonjour Wei, veuillez trouver ci-joint notre bon de commande pour 600 paires de baskets noires. Notre niveau de stock est bas et nous prévoyons une rupture dans une dizaine de jours. Serait-il possible d'expédier une partie de la commande par avion ? Merci de m'indiquer le délai pour chacune des deux parties.",
-            "key_phrases": ["please find attached our purchase order", "Our stock level is low", "we expect a stockout", "Would it be possible to ship part of the order by air?"]
+            "key_phrases": [
+              "please find attached our purchase order",
+              "Our stock level is low",
+              "we expect a stockout",
+              "Would it be possible to ship part of the order by air?"
+            ]
           }
         },
         {
           "id": "ecommerce-point-entrepot",
           "title_fr": "Faire le point avec l'entrepôt",
-          "term_ids": ["order-fulfillment", "third-party-logistics", "fulfillment-center", "pick-and-pack", "backorder"],
+          "term_ids": [
+            "order-fulfillment",
+            "third-party-logistics",
+            "fulfillment-center",
+            "pick-and-pack",
+            "backorder"
+          ],
           "dialogue": [
-            { "speaker": "Sofia", "text_en": "How many orders are still waiting to be shipped?", "text_fr": "Combien de commandes attendent encore d'être expédiées ?" },
-            { "speaker": "Bilal", "text_en": "About 900. Our 3PL is short of staff this week, so order fulfillment is slower.", "text_fr": "Environ 900. Notre prestataire logistique manque de personnel cette semaine, donc le traitement des commandes est plus lent." },
-            { "speaker": "Sofia", "text_en": "How long is the delay at the fulfillment center?", "text_fr": "Quel est le retard au centre logistique ?" },
-            { "speaker": "Bilal", "text_en": "Pick and pack takes two days instead of one. They're adding a night shift from Wednesday.", "text_fr": "La préparation prend deux jours au lieu d'un. Ils ajoutent une équipe de nuit à partir de mercredi." },
-            { "speaker": "Sofia", "text_en": "And the backorders for the red jacket?", "text_fr": "Et les commandes en attente de réassort pour la veste rouge ?" },
-            { "speaker": "Bilal", "text_en": "The new stock arrives on Thursday. Those orders will ship first.", "text_fr": "Le nouveau stock arrive jeudi. Ces commandes partiront en priorité." }
+            {
+              "speaker": "Sofia",
+              "text_en": "How many orders are still waiting to be shipped?",
+              "text_fr": "Combien de commandes attendent encore d'être expédiées ?"
+            },
+            {
+              "speaker": "Bilal",
+              "text_en": "About 900. Our 3PL is short of staff this week, so order fulfillment is slower.",
+              "text_fr": "Environ 900. Notre prestataire logistique manque de personnel cette semaine, donc le traitement des commandes est plus lent."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "How long is the delay at the fulfillment center?",
+              "text_fr": "Quel est le retard au centre logistique ?"
+            },
+            {
+              "speaker": "Bilal",
+              "text_en": "Pick and pack takes two days instead of one. They're adding a night shift from Wednesday.",
+              "text_fr": "La préparation prend deux jours au lieu d'un. Ils ajoutent une équipe de nuit à partir de mercredi."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "And the backorders for the red jacket?",
+              "text_fr": "Et les commandes en attente de réassort pour la veste rouge ?"
+            },
+            {
+              "speaker": "Bilal",
+              "text_en": "The new stock arrives on Thursday. Those orders will ship first.",
+              "text_fr": "Le nouveau stock arrive jeudi. Ces commandes partiront en priorité."
+            }
           ],
           "questions": [
             {
@@ -855,7 +1460,11 @@
             },
             {
               "prompt_fr": "Comment s'appelle, à l'entrepôt, l'étape où l'on prélève les articles puis où on les emballe ?",
-              "choices": ["order picking up", "order preparing", "pick and pack"],
+              "choices": [
+                "order picking up",
+                "order preparing",
+                "pick and pack"
+              ],
               "answer_index": 2,
               "explanation_fr": "Pick and pack : on prélève (pick) les articles dans les rayonnages, puis on les emballe (pack). « Order preparing » est un calque de « préparation de commandes » que personne n'emploie. Pick up veut dire aller chercher ou récupérer (pick up a parcel at a pickup point)."
             },
@@ -871,7 +1480,11 @@
             },
             {
               "prompt_fr": "Complète : « Those orders will ___ first. » (Ces commandes partiront en priorité.)",
-              "choices": ["expedite", "send", "ship"],
+              "choices": [
+                "expedite",
+                "send",
+                "ship"
+              ],
               "answer_index": 2,
               "explanation_fr": "To ship peut s'employer sans complément : the orders will ship first (= partiront). Send a besoin d'un sujet qui envoie : we will send those orders first. Et to expedite est un faux ami : il veut dire accélérer, traiter en urgence, pas expédier."
             }
@@ -881,20 +1494,57 @@
             "prompt_fr": "Au stand-up du matin, fais le point logistique en 3 ou 4 phrases : le nombre de commandes en attente et la cause, la solution prévue, quand ce sera rentré dans l'ordre, et ce qui part en priorité.",
             "model_answer_en": "Quick update on logistics: about 900 orders are waiting to be shipped because our 3PL is short of staff. They're adding a night shift from Wednesday, so we should be back to normal by Friday. Backorders for the red jacket will ship first when the stock arrives on Thursday.",
             "model_answer_fr": "Petit point logistique : environ 900 commandes attendent d'être expédiées parce que notre prestataire logistique manque de personnel. Ils ajoutent une équipe de nuit à partir de mercredi, donc on devrait revenir à la normale d'ici vendredi. Les commandes en attente de la veste rouge partiront en priorité quand le stock arrivera jeudi.",
-            "key_phrases": ["Quick update on logistics", "waiting to be shipped", "short of staff", "back to normal by Friday", "will ship first"]
+            "key_phrases": [
+              "Quick update on logistics",
+              "waiting to be shipped",
+              "short of staff",
+              "back to normal by Friday",
+              "will ship first"
+            ]
           }
         },
         {
           "id": "ecommerce-colis-en-retard",
           "title_fr": "Gérer un colis en retard ou perdu",
-          "term_ids": ["carrier", "last-mile-delivery", "tracking-number", "proof-of-delivery", "parcel", "pickup-point"],
+          "term_ids": [
+            "carrier",
+            "last-mile-delivery",
+            "tracking-number",
+            "proof-of-delivery",
+            "parcel",
+            "pickup-point"
+          ],
           "dialogue": [
-            { "speaker": "Rania", "text_en": "A customer says her parcel never arrived, but the carrier says it was delivered.", "text_fr": "Une cliente dit que son colis n'est jamais arrivé, mais le transporteur dit qu'il a été livré." },
-            { "speaker": "Lars", "text_en": "Can you send me the tracking number? I'll ask for the proof of delivery.", "text_fr": "Tu peux m'envoyer le numéro de suivi ? Je vais demander la preuve de livraison." },
-            { "speaker": "Rania", "text_en": "Here it is. It's the third complaint this week with the same carrier.", "text_fr": "Le voici. C'est la troisième réclamation cette semaine avec le même transporteur." },
-            { "speaker": "Lars", "text_en": "I know. Their last-mile delivery in Lyon is a mess right now. Drivers leave parcels at the door.", "text_fr": "Je sais. Leur livraison du dernier kilomètre à Lyon est un vrai bazar en ce moment. Les livreurs laissent les colis devant la porte." },
-            { "speaker": "Rania", "text_en": "Should we make pickup points the default option there?", "text_fr": "On devrait mettre les points relais comme option par défaut là-bas ?" },
-            { "speaker": "Lars", "text_en": "Good idea. And let's ship her a new one today. We'll sort it out with the carrier later.", "text_fr": "Bonne idée. Et renvoyons-lui un colis aujourd'hui. On réglera ça avec le transporteur plus tard." }
+            {
+              "speaker": "Rania",
+              "text_en": "A customer says her parcel never arrived, but the carrier says it was delivered.",
+              "text_fr": "Une cliente dit que son colis n'est jamais arrivé, mais le transporteur dit qu'il a été livré."
+            },
+            {
+              "speaker": "Lars",
+              "text_en": "Can you send me the tracking number? I'll ask for the proof of delivery.",
+              "text_fr": "Tu peux m'envoyer le numéro de suivi ? Je vais demander la preuve de livraison."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "Here it is. It's the third complaint this week with the same carrier.",
+              "text_fr": "Le voici. C'est la troisième réclamation cette semaine avec le même transporteur."
+            },
+            {
+              "speaker": "Lars",
+              "text_en": "I know. Their last-mile delivery in Lyon is a mess right now. Drivers leave parcels at the door.",
+              "text_fr": "Je sais. Leur livraison du dernier kilomètre à Lyon est un vrai bazar en ce moment. Les livreurs laissent les colis devant la porte."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "Should we make pickup points the default option there?",
+              "text_fr": "On devrait mettre les points relais comme option par défaut là-bas ?"
+            },
+            {
+              "speaker": "Lars",
+              "text_en": "Good idea. And let's ship her a new one today. We'll sort it out with the carrier later.",
+              "text_fr": "Bonne idée. Et renvoyons-lui un colis aujourd'hui. On réglera ça avec le transporteur plus tard."
+            }
           ],
           "questions": [
             {
@@ -929,7 +1579,11 @@
             },
             {
               "prompt_fr": "Complète : « We'll ___ it out with the carrier later. » (On réglera ça avec le transporteur.)",
-              "choices": ["sort", "solve", "arrange"],
+              "choices": [
+                "sort",
+                "solve",
+                "arrange"
+              ],
               "answer_index": 0,
               "explanation_fr": "To sort something out = régler un problème, souvent en discutant avec quelqu'un. Solve s'emploie sans out (solve a problem), et « arrange out » n'existe pas : arrange veut dire organiser (arrange a meeting, arrange a pickup)."
             }
@@ -939,20 +1593,57 @@
             "prompt_fr": "Écris au chargé de compte du transporteur, en 3 ou 4 phrases : décris le problème avec des faits, demande les preuves de livraison et propose une prochaine étape. Ton ferme mais cordial.",
             "model_answer_en": "Hi Marc, this week we received three complaints about parcels marked as delivered in Lyon that customers never received. Could you send us the proof of delivery for the three tracking numbers below? We need to understand what is happening with last-mile delivery in that area. Could we have a quick call on Thursday to agree on a solution?",
             "model_answer_fr": "Bonjour Marc, cette semaine, nous avons reçu trois réclamations concernant des colis indiqués comme livrés à Lyon, que les clients n'ont jamais reçus. Pourriez-vous nous envoyer la preuve de livraison pour les trois numéros de suivi ci-dessous ? Nous devons comprendre ce qui se passe avec la livraison du dernier kilomètre dans ce secteur. Pourrions-nous faire un point rapide jeudi pour convenir d'une solution ?",
-            "key_phrases": ["marked as delivered", "Could you send us the proof of delivery", "tracking numbers", "last-mile delivery", "agree on a solution"]
+            "key_phrases": [
+              "marked as delivered",
+              "Could you send us the proof of delivery",
+              "tracking numbers",
+              "last-mile delivery",
+              "agree on a solution"
+            ]
           }
         },
         {
           "id": "ecommerce-reduire-taux-retour",
           "title_fr": "Réduire le taux de retour",
-          "term_ids": ["return-policy", "return-rate", "refund", "reverse-logistics", "size-guide", "virtual-try-on"],
+          "term_ids": [
+            "return-policy",
+            "return-rate",
+            "refund",
+            "reverse-logistics",
+            "size-guide",
+            "virtual-try-on"
+          ],
           "dialogue": [
-            { "speaker": "Nour", "text_en": "Our return rate on shoes is 35%. That's too high, and reverse logistics is costing us a fortune.", "text_fr": "Notre taux de retour sur les chaussures est de 35 %. C'est trop élevé, et la logistique des retours nous coûte une fortune." },
-            { "speaker": "Felix", "text_en": "What's the main reason customers give?", "text_fr": "Quelle est la principale raison donnée par les clients ?" },
-            { "speaker": "Nour", "text_en": "The size, by far. Many people order two sizes and send one back.", "text_fr": "La taille, de loin. Beaucoup de gens commandent deux pointures et en renvoient une." },
-            { "speaker": "Felix", "text_en": "So let's improve the size guide with real measurements, and test a virtual try-on on our best-selling models.", "text_fr": "Alors améliorons le guide des tailles avec de vraies mesures, et testons l'essayage virtuel sur nos modèles les plus vendus." },
-            { "speaker": "Nour", "text_en": "Should we also change the return policy? Returns are free right now.", "text_fr": "On devrait aussi changer la politique de retour ? Les retours sont gratuits pour l'instant." },
-            { "speaker": "Felix", "text_en": "Let's keep them free, but offer an instant refund in store credit. It keeps the money with us.", "text_fr": "Gardons-les gratuits, mais proposons un remboursement immédiat en avoir. Ça garde l'argent chez nous." }
+            {
+              "speaker": "Nour",
+              "text_en": "Our return rate on shoes is 35%. That's too high, and reverse logistics is costing us a fortune.",
+              "text_fr": "Notre taux de retour sur les chaussures est de 35 %. C'est trop élevé, et la logistique des retours nous coûte une fortune."
+            },
+            {
+              "speaker": "Felix",
+              "text_en": "What's the main reason customers give?",
+              "text_fr": "Quelle est la principale raison donnée par les clients ?"
+            },
+            {
+              "speaker": "Nour",
+              "text_en": "The size, by far. Many people order two sizes and send one back.",
+              "text_fr": "La taille, de loin. Beaucoup de gens commandent deux pointures et en renvoient une."
+            },
+            {
+              "speaker": "Felix",
+              "text_en": "So let's improve the size guide with real measurements, and test a virtual try-on on our best-selling models.",
+              "text_fr": "Alors améliorons le guide des tailles avec de vraies mesures, et testons l'essayage virtuel sur nos modèles les plus vendus."
+            },
+            {
+              "speaker": "Nour",
+              "text_en": "Should we also change the return policy? Returns are free right now.",
+              "text_fr": "On devrait aussi changer la politique de retour ? Les retours sont gratuits pour l'instant."
+            },
+            {
+              "speaker": "Felix",
+              "text_en": "Let's keep them free, but offer an instant refund in store credit. It keeps the money with us.",
+              "text_fr": "Gardons-les gratuits, mais proposons un remboursement immédiat en avoir. Ça garde l'argent chez nous."
+            }
           ],
           "questions": [
             {
@@ -977,7 +1668,11 @@
             },
             {
               "prompt_fr": "Complète : « Many people order two sizes and send one ___. »",
-              "choices": ["back", "again", "off"],
+              "choices": [
+                "back",
+                "again",
+                "off"
+              ],
               "answer_index": 0,
               "explanation_fr": "Send back = renvoyer à l'expéditeur. Send again = envoyer une seconde fois. Send off = expédier, poster (send off a parcel), sans idée de retour. Avec les verbes à particule, c'est la petite préposition qui porte le sens."
             },
@@ -997,7 +1692,12 @@
             "prompt_fr": "Rédige une recommandation pour la direction, en 3 ou 4 phrases, pour réduire le taux de retour sur les chaussures : le constat chiffré et sa cause, deux actions, et ta position sur la politique de retour avec un argument.",
             "model_answer_en": "Our return rate on shoes is 35%, mainly because customers order two sizes and send one back. I recommend improving the size guide with real measurements and testing virtual try-on on our best-selling models. We should keep free returns, as they reassure customers before they buy. However, we can offer an instant refund in store credit to keep more of the money.",
             "model_answer_fr": "Notre taux de retour sur les chaussures est de 35 %, surtout parce que les clients commandent deux pointures et en renvoient une. Je recommande d'améliorer le guide des tailles avec de vraies mesures et de tester l'essayage virtuel sur nos modèles les plus vendus. Nous devrions garder les retours gratuits, car ils rassurent les clients avant l'achat. En revanche, nous pouvons proposer un remboursement immédiat en avoir pour garder une plus grande part de l'argent.",
-            "key_phrases": ["Our return rate on shoes is 35%", "send one back", "I recommend improving the size guide", "an instant refund in store credit"]
+            "key_phrases": [
+              "Our return rate on shoes is 35%",
+              "send one back",
+              "I recommend improving the size guide",
+              "an instant refund in store credit"
+            ]
           }
         }
       ]
@@ -1010,12 +1710,30 @@
       "guide": {
         "intro_fr": "Une marque peut vendre en direct sur son propre site (le modèle DTC, direct-to-consumer) ou passer par une marketplace comme Amazon, Zalando ou Cdiscount. Elle y devient un third-party seller, un vendeur tiers, qui paie une commission sur chaque vente. Les produits y arrivent par un product feed, un fichier qui envoie titres, prix, stocks et attributs : si un champ obligatoire manque, l'offre est refusée. Pour gagner en visibilité, on achète du retail media, la publicité vendue par les distributeurs, par exemple des sponsored products en tête des résultats. On suit le ROAS, le chiffre généré par euro de publicité. Enfin, la plateforme note chaque vendeur : la seller rating dépend des délais, des annulations et des avis clients.",
         "key_phrases": [
-          { "en": "It would give us reach, but less control.", "fr": "Ça nous donnerait de la visibilité, mais moins de contrôle." },
-          { "en": "Half of our listings were rejected.", "fr": "La moitié de nos offres ont été refusées." },
-          { "en": "The feed is missing the GTIN for most products.", "fr": "Il manque le GTIN dans le flux pour la plupart des produits." },
-          { "en": "We're above break-even, but not by much.", "fr": "On est au-dessus du seuil de rentabilité, mais pas de beaucoup." },
-          { "en": "Our seller rating dropped below 4.", "fr": "Notre note vendeur est passée sous 4." },
-          { "en": "Let's reply to every negative review within 24 hours.", "fr": "Répondons à chaque avis négatif sous 24 heures." }
+          {
+            "en": "It would give us reach, but less control.",
+            "fr": "Ça nous donnerait de la visibilité, mais moins de contrôle."
+          },
+          {
+            "en": "Half of our listings were rejected.",
+            "fr": "La moitié de nos offres ont été refusées."
+          },
+          {
+            "en": "The feed is missing the GTIN for most products.",
+            "fr": "Il manque le GTIN dans le flux pour la plupart des produits."
+          },
+          {
+            "en": "We're above break-even, but not by much.",
+            "fr": "On est au-dessus du seuil de rentabilité, mais pas de beaucoup."
+          },
+          {
+            "en": "Our seller rating dropped below 4.",
+            "fr": "Notre note vendeur est passée sous 4."
+          },
+          {
+            "en": "Let's reply to every negative review within 24 hours.",
+            "fr": "Répondons à chaque avis négatif sous 24 heures."
+          }
         ],
         "tip_fr": "Sur une marketplace, une offre produit se dit a listing (to list a product = mettre un produit en vente). Ne dis pas « an announce » : announce est un verbe, et une annonce publicitaire se dit an ad. La commission se dit commission, mais on parle surtout de fees (seller fees, referral fees)."
       },
@@ -1023,13 +1741,39 @@
         {
           "id": "ecommerce-decider-marketplace",
           "title_fr": "Peser le pour et le contre d'une marketplace",
-          "term_ids": ["marketplace", "dtc", "third-party-seller", "omnichannel", "gmv"],
+          "term_ids": [
+            "marketplace",
+            "dtc",
+            "third-party-seller",
+            "omnichannel",
+            "gmv"
+          ],
           "dialogue": [
-            { "speaker": "Mateo", "text_en": "Management wants us on Amazon by spring. What do you think?", "text_fr": "La direction veut qu'on soit sur Amazon d'ici le printemps. Qu'est-ce que tu en penses ?" },
-            { "speaker": "Aïcha", "text_en": "A marketplace would give us reach, but less control. As a third-party seller, we pay fees on every sale and we don't own the customer data.", "text_fr": "Une marketplace nous donnerait de la visibilité, mais moins de contrôle. En tant que vendeur tiers, on paie des commissions sur chaque vente et les données clients ne nous appartiennent pas." },
-            { "speaker": "Mateo", "text_en": "But our DTC site alone won't grow fast enough.", "text_fr": "Mais notre site en vente directe ne grandira pas assez vite à lui seul." },
-            { "speaker": "Aïcha", "text_en": "True. Then let's be omnichannel, but carefully: only part of the range on Amazon, and new collections on our own site first.", "text_fr": "C'est vrai. Alors soyons omnicanaux, mais prudemment : une partie de la gamme seulement sur Amazon, et les nouvelles collections d'abord sur notre site." },
-            { "speaker": "Mateo", "text_en": "Makes sense. I'll present it as a test, with a GMV target for the first six months.", "text_fr": "Logique. Je vais le présenter comme un test, avec un objectif de GMV pour les six premiers mois." }
+            {
+              "speaker": "Mateo",
+              "text_en": "Management wants us on Amazon by spring. What do you think?",
+              "text_fr": "La direction veut qu'on soit sur Amazon d'ici le printemps. Qu'est-ce que tu en penses ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "A marketplace would give us reach, but less control. As a third-party seller, we pay fees on every sale and we don't own the customer data.",
+              "text_fr": "Une marketplace nous donnerait de la visibilité, mais moins de contrôle. En tant que vendeur tiers, on paie des commissions sur chaque vente et les données clients ne nous appartiennent pas."
+            },
+            {
+              "speaker": "Mateo",
+              "text_en": "But our DTC site alone won't grow fast enough.",
+              "text_fr": "Mais notre site en vente directe ne grandira pas assez vite à lui seul."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "True. Then let's be omnichannel, but carefully: only part of the range on Amazon, and new collections on our own site first.",
+              "text_fr": "C'est vrai. Alors soyons omnicanaux, mais prudemment : une partie de la gamme seulement sur Amazon, et les nouvelles collections d'abord sur notre site."
+            },
+            {
+              "speaker": "Mateo",
+              "text_en": "Makes sense. I'll present it as a test, with a GMV target for the first six months.",
+              "text_fr": "Logique. Je vais le présenter comme un test, avec un objectif de GMV pour les six premiers mois."
+            }
           ],
           "questions": [
             {
@@ -1044,7 +1788,11 @@
             },
             {
               "prompt_fr": "Comment dire « une partie de la gamme » ?",
-              "choices": ["part of the gamut", "part of the scale", "part of the range"],
+              "choices": [
+                "part of the gamut",
+                "part of the scale",
+                "part of the range"
+              ],
               "answer_index": 2,
               "explanation_fr": "La gamme de produits se dit the range (ou the product line). Faux ami : gamut existe, mais veut dire « tout l'éventail » de quelque chose d'abstrait (the whole gamut of emotions), jamais une gamme de produits. Scale = échelle ou taille (at scale = à grande échelle)."
             },
@@ -1074,20 +1822,55 @@
             "prompt_fr": "En comité de direction, donne ta recommandation sur Amazon en 3 ou 4 phrases : un avantage, deux risques, ta proposition concrète et quand vous ferez le bilan.",
             "model_answer_en": "A marketplace would give us reach, but less control over prices and customer data. I recommend a six-month test with part of the range, while new collections launch on our DTC site first. That way we limit the risk on our margin and our brand. We'll review the GMV and the margin after three months.",
             "model_answer_fr": "Une marketplace nous donnerait de la visibilité, mais moins de contrôle sur les prix et les données clients. Je recommande un test de six mois avec une partie de la gamme, pendant que les nouvelles collections sortent d'abord sur notre site en propre. Ainsi, nous limitons le risque pour notre marge et notre marque. Nous ferons le bilan de la GMV et de la marge au bout de trois mois.",
-            "key_phrases": ["would give us reach, but less control", "I recommend a six-month test", "part of the range", "our DTC site first"]
+            "key_phrases": [
+              "would give us reach, but less control",
+              "I recommend a six-month test",
+              "part of the range",
+              "our DTC site first"
+            ]
           }
         },
         {
           "id": "ecommerce-corriger-flux-produits",
           "title_fr": "Corriger un flux produits refusé",
-          "term_ids": ["product-feed", "product-attributes", "sku", "price-comparison-site", "product-title"],
+          "term_ids": [
+            "product-feed",
+            "product-attributes",
+            "sku",
+            "price-comparison-site",
+            "product-title"
+          ],
           "dialogue": [
-            { "speaker": "Kenji", "text_en": "Bad news: half of our listings were rejected by the marketplace overnight.", "text_fr": "Mauvaise nouvelle : la moitié de nos offres ont été refusées par la marketplace cette nuit." },
-            { "speaker": "Priya", "text_en": "Let me check the error report. The product feed is missing the GTIN for most products.", "text_fr": "Je regarde le rapport d'erreurs. Il manque le GTIN dans le flux produits pour la plupart des produits." },
-            { "speaker": "Kenji", "text_en": "The barcode number? I thought the SKU was enough.", "text_fr": "Le numéro de code-barres ? Je pensais que le SKU suffisait." },
-            { "speaker": "Priya", "text_en": "No, the SKU is our internal code. The marketplace needs the official one. Some product attributes are also empty, like color and material.", "text_fr": "Non, le SKU est notre code interne. La marketplace a besoin du code officiel. Certaines caractéristiques produit sont aussi vides, comme la couleur et la matière." },
-            { "speaker": "Kenji", "text_en": "And the product titles?", "text_fr": "Et les titres produits ?" },
-            { "speaker": "Priya", "text_en": "Too short. Let's follow their format: brand, product, color, size. The same feed goes to the price comparison sites, so it will help there too.", "text_fr": "Trop courts. Suivons leur format : marque, produit, couleur, taille. Le même flux part aussi vers les comparateurs de prix, donc ça aidera là aussi." }
+            {
+              "speaker": "Kenji",
+              "text_en": "Bad news: half of our listings were rejected by the marketplace overnight.",
+              "text_fr": "Mauvaise nouvelle : la moitié de nos offres ont été refusées par la marketplace cette nuit."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Let me check the error report. The product feed is missing the GTIN for most products.",
+              "text_fr": "Je regarde le rapport d'erreurs. Il manque le GTIN dans le flux produits pour la plupart des produits."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "The barcode number? I thought the SKU was enough.",
+              "text_fr": "Le numéro de code-barres ? Je pensais que le SKU suffisait."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "No, the SKU is our internal code. The marketplace needs the official one. Some product attributes are also empty, like color and material.",
+              "text_fr": "Non, le SKU est notre code interne. La marketplace a besoin du code officiel. Certaines caractéristiques produit sont aussi vides, comme la couleur et la matière."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "And the product titles?",
+              "text_fr": "Et les titres produits ?"
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Too short. Let's follow their format: brand, product, color, size. The same feed goes to the price comparison sites, so it will help there too.",
+              "text_fr": "Trop courts. Suivons leur format : marque, produit, couleur, taille. Le même flux part aussi vers les comparateurs de prix, donc ça aidera là aussi."
+            }
           ],
           "questions": [
             {
@@ -1112,7 +1895,11 @@
             },
             {
               "prompt_fr": "Complète : « Some product attributes are also ___, like color and material. »",
-              "choices": ["empty", "void", "emptied"],
+              "choices": [
+                "empty",
+                "void",
+                "emptied"
+              ],
               "answer_index": 0,
               "explanation_fr": "Un champ vide se dit empty (ou blank). Void veut surtout dire nul, sans valeur juridique (a void contract). Emptied signifie que quelqu'un a vidé le champ volontairement, ce qui n'est pas le cas ici."
             },
@@ -1132,20 +1919,54 @@
             "prompt_fr": "Explique à l'équipe catalogue, sur Slack, pourquoi le flux a été refusé et ce qu'il faut corriger, en 3 ou 4 phrases. Donne une échéance et précise que ça aidera aussi sur les comparateurs.",
             "model_answer_en": "Half of our listings were rejected because the product feed is missing GTINs. Could you add the GTIN for every SKU and fill in the empty product attributes, especially color and material? Please also update the product titles to the format brand, product, color, size. If we fix it by Wednesday, it will help on the price comparison sites too.",
             "model_answer_fr": "La moitié de nos offres ont été refusées parce qu'il manque les GTIN dans le flux produits. Pourriez-vous ajouter le GTIN de chaque SKU et compléter les caractéristiques produit vides, surtout la couleur et la matière ? Merci aussi de mettre à jour les titres produits au format marque, produit, couleur, taille. Si on corrige d'ici mercredi, ça aidera aussi sur les comparateurs de prix.",
-            "key_phrases": ["listings were rejected", "the product feed is missing GTINs", "fill in the empty product attributes", "update the product titles"]
+            "key_phrases": [
+              "listings were rejected",
+              "the product feed is missing GTINs",
+              "fill in the empty product attributes",
+              "update the product titles"
+            ]
           }
         },
         {
           "id": "ecommerce-produits-sponsorises",
           "title_fr": "Lancer des produits sponsorisés",
-          "term_ids": ["retail-media", "sponsored-products", "roas", "break-even-roas"],
+          "term_ids": [
+            "retail-media",
+            "sponsored-products",
+            "roas",
+            "break-even-roas"
+          ],
           "dialogue": [
-            { "speaker": "Kofi", "text_en": "The marketplace's ad team is pushing us to invest in retail media. Is it worth it?", "text_fr": "L'équipe publicité de la marketplace nous pousse à investir dans le retail media. Ça vaut le coup ?" },
-            { "speaker": "Mei", "text_en": "For new products, yes. Without sponsored products, nobody sees us on the first page of results.", "text_fr": "Pour les nouveaux produits, oui. Sans produits sponsorisés, personne ne nous voit sur la première page de résultats." },
-            { "speaker": "Kofi", "text_en": "What's our ROAS so far?", "text_fr": "Quel est notre ROAS jusqu'ici ?" },
-            { "speaker": "Mei", "text_en": "3.2. For every euro we spend, we get 3.20 euros in sales.", "text_fr": "3,2. Pour chaque euro dépensé, on génère 3,20 euros de ventes." },
-            { "speaker": "Kofi", "text_en": "Is that profitable after the marketplace fees?", "text_fr": "C'est rentable après les commissions de la marketplace ?" },
-            { "speaker": "Mei", "text_en": "Just about. Our break-even ROAS is 2.8, so we're above it, but not by much. Let's cut the keywords that don't sell.", "text_fr": "Tout juste. Notre ROAS de rentabilité est de 2,8, donc on est au-dessus, mais pas de beaucoup. Coupons les mots-clés qui ne vendent pas." }
+            {
+              "speaker": "Kofi",
+              "text_en": "The marketplace's ad team is pushing us to invest in retail media. Is it worth it?",
+              "text_fr": "L'équipe publicité de la marketplace nous pousse à investir dans le retail media. Ça vaut le coup ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "For new products, yes. Without sponsored products, nobody sees us on the first page of results.",
+              "text_fr": "Pour les nouveaux produits, oui. Sans produits sponsorisés, personne ne nous voit sur la première page de résultats."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "What's our ROAS so far?",
+              "text_fr": "Quel est notre ROAS jusqu'ici ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "3.2. For every euro we spend, we get 3.20 euros in sales.",
+              "text_fr": "3,2. Pour chaque euro dépensé, on génère 3,20 euros de ventes."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Is that profitable after the marketplace fees?",
+              "text_fr": "C'est rentable après les commissions de la marketplace ?"
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Just about. Our break-even ROAS is 2.8, so we're above it, but not by much. Let's cut the keywords that don't sell.",
+              "text_fr": "Tout juste. Notre ROAS de rentabilité est de 2,8, donc on est au-dessus, mais pas de beaucoup. Coupons les mots-clés qui ne vendent pas."
+            }
           ],
           "questions": [
             {
@@ -1160,7 +1981,11 @@
             },
             {
               "prompt_fr": "Comment dire « Ça vaut le coup ? » ?",
-              "choices": ["Does it worth it?", "Is it worth it?", "Is it worth the cost of it?"],
+              "choices": [
+                "Does it worth it?",
+                "Is it worth it?",
+                "Is it worth the cost of it?"
+              ],
               "answer_index": 1,
               "explanation_fr": "Worth n'est pas un verbe mais un adjectif : on dit is it worth it?, jamais « does it worth ». « Is it worth the cost of it? » répète it inutilement ; on dirait is it worth the cost?"
             },
@@ -1176,7 +2001,11 @@
             },
             {
               "prompt_fr": "Complète : « We're above it, but not by ___. » (mais pas de beaucoup)",
-              "choices": ["many", "lot", "much"],
+              "choices": [
+                "many",
+                "lot",
+                "much"
+              ],
               "answer_index": 2,
               "explanation_fr": "Not by much = pas de beaucoup ; much s'emploie pour une quantité indénombrable, ici un écart. Many s'emploie avec un pluriel dénombrable (many keywords). On peut dire not by a lot, mais jamais « by lot » sans article."
             }
@@ -1187,20 +2016,55 @@
             "context_en": "Ryan (marketplace ads team): Your sponsored products are doing well! Shall we double the budget next month?",
             "model_answer_en": "Thanks, Ryan, glad to hear it. Our ROAS is 3.2, which is above our break-even ROAS, but not by much. Before we double the budget, we'd like to cut the keywords that don't sell. Can we review the results together next Friday?",
             "model_answer_fr": "Merci Ryan, ça fait plaisir. Notre ROAS est de 3,2, au-dessus de notre ROAS de rentabilité, mais pas de beaucoup. Avant de doubler le budget, nous voulons couper les mots-clés qui ne vendent pas. On peut regarder les résultats ensemble vendredi prochain ?",
-            "key_phrases": ["above our break-even ROAS", "but not by much", "cut the keywords that don't sell", "review the results together"]
+            "key_phrases": [
+              "above our break-even ROAS",
+              "but not by much",
+              "cut the keywords that don't sell",
+              "review the results together"
+            ]
           }
         },
         {
           "id": "ecommerce-proteger-note-vendeur",
           "title_fr": "Répondre aux avis et protéger la note vendeur",
-          "term_ids": ["seller-rating", "product-review", "star-rating", "complaint", "refund"],
+          "term_ids": [
+            "seller-rating",
+            "product-review",
+            "star-rating",
+            "complaint",
+            "refund"
+          ],
           "dialogue": [
-            { "speaker": "Tomasz", "text_en": "Our seller rating dropped below 4 this week. Buyers will trust us less.", "text_fr": "Notre note vendeur est passée sous 4 cette semaine. Les acheteurs vont moins nous faire confiance." },
-            { "speaker": "Leila", "text_en": "I saw. Most of the negative product reviews are about late deliveries, not the products themselves.", "text_fr": "J'ai vu. La plupart des avis produits négatifs portent sur les retards de livraison, pas sur les produits eux-mêmes." },
-            { "speaker": "Tomasz", "text_en": "One customer left a one-star rating because the box arrived damaged.", "text_fr": "Un client a laissé une note d'une étoile parce que le carton est arrivé abîmé." },
-            { "speaker": "Leila", "text_en": "Let's reply to every negative review within 24 hours. Apologize, explain, and offer a solution.", "text_fr": "Répondons à chaque avis négatif sous 24 heures. On s'excuse, on explique et on propose une solution." },
-            { "speaker": "Tomasz", "text_en": "For that one, I'll offer a full refund or a replacement.", "text_fr": "Pour celui-là, je propose un remboursement complet ou un remplacement." },
-            { "speaker": "Leila", "text_en": "Good. And let's send the delivery complaints to the logistics team every week.", "text_fr": "Bien. Et transmettons chaque semaine les réclamations sur la livraison à l'équipe logistique." }
+            {
+              "speaker": "Tomasz",
+              "text_en": "Our seller rating dropped below 4 this week. Buyers will trust us less.",
+              "text_fr": "Notre note vendeur est passée sous 4 cette semaine. Les acheteurs vont moins nous faire confiance."
+            },
+            {
+              "speaker": "Leila",
+              "text_en": "I saw. Most of the negative product reviews are about late deliveries, not the products themselves.",
+              "text_fr": "J'ai vu. La plupart des avis produits négatifs portent sur les retards de livraison, pas sur les produits eux-mêmes."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "One customer left a one-star rating because the box arrived damaged.",
+              "text_fr": "Un client a laissé une note d'une étoile parce que le carton est arrivé abîmé."
+            },
+            {
+              "speaker": "Leila",
+              "text_en": "Let's reply to every negative review within 24 hours. Apologize, explain, and offer a solution.",
+              "text_fr": "Répondons à chaque avis négatif sous 24 heures. On s'excuse, on explique et on propose une solution."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "For that one, I'll offer a full refund or a replacement.",
+              "text_fr": "Pour celui-là, je propose un remboursement complet ou un remplacement."
+            },
+            {
+              "speaker": "Leila",
+              "text_en": "Good. And let's send the delivery complaints to the logistics team every week.",
+              "text_fr": "Bien. Et transmettons chaque semaine les réclamations sur la livraison à l'équipe logistique."
+            }
           ],
           "questions": [
             {
@@ -1225,7 +2089,11 @@
             },
             {
               "prompt_fr": "Complète : « Let's reply to every negative review ___ 24 hours. » (sous 24 heures)",
-              "choices": ["within", "since", "during"],
+              "choices": [
+                "within",
+                "since",
+                "during"
+              ],
               "answer_index": 0,
               "explanation_fr": "Within 24 hours = dans un délai de 24 heures maximum. Since veut dire « depuis » (since Monday), et during veut dire « pendant », sans idée de délai limite. Ni l'un ni l'autre ne traduit « sous 24 heures »."
             },
@@ -1246,7 +2114,12 @@
             "context_en": "Review (1 star): The box arrived damaged and the mug inside was broken. Very disappointed.",
             "model_answer_en": "Hello James, we're very sorry that your order arrived damaged. We can send you a replacement this week or give you a full refund, whichever you prefer. Just reply to this email with your choice, and there's no need to send the broken mug back. We'll take care of everything within 24 hours.",
             "model_answer_fr": "Bonjour James, nous sommes vraiment désolés que votre commande soit arrivée abîmée. Nous pouvons vous envoyer un remplacement cette semaine ou vous rembourser intégralement, comme vous préférez. Répondez simplement à cet e-mail avec votre choix ; inutile de nous renvoyer le mug cassé. Nous nous occupons de tout sous 24 heures.",
-            "key_phrases": ["we're very sorry that your order arrived damaged", "send you a replacement", "a full refund", "whichever you prefer"]
+            "key_phrases": [
+              "we're very sorry that your order arrived damaged",
+              "send you a replacement",
+              "a full refund",
+              "whichever you prefer"
+            ]
           }
         }
       ]
@@ -1259,12 +2132,30 @@
       "guide": {
         "intro_fr": "La revue hebdomadaire est le moment où le responsable e-commerce transforme les chiffres en décisions. On part du chiffre d'affaires, qu'on décompose : nombre de visiteurs, conversion rate et average order value. Le revenue per visitor (RPV) résume ces deux derniers en un seul indicateur. On compare avec la semaine précédente (week over week) et avec la même semaine de l'an dernier (year-over-year), pour tenir compte de la seasonality. Mais le chiffre d'affaires ne suffit pas : la direction veut connaître la gross margin et la contribution margin, une fois retirés le COGS, la logistique et la publicité. Enfin, on suit la fidélité : repeat purchase rate et LTV, la valeur d'un client sur toute la durée de la relation.",
         "key_phrases": [
-          { "en": "Revenue is up 8% week over week.", "fr": "Le chiffre d'affaires est en hausse de 8 % par rapport à la semaine précédente." },
-          { "en": "Compared to the same week last year, we're down 3%.", "fr": "Par rapport à la même semaine l'an dernier, on est en baisse de 3 %." },
-          { "en": "The drop is mainly due to lower traffic.", "fr": "La baisse est surtout due à un trafic plus faible." },
-          { "en": "The average order value is flat.", "fr": "Le panier moyen est stable." },
-          { "en": "Let's look at margin, not just revenue.", "fr": "Regardons la marge, pas seulement le chiffre d'affaires." },
-          { "en": "Our main focus for next week is traffic.", "fr": "Notre priorité pour la semaine prochaine, c'est le trafic." }
+          {
+            "en": "Revenue is up 8% week over week.",
+            "fr": "Le chiffre d'affaires est en hausse de 8 % par rapport à la semaine précédente."
+          },
+          {
+            "en": "Compared to the same week last year, we're down 3%.",
+            "fr": "Par rapport à la même semaine l'an dernier, on est en baisse de 3 %."
+          },
+          {
+            "en": "The drop is mainly due to lower traffic.",
+            "fr": "La baisse est surtout due à un trafic plus faible."
+          },
+          {
+            "en": "The average order value is flat.",
+            "fr": "Le panier moyen est stable."
+          },
+          {
+            "en": "Let's look at margin, not just revenue.",
+            "fr": "Regardons la marge, pas seulement le chiffre d'affaires."
+          },
+          {
+            "en": "Our main focus for next week is traffic.",
+            "fr": "Notre priorité pour la semaine prochaine, c'est le trafic."
+          }
         ],
         "tip_fr": "« Le chiffre d'affaires » se dit revenue ou sales. Turnover s'emploie au Royaume-Uni, mais veut aussi dire rotation du personnel (staff turnover) : revenue est plus sûr. Pour les variations, pas de préposition après up ou down : « Revenue is up 8% », mais « an increase of 8% » et « it rose by 8% »."
       },
@@ -1272,14 +2163,44 @@
         {
           "id": "ecommerce-commenter-chiffres-semaine",
           "title_fr": "Commenter les chiffres de la semaine",
-          "term_ids": ["revenue-per-visitor", "conversion-rate", "average-order-value", "year-over-year", "seasonality"],
+          "term_ids": [
+            "revenue-per-visitor",
+            "conversion-rate",
+            "average-order-value",
+            "year-over-year",
+            "seasonality"
+          ],
           "dialogue": [
-            { "speaker": "Ingrid", "text_en": "Let's start with the numbers. How was last week?", "text_fr": "Commençons par les chiffres. Comment s'est passée la semaine dernière ?" },
-            { "speaker": "Moussa", "text_en": "Revenue is up 8% week over week, but compared to the same week last year, we're down 3%.", "text_fr": "Le chiffre d'affaires est en hausse de 8 % par rapport à la semaine précédente, mais par rapport à la même semaine l'an dernier, on est en baisse de 3 %." },
-            { "speaker": "Ingrid", "text_en": "Why is the year-over-year number negative?", "text_fr": "Pourquoi le chiffre sur un an est-il négatif ?" },
-            { "speaker": "Moussa", "text_en": "Mainly traffic. The conversion rate is stable at 2.1%, and the average order value is flat. Last year, Easter was a week earlier, so it's partly seasonality.", "text_fr": "Surtout le trafic. Le taux de conversion est stable à 2,1 % et le panier moyen n'a pas bougé. L'an dernier, Pâques tombait une semaine plus tôt, donc c'est en partie de la saisonnalité." },
-            { "speaker": "Ingrid", "text_en": "OK. And revenue per visitor?", "text_fr": "D'accord. Et le chiffre d'affaires par visiteur ?" },
-            { "speaker": "Moussa", "text_en": "Stable too. So the site sells as well as before. We just need more visitors.", "text_fr": "Stable aussi. Donc le site vend aussi bien qu'avant. Il nous faut simplement plus de visiteurs." }
+            {
+              "speaker": "Ingrid",
+              "text_en": "Let's start with the numbers. How was last week?",
+              "text_fr": "Commençons par les chiffres. Comment s'est passée la semaine dernière ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Revenue is up 8% week over week, but compared to the same week last year, we're down 3%.",
+              "text_fr": "Le chiffre d'affaires est en hausse de 8 % par rapport à la semaine précédente, mais par rapport à la même semaine l'an dernier, on est en baisse de 3 %."
+            },
+            {
+              "speaker": "Ingrid",
+              "text_en": "Why is the year-over-year number negative?",
+              "text_fr": "Pourquoi le chiffre sur un an est-il négatif ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Mainly traffic. The conversion rate is stable at 2.1%, and the average order value is flat. Last year, Easter was a week earlier, so it's partly seasonality.",
+              "text_fr": "Surtout le trafic. Le taux de conversion est stable à 2,1 % et le panier moyen n'a pas bougé. L'an dernier, Pâques tombait une semaine plus tôt, donc c'est en partie de la saisonnalité."
+            },
+            {
+              "speaker": "Ingrid",
+              "text_en": "OK. And revenue per visitor?",
+              "text_fr": "D'accord. Et le chiffre d'affaires par visiteur ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Stable too. So the site sells as well as before. We just need more visitors.",
+              "text_fr": "Stable aussi. Donc le site vend aussi bien qu'avant. Il nous faut simplement plus de visiteurs."
+            }
           ],
           "questions": [
             {
@@ -1328,20 +2249,56 @@
             "prompt_fr": "Rédige le paragraphe « Performance de la semaine » du rapport, en 3 ou 4 phrases : les deux comparaisons, la cause principale avec une nuance, ce qui est stable, et la priorité de la semaine suivante.",
             "model_answer_en": "Revenue is up 8% week over week but down 3% year over year. The drop is mainly due to lower traffic, partly because of seasonality: Easter was a week earlier last year. The conversion rate and revenue per visitor are stable, so the site still sells well. Our main focus for next week is traffic.",
             "model_answer_fr": "Le chiffre d'affaires est en hausse de 8 % par rapport à la semaine précédente, mais en baisse de 3 % sur un an. La baisse est surtout due à un trafic plus faible, en partie à cause de la saisonnalité : Pâques tombait une semaine plus tôt l'an dernier. Le taux de conversion et le chiffre d'affaires par visiteur sont stables, donc le site vend toujours bien. Notre priorité pour la semaine prochaine, c'est le trafic.",
-            "key_phrases": ["up 8% week over week", "down 3% year over year", "mainly due to lower traffic", "Our main focus for next week"]
+            "key_phrases": [
+              "up 8% week over week",
+              "down 3% year over year",
+              "mainly due to lower traffic",
+              "Our main focus for next week"
+            ]
           }
         },
         {
           "id": "ecommerce-parler-marge",
           "title_fr": "Parler marge, pas seulement chiffre d'affaires",
-          "term_ids": ["cogs", "gross-margin", "contribution-margin", "cost-per-order", "retail-price", "markup"],
+          "term_ids": [
+            "cogs",
+            "gross-margin",
+            "contribution-margin",
+            "cost-per-order",
+            "retail-price",
+            "markup"
+          ],
           "dialogue": [
-            { "speaker": "Fatou", "text_en": "Revenue looks great, but let's look at margin, not just revenue.", "text_fr": "Le chiffre d'affaires a l'air très bon, mais regardons la marge, pas seulement le chiffre d'affaires." },
-            { "speaker": "Diego", "text_en": "Sure. Our gross margin is 58%, so 58% of sales is left after the COGS, the cost of the products themselves.", "text_fr": "Bien sûr. Notre marge brute est de 58 % : il reste 58 % des ventes une fois retiré le coût des marchandises vendues, c'est-à-dire le coût des produits eux-mêmes." },
-            { "speaker": "Fatou", "text_en": "And after shipping, packaging and ads? What's the contribution margin?", "text_fr": "Et après la livraison, l'emballage et la publicité ? Quelle est la marge sur coûts variables ?" },
-            { "speaker": "Diego", "text_en": "About 22%. Our cost per order went up: we spent more on ads to get each order.", "text_fr": "Environ 22 %. Notre coût par commande a augmenté : on a dépensé plus en publicité pour obtenir chaque commande." },
-            { "speaker": "Fatou", "text_en": "So we sell more, but we earn less on each order.", "text_fr": "Donc on vend plus, mais on gagne moins sur chaque commande." },
-            { "speaker": "Diego", "text_en": "Exactly. Take the canvas bag: it costs us 40 euros and its retail price is 100 euros before VAT. With that markup, we can afford ads. On low-markup products, we can't.", "text_fr": "Exactement. Prends le sac en toile : il nous coûte 40 euros et son prix de vente est de 100 euros HT. Avec ce niveau de marge sur coût, on peut se permettre de la publicité. Sur les produits à faible marge, non." }
+            {
+              "speaker": "Fatou",
+              "text_en": "Revenue looks great, but let's look at margin, not just revenue.",
+              "text_fr": "Le chiffre d'affaires a l'air très bon, mais regardons la marge, pas seulement le chiffre d'affaires."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Sure. Our gross margin is 58%, so 58% of sales is left after the COGS, the cost of the products themselves.",
+              "text_fr": "Bien sûr. Notre marge brute est de 58 % : il reste 58 % des ventes une fois retiré le coût des marchandises vendues, c'est-à-dire le coût des produits eux-mêmes."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "And after shipping, packaging and ads? What's the contribution margin?",
+              "text_fr": "Et après la livraison, l'emballage et la publicité ? Quelle est la marge sur coûts variables ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "About 22%. Our cost per order went up: we spent more on ads to get each order.",
+              "text_fr": "Environ 22 %. Notre coût par commande a augmenté : on a dépensé plus en publicité pour obtenir chaque commande."
+            },
+            {
+              "speaker": "Fatou",
+              "text_en": "So we sell more, but we earn less on each order.",
+              "text_fr": "Donc on vend plus, mais on gagne moins sur chaque commande."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Exactly. Take the canvas bag: it costs us 40 euros and its retail price is 100 euros before VAT. With that markup, we can afford ads. On low-markup products, we can't.",
+              "text_fr": "Exactement. Prends le sac en toile : il nous coûte 40 euros et son prix de vente est de 100 euros HT. Avec ce niveau de marge sur coût, on peut se permettre de la publicité. Sur les produits à faible marge, non."
+            }
           ],
           "questions": [
             {
@@ -1390,24 +2347,60 @@
             "prompt_fr": "Écris à Fatou (finance) pour expliquer en 3 ou 4 phrases pourquoi la marge baisse alors que les ventes augmentent : le chiffre clé, la cause, et une proposition concrète avec sa raison.",
             "model_answer_en": "Hi Fatou, our revenue is up, but our contribution margin fell to 22% this month. The main reason is a higher cost per order, because we spent more on ads to get each sale. I suggest we stop advertising the products with the lowest markup, since they can't cover the cost of ads. We would keep investing in high-markup products like the canvas bag.",
             "model_answer_fr": "Bonjour Fatou, notre chiffre d'affaires augmente, mais notre marge sur coûts variables est tombée à 22 % ce mois-ci. La raison principale est un coût par commande plus élevé, parce que nous avons dépensé plus en publicité pour obtenir chaque vente. Je propose d'arrêter la publicité sur les produits à plus faible marge, puisqu'ils ne peuvent pas couvrir son coût. Nous continuerions à investir sur les produits à forte marge, comme le sac en toile.",
-            "key_phrases": ["our contribution margin fell to 22%", "a higher cost per order", "the products with the lowest markup", "cover the cost of ads"]
+            "key_phrases": [
+              "our contribution margin fell to 22%",
+              "a higher cost per order",
+              "the products with the lowest markup",
+              "cover the cost of ads"
+            ]
           }
         },
         {
           "id": "ecommerce-suivre-clients-fideles",
           "title_fr": "Suivre les clients qui reviennent",
-          "term_ids": ["repeat-purchase-rate", "repeat-customer", "first-time-buyer", "ltv", "post-purchase-email", "loyalty-program"],
+          "term_ids": [
+            "repeat-purchase-rate",
+            "repeat-customer",
+            "first-time-buyer",
+            "ltv",
+            "post-purchase-email",
+            "loyalty-program"
+          ],
           "dialogue": [
-            { "speaker": "Hannah", "text_en": "Black Friday brought a lot of first-time buyers. The question is: will they come back?", "text_fr": "Le Black Friday a amené beaucoup de nouveaux clients. La question, c'est : est-ce qu'ils vont revenir ?" },
-            { "speaker": "Kwame", "text_en": "Historically, our repeat purchase rate is about 25% within six months.", "text_fr": "Historiquement, notre taux de réachat est d'environ 25 % à six mois." },
-            { "speaker": "Hannah", "text_en": "That's low. A repeat customer is worth much more to us: their LTV is almost three times higher.", "text_fr": "C'est faible. Un client fidèle vaut beaucoup plus pour nous : sa LTV est presque trois fois plus élevée." },
-            { "speaker": "Kwame", "text_en": "Then let's work on the post-purchase email flow: a thank-you, tips to use the product, then a review request.", "text_fr": "Alors travaillons la séquence d'e-mails après achat : un remerciement, des conseils d'utilisation, puis une demande d'avis." },
-            { "speaker": "Hannah", "text_en": "And let's invite them to join the loyalty program after the first order, not before.", "text_fr": "Et invitons-les à rejoindre le programme de fidélité après la première commande, pas avant." }
+            {
+              "speaker": "Hannah",
+              "text_en": "Black Friday brought a lot of first-time buyers. The question is: will they come back?",
+              "text_fr": "Le Black Friday a amené beaucoup de nouveaux clients. La question, c'est : est-ce qu'ils vont revenir ?"
+            },
+            {
+              "speaker": "Kwame",
+              "text_en": "Historically, our repeat purchase rate is about 25% within six months.",
+              "text_fr": "Historiquement, notre taux de réachat est d'environ 25 % à six mois."
+            },
+            {
+              "speaker": "Hannah",
+              "text_en": "That's low. A repeat customer is worth much more to us: their LTV is almost three times higher.",
+              "text_fr": "C'est faible. Un client fidèle vaut beaucoup plus pour nous : sa LTV est presque trois fois plus élevée."
+            },
+            {
+              "speaker": "Kwame",
+              "text_en": "Then let's work on the post-purchase email flow: a thank-you, tips to use the product, then a review request.",
+              "text_fr": "Alors travaillons la séquence d'e-mails après achat : un remerciement, des conseils d'utilisation, puis une demande d'avis."
+            },
+            {
+              "speaker": "Hannah",
+              "text_en": "And let's invite them to join the loyalty program after the first order, not before.",
+              "text_fr": "Et invitons-les à rejoindre le programme de fidélité après la première commande, pas avant."
+            }
           ],
           "questions": [
             {
               "prompt_fr": "Comment dire « un primo-acheteur » ?",
-              "choices": ["a first buyer", "a first-time buyer", "a primo-buyer"],
+              "choices": [
+                "a first buyer",
+                "a first-time buyer",
+                "a primo-buyer"
+              ],
               "answer_index": 1,
               "explanation_fr": "On dit a first-time buyer (ou a new customer). « A first buyer » voudrait dire le tout premier acheteur, celui qui a acheté avant tous les autres. « Primo-buyer » n'existe pas en anglais : primo est un emprunt au latin propre au français."
             },
@@ -1433,7 +2426,11 @@
             },
             {
               "prompt_fr": "Complète : « Let's invite them to ___ the loyalty program after the first order. »",
-              "choices": ["enter in", "join", "subscribe"],
+              "choices": [
+                "enter in",
+                "join",
+                "subscribe"
+              ],
               "answer_index": 1,
               "explanation_fr": "On dit join a program (rejoindre, adhérer à). « Enter in » est un calque de « entrer dans » : enter se construit sans in. Subscribe demande to (subscribe to a newsletter) et évoque plutôt un abonnement."
             }
@@ -1443,20 +2440,55 @@
             "prompt_fr": "Rédige le brief de la séquence post-achat pour l'équipe CRM, en 3 ou 4 phrases : l'objectif, les trois e-mails avec leur timing, le moment de l'invitation au programme de fidélité, et l'indicateur de succès.",
             "model_answer_en": "Our goal is to turn first-time buyers into repeat customers. The post-purchase email flow will include a thank-you email, product tips after five days, and a review request after two weeks. After the first order, we will invite customers to join the loyalty program. We'll measure success with the repeat purchase rate at six months.",
             "model_answer_fr": "Notre objectif est de transformer les primo-acheteurs en clients fidèles. La séquence d'e-mails après achat comprendra un e-mail de remerciement, des conseils d'utilisation au bout de cinq jours et une demande d'avis au bout de deux semaines. Après la première commande, nous inviterons les clients à rejoindre le programme de fidélité. Nous mesurerons le succès avec le taux de réachat à six mois.",
-            "key_phrases": ["turn first-time buyers into repeat customers", "The post-purchase email flow", "join the loyalty program", "the repeat purchase rate at six months"]
+            "key_phrases": [
+              "turn first-time buyers into repeat customers",
+              "The post-purchase email flow",
+              "join the loyalty program",
+              "the repeat purchase rate at six months"
+            ]
           }
         },
         {
           "id": "ecommerce-defendre-nouveau-canal",
           "title_fr": "Défendre un nouveau canal de vente",
-          "term_ids": ["social-commerce", "live-shopping", "shoppable-post", "mobile-commerce", "omnichannel"],
+          "term_ids": [
+            "social-commerce",
+            "live-shopping",
+            "shoppable-post",
+            "mobile-commerce",
+            "omnichannel"
+          ],
           "dialogue": [
-            { "speaker": "Lucía", "text_en": "Before we finish, I'd like to propose a test with social commerce.", "text_fr": "Avant de terminer, j'aimerais proposer un test de social commerce." },
-            { "speaker": "Nikos", "text_en": "What exactly do you have in mind?", "text_fr": "Tu penses à quoi exactement ?" },
-            { "speaker": "Lucía", "text_en": "First, shoppable posts: people tap a product in our posts and buy it. Then one live shopping session a month, where our stylist presents the new collection.", "text_fr": "D'abord, des publications achetables : les gens touchent un produit dans nos posts et l'achètent. Ensuite, une session de live shopping par mois, où notre styliste présente la nouvelle collection." },
-            { "speaker": "Nikos", "text_en": "Why now?", "text_fr": "Pourquoi maintenant ?" },
-            { "speaker": "Lucía", "text_en": "Mobile commerce is already 70% of our orders, and our customers spend their time on social media. It fits our omnichannel strategy.", "text_fr": "Le commerce mobile représente déjà 70 % de nos commandes, et nos clients passent leur temps sur les réseaux sociaux. Ça s'inscrit dans notre stratégie omnicanale." },
-            { "speaker": "Nikos", "text_en": "OK, let's try it for three months. Come back with the numbers.", "text_fr": "D'accord, essayons pendant trois mois. Reviens avec les chiffres." }
+            {
+              "speaker": "Lucía",
+              "text_en": "Before we finish, I'd like to propose a test with social commerce.",
+              "text_fr": "Avant de terminer, j'aimerais proposer un test de social commerce."
+            },
+            {
+              "speaker": "Nikos",
+              "text_en": "What exactly do you have in mind?",
+              "text_fr": "Tu penses à quoi exactement ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "First, shoppable posts: people tap a product in our posts and buy it. Then one live shopping session a month, where our stylist presents the new collection.",
+              "text_fr": "D'abord, des publications achetables : les gens touchent un produit dans nos posts et l'achètent. Ensuite, une session de live shopping par mois, où notre styliste présente la nouvelle collection."
+            },
+            {
+              "speaker": "Nikos",
+              "text_en": "Why now?",
+              "text_fr": "Pourquoi maintenant ?"
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Mobile commerce is already 70% of our orders, and our customers spend their time on social media. It fits our omnichannel strategy.",
+              "text_fr": "Le commerce mobile représente déjà 70 % de nos commandes, et nos clients passent leur temps sur les réseaux sociaux. Ça s'inscrit dans notre stratégie omnicanale."
+            },
+            {
+              "speaker": "Nikos",
+              "text_en": "OK, let's try it for three months. Come back with the numbers.",
+              "text_fr": "D'accord, essayons pendant trois mois. Reviens avec les chiffres."
+            }
           ],
           "questions": [
             {
@@ -1481,7 +2513,11 @@
             },
             {
               "prompt_fr": "Complète : « It ___ our omnichannel strategy. » (Ça s'inscrit dans notre stratégie omnicanale.)",
-              "choices": ["fits", "enters", "registers in"],
+              "choices": [
+                "fits",
+                "enters",
+                "registers in"
+              ],
               "answer_index": 0,
               "explanation_fr": "To fit something = correspondre, s'intégrer à quelque chose (on dit aussi it fits in with our strategy). « Enters » et « registers in » sont des calques de « entrer dans » et « s'inscrire dans » : en anglais, register veut dire s'inscrire sur une liste ou un site, au sens propre."
             },
@@ -1501,7 +2537,308 @@
             "prompt_fr": "En fin de revue, propose le test de social commerce en 3 ou 4 phrases : ce que tu veux tester, pourquoi maintenant (avec une donnée), la durée, et ce que tu présenteras à la fin.",
             "model_answer_en": "I'd like to propose a three-month test with social commerce. We'll add shoppable posts to our feed and run one live shopping session a month to present the new collection. Mobile commerce is already 70% of our orders, so it fits our omnichannel strategy. At the end of the test, I'll come back with sales, conversion and cost per order.",
             "model_answer_fr": "J'aimerais proposer un test de social commerce sur trois mois. Nous ajouterons des publications achetables à notre fil et organiserons une session de live shopping par mois pour présenter la nouvelle collection. Le commerce mobile représente déjà 70 % de nos commandes, donc ça s'inscrit dans notre stratégie omnicanale. À la fin du test, je reviendrai avec les ventes, la conversion et le coût par commande.",
-            "key_phrases": ["I'd like to propose a three-month test", "add shoppable posts", "one live shopping session a month", "it fits our omnichannel strategy"]
+            "key_phrases": [
+              "I'd like to propose a three-month test",
+              "add shoppable posts",
+              "one live shopping session a month",
+              "it fits our omnichannel strategy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ecommerce-profitability-stock-and-platform",
+      "title_fr": "Piloter la rentabilité, le stock et la plateforme d'une boutique en croissance",
+      "title_en": "Steer profitability, stock and platform for a growing store",
+      "situation_fr": "La boutique vend davantage, mais la marge baisse, les retours augmentent et le site devient difficile à faire évoluer. Tu dois présenter les bons indicateurs, ajuster le stock et justifier une évolution technique.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu défends la rentabilité, pas seulement le chiffre d'affaires. Le « GMV » mesure les ventes brutes, la « contribution margin » ce qui reste après les coûts variables, et le « revenue per visitor » la valeur de chaque visite. La « price elasticity » dit comment la demande réagit à un changement de prix. Pour le stock : « safety stock », « sell-through rate » et « reverse logistics » pour les retours, sans oublier les questions « WISMO » (où est ma commande ?). Côté plateforme : « headless commerce », « PIM », « order management system » et « retail media ». Verbes clés : to forecast, to restock, to reprice, to decouple.",
+        "key_phrases": [
+          {
+            "en": "GMV is up, but the contribution margin is down.",
+            "fr": "Le GMV augmente, mais la marge sur coûts variables baisse."
+          },
+          {
+            "en": "A small price increase barely affected demand: low price elasticity.",
+            "fr": "Une petite hausse de prix a peu affecté la demande : faible élasticité-prix."
+          },
+          {
+            "en": "We keep a safety stock for our best sellers.",
+            "fr": "Nous gardons un stock de sécurité pour nos meilleures ventes."
+          },
+          {
+            "en": "The sell-through rate shows how fast a collection is selling.",
+            "fr": "Le taux d'écoulement montre à quelle vitesse une collection se vend."
+          },
+          {
+            "en": "Most support tickets are WISMO questions.",
+            "fr": "La plupart des tickets du support sont des questions « où est ma commande ? »."
+          },
+          {
+            "en": "Going headless lets us change the front end without touching the back office.",
+            "fr": "Passer en headless nous permet de changer l'interface sans toucher au back-office."
+          }
+        ],
+        "tip_fr": "Faux ami : « margin » seul est ambigu. Précise « gross margin » (marge brute) ou « contribution margin » (marge sur coûts variables) pour être compris."
+      },
+      "lessons": [
+        {
+          "id": "ecommerce-profit-not-just-sales",
+          "title_fr": "Défendre la marge plutôt que le chiffre d'affaires",
+          "term_ids": [
+            "gmv",
+            "contribution-margin",
+            "price-elasticity",
+            "revenue-per-visitor"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Camille",
+              "text_en": "GMV grew by 20% this quarter. Great, right?",
+              "text_fr": "Le GMV a augmenté de 20 % ce trimestre. Super, non ?"
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "Not really. Discounts and shipping costs cut the contribution margin in half.",
+              "text_fr": "Pas vraiment. Les remises et les frais de livraison ont divisé par deux la marge sur coûts variables."
+            },
+            {
+              "speaker": "Camille",
+              "text_en": "Can we raise prices?",
+              "text_fr": "Peut-on augmenter les prix ?"
+            },
+            {
+              "speaker": "Ravi",
+              "text_en": "A test showed low price elasticity on our best sellers, and revenue per visitor stayed stable.",
+              "text_fr": "Un test a montré une faible élasticité-prix sur nos meilleures ventes, et le revenu par visiteur est resté stable."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Ravi relativise-t-il la croissance du GMV ?",
+              "choices": [
+                "La marge sur coûts variables a fortement baissé malgré les ventes",
+                "Le GMV mesure uniquement les ventes en magasin physique",
+                "Le GMV ne compte pas les ventes réalisées avec des remises"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le GMV (ventes brutes) peut croître alors que la rentabilité diminue. Il inclut bien les ventes remisées et concerne les ventes en ligne, pas seulement le magasin physique."
+            },
+            {
+              "prompt_fr": "Que signifie « low price elasticity » ?",
+              "choices": [
+                "Le prix change très peu d'un mois à l'autre",
+                "La demande baisse fortement quand le prix augmente",
+                "La demande réagit peu à un changement de prix"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Une faible élasticité-prix signifie que les clients continuent d'acheter malgré une hausse. L'inverse décrit une forte élasticité, et la stabilité du prix est un autre sujet."
+            },
+            {
+              "prompt_fr": "Comment dire « Les remises ont divisé la marge par deux » ?",
+              "choices": [
+                "Discounts cut the half of the margin.",
+                "Discounts cut the margin in half.",
+                "Discounts divided the margin by two halves."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Cut in half » est l'expression idiomatique pour diviser par deux. Les autres tournures sont des calques incorrects."
+            },
+            {
+              "prompt_fr": "Que mesure le « revenue per visitor » ?",
+              "choices": [
+                "Le revenu total divisé par le nombre de commandes passées",
+                "Le revenu moyen généré par chaque visiteur du site",
+                "Le nombre de visiteurs nécessaires pour une vente"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le revenu par visiteur divise le revenu par le nombre de visiteurs. Diviser par les commandes donne le panier moyen, et le nombre de visiteurs par vente est l'inverse du taux de conversion."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour la direction : la croissance, le problème de rentabilité et ta recommandation sur les prix.",
+            "context_en": "GMV +20%, but margin is down.",
+            "model_answer_en": "GMV grew by 20% this quarter, but discounts and shipping costs cut the contribution margin in half. A test showed low price elasticity on our best sellers, and revenue per visitor stayed stable. I recommend a small price increase on those products and fewer blanket discounts.",
+            "model_answer_fr": "Le GMV a augmenté de 20 % ce trimestre, mais les remises et les frais de livraison ont divisé par deux la marge sur coûts variables. Un test a montré une faible élasticité-prix sur nos meilleures ventes, et le revenu par visiteur est resté stable. Je recommande une petite hausse de prix sur ces produits et moins de remises générales.",
+            "key_phrases": [
+              "contribution margin",
+              "low price elasticity",
+              "revenue per visitor"
+            ]
+          }
+        },
+        {
+          "id": "ecommerce-stock-returns-and-wismo",
+          "title_fr": "Ajuster le stock, gérer les retours et réduire les « où est ma commande ? »",
+          "term_ids": [
+            "safety-stock",
+            "sell-through-rate",
+            "reverse-logistics",
+            "wismo"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Leila",
+              "text_en": "Our winter collection has a low sell-through rate. We still have 70% in stock.",
+              "text_fr": "Notre collection d'hiver a un faible taux d'écoulement. Il nous reste 70 % en stock."
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "But we ran out of our best seller twice. We need a higher safety stock for it.",
+              "text_fr": "Mais nous avons eu deux ruptures de notre meilleure vente. Il nous faut un stock de sécurité plus élevé pour celle-ci."
+            },
+            {
+              "speaker": "Leila",
+              "text_en": "Returns are also piling up. Reverse logistics is overloaded.",
+              "text_fr": "Les retours s'accumulent aussi. La logistique inverse est saturée."
+            },
+            {
+              "speaker": "Jonas",
+              "text_en": "And most support tickets are WISMO. Let's send proactive tracking emails.",
+              "text_fr": "Et la plupart des tickets du support sont des « où est ma commande ? ». Envoyons des e-mails de suivi proactifs."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que révèle le faible « sell-through rate » de la collection d'hiver ?",
+              "choices": [
+                "Les produits sont vendus plus vite que prévu",
+                "Les clients retournent la majorité des produits achetés",
+                "Une grande partie du stock n'est pas encore vendue"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le taux d'écoulement mesure la part du stock vendue. Un taux faible signifie qu'il reste beaucoup de stock. Il ne mesure pas les retours, et l'inverse correspond à un taux élevé."
+            },
+            {
+              "prompt_fr": "Pourquoi augmenter le « safety stock » de la meilleure vente ?",
+              "choices": [
+                "Pour réduire le coût de stockage de l'ensemble des produits",
+                "Pour éviter les ruptures si la demande ou les délais varient",
+                "Pour vendre ce produit plus cher pendant les périodes de forte demande"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le stock de sécurité absorbe les variations de demande et de délai de réapprovisionnement. Il n'a pas pour but de justifier une hausse de prix ni de réduire les coûts de stockage."
+            },
+            {
+              "prompt_fr": "Que signifie « WISMO » ?",
+              "choices": [
+                "Quand sera mon remboursement ? (When Is My Money Out)",
+                "Quel est mon moyen de paiement ? (What Is My Option)",
+                "Où est ma commande ? (Where Is My Order)"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "WISMO vient de « Where Is My Order ». Les deux autres sont des développements inventés, plausibles mais faux."
+            },
+            {
+              "prompt_fr": "Comment dire « Les retours s'accumulent » ?",
+              "choices": [
+                "Returns are accumulating themselves.",
+                "Returns are piling up.",
+                "Returns are making a pile."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To pile up » est l'expression courante pour des choses qui s'accumulent. Les autres tournures sont des calques peu naturels."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail de 3 ou 4 phrases à la logistique : le problème de stock, celui des retours et ta demande.",
+            "context_en": "Low sell-through for winter, stockouts on the best seller, returns piling up.",
+            "model_answer_en": "Our winter collection has a low sell-through rate, but we ran out of our best seller twice. I would like to raise its safety stock and reduce the winter orders. Reverse logistics is overloaded because returns are piling up. Most support tickets are WISMO, so I will add proactive tracking emails.",
+            "model_answer_fr": "Notre collection d'hiver a un faible taux d'écoulement, mais nous avons eu deux ruptures de notre meilleure vente. Je voudrais augmenter son stock de sécurité et réduire les commandes d'hiver. La logistique inverse est saturée car les retours s'accumulent. La plupart des tickets du support sont des « où est ma commande ? », j'ajouterai donc des e-mails de suivi proactifs.",
+            "key_phrases": [
+              "sell-through rate",
+              "safety stock",
+              "Reverse logistics"
+            ]
+          }
+        },
+        {
+          "id": "ecommerce-headless-and-platform",
+          "title_fr": "Justifier une évolution de plateforme",
+          "term_ids": [
+            "headless-commerce",
+            "pim",
+            "order-management-system",
+            "retail-media"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ines",
+              "text_en": "Every change to the site takes weeks. Can we do better?",
+              "text_fr": "Chaque modification du site prend des semaines. Pouvons-nous faire mieux ?"
+            },
+            {
+              "speaker": "Oleg",
+              "text_en": "Headless commerce separates the front end from the back office, so designers can ship without waiting for engineers.",
+              "text_fr": "Le commerce headless sépare l'interface du back-office, donc les designers peuvent livrer sans attendre les ingénieurs."
+            },
+            {
+              "speaker": "Ines",
+              "text_en": "What about our product data, spread across spreadsheets?",
+              "text_fr": "Et nos données produits, éparpillées dans des tableurs ?"
+            },
+            {
+              "speaker": "Oleg",
+              "text_en": "A PIM centralizes them, and an order management system routes each order. Retail media could then monetize our traffic with brand ads.",
+              "text_fr": "Un PIM les centralise, et un système de gestion des commandes route chaque commande. Le retail media pourrait ensuite monétiser notre trafic avec des publicités de marques."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel avantage du « headless commerce » Oleg met-il en avant ?",
+              "choices": [
+                "Changer l'interface sans toucher au back-office",
+                "Vendre uniquement sur les places de marché partenaires",
+                "Supprimer entièrement le besoin d'un site de vente en ligne"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le headless sépare l'interface du moteur de commerce, ce qui accélère les évolutions de l'interface. Il ne supprime pas le site et ne limite pas la vente aux places de marché."
+            },
+            {
+              "prompt_fr": "À quoi sert un « PIM » ?",
+              "choices": [
+                "Gérer les paiements et les remboursements des clients",
+                "Centraliser et enrichir les informations produit",
+                "Suivre la position GPS des colis en livraison"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un PIM (Product Information Management) regroupe les fiches produit. Le suivi de colis et les paiements relèvent d'autres systèmes."
+            },
+            {
+              "prompt_fr": "Comment dire « sans attendre les ingénieurs » ?",
+              "choices": [
+                "without waiting the engineers",
+                "without to wait the engineers",
+                "without waiting for the engineers"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Après « without », on utilise « waiting », et « wait » se construit avec « for ». Les autres formes sont incorrectes."
+            },
+            {
+              "prompt_fr": "Que désigne « retail media » ?",
+              "choices": [
+                "La publicité diffusée uniquement dans les magasins physiques",
+                "La publicité vendue par un site marchand sur son propre trafic",
+                "Les avis clients affichés sur les fiches des produits"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Le retail media est une activité publicitaire où le distributeur vend des espaces à des marques sur ses canaux. Ce n'est pas limité aux magasins et ce ne sont pas des avis clients."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour justifier une évolution de plateforme à la direction : le problème, la solution et le bénéfice.",
+            "context_en": "Every site change takes weeks.",
+            "model_answer_en": "Every change to the site takes weeks because the front end and the back office are tied together. I recommend headless commerce, so designers can ship without waiting for engineers. A PIM will centralize our product data, and an order management system will route each order. Later, retail media could add a new revenue stream.",
+            "model_answer_fr": "Chaque modification du site prend des semaines car l'interface et le back-office sont liés. Je recommande le commerce headless, pour que les designers puissent livrer sans attendre les ingénieurs. Un PIM centralisera nos données produits, et un système de gestion des commandes routera chaque commande. Plus tard, le retail media pourrait ajouter une nouvelle source de revenus.",
+            "key_phrases": [
+              "headless commerce",
+              "without waiting for engineers",
+              "A PIM"
+            ]
           }
         }
       ]
