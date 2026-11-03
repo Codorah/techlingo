@@ -3342,6 +3342,440 @@
       "common_mistakes": [],
       "related_terms": [],
       "quiz": []
+    },
+    {
+      "id": "bgp",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 80
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "BGP",
+      "translation_fr": "BGP, protocole de routage entre réseaux de l'Internet",
+      "part_of_speech": "acronym",
+      "definition_en": "Border Gateway Protocol: the protocol that exchanges routing information between large networks on the internet.",
+      "explanation_fr": "Le protocole qui échange les informations de routage entre les grands réseaux de l'Internet.",
+      "why_it_matters_fr": "Une erreur BGP peut rendre un site injoignable pour des millions de personnes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bgp-1",
+          "text_en": "A wrong BGP announcement made the service unreachable.",
+          "text_fr": "Une mauvaise annonce BGP a rendu le service injoignable."
+        },
+        {
+          "id": "bgp-2",
+          "text_en": "We peer with two providers using BGP.",
+          "text_fr": "Nous échangeons du trafic avec deux fournisseurs grâce à BGP."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "mpls",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "MPLS",
+      "translation_fr": "MPLS, commutation par étiquettes",
+      "part_of_speech": "acronym",
+      "definition_en": "Multiprotocol Label Switching: a technique that forwards data using short labels instead of long network addresses.",
+      "explanation_fr": "Une technique qui achemine les données avec de courtes étiquettes plutôt que de longues adresses réseau.",
+      "why_it_matters_fr": "Longtemps utilisée pour relier les sites d'une entreprise avec une qualité de service garantie.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "mpls-1",
+          "text_en": "Our branch offices are connected through an MPLS network.",
+          "text_fr": "Nos agences sont reliées par un réseau MPLS."
+        },
+        {
+          "id": "mpls-2",
+          "text_en": "The company is replacing MPLS with SD-WAN to cut costs.",
+          "text_fr": "L'entreprise remplace le MPLS par du SD-WAN pour réduire les coûts."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ztna",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "networking",
+        "security"
+      ],
+      "term_en": "ZTNA",
+      "translation_fr": "accès réseau Zero Trust",
+      "part_of_speech": "acronym",
+      "definition_en": "Zero Trust Network Access: giving users access to one application at a time after checking who they are and the state of their device.",
+      "explanation_fr": "Donner accès à une application à la fois, après vérification de l'identité de la personne et de l'état de son appareil.",
+      "why_it_matters_fr": "Il remplace le VPN qui ouvre tout le réseau une fois connecté.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ztna-1",
+          "text_en": "We moved from a classic VPN to ZTNA.",
+          "text_fr": "Nous sommes passés d'un VPN classique à du ZTNA."
+        },
+        {
+          "id": "ztna-2",
+          "text_en": "ZTNA checks the device before every connection.",
+          "text_fr": "Le ZTNA vérifie l'appareil avant chaque connexion."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "sd-wan",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "SD-WAN",
+      "translation_fr": "SD-WAN, réseau étendu défini par logiciel",
+      "part_of_speech": "acronym",
+      "definition_en": "Software-defined WAN: a way to manage several internet and private links between sites with software and send traffic over the best one.",
+      "explanation_fr": "Une façon de piloter par logiciel plusieurs liens entre sites et d'envoyer chaque flux sur le meilleur chemin.",
+      "why_it_matters_fr": "Il réduit les coûts et améliore la résilience des agences.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "sd-wan-1",
+          "text_en": "SD-WAN sends video calls over the fastest link.",
+          "text_fr": "Le SD-WAN envoie les appels vidéo sur le lien le plus rapide."
+        },
+        {
+          "id": "sd-wan-2",
+          "text_en": "The SD-WAN controller applies the same policy to every site.",
+          "text_fr": "Le contrôleur SD-WAN applique la même politique à tous les sites."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "spanning-tree-protocol",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "spanning tree protocol",
+      "translation_fr": "protocole Spanning Tree",
+      "part_of_speech": "noun",
+      "definition_en": "A layer 2 protocol that blocks redundant links to prevent switching loops in an Ethernet network.",
+      "explanation_fr": "Un protocole de niveau 2 qui bloque les liens redondants pour éviter les boucles dans un réseau Ethernet.",
+      "why_it_matters_fr": "Une boucle réseau peut saturer tout un site en quelques secondes.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "spanning-tree-protocol-1",
+          "text_en": "The spanning tree protocol blocked one of the two uplinks.",
+          "text_fr": "Le protocole Spanning Tree a bloqué l'un des deux liens montants."
+        },
+        {
+          "id": "spanning-tree-protocol-2",
+          "text_en": "A misconfigured spanning tree protocol caused a network storm.",
+          "text_fr": "Un protocole Spanning Tree mal configuré a provoqué une tempête réseau."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "snmp-trap",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking",
+        "monitoring"
+      ],
+      "term_en": "SNMP trap",
+      "translation_fr": "alerte SNMP",
+      "part_of_speech": "noun",
+      "definition_en": "An alert that a network device sends by itself to a monitoring server when something happens.",
+      "explanation_fr": "Une alerte qu'un équipement réseau envoie de lui-même à un serveur de supervision quand un événement se produit.",
+      "why_it_matters_fr": "Elle évite d'attendre le prochain relevé périodique pour savoir qu'un lien est tombé.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "snmp-trap-1",
+          "text_en": "The switch sent an SNMP trap when the port went down.",
+          "text_fr": "Le commutateur a envoyé une alerte SNMP quand le port est tombé."
+        },
+        {
+          "id": "snmp-trap-2",
+          "text_en": "We forward every SNMP trap to the monitoring dashboard.",
+          "text_fr": "Nous transmettons chaque alerte SNMP au tableau de bord de supervision."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "quality-of-service",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 75
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "quality of service",
+      "translation_fr": "qualité de service",
+      "part_of_speech": "noun",
+      "definition_en": "A set of rules that give priority to some traffic, such as voice calls, over other traffic on the network.",
+      "explanation_fr": "Un ensemble de règles qui donnent la priorité à certains flux, comme les appels vocaux, sur les autres.",
+      "why_it_matters_fr": "Sans cela, un gros téléchargement peut couper une visioconférence.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "quality-of-service-1",
+          "text_en": "We configured quality of service to protect voice calls.",
+          "text_fr": "Nous avons configuré la qualité de service pour protéger les appels vocaux."
+        },
+        {
+          "id": "quality-of-service-2",
+          "text_en": "Quality of service limits the bandwidth of backups during the day.",
+          "text_fr": "La qualité de service limite le débit des sauvegardes en journée."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "multicast",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "multicast",
+      "translation_fr": "multidiffusion",
+      "part_of_speech": "noun",
+      "definition_en": "Sending data from one source to a group of chosen receivers at the same time, instead of one copy per receiver.",
+      "explanation_fr": "Envoyer des données d'une source vers un groupe de destinataires choisis en même temps, au lieu d'une copie par destinataire.",
+      "why_it_matters_fr": "Utile pour la vidéo en direct ou la diffusion interne à grande échelle.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "multicast-1",
+          "text_en": "We use multicast to stream the training video to all sites.",
+          "text_fr": "Nous utilisons la multidiffusion pour diffuser la vidéo de formation à tous les sites."
+        },
+        {
+          "id": "multicast-2",
+          "text_en": "Multicast saves bandwidth compared with sending separate streams.",
+          "text_fr": "La multidiffusion économise de la bande passante par rapport à des flux séparés."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "ospf",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 70
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "OSPF",
+      "translation_fr": "OSPF, protocole de routage interne",
+      "part_of_speech": "acronym",
+      "definition_en": "Open Shortest Path First: a routing protocol that lets routers inside one network learn the shortest paths to each destination.",
+      "explanation_fr": "Un protocole de routage qui permet aux routeurs d'un même réseau d'apprendre les chemins les plus courts vers chaque destination.",
+      "why_it_matters_fr": "Très répandu dans les réseaux d'entreprise.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "ospf-1",
+          "text_en": "OSPF recalculates the routes when a link fails.",
+          "text_fr": "OSPF recalcule les routes quand un lien tombe."
+        },
+        {
+          "id": "ospf-2",
+          "text_en": "We run OSPF between the core routers.",
+          "text_fr": "Nous utilisons OSPF entre les routeurs du cœur de réseau."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "anycast",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "anycast",
+      "translation_fr": "anycast, adressage au plus proche",
+      "part_of_speech": "noun",
+      "definition_en": "A way of giving the same address to several servers so that each user reaches the nearest one.",
+      "explanation_fr": "Une façon de donner la même adresse à plusieurs serveurs pour que chaque utilisateur atteigne le plus proche.",
+      "why_it_matters_fr": "Utilisé par les DNS et les CDN pour la rapidité et la résilience.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "anycast-1",
+          "text_en": "The DNS service uses anycast to answer from the closest location.",
+          "text_fr": "Le service DNS utilise l'anycast pour répondre depuis le site le plus proche."
+        },
+        {
+          "id": "anycast-2",
+          "text_en": "Anycast keeps the service up if one site fails.",
+          "text_fr": "L'anycast maintient le service si un site tombe."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "link-aggregation",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 65
+        }
+      ],
+      "categories": [
+        "networking"
+      ],
+      "term_en": "link aggregation",
+      "translation_fr": "agrégation de liens",
+      "part_of_speech": "noun",
+      "definition_en": "Combining several physical network links into one logical link for more bandwidth and redundancy.",
+      "explanation_fr": "Regrouper plusieurs liens physiques en un seul lien logique pour plus de débit et de redondance.",
+      "why_it_matters_fr": "Si un câble casse, le trafic continue sur les autres.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "link-aggregation-1",
+          "text_en": "We use link aggregation between the two core switches.",
+          "text_fr": "Nous utilisons l'agrégation de liens entre les deux commutateurs de cœur."
+        },
+        {
+          "id": "link-aggregation-2",
+          "text_en": "Link aggregation doubled the available bandwidth.",
+          "text_fr": "L'agrégation de liens a doublé la bande passante disponible."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
+    },
+    {
+      "id": "bare-metal-provisioning",
+      "status": "draft",
+      "level": "C1",
+      "roles": [
+        {
+          "role": "network-systems",
+          "priority": 60
+        }
+      ],
+      "categories": [
+        "operating-systems"
+      ],
+      "term_en": "bare-metal provisioning",
+      "translation_fr": "provisionnement de serveurs physiques",
+      "part_of_speech": "noun",
+      "definition_en": "Installing and configuring an operating system directly on a physical server, without virtualisation.",
+      "explanation_fr": "Installer et configurer un système directement sur un serveur physique, sans virtualisation.",
+      "why_it_matters_fr": "Il se fait de plus en plus par automatisation, comme dans le cloud.",
+      "context_fr": [],
+      "sentences": [
+        {
+          "id": "bare-metal-provisioning-1",
+          "text_en": "Bare-metal provisioning takes ten minutes with our automation.",
+          "text_fr": "Le provisionnement de serveurs physiques prend dix minutes avec notre automatisation."
+        },
+        {
+          "id": "bare-metal-provisioning-2",
+          "text_en": "We need bare-metal provisioning for the database cluster.",
+          "text_fr": "Nous avons besoin de provisionnement de serveurs physiques pour le cluster de bases de données."
+        }
+      ],
+      "common_mistakes": [],
+      "related_terms": [],
+      "quiz": []
     }
   ]
 }
