@@ -2491,6 +2491,332 @@
           }
         }
       ]
+    },
+    {
+      "id": "content-marketing-build-topical-authority",
+      "title_fr": "Bâtir et entretenir l'autorité thématique d'un site",
+      "title_en": "Build and maintain a site's topical authority",
+      "situation_fr": "Le blog stagne malgré la publication régulière. Tu dois présenter à la direction une stratégie : structurer les contenus par thème, retirer ce qui s'érode et industrialiser sans perdre en qualité.",
+      "guide": {
+        "intro_fr": "À ce niveau, on ne publie plus article par article : on construit une « topical authority », c'est-à-dire la preuve qu'un site couvre un sujet en profondeur. Une « pillar page » traite le thème en général, des articles satellites le détaillent, et le « cornerstone content » regroupe les pages stratégiques. Pour qu'un article mérite d'être cité, il doit apporter de l'« information gain ». Avec le temps, les pages subissent le « content decay » : on les met à jour ou on fait du « content pruning » sur le « thin content ». Enfin, pour tenir la cadence, on joue sur la « content velocity », le « ghostwriting » et la « content syndication ». Verbes clés : to refresh, to consolidate, to redirect, to scale.",
+        "key_phrases": [
+          {
+            "en": "We want to build topical authority around payroll.",
+            "fr": "Nous voulons bâtir une autorité thématique autour de la paie."
+          },
+          {
+            "en": "Each cluster article links back to the pillar page.",
+            "fr": "Chaque article satellite renvoie vers la page pilier."
+          },
+          {
+            "en": "This article adds little information gain.",
+            "fr": "Cet article apporte peu de gain d'information."
+          },
+          {
+            "en": "Content decay is costing us traffic.",
+            "fr": "L'érosion du contenu nous coûte du trafic."
+          },
+          {
+            "en": "We should consolidate the thin content pages.",
+            "fr": "Nous devrions regrouper les pages au contenu pauvre."
+          },
+          {
+            "en": "Speed must not come at the expense of quality.",
+            "fr": "La vitesse ne doit pas se faire au détriment de la qualité."
+          }
+        ],
+        "tip_fr": "Faux ami : « to consolidate » veut dire regrouper ou renforcer, pas seulement « consolider » une idée. Pour fusionner deux pages, dis « to merge » ou « to consolidate two pages into one »."
+      },
+      "lessons": [
+        {
+          "id": "content-marketing-structure-topical-authority",
+          "title_fr": "Structurer un thème avec une page pilier et des satellites",
+          "term_ids": [
+            "topical-authority",
+            "pillar-page",
+            "cornerstone-content",
+            "information-gain"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Julia",
+              "text_en": "We publish three posts a week, but our rankings are flat. Why?",
+              "text_fr": "Nous publions trois articles par semaine, mais nos positions stagnent. Pourquoi ?"
+            },
+            {
+              "speaker": "Ahmed",
+              "text_en": "Our posts are isolated. We lack topical authority on any single subject.",
+              "text_fr": "Nos articles sont isolés. Nous n'avons d'autorité thématique sur aucun sujet."
+            },
+            {
+              "speaker": "Julia",
+              "text_en": "So we should pick one theme and write a pillar page first?",
+              "text_fr": "Donc nous devrions choisir un thème et écrire d'abord une page pilier ?"
+            },
+            {
+              "speaker": "Ahmed",
+              "text_en": "Yes, then ten cluster articles that all link back to it. The pillar becomes our cornerstone content.",
+              "text_fr": "Oui, puis dix articles satellites qui renvoient tous vers elle. La page pilier devient notre contenu pilier."
+            },
+            {
+              "speaker": "Julia",
+              "text_en": "And what makes an article worth ranking?",
+              "text_fr": "Et qu'est-ce qui rend un article digne d'être bien classé ?"
+            },
+            {
+              "speaker": "Ahmed",
+              "text_en": "Information gain. If it only repeats the top results, it adds nothing.",
+              "text_fr": "Le gain d'information. S'il ne fait que répéter les premiers résultats, il n'apporte rien."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les positions stagnent-elles malgré trois articles par semaine ?",
+              "choices": [
+                "Trois articles par semaine est un rythme trop élevé pour les moteurs",
+                "Les articles sont trop longs pour être bien classés par les moteurs",
+                "Les articles sont isolés et ne prouvent pas une expertise sur un thème"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Ahmed pointe l'absence de « topical authority » : sans ensemble cohérent sur un sujet, le site n'apparaît pas comme une référence. Le rythme et la longueur ne sont pas le problème évoqué."
+            },
+            {
+              "prompt_fr": "Quel est le rôle de la « pillar page » ?",
+              "choices": [
+                "Regrouper les commentaires des lecteurs sur un même sujet",
+                "Traiter le thème en général et relier tous les articles détaillés",
+                "Remplacer les articles anciens dont le trafic a fortement baissé"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La page pilier est le point central d'un thème : elle présente le sujet et renvoie vers les articles satellites. Elle ne sert ni à agréger des commentaires ni à remplacer des articles qui s'érodent."
+            },
+            {
+              "prompt_fr": "Comment dire « Cet article n'apporte rien de nouveau » ?",
+              "choices": [
+                "This article adds nothing new to the topic.",
+                "This article brings nothing new on the topic.",
+                "This article makes nothing new to the topic."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« To add something to a topic » est la collocation naturelle. « Bring on » et « make to » sont des calques de « apporter » et « faire » qui ne s'emploient pas ainsi."
+            },
+            {
+              "prompt_fr": "Complète : « Every cluster article should link ___ to the pillar page. »",
+              "choices": [
+                "behind",
+                "after",
+                "back"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Link back to » veut dire renvoyer vers la page d'origine. « Behind » et « after » indiquent une position ou un ordre, pas un lien de retour."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Présente en 3 ou 4 phrases ta stratégie de contenu à la direction : le thème choisi, la structure (pilier et satellites) et ce qui rendra chaque article utile.",
+            "context_en": "Posts are published often, but rankings are flat.",
+            "model_answer_en": "Our posts are isolated, so we lack topical authority on any subject. I propose to choose one theme, build a pillar page, and publish ten cluster articles that link back to it. Each article must add real information gain, for example our own survey data. This should make us a reference on the topic within six months.",
+            "model_answer_fr": "Nos articles sont isolés, nous n'avons donc d'autorité thématique sur aucun sujet. Je propose de choisir un thème, de bâtir une page pilier et de publier dix articles satellites qui renvoient vers elle. Chaque article doit apporter un vrai gain d'information, par exemple nos propres données d'enquête. Cela devrait faire de nous une référence sur le sujet d'ici six mois.",
+            "key_phrases": [
+              "topical authority",
+              "link back to it",
+              "information gain"
+            ]
+          }
+        },
+        {
+          "id": "content-marketing-refresh-and-prune",
+          "title_fr": "Mettre à jour, regrouper et élaguer les anciens contenus",
+          "term_ids": [
+            "content-decay",
+            "content-pruning",
+            "thin-content",
+            "zero-click-search"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Our blog traffic dropped by a third. Is it a penalty?",
+              "text_fr": "Le trafic du blog a baissé d'un tiers. Est-ce une pénalité ?"
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "I don't think so. It looks like content decay: our best posts are three years old.",
+              "text_fr": "Je ne pense pas. Cela ressemble à une érosion du contenu : nos meilleurs articles ont trois ans."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "And we have hundreds of thin content pages that nobody reads.",
+              "text_fr": "Et nous avons des centaines de pages au contenu pauvre que personne ne lit."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Let's start with content pruning: merge, redirect or delete the weakest ones.",
+              "text_fr": "Commençons par l'élagage : fusionner, rediriger ou supprimer les plus faibles."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Also, more searches end with zero clicks now, because the answer appears in the results.",
+              "text_fr": "De plus, davantage de recherches se terminent sans clic, car la réponse apparaît dans les résultats."
+            },
+            {
+              "speaker": "Marcus",
+              "text_en": "Then we should write answers that get quoted, not only visits.",
+              "text_fr": "Alors nous devrions écrire des réponses qui sont citées, pas seulement chercher des visites."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Marcus exclut-il une pénalité ?",
+              "choices": [
+                "Le trafic ne baisse jamais à cause d'une pénalité des moteurs",
+                "Les moteurs préviennent toujours avant d'appliquer une pénalité",
+                "La baisse suit le vieillissement des articles les plus performants"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Marcus relie la baisse à l'âge des contenus : c'est l'érosion du contenu. Les deux autres affirmations sont fausses : une pénalité peut faire baisser le trafic, et les moteurs ne préviennent pas toujours."
+            },
+            {
+              "prompt_fr": "Que propose Marcus avec le « content pruning » ?",
+              "choices": [
+                "Ajouter des liens internes vers toutes les pages du site",
+                "Réécrire toutes les pages avec un ton plus accrocheur",
+                "Fusionner, rediriger ou supprimer les pages les plus faibles"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'élagage consiste à retirer ou regrouper les pages de faible qualité pour renforcer l'ensemble. Réécrire ou ajouter des liens partout ne réduit pas le nombre de pages faibles."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous devrions regrouper ces pages au contenu pauvre » ?",
+              "choices": [
+                "We should consolidate these thin content pages.",
+                "We should consolidate these pages of poor content.",
+                "We should concentrate these thin content pages."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Thin content » est le terme technique et « consolidate » le verbe adapté pour regrouper. « Poor content » est trop vague, et « concentrate » (se concentrer, concentrer) change le sens."
+            },
+            {
+              "prompt_fr": "Que signifie « zero-click search » ?",
+              "choices": [
+                "L'utilisateur trouve la réponse dans les résultats et ne visite aucun site",
+                "L'utilisateur quitte la page de résultats sans avoir lu aucune réponse",
+                "Le moteur n'affiche aucun résultat pour la requête de l'utilisateur"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Dans une recherche sans clic, la réponse est affichée directement, donc personne ne clique. Ce n'est ni un abandon sans lecture ni une absence de résultats."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail à ton responsable pour expliquer la baisse de trafic et proposer un plan en deux actions.",
+            "context_en": "Blog traffic is down by a third. Our best posts are three years old.",
+            "model_answer_en": "The drop in traffic looks like content decay, not a penalty: our best posts are three years old. First, I propose content pruning, so we merge or redirect the thin content pages. Second, we refresh the top fifteen articles and rewrite them to be quoted in zero-click searches. I will share the list tomorrow.",
+            "model_answer_fr": "La baisse de trafic ressemble à une érosion du contenu, pas à une pénalité : nos meilleurs articles ont trois ans. D'abord, je propose un élagage, afin de fusionner ou rediriger les pages au contenu pauvre. Ensuite, nous mettons à jour les quinze meilleurs articles et les réécrivons pour être cités dans les recherches sans clic. Je partage la liste demain.",
+            "key_phrases": [
+              "content decay",
+              "content pruning",
+              "thin content pages"
+            ]
+          }
+        },
+        {
+          "id": "content-marketing-scale-without-losing-quality",
+          "title_fr": "Produire plus sans perdre en qualité",
+          "term_ids": [
+            "content-velocity",
+            "ghostwriting",
+            "content-syndication",
+            "programmatic-seo"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sofia",
+              "text_en": "The CEO wants to double our content velocity this quarter.",
+              "text_fr": "Le PDG veut doubler notre cadence de publication ce trimestre."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "We can use ghostwriting for his posts, but he needs to review each one.",
+              "text_fr": "Nous pouvons faire de la rédaction fantôme pour ses publications, mais il doit relire chacune."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "What about content syndication? Partner sites could republish our best guides.",
+              "text_fr": "Et la syndication de contenu ? Des sites partenaires pourraient republier nos meilleurs guides."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Good idea, as long as they add a canonical link to the original.",
+              "text_fr": "Bonne idée, à condition qu'ils ajoutent un lien canonique vers l'original."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "And programmatic SEO could create a page for each city automatically.",
+              "text_fr": "Et le SEO programmatique pourrait créer automatiquement une page par ville."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Only if every page offers something useful. Otherwise we create thin content at scale.",
+              "text_fr": "Seulement si chaque page offre quelque chose d'utile. Sinon nous créons du contenu pauvre à grande échelle."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Daniel veut-il que le PDG relise ses publications écrites en « ghostwriting » ?",
+              "choices": [
+                "Elles seront publiées sous son nom, donc il doit les valider",
+                "Le texte d'un rédacteur fantôme est toujours moins fiable que le sien",
+                "Les moteurs sanctionnent les textes écrits par une autre personne"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "En rédaction fantôme, le texte paraît sous le nom du dirigeant : il en porte la responsabilité et doit le valider. Ce n'est pas une question de fiabilité du rédacteur, et les moteurs ne sanctionnent pas cette pratique."
+            },
+            {
+              "prompt_fr": "Pourquoi exiger un lien canonique pour la syndication ?",
+              "choices": [
+                "Pour indiquer aux moteurs quelle version est l'originale",
+                "Pour que les lecteurs puissent signaler une erreur dans l'article",
+                "Pour empêcher les partenaires de modifier le texte republié"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le lien canonique désigne la page source, ce qui évite les problèmes de contenu dupliqué. Il n'empêche pas de modifier le texte et n'a pas de fonction de signalement."
+            },
+            {
+              "prompt_fr": "Quel est le risque du SEO programmatique évoqué par Daniel ?",
+              "choices": [
+                "Perdre le contrôle du design des pages produites",
+                "Dépasser la limite de pages autorisée par les moteurs",
+                "Créer en masse des pages peu utiles qui nuisent au site"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Daniel dit « thin content at scale » : l'automatisation multiplie les pages faibles si elles n'apportent rien. Il n'existe pas de limite officielle de pages, et le design n'est pas le sujet."
+            },
+            {
+              "prompt_fr": "Comment dire « La vitesse ne doit pas se faire au détriment de la qualité » ?",
+              "choices": [
+                "Speed must not come to the expense of quality.",
+                "Speed must not go at the detriment of quality.",
+                "Speed must not come at the expense of quality."
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« At the expense of » est l'expression figée pour « au détriment de ». Les variantes avec « to the expense » ou « at the detriment » sont des calques incorrects."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "En réunion, réponds au PDG qui veut doubler la cadence de publication. En 3 ou 4 phrases : dis ce que tu peux faire, deux leviers, et la condition pour garder la qualité.",
+            "context_en": "I want to double our content velocity this quarter. How do we do it?",
+            "model_answer_en": "We can double our content velocity, but speed must not come at the expense of quality. First, we can use ghostwriting for executive posts, with your review before publication. Second, content syndication lets partner sites republish our best guides with a canonical link. I would avoid programmatic SEO unless each page is genuinely useful.",
+            "model_answer_fr": "Nous pouvons doubler la cadence de publication, mais la vitesse ne doit pas se faire au détriment de la qualité. D'abord, nous pouvons faire de la rédaction fantôme pour les publications de dirigeants, avec votre relecture avant publication. Ensuite, la syndication de contenu permet à des sites partenaires de republier nos meilleurs guides avec un lien canonique. J'éviterais le SEO programmatique sauf si chaque page est réellement utile.",
+            "key_phrases": [
+              "content velocity",
+              "at the expense of quality",
+              "content syndication"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
