@@ -11,12 +11,30 @@
       "guide": {
         "intro_fr": "Dans une équipe qui adopte la culture DevOps, chaque modification du code déclenche un « CI/CD pipeline » défini dans un fichier YAML. L’intégration continue (« continuous integration ») compile le projet, lance les tests et vérifie le « quality gate » (jalon de qualité) sur chaque pull request avant la fusion. Ensuite, la livraison continue (« continuous delivery ») produit un seul « artifact » signé, que l’on promeut de « staging » vers la production pour garantir la parité des environnements (« environment parity »). Les données sensibles (« secrets ») ne vont jamais dans Git : on les injecte au moment du déploiement via un gestionnaire de clés (KMS). Enfin, pour livrer sans coupure (« zero downtime »), on utilise un déploiement canari (« canary release »), un déploiement bleu-vert (« blue-green deployment ») ou un « feature flag ».",
         "key_phrases": [
-          { "en": "The pipeline failed at the linting stage.", "fr": "Le pipeline a échoué à l’étape d’analyse du code." },
-          { "en": "We build the artifact once and promote it to production.", "fr": "Nous construisons l’artefact une seule fois et nous le promouvons en production." },
-          { "en": "Never hardcode secrets in the YAML file.", "fr": "Ne code jamais de secrets en dur dans le fichier YAML." },
-          { "en": "The secret is injected as an environment variable at runtime.", "fr": "Le secret est injecté comme variable d’environnement à l’exécution." },
-          { "en": "Let’s roll out the canary release to 5% of traffic first.", "fr": "Déployons d’abord la version canari sur 5 % du trafic." },
-          { "en": "Blue-green deployment lets us switch traffic with zero downtime.", "fr": "Le déploiement bleu-vert permet de basculer le trafic sans coupure." }
+          {
+            "en": "The pipeline failed at the linting stage.",
+            "fr": "Le pipeline a échoué à l’étape d’analyse du code."
+          },
+          {
+            "en": "We build the artifact once and promote it to production.",
+            "fr": "Nous construisons l’artefact une seule fois et nous le promouvons en production."
+          },
+          {
+            "en": "Never hardcode secrets in the YAML file.",
+            "fr": "Ne code jamais de secrets en dur dans le fichier YAML."
+          },
+          {
+            "en": "The secret is injected as an environment variable at runtime.",
+            "fr": "Le secret est injecté comme variable d’environnement à l’exécution."
+          },
+          {
+            "en": "Let’s roll out the canary release to 5% of traffic first.",
+            "fr": "Déployons d’abord la version canari sur 5 % du trafic."
+          },
+          {
+            "en": "Blue-green deployment lets us switch traffic with zero downtime.",
+            "fr": "Le déploiement bleu-vert permet de basculer le trafic sans coupure."
+          }
         ],
         "tip_fr": "Ne confonds pas « continuous delivery » (le code est toujours prêt à partir, mais un humain clique pour déployer en production) et « continuous deployment » (tout commit qui passe les tests part automatiquement en production). Et attention à la prononciation de YAML : ça rime avec « camel »."
       },
@@ -24,14 +42,44 @@
         {
           "id": "devops-cloud-write-pipeline-yaml",
           "title_fr": "Écrire et déboguer le fichier YAML du pipeline",
-          "term_ids": ["devops", "cicd-pipeline", "continuous-integration", "yaml", "quality-gate"],
+          "term_ids": [
+            "devops",
+            "cicd-pipeline",
+            "continuous-integration",
+            "yaml",
+            "quality-gate"
+          ],
           "dialogue": [
-            { "speaker": "Aïcha", "text_en": "Hi Tomasz, I pushed the YAML file for the new billing CI/CD pipeline, but the workflow won’t even start.", "text_fr": "Salut Tomasz, j’ai poussé le fichier YAML du nouveau pipeline CI/CD de facturation, mais le workflow ne démarre même pas." },
-            { "speaker": "Tomasz", "text_en": "Let me check. Line 24 has a tab instead of spaces: YAML only accepts spaces for indentation.", "text_fr": "Laisse-moi regarder. La ligne 24 a une tabulation au lieu d’espaces : YAML n’accepte que des espaces pour l’indentation." },
-            { "speaker": "Aïcha", "text_en": "Good catch! Now continuous integration runs on every pull request, but the build takes twelve minutes.", "text_fr": "Bien vu ! Maintenant l’intégration continue tourne sur chaque pull request, mais le build prend douze minutes." },
-            { "speaker": "Tomasz", "text_en": "Are you caching the dependencies between runs? Without a cache, it downloads every package from scratch.", "text_fr": "Est-ce que tu mets les dépendances en cache entre les exécutions ? Sans cache, il retélécharge chaque paquet depuis zéro." },
-            { "speaker": "Aïcha", "text_en": "I’ll add that. I also added a quality gate so the pipeline fails if test coverage drops below 80%.", "text_fr": "Je vais ajouter ça. J’ai aussi ajouté un jalon de qualité pour que le pipeline échoue si la couverture de tests passe sous 80 %." },
-            { "speaker": "Tomasz", "text_en": "Nice. That’s real DevOps: fast feedback for developers and reliable checks before anyone merges.", "text_fr": "Super. C’est ça le vrai DevOps : un retour rapide pour les développeurs et des contrôles fiables avant toute fusion." }
+            {
+              "speaker": "Aïcha",
+              "text_en": "Hi Tomasz, I pushed the YAML file for the new billing CI/CD pipeline, but the workflow won’t even start.",
+              "text_fr": "Salut Tomasz, j’ai poussé le fichier YAML du nouveau pipeline CI/CD de facturation, mais le workflow ne démarre même pas."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Let me check. Line 24 has a tab instead of spaces: YAML only accepts spaces for indentation.",
+              "text_fr": "Laisse-moi regarder. La ligne 24 a une tabulation au lieu d’espaces : YAML n’accepte que des espaces pour l’indentation."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Good catch! Now continuous integration runs on every pull request, but the build takes twelve minutes.",
+              "text_fr": "Bien vu ! Maintenant l’intégration continue tourne sur chaque pull request, mais le build prend douze minutes."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Are you caching the dependencies between runs? Without a cache, it downloads every package from scratch.",
+              "text_fr": "Est-ce que tu mets les dépendances en cache entre les exécutions ? Sans cache, il retélécharge chaque paquet depuis zéro."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "I’ll add that. I also added a quality gate so the pipeline fails if test coverage drops below 80%.",
+              "text_fr": "Je vais ajouter ça. J’ai aussi ajouté un jalon de qualité pour que le pipeline échoue si la couverture de tests passe sous 80 %."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Nice. That’s real DevOps: fast feedback for developers and reliable checks before anyone merges.",
+              "text_fr": "Super. C’est ça le vrai DevOps : un retour rapide pour les développeurs et des contrôles fiables avant toute fusion."
+            }
           ],
           "questions": [
             {
@@ -91,14 +139,44 @@
         {
           "id": "devops-cloud-build-once-deploy-everywhere",
           "title_fr": "Construire l’artefact une seule fois",
-          "term_ids": ["continuous-delivery", "artifact", "environment-parity", "staging", "code-signing"],
+          "term_ids": [
+            "continuous-delivery",
+            "artifact",
+            "environment-parity",
+            "staging",
+            "code-signing"
+          ],
           "dialogue": [
-            { "speaker": "Priya", "text_en": "Kenji, why did the release fail in production when all tests passed on staging?", "text_fr": "Kenji, pourquoi la mise en ligne a-t-elle échoué en production alors que tous les tests passaient en préproduction ?" },
-            { "speaker": "Kenji", "text_en": "Because our pipeline rebuilds the app for each environment, and a library updated a minor version in between.", "text_fr": "Parce que notre pipeline recompile l’application pour chaque environnement, et qu’une bibliothèque a changé de version mineure entre-temps." },
-            { "speaker": "Priya", "text_en": "That breaks environment parity. In continuous delivery, we should build the artifact once and promote that exact file.", "text_fr": "Ça casse la parité des environnements. En livraison continue, on doit construire l’artefact une seule fois et promouvoir ce fichier exact." },
-            { "speaker": "Kenji", "text_en": "Agreed. I’ll change the pipeline so it builds one artifact on merge, runs code signing, and stores it in the registry.", "text_fr": "D’accord. Je vais modifier le pipeline pour qu’il construise un seul artefact à la fusion, applique la signature de code et le stocke dans le registre." },
-            { "speaker": "Priya", "text_en": "Then the staging job and the production job both pull the same signed artifact?", "text_fr": "Ensuite la tâche de préproduction et celle de production récupèrent toutes les deux le même artefact signé ?" },
-            { "speaker": "Kenji", "text_en": "Exactly. Only the environment variables change, and a team lead still approves the production step.", "text_fr": "Exactement. Seules les variables d’environnement changent, et un tech lead valide toujours l’étape de production." }
+            {
+              "speaker": "Priya",
+              "text_en": "Kenji, why did the release fail in production when all tests passed on staging?",
+              "text_fr": "Kenji, pourquoi la mise en ligne a-t-elle échoué en production alors que tous les tests passaient en préproduction ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Because our pipeline rebuilds the app for each environment, and a library updated a minor version in between.",
+              "text_fr": "Parce que notre pipeline recompile l’application pour chaque environnement, et qu’une bibliothèque a changé de version mineure entre-temps."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "That breaks environment parity. In continuous delivery, we should build the artifact once and promote that exact file.",
+              "text_fr": "Ça casse la parité des environnements. En livraison continue, on doit construire l’artefact une seule fois et promouvoir ce fichier exact."
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Agreed. I’ll change the pipeline so it builds one artifact on merge, runs code signing, and stores it in the registry.",
+              "text_fr": "D’accord. Je vais modifier le pipeline pour qu’il construise un seul artefact à la fusion, applique la signature de code et le stocke dans le registre."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Then the staging job and the production job both pull the same signed artifact?",
+              "text_fr": "Ensuite la tâche de préproduction et celle de production récupèrent toutes les deux le même artefact signé ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Exactly. Only the environment variables change, and a team lead still approves the production step.",
+              "text_fr": "Exactement. Seules les variables d’environnement changent, et un tech lead valide toujours l’étape de production."
+            }
           ],
           "questions": [
             {
@@ -158,14 +236,44 @@
         {
           "id": "devops-cloud-secure-pipeline-secrets",
           "title_fr": "Protéger les secrets et scanner le build",
-          "term_ids": ["secret", "vulnerability-scanning", "branch-protection", "environment-variable", "kms"],
+          "term_ids": [
+            "secret",
+            "vulnerability-scanning",
+            "branch-protection",
+            "environment-variable",
+            "kms"
+          ],
           "dialogue": [
-            { "speaker": "Lucía", "text_en": "Moussa, the security bot blocked my pull request. It says it found a secret in the test script.", "text_fr": "Moussa, le robot de sécurité a bloqué ma pull request. Il dit qu’il a trouvé un secret dans le script de test." },
-            { "speaker": "Moussa", "text_en": "Did you commit an API key? Even on a feature branch, a secret stays in the Git history forever.", "text_fr": "Tu as commité une clé d’API ? Même sur une branche de fonctionnalité, un secret reste dans l’historique Git pour toujours." },
-            { "speaker": "Lucía", "text_en": "It’s only a sandbox key, but I get it. Should I revoke it and pass the new one as an environment variable?", "text_fr": "Ce n’est qu’une clé de bac à sable, mais je comprends. Je dois la révoquer et passer la nouvelle en variable d’environnement ?" },
-            { "speaker": "Moussa", "text_en": "Yes, rotate the key right away. Store the new value in our KMS, and the runner will inject it at runtime.", "text_fr": "Oui, change la clé tout de suite. Stocke la nouvelle valeur dans notre KMS, et le runner l’injectera à l’exécution." },
-            { "speaker": "Lucía", "text_en": "Done. Why couldn’t I bypass the check to merge faster?", "text_fr": "C’est fait. Pourquoi je ne pouvais pas contourner la vérification pour fusionner plus vite ?" },
-            { "speaker": "Moussa", "text_en": "Because we enabled branch protection on main: secret detection and vulnerability scanning must pass before any merge.", "text_fr": "Parce que nous avons activé la protection de branche sur main : la détection de secrets et le scan de vulnérabilités doivent passer avant toute fusion." }
+            {
+              "speaker": "Lucía",
+              "text_en": "Moussa, the security bot blocked my pull request. It says it found a secret in the test script.",
+              "text_fr": "Moussa, le robot de sécurité a bloqué ma pull request. Il dit qu’il a trouvé un secret dans le script de test."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Did you commit an API key? Even on a feature branch, a secret stays in the Git history forever.",
+              "text_fr": "Tu as commité une clé d’API ? Même sur une branche de fonctionnalité, un secret reste dans l’historique Git pour toujours."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "It’s only a sandbox key, but I get it. Should I revoke it and pass the new one as an environment variable?",
+              "text_fr": "Ce n’est qu’une clé de bac à sable, mais je comprends. Je dois la révoquer et passer la nouvelle en variable d’environnement ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Yes, rotate the key right away. Store the new value in our KMS, and the runner will inject it at runtime.",
+              "text_fr": "Oui, change la clé tout de suite. Stocke la nouvelle valeur dans notre KMS, et le runner l’injectera à l’exécution."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Done. Why couldn’t I bypass the check to merge faster?",
+              "text_fr": "C’est fait. Pourquoi je ne pouvais pas contourner la vérification pour fusionner plus vite ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Because we enabled branch protection on main: secret detection and vulnerability scanning must pass before any merge.",
+              "text_fr": "Parce que nous avons activé la protection de branche sur main : la détection de secrets et le scan de vulnérabilités doivent passer avant toute fusion."
+            }
           ],
           "questions": [
             {
@@ -227,14 +335,44 @@
         {
           "id": "devops-cloud-canary-and-blue-green",
           "title_fr": "Choisir entre déploiement canari et bleu-vert",
-          "term_ids": ["deployment", "canary-release", "blue-green-deployment", "downtime", "feature-flag"],
+          "term_ids": [
+            "deployment",
+            "canary-release",
+            "blue-green-deployment",
+            "downtime",
+            "feature-flag"
+          ],
           "dialogue": [
-            { "speaker": "Sarah", "text_en": "Ivan, we’re ready for the payment API deployment, and the business wants zero downtime. Should we use blue-green deployment?", "text_fr": "Ivan, nous sommes prêts pour le déploiement de l’API de paiement, et le métier veut zéro temps d’arrêt. On utilise un déploiement bleu-vert ?" },
-            { "speaker": "Ivan", "text_en": "Blue-green deployment is fast to switch back, but it doubles our server cost while both environments run.", "text_fr": "Le déploiement bleu-vert permet de rebasculer vite, mais il double notre coût serveur pendant que les deux environnements tournent." },
-            { "speaker": "Sarah", "text_en": "What if we do a canary release on our existing cluster instead?", "text_fr": "Et si on faisait plutôt un déploiement canari sur notre cluster existant ?" },
-            { "speaker": "Ivan", "text_en": "That works well: we route 5% of live traffic to the new pods first and watch the error rate for fifteen minutes.", "text_fr": "Ça marche très bien : on achemine d’abord 5 % du trafic réel vers les nouveaux pods et on surveille le taux d’erreur pendant quinze minutes." },
-            { "speaker": "Sarah", "text_en": "And the new fraud check inside that release is also behind a feature flag, right?", "text_fr": "Et le nouveau contrôle anti-fraude dans cette version est aussi derrière un interrupteur de fonctionnalité, n’est-ce pas ?" },
-            { "speaker": "Ivan", "text_en": "Yes. Even after the canary release reaches 100%, we can toggle the feature flag off without a new deployment.", "text_fr": "Oui. Même une fois que le déploiement canari atteint 100 %, on peut couper l’interrupteur de fonctionnalité sans nouveau déploiement." }
+            {
+              "speaker": "Sarah",
+              "text_en": "Ivan, we’re ready for the payment API deployment, and the business wants zero downtime. Should we use blue-green deployment?",
+              "text_fr": "Ivan, nous sommes prêts pour le déploiement de l’API de paiement, et le métier veut zéro temps d’arrêt. On utilise un déploiement bleu-vert ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Blue-green deployment is fast to switch back, but it doubles our server cost while both environments run.",
+              "text_fr": "Le déploiement bleu-vert permet de rebasculer vite, mais il double notre coût serveur pendant que les deux environnements tournent."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "What if we do a canary release on our existing cluster instead?",
+              "text_fr": "Et si on faisait plutôt un déploiement canari sur notre cluster existant ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "That works well: we route 5% of live traffic to the new pods first and watch the error rate for fifteen minutes.",
+              "text_fr": "Ça marche très bien : on achemine d’abord 5 % du trafic réel vers les nouveaux pods et on surveille le taux d’erreur pendant quinze minutes."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "And the new fraud check inside that release is also behind a feature flag, right?",
+              "text_fr": "Et le nouveau contrôle anti-fraude dans cette version est aussi derrière un interrupteur de fonctionnalité, n’est-ce pas ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Yes. Even after the canary release reaches 100%, we can toggle the feature flag off without a new deployment.",
+              "text_fr": "Oui. Même une fois que le déploiement canari atteint 100 %, on peut couper l’interrupteur de fonctionnalité sans nouveau déploiement."
+            }
           ],
           "questions": [
             {
@@ -301,12 +439,30 @@
       "guide": {
         "intro_fr": "Pour qu’un service tourne de la même façon partout, on l’empaquette dans un « container » léger avec Docker, bien plus rapide à démarrer qu’une « virtual machine » complète. Tout commence par le Dockerfile qui construit une « image » immuable, que l’on scanne contre les failles connues (CVE) avant de l’envoyer dans un registre. En production, « Kubernetes » assure l’orchestration sur un « cluster » de machines : il fait tourner les conteneurs dans des « pods », maintient plusieurs « replicas » et les redémarre si un « health check » échoue. Pour éviter de dupliquer des dizaines de fichiers YAML, on déploie avec « Helm » et une approche « GitOps » où chaque changement passe par une pull request. Enfin, un « load balancer » et un « reverse proxy » gèrent le DNS, les certificats TLS et la répartition du trafic.",
         "key_phrases": [
-          { "en": "A multi-stage build cut the container image size from 900 MB to 80 MB.", "fr": "Un build multi-étapes a réduit la taille de l’image de conteneur de 900 Mo à 80 Mo." },
-          { "en": "The pod is in CrashLoopBackOff because the liveness check fails.", "fr": "Le pod redémarre en boucle parce que la sonde de vie échoue." },
-          { "en": "Kubernetes keeps three replicas running across the cluster.", "fr": "Kubernetes maintient trois réplicas en fonctionnement sur le cluster." },
-          { "en": "We update the image tag in the Helm chart via a pull request.", "fr": "Nous mettons à jour le tag de l’image dans le chart Helm via une pull request." },
-          { "en": "The load balancer stops sending traffic to unhealthy pods.", "fr": "Le répartiteur de charge cesse d’envoyer du trafic aux pods défaillants." },
-          { "en": "The reverse proxy handles TLS termination and renews the certificate.", "fr": "Le proxy inverse gère la terminaison TLS et renouvelle le certificat." }
+          {
+            "en": "A multi-stage build cut the container image size from 900 MB to 80 MB.",
+            "fr": "Un build multi-étapes a réduit la taille de l’image de conteneur de 900 Mo à 80 Mo."
+          },
+          {
+            "en": "The pod is in CrashLoopBackOff because the liveness check fails.",
+            "fr": "Le pod redémarre en boucle parce que la sonde de vie échoue."
+          },
+          {
+            "en": "Kubernetes keeps three replicas running across the cluster.",
+            "fr": "Kubernetes maintient trois réplicas en fonctionnement sur le cluster."
+          },
+          {
+            "en": "We update the image tag in the Helm chart via a pull request.",
+            "fr": "Nous mettons à jour le tag de l’image dans le chart Helm via une pull request."
+          },
+          {
+            "en": "The load balancer stops sending traffic to unhealthy pods.",
+            "fr": "Le répartiteur de charge cesse d’envoyer du trafic aux pods défaillants."
+          },
+          {
+            "en": "The reverse proxy handles TLS termination and renews the certificate.",
+            "fr": "Le proxy inverse gère la terminaison TLS et renouvelle le certificat."
+          }
         ],
         "tip_fr": "Ne confonds pas « image » et « container » : l’image est le modèle figé en lecture seule (comme une classe), tandis que le conteneur est l’instance en cours d’exécution (comme un objet). Et dans Kubernetes, on ne déploie jamais un conteneur tout seul : l’unité minimale est le « pod »."
       },
@@ -314,14 +470,44 @@
         {
           "id": "devops-cloud-optimize-docker-image",
           "title_fr": "Alléger et sécuriser une image Docker",
-          "term_ids": ["container", "docker", "container-image", "virtual-machine", "cve"],
+          "term_ids": [
+            "container",
+            "docker",
+            "container-image",
+            "virtual-machine",
+            "cve"
+          ],
           "dialogue": [
-            { "speaker": "Mei", "text_en": "Kofi, our new Docker container image is 1.2 gigabytes! It takes forever to pull when a node starts.", "text_fr": "Kofi, notre nouvelle image de conteneur Docker fait 1,2 gigaoctet ! Elle met une éternité à se télécharger quand un nœud démarre." },
-            { "speaker": "Kofi", "text_en": "You’re shipping the whole build toolchain inside it, almost like a virtual machine. Use a multi-stage Dockerfile instead.", "text_fr": "Tu embarques tous les outils de compilation dedans, presque comme une machine virtuelle. Utilise plutôt un Dockerfile multi-étapes." },
-            { "speaker": "Mei", "text_en": "So the first stage compiles the code, and the final image only copies the compiled binary?", "text_fr": "Donc la première étape compile le code, et l’image finale ne copie que le binaire compilé ?" },
-            { "speaker": "Kofi", "text_en": "Exactly. Switch to a slim base image too: our scanner flagged twelve high-severity CVEs in those unused system packages.", "text_fr": "Exactement. Passe aussi sur une image de base allégée : notre scanner a signalé douze CVE de gravité élevée dans ces paquets système inutilisés." },
-            { "speaker": "Mei", "text_en": "Nice, the image is down to 65 megabytes and zero critical CVEs. Anything else before I push?", "text_fr": "Super, l’image est descendue à 65 mégaoctets et zéro CVE critique. Autre chose avant que je pousse ?" },
-            { "speaker": "Kofi", "text_en": "Add a non-root user in the Dockerfile so the container doesn’t run as root in production.", "text_fr": "Ajoute un utilisateur non-root dans le Dockerfile pour que le conteneur ne tourne pas en root en production." }
+            {
+              "speaker": "Mei",
+              "text_en": "Kofi, our new Docker container image is 1.2 gigabytes! It takes forever to pull when a node starts.",
+              "text_fr": "Kofi, notre nouvelle image de conteneur Docker fait 1,2 gigaoctet ! Elle met une éternité à se télécharger quand un nœud démarre."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "You’re shipping the whole build toolchain inside it, almost like a virtual machine. Use a multi-stage Dockerfile instead.",
+              "text_fr": "Tu embarques tous les outils de compilation dedans, presque comme une machine virtuelle. Utilise plutôt un Dockerfile multi-étapes."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "So the first stage compiles the code, and the final image only copies the compiled binary?",
+              "text_fr": "Donc la première étape compile le code, et l’image finale ne copie que le binaire compilé ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Exactly. Switch to a slim base image too: our scanner flagged twelve high-severity CVEs in those unused system packages.",
+              "text_fr": "Exactement. Passe aussi sur une image de base allégée : notre scanner a signalé douze CVE de gravité élevée dans ces paquets système inutilisés."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Nice, the image is down to 65 megabytes and zero critical CVEs. Anything else before I push?",
+              "text_fr": "Super, l’image est descendue à 65 mégaoctets et zéro CVE critique. Autre chose avant que je pousse ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Add a non-root user in the Dockerfile so the container doesn’t run as root in production.",
+              "text_fr": "Ajoute un utilisateur non-root dans le Dockerfile pour que le conteneur ne tourne pas en root en production."
+            }
           ],
           "questions": [
             {
@@ -381,14 +567,44 @@
         {
           "id": "devops-cloud-configure-pods-and-probes",
           "title_fr": "Configurer les pods, les réplicas et les sondes de santé",
-          "term_ids": ["kubernetes", "cluster", "pod", "replica", "health-check"],
+          "term_ids": [
+            "kubernetes",
+            "cluster",
+            "pod",
+            "replica",
+            "health-check"
+          ],
           "dialogue": [
-            { "speaker": "Inès", "text_en": "Daniel, the new search service is deployed on our Kubernetes cluster, but one pod keeps restarting.", "text_fr": "Daniel, le nouveau service de recherche est déployé sur notre cluster Kubernetes, mais un pod redémarre sans arrêt." },
-            { "speaker": "Daniel", "text_en": "What does kubectl describe pod say? Is it running out of memory, or is the health check failing?", "text_fr": "Que dit kubectl describe pod ? Il manque de mémoire, ou c’est la sonde de santé qui échoue ?" },
-            { "speaker": "Inès", "text_en": "The liveness health check fails after ten seconds because the search index takes twenty seconds to load at startup.", "text_fr": "La sonde de vie échoue au bout de dix secondes parce que l’index de recherche met vingt secondes à se charger au démarrage." },
-            { "speaker": "Daniel", "text_en": "Then Kubernetes thinks the pod is dead and kills it before it finishes starting! Add a startup probe with a longer grace period.", "text_fr": "Alors Kubernetes croit que le pod est bloqué et le tue avant même qu’il ait fini de démarrer ! Ajoute une sonde de démarrage avec un délai plus long." },
-            { "speaker": "Inès", "text_en": "Got it. And how do we stop traffic from hitting a new replica before the index is ready?", "text_fr": "Compris. Et comment empêcher le trafic d’arriver sur un nouveau réplica avant que l’index soit prêt ?" },
-            { "speaker": "Daniel", "text_en": "That’s what the readiness check is for: Kubernetes only routes requests to a replica once readiness passes.", "text_fr": "C’est le rôle de la sonde de disponibilité (readiness) : Kubernetes n’envoie des requêtes à un réplica qu’une fois cette vérification réussie." }
+            {
+              "speaker": "Inès",
+              "text_en": "Daniel, the new search service is deployed on our Kubernetes cluster, but one pod keeps restarting.",
+              "text_fr": "Daniel, le nouveau service de recherche est déployé sur notre cluster Kubernetes, mais un pod redémarre sans arrêt."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "What does kubectl describe pod say? Is it running out of memory, or is the health check failing?",
+              "text_fr": "Que dit kubectl describe pod ? Il manque de mémoire, ou c’est la sonde de santé qui échoue ?"
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "The liveness health check fails after ten seconds because the search index takes twenty seconds to load at startup.",
+              "text_fr": "La sonde de vie échoue au bout de dix secondes parce que l’index de recherche met vingt secondes à se charger au démarrage."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Then Kubernetes thinks the pod is dead and kills it before it finishes starting! Add a startup probe with a longer grace period.",
+              "text_fr": "Alors Kubernetes croit que le pod est bloqué et le tue avant même qu’il ait fini de démarrer ! Ajoute une sonde de démarrage avec un délai plus long."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Got it. And how do we stop traffic from hitting a new replica before the index is ready?",
+              "text_fr": "Compris. Et comment empêcher le trafic d’arriver sur un nouveau réplica avant que l’index soit prêt ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "That’s what the readiness check is for: Kubernetes only routes requests to a replica once readiness passes.",
+              "text_fr": "C’est le rôle de la sonde de disponibilité (readiness) : Kubernetes n’envoie des requêtes à un réplica qu’une fois cette vérification réussie."
+            }
           ],
           "questions": [
             {
@@ -447,14 +663,44 @@
         {
           "id": "devops-cloud-deploy-with-helm-and-gitops",
           "title_fr": "Gérer les déploiements Kubernetes avec Helm et GitOps",
-          "term_ids": ["helm", "gitops", "orchestration", "tag-git", "pull-request"],
+          "term_ids": [
+            "helm",
+            "gitops",
+            "orchestration",
+            "tag-git",
+            "pull-request"
+          ],
           "dialogue": [
-            { "speaker": "Rania", "text_en": "Hiroshi, I need to increase the memory limit for the notifications service. Should I run kubectl edit on the cluster?", "text_fr": "Hiroshi, je dois augmenter la limite de mémoire du service de notifications. Je lance kubectl edit sur le cluster ?" },
-            { "speaker": "Hiroshi", "text_en": "No, never edit the cluster by hand! We use GitOps, so Argo CD would overwrite your manual change within minutes.", "text_fr": "Non, ne modifie jamais le cluster à la main ! Nous utilisons GitOps, donc Argo CD écraserait ta modification manuelle en quelques minutes." },
-            { "speaker": "Rania", "text_en": "Right, Git is the single source of truth. Where is the memory limit configured?", "text_fr": "C’est vrai, Git est l’unique source de vérité. Où la limite de mémoire est-elle configurée ?" },
-            { "speaker": "Hiroshi", "text_en": "In the Helm chart repository, inside values-production.yaml. That way, container orchestration stays identical across environments.", "text_fr": "Dans le dépôt du chart Helm, dans values-production.yaml. Comme ça, l’orchestration des conteneurs utilise le même modèle sur tous les environnements." },
-            { "speaker": "Rania", "text_en": "Can I also bump the image version to the new Git tag v1.8.2 in the same pull request?", "text_fr": "Je peux aussi monter la version de l’image vers le nouveau tag Git v1.8.2 dans la même pull request ?" },
-            { "speaker": "Hiroshi", "text_en": "Yes, open the pull request and I’ll approve it. As soon as it’s merged, the cluster will sync automatically.", "text_fr": "Oui, ouvre la pull request et je l’approuverai. Dès qu’elle sera fusionnée, le cluster se synchronisera automatiquement." }
+            {
+              "speaker": "Rania",
+              "text_en": "Hiroshi, I need to increase the memory limit for the notifications service. Should I run kubectl edit on the cluster?",
+              "text_fr": "Hiroshi, je dois augmenter la limite de mémoire du service de notifications. Je lance kubectl edit sur le cluster ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "No, never edit the cluster by hand! We use GitOps, so Argo CD would overwrite your manual change within minutes.",
+              "text_fr": "Non, ne modifie jamais le cluster à la main ! Nous utilisons GitOps, donc Argo CD écraserait ta modification manuelle en quelques minutes."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "Right, Git is the single source of truth. Where is the memory limit configured?",
+              "text_fr": "C’est vrai, Git est l’unique source de vérité. Où la limite de mémoire est-elle configurée ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "In the Helm chart repository, inside values-production.yaml. That way, container orchestration stays identical across environments.",
+              "text_fr": "Dans le dépôt du chart Helm, dans values-production.yaml. Comme ça, l’orchestration des conteneurs utilise le même modèle sur tous les environnements."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "Can I also bump the image version to the new Git tag v1.8.2 in the same pull request?",
+              "text_fr": "Je peux aussi monter la version de l’image vers le nouveau tag Git v1.8.2 dans la même pull request ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Yes, open the pull request and I’ll approve it. As soon as it’s merged, the cluster will sync automatically.",
+              "text_fr": "Oui, ouvre la pull request et je l’approuverai. Dès qu’elle sera fusionnée, le cluster se synchronisera automatiquement."
+            }
           ],
           "questions": [
             {
@@ -514,14 +760,44 @@
         {
           "id": "devops-cloud-expose-traffic-reverse-proxy",
           "title_fr": "Exposer le service derrière un proxy inverse et un répartiteur",
-          "term_ids": ["load-balancer", "reverse-proxy", "certificate", "dns", "port"],
+          "term_ids": [
+            "load-balancer",
+            "reverse-proxy",
+            "certificate",
+            "dns",
+            "port"
+          ],
           "dialogue": [
-            { "speaker": "Nadia", "text_en": "Diego, the API pods are healthy inside the cluster, but external requests to api.example.com time out.", "text_fr": "Diego, les pods de l’API sont en bonne santé dans le cluster, mais les requêtes externes vers api.example.com expirent." },
-            { "speaker": "Diego", "text_en": "Does the DNS record point to the cloud load balancer IP?", "text_fr": "Est-ce que l’enregistrement DNS pointe bien vers l’IP du répartiteur de charge cloud ?" },
-            { "speaker": "Nadia", "text_en": "Yes, DNS resolves properly, and the load balancer forwards HTTPS traffic on port 443 to our Nginx reverse proxy.", "text_fr": "Oui, le DNS résout bien le nom, et le répartiteur de charge transmet le trafic HTTPS sur le port 443 à notre proxy inverse Nginx." },
-            { "speaker": "Diego", "text_en": "Then check the reverse proxy config. Which port is the application container actually listening on?", "text_fr": "Alors vérifie la configuration du proxy inverse. Sur quel port le conteneur de l’application écoute-t-il réellement ?" },
-            { "speaker": "Nadia", "text_en": "Aha! The app listens on port 8080, but the reverse proxy was forwarding to port 3000.", "text_fr": "Aha ! L’application écoute sur le port 8080, mais le proxy inverse redirigeait vers le port 3000." },
-            { "speaker": "Diego", "text_en": "That explains it. Also verify that cert-manager renewed the TLS certificate so browsers don’t show a security warning.", "text_fr": "Tout s’explique. Vérifie aussi que cert-manager a bien renouvelé le certificat TLS pour que les navigateurs n’affichent pas d’alerte de sécurité." }
+            {
+              "speaker": "Nadia",
+              "text_en": "Diego, the API pods are healthy inside the cluster, but external requests to api.example.com time out.",
+              "text_fr": "Diego, les pods de l’API sont en bonne santé dans le cluster, mais les requêtes externes vers api.example.com expirent."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Does the DNS record point to the cloud load balancer IP?",
+              "text_fr": "Est-ce que l’enregistrement DNS pointe bien vers l’IP du répartiteur de charge cloud ?"
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Yes, DNS resolves properly, and the load balancer forwards HTTPS traffic on port 443 to our Nginx reverse proxy.",
+              "text_fr": "Oui, le DNS résout bien le nom, et le répartiteur de charge transmet le trafic HTTPS sur le port 443 à notre proxy inverse Nginx."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Then check the reverse proxy config. Which port is the application container actually listening on?",
+              "text_fr": "Alors vérifie la configuration du proxy inverse. Sur quel port le conteneur de l’application écoute-t-il réellement ?"
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Aha! The app listens on port 8080, but the reverse proxy was forwarding to port 3000.",
+              "text_fr": "Aha ! L’application écoute sur le port 8080, mais le proxy inverse redirigeait vers le port 3000."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "That explains it. Also verify that cert-manager renewed the TLS certificate so browsers don’t show a security warning.",
+              "text_fr": "Tout s’explique. Vérifie aussi que cert-manager a bien renouvelé le certificat TLS pour que les navigateurs n’affichent pas d’alerte de sécurité."
+            }
           ],
           "questions": [
             {
@@ -588,12 +864,30 @@
       "guide": {
         "intro_fr": "Avec l’« infrastructure as code » (IaC), plus personne ne crée de serveurs à la main dans la console : les réseaux, bases de données et droits sont décrits dans des fichiers « Terraform » versionnés. Avant d’appliquer un changement, on relit le « Terraform plan » pour vérifier ce qui sera créé, modifié ou détruit. Associée à la « configuration management » et à l’« immutable infrastructure », cette pratique rend les déploiements « idempotent » : les relancer produit toujours le même état. Côté réseau et sécurité, on isole les services dans un « VPC » découpé en « subnets » publics et privés au sein d’une « region » cloud. Enfin, on verrouille chaque « bucket » de stockage objet avec le chiffrement au repos (« encryption at rest ») et des règles « IAM » suivant le principe du moindre privilège (« least privilege »).",
         "key_phrases": [
-          { "en": "Always review the Terraform plan before applying changes.", "fr": "Relis toujours le plan Terraform avant d’appliquer les changements." },
-          { "en": "Renaming this resource will destroy and recreate the database.", "fr": "Renommer cette ressource va détruire et recréer la base de données." },
-          { "en": "The database runs in a private subnet with no public IP address.", "fr": "La base de données tourne dans un sous-réseau privé sans adresse IP publique." },
-          { "en": "This IAM policy is too permissive: it grants wildcard access.", "fr": "Cette règle IAM est trop permissive : elle accorde un accès universel (*)." },
-          { "en": "Make sure the S3 bucket blocks public access and enables encryption at rest.", "fr": "Assure-toi que le compartiment S3 bloque l’accès public et active le chiffrement au repos." },
-          { "en": "We replaced static access keys with short-lived IAM roles.", "fr": "Nous avons remplacé les clés d’accès statiques par des rôles IAM de courte durée." }
+          {
+            "en": "Always review the Terraform plan before applying changes.",
+            "fr": "Relis toujours le plan Terraform avant d’appliquer les changements."
+          },
+          {
+            "en": "Renaming this resource will destroy and recreate the database.",
+            "fr": "Renommer cette ressource va détruire et recréer la base de données."
+          },
+          {
+            "en": "The database runs in a private subnet with no public IP address.",
+            "fr": "La base de données tourne dans un sous-réseau privé sans adresse IP publique."
+          },
+          {
+            "en": "This IAM policy is too permissive: it grants wildcard access.",
+            "fr": "Cette règle IAM est trop permissive : elle accorde un accès universel (*)."
+          },
+          {
+            "en": "Make sure the S3 bucket blocks public access and enables encryption at rest.",
+            "fr": "Assure-toi que le compartiment S3 bloque l’accès public et active le chiffrement au repos."
+          },
+          {
+            "en": "We replaced static access keys with short-lived IAM roles.",
+            "fr": "Nous avons remplacé les clés d’accès statiques par des rôles IAM de courte durée."
+          }
         ],
         "tip_fr": "En anglais cloud, « policy » veut dire « règle ou stratégie de permissions » (une IAM policy), jamais « police ». Et dans un plan Terraform, méfie-toi de la mention « forces replacement » (ou « must be replaced ») : cela signifie que Terraform va supprimer la ressource existante avant d’en créer une nouvelle."
       },
@@ -601,14 +895,44 @@
         {
           "id": "devops-cloud-review-terraform-plan",
           "title_fr": "Relire un plan Terraform avant de l’appliquer",
-          "term_ids": ["infrastructure-as-code", "terraform", "immutable-infrastructure", "configuration-management", "idempotent"],
+          "term_ids": [
+            "infrastructure-as-code",
+            "terraform",
+            "immutable-infrastructure",
+            "configuration-management",
+            "idempotent"
+          ],
           "dialogue": [
-            { "speaker": "Aïcha", "text_en": "Tomasz, could you review my infrastructure as code pull request? I updated the Terraform module for our worker nodes.", "text_fr": "Tomasz, tu pourrais relire ma pull request d’infrastructure en tant que code ? J’ai mis à jour le module Terraform de nos nœuds de calcul." },
-            { "speaker": "Tomasz", "text_en": "Sure, I’m looking at the Terraform plan output in the PR comment. Wait: it says 3 to add, 1 to change, and 1 to destroy!", "text_fr": "Bien sûr, je regarde la sortie du plan Terraform dans le commentaire de la PR. Attends : il indique 3 ajouts, 1 modification et 1 suppression !" },
-            { "speaker": "Aïcha", "text_en": "Oh! Why does it want to destroy the Redis instance? I only changed its name tag.", "text_fr": "Oh ! Pourquoi veut-il détruire l’instance Redis ? J’ai seulement changé son étiquette de nom." },
-            { "speaker": "Tomasz", "text_en": "You also renamed the resource identifier in the code, so Terraform treats it as a brand-new resource. Use a moved block so it updates the state without destroying the instance.", "text_fr": "Tu as aussi renommé l’identifiant de la ressource dans le code, donc Terraform la traite comme une toute nouvelle ressource. Utilise un bloc moved pour qu’il mette à jour l’état sans détruire l’instance." },
-            { "speaker": "Aïcha", "text_en": "Good catch, that saved our cache! For the worker nodes, I baked the OS settings into the image with Packer and Ansible.", "text_fr": "Bien vu, ça a sauvé notre cache ! Pour les nœuds de calcul, j’ai intégré les réglages système dans l’image avec Packer et Ansible." },
-            { "speaker": "Tomasz", "text_en": "Great. Combining idempotent configuration management with immutable infrastructure means we replace stateless nodes cleanly instead of patching live servers.", "text_fr": "Super. Combiner une gestion de configuration idempotente avec une infrastructure immuable nous permet de remplacer proprement les nœuds sans état au lieu de bricoler des serveurs en marche." }
+            {
+              "speaker": "Aïcha",
+              "text_en": "Tomasz, could you review my infrastructure as code pull request? I updated the Terraform module for our worker nodes.",
+              "text_fr": "Tomasz, tu pourrais relire ma pull request d’infrastructure en tant que code ? J’ai mis à jour le module Terraform de nos nœuds de calcul."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Sure, I’m looking at the Terraform plan output in the PR comment. Wait: it says 3 to add, 1 to change, and 1 to destroy!",
+              "text_fr": "Bien sûr, je regarde la sortie du plan Terraform dans le commentaire de la PR. Attends : il indique 3 ajouts, 1 modification et 1 suppression !"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Oh! Why does it want to destroy the Redis instance? I only changed its name tag.",
+              "text_fr": "Oh ! Pourquoi veut-il détruire l’instance Redis ? J’ai seulement changé son étiquette de nom."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "You also renamed the resource identifier in the code, so Terraform treats it as a brand-new resource. Use a moved block so it updates the state without destroying the instance.",
+              "text_fr": "Tu as aussi renommé l’identifiant de la ressource dans le code, donc Terraform la traite comme une toute nouvelle ressource. Utilise un bloc moved pour qu’il mette à jour l’état sans détruire l’instance."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Good catch, that saved our cache! For the worker nodes, I baked the OS settings into the image with Packer and Ansible.",
+              "text_fr": "Bien vu, ça a sauvé notre cache ! Pour les nœuds de calcul, j’ai intégré les réglages système dans l’image avec Packer et Ansible."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Great. Combining idempotent configuration management with immutable infrastructure means we replace stateless nodes cleanly instead of patching live servers.",
+              "text_fr": "Super. Combiner une gestion de configuration idempotente avec une infrastructure immuable nous permet de remplacer proprement les nœuds sans état au lieu de bricoler des serveurs en marche."
+            }
           ],
           "questions": [
             {
@@ -669,14 +993,44 @@
         {
           "id": "devops-cloud-isolate-network-vpc",
           "title_fr": "Isoler la base de données dans un VPC privé",
-          "term_ids": ["vpc", "subnet", "region", "ip-address", "ssh"],
+          "term_ids": [
+            "vpc",
+            "subnet",
+            "region",
+            "ip-address",
+            "ssh"
+          ],
           "dialogue": [
-            { "speaker": "Priya", "text_en": "Kenji, we’re provisioning the new PostgreSQL database in the Europe West region. Should it go in the same subnet as the load balancer?", "text_fr": "Kenji, nous provisionnons la nouvelle base PostgreSQL dans la région Europe Ouest. Doit-elle aller dans le même sous-réseau que le répartiteur de charge ?" },
-            { "speaker": "Kenji", "text_en": "Definitely not. The load balancer lives in a public subnet, whereas the database must stay in a private subnet inside our VPC.", "text_fr": "Surtout pas. Le répartiteur de charge se trouve dans un sous-réseau public, tandis que la base de données doit rester dans un sous-réseau privé à l’intérieur de notre VPC." },
-            { "speaker": "Priya", "text_en": "So the database won’t have a public IP address at all?", "text_fr": "Donc la base de données n’aura aucune adresse IP publique ?" },
-            { "speaker": "Kenji", "text_en": "Right, only a private IP address. And the security group should only allow traffic on port 5432 from the API subnet.", "text_fr": "Exact, seulement une adresse IP privée. Et le groupe de sécurité ne doit autoriser le trafic sur le port 5432 que depuis le sous-réseau de l’API." },
-            { "speaker": "Priya", "text_en": "How do we run a manual query during debugging if port 22 isn’t open to the internet for SSH?", "text_fr": "Comment lance-t-on une requête manuelle pendant un débogage si le port 22 n’est pas ouvert sur internet pour SSH ?" },
-            { "speaker": "Kenji", "text_en": "We connect through the cloud identity tunnel instead of exposing SSH to the internet, and every session is logged.", "text_fr": "On se connecte via le tunnel d’identité cloud au lieu d’exposer SSH sur internet, et chaque session est journalisée." }
+            {
+              "speaker": "Priya",
+              "text_en": "Kenji, we’re provisioning the new PostgreSQL database in the Europe West region. Should it go in the same subnet as the load balancer?",
+              "text_fr": "Kenji, nous provisionnons la nouvelle base PostgreSQL dans la région Europe Ouest. Doit-elle aller dans le même sous-réseau que le répartiteur de charge ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Definitely not. The load balancer lives in a public subnet, whereas the database must stay in a private subnet inside our VPC.",
+              "text_fr": "Surtout pas. Le répartiteur de charge se trouve dans un sous-réseau public, tandis que la base de données doit rester dans un sous-réseau privé à l’intérieur de notre VPC."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "So the database won’t have a public IP address at all?",
+              "text_fr": "Donc la base de données n’aura aucune adresse IP publique ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Right, only a private IP address. And the security group should only allow traffic on port 5432 from the API subnet.",
+              "text_fr": "Exact, seulement une adresse IP privée. Et le groupe de sécurité ne doit autoriser le trafic sur le port 5432 que depuis le sous-réseau de l’API."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "How do we run a manual query during debugging if port 22 isn’t open to the internet for SSH?",
+              "text_fr": "Comment lance-t-on une requête manuelle pendant un débogage si le port 22 n’est pas ouvert sur internet pour SSH ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "We connect through the cloud identity tunnel instead of exposing SSH to the internet, and every session is logged.",
+              "text_fr": "On se connecte via le tunnel d’identité cloud au lieu d’exposer SSH sur internet, et chaque session est journalisée."
+            }
           ],
           "questions": [
             {
@@ -736,14 +1090,44 @@
         {
           "id": "devops-cloud-lock-down-iam-and-buckets",
           "title_fr": "Sécuriser un compartiment de stockage objet et les rôles IAM",
-          "term_ids": ["object-storage", "bucket", "iam", "least-privilege", "encryption-at-rest"],
+          "term_ids": [
+            "object-storage",
+            "bucket",
+            "iam",
+            "least-privilege",
+            "encryption-at-rest"
+          ],
           "dialogue": [
-            { "speaker": "Lucía", "text_en": "Moussa, the invoice service needs to upload PDF files to cloud object storage. Can you approve my Terraform PR?", "text_fr": "Moussa, le service de facturation doit envoyer des fichiers PDF vers le stockage objet cloud. Tu peux approuver ma PR Terraform ?" },
-            { "speaker": "Moussa", "text_en": "I checked the bucket settings: encryption at rest is enabled and public access is blocked, which is great.", "text_fr": "J’ai vérifié les réglages du compartiment : le chiffrement au repos est activé et l’accès public est bloqué, ce qui est très bien." },
-            { "speaker": "Lucía", "text_en": "Thanks! Was there an issue with the IAM policy?", "text_fr": "Merci ! Est-ce qu’il y avait un souci avec la règle IAM ?" },
-            { "speaker": "Moussa", "text_en": "Yes, the IAM policy grants s3:* on all buckets in the account. That violates the principle of least privilege.", "text_fr": "Oui, la règle IAM accorde s3:* sur tous les compartiments du compte. Cela enfreint le principe du moindre privilège." },
-            { "speaker": "Lucía", "text_en": "Right, if the invoice pod were compromised, an attacker could read or delete our database backups in the other bucket.", "text_fr": "C’est vrai, si le pod de facturation était compromis, un attaquant pourrait lire ou supprimer nos sauvegardes de base de données dans l’autre compartiment." },
-            { "speaker": "Moussa", "text_en": "Exactly. Scope the IAM role down to GetObject and PutObject on the invoices bucket only, and I’ll approve it right away.", "text_fr": "Exactement. Restreins le rôle IAM à GetObject et PutObject uniquement sur le compartiment des factures, et je l’approuverai tout de suite." }
+            {
+              "speaker": "Lucía",
+              "text_en": "Moussa, the invoice service needs to upload PDF files to cloud object storage. Can you approve my Terraform PR?",
+              "text_fr": "Moussa, le service de facturation doit envoyer des fichiers PDF vers le stockage objet cloud. Tu peux approuver ma PR Terraform ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "I checked the bucket settings: encryption at rest is enabled and public access is blocked, which is great.",
+              "text_fr": "J’ai vérifié les réglages du compartiment : le chiffrement au repos est activé et l’accès public est bloqué, ce qui est très bien."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Thanks! Was there an issue with the IAM policy?",
+              "text_fr": "Merci ! Est-ce qu’il y avait un souci avec la règle IAM ?"
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Yes, the IAM policy grants s3:* on all buckets in the account. That violates the principle of least privilege.",
+              "text_fr": "Oui, la règle IAM accorde s3:* sur tous les compartiments du compte. Cela enfreint le principe du moindre privilège."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Right, if the invoice pod were compromised, an attacker could read or delete our database backups in the other bucket.",
+              "text_fr": "C’est vrai, si le pod de facturation était compromis, un attaquant pourrait lire ou supprimer nos sauvegardes de base de données dans l’autre compartiment."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Exactly. Scope the IAM role down to GetObject and PutObject on the invoices bucket only, and I’ll approve it right away.",
+              "text_fr": "Exactement. Restreins le rôle IAM à GetObject et PutObject uniquement sur le compartiment des factures, et je l’approuverai tout de suite."
+            }
           ],
           "questions": [
             {
@@ -804,14 +1188,44 @@
         {
           "id": "devops-cloud-fix-cloud-misconfiguration",
           "title_fr": "Corriger une dérive de configuration détectée par un audit",
-          "term_ids": ["cloud-misconfiguration", "service-account", "key-rotation", "cspm", "security-audit"],
+          "term_ids": [
+            "cloud-misconfiguration",
+            "service-account",
+            "key-rotation",
+            "cspm",
+            "security-audit"
+          ],
           "dialogue": [
-            { "speaker": "Sarah", "text_en": "Ivan, our CSPM tool flagged two high-priority findings ahead of next month’s security audit.", "text_fr": "Ivan, notre outil CSPM a signalé deux alertes de haute priorité avant l’audit de sécurité du mois prochain." },
-            { "speaker": "Ivan", "text_en": "What did it find? A cloud misconfiguration on one of our staging accounts?", "text_fr": "Qu’est-ce qu’il a trouvé ? Une mauvaise configuration cloud sur l’un de nos comptes de préproduction ?" },
-            { "speaker": "Sarah", "text_en": "First, an old analytics bucket was manually set to public read in the console. Second, a CI service account has an access key that is eight months old.", "text_fr": "D’abord, un vieux compartiment d’analyse a été passé manuellement en lecture publique dans la console. Ensuite, un compte de service CI possède une clé d’accès vieille de huit mois." },
-            { "speaker": "Ivan", "text_en": "I’ll run Terraform right now to revert the bucket to private, and we should remove console write access so nobody creates drift again.", "text_fr": "Je lance Terraform tout de suite pour repasser le compartiment en privé, et nous devrions retirer l’accès en écriture à la console pour que plus personne ne crée de dérive." },
-            { "speaker": "Sarah", "text_en": "Good idea. And for the service account, should we set up automatic key rotation every 90 days?", "text_fr": "Bonne idée. Et pour le compte de service, on met en place une rotation automatique des clés tous les 90 jours ?" },
-            { "speaker": "Ivan", "text_en": "Even better: let’s switch the pipeline to OIDC federation with short-lived tokens, so we don’t store any long-lived key at all.", "text_fr": "Encore mieux : passons le pipeline en fédération OIDC avec des jetons à durée de vie courte, comme ça nous ne stockons plus aucune clé permanente." }
+            {
+              "speaker": "Sarah",
+              "text_en": "Ivan, our CSPM tool flagged two high-priority findings ahead of next month’s security audit.",
+              "text_fr": "Ivan, notre outil CSPM a signalé deux alertes de haute priorité avant l’audit de sécurité du mois prochain."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "What did it find? A cloud misconfiguration on one of our staging accounts?",
+              "text_fr": "Qu’est-ce qu’il a trouvé ? Une mauvaise configuration cloud sur l’un de nos comptes de préproduction ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "First, an old analytics bucket was manually set to public read in the console. Second, a CI service account has an access key that is eight months old.",
+              "text_fr": "D’abord, un vieux compartiment d’analyse a été passé manuellement en lecture publique dans la console. Ensuite, un compte de service CI possède une clé d’accès vieille de huit mois."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "I’ll run Terraform right now to revert the bucket to private, and we should remove console write access so nobody creates drift again.",
+              "text_fr": "Je lance Terraform tout de suite pour repasser le compartiment en privé, et nous devrions retirer l’accès en écriture à la console pour que plus personne ne crée de dérive."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Good idea. And for the service account, should we set up automatic key rotation every 90 days?",
+              "text_fr": "Bonne idée. Et pour le compte de service, on met en place une rotation automatique des clés tous les 90 jours ?"
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Even better: let’s switch the pipeline to OIDC federation with short-lived tokens, so we don’t store any long-lived key at all.",
+              "text_fr": "Encore mieux : passons le pipeline en fédération OIDC avec des jetons à durée de vie courte, comme ça nous ne stockons plus aucune clé permanente."
+            }
           ],
           "questions": [
             {
@@ -879,12 +1293,30 @@
       "guide": {
         "intro_fr": "En « SRE » (Site Reliability Engineering), on n’attend pas qu’un client signale une panne. Le « monitoring » surveille les indicateurs clés (« metrics »), tandis que l’« observability » croise les trois piliers, « logs », métriques et « distributed tracing », pour comprendre pourquoi une requête ralentit à travers plusieurs microservices. Pour cadrer la fiabilité, on distingue le « SLA » (l’engagement contractuel d’« uptime » envers le client) du « SLO » (l’objectif interne, souvent mesuré au 95e ou 99e « percentile » de latence). L’écart autorisé constitue l’« error budget » : tant qu’il en reste, on livre vite ; s’il est épuisé, on stabilise. Enfin, pour éviter l’« alert fatigue », on trie les « alerts » et on lie chacune à un « runbook » clair.",
         "key_phrases": [
-          { "en": "Logs, metrics, and traces are the three pillars of observability.", "fr": "Les logs, les métriques et les traces sont les trois piliers de l’observabilité." },
-          { "en": "Distributed tracing shows where the request spends most of its time.", "fr": "Le traçage distribué montre où la requête passe l’essentiel de son temps." },
-          { "en": "Our internal SLO is stricter than the customer-facing SLA.", "fr": "Notre SLO interne est plus strict que le SLA contractuel." },
-          { "en": "Average latency looks fine, but p99 latency spiked to three seconds.", "fr": "La latence moyenne a l’air normale, mais la latence au 99e centile a bondi à trois secondes." },
-          { "en": "We burned through 70% of our monthly error budget during yesterday’s outage.", "fr": "Nous avons consommé 70 % de notre budget d’erreur mensuel pendant la panne d’hier." },
-          { "en": "Noisy alerts cause alert fatigue; every page must link to a runbook.", "fr": "Les alertes bruyantes causent une fatigue d’alerte ; chaque alerte nocturne doit pointer vers un runbook." }
+          {
+            "en": "Logs, metrics, and traces are the three pillars of observability.",
+            "fr": "Les logs, les métriques et les traces sont les trois piliers de l’observabilité."
+          },
+          {
+            "en": "Distributed tracing shows where the request spends most of its time.",
+            "fr": "Le traçage distribué montre où la requête passe l’essentiel de son temps."
+          },
+          {
+            "en": "Our internal SLO is stricter than the customer-facing SLA.",
+            "fr": "Notre SLO interne est plus strict que le SLA contractuel."
+          },
+          {
+            "en": "Average latency looks fine, but p99 latency spiked to three seconds.",
+            "fr": "La latence moyenne a l’air normale, mais la latence au 99e centile a bondi à trois secondes."
+          },
+          {
+            "en": "We burned through 70% of our monthly error budget during yesterday’s outage.",
+            "fr": "Nous avons consommé 70 % de notre budget d’erreur mensuel pendant la panne d’hier."
+          },
+          {
+            "en": "Noisy alerts cause alert fatigue; every page must link to a runbook.",
+            "fr": "Les alertes bruyantes causent une fatigue d’alerte ; chaque alerte nocturne doit pointer vers un runbook."
+          }
         ],
         "tip_fr": "Ne te fie jamais à la moyenne (« average ») pour les temps de réponse : si 99 % des requêtes prennent 20 ms et 1 % prennent 10 secondes, la moyenne semble bonne alors que tes plus gros clients souffrent. En SRE, on parle toujours en « percentiles » : p95 (95th percentile) ou p99."
       },
@@ -892,14 +1324,44 @@
         {
           "id": "devops-cloud-three-pillars-observability",
           "title_fr": "Croiser logs, métriques et traçage distribué",
-          "term_ids": ["monitoring", "observability", "log", "distributed-tracing", "metric"],
+          "term_ids": [
+            "monitoring",
+            "observability",
+            "log",
+            "distributed-tracing",
+            "metric"
+          ],
           "dialogue": [
-            { "speaker": "Mei", "text_en": "Kofi, our monitoring shows a spike in checkout latency, but the CPU and memory metrics on all pods look normal.", "text_fr": "Kofi, notre supervision montre un pic de latence sur le paiement, mais les métriques CPU et mémoire de tous les pods semblent normales." },
-            { "speaker": "Kofi", "text_en": "Metrics tell us something is slow, not why. Since a checkout request hops across four microservices, let’s open distributed tracing.", "text_fr": "Les métriques nous disent que quelque chose est lent, pas pourquoi. Comme une requête de paiement traverse quatre microservices, ouvrons le traçage distribué." },
-            { "speaker": "Mei", "text_en": "Looking at a slow trace now: 90% of the time is spent waiting on the tax calculation service.", "text_fr": "Je regarde une trace lente : 90 % du temps est passé à attendre le service de calcul des taxes." },
-            { "speaker": "Kofi", "text_en": "Copy the trace ID and filter the structured logs for that service.", "text_fr": "Copie l’identifiant de trace et filtre les logs structurés de ce service." },
-            { "speaker": "Mei", "text_en": "Found it! The log shows it retries an external currency API three times before falling back to the cached rate.", "text_fr": "Trouvé ! Le log montre qu’il réessaie une API de devises externe trois fois avant de se replier sur le taux en cache." },
-            { "speaker": "Kofi", "text_en": "That’s why good observability matters: correlating metrics, traces, and logs took us two minutes instead of two hours.", "text_fr": "Voilà pourquoi une bonne observabilité compte : corréler métriques, traces et logs nous a pris deux minutes au lieu de deux heures." }
+            {
+              "speaker": "Mei",
+              "text_en": "Kofi, our monitoring shows a spike in checkout latency, but the CPU and memory metrics on all pods look normal.",
+              "text_fr": "Kofi, notre supervision montre un pic de latence sur le paiement, mais les métriques CPU et mémoire de tous les pods semblent normales."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Metrics tell us something is slow, not why. Since a checkout request hops across four microservices, let’s open distributed tracing.",
+              "text_fr": "Les métriques nous disent que quelque chose est lent, pas pourquoi. Comme une requête de paiement traverse quatre microservices, ouvrons le traçage distribué."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Looking at a slow trace now: 90% of the time is spent waiting on the tax calculation service.",
+              "text_fr": "Je regarde une trace lente : 90 % du temps est passé à attendre le service de calcul des taxes."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Copy the trace ID and filter the structured logs for that service.",
+              "text_fr": "Copie l’identifiant de trace et filtre les logs structurés de ce service."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Found it! The log shows it retries an external currency API three times before falling back to the cached rate.",
+              "text_fr": "Trouvé ! Le log montre qu’il réessaie une API de devises externe trois fois avant de se replier sur le taux en cache."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "That’s why good observability matters: correlating metrics, traces, and logs took us two minutes instead of two hours.",
+              "text_fr": "Voilà pourquoi une bonne observabilité compte : corréler métriques, traces et logs nous a pris deux minutes au lieu de deux heures."
+            }
           ],
           "questions": [
             {
@@ -959,14 +1421,44 @@
         {
           "id": "devops-cloud-define-sla-slo",
           "title_fr": "Distinguer SLA et SLO avec l’équipe produit",
-          "term_ids": ["sre", "uptime", "sla", "slo", "percentile"],
+          "term_ids": [
+            "sre",
+            "uptime",
+            "sla",
+            "slo",
+            "percentile"
+          ],
           "dialogue": [
-            { "speaker": "Inès", "text_en": "Daniel, a new enterprise customer is asking for a 99.99% uptime SLA in their contract. Can our SRE team commit to that?", "text_fr": "Daniel, un nouveau client grand compte demande un SLA de 99,99 % de disponibilité dans son contrat. Notre équipe SRE peut-elle s’y engager ?" },
-            { "speaker": "Daniel", "text_en": "Four nines is less than five minutes of downtime per month! Our current architecture runs in a single region, so we can’t guarantee that SLA yet.", "text_fr": "« Quatre neufs », c’est moins de cinq minutes d’indisponibilité par mois ! Notre architecture actuelle tourne dans une seule région, donc nous ne pouvons pas encore garantir ce SLA." },
-            { "speaker": "Inès", "text_en": "What can we put in the contract, then?", "text_fr": "Qu’est-ce qu’on peut mettre dans le contrat, alors ?" },
-            { "speaker": "Daniel", "text_en": "We can sign a 99.9% SLA externally, and set an internal SLO of 99.95% uptime so we get warned before we ever breach the contract.", "text_fr": "On peut signer un SLA externe de 99,9 %, et fixer un SLO interne de 99,95 % de disponibilité afin d’être alertés avant même d’enfreindre le contrat." },
-            { "speaker": "Inès", "text_en": "Should the SLO only measure uptime, or response speed too?", "text_fr": "Le SLO doit-il seulement mesurer la disponibilité, ou aussi la vitesse de réponse ?" },
-            { "speaker": "Daniel", "text_en": "Both. Let’s add a latency SLO where the 95th percentile stays under 250 milliseconds.", "text_fr": "Les deux. Ajoutons un SLO de latence où le 95e centile reste sous 250 millisecondes." }
+            {
+              "speaker": "Inès",
+              "text_en": "Daniel, a new enterprise customer is asking for a 99.99% uptime SLA in their contract. Can our SRE team commit to that?",
+              "text_fr": "Daniel, un nouveau client grand compte demande un SLA de 99,99 % de disponibilité dans son contrat. Notre équipe SRE peut-elle s’y engager ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Four nines is less than five minutes of downtime per month! Our current architecture runs in a single region, so we can’t guarantee that SLA yet.",
+              "text_fr": "« Quatre neufs », c’est moins de cinq minutes d’indisponibilité par mois ! Notre architecture actuelle tourne dans une seule région, donc nous ne pouvons pas encore garantir ce SLA."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "What can we put in the contract, then?",
+              "text_fr": "Qu’est-ce qu’on peut mettre dans le contrat, alors ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "We can sign a 99.9% SLA externally, and set an internal SLO of 99.95% uptime so we get warned before we ever breach the contract.",
+              "text_fr": "On peut signer un SLA externe de 99,9 %, et fixer un SLO interne de 99,95 % de disponibilité afin d’être alertés avant même d’enfreindre le contrat."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Should the SLO only measure uptime, or response speed too?",
+              "text_fr": "Le SLO doit-il seulement mesurer la disponibilité, ou aussi la vitesse de réponse ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Both. Let’s add a latency SLO where the 95th percentile stays under 250 milliseconds.",
+              "text_fr": "Les deux. Ajoutons un SLO de latence où le 95e centile reste sous 250 millisecondes."
+            }
           ],
           "questions": [
             {
@@ -1026,14 +1518,44 @@
         {
           "id": "devops-cloud-manage-error-budget",
           "title_fr": "Arbitrer les mises en ligne grâce au budget d’erreur",
-          "term_ids": ["error-budget", "dashboard", "latency", "throughput", "go-no-go"],
+          "term_ids": [
+            "error-budget",
+            "dashboard",
+            "latency",
+            "throughput",
+            "go-no-go"
+          ],
           "dialogue": [
-            { "speaker": "Rania", "text_en": "Hiroshi, let’s look at the reliability dashboard before the go/no-go meeting for Friday’s big release.", "text_fr": "Hiroshi, regardons le tableau de bord de fiabilité avant la réunion de décision (go/no-go) pour la grosse mise en ligne de vendredi." },
-            { "speaker": "Hiroshi", "text_en": "Throughput is up 20% this month, which is great, but two database incidents burned through 85% of our monthly error budget.", "text_fr": "Le débit a augmenté de 20 % ce mois-ci, ce qui est super, mais deux incidents de base de données ont consommé 85 % de notre budget d’erreur mensuel." },
-            { "speaker": "Rania", "text_en": "So we only have 15% of our error budget left for the last ten days of the month?", "text_fr": "Donc il ne nous reste que 15 % de notre budget d’erreur pour les dix derniers jours du mois ?" },
-            { "speaker": "Hiroshi", "text_en": "Yes, and staging tests show the new recommendation engine adds forty milliseconds of latency under high throughput.", "text_fr": "Oui, et les tests en préproduction montrent que le nouveau moteur de recommandation ajoute quarante millisecondes de latence à fort débit." },
-            { "speaker": "Rania", "text_en": "Pushing a risky change right before the weekend could exhaust the error budget. What’s your call for the go/no-go?", "text_fr": "Pousser un changement risqué juste avant le week-end pourrait épuiser le budget d’erreur. Quel est ton avis pour le go/no-go ?" },
-            { "speaker": "Hiroshi", "text_en": "I’ll recommend a no-go for Friday: let’s optimize the query first and ship on Tuesday morning with a canary rollout.", "text_fr": "Je vais recommander un no-go pour vendredi : optimisons d’abord la requête et déployons mardi matin avec un déploiement canari." }
+            {
+              "speaker": "Rania",
+              "text_en": "Hiroshi, let’s look at the reliability dashboard before the go/no-go meeting for Friday’s big release.",
+              "text_fr": "Hiroshi, regardons le tableau de bord de fiabilité avant la réunion de décision (go/no-go) pour la grosse mise en ligne de vendredi."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Throughput is up 20% this month, which is great, but two database incidents burned through 85% of our monthly error budget.",
+              "text_fr": "Le débit a augmenté de 20 % ce mois-ci, ce qui est super, mais deux incidents de base de données ont consommé 85 % de notre budget d’erreur mensuel."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "So we only have 15% of our error budget left for the last ten days of the month?",
+              "text_fr": "Donc il ne nous reste que 15 % de notre budget d’erreur pour les dix derniers jours du mois ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Yes, and staging tests show the new recommendation engine adds forty milliseconds of latency under high throughput.",
+              "text_fr": "Oui, et les tests en préproduction montrent que le nouveau moteur de recommandation ajoute quarante millisecondes de latence à fort débit."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "Pushing a risky change right before the weekend could exhaust the error budget. What’s your call for the go/no-go?",
+              "text_fr": "Pousser un changement risqué juste avant le week-end pourrait épuiser le budget d’erreur. Quel est ton avis pour le go/no-go ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "I’ll recommend a no-go for Friday: let’s optimize the query first and ship on Tuesday morning with a canary rollout.",
+              "text_fr": "Je vais recommander un no-go pour vendredi : optimisons d’abord la requête et déployons mardi matin avec un déploiement canari."
+            }
           ],
           "questions": [
             {
@@ -1093,14 +1615,44 @@
         {
           "id": "devops-cloud-reduce-alert-fatigue",
           "title_fr": "Trier les alertes et rédiger des procédures d’exploitation",
-          "term_ids": ["alert", "alert-fatigue", "alert-triage", "runbook", "uptime-monitoring"],
+          "term_ids": [
+            "alert",
+            "alert-fatigue",
+            "alert-triage",
+            "runbook",
+            "uptime-monitoring"
+          ],
           "dialogue": [
-            { "speaker": "Nadia", "text_en": "Diego, I got paged four times last night for CPU spikes that resolved themselves in two minutes. The team is suffering from serious alert fatigue.", "text_fr": "Diego, j’ai été bipée quatre fois cette nuit pour des pics CPU qui se sont résolus tout seuls en deux minutes. L’équipe souffre d’une vraie fatigue d’alerte." },
-            { "speaker": "Diego", "text_en": "You’re right. If an alert doesn’t require human action, it shouldn’t wake anyone up. Let’s do an alert triage session today.", "text_fr": "Tu as raison. Si une alerte ne demande aucune action humaine, elle ne devrait réveiller personne. Faisons une séance de tri des alertes aujourd’hui." },
-            { "speaker": "Nadia", "text_en": "How should we separate urgent pages from low-priority warnings?", "text_fr": "Comment doit-on séparer les appels nocturnes urgents des avertissements de basse priorité ?" },
-            { "speaker": "Diego", "text_en": "Only page on-call when user-facing SLOs or external uptime monitoring fail for more than five minutes. Send brief CPU spikes to a Slack channel instead.", "text_fr": "Ne bipe l’astreinte que lorsque les SLO visibles par les utilisateurs ou la supervision de disponibilité externe échouent pendant plus de cinq minutes. Envoie plutôt les brefs pics CPU dans un canal Slack." },
-            { "speaker": "Nadia", "text_en": "And for the alerts that still page us at night, half of them don’t explain what to do.", "text_fr": "Et pour les alertes qui continuent de nous biper la nuit, la moitié n’expliquent pas quoi faire." },
-            { "speaker": "Diego", "text_en": "Let’s make it a rule: every paging alert must include a link to an up-to-date runbook with the first diagnostic steps.", "text_fr": "Faisons-en une règle : chaque alerte qui bipe doit inclure un lien vers un runbook à jour avec les premières étapes de diagnostic." }
+            {
+              "speaker": "Nadia",
+              "text_en": "Diego, I got paged four times last night for CPU spikes that resolved themselves in two minutes. The team is suffering from serious alert fatigue.",
+              "text_fr": "Diego, j’ai été bipée quatre fois cette nuit pour des pics CPU qui se sont résolus tout seuls en deux minutes. L’équipe souffre d’une vraie fatigue d’alerte."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "You’re right. If an alert doesn’t require human action, it shouldn’t wake anyone up. Let’s do an alert triage session today.",
+              "text_fr": "Tu as raison. Si une alerte ne demande aucune action humaine, elle ne devrait réveiller personne. Faisons une séance de tri des alertes aujourd’hui."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "How should we separate urgent pages from low-priority warnings?",
+              "text_fr": "Comment doit-on séparer les appels nocturnes urgents des avertissements de basse priorité ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Only page on-call when user-facing SLOs or external uptime monitoring fail for more than five minutes. Send brief CPU spikes to a Slack channel instead.",
+              "text_fr": "Ne bipe l’astreinte que lorsque les SLO visibles par les utilisateurs ou la supervision de disponibilité externe échouent pendant plus de cinq minutes. Envoie plutôt les brefs pics CPU dans un canal Slack."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "And for the alerts that still page us at night, half of them don’t explain what to do.",
+              "text_fr": "Et pour les alertes qui continuent de nous biper la nuit, la moitié n’expliquent pas quoi faire."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Let’s make it a rule: every paging alert must include a link to an up-to-date runbook with the first diagnostic steps.",
+              "text_fr": "Faisons-en une règle : chaque alerte qui bipe doit inclure un lien vers un runbook à jour avec les premières étapes de diagnostic."
+            }
           ],
           "questions": [
             {
@@ -1167,12 +1719,30 @@
       "guide": {
         "intro_fr": "Quand un « incident » majeur survient pendant ton tour d’« on-call », le calme et la répartition des rôles font toute la différence. L’« incident commander » coordonne la « war room », assigne les pistes techniques et tient la « status page » à jour en distinguant « degraded performance » (service ralenti) et « partial outage » (panne partielle). Priorité absolue : rendre l’incident « mitigated » (atténué) par un « rollback » ou un « failover » automatique vers une « replica » en « high availability », avant même de corriger la « root cause ». Une fois le calme revenu, on vérifie les « backups », on rédige un « postmortem » sans reproches et on teste régulièrement le plan de « disaster recovery » ainsi que des scénarios de « chaos engineering ».",
         "key_phrases": [
-          { "en": "I’ll act as incident commander and post updates every 15 minutes.", "fr": "Je prends le rôle d’incident commander et je publie un point toutes les 15 minutes." },
-          { "en": "We’re experiencing a partial outage in the Europe region.", "fr": "Nous subissons une panne partielle dans la région Europe." },
-          { "en": "The impact is mitigated; we’re still investigating the root cause.", "fr": "L’impact est atténué ; nous enquêtons toujours sur la cause racine." },
-          { "en": "We triggered a failover to the standby database replica.", "fr": "Nous avons déclenché un basculement vers la réplique de secours de la base." },
-          { "en": "An untested backup is not a backup.", "fr": "Une sauvegarde dont la restauration n’a jamais été testée n’est pas une sauvegarde." },
-          { "en": "Chaos engineering revealed that our circuit breaker timeout was too long.", "fr": "L’ingénierie du chaos a révélé que le délai de notre disjoncteur logiciel était trop long." }
+          {
+            "en": "I’ll act as incident commander and post updates every 15 minutes.",
+            "fr": "Je prends le rôle d’incident commander et je publie un point toutes les 15 minutes."
+          },
+          {
+            "en": "We’re experiencing a partial outage in the Europe region.",
+            "fr": "Nous subissons une panne partielle dans la région Europe."
+          },
+          {
+            "en": "The impact is mitigated; we’re still investigating the root cause.",
+            "fr": "L’impact est atténué ; nous enquêtons toujours sur la cause racine."
+          },
+          {
+            "en": "We triggered a failover to the standby database replica.",
+            "fr": "Nous avons déclenché un basculement vers la réplique de secours de la base."
+          },
+          {
+            "en": "An untested backup is not a backup.",
+            "fr": "Une sauvegarde dont la restauration n’a jamais été testée n’est pas une sauvegarde."
+          },
+          {
+            "en": "Chaos engineering revealed that our circuit breaker timeout was too long.",
+            "fr": "L’ingénierie du chaos a révélé que le délai de notre disjoncteur logiciel était trop long."
+          }
         ],
         "tip_fr": "Sur une « status page », ne confonds pas « mitigated » et « resolved » : un incident est « mitigated » dès que les utilisateurs ne souffrent plus (grâce à un contournement ou un basculement), mais il n’est « resolved » qu’une fois le système revenu dans son état nominal durable."
       },
@@ -1180,14 +1750,44 @@
         {
           "id": "devops-cloud-lead-as-incident-commander",
           "title_fr": "Coordonner la cellule de crise en tant qu’incident commander",
-          "term_ids": ["on-call", "incident", "incident-commander", "partial-outage", "war-room"],
+          "term_ids": [
+            "on-call",
+            "incident",
+            "incident-commander",
+            "partial-outage",
+            "war-room"
+          ],
           "dialogue": [
-            { "speaker": "Aïcha", "text_en": "Tomasz, I’m on-call and checkout is failing for users in Europe West. I just declared a SEV-1 incident.", "text_fr": "Tomasz, je suis d’astreinte et le paiement échoue pour les utilisateurs en Europe Ouest. Je viens de déclarer un incident SEV-1." },
-            { "speaker": "Tomasz", "text_en": "Five engineers just joined the war room call and everyone is talking at once. Who’s coordinating?", "text_fr": "Cinq ingénieurs viennent de rejoindre l’appel de la cellule de crise et tout le monde parle en même temps. Qui coordonne ?" },
-            { "speaker": "Aïcha", "text_en": "I’ll take the incident commander role so you can focus 100% on the database.", "text_fr": "Je prends le rôle d’incident commander pour que tu puisses te concentrer à 100 % sur la base de données." },
-            { "speaker": "Tomasz", "text_en": "Thanks. Confirming scope: North America and Asia are unaffected, so this is a partial outage limited to one region.", "text_fr": "Merci. Je confirme le périmètre : l’Amérique du Nord et l’Asie ne sont pas touchées, c’est donc une panne partielle limitée à une région." },
-            { "speaker": "Aïcha", "text_en": "Got it. Tomasz, you investigate the database connections; Priya, you check if the last release changed the connection pool.", "text_fr": "Bien noté. Tomasz, tu analyses les connexions à la base ; Priya, tu vérifies si la dernière version a modifié le pool de connexions." },
-            { "speaker": "Tomasz", "text_en": "On it. I’ll report back in the war room channel in five minutes.", "text_fr": "Je m’en occupe. Je fais un retour dans le canal de la cellule de crise dans cinq minutes." }
+            {
+              "speaker": "Aïcha",
+              "text_en": "Tomasz, I’m on-call and checkout is failing for users in Europe West. I just declared a SEV-1 incident.",
+              "text_fr": "Tomasz, je suis d’astreinte et le paiement échoue pour les utilisateurs en Europe Ouest. Je viens de déclarer un incident SEV-1."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Five engineers just joined the war room call and everyone is talking at once. Who’s coordinating?",
+              "text_fr": "Cinq ingénieurs viennent de rejoindre l’appel de la cellule de crise et tout le monde parle en même temps. Qui coordonne ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "I’ll take the incident commander role so you can focus 100% on the database.",
+              "text_fr": "Je prends le rôle d’incident commander pour que tu puisses te concentrer à 100 % sur la base de données."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Thanks. Confirming scope: North America and Asia are unaffected, so this is a partial outage limited to one region.",
+              "text_fr": "Merci. Je confirme le périmètre : l’Amérique du Nord et l’Asie ne sont pas touchées, c’est donc une panne partielle limitée à une région."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Got it. Tomasz, you investigate the database connections; Priya, you check if the last release changed the connection pool.",
+              "text_fr": "Bien noté. Tomasz, tu analyses les connexions à la base ; Priya, tu vérifies si la dernière version a modifié le pool de connexions."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "On it. I’ll report back in the war room channel in five minutes.",
+              "text_fr": "Je m’en occupe. Je fais un retour dans le canal de la cellule de crise dans cinq minutes."
+            }
           ],
           "questions": [
             {
@@ -1247,14 +1847,44 @@
         {
           "id": "devops-cloud-update-status-and-mitigate",
           "title_fr": "Tenir la page de statut à jour jusqu’à l’atténuation",
-          "term_ids": ["outage", "status-page", "degraded-performance", "mitigated", "rollback"],
+          "term_ids": [
+            "outage",
+            "status-page",
+            "degraded-performance",
+            "mitigated",
+            "rollback"
+          ],
           "dialogue": [
-            { "speaker": "Priya", "text_en": "Aïcha, support is getting flooded with tickets about the outage. Can we update the public status page?", "text_fr": "Aïcha, le support est submergé de tickets sur la panne. On peut mettre à jour la page de statut publique ?" },
-            { "speaker": "Aïcha", "text_en": "Yes, post an update now: checkout is in partial outage in Europe, and search is experiencing degraded performance.", "text_fr": "Oui, publie une mise à jour maintenant : le paiement est en panne partielle en Europe, et la recherche connaît des performances dégradées." },
-            { "speaker": "Priya", "text_en": "Good news: rolling back the checkout service cleared the connection pool! Error rates just dropped back to 0.1%.", "text_fr": "Bonne nouvelle : le retour arrière sur le service de paiement a libéré le pool de connexions ! Le taux d’erreur vient de retomber à 0,1 %." },
-            { "speaker": "Aïcha", "text_en": "Awesome. That means the rollback worked and the user impact is mitigated.", "text_fr": "Génial. Ça veut dire que le retour arrière a fonctionné et que l’impact utilisateur est atténué." },
-            { "speaker": "Priya", "text_en": "Should I mark the incident as fully resolved on the status page right away?", "text_fr": "Je marque l’incident comme entièrement résolu sur la page de statut tout de suite ?" },
-            { "speaker": "Aïcha", "text_en": "Not yet: set the status page to mitigated and say we’re monitoring stability for 30 minutes before marking it resolved.", "text_fr": "Pas encore : passe la page de statut sur « atténué » et indique que nous surveillons la stabilité pendant 30 minutes avant de le marquer comme résolu." }
+            {
+              "speaker": "Priya",
+              "text_en": "Aïcha, support is getting flooded with tickets about the outage. Can we update the public status page?",
+              "text_fr": "Aïcha, le support est submergé de tickets sur la panne. On peut mettre à jour la page de statut publique ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Yes, post an update now: checkout is in partial outage in Europe, and search is experiencing degraded performance.",
+              "text_fr": "Oui, publie une mise à jour maintenant : le paiement est en panne partielle en Europe, et la recherche connaît des performances dégradées."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Good news: rolling back the checkout service cleared the connection pool! Error rates just dropped back to 0.1%.",
+              "text_fr": "Bonne nouvelle : le retour arrière sur le service de paiement a libéré le pool de connexions ! Le taux d’erreur vient de retomber à 0,1 %."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Awesome. That means the rollback worked and the user impact is mitigated.",
+              "text_fr": "Génial. Ça veut dire que le retour arrière a fonctionné et que l’impact utilisateur est atténué."
+            },
+            {
+              "speaker": "Priya",
+              "text_en": "Should I mark the incident as fully resolved on the status page right away?",
+              "text_fr": "Je marque l’incident comme entièrement résolu sur la page de statut tout de suite ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Not yet: set the status page to mitigated and say we’re monitoring stability for 30 minutes before marking it resolved.",
+              "text_fr": "Pas encore : passe la page de statut sur « atténué » et indique que nous surveillons la stabilité pendant 30 minutes avant de le marquer comme résolu."
+            }
           ],
           "questions": [
             {
@@ -1314,14 +1944,44 @@
         {
           "id": "devops-cloud-trigger-database-failover",
           "title_fr": "Basculer vers la réplique et vérifier les sauvegardes",
-          "term_ids": ["high-availability", "failover", "backup", "replica", "root-cause"],
+          "term_ids": [
+            "high-availability",
+            "failover",
+            "backup",
+            "replica",
+            "root-cause"
+          ],
           "dialogue": [
-            { "speaker": "Kenji", "text_en": "Lucía, the primary database node in zone A just lost underlying storage hardware.", "text_fr": "Lucía, le nœud principal de la base de données dans la zone A vient de perdre son stockage matériel sous-jacent." },
-            { "speaker": "Lucía", "text_en": "Good thing we run in high availability across two zones. Did automatic failover promote the standby replica in zone B?", "text_fr": "Heureusement que nous tournons en haute disponibilité sur deux zones. Est-ce que le basculement automatique a promu la réplique de secours dans la zone B ?" },
-            { "speaker": "Kenji", "text_en": "Yes! The failover finished in twelve seconds, and the API reconnected to the new primary automatically.", "text_fr": "Oui ! Le basculement s’est terminé en douze secondes, et l’API s’est reconnectée automatiquement à la nouvelle base principale." },
-            { "speaker": "Lucía", "text_en": "Did we lose any transactions during the switch?", "text_fr": "Avons-nous perdu des transactions pendant la bascule ?" },
-            { "speaker": "Kenji", "text_en": "Zero data loss: synchronous replication was caught up, and last night’s backup is also intact in object storage.", "text_fr": "Aucune perte de données : la réplication synchrone était à jour, et la sauvegarde de la nuit dernière est également intacte dans le stockage objet." },
-            { "speaker": "Lucía", "text_en": "Great. The cloud provider confirmed the root cause was a failed physical disk rack in zone A, and a new standby replica is already syncing.", "text_fr": "Parfait. Le fournisseur cloud a confirmé que la cause racine était une baie de disques physiques en panne dans la zone A, et une nouvelle réplique de secours est déjà en cours de synchronisation." }
+            {
+              "speaker": "Kenji",
+              "text_en": "Lucía, the primary database node in zone A just lost underlying storage hardware.",
+              "text_fr": "Lucía, le nœud principal de la base de données dans la zone A vient de perdre son stockage matériel sous-jacent."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Good thing we run in high availability across two zones. Did automatic failover promote the standby replica in zone B?",
+              "text_fr": "Heureusement que nous tournons en haute disponibilité sur deux zones. Est-ce que le basculement automatique a promu la réplique de secours dans la zone B ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Yes! The failover finished in twelve seconds, and the API reconnected to the new primary automatically.",
+              "text_fr": "Oui ! Le basculement s’est terminé en douze secondes, et l’API s’est reconnectée automatiquement à la nouvelle base principale."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Did we lose any transactions during the switch?",
+              "text_fr": "Avons-nous perdu des transactions pendant la bascule ?"
+            },
+            {
+              "speaker": "Kenji",
+              "text_en": "Zero data loss: synchronous replication was caught up, and last night’s backup is also intact in object storage.",
+              "text_fr": "Aucune perte de données : la réplication synchrone était à jour, et la sauvegarde de la nuit dernière est également intacte dans le stockage objet."
+            },
+            {
+              "speaker": "Lucía",
+              "text_en": "Great. The cloud provider confirmed the root cause was a failed physical disk rack in zone A, and a new standby replica is already syncing.",
+              "text_fr": "Parfait. Le fournisseur cloud a confirmé que la cause racine était une baie de disques physiques en panne dans la zone A, et une nouvelle réplique de secours est déjà en cours de synchronisation."
+            }
           ],
           "questions": [
             {
@@ -1382,14 +2042,44 @@
         {
           "id": "devops-cloud-run-dr-and-chaos-drills",
           "title_fr": "Mener un exercice de reprise après sinistre et de chaos",
-          "term_ids": ["disaster-recovery", "chaos-engineering", "postmortem", "circuit-breaker", "cutover"],
+          "term_ids": [
+            "disaster-recovery",
+            "chaos-engineering",
+            "postmortem",
+            "circuit-breaker",
+            "cutover"
+          ],
           "dialogue": [
-            { "speaker": "Moussa", "text_en": "Sarah, one action item from last month’s postmortem was to test our disaster recovery plan before the peak season.", "text_fr": "Sarah, l’une des actions du post-mortem du mois dernier était de tester notre plan de reprise après sinistre avant la haute saison." },
-            { "speaker": "Sarah", "text_en": "Yes, we ran the disaster recovery drill in staging this morning and practiced a full cutover to the secondary region.", "text_fr": "Oui, nous avons mené l’exercice de reprise après sinistre en préproduction ce matin et pratiqué une bascule complète vers la région secondaire." },
-            { "speaker": "Moussa", "text_en": "How long did the cutover take? Did we meet our one-hour target?", "text_fr": "Combien de temps la bascule a-t-elle pris ? Avons-nous tenu notre objectif d’une heure ?" },
-            { "speaker": "Sarah", "text_en": "Thirty-five minutes! Then we ran a chaos engineering experiment by injecting network latency on the shipping API.", "text_fr": "Trente-cinq minutes ! Ensuite, nous avons mené une expérience d’ingénierie du chaos en injectant de la latence réseau sur l’API de livraison." },
-            { "speaker": "Moussa", "text_en": "Did the checkout service stay up when the shipping API slowed down?", "text_fr": "Est-ce que le service de paiement a tenu bon quand l’API de livraison a ralenti ?" },
-            { "speaker": "Sarah", "text_en": "At first no: threads piled up waiting. Once we tuned the circuit breaker to trip after two seconds and return a default shipping fee, checkout stayed fast.", "text_fr": "Au début non : les threads se sont accumulés en attente. Une fois que nous avons réglé le disjoncteur logiciel pour qu’il s’ouvre au bout de deux secondes et renvoie des frais de port par défaut, le paiement est resté rapide." }
+            {
+              "speaker": "Moussa",
+              "text_en": "Sarah, one action item from last month’s postmortem was to test our disaster recovery plan before the peak season.",
+              "text_fr": "Sarah, l’une des actions du post-mortem du mois dernier était de tester notre plan de reprise après sinistre avant la haute saison."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Yes, we ran the disaster recovery drill in staging this morning and practiced a full cutover to the secondary region.",
+              "text_fr": "Oui, nous avons mené l’exercice de reprise après sinistre en préproduction ce matin et pratiqué une bascule complète vers la région secondaire."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "How long did the cutover take? Did we meet our one-hour target?",
+              "text_fr": "Combien de temps la bascule a-t-elle pris ? Avons-nous tenu notre objectif d’une heure ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Thirty-five minutes! Then we ran a chaos engineering experiment by injecting network latency on the shipping API.",
+              "text_fr": "Trente-cinq minutes ! Ensuite, nous avons mené une expérience d’ingénierie du chaos en injectant de la latence réseau sur l’API de livraison."
+            },
+            {
+              "speaker": "Moussa",
+              "text_en": "Did the checkout service stay up when the shipping API slowed down?",
+              "text_fr": "Est-ce que le service de paiement a tenu bon quand l’API de livraison a ralenti ?"
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "At first no: threads piled up waiting. Once we tuned the circuit breaker to trip after two seconds and return a default shipping fee, checkout stayed fast.",
+              "text_fr": "Au début non : les threads se sont accumulés en attente. Une fois que nous avons réglé le disjoncteur logiciel pour qu’il s’ouvre au bout de deux secondes et renvoie des frais de port par défaut, le paiement est resté rapide."
+            }
           ],
           "questions": [
             {
@@ -1457,12 +2147,30 @@
       "guide": {
         "intro_fr": "Avec le « cloud computing », faire grossir une architecture est rapide, mais la facture peut vite déraper. Pour absorber un pic après avoir identifié le « bottleneck », on choisit entre le « vertical scaling » (une machine plus grosse) et l’« horizontal scaling » (plus d’instances derrière un répartiteur), piloté par l’« autoscaling » sur des services « stateless ». Pour réduire la latence mondiale et la consommation de « bandwidth », on s’appuie sur un « CDN », du « cache » et l’« edge computing ». Côté architecture, il faut arbitrer entre « IaaS and PaaS », « serverless » (attention au « cold start ») et « managed service » en pesant le risque de « vendor lock-in ». Enfin, la « cloud cost optimization » combine tests de charge (« load testing ») et « capacity planning ».",
         "key_phrases": [
-          { "en": "Stateless services are much easier to scale horizontally.", "fr": "Les services sans état sont beaucoup plus faciles à mettre à l’échelle horizontalement." },
-          { "en": "Autoscaling adds pods when CPU usage crosses 70%.", "fr": "La mise à l’échelle automatique ajoute des pods quand le CPU dépasse 70 %." },
-          { "en": "Serving static assets from a CDN cut our origin bandwidth by 60%.", "fr": "Servir les fichiers statiques depuis un CDN a réduit de 60 % la bande passante de nos serveurs d’origine." },
-          { "en": "We keep one serverless instance warm to avoid cold starts.", "fr": "Nous gardons une instance serverless active pour éviter les démarrages à froid." },
-          { "en": "Using a managed service saves operations time, at the cost of some vendor lock-in.", "fr": "Utiliser un service managé fait gagner du temps d’exploitation, au prix d’une certaine dépendance au fournisseur." },
-          { "en": "Shutting down non-production clusters at night reduced our cloud bill by 25%.", "fr": "Éteindre les clusters hors production la nuit a réduit notre facture cloud de 25 %." }
+          {
+            "en": "Stateless services are much easier to scale horizontally.",
+            "fr": "Les services sans état sont beaucoup plus faciles à mettre à l’échelle horizontalement."
+          },
+          {
+            "en": "Autoscaling adds pods when CPU usage crosses 70%.",
+            "fr": "La mise à l’échelle automatique ajoute des pods quand le CPU dépasse 70 %."
+          },
+          {
+            "en": "Serving static assets from a CDN cut our origin bandwidth by 60%.",
+            "fr": "Servir les fichiers statiques depuis un CDN a réduit de 60 % la bande passante de nos serveurs d’origine."
+          },
+          {
+            "en": "We keep one serverless instance warm to avoid cold starts.",
+            "fr": "Nous gardons une instance serverless active pour éviter les démarrages à froid."
+          },
+          {
+            "en": "Using a managed service saves operations time, at the cost of some vendor lock-in.",
+            "fr": "Utiliser un service managé fait gagner du temps d’exploitation, au prix d’une certaine dépendance au fournisseur."
+          },
+          {
+            "en": "Shutting down non-production clusters at night reduced our cloud bill by 25%.",
+            "fr": "Éteindre les clusters hors production la nuit a réduit notre facture cloud de 25 %."
+          }
         ],
         "tip_fr": "En anglais cloud, on dit aussi « to scale up / down » pour la mise à l’échelle verticale (prendre une machine plus grande ou plus petite) et « to scale out / in » pour la mise à l’échelle horizontale (ajouter ou retirer des instances). Et « right-sizing » désigne le fait de choisir la juste taille de machine plutôt que de surdimensionner."
       },
@@ -1470,14 +2178,44 @@
         {
           "id": "devops-cloud-scale-stateless-services",
           "title_fr": "Dimensionner la mise à l’échelle horizontale et verticale",
-          "term_ids": ["autoscaling", "horizontal-scaling", "vertical-scaling", "stateless", "bottleneck"],
+          "term_ids": [
+            "autoscaling",
+            "horizontal-scaling",
+            "vertical-scaling",
+            "stateless",
+            "bottleneck"
+          ],
           "dialogue": [
-            { "speaker": "Mei", "text_en": "Kofi, marketing is launching a flash sale on Monday. Where is the main bottleneck in our current setup?", "text_fr": "Kofi, le marketing lance une vente flash lundi. Où se situe le principal goulot d’étranglement dans notre architecture actuelle ?" },
-            { "speaker": "Kofi", "text_en": "The catalog API hits 90% CPU at three thousand requests per second, and autoscaling couldn’t add new pods cleanly during yesterday’s test.", "text_fr": "L’API catalogue atteint 90 % de CPU à trois mille requêtes par seconde, et la mise à l’échelle automatique n’a pas pu ajouter de nouveaux pods proprement pendant le test d’hier." },
-            { "speaker": "Mei", "text_en": "Why? Isn’t the catalog API stateless?", "text_fr": "Pourquoi ? L’API catalogue n’est-elle pas sans état ?" },
-            { "speaker": "Kofi", "text_en": "Almost, but it still stores user cart sessions in local memory! Once we move sessions to Redis, the API becomes truly stateless and horizontal scaling will work smoothly.", "text_fr": "Presque, mais elle stocke encore les sessions de panier en mémoire locale ! Dès qu’on déplace les sessions dans Redis, l’API devient vraiment sans état et la mise à l’échelle horizontale marchera sans accroc." },
-            { "speaker": "Mei", "text_en": "What about the primary database? We can’t just add ten write nodes in five minutes.", "text_fr": "Et pour la base de données principale ? On ne peut pas juste ajouter dix nœuds d’écriture en cinq minutes." },
-            { "speaker": "Kofi", "text_en": "For the database writes, we’ll use vertical scaling before the sale to double its RAM and CPU, and offload read queries to replicas.", "text_fr": "Pour les écritures en base, nous utiliserons la mise à l’échelle verticale avant la vente pour doubler sa RAM et son CPU, et nous délesterons les lectures vers des répliques." }
+            {
+              "speaker": "Mei",
+              "text_en": "Kofi, marketing is launching a flash sale on Monday. Where is the main bottleneck in our current setup?",
+              "text_fr": "Kofi, le marketing lance une vente flash lundi. Où se situe le principal goulot d’étranglement dans notre architecture actuelle ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "The catalog API hits 90% CPU at three thousand requests per second, and autoscaling couldn’t add new pods cleanly during yesterday’s test.",
+              "text_fr": "L’API catalogue atteint 90 % de CPU à trois mille requêtes par seconde, et la mise à l’échelle automatique n’a pas pu ajouter de nouveaux pods proprement pendant le test d’hier."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "Why? Isn’t the catalog API stateless?",
+              "text_fr": "Pourquoi ? L’API catalogue n’est-elle pas sans état ?"
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "Almost, but it still stores user cart sessions in local memory! Once we move sessions to Redis, the API becomes truly stateless and horizontal scaling will work smoothly.",
+              "text_fr": "Presque, mais elle stocke encore les sessions de panier en mémoire locale ! Dès qu’on déplace les sessions dans Redis, l’API devient vraiment sans état et la mise à l’échelle horizontale marchera sans accroc."
+            },
+            {
+              "speaker": "Mei",
+              "text_en": "What about the primary database? We can’t just add ten write nodes in five minutes.",
+              "text_fr": "Et pour la base de données principale ? On ne peut pas juste ajouter dix nœuds d’écriture en cinq minutes."
+            },
+            {
+              "speaker": "Kofi",
+              "text_en": "For the database writes, we’ll use vertical scaling before the sale to double its RAM and CPU, and offload read queries to replicas.",
+              "text_fr": "Pour les écritures en base, nous utiliserons la mise à l’échelle verticale avant la vente pour doubler sa RAM et son CPU, et nous délesterons les lectures vers des répliques."
+            }
           ],
           "questions": [
             {
@@ -1538,14 +2276,44 @@
         {
           "id": "devops-cloud-speed-up-with-cdn-and-edge",
           "title_fr": "Réduire la latence avec un CDN et le calcul en périphérie",
-          "term_ids": ["cdn", "edge-computing", "cache", "cache-invalidation", "bandwidth"],
+          "term_ids": [
+            "cdn",
+            "edge-computing",
+            "cache",
+            "cache-invalidation",
+            "bandwidth"
+          ],
           "dialogue": [
-            { "speaker": "Inès", "text_en": "Daniel, users in Dakar and Abidjan report that product pages take four seconds to load, and our origin bandwidth bill is huge.", "text_fr": "Daniel, les utilisateurs à Dakar et Abidjan signalent que les pages produit mettent quatre secondes à charger, et notre facture de bande passante sur les serveurs d’origine est énorme." },
-            { "speaker": "Daniel", "text_en": "Right now every image and script is fetched all the way from our Europe cluster. Let’s put a CDN in front of our static assets.", "text_fr": "En ce moment, chaque image et chaque script est récupéré tout droit depuis notre cluster en Europe. Plaçons un CDN devant nos fichiers statiques." },
-            { "speaker": "Inès", "text_en": "What about the catalog pages? Prices change twice a day, so we were afraid to cache them.", "text_fr": "Et pour les pages du catalogue ? Les prix changent deux fois par jour, donc nous avions peur de les mettre en cache." },
-            { "speaker": "Daniel", "text_en": "We can cache them at the CDN level for an hour and trigger a cache invalidation webhook whenever a merchant updates a price.", "text_fr": "On peut les mettre en cache au niveau du CDN pendant une heure et déclencher un webhook d’invalidation de cache dès qu’un marchand modifie un prix." },
-            { "speaker": "Inès", "text_en": "Nice! Can we also handle country redirects and A/B test cookies closer to the user?", "text_fr": "Bien vu ! On peut aussi gérer les redirections par pays et les cookies de test A/B plus près de l’utilisateur ?" },
-            { "speaker": "Daniel", "text_en": "Yes, that’s a great use case for edge computing: a lightweight worker runs at the closest point of presence in milliseconds.", "text_fr": "Oui, c’est un excellent cas d’usage pour l’informatique en périphérie (edge) : une fonction légère s’exécute au point de présence le plus proche en quelques millisecondes." }
+            {
+              "speaker": "Inès",
+              "text_en": "Daniel, users in Dakar and Abidjan report that product pages take four seconds to load, and our origin bandwidth bill is huge.",
+              "text_fr": "Daniel, les utilisateurs à Dakar et Abidjan signalent que les pages produit mettent quatre secondes à charger, et notre facture de bande passante sur les serveurs d’origine est énorme."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Right now every image and script is fetched all the way from our Europe cluster. Let’s put a CDN in front of our static assets.",
+              "text_fr": "En ce moment, chaque image et chaque script est récupéré tout droit depuis notre cluster en Europe. Plaçons un CDN devant nos fichiers statiques."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "What about the catalog pages? Prices change twice a day, so we were afraid to cache them.",
+              "text_fr": "Et pour les pages du catalogue ? Les prix changent deux fois par jour, donc nous avions peur de les mettre en cache."
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "We can cache them at the CDN level for an hour and trigger a cache invalidation webhook whenever a merchant updates a price.",
+              "text_fr": "On peut les mettre en cache au niveau du CDN pendant une heure et déclencher un webhook d’invalidation de cache dès qu’un marchand modifie un prix."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "Nice! Can we also handle country redirects and A/B test cookies closer to the user?",
+              "text_fr": "Bien vu ! On peut aussi gérer les redirections par pays et les cookies de test A/B plus près de l’utilisateur ?"
+            },
+            {
+              "speaker": "Daniel",
+              "text_en": "Yes, that’s a great use case for edge computing: a lightweight worker runs at the closest point of presence in milliseconds.",
+              "text_fr": "Oui, c’est un excellent cas d’usage pour l’informatique en périphérie (edge) : une fonction légère s’exécute au point de présence le plus proche en quelques millisecondes."
+            }
           ],
           "questions": [
             {
@@ -1605,14 +2373,45 @@
         {
           "id": "devops-cloud-weigh-serverless-and-lock-in",
           "title_fr": "Peser le serverless, les services managés et la dépendance au fournisseur",
-          "term_ids": ["cloud-computing", "iaas-paas", "saas", "serverless", "cold-start", "managed-service"],
+          "term_ids": [
+            "cloud-computing",
+            "iaas-paas",
+            "saas",
+            "serverless",
+            "cold-start",
+            "managed-service"
+          ],
           "dialogue": [
-            { "speaker": "Rania", "text_en": "Hiroshi, we’re building the new PDF receipt generator for our SaaS platform. Should we spin up a virtual machine or run it on Kubernetes?", "text_fr": "Hiroshi, nous développons le nouveau générateur de reçus PDF pour notre plateforme SaaS. Doit-on lancer une machine virtuelle ou le faire tourner sur Kubernetes ?" },
-            { "speaker": "Hiroshi", "text_en": "Receipts are generated in bursts and only a few thousand times a day. With cloud computing, we don’t need a server running 24/7 for that.", "text_fr": "Les reçus sont générés par pics et seulement quelques milliers de fois par jour. Avec le cloud, nous n’avons pas besoin d’un serveur qui tourne 24 h/24 pour ça." },
-            { "speaker": "Rania", "text_en": "So you’d choose a serverless function over IaaS and PaaS?", "text_fr": "Donc tu choisirais une fonction serverless plutôt que de l’IaaS ou du PaaS ?" },
-            { "speaker": "Hiroshi", "text_en": "Yes: serverless scales to zero when idle, so we only pay per execution. What about the latency requirement?", "text_fr": "Oui : le serverless redescend à zéro quand il est inactif, donc on ne paie qu’à l’exécution. Qu’en est-il de l’exigence de latence ?" },
-            { "speaker": "Rania", "text_en": "Receipts are sent asynchronously by email, so a two-second cold start after an idle period doesn’t bother the user at all.", "text_fr": "Les reçus sont envoyés de façon asynchrone par e-mail, donc un démarrage à froid de deux secondes après une période d’inactivité ne gêne pas du tout l’utilisateur." },
-            { "speaker": "Hiroshi", "text_en": "Perfect. Let’s also trigger it from a managed service queue so our small team doesn’t spend time patching message brokers.", "text_fr": "Parfait. Déclenchons-la aussi depuis une file d’attente en service managé pour que notre petite équipe ne passe pas son temps à mettre à jour des courtiers de messages." }
+            {
+              "speaker": "Rania",
+              "text_en": "Hiroshi, we’re building the new PDF receipt generator for our SaaS platform. Should we spin up a virtual machine or run it on Kubernetes?",
+              "text_fr": "Hiroshi, nous développons le nouveau générateur de reçus PDF pour notre plateforme SaaS. Doit-on lancer une machine virtuelle ou le faire tourner sur Kubernetes ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Receipts are generated in bursts and only a few thousand times a day. With cloud computing, we don’t need a server running 24/7 for that.",
+              "text_fr": "Les reçus sont générés par pics et seulement quelques milliers de fois par jour. Avec le cloud, nous n’avons pas besoin d’un serveur qui tourne 24 h/24 pour ça."
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "So you’d choose a serverless function over IaaS and PaaS?",
+              "text_fr": "Donc tu choisirais une fonction serverless plutôt que de l’IaaS ou du PaaS ?"
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Yes: serverless scales to zero when idle, so we only pay per execution. What about the latency requirement?",
+              "text_fr": "Oui : le serverless redescend à zéro quand il est inactif, donc on ne paie qu’à l’exécution. Qu’en est-il de l’exigence de latence ?"
+            },
+            {
+              "speaker": "Rania",
+              "text_en": "Receipts are sent asynchronously by email, so a two-second cold start after an idle period doesn’t bother the user at all.",
+              "text_fr": "Les reçus sont envoyés de façon asynchrone par e-mail, donc un démarrage à froid de deux secondes après une période d’inactivité ne gêne pas du tout l’utilisateur."
+            },
+            {
+              "speaker": "Hiroshi",
+              "text_en": "Perfect. Let’s also trigger it from a managed service queue so our small team doesn’t spend time patching message brokers.",
+              "text_fr": "Parfait. Déclenchons-la aussi depuis une file d’attente en service managé pour que notre petite équipe ne passe pas son temps à mettre à jour des courtiers de messages."
+            }
           ],
           "questions": [
             {
@@ -1673,14 +2472,44 @@
         {
           "id": "devops-cloud-cut-cloud-spending",
           "title_fr": "Réduire la facture cloud sans dégrader le service",
-          "term_ids": ["cloud-cost", "vendor-lock-in", "capacity-planning", "load-testing", "disk-space"],
+          "term_ids": [
+            "cloud-cost",
+            "vendor-lock-in",
+            "capacity-planning",
+            "load-testing",
+            "disk-space"
+          ],
           "dialogue": [
-            { "speaker": "Nadia", "text_en": "Diego, finance asked us to look into cloud cost optimization: our monthly bill jumped 35% last quarter.", "text_fr": "Diego, la finance nous a demandé de nous pencher sur l’optimisation des coûts cloud : notre facture mensuelle a bondi de 35 % au dernier trimestre." },
-            { "speaker": "Diego", "text_en": "I ran a cost report this morning. First, we have forty unattached volumes eating terabytes of disk space from old load testing runs.", "text_fr": "J’ai sorti un rapport de coûts ce matin. D’abord, nous avons quarante volumes non rattachés qui consomment des téraoctets d’espace disque depuis d’anciens tirs de tests de charge." },
-            { "speaker": "Nadia", "text_en": "Easy win: let’s delete those orphaned volumes and add a cleanup step to the load testing script.", "text_fr": "Gain facile : supprimons ces volumes orphelins et ajoutons une étape de nettoyage au script de test de charge." },
-            { "speaker": "Diego", "text_en": "Second, our capacity planning shows we have a steady baseline of twenty nodes in production. Committing to a one-year savings plan cuts their price by 30%.", "text_fr": "Ensuite, notre planification de capacité montre que nous avons un socle stable de vingt nœuds en production. S’engager sur un plan d’économies d’un an réduit leur prix de 30 %." },
-            { "speaker": "Nadia", "text_en": "Does a one-year commitment increase vendor lock-in?", "text_fr": "Est-ce qu’un engagement d’un an augmente la dépendance au fournisseur ?" },
-            { "speaker": "Diego", "text_en": "A little on billing, but our workloads still run on standard Kubernetes and PostgreSQL, so we avoid technical vendor lock-in while saving four thousand euros a month.", "text_fr": "Un peu sur la facturation, mais nos charges tournent toujours sur du Kubernetes et du PostgreSQL standards : on évite donc la dépendance technique au fournisseur tout en économisant quatre mille euros par mois." }
+            {
+              "speaker": "Nadia",
+              "text_en": "Diego, finance asked us to look into cloud cost optimization: our monthly bill jumped 35% last quarter.",
+              "text_fr": "Diego, la finance nous a demandé de nous pencher sur l’optimisation des coûts cloud : notre facture mensuelle a bondi de 35 % au dernier trimestre."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "I ran a cost report this morning. First, we have forty unattached volumes eating terabytes of disk space from old load testing runs.",
+              "text_fr": "J’ai sorti un rapport de coûts ce matin. D’abord, nous avons quarante volumes non rattachés qui consomment des téraoctets d’espace disque depuis d’anciens tirs de tests de charge."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Easy win: let’s delete those orphaned volumes and add a cleanup step to the load testing script.",
+              "text_fr": "Gain facile : supprimons ces volumes orphelins et ajoutons une étape de nettoyage au script de test de charge."
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "Second, our capacity planning shows we have a steady baseline of twenty nodes in production. Committing to a one-year savings plan cuts their price by 30%.",
+              "text_fr": "Ensuite, notre planification de capacité montre que nous avons un socle stable de vingt nœuds en production. S’engager sur un plan d’économies d’un an réduit leur prix de 30 %."
+            },
+            {
+              "speaker": "Nadia",
+              "text_en": "Does a one-year commitment increase vendor lock-in?",
+              "text_fr": "Est-ce qu’un engagement d’un an augmente la dépendance au fournisseur ?"
+            },
+            {
+              "speaker": "Diego",
+              "text_en": "A little on billing, but our workloads still run on standard Kubernetes and PostgreSQL, so we avoid technical vendor lock-in while saving four thousand euros a month.",
+              "text_fr": "Un peu sur la facturation, mais nos charges tournent toujours sur du Kubernetes et du PostgreSQL standards : on évite donc la dépendance technique au fournisseur tout en économisant quatre mille euros par mois."
+            }
           ],
           "questions": [
             {
@@ -1735,6 +2564,302 @@
               "disk space",
               "capacity planning",
               "vendor lock-in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "devops-cloud-reliable-delivery-and-resilience",
+      "title_fr": "Fiabiliser les déploiements et piloter la résilience",
+      "title_en": "Make deployments reliable and lead resilience",
+      "situation_fr": "Après un incident en production, la direction veut savoir comment livrer plus souvent sans prendre de risque et comment survivre à une panne majeure. Tu dois défendre ta stratégie de déploiement, tes objectifs de fiabilité et ton plan de reprise.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu justifies des choix de fiabilité. Pour déployer sans risque : « canary release » (une petite part des utilisateurs d'abord), « blue-green deployment » (deux environnements, on bascule) et « GitOps » (l'état voulu vit dans Git). L'« immutable infrastructure » remplace les serveurs au lieu de les modifier. Pour piloter : « SLO » (objectif de fiabilité), « error budget » (marge d'erreur acceptée), « distributed tracing » et « chaos engineering ». Pour survivre : « disaster recovery », « failover » et un « incident commander ». Verbes clés : to roll back, to fail over, to shift traffic, to burn the error budget.",
+        "key_phrases": [
+          {
+            "en": "We start with a canary release on five percent of users.",
+            "fr": "Nous commençons par une version canari sur cinq pour cent des utilisateurs."
+          },
+          {
+            "en": "Blue-green deployment lets us roll back in seconds.",
+            "fr": "Le déploiement bleu-vert nous permet de revenir en arrière en quelques secondes."
+          },
+          {
+            "en": "We have burned half of our error budget this month.",
+            "fr": "Nous avons consommé la moitié de notre budget d'erreur ce mois-ci."
+          },
+          {
+            "en": "Distributed tracing shows which service is slow.",
+            "fr": "Le traçage distribué montre quel service est lent."
+          },
+          {
+            "en": "The traffic should fail over to the second region automatically.",
+            "fr": "Le trafic devrait basculer automatiquement vers la seconde région."
+          },
+          {
+            "en": "The incident commander coordinates the response, not the fix.",
+            "fr": "Le responsable d'incident coordonne la réponse, pas la correction."
+          }
+        ],
+        "tip_fr": "Faux ami : « to roll back » veut dire revenir à la version précédente. Ne le confonds pas avec « to roll out » (déployer progressivement)."
+      },
+      "lessons": [
+        {
+          "id": "devops-cloud-safe-deployment-strategies",
+          "title_fr": "Défendre une stratégie de déploiement sans risque",
+          "term_ids": [
+            "canary-release",
+            "blue-green-deployment",
+            "gitops",
+            "immutable-infrastructure"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aisha",
+              "text_en": "Last Friday's release broke checkout for an hour. How do we avoid that?",
+              "text_fr": "La mise en production de vendredi dernier a cassé le paiement pendant une heure. Comment éviter cela ?"
+            },
+            {
+              "speaker": "Felix",
+              "text_en": "A canary release: we send five percent of users to the new version first.",
+              "text_fr": "Une version canari : nous envoyons d'abord cinq pour cent des utilisateurs vers la nouvelle version."
+            },
+            {
+              "speaker": "Aisha",
+              "text_en": "And if something goes wrong?",
+              "text_fr": "Et si quelque chose se passe mal ?"
+            },
+            {
+              "speaker": "Felix",
+              "text_en": "With blue-green deployment we switch back in seconds. Everything is defined in Git with GitOps, on immutable infrastructure.",
+              "text_fr": "Avec le déploiement bleu-vert, nous rebasculons en quelques secondes. Tout est défini dans Git avec GitOps, sur une infrastructure immuable."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est l'intérêt d'une « canary release » ?",
+              "choices": [
+                "Déployer la nouvelle version chez tous les utilisateurs en une fois",
+                "Détecter un problème sur un petit groupe avant tous les utilisateurs",
+                "Tester la nouvelle version uniquement sur des serveurs de développement"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une version canari expose peu d'utilisateurs, ce qui limite l'impact d'un défaut. Déployer pour tous d'un coup est l'inverse, et un test en développement ne mesure pas le comportement réel."
+            },
+            {
+              "prompt_fr": "Pourquoi le déploiement bleu-vert permet-il un retour rapide ?",
+              "choices": [
+                "La nouvelle version est installée par-dessus l'ancienne sans sauvegarde",
+                "Un script restaure automatiquement la base de données de production",
+                "L'ancien environnement reste prêt et on rebascule le trafic"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Deux environnements coexistent : l'ancien reste intact, donc la bascule inverse est rapide. Écraser l'ancienne version ou restaurer la base ne sont pas le principe du bleu-vert."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous rebasculons en quelques secondes » ?",
+              "choices": [
+                "We back switch in few seconds.",
+                "We switch back in seconds.",
+                "We switch back within some seconds."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« In seconds » est la formule naturelle. « Within some seconds » est maladroit, et « back switch in few seconds » est incorrect (il faudrait « a few »)."
+            },
+            {
+              "prompt_fr": "Que signifie « immutable infrastructure » ?",
+              "choices": [
+                "On remplace les serveurs au lieu de les modifier",
+                "On garde les mêmes serveurs sans jamais les mettre à jour",
+                "On interdit toute modification du code de l'application"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'infrastructure immuable consiste à déployer de nouveaux serveurs à partir d'une image plutôt que de modifier les existants. Elle ne bloque pas le code et ne signifie pas l'absence de mises à jour."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Défends à voix haute, en 3 ou 4 phrases, ta stratégie pour éviter un nouvel incident de déploiement.",
+            "context_en": "Last release broke checkout for an hour.",
+            "model_answer_en": "I propose a canary release: we send five percent of users to the new version first. If something goes wrong, blue-green deployment lets us switch back in seconds. Everything is defined in Git with GitOps, on immutable infrastructure. This way, a bad release never reaches all our users.",
+            "model_answer_fr": "Je propose une version canari : nous envoyons d'abord cinq pour cent des utilisateurs vers la nouvelle version. Si quelque chose se passe mal, le déploiement bleu-vert nous permet de rebasculer en quelques secondes. Tout est défini dans Git avec GitOps, sur une infrastructure immuable. Ainsi, une mauvaise version n'atteint jamais tous nos utilisateurs.",
+            "key_phrases": [
+              "a canary release",
+              "switch back in seconds",
+              "immutable infrastructure"
+            ]
+          }
+        },
+        {
+          "id": "devops-cloud-slo-error-budget-tracing",
+          "title_fr": "Piloter la fiabilité avec les SLO et le budget d'erreur",
+          "term_ids": [
+            "slo",
+            "error-budget",
+            "distributed-tracing",
+            "chaos-engineering"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Noor",
+              "text_en": "Product wants to ship three features this week. Can we?",
+              "text_fr": "Le produit veut livrer trois fonctionnalités cette semaine. Pouvons-nous ?"
+            },
+            {
+              "speaker": "Viktor",
+              "text_en": "Our SLO is 99.9%. We have already burned most of the error budget this month.",
+              "text_fr": "Notre SLO est de 99,9 %. Nous avons déjà consommé la majeure partie du budget d'erreur ce mois-ci."
+            },
+            {
+              "speaker": "Noor",
+              "text_en": "Where is the slowness coming from?",
+              "text_fr": "D'où vient la lenteur ?"
+            },
+            {
+              "speaker": "Viktor",
+              "text_en": "Distributed tracing points to the payment service. Next, we will run a chaos engineering test on it.",
+              "text_fr": "Le traçage distribué pointe vers le service de paiement. Ensuite, nous ferons un test d'ingénierie du chaos dessus."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que signifie « burned most of the error budget » ?",
+              "choices": [
+                "L'équipe a dépensé presque tout le budget financier du mois",
+                "Le service a corrigé presque toutes ses erreurs connues",
+                "Le service a presque épuisé les pannes qu'il pouvait se permettre"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le budget d'erreur est la marge d'indisponibilité acceptée par le SLO. L'avoir consommé impose de la prudence. Il ne s'agit ni d'argent ni d'un nombre de corrections."
+            },
+            {
+              "prompt_fr": "À quoi sert le « distributed tracing » ?",
+              "choices": [
+                "Compter le nombre d'utilisateurs connectés à chaque service",
+                "Sauvegarder les journaux de tous les services dans un seul fichier",
+                "Suivre une requête à travers plusieurs services pour repérer le point lent"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Le traçage distribué suit le trajet d'une requête de service en service. Il ne compte pas les utilisateurs et n'est pas un système de sauvegarde de journaux."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous avons déjà consommé la plus grande partie du budget » ?",
+              "choices": [
+                "We have already used most of the budget.",
+                "We have yet used the major part of budget.",
+                "We already used the most of the budget."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Have already used most of » est naturel. « The most of » est incorrect, et « yet » n'a pas ce sens dans une phrase affirmative."
+            },
+            {
+              "prompt_fr": "Quel est le but d'un test de « chaos engineering » ?",
+              "choices": [
+                "Remplacer les tests automatisés par des tests aléatoires",
+                "Provoquer volontairement des pannes pour vérifier la résilience",
+                "Mesurer la vitesse de chargement des pages en conditions normales"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'ingénierie du chaos injecte des pannes contrôlées pour valider la tolérance du système. Elle ne mesure pas le chargement normal et ne remplace pas les tests automatisés."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Réponds au produit en 3 ou 4 phrases : pourquoi tu retardes les livraisons, avec quel indicateur, et ce que tu proposes.",
+            "context_en": "Product wants to ship three features this week.",
+            "model_answer_en": "We should wait: our SLO is 99.9% and we have already used most of the error budget this month. Distributed tracing points to the payment service as the slow part. I propose to ship one feature now and the others after we fix it. We will also run a chaos engineering test on that service.",
+            "model_answer_fr": "Nous devrions attendre : notre SLO est de 99,9 % et nous avons déjà consommé la plus grande partie du budget d'erreur ce mois-ci. Le traçage distribué désigne le service de paiement comme la partie lente. Je propose de livrer une fonctionnalité maintenant et les autres après correction. Nous ferons aussi un test d'ingénierie du chaos sur ce service.",
+            "key_phrases": [
+              "our SLO is 99.9%",
+              "the error budget",
+              "Distributed tracing"
+            ]
+          }
+        },
+        {
+          "id": "devops-cloud-disaster-recovery-leadership",
+          "title_fr": "Piloter la reprise après sinistre et coordonner un incident",
+          "term_ids": [
+            "disaster-recovery",
+            "failover",
+            "incident-commander",
+            "environment-parity"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Mateo",
+              "text_en": "If the main region goes down, how fast can we recover?",
+              "text_fr": "Si la région principale tombe, en combien de temps pouvons-nous reprendre ?"
+            },
+            {
+              "speaker": "Sana",
+              "text_en": "Our disaster recovery plan says thirty minutes, with automatic failover to the second region.",
+              "text_fr": "Notre plan de reprise après sinistre indique trente minutes, avec une bascule automatique vers la seconde région."
+            },
+            {
+              "speaker": "Mateo",
+              "text_en": "Have we tested it?",
+              "text_fr": "L'avons-nous testé ?"
+            },
+            {
+              "speaker": "Sana",
+              "text_en": "Only in staging, and staging differs from production. We need environment parity, and a named incident commander for every drill.",
+              "text_fr": "Seulement en préproduction, et la préproduction diffère de la production. Il nous faut la parité des environnements, et un responsable d'incident désigné pour chaque exercice."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel problème Sana relève-t-elle sur le test du plan de reprise ?",
+              "choices": [
+                "Il n'a jamais été prévu dans le plan de reprise après sinistre",
+                "Il a été fait en production sans prévenir les équipes concernées",
+                "Il a été fait en préproduction, qui ne ressemble pas assez à la production"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Sana indique que le test a eu lieu en préproduction, différente de la production : d'où le besoin de parité des environnements. Les autres affirmations contredisent le dialogue."
+            },
+            {
+              "prompt_fr": "Que fait un « incident commander » ?",
+              "choices": [
+                "Coordonner la réponse et la communication pendant l'incident",
+                "Corriger lui-même le défaut technique à l'origine de l'incident",
+                "Rédiger le rapport après l'incident sans participer à la réponse"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le responsable d'incident coordonne et décide ; il ne corrige pas nécessairement lui-même, et son rôle commence pendant l'incident, pas après."
+            },
+            {
+              "prompt_fr": "Comment dire « avec une bascule automatique vers la seconde région » ?",
+              "choices": [
+                "with an automatic failover on the second region",
+                "with automatic switching towards second region",
+                "with automatic failover to the second region"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Failover to » est la construction standard. « On » est incorrect avec ce nom, et la dernière option omet l'article et alourdit la phrase."
+            },
+            {
+              "prompt_fr": "Que veut dire « environment parity » ?",
+              "choices": [
+                "Donner les mêmes droits d'accès à toutes les équipes techniques",
+                "Garder les environnements de test aussi proches que possible de la production",
+                "Avoir le même nombre de serveurs dans chaque région du cloud"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La parité des environnements limite les surprises entre test et production. Ce n'est ni une égalité de serveurs entre régions ni une politique d'accès."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour le comité : l'objectif de reprise, la limite actuelle du test et ton plan.",
+            "context_en": "Can we recover quickly if the main region goes down?",
+            "model_answer_en": "Our disaster recovery plan targets thirty minutes, with automatic failover to the second region. However, we tested it only in staging, which differs from production. I propose to improve environment parity and run a full drill next month. Each drill will have a named incident commander.",
+            "model_answer_fr": "Notre plan de reprise après sinistre vise trente minutes, avec une bascule automatique vers la seconde région. Cependant, nous ne l'avons testé qu'en préproduction, qui diffère de la production. Je propose d'améliorer la parité des environnements et de faire un exercice complet le mois prochain. Chaque exercice aura un responsable d'incident désigné.",
+            "key_phrases": [
+              "disaster recovery plan",
+              "automatic failover",
+              "environment parity"
             ]
           }
         }
