@@ -2546,6 +2546,302 @@
           }
         }
       ]
+    },
+    {
+      "id": "data-engineer-reliable-streaming-and-governance",
+      "title_fr": "Fiabiliser un pipeline en continu et gouverner les données",
+      "title_en": "Make a streaming pipeline reliable and govern the data",
+      "situation_fr": "Le pipeline en temps réel produit des chiffres incohérents après un retard réseau et un changement de schéma. Tu dois expliquer les causes, corriger sans casser les consommateurs et mettre en place une gouvernance claire.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu expliques pourquoi un pipeline en continu se trompe et comment le rendre fiable. Le « stream processing » traite les données au fil de l'eau. Il distingue l'« event time » (quand l'événement s'est produit) du moment de réception, et utilise un « watermark » pour décider jusqu'à quand attendre les « late-arriving data ». Pour corriger l'historique, on fait un « backfill ». Le « partitioning » répartit les données, la « schema evolution » gère les changements de colonnes, et un « data contract » engage producteurs et consommateurs. Enfin, la « data lineage » et la « data governance » rendent le tout traçable. Verbes clés : to replay, to backfill, to deprecate, to trace.",
+        "key_phrases": [
+          {
+            "en": "We process events by event time, not by arrival time.",
+            "fr": "Nous traitons les événements selon leur heure de survenue, pas leur heure d'arrivée."
+          },
+          {
+            "en": "The watermark tells the job how long to wait for late data.",
+            "fr": "Le watermark indique au job combien de temps attendre les données tardives."
+          },
+          {
+            "en": "We need a backfill to fix the last three days.",
+            "fr": "Nous avons besoin d'un backfill pour corriger les trois derniers jours."
+          },
+          {
+            "en": "The schema change broke a downstream dashboard.",
+            "fr": "Le changement de schéma a cassé un tableau de bord en aval."
+          },
+          {
+            "en": "Let's sign a data contract with the producing team.",
+            "fr": "Signons un contrat de données avec l'équipe productrice."
+          },
+          {
+            "en": "Data lineage shows where each number comes from.",
+            "fr": "La traçabilité des données montre d'où vient chaque chiffre."
+          }
+        ],
+        "tip_fr": "Faux ami : « downstream » veut dire en aval, vers les consommateurs de la donnée ; « upstream » veut dire en amont, vers la source."
+      },
+      "lessons": [
+        {
+          "id": "data-engineer-event-time-and-late-data",
+          "title_fr": "Expliquer le temps d'événement et les données tardives",
+          "term_ids": [
+            "stream-processing",
+            "event-time",
+            "watermark",
+            "late-arriving-data"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Anouk",
+              "text_en": "The hourly totals changed after the dashboard was published. Why?",
+              "text_fr": "Les totaux horaires ont changé après la publication du tableau de bord. Pourquoi ?"
+            },
+            {
+              "speaker": "Ben",
+              "text_en": "Some events arrived late after a network delay. Our stream processing job counted them in the wrong hour.",
+              "text_fr": "Certains événements sont arrivés en retard après un incident réseau. Notre job de traitement en continu les a comptés dans la mauvaise heure."
+            },
+            {
+              "speaker": "Anouk",
+              "text_en": "So we should use event time?",
+              "text_fr": "Donc nous devrions utiliser le temps d'événement ?"
+            },
+            {
+              "speaker": "Ben",
+              "text_en": "Yes, with a watermark of ten minutes to accept late-arriving data.",
+              "text_fr": "Oui, avec un watermark de dix minutes pour accepter les données tardives."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi les totaux horaires étaient-ils faux ?",
+              "choices": [
+                "Certains événements ont été comptés deux fois dans la même heure",
+                "Les événements en retard ont été comptés dans la mauvaise heure",
+                "Le tableau de bord n'affichait que la moitié des événements reçus"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Ben explique que le retard réseau a fait arriver des événements après leur heure réelle : ils ont été rattachés à une mauvaise heure. Les doublons et l'affichage partiel ne sont pas mentionnés."
+            },
+            {
+              "prompt_fr": "Que fait un « watermark » ?",
+              "choices": [
+                "Fixer jusqu'à quand le job attend les données tardives",
+                "Marquer chaque événement avec la signature de son producteur",
+                "Supprimer automatiquement les événements en double"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Le watermark est un seuil de temps : au-delà, les données tardives ne sont plus acceptées. Ce n'est ni une signature ni un mécanisme de déduplication."
+            },
+            {
+              "prompt_fr": "Comment dire « Les événements sont arrivés en retard » ?",
+              "choices": [
+                "The events arrived late.",
+                "The events arrived lately.",
+                "The events arrived with delay."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Late » est l'adverbe pour « en retard ». « Lately » veut dire « récemment », et « with delay » est un calque peu naturel."
+            },
+            {
+              "prompt_fr": "Quelle différence entre « event time » et heure d'arrivée ?",
+              "choices": [
+                "L'event time est l'heure où le tableau de bord est mis à jour",
+                "L'event time est l'heure où l'événement est enregistré en base",
+                "L'event time est l'heure où l'événement s'est vraiment produit"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "L'event time est l'heure réelle de l'événement, indépendante du retard de transmission. Les deux autres propositions décrivent des moments de traitement ou d'affichage."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Explique à l'équipe analytique en 3 ou 4 phrases pourquoi les totaux ont bougé et ce que tu changes.",
+            "context_en": "Hourly totals changed after publication.",
+            "model_answer_en": "The totals changed because some events arrived late after a network delay and our job counted them in the wrong hour. I am switching the stream processing job to event time. A watermark of ten minutes will accept late-arriving data. I will also run a backfill for yesterday.",
+            "model_answer_fr": "Les totaux ont changé car certains événements sont arrivés en retard après un incident réseau et notre job les a comptés dans la mauvaise heure. Je passe le job de traitement en continu au temps d'événement. Un watermark de dix minutes acceptera les données tardives. Je lance aussi un backfill pour hier.",
+            "key_phrases": [
+              "arrived late",
+              "event time",
+              "late-arriving data"
+            ]
+          }
+        },
+        {
+          "id": "data-engineer-backfill-schema-contract",
+          "title_fr": "Corriger l'historique et sécuriser les changements de schéma",
+          "term_ids": [
+            "backfill",
+            "partitioning",
+            "schema-evolution",
+            "data-contract"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Carla",
+              "text_en": "A producer renamed a column and our dashboard broke.",
+              "text_fr": "Un producteur a renommé une colonne et notre tableau de bord a cassé."
+            },
+            {
+              "speaker": "Dmitri",
+              "text_en": "We need schema evolution rules: new columns are fine, renames need a deprecation period.",
+              "text_fr": "Il nous faut des règles d'évolution de schéma : les nouvelles colonnes sont acceptées, les renommages demandent une période de dépréciation."
+            },
+            {
+              "speaker": "Carla",
+              "text_en": "Should we write that in a data contract?",
+              "text_fr": "Devons-nous l'écrire dans un contrat de données ?"
+            },
+            {
+              "speaker": "Dmitri",
+              "text_en": "Yes. Then a backfill of the affected partitions will repair the last three days.",
+              "text_fr": "Oui. Ensuite un backfill des partitions touchées réparera les trois derniers jours."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que prévoit le « data contract » proposé ?",
+              "choices": [
+                "La liste des personnes autorisées à supprimer des tables",
+                "Les règles que producteurs et consommateurs s'engagent à respecter",
+                "Le prix que chaque équipe paye pour utiliser les données"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un contrat de données formalise le schéma attendu et les règles de changement. Il ne fixe ni un prix ni une liste de suppressions."
+            },
+            {
+              "prompt_fr": "Pourquoi un backfill ne concerne-t-il que « les partitions touchées » ?",
+              "choices": [
+                "Les autres partitions ont été supprimées par la dépréciation",
+                "Le backfill ne peut traiter qu'une partition à la fois",
+                "Le partitionnement permet de recalculer seulement les périodes concernées"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Grâce au partitionnement, on recalcule uniquement les jours ou segments affectés. Les autres partitions existent toujours, et un backfill peut traiter plusieurs partitions."
+            },
+            {
+              "prompt_fr": "Comment dire « le changement de schéma a cassé le tableau de bord » ?",
+              "choices": [
+                "the schema change broke the dashboard",
+                "the schema change has broke the dashboard",
+                "the schema changing broke the dashboard"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Schema change » est le nom, et « broke » le passé de « break ». « Has broke » est incorrect (il faut « has broken »), et « changing » n'est pas le nom attendu ici."
+            },
+            {
+              "prompt_fr": "Que signifie « a deprecation period » ?",
+              "choices": [
+                "Un délai pendant lequel la nouvelle colonne est testée en secret",
+                "Un délai pendant lequel l'ancienne colonne reste disponible avant retrait",
+                "Un délai après lequel toutes les anciennes données sont supprimées"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La dépréciation laisse du temps aux consommateurs pour migrer avant de retirer l'ancienne colonne. Ce n'est ni un test secret ni une suppression des données."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris un e-mail de 3 ou 4 phrases à l'équipe productrice : l'incident, la règle demandée et la correction prévue.",
+            "context_en": "A renamed column broke our dashboard.",
+            "model_answer_en": "The renamed column broke a downstream dashboard. I propose a data contract: new columns are fine, but renames need a deprecation period. In the meantime, I will run a backfill on the affected partitions to repair the last three days. Could we discuss the contract on Thursday?",
+            "model_answer_fr": "La colonne renommée a cassé un tableau de bord en aval. Je propose un contrat de données : les nouvelles colonnes sont acceptées, mais les renommages demandent une période de dépréciation. En attendant, je lance un backfill sur les partitions touchées pour réparer les trois derniers jours. Pouvons-nous discuter du contrat jeudi ?",
+            "key_phrases": [
+              "a data contract",
+              "a deprecation period",
+              "a backfill on the affected partitions"
+            ]
+          }
+        },
+        {
+          "id": "data-engineer-governance-and-lineage",
+          "title_fr": "Mettre en place traçabilité et gouvernance",
+          "term_ids": [
+            "data-lineage",
+            "data-governance",
+            "data-catalog",
+            "medallion-architecture"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lucia",
+              "text_en": "Finance asks where the revenue number on the dashboard comes from.",
+              "text_fr": "La finance demande d'où vient le chiffre d'affaires affiché sur le tableau de bord."
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "Data lineage shows the path from the raw tables to the final metric.",
+              "text_fr": "La traçabilité montre le chemin des tables brutes jusqu'à l'indicateur final."
+            },
+            {
+              "speaker": "Lucia",
+              "text_en": "And who is allowed to change it?",
+              "text_fr": "Et qui a le droit de le modifier ?"
+            },
+            {
+              "speaker": "Samuel",
+              "text_en": "That is data governance. Owners are listed in the data catalog, and our medallion architecture separates bronze, silver and gold layers.",
+              "text_fr": "C'est de la gouvernance des données. Les responsables figurent dans le catalogue de données, et notre architecture médaillon sépare les couches bronze, argent et or."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "À quoi sert la « data lineage » ici ?",
+              "choices": [
+                "Sauvegarder les tables brutes sur un second site",
+                "Mesurer la vitesse d'exécution des requêtes sur les tables",
+                "Montrer d'où vient un chiffre et par quelles transformations"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La traçabilité documente l'origine et les transformations d'une donnée. Elle ne mesure pas les performances et n'est pas une sauvegarde."
+            },
+            {
+              "prompt_fr": "Que contient le « data catalog » selon Samuel ?",
+              "choices": [
+                "Les mots de passe des utilisateurs autorisés à les consulter",
+                "La description des jeux de données et leurs responsables",
+                "Les copies de toutes les données pour les analyses locales"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Un catalogue de données décrit les jeux de données, leur sens et leurs propriétaires. Il ne stocke ni les données elles-mêmes ni les mots de passe."
+            },
+            {
+              "prompt_fr": "Comment dire « Qui a le droit de le modifier ? » ?",
+              "choices": [
+                "Who is authorized for changing it?",
+                "Who is allowed to change it?",
+                "Who has the right to modify it?"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Is allowed to » est la formule la plus naturelle à l'oral. « Has the right to modify » est possible mais plus juridique, et « authorized for changing » est incorrect (on dit « authorized to change »)."
+            },
+            {
+              "prompt_fr": "Que sépare l'architecture « médaillon » ?",
+              "choices": [
+                "Les données brutes, nettoyées et prêtes pour l'analyse",
+                "Les données récentes, anciennes et archivées",
+                "Les données internes, externes et confidentielles"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "L'architecture médaillon organise les données en couches de qualité croissante (bronze, argent, or). Les autres découpages (confidentialité, ancienneté) sont d'autres logiques."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour répondre à la finance : l'origine du chiffre, qui le gère et comment les couches sont organisées.",
+            "context_en": "Where does the revenue number come from?",
+            "model_answer_en": "Data lineage shows the path from the raw tables to the revenue metric. The owners are listed in the data catalog, and data governance defines who is allowed to change each table. Our medallion architecture separates raw, cleaned and business-ready layers. I can share the lineage diagram this afternoon.",
+            "model_answer_fr": "La traçabilité des données montre le chemin des tables brutes à l'indicateur de chiffre d'affaires. Les responsables figurent dans le catalogue de données, et la gouvernance définit qui a le droit de modifier chaque table. Notre architecture médaillon sépare les couches brute, nettoyée et prête pour le métier. Je peux partager le schéma de traçabilité cet après-midi.",
+            "key_phrases": [
+              "Data lineage",
+              "the data catalog",
+              "medallion architecture"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
