@@ -2555,6 +2555,302 @@
           }
         }
       ]
+    },
+    {
+      "id": "cybersecurity-lead-advanced-incident-response",
+      "title_fr": "Mener et documenter une réponse à incident avancée",
+      "title_en": "Lead and document an advanced incident response",
+      "situation_fr": "Une intrusion sophistiquée est détectée sur un serveur sensible. Tu dois qualifier l'attaque, préserver les preuves, éradiquer la menace et expliquer à la direction comment éviter une récidive.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu conduis l'incident et tu le justifies. Le « SIEM » centralise les alertes, une « zero-day » est une faille inconnue de l'éditeur, et le cadre « MITRE ATT&CK » décrit les techniques des attaquants. Un « command and control » est le canal par lequel l'attaquant pilote la machine compromise. Pour les preuves, tu fais une « forensic image » et tu documentes la « chain of custody ». Tu surveilles la « privilege escalation » et tu mènes l'« eradication ». Ensuite : « threat modeling », « security by design », « red team » et « SOAR » pour automatiser la réponse. Verbes clés : to contain, to eradicate, to preserve, to pivot.",
+        "key_phrases": [
+          {
+            "en": "The SIEM raised an alert on an unusual outbound connection.",
+            "fr": "Le SIEM a levé une alerte sur une connexion sortante inhabituelle."
+          },
+          {
+            "en": "This looks like a command and control channel.",
+            "fr": "Cela ressemble à un canal de commande et de contrôle."
+          },
+          {
+            "en": "We must preserve the evidence and keep the chain of custody.",
+            "fr": "Nous devons préserver les preuves et garder la chaîne de conservation."
+          },
+          {
+            "en": "The attacker used privilege escalation to reach the domain controller.",
+            "fr": "L'attaquant a utilisé une élévation de privilèges pour atteindre le contrôleur de domaine."
+          },
+          {
+            "en": "Eradication is not complete until we close the entry point.",
+            "fr": "L'éradication n'est pas terminée tant que nous n'avons pas fermé le point d'entrée."
+          },
+          {
+            "en": "We should build security by design, not add it afterwards.",
+            "fr": "Nous devrions intégrer la sécurité dès la conception, pas l'ajouter après."
+          }
+        ],
+        "tip_fr": "Faux ami : « to contain » veut dire limiter la propagation d'un incident, pas « contenir » au sens de renfermer. « Containment » est la phase d'isolement."
+      },
+      "lessons": [
+        {
+          "id": "cybersecurity-detect-and-qualify-intrusion",
+          "title_fr": "Détecter et qualifier une intrusion",
+          "term_ids": [
+            "siem",
+            "zero-day",
+            "mitre-attack",
+            "command-and-control"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Dina",
+              "text_en": "The SIEM raised an alert: a server is sending data to an unknown address every five minutes.",
+              "text_fr": "Le SIEM a levé une alerte : un serveur envoie des données à une adresse inconnue toutes les cinq minutes."
+            },
+            {
+              "speaker": "Tomas",
+              "text_en": "That regularity looks like a command and control channel.",
+              "text_fr": "Cette régularité ressemble à un canal de commande et de contrôle."
+            },
+            {
+              "speaker": "Dina",
+              "text_en": "Could it be a zero-day? The patches are up to date.",
+              "text_fr": "Cela pourrait-il être une faille zero-day ? Les correctifs sont à jour."
+            },
+            {
+              "speaker": "Tomas",
+              "text_en": "Possibly. Let's map the behavior to MITRE ATT&CK to describe the technique to the team.",
+              "text_fr": "Peut-être. Rapprochons le comportement de MITRE ATT&CK pour décrire la technique à l'équipe."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Tomas parle-t-il d'un canal de « command and control » ?",
+              "choices": [
+                "Le serveur envoie des données à l'adresse de sauvegarde habituelle",
+                "Les envois réguliers vers une adresse inconnue suggèrent un pilotage à distance",
+                "L'adresse inconnue appartient à un fournisseur de l'entreprise"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une communication régulière vers une adresse inconnue est typique d'un malware qui reçoit des ordres. Une sauvegarde ou un fournisseur serait une adresse connue."
+            },
+            {
+              "prompt_fr": "Qu'est-ce qu'une « zero-day » ?",
+              "choices": [
+                "Une attaque qui dure moins d'une journée avant d'être détectée",
+                "Une faille inconnue de l'éditeur, sans correctif disponible",
+                "Une faille corrigée le jour même de sa publication"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Une zero-day est exploitée avant que l'éditeur la connaisse, donc sans correctif. Ce n'est ni une durée d'attaque ni une faille déjà corrigée."
+            },
+            {
+              "prompt_fr": "Comment dire « Les correctifs sont à jour » ?",
+              "choices": [
+                "The patches are up to date.",
+                "The patches are at day.",
+                "The patches are updated to date."
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Up to date » est l'expression figée pour « à jour ». « At day » est un calque, et « updated to date » n'existe pas."
+            },
+            {
+              "prompt_fr": "À quoi sert MITRE ATT&CK dans la réponse de Tomas ?",
+              "choices": [
+                "Installer automatiquement les correctifs sur tous les serveurs",
+                "Chiffrer les données sensibles avant leur sortie du réseau",
+                "Décrire le comportement de l'attaquant avec un vocabulaire commun"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "MITRE ATT&CK est une base de connaissances des techniques d'attaque, utile pour décrire et partager un comportement. Elle n'installe pas de correctifs et ne chiffre rien."
+            }
+          ],
+          "production": {
+            "channel": "slack",
+            "prompt_fr": "Écris l'alerte initiale à l'équipe en 3 ou 4 phrases : ce que tu observes, ton hypothèse et la prochaine étape.",
+            "context_en": "A server sends data to an unknown address every five minutes.",
+            "model_answer_en": "The SIEM raised an alert: server 12 sends data to an unknown address every five minutes. This looks like a command and control channel. The patches are up to date, so a zero-day cannot be ruled out. I will map the behavior to MITRE ATT&CK and isolate the server.",
+            "model_answer_fr": "Le SIEM a levé une alerte : le serveur 12 envoie des données à une adresse inconnue toutes les cinq minutes. Cela ressemble à un canal de commande et de contrôle. Les correctifs sont à jour, donc une faille zero-day ne peut pas être exclue. Je vais rapprocher le comportement de MITRE ATT&CK et isoler le serveur.",
+            "key_phrases": [
+              "a command and control channel",
+              "a zero-day",
+              "MITRE ATT&CK"
+            ]
+          }
+        },
+        {
+          "id": "cybersecurity-preserve-evidence-and-eradicate",
+          "title_fr": "Préserver les preuves et éradiquer la menace",
+          "term_ids": [
+            "forensic-image",
+            "chain-of-custody",
+            "privilege-escalation",
+            "eradication"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Yara",
+              "text_en": "Before we clean the server, we take a forensic image of the disk.",
+              "text_fr": "Avant de nettoyer le serveur, nous faisons une image forensique du disque."
+            },
+            {
+              "speaker": "Leo",
+              "text_en": "And we log who handles it. We must keep the chain of custody for legal reasons.",
+              "text_fr": "Et nous consignons qui la manipule. Il faut garder la chaîne de conservation pour des raisons juridiques."
+            },
+            {
+              "speaker": "Yara",
+              "text_en": "The logs show privilege escalation: the account became domain admin.",
+              "text_fr": "Les journaux montrent une élévation de privilèges : le compte est devenu administrateur du domaine."
+            },
+            {
+              "speaker": "Leo",
+              "text_en": "Then eradication must include resetting every privileged credential.",
+              "text_fr": "Alors l'éradication doit inclure la réinitialisation de tous les identifiants privilégiés."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi faire une image forensique avant de nettoyer ?",
+              "choices": [
+                "Pour accélérer le nettoyage du serveur en réduisant les écritures",
+                "Pour conserver une copie exacte des preuves avant toute modification",
+                "Pour restaurer immédiatement le serveur sur un autre matériel"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'image forensique fige l'état du disque comme preuve. Elle n'accélère pas le nettoyage et ne sert pas à restaurer le service."
+            },
+            {
+              "prompt_fr": "Que garantit la « chain of custody » ?",
+              "choices": [
+                "Que les preuves sont conservées uniquement dans le cloud",
+                "Que les preuves sont chiffrées pendant toute l'enquête",
+                "Que l'on peut prouver qui a manipulé les preuves, et quand"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La chaîne de conservation documente chaque manipulation pour que les preuves restent recevables. Elle n'impose ni chiffrement ni stockage cloud."
+            },
+            {
+              "prompt_fr": "Comment dire « Le compte est devenu administrateur du domaine » ?",
+              "choices": [
+                "The account turned domain admin.",
+                "The account became domain admin.",
+                "The account was becoming domain admin."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Became » (passé de « become ») exprime un changement d'état achevé. « Turned » n'est pas adapté ici, et la forme progressive suggère une action en cours."
+            },
+            {
+              "prompt_fr": "Pourquoi l'éradication inclut-elle la réinitialisation des identifiants privilégiés ?",
+              "choices": [
+                "Les identifiants privilégiés expirent chaque jour par défaut",
+                "Les identifiants privilégiés sont supprimés à la fin d'un incident",
+                "L'attaquant a pu les copier lors de l'élévation de privilèges"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Si un compte a atteint un niveau administrateur, ses identifiants peuvent être compromis. Les deux autres affirmations sont inexactes."
+            }
+          ],
+          "production": {
+            "channel": "report",
+            "prompt_fr": "Rédige 3 ou 4 phrases du rapport d'incident : preuves préservées, élévation observée et actions d'éradication.",
+            "context_en": "Forensic image taken. Account became domain admin.",
+            "model_answer_en": "We took a forensic image of the disk before any cleaning and kept the chain of custody. The logs show privilege escalation: the account became domain admin. Eradication includes resetting every privileged credential and closing the entry point. We will confirm the result with a new scan.",
+            "model_answer_fr": "Nous avons fait une image forensique du disque avant tout nettoyage et gardé la chaîne de conservation. Les journaux montrent une élévation de privilèges : le compte est devenu administrateur du domaine. L'éradication inclut la réinitialisation de tous les identifiants privilégiés et la fermeture du point d'entrée. Nous confirmerons le résultat par une nouvelle analyse.",
+            "key_phrases": [
+              "a forensic image",
+              "the chain of custody",
+              "privilege escalation"
+            ]
+          }
+        },
+        {
+          "id": "cybersecurity-prevent-recurrence",
+          "title_fr": "Éviter la récidive : conception sûre et automatisation",
+          "term_ids": [
+            "threat-modeling",
+            "security-by-design",
+            "red-team",
+            "soar"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Priscilla",
+              "text_en": "How do we stop this from happening again?",
+              "text_fr": "Comment empêcher que cela se reproduise ?"
+            },
+            {
+              "speaker": "Jamal",
+              "text_en": "Start with threat modeling on the new application, and build security by design.",
+              "text_fr": "Commencer par la modélisation des menaces sur la nouvelle application, et intégrer la sécurité dès la conception."
+            },
+            {
+              "speaker": "Priscilla",
+              "text_en": "And how do we test our defenses?",
+              "text_fr": "Et comment tester nos défenses ?"
+            },
+            {
+              "speaker": "Jamal",
+              "text_en": "A red team exercise, plus SOAR playbooks to automate the first response.",
+              "text_fr": "Un exercice d'équipe rouge, plus des playbooks SOAR pour automatiser la première réponse."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que fait le « threat modeling » ?",
+              "choices": [
+                "Mesurer la vitesse de réponse de l'équipe pendant l'incident",
+                "Identifier à l'avance les menaces possibles contre une application",
+                "Reproduire après l'incident les actions exactes de l'attaquant"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La modélisation des menaces anticipe les attaques avant ou pendant la conception. Les deux autres propositions décrivent d'autres activités (reconstitution, mesure de performance)."
+            },
+            {
+              "prompt_fr": "Que signifie « security by design » ?",
+              "choices": [
+                "Intégrer la sécurité dès la conception plutôt que l'ajouter plus tard",
+                "Confier toute la sécurité à un prestataire externe unique",
+                "Concevoir une interface graphique dédiée à la sécurité"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La sécurité dès la conception est une approche : elle s'intègre dès les premières décisions. « Design » ne désigne pas ici une interface."
+            },
+            {
+              "prompt_fr": "Comment dire « pour automatiser la première réponse » ?",
+              "choices": [
+                "for to automate the first response",
+                "to automate the first response",
+                "to automatize the first answer"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To automate » est le verbe correct. « For to » est incorrect en anglais standard, et « automatize » existe peu ; « response » est le mot usuel en sécurité."
+            },
+            {
+              "prompt_fr": "Quel est le rôle d'un exercice de « red team » ?",
+              "choices": [
+                "Simuler une attaque réelle pour tester les défenses",
+                "Surveiller en continu les alertes du SIEM",
+                "Former les utilisateurs à reconnaître des e-mails de phishing"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une équipe rouge joue l'attaquant pour éprouver les défenses. La sensibilisation au phishing et la surveillance du SIEM sont d'autres activités."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Présente à la direction en 3 ou 4 phrases ton plan pour éviter une récidive.",
+            "context_en": "How do we prevent this from happening again?",
+            "model_answer_en": "First, we will run threat modeling on the new application and build security by design. Second, a red team exercise will test our real defenses. Third, SOAR playbooks will automate the first response, so we react in minutes. I will report progress every month.",
+            "model_answer_fr": "D'abord, nous ferons de la modélisation des menaces sur la nouvelle application et intégrerons la sécurité dès la conception. Ensuite, un exercice d'équipe rouge testera nos vraies défenses. Enfin, des playbooks SOAR automatiseront la première réponse, pour que nous réagissions en quelques minutes. Je rendrai compte de l'avancement chaque mois.",
+            "key_phrases": [
+              "threat modeling",
+              "security by design",
+              "SOAR playbooks"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
