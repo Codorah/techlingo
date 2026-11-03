@@ -7,6 +7,7 @@ import type { Manifest } from '@/content/schema';
 import type { PathProgress } from '@/learning/path';
 
 const KEY = 'activeCourse';
+const MY_KEY = 'myCourses';
 
 /** The role whose course was picked with the switcher, or null (= the learner's own job). */
 export function useActiveCourse(): string | null | undefined {
@@ -30,3 +31,10 @@ export function startedRoles(progress: PathProgress, roles: string[]): Set<strin
   const keys = Object.keys(progress);
   return new Set(roles.filter((r) => keys.some((k) => k.includes(`${r}-`) || k.startsWith(`rap:${r}:`) || k.startsWith(`itw:${r}:`))));
 }
+
+/** The courses the learner follows in parallel (null = never customised: own job and its secondaries). */
+export function useMyCourses(): string[] | null | undefined {
+  return useLiveQuery(() => db.settings.get(MY_KEY).then((r) => (r?.value as string[] | undefined) ?? null), [], undefined);
+}
+
+export const saveMyCourses = (roles: string[]) => setSetting(MY_KEY, [...new Set(roles)]);

@@ -12,7 +12,7 @@ import { db } from '@/db/db';
 import { daysAway, displayedStreak, localDay } from '@/learning/streak';
 import { domainOf, generalRoleOf } from '@/lib/domains';
 import { checkDailyReminder, syncPushSubscription } from '@/lib/notifications';
-import { setActiveCourse, useActiveCourse } from '@/lib/activeCourse';
+import { saveMyCourses, setActiveCourse, useActiveCourse, useMyCourses } from '@/lib/activeCourse';
 import { courseRoles, useCourse } from '@/lib/useCourse';
 import { useManifest } from '@/lib/useContent';
 import { courseNodeHref } from '@/screens/course/CourseScreen';
@@ -28,6 +28,7 @@ export function HomeScreen() {
   const [status, setStatus] = useState<SpinStatus | null>(null);
   const [due, setDue] = useState<number>(0);
   const activeCourse = useActiveCourse();
+  const storedCourses = useMyCourses();
   const [switching, setSwitching] = useState(false);
   const lessonsDone = useLiveQuery(() => db.lessonSessions.filter((l) => !!l.completedAt).toArray(), [], []);
 
@@ -79,15 +80,19 @@ export function HomeScreen() {
     ? courseRoles(manifest, profile.primaryRole, profile.secondaryRoles)
     : { mine: [], discover: [], otherDomain: [] };
   // The course shown here can differ from the learner's own job without changing the profile.
-  const main = activeCourse && manifest?.rolePaths?.includes(activeCourse) ? activeCourse : roles.mine[0];
-  const others = roles.mine.filter((r) => r !== main);
+  const hasCourse = (r: string) => !!manifest?.rolePaths?.includes(r) || r === generalRoleOf(manifest, profile.primaryRole);
+  const myCourses = [...new Set([...(profile.primaryRole ? [profile.primaryRole] : []), ...(storedCourses ?? roles.mine)])].filter(hasCourse);
+  const main = activeCourse && myCourses.includes(activeCourse) ? activeCourse : myCourses[0];
+  const mainMeta = manifest?.roles.find((r) => r.id === main);
+  const courseDomain = domainOf(manifest, main) ?? domain;
+  const others = myCourses.filter((r) => r !== main);
   const general = generalRoleOf(manifest, profile.primaryRole);
 
   const todaysTerm = status?.todaysTermId && manifest ? manifest.roles.flatMap(r => []).length : null;
 
   return (
     <>
-      <main style={accentStyle(domain)} className="mx-auto max-w-[1080px] px-5 pb-28 pt-[calc(env(safe-area-inset-top)+14px)] lg:px-8">
+      <main style={accentStyle(courseDomain)} className="mx-auto max-w-[1080px] px-5 pb-28 pt-[calc(env(safe-area-inset-top)+14px)] lg:px-8">
         {/* Top App Header */}
         <header className="flex items-center gap-2">
           <Link href="/profile" aria-label={t('profile.title')} className="rounded-full transition-transform active:scale-95">
@@ -97,9 +102,11 @@ export function HomeScreen() {
             <p className="truncate font-title text-lg font-black leading-tight">
               {profile.displayName ? t('home.hello', { name: profile.displayName }) : t('home.helloAnon')}
             </p>
-            <p className="line-clamp-2 text-sm font-semibold text-ink-2">
-              {manifest?.roles.find((r) => r.id === profile.primaryRole)?.name_fr}
-            </p>
+            {mainMeta && (
+              <button type="button" onClick={() => setSwitching(true)} aria-label={t('course.switch.button')} className="mt-0.5 inline-flex min-h-11 max-w-full items-center gap-1.5 rounded-xl pr-2 text-sm font-extrabold text-[var(--accent)] active:opacity-70">
+                <DynamicIcon name={mainMeta.icon} size={16} aria-hidden /><span className="truncate">{mainMeta.name_fr}</span><ChevronDown size={16} aria-hidden />
+              </button>
+            )}
           </div>
           <span
             className={`inline-flex min-h-11 items-center gap-1 rounded-xl px-2.5 font-black ${streak ? 'text-flame-ink bg-flame-soft/60' : 'text-ink-2'}`}
@@ -351,8 +358,11 @@ export function HomeScreen() {
         )}
       </main>
       {switching && manifest && main && (
-        <CourseSwitchSheet manifest={manifest} ownDomain={domain} current={main} ownRole={profile.primaryRole}
-          onPick={(r) => { void setActiveCourse(r === profile.primaryRole ? null : r); setSwitching(false); }} onClose={() => setSwitching(false)} />
+        <CourseSwitchSheet manifest={manifest} ownDomain={domain} current={main} mine={myCourses} ownRole={profile.primaryRole}
+          onPick={(r) => { void setActiveCourse(r); setSwitching(false); }}
+          onAdd={(r) => { void saveMyCourses([...myCourses, r]); void setActiveCourse(r); setSwitching(false); }}
+          onRemove={(r) => { void saveMyCourses(myCourses.filter((x) => x !== r)); if (main === r) void setActiveCourse(null); }}
+          onClose={() => setSwitching(false)} />
       )}
       <TabBar />
     </>
