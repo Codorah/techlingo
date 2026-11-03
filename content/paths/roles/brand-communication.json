@@ -2465,6 +2465,302 @@
           }
         }
       ]
+    },
+    {
+      "id": "brand-communication-defend-brand-strategy",
+      "title_fr": "Défendre la stratégie de marque devant le comité de direction",
+      "title_en": "Defend the brand strategy in front of the executive committee",
+      "situation_fr": "Le comité de direction remet en cause le budget de communication. Tu dois justifier le positionnement, l'architecture de marque, le choix des canaux et la gestion du risque de réputation avec des arguments précis.",
+      "guide": {
+        "intro_fr": "À ce niveau, tu défends des choix stratégiques. Le « positioning statement » dit en une phrase ce que la marque promet et à qui. La « brand equity » est la valeur que la marque ajoute au produit, et la « brand architecture » organise les marques d'un groupe. Une « challenger brand » attaque le leader. Pour les campagnes, tu parles de « creative route », d'« above-the-line » (médias de masse) et de « below-the-line » (actions ciblées), et la « transcreation » adapte un message à une autre culture. Enfin, l'« issues management » anticipe les sujets sensibles et réduit le « reputational risk ». Verbes clés : to position, to differentiate, to anticipate, to safeguard.",
+        "key_phrases": [
+          {
+            "en": "Our positioning statement makes one clear promise.",
+            "fr": "Notre énoncé de positionnement fait une seule promesse claire."
+          },
+          {
+            "en": "Brand equity is what lets us charge a premium.",
+            "fr": "La valeur de marque est ce qui nous permet de pratiquer un prix premium."
+          },
+          {
+            "en": "As a challenger brand, we cannot outspend the leader.",
+            "fr": "En tant que marque challenger, nous ne pouvons pas dépenser plus que le leader."
+          },
+          {
+            "en": "We combine above-the-line reach with below-the-line precision.",
+            "fr": "Nous associons la portée du média de masse à la précision du hors-média."
+          },
+          {
+            "en": "This message needs transcreation, not a literal translation.",
+            "fr": "Ce message demande une transcréation, pas une traduction littérale."
+          },
+          {
+            "en": "Issues management helps us reduce reputational risk.",
+            "fr": "La gestion des sujets sensibles nous aide à réduire le risque de réputation."
+          }
+        ],
+        "tip_fr": "Faux ami : « to position » en marketing veut dire donner une place dans l'esprit du client, pas « placer » physiquement. « Positioning » est le nom de cette démarche."
+      },
+      "lessons": [
+        {
+          "id": "brand-communication-positioning-and-equity",
+          "title_fr": "Justifier le positionnement et la valeur de marque",
+          "term_ids": [
+            "positioning-statement",
+            "brand-equity",
+            "brand-architecture",
+            "challenger-brand"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Clara",
+              "text_en": "The board asks why we need a new positioning statement.",
+              "text_fr": "Le conseil demande pourquoi nous avons besoin d'un nouvel énoncé de positionnement."
+            },
+            {
+              "speaker": "Hugo",
+              "text_en": "Because we are a challenger brand. We cannot win by copying the leader.",
+              "text_fr": "Parce que nous sommes une marque challenger. Nous ne pouvons pas gagner en copiant le leader."
+            },
+            {
+              "speaker": "Clara",
+              "text_en": "How does it protect our brand equity?",
+              "text_fr": "En quoi protège-t-il notre valeur de marque ?"
+            },
+            {
+              "speaker": "Hugo",
+              "text_en": "A clear promise supports our premium price. And we need a simpler brand architecture across the three product lines.",
+              "text_fr": "Une promesse claire soutient notre prix premium. Et il nous faut une architecture de marque plus simple pour les trois gammes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi Hugo met-il en avant le statut de « challenger brand » ?",
+              "choices": [
+                "La marque doit se différencier au lieu d'imiter le leader",
+                "La marque doit copier la stratégie du leader pour le dépasser",
+                "La marque doit baisser ses prix pour rattraper le leader"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une marque challenger gagne en se différenciant. Baisser les prix ou copier le leader sont des stratégies perdantes à budget inférieur, ce que Hugo rejette explicitement."
+            },
+            {
+              "prompt_fr": "Que représente la « brand equity » ?",
+              "choices": [
+                "La valeur que la marque ajoute au produit dans l'esprit des clients",
+                "Le budget total dépensé pour la publicité de la marque cette année",
+                "La part du capital de l'entreprise détenue par les salariés"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "La valeur de marque est un actif immatériel qui permet par exemple un prix plus élevé. « Equity » évoque ici la valeur et non le capital financier."
+            },
+            {
+              "prompt_fr": "Comment dire « Nous ne pouvons pas gagner en copiant le leader » ?",
+              "choices": [
+                "We cannot win in copying the leader.",
+                "We cannot win by copying the leader.",
+                "We cannot win with to copy the leader."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Après « by », on emploie la forme en -ing pour exprimer le moyen. « In copying » est possible mais peu naturel ici, et « with to copy » est incorrect."
+            },
+            {
+              "prompt_fr": "À quoi sert la « brand architecture » ?",
+              "choices": [
+                "Construire l'espace physique d'un stand pour un salon",
+                "Organiser les marques et gammes d'un groupe de façon cohérente",
+                "Dessiner le logo et la charte graphique d'une seule marque"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "L'architecture de marque définit le lien entre marque mère, sous-marques et gammes. Le logo relève de l'identité visuelle, et un stand relève de l'événementiel."
+            }
+          ],
+          "production": {
+            "channel": "meeting",
+            "prompt_fr": "Justifie à voix haute, en 3 ou 4 phrases, pourquoi un nouveau positionnement est nécessaire.",
+            "context_en": "Why do we need a new positioning statement?",
+            "model_answer_en": "We are a challenger brand, so we cannot win by copying the leader. A clear positioning statement makes one promise and protects our brand equity, which supports our premium price. We also need a simpler brand architecture across the three product lines. I propose to test it with customers before the launch.",
+            "model_answer_fr": "Nous sommes une marque challenger, nous ne pouvons donc pas gagner en copiant le leader. Un énoncé de positionnement clair fait une seule promesse et protège notre valeur de marque, qui soutient notre prix premium. Il nous faut aussi une architecture de marque plus simple pour les trois gammes. Je propose de le tester auprès des clients avant le lancement.",
+            "key_phrases": [
+              "a challenger brand",
+              "brand equity",
+              "brand architecture"
+            ]
+          }
+        },
+        {
+          "id": "brand-communication-channels-and-adaptation",
+          "title_fr": "Choisir les canaux et adapter le message à d'autres cultures",
+          "term_ids": [
+            "creative-route",
+            "above-the-line",
+            "below-the-line",
+            "transcreation"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Inès",
+              "text_en": "The agency presented three creative routes. Which one do you prefer?",
+              "text_fr": "L'agence a présenté trois pistes créatives. Laquelle préfères-tu ?"
+            },
+            {
+              "speaker": "Paul",
+              "text_en": "The second route. It works above-the-line for awareness and below-the-line for conversion.",
+              "text_fr": "La deuxième piste. Elle fonctionne en média de masse pour la notoriété et en hors-média pour la conversion."
+            },
+            {
+              "speaker": "Inès",
+              "text_en": "For Spain and Germany, a literal translation will not work.",
+              "text_fr": "Pour l'Espagne et l'Allemagne, une traduction littérale ne fonctionnera pas."
+            },
+            {
+              "speaker": "Paul",
+              "text_en": "Right, we need transcreation: the same idea, rewritten for each culture.",
+              "text_fr": "Exact, il faut de la transcréation : la même idée, réécrite pour chaque culture."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel est le rôle de l'« above-the-line » ici ?",
+              "choices": [
+                "Convertir directement des clients déjà identifiés",
+                "Fidéliser les clients existants avec des offres personnalisées",
+                "Gagner en notoriété auprès d'un large public"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Les médias de masse (TV, affichage) construisent la notoriété. La conversion ciblée et la fidélisation relèvent plutôt du below-the-line."
+            },
+            {
+              "prompt_fr": "Que signifie « transcreation » ?",
+              "choices": [
+                "Créer une nouvelle marque pour chaque pays de lancement",
+                "Traduire un texte mot à mot en conservant exactement la forme",
+                "Adapter l'idée et le ton d'un message à une autre culture"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "La transcréation recrée le message pour produire le même effet dans une autre culture. Ce n'est ni une traduction littérale ni la création d'une marque différente."
+            },
+            {
+              "prompt_fr": "Comment dire « Une traduction littérale ne fonctionnera pas » ?",
+              "choices": [
+                "A literal translation will not function.",
+                "A literal translation will not work.",
+                "A literally translation will not work."
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Literal » est l'adjectif devant un nom. « Literally » est un adverbe, donc incorrect ici, et « function » ne s'emploie pas ainsi pour une approche qui ne marche pas."
+            },
+            {
+              "prompt_fr": "Que présente l'agence avec les « creative routes » ?",
+              "choices": [
+                "Plusieurs directions créatives possibles pour la campagne",
+                "Plusieurs itinéraires de livraison des supports de campagne",
+                "Plusieurs budgets de campagne à comparer pour la direction"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une « creative route » est une piste créative, une direction possible pour la campagne. « Route » ne désigne pas ici un itinéraire matériel."
+            }
+          ],
+          "production": {
+            "channel": "email",
+            "prompt_fr": "Écris à l'agence en 3 ou 4 phrases : ta piste préférée, la répartition des canaux et ta demande pour les marchés étrangers.",
+            "context_en": "Three creative routes were presented.",
+            "model_answer_en": "We prefer the second creative route. It works above-the-line for awareness and below-the-line for conversion. For Spain and Germany, please plan transcreation rather than a literal translation. Could you send a revised budget by Friday?",
+            "model_answer_fr": "Nous préférons la deuxième piste créative. Elle fonctionne en média de masse pour la notoriété et en hors-média pour la conversion. Pour l'Espagne et l'Allemagne, merci de prévoir de la transcréation plutôt qu'une traduction littérale. Pouvez-vous envoyer un budget révisé d'ici vendredi ?",
+            "key_phrases": [
+              "creative route",
+              "above-the-line for awareness",
+              "transcreation"
+            ]
+          }
+        },
+        {
+          "id": "brand-communication-reputational-risk",
+          "title_fr": "Anticiper les sujets sensibles et protéger la réputation",
+          "term_ids": [
+            "reputational-risk",
+            "issues-management",
+            "cause-marketing",
+            "public-affairs"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sofia",
+              "text_en": "Our new cause marketing campaign could backfire if we are not consistent.",
+              "text_fr": "Notre nouvelle campagne de cause marketing pourrait se retourner contre nous si nous ne sommes pas cohérents."
+            },
+            {
+              "speaker": "Marc",
+              "text_en": "That is a reputational risk. Issues management should list the questions journalists might ask.",
+              "text_fr": "C'est un risque de réputation. La gestion des sujets sensibles doit lister les questions que des journalistes pourraient poser."
+            },
+            {
+              "speaker": "Sofia",
+              "text_en": "And public affairs?",
+              "text_fr": "Et les affaires publiques ?"
+            },
+            {
+              "speaker": "Marc",
+              "text_en": "They brief the regulators early, so we are not surprised by new rules.",
+              "text_fr": "Elles informent tôt les régulateurs, pour que nous ne soyons pas surpris par de nouvelles règles."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Pourquoi la campagne de cause marketing présente-t-elle un risque ?",
+              "choices": [
+                "Elle peut se retourner contre la marque si les actions ne sont pas cohérentes",
+                "Elle est interdite dans la plupart des pays où la marque est présente",
+                "Elle coûte toujours plus cher que les autres campagnes de la marque"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "Une cause défendue sans cohérence réelle expose la marque à des critiques. Les deux autres affirmations sont inventées."
+            },
+            {
+              "prompt_fr": "Que fait l'« issues management » selon Marc ?",
+              "choices": [
+                "Gérer les stocks de produits en rupture de vente",
+                "Anticiper les sujets sensibles et préparer les réponses",
+                "Répondre aux plaintes clients après chaque achat"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "La gestion des sujets sensibles consiste à repérer à l'avance les thèmes à risque et à préparer les réponses. Ce n'est ni du service client ni de la logistique."
+            },
+            {
+              "prompt_fr": "Comment dire « pour que nous ne soyons pas surpris par de nouvelles règles » ?",
+              "choices": [
+                "so that we are not surprising by new rules",
+                "for we are not surprised by new rules",
+                "so we are not surprised by new rules"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« So (that) + sujet + verbe » exprime le but. « For we » n'est pas naturel ici, et « surprising » (surprenant) change le sens."
+            },
+            {
+              "prompt_fr": "Que sont les « public affairs » dans la réponse de Marc ?",
+              "choices": [
+                "La communication publicitaire adressée au grand public",
+                "Le dialogue avec les décideurs publics et les régulateurs",
+                "L'organisation d'événements publics pour les clients"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "Les affaires publiques sont les relations avec les pouvoirs publics et les régulateurs. Elles ne relèvent ni de la publicité ni de l'événementiel."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Rédige 3 ou 4 phrases pour la direction : le risque, la méthode de préparation et le rôle des affaires publiques.",
+            "context_en": "A cause marketing campaign might backfire.",
+            "model_answer_en": "Our cause marketing campaign carries a reputational risk if our actions are not consistent. Issues management will list the questions journalists might ask and prepare our answers. Public affairs will brief the regulators early. I recommend a review before the campaign goes live.",
+            "model_answer_fr": "Notre campagne de cause marketing comporte un risque de réputation si nos actions ne sont pas cohérentes. La gestion des sujets sensibles listera les questions que des journalistes pourraient poser et préparera nos réponses. Les affaires publiques informeront tôt les régulateurs. Je recommande une revue avant la mise en ligne de la campagne.",
+            "key_phrases": [
+              "a reputational risk",
+              "Issues management",
+              "Public affairs"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
