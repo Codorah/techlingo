@@ -1,0 +1,1875 @@
+{
+  "role": "event-hostess",
+  "status": "draft",
+  "title_fr": "L'anglais de l'accueil événementiel et du protocole",
+  "units": [
+    {
+      "id": "event-hostess-welcome-desk-and-badge-scanning",
+      "title_fr": "Accueillir les participants et scanner les badges d'accès",
+      "title_en": "Welcome guests, verify registrations, and scan badges",
+      "situation_fr": "Tu es en poste au comptoir d'enregistrement à l'entrée d'un congrès international. Tu dois accueillir les congressistes, vérifier leurs billets numériques, scanner les badges et distribuer les tours de cou.",
+      "guide": {
+        "intro_fr": "Au comptoir d'enregistrement (« guest check-in »), l'hôte ou l'hôtesse représente la première impression de l'événement. Tu accueilles les invités avec courtoisie (« May I help you? ») et vérifies les identités sur la liste (« to check names »). Grâce au lecteur de badge (« badge scanner ») ou au scanneur de QR code (« qr-code-scanner »), tu valides l'émargement électronique (« electronic-check-in »). Tu remets le badge dans son porte-badge (« badge-holder ») avec son tour de cou officiel (« lanyard »), ou le bracelet de sécurité (« security-wristband »). Tu orientes les délégations prioritaires vers la file d'accès dédiée (« priority-access-lane ») et contrôles le passage aux tourniquets (« entrance-turnstile »).",
+        "key_phrases": [
+          {
+            "en": "Good morning, welcome to the Global Summit! May I help you?",
+            "fr": "Bonjour, bienvenue au Sommet Mondial ! Puis-je vous aider ?"
+          },
+          {
+            "en": "Please present your QR code or registration confirmation to check names.",
+            "fr": "Veuillez présenter votre code QR ou confirmation d'inscription pour vérifier les noms."
+          },
+          {
+            "en": "Let me scan your badge with our handheld badge scanner.",
+            "fr": "Laissez-moi scanner votre badge avec notre scanneur portable."
+          },
+          {
+            "en": "Here is your official delegate lanyard and printed badge holder.",
+            "fr": "Voici votre tour de cou officiel de délégué et votre porte-badge imprimé."
+          },
+          {
+            "en": "Speakers and VIP guests may use the priority access lane on the left.",
+            "fr": "Les intervenants et invités VIP peuvent emprunter la file d'accès prioritaire à gauche."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « badge holder » (l'étui plastique transparent) et « lanyard » (le cordon ou tour de cou en tissu). L'expression polie standard est « May I have your name, please? » ou « May I help you? », jamais un direct « What is your name? »."
+      },
+      "lessons": [
+        {
+          "id": "event-hostess-greet-guests-and-scan-badges",
+          "title_fr": "Accueillir les participants et scanner les billets numériques",
+          "term_ids": [
+            "guest-check-in",
+            "badge-scanner",
+            "to-check-names",
+            "may-i-help-you",
+            "lanyard"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Hostess",
+              "text_en": "Good morning, welcome to the Tech Forum! May I help you?",
+              "text_fr": "Bonjour, bienvenue au Forum Tech ! Puis-je vous aider ?"
+            },
+            {
+              "speaker": "Attendee",
+              "text_en": "Hello, I am looking for the guest check-in area. My name is Thomas Miller.",
+              "text_fr": "Bonjour, je cherche la zone d'enregistrement des invités. Je m'appelle Thomas Miller."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "You are at the right desk. Let me check names on our attendee registry.",
+              "text_fr": "Vous êtes au bon comptoir. Laissez-moi vérifier les noms sur notre registre des participants."
+            },
+            {
+              "speaker": "Attendee",
+              "text_en": "Here is the confirmation barcode on my smartphone screen.",
+              "text_fr": "Voici le code-barres de confirmation sur l'écran de mon smartphone."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Perfect! I will scan it with this badge scanner and hand you your official conference lanyard.",
+              "text_fr": "Parfait ! Je vais le scanner avec ce lecteur de badge et vous remettre votre tour de cou officiel de conférence."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle formule de politesse professionnelle emploie une hôtesse pour accueillir un congressiste au comptoir ?",
+              "choices": [
+                "Give me your pass!",
+                "Good morning, may I help you with your badge?",
+                "Show your identity now!"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« May I help you? » est la formule d'accueil polie et bienveillante standard dans l'hôtellerie et l'événementiel international. Les autres propositions sont impératives et discourtoises."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on l'appareil électronique manuel servant à lire les codes des billets à l'entrée ?",
+              "choices": [
+                "A thermal badge laminator",
+                "A conference audio headset",
+                "An optical handheld badge scanner"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Badge scanner » est le terminal de lecture de badges et billets. La plastifieuse (« laminator ») sert à confectionner les badges physiques et le casque audio (« headset ») à la traduction simultanée."
+            },
+            {
+              "prompt_fr": "Comment appelle-t-on le cordon en tissu porté autour du cou auquel est suspendu le badge d'accès ?",
+              "choices": [
+                "A conference lanyard",
+                "A velvet coat hanger",
+                "A security wristband"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Lanyard » est le tour de cou officiel. « Coat hanger » est un cintre de vestiaire et « security wristband » est un bracelet de contrôle inviolable fixé au poignet."
+            },
+            {
+              "prompt_fr": "Quelle démarche effectue l'hôte lorsqu'il cherche l'orthographe d'un invité sur le registre informatique ?",
+              "choices": [
+                "To reset the stage lighting control board",
+                "To verify attendee names on the manifest",
+                "To calibrate the sound speakers"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To check names » signifie vérifier et pointer les noms sur le fichier d'émargement. Les autres propositions relèvent de la régie lumière et de l'acoustique scénique."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Accueille une congressiste anglophone arrivant au sommet : salue-la chaleureusement, demande son nom ou son QR code, scanne son badge et remets-lui son tour de cou.",
+            "context_en": "Welcoming an international delegate at the conference check-in desk.",
+            "model_answer_en": "Good morning, welcome to our annual convention! May I help you? If you have your registration confirmation or QR code on your mobile, I will quickly scan it with our badge scanner. Here is your delegate lanyard and official program guide. Have a wonderful day!",
+            "model_answer_fr": "Bonjour, bienvenue à notre convention annuelle ! Puis-je vous aider ? Si vous avez votre confirmation d'inscription ou votre QR code sur mobile, je vais le scanner rapidement avec notre lecteur de badge. Voici votre tour de cou de délégué et le guide du programme officiel. Excellente journée !",
+            "key_phrases": [
+              "May I help you",
+              "badge scanner",
+              "lanyard",
+              "welcome"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-electronic-checkin-and-priority-lanes",
+          "title_fr": "Gérer l'émargement électronique et orienter vers les files prioritaires",
+          "term_ids": [
+            "electronic-check-in",
+            "qr-code-scanner",
+            "to-scan-barcodes",
+            "to-sign-in",
+            "priority-access-lane"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Hostess",
+              "text_en": "Welcome, sir. If you already have your confirmation email, please step forward to our electronic check-in.",
+              "text_fr": "Bienvenue, monsieur. Si vous avez déjà votre courriel de confirmation, veuillez avancer vers notre émargement électronique."
+            },
+            {
+              "speaker": "Speaker",
+              "text_en": "I am one of the keynote speakers on this morning's main stage panel.",
+              "text_fr": "Je suis l'un des intervenants principaux de la table ronde de ce matin."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "In that case, please follow me to the priority access lane reserved for speakers and sponsors.",
+              "text_fr": "Dans ce cas, veuillez me suivre vers la file d'accès prioritaire réservée aux intervenants et sponsors."
+            },
+            {
+              "speaker": "Speaker",
+              "text_en": "Do I need to sign in physically on paper as well?",
+              "text_fr": "Dois-je également émarger physiquement sur papier ?"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "No paper needed. Our qr-code scanner instantly registers your presence as soon as we scan barcodes.",
+              "text_fr": "Aucun papier requis. Notre lecteur de QR code enregistre instantanément votre présence dès que nous scannons les codes-barres."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le dispositif d'enregistrement dématérialisé sur tablette qui remplace les listes papier ?",
+              "choices": [
+                "Manual paper manifest sheet",
+                "Stage lighting dimmer switch",
+                "A digital electronic check-in system"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Electronic check-in » désigne l'émargement informatisé en temps réel. « Manual paper manifest » est la liste d'émargement papier traditionnelle et « dimmer switch » est un gradateur lumière de régie."
+            },
+            {
+              "prompt_fr": "Quelle file aménagée permet aux conférenciers et VIP d'accéder au hall sans attendre dans la file principale ?",
+              "choices": [
+                "The dedicated priority access lane",
+                "The public general queue line",
+                "The backstage delivery loading ramp"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Priority access lane » (ou fast-track entry) est le couloir prioritaire d'accès. « Public general queue » est la file générale et « loading ramp » est la rampe de livraison matériel pour les camions."
+            },
+            {
+              "prompt_fr": "Quel outil optique lit instantanément les billets numériques affichés sur les smartphones des visiteurs ?",
+              "choices": [
+                "A studio acoustic condenser microphone",
+                "A high-speed optical QR-code scanner",
+                "A venue smoke machine generator"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« QR-code scanner » lit les codes matriciels 2D sur écran ou papier. Le micro de studio (« microphone ») et la machine à fumée (« smoke machine ») sont des équipements techniques scéniques."
+            },
+            {
+              "prompt_fr": "Quelle expression en anglais signifie apposer sa signature ou valider formellement sa présence à l'arrivée ?",
+              "choices": [
+                "To dismantle the heavy sound truss",
+                "To unplug the video monitors",
+                "To sign in upon guest arrival"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To sign in » signifie émarger, s'enregistrer ou pointer son arrivée. Les autres verbes décrivent le démontage d'une structure son (« dismantle ») ou le débranchement d'écrans vidéo."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un intervenant presse arrive pressé à l'entrée du salon. Oriente-le vers la file prioritaire, scanne son QR code sur son téléphone et valide son entrée dématérialisée.",
+            "context_en": "Handling a VIP speaker at the priority entrance lane.",
+            "model_answer_en": "Good morning! Since you are speaking on today's panel, please proceed straight through our priority access lane. Allow me to point my qr-code scanner at your phone to complete your electronic check-in. You are all set; your session room is located on the second floor.",
+            "model_answer_fr": "Bonjour ! Comme vous intervenez lors de la table ronde d'aujourd'hui, veuillez emprunter directement notre file d'accès prioritaire. Permettez-moi de viser votre téléphone avec mon lecteur de QR code pour finaliser votre émargement électronique. Tout est validé ; votre salle de conférence se trouve au deuxième étage.",
+            "key_phrases": [
+              "priority access lane",
+              "qr-code scanner",
+              "electronic check-in",
+              "proceed"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-turnstiles-and-access-passes",
+          "title_fr": "Contrôler les tourniquets et remettre les titres d'accès",
+          "term_ids": [
+            "visitor-log",
+            "registration-sheet",
+            "badge-holder",
+            "entrance-turnstile",
+            "security-wristband"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Hostess",
+              "text_en": "Please swipe your badge against the optical reader to release the entrance turnstile.",
+              "text_fr": "Veuillez passer votre badge devant le lecteur optique pour déverrouiller le tourniquet d'entrée."
+            },
+            {
+              "speaker": "Delegate",
+              "text_en": "My badge plastic cover got crushed in my bag. Do you have a spare badge holder?",
+              "text_fr": "La pochette plastique de mon badge s'est écrasée dans mon sac. Avez-vous un porte-badge de rechange ?"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Of course, here is a fresh rigid badge holder. Are you also attending tonight's gala dinner?",
+              "text_fr": "Bien sûr, voici un nouveau porte-badge rigide. Participez-vous également au dîner de gala de ce soir ?"
+            },
+            {
+              "speaker": "Delegate",
+              "text_en": "Yes, I am registered for the gala under company sponsorship.",
+              "text_fr": "Oui, je suis inscrit au gala sous le parrainage de mon entreprise."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Then I must fasten this color-coded security wristband around your wrist for evening access.",
+              "text_fr": "Je dois alors fixer ce bracelet de sécurité avec code couleur autour de votre poignet pour l'accès du soir."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment appelle-t-on le portillon rotatif automatique qui débloque le passage un par un après lecture du badge ?",
+              "choices": [
+                "The automated entrance turnstile",
+                "The cloakroom coat rack",
+                "The emergency fire extinguisher"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Entrance turnstile » désigne le tourniquet ou tripode d'accès sécurisé. « Coat rack » est un portant de vestiaire et « fire extinguisher » est un extincteur de sécurité incendie."
+            },
+            {
+              "prompt_fr": "Quelle pochette transparente en vinyle ou plastique rigide protège la carte de visite du congressiste ?",
+              "choices": [
+                "A conference table runner",
+                "A transparent badge holder",
+                "A projection screen remote"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Badge holder » est la pochette ou le boîtier porte-badge. « Table runner » est un chemin de table et « projection screen remote » est une télécommande d'écran."
+            },
+            {
+              "prompt_fr": "Quel bracelet inviolable est fixé au poignet pour identifier visuellement les invités autorisés lors d'une soirée privée ?",
+              "choices": [
+                "An audio cable adapter",
+                "A paper cocktail napkin",
+                "A tamper-evident security wristband"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Security wristband » (bracelet de contrôle indéchirable en Tyvek ou tissu) garantit le filtrage visuel des accès. Les adaptateurs audio et serviettes de cocktail n'ont aucun rôle d'identification."
+            },
+            {
+              "prompt_fr": "Quel registre papier ou classeur officiel consigne manuellement les entrées et sorties des visiteurs extérieurs ?",
+              "choices": [
+                "The security visitor check log",
+                "The official event catering recipe book",
+                "The stage floor lighting plot"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Visitor log » (ou guest logbook) est le registre officiel d'enregistrement des visiteurs. Le livre de recettes du traiteur ou le plan d'implantation lumière de scène n'ont rien à voir avec le contrôle des personnes."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un participant se présente devant le tourniquet avec son badge : explique-lui comment badger pour déverrouiller le portillon et pose-lui le bracelet de sécurité requis pour la soirée de clôture.",
+            "context_en": "Guiding an attendee through the access turnstiles and applying a wristband.",
+            "model_answer_en": "Please hold your badge flat against the sensor to unlock the entrance turnstile. Since your pass includes access to our closing party, I also need to secure this gold security wristband on your wrist. Please keep it visible throughout the evening.",
+            "model_answer_fr": "Veuillez plaquer votre badge contre le capteur pour déverrouiller le tourniquet d'entrée. Comme votre titre inclut l'accès à notre soirée de clôture, je dois également fixer ce bracelet de sécurité doré à votre poignet. Merci de le garder visible toute la soirée.",
+            "key_phrases": [
+              "entrance turnstile",
+              "badge",
+              "security wristband",
+              "visible"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-hostess-cloakroom-and-wayfinding",
+      "title_fr": "Gérer le vestiaire, les bagages et l'orientation des visiteurs",
+      "title_en": "Manage cloakroom operations, luggage checks, and venue wayfinding",
+      "situation_fr": "Tu es affectée au vestiaire central et au point d'information du palais des congrès. Tu dois enregistrer les manteaux et valises, remettre les contremarques, et orienter les participants avec le plan du site.",
+      "guide": {
+        "intro_fr": "Le vestiaire (« coat-check » ou « cloakroom ») exige rapidité et méthode. L'employé de vestiaire (« cloakroom-attendant ») suspend le vêtement sur un cintre numéroté et remet au visiteur une contremarque numérotée (« claim-check »). Au bureau d'accueil (« information-desk »), tu orientes les personnes à l'aide du plan du site (« venue-map ») et de la signalétique directionnelle (« directional-sign »). Tu accompagnes les congressistes (« Please follow me ») et gères le bureau des objets trouvés (« lost-and-found-desk »). Pour les réceptions de prestige, tu diriges les délégations vers les salons privatifs (« hospitality-suite ») où sont servis les verres de bienvenue (« welcome-drink »).",
+        "key_phrases": [
+          {
+            "en": "May I take your overcoat and umbrella for the coat check?",
+            "fr": "Puis-je prendre votre pardessus et votre parapluie pour le vestiaire ?"
+          },
+          {
+            "en": "Please keep this numbered claim check safely; you will need it to retrieve your coat.",
+            "fr": "Veuillez conserver précieusement cette contremarque numérotée ; vous en aurez besoin pour récupérer votre manteau."
+          },
+          {
+            "en": "The plenary auditorium is on level two; please follow the directional signs down this corridor.",
+            "fr": "L'auditorium plénier est au niveau deux ; veuillez suivre les panneaux directionnels le long de ce couloir."
+          },
+          {
+            "en": "Let me show you our venue map to pinpoint your workshop meeting room.",
+            "fr": "Laissez-moi vous montrer notre plan du site pour repérer votre salle d'atelier."
+          },
+          {
+            "en": "If you misplaced your notebook, please check with the lost and found desk.",
+            "fr": "Si vous avez égaré votre carnet de notes, veuillez vérifier auprès du bureau des objets trouvés."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « claim check » (le ticket ou jeton numéroté remis au client) et « coat check » (le vestiaire lui-même). Pour inviter un participant à te suivre, privilégie « Please follow me » plutôt que « Walk behind me »."
+      },
+      "lessons": [
+        {
+          "id": "event-hostess-coat-check-and-claim-tickets",
+          "title_fr": "Prendre en charge les effets personnels et remettre les contremarques",
+          "term_ids": [
+            "coat-check",
+            "claim-check",
+            "cloakroom-attendant",
+            "directional-sign",
+            "please-follow-me"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Attendee",
+              "text_en": "Good morning, where can I safely leave my winter coat and trolley bag?",
+              "text_fr": "Bonjour, où puis-je déposer en sécurité mon manteau d'hiver et ma valise cabine ?"
+            },
+            {
+              "speaker": "Attendant",
+              "text_en": "Right here at our central coat check. I am the cloakroom attendant on duty today.",
+              "text_fr": "Ici même à notre vestiaire central. Je suis l'employée de vestiaire de service aujourd'hui."
+            },
+            {
+              "speaker": "Attendee",
+              "text_en": "Wonderful. Is there any fee for conference attendees?",
+              "text_fr": "Formidable. Y a-t-il des frais pour les congressistes ?"
+            },
+            {
+              "speaker": "Attendant",
+              "text_en": "No, it is complimentary. Here is your numbered claim check. Please do not lose this ticket.",
+              "text_fr": "Non, c'est gratuit. Voici votre contremarque numérotée. Merci de ne pas perdre ce ticket."
+            },
+            {
+              "speaker": "Attendee",
+              "text_en": "Understood. Which way to the keynote opening session?",
+              "text_fr": "Bien compris. Par où va-t-on pour la session plénière d'ouverture ?"
+            },
+            {
+              "speaker": "Attendant",
+              "text_en": "Please follow me; I will guide you toward the main auditorium staircase.",
+              "text_fr": "Veuillez me suivre ; je vais vous guider vers l'escalier menant à l'auditorium principal."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment désigne-t-on le vestiaire où les participants déposent leurs vêtements et petits bagages ?",
+              "choices": [
+                "The media broadcast van",
+                "The staffed visitor coat check",
+                "The stage rigging hoist"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Coat check » (ou cloakroom) est le vestiaire. « Media broadcast van » est le car régie audiovisuel et « stage rigging hoist » est le treuil de levage scénique."
+            },
+            {
+              "prompt_fr": "Quel ticket numéroté ou jeton l'hôte remet-il au visiteur en échange de son manteau ?",
+              "choices": [
+                "A conference feedback survey",
+                "A catering price quotation form",
+                "A numbered claim check ticket"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Claim check » est le ticket de contremarque qui prouve le dépôt du vêtement. Les questionnaires de satisfaction ou devis traiteur ne constituent pas un justificatif de vestiaire."
+            },
+            {
+              "prompt_fr": "Quelle phrase polie en anglais utilise l'hôtesse pour inviter un groupe de délégués à lui emboîter le pas ?",
+              "choices": [
+                "Please follow me to the auditorium",
+                "Run after my footsteps!",
+                "Get out of the entrance hall!"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Please follow me » est la formule d'accompagnement professionnelle et respectueuse. Les autres expressions sont familières, agressives ou inappropriées."
+            },
+            {
+              "prompt_fr": "Quel élément visuel mural indique la direction des salles de réunion, des toilettes ou des sorties ?",
+              "choices": [
+                "A wireless audio transmitter",
+                "A clear directional sign",
+                "A cocktail glass coaster"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Directional sign » (ou wayfinding signage) désigne le panneau indicateur de direction. Les émetteurs audio ou sous-bocks de verre relèvent de la technique ou de la restauration."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Prends en charge le manteau et le parapluie d'un congressiste étranger au vestiaire : remets-lui sa contremarque numérotée, rappelle-lui de la garder pour la sortie et invite-le à te suivre vers l'amphithéâtre.",
+            "context_en": "Operating the event cloakroom during attendee arrival.",
+            "model_answer_en": "Good morning, sir. I will hang your overcoat and place your umbrella on rack thirty-two. Here is your claim check number 32; please keep it safe in your pocket to collect your belongings later. The opening session starts in ten minutes. Please follow me to the main hall.",
+            "model_answer_fr": "Bonjour monsieur. Je vais suspendre votre pardessus et placer votre parapluie sur le portant trente-deux. Voici votre contremarque numéro 32 ; conservez-la bien dans votre poche pour récupérer vos affaires tout à l'heure. La séance d'ouverture débute dans dix minutes. Veuillez me suivre vers le hall principal.",
+            "key_phrases": [
+              "coat check",
+              "claim check",
+              "belongings",
+              "Please follow me"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-wayfinding-and-lost-property",
+          "title_fr": "Orienter les congressistes et gérer les objets trouvés",
+          "term_ids": [
+            "venue-map",
+            "to-guide-attendees",
+            "information-desk",
+            "lost-and-found-desk",
+            "table-plan"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Visitor",
+              "text_en": "Hello, I cannot find workshop room B. This conference center is gigantic!",
+              "text_fr": "Bonjour, je n'arrive pas à trouver la salle d'atelier B. Ce centre de congrès est gigantesque !"
+            },
+            {
+              "speaker": "Host",
+              "text_en": "Do not worry, welcome to the central information desk. Let me show you on our printed venue map.",
+              "text_fr": "Ne vous inquiétez pas, bienvenue au point d'information central. Laissez-moi vous montrer sur notre plan du site."
+            },
+            {
+              "speaker": "Visitor",
+              "text_en": "Ah, it is on the mezzanine floor next to the press terrace!",
+              "text_fr": "Ah, elle se trouve en mezzanine à côté de la terrasse presse !"
+            },
+            {
+              "speaker": "Host",
+              "text_en": "Exactly. Also, my colleague will guide attendees heading to the lunch hall with the table plan.",
+              "text_fr": "Exactement. De plus, ma collègue guidera les participants se rendant à l'espace déjeuner avec le plan des tables."
+            },
+            {
+              "speaker": "Visitor",
+              "text_en": "One more thing: my colleague left his glasses in room A. Where should he look?",
+              "text_fr": "Une dernière chose : mon collègue a laissé ses lunettes en salle A. Où doit-il s'adresser ?"
+            },
+            {
+              "speaker": "Host",
+              "text_en": "Please advise him to visit our lost and found desk located right behind this partition.",
+              "text_fr": "Conseillez-lui de passer à notre bureau des objets trouvés situé juste derrière cette cloison."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel document cartographique schématise l'ensemble des pavillons, étages et issues du centre de congrès ?",
+              "choices": [
+                "A conference catering invoice",
+                "An audio cable wiring diagram",
+                "A comprehensive detailed venue map"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Venue map » (plan du site) détaille l'implantation spatiale des salles et cheminements. La facture traiteur ou le schéma de câblage audio ne servent pas à orienter les usagers."
+            },
+            {
+              "prompt_fr": "Où sont déposés et répertoriés les téléphones, badges ou clés oubliés par les participants pendant la journée ?",
+              "choices": [
+                "At the official lost and found desk",
+                "Inside the primary electrical substation room",
+                "Inside the kitchen walk-in freezer"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Lost and found desk » (bureau des objets trouvés) est le lieu de centralisation des affaires oubliées. Le local transformateur ou la chambre froide de cuisine sont des zones techniques interdites au public."
+            },
+            {
+              "prompt_fr": "Quel document affiche la disposition et le numéro attribué à chaque convive lors d'un banquet assis ?",
+              "choices": [
+                "A master stage lighting color chart",
+                "A reserved seating table plan",
+                "A speaker microphone script"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Table plan » (plan de table) indique l'affectation des places et des tables pour un dîner. Les nuanciers d'éclairage ou les fiches de discours ne concernent pas le placement des convives."
+            },
+            {
+              "prompt_fr": "Quel comptoir central répond aux questions pratiques des visiteurs sur les horaires et les services ?",
+              "choices": [
+                "The sound technician console",
+                "The garbage disposal compactor",
+                "The main central information desk"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Information desk » (point d'information) accueille et renseigne les visiteurs. La console son et le compacteur de déchets sont des postes techniques fermés aux usagers."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un congressiste égaré cherche la salle de sous-commission 4 et a oublié sa tablette en plénière. Montre-lui le chemin sur le plan du site et dirige-le vers le bureau des objets trouvés.",
+            "context_en": "Providing directions and lost item assistance at the info desk.",
+            "model_answer_en": "Hello! Looking at this venue map, subcommittee room four is located on level one. Walk down corridor C and take the glass elevator up. Regarding your misplaced tablet, our housekeeping crew delivered three devices to the lost and found desk five minutes ago. You can identify your item there right away.",
+            "model_answer_fr": "Bonjour ! En observant ce plan du site, la salle de sous-commission quatre se trouve au niveau un. Empruntez le couloir C et montez par l'ascenseur de verre. Concernant votre tablette oubliée, notre équipe de nettoyage a déposé trois appareils au bureau des objets trouvés il y a cinq minutes. Vous pouvez aller identifier la vôtre immédiatement.",
+            "key_phrases": [
+              "venue map",
+              "information desk",
+              "lost and found desk",
+              "level"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-hospitality-suites-and-guest-register",
+          "title_fr": "Accueillir les délégations dans les salons privatifs",
+          "term_ids": [
+            "welcome-drink",
+            "hospitality-suite",
+            "guest-register",
+            "temporary-pass",
+            "welcome-hostess"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Hostess",
+              "text_en": "Good afternoon, delegates. Welcome to our corporate hospitality suite.",
+              "text_fr": "Bonjour, messieurs les délégués. Bienvenue dans notre salon de réception d'entreprise."
+            },
+            {
+              "speaker": "VIP Guest",
+              "text_en": "Thank you. Our international delegation is scheduled for a bilateral briefing here.",
+              "text_fr": "Merci. Notre délégation internationale doit tenir un point d'information bilatéral ici."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Please make yourselves comfortable. May I offer you a refreshing welcome drink while you settle in?",
+              "text_fr": "Installez-vous confortablement. Puis-je vous offrir un verre de bienvenue rafraîchissant pendant que vous vous installez ?"
+            },
+            {
+              "speaker": "VIP Guest",
+              "text_en": "That would be wonderful. Do we also need to sign this leather-bound book?",
+              "text_fr": "Ce serait formidable. Devons-nous également signer ce livre relié en cuir ?"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Yes, please sign our commemorative guest register. If an assistant arrives later, I will issue a temporary pass.",
+              "text_fr": "Oui, merci de signer notre livre d'or des invités. Si un assistant arrive plus tard, je lui délivrerai un laissez-passer temporaire."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le salon privatif haut de gamme où une entreprise reçoit ses clients d'honneur pendant un salon ?",
+              "choices": [
+                "A corporate hospitality suite",
+                "A commercial freight trailer",
+                "A public parking ticket machine"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Hospitality suite » est un espace de réception privatisé pour recevoir clients et partenaires avec confort. Une remorque de fret et un horodateur de parking ne sont pas des lieux d'accueil événementiel."
+            },
+            {
+              "prompt_fr": "Quelle boisson ou coupe de bienvenue offre l'hôtesse aux hôtes d'honneur dès leur arrivée dans le salon ?",
+              "choices": [
+                "A mandatory entrance tax bill invoice",
+                "A complimentary welcome drink glass",
+                "A printed legal waiver"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Welcome drink » est la boisson de bienvenue offerte aux invités de marque. Les factures de taxe d'entrée ou décharges de responsabilité ne sont pas des marques de bienvenue hôtelière."
+            },
+            {
+              "prompt_fr": "Quel pass provisoire délivre-t-on à un visiteur imprévu ou un accompagnateur d'un jour ?",
+              "choices": [
+                "A lifetime diplomatic immunity card",
+                "An open-ended ten-year visa certificate",
+                "An official day visitor temporary badge pass"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Temporary pass » est le laissez-passer provisoire d'une journée pour un accès ponctuel. Les immunités diplomatiques à vie ou visas décennaux n'ont rien à voir avec un titre d'accès journalier."
+            },
+            {
+              "prompt_fr": "Quel livre d'honneur les personnalités signent-elles pour témoigner de leur visite lors d'un événement institutionnel ?",
+              "choices": [
+                "The official VIP guest register",
+                "The commercial kitchen fire safety manual",
+                "The daily cable inventory"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Guest register » (ou guestbook / livre d'or) recueille les signatures et messages des personnalités accueillies. Le manuel incendie de cuisine ou l'inventaire des câbles son sont des documents techniques internes."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Accueille une délégation de directeurs financiers dans un salon privatif : sers-leur un verre de bienvenue, invite-les à signer le livre d'or et remets un laissez-passer temporaire à leur attaché de presse.",
+            "context_en": "Welcoming an executive delegation in a private hospitality suite.",
+            "model_answer_en": "Good afternoon, gentlemen. Welcome to our executive hospitality suite. Please take a seat while I serve you a glass of champagne or fruit juice as a welcome drink. We would be honored if you could sign our official guest register. For your communications officer, here is a day temporary pass providing full suite access.",
+            "model_answer_fr": "Bonjour, messieurs. Bienvenue dans notre salon de réception exécutif. Prenez place pendant que je vous sers une coupe de champagne ou un jus de fruits en verre de bienvenue. Nous serions honorés si vous pouviez signer notre livre d'or officiel. Pour votre attaché de communication, voici un laissez-passer temporaire donnant un accès complet au salon.",
+            "key_phrases": [
+              "hospitality suite",
+              "welcome drink",
+              "guest register",
+              "temporary pass"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-hostess-crowd-circulation-and-roving-mics",
+      "title_fr": "Réguler les flux de foule et faire circuler les micros en salle",
+      "title_en": "Manage attendee crowd flow, stanchions, and roving microphones",
+      "situation_fr": "Tu es en salle plénière et dans les galeries de liaison. Tu dois réguler les files d'attente avec des potelets de guidage, faire circuler les micros pour les questions du public et surveiller la jauge de la salle.",
+      "guide": {
+        "intro_fr": "Lors des temps forts d'un événement, la gestion des foules (« crowd-flow ») est capitale. Pour canaliser les flux sans créer d'engorgement (« to manage queue flow »), tu installes et déplaces les potelets à sangle rétractable (« stanchion » ou « tensabarrier »). Dans l'auditorium, l'hôtesse intervient comme coordinatrice de micro baladeur (« roving-microphone-coordinator » ou « microphone-runner ») lors des sessions de questions-réponses. Tu surveilles la densité de la foule (« to-monitor-crowd-density ») et respectes la jauge maximale de sièges (« seating-capacity-threshold »). En liaison avec le régisseur par talkie-walkie (« two-way-radio »), tu appliques le silence radio (« radio-silence-protocol ») et réorientes les flux excédentaires (« to-redirect-attendee-overflow »).",
+        "key_phrases": [
+          {
+            "en": "Please arrange additional tensabarriers to maintain smooth crowd flow in the foyer.",
+            "fr": "Veuillez disposer des potelets à sangle supplémentaires pour maintenir un flux de foule fluide dans le hall."
+          },
+          {
+            "en": "I will run the roving microphone to the attendee in the fourth row on the left.",
+            "fr": "Je vais apporter le micro baladeur au participant au quatrième rang sur la gauche."
+          },
+          {
+            "en": "We must monitor crowd density because the plenary hall is approaching maximum seating capacity.",
+            "fr": "Nous devons surveiller la densité de la foule car la salle plénière approche de sa capacité maximale de places."
+          },
+          {
+            "en": "All ground staff must observe strict radio silence protocol during the presidential opening address.",
+            "fr": "Tous les personnels au sol doivent respecter un protocole strict de silence radio durant le discours d'ouverture présidentiel."
+          },
+          {
+            "en": "Please redirect attendee overflow toward the live broadcast room in gallery C.",
+            "fr": "Veuillez réorienter le flux excédentaire de participants vers la salle de retransmission en direct galerie C."
+          }
+        ],
+        "tip_fr": "« Stanchion » désigne le potelet métallique et « tensabarrier » le potelet avec ruban sangle déroulant. Lorsqu'on court avec un micro baladeur, on tient toujours le corps du micro, jamais la bonnette, et on vérifie que l'interrupteur mute est bien sur ON avant de le tendre au congressiste."
+      },
+      "lessons": [
+        {
+          "id": "event-hostess-queue-flow-and-stanchions",
+          "title_fr": "Réguler les files d'attente et canaliser les arrivées",
+          "term_ids": [
+            "crowd-flow",
+            "stanchion",
+            "tensabarrier",
+            "attendee-flow-management",
+            "to-manage-queue-flow"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Lead Hostess",
+              "text_en": "Look at the main lobby entrance; the arrival wave is creating bottlenecks near the escalators.",
+              "text_fr": "Regarde l'entrée du hall principal ; la vague d'arrivées crée des goulets d'étranglement près des escalators."
+            },
+            {
+              "speaker": "Floor Host",
+              "text_en": "I will reposition the chrome stanchions into a zigzag serpentine maze to manage queue flow.",
+              "text_fr": "Je vais repositionner les potelets chromés en serpentin en zigzag pour réguler le flux des files d'attente."
+            },
+            {
+              "speaker": "Lead Hostess",
+              "text_en": "Great idea. Extend the black retractable strap on each tensabarrier so attendees form two single lines.",
+              "text_fr": "Excellente idée. Étends la sangle rétractable noire sur chaque potelet afin que les participants forment deux files uniques."
+            },
+            {
+              "speaker": "Floor Host",
+              "text_en": "Done. Proper attendee flow management will prevent any crushing around the registration counters.",
+              "text_fr": "C'est fait. Une bonne régulation des flux évitera tout écrasement autour des comptoirs d'émargement."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le potelet métallique vertical relié par corde ou sangle pour délimiter les files d'attente ?",
+              "choices": [
+                "A sound reverberation baffle",
+                "A crowd guidance stanchion",
+                "A stage spotlight tripod"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Stanchion » est le terme universel pour désigner un potelet de guidage de foule. « Reverberation baffle » est un panneau d'isolation acoustique et « spotlight tripod » est un pied de projecteur scénique."
+            },
+            {
+              "prompt_fr": "Quelle marque générique désigne les potelets d'accueil équipés d'une sangle rétractable déroulante ?",
+              "choices": [
+                "A teleprompter glass",
+                "A smoke haze machine",
+                "A retractable tensabarrier post"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Tensabarrier » (ou tensa-post) désigne le potelet à sangle extensible très utilisé pour canaliser les foules en aéroport et événementiel. Les télésouffleurs et machines à brouillard relèvent de la mise en scène audiovisuelle."
+            },
+            {
+              "prompt_fr": "Quel terme technique qualifie la circulation continue et le déplacement ordonné des visiteurs dans un hall ?",
+              "choices": [
+                "The steady crowd flow rate",
+                "The acoustic decibel peak",
+                "The lighting lux distribution"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Crowd flow » désigne le flux et la dynamique de circulation de la foule. Les décibels ou l'éclairement en lux sont des mesures sonores et photométriques sans rapport avec le mouvement des personnes."
+            },
+            {
+              "prompt_fr": "Quel verbe en anglais décrit l'action de discipliner et réguler l'avancée ordonnée des participants dans une file ?",
+              "choices": [
+                "To disconnect the audio speakers",
+                "To guide visitor queue flow smoothly",
+                "To completely dismantle the venue sound truss"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To manage queue flow » signifie gérer le flux d'une file d'attente. Les autres propositions décrivent des tâches d'ingénierie audiovisuelle comme déconnecter des haut-parleurs ou souder des câbles."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "500 délégués arrivent simultanément devant les portes du grand amphithéâtre. Donne des instructions à deux équipiers pour déployer des potelets à sangle et fluidifier la file d'attente.",
+            "context_en": "Managing sudden attendee surge before auditorium doors open.",
+            "model_answer_en": "Team, we have a major crowd flow bottleneck forming at the auditorium entrance. Please pull out four tensabarrier units immediately and set up two serpentine lanes. Make sure the stanchions are spaced evenly so attendees move forward smoothly without blocking the main corridor.",
+            "model_answer_fr": "Équipe, nous avons un gros bouchon qui se forme à l'entrée de l'auditorium. Veuillez sortir immédiatement quatre potelets à sangle et disposer deux files en serpentin. Veillez à ce que les potelets soient espacés régulièrement pour que les participants avancent de manière fluide sans bloquer le couloir principal.",
+            "key_phrases": [
+              "crowd flow",
+              "tensabarrier",
+              "stanchions",
+              "queue"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-roving-microphones-and-ushers",
+          "title_fr": "Coordonner les micros baladeurs et surveiller la densité en salle",
+          "term_ids": [
+            "roving-microphone-coordinator",
+            "microphone-runner",
+            "stage-trophy-handler",
+            "to-monitor-crowd-density",
+            "seating-capacity-threshold"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Session Moderator",
+              "text_en": "We will now open the floor to questions from our audience for fifteen minutes.",
+              "text_fr": "Nous allons maintenant ouvrir la séance aux questions de notre public pendant quinze minutes."
+            },
+            {
+              "speaker": "Roving Coordinator",
+              "text_en": "I am coordinating the microphone runners. Maria is covering the balcony and Alex has the main floor.",
+              "text_fr": "Je coordonne les porteurs de micros baladeurs. Maria couvre le balcon et Alex s'occupe du parterre."
+            },
+            {
+              "speaker": "Session Moderator",
+              "text_en": "Please run a microphone to the lady holding up her hand in row eight.",
+              "text_fr": "Veuillez apporter un micro à la dame qui lève la main au huitième rang."
+            },
+            {
+              "speaker": "Roving Coordinator",
+              "text_en": "On it. Meanwhile, our door ushers continue to monitor crowd density as standing attendees gather at the back.",
+              "text_fr": "Je m'en charge. Pendant ce temps, nos placeurs aux portes continuent de surveiller la densité car des participants debout s'accumulent au fond."
+            },
+            {
+              "speaker": "Session Moderator",
+              "text_en": "Tell them we have reached our seating capacity threshold; extra guests must be turned toward the overflow lounge.",
+              "text_fr": "Dites-leur que nous avons atteint notre jauge maximale de sièges ; les invités supplémentaires doivent être réorientés vers le salon de retransmission."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on l'hôte ou l'hôtesse qui court dans les rangs pour apporter le micro sans fil aux personnes posant une question ?",
+              "choices": [
+                "A backstage electrical generator operator",
+                "A heavy freight forklift driver",
+                "A conference roving microphone runner"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Microphone runner » (ou roving mic host) est la personne chargée d'apporter promptement le micro aux spectateurs. Les conducteurs de chariot élévateur ou opérateurs de groupe électrogène sont des postes logistiques lourds."
+            },
+            {
+              "prompt_fr": "Quelle expression technique désigne le seuil maximal réglementaire de personnes autorisées assises dans l'amphithéâtre ?",
+              "choices": [
+                "The maximum room seating capacity threshold",
+                "The sound equalizer frequency range",
+                "The video projector display resolution output"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Seating capacity threshold » est la jauge limite de places assises autorisée pour la sécurité du public. La résolution de vidéoprojecteur ou l'égalisation sonore sont des grandeurs audiovisuelles."
+            },
+            {
+              "prompt_fr": "Quel verbe en anglais désigne la vigilance constante exercée par les équipes d'accueil sur le taux de remplissage d'une salle ?",
+              "choices": [
+                "To clean the carpet fibers",
+                "To monitor crowd density",
+                "To repaint the exit doors"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To monitor crowd density » signifie surveiller activement la densité et la concentration de personnes dans l'espace. Les autres options portent sur l'entretien ménager ou la peinture."
+            },
+            {
+              "prompt_fr": "Qui supervise et coordonne l'ensemble des équipes portant les micros HF lors d'une séance plénière interactive ?",
+              "choices": [
+                "The airport baggage customs inspector",
+                "The restaurant pastry sous-chef",
+                "The roving microphone coordinator"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Roving microphone coordinator » répartit les zones et attribue les micros aux hôtes pour couvrir l'amphithéâtre. Les inspecteurs douaniers ou chefs pâtissiers n'ont aucune mission en régie de salle."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "La séance de questions-réponses commence dans une plénière de 800 personnes. Donne des consignes claires aux deux porteurs de micros baladeurs sur leur positionnement, la vérification du son et la réactivité dès qu'un bras se lève.",
+            "context_en": "Briefing roving microphone runners before audience Q&A session.",
+            "model_answer_en": "Alex and Maria, Q&A starts right now. Alex, please cover aisle left; Maria, take aisle right. Keep your wireless microphones switched on, stay visible at the edge of the rows, and sprint quietly toward any attendee whose hand is called by the moderator. Do not let go of the microphone handle.",
+            "model_answer_fr": "Alex et Maria, la session questions-réponses débute maintenant. Alex, couvre l'allée gauche ; Maria, prends l'allée droite. Gardez vos micros sans fil allumés, restez bien visibles au bord des rangées et avancez promptement vers tout participant désigné par le modérateur. Ne lâchez pas le corps du micro.",
+            "key_phrases": [
+              "roving microphone",
+              "runner",
+              "aisle",
+              "moderator"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-intercom-and-session-start",
+          "title_fr": "Coordonner la régie radio et réorienter les flux excédentaires",
+          "term_ids": [
+            "two-way-radio",
+            "headset-intercom",
+            "radio-silence-protocol",
+            "to-redirect-attendee-overflow",
+            "incident-reporting-log"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Floor Supervisor",
+              "text_en": "Hostess team, do you copy on channel two on your two-way radio?",
+              "text_fr": "Équipe hôtesses, recevez-vous sur le canal deux de votre talkie-walkie ?"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Loud and clear through the headset intercom. The main auditorium is now completely packed.",
+              "text_fr": "Fort et clair dans l'intercom avec oreillette. L'auditorium principal est désormais totalement plein."
+            },
+            {
+              "speaker": "Floor Supervisor",
+              "text_en": "Close the double doors and immediately begin to redirect attendee overflow to the live stream hall on floor 1.",
+              "text_fr": "Fermez les doubles portes et commencez immédiatement à réorienter le flux excédentaire vers la salle de retransmission au premier étage."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Understood. The opening countdown starts in sixty seconds. Are we initiating the radio silence protocol?",
+              "text_fr": "Bien reçu. Le compte à rebours de lancement commence dans soixante secondes. Enclenchons-nous le protocole de silence radio ?"
+            },
+            {
+              "speaker": "Floor Supervisor",
+              "text_en": "Yes, maintain total radio silence until the prime minister finishes her introductory address.",
+              "text_fr": "Oui, observez un silence radio total jusqu'à ce que la première ministre termine son discours d'introduction."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel appareil émetteur-récepteur portatif permet aux équipes d'accueil de communiquer instantanément avec la sécurité et la régie ?",
+              "choices": [
+                "A portable two-way radio",
+                "A desktop barcode label printer",
+                "A heavy theater acoustic curtain"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Two-way radio » (ou walkie-talkie) est la radio portative professionnelle essentielle pour la coordination au sol. Les imprimantes d'étiquettes ou rideaux acoustiques ne sont pas des appareils de communication mobile."
+            },
+            {
+              "prompt_fr": "Quelle consigne stricte interdit toute transmission radio non urgente pendant les discours officiels ou moments sensibles ?",
+              "choices": [
+                "The voluntary feedback survey",
+                "The strict radio silence protocol",
+                "The catering menu tasting session"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Radio silence protocol » interdit d'émettre sur les ondes pendant les discours solennels afin de ne pas perturber les liaisons HF ou la concentration des régisseurs. Les dégustations de menu ou sondages n'ont aucun lien avec les règles radio."
+            },
+            {
+              "prompt_fr": "Quelle action doivent accomplir les hôtes lorsque la salle plénière est comble et que des centaines de personnes attendent dehors ?",
+              "choices": [
+                "To dismantle the fire alarm bells",
+                "To turn off the building power grid",
+                "To redirect attendee overflow to secondary rooms"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To redirect attendee overflow » consiste à canaliser avec courtoisie le surplus de spectateurs vers des salles annexes équipées d'écrans de retransmission. Les autres choix sont des actes dangereux ou absurdes."
+            },
+            {
+              "prompt_fr": "Quel équipement discret relie la radio portative à l'oreille et à la voix de l'hôtesse sans perturber le public environnant ?",
+              "choices": [
+                "A discrete headset intercom with earpiece",
+                "A high-power stadium loudspeaker horn",
+                "A mechanical stage smoke blower"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Headset intercom » (oreillette avec micro cravate ou micro perche) permet des échanges discrets et inaudibles pour les congressistes. Les porte-voix de stade ou ventilateurs de fumée feraient un vacarme inacceptable."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "La salle plénière affiche complet alors que 80 personnes arrivent encore. Annonce par talkie-walkie la fermeture des portes, ordonne le silence radio pour le discours et guide les retardataires vers la salle vidéo mitoyenne.",
+            "context_en": "Handling full auditorium and redirecting crowd overflow.",
+            "model_answer_en": "Control, this is main door hostess. The auditorium has reached full capacity. We are closing the doors now and initiating strict radio silence protocol for the opening speech. We are currently redirecting attendee overflow to the broadcast room in conference hall B.",
+            "model_answer_fr": "Régie, ici l'hôtesse porte principale. L'auditorium est à pleine capacité. Nous fermons les portes maintenant et enclenchons le protocole strict de silence radio pour le discours d'ouverture. Nous réorientons actuellement le flux excédentaire vers la salle de retransmission en salle B.",
+            "key_phrases": [
+              "full capacity",
+              "radio silence protocol",
+              "redirect attendee overflow",
+              "doors"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-hostess-vip-protocol-and-guest-escort",
+      "title_fr": "Appliquer le protocole et escorter les personnalités VIP",
+      "title_en": "Handle VIP protocol, guest escorting, and diplomatic ceremonies",
+      "situation_fr": "Tu es désignée pour l'accueil du cortège ministériel et des invités d'honneur. Tu dois appliquer le protocole officiel, escorter les VIP vers le salon vert, et assurer la présentation des trophées sur scène.",
+      "guide": {
+        "intro_fr": "L'accueil de personnalités de haut rang exige la maîtrise rigoureuse du protocole VIP (« vip-greeting-protocol »). Dès l'arrivée du cortège officiel (« vip-motorcade-arrival »), tu accueilles les dignitaires à la descente du véhicule de courtoisie (« courtesy-vehicle ») et les intègres dans la haie d'honneur protocolaire (« diplomatic-reception-line »). Tu les escortes vers le salon vert (« vip-green-room-escort » ou « green-room-access ») situé en coulisses (« backstage-corridor-control »). En salle, le placeur protocolaire (« seating-usher » ou « protocol-host ») veille au respect des préséances au premier rang. Lors des cérémonies de remise de prix, l'hôtesse intervient comme présentatrice des trophées (« trophy-presenter » ou « stage-trophy-handler »).",
+        "key_phrases": [
+          {
+            "en": "We will initiate the vip greeting protocol upon the minister's motorcade arrival at the curbside.",
+            "fr": "Nous enclencherons le protocole d'accueil VIP dès l'arrivée du cortège ministériel sur le parvis."
+          },
+          {
+            "en": "Please escort our keynote speaker directly through backstage security into the green room.",
+            "fr": "Veuillez escorter notre conférencière d'honneur directement via la sécurité des coulisses jusqu'au salon vert."
+          },
+          {
+            "en": "Only accredited delegation members are granted green room access before the ceremony.",
+            "fr": "Seuls les membres accrédités de la délégation bénéficient de l'accès au salon vert avant la cérémonie."
+          },
+          {
+            "en": "Our seating usher will show dignitaries to their reserved front-row positions according to protocol.",
+            "fr": "Notre placeur guidera les dignitaires vers leurs places réservées au premier rang conformément au protocole."
+          },
+          {
+            "en": "The stage trophy handler will carry the engraved awards onto the podium during the ceremony.",
+            "fr": "La responsable des trophées de scène apportera les prix gravés sur l'estrade pendant la cérémonie."
+          }
+        ],
+        "tip_fr": "Dans le monde anglo-saxon du spectacle et des conférences, la « green room » désigne le salon privé de repos des intervenants et artistes situé en coulisses (quel que soit son habillage de couleur réel). Ne le traduis jamais littéralement par « chambre verte » !"
+      },
+      "lessons": [
+        {
+          "id": "event-hostess-motorcade-arrival-and-vip-lounge",
+          "title_fr": "Accueillir les cortèges et escorter vers le salon VIP",
+          "term_ids": [
+            "vip-greeting-protocol",
+            "vip-motorcade-arrival",
+            "courtesy-vehicle",
+            "diplomatic-reception-line",
+            "vip-holding-area"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Protocol Officer",
+              "text_en": "Security notifies us that the VIP motorcade arrival is two minutes out at the North VIP gate.",
+              "text_fr": "La sécurité nous signale que l'arrivée du cortège VIP est dans deux minutes au portail VIP Nord."
+            },
+            {
+              "speaker": "Lead Hostess",
+              "text_en": "Our hostess greeting team is assembled and standing ready according to the vip greeting protocol.",
+              "text_fr": "Notre équipe d'hôtesses d'accueil est rassemblée et prête selon le protocole d'accueil VIP."
+            },
+            {
+              "speaker": "Protocol Officer",
+              "text_en": "As soon as the minister exits the courtesy vehicle, guide her directly into the diplomatic reception line.",
+              "text_fr": "Dès que la ministre descend du véhicule de courtoisie, guidez-la directement dans la haie d'honneur diplomatique."
+            },
+            {
+              "speaker": "Lead Hostess",
+              "text_en": "Understood. Afterwards, we will escort the official party to the private vip holding area for coffee.",
+              "text_fr": "Bien compris. Ensuite, nous escorterons la délégation officielle vers l'espace de retenue VIP privatif pour un café."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le convoi automobile sécurisé transportant un chef d'État ou une personnalité de premier rang ?",
+              "choices": [
+                "A commercial freight delivery truck",
+                "A secure official VIP motorcade",
+                "A public municipal transit trolley"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« VIP motorcade » désigne le cortège officiel d'automobiles et d'escorte policière. Les camions de livraison et autobus municipaux ne sont pas des convois officiels."
+            },
+            {
+              "prompt_fr": "Quelle automobile de prestige avec chauffeur est mise à disposition des personnalités par les organisateurs ?",
+              "choices": [
+                "An airport tarmac baggage tractor",
+                "A mechanical floor cleaning scrubber",
+                "A complimentary courtesy vehicle"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Courtesy vehicle » (véhicule officiel / voiture de courtoisie) assure le transport dédié des invités de marque. Les tracteurs de piste ou balayeuses de sol sont des engins techniques industriels."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on la haie protocolaire formée par les officiels pour saluer les dignitaires à leur arrivée ?",
+              "choices": [
+                "A diplomatic reception line",
+                "A technical audio cable barrier",
+                "A stage pyrotechnic launch line"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Diplomatic reception line » (haie d'honneur ou ligne d'accueil officielle) réunit les représentants officiels pour la poignée de main protocolaire. Les autres propositions désignent des câbles de son ou des rampes de feux d'artifice."
+            },
+            {
+              "prompt_fr": "Quel espace sécurisé et confidentiel accueille les dignitaires avant leur entrée en scène ?",
+              "choices": [
+                "A general public smoking shelter",
+                "A secure VIP holding area",
+                "An open-air parking payment booth"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« VIP holding area » est le salon de retenue privatif où les personnalités patientent à l'abri des regards. Les abris fumeurs publics ou guérites de parking ne garantissent aucune discrétion ni sécurité."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "La berline de l'ambassadrice s'arrête devant le tapis rouge du pavillon d'honneur. Ouvre la portière avec élégance, souhaite-lui la bienvenue au sommet et escorte-la vers la haie d'honneur protocolaire.",
+            "context_en": "Welcoming an ambassador arriving at the red carpet entrance.",
+            "model_answer_en": "Your Excellency, welcome to the International Economic Summit. It is an immense honor to receive you today. If you would please step this way, our organizing committee and executive board await you in the diplomatic reception line before we proceed to your private holding lounge.",
+            "model_answer_fr": "Votre Excellence, bienvenue au Sommet Économique International. C'est un immense honneur de vous accueillir aujourd'hui. Veuillez me suivre, notre comité d'organisation et notre directoire vous attendent dans la haie d'honneur protocolaire avant que nous ne rejoignions votre salon privatif.",
+            "key_phrases": [
+              "Your Excellency",
+              "welcome",
+              "diplomatic reception line",
+              "honor"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-green-room-and-seating-ushers",
+          "title_fr": "Filtrer l'accès aux loges et placer au premier rang",
+          "term_ids": [
+            "seating-usher",
+            "vip-green-room-escort",
+            "protocol-host",
+            "green-room-access",
+            "backstage-corridor-control"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Stage Manager",
+              "text_en": "We have non-authorized attendees trying to slip behind the backstage curtains.",
+              "text_fr": "Nous avons des participants non autorisés qui tentent de se glisser derrière les rideaux de coulisses."
+            },
+            {
+              "speaker": "Protocol Host",
+              "text_en": "I am strengthening backstage corridor control immediately. No one passes without the gold speaker badge.",
+              "text_fr": "Je renforce immédiatement le contrôle des couloirs de coulisses. Personne ne passe sans le badge or intervenant."
+            },
+            {
+              "speaker": "Stage Manager",
+              "text_en": "Good. Our VIP green room escort has just guided the keynote speaker inside for microphone wiring.",
+              "text_fr": "Bien. Notre accompagnatrice de salon vert vient d'y guider la conférencière d'honneur pour la pose de son micro."
+            },
+            {
+              "speaker": "Protocol Host",
+              "text_en": "Has the seating usher confirmed that her reserved seat in row A center is protected?",
+              "text_fr": "Le placeur a-t-il bien confirmé que son siège réservé au centre du rang A est protégé ?"
+            },
+            {
+              "speaker": "Stage Manager",
+              "text_en": "Yes, reserved name cards and protocol reserved ribbons are firmly in place on all front-row seats.",
+              "text_fr": "Oui, les chevalets nominatifs et rubans réservés protocolaires sont bien en place sur tous les sièges du premier rang."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le salon privatif en coulisses réservé aux artistes et orateurs avant leur montée sur scène ?",
+              "choices": [
+                "The public restroom lobby",
+                "The electrical breaker closet",
+                "The backstage green room"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Green room » est le terme standard international pour désigner le salon des orateurs et artistes en coulisses. Les toilettes publiques ou le placard des disjoncteurs électriques ne sont pas des espaces de réception."
+            },
+            {
+              "prompt_fr": "Quel rôle remplit l'hôte qui contrôle les badges d'accès à l'entrée des couloirs de coulisses ?",
+              "choices": [
+                "Backstage corridor control",
+                "A conference pastry baker",
+                "An external parking valet"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Backstage corridor control » (filtrage coulisses) s'assure que seules les personnes accréditées pénètrent dans les zones de préparation technique et loges. Les voituriers ou pâtissiers n'ont pas cette attribution de sûreté."
+            },
+            {
+              "prompt_fr": "Comment qualifie-t-on le membre de l'équipe d'accueil chargé d'accompagner les personnalités jusqu'à leur siège nominatif ?",
+              "choices": [
+                "A heavy camera operator",
+                "A protocol seating usher",
+                "A sound equalization engineer"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Seating usher » (placeur / ouvreur protocolaire) oriente les spectateurs et vérifie l'occupation conforme des sièges de gala. Les cadreurs caméra ou ingénieurs son se consacrent à la captation technique."
+            },
+            {
+              "prompt_fr": "Quelle mention sur un badge autorise formellement un intervenant à pénétrer dans les loges des orateurs ?",
+              "choices": [
+                "General visitor exhibition ticket",
+                "Single day lunch voucher only",
+                "Green room access clearance"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Green room access » autorise l'entrée dans le salon des intervenants. Les billets de visiteur général ou simples bons de déjeuner n'ouvrent aucun droit d'accès aux loges en coulisses."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Escorte le PDG invité d'honneur depuis la porte des artistes jusqu'à la loge (green room). Assure-toi de son confort, présente-lui le technicien micro et rappelle-lui l'heure de sa prise de parole.",
+            "context_en": "Escorting a guest keynote speaker to the backstage green room.",
+            "model_answer_en": "Good morning Mr. Davis. Please follow me through our backstage security corridor into the green room. You will find still water, fresh espresso, and quiet space to review your slides. Our sound technician is here to clip on your lapel microphone. We will escort you to the stage wings promptly at 10:15.",
+            "model_answer_fr": "Bonjour monsieur Davis. Veuillez me suivre par notre couloir de sécurité en coulisses jusqu'au salon vert. Vous y trouverez de l'eau plate, un espresso chaud et un espace calme pour relire vos diapositives. Notre ingénieur du son est ici pour installer votre micro-cravate. Nous vous escorterons en bord de scène précisément à 10 h 15.",
+            "key_phrases": [
+              "green room",
+              "backstage",
+              "lapel microphone",
+              "wings"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-awards-ceremony-and-trophies",
+          "title_fr": "Assister la cérémonie de remise des trophées",
+          "term_ids": [
+            "trophy-presenter",
+            "award-ceremony-hostess",
+            "stage-trophy-handler",
+            "to-escort-vips",
+            "branded-promotional-gift"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Show Director",
+              "text_en": "Hostess team, cue for the annual industry awards ceremony in three minutes.",
+              "text_fr": "Équipe hôtesses, top départ pour la cérémonie annuelle de remise des prix dans trois minutes."
+            },
+            {
+              "speaker": "Awards Hostess",
+              "text_en": "I am in position beside the podium as the designated stage trophy handler.",
+              "text_fr": "Je suis en position à côté du pupitre en tant que responsable des trophées de scène."
+            },
+            {
+              "speaker": "Show Director",
+              "text_en": "Inspect each glass trophy to ensure the engraved company name matches the presenter's envelope order.",
+              "text_fr": "Vérifie chaque trophée en verre pour t'assurer que le nom d'entreprise gravé correspond à l'ordre des enveloppes de l'animateur."
+            },
+            {
+              "speaker": "Awards Hostess",
+              "text_en": "Done. All eight awards are wiped clean on velvet trays. My colleague is ready to escort VIPs up the stage steps.",
+              "text_fr": "C'est fait. Les huit récompenses sont impeccables sur plateaux de velours. Ma collègue est prête pour escorter les lauréats sur les marches."
+            },
+            {
+              "speaker": "Show Director",
+              "text_en": "Excellent. Make sure each winner also receives their branded promotional gift bag as they step off the stage.",
+              "text_fr": "Excellent. Assure-toi que chaque vainqueur reçoive également son sac-cadeau promotionnel de marque en descendant de scène."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment désigne-t-on l'hôtesse qui apporte les prix et trophées sur l'estrade lors d'un gala de prestige ?",
+              "choices": [
+                "A stage trophy handler",
+                "A heavy truss rigger",
+                "A culinary kitchen butcher"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Stage trophy handler » (ou trophy presenter) remet avec grâce les trophées aux officiels ou lauréats sur scène. Les monteurs de structures métalliques ou bouchers de cuisine n'interviennent pas dans la remise protocolaire de prix."
+            },
+            {
+              "prompt_fr": "Quel cadeau d'entreprise aux couleurs de l'événement est remis aux invités de marque à l'issue de la cérémonie ?",
+              "choices": [
+                "An unpaid technical repair invoice",
+                "A branded promotional gift bag",
+                "A broken projection bulb shard"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Branded promotional gift » (goodie bag / cadeau corporatif griffé) valorise la marque auprès des invités prestigieux. Les factures impayées ou éclats d'ampoule brisée sont évidemment sans valeur de gratification."
+            },
+            {
+              "prompt_fr": "Quelle mission incombe à l'hôtesse accompagnatrice lorsque le nom du lauréat est proclamé au micro ?",
+              "choices": [
+                "To immediately switch off the hall fire sprinklers",
+                "To wipe down the exterior building facade windows",
+                "To escort the VIP winner up the stage steps safely"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To escort VIPs » consiste à guider le lauréat vers les marches d'accès à la scène et l'orienter face aux photographes. Les autres options sont des tâches de maintenance ou des manœuvres de sécurité incendie hors sujet."
+            },
+            {
+              "prompt_fr": "Quel intitulé professionnel porte l'hôtesse dédiée à la tenue fluide et au protocole d'une soirée de gala ?",
+              "choices": [
+                "An award ceremony hostess",
+                "A backstage forklift mechanic",
+                "An aircraft cargo loader"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Award ceremony hostess » est l'hôtesse spécialisée dans les remises de prix et galas. Les chargeurs de soute d'avion ou mécaniciens de chariots sont des métiers de fret et manutention industrielle."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "La remise du Grand Prix de l'Innovation va avoir lieu sur scène. Donne les consignes à l'hôtesse de scène : vérification de la gravure, port du plateau de velours, remise au ministre et guidage du lauréat vers la séance photo.",
+            "context_en": "Coordinating trophy presentation on stage during gala dinner.",
+            "model_answer_en": "Please check that the glass trophy is facing forward on the velvet tray and matches envelope number one. When the minister announces the winner, walk gracefully to the center podium, present the award with both hands, and guide the laureate toward the official backdrop for the press photo call.",
+            "model_answer_fr": "Vérifie que le trophée en verre est tourné vers l'avant sur le plateau de velours et correspond à l'enveloppe numéro un. Lorsque le ministre proclame le vainqueur, avance avec élégance au centre de l'estrade, présente le prix à deux mains et guide le lauréat vers le fond de scène officiel pour la séance photo de presse.",
+            "key_phrases": [
+              "trophy",
+              "podium",
+              "present the award",
+              "photo call"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-hostess-access-disputes-and-issue-resolution",
+      "title_fr": "Traiter les refus de badge et désamorcer les réclamations",
+      "title_en": "Handle credential disputes, registration errors, and agitated attendees",
+      "situation_fr": "Des congressistes mécontents se présentent avec un badge non reconnu, une pré-inscription introuvable ou tentent d'accéder à une salle comble. Tu dois désamorcer les tensions et appliquer les règles d'accès fermement et poliment.",
+      "guide": {
+        "intro_fr": "Face à un litige d'accréditation (« access-credential »), l'hôtesse applique le protocole de vérification d'accréditation (« accreditation-verification-protocol ») et le rapprochement des pré-inscriptions (« pre-registration-reconciliation »). Si le badge est introuvable ou non réglé, tu diriges la personne vers le comptoir des inscriptions sur place (« walk-in-registration-desk ») conformément à la politique de réémission (« credential-reissuance-policy »). Face à un congressiste agressif (« hostile-attendee-de-escalation » ou « unruly-attendee-handling »), tu désamorces le conflit avec calme (« to-de-escalate-aggressive-confrontations »). Si une salle plénière atteint sa jauge limite, tu enclenches le protocole de salle comble (« full-house-lock-out-protocol ») et diriges vers la salle de retransmission (« audience-overflow-room »).",
+        "key_phrases": [
+          {
+            "en": "Let me cross-reference your confirmation number against our pre-registration reconciliation database.",
+            "fr": "Laissez-moi recouper votre numéro de confirmation avec notre base de rapprochement des pré-inscriptions."
+          },
+          {
+            "en": "In accordance with our credential reissuance policy, a duplicate badge can be printed at the walk-in registration desk.",
+            "fr": "Conformément à notre politique de réémission des titres, un duplicata peut être imprimé au comptoir des inscriptions sur place."
+          },
+          {
+            "en": "I understand your frustration, sir, and I am here to help resolve this discrepancy calmly.",
+            "fr": "Je comprends votre mécontentement, monsieur, et je suis là pour résoudre cette divergence dans le calme."
+          },
+          {
+            "en": "Under our full house lock-out protocol, no additional spectators may enter once seats are filled.",
+            "fr": "En vertu de notre protocole de salle comble, aucun spectateur supplémentaire ne peut entrer une fois les sièges occupés."
+          },
+          {
+            "en": "We invite you to view the live broadcast comfortably in the adjacent audience overflow room.",
+            "fr": "Nous vous invitons à regarder la retransmission en direct confortablement dans la salle de débordement voisine."
+          }
+        ],
+        "tip_fr": "Ne dis jamais « Your name is not in the system, you cannot enter ». Utilise une tournure constructive et apaisante : « I cannot locate your badge on this terminal, but let us verify your confirmation together at our walk-in resolution desk »."
+      },
+      "lessons": [
+        {
+          "id": "event-hostess-credential-disputes-and-replacement",
+          "title_fr": "Vérifier les accréditations et appliquer la politique de réémission",
+          "term_ids": [
+            "access-credential",
+            "accreditation-verification-protocol",
+            "pre-registration-reconciliation",
+            "credential-reissuance-policy",
+            "walk-in-registration-desk"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Attendee",
+              "text_en": "Your scanner beeped red! My company paid three thousand euros for my delegate ticket last month.",
+              "text_fr": "Votre scanneur a émis un bip rouge ! Mon entreprise a payé trois mille euros pour mon billet de délégué le mois dernier."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "I understand your concern, sir. Let me initiate our accreditation verification protocol right away.",
+              "text_fr": "Je comprends votre inquiétude, monsieur. Laissez-moi enclencher immédiatement notre protocole de vérification d'accréditation."
+            },
+            {
+              "speaker": "Attendee",
+              "text_en": "Could my registration be listed under my corporate group booking rather than my personal email?",
+              "text_fr": "Mon inscription pourrait-elle être enregistrée sous la réservation de groupe de mon entreprise plutôt que sous mon e-mail personnel ?"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "That is very likely. Let us run a pre-registration reconciliation with your corporate VAT number.",
+              "text_fr": "C'est très probable. Faisons un rapprochement de pré-inscription avec le numéro de TVA de votre entreprise."
+            },
+            {
+              "speaker": "Attendee",
+              "text_en": "And if my badge was misplaced by my travel agency, what is the procedure?",
+              "text_fr": "Et si mon badge a été égaré par mon agence de voyages, quelle est la procédure ?"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Under our credential reissuance policy, our walk-in registration desk will reprint your official pass in two minutes.",
+              "text_fr": "Selon notre politique de réémission des titres, notre comptoir d'inscription sur place réimprimera votre pass officiel en deux minutes."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel terme technique global désigne tout titre officiel, badge RFID ou bracelet ouvrant l'accès à l'événement ?",
+              "choices": [
+                "A stage lighting color filter gel",
+                "An authorized access credential",
+                "An acoustic loudspeaker woofer cone"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Access credential » (titre ou accréditation d'accès) englobe tout support validant le droit d'entrée. Les filtres d'éclairage ou haut-parleurs de graves sont des composants de régie scénique."
+            },
+            {
+              "prompt_fr": "Où devez-vous orienter un visiteur non inscrit sur les listes pour qu'il règle son entrée et obtienne un badge ?",
+              "choices": [
+                "The rooftop air conditioning condenser",
+                "The basement trash compactor bin",
+                "The walk-in registration desk"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Walk-in registration desk » est le comptoir des inscriptions de dernière minute sur place. Les groupes de climatisation ou bennes à compacteur sont des locaux techniques hors d'atteinte du public."
+            },
+            {
+              "prompt_fr": "Quelle procédure informatique consiste à retrouver une commande dans la base globale des pré-inscriptions en ligne ?",
+              "choices": [
+                "Pre-registration reconciliation",
+                "Stage pyrotechnic ignition testing",
+                "Acoustic reverberation measurement"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Pre-registration reconciliation » est le rapprochement informatique des dossiers d'inscription préalable. Les tests pyrotechniques ou mesures acoustiques concernent le spectacle vivant."
+            },
+            {
+              "prompt_fr": "Quel règlement interne définit les conditions de remplacement et les éventuels frais en cas de perte de badge ?",
+              "choices": [
+                "The stage curtain fabric certification",
+                "The credential reissuance policy",
+                "The catering dessert temperature rule"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Credential reissuance policy » encadre formellement la réimpression et le duplicata de badges perdus. Les certifications textiles ou températures de desserts relèvent de la scénographie et de l'hygiène alimentaire."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Le badge d'un directeur commercial est rejeté au contrôle. Rassure-le avec empathie, effectue le rapprochement sur sa référence de commande et dirige-le vers le comptoir de réémission immédiate.",
+            "context_en": "Resolving a credential error for an irritated corporate delegate.",
+            "model_answer_en": "Please do not worry, sir. Scanner errors happen occasionally with recent updates. Let me review your company purchase order to run a quick pre-registration reconciliation. Your booking is confirmed in our database. Please step over to our walk-in registration desk where my colleague will reprint your access credential immediately.",
+            "model_answer_fr": "Ne vous inquiétez pas, monsieur. Les erreurs de lecture arrivent parfois lors des mises à jour récentes. Laissez-moi consulter le bon de commande de votre société pour faire un rapide rapprochement de pré-inscription. Votre réservation est bien confirmée dans notre base. Veuillez avancer vers notre comptoir d'enregistrement sur place où ma collègue réimprimera immédiatement votre titre d'accès.",
+            "key_phrases": [
+              "pre-registration reconciliation",
+              "access credential",
+              "walk-in registration desk",
+              "confirmed"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-deescalate-confrontations",
+          "title_fr": "Désamorcer les tensions et confiner les périmètres sensibles",
+          "term_ids": [
+            "unruly-attendee-handling",
+            "hostile-attendee-de-escalation",
+            "to-de-escalate-aggressive-confrontations",
+            "incident-escalation-pathway",
+            "restricted-access-containment"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Hostess",
+              "text_en": "Sir, I understand you are upset about the entrance delay, but shouting at the desk staff will not speed up the process.",
+              "text_fr": "Monsieur, je comprends que vous soyez contrarié par l'attente à l'entrée, mais crier sur le personnel d'accueil n'accélérera pas les choses."
+            },
+            {
+              "speaker": "Agitated Guest",
+              "text_en": "I have an urgent contract signing in ten minutes and I demand immediate entry!",
+              "text_fr": "J'ai une signature de contrat urgente dans dix minutes et j'exige d'entrer immédiatement !"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Let us step over to this quiet side lounge so we can review your pass without holding up the line.",
+              "text_fr": "Passons dans ce salon latéral calme afin d'examiner votre pass sans bloquer la file."
+            },
+            {
+              "speaker": "Agitated Guest",
+              "text_en": "Fine, as long as this gets resolved right now.",
+              "text_fr": "Très bien, tant que c'est résolu tout de suite."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Thank you for cooperating. Good hostile attendee de-escalation allows us to assist you without activating our incident escalation pathway.",
+              "text_fr": "Merci de votre coopération. Un bon désamorçage nous permet de vous aider sans avoir à déclencher notre procédure d'escalade d'incident."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle méthode comportementale vise à calmer un participant agressif par l'écoute active et un ton posé ?",
+              "choices": [
+                "Aggressive megaphone counter-shouting",
+                "Immediate public physical ejection",
+                "Hostile attendee de-escalation"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Hostile attendee de-escalation » est la technique de communication verbale visant à apaiser la colère sans violence. Hurler au mégaphone ou expulser brutalement une personne agacée aggraverait le trouble."
+            },
+            {
+              "prompt_fr": "Quel protocole officiel définit les étapes pour faire intervenir la sécurité ou la direction en cas d'incident grave ?",
+              "choices": [
+                "The incident escalation pathway",
+                "The cocktail recipe ingredient list",
+                "The annual delegate discount schedule"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Incident escalation pathway » formalise la chaîne d'alerte graduelle vers la sécurité ou la direction. Les listes d'ingrédients de cocktail ou barèmes de remises n'ont aucun rapport avec la gestion des crises."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on la sécurisation d'un espace fermé pour empêcher un individu perturbateur d'approcher des personnalités ?",
+              "choices": [
+                "Stage lighting beam calibration",
+                "Restricted access containment",
+                "Sound reverberation decay testing"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Restricted access containment » consiste à isoler et sécuriser un périmètre protégé contre les intrusions. La calibration des projecteurs ou l'acoustique de salle relèvent de la technique pure."
+            },
+            {
+              "prompt_fr": "Quel verbe en anglais décrit la capacité professionnelle à éteindre un conflit naissant par le dialogue ?",
+              "choices": [
+                "To amplify the hostile dispute",
+                "To provoke physical altercation",
+                "To de-escalate aggressive confrontations"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To de-escalate aggressive confrontations » signifie apaiser et désamorcer une situation conflictuelle. Les autres options signifient au contraire attiser ou provoquer l'altercation."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un congressiste furieux tape sur le comptoir car son badge VIP n'a pas été imprimé. Reste parfaitement calme, valide ses émotions, isole-le poliment de la file d'attente et trouve une solution avec le superviseur.",
+            "context_en": "De-escalating an angry executive attendee at the reception desk.",
+            "model_answer_en": "Sir, I completely hear your frustration regarding your VIP badge, and I apologize for this inconvenience. Let us step over to our customer service desk right here so I can personally investigate your record with our supervisor. I will ensure your pass is printed immediately so you do not miss your appointment.",
+            "model_answer_fr": "Monsieur, j'entends parfaitement votre mécontentement concernant votre badge VIP et je vous présente nos excuses pour ce contretemps. Passons à notre comptoir d'assistance juste ici afin que j'examine personnellement votre dossier avec notre superviseur. Je veille à ce que votre pass soit imprimé immédiatement pour que vous ne manquiez pas votre rendez-vous.",
+            "key_phrases": [
+              "frustration",
+              "apologize",
+              "customer service desk",
+              "printed immediately"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-room-capacity-and-overflow",
+          "title_fr": "Gérer les listes confidentielles et les protocoles de salle comble",
+          "term_ids": [
+            "protocol-breakdown-contingency",
+            "embargoed-attendee-manifest",
+            "full-house-lock-out-protocol",
+            "audience-overflow-room",
+            "to-redirect-attendee-overflow"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Safety Marshal",
+              "text_en": "Auditorium alpha has reached maximum licensed seating capacity. We are at full house.",
+              "text_fr": "L'auditorium alpha a atteint sa capacité maximale autorisée de places assises. La salle est comble."
+            },
+            {
+              "speaker": "Lead Hostess",
+              "text_en": "Activating the full-house lock-out protocol immediately. All four main double doors are now closed.",
+              "text_fr": "Activation immédiate du protocole de salle comble. Les quatre portes doubles principales sont désormais fermées."
+            },
+            {
+              "speaker": "Safety Marshal",
+              "text_en": "What do we do with the seventy delegates still queuing outside?",
+              "text_fr": "Que faisons-nous des soixante-dix délégués qui font encore la queue dehors ?"
+            },
+            {
+              "speaker": "Lead Hostess",
+              "text_en": "My team is trained to redirect attendee overflow directly into the audience overflow room on level 2.",
+              "text_fr": "Mon équipe est formée pour réorienter le flux excédentaire directement vers la salle de débordement au niveau 2."
+            },
+            {
+              "speaker": "Safety Marshal",
+              "text_en": "Excellent. Make sure only names appearing on the embargoed attendee manifest enter the backstage corridor.",
+              "text_fr": "Excellent. Assurez-vous que seuls les noms figurant sur la liste confidentielle sous embargo accèdent au couloir de coulisses."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel protocole de sécurité interdit formellement d'ouvrir les portes d'un amphithéâtre lorsque chaque place est occupée ?",
+              "choices": [
+                "The full-house lock-out protocol",
+                "The voluntary cocktail menu survey",
+                "The carpet color cleaning guideline"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Full-house lock-out protocol » verrouille les accès dès que la jauge de sécurité incendie est atteinte. Les enquêtes sur les menus de cocktails ou le nettoyage des moquettes ne relèvent pas de la sécurité du public."
+            },
+            {
+              "prompt_fr": "Quelle salle secondaire équipée d'écrans géants et de hauts-parleurs retransmet la plénière pour les personnes n'ayant pu entrer ?",
+              "choices": [
+                "The electrical substation corridor",
+                "The audience overflow room",
+                "The basement freight delivery dock"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Audience overflow room » (salle de retransmission ou salle de débordement) permet à l'excédent de public de suivre l'événement en direct dans de parfaites conditions. Les locaux techniques et quais de fret sont interdits au public."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on la liste nominative ultra-confidentielle dont la diffusion est strictement verrouillée jusqu'à l'heure dite ?",
+              "choices": [
+                "The public conference flyer pamphlet",
+                "The general tourist souvenir map",
+                "An embargoed attendee manifest"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Embargoed attendee manifest » est la liste des participants sous embargo strict pour des raisons protocolaires ou de sécurité d'État. Les dépliants tout public ou plans touristiques sont largement diffusés."
+            },
+            {
+              "prompt_fr": "Quel plan d'urgence anticipe la défaillance d'un équipement ou un couac dans l'ordre des préséances officielles ?",
+              "choices": [
+                "A protocol breakdown contingency plan",
+                "An audio cable recycling proposal",
+                "A dining table linen laundry schedule"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Protocol breakdown contingency » est le plan de secours prévu pour parer aux imprévus protocolaires majeurs. Le recyclage des câbles ou la blanchisserie des nappes sont des aspects logistiques mineurs."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "L'amphithéâtre vient de fermer pour salle comble alors qu'un groupe de congressistes insiste pour entrer. Annonce la règle de sécurité avec fermeté et courtoisie, et guide-les vers la salle de retransmission en direct.",
+            "context_en": "Redirecting attendees after an auditorium reaches full capacity.",
+            "model_answer_en": "Ladies and gentlemen, the main auditorium has now reached its certified safety capacity, so we must enforce our full-house lock-out protocol. For your comfort and safety, we have opened the audience overflow room right across the hall in salon B, featuring comfortable seating and a live high-definition broadcast of the session.",
+            "model_answer_fr": "Mesdames et messieurs, l'auditorium principal a atteint sa jauge de sécurité certifiée, nous devons donc appliquer notre protocole de salle comble. Pour votre confort et sécurité, nous avons ouvert la salle de débordement juste en face dans le salon B, avec des sièges confortables et une retransmission haute définition en direct de la séance.",
+            "key_phrases": [
+              "safety capacity",
+              "full-house lock-out protocol",
+              "audience overflow room",
+              "live broadcast"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "event-hostess-prm-accessibility-and-emergency-egress",
+      "title_fr": "Assurer l'assistance PMR et guider les évacuations d'urgence",
+      "title_en": "Manage PRM accessibility, emergency egress, and radio silence discipline",
+      "situation_fr": "Tu es formée à la sécurité incendie et à l'accessibilité universelle. Tu dois guider les personnes à mobilité réduite, maintenir les dégagements de secours dégagés, et diriger l'évacuation en cas d'alarme.",
+      "guide": {
+        "intro_fr": "La sécurité des personnes et l'accessibilité universelle constituent le socle du métier d'accueil. Tu prodigues une assistance attentionnée aux personnes à mobilité réduite (« prm-assistance »), déploies la chaise d'évacuation spéciale (« prm-evacuation-chair ») et guides le long des bandes podotactiles (« tactile-paving-guidance »). En cas d'incident grave ou d'alerte incendie, tu veilles à libérer immédiatement les voies d'accès (« to-enforce-emergency-ingress-clearways ») et diriges la foule le long des issues d'évacuation (« emergency-egress-route »). Tu appliques la discipline radio (« multi-channel-radio-etiquette ») et le silence radio (« maintain-radio-silence-until-the-all-clear-is-given »). Tu vérifies le point de rassemblement (« emergency-head-count-reconciliation ») et le cordon de sécurité (« security-cordon-enforcement »).",
+        "key_phrases": [
+          {
+            "en": "Our hospitality team provides dedicated PRM assistance throughout the conference venue.",
+            "fr": "Notre équipe d'accueil fournit une assistance PMR dédiée dans l'ensemble du centre de congrès."
+          },
+          {
+            "en": "Staff are trained to deploy the PRM evacuation chair in stairwells during an emergency.",
+            "fr": "Le personnel est formé pour déployer la chaise d'évacuation PMR dans les escaliers en cas d'urgence."
+          },
+          {
+            "en": "Please keep this emergency egress route and fire exit completely clear of bags and banners.",
+            "fr": "Veuillez maintenir cette voie d'évacuation d'urgence et issue de secours totalement dégagées de sacs et banderoles."
+          },
+          {
+            "en": "All teams must maintain radio silence until the all-clear is given by the incident commander.",
+            "fr": "Toutes les équipes doivent observer le silence radio jusqu'à ce que la fin d'alerte soit donnée par le commandant des opérations."
+          },
+          {
+            "en": "Security cordons must be strictly enforced around the exterior assembly point.",
+            "fr": "Les cordons de sécurité doivent être strictement appliqués autour du point de rassemblement extérieur."
+          }
+        ],
+        "tip_fr": "« PRM » est l'acronyme universel pour « Persons with Reduced Mobility ». En cas d'alarme sonore, l'hôtesse ne court jamais et ne crie pas : elle parle d'une voix posée et directive (« Please walk calmly toward the emergency exit ») pour éviter tout mouvement de panique."
+      },
+      "lessons": [
+        {
+          "id": "event-hostess-prm-guidance-and-accessibility",
+          "title_fr": "Accompagner les personnes à mobilité réduite et déployer la chaise d'évacuation",
+          "term_ids": [
+            "prm-assistance",
+            "prm-evacuation-chair",
+            "tactile-paving-guidance",
+            "crowd-dispersal-strategy",
+            "discreet-dignitary-extraction"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Attendee",
+              "text_en": "Excuse me, I use a wheelchair and I cannot find the ramp access to the main amphitheater.",
+              "text_fr": "Excusez-moi, j'utilise un fauteuil roulant et je ne trouve pas la rampe d'accès à l'amphithéâtre principal."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Welcome, I am assigned to prm assistance today. Let me escort you along the step-free pathway.",
+              "text_fr": "Bienvenue, je suis affectée à l'assistance PMR aujourd'hui. Laissez-moi vous escorter le long du cheminement sans marche."
+            },
+            {
+              "speaker": "Attendee",
+              "text_en": "Thank you so much. Are there designated wheelchair spaces inside the auditorium?",
+              "text_fr": "Merci infiniment. Y a-t-il des emplacements réservés aux fauteuils roulants dans l'auditorium ?"
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Yes, on row G center. Also, we have a specialized prm evacuation chair mounted by each emergency staircase.",
+              "text_fr": "Oui, au rang G au centre. De plus, nous disposons d'une chaise d'évacuation PMR spécialisée fixée près de chaque escalier de secours."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle assistance spécifique est dédiée aux personnes en situation de handicap ou à mobilité réduite ?",
+              "choices": [
+                "Stage spotlight maintenance service",
+                "Dedicated PRM assistance service",
+                "Commercial exhibition booth carpentry"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« PRM assistance » (Persons with Reduced Mobility) est le service d'accompagnement adapté aux personnes en situation de handicap. Les techniciens d'éclairage ou menuisiers de stands n'assurent pas l'aide aux personnes."
+            },
+            {
+              "prompt_fr": "Quel équipement de secours sur rails ou patins permet d'évacuer une personne en fauteuil dans un escalier ?",
+              "choices": [
+                "An acoustic loudspeaker tripod",
+                "A video monitor transport flightcase",
+                "A specialized PRM evacuation chair"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« PRM evacuation chair » est la chaise d'évacuation d'urgence permettant de descendre en sécurité une personne à mobilité réduite dans les escaliers. Les pieds d'enceinte ou malles de transport n'ont aucun usage d'évacuation."
+            },
+            {
+              "prompt_fr": "Quel revêtement au sol à bandes en relief guide les congressistes malvoyants à l'aide de leur canne blanche ?",
+              "choices": [
+                "Tactile paving guidance strips",
+                "A velvet VIP banquet runner",
+                "An outdoor wet grass lawn"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Tactile paving guidance » désigne les bandes de guidage podotactiles au sol pour déficients visuels. Les tapis de velours décoratifs ou pelouses d'herbe ne sont pas des aménagements d'accessibilité tactile."
+            },
+            {
+              "prompt_fr": "Quelle manœuvre de sécurité confidentielle consiste à faire sortir un dignitaire par une issue protégée en cas de menace ?",
+              "choices": [
+                "A public banquet ribbon cutting",
+                "A discreet dignitary extraction",
+                "A promotional flyer distribution"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Discreet dignitary extraction » est l'évacuation d'urgence discrète d'une personnalité protégée par les services de sécurité. La distribution de prospectus ou le découpage de ruban sont des actes promotionnels."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Accueille un délégué en béquilles à l'entrée du palais des congrès : propose-lui une assistance PMR, oriente-le vers les ascenseurs prioritaires et indique-lui la présence des chaises d'évacuation.",
+            "context_en": "Assisting a passenger on crutches seeking accessible pathways.",
+            "model_answer_en": "Good morning, sir. Our dedicated PRM assistance team is delighted to accompany you. Please take our step-free corridor to the priority elevator on your right. In the auditorium, reserved accessible seating is ready for you, and all emergency exits are equipped with certified evacuation chairs.",
+            "model_answer_fr": "Bonjour monsieur. Notre équipe dédiée à l'assistance PMR est heureuse de vous accompagner. Veuillez emprunter notre couloir de plain-pied vers l'ascenseur prioritaire sur votre droite. Dans l'auditorium, des places accessibles réservées vous attendent, et toutes les issues de secours sont dotées de chaises d'évacuation certifiées.",
+            "key_phrases": [
+              "PRM assistance",
+              "step-free",
+              "elevator",
+              "evacuation chairs"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-emergency-evacuation-and-assembly",
+          "title_fr": "Guider l'évacuation d'urgence vers le point de rassemblement",
+          "term_ids": [
+            "emergency-egress-route",
+            "to-enforce-emergency-ingress-clearways",
+            "emergency-head-count-reconciliation",
+            "security-cordon-enforcement",
+            "maintain-radio-silence-until-the-all-clear-is-given"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Safety Lead",
+              "text_en": "Attention all floor staff: fire alarm confirmed on level 1. Execute building evacuation immediately.",
+              "text_fr": "Attention à tous les personnels de salle : alarme incendie confirmée au niveau 1. Exécutez l'évacuation du bâtiment immédiatement."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Understood. Guiding attendees from foyer B along the primary emergency egress route right now.",
+              "text_fr": "Bien reçu. Nous guidons les participants du foyer B le long de la voie principale d'évacuation d'urgence dès maintenant."
+            },
+            {
+              "speaker": "Safety Lead",
+              "text_en": "Keep voices firm and calm: walk, do not run. Do not allow anyone to use the passenger elevators.",
+              "text_fr": "Gardez une voix ferme et calme : marchez, ne courez pas. N'autorisez personne à utiliser les ascenseurs."
+            },
+            {
+              "speaker": "Hostess",
+              "text_en": "Confirmed. Exterior security is executing security cordon enforcement at assembly point number three.",
+              "text_fr": "Confirmé. La sécurité extérieure met en place le cordon de sécurité au point de rassemblement numéro trois."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment désigne-t-on le couloir sécurisé et balisé conduisant directement vers l'extérieur en cas de sinistre ?",
+              "choices": [
+                "A stage lighting catwalk",
+                "A kitchen food service hatch",
+                "An emergency egress route"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Emergency egress route » (cheminement ou issue d'évacuation d'urgence) garantit la sortie rapide du public vers l'extérieur. Les passerelles d'éclairage ou passe-plats de cuisine ne sont pas des chemins d'évacuation."
+            },
+            {
+              "prompt_fr": "Quelle mesure de sécurité périmétrique empêche la foule évacuée de refluer vers le bâtiment en danger ?",
+              "choices": [
+                "Strict security cordon enforcement",
+                "A conference coffee tasting survey",
+                "A stage pyrotechnic smoke rehearsal"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Security cordon enforcement » (maintien du cordon de sécurité) bloque tout retour dans l'édifice avant l'autorisation des pompiers. Les dégustations de café ou répétitions pyrotechniques sont sans lien avec le bouclage de sécurité."
+            },
+            {
+              "prompt_fr": "Quelle vérification d'effectif les équipes d'accueil mènent-elles au point de rassemblement pour s'assurer que personne ne manque ?",
+              "choices": [
+                "A souvenir gift bag count",
+                "An emergency head-count reconciliation",
+                "An audio cable length check"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Emergency head-count reconciliation » est le pointage nominatif ou volumétrique au point de rassemblement pour s'assurer de l'évacuation de tous. Le comptage des sacs cadeaux ou la mesure des câbles son ne sauvent aucune vie."
+            },
+            {
+              "prompt_fr": "Pourquoi est-il crucial de maintenir les voies d'accès extérieures (« ingress clearways ») parfaitement dégagées pendant l'évacuation ?",
+              "choices": [
+                "To display large commercial sponsor advertising banners on the road",
+                "To park delivery food trucks as close as possible to the front door",
+                "To allow emergency firefighting vehicles immediate unobstructed access"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "Les voies d'accès de secours (« emergency ingress clearways ») doivent rester libres pour le passage des camions de pompiers et ambulances. Y déployer des banderoles ou garer des food-trucks serait criminel."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Une alarme incendie retentit dans le hall d'exposition. Prends la parole avec calme et autorité en anglais pour guider 300 personnes vers la sortie de secours la plus proche sans panique.",
+            "context_en": "Guiding an emergency evacuation calmly and authoritatively.",
+            "model_answer_en": "Ladies and gentlemen, please remain calm. An alarm has sounded and we must evacuate the exhibition hall. Please leave your coats and bags, do not use the elevators, and walk calmly toward the illuminated green exit signs on your right. Follow our staff directly to assembly point number two outside.",
+            "model_answer_fr": "Mesdames et messieurs, veuillez garder votre calme. Une alarme a retenti et nous devons évacuer le hall d'exposition. Veuillez laisser manteaux et sacs, n'utilisez pas les ascenseurs et marchez calmement vers les panneaux lumineux verts de sortie sur votre droite. Suivez notre personnel directement jusqu'au point de rassemblement numéro deux à l'extérieur.",
+            "key_phrases": [
+              "remain calm",
+              "evacuate",
+              "exit signs",
+              "assembly point"
+            ]
+          }
+        },
+        {
+          "id": "event-hostess-radio-silence-and-containment",
+          "title_fr": "Appliquer la discipline radio et évacuer les zones réservées",
+          "term_ids": [
+            "multi-channel-radio-etiquette",
+            "unauthorized-personnel-must-vacate-the-backstage-area-immediately",
+            "credentials-must-be-visibly-displayed-at-all-times",
+            "stage-cue-coordination",
+            "biometric-access-clearance"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Security Chief",
+              "text_en": "Attention all channels: observe professional multi-channel radio etiquette. Keep transmissions concise.",
+              "text_fr": "Attention sur tous les canaux : respectez une discipline radio multi-canaux professionnelle. Soyez concis."
+            },
+            {
+              "speaker": "Hostess Lead",
+              "text_en": "Channel four clear. We are announcing that credentials must be visibly displayed at all times throughout the venue.",
+              "text_fr": "Canal quatre dégagé. Nous annonçons que les badges doivent être portés de manière visible en permanence."
+            },
+            {
+              "speaker": "Security Chief",
+              "text_en": "Broadcasting security instruction: unauthorized personnel must vacate the backstage area immediately.",
+              "text_fr": "Diffusion de la consigne de sécurité : le personnel non autorisé doit évacuer les coulisses immédiatement."
+            },
+            {
+              "speaker": "Hostess Lead",
+              "text_en": "Copy. We have escorted external media back to the press center. Biometric access clearance is active at the green room door.",
+              "text_fr": "Bien reçu. Nous avons raccompagné les médias extérieurs vers le centre de presse. Le contrôle d'accès biométrique est actif à la porte des loges."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle consigne de sécurité formelle intime l'ordre aux personnes sans titre de quitter les coulisses sur-le-champ ?",
+              "choices": [
+                "Unauthorized personnel must vacate the backstage area immediately",
+                "Please taste all gourmet desserts before leaving the hall",
+                "Feel free to wander behind the stage curtains anytime"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Unauthorized personnel must vacate the backstage area immediately » est l'injonction réglementaire de sécurité sommant les intrus de quitter les coulisses. Les autres propositions sont invraisemblables."
+            },
+            {
+              "prompt_fr": "Quelle règle fondamentale de badgeage est imposée à tous les congressistes et personnels dans le bâtiment ?",
+              "choices": [
+                "Badges can be left hidden inside luggage",
+                "Credentials must be visibly displayed at all times",
+                "Badges must be thrown away upon arrival"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Credentials must be visibly displayed at all times » est la consigne universelle imposant le port visible du badge autour du cou ou à la poitrine. Cacher ou jeter son badge contrevient aux règles de sûreté."
+            },
+            {
+              "prompt_fr": "Comment qualifie-t-on le respect des règles de communication concise et courtoise sur les talkies-walkies professionnels ?",
+              "choices": [
+                "Loudspeaker feedback resonance",
+                "Stage curtain motorized hoisting",
+                "Multi-channel radio etiquette"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Multi-channel radio etiquette » régit la clarté, la concision et la discipline des transmissions radio d'exploitation. L'effet larsen ou le levage motorisé des rideaux n'ont rien à voir avec la déontologie radio."
+            },
+            {
+              "prompt_fr": "Quel niveau de sécurité de pointe filtre l'accès aux zones ultra-sensibles par reconnaissance d'empreintes ou d'iris ?",
+              "choices": [
+                "Biometric access clearance",
+                "A paper cocktail drink coupon",
+                "A standard promotional brochure"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Biometric access clearance » est le contrôle d'accès par données biométriques (empreinte, visage, iris) réservé aux zones de haute sécurité. Les coupons de boisson ou brochures publicitaires n'offrent aucune sécurité d'accès."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Lors d'un sommet diplomatique, rappelle à l'équipe sol les 3 consignes de sûreté essentielles : port obligatoire et visible des badges, évacuation des coulisses pour tout personnel non accrédité, et discipline radio stricte.",
+            "context_en": "Pre-summit security briefing for event hosting staff.",
+            "model_answer_en": "Team, please listen carefully to our three mandatory security directives. First, credentials must be visibly displayed at all times by every single attendee and staff member. Second, unauthorized personnel must vacate the backstage area immediately. Third, maintain rigorous multi-channel radio etiquette with concise messages only. Let us ensure a flawless operation.",
+            "model_answer_fr": "Équipe, écoutez attentivement nos trois directives obligatoires de sécurité. Premièrement, les badges doivent être portés de manière visible en permanence par chaque congressiste et membre du personnel. Deuxièmement, le personnel non autorisé doit évacuer les coulisses immédiatement. Troisièmement, observez une discipline radio multi-canaux rigoureuse avec des messages concis uniquement. Assurons un déroulement sans faille.",
+            "key_phrases": [
+              "credentials visibly displayed",
+              "vacate the backstage area",
+              "radio etiquette",
+              "mandatory"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1576 @@
+{
+  "role": "general-air-events",
+  "status": "draft",
+  "title_fr": "L'anglais du service et de l'accueil aéroportuaire",
+  "units": [
+    {
+      "id": "general-air-events-terminal-assistance-and-directions",
+      "title_fr": "Renseigner et orienter les voyageurs dans l'aérogare",
+      "title_en": "Assist and guide passengers throughout the terminal",
+      "situation_fr": "Tu travailles au comptoir d'information et d'assistance de l'aérogare. Tu dois orienter les voyageurs vers leurs portes d'embarquement, les aider sur les bornes libre-service et renseigner les passagers en transit.",
+      "guide": {
+        "intro_fr": "Dans l'aérogare côté ville (« landside ») ou côté piste (« airside »), les agents d'accueil guident des flux continus de voyageurs internationaux. Au comptoir d'information (« customer service counter »), tu vérifies le numéro de vol (« flight number »), l'heure d'embarquement (« boarding time ») et tu indiques la porte de départ (« departure gate »). Tu aides les passagers à s'enregistrer en ligne (« to check in online ») ou sur les bornes libre-service (« check-in kiosk »), puis à déposer leurs valises au dépose-bagages (« bag-drop counter »). Tu vérifies les dimensions du bagage cabine (« carry-on bag ») et orientes les voyageurs en correspondance vers le salon de transit (« transit lounge »).",
+        "key_phrases": [
+          {
+            "en": "May I check your flight number and travel itinerary, please?",
+            "fr": "Puis-je vérifier votre numéro de vol et votre itinéraire de voyage, s'il vous plaît ?"
+          },
+          {
+            "en": "Your departure gate is B14; boarding time is scheduled for 10:30 AM.",
+            "fr": "Votre porte d'embarquement est la B14 ; l'heure d'embarquement est prévue à 10 h 30."
+          },
+          {
+            "en": "You can print your baggage tag at any self-service check-in kiosk.",
+            "fr": "Vous pouvez imprimer votre étiquette bagage sur n'importe quelle borne libre-service."
+          },
+          {
+            "en": "Please drop off your checked suitcase at bag-drop counter number four.",
+            "fr": "Veuillez déposer votre valise enregistrée au comptoir dépose-bagages numéro quatre."
+          },
+          {
+            "en": "Transit passengers with connecting flights should proceed to the transit lounge.",
+            "fr": "Les passagers en transit ayant un vol de correspondance doivent se rendre au salon de transit."
+          },
+          {
+            "en": "If you misplaced your backpack, please report to the lost property office.",
+            "fr": "Si vous avez égaré votre sac à dos, veuillez vous signaler au bureau des objets trouvés."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « departure gate » (la porte d'embarquement dans l'aérogare) et « door » (une porte ordinaire). On dit « carry-on bag » ou « hand luggage » pour un bagage en cabine, et « checked bag » pour un bagage en soute."
+      },
+      "lessons": [
+        {
+          "id": "general-air-events-flight-information-and-gates",
+          "title_fr": "Renseigner sur les vols et orienter vers les portes de départ",
+          "term_ids": [
+            "customer-service-counter",
+            "flight-number",
+            "departure-gate",
+            "boarding-time",
+            "to-check-in-online"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Aïcha",
+              "text_en": "Good morning! Welcome to the airport customer service counter. How may I assist you?",
+              "text_fr": "Bonjour ! Bienvenue au comptoir d'information de l'aéroport. Comment puis-je vous aider ?"
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Hello, I am flying to Montreal. My boarding pass shows flight number AF342, but no gate is listed.",
+              "text_fr": "Bonjour, je pars pour Montréal. Ma carte d'embarquement indique le vol numéro AF342, mais aucune porte n'est mentionnée."
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Let me check the terminal displays. Your departure gate has just been assigned to gate E22.",
+              "text_fr": "Laissez-moi vérifier les écrans de l'aérogare. Votre porte d'embarquement vient d'être attribuée en porte E22."
+            },
+            {
+              "speaker": "Tomasz",
+              "text_en": "Thank you. What is the boarding time for that flight?",
+              "text_fr": "Merci. Quelle est l'heure d'embarquement pour ce vol ?"
+            },
+            {
+              "speaker": "Aïcha",
+              "text_en": "Boarding time begins at 14:15. For your next journey, remember you can check in online 24 hours prior to departure.",
+              "text_fr": "L'embarquement commence à 14 h 15. Pour votre prochain voyage, n'oubliez pas que vous pouvez vous enregistrer en ligne 24 heures avant le départ."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment désigne-t-on la porte d'embarquement où les voyageurs accèdent à leur avion ?",
+              "choices": [
+                "The designated flight departure gate",
+                "The boarding lounge",
+                "The jet bridge entrance"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Departure gate » est le terme aéronautique standard pour désigner la porte d'embarquement. « Boarding lounge » est la salle d'attente adjacente et « jet bridge entrance » est l'entrée physique de la passerelle télescopique."
+            },
+            {
+              "prompt_fr": "Quelle démarche permet au voyageur d'éditer sa carte d'embarquement depuis chez lui avant le départ ?",
+              "choices": [
+                "To book an open itinerary",
+                "To complete the passenger check-in online",
+                "To clear border security"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To check in online » désigne l'enregistrement en ligne. « To book an open itinerary » signifie réserver un voyage à dates flexibles et « to clear border security » renvoie au franchissement du contrôle frontalier."
+            },
+            {
+              "prompt_fr": "Quel horaire spécifique indique le moment exact où commence l'accès à bord des passagers ?",
+              "choices": [
+                "The estimated turnaround time",
+                "The standard departure slot",
+                "The officially scheduled boarding time"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Boarding time » est l'heure d'embarquement des passagers. « Turnaround time » désigne la durée de rotation de l'appareil au sol et « departure slot » est le créneau horaire de décollage attribué par le contrôle aérien."
+            },
+            {
+              "prompt_fr": "Un passager cherche le comptoir d'assistance générale de l'aéroport. Quelle formule utilisez-vous ?",
+              "choices": [
+                "Please follow overhead signs to the passenger customer service counter",
+                "You must report directly to the lost luggage carousel",
+                "The customs inspection office handles all boarding passes"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Customer service counter » est le comptoir d'information et d'assistance. « Lost luggage carousel » est le tapis de réclamation des bagages et « customs inspection office » est le bureau des douanes, qui ne traite pas les cartes d'embarquement."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un passager étranger se présente au comptoir d'information : vérifie son numéro de vol, annonce-lui sa porte d'embarquement et son heure d'embarquement, et précise le chemin à suivre.",
+            "context_en": "Passenger asking for gate information for flight LH2240 to Munich.",
+            "model_answer_en": "Good morning! According to your flight number LH2240, your departure gate is B18. Your boarding time starts at 11:20 AM. Please proceed straight through passport control and turn right.",
+            "model_answer_fr": "Bonjour ! D'après votre numéro de vol LH2240, votre porte d'embarquement est la B18. Votre heure d'embarquement commence à 11 h 20. Veuillez continuer tout droit après le contrôle des passeports et tourner à droite.",
+            "key_phrases": [
+              "flight number",
+              "departure gate",
+              "boarding time",
+              "passport control"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-kiosks-and-bag-drop",
+          "title_fr": "Guider sur les bornes libre-service et au dépose-bagages",
+          "term_ids": [
+            "check-in-kiosk",
+            "bag-drop-counter",
+            "carry-on-bag",
+            "excess-baggage",
+            "curbside-check-in"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Sarah",
+              "text_en": "Ivan, there is a queue building up in front of the self-service terminal bank.",
+              "text_fr": "Ivan, une file est en train de se former devant la rangée de terminaux libre-service."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "I will direct passengers with biometric passports to the automated check-in kiosk.",
+              "text_fr": "Je vais orienter les passagers munis de passeports biométriques vers la borne d'enregistrement libre-service."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Good. Make sure passengers who already have their boarding passes go straight to the bag-drop counter.",
+              "text_fr": "Bien. Assure-toi que les passagers ayant déjà leur carte d'embarquement aillent directement au comptoir dépose-bagages."
+            },
+            {
+              "speaker": "Ivan",
+              "text_en": "Will do. A passenger also asked whether his oversized carry-on bag must be checked in as excess baggage.",
+              "text_fr": "C'est noté. Un voyageur m'a également demandé si son grand bagage cabine devait être enregistré comme excédent de bagages."
+            },
+            {
+              "speaker": "Sarah",
+              "text_en": "Yes, if it exceeds the overhead bin dimensions, it must go into the hold with an excess baggage receipt.",
+              "text_fr": "Oui, s'il dépasse les dimensions du coffre à bagages, il doit voyager en soute avec un reçu d'excédent de bagages."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle borne tactile permet aux voyageurs d'éditer eux-mêmes leur carte d'embarquement et leurs étiquettes ?",
+              "choices": [
+                "A biometric passport gate",
+                "A self-service check-in kiosk",
+                "A lost property scanning desk"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Check-in kiosk » est la borne d'enregistrement libre-service. « Biometric passport gate » est un portillon automatisé de contrôle des frontières et « lost property scanning desk » n'a aucun rapport avec l'enregistrement."
+            },
+            {
+              "prompt_fr": "Où devez-vous envoyer un passager déjà enregistré qui doit seulement confier sa valise de soute ?",
+              "choices": [
+                "To the airside transit lounge",
+                "To the customs declaration counter",
+                "To the dedicated bag-drop counter"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Bag-drop counter » désigne le comptoir dépose-bagages rapide pour les voyageurs déjà munis de leur carte d'embarquement. « Airside transit lounge » est le salon de correspondance et « customs declaration counter » sert aux formalités douanières."
+            },
+            {
+              "prompt_fr": "Comment qualifie-t-on en anglais le bagage que le voyageur conserve avec lui dans la cabine ?",
+              "choices": [
+                "A standard carry-on bag",
+                "A cargo manifest unit",
+                "A checked luggage hold parcel"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Carry-on bag » (ou « hand luggage ») est le bagage emporté en cabine. « Cargo manifest unit » est un lot de fret commercial aérien et « checked luggage hold parcel » renvoie au fret ou aux bagages enregistrés en soute."
+            },
+            {
+              "prompt_fr": "Quelle majoration s'applique lorsque la valise d'un voyageur dépasse le poids autorisé par sa réservation ?",
+              "choices": [
+                "A dangerous goods security levy",
+                "An applicable excess baggage weight surcharge",
+                "An airport passenger tax charge"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Excess baggage » désigne l'excédent de bagages facturé au-delà de la franchise autorisée. « Dangerous goods security levy » concerne les matières dangereuses et « passenger tax charge » est la taxe aéroportuaire générale."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un passager voyageant avec un sac à dos et une grande valise arrive à l'aéroport. Guide-le depuis la borne libre-service jusqu'au dépose-bagages en vérifiant le gabarit de son bagage cabine.",
+            "context_en": "Assisting a passenger on departure floor who needs to check in baggage.",
+            "model_answer_en": "Please step up to this check-in kiosk to scan your passport and print your boarding pass. Your small backpack is fine as a carry-on bag. However, please place your large suitcase on the belt at bag-drop counter number three.",
+            "model_answer_fr": "Veuillez vous approcher de cette borne libre-service pour scanner votre passeport et imprimer votre carte d'embarquement. Votre petit sac à dos convient parfaitement comme bagage cabine. En revanche, veuillez déposer votre grande valise sur le tapis du comptoir dépose-bagages numéro trois.",
+            "key_phrases": [
+              "check-in kiosk",
+              "boarding pass",
+              "carry-on bag",
+              "bag-drop counter"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-transit-passengers-and-lost-property",
+          "title_fr": "Assister les voyageurs en transit et gérer les objets trouvés",
+          "term_ids": [
+            "travel-itinerary",
+            "transit-lounge",
+            "transit-passenger",
+            "lost-property",
+            "duty-free-allowance"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Elena",
+              "text_en": "Excuse me, I am a transit passenger coming from Tokyo with a three-hour layover before Rome.",
+              "text_fr": "Excusez-moi, je suis une passagère en transit venant de Tokyo avec une escale de trois heures avant Rome."
+            },
+            {
+              "speaker": "Marc",
+              "text_en": "Welcome to Paris. May I inspect your travel itinerary and onward boarding pass?",
+              "text_fr": "Bienvenue à Paris. Puis-je vérifier votre itinéraire de voyage et votre carte d'embarquement pour le vol suivant ?"
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Here they are. Also, I think I left my camera in the duty-free shop near gate K12.",
+              "text_fr": "Les voici. De plus, je crois avoir laissé mon appareil photo dans la boutique hors taxes près de la porte K12."
+            },
+            {
+              "speaker": "Marc",
+              "text_en": "Do not worry. You can rest in the transit lounge while I call the lost property office to locate it.",
+              "text_fr": "Ne vous inquiétez pas. Vous pouvez vous reposer dans le salon de transit pendant que j'appelle le bureau des objets trouvés pour le localiser."
+            },
+            {
+              "speaker": "Elena",
+              "text_en": "Thank you so much. What is my duty-free allowance for cosmetics during this connection?",
+              "text_fr": "Merci infiniment. Quelle est ma franchise hors taxes pour les cosmétiques durant cette correspondance ?"
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment qualifie-t-on le passager effectuant une escale intermédiaire avant son vol final ?",
+              "choices": [
+                "A standby passenger",
+                "A denied passenger",
+                "A transit passenger"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Transit passenger » (ou connecting passenger) est le passager en escale ou en correspondance. « Standby passenger » est un passager en liste d'attente sans place confirmée et « denied passenger » est un passager refusé à l'embarquement."
+            },
+            {
+              "prompt_fr": "Où un passager international en escale peut-il se reposer côté piste sans franchir les douanes de sortie ?",
+              "choices": [
+                "In the secure international transit lounge",
+                "In the curbside taxi bay",
+                "At the baggage reclaim area"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Transit lounge » est la zone de repos et d'attente en zone internationale réservée aux voyageurs en transit. « Curbside taxi bay » et « baggage reclaim area » nécessitent d'avoir franchi les contrôles frontaliers pour sortir côté ville."
+            },
+            {
+              "prompt_fr": "Quel service doit contacter un passager qui a égaré son portefeuille dans l'aérogare ?",
+              "choices": [
+                "The air traffic control tower",
+                "The airport lost property office",
+                "The aircraft maintenance hangar"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Lost property office » (ou lost and found) gère les biens égarés dans le terminal. La tour de contrôle (« air traffic control tower ») et le hangar de maintenance (« maintenance hangar ») sont des zones techniques aéronautiques sans rapport avec les usagers."
+            },
+            {
+              "prompt_fr": "Que désigne la notion douanière de « duty-free allowance » pour un voyageur ?",
+              "choices": [
+                "The maximum compensation for baggage delays",
+                "The legal tax-free import quota for personal goods",
+                "The fee charged to upgrade from economy to business"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Duty-free allowance » est la franchise douanière, soit le volume ou la valeur de marchandises exonérées de droits de douane autorisées par voyageur. Les autres propositions renvoient aux indemnisations bagages ou aux frais de surclassement."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Accueille une passagère japonaise en transit à Francfort : examine son itinéraire, indique-lui le salon de transit et la démarche pour un sac oublié dans l'aérogare.",
+            "context_en": "Assisting an international transit passenger looking for her lounge and missing bag.",
+            "model_answer_en": "Good afternoon, Madam. Looking at your travel itinerary, your connecting gate opens in two hours. You may relax comfortably in the central transit lounge. Regarding your forgotten handbag, I will immediately alert the lost property office to check if it was retrieved.",
+            "model_answer_fr": "Bonjour Madame. En examinant votre itinéraire de voyage, votre porte de correspondance ouvre dans deux heures. Vous pouvez vous détendre confortablement dans le salon central de transit. Concernant votre sac à main oublié, je vais immédiatement contacter le bureau des objets trouvés pour voir s'il a été rapporté.",
+            "key_phrases": [
+              "travel itinerary",
+              "transit passenger",
+              "transit lounge",
+              "lost property office"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "general-air-events-security-screening-and-boarding-support",
+      "title_fr": "Accompagner les passagers aux postes de contrôle et à l'embarquement",
+      "title_en": "Support passengers through security checkpoints and gate boarding",
+      "situation_fr": "Tu es en poste aux sas de sûreté et en porte d'embarquement. Tu prépares les passagers au passage des détecteurs, tu gères l'embarquement prioritaire par zones et tu contrôles l'accès à la passerelle.",
+      "guide": {
+        "intro_fr": "Le passage du poste de contrôle de sûreté (« security checkpoint ») et du contrôle des passeports (« passport control ») est une étape critique où les agents fluidifient les files. Tu invites les voyageurs à déposer leurs objets métalliques dans les bacs pour passer le portique de détection (« metal detector »). En porte, tu diffuses l'annonce d'embarquement (« boarding announcement »), tu appelles les zones d'embarquement (« boarding zone ») en commençant par l'embarquement prioritaire (« priority boarding »). Tu vérifies l'attribution des sièges (« seat assignment ») avant d'engager les voyageurs sur la passerelle télescopique (« jet bridge ») ou vers le bus de transfert sur le tarmac (« tarmac transfer »).",
+        "key_phrases": [
+          {
+            "en": "Please place liquids and electronic devices into separate inspection trays.",
+            "fr": "Veuillez placer vos liquides et appareils électroniques dans des bacs de contrôle séparés."
+          },
+          {
+            "en": "Remove your coat, belt, and keys before walking through the metal detector.",
+            "fr": "Retirez votre manteau, ceinture et clés avant de franchir le portique détecteur de métaux."
+          },
+          {
+            "en": "We are now inviting passengers in boarding zone one for priority boarding.",
+            "fr": "Nous invitons désormais les passagers de la zone un pour l'embarquement prioritaire."
+          },
+          {
+            "en": "Please check your boarding pass for your designated seat assignment.",
+            "fr": "Veuillez vérifier sur votre carte d'embarquement le siège qui vous a été attribué."
+          },
+          {
+            "en": "Passengers will board the aircraft directly through the covered jet bridge.",
+            "fr": "Les passagers embarqueront dans l'avion directement par la passerelle couverte."
+          }
+        ],
+        "tip_fr": "Distingue bien « security checkpoint » (sûreté : contrôle des bagages et fouille) et « passport control » ou « border control » (police aux frontières : validité des visas et passeports)."
+      },
+      "lessons": [
+        {
+          "id": "general-air-events-security-screening-and-passport-control",
+          "title_fr": "Préparer les passagers au contrôle de sûreté et des passeports",
+          "term_ids": [
+            "security-checkpoint",
+            "metal-detector",
+            "passport-control",
+            "customs-declaration",
+            "lost-and-found-clerk"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Khadija",
+              "text_en": "Attention passengers in line, please get ready for the security checkpoint screening.",
+              "text_fr": "Attention aux passagers dans la file, veuillez vous préparer pour le contrôle au poste de sûreté."
+            },
+            {
+              "speaker": "Liam",
+              "text_en": "Do I need to remove my wristwatch and coins before stepping through the metal detector?",
+              "text_fr": "Dois-je retirer ma montre-bracelet et mes pièces de monnaie avant de franchir le détecteur de métaux ?"
+            },
+            {
+              "speaker": "Khadija",
+              "text_en": "Yes, please put all metallic items into the tray. Have your boarding pass ready for verification.",
+              "text_fr": "Oui, veuillez placer tous les objets métalliques dans le bac. Gardez votre carte d'embarquement prête pour vérification."
+            },
+            {
+              "speaker": "Liam",
+              "text_en": "And where is passport control for international non-Schengen departures?",
+              "text_fr": "Et où se trouve le contrôle des passeports pour les départs internationaux hors espace Schengen ?"
+            },
+            {
+              "speaker": "Khadija",
+              "text_en": "Right after this security area, follow the overhead signs for border police and passport control.",
+              "text_fr": "Juste après cette zone de sûreté, suivez les panneaux en hauteur pour la police aux frontières et le contrôle des passeports."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le point de passage où les bagages de cabine sont radiographiés aux rayons X ?",
+              "choices": [
+                "The baggage sorting carousel",
+                "The passenger security checkpoint",
+                "The airline ticketing office"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Security checkpoint » désigne le poste d'inspection filtrage de sûreté. « Baggage sorting carousel » est le carrousel de tri des valises en sous-sol et « airline ticketing office » est le bureau de vente de billets."
+            },
+            {
+              "prompt_fr": "Quel portique d'inspection les voyageurs franchissent-ils à pied pour détecter les objets métalliques ?",
+              "choices": [
+                "An automated boarding barcode reader",
+                "An infrared thermal temperature sensor",
+                "A walkthrough security metal detector"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Metal detector » (walkthrough metal detector) est le portique détecteur de métaux. Les autres choix renvoient au lecteur de code-barres d'embarquement ou à des capteurs de température corporelle."
+            },
+            {
+              "prompt_fr": "Quel poste officiel vérifie l'identité des passagers et la validité de leurs visas internationaux ?",
+              "choices": [
+                "Official border passport control",
+                "Customer satisfaction survey booth",
+                "Luggage lost property locker"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Passport control » (ou border control) est le contrôle policier des passeports et visas. Les autres propositions correspondent au stand de satisfaction client ou aux casiers d'objets trouvés."
+            },
+            {
+              "prompt_fr": "Quel document écrit doit remettre un voyageur transportant des marchandises soumises à déclaration douanière ?",
+              "choices": [
+                "An excess baggage weight voucher",
+                "A signed customs declaration form",
+                "An electronic boarding confirmation"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Customs declaration » est la déclaration en douane pour les marchandises et valeurs imposables. « Excess baggage voucher » est un reçu d'excédent de bagages et « boarding confirmation » est une confirmation d'embarquement."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Face à une file dense au poste de sûreté, diffuse des instructions claires en anglais pour inviter les passagers à retirer vestes, ceintures, ordinateurs portables et liquides.",
+            "context_en": "Queue management at airport security checkpoint during morning rush.",
+            "model_answer_en": "Good morning passengers. Please prepare for the security checkpoint by taking out laptops and liquids from your bags. Place coats, belts, and coins into the trays before walking through the metal detector. Have your passport and boarding pass ready.",
+            "model_answer_fr": "Bonjour aux passagers. Veuillez vous préparer pour le poste de contrôle en sortant ordinateurs et liquides de vos sacs. Déposez manteaux, ceintures et pièces dans les bacs avant de franchir le détecteur de métaux. Gardez passeport et carte d'embarquement prêts.",
+            "key_phrases": [
+              "security checkpoint",
+              "metal detector",
+              "laptops and liquids",
+              "boarding pass"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-boarding-announcements-and-zones",
+          "title_fr": "Diffuser les annonces d'embarquement et embarquer par zone",
+          "term_ids": [
+            "boarding-announcement",
+            "boarding-zone",
+            "priority-boarding",
+            "to-page-a-passenger",
+            "boarding-gate-screen"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Agent",
+              "text_en": "Ladies and gentlemen, this is a boarding announcement for flight BA304 to London Heathrow.",
+              "text_fr": "Mesdames et messieurs, ceci est une annonce d'embarquement pour le vol BA304 à destination de Londres Heathrow."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Are you calling all passengers right now or only business class travelers?",
+              "text_fr": "Appelez-vous tous les passagers en ce moment ou seulement les voyageurs de classe affaires ?"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "We are currently starting with priority boarding for families with young children and passengers requiring assistance.",
+              "text_fr": "Nous commençons actuellement par l'embarquement prioritaire pour les familles avec de jeunes enfants et les passagers nécessitant une assistance."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Understood. My ticket says boarding zone four, so I will wait for my group to be displayed.",
+              "text_fr": "Bien compris. Mon billet indique la zone d'embarquement quatre, je vais donc attendre que mon groupe soit affiché."
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "Exactly. Please watch the boarding gate screen, and we will page missing passengers before gate closure.",
+              "text_fr": "Exactement. Veuillez surveiller l'écran de la porte d'embarquement, et nous appellerons les passagers manquants avant la fermeture de la porte."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel service exclusif permet aux passagers de classe affaires et aux membres statutaires de monter à bord en premier ?",
+              "choices": [
+                "Unaccompanied minor airport transfer escort",
+                "Standby seat allocation",
+                "Priority passenger boarding privilege"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Priority boarding » donne l'accès prioritaire à bord. « Unaccompanied minor transfer » concerne l'escorte des enfants non accompagnés et « standby waitlist » est la liste d'attente des passagers sans place attribuée."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on le découpage des passagers en groupes successifs pour fluidifier l'entrée dans l'avion ?",
+              "choices": [
+                "The designated passenger boarding zone",
+                "The main international baggage carousel section",
+                "The terminal transit sector"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Boarding zone » (ou boarding group) divise la cabine par rangées pour embarquer méthodiquement. « Baggage carousel section » est une portion de tapis de livraison et « terminal transit sector » est un secteur de l'aérogare."
+            },
+            {
+              "prompt_fr": "Quelle action réalise l'agent d'embarquement lorsqu'il diffuse un appel micro nominatif pour un retardataire ?",
+              "choices": [
+                "To issue an emergency flight rerouting voucher",
+                "To make a public page for an absent passenger",
+                "To permanently revoke a passenger passport"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To page a passenger » signifie appeler un passager par haut-parleur. « To issue a rerouting voucher » est l'émission d'un bon de réacheminement et « to revoke a passport » est un acte régalien qui n'incombe pas aux agents de porte."
+            },
+            {
+              "prompt_fr": "Où les voyageurs peuvent-ils lire en temps réel le statut du vol et le numéro de zone appelée ?",
+              "choices": [
+                "On the duty-free shop cashier till screen",
+                "On the designated boarding gate screen",
+                "In the baggage hold container"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Boarding gate screen » est le moniteur d'affichage situé en porte d'embarquement. La caisse duty-free (« cashier till ») et le conteneur de soute (« baggage hold container ») n'affichent pas les statuts de porte."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Fais une annonce micro en porte pour annoncer l'ouverture de l'embarquement du vol AF1180 vers Londres : commence par les passagers prioritaires et rappelle d'avoir passeport et carte prêts.",
+            "context_en": "Boarding announcement at gate for flight AF1180 to London.",
+            "model_answer_en": "Good afternoon ladies and gentlemen. Air France announces the boarding of flight AF1180 to London Heathrow at gate C12. We now invite passengers eligible for priority boarding, as well as families with small children, to board first. Please have your passport and boarding pass open and ready.",
+            "model_answer_fr": "Bonjour mesdames et messieurs. Air France annonce l'embarquement du vol AF1180 à destination de Londres Heathrow en porte C12. Nous invitons désormais les passagers bénéficiant de l'embarquement prioritaire ainsi que les familles avec jeunes enfants à se présenter. Merci de préparer passeports et cartes d'embarquement.",
+            "key_phrases": [
+              "boarding announcement",
+              "priority boarding",
+              "passport and boarding pass",
+              "gate"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-jet-bridge-and-seat-assignment",
+          "title_fr": "Orienter sur la passerelle et vérifier les attributions de sièges",
+          "term_ids": [
+            "jet-bridge",
+            "seat-assignment",
+            "tarmac-transfer",
+            "to-fasten-the-seatbelt",
+            "to-board-the-plane"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Traveler",
+              "text_en": "Excuse me, does this gate use a covered jet bridge or will we take a bus onto the apron?",
+              "text_fr": "Excusez-moi, cette porte utilise-t-elle une passerelle couverte ou prendrons-nous un bus sur le tarmac ?"
+            },
+            {
+              "speaker": "Ground Staff",
+              "text_en": "You will walk straight down this jet bridge into aircraft door 2L.",
+              "text_fr": "Vous descendrez directement par cette passerelle télescopique jusqu'à la porte 2L de l'avion."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Perfect. Could you please double-check my seat assignment? I requested an aisle seat.",
+              "text_fr": "Parfait. Pourriez-vous revérifier l'attribution de mon siège ? J'avais demandé un siège couloir."
+            },
+            {
+              "speaker": "Ground Staff",
+              "text_en": "You are confirmed in seat 14C, which is indeed an aisle seat in the forward cabin.",
+              "text_fr": "Vous êtes confirmé au siège 14C, qui est bien un siège couloir en cabine avant."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Thank you! I am ready to board the plane now.",
+              "text_fr": "Merci ! Je suis prêt à monter à bord maintenant."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le tunnel télescopique reliant directement l'aérogare à la porte de l'avion ?",
+              "choices": [
+                "The mechanical baggage loading belt",
+                "The tarmac passenger bus",
+                "The enclosed passenger jet bridge"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Jet bridge » (ou airbridge / finger) est la passerelle télescopique couverte reliant le terminal à l'avion. « Baggage loading belt » est le tapis convoyeur de soute et « tarmac bus » est la navette au sol."
+            },
+            {
+              "prompt_fr": "Quelle information imprimée sur la carte d'embarquement précise la rangée et la lettre de votre place ?",
+              "choices": [
+                "The assigned passenger seat assignment",
+                "The cargo freight container routing label",
+                "The aircraft tail register"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Seat assignment » désigne l'attribution du siège (ex. 14C). « Cargo container label » étiquette les conteneurs de fret et « aircraft tail register » est l'immatriculation de l'appareil."
+            },
+            {
+              "prompt_fr": "Quelle formule standard en anglais signifie « monter à bord de l'appareil » ?",
+              "choices": [
+                "To completely offload the aircraft cargo",
+                "To board the scheduled passenger plane",
+                "To deice the runway"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« To board the plane » signifie monter à bord de l'avion. « To offload cargo » signifie décharger du fret et « to deice the runway » désigne le dégivrage de la piste d'atterrissage."
+            },
+            {
+              "prompt_fr": "Lorsque l'appareil est stationné sur un point éloigné au large, quel moyen achemine les passagers depuis le terminal ?",
+              "choices": [
+                "An emergency evacuation slide",
+                "A tarmac transfer shuttle bus",
+                "A motorized baggage tug truck"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Tarmac transfer » (ou apron bus) est le transfert des passagers par navette sur le tarmac vers les postes de stationnement au large. « Evacuation slide » est le toboggan d'évacuation d'urgence et « baggage tug » est le tracteur à chariots bagages."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "À l'entrée de la passerelle, accueille un voyageur : confirme son attribution de siège en 12D, invite-le à avancer sur la passerelle pour monter dans l'appareil et souhaite-lui bon vol.",
+            "context_en": "Greeting a boarding passenger entering the jet bridge.",
+            "model_answer_en": "Welcome aboard, sir. Your seat assignment is 12D, which will be on your right-hand side. Please walk straight down the jet bridge to board the plane through the forward door. Have a wonderful flight with us today!",
+            "model_answer_fr": "Bienvenue à bord, monsieur. Votre siège attribué est le 12D, sur votre droite. Veuillez vous engager dans la passerelle pour monter dans l'avion par la porte avant. Excellent vol parmi nous !",
+            "key_phrases": [
+              "seat assignment",
+              "jet bridge",
+              "board the plane",
+              "have a wonderful flight"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "general-air-events-flight-delays-and-missed-connections",
+      "title_fr": "Expliquer les retards de vol et assister les passagers en correspondance",
+      "title_en": "Handle flight delays, care vouchers, and disrupted passenger itineraries",
+      "situation_fr": "Un vol subit un retard de quatre heures pour cause météo. Tu dois renseigner les passagers en colère, distribuer des bons de repas et d'hôtel, et réacheminer ceux qui ratent leur correspondance.",
+      "guide": {
+        "intro_fr": "En cas d'aléa d'exploitation, l'agent d'escale applique les procédures d'irrégularité. Sur un vol retardé (« delayed flight »), tu informes les voyageurs et coordonnes avec le chef d'escale (« duty manager »). Selon la directive des droits passagers (« passenger rights directive »), la compagnie délivre un bon de repas (« meal voucher ») et prend en charge l'hébergement hôtelier (« hotel accommodation ») si le départ est reporté au lendemain en raison du couvre-feu aéroportuaire (« terminal curfew »). Pour les correspondances très courtes (« tight connection ») sous le temps minimal de transit (« minimum connecting time »), tu réachemines le voyageur (« to reroute a passenger ») et réserves un nouveau vol (« to rebook a flight »).",
+        "key_phrases": [
+          {
+            "en": "We sincerely apologize for this delayed flight caused by air traffic control restrictions.",
+            "fr": "Nous vous prions de nous excuser pour ce vol retardé dû à des restrictions du contrôle aérien."
+          },
+          {
+            "en": "Our duty manager has authorized a meal voucher valid at any terminal restaurant.",
+            "fr": "Notre responsable de permanence a autorisé un bon de repas valable dans tous les restaurants du terminal."
+          },
+          {
+            "en": "Because departure is postponed until tomorrow morning due to curfew, we provide hotel accommodation.",
+            "fr": "Comme le départ est reporté à demain matin en raison du couvre-feu, nous fournissons un hébergement à l'hôtel."
+          },
+          {
+            "en": "Your tight connection fell below the forty-minute minimum connecting time.",
+            "fr": "Votre correspondance trop courte est passée sous le temps minimal de transit de quarante minutes."
+          },
+          {
+            "en": "I will immediately rebook your flight on the next available partner airline connection.",
+            "fr": "Je vais immédiatement vous réserver un nouveau vol sur la prochaine correspondance d'une compagnie partenaire."
+          }
+        ],
+        "tip_fr": "Ne confonds pas « to delay » (différer un vol de quelques heures) et « to cancel » (supprimer purement et simplement le vol). Mentionne toujours « minimum connecting time » pour justifier objectivement l'impossibilité d'attraper une correspondance."
+      },
+      "lessons": [
+        {
+          "id": "general-air-events-flight-delays-and-care-vouchers",
+          "title_fr": "Annoncer les retards de vol et délivrer les bons de prise en charge",
+          "term_ids": [
+            "duty-manager",
+            "meal-voucher",
+            "hotel-accommodation",
+            "terminal-curfew",
+            "delayed-flight"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Traveler",
+              "text_en": "Our flight was supposed to depart two hours ago! Nobody has given us any update.",
+              "text_fr": "Notre vol était censé partir il y a deux heures ! Personne ne nous a donné la moindre information."
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "I completely understand your frustration. Our delayed flight is held on the ground due to severe thunderstorms.",
+              "text_fr": "Je comprends tout à fait votre frustration. Notre vol retardé est retenu au sol en raison de violents orages."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Will we take off tonight or will the flight be grounded until tomorrow?",
+              "text_fr": "Décollerons-nous ce soir ou le vol sera-t-il bloqué jusqu'à demain ?"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "The duty manager is monitoring the terminal curfew. If we cannot depart before 23:00, we will arrange hotel accommodation.",
+              "text_fr": "Le chef d'escale surveille le couvre-feu de l'aérogare. Si nous ne pouvons partir avant 23 h, nous organiserons un hébergement hôtelier."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "What do we do in the meantime while waiting for that decision?",
+              "text_fr": "Que faisons-nous en attendant cette décision ?"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "Please accept this meal voucher, which you can use immediately at any restaurant in gate area D.",
+              "text_fr": "Veuillez accepter ce bon de restauration, que vous pouvez utiliser immédiatement dans tout restaurant de la zone D."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel responsable d'escale supervise les opérations au sol et autorise les mesures d'assistance financière ?",
+              "choices": [
+                "The airport terminal duty manager",
+                "The air traffic control radar trainee",
+                "The aircraft exterior painter"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Duty manager » désigne le responsable de permanence ou chef d'escale de service. Les autres choix mentionnent un stagiaire radar ou un technicien de peinture sans pouvoir décisionnel sur les passagers."
+            },
+            {
+              "prompt_fr": "Quel bon de prise en charge distribue la compagnie pour permettre aux voyageurs retardés de se restaurer ?",
+              "choices": [
+                "A duty-free catalog rebate",
+                "A complimentary meal voucher",
+                "A future baggage discount slip"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Meal voucher » est le bon de repas remis aux passagers lors de retards prolongés. Les autres options sont des prospectus de réduction commerciale ou de bagages futurs."
+            },
+            {
+              "prompt_fr": "Quelle restriction réglementaire nocturne peut empêcher un avion de décoller après une certaine heure tardive ?",
+              "choices": [
+                "The aircraft weight limit",
+                "The terminal passenger tax",
+                "The airport terminal curfew"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Terminal curfew » (ou airport noise curfew) est le couvre-feu nocturne interdisant les décollages pour préserver la tranquillité des riverains. Les autres réponses relèvent de la masse au décollage ou des taxes fiscales."
+            },
+            {
+              "prompt_fr": "Quelle prestation d'assistance obligatoire doit fournir la compagnie si le vol retardé est reporté au lendemain matin ?",
+              "choices": [
+                "Free hotel accommodation",
+                "Immediate cash refund of all taxes",
+                "A mandatory downgrade to cargo class"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Hotel accommodation » (hébergement d'hôtel et transferts) est obligatoire lorsque le retard impose une nuitée sur place. Les autres options sont incorrectes ou inexistantes."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un vol est retardé de 3 heures à cause d'un problème technique. Annonce la situation au comptoir, délivre les bons de repas et rassure les passagers sur le respect du couvre-feu.",
+            "context_en": "Explaining flight delay and issuing meal vouchers to passengers.",
+            "model_answer_en": "Ladies and gentlemen, we regret to inform you that flight AF834 is experiencing a three-hour delay due to scheduled maintenance. Our duty manager has issued a meal voucher for each traveler, redeemable at any food court restaurant. We are working closely with ground crew to depart well before our terminal curfew.",
+            "model_answer_fr": "Mesdames et messieurs, nous avons le regret de vous annoncer que le vol AF834 subit un retard de trois heures pour maintenance. Notre responsable de permanence a émis un bon de repas pour chaque voyageur, utilisable dans tout restaurant du terminal. Nous faisons le nécessaire pour partir bien avant le couvre-feu.",
+            "key_phrases": [
+              "delayed flight",
+              "duty manager",
+              "meal voucher",
+              "terminal curfew"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-tight-connections-and-rerouting",
+          "title_fr": "Traiter les correspondances courtes et réacheminer les voyageurs",
+          "term_ids": [
+            "tight-connection",
+            "minimum-connecting-time",
+            "to-reroute-a-passenger",
+            "transit-visa",
+            "to-rebook-a-flight"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Traveler",
+              "text_en": "My inbound flight arrived forty minutes late. I only have fifteen minutes to reach terminal 2E!",
+              "text_fr": "Mon premier vol est arrivé avec quarante minutes de retard. Il ne me reste que quinze minutes pour rejoindre le terminal 2E !"
+            },
+            {
+              "speaker": "Transfer Agent",
+              "text_en": "I am afraid this tight connection falls below the sixty-minute minimum connecting time for international transfers.",
+              "text_fr": "Je crains que cette correspondance très courte ne soit passée sous le temps minimal de transit de soixante minutes."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Does that mean my onward flight to Chicago is already closed?",
+              "text_fr": "Cela veut-il dire que mon vol pour Chicago est déjà fermé ?"
+            },
+            {
+              "speaker": "Transfer Agent",
+              "text_en": "Yes, gate closure occurs twenty minutes prior to departure. Let me immediately rebook a flight for you.",
+              "text_fr": "Oui, la fermeture des portes a lieu vingt minutes avant le départ. Laissez-moi immédiatement vous réserver un nouveau vol."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Will I need an extra transit visa if you reroute me through London instead?",
+              "text_fr": "Aurai-je besoin d'un visa de transit supplémentaire si vous me réacheminez par Londres ?"
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle expression désigne une correspondance avec un délai d'escale très serré entre deux vols ?",
+              "choices": [
+                "A tight connection",
+                "A chartered ferry run",
+                "A cargo transit slot"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Tight connection » (ou short connection) est une correspondance très courte où le risque de rater le vol est élevé. « Chartered ferry run » désigne un vol de convoyage à vide et « cargo transit slot » concerne le fret aérien."
+            },
+            {
+              "prompt_fr": "Quel paramètre standardisé fixe la durée minimale réglementaire requise pour effectuer une correspondance ?",
+              "choices": [
+                "Maximum runway taxi time",
+                "Minimum connecting time",
+                "Average boarding speed rate"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Minimum connecting time » (MCT) est la durée minimale calculée entre deux vols pour transférer le passager et ses bagages. Les autres choix sont des vitesses moyennes ou des temps de roulage."
+            },
+            {
+              "prompt_fr": "Quelle opération réalise l'agent lorsqu'il réserve un nouveau vol pour un passager ayant raté sa correspondance ?",
+              "choices": [
+                "To ground an airline fleet",
+                "To inspect aircraft avionics",
+                "To rebook a passenger's flight"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To rebook a flight » (ou to rebook a passenger) consiste à réserver une nouvelle place sur un vol ultérieur. « To ground a fleet » signifie immobiliser une flotte entière et « to inspect avionics » concerne la maintenance électronique."
+            },
+            {
+              "prompt_fr": "Quel document consulaire obligatoire devez-vous vérifier avant de réacheminer un passager étranger via un pays tiers ?",
+              "choices": [
+                "A mandatory transit visa",
+                "A baggage insurance receipt",
+                "A hotel loyalty rewards slip"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Transit visa » est le visa de transit requis par certains pays même pour une simple escale dans l'aéroport. Les reçus d'assurance bagages ou cartes de fidélité hôtelières n'ont aucune valeur consulaire."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un passager en provenance de Nice arrive avec 50 minutes de retard à Paris-CDG et rate sa correspondance pour New York. Explique le non-respect du temps d'escale minimal et réachemine-le sur le vol suivant.",
+            "context_en": "Rebooking a passenger who missed a connection due to inbound flight delay.",
+            "model_answer_en": "I understand your concern, sir. Because your inbound aircraft landed late, your connection fell well below our forty-five minute minimum connecting time. I have already rebooked you onto the next flight to New York at 16:30. Here is your new boarding pass, and your checked bags will be automatically transferred.",
+            "model_answer_fr": "Je comprends votre inquiétude, monsieur. Comme votre premier vol a atterri en retard, votre escale est passée sous notre temps minimal de correspondance de quarante-cinq minutes. Je vous ai déjà réservé une place sur le prochain vol pour New York à 16 h 30. Voici votre nouvelle carte d'embarquement, et vos bagages enregistrés seront automatiquement transférés.",
+            "key_phrases": [
+              "minimum connecting time",
+              "rebook a flight",
+              "tight connection",
+              "boarding pass"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-passenger-rights-and-fast-track",
+          "title_fr": "Appliquer les directives des droits passagers et faciliter les accès",
+          "term_ids": [
+            "passenger-rights-directive",
+            "fast-track-lane",
+            "lounge-access",
+            "airside",
+            "gate-change"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Traveler",
+              "text_en": "Under European consumer law, am I entitled to refreshments and lounge access after this four-hour delay?",
+              "text_fr": "En vertu du droit européen des consommateurs, ai-je droit à des rafraîchissements et à l'accès au salon après ce retard de quatre heures ?"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "Yes, under the passenger rights directive EU261, we provide food vouchers and communication assistance.",
+              "text_fr": "Oui, conformément à la directive sur les droits des passagers EU261, nous fournissons des bons de repas et des facilités de communication."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Could you also grant me lounge access while I wait for the departure gate to be announced?",
+              "text_fr": "Pourriez-vous aussi m'accorder l'accès au salon pendant que j'attends l'annonce de la porte d'embarquement ?"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "As a courtesy for this extended disruption, I will encode complimentary lounge access onto your pass.",
+              "text_fr": "À titre commercial pour cette longue perturbation, je vais encoder un accès gratuit au salon sur votre carte."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Thank you. How do I get back through security quickly once the gate is posted?",
+              "text_fr": "Merci. Comment repasser rapidement les contrôles une fois la porte affichée ?"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "You are already airside, but you can use the fast-track lane at any secondary check to speed up your transfer.",
+              "text_fr": "Vous êtes déjà côté piste, mais vous pouvez emprunter la file prioritaire coupe-file à tout contrôle secondaire pour accélérer votre transfert."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle réglementation internationale encadre l'indemnisation et l'assistance des passagers en cas de retard ou d'annulation ?",
+              "choices": [
+                "The air freight tariff protocol",
+                "The passenger rights directive",
+                "The airport construction code"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Passenger rights directive » (notamment le règlement européen CE 261/2004) définit l'assistance obligatoire et les indemnisations en cas de vol perturbé. Les autres options concernent les tarifs de fret ou les normes de construction."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on le couloir d'accès prioritaire qui permet d'éviter les longues files aux contrôles ?",
+              "choices": [
+                "The baggage holding pen",
+                "The tarmac service lane",
+                "The fast-track lane"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Fast-track lane » est le coupe-file prioritaire permettant un passage accéléré aux postes de contrôle de sûreté. « Baggage holding pen » est une zone de stockage des valises et « tarmac service lane » est la voie de circulation des véhicules au sol."
+            },
+            {
+              "prompt_fr": "Quel terme technique désigne la zone sécurisée de l'aéroport située au-delà des contrôles de sûreté ?",
+              "choices": [
+                "Airside",
+                "Landside",
+                "Curbside"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Airside » (côté piste) désigne la partie de l'aéroport accessible uniquement après les contrôles de sûreté et de police. « Landside » (côté ville) et « curbside » (parvis) sont ouverts au public sans contrôle d'embarquement."
+            },
+            {
+              "prompt_fr": "Que devez-vous immédiatement annoncer lorsqu'un vol est déplacé d'une porte d'embarquement vers une autre ?",
+              "choices": [
+                "An unexpected gate change",
+                "A cabin crew uniform swap",
+                "A total runway resurfacing"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Gate change » est le changement de porte d'embarquement. Les annonces sur les uniformes du personnel ou les réfections de chaussée n'ont pas d'utilité pour diriger les passagers."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un passager premium subit un retard de 4 heures et un changement de porte. Explique-lui ses droits selon la directive européenne, offre-lui l'accès au salon privé et donne-lui un accès coupe-file pour sa nouvelle porte.",
+            "context_en": "Applying EU passenger rights for delayed traveler and upgrading comfort.",
+            "model_answer_en": "Under the European passenger rights directive, you are entitled to meals and care during this four-hour delay. As a valued passenger, I have granted you complimentary lounge access in terminal 2F. Please also note that a gate change occurred: your flight now leaves from gate L24. You may use the fast-track lane to reach it smoothly.",
+            "model_answer_fr": "Conformément à la directive européenne sur les droits des passagers, vous bénéficiez de repas et d'assistance durant ce retard de quatre heures. En tant que voyageur privilégié, je vous accorde l'accès gracieux au salon au terminal 2F. Notez également qu'un changement de porte a eu lieu : votre vol part désormais en porte L24. Vous pouvez emprunter le coupe-file pour y accéder rapidement.",
+            "key_phrases": [
+              "passenger rights directive",
+              "lounge access",
+              "gate change",
+              "fast-track lane"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "general-air-events-lost-baggage-and-complaint-handling",
+      "title_fr": "Traiter les litiges de bagages et reformuler les réclamations avec tact",
+      "title_en": "Manage mishandled luggage, PIR reports, and passenger disputes",
+      "situation_fr": "Des passagers arrivent en salle de livraison des bagages sans avoir reçu leurs valises, ou avec des bagages endommagés. Tu dois dresser un constat officiel, retracer les bagages et désamorcer leur agressivité.",
+      "guide": {
+        "intro_fr": "Au service réclamation bagages (« baggage claim »), l'agent gère les litiges avec calme et professionnalisme. Lorsqu'une valise n'apparaît pas sur le carrousel (« baggage carousel »), tu vérifies l'étiquette bagage (« baggage tag ») et le rapprochement bagage (« baggage reconciliation »). Tu enregistres un rapport officiel d'irrégularité bagage (PIR) et lances la recherche informatique (« delayed baggage tracing »). En cas de valise abîmée (« damaged baggage »), tu appliques le plafond de responsabilité bagage (« baggage liability limit ») fixé par la Convention de Montréal (« Montreal Convention »). En cas de surréservation (« overbooking ») ou de refus d'embarquement (« denied boarding »), tu appliques l'obligation de prise en charge (« duty of care obligation »).",
+        "key_phrases": [
+          {
+            "en": "May I have your baggage tag receipt and your boarding pass to start the trace?",
+            "fr": "Puis-je avoir votre reçu d'étiquette bagage et votre carte d'embarquement pour lancer la recherche ?"
+          },
+          {
+            "en": "We are filing a Property Irregularity Report to initiate delayed baggage tracing immediately.",
+            "fr": "Nous établissons un constat d'irrégularité bagage pour déclencher immédiatement la recherche."
+          },
+          {
+            "en": "Under the Montreal Convention, the airline is liable for damaged or delayed luggage up to legal limits.",
+            "fr": "Selon la Convention de Montréal, la compagnie est responsable des bagages endommagés ou retardés dans la limite des plafonds légaux."
+          },
+          {
+            "en": "We offer volunteers generous compensation and rerouting in case of flight overbooking.",
+            "fr": "Nous offrons aux volontaires une indemnisation généreuse et un réacheminement en cas de surréservation du vol."
+          },
+          {
+            "en": "I understand your frustration, and I will personally track your case until delivery.",
+            "fr": "Je comprends votre mécontentement et je suivrai personnellement votre dossier jusqu'à la livraison."
+          }
+        ],
+        "tip_fr": "Ne dis jamais « your bag is definitely lost » : dans l'aviation, un bagage égaré est désigné comme « delayed bag » ou « mishandled baggage ». La grande majorité des valises sont retrouvées et livrées sous 24 à 48 heures."
+      },
+      "lessons": [
+        {
+          "id": "general-air-events-pir-report-and-baggage-tracing",
+          "title_fr": "Établir un constat d'irrégularité bagage et lancer la recherche",
+          "term_ids": [
+            "delayed-baggage-tracing",
+            "baggage-tag",
+            "baggage-reconciliation",
+            "montreal-convention",
+            "baggage-liability-limit"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Passenger",
+              "text_en": "All the bags from flight AF022 have been delivered, but my red hard-shell suitcase never appeared.",
+              "text_fr": "Toutes les valises du vol AF022 ont été livrées, mais ma valise rigide rouge n'est jamais apparue."
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "I am very sorry for this inconvenience. Could you please show me your baggage tag receipt?",
+              "text_fr": "Je suis sincèrement désolé pour ce désagrément. Pourriez-vous me montrer votre reçu d'étiquette bagage ?"
+            },
+            {
+              "speaker": "Passenger",
+              "text_en": "Here it is. It was checked in at Tokyo Haneda this morning.",
+              "text_fr": "Le voici. Elle a été enregistrée à Tokyo Haneda ce matin."
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "Thank you. I am opening a file in the delayed baggage tracing system right now. What is your local hotel address?",
+              "text_fr": "Merci. J'ouvre immédiatement un dossier dans le système de recherche des bagages retardés. Quelle est l'adresse de votre hôtel sur place ?"
+            },
+            {
+              "speaker": "Passenger",
+              "text_en": "Hotel Mercure near the Opera. What compensation can I claim under the Montreal Convention if my clothes are missing?",
+              "text_fr": "Hôtel Mercure près de l'Opéra. Quel dédommagement puis-je réclamer selon la Convention de Montréal si mes vêtements manquent ?"
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel système informatique aéronautique mondial permet de localiser une valise égarée dans un autre aéroport ?",
+              "choices": [
+                "Delayed baggage tracing",
+                "Flight cockpit telemetry",
+                "Runway friction measurement"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Delayed baggage tracing » (comme le réseau mondial WorldTracer) permet de tracer et localiser les bagages égarés. Les autres choix sont des systèmes techniques de pilotage ou de mesure de piste."
+            },
+            {
+              "prompt_fr": "Quel talon adhésif muni d'un code-barres permet d'identifier formellement la valise enregistrée d'un voyageur ?",
+              "choices": [
+                "A duty-free shopping receipt",
+                "An automated baggage tag receipt",
+                "A boarding gate priority coupon"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Baggage tag » (ou baggage tag receipt) est l'étiquette bagage avec numéro à code-barres qui associe la valise au passager. Les coupons duty-free ou d'embarquement ne constituent pas un justificatif de bagage en soute."
+            },
+            {
+              "prompt_fr": "Quel traité international régit la responsabilité financière des compagnies aériennes pour les bagages retardés ou endommagés ?",
+              "choices": [
+                "The Geneva maritime agreement",
+                "The Paris climate convention",
+                "The Montreal Convention"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Montreal Convention » (Convention de Montréal de 1999) est le traité international établissant la responsabilité des transporteurs aériens pour les passagers et les bagages. Les autres accords relèvent du droit maritime ou du climat."
+            },
+            {
+              "prompt_fr": "Que fixe le barème légal désigné par l'expression « baggage liability limit » ?",
+              "choices": [
+                "The maximum legal compensation ceiling payable for lost or damaged luggage",
+                "The maximum total weight an aircraft is authorized to carry inside its cargo hold",
+                "The maximum fee an airport can charge for delivering a suitcase to a passenger hotel"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Baggage liability limit » est le plafond légal de responsabilité (exprimé en Droits de Tirage Spéciaux) au-delà duquel la compagnie n'est plus tenue d'indemniser les pertes ordinaires. Les autres choix portent sur le poids de soute ou les frais de livraison."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Reçois un voyageur d'affaires dont la valise n'est pas arrivée à l'atterrissage. Rassure-le, prends son reçu d'étiquette bagage, saisis le dossier de recherche et informe-le de ses droits selon la Convention de Montréal.",
+            "context_en": "Filing a missing baggage report for an executive traveler.",
+            "model_answer_en": "I understand how disruptive this is for your business trip, sir. Let me examine your baggage tag receipt so I can enter your file into the delayed baggage tracing system. Most transfer bags arrive on the next flight within twenty-four hours. Under the Montreal Convention, you may purchase essential toiletries and claim reimbursement with your receipts.",
+            "model_answer_fr": "Je comprends à quel point cela perturbe votre voyage d'affaires, monsieur. Laissez-moi examiner votre reçu d'étiquette bagage afin d'enregistrer votre dossier dans le système de recherche des bagages retardés. La plupart des bagages en correspondance arrivent par le vol suivant sous vingt-quatre heures. Selon la Convention de Montréal, vous pouvez acheter les articles de toilette de première nécessité et en demander le remboursement sur facture.",
+            "key_phrases": [
+              "baggage tag",
+              "delayed baggage tracing",
+              "Montreal Convention",
+              "reimbursement"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-baggage-reconciliation-and-carousels",
+          "title_fr": "Gérer le rapprochement des bagages et les carrousels de livraison",
+          "term_ids": [
+            "damaged-baggage",
+            "baggage-claim",
+            "baggage-carousel",
+            "duty-of-care-obligation",
+            "passenger-service-charge"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Agent",
+              "text_en": "Luggage from Rome flight AZ318 is now arriving on baggage carousel number five.",
+              "text_fr": "Les bagages en provenance du vol AZ318 de Rome arrivent actuellement sur le carrousel à bagages numéro cinq."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "My suitcase just came off the belt, but one wheel is broken and the zipper is completely ripped open!",
+              "text_fr": "Ma valise vient de sortir du tapis, mais une roue est cassée et la fermeture éclair est complètement déchirée !"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "Please come over to the baggage claim counter so we can document this damaged baggage right away.",
+              "text_fr": "Veuillez vous approcher du comptoir de réclamation bagages afin que nous constations immédiatement ce bagage endommagé."
+            },
+            {
+              "speaker": "Traveler",
+              "text_en": "Can you replace the suitcase or will you pay for its repair?",
+              "text_fr": "Pouvez-vous remplacer la valise ou paierez-vous pour sa réparation ?"
+            },
+            {
+              "speaker": "Agent",
+              "text_en": "Under our duty of care obligation, we will provide an authorized repair service voucher or an equivalent replacement suitcase.",
+              "text_fr": "Conformément à notre obligation d'assistance, nous vous remettrons un bon pour un réparateur agréé ou une valise de remplacement équivalente."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Comment nomme-t-on le tapis tournant en salle d'arrivée où les passagers récupèrent leurs valises ?",
+              "choices": [
+                "The boarding turnstile",
+                "The baggage carousel",
+                "The customs x-ray canal"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Baggage carousel » (ou baggage belt) est le tapis roulant distributeur de bagages en salle d'arrivée. « Boarding turnstile » est un tourniquet d'accès et « customs x-ray canal » est le tunnel d'inspection douanière."
+            },
+            {
+              "prompt_fr": "Quel constat officiel devez-vous dresser lorsqu'une valise sort du tapis de livraison avec des poignées ou roues cassées ?",
+              "choices": [
+                "A dangerous cargo waiver",
+                "A customs contraband report",
+                "A damaged baggage claim report"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Damaged baggage » fait l'objet d'un rapport de constatation d'avarie (Damage Property Report) en vue d'une réparation ou d'un échange. Les autres propositions concernent le fret dangereux ou la contrebande en douane."
+            },
+            {
+              "prompt_fr": "Quel comptoir d'assistance aéroportuaire centralise les plaintes des passagers en salle de livraison ?",
+              "choices": [
+                "The baggage claim service desk",
+                "The flight training academy counter",
+                "The aircraft fueling office"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Baggage claim » est le service litiges et réclamation bagages situé en salle d'arrivée. Les bureaux de formation de vol (« flight training academy ») ou de carburant (« fueling office ») sont des services d'exploitation technique."
+            },
+            {
+              "prompt_fr": "Quel principe juridique impose à la compagnie d'assister loyalement le passager confronté à une défaillance de service ?",
+              "choices": [
+                "The strict duty of care obligation",
+                "The aircraft maintenance checklist rule",
+                "The standard ticket non-transferability clause"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Duty of care obligation » (devoir d'assistance et de diligence) oblige le transporteur à fournir aide, information et hébergement aux voyageurs affectés par une perturbation. Les autres choix portent sur la maintenance ou la cessibilité des billets."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un passager en colère te montre sa valise en cuir éventrée sur le carrousel 4. Reste calme, examine les dégâts, remplis le constat de bagage endommagé et explique la procédure de réparation ou d'indemnisation.",
+            "context_en": "Handling a damaged luggage report at the baggage claim desk.",
+            "model_answer_en": "I am truly sorry to see the damage to your suitcase, sir. Let me inspect the torn zipper and broken handle so we can file an official damaged baggage claim immediately. Under our duty of care obligation, we can either send your bag to our certified repair partner or provide an authorized replacement value.",
+            "model_answer_fr": "Je suis sincèrement navré de constater les dégâts sur votre valise, monsieur. Laissez-moi inspecter la fermeture déchirée et la poignée cassée afin d'enregistrer immédiatement une déclaration officielle de bagage endommagé. Selon notre devoir de diligence, nous pouvons soit confier votre valise à notre réparateur agréé, soit vous indemniser sur la base de sa valeur de remplacement.",
+            "key_phrases": [
+              "damaged baggage",
+              "baggage claim",
+              "duty of care obligation",
+              "replacement value"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-overbooking-and-downgrades",
+          "title_fr": "Gérer la surréservation, les refus d'embarquement et les déclassements",
+          "term_ids": [
+            "excess-baggage",
+            "interline-baggage",
+            "denied-boarding",
+            "overbooking",
+            "force-majeure-clause"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Duty Officer",
+              "text_en": "Flight KL1420 has forty more passengers confirmed than available seats due to overbooking.",
+              "text_fr": "Le vol KL1420 a quarante passagers confirmés de plus que de sièges disponibles en raison de la surréservation."
+            },
+            {
+              "speaker": "Gate Agent",
+              "text_en": "Should we make an announcement asking for volunteers before we issue involuntary denied boarding notices?",
+              "text_fr": "Devons-nous faire une annonce pour chercher des volontaires avant de délivrer des notifications de refus d'embarquement involontaire ?"
+            },
+            {
+              "speaker": "Duty Officer",
+              "text_en": "Yes, offer travel vouchers, lounge access, and a confirmed seat on the afternoon flight.",
+              "text_fr": "Oui, offrez des bons de voyage, l'accès au salon et un siège confirmé sur le vol de l'après-midi."
+            },
+            {
+              "speaker": "Gate Agent",
+              "text_en": "What happens to their interline baggage transferred from connecting partner flights?",
+              "text_fr": "Qu'advient-il de leurs bagages interlignes transférés depuis les vols des compagnies partenaires ?"
+            },
+            {
+              "speaker": "Duty Officer",
+              "text_en": "Our ramp team will retrieve their interline baggage and re-tag it for their new departure.",
+              "text_fr": "Notre équipe de piste récupérera leurs bagages interlignes pour les réétiqueter vers leur nouveau départ."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle pratique commerciale autorise une compagnie à vendre plus de billets que la capacité physique de l'avion ?",
+              "choices": [
+                "Commercial seat overbooking",
+                "Charter flight leasing",
+                "Baggage container balancing"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Overbooking » (surréservation) est la pratique consistant à vendre un nombre de places supérieur à la capacité de la cabine en prévision des désistements. « Charter leasing » désigne l'affrètement d'avions et « container balancing » est l'équilibrage des masses de fret."
+            },
+            {
+              "prompt_fr": "Quel terme juridique désigne la situation d'un passager en règle auquel la compagnie refuse l'accès à bord faute de sièges ?",
+              "choices": [
+                "Customs border detention",
+                "Involuntary denied boarding",
+                "Runway security inspection"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Denied boarding » (refus d'embarquement) survient lorsqu'un passager confirmé ne peut embarquer en raison d'une surréservation. « Customs detention » est une rétention douanière et « runway inspection » est un contrôle technique de la piste."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on les bagages transférés directement d'une compagnie aérienne partenaire à une autre lors d'une escale ?",
+              "choices": [
+                "Unclaimed customs contraband",
+                "Airport dumpster scrap parcels",
+                "Interline connecting baggage"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Interline baggage » désigne les bagages voyageant sur plusieurs compagnies différentes sous un contrat de transport conjoint. Les autres propositions désignent des saisies de contrebande ou des rebuts sans valeur."
+            },
+            {
+              "prompt_fr": "Quelle clause juridique exonère le transporteur de son obligation d'indemnisation lors d'événements exceptionnels et imprévisibles ?",
+              "choices": [
+                "A force majeure clause",
+                "An open return ticket clause",
+                "A preferred seating option fee"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Force majeure clause » (circonstances extraordinaires comme une éruption volcanique ou une tempête violente) décharge la compagnie des indemnités forfaitaires de retard. Les autres options sont des options tarifaires de confort ou de flexibilité."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Le vol pour Madrid est surréservé de 5 passagers. Fais une annonce professionnelle au micro en porte pour rechercher des volontaires acceptant de différer leur départ contre indemnité, bon d'achat et vol garanti l'après-midi.",
+            "context_en": "Seeking volunteers to surrender their seats on an overbooked flight.",
+            "model_answer_en": "Ladies and gentlemen, this is an important announcement regarding flight IB3402 to Madrid. Due to flight overbooking, we are seeking three volunteers willing to give up their seats today. Volunteers will receive a four-hundred-euro compensation voucher, access to our VIP lounge, and a guaranteed confirmed seat on our 15:00 departure. Please approach the customer service desk if interested.",
+            "model_answer_fr": "Mesdames et messieurs, une annonce importante concernant le vol IB3402 pour Madrid. En raison d'une surréservation du vol, nous recherchons trois volontaires acceptant de différer leur voyage. Les volontaires recevront un bon d'indemnisation de quatre cents euros, l'accès à notre salon VIP et une place confirmée garantie sur notre vol de 15 h. Si vous êtes intéressé, présentez-vous au comptoir d'assistance.",
+            "key_phrases": [
+              "flight overbooking",
+              "volunteers",
+              "compensation voucher",
+              "confirmed seat"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "general-air-events-special-care-and-disrupted-operations",
+      "title_fr": "Coordonner l'assistance spécifique et gérer les situations dégradées",
+      "title_en": "Coordinate special assistance, passenger rights, and severe irregular operations",
+      "situation_fr": "Tu gères les situations complexes et sensibles au sol : passagers refusés par la police aux frontières (INAD), passagers perturbateurs, passagers à mobilité réduite et retards prolongés sur le tarmac.",
+      "guide": {
+        "intro_fr": "Dans les situations dégradées de haut niveau (« irregular operations » ou IROP), l'agent coordonne les protocoles stricts de l'OACI et des autorités nationales. Lorsqu'un passager étranger n'est pas autorisé à entrer sur le territoire par la police aux frontières, tu déclenches le protocole de passager inadmissible (« inad-protocol ») pour un passager non admissible (« inadmissible-passenger ») et sécurises son accès en zone stérile (« sterile-area-access »). En cas de crise à bord ou en salle d'embarquement, tu appliques le protocole pour passager perturbateur (« unruly-passenger-protocol »). Tu respectes scrupuleusement la règle sur les retards prolongés sur le tarmac (« tarmac-delay-rule ») pour l'eau, la climatisation et le retour en porte. Enfin, tu maîtrises les Droits de Tirage Spéciaux (« special-drawing-rights ») sous la Convention de Varsovie (« warsaw-convention ») et de Montréal.",
+        "key_phrases": [
+          {
+            "en": "Under border police instructions, we are initiating the standard INAD protocol for this passenger.",
+            "fr": "Sur instruction de la police aux frontières, nous appliquons le protocole INAD standard pour ce passager."
+          },
+          {
+            "en": "Passengers must maintain restricted sterile area access until departing on the repatriation flight.",
+            "fr": "Les passagers doivent rester en zone stérile réservée jusqu'à leur départ sur le vol de rapatriement."
+          },
+          {
+            "en": "The captain requested security support in accordance with the unruly passenger protocol.",
+            "fr": "Le commandant de bord a demandé le soutien des forces de sécurité conformément au protocole passager perturbateur."
+          },
+          {
+            "en": "Under the international tarmac delay rule, aircraft must provide water and food after two hours on the apron.",
+            "fr": "Selon la réglementation internationale sur les retards sur le tarmac, les avions doivent fournir de l'eau et de la nourriture après deux heures au sol."
+          },
+          {
+            "en": "Liability compensation ceilings are legally expressed in special drawing rights.",
+            "fr": "Les plafonds d'indemnisation de responsabilité sont légalement exprimés en droits de tirage spéciaux."
+          }
+        ],
+        "tip_fr": "« INAD » est l'abréviation universelle de « Inadmissible Passenger », une personne refusée d'entrée sur un territoire par les services d'immigration. La compagnie ayant transporté la personne est légalement tenue d'assurer son hébergement sous surveillance et son réacheminement à ses frais."
+      },
+      "lessons": [
+        {
+          "id": "general-air-events-inad-protocol-and-sterile-areas",
+          "title_fr": "Appliquer le protocole INAD et contrôler l'accès en zone stérile",
+          "term_ids": [
+            "inad-protocol",
+            "inadmissible-passenger",
+            "sterile-area-access",
+            "security-screening-directive",
+            "medical-clearance"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Immigration Officer",
+              "text_en": "This traveler does not possess a valid entry visa. We are formally issuing an INAD refusal notice.",
+              "text_fr": "Ce voyageur ne possède pas de visa d'entrée valide. Nous émettons formellement un avis de refus INAD."
+            },
+            {
+              "speaker": "Duty Supervisor",
+              "text_en": "Received. Our airline team will initiate the INAD protocol and arrange his return journey.",
+              "text_fr": "Bien reçu. Notre équipe d'escale va enclencher le protocole INAD et organiser son voyage de retour."
+            },
+            {
+              "speaker": "Immigration Officer",
+              "text_en": "Ensure he remains under observation with strictly regulated sterile area access until departure.",
+              "text_fr": "Assurez-vous qu'il reste sous surveillance avec un accès strictement encadré en zone stérile jusqu'au départ."
+            },
+            {
+              "speaker": "Duty Supervisor",
+              "text_en": "Understood. We will secure his boarding pass and provide meals in accordance with international handling standards.",
+              "text_fr": "Bien compris. Nous conserverons sa carte d'embarquement et lui fournirons des repas selon les normes internationales d'assistance."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Que désigne le terme technique « INAD » dans la gestion aéroportuaire des frontières ?",
+              "choices": [
+                "An aircraft internal hydraulic defect",
+                "A formal inadmissible passenger refused entry by immigration",
+                "An in-flight entertainment audio discrepancy"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Inadmissible passenger » (INAD) désigne un voyageur auquel les autorités frontalières refusent légalement l'accès au pays. Les autres choix portent sur des pannes hydrauliques ou de divertissement de bord."
+            },
+            {
+              "prompt_fr": "Quelle procédure formalise la prise en charge et le réacheminement d'un passager refoulé aux frontières ?",
+              "choices": [
+                "The corporate holiday booking scheme",
+                "The standardized airline INAD protocol",
+                "The voluntary frequent flyer point exchange"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« INAD protocol » formalise l'obligation pour la compagnie de reconduire le passager dans son pays d'origine ou d'embarquement. Les autres choix sont des programmes commerciaux et de fidélité."
+            },
+            {
+              "prompt_fr": "Comment nomme-t-on la zone de transit internationale fermée où les passagers en attente de refoulement doivent rester ?",
+              "choices": [
+                "The sterile transit area",
+                "The curbside drop-off lane",
+                "The airport staff breakroom"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Sterile area » (zone stérile ou zone internationale étanche) est la zone ultra-sécurisée située après les postes d'immigration et de filtrage. Le parvis (« curbside ») et les salles de pause du personnel ne sont pas des zones d'attente sécurisées."
+            },
+            {
+              "prompt_fr": "Quel document médical officiel est requis pour autoriser l'embarquement d'un passager ayant subi une intervention chirurgicale récente ?",
+              "choices": [
+                "A formal medical clearance certificate",
+                "A baggage allowance excess receipt",
+                "A duty-free cosmetics purchase form"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Medical clearance » (accord médical / MEDIF) certifie l'aptitude médicale d'un passager à supporter le voyage aérien sans danger. Les reçus de bagages ou d'achats n'ont aucune valeur médicale."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "La police aux frontières te remet un passager non admissible refoulé pour défaut de visa. Rédige les consignes pour ton équipe : application du protocole INAD, maintien en zone stérile et organisation du vol de retour.",
+            "context_en": "Briefing airport staff on handling an inadmissible traveler (INAD).",
+            "model_answer_en": "Team, we have an inadmissible passenger arriving on flight AF218 due to visa non-compliance. In accordance with border police instructions, we are activating our airline INAD protocol immediately. The passenger must maintain sterile area access under our care in the designated transfer zone. We have booked his return repatriation flight for tomorrow at 08:30 AM.",
+            "model_answer_fr": "Équipe, nous avons un passager non admissible arrivant sur le vol AF218 pour défaut de visa valide. Conformément aux instructions de la police aux frontières, nous activons immédiatement notre protocole INAD. Le passager doit rester en zone stérile sous notre assistance dans la zone de transit prévue. Nous avons réservé son vol de rapatriement pour demain à 8 h 30.",
+            "key_phrases": [
+              "inadmissible passenger",
+              "INAD protocol",
+              "sterile area access",
+              "repatriation flight"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-unruly-passengers-and-duty-of-care",
+          "title_fr": "Gérer les passagers perturbateurs et respecter l'obligation de prise en charge",
+          "term_ids": [
+            "unruly-passenger-protocol",
+            "duty-of-care-obligation",
+            "passenger-name-record",
+            "tarmac-delay-rule",
+            "to-quarantine-an-aircraft"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Ramp Coordinator",
+              "text_en": "The aircraft has been held on the taxiway for two hours due to severe congestion.",
+              "text_fr": "L'avion est retenu sur la voie de circulation depuis deux heures en raison d'un fort encombrement."
+            },
+            {
+              "speaker": "Station Manager",
+              "text_en": "Be mindful of the international tarmac delay rule. Food, water, and operable lavatories must be available.",
+              "text_fr": "Attention à la réglementation sur les retards prolongés sur le tarmac. Nourriture, eau et toilettes doivent être disponibles."
+            },
+            {
+              "speaker": "Ramp Coordinator",
+              "text_en": "Understood. Also, the captain reports an agitated passenger screaming at crew members in the forward cabin.",
+              "text_fr": "C'est noté. Par ailleurs, le commandant signale un voyageur très agité qui crie sur l'équipage en cabine avant."
+            },
+            {
+              "speaker": "Station Manager",
+              "text_en": "Notify airport police immediately to implement the unruly passenger protocol upon return to the gate.",
+              "text_fr": "Prévenez immédiatement la police aéroportuaire pour appliquer le protocole passager perturbateur dès le retour en porte."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quel protocole de sûreté encadre l'intervention des forces de l'ordre face à un passager agressif ou menaçant ?",
+              "choices": [
+                "The corporate frequent flyer loyalty program",
+                "The standard unruly passenger safety protocol",
+                "The automated luggage carousel scheduling manual"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Unruly passenger protocol » encadre la prise en charge et le débarquement forcé des passagers indisciplinés ou violents mettant en péril la sécurité des vols. Les autres propositions sont des programmes de fidélité ou de gestion logistique des bagages."
+            },
+            {
+              "prompt_fr": "Quelle réglementation internationale impose d'offrir des rafraîchissements et de revenir en porte lors d'attentes prolongées au sol ?",
+              "choices": [
+                "The international tarmac delay rule",
+                "The supersonic airspeed limitation act",
+                "The aircraft repaint depreciation schedule"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Tarmac delay rule » (règle des retards sur le tarmac) protège les passagers coincés dans un avion sur les voies de circulation en imposant de l'eau, de la nourriture et un débarquement après 3 ou 4 heures d'attente. Les autres choix concernent les vitesses supersoniques ou la comptabilité aéronautique."
+            },
+            {
+              "prompt_fr": "Quel dossier informatique unique regroupe l'historique complet de voyage, les coordonnées et les préférences d'un passager ?",
+              "choices": [
+                "The airfield snow removal report",
+                "The passenger name record",
+                "The jet engine fuel density log"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Passenger Name Record » (PNR) est le dossier passager informatique centralisé contenant toutes les données de réservation. Les rapports de déneigement ou de densité carburant sont des paramètres techniques opérationnels sans lien avec l'identité du voyageur."
+            },
+            {
+              "prompt_fr": "Quelle mesure sanitaire exceptionnelle consiste à isoler temporairement un aéronef soupçonné de transporter un agent pathogène contagieux ?",
+              "choices": [
+                "To ground an aircraft for routine cleaning",
+                "To repaint an aircraft fuselage during layover",
+                "To quarantine an aircraft upon international arrival"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« To quarantine an aircraft » signifie mettre un aéronef en quarantaine sanitaire sur instruction des autorités médicales portuaires. Les autres choix désignent un nettoyage ordinaire ou une opération de peinture."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un vol est bloqué sur le taxiway depuis 2 h 30 par temps de canicule. Rappelle au commandant de bord et à l'équipe sol les obligations de la règle sur les retards sur le tarmac (eau, ventilation, décision de retour en porte).",
+            "context_en": "Enforcing tarmac delay rule and passenger welfare on delayed aircraft.",
+            "model_answer_en": "Captain, we have reached two hours and thirty minutes of ground taxi time. Under the international tarmac delay rule, cabin crew must now distribute drinking water and light refreshments, and ensure adequate cabin ventilation. If clearance is not granted within the next thirty minutes, we must coordinate an immediate return to the gate to allow passengers to deplane.",
+            "model_answer_fr": "Commandant, nous avons atteint deux heures et trente minutes d'attente au sol sur la voie de circulation. Selon la règle internationale sur les retards sur le tarmac, l'équipage cabine doit désormais distribuer de l'eau et des collations légères, et veiller à une ventilation adéquate. Si l'autorisation n'est pas accordée dans les trente prochaines minutes, nous devons coordonner un retour immédiat en porte pour permettre aux passagers de débarquer.",
+            "key_phrases": [
+              "tarmac delay rule",
+              "drinking water",
+              "cabin ventilation",
+              "return to the gate"
+            ]
+          }
+        },
+        {
+          "id": "general-air-events-force-majeure-and-montreal-convention",
+          "title_fr": "Invoquer la force majeure et appliquer la Convention de Montréal",
+          "term_ids": [
+            "force-majeure-clause",
+            "montreal-convention",
+            "baggage-liability-limit",
+            "special-drawing-rights",
+            "warsaw-convention"
+          ],
+          "dialogue": [
+            {
+              "speaker": "Legal Advisor",
+              "text_en": "Due to volcanic ash clouds shutting down regional airspace, flight cancellations fall under the force majeure clause.",
+              "text_fr": "En raison de nuages de cendres volcaniques fermant l'espace aérien régional, les annulations de vols relèvent de la clause de force majeure."
+            },
+            {
+              "speaker": "Station Lead",
+              "text_en": "Does that eliminate our duty to provide care and assistance to grounded passengers?",
+              "text_fr": "Cela élimine-t-il notre devoir de fournir hébergement et assistance aux passagers bloqués au sol ?"
+            },
+            {
+              "speaker": "Legal Advisor",
+              "text_en": "No. Force majeure exempts the airline from cash compensation, but our duty of care remains fully applicable.",
+              "text_fr": "Non. La force majeure exonère la compagnie des indemnités forfaitaires en espèces, mais notre devoir d'assistance reste pleinement applicable."
+            },
+            {
+              "speaker": "Station Lead",
+              "text_en": "And for delayed baggage claims, we still process files in accordance with the Montreal Convention?",
+              "text_fr": "Et pour les litiges de bagages retardés, nous traitons toujours les dossiers conformément à la Convention de Montréal ?"
+            },
+            {
+              "speaker": "Legal Advisor",
+              "text_en": "Yes, passenger claims are reimbursed up to the official limits evaluated in special drawing rights.",
+              "text_fr": "Oui, les réclamations des passagers sont remboursées jusqu'aux plafonds officiels évalués en droits de tirage spéciaux."
+            }
+          ],
+          "questions": [
+            {
+              "prompt_fr": "Quelle unité de compte internationale du FMI est utilisée pour calculer les plafonds de responsabilité aérienne sous la Convention de Montréal ?",
+              "choices": [
+                "Special drawing rights",
+                "Automated airline credits",
+                "European gold bullion standard"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Special Drawing Rights » (SDR / Droits de Tirage Spéciaux) est l'unité de compte monétaire internationale servant de référence pour les plafonds de responsabilité des transporteurs aériens. Les autres options ne sont pas des unités monétaires internationales."
+            },
+            {
+              "prompt_fr": "Quelle convention historique de 1929 a précédé la Convention de Montréal pour unifier les règles du transport aérien international ?",
+              "choices": [
+                "The Chicago maritime charter",
+                "The Warsaw Convention",
+                "The Tokyo diplomatic treaty"
+              ],
+              "answer_index": 1,
+              "explanation_fr": "« Warsaw Convention » (Convention de Varsovie de 1929) est le traité originel ayant posé les bases de la responsabilité des transporteurs aériens avant d'être modernisé par la Convention de Montréal en 1999."
+            },
+            {
+              "prompt_fr": "En cas d'annulation causée par une tempête exceptionnelle, quelle clause libère le transporteur des indemnités compensatoires ?",
+              "choices": [
+                "The corporate passenger perk voucher",
+                "The non-refundable baggage fee addendum",
+                "The contractual force majeure clause"
+              ],
+              "answer_index": 2,
+              "explanation_fr": "« Force majeure clause » (circonstances extraordinaires échappant au contrôle effectif du transporteur) dégage la compagnie des indemnités compensatoires, tout en maintenant l'obligation de prise en charge."
+            },
+            {
+              "prompt_fr": "Sous la Convention de Montréal, que doit prouver un voyageur dont le bagage a été retardé pour obtenir un remboursement d'achats de première nécessité ?",
+              "choices": [
+                "Itemized receipts for reasonable and necessary replacement expenses",
+                "A written authorization signed in advance by the chief pilot",
+                "A notarized proof of purchase of his international flight ticket"
+              ],
+              "answer_index": 0,
+              "explanation_fr": "« Itemized receipts » (factures détaillées de dépenses nécessaires et raisonnables) sont indispensables pour obtenir le remboursement des articles de première nécessité achetés pendant l'attente du bagage."
+            }
+          ],
+          "production": {
+            "channel": "brief",
+            "prompt_fr": "Un violent blizzard paralyse l'aéroport et cloue 20 vols au sol. Explique aux délégués des passagers que l'événement relève de la force majeure pour les indemnités financières, mais que la compagnie prend en charge repas, hôtels et applique la Convention de Montréal.",
+            "context_en": "Addressing stranded passengers during airport closure due to severe winter weather.",
+            "model_answer_en": "Ladies and gentlemen, due to severe blizzard conditions and runway icing, airport operations are temporarily halted. Under aviation regulations, severe weather constitutes a case of force majeure, which suspends statutory financial compensation. However, our duty of care remains our utmost priority. We are providing immediate hotel accommodation and meal vouchers, and our teams are handling baggage reconciliation in full compliance with the Montreal Convention.",
+            "model_answer_fr": "Mesdames et messieurs, en raison d'un violent blizzard et du gel des pistes, les opérations aéroportuaires sont temporairement suspendues. Selon les règles aéronautiques, une météo extrême constitue un cas de force majeure suspendant les indemnités financières forfaitaires. Néanmoins, notre devoir d'assistance reste notre priorité absolue. Nous fournissons immédiatement hébergement hôtelier et bons de repas, et nos équipes traitent la recherche des bagages en totale conformité avec la Convention de Montréal.",
+            "key_phrases": [
+              "force majeure",
+              "duty of care",
+              "hotel accommodation",
+              "Montreal Convention"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

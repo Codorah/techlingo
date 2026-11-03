@@ -85,7 +85,7 @@
             {
               "prompt_fr": "Quelle gouverne actionne le pilote en poussant ou tirant le manche sur l'axe de tangage ?",
               "choices": [
-                "The rudder",
+                "The rudder trim tab",
                 "The elevator",
                 "The aileron"
               ],
@@ -191,9 +191,9 @@
             {
               "prompt_fr": "Que signifie « wing spoiler » en exploitation sur piste et en vol ?",
               "choices": [
-                "Un panneau mobile sur l'extrados qui détruit la portance et freine en environnement de test",
-                "Un compensateur d'effort sur le manche selon les limitations certifiées du manuel de vol",
-                "Une pompe de transfert de kérosène vers les moteurs lors du déploiement"
+                "Un panneau mobile d'extrados qui détruit la portance et plaque l'avion au sol",
+                "Un compensateur automatique de profondeur asservi en continu à la vitesse d'approche",
+                "Une pompe de transfert rapide de kérosène entre les réservoirs de voilure"
               ],
               "answer_index": 0,
               "explanation_fr": "Les « wing spoilers » (déporteurs) se lèvent sur l'extrados de l'aile pour briser la portance et augmenter la traînée (freins aérodynamiques en vol ou ground spoilers au poser). Ce ne sont ni des trims ni des pompes."
@@ -211,7 +211,7 @@
             {
               "prompt_fr": "Complète : « After liftoff, positive climb confirmed, order: '___ gear up'. »",
               "choices": [
-                "Takeoff",
+                "Takeoff roll",
                 "Ground",
                 "Landing"
               ],
@@ -297,8 +297,8 @@
             {
               "prompt_fr": "Que désigne la technologie « fly-by-wire » en poste de pilotage ?",
               "choices": [
-                "Une liaison radio sans fil entre l'avion et le satellite en veillant au strict respect des réglementations applicables et des marges de sécurité",
-                "Un système de câbles en acier tendus vers les gouvernes selon les limitations certifiées du manuel de vol",
+                "Une transmission mécanique assistée par câbles et servocommandes hydrauliques",
+                "Un réseau de timoneries rigides reliant directement les manches aux gouvernes",
                 "Des commandes de vol électriques où les ordres passent par des calculateurs"
               ],
               "answer_index": 2,
@@ -383,9 +383,9 @@
             {
               "prompt_fr": "Quel est le rôle du « flight director » (FD) matérialisé par des barres croisées sur le PFD ?",
               "choices": [
-                "Mesurer la température des freins après le roulage",
-                "Verrouiller les ailerons lors des fortes rafales de vent selon les limitations certifiées du manuel de vol",
-                "Indiquer les ordres de guidage calculés pour suivre la trajectoire sélectionnée en environnement de test"
+                "Contrôler la pression hydraulique et la température des freins après le roulage",
+                "Verrouiller automatiquement le pilote automatique lors des fortes rafales",
+                "Indiquer les ordres de guidage calculés pour suivre la trajectoire choisie"
               ],
               "answer_index": 2,
               "explanation_fr": "Le « flight director » présente des barres ou un symbole que le pilote suit pour respecter l'assiette et le cap calculés par l'ordinateur de vol. Il n'a aucun lien avec les freins ni avec un verrouillage mécanique."
@@ -518,8 +518,8 @@
               "prompt_fr": "Comment dit-on en anglais aéronautique la visite extérieure pré-vol autour de l'appareil ?",
               "choices": [
                 "The pre-flight walkaround",
-                "The runway tour",
-                "The aircraft outing"
+                "The scheduled tarmac runway inspection tour",
+                "The aircraft visual security perimeter check"
               ],
               "answer_index": 0,
               "explanation_fr": "« Pre-flight walkaround » est l'expression officielle consacrée pour désigner l'inspection visuelle détaillée extérieure effectuée par un pilote avant le départ. « Runway tour » ou « aircraft outing » sont des calques inexistants."
@@ -609,8 +609,8 @@
               "prompt_fr": "Quelle méthode de lecture de check-list exige que le pilote qui lit attende la confirmation verbale du second avant de valider l'action ?",
               "choices": [
                 "Challenge and response",
-                "Free flow reading",
-                "Silent personal review"
+                "Unchecked free flow",
+                "Silent personal review checks"
               ],
               "answer_index": 0,
               "explanation_fr": "« Challenge and response » (défi et réponse) est la méthode standard obligatoire en cockpit où un pilote annonce l'item (« challenge ») et l'autre vérifie et confirme l'état à voix haute (« response »). « Silent review » est une relecture muette et « free flow » désigne des flux d'actions sans appel."
@@ -618,9 +618,9 @@
             {
               "prompt_fr": "À quoi sert l'« inertial reference system » (IRS) à bord d'un avion ?",
               "choices": [
-                "Vérifier la cohérence des pressions hydrauliques sur les circuits principaux en coordination directe avec les services du contrôle aérien en route",
-                "Fournir la position autonome, la vitesse sol et les assiettes de l'appareil à partir de gyroscopes laser en environnement de test",
-                "Fournir les données d'attitude, d'accélération et de cap inertiel précis aux calculateurs de vol et au PFD"
+                "Mesurer la pression atmosphérique ambiante et la température extérieure globale",
+                "Fournir la position autonome, la vitesse sol et l'attitude par gyrolasers",
+                "Gérer l'équilibrage automatique du carburant entre les réservoirs d'ailes"
               ],
               "answer_index": 1,
               "explanation_fr": "L'« inertial reference system » (IRS) est la centrale inertielle qui calcule la navigation et l'attitude (tangage, roulis, cap) grâce à des accéléromètres et gyrolasers indépendants des stations terrestres. Il n'a rien à voir avec le service cabine."
@@ -628,9 +628,9 @@
             {
               "prompt_fr": "Comment traduit-on « cross-check instruments » dans la pratique opérationnelle des pilotes ?",
               "choices": [
-                "Débrancher les fusibles des instruments secondaires en veillant au strict respect des réglementations applicables et des marges de sécurité",
-                "Recalibrer les compas magnétiques avec un tournevis",
-                "Vérifier et comparer mutuellement les indications des instruments de bord"
+                "Contrôler visuellement l'état des gouvernes depuis les hublots passagers",
+                "Transmettre les paramètres moteurs au régulateur de vol par liaison data",
+                "Vérifier et comparer mutuellement la cohérence des instruments de bord"
               ],
               "answer_index": 2,
               "explanation_fr": "« To cross-check instruments » signifie effectuer un recoupement croisé des indications (comparer altimètres, anémomètres et horizons entre les deux postes et les instruments de secours). Cela ne désigne jamais une opération de maintenance mécanique."
@@ -704,9 +704,9 @@
             {
               "prompt_fr": "Quel est le rôle principal du « pilot flying » (PF) pendant le vol ?",
               "choices": [
-                "S'occuper exclusivement de la vente des produits détaxés en cabine",
+                "S'occuper de la coordination commerciale et de la vente des articles détaxés en vol",
                 "Contrôler la trajectoire, la vitesse et la configuration de l'appareil",
-                "Rédiger le rapport commercial pour la direction de la compagnie"
+                "Rédiger le rapport technique d'escale et contrôler la validité des passeports passagers"
               ],
               "answer_index": 1,
               "explanation_fr": "Le « pilot flying » (PF) a la charge directe de la trajectoire, des commandes, de la vitesse et de la conduite du vol. Le « pilot monitoring » (PM) assure la radio, la surveillance des paramètres et la lecture des check-lists."
@@ -724,9 +724,9 @@
             {
               "prompt_fr": "Quelles sont les responsabilités clés du « pilot monitoring » (PM) ?",
               "choices": [
-                "Gérer la radio ATC, surveiller la trajectoire et lire les check-lists en environnement de test",
-                "Calculer les salaires de l'équipage en veillant au strict respect des réglementations applicables et des marges de sécurité",
-                "Piloter manuellement l'avion pendant que le PF regarde par le pare-brise lors du déploiement"
+                "Gérer la radio ATC, surveiller la trajectoire et lire les check-lists",
+                "Calculer les performances de centrage et rédiger le carnet de route",
+                "Piloter manuellement l'appareil pendant que le PF surveille les alarmes"
               ],
               "answer_index": 0,
               "explanation_fr": "Le « pilot monitoring » (PM) est le gardien de la sécurité : il collationne les clairances radio ATC, lit les check-lists, surveille les instruments et alerte le PF au moindre écart de trajectoire. Il ne pilote pas manuellement à la place du PF."
@@ -801,9 +801,9 @@
             {
               "prompt_fr": "Que vérifie le calcul de « weight and balance » avant chaque départ en vol ?",
               "choices": [
-                "Que le nombre de bagages cabine est égal au nombre de passagers afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers",
-                "Que la trajectoire de départ publiée nécessite un taux de montée minimal de 5 pour cent afin de garantir le respect strict des marges de sécurité applicables",
-                "Que la masse totale et la position du centre de gravité respectent les limites structurales et aérodynamiques selon les normes de l’équipe"
+                "Que la charge marchande correspond exactement aux réservations passagers confirmées",
+                "Que la pente de montée tous moteurs en fonctionnement dépasse six pour cent",
+                "Que la masse totale et le centre de gravité respectent l'enveloppe certifiée"
               ],
               "answer_index": 2,
               "explanation_fr": "Le « weight and balance » (masse et centrage) calcule la masse au décollage (TOW) et vérifie que le centre de gravité (« center of gravity ») reste dans l'enveloppe certifiée pour assurer la manœuvrabilité de l'avion. Il n'a aucun lien avec les bagages en cabine ou les repas."
@@ -811,9 +811,9 @@
             {
               "prompt_fr": "Quel est le but de la « crossfeed valve » sur le circuit carburant ?",
               "choices": [
-                "Permettre d'alimenter n'importe quel moteur à partir de n'importe quel réservoir pour corriger un déséquilibre",
-                "Vidanger le kérosène par-dessus bord en vol selon les limitations certifiées du manuel de vol selon les normes de l’équipe",
-                "Refroidir l'huile des réacteurs avec de l'eau glycolée en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Permettre d'alimenter n'importe quel moteur à partir de n'importe quel réservoir",
+                "Vidanger le surplus de carburant par-dessus bord en cas d'atterrissage immédiat forcé",
+                "Refroidir les circuits d'huile moteur en échangeant la chaleur avec le kérosène"
               ],
               "answer_index": 0,
               "explanation_fr": "La « crossfeed valve » (vanne d'intercommunication carburant) permet de relier les circuits gauche et droit afin d'alimenter un moteur depuis le réservoir opposé pour rééquilibrer les ailes. Elle ne vidange pas le carburant (cela s'appelle le jettison) et ne transporte pas d'eau."
@@ -831,8 +831,8 @@
             {
               "prompt_fr": "Complète : « An aft ___ location makes the aircraft more fuel-efficient but reduces pitch stability. »",
               "choices": [
-                "wing slat",
-                "crossfeed valve",
+                "wing slat mechanism",
+                "crossfeed valve line",
                 "center of gravity"
               ],
               "answer_index": 2,
@@ -955,9 +955,9 @@
             {
               "prompt_fr": "Quel message officiel d'information prévient les pilotes d'un équipement en panne, d'une piste raccourcie ou d'une zone militaire temporaire ?",
               "choices": [
-                "A boarding pass",
+                "A passenger boarding pass",
                 "A cargo manifest",
-                "A NOTAM bulletin"
+                "A flight NOTAM bulletin"
               ],
               "answer_index": 2,
               "explanation_fr": "Un « NOTAM » (Notice to Airmen / Notice to Air Missions) est un avis aux navigateurs publié par l'aviation civile pour alerter l'équipage sur tout danger, fermeture ou changement temporaire d'infrastructure aéronautique. Ce n'est ni un titre de transport ni un bordereau fret."
@@ -1031,7 +1031,7 @@
             {
               "prompt_fr": "Que signifie l'acronyme STAR dans le guidage terminal vers l'aéroport d'arrivée ?",
               "choices": [
-                "Speed Tracking and Roll",
+                "Speed Tracking and Radar Roll",
                 "Standard Terminal Arrival",
                 "System Timing and Radar"
               ],
@@ -1137,9 +1137,9 @@
             {
               "prompt_fr": "Que signifie la « decision altitude » (DA) lors d’une approche aux instruments de précision ILS ?",
               "choices": [
-                "La vérification des circuits redondants de secours et des paramètres d'équilibrage",
-                "L’altitude minimale de sécurité calculée par le contrôle pour garantir un espacement radar de mille pieds avec les aéronefs en circuit d’attente",
-                "La procédure de basculement sur source électrique autonome en cas de panne de bus alternatif en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "La trajectoire et l'altitude assignées à suivre si l'approche est interrompue",
+                "L'altitude de sécurité minimale assurant un espacement radar suffisant avec les zones d'attente",
+                "La configuration optimale des volets et des aérofreins pour un atterrissage d'urgence court terme"
               ],
               "answer_index": 0,
               "explanation_fr": "La « decision altitude » (DA) est l’altitude de référence sur approche de précision où la décision de remise de gaz (missed approach) est obligatoire si les repères visuels de piste requis ne sont pas distinctement visibles."
@@ -1254,8 +1254,8 @@
               "prompt_fr": "Complète : « The captain decided ___ a go-around due to sudden windshear warnings at low level. »",
               "choices": [
                 "to execute",
-                "to skip",
-                "to avoid"
+                "to safely bypass",
+                "to avoid completely"
               ],
               "answer_index": 0,
               "explanation_fr": "En anglais opérationnel, on emploie « to execute a go-around » (exécuter une remise de gaz) ou « to initiate a go-around ». « To skip » ou « to avoid » ont un sens opposé ou inapproprié."
@@ -1379,8 +1379,8 @@
               "prompt_fr": "À quoi sert la diffusion continue « ATIS broadcast » sur les aéroports ?",
               "choices": [
                 "À transmettre automatiquement en boucle les conditions météo et opérationnelles pour désengorger la fréquence de la tour",
-                "À diffuser de la musique d'ambiance aux passagers",
-                "À diffuser en boucle la météo de la plateforme, la piste en service et les NOTAM essentiels aux équipages"
+                "À diffuser en boucle la météo de la plateforme, la piste en service, les calages altimétriques et les NOTAM essentiels aux équipages",
+                "À enregistrer les communications de départ et fournir des bulletins d'information commerciale aux passagers en salle d'embarquement"
               ],
               "answer_index": 0,
               "explanation_fr": "L'« ATIS » (Automatic Terminal Information Service) diffuse en boucle sur une fréquence VHF dédiée les paramètres d'aérodrome (piste en service, vent, calage altimétrique QNH, RVR, NOTAMs) identifiés par une lettre alphabétique afin d'éviter que chaque pilote ne pose la question à la tour."
@@ -1388,9 +1388,9 @@
             {
               "prompt_fr": "Complète : « The angular difference between runway heading and wind direction determines the ___ component. »",
               "choices": [
-                "elevator",
+                "rudder",
                 "crosswind",
-                "hydraulic"
+                "hydraulic pump"
               ],
               "answer_index": 1,
               "explanation_fr": "La composante perpendiculaire au débattement de piste est la « crosswind component » (composante de vent de travers). Les autres choix (« elevator », « hydraulic ») n'ont aucun rapport avec le calcul aérologique."
@@ -1465,9 +1465,9 @@
             {
               "prompt_fr": "Pourquoi le nuage de type « cumulonimbus cloud » est-il redouté et systématiquement évité par les avions de ligne ?",
               "choices": [
-                "Il contient de violents courants ascendants et descendants, du givre sévère, de la foudre et de la grêle",
-                "Il décolore la peinture des winglets afin de garantir le respect strict des marges de sécurité applicables",
-                "Il absorbe les ondes radio du transpondeur en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Il renferme de violents courants verticaux, du givrage sévère et de la grêle",
+                "Il dévie durablement le cap magnétique et perturbe la réception radio HF de bord",
+                "Il altère la pressurisation cabine en créant une dépression extérieure forte"
               ],
               "answer_index": 0,
               "explanation_fr": "Le cumulonimbus (CB) est la cellule orageuse la plus dangereuse : il génère des turbulences destructrices, du givrage instantané, des microrafales et de la grêle capable de briser le pare-brise. Il n'absorbe pas les ondes et la peinture n'est pas le risque visé."
@@ -1475,9 +1475,9 @@
             {
               "prompt_fr": "Qu'est-ce que la « clear-air turbulence » (CAT) ?",
               "choices": [
-                "De la pluie battante sans nuages en coordination directe avec les services du contrôle aérien en route",
-                "Une turbulence invisible et soudaine se produisant sans nuages, souvent aux abords des courants-jets à haute altitude",
-                "Une perte d'adhérence des pneus sur la piste afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers"
+                "Une rafale de vent de travers soufflant sur la piste lors de l'arrondi final",
+                "Une turbulence invisible survenant en ciel clair au voisinage du jet-stream",
+                "Une onde de compression acoustique générée par le franchissement du relief"
               ],
               "answer_index": 1,
               "explanation_fr": "La « clear-air turbulence » (CAT ou turbulence en ciel clair) survient sans indice visuel ou nuageux dans l'air limpide, provoquée par le fort gradient de vent aux frontières des jet streams en haute troposphère. Elle ne se détecte pas au radar météo standard."
@@ -1485,7 +1485,7 @@
             {
               "prompt_fr": "Complète : « The weather radar highlighted strong ___ activity along our planned airway. »",
               "choices": [
-                "hydraulic",
+                "hydraulic valve",
                 "magnetic",
                 "convective"
               ],
@@ -1551,9 +1551,9 @@
             {
               "prompt_fr": "Quelle est la caractéristique mortelle d'un « microburst downdraft » sous un orage ?",
               "choices": [
-                "Une colonne descendante d'air froid ultra-violent qui s'écrase au sol et s'évase en vents cisaillants contraires",
-                "Une surchauffe des circuits électriques afin de garantir le respect strict des marges de sécurité applicables en environnement de test",
-                "Une baisse de température qui gèle instantanément les réservoirs"
+                "Un violent courant d'air froid descendant qui s'écrase et diverge près du sol",
+                "Une onde de choc thermique provoquant l'extinction simultanée de tous les réacteurs",
+                "Un tourbillon marginal causé par le souffle des réacteurs d'un gros-porteur"
               ],
               "answer_index": 0,
               "explanation_fr": "Une microrafale (« microburst ») est un puissant courant descendant d'air dense qui plonge vers le sol sous un orage et diverge radialement. L'avion rencontre d'abord un fort vent de face qui augmente sa portance apparente, suivi d'une dégueulante puis d'un vent arrière catastrophique qui provoque le crash sans poussée maximale immédiate."
@@ -1561,9 +1561,9 @@
             {
               "prompt_fr": "Pourquoi le pilote ne change-t-il pas la configuration train/volets lors d'une « windshear escape maneuver » ?",
               "choices": [
-                "Parce que les volets ne fonctionnent plus sous la pluie en coordination directe avec les services du contrôle aérien en route",
+                "Parce que les volets risquent de se bloquer en position intermédiaire sous l'effet du vent violent",
                 "Parce que changer la configuration crée un surcroît transitoire de traînée et risque de déstabiliser l'assiette au pire moment",
-                "Parce que toute rentrée de volets ou de train détruirait la portance critique nécessaire pour s'extraire du cisaillement"
+                "Parce que toute rentrée de volets ou de train détruirait la portance critique nécessaire pour franchir les obstacles du relief"
               ],
               "answer_index": 1,
               "explanation_fr": "Lors de la manœuvre réflexe d'échappement au cisaillement (« windshear escape maneuver »), la règle d'or est de maintenir la configuration intacte (ne pas toucher au train ni aux volets) car le mouvement des trappes et des gouvernes augmente la traînée et perturbe la portance."
@@ -1571,9 +1571,9 @@
             {
               "prompt_fr": "À quel danger immédiat prévient le « stick shaker activation » en cabine de pilotage ?",
               "choices": [
-                "Au dépassement de la vitesse maximale autorisée",
-                "À l'extinction des feux de navigation selon les limitations certifiées du manuel de vol",
-                "À l'approche imminente du décrochage aérodynamique"
+                "Au dépassement accidentel de la vitesse maximale d'exploitation VMO",
+                "Lors d'une variation brutale et prolongée du vent de travers mesurée par les sondes",
+                "À l'approche immédiate de l'incidence critique de décrochage de l'avion"
               ],
               "answer_index": 2,
               "explanation_fr": "Le vibreur de manche (« stick shaker ») avertit tactilement et bruyamment le pilote qu'il approche de l'angle d'attaque critique de décrochage (stall). Il n'a rien à voir avec la sur-vitesse ou les feux."
@@ -1648,9 +1648,9 @@
             {
               "prompt_fr": "Quel est l'effet le plus dangereux d'un dépôt de glace ou de givre sur l'extrados d'une aile d'avion ?",
               "choices": [
-                "Il fait fondre le revêtement de protection en titane afin de garantir le respect strict des marges de sécurité applicables",
-                "Il altère le profil aérodynamique, détruit la portance et augmente drastiquement la vitesse de décrochage",
-                "Il empêche l'allumage des feux d'atterrissage en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Il augmente considérablement la traînée de friction tout en perturbant l'écoulement laminaire de l'air sur la voilure",
+                "Il altère le profil porteur, détruit la portance et augmente la vitesse de décrochage",
+                "Il obstrue systématiquement les conduites de décharge de carburant ainsi que les sondes d'incidence extérieures de l'appareil"
               ],
               "answer_index": 1,
               "explanation_fr": "Même une infime pellicule de givre (« airframe icing ») rugueuse sur l'extrados décolle les filets d'air, réduisant la portance de 30 % ou plus et augmentant brutalement la vitesse de décrochage. Cela ne fait pas fondre le titane ni n'éteint les phares."
@@ -1783,9 +1783,9 @@
             {
               "prompt_fr": "Que signifie l'ordre impératif du contrôleur « hold short of runway zero eight » ?",
               "choices": [
-                "Traverser rapidement la piste sans regarder afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers",
-                "Faire demi-tour vers le terminal de passagers en coordination directe avec les services du contrôle aérien en route",
-                "La vérification des circuits redondants de secours et des paramètres d'équilibrage"
+                "Pénétrer sur la piste sans clairance explicite si elle semble dégagée",
+                "Accélérer le roulage pour traverser la piste avant l'arrivée du trafic",
+                "S'arrêter impérativement avant la ligne d'arrêt protégée de la piste 27R"
               ],
               "answer_index": 2,
               "explanation_fr": "L'instruction « hold short of runway » exige l'arrêt absolu avant le point d'attente sans empiéter sur la zone protégée de la piste afin d'éviter tout conflit avec un avion qui atterrit ou décolle."
@@ -1793,9 +1793,9 @@
             {
               "prompt_fr": "Quelle est la définition d'une « runway incursion » dans la sécurité des aérodromes ?",
               "choices": [
-                "La présence non autorisée d'un aéronef, véhicule ou piéton dans la zone protégée de la piste en service",
-                "L'apparition de mauvaises herbes entre les dalles de béton de la piste",
-                "Une fuite d'huile sous un camion d'avitaillement en kérosène en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "La présence non autorisée d'un avion, véhicule ou piéton sur la piste active",
+                "Une panne des feux axiaux de piste rendant l'atterrissage de nuit difficile",
+                "Un dépassement de vitesse de roulage autorisé sur une voie de dégagement"
               ],
               "answer_index": 0,
               "explanation_fr": "Une « runway incursion » (incursion sur piste) est un incident grave où un avion, un véhicule ou une personne pénètre indûment sur une piste active, créant un risque direct de collision au décollage ou à l'atterrissage."
@@ -1803,9 +1803,9 @@
             {
               "prompt_fr": "Que doit faire un pilote autorisé « cleared for immediate takeoff » ?",
               "choices": [
-                "Attendre deux minutes pour vérifier les instruments météo afin de garantir le respect strict des marges de sécurité applicables",
-                "S'aligner sans marquer de temps d'arrêt et afficher aussitôt la poussée de décollage",
-                "Demander un tracteur de repoussage supplémentaire afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers"
+                "Marquer un temps d'arrêt complet sur l'axe pour stabiliser les réacteurs",
+                "S'aligner sans marquer de temps d'arrêt et afficher aussitôt la poussée",
+                "Confirmer les prévisions météo d'atterrissage avec la fréquence de départ"
               ],
               "answer_index": 1,
               "explanation_fr": "Une clairance « cleared for immediate takeoff » est délivrée pour intercaler un départ dans un trafic serré : le pilote doit s'engager en continu sur la piste et décoller sans marquer d'arrêt à l'alignement."
@@ -1879,9 +1879,9 @@
             {
               "prompt_fr": "Que confirme le contrôleur en annonçant « radar contact » ?",
               "choices": [
-                "Que l'aéronef a été identifié avec certitude sur l'écran radar du centre de contrôle et bénéficie du service radar",
-                "Que les radars de bord de l'avion sont éteints selon les limitations certifiées du manuel de vol",
-                "Que l'avion est entré en collision avec un oiseau"
+                "Que l'aéronef est identifié sur le scope radar du centre et reçoit le service",
+                "Que le transpondeur de bord a cessé de transmettre l'altitude barométrique",
+                "Que la météo en route impose un guidage radar d'évitement des orages actifs"
               ],
               "answer_index": 0,
               "explanation_fr": "L'expression standard « radar contact » signifie que la position radar de l'avion est formellement identifiée par le contrôleur sur son scope. Les services de surveillance et de guidage radar sont alors actifs."
@@ -1975,9 +1975,9 @@
             {
               "prompt_fr": "Qu'est-ce qu'une « hearback error » dans les communications de la circulation aérienne ?",
               "choices": [
-                "Une panne des écouteurs du casque du pilote afin de garantir le respect strict des marges de sécurité applicables",
-                "Le fait pour un contrôleur de ne pas remarquer qu'un pilote a mal répété sa clairance au collationnement",
-                "Un pilote qui refuse d'écouter les consignes de sécurité en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Une mauvaise réception radio due à un brouillage temporaire de la fréquence",
+                "L'omission par le contrôleur de repérer une erreur de collationnement pilote",
+                "Une interruption des communications VHF par un message d'urgence prioritaire"
               ],
               "answer_index": 1,
               "explanation_fr": "Une « hearback error » survient lorsqu'un pilote commet une erreur dans son collationnement (readback error) et que le contrôleur aérien ne relève pas cette erreur et valide silencieusement, laissant l'avion voler sur une fausse consigne."
@@ -2081,9 +2081,9 @@
             {
               "prompt_fr": "Que signifie le verbe aéronautique « to squawk » ?",
               "choices": [
-                "Afficher un code numérique à 4 chiffres sur le transpondeur pour identification radar",
-                "Évacuer l'eau accumulée dans les ailes selon les limitations certifiées du manuel de vol en environnement de test",
-                "Crier très fort dans le micro du cockpit en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Afficher le code transpondeur 4215 pour permettre l'identification radar",
+                "Régler la fréquence radio VHF secondaire sur le canal de secours 121.500",
+                "Basculer l'altimètre de bord sur le calage altimétrique standard 1013 hPa"
               ],
               "answer_index": 0,
               "explanation_fr": "« To squawk » est le verbe officiel qui signifie afficher le code transpondeur assigné (ex: « squawk 7000 », « squawk 7700 »). Cela n'a rien à voir avec des cris ou de l'eau."
@@ -2091,9 +2091,9 @@
             {
               "prompt_fr": "Que fait le pilote lorsqu'un contrôleur lui ordonne « squawk ident » ?",
               "choices": [
-                "Il coupe le transpondeur pendant trente secondes",
-                "Il appuie sur la touche IDENT du transpondeur pour faire clignoter la cible de l'avion sur le scope du contrôleur",
-                "Il énonce les noms et prénoms de tous les passagers afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers"
+                "Il annonce son indicatif d'appel complet sur la fréquence de contrôle",
+                "Il appuie sur le bouton IDENT pour faire clignoter son plot sur le scope",
+                "Il réinitialise le code transpondeur par défaut de l'espace non contrôlé"
               ],
               "answer_index": 1,
               "explanation_fr": "L'instruction « squawk ident » demande au pilote d'appuyer sur le bouton IDENT du transpondeur, ce qui active une impulsion spéciale faisant briller la trace radar de l'avion chez le contrôleur pour une identification visuelle instantanée."
@@ -2225,9 +2225,9 @@
             {
               "prompt_fr": "Pourquoi l'« asymmetric thrust rudder authority » est-elle critique lors d'une panne moteur au décollage ?",
               "choices": [
-                "Elle sert à orienter l'antenne radio vers le satellite météo en veillant au strict respect des réglementations applicables et des marges de sécurité",
-                "Elle régule la température de la cabine passagers afin de garantir le respect strict des marges de sécurité applicables",
-                "Elle permet au palonnier de contrer le puissant moment de lacet causé par le moteur resté à pleine poussée lors du déploiement"
+                "La vitesse minimale pour maintenir le taux de montée en palier monomoteur",
+                "La vitesse maximale d'utilisation des volets lors d'un décollage lourd",
+                "La vitesse minimale pour contrôler la trajectoire au palonnier après panne moteur"
               ],
               "answer_index": 2,
               "explanation_fr": "Quand un moteur tombe en panne sur un biréacteur, le moteur restant produit une énorme poussée dissymétrique qui fait violemment pivoter l'avion en lacet. La gouverne de direction doit avoir une autorité suffisante pour maintenir l'appareil en ligne droite."
@@ -2302,9 +2302,9 @@
             {
               "prompt_fr": "Qu'est-ce que la « drift down procedure » lors d'une panne moteur en croisière à haute altitude ?",
               "choices": [
-                "Une chute libre en piqué vers la mer afin de garantir le respect strict des marges de sécurité applicables selon les normes de l’équipe",
-                "Une descente progressive à la vitesse optimale de finesse max pour rejoindre le plafond monomoteur sans perdre le contrôle",
-                "Une manœuvre de voltige pour relancer la turbine en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Une descente rapide pleins aérofreins pour regagner l'aéroport de dégagement",
+                "Une descente progressive à la vitesse de finesse max vers le plafond monomoteur",
+                "Une ressource cabrée pour transformer l'énergie cinétique en altitude refuge"
               ],
               "answer_index": 1,
               "explanation_fr": "À haute altitude, un avion de ligne ne peut pas tenir son altitude de croisière sur un seul moteur. La « drift down procedure » permet de convertir l'énergie potentielle en une descente lente et stabilisée à la vitesse de finesse max jusqu'au nouveau plafond rétabli monomoteur."
@@ -2312,9 +2312,9 @@
             {
               "prompt_fr": "Quelle est la gravité extrême d'une « uncontained engine failure » ?",
               "choices": [
-                "Le réacteur fume un peu à l'échappement selon les normes de l’équipe",
-                "Des projections de débris de turbine à haute énergie perforent le fuselage, les réservoirs ou les circuits hydrauliques",
-                "Des débris de turbine ou de compresseur à haute énergie traversent le carénage moteur et peuvent perforer les ailes, le fuselage ou les circuits vitaux"
+                "Une extinction brutale de la chambre de combustion sans dommage mécanique",
+                "Un blocage du compresseur haute pression contenu dans le carter moteur",
+                "Une rupture de disque de turbine perforant le carter et les circuits de l'avion"
               ],
               "answer_index": 2,
               "explanation_fr": "Une avarie non contenue (« uncontained failure ») est l'éclatement mécanique d'un disque de réacteur dont les éclats à grande vitesse percent le carter et risquent de cisailler les commandes de vol, les réservoirs ou la cabine pressurisée."
@@ -2409,9 +2409,9 @@
             {
               "prompt_fr": "À quoi correspond le « post-decompression profile » ?",
               "choices": [
-                "Le profil de descente rapide vers 10 000 ft (ou l'altitude de sécurité relief MORA) où l'air ambiant est à nouveau respirable sans masque en environnement de test",
-                "L'historique des réparations de la porte cargo selon les limitations certifiées du manuel de vol",
-                "Le tracé du plan de vol commercial sur le journal de bord en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Rejoindre d'urgence 10 000 ft ou la MORA où l'atmosphère redevient respirable",
+                "Maintenir le niveau de vol de croisière en isolant le circuit d'air cabine",
+                "Réduire les moteurs sur ralenti en attendant une clairance de déroutement"
               ],
               "answer_index": 0,
               "explanation_fr": "Le « post-decompression profile » est la trajectoire de descente d'urgence maximale (aérofreins sortis, vitesse Vmo/Mmo) jusqu'à une altitude respirable où la pression partielle en oxygène permet aux passagers et à l'équipage de survivre sans réserve de masque."
@@ -2419,9 +2419,9 @@
             {
               "prompt_fr": "Que se passe-t-il automatiquement en cabine passagers quand l'altitude cabine dépasse 14 000 pieds ?",
               "choices": [
-                "Les sièges s'inclinent en arrière",
-                "Le système provoque l'oxygen mask deployment au-dessus de chaque siège lors du déploiement",
-                "Les rideaux des hublots se ferment afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers"
+                "Les aérofreins sortent automatiquement pour amorcer la descente d'urgence",
+                "Les masques à oxygène passagers tombent automatiquement de leurs coffres",
+                "Les volets hypersustentateurs se déploient au premier cran de braquage"
               ],
               "answer_index": 1,
               "explanation_fr": "L'« oxygen mask deployment » automatique fait s'ouvrir les trappes des plafonniers pour libérer les masques à oxygène chimiques ou gazeux destinés aux passagers dès que l'altitude cabine dépasse le seuil réglementaire de sécurité."
@@ -2516,9 +2516,9 @@
             {
               "prompt_fr": "Qu'est-ce que l'« overweight landing check » réalisée par les équipes de maintenance après un poser d'urgence lourd ?",
               "choices": [
-                "Une pesée des passagers un par un en veillant au strict respect des réglementations applicables et des marges de sécurité",
-                "Une vérification de la facture de carburant selon les limitations certifiées du manuel de vol afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers",
-                "Une inspection structurale approfondie des trains, des fuselages et des attaches de voilure après un atterrissage au-dessus de la masse max"
+                "Une vidange obligatoire du kérosène résiduel avant de toucher la piste",
+                "Le remplacement systématique des freins et pneumatiques du train principal",
+                "Une inspection structurale approfondie des trains d'atterrissage et cellules"
               ],
               "answer_index": 2,
               "explanation_fr": "Lorsqu'une urgence impose de se poser sans avoir le temps de vidanger, l'atterrissage en surcharge (« overweight landing ») est autorisé mais exige une inspection obligatoire post-vol détaillée des trains, longerons et attaches pour déceler d'éventuelles déformations ou criques structurales."
@@ -2631,9 +2631,9 @@
             {
               "prompt_fr": "Que préconise le concept TEM (Threat and Error Management) en équipage de conduite ?",
               "choices": [
-                "Ignorer les risques pour ne pas stresser la cabine afin de garantir le respect strict des marges de sécurité applicables lors du déploiement",
-                "La vérification des circuits redondants de secours et des paramètres d'équilibrage",
-                "Faire confiance au hasard pour les atterrissages difficiles en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Une méthode de calcul des marges de carburant en fonction des vents météo",
+                "Un modèle opérationnel pour anticiper les menaces et piéger les erreurs de vol",
+                "Une procédure de vérification systématique de l'état physique de l'équipage"
               ],
               "answer_index": 1,
               "explanation_fr": "Le TEM (Threat and Error Management) est la doctrine moderne de sécurité des vols : anticiper les menaces (météo, relief, fatigue) et mettre en place des barrières rigoureuses (briefings, check-lists croisées) pour piéger toute erreur humaine dès sa genèse."
@@ -2728,9 +2728,9 @@
             {
               "prompt_fr": "Que doit faire un pilote si une consigne « TCAS resolution advisory » contredit un ordre contradictoire du contrôleur aérien ?",
               "choices": [
-                "Obéir au contrôleur car il voit tout l'espace aérien sur son radar afin de prévenir tout incident opérationnel et de protéger l’intégrité des passagers",
-                "Attendre que les deux systèmes se mettent d'accord afin de garantir le respect strict des marges de sécurité applicables",
-                "Suivre impérativement l'ordre d'évitement vertical du TCAS qui a la priorité légale absolue sur l'ATC"
+                "Privilégier la consigne du contrôleur qui dispose de la vue radar globale",
+                "Maintenir l'altitude courante en demandant une confirmation immédiate à l'ATC",
+                "Suivre immédiatement l'ordre du TCAS qui prévaut légalement sur la consigne ATC"
               ],
               "answer_index": 2,
               "explanation_fr": "En droit aérien international, un ordre TCAS RA (Resolution Advisory) prime formellement et sans exception sur toute instruction du contrôle aérien. L'équipage doit immédiatement déconnecter l'autopilote et suivre l'ordre TCAS sans hésiter."
@@ -2738,9 +2738,9 @@
             {
               "prompt_fr": "Que signifie une « loss of separation » entre deux avions en vol contrôlé ?",
               "choices": [
-                "La réduction de la distance horizontale ou verticale sous les minima légaux de séparation prescrits par les règles de l'air",
-                "La perte des valises d'un passager selon les limitations certifiées du manuel de vol",
-                "La panne d'un écran sur la planche de bord en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Le franchissement à la baisse des distances de sécurité latérale ou verticale",
+                "La perte temporaire du signal du transpondeur sur les écrans du contrôle",
+                "Une divergence de trajectoire entre deux appareils en circuit d'attente"
               ],
               "answer_index": 0,
               "explanation_fr": "Une « loss of separation » (perte de séparation) survient lorsque l'espacement standard entre deux aéronefs (par exemple 1 000 pieds verticaux ou 5 milles nautiques horizontaux) est enfreint, créant un risque de collision en vol."
@@ -2845,9 +2845,9 @@
             {
               "prompt_fr": "Qu'est-ce qu'un « deep stall lockout » sur un avion à empennage en T ?",
               "choices": [
-                "Un écart d’altitude de plus de deux cents pieds par rapport au niveau de vol assigné en veillant au strict respect des réglementations applicables et des marges de sécurité",
-                "Un oubli de rentrée des aérofreins à l'atterrissage en coordination directe avec les services du contrôle aérien en route",
-                "Une situation gravissime où le sillage turbulent des ailes décrochées baigne l'empennage horizontal, rendant la profondeur inopérante pour repiquer"
+                "Un décrochage dissymétrique provoquant une mise en virage engagé incontrôlée",
+                "Une perte brutale d'efficacité des ailerons due à des ondes de choc transsoniques",
+                "Un décrochage où le sillage de l'aile masque la gouverne de profondeur impuissante"
               ],
               "answer_index": 2,
               "explanation_fr": "Le décrochage profond (« deep stall ») touche particulièrement les avions avec réacteurs à l'arrière et empennage en T : à très forte incidence, l'aile masque entièrement l'empennage horizontal qui n'a plus aucun flux d'air pour agir, bloquant l'appareil dans une descente à plat incontrôlable."
@@ -2922,9 +2922,9 @@
             {
               "prompt_fr": "Que signifie pour le contrôle aérien une « minimum fuel declaration » transmise par un avion de ligne ?",
               "choices": [
-                "Que les réservoirs sont totalement vides et que les moteurs vont caler dans les cinq secondes selon les limitations certifiées du manuel de vol",
-                "Que l'avion informe l'ATC que tout changement par rapport à la clairance actuelle entraînera un atterrissage avec moins que le carburant de réserve finale obligatoire",
-                "Que la trajectoire de départ publiée nécessite un taux de montée minimal de 5 pour cent en veillant au strict respect des réglementations applicables et des marges de sécurité"
+                "Que les réservoirs sont presque vides et que les moteurs vont s'éteindre sous peu",
+                "Que tout retard imprévu conduira à atterrir sous la réserve finale réglementaire",
+                "Que l'avion demande un guidage prioritaire direct sans circuit d'attente en route"
               ],
               "answer_index": 1,
               "explanation_fr": "La déclaration « MINIMUM FUEL » est une notification informative officielle avertissant le contrôleur que l'aéronef est engagé à atterrir sur un terrain donné et que tout délai supplémentaire imprévu entamera la réserve finale de carburant (final reserve fuel). Ce n'est pas encore une situation de détresse (qui exigerait MAYDAY FUEL)."

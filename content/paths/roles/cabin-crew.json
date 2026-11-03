@@ -79,11 +79,11 @@
             {
               "prompt_fr": "Que doit vérifier l'équipage concernant chaque passager assis avant le roulage ?",
               "choices": [
-                "Qu'il a gonflé son gilet de sauvetage",
-                "Qu'il a bien attaché sa ceinture (seat belt)",
-                "Qu'il a branché son casque audio au système de bord"
+                "Le dépliant illustré expliquant les consignes d'urgence et l'évacuation",
+                "La carte d'embarquement nominative remise lors de l'enregistrement en ligne",
+                "Le menu gastronomique détaillant le service des collations et boissons à bord"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le PNC vérifie que la ceinture de sécurité (« seat belt ») est attachée et ajustée. Gonfler le gilet est proscrit à bord, et le casque audio n'a aucun lien avec la consigne de sécurité."
             },
             {
@@ -99,17 +99,17 @@
             {
               "prompt_fr": "Que signifie l'annonce « fasten seatbelts » adressée à la cabine ?",
               "choices": [
-                "Attachez vos ceintures de sécurité",
-                "Redressez votre siège en position couchette",
-                "Rangez vos manteaux dans la penderie centrale"
+                "Pour vérifier que le passager a bien validé sa réservation en ligne",
+                "Pour rappeler la consigne de maintenir la ceinture attachée en vol",
+                "Pour ordonner d'éteindre immédiatement tous les téléphones portables et tablettes"
               ],
-              "answer_index": 0,
+              "answer_index": 1,
               "explanation_fr": "L'injonction « fasten seatbelts » ordonne d'attacher et de verrouiller sa ceinture ventrale. Elle ne concerne ni les couchettes ni la penderie."
             },
             {
               "prompt_fr": "Quand la démonstration de sécurité (« safety demonstration ») doit-elle impérativement être présentée ?",
               "choices": [
-                "Uniquement si l'appareil rencontre des turbulences en vol",
+                "Uniquement si l'appareil rencontre des turbulences sévères en cours de croisière",
                 "Avant le décollage, dès la fermeture des portes de l'appareil",
                 "À l'atterrissage pendant la sortie des volets"
               ],
@@ -169,19 +169,19 @@
             {
               "prompt_fr": "Où est rangé le « life vest » individuel pour la majorité des passagers adultes ?",
               "choices": [
-                "coffre sécurisé d’armement d’urgence situé sous les sièges de cabine",
-                "Dans la soute à bagages principale lors du déploiement",
-                "Sous le coussin du siège du passager"
+                "Sous chaque siège passager ou dans l'accoudoir en classe avant",
+                "Dans le compartiment à bagages supérieur au-dessus de chaque rangée",
+                "Dans l'armoire technique de l'office réservée aux membres d'équipage"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Le « life vest » adulte se trouve sous chaque siège passager (ou sous l'accoudoir). Il n'est jamais stocké en soute ou dans un chariot de service."
             },
             {
               "prompt_fr": "Quelle est la particularité d'un passager assis dans un « exit row » ?",
               "choices": [
                 "Il doit être briefé et capable d'assister l'équipage pour ouvrir l'issue en cas d'évacuation",
-                "Il a le droit d'ouvrir la porte en vol pour aérer la cabine afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Il n'est pas tenu d'attacher sa ceinture ventrale"
+                "Il doit surveiller les coffres à bagages supérieurs durant toute la phase de décollage et d'atterrissage",
+                "Il est dispensé d'écouter les consignes de sécurité s'il voyage fréquemment sur la ligne"
               ],
               "answer_index": 0,
               "explanation_fr": "Les passagers assis en « exit row » doivent être valides, attentifs et capables de manœuvrer l'issue de secours (« emergency exit ») sur instruction de l'équipage."
@@ -199,9 +199,9 @@
             {
               "prompt_fr": "Que signifie le terme « emergency exit » en environnement cabine ?",
               "choices": [
-                "La porte d'accès au poste de pilotage réservée aux commandants",
-                "Le sas d'évacuation des déchets de la cuisine selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "L'issue de secours permettant d'évacuer l'appareil en cas de sinistre"
+                "La porte blindée d'accès au poste de pilotage réservée aux navigants techniques",
+                "L'office avant servant à la préparation et au réchauffage des plateaux-repas chauds",
+                "L'issue de secours permettant d'évacuer rapidement l'appareil en cas de sinistre"
               ],
               "answer_index": 2,
               "explanation_fr": "Une « emergency exit » est une porte ou une trappe de secours conçue pour permettre aux occupants de quitter rapidement l'avion lors d'une évacuation."
@@ -260,8 +260,8 @@
               "prompt_fr": "Quelle est la règle d'or lors du déploiement soudain des « oxygen masks » ?",
               "choices": [
                 "Ajuster son propre masque sur son nez et sa bouche avant d'aider un enfant ou un voisin",
-                "Attendre que le chef de cabine vienne ajuster votre sangle",
-                "Quitter son fauteuil pour courir vers le poste de pilotage"
+                "Attendre patiemment que le chef de cabine vienne ajuster la sangle de votre équipement",
+                "Quitter immédiatement son fauteuil pour courir vers le poste de pilotage prévenir les pilotes"
               ],
               "answer_index": 0,
               "explanation_fr": "Il faut d'abord enfiler son propre « oxygen mask » afin de conserver sa pleine lucidité avant d'assister un proche. Attendre ou se lever expose à une perte de conscience rapide en hypoxie."
@@ -389,7 +389,7 @@
               "choices": [
                 "Le compartiment à bagages situé au-dessus des sièges passagers",
                 "Le compartiment à bagages situé au-dessus de la tête des passagers",
-                "Le tiroir réfrigéré de l'office avant"
+                "Le tiroir réfrigéré de l'office avant réservé aux équipages de cabine"
               ],
               "answer_index": 1,
               "explanation_fr": "L'« overhead bin » est le coffre à bagages supérieur où les passagers rangent leurs valises de cabine. Les toilettes ou l'office possèdent d'autres rangements dédiés."
@@ -397,9 +397,9 @@
             {
               "prompt_fr": "Que signifie la phrase « the bins are full » prononcée par l'équipage ?",
               "choices": [
-                "Les réservoirs de carburant sont au niveau maximal lors du déploiement",
-                "Les repas chauds ont tous été distribués afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Les coffres à bagages supérieurs sont totalement remplis"
+                "Le carburant nécessaire au vol a été entièrement chargé dans les réservoirs",
+                "L'ensemble des plateaux-repas spéciaux a été distribué en classe économique",
+                "Les coffres à bagages supérieurs situés au-dessus des sièges sont saturés"
               ],
               "answer_index": 2,
               "explanation_fr": "« The bins are full » indique que les coffres à bagages de cabine sont saturés et ne peuvent plus accueillir de bagages à main supplémentaires."
@@ -407,9 +407,9 @@
             {
               "prompt_fr": "Pourquoi un steward dit-il poliment « please take your seat » à un passager stationnant au milieu de l'avion ?",
               "choices": [
-                "Le contrôle du registre des consommations alcoolisées déclarées au chef de cabine",
-                "Pour lui interdire formellement de voyager sur le vol selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Pour lui demander de nettoyer son accoudoir"
+                "Pour lui demander de placer son petit sac personnel sous le siège devant lui",
+                "Pour lui interdire de se déplacer dans l'allée centrale durant toute la durée du vol",
+                "Pour lui ordonner de fermer son hublot avant le début de l'embarquement"
               ],
               "answer_index": 0,
               "explanation_fr": "« Please take your seat » permet de demander courtoisement au passager de s'installer à sa place afin de libérer l'allée centrale et fluidifier le flux d'embarquement."
@@ -417,9 +417,9 @@
             {
               "prompt_fr": "À quoi sert le « coat closet » situé près de la porte d'entrée de cabine ?",
               "choices": [
-                "À suspendre les vestes et manteaux des passagers de première classe",
-                "À suspendre les manteaux et vestes des passagers afin de ne pas encombrer les coffres",
-                "À enfermer les chariots de service défectueux"
+                "À suspendre les vestes et manteaux des passagers de première classe afin d'éviter tout froissement",
+                "À suspendre les manteaux des passagers",
+                "À enfermer les chariots de service défectueux et le matériel technique d'entretien de la cabine"
               ],
               "answer_index": 1,
               "explanation_fr": "Le « coat closet » est une penderie de cabine destinée à suspendre manteaux, costumes ou vestes pour optimiser l'espace des coffres supérieurs."
@@ -497,9 +497,9 @@
             {
               "prompt_fr": "Qu'appelle-t-on un « connecting passenger » dans le transport aérien ?",
               "choices": [
-                "Un passager qui utilise le réseau Wi-Fi de bord pendant tout le vol selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Un voyageur qui effectue une escale pour prendre un second vol vers sa destination finale",
-                "Un technicien de maintenance voyageant comme passager"
+                "Un passager voyageant sur un vol sans escale jusqu'à sa destination",
+                "Un voyageur qui effectue une escale pour prendre un second vol de correspondance",
+                "Un voyageur muni d'un billet sans réservation de siège confirmée à l'avance par sa compagnie"
               ],
               "answer_index": 1,
               "explanation_fr": "Un « connecting passenger » est un voyageur en correspondance transitant par un aéroport hub pour embarquer sur un vol ultérieur."
@@ -567,9 +567,9 @@
             {
               "prompt_fr": "Pourquoi le personnel demande-t-il « please keep the aisle clear » pendant l'embarquement ?",
               "choices": [
-                "Pour permettre aux passagers arrivant derrière d'avancer sans encombre et accélérer le départ",
-                "Pour installer un buffet de bienvenue au milieu de la cabine selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Pour nettoyer les moquettes à grande eau avant le décollage"
+                "Pour permettre aux passagers de circuler sans encombre et accélérer le départ",
+                "Pour libérer les sièges réservés aux membres d'équipage en cabine arrière avant le vol",
+                "Pour faciliter le nettoyage complet des allées avant l'arrivée des pilotes"
               ],
               "answer_index": 0,
               "explanation_fr": "Dégager le couloir (« please keep the aisle clear ») évite les bouchons dans la cabine et permet de respecter l'horaire de départ (créneau de vol)."
@@ -577,9 +577,9 @@
             {
               "prompt_fr": "Que signifie la requête « please gate-check your bag » adressée à un voyageur ?",
               "choices": [
-                "Veuillez peser votre sac sur la balance de bord",
+                "Veuillez peser votre sac sur la balance électronique de bord avant de vous asseoir",
                 "Veuillez confier votre bagage pour enregistrement en porte vers la soute",
-                "Veuillez ouvrir votre valise devant tous les passagers"
+                "Veuillez ouvrir votre valise devant les personnels de sûreté pour inspection visuelle"
               ],
               "answer_index": 1,
               "explanation_fr": "« Please gate-check your bag » invite le passager à confier sa valise cabine à la porte d'embarquement pour qu'elle soit transportée en soute gratuitement par manque de place."
@@ -587,9 +587,9 @@
             {
               "prompt_fr": "Où le passager récupère-t-il généralement son « valet bag » à l'arrivée ?",
               "choices": [
-                "À son domicile trois jours plus tard par coursier",
-                "Dans le bureau de douane de la ville de départ afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Directement sur la passerelle ou au pied de l'avion à la sortie de l'appareil"
+                "Au tapis de livraison des bagages principal du hall des arrivées de l'aéroport",
+                "Au comptoir d'enregistrement des correspondances situé en zone de transit",
+                "Directement sur la passerelle ou au pied de l'avion à la sortie des passagers"
               ],
               "answer_index": 2,
               "explanation_fr": "Le « valet bag » est restitué immédiatement à la sortie de l'avion (sur la passerelle ou au pied de l'escalier), sans devoir passer par les tapis de livraison bagages."
@@ -598,8 +598,8 @@
               "prompt_fr": "Que fait concrètement le steward lorsqu'il doit « tag a gate bag » ?",
               "choices": [
                 "Il colle une étiquette de soute numérotée avec un reçu détachable pour le passager",
-                "Il inscrit le prénom du passager au feutre indélébile sur le tissu selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Il enferme la valise dans une housse ignifugée"
+                "Il remet un formulaire douanier d'importation temporaire à remplir en vol et à signer",
+                "Il range la valise dans une armoire vestiaire réservée à la première classe"
               ],
               "answer_index": 0,
               "explanation_fr": "L'expression « tag a gate bag » consiste à apposer une étiquette de traçabilité aéroportuaire sur la valise et remettre le coupon justificatif au passager."
@@ -695,11 +695,11 @@
             {
               "prompt_fr": "Quel chariot mobile le PNC utilise-t-il dans l'allée pour servir les rafraîchissements ?",
               "choices": [
-                "The emergency kit locker",
-                "The beverage cart",
-                "The baggage trolley"
+                "Le chariot mobile à roulettes contenant les repas et les boissons",
+                "Le conteneur fixe de réchauffage des barquettes situé dans l'office",
+                "Le plateau individuel distribué aux passagers lors du service de bord"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le « beverage cart » est le chariot spécialement configuré avec bouteilles, canettes, glaçons et verres pour servir les boissons aux passagers."
             },
             {
@@ -715,9 +715,9 @@
             {
               "prompt_fr": "Pourquoi la question « Chicken or pasta? » est-elle devenue célèbre dans le transport aérien ?",
               "choices": [
-                "C'est la proposition classique résumant les deux choix de plats chauds en classe économique",
-                "C'est un code secret pour prévenir le cockpit d'un incident afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "C'est une consigne d'urgence pour ordonner l'évacuation"
+                "C'est la proposition classique résumant les choix de plats chauds en cabine",
+                "C'est un appel discret prévenant le personnel de l'imminence d'une secousse",
+                "C'est une consigne d'alerte ordonnant l'arrêt immédiat du service des repas"
               ],
               "answer_index": 0,
               "explanation_fr": "« Chicken or pasta? » illustre le choix traditionnel du plat principal proposé aux passagers durant le « meal service » sur les vols long-courriers ou moyen-courriers."
@@ -725,11 +725,11 @@
             {
               "prompt_fr": "À quel moment le « meal service » débute-t-il habituellement ?",
               "choices": [
-                "Le protocole standard et le contrôle du registre des consommations alcoolisées déclarées au chef de cabine",
-                "Après l'extinction de la consigne des ceintures en altitude de croisière stabilisée lors du déploiement",
-                "Pendant l'approche finale à deux minutes du toucher des roues"
+                "Ranger et verrouiller immédiatement les chariots dans les galleys",
+                "Continuer à servir rapidement les passagers des rangées prioritaires",
+                "Distribuer des sacs pour le mal des transports à l'ensemble de la cabine"
               ],
-              "answer_index": 1,
+              "answer_index": 0,
               "explanation_fr": "Le service de restauration (« meal service ») débute une fois l'avion stabilisé en palier de croisière et la consigne lumineuse éteinte par les pilotes."
             }
           ],
@@ -785,19 +785,19 @@
             {
               "prompt_fr": "Quel équipement de l'office permet de réchauffer simultanément plusieurs dizaines de plats préparés ?",
               "choices": [
-                "The microwave kettle",
-                "The trash compactor",
-                "The galley oven"
+                "Les fours à convection de l'office pour réchauffer les cassolettes",
+                "Les réfrigérateurs servant à maintenir les boissons gazeuses fraîches",
+                "Les compartiments isothermes de stockage des plateaux froids de classe affaires"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Le « galley oven » (four de cuisine de bord, à convection ou vapeur) permet de réchauffer uniformément les cassolettes des repas à bord d'un avion de ligne."
             },
             {
               "prompt_fr": "Pourquoi le personnel doit-il impérativement vérifier les « dietary meal orders » avant le service général ?",
               "choices": [
-                "Pour identifier les passagers ayant des exigences médicales, religieuses ou allergiques et les servir en priorité",
-                "plateaux témoins conservés sous scellés pour analyse toxicologique afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Pour les jeter si le vol a plus de dix minutes de retard"
+                "Pour servir en priorité les passagers ayant des besoins médicaux ou religieux",
+                "Pour vérifier que les barquettes contiennent des couverts jetables en plastique",
+                "Pour isoler les plateaux dont la date limite de consommation serait dépassée"
               ],
               "answer_index": 0,
               "explanation_fr": "Les repas spéciaux (« dietary meal orders ») correspondent à des besoins de santé ou de culte et doivent être servis avant le service général pour éviter toute inversion."
@@ -805,9 +805,9 @@
             {
               "prompt_fr": "Que signifie l'action « to clear trays » en fin de service cabine ?",
               "choices": [
-                "Les empiler sur le plan de travail du galley sans les verrouiller dans le trolley",
+                "Les empiler sur le plan de travail de l'office sans bloquer les portes des placards",
                 "Le contrôle du registre des consommations alcoolisées déclarées au chef de cabine",
-                "Désinfecter les ailes de l'appareil pendant le vol"
+                "Ranger et verrouiller systématiquement tous les trolleys dans leurs logements avec freins"
               ],
               "answer_index": 1,
               "explanation_fr": "« To clear trays » signifie ramasser les plateaux-repas usagés et les restes alimentaires dans le trolley poubelle pour libérer les tablettes des passagers."
@@ -815,9 +815,9 @@
             {
               "prompt_fr": "Quelle est la durée approximative courante nécessaire pour « reheat passenger meals » dans les fours de bord ?",
               "choices": [
-                "Seulement 10 secondes",
-                "Plus de 4 heures selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Environ 20 à 30 minutes selon la densité des cassolettes"
+                "Moins de cinq minutes à température ambiante pour réchauffer les cassolettes",
+                "Plus d'une heure à basse température pour préserver la qualité des sauces",
+                "Environ vingt à trente minutes selon la densité et la température de départ"
               ],
               "answer_index": 2,
               "explanation_fr": "La remise en température (« to reheat passenger meals ») dans les fours à convection d'office requiert généralement 20 à 30 minutes selon les procédures de la compagnie."
@@ -877,9 +877,9 @@
             {
               "prompt_fr": "Que désigne le code IATA standard « VGML » sur l'étiquette d'un repas de bord ?",
               "choices": [
-                "Un repas végétarien ou végétalien strict sans viande ni poisson",
-                "Vegetarian Vegan Meal (repas strictement végétalien sans aucun produit d'origine animale)",
-                "Un plateau composé uniquement de confiseries"
+                "Bloquer la pédale de frein au pied dès que le chariot s'arrête dans l'allée",
+                "Tenir le chariot d'une seule main pendant que l'on sert les boissons chaudes",
+                "Laisser le chariot en roue libre si l'allée centrale est parfaitement horizontale"
               ],
               "answer_index": 0,
               "explanation_fr": "VGML correspond au « Vegetarian Meal » (végétalien ou végétarien strict, exempt de viande, volaille, poisson et sous-produits animaux)."
@@ -887,9 +887,9 @@
             {
               "prompt_fr": "Pourquoi le plateau « KSML » (casher) doit-il être présenté avec ses doubles emballages scellés au passager ?",
               "choices": [
-                "Pour empêcher le passager d'ouvrir son repas avant l'arrivée afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Pour prouver que les règles religieuses de préparation et de certification casher ont été strictement respectées sans contamination",
-                "Pour éviter que les arômes n'incommodent les pilotes en cockpit"
+                "Pour empêcher l'ouverture accidentelle du repas avant l'extinction complète des consignes",
+                "Pour prouver que la certification rituelle casher a été préservée sans ouverture",
+                "Pour conserver la chaleur du plat sans utiliser les réchauffeurs électriques"
               ],
               "answer_index": 1,
               "explanation_fr": "Le « KSML » (Kosher Meal) est certifié par une autorité rabbinique et doit conserver ses scellés inviolés jusqu'à ce que le passager les constate et en autorise l'ouverture."
@@ -897,11 +897,11 @@
             {
               "prompt_fr": "Quel est le risque mortel si un steward oublie d'enclencher le « cart brake » dans l'allée ?",
               "choices": [
-                "Le contenu très chaud risque de se renverser et de provoquer de graves brûlures",
-                "Le chariot risque de percuter violemment des passagers ou d'endommager la structure en cas de secousse",
-                "Le chariot peut rouler brutalement lors d'un coup de frein ou d'une turbulence et blesser gravement des passagers"
+                "Un repas sans gluten",
+                "Un repas végétarien préparé sans viande ni poisson",
+                "Un repas strictement casher certifié sous double opercule scellé"
               ],
-              "answer_index": 2,
+              "answer_index": 0,
               "explanation_fr": "Un chariot de service pèse entre 60 et 90 kg : sans enclencher le « cart brake », il devient un projectile dangereux lors d'une décélération ou d'une turbulence soudaine."
             },
             {
@@ -1005,9 +1005,9 @@
             {
               "prompt_fr": "Pourquoi diffuse-t-on l'annonce « service suspended due to turbulence » ?",
               "choices": [
-                "danger immédiat de turbulences sévères pouvant déséquilibrer les personnels selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Pour avertir les passagers que les liquides brûlants et les chariots présentent un danger lors des secousses",
-                "Pour demander aux passagers de regagner immédiatement leur siège et d’attacher leur ceinture"
+                "Pour inciter les passagers à commander des boissons chaudes avant la descente",
+                "Pour avertir les passagers que les liquides chauds et les chariots sont dangereux",
+                "Pour rappeler que l'usage des toilettes reste autorisé avec prudence à bord"
               ],
               "answer_index": 1,
               "explanation_fr": "« Service suspended due to turbulence » annonce l'arrêt immédiat des prestations afin d'éviter que les chariots lourds ou les thés/cafés bouillants ne blessent les occupants."
@@ -1016,7 +1016,7 @@
               "prompt_fr": "Que signifie une « headwind announcement » faite par l'équipage ?",
               "choices": [
                 "Une annonce signalant que le commandant a mal à la tête",
-                "Une annonce d'information météo sur la vitesse du vent de face et l'horaire estimé d'arrivée",
+                "Une annonce d'information météo détaillée sur la vitesse du vent de face et l'horaire d'arrivée",
                 "Une annonce indiquant que l'avion affronte un vent de face qui ralentit sa progression au sol"
               ],
               "answer_index": 2,
@@ -1026,7 +1026,7 @@
               "prompt_fr": "Quelle est la conséquence d'un fort vent arrière signalé dans une « tailwind announcement » ?",
               "choices": [
                 "L'avion avance plus vite par rapport au sol et arrive souvent avant l'heure prévue",
-                "Le vol peut subir une consommation accrue de carburant et un retard à l'arrivée",
+                "Le vol peut subir une consommation accrue de carburant et un retard important à l'arrivée",
                 "Les portes de secours risquent de s'ouvrir toutes seules"
               ],
               "answer_index": 0,
@@ -1035,9 +1035,9 @@
             {
               "prompt_fr": "Quelle attitude le personnel exige-t-il avec la consigne « please remain in your seat » ?",
               "choices": [
-                "Se lever pour aider à ranger les plateaux-repas selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Rester impérativement assis à son fauteuil avec la ceinture bouclée",
-                "Changer de siège pour s'installer à l'avant"
+                "Se lever rapidement pour aider l'équipage à ranger le matériel dans les offices arrière",
+                "Rester impérativement assis à son fauteuil avec la ceinture de sécurité bouclée",
+                "Changer de place pour s'asseoir dans les rangées centrales qui subissent moins de roulis"
               ],
               "answer_index": 1,
               "explanation_fr": "« Please remain in your seat » ordonne aux voyageurs de ne pas quitter leur siège afin de prévenir les traumatismes crâniens ou chutes lors de secousses imprévues."
@@ -1095,9 +1095,9 @@
             {
               "prompt_fr": "Qu'interdit formellement la « sterile cockpit rule » en dessous de 10 000 pieds ?",
               "choices": [
-                "L'utilisation de la radio de bord par les commandants de bord",
-                "Le fonctionnement de la pressurisation cabine afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Toute communication superflue ou non critique entre la cabine et les pilotes pour préserver leur concentration lors du déploiement"
+                "L'obligation pour les pilotes de porter le casque radio durant tout le vol",
+                "L'interdiction faite aux passagers d'utiliser les toilettes situées à l'avant",
+                "L'interdiction de toute communication non liée à la sécurité sous 10 000 ft"
               ],
               "answer_index": 2,
               "explanation_fr": "La « sterile cockpit rule » (règle du cockpit stérile) sanctuarise les phases critiques de vol (< 10 000 ft) : l'équipage ne doit pas distraire les pilotes avec des échanges non urgents."
@@ -1105,9 +1105,9 @@
             {
               "prompt_fr": "Pourquoi chaque « tray table » doit-elle être en « upright position » avant l'atterrissage ?",
               "choices": [
-                "Pour dégager l'espace d'évacuation immédiat en cas d'accident à l'atterrissage",
-                "Pour permettre aux passagers de dormir plus confortablement lors du déploiement",
-                "vérifier l’absence d’objets tranchants dans les aumônières des sièges passagers"
+                "Sous dix mille pieds (environ trois mille mètres d'altitude)",
+                "Durant toute la phase de croisière au-dessus des nuages orageux",
+                "Uniquement pendant les dix premières minutes suivant l'atterrissage"
               ],
               "answer_index": 0,
               "explanation_fr": "Une tablette baissée piège les jambes du passager et bloque la rangée. La relever en « upright position » garantit une voie d'évacuation libre en cas d'impact."
@@ -1115,9 +1115,9 @@
             {
               "prompt_fr": "Que signifie le message transmis par le chef de cabine : « Cabin secure » ?",
               "choices": [
-                "Tous les passagers sont assis avec leurs ceintures attachées et les issues sont sécurisées",
-                "Tous les coffres, galleys, passagers et ceintures sont vérifiés et conformes pour le décollage ou l'atterrissage",
-                "L'avion n'a plus de kérosène dans les réservoirs"
+                "Tous les passagers sont assis avec leurs ceintures attachées et les issues sont dégagées",
+                "Tous les coffres, galleys, passagers et ceintures sont vérifiés et conformes",
+                "Les pilotes ont terminé de vérifier l'ensemble des calculateurs de navigation de bord"
               ],
               "answer_index": 1,
               "explanation_fr": "« Cabin secure » certifie aux pilotes que la cabine est inspectée, arrimée, ceintures verrouillées et prête pour la manœuvre de décollage ou d'atterrissage."
@@ -1125,9 +1125,9 @@
             {
               "prompt_fr": "Dans quel contexte le personnel utilise-t-il la formule « we apologize for the inconvenience » ?",
               "choices": [
-                "Pour saluer le pilote à la prise de service",
-                "Pour demander l'autorisation de décoller à la tour de contrôle afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Lorsqu'un retard, une restriction de service ou une turbulence contrarie le voyageur"
+                "Pour saluer les pilotes avant le repoussage et s'enquérir de leur état de forme général",
+                "Pour signaler qu'un voyageur demande un verre d'eau minérale supplémentaire en classe éco",
+                "Lors d'un danger imminent menaçant la sécurité du vol ou des passagers"
               ],
               "answer_index": 2,
               "explanation_fr": "« We apologize for the inconvenience » (« Nous vous prions d'excuser ce désagrément ») est la formule standard d'empathie et de service client face aux aléas de vol."
@@ -1195,9 +1195,9 @@
             {
               "prompt_fr": "Quels équipements individuels sont intégrés dans le « PSU » (Passenger Service Unit) au-dessus de chaque siège ?",
               "choices": [
-                "Les pédales de frein et les commandes des ailerons selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Les liseuses individuelles, les buses d'aération, les boutons d'appel et les masques à oxygène automatiques",
-                "Le réchaud de cuisine et le chariot à journaux"
+                "Les instruments de navigation et les commandes de vol du poste de pilotage principal",
+                "Les liseuses, les buses d'aération, le bouton d'appel et les masques à oxygène",
+                "Le chariot de distribution des boissons et le four de réchauffage des plats de l'office"
               ],
               "answer_index": 1,
               "explanation_fr": "Le « PSU » (Passenger Service Unit) regroupe l'aération individuelle, la liseuse, le bouton d'appel steward et le compartiment de masques à oxygène tombants."
@@ -1205,9 +1205,9 @@
             {
               "prompt_fr": "Pourquoi est-il primordial de « secure galley equipment » dès l'annonce de secousses ?",
               "choices": [
-                "Pour permettre aux cuisiniers de préparer le dîner plus vite",
-                "Pour éviter la projection de récipients brûlants ou lourds lors des accélérations et turbulences",
-                "Pour éviter que les cafetières, tiroirs et boîtes métalliques ne soient projetés à travers la cabine"
+                "Pour permettre aux membres d'équipage de préparer le service des boissons plus rapidement",
+                "Pour éviter la projection brutale de récipients brûlants ou lourds lors des fortes secousses",
+                "Pour éviter que les cafetières et tiroirs ne soient projetés à travers la cabine"
               ],
               "answer_index": 2,
               "explanation_fr": "« To secure galley equipment » (verrouiller loquets de fours, cafetières, tiroirs) empêche que du matériel lourd et brûlant ne devienne un projectile dangereux en vol."
@@ -1215,9 +1215,9 @@
             {
               "prompt_fr": "Quelle attitude et paroles professionnelles conviennent pour « calm an anxious passenger » en turbulence ?",
               "choices": [
-                "Lui expliquer posément que les secousses sont normales, que l'appareil est conçu pour y résister et qu'il est en sécurité",
-                "Lui parler avec douceur, lui expliquer le fonctionnement normal des bruits d'avion et lui proposer de l'eau",
-                "L'ignorer complètement jusqu'à la fin du voyage"
+                "Lui expliquer posément que les secousses sont normales et qu'il est en sécurité",
+                "Lui parler avec douceur, lui expliquer le fonctionnement des bruits et lui offrir de l'eau",
+                "L'inviter à s'isoler dans l'office arrière jusqu'à ce que les secousses de l'avion cessent"
               ],
               "answer_index": 0,
               "explanation_fr": "Pour « calm an anxious passenger » (rassurer un passager angoissé), le PNC utilise un ton calme, maintient le contact visuel, dédramatise la situation et explique la physique du vol."
@@ -1313,9 +1313,9 @@
             {
               "prompt_fr": "Qu'est-ce qu'un « unruly passenger » dans la terminologie aérienne internationale ?",
               "choices": [
-                "Un voyageur qui dort pendant toute la durée du voyage selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Un passager perturbateur dont le comportement agressif ou indiscipliné enfreint l'ordre et la sécurité du vol",
-                "Un passager qui voyage avec un bagage en surpoids"
+                "Un passager qui s'endort profondément sans avoir attaché sa ceinture ventrale",
+                "Un passager perturbateur dont le comportement agressif compromet la sécurité",
+                "Un voyageur demandant un changement de place en classe affaires au décollage"
               ],
               "answer_index": 1,
               "explanation_fr": "Un « unruly passenger » (passager perturbateur ou indiscipliné) est une personne refusant de se conformer aux consignes de l'équipage ou manifestant de l'agressivité physique/verbale."
@@ -1323,9 +1323,9 @@
             {
               "prompt_fr": "Quelle est la première action recommandée pour « de-escalate tension » face à un passager agressif ?",
               "choices": [
-                "Lui crier dessus encore plus fort pour lui faire peur",
-                "Écouter calmement ses griefs, reformuler avec empathie et fixer les limites sans agressivité",
-                "Garder son calme, baisser la voix et écouter activement sa frustration sans l'interrompre brusquement"
+                "Lui crier dessus encore plus fort pour affirmer son autorité et faire respecter l'ordre",
+                "Menacer immédiatement le passager de poursuites judiciaires dès l'arrivée sur le tarmac",
+                "Garder son calme, baisser la voix et écouter activement sa frustration sans l'interrompre"
               ],
               "answer_index": 2,
               "explanation_fr": "Pour « de-escalate tension », l'équipage adopte une posture calme, non menaçante et empathique pour faire redescendre la charge émotionnelle avant d'explorer une solution."
@@ -1343,9 +1343,9 @@
             {
               "prompt_fr": "Quelle est la règle essentielle pour « handle an unruly traveller » sans envenimer la situation ?",
               "choices": [
-                "Lui servir trois verres de whisky consécutifs selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "L'inviter à s'isoler dans l'office pour discuter calmement hors du regard des autres passagers",
-                "Demander à tous les passagers de voter contre lui"
+                "Le menacer immédiatement de poursuites judiciaires et d'interdiction formelle de vol",
+                "L'inviter calmement dans l'office pour discuter hors du regard d'autrui",
+                "Demander aux passagers des rangées voisines d'intervenir pour le neutraliser physiquement"
               ],
               "answer_index": 1,
               "explanation_fr": "Pour « handle an unruly traveller », l'isoler de son public (le reste de la cabine) diminue la provocation et favorise un échange constructif."
@@ -1423,9 +1423,9 @@
             {
               "prompt_fr": "En quoi consiste le « captain briefing » dispensé avant le vol ?",
               "choices": [
-                "répartition des postes de sécurité et des portes assignées à chaque navigant afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "À vérifier la météo, le temps de vol, les zones de turbulences et les consignes particulières de sécurité avec l'équipage",
-                "temps de vol effectif et les temps de repos réglementaires de l’équipage"
+                "Répartir les tâches en cabine et organiser le calendrier des congés annuels de l'équipage",
+                "Vérifier la météo, le vol, les zones de turbulences et les consignes de sûreté",
+                "Contrôler la validité administrative des passeports et des visas d'entrée des navigants"
               ],
               "answer_index": 1,
               "explanation_fr": "Le « captain briefing » rassemble le commandant et le chef de cabine pour caler les procédures, la météo, la sûreté et la communication interphone du jour."
@@ -1493,9 +1493,9 @@
             {
               "prompt_fr": "En quoi consiste un « blind passenger briefing » individuel dispensé par le personnel navigant ?",
               "choices": [
-                "Faire toucher physiquement au passager le bouton d'appel, l'emplacement du gilet, le masque et compter les rangées jusqu'à l'issue",
-                "Lui lire à haute voix le journal financier en entier afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Lui interdire de se déplacer pendant les douze heures de vol"
+                "Lui faire repérer le bouton d'appel, le gilet de sauvetage et les issues proches",
+                "Lui faire la lecture complète du magazine de bord et de la carte des boissons",
+                "Lui demander de rester éveillé pendant toutes les manœuvres d'atterrissage"
               ],
               "answer_index": 0,
               "explanation_fr": "Le « blind passenger briefing » est un exposé tactile personnalisé permettant à la personne non-voyante de mémoriser l'agencement de son environnement et le cheminement vers l'issue."
@@ -1513,9 +1513,9 @@
             {
               "prompt_fr": "Pourquoi l'équipage décide-t-il parfois de « reassign seats » après un incident de boisson ?",
               "choices": [
-                "sécuriser immédiatement la zone et prévenir les risques de brûlure",
-                "Pour obliger le voyageur à payer un surclassement obligatoire selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Pour permettre au passager de s'asseoir sur un siège propre et sec tout en facilitant le nettoyage"
+                "Pour lui imposer le règlement immédiat des frais de nettoyage du fauteuil",
+                "Pour le contraindre à débarquer à la prochaine escale technique du voyage",
+                "Pour lui offrir une assise sèche et propre tout en facilitant le traitement"
               ],
               "answer_index": 2,
               "explanation_fr": "L'action « to reassign seats » offre une solution immédiate de confort en déplaçant le passager vers un fauteuil sec pendant que l'équipage traite la zone souillée."
@@ -1523,9 +1523,9 @@
             {
               "prompt_fr": "Qu'impose la « spill cleanup procedure » lors du déversement de liquide en cabine ?",
               "choices": [
-                "Appliquer des gants, utiliser les poudres absorbantes du kit de nettoyage et isoler les déchets souillés",
-                "Verser de l'essence pour dissoudre la tache afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Attendre l'arrivée à destination sans rien faire"
+                "Mettre des gants, saupoudrer un absorbant et enfermer les résidus dans un sac biohazard",
+                "Rincer abondamment le tissu avec de l'eau tiède sans équipement de protection individuel",
+                "Couvrir le siège avec une couverture de laine sans toucher aux matières souillées"
               ],
               "answer_index": 0,
               "explanation_fr": "La « spill cleanup procedure » encadre l'absorption rapide et hygiénique du liquide à l'aide de serviettes ou poudre gélifiante pour prévenir les risques de glissade ou d'odeur."
@@ -1622,9 +1622,9 @@
             {
               "prompt_fr": "Qu'est-ce qu'un service de « telemedical assistance service » en aviation commerciale ?",
               "choices": [
-                "Une application mobile pour commander des médicaments en duty-free afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Un centre d'urgence médical basé au sol joignable 24h/24 par satellite pour guider l'équipage lors d'un malaise en vol",
-                "Un robot chirurgien installé dans la soute de l'appareil"
+                "Un service de réservation en ligne pour modifier ses correspondances en vol",
+                "Un centre médical d'urgence joignable par satellite pour conseiller l'équipage",
+                "Une armoire à pharmacie robotisée distribuant automatiquement des calmants"
               ],
               "answer_index": 1,
               "explanation_fr": "Le « telemedical assistance service » (ex: MedLink) met en relation directe l'équipage avec des urgentistes spécialisés pour poser un diagnostic et recommander un déroutement."
@@ -1652,9 +1652,9 @@
             {
               "prompt_fr": "Quelle est la qualification d'un incident qualifié d'« in-flight medical emergency » ?",
               "choices": [
-                "Une panne d'écouteurs audio afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Une détérioration sévère et immédiate de l'état de santé d'un occupant menaçant son pronostic vital",
-                "Une dispute verbale sur l'inclinaison d'un siège"
+                "Une plainte concernant la température trop fraîche de l'air en cabine",
+                "Une détérioration sévère de l'état d'un passager engageant son pronostic vital",
+                "Une panne intermittente des écrans individuels de divertissement vidéo"
               ],
               "answer_index": 1,
               "explanation_fr": "Une « in-flight medical emergency » désigne une détresse médicale aiguë (arrêt cardiaque, AVC, crise d'asthme majeure) nécessitant un protocole d'urgence."
@@ -1733,9 +1733,9 @@
             {
               "prompt_fr": "Quand devient-il impératif de « coordinate medical diversion » vers un aéroport de dégagement ?",
               "choices": [
-                "Dès qu'un voyageur demande un verre d'eau supplémentaire selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Lorsque le pronostic vital du patient est engagé et nécessite une hospitalisation d'urgence introuvable en vol",
-                "Lorsque la batterie du système vidéo est déchargée"
+                "Lorsqu'un passager manifeste des nausées légères sans perte de connaissance",
+                "Lorsque l'état critique du patient exige une hospitalisation terrestre urgente",
+                "Dès que la trousse de premiers secours d'urgence a été ouverte par un membre d'équipage"
               ],
               "answer_index": 1,
               "explanation_fr": "L'action « to coordinate medical diversion » est déclenchée par le commandant après avis médical lorsque la survie du passager dépend d'une admission hospitalière d'extrême urgence."
@@ -1814,9 +1814,9 @@
             {
               "prompt_fr": "Quand déclenche-t-on un « crew interphone emergency call » sur tous les combinés ?",
               "choices": [
-                "coordonner l’accueil médico-légal et les secours d’urgence à l’arrivée afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Pour mobiliser instantanément l'ensemble de l'équipage lors d'une crise vitale ou de sûreté majeure en cabine lors du déploiement",
-                "Pour souhaiter un joyeux anniversaire à un collègue"
+                "Pour lancer la distribution générale des rafraîchissements après le décollage",
+                "Pour mobiliser sans délai tout l'équipage lors d'une crise vitale en cabine",
+                "Pour inviter les passagers à remplir le questionnaire de satisfaction en vol"
               ],
               "answer_index": 1,
               "explanation_fr": "L'appel « crew interphone emergency call » fait retentir une triple sonnerie d'urgence sur tous les postes pour coordonner immédiatement une réaction collective."
@@ -1943,9 +1943,9 @@
             {
               "prompt_fr": "Que contient un « unruly passenger restraint kit » certifié à bord d'un avion ?",
               "choices": [
-                "Des pistolets à impulsion électrique et des matraques en fer",
-                "sangles de contention textiles et des menottes de sécurité en nylon renforcé selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Des liens de contention (menottes en plastique renforcé / flexicuffs), des sangles pour chevilles et des ciseaux de sécurité"
+                "Des pistolets à impulsion électrique d'intervention et des matraques en acier",
+                "Des ceintures de sécurité standard nouées fermement autour des avant-bras",
+                "Des colliers de serrage en nylon renforcé, des sangles et des ciseaux mousses"
               ],
               "answer_index": 2,
               "explanation_fr": "L'« unruly passenger restraint kit » comprend des menottes en nylon/polymère (« restraint cuffs »), des liens de jambes et un coupe-liens de sécurité pour neutraliser un individu dangereux."
@@ -1953,9 +1953,9 @@
             {
               "prompt_fr": "En quoi consiste une « passenger intoxication assessment » en cabine ?",
               "choices": [
-                "Observer les signes objectifs de l'alcoolisme (élocution pâteuse, agressivité, démarche titubante, odeur) pour stopper le service d'alcool",
-                "évaluation comportementale discrète des signes manifestes d’ébriété afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Calculer le prix total des consommations hors taxes"
+                "Détecter les signes objectifs d'ébriété pour refuser de servir d'autres boissons",
+                "Calculer le montant des taxes douanières sur les bouteilles vendues à bord",
+                "Confisquer les bagages de cabine contenant des articles achetés en duty-free"
               ],
               "answer_index": 0,
               "explanation_fr": "L'évaluation (« passenger intoxication assessment ») permet au PNC de relever les signes comportementaux d'ébriété afin d'interrompre le service d'alcool et prévenir les débordements."
@@ -2044,9 +2044,9 @@
             {
               "prompt_fr": "Quelle attitude physique fait partie d'une « de-escalation verbal technique » réussie ?",
               "choices": [
-                "Pointer du doigt le visage du passager en levant la voix afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Maintenir une posture ouverte, des mains visibles, une voix posée et une écoute active sans provocation",
-                "Adopter une attitude agressive et menacer le passager de sanctions pénales immédiates"
+                "Pointer du doigt le voyageur et élever la voix pour affirmer son autorité",
+                "Garder une voix calme, des gestes ouverts et pratiquer une écoute bienveillante",
+                "Exiger des excuses publiques immédiates sous peine d'interpellation formelle à l'arrivée"
               ],
               "answer_index": 1,
               "explanation_fr": "La « de-escalation verbal technique » s'appuie sur un langage corporel neutre, un ton apaisant et la validation des émotions pour faire retomber l'excitation."
@@ -2115,9 +2115,9 @@
             {
               "prompt_fr": "Qu'est-ce que le « flashover phenomenon » lors d'un incendie en espace clos aéronautique ?",
               "choices": [
-                "L'embrasement généralisé et quasi instantané de tous les matériaux combustibles de la cabine sous l'effet des gaz surchauffés",
-                "L'allumage automatique de l'éclairage de secours au plafond afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "Le flash lumineux des balises de détresse de piste"
+                "L'embrasement quasi instantané de toute la cabine provoqué par les gaz chauds",
+                "Le déclenchement intempestif des balises de détresse acoustiques et radio sous-marines",
+                "La panne simultanée des circuits de ventilation et de recyclage de l'air"
               ],
               "answer_index": 0,
               "explanation_fr": "Le « flashover phenomenon » est la transition thermique brutale où la chaleur accumulée sous le plafond enflamme spontanément l'ensemble de la cabine en quelques secondes."
@@ -2135,9 +2135,9 @@
             {
               "prompt_fr": "Quelle est la procédure cruciale pour réussir un « lithium cell containment » sur un appareil électronique en surchauffe ?",
               "choices": [
-                "Enfermer l'appareil brûlant sous une couverture en laine sans eau",
-                "L'abandonner dans la poubelle des toilettes selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Refroidir abondamment l'appareil avec des liquides aqueux ininflammables puis l'isoler dans un sac de confinement anti-feu"
+                "Enfermer la batterie dans un sac plastique hermétique sans produit extincteur",
+                "Déposer l'appareil en feu dans le réceptacle des déchets de l'office arrière",
+                "Arroser d'eau pour refroidir l'élément puis l'enfermer dans un sac anti-feu"
               ],
               "answer_index": 2,
               "explanation_fr": "Le « lithium cell containment » exige un refroidissement à l'eau pour stopper la réaction chimique en chaîne (thermal runaway) avant placement dans un sac thermique spécial."
@@ -2145,9 +2145,9 @@
             {
               "prompt_fr": "Pourquoi un « uncontrolled cabin fire » est-il l'urgence absolue la plus redoutée des équipages ?",
               "choices": [
-                "Parce qu'il peut perforer la carlingue et intoxiquer mortellement les passagers en moins de trois minutes",
-                "provoquer l’asphyxie rapide des occupants par inhalation de fumées denses et toxiques afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "provoquer l’asphyxie rapide des occupants par inhalation de fumées denses et toxiques"
+                "Il dégage des vapeurs hautement toxiques pouvant neutraliser la cabine en vol",
+                "Il coupe instantanément l'alimentation électrique de secours du cockpit",
+                "Il modifie la pression barométrique et fait chuter les masques passagers"
               ],
               "answer_index": 0,
               "explanation_fr": "Un « uncontrolled cabin fire » produit des gaz toxiques (cyanure, monoxyde de carbone) et peut détruire les commandes de vol en quelques minutes, imposant un atterrissage immédiat."
@@ -2216,9 +2216,9 @@
             {
               "prompt_fr": "Pourquoi l'équipage hurle-t-il « Brace, brace! » à l'unisson quelques secondes avant un impact forcé ?",
               "choices": [
-                "Pour leur demander de détacher leur ceinture immédiatement",
-                "Pour leur dire de ranger leurs écouteurs dans leur poche selon les consignes standardisées en vigueur dans l’aviation commerciale civile",
-                "Pour ordonner aux passagers de se pencher en avant tête calée contre le siège pour absorber le choc et éviter le coup du lapin"
+                "Pour inciter les passagers à déboucler leur ceinture et se tenir prêts debout",
+                "Pour rappeler l'obligation d'éteindre tous les appareils électroniques à bord",
+                "Pour ordonner de se pencher en avant tête protégée afin d'amortir le choc"
               ],
               "answer_index": 2,
               "explanation_fr": "« Brace, brace! » ordonne l'adoption instantanée de la position de protection réduisant les fractures crâniennes et le coup du lapin lors de la décélération brutale."
@@ -2226,9 +2226,9 @@
             {
               "prompt_fr": "Que signifie le commandement vocal direct « Step and slide » hurlé à la porte de secours ?",
               "choices": [
-                "Une consigne claire et percutante intimant au passager d'avancer sans hésiter et de se laisser glisser sur le toboggan d'évacuation",
-                "s’asseoir sur le seuil de porte avant de se laisser glisser doucement sur la rampe afin de garantir l’intégrité physique de l’ensemble des passagers à bord",
-                "s’asseoir sur le seuil de porte avant de se laisser glisser doucement sur la rampe"
+                "Une consigne brève et percutante intimant de sauter sans délai sur le toboggan",
+                "Une demande polie invitant à s'asseoir doucement sur le rebord avant de glisser",
+                "Un rappel formel interdisant aux passagers de quitter leurs sièges assignés"
               ],
               "answer_index": 0,
               "explanation_fr": "« Step and slide » (avancez et glissez) est la commande réflexe internationale projetée aux passagers pour accélérer le débit de descente sur les toboggans gonflables."
