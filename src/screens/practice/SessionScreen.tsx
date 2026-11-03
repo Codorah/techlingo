@@ -15,8 +15,9 @@ import { localDay } from '@/learning/streak';
 import { useContent } from '@/lib/useContent';
 import { type Playable, QuizStep } from '@/screens/lesson/QuizStep';
 import { REPEAT_PASS_SCORE, RepeatStep } from '@/screens/lesson/RepeatStep';
+import { OrderGame } from './OrderGame';
 
-type Mode = 'challenge' | 'listening' | 'speaking' | 'match';
+type Mode = 'challenge' | 'listening' | 'speaking' | 'match' | 'order';
 const XP_PER_CORRECT = 5;
 const ORAL_XP_PER_CORRECT = 10;
 // The daily challenge rewards XP once per local day; replays are practice only.
@@ -182,6 +183,7 @@ export function SessionScreen() {
     );
   }
 
+  if (mode === 'order') return shell(<OrderGame key={round} pool={pool} onDone={(c, total) => void finish(c, total)} />);
   if (mode === 'match') return shell(<MatchGame key={round} pool={pool} onDone={(c, total) => void finish(c, total)} />);
   if (mode === 'speaking') return shell(<SpeakingDrill key={round} pool={pool} onDone={(c, total) => void finish(c, total)} />);
 

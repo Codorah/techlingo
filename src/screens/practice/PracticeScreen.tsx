@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ChevronRight, Ear, Layers, Link2, Map as MapIcon, Mic, Trophy } from 'lucide-react';
+import { ChevronRight, Ear, Layers, Link2, Map as MapIcon, Mic, Puzzle, Trophy } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
@@ -17,7 +17,8 @@ const MODES = [
   { id: 'challenge', Icon: Trophy, bg: 'bg-sun', fg: 'text-sun-ink' },
   { id: 'listening', Icon: Ear, bg: 'bg-mist', fg: 'text-[var(--accent)]' },
   { id: 'speaking', Icon: Mic, bg: 'bg-[#E3DCFB]', fg: 'text-[#5B4FC4]' },
-  { id: 'match', Icon: Link2, bg: 'bg-mint', fg: 'text-mint-ink' }
+  { id: 'match', Icon: Link2, bg: 'bg-mint', fg: 'text-mint-ink' },
+  { id: 'order', Icon: Puzzle, bg: 'bg-teal-soft', fg: 'text-teal' }
 ] as const;
 
 export function PracticeScreen() {
