@@ -124,11 +124,11 @@ export function PhraseCard({ phrase, kicker }: { phrase: { en: string; fr: strin
 type Step = 'words' | 'dialogue' | 'quiz' | 'production';
 const STEPS: Step[] = ['words', 'dialogue', 'quiz', 'production'];
 
-export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; lesson: PathLesson; nodeId: string; onClose: () => void }) {
+export function Lesson({ path, lesson, nodeId, onClose, closesUnit }: { path: ShippedPath; lesson: PathLesson; nodeId: string; onClose: () => void; closesUnit?: () => boolean }) {
   const { t } = useTranslation();
   const [step, setStep] = useState<Step>('words');
   const [quizCorrect, setQuizCorrect] = useState(0);
-  const [done, setDone] = useState<{ xp: number; firstTime: boolean; accuracy: number } | null>(null);
+  const [done, setDone] = useState<{ xp: number; firstTime: boolean; accuracy: number; unit: boolean } | null>(null);
   const finishing = useRef(false);
   // Choices are shuffled on display so the right answer's position in the file never leaks.
   // The quiz opens with listening questions on the lesson's own words, then the written questions.
@@ -154,10 +154,10 @@ export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; l
     const r = await completeNode(nodeId, 'lesson', [], { correct, total });
     navigator.vibrate?.([12, 40, 12]);
     sounds.celebrate();
-    setDone({ ...r, accuracy: Math.round((correct / total) * 100) });
+    setDone({ ...r, accuracy: Math.round((correct / total) * 100), unit: r.firstTime && !!closesUnit?.() });
   }
 
-  if (done) return <Done xp={done.xp} title={t('path.lessonDone')} accuracy={done.accuracy} confetti={done.firstTime} replay={!done.firstTime} onContinue={onClose} />;
+  if (done) return <Done xp={done.xp} title={done.unit ? t('path.unitDone') : t('path.lessonDone')} accuracy={done.accuracy} confetti={done.firstTime} unit={done.unit} replay={!done.firstTime} onContinue={onClose} />;
 
   if (step === 'words') {
     const words = lesson.term_ids.map((id) => path.terms[id]).filter((x): x is NonNullable<typeof x> => !!x);
@@ -319,7 +319,7 @@ function Production({ lesson, onDone }: { lesson: PathLesson; onDone: (hits: num
   );
 }
 
-export function Done({ xp, title, accuracy, confetti = true, replay, onContinue }: { xp: number; title: string; accuracy?: number; confetti?: boolean; replay?: boolean; onContinue: () => void }) {
+export function Done({ xp, title, accuracy, confetti = true, unit = false, replay, onContinue }: { xp: number; title: string; accuracy?: number; confetti?: boolean; unit?: boolean; replay?: boolean; onContinue: () => void }) {
   const { t } = useTranslation();
   const countXp = useCountUp(xp, 800);
 
@@ -330,7 +330,7 @@ export function Done({ xp, title, accuracy, confetti = true, replay, onContinue 
       {confetti && <Confetti />}
       <div className="flex flex-1 flex-col items-center justify-center">
         <div className="relative grid h-48 w-48 animate-[bounce-in_.55s_var(--ease-out-quart)] place-items-center">
-          <img src={`/illustrations/results/${perfect ? 'lesson-perfect' : 'lesson-success'}.png`} alt="" width={192} height={192} decoding="async" className="h-48 w-48 object-contain" />
+          <img src={`/illustrations/results/${unit ? 'unit-complete' : perfect ? 'lesson-perfect' : 'lesson-success'}.png`} alt="" width={192} height={192} decoding="async" className="h-48 w-48 object-contain" />
           <span className="absolute -bottom-2 rounded-full bg-[var(--accent)] px-3.5 py-1 font-title text-base font-black text-on-ocean shadow">+{countXp} XP</span>
         </div>
         {perfect && (

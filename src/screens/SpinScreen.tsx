@@ -129,6 +129,7 @@ export function SpinScreen() {
           disabled={!canSpin || !!result || spinning || !input || (mode === 'category' && !category)} />}
         {!canSpin && !result && todaysTerm && (
           <Card className="w-full text-center">
+            <img src="/illustrations/empty/spin-done.png" alt="" width={140} height={140} decoding="async" className="mx-auto mb-1 h-32 w-32 object-contain" />
             <p className="text-sm font-bold text-ink-2">{t('home.spin.done.title')}</p>
             <h2 className="mt-2 text-3xl font-black">{todaysTerm.term_en}</h2>
             <p className="mt-1 text-ink-2">{todaysTerm.translation_fr}</p>

@@ -35,8 +35,13 @@ export function CareerScreen() {
   return (
     <>
       <main className="mx-auto max-w-[640px] px-5 pb-28 pt-[calc(env(safe-area-inset-top)+16px)]">
-        <h1 className="text-[1.75rem] font-black">{t('career.title')}</h1>
-        <p className="text-ink-2">{t('career.subtitle')}</p>
+        <div className="flex items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <h1 className="text-[1.75rem] font-black">{t('career.title')}</h1>
+            <p className="text-ink-2">{t('career.subtitle')}</p>
+          </div>
+          <img src="/illustrations/career/interview-prep.png" alt="" width={96} height={96} decoding="async" className="h-24 w-24 flex-none object-contain" />
+        </div>
 
         <section className="relative mt-5 overflow-hidden rounded-[var(--radius-card)] bg-[#5B4FC4] p-5 text-white shadow-[0_4px_0_#43399A]">
           <MessageSquareText size={130} className="absolute -right-5 -top-3 opacity-15" aria-hidden />

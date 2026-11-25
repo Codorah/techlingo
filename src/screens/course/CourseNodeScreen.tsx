@@ -17,21 +17,25 @@ export function CourseNodeScreen() {
   const [, navigate] = useLocation();
   const params = useParams<{ role: string; nodeId: string }>();
   const nodeId = decodeURIComponent(params.nodeId);
-  const { course, path, domain, missing } = useCourse(params.role);
+  const { course, path, domain, missing, progress } = useCourse(params.role);
   const [recallDone, setRecallDone] = useState<{ xp: number; accuracy: number; firstTime: boolean } | null>(null);
   const recording = useRef(false);
+  // Captured while this step is still open: finishing it records progress, which would hide the answer.
+  const closesUnit = useRef(false);
   const back = () => navigate(`/parcours/${params.role}`, { replace: true });
 
   if (missing) return <NotFound />;
   if (!course || !path) return <MapSkeleton />;
   const node = course.nodes.find((n) => n.id === nodeId);
   if (!node) return <NotFound />;
+  const unit = course.units.find((u) => u.nodes.some((n) => n.id === node.id));
+  if (unit && !progress[node.id]) closesUnit.current = unit.nodes.every((n) => n.id === node.id || !!progress[n.id]);
 
   let view: React.ReactNode = <NotFound />;
   if (node.kind === 'guide' && node.unitIndex != null) {
     view = <Guide unit={path.units[node.unitIndex]!} nodeId={node.id} onClose={back} />;
   } else if (node.kind === 'lesson' && node.unitIndex != null && node.lessonIndex != null) {
-    view = <Lesson path={path} lesson={path.units[node.unitIndex]!.lessons[node.lessonIndex]!} nodeId={node.id} onClose={back} />;
+    view = <Lesson path={path} lesson={path.units[node.unitIndex]!.lessons[node.lessonIndex]!} nodeId={node.id} onClose={back} closesUnit={() => closesUnit.current} />;
   } else if (node.kind === 'recall') {
     const terms = (node.termIds ?? []).map((id) => path.terms[id]).filter((x): x is PathTerm => !!x);
     view = recallDone
