@@ -4,7 +4,7 @@ import { type ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
 import { openInstallSheet } from '@/app/InstallSheet';
-import { Avatar } from '@/components/ui/Avatar';
+import { Avatar, IMAGE_AVATARS } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
@@ -101,7 +101,7 @@ export function SettingsScreen() {
             </label>
             <p className="mt-4 text-sm font-bold text-ink-2">{t('settings.avatar')}</p>
             <div className="mt-2 flex flex-wrap gap-1" role="radiogroup" aria-label={t('settings.avatar')}>
-              {AVATARS.map((av) => (
+              {[...IMAGE_AVATARS, ...AVATARS].map((av) => (
                 <button key={av} type="button" role="radio" aria-checked={profile.avatar === av}
                   onClick={() => void saveProfile({ avatar: av })}
                   className={`rounded-full p-1 transition-transform ${profile.avatar === av ? 'ring-3 ring-[var(--accent)] scale-105' : 'opacity-80'}`}>

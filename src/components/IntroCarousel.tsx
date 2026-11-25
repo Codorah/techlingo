@@ -1,15 +1,15 @@
-import { ArrowRight, Mic, MessagesSquare, Route, Trophy, Volume2, type LucideIcon } from 'lucide-react';
+import { ArrowRight, Volume2 } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/Button';
 import { speak } from '@/lib/speech';
 
-const SLIDES: { key: string; icon: LucideIcon; sample: string }[] = [
-  { key: 'job', icon: MessagesSquare, sample: 'Can you explain what DevOps is?' },
-  { key: 'path', icon: Route, sample: 'Let me walk you through this campaign.' },
-  { key: 'speak', icon: Mic, sample: 'I’ll follow up by email today.' },
-  { key: 'progress', icon: Trophy, sample: 'You’re on a 4-day streak.' }
+const SLIDES: { key: string; image: string; sample: string }[] = [
+  { key: 'job', image: 'speak-english-at-work', sample: 'Can you explain what DevOps is?' },
+  { key: 'path', image: 'situations-path', sample: 'Let me walk you through this campaign.' },
+  { key: 'memory', image: 'spaced-repetition', sample: 'Let’s go over it once more.' },
+  { key: 'leagues', image: 'friendly-leagues', sample: 'You’re on a four-day streak.' }
 ];
 
 /**
@@ -38,16 +38,11 @@ export function IntroCarousel({ onDone }: { onDone: () => void }) {
       <div ref={scroller} role="group" aria-roledescription="carousel" aria-label={t('onboarding.intro.label')}
         onScroll={(e) => { const el = e.currentTarget; setIndex(Math.round(el.scrollLeft / el.clientWidth)); }}
         className="flex min-h-0 flex-1 snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {SLIDES.map(({ key, icon: Icon, sample }, i) => (
+        {SLIDES.map(({ key, image, sample }, i) => (
           <section key={key} aria-roledescription="slide" aria-label={t('deck.progress', { n: i + 1, total: SLIDES.length })}
             className="flex w-full flex-none snap-center flex-col items-center justify-center px-8 text-center">
-            <div className="relative grid h-56 w-56 place-items-center" aria-hidden>
-              <span className="absolute inset-0 rounded-full bg-[var(--accent)] opacity-10" />
-              <span className="absolute inset-6 rounded-full bg-[var(--accent)] opacity-10" />
-              <span className={`grid h-28 w-28 place-items-center rounded-2xl bg-[var(--accent)] text-on-ocean shadow-[0_6px_0_rgba(15,34,56,0.18)] ${i === index ? 'motion-safe:animate-[bounce-in_.55s_var(--ease-out-quart)]' : ''}`}>
-                <Icon size={56} strokeWidth={2.2} />
-              </span>
-            </div>
+            <img src={`/illustrations/onboarding/${image}.png`} alt="" width={256} height={256} decoding="async" fetchPriority={i === 0 ? 'high' : 'low'}
+              className={`h-56 w-56 object-contain sm:h-64 sm:w-64 ${i === index ? 'motion-safe:animate-[bounce-in_.55s_var(--ease-out-quart)]' : ''}`} />
             <h1 className="mt-6 text-[1.75rem] font-black leading-tight [text-wrap:balance]">{t(`onboarding.intro.${key}.title`)}</h1>
             <p className="mt-3 max-w-[34ch] text-lg leading-relaxed text-ink-2 [text-wrap:pretty]">{t(`onboarding.intro.${key}.text`)}</p>
             <button type="button" onClick={() => speak(sample)} className="mt-6 inline-flex min-h-11 max-w-full items-center gap-2 rounded-2xl border-2 border-line bg-surface px-4 py-2 text-left font-bold">

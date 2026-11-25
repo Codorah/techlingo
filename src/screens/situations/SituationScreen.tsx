@@ -1,4 +1,4 @@
-import { ArrowRight, ChartColumn, Check, Circle, FileText, GitPullRequest, Hash, Languages, Lightbulb, Mail, Megaphone, Mic, Sparkles, Square, Trophy, Users, Video, Volume2, X } from 'lucide-react';
+import { ArrowRight, ChartColumn, Check, Circle, FileText, GitPullRequest, Hash, Languages, Lightbulb, Mail, Megaphone, Mic, Sparkles, Square, Users, Video, Volume2, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NotFound } from '@/components/NotFound';
@@ -329,9 +329,9 @@ export function Done({ xp, title, accuracy, confetti = true, replay, onContinue 
     <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col px-5 pb-[calc(env(safe-area-inset-bottom)+20px)] pt-[calc(env(safe-area-inset-top)+24px)] text-center">
       {confetti && <Confetti />}
       <div className="flex flex-1 flex-col items-center justify-center">
-        <div className="relative grid h-32 w-32 animate-[bounce-in_.55s_var(--ease-out-quart)] place-items-center rounded-full bg-sun text-sun-ink shadow-[0_6px_0_var(--color-gold-press)]">
-          <Trophy size={54} strokeWidth={2.4} aria-hidden />
-          <span className="absolute -bottom-3 rounded-full bg-[var(--accent)] px-3.5 py-1 font-title text-base font-black text-on-ocean shadow">+{countXp} XP</span>
+        <div className="relative grid h-48 w-48 animate-[bounce-in_.55s_var(--ease-out-quart)] place-items-center">
+          <img src={`/illustrations/results/${perfect ? 'lesson-perfect' : 'lesson-success'}.png`} alt="" width={192} height={192} decoding="async" className="h-48 w-48 object-contain" />
+          <span className="absolute -bottom-2 rounded-full bg-[var(--accent)] px-3.5 py-1 font-title text-base font-black text-on-ocean shadow">+{countXp} XP</span>
         </div>
         {perfect && (
           <span className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-mint px-3.5 py-1 text-xs font-black uppercase tracking-wider text-mint-ink">

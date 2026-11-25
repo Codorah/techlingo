@@ -5,6 +5,7 @@ import { db, getDeviceId, nowIso, uuid } from '@/db/db';
 import type { PathProgress } from '@/learning/path';
 import { review, stateOf } from '@/learning/srs';
 import { notifyStepCompleted } from '@/app/InstallSheet';
+import { syncXp } from './cloud';
 import { addXP, getRetention, getSetting, setSetting } from './progress';
 
 const KEY = 'pathProgress';
@@ -56,6 +57,7 @@ async function recordNode(nodeId: string, kind: NodeKind, results: WordResult[],
   if (results.length) await scheduleWords(results);
   await logSession(results[0]?.termId ?? nodeId, ratio, xp);
   await addXP(xp);
+  void syncXp(nodeId, kind === 'challenge' ? 'practice' : kind, ratio, firstTime); // league XP, server side
   return { xp, firstTime };
 }
 

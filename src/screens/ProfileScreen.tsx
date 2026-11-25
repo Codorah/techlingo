@@ -1,4 +1,4 @@
-import { BookOpen, CalendarCheck, ChevronRight, Database, Flame, HelpCircle, Map as MapIcon, Settings, Sparkles, Star, Target, Zap } from 'lucide-react';
+import { BookOpen, CalendarCheck, ChevronRight, Database, Flame, HelpCircle, Map as MapIcon, Settings, Sparkles, Star, Target, Trophy, Zap } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
@@ -91,6 +91,7 @@ export function ProfileScreen() {
   ];
 
   const hub = [
+    { href: '/compte', Icon: Trophy, tone: 'bg-mint text-mint-ink', title: t('account.title'), text: t('account.hubText') },
     { href: '/settings', Icon: Settings, tone: 'bg-violet-soft text-violet', title: t('settings.title'), text: t('settings.subtitle') },
     { href: '/settings/data', Icon: Database, tone: 'bg-teal-soft text-teal', title: t('profile.data'), text: hasBackup ? t('profile.backedUp') : t('profile.dataText') },
     { href: '/settings/help', Icon: HelpCircle, tone: 'bg-sun text-sun-ink', title: t('help.title'), text: t('settings.helpText') },

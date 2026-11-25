@@ -43,6 +43,8 @@ const SessionScreen = named(() => import('@/screens/practice/SessionScreen'), 'S
 const CareerScreen = named(() => import('@/screens/career/CareerScreen'), 'CareerScreen');
 const QuestionScreen = named(() => import('@/screens/career/QuestionScreen'), 'QuestionScreen');
 const PitchScreen = named(() => import('@/screens/career/PitchScreen'), 'PitchScreen');
+const AccountScreen = named(() => import('@/screens/AccountScreen'), 'AccountScreen');
+const LeagueScreen = named(() => import('@/screens/LeagueScreen'), 'LeagueScreen');
 const DataScreen = named(() => import('@/screens/DataScreen'), 'DataScreen');
 const RolesScreen = named(() => import('@/screens/RolesScreen'), 'RolesScreen');
 const ThemeScreen = named(() => import('@/screens/path/ThemeScreen'), 'ThemeScreen');
@@ -91,6 +93,8 @@ function App() {
       <Route path="/career/q/:id"><QuestionScreen /></Route>
       <Route path="/career"><CareerScreen /></Route>
       <Route path="/profile"><ProfileScreen /></Route>
+      <Route path="/compte"><AccountScreen /></Route>
+      <Route path="/ligue"><LeagueScreen /></Route>
       <Route path="/settings/roles"><RolesScreen /></Route>
       <Route path="/settings/data"><DataScreen /></Route>
       <Route path="/settings/help"><HelpScreen /></Route>
