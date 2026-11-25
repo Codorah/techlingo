@@ -1,7 +1,8 @@
 import { ArrowRight, ChevronLeft, Sparkles } from 'lucide-react';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'wouter';
+import { useLocation } from 'wouter';
+import { IntroCarousel } from '@/components/IntroCarousel';
 import { Button } from '@/components/ui/Button';
 import { DomainPicker, RolePicker } from '@/components/RolePicker';
 import { Choice } from '@/components/ui/Choice';
@@ -40,20 +41,7 @@ export function OnboardingScreen() {
     navigate('/spin?first=1', { replace: true });
   }
 
-  if (step === 'welcome') {
-    return (
-      <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col px-6 pb-[calc(env(safe-area-inset-bottom)+24px)] pt-[calc(env(safe-area-inset-top)+24px)]">
-        <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <img src="/icons/icon.svg" width={112} height={112} alt="" className="drop-shadow-[0_14px_24px_rgba(23,50,77,0.18)]" />
-          <h1 className="mt-8 text-3xl font-black leading-tight">{t('onboarding.welcome.title')}</h1>
-          <p className="mt-3 max-w-[32ch] text-lg text-ink-2">{t('onboarding.welcome.text')}</p>
-        </div>
-        <Button onClick={() => setStep('domain')} icon={<ArrowRight size={20} aria-hidden />}>{t('onboarding.welcome.start')}</Button>
-        <Link href="/settings/data" className="mt-2 flex min-h-11 items-center justify-center font-bold text-[var(--accent)]">{t('onboarding.welcome.restore')}</Link>
-        <p className="mt-2 text-center text-sm text-ink-2">{t('onboarding.welcome.privacy')}</p>
-      </main>
-    );
-  }
+  if (step === 'welcome') return <IntroCarousel onDone={() => setStep('domain')} />;
 
   const header = (
     <header className="mb-6 flex items-center gap-3">
