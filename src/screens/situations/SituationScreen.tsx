@@ -12,6 +12,7 @@ import { ProgressBar } from '@/components/ui/ProgressBar';
 import type { PathLesson, PathUnitDef, ShippedPath } from '@/content/schema';
 import { completeNode } from '@/data/path';
 import { db } from '@/db/db';
+import { buildChecks } from '@/learning/checks';
 import { phraseHits } from '@/learning/situations';
 import { useCountUp } from '@/lib/motion';
 import { sounds } from '@/lib/sound';
@@ -68,13 +69,25 @@ const Shell = ({ children, onClose, progress, label }: { children: React.ReactNo
 export function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: string; onClose: () => void }) {
   const { t } = useTranslation();
   const [xp, setXp] = useState<number | null>(null);
+  const [checking, setChecking] = useState(false);
   const busy = useRef(false);
+  // Short check before the unit starts: listen and recognise the key phrases just read.
+  const checks = useMemo(() => buildChecks(unit.guide.key_phrases, `${unit.id}-guide`, 4, {
+    listen: t('checks.listen'), read: t('checks.read'), explain: (p) => t('checks.explain', { en: p.en, fr: p.fr })
+  }), [unit, t]);
   async function start() {
     if (busy.current) return; // double tap
     busy.current = true;
     setXp((await completeNode(nodeId, 'course')).xp);
   }
   if (xp != null) return <Done xp={xp} title={t('path.courseDone')} onContinue={onClose} />;
+  if (checking) {
+    return (
+      <Shell onClose={onClose} progress={0} label={t('checks.title')}>
+        <QuizStep questions={checks} onAnswer={() => {}} onDone={() => void start()} />
+      </Shell>
+    );
+  }
   const cards = [
     <DeckCard key="cover" kicker={t('situations.guide')}>
       <h1 className="text-[clamp(1.5rem,7vw,1.9rem)] font-black leading-tight">{unit.title_fr}</h1>
@@ -88,7 +101,7 @@ export function Guide({ unit, nodeId, onClose }: { unit: PathUnitDef; nodeId: st
     )),
     <p key="tip" className="flex gap-3 rounded-2xl bg-sun p-5 text-sun-ink"><Lightbulb size={24} className="flex-none" aria-hidden /><span><span className="mb-1 block text-sm font-black">{t('deck.tip')}</span><span className="font-semibold leading-relaxed">{unit.guide.tip_fr}</span></span></p>
   ];
-  return <CardDeck cards={cards} onClose={onClose} onFinish={() => void start()} finishLabel={t('path.start')} label={unit.title_fr} />;
+  return <CardDeck cards={cards} onClose={onClose} onFinish={() => (checks.length ? setChecking(true) : void start())} finishLabel={checks.length ? t('checks.toCheck') : t('path.start')} label={unit.title_fr} />;
 }
 
 export function PhraseCard({ phrase, kicker }: { phrase: { en: string; fr: string }; kicker: string }) {
@@ -118,10 +131,19 @@ export function Lesson({ path, lesson, nodeId, onClose }: { path: ShippedPath; l
   const [done, setDone] = useState<{ xp: number; firstTime: boolean; accuracy: number } | null>(null);
   const finishing = useRef(false);
   // Choices are shuffled on display so the right answer's position in the file never leaks.
-  const questions = useMemo<Playable[]>(() => lesson.questions.map((q, i) => {
-    const order = q.choices.map((_, k) => k).sort(() => Math.random() - 0.5);
-    return { id: `${lesson.id}-q${i}`, prompt: q.prompt_fr, choices: order.map((k) => q.choices[k]!), answer: order.indexOf(q.answer_index), explanation: q.explanation_fr };
-  }), [lesson]);
+  // The quiz opens with listening questions on the lesson's own words, then the written questions.
+  const questions = useMemo<Playable[]>(() => {
+    const written = lesson.questions.map((q, i): Playable => {
+      const order = q.choices.map((_, k) => k).sort(() => Math.random() - 0.5);
+      return { id: `${lesson.id}-q${i}`, prompt: q.prompt_fr, choices: order.map((k) => q.choices[k]!), answer: order.indexOf(q.answer_index), explanation: q.explanation_fr };
+    });
+    const own = lesson.term_ids.map((id) => path.terms[id]).filter((x): x is NonNullable<typeof x> => !!x).map((x) => ({ en: x.term_en, fr: x.translation_fr }));
+    const others = Object.values(path.terms).map((x) => ({ en: x.term_en, fr: x.translation_fr }));
+    const listening = buildChecks(own, lesson.id, 2, {
+      listen: t('checks.listen'), read: t('checks.read'), explain: (p) => t('checks.explain', { en: p.en, fr: p.fr })
+    }, others);
+    return [...listening, ...written];
+  }, [lesson, path, t]);
   const index = STEPS.indexOf(step);
 
   async function finish(hits: number) {
