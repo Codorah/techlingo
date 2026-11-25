@@ -10,7 +10,8 @@ import { addFriend, type FriendRow, loadFriends, loadLeague, loadMyProfile, type
 import { cloudEnabled } from '@/lib/supabase';
 import { useAuth } from '@/lib/useAuth';
 
-type State = { kind: 'loading' } | { kind: 'off' } | { kind: 'ready'; rows: LeagueRow[]; friends: FriendRow[] } | { kind: 'error' };
+type State = { kind: 'loading' } | { kind: 'off' } | { kind: 'ready'; rows: LeagueRow[]; friends: FriendRow[]; tier: number } | { kind: 'error' };
+const EMBLEMS = ['league-1-bronze', 'league-2-silver', 'league-3-gold', 'league-4-sapphire', 'league-5-diamond'];
 
 function Empty({ image, title, text, cta, href }: { image: string; title: string; text: string; cta: string; href: string }) {
   return (
@@ -36,7 +37,7 @@ export function LeagueScreen() {
       const mine = await loadMyProfile(user.id);
       if (!mine?.league_opt_in) { setState({ kind: 'off' }); return; }
       const [rows, friends] = await Promise.all([loadLeague(), loadFriends()]);
-      setState({ kind: 'ready', rows, friends });
+      setState({ kind: 'ready', rows, friends, tier: Math.min(5, Math.max(1, mine.league_tier)) });
     } catch { setState({ kind: 'error' }); }
   }, [user]);
 
@@ -66,9 +67,9 @@ export function LeagueScreen() {
         {state.kind === 'ready' && (
           <div className="grid gap-4">
             <div className="flex items-center gap-4">
-              <img src="/illustrations/leagues/league-1-bronze.png" alt="" width={96} height={96} className="h-20 w-20 flex-none object-contain" />
+              <img src={`/illustrations/leagues/${EMBLEMS[state.tier - 1]}.png`} alt="" width={96} height={96} className="h-20 w-20 flex-none object-contain" />
               <div>
-                <p className="text-sm font-black uppercase tracking-wider text-[var(--accent)]">{t('league.tier1')}</p>
+                <p className="text-sm font-black uppercase tracking-wider text-[var(--accent)]">{t(`league.tiers.${state.tier}`)}</p>
                 <p className="text-ink-2">{t('league.weekHint')}</p>
               </div>
             </div>

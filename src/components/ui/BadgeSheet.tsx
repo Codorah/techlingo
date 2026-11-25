@@ -4,6 +4,9 @@ import { useTranslation } from 'react-i18next';
 import type { EvaluatedBadge } from '@/learning/badges';
 import { BadgeMedal, TIER_COLOR } from './BadgeMedal';
 
+/** Badges that have an illustration in public/illustrations/badges (file name uses dashes). */
+const BADGE_ART = new Set(['first_steps', 'interview', 'lexicon', 'mastery', 'memory', 'precision', 'recall', 'speaker', 'streak', 'xp']);
+
 /** Bottom sheet with the detail of one badge: description, progress and the three tier targets. */
 export function BadgeSheet({ badge, onClose }: { badge: EvaluatedBadge; onClose: () => void }) {
   const { t } = useTranslation();
@@ -24,7 +27,9 @@ export function BadgeSheet({ badge, onClose }: { badge: EvaluatedBadge; onClose:
           <button type="button" onClick={onClose} aria-label={t('common.close')} className="-mr-2 grid h-11 w-11 place-items-center rounded-xl text-ink-2 active:bg-mist"><X size={22} aria-hidden /></button>
         </div>
         <div className="-mt-5 flex flex-col items-center text-center">
-          <BadgeMedal icon={badge.icon} tier={badge.tier} ratio={badge.ratio} size={96} />
+          {BADGE_ART.has(badge.id) && badge.tier !== 'locked'
+            ? <img src={`/illustrations/badges/${badge.id.replace('_', '-')}.png`} alt="" width={120} height={120} decoding="async" className="h-28 w-28 animate-[bounce-in_.55s_var(--ease-out-quart)] object-contain motion-reduce:animate-none" />
+            : <BadgeMedal icon={badge.icon} tier={badge.tier} ratio={badge.ratio} size={96} />}
           <h2 className="mt-3 text-xl font-black">{t(`badges.list.${badge.id}.title`)}</h2>
           <span className="mt-1 rounded-full px-3 py-0.5 text-xs font-black uppercase tracking-wider" style={{ background: TIER_COLOR[badge.tier].fill, color: TIER_COLOR[badge.tier].icon }}>
             {t(`badges.tier.${badge.tier}`)}

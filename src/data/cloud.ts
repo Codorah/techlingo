@@ -29,11 +29,11 @@ export async function pushProfile(userId: string, p: CloudProfile): Promise<bool
   return !error;
 }
 
-export type MyCloudProfile = { display_name: string; avatar: string; league_opt_in: boolean; invite_code: string; total_xp: number };
+export type MyCloudProfile = { display_name: string; avatar: string; league_opt_in: boolean; invite_code: string; total_xp: number; league_tier: number };
 
 export async function loadMyProfile(userId: string): Promise<MyCloudProfile | null> {
   if (!supabase) return null;
-  const { data } = await supabase.from('profiles').select('display_name, avatar, league_opt_in, invite_code, total_xp').eq('id', userId).maybeSingle();
+  const { data } = await supabase.from('profiles').select('display_name, avatar, league_opt_in, invite_code, total_xp, league_tier').eq('id', userId).maybeSingle();
   return (data as MyCloudProfile | null) ?? null;
 }
 
