@@ -132,7 +132,10 @@ export function DictionaryScreen() {
         {error ? (
           <p className="mt-10 text-center text-ink-2">{t('errors.content')}</p>
         ) : all && results.length === 0 ? (
-          <p className="mt-10 text-center text-ink-2">{t('dictionary.empty')}</p>
+          <div className="mt-8 grid justify-items-center gap-2 text-center">
+            <img src="/illustrations/empty/no-words.png" alt="" width={200} height={200} decoding="async" className="h-40 w-40 object-contain" />
+            <p className="text-ink-2">{t('dictionary.empty')}</p>
+          </div>
         ) : (
           <ul className="mt-2 overflow-hidden rounded-[var(--radius-card)] border-2 border-line bg-surface">
             {results.slice(0, shown).map((e, i) => {

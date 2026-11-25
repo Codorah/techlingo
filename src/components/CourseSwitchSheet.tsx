@@ -48,7 +48,10 @@ export function CourseSwitchSheet({ manifest, ownDomain, current, mine, ownRole,
         {groups.length > 0 && <h3 className="mt-6 text-xs font-extrabold uppercase tracking-wider text-ink-2">{t('course.switch.add')}</h3>}
         {groups.map(({ domain, roles }) => (
           <section key={domain.id} className="mt-2">
-            <p className="text-sm font-bold text-ink-2">{domain.name_fr}</p>
+            <p className="flex items-center gap-2 text-sm font-bold text-ink-2">
+              {['tech', 'marketing', 'air-events'].includes(domain.id) && <img src={`/illustrations/domains/${domain.id}.png`} alt="" width={32} height={32} loading="lazy" decoding="async" className="h-8 w-8 rounded-lg object-cover" />}
+              {domain.name_fr}
+            </p>
             <ul className="mt-1.5 grid gap-2">
               {roles.map((r) => (
                 <li key={r.id}>

@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { ArrowLeftRight, ArrowRight, CalendarCheck, ChevronDown, ChevronRight, Compass, Flame, Hand, Layers, RotateCw, Sparkles, Zap } from 'lucide-react';
+import { ArrowLeftRight, ArrowRight, CalendarCheck, ChevronDown, ChevronRight, Compass, Flame, Layers, RotateCw, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'wouter';
@@ -153,7 +153,7 @@ export function HomeScreen() {
         {/* Gentle welcome-back banner */}
         {away >= 3 && (
           <p className="mt-4 flex items-start gap-3 rounded-2xl bg-[var(--accent-soft)] p-4">
-            <Hand size={24} className="flex-none text-[var(--accent)]" aria-hidden />
+            <img src="/illustrations/empty/no-streak.png" alt="" width={64} height={64} decoding="async" className="h-16 w-16 flex-none object-contain" />
             <span>
               <span className="block font-extrabold">{t('home.welcomeBack.title')}</span>
               <span className="block text-sm text-ink-2">{t('home.welcomeBack.text', { count: away })}</span>
@@ -175,9 +175,7 @@ export function HomeScreen() {
                   href={status?.todaysTermId ? `/lesson/${status.todaysTermId}` : '/spin'}
                   className="flex items-center gap-3.5 rounded-2xl border-2 border-line bg-surface p-4 shadow-[0_3px_0_var(--color-line)] active:translate-y-1 active:shadow-none"
                 >
-                  <span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-sun/60 text-gold-ink">
-                    <Sparkles size={22} aria-hidden />
-                  </span>
+                  <img src="/illustrations/empty/spin-done.png" alt="" width={48} height={48} decoding="async" className="h-12 w-12 flex-none object-contain" />
                   <div className="min-w-0 flex-1">
                     <span className="block font-extrabold text-sm">{t('home.spin.done.title')}</span>
                     <span className="block text-sm text-ink-2">Mot du jour appris · Revoir la leçon</span>
@@ -191,9 +189,9 @@ export function HomeScreen() {
                 href={due ? '/practice/review' : '/practice'}
                 className="flex items-center gap-3.5 rounded-2xl border-2 border-line bg-surface p-4 shadow-[0_3px_0_var(--color-line)] active:translate-y-1 active:shadow-none"
               >
-                <span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-teal-soft text-teal">
-                  <Layers size={22} aria-hidden />
-                </span>
+                {due
+                  ? <span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-teal-soft text-teal"><Layers size={22} aria-hidden /></span>
+                  : <img src="/illustrations/empty/reviews-done.png" alt="" width={48} height={48} decoding="async" className="h-12 w-12 flex-none object-contain" />}
                 <div className="min-w-0 flex-1">
                   <span className="block font-extrabold text-sm">
                     {due ? t('home.reviews.title', { count: due }) : t('home.reviews.none')}
