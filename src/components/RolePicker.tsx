@@ -3,6 +3,8 @@ import { Choice } from '@/components/ui/Choice';
 import { DynamicIcon } from '@/components/ui/DynamicIcon';
 import type { Manifest } from '@/content/schema';
 
+const DOMAIN_ART = new Set(['tech', 'marketing', 'air-events']);
+
 const tile = (icon: string) => (
   <span className="grid h-11 w-11 flex-none place-items-center rounded-xl bg-mist text-[var(--accent)]"><DynamicIcon name={icon} /></span>
 );
@@ -16,7 +18,10 @@ export function DomainPicker({ manifest, value, onChange }: { manifest: Manifest
         const disabled = d.termCount === 0;
         return (
           <li key={d.id}>
-            <Choice state={value === d.id ? 'selected' : 'idle'} disabled={disabled} onClick={() => onChange(d.id)} leading={tile(d.icon)}
+            <Choice state={value === d.id ? 'selected' : 'idle'} disabled={disabled} onClick={() => onChange(d.id)}
+              leading={DOMAIN_ART.has(d.id)
+                ? <img src={`/illustrations/domains/${d.id}.png`} alt="" width={48} height={48} loading="lazy" decoding="async" className="h-12 w-12 flex-none rounded-xl object-cover" />
+                : tile(d.icon)}
               trailing={disabled ? <span className="text-xs font-bold text-ink-2">{t('onboarding.role.soon')}</span> : null}>
               <span className="block">{d.name_fr}</span>
               <span className="block text-sm font-normal text-ink-2">{d.description_fr}</span>

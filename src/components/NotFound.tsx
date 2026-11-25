@@ -1,4 +1,4 @@
-import { ArrowLeft, Compass } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'wouter';
 import { Button } from '@/components/ui/Button';
@@ -10,9 +10,7 @@ export function NotFound() {
 
   return (
     <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col items-center justify-center gap-6 px-6 py-12 text-center">
-      <div className="grid h-20 w-20 place-items-center rounded-3xl bg-mist text-ocean ring-4 ring-sky/30">
-        <Compass size={44} aria-hidden />
-      </div>
+      <img src="/illustrations/empty/not-found.png" alt="" width={200} height={200} decoding="async" className="h-44 w-44 object-contain" />
 
       <div className="space-y-2">
         <h1 className="text-2xl font-black text-ink">Page introuvable</h1>

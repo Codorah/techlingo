@@ -1,5 +1,5 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { CircleCheck, Volume2, X } from 'lucide-react';
+import { Volume2, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'wouter';
@@ -38,7 +38,7 @@ export function ReviewScreen() {
   if (!term) {
     return (
       <main className="mx-auto flex min-h-dvh max-w-[640px] flex-col items-center justify-center px-5 text-center">
-        <CircleCheck size={72} className="text-mint-strong" aria-hidden />
+        <img src="/illustrations/empty/reviews-done.png" alt="" width={220} height={220} decoding="async" className="h-48 w-48 object-contain" />
         <h1 className="mt-5 text-3xl font-black">{t('practice.review.done')}</h1>
         <p className="mt-2 text-ink-2">{t('practice.review.doneText', { count: queue.length })}</p>
         <Button className="mt-8" onClick={() => navigate('/practice')}>{t('practice.result.back')}</Button>

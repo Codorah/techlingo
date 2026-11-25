@@ -5,7 +5,7 @@ import type { EvaluatedBadge } from '@/learning/badges';
 import { BadgeMedal, TIER_COLOR } from './BadgeMedal';
 
 /** Badges that have an illustration in public/illustrations/badges (file name uses dashes). */
-const BADGE_ART = new Set(['first_steps', 'interview', 'lexicon', 'mastery', 'memory', 'precision', 'recall', 'speaker', 'streak', 'xp']);
+const BADGE_ART = new Set(['first_steps', 'lexicon', 'mastery', 'streak', 'weekly', 'speaker', 'recall', 'interview', 'pitch', 'precision', 'memory', 'wheel', 'collector', 'polyvalent', 'xp', 'guardian']);
 
 /** Bottom sheet with the detail of one badge: description, progress and the three tier targets. */
 export function BadgeSheet({ badge, onClose }: { badge: EvaluatedBadge; onClose: () => void }) {
